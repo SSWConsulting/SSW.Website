@@ -1,15 +1,7 @@
-import { backgroundOptions } from "../../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
-import { ColorPickerInput } from "../../blocksSubtemplates/tinaFormElements/colourSelector";
+import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
 
 export const ImageComponentLayoutSchema = [
-  {
-    type: "number",
-    label: "Background Colour",
-    name: "background",
-    ui: {
-      component: ColorPickerInput(backgroundOptions),
-    },
-  },
+  backgroundSchema,
   {
     type: "object",
     label: "Media",

@@ -8,7 +8,11 @@ import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colour
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 
 type BackgroundData = {
-  background?: number;
+  background?: {
+    backgroundColour?: number;
+    backgroundImage?: string;
+    bleed?: boolean;
+  };
 };
 
 const V2ComponentWrapper = ({
@@ -32,12 +36,22 @@ const V2ComponentWrapper = ({
     <section
       className={classNames(
         backgroundOptions.find((value) => {
-          return value.reference === data.background;
+          return value.reference === data.background?.backgroundColour;
         })?.classes,
-        "w-full",
+        "relative w-full",
         className
       )}
     >
+      {data.background?.bleed ? (
+        <div>
+          <img
+            src={data.background?.backgroundImage}
+            className="absolute inset-0 z-0 w-full object-cover"
+          />
+        </div>
+      ) : (
+        <></>
+      )}
       <section
         ref={ref}
         className={classNames(
@@ -45,6 +59,16 @@ const V2ComponentWrapper = ({
           isInInitialViewport === false && "opacity-0",
           !isInInitialViewport && isInView && "opacity-100"
         )}
+        style={
+          data.background?.bleed
+            ? {}
+            : {
+                backgroundImage: `url(${data.background?.backgroundImage})`,
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }
+        }
       >
         {children}
       </section>
@@ -53,12 +77,32 @@ const V2ComponentWrapper = ({
 };
 
 export const backgroundSchema = {
-  type: "number",
-  label: "Background Colour",
+  type: "object",
+  label: "Background",
   name: "background",
-  ui: {
-    component: ColorPickerInput(backgroundOptions),
-  },
+  fields: [
+    {
+      type: "number",
+      label: "Background Colour",
+      name: "backgroundColour",
+      ui: {
+        component: ColorPickerInput(backgroundOptions),
+      },
+    },
+    {
+      type: "image",
+      label: "Background Image",
+      name: "backgroundImage",
+      description:
+        "An optional background image, overlay on top of the colour. Streched to fit. File names cannot contain spaces.",
+    },
+    {
+      type: "boolean",
+      label: "Bleed",
+      name: "bleed",
+      description: "If true, the background will bleed into lower blocks.",
+    },
+  ],
 };
 
 export default V2ComponentWrapper;

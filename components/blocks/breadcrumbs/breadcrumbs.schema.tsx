@@ -1,8 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
-import { backgroundOptions } from "../../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
-import { ColorPickerInput } from "../../blocksSubtemplates/tinaFormElements/colourSelector";
+import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
 import { TinaInfo } from "../../tina/tina-info";
 
 export const BreadcrumbSchema: Template = {
@@ -12,15 +11,8 @@ export const BreadcrumbSchema: Template = {
     previewSrc: "/images/thumbs/tina/breadcrumbs.jpg",
   },
   fields: [
-    {
-      type: "number",
-      label: "Background Colour",
-      name: "background",
-      ui: {
-        //@ts-expect-error – custom component typing won't be pinned down
-        component: ColorPickerInput(backgroundOptions),
-      },
-    },
+    //@ts-expect-error – custom component typing won't be pinned down
+    backgroundSchema,
     {
       type: "string",
       label: "Final Breadcrumb",
