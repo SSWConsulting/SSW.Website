@@ -3,12 +3,12 @@ import { ColorPickerOptions } from "../colourSelector";
 export const backgroundOptions: ColorPickerOptions[] = [
   {
     name: "Soft Left Gradient",
-    classes: "bg-gradient-to-l from-gray-900 to-black text-white",
+    classes: "bg-gradient-to-l from-gray-900 to-[#121212] text-white",
     reference: 0,
   },
   {
     name: "Soft Right Gradient",
-    classes: "bg-gradient-to-r from-gray-900 to-black text-white",
+    classes: "bg-gradient-to-r from-gray-900 to-[#121212] text-white",
     reference: 1,
   },
   {

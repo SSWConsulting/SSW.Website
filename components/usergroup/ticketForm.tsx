@@ -38,7 +38,6 @@ export const TicketForm = ({ className }: TicketFormProps) => {
         validationSchema={validationSchema}
         onSubmit={(values: FormValues) => {
           // Process form submission here
-          //eslint-disable-next-line @typescript-eslint/no-unused-expressions
           values.email;
         }}
       >

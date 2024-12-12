@@ -28,6 +28,8 @@ type ArticlesIndexPageProps = {
 
 function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
   const { data } = tinaProps;
+  data.articlesIndex;
+  data.articlesIndex.seo;
   const { dehydratedState } = props;
   return (
     <>
