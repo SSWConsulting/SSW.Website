@@ -1,121 +1,34 @@
 "use client";
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
-import classNames from "classnames";
+import { Consultingv2BlocksCardCarousel as CardCarouselData } from "@/tina/types";
 import Image from "next/image";
 import Link from "next/link";
-import { setState, useEffect, useMemo, useRef, useState } from "react";
-import { current } from "tailwindcss/colors";
+import { useEffect, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
-import { useResizeObserver } from "usehooks-ts";
 import { ListItem } from "../imageComponents/imageTextBlock/listItem";
 import { PillGroup } from "../imageComponents/imageTextBlock/pillGroup";
 import V2ComponentWrapper from "../imageComponents/imageTextBlock/v2ComponentWrapper";
 import { cardOptions } from "../sharedTinaFields/colourOptions/cardOptions";
 import { Icon } from "../sharedTinaFields/icon";
 import { CardList } from "./cardCarouseSlideshow";
+import { Tabs, useTabCarousel } from "./cardCarouselTabs";
 
-export const CardCarousel = ({ data }) => {
+export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
   const [hasImages, setHasImages] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
-
+  const { tabsData, activeCategory, categoryGroup } = useTabCarousel({
+    categoryGroup: data.categoryGroup,
+  });
   useEffect(() => {
     setHasImages(data.cards?.some((card) => card.image));
   }, [data.cards]);
-  const [containerDimensions, setContainerDimensions] = useState({
-    width: 0,
-    height: 0,
-  });
-  //Sliding tabs
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const tabWrapperRef = useRef<HTMLDivElement>(null);
-  const [tabDimemsions, setTabDimensions] = useState({
-    top: 0,
-    left: 0,
-    width: 0,
-    height: 0,
-  });
-
-  useEffect(() => {
-    if (tabWrapperRef) {
-      const { clientHeight, clientWidth } = tabWrapperRef.current;
-      setContainerDimensions({ width: clientWidth, height: clientHeight });
-    }
-  }, [tabWrapperRef]);
-
-  useEffect(() => {
-    console.log("containerDimensions", containerDimensions);
-    const button = buttonRefs.current[selectedIndex];
-    if (button) {
-      const { clientWidth, offsetLeft, offsetTop, clientHeight } = button;
-      setTabDimensions({
-        top: offsetTop,
-        left: offsetLeft,
-        width: clientWidth,
-        height: clientHeight,
-      });
-    }
-  }, [selectedIndex, containerDimensions]);
-  const [activeCategory, setActiveCategory] = useState(
-    data.categoryGroup?.at(0) ?? null
-  );
-  useResizeObserver({
-    ref: tabWrapperRef,
-    onResize: () => {
-      const { clientWidth, clientHeight } = tabWrapperRef.current;
-      // const clientHeight = spanref.current.clientHeight;
-      setContainerDimensions({ width: clientWidth, height: clientHeight });
-    },
-  });
-  useEffect(() => {
-    const tabIndex = data.categoryGroup?.indexOf(activeCategory);
-    setSelectedIndex(tabIndex ?? 0);
-  }, [activeCategory, data.categoryGroup]);
 
   return (
     <V2ComponentWrapper data={data}>
       <Container>
         <div className="flex flex-col gap-4 text-center">
-          <div
-            className="relative m-auto flex w-fit flex-wrap overflow-hidden rounded-md bg-black"
-            ref={tabWrapperRef}
-          >
-            {/* Underlay to achieve the slide effect */}
-            <span
-              className="absolute inset-y-0 flex overflow-hidden rounded-md transition-all duration-500"
-              style={{
-                left: tabDimemsions.left,
-                width: tabDimemsions.width,
-                marginTop: tabDimemsions.top,
-                height: tabDimemsions.height,
-              }}
-            >
-              <span className="size-full bg-white" />
-            </span>
-            {/* Actual buttons */}
-            {data.categoryGroup?.map((category, index) => {
-              return (
-                <>
-                  <button
-                    data-tina-field={tinaField(category, "categoryName")}
-                    ref={(el) => {
-                      buttonRefs.current[index] = el;
-                    }}
-                    key={`category-${index}`}
-                    className={`relative w-fit min-w-24 rounded-md bg-transparent p-2 transition-colors duration-500 ${
-                      selectedIndex === index ? "text-black" : "text-gray-200"
-                    }`}
-                    onClick={() => {
-                      setActiveCategory(category);
-                    }}
-                  >
-                    {category.categoryName}
-                  </button>
-                </>
-              );
-            })}
-          </div>
+          <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
           {data.isH1 ? (
             <h1
               data-tina-field={tinaField(data, "heading")}
@@ -140,9 +53,7 @@ export const CardCarousel = ({ data }) => {
             </p>
           )}
           {data.buttons?.length > 0 && (
-            <div
-              className={`mb-4 mt-2 flex gap-3 ${data.mediaConfiguration?.imageSource ? "" : "justify-center"}`}
-            >
+            <div className={"mb-4 mt-2 flex justify-center gap-3"}>
               {data.buttons?.map((button, index) => {
                 const buttonElement = (
                   <Button

@@ -48,7 +48,7 @@ const CardList = ({ activeCategory, data, hasImages }) => {
           </CarouselContent>
           <div className="m-auto flex w-3/4 justify-center gap-2 p-6">
             {cardData.map((_, index) => {
-              return <CarouselButton index={index} />;
+              return <CarouselButton key={index} index={index} />;
             })}
           </div>
         </Carousel>

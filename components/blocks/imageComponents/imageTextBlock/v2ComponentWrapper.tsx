@@ -8,8 +8,8 @@ import { backgroundOptions } from "../../sharedTinaFields/colourOptions/blockBac
 import { ColorPickerInput } from "../../sharedTinaFields/colourSelector";
 
 type BackgroundData = {
-  shouldFadeIn: boolean;
-  background: number;
+  shouldFadeIn?: boolean;
+  background?: number;
 };
 
 const V2ComponentWrapper = ({
