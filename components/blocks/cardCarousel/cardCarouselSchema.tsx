@@ -20,14 +20,58 @@ const GUIDGeneratorComponent = (props) => {
   return <></>;
 };
 
+const defaultCardItem = {
+  guid: null,
+  altText: "Lorem Ipsum",
+  chips: {
+    chips: [
+      {
+        filledChipText: "Lorem",
+        clearChipText: "Ipsum",
+      },
+    ],
+  },
+  icon: "info",
+  heading: "Lorem Ipsum",
+  description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  featureList: {
+    features: [
+      {
+        heading: "Feature 1",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        icon: "Tina",
+      },
+      {
+        heading: "Feature 2",
+        description:
+          "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        icon: "Tina",
+      },
+    ],
+  },
+  embeddedButton: {
+    buttonText: "Lorem",
+  },
+};
 export const CardCarouselSchema: Template = {
   name: "cardCarousel",
-  label: "Card Carousel",
+  label: "<V2> Card Carousel",
   // ui: {
   //   previewSrc: "/images/thumbs/tina/accordian.jpg",
   // },
   ui: {
     defaultItem: {
+      buttons: [
+        {
+          buttonText: "Lorem",
+          colour: 0,
+        },
+        {
+          buttonText: "Ipsum",
+          colour: 1,
+        },
+      ],
       isStacked: false,
       heading: "Lorem Ipsum",
       isH1: false,
@@ -56,141 +100,11 @@ export const CardCarouselSchema: Template = {
         },
       ],
       cards: [
-        {
-          guid: null,
-          altText: "Lorem Ipsum",
-          chips: {
-            chips: [
-              {
-                filledChipText: "Lorem",
-                clearChipText: "Ipsum",
-              },
-            ],
-          },
-          icon: "info",
-          heading: "Lorem Ipsum",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          featureList: {
-            features: [
-              {
-                heading: "Feature 1",
-                description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                icon: "Tina",
-              },
-              {
-                heading: "Feature 2",
-                description:
-                  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                icon: "Tina",
-              },
-            ],
-          },
-          embeddedButton: {
-            buttonText: "Lorem",
-          },
-        },
-        {
-          guid: null,
-          altText: "Lorem Ipsum",
-          chips: {
-            chips: [
-              {
-                filledChipText: "Lorem",
-                clearChipText: "Ipsum",
-              },
-            ],
-          },
-          icon: "info",
-          heading: "Lorem Ipsum",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          featureList: {
-            features: [
-              {
-                heading: "Feature 1",
-                description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                icon: "Tina",
-              },
-              {
-                heading: "Feature 2",
-                description:
-                  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                icon: "Tina",
-              },
-            ],
-          },
-          embeddedButton: {
-            buttonText: "Lorem",
-          },
-        },
-        {
-          guid: null,
-          altText: "Lorem Ipsum",
-          chips: {
-            chips: [
-              {
-                filledChipText: "Lorem",
-                clearChipText: "Ipsum",
-              },
-            ],
-          },
-          icon: "info",
-          heading: "Lorem Ipsum",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          featureList: {
-            features: [
-              {
-                heading: "Feature 1",
-                description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                icon: "Tina",
-              },
-              {
-                heading: "Feature 2",
-                description:
-                  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                icon: "Tina",
-              },
-            ],
-          },
-          embeddedButton: {
-            buttonText: "Lorem",
-          },
-        },
-        {
-          altText: "Lorem Ipsum",
-          chips: {
-            chips: [],
-          },
-          icon: "info",
-          heading: "Lorem Ipsum",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          featureList: {
-            features: [
-              {
-                heading: "Feature 1",
-                description:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                icon: "Tina",
-              },
-              {
-                heading: "Feature 2",
-                description:
-                  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                icon: "Tina",
-              },
-            ],
-          },
-          embeddedButton: {
-            buttonText: "Lorem",
-            icon: "info",
-          },
-        },
+        defaultCardItem,
+        defaultCardItem,
+        defaultCardItem,
+        defaultCardItem,
+        defaultCardItem,
       ],
     },
   },
@@ -382,20 +296,7 @@ export const CardCarouselSchema: Template = {
         itemProps: (item) => {
           return { label: item?.heading ?? "Card" };
         },
-        defaultItem: {
-          chips: {
-            chips: [],
-          },
-          heading: "Lorem Ipsum",
-          description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          featureList: {
-            features: [],
-          },
-          embeddedButton: {
-            buttonText: "Lorem",
-          },
-        },
+        defaultItem: defaultCardItem,
       },
       fields: [
         {
@@ -465,8 +366,9 @@ export const CardCarouselSchema: Template = {
               fields: listItemSchema,
               ui: {
                 defaultItem: {
-                  heading: "{{ HEADING }}",
-                  description: "{{ DESCRIPTION }}",
+                  heading: "Lorem Ipsum",
+                  description:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                 },
               },
             },

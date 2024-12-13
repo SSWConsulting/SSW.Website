@@ -4,8 +4,6 @@ import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
 import { Consultingv2BlocksCardCarousel as CardCarouselData } from "@/tina/types";
-
-import { Consultingv2BlocksCardCarouselCards as Card } from "@/tina/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -25,7 +23,7 @@ export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
   const [cardSet, setCardSet] = useState(data.cards);
 
   useEffect(() => {
-    if (activeCategory) {
+    if (activeCategory && data.cards) {
       setCardSet(
         data.cards.filter((card) =>
           activeCategory.cardGuidList.cardGuidList.includes(card.guid)
@@ -130,7 +128,6 @@ const Card = ({ data, placeholder }: CardProps) => {
     <div
       className={`flex w-90 shrink flex-col rounded-md text-start ${
         cardOptions.find((value) => {
-          console.log("cardRef", value.reference, data.cardStyle);
           return value.reference === data.cardStyle;
         })?.classes
       }`}

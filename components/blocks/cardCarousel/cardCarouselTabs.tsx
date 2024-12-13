@@ -45,6 +45,11 @@ const useTabCarousel = ({ categoryGroup }: Consultingv2BlocksCardCarousel) => {
         height: clientHeight,
       });
     }
+
+    setContainerDimensions({
+      width: tabWrapperRef.current.clientWidth,
+      height: tabWrapperRef.current.clientHeight,
+    });
   }, [selectedIndex, containerDimensions]);
   const [activeCategory, setActiveCategory] = useState(
     categoryGroup?.at(0) ?? null
@@ -98,7 +103,7 @@ const Tabs = ({ categoryGroup, tabsData }: TabsProps) => {
 
   return (
     <div
-      className="relative m-auto flex w-fit flex-wrap overflow-hidden rounded-md bg-black"
+      className="relative m-auto flex flex-wrap overflow-hidden rounded-md bg-black"
       ref={tabWrapperRef}
     >
       {/* Underlay to achieve the slide effect */}
