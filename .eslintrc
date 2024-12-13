@@ -26,9 +26,8 @@
       {
         "whitelist": [
           "g\\-yt.+",
-          //"prose\\-.+",
-          "prose-[a-zA-Z0-9]+\\:[a-zA-Z0-9\\-\\/]+",
-          //"prose-.+",
+          "prose-.+",
+          "prose-h2:text-3xl/9",
           "legend",
           "dark",
         ],
