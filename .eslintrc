@@ -6,9 +6,9 @@
     "eslint:recommended",
     "next/typescript",
     "plugin:react/recommended",
-    "plugin:tailwindcss/recommended",
     "next/core-web-vitals",
     "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended",
   ],
   "rules": {
     "@typescript-eslint/no-unused-expressions": [
@@ -22,13 +22,13 @@
     "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-custom-classname": [
-      "warn",
+      "error",
       {
         "whitelist": ["g\\-yt.+", "prose-.+", "legend", "dark"],
       },
     ],
     "prettier/prettier": [
-      "warn",
+      "error",
       {
         "endOfLine": "auto",
       },

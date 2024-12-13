@@ -3,7 +3,5 @@
   "singleQuote": false,
   "tabWidth": 2,
   "trailingComma": "es5",
-  "tailwindConfig": "./tailwind.config.js",
-  "tailwindAttributes": ["className"],
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "tailwindConfig": "./tailwind.config.js"
 }
