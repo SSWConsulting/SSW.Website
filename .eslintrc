@@ -27,7 +27,7 @@
         "whitelist": [
           "g\\-yt.+",
           "prose-.+",
-          "prose-h2:text-3xl/9",
+          "prose-h2:text-3xl\\/9",
           "legend",
           "dark",
         ],
