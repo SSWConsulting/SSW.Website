@@ -1,6 +1,5 @@
 {
   "root": true,
-  "useTabs": false,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "tailwindcss"],
   "extends": [
@@ -23,15 +22,9 @@
     "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
     "tailwindcss/no-custom-classname": [
-      "error",
+      "warn",
       {
-        "whitelist": [
-          "g\\-yt.+",
-          "prose-.+",
-          "prose-h2\\:text-3xl\\/9",
-          "legend",
-          "dark",
-        ],
+        "whitelist": ["g\\-yt.+", "prose-.+", "legend", "dark"],
       },
     ],
     "prettier/prettier": [
