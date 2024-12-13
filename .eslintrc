@@ -1,5 +1,6 @@
 {
   "root": true,
+  "useTabs": false,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "tailwindcss"],
   "extends": [
