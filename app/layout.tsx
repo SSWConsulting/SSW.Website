@@ -31,7 +31,7 @@ const inter = Inter({
   variable: "--inter-font",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "600", "700"],
+  weight: ["300", "400", "600", "700"],
 });
 
 const ChatBaseBot = dynamic(
