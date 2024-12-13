@@ -9,7 +9,7 @@ import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colour
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 
 type BackgroundData = {
-  background: {
+  background?: {
     backgroundColour?: number;
     backgroundImage?: string;
     bleed?: boolean;
