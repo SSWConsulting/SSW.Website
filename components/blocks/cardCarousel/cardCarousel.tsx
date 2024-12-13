@@ -3,7 +3,10 @@ import { ListItem } from "@/components/blocksSubtemplates/listItem";
 import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
-import { Consultingv2BlocksCardCarousel as CardCarouselData } from "@/tina/types";
+import {
+  Consultingv2BlocksCardCarousel as CardCarouselData,
+  Consultingv2BlocksCardCarouselCards,
+} from "@/tina/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -14,6 +17,7 @@ import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 import { CardList } from "./cardCarouseSlideshow";
 import { Tabs, useTabCarousel } from "./cardCarouselTabs";
 
+type CardData = Consultingv2BlocksCardCarouselCards;
 export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
   const [hasImages, setHasImages] = useState(false);
@@ -116,7 +120,7 @@ export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
   );
 };
 type CardProps = {
-  data: Card & { cardStyle: number };
+  data: CardData & { cardStyle: number };
   placeholder: boolean;
 };
 const Card = ({ data, placeholder }: CardProps) => {
