@@ -8,7 +8,7 @@ export function LogoCarousel({ data }) {
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom">
-        <div className="flex w-full flex-col items-center justify-center pt-8">
+        <div className="flex w-full flex-col items-center justify-center pb-14">
           <h2
             className="p-2 text-xl font-semibold text-white md:text-2xl"
             data-tina-field={tinaField(data, "heading")}

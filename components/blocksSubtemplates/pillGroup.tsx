@@ -14,7 +14,7 @@ export const PillGroup = ({ data }) => {
       {data.clearChipText && (
         <span
           data-tina-field={tinaField(data, "clearChipText")}
-          className="px-2 py-1 text-xs font-normal text-white"
+          className="px-2 py-1 text-xs font-light text-white"
         >
           {data.clearChipText}
         </span>
