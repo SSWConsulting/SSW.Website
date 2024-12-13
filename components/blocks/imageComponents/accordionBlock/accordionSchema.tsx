@@ -14,10 +14,16 @@ export const AccordionSchema: Template = {
         {
           label: "Lorem",
           content: {
-            type: "p",
+            type: "root",
             children: [
               {
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                type: "p",
+                children: [
+                  {
+                    type: "text",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  },
+                ],
               },
             ],
           },
@@ -25,10 +31,16 @@ export const AccordionSchema: Template = {
         {
           label: "Ipsum",
           content: {
-            type: "p",
+            type: "root",
             children: [
               {
-                text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                type: "p",
+                children: [
+                  {
+                    type: "text",
+                    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                  },
+                ],
               },
             ],
           },
