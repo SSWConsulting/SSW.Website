@@ -20,6 +20,18 @@ export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
   const { tabsData, activeCategory, categoryGroup } = useTabCarousel({
     categoryGroup: data.categoryGroup,
   });
+  const [cardSet, setCardSet] = useState(data.cards);
+
+  useEffect(() => {
+    if (activeCategory) {
+      setCardSet(
+        data.cards.filter((card) =>
+          activeCategory.cardGuidList.cardGuidList.includes(card.guid)
+        )
+      );
+    }
+  }, [activeCategory, data.cards]);
+
   useEffect(() => {
     setHasImages(data.cards?.some((card) => card.image));
   }, [data.cards]);
@@ -76,7 +88,7 @@ export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
           {data.isStacked && data.cards && (
             <>
               <div className="flex flex-wrap items-stretch justify-center gap-4 lg:gap-8">
-                {data.cards.map((cardData, index) => {
+                {cardSet.map((cardData, index) => {
                   return (
                     <Card
                       key={`card-${index}`}
@@ -90,12 +102,11 @@ export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
           )}
         </div>
       </Container>
-
       {data.cards && !data.isStacked && (
         <Container padding="sm:px-8">
           <CardList
             activeCategory={activeCategory}
-            data={data}
+            data={cardSet}
             hasImages={hasImages}
           />
         </Container>
@@ -111,7 +122,7 @@ const Card = ({ data, placeholder }) => {
 
   return (
     <div
-      className={`flex w-full shrink flex-col rounded-md text-start ${
+      className={`flex w-90 shrink flex-col rounded-md text-start ${
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
