@@ -106,7 +106,7 @@ export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
         <Container padding="sm:px-8">
           <CardList
             activeCategory={activeCategory}
-            data={cardSet}
+            data={{ cards: cardSet, cardStyle: data.cardStyle }}
             hasImages={hasImages}
           />
         </Container>

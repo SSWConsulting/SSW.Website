@@ -5,9 +5,23 @@ import {
   CarouselPickItem,
   useCarousel,
 } from "@/components/ui/carousel";
+import {
+  Consultingv2BlocksCardCarouselCards as CarouselCard,
+  Consultingv2BlocksCardCarouselCategoryGroup,
+} from "@/tina/types";
 import { useEffect, useState } from "react";
 import { Card } from "./cardCarousel";
-const CardList = ({ activeCategory, data, hasImages }) => {
+
+type CardSlideshowProps = {
+  data: {
+    cards: CarouselCard[];
+    cardStyle: number;
+  };
+  hasImages: boolean;
+  activeCategory: Consultingv2BlocksCardCarouselCategoryGroup;
+};
+
+const CardList = ({ activeCategory, data, hasImages }: CardSlideshowProps) => {
   const [cardData, setCardData] = useState(data.cards);
   useEffect(() => {
     if (activeCategory && activeCategory?.cardGuidList?.cardGuidList) {
