@@ -5,9 +5,43 @@ import {
   CarouselPickItem,
   useCarousel,
 } from "@/components/ui/carousel";
+import {
+  Consultingv2BlocksCardCarouselCards as CarouselCard,
+  Consultingv2BlocksCardCarouselCategoryGroup,
+} from "@/tina/types";
 import { useEffect, useState } from "react";
 import { Card } from "./cardCarousel";
-const CardList = ({ data, hasImages }) => {
+
+type CardSlideshowProps = {
+  data: {
+    cards: CarouselCard[];
+    cardStyle: number;
+  };
+  hasImages: boolean;
+  activeCategory: Consultingv2BlocksCardCarouselCategoryGroup;
+};
+
+const CardList = ({ activeCategory, data, hasImages }: CardSlideshowProps) => {
+  const [cardData, setCardData] = useState(data.cards);
+  useEffect(() => {
+    if (
+      activeCategory &&
+      activeCategory?.cardGuidList?.cardGuidList &&
+      data.cards
+    ) {
+      setCardData(
+        data.cards.filter((card) => {
+          return activeCategory?.cardGuidList.cardGuidList.includes(card.guid);
+        })
+      );
+    } else {
+      setCardData([]);
+    }
+  }, [activeCategory, data.cards]);
+  useEffect(() => {
+    setCardData(data.cards);
+  }, [data]);
+
   return (
     <div>
       <div className="mask-horizontal-fade">
@@ -16,19 +50,22 @@ const CardList = ({ data, hasImages }) => {
           className="w-full max-w-9xl"
         >
           <CarouselContent>
-            {data?.map((cardData, index) => {
+            {cardData?.map((cardData, index) => {
               return (
                 <CarouselItem
                   className="flex basis-72 md:basis-96"
                   key={`card-carousel-${index}`}
                 >
-                  <Card placeholder={hasImages} data={{ ...cardData }} />
+                  <Card
+                    placeholder={hasImages}
+                    data={{ ...cardData, cardStyle: data.cardStyle }}
+                  />
                 </CarouselItem>
               );
             })}
           </CarouselContent>
           <div className="m-auto flex w-3/4 justify-center gap-2 p-6">
-            {data?.map((_, index) => {
+            {cardData?.map((_, index) => {
               return (
                 <CarouselButton
                   key={`carousel-button-${index}`}

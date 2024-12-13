@@ -96,7 +96,6 @@ export const CardCarouselSchema: Template = {
       description:
         "Tabs that group cards, under the hood cards and tabs are linked by hidden GUIDs.",
       ui: {
-        max: 4,
         defaultItem: {
           cardGuidList: {
             cardGuidList: [],

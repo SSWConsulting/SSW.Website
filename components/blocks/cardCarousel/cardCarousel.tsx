@@ -3,88 +3,47 @@ import { ListItem } from "@/components/blocksSubtemplates/listItem";
 import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
+import { Consultingv2BlocksCardCarousel as CardCarouselData } from "@/tina/types";
+
+import { Consultingv2BlocksCardCarouselCards as Card } from "@/tina/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { cardOptions } from "../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { Icon } from "../../blocksSubtemplates/tinaFormElements/icon";
 import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 import { CardList } from "./cardCarouseSlideshow";
+import { Tabs, useTabCarousel } from "./cardCarouselTabs";
 
-export const CardCarousel = ({ data }) => {
+export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
   const [hasImages, setHasImages] = useState(false);
+  const { tabsData, activeCategory, categoryGroup } = useTabCarousel({
+    categoryGroup: data.categoryGroup,
+  });
   const [cardSet, setCardSet] = useState(data.cards);
+
+  useEffect(() => {
+    if (activeCategory) {
+      setCardSet(
+        data.cards.filter((card) =>
+          activeCategory.cardGuidList.cardGuidList.includes(card.guid)
+        )
+      );
+    }
+  }, [activeCategory, data.cards]);
 
   useEffect(() => {
     setHasImages(data.cards?.some((card) => card.image));
     setCardSet(data.cards);
   }, [data.cards]);
 
-  //Sliding tabs
-  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [selectedTabWidth, setSelectedTabWidth] = useState(0);
-  const [selectedTabOffset, setSelectedTabOffset] = useState(0);
-
-  const [activeCategory, setActiveCategory] = useState(null);
-
-  useEffect(() => {
-    if (activeCategory === null) {
-      return;
-    }
-
-    const currentTab = buttonRefs.current[
-      data.categoryGroup?.indexOf(activeCategory)
-    ] as HTMLElement;
-    setSelectedTabOffset(currentTab?.offsetLeft ?? 0);
-    setSelectedTabWidth(currentTab?.clientWidth ?? 0);
-  }, [activeCategory, data.categoryGroup]);
-
   return (
     <V2ComponentWrapper data={data}>
       <Container>
         <div className="flex flex-col gap-4 text-center">
-          <div className="relative m-auto flex w-fit overflow-hidden rounded-md bg-black">
-            {/* Underlay to achieve the slide effect */}
-            <span
-              className="absolute inset-y-0 flex overflow-hidden rounded-md transition-all duration-500"
-              style={{ left: selectedTabOffset, width: selectedTabWidth }}
-            >
-              <span className="size-full bg-white" />
-            </span>
-            {/* Actual buttons */}
-            {data.categoryGroup?.map((category, index) => {
-              return (
-                <>
-                  <button
-                    data-tina-field={tinaField(category, "categoryName")}
-                    ref={(el) => {
-                      buttonRefs.current[index] = el;
-                    }}
-                    key={`category-${index}`}
-                    className={`relative w-fit min-w-24 rounded-md bg-transparent p-2 transition-colors duration-500 ${
-                      activeCategory === category
-                        ? "text-black"
-                        : "text-gray-200"
-                    }`}
-                    onClick={() => {
-                      setActiveCategory(category);
-                      setCardSet(
-                        data.cards?.filter((card) => {
-                          return category.cardGuidList?.cardGuidList?.includes(
-                            card.guid
-                          );
-                        })
-                      );
-                    }}
-                  >
-                    {category.categoryName}
-                  </button>
-                </>
-              );
-            })}
-          </div>
+          <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
           {data.isH1 ? (
             <h1
               data-tina-field={tinaField(data, "heading")}
@@ -109,9 +68,7 @@ export const CardCarousel = ({ data }) => {
             </p>
           )}
           {data.buttons?.length > 0 && (
-            <div
-              className={`mb-4 mt-2 flex gap-3 ${data.mediaConfiguration?.imageSource ? "" : "justify-center"}`}
-            >
+            <div className={"mb-4 mt-2 flex justify-center gap-3"}>
               {data.buttons?.map((button, index) => {
                 const buttonElement = (
                   <Button
@@ -148,13 +105,11 @@ export const CardCarousel = ({ data }) => {
           )}
         </div>
       </Container>
-
       {data.cards && !data.isStacked && (
         <Container padding="sm:px-8">
           <CardList
-            data={cardSet?.map((cardData) => {
-              return { ...cardData, cardStyle: data.cardStyle };
-            })}
+            activeCategory={activeCategory}
+            data={{ cards: cardSet, cardStyle: data.cardStyle }}
             hasImages={hasImages}
           />
         </Container>
@@ -162,16 +117,20 @@ export const CardCarousel = ({ data }) => {
     </V2ComponentWrapper>
   );
 };
-
-const Card = ({ data, placeholder }) => {
+type CardProps = {
+  data: Card & { cardStyle: number };
+  placeholder: boolean;
+};
+const Card = ({ data, placeholder }: CardProps) => {
   //If image fails to load, use placeholder (Piers)
   const [usePlaceholder, setUsePlaceholder] = useState(false);
   const placeholderImage = "/images/videoPlaceholder.png";
 
   return (
     <div
-      className={`w-90 flex shrink flex-col rounded-md text-start ${
+      className={`flex w-90 shrink flex-col rounded-md text-start ${
         cardOptions.find((value) => {
+          console.log("cardRef", value.reference, data.cardStyle);
           return value.reference === data.cardStyle;
         })?.classes
       }`}
