@@ -9,7 +9,7 @@ import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colour
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 
 type BackgroundData = {
-  background?: {
+  background: {
     backgroundColour?: number;
     backgroundImage?: string;
     bleed?: boolean;
@@ -58,7 +58,7 @@ const V2ComponentWrapper = ({
       <section
         ref={ref}
         className={classNames(
-          "transition-opacity duration-300",
+          "relative transition-opacity duration-300",
           isInInitialViewport === false && "opacity-0",
           !isInInitialViewport && isInView && "opacity-100"
         )}
