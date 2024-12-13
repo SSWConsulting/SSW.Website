@@ -134,10 +134,6 @@ const ImageTextBlock = dynamic(() =>
   )
 );
 
-const CardCarousel = dynamic(() =>
-  import("./blocks/cardCarousel/cardCarousel").then((mod) => mod.CardCarousel)
-);
-
 const componentMap = {
   AboutUs,
   Carousel,
@@ -173,7 +169,6 @@ const componentMap = {
   LogoCarousel,
   ImageTextBlock,
   AccordionBlock,
-  CardCarousel,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
