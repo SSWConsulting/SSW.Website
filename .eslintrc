@@ -6,9 +6,9 @@
     "eslint:recommended",
     "next/typescript",
     "plugin:react/recommended",
+    "plugin:tailwindcss/recommended",
     "next/core-web-vitals",
     "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended",
   ],
   "rules": {
     "@typescript-eslint/no-unused-expressions": [
@@ -21,6 +21,7 @@
     "quotes": ["error", "double"],
     "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
+    "tailwindcss/classnames-order": "off",
     "tailwindcss/no-custom-classname": [
       "error",
       {
