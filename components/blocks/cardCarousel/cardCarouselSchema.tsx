@@ -32,12 +32,164 @@ export const CardCarouselSchema: Template = {
       heading: "Lorem Ipsum",
       isH1: false,
       body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+
+      categoryGroup: [
+        {
+          categoryName: "Lorem",
+          cardGuidList: {
+            cardGuidList: [],
+          },
+        },
+        {
+          categoryName: "Dolor",
+          cardGuidList: {
+            cardGuidList: [],
+          },
+        },
+      ],
       buttonRow: [
         {
           buttonText: "Lorem",
         },
         {
           buttonText: "Ipsum",
+        },
+      ],
+      cards: [
+        {
+          guid: null,
+          altText: "Lorem Ipsum",
+          chips: {
+            chips: [
+              {
+                filledChipText: "Lorem",
+                clearChipText: "Ipsum",
+              },
+            ],
+          },
+          icon: "info",
+          heading: "Lorem Ipsum",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          featureList: {
+            features: [
+              {
+                heading: "Feature 1",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                icon: "Tina",
+              },
+              {
+                heading: "Feature 2",
+                description:
+                  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                icon: "Tina",
+              },
+            ],
+          },
+          embeddedButton: {
+            buttonText: "Lorem",
+          },
+        },
+        {
+          guid: null,
+          altText: "Lorem Ipsum",
+          chips: {
+            chips: [
+              {
+                filledChipText: "Lorem",
+                clearChipText: "Ipsum",
+              },
+            ],
+          },
+          icon: "info",
+          heading: "Lorem Ipsum",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          featureList: {
+            features: [
+              {
+                heading: "Feature 1",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                icon: "Tina",
+              },
+              {
+                heading: "Feature 2",
+                description:
+                  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                icon: "Tina",
+              },
+            ],
+          },
+          embeddedButton: {
+            buttonText: "Lorem",
+          },
+        },
+        {
+          guid: null,
+          altText: "Lorem Ipsum",
+          chips: {
+            chips: [
+              {
+                filledChipText: "Lorem",
+                clearChipText: "Ipsum",
+              },
+            ],
+          },
+          icon: "info",
+          heading: "Lorem Ipsum",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          featureList: {
+            features: [
+              {
+                heading: "Feature 1",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                icon: "Tina",
+              },
+              {
+                heading: "Feature 2",
+                description:
+                  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                icon: "Tina",
+              },
+            ],
+          },
+          embeddedButton: {
+            buttonText: "Lorem",
+          },
+        },
+        {
+          altText: "Lorem Ipsum",
+          chips: {
+            chips: [],
+          },
+          icon: "info",
+          heading: "Lorem Ipsum",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          featureList: {
+            features: [
+              {
+                heading: "Feature 1",
+                description:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                icon: "Tina",
+              },
+              {
+                heading: "Feature 2",
+                description:
+                  "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                icon: "Tina",
+              },
+            ],
+          },
+          embeddedButton: {
+            buttonText: "Lorem",
+            icon: "info",
+          },
         },
       ],
     },
@@ -97,10 +249,12 @@ export const CardCarouselSchema: Template = {
         "Tabs that group cards, under the hood cards and tabs are linked by hidden GUIDs.",
       ui: {
         defaultItem: {
+          categoryName: "Lorem Ipsum",
           cardGuidList: {
             cardGuidList: [],
           },
         },
+
         itemProps: (item) => {
           return { label: item?.categoryName ?? "Tab" };
         },
