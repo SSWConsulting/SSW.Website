@@ -9,11 +9,11 @@
         "icon": "BiOutline"
       },
       "heading": "One platform for user feedback and customer support",
-      "isH1": false,
-      "description": "",
+      "isH1": true,
+      "description": "Support your customers via email, Slack connect and a native widget, so you can follow up on all feedback and ship well crafted products. Local first and built on Linear.\n",
       "chips": {
-        "filledChipText": "Lorem",
-        "clearChipText": "Ipsum"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
         "twoColumns": true,
