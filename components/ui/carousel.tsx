@@ -1,8 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { EmblaCarouselType, EmblaEventType } from "embla-carousel";
-import AutoPlay from 'embla-carousel-autoplay';
+import { EmblaCarouselType } from "embla-carousel";
+import AutoPlay from "embla-carousel-autoplay";
 import useEmblaCarousel, {
   type UseEmblaCarouselType,
 } from "embla-carousel-react";
@@ -65,23 +65,26 @@ const Carousel = React.forwardRef<
         loop: true,
       },
 
-
-      [AutoPlay({ delay: 5000, playOnInit: true, stopOnInteraction: false, stopOnMouseEnter: true }), ...(plugins || [])]
+      [
+        AutoPlay({
+          delay: 5000,
+          playOnInit: true,
+          stopOnInteraction: false,
+          stopOnMouseEnter: true,
+        }),
+        ...(plugins || []),
+      ]
     );
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
-    React.useEffect(()=> {
-      if(api)
-        console.log("scroll progress", api.scrollProgress())
-    }, [api])
     const [selectedIndex, setSelectedIndex] = React.useState(0);
     React.useEffect(() => {
-      if(api)
-        api.on("select", (emblaApi: EmblaCarouselType)=>{
-          setSelectedIndex(emblaApi.selectedScrollSnap())
-        })
-    }, [api])
-  
+      if (api)
+        api.on("select", (emblaApi: EmblaCarouselType) => {
+          setSelectedIndex(emblaApi.selectedScrollSnap());
+        });
+    }, [api]);
+
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
         return;
@@ -207,25 +210,25 @@ const CarouselItem = React.forwardRef<
 });
 CarouselItem.displayName = "CarouselItem";
 
-
-const CarouselPickItem = React.forwardRef<HTMLButtonElement, {className?: string, index: number, onClick?, children?: React.ReactNode}>(function({className, index, onClick ,children}) {
-  const { api }  = useCarousel();
+const CarouselPickItem = React.forwardRef<
+  HTMLButtonElement,
+  { className?: string; index: number; onClick?; children?: React.ReactNode }
+>(function ({ className, index, onClick, children }) {
+  const { api } = useCarousel();
   return (
     <button
       className={cn(className)}
       onClick={() => {
         api?.scrollTo(index);
-        if (onClick)
-          onClick()
+        if (onClick) onClick();
       }}
     >
       {children}
     </button>
   );
-}
-)
+});
 
-CarouselPickItem.displayName
+CarouselPickItem.displayName = "CarouselPickItem";
 
 const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
@@ -285,6 +288,8 @@ export {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext, CarouselPickItem, CarouselPrevious, type CarouselApi
+  CarouselNext,
+  CarouselPickItem,
+  CarouselPrevious,
+  type CarouselApi,
 };
-
