@@ -5,7 +5,6 @@ import { SectionColor } from "@/components/util/constants/styles";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { Consultingv2Query } from "@/tina/types";
-import _ from "lodash";
 import React from "react";
 
 type ConsultingV2PageProps<T> = {
