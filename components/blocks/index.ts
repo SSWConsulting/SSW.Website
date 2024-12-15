@@ -21,7 +21,6 @@ import { aboutUsBlockSchema } from "./aboutUs";
 import { agendaSchema } from "./agenda";
 import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
-import { CardCarouselSchema } from "./cardCarousel/cardCarouselSchema";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
 import { colorBlockSchema } from "./colorBlock";
@@ -63,7 +62,6 @@ export const pageBlocks: Template[] = [
   ImageTextBlockSchema,
   LogoCarouselSchema,
   AccordionSchema,
-  CardCarouselSchema,
   aboutUsBlockSchema,
   agendaSchema,
   agreementFormBlockSchema,
