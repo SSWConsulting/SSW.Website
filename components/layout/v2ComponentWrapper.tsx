@@ -96,6 +96,11 @@ export const backgroundSchema = {
       type: "image",
       label: "Background Image",
       name: "backgroundImage",
+      ui: {
+        validate: (value) => {
+          if (value?.indexOf(" ") > -1) return "image names cannot have spaces";
+        },
+      },
       description:
         "An optional background image, overlay on top of the colour. Streched to fit. File names cannot contain spaces.",
     },
