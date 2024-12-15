@@ -284,8 +284,8 @@ export default {
           "100%": { background: "transparent" },
         },
         marquee: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+          from: { transform: "translateX(50%)" },
+          to: { transform: "translateX(calc(-50% - var(--gap)))" },
         },
         "marquee-vertical": {
           from: { transform: "translateY(0)" },
