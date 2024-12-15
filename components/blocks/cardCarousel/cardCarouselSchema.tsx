@@ -57,10 +57,8 @@ const defaultCardItem = {
 export const CardCarouselSchema: Template = {
   name: "cardCarousel",
   label: "<V2> Card Carousel",
-  // ui: {
-  //   previewSrc: "/images/thumbs/tina/accordian.jpg",
-  // },
   ui: {
+    previewSrc: "/images/thumbs/tina/card-carousel.jpg",
     defaultItem: {
       buttons: [
         {
