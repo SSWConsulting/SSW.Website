@@ -124,12 +124,12 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Publish faster",
       "isH1": false,
-      "description": "",
+      "description": "Automate your first update to let customers know you're on the case, create templates that pre-fill when you’re updating an incident, and then preview before you post for faster, more confident updates.\n",
       "chips": {
-        "filledChipText": "Lorem",
-        "clearChipText": "Ipsum"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
         "twoColumns": true,
