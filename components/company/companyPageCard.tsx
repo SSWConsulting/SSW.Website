@@ -42,7 +42,6 @@ const CompanyPageCard = ({ data, schema, index }) => {
   );
 };
 
-const proseClass = "prose-h2:text-3xl/9";
 const CompanyPageCardContent = ({ title, body, schema, index }) => {
   return (
     <article className="col-span-1 size-full rounded border-1 border-gray-300 bg-white px-8 py-4 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
