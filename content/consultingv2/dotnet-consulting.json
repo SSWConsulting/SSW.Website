@@ -103,6 +103,11 @@
         "twoColumns": true,
         "features": [
           {
+            "heading": "Predictable timing",
+            "description": "Submit at any FedACH window.",
+            "icon": "BiSolidTime"
+          },
+          {
             "heading": "Fast by default",
             "description": "Same-day ACH means funds land in as little as a few hours",
             "icon": "BiFastForward"
