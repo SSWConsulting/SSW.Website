@@ -5,7 +5,8 @@ import { SectionColor } from "@/components/util/constants/styles";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { Consultingv2Query } from "@/tina/types";
-import React from "react";
+import _ from "lodash";
+import React, { memo } from "react";
 
 type ConsultingV2PageProps<T> = {
   tinaProps: {
@@ -16,35 +17,38 @@ type ConsultingV2PageProps<T> = {
   props: T;
 };
 
-export default function ConsultingV2({
-  tinaProps,
-}: ConsultingV2PageProps<object>) {
-  const { data } = tinaProps;
+const Consulting2 = memo(
+  function ConsultingV2({ tinaProps }: ConsultingV2PageProps<object>) {
+    const { data } = tinaProps;
 
-  return (
-    <>
-      <div className="dark flex h-full flex-col">
-        <Section color={SectionColor.ToggleLightMode}>
-          <Container
-            size="custom"
-            width="custom"
-            padding="custom"
-            className="w-full p-0"
-          >
-            <div className="w-full">
-              {data.consultingv2.blocks ? (
-                <Blocks
-                  prefix={"Consultingv2Blocks"}
-                  blocks={data.consultingv2.blocks}
-                />
-              ) : (
-                <></>
-              )}
-            </div>
-          </Container>
-        </Section>
-        <PreFooter />
-      </div>
-    </>
-  );
-}
+    return (
+      <>
+        <div className="dark flex h-full flex-col">
+          <Section color={SectionColor.ToggleLightMode}>
+            <Container
+              size="custom"
+              width="custom"
+              padding="custom"
+              className="w-full p-0"
+            >
+              <div className="w-full">
+                {data.consultingv2.blocks ? (
+                  <Blocks
+                    prefix={"Consultingv2Blocks"}
+                    blocks={data.consultingv2.blocks}
+                  />
+                ) : (
+                  <></>
+                )}
+              </div>
+            </Container>
+          </Section>
+          <PreFooter />
+        </div>
+      </>
+    );
+  },
+  (prevProps, nextProps) => _.isEqual(prevProps, nextProps)
+);
+
+export default Consulting2;
