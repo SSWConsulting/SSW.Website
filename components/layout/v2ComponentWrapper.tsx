@@ -39,7 +39,7 @@ const V2ComponentWrapper = ({
         backgroundOptions.find((value) => {
           return value.reference === data.background?.backgroundColour;
         })?.classes,
-        "relative w-full",
+        "w-full",
         className
       )}
     >
