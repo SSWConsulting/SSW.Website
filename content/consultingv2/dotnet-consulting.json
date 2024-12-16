@@ -205,14 +205,13 @@
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Authentic",
+          "heading": "",
           "description": "incident.io is probably one of the most seamless products l've used – ever. We went from just PagerDuty to streamlined incident reporting, management and follow up in ~3 weeks!",
           "featureList": {
             "features": [
               {
                 "heading": "Saravana Kumar",
-                "description": "Head of Engineering",
-                "icon": "BiUserPin"
+                "description": "Head of Engineering"
               }
             ]
           },
