@@ -56,7 +56,7 @@
           "guid": "pbb42d",
           "altText": "Lorem Ipsum",
           "chips": {},
-          "icon": "info",
+          "icon": "BiPlusCircle",
           "heading": "Use subscriptions to minimize inbound queries",
           "description": "",
           "embeddedButton": {
