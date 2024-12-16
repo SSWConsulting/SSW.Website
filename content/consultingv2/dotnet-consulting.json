@@ -203,7 +203,9 @@
         {
           "guid": "q3juh",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": "Commonwealth Bank"
+          },
           "icon": "info",
           "heading": "",
           "description": "incident.io is probably one of the most seamless products l've used – ever. We went from just PagerDuty to streamlined incident reporting, management and follow up in ~3 weeks!",
