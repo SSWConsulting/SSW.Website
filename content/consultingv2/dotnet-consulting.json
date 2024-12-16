@@ -103,9 +103,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Proactively communicate with subscribers",
       "isH1": false,
-      "description": "",
+      "description": "Customers can subscribe to receive updates their way: email, RSS, and even Slack allowing them to stay up to date on their terms.\n",
       "chips": {
         "filledChipText": "Lorem",
         "clearChipText": "Ipsum"
