@@ -163,7 +163,9 @@
         {
           "guid": "wshxr9",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": "Smart Pension"
+          },
           "icon": "info",
           "heading": "Smart Pension",
           "description": "On-call feels refreshingly light and easy to configure compared to PagerDuty.",
