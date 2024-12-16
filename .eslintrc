@@ -21,10 +21,11 @@
     "quotes": ["error", "double"],
     "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
+    "tailwindcss/classnames-order": "off",
     "tailwindcss/no-custom-classname": [
       "error",
       {
-        "whitelist": ["g\\-yt.+", "prose-.+", "legend", "dark", "text-3xl/9"],
+        "whitelist": ["g\\-yt.+", "prose-.+", "text-3xl/9", "legend", "dark"],
       },
     ],
     "prettier/prettier": [
