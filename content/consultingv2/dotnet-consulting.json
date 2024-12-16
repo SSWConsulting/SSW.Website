@@ -29,6 +29,9 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis Test Images/Better Stack/Website Monitoring _ Better Stack/hero-bg-20b27332c840f46ae5f1bfda108236e9bdbe2eefed43f16db50cb023b18f1d0c.png"
+      },
       "_template": "imageTextBlock"
     },
     {
