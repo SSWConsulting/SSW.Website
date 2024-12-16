@@ -192,21 +192,11 @@
     },
     {
       "heading": "Lorem Ipsum",
-      "logos": [
-        {
-          "logo": "",
-          "altText": "Logo"
-        }
-      ],
-      "_template": "logoCarousel"
-    },
-    {
-      "heading": "Lorem Ipsum",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "accordionItems": [
         {
-          "label": "Lorem",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "What is an FAQ page?",
+          "content": "An FAQ (Frequently Asked Questions) page is a key part of a knowledge base because it addresses the most common questions customers have and is useful to customers at all stages of the customer journey. FAQs start with a question and then answer it concisely. Within a [knowledge base template](https://www.zendesk.com/blog/knowledge-base-article-template/), FAQs can function as their own articles (e.g., \"How do I set up a password?\") or be incorporated into a longer series (e.g., \"How to get started with your account\"). Outside of the help center, a [chatbot](https://www.zendesk.com/service/messaging/chatbot/) can also provide support through FAQs.\n"
         },
         {
           "label": "Ipsum",
