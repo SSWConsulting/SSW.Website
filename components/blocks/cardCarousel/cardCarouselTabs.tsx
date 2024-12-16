@@ -45,11 +45,6 @@ const useTabCarousel = ({ categoryGroup }: Consultingv2BlocksCardCarousel) => {
         height: clientHeight,
       });
     }
-
-    setContainerDimensions({
-      width: tabWrapperRef.current.clientWidth,
-      height: tabWrapperRef.current.clientHeight,
-    });
   }, [selectedIndex, containerDimensions]);
   const [activeCategory, setActiveCategory] = useState(
     categoryGroup?.at(0) ?? null
@@ -58,7 +53,6 @@ const useTabCarousel = ({ categoryGroup }: Consultingv2BlocksCardCarousel) => {
     ref: tabWrapperRef,
     onResize: () => {
       const { clientWidth, clientHeight } = tabWrapperRef.current;
-      // const clientHeight = spanref.current.clientHeight;
       setContainerDimensions({ width: clientWidth, height: clientHeight });
     },
   });
