@@ -169,7 +169,7 @@
       "cards": [
         {
           "guid": "kwmk28",
-          "image": "/images/company-logos/EagleEye_preview.png",
+          "image": "/images/Louis Test Images/Incident/Data Teams _ incident.io/image_(6).png",
           "altText": "Ravelin",
           "chips": {
             "filledChipText": "EagleEye"
@@ -213,6 +213,7 @@
         },
         {
           "guid": "wshxr9",
+          "image": "/images/Louis Test Images/Incident/Data Teams _ incident.io/image_(2).png",
           "altText": "Lorem Ipsum",
           "chips": {
             "filledChipText": "Smart Pension"
