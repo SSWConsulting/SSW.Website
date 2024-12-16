@@ -165,6 +165,7 @@
       "heading": "Customer Love",
       "isH1": false,
       "body": "We love working with our customers, and they love it too. But don’t take our word for it—hear exactly how they describe their experiences firsthand.",
+      "cardStyle": 1,
       "cards": [
         {
           "guid": "kwmk28",
@@ -190,6 +191,7 @@
         },
         {
           "guid": "jzueiv",
+          "image": "/images/Louis Test Images/Tinybird/Tinybird · The Way to build Real-time Data Products/download.png",
           "altText": "Lorem Ipsum",
           "chips": {
             "filledChipText": "Skyscanner"
