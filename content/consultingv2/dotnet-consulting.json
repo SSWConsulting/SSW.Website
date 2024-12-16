@@ -112,6 +112,22 @@
       "_template": "imageTextBlock"
     },
     {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Publish faster",
+      "isH1": false,
+      "description": "Automate your first update to let customers know you're on the case, create templates that pre-fill when you’re updating an incident, and then preview before you post for faster, more confident updates.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "_template": "imageTextBlock"
+    },
+    {
       "isStacked": true,
       "heading": "Use cases",
       "isH1": true,
