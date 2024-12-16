@@ -200,23 +200,18 @@
           }
         },
         {
-          "guid": null,
+          "guid": "q3juh",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Authentic",
+          "description": "incident.io is probably one of the most seamless products l've used – ever. We went from just PagerDuty to streamlined incident reporting, management and follow up in ~3 weeks!",
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "Saravana Kumar",
+                "description": "Head of Engineering",
+                "icon": "BiUserPin"
               }
             ]
           },
