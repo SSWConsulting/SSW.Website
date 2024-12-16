@@ -112,6 +112,55 @@
       "_template": "imageTextBlock"
     },
     {
+      "isStacked": true,
+      "heading": "Use cases",
+      "isH1": true,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "9seun9",
+          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(2).png",
+          "altText": "Public Status Pages",
+          "chips": {},
+          "icon": "info",
+          "heading": "Public Status Pages",
+          "description": "Report the health of your services to your users. Need to support multiple audiences or different regions? No problem, just use public Status Pages with sub-pages.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "o5jk2",
+          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
+          "altText": "Internal Status Pages",
+          "chips": {},
+          "icon": "info",
+          "heading": "Internal Status Pages",
+          "description": "Make it easy for internal teams to check on the status of your product or platform without having to interrupt responders in Slack.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "4a5e5e",
+          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(5).png",
+          "altText": "Customer Status Pages",
+          "chips": {},
+          "icon": "info",
+          "heading": "Customer Status Pages",
+          "description": "Provide private, secure customer-specific pages for VIP customers. These pages are authenticated, and tailored to their specific needs.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundImage": "/images/Louis Test Images/Better Stack/Better Stack - Radically better observability stack/hero-bg-408d1e858d0c9969863b4116bf2ad625e96cb10643f5868768c35b604208b9ad.png"
+      },
+      "_template": "cardCarousel"
+    },
+    {
       "isStacked": false,
       "heading": "Customer Love",
       "isH1": false,
@@ -226,55 +275,6 @@
       ],
       "background": {
         "backgroundColour": 2
-      },
-      "_template": "cardCarousel"
-    },
-    {
-      "isStacked": true,
-      "heading": "Use cases",
-      "isH1": true,
-      "body": "",
-      "cardStyle": 0,
-      "cards": [
-        {
-          "guid": "9seun9",
-          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(2).png",
-          "altText": "Public Status Pages",
-          "chips": {},
-          "icon": "info",
-          "heading": "Public Status Pages",
-          "description": "Report the health of your services to your users. Need to support multiple audiences or different regions? No problem, just use public Status Pages with sub-pages.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "o5jk2",
-          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
-          "altText": "Internal Status Pages",
-          "chips": {},
-          "icon": "info",
-          "heading": "Internal Status Pages",
-          "description": "Make it easy for internal teams to check on the status of your product or platform without having to interrupt responders in Slack.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "4a5e5e",
-          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(5).png",
-          "altText": "Customer Status Pages",
-          "chips": {},
-          "icon": "info",
-          "heading": "Customer Status Pages",
-          "description": "Provide private, secure customer-specific pages for VIP customers. These pages are authenticated, and tailored to their specific needs.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundImage": "/images/Louis Test Images/Better Stack/Better Stack - Radically better observability stack/hero-bg-408d1e858d0c9969863b4116bf2ad625e96cb10643f5868768c35b604208b9ad.png"
       },
       "_template": "cardCarousel"
     },
