@@ -183,10 +183,12 @@
         },
         {
           "guid": "pbju9n",
-          "altText": "Lorem Ipsum",
-          "chips": {},
+          "altText": "",
+          "chips": {
+            "filledChipText": "Planview"
+          },
           "icon": "info",
-          "heading": "SkyScanner",
+          "heading": "",
           "description": "The team behind the product are excellent. Being able to speak directly with Product Owners & Engineers makes a world of difference in our partnership with incident.io",
           "featureList": {
             "features": [
