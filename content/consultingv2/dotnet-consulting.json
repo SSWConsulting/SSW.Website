@@ -34,7 +34,8 @@
         }
       ],
       "background": {
-        "backgroundColour": 4
+        "backgroundColour": 4,
+        "backgroundImage": "/images/Louis Test Images/Better Stack/Better Stack - Radically better observability stack/hero-bg-408d1e858d0c9969863b4116bf2ad625e96cb10643f5868768c35b604208b9ad.png"
       },
       "mediaConfiguration": {
         "verticalPlacement": "Centered",
