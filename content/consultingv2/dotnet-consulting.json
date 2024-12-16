@@ -133,6 +133,10 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "placement": "Right",
+        "imageSource": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image_(1).png"
+      },
       "_template": "imageTextBlock"
     },
     {
