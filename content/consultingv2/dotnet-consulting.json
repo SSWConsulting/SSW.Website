@@ -134,6 +134,9 @@
       "featureColumns": {
         "twoColumns": true
       },
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image.png"
+      },
       "_template": "imageTextBlock"
     },
     {
