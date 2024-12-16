@@ -167,14 +167,13 @@
             "filledChipText": "Smart Pension"
           },
           "icon": "info",
-          "heading": "Smart Pension",
+          "heading": "",
           "description": "On-call feels refreshingly light and easy to configure compared to PagerDuty.",
           "featureList": {
             "features": [
               {
                 "heading": "Mark Sta Ana",
-                "description": "Site Reliability Tech Lead",
-                "icon": "BiUserPin"
+                "description": "Site Reliability Tech Lead"
               }
             ]
           },
