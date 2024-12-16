@@ -2,7 +2,7 @@
   "blocks": [
     {
       "background": {
-        "backgroundColour": 3
+        "backgroundColour": 5
       },
       "finalBreadcrumb": "Status Pages",
       "_template": "breadcrumbs"
