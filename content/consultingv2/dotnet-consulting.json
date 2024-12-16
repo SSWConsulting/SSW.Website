@@ -103,6 +103,11 @@
         "twoColumns": true,
         "features": [
           {
+            "heading": "Settlement tracking",
+            "description": "Get up-to-date settlement information directly from the Federal Reserve",
+            "icon": "BiSolidSend"
+          },
+          {
             "heading": "Predictable timing",
             "description": "Submit at any FedACH window.",
             "icon": "BiSolidTime"
