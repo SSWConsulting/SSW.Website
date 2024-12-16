@@ -38,34 +38,9 @@
     {
       "isStacked": true,
       "heading": "Use cases",
-      "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
-      "categoryGroup": [
-        {
-          "categoryName": "Lorem",
-          "cardGuidList": {
-            "guid": "dcirgs",
-            "cardGuidList": []
-          }
-        },
-        {
-          "categoryName": "Dolor",
-          "cardGuidList": {
-            "guid": "ow7h9",
-            "cardGuidList": []
-          }
-        }
-      ],
+      "isH1": true,
+      "body": "",
+      "cardStyle": 0,
       "cards": [
         {
           "guid": "9seun9",
