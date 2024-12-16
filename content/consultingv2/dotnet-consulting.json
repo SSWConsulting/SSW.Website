@@ -5,8 +5,8 @@
     },
     {
       "topLabel": {
-        "labelText": "Linear customers integrations",
-        "icon": "BiOutline"
+        "labelText": "Status Pages",
+        "icon": "BiStation"
       },
       "heading": "Build customer trust even during downtime with Status Pages",
       "isH1": true,
