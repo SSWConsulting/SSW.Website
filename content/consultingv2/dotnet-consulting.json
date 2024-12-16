@@ -76,7 +76,7 @@
           "heading": "Public Status Pages",
           "description": "Report the health of your services to your users. Need to support multiple audiences or different regions? No problem, just use public Status Pages with sub-pages.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
