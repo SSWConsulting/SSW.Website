@@ -142,6 +142,159 @@
       "_template": "imageTextBlock"
     },
     {
+      "isStacked": false,
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "Lorem",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Dolor",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "guid": "kwmk28",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "",
+          "description": "\"incident.io's Status Pages actually made me happy and confident updating the status page again, largely due to the way that it gets shared in the incident channel. Using incident.io status pages means everybody helping stays in sync and you get review on your updates even if you do it through the browser.\"",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Paul Scott",
+                "description": "Senior Engineer",
+                "icon": "BiSolidUserCheck"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
       "isStacked": true,
       "heading": "Use cases",
       "isH1": true,
