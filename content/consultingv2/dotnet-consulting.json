@@ -103,6 +103,11 @@
         "twoColumns": true,
         "features": [
           {
+            "heading": "Correlated returns",
+            "description": "Returns are automatically correlated using unique trace identifiers.",
+            "icon": "BiMinusBack"
+          },
+          {
             "heading": "Settlement tracking",
             "description": "Get up-to-date settlement information directly from the Federal Reserve",
             "icon": "BiSolidSend"
