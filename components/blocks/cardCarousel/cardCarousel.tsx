@@ -106,16 +106,16 @@ export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
             </>
           )}
         </div>
+        {data.cards && !data.isStacked && (
+          <Container size="custom" padding="sm:px-8" className="py-4">
+            <CardList
+              activeCategory={activeCategory}
+              data={{ cards: cardSet, cardStyle: data.cardStyle }}
+              hasImages={hasImages}
+            />
+          </Container>
+        )}
       </Container>
-      {data.cards && !data.isStacked && (
-        <Container padding="sm:px-8">
-          <CardList
-            activeCategory={activeCategory}
-            data={{ cards: cardSet, cardStyle: data.cardStyle }}
-            hasImages={hasImages}
-          />
-        </Container>
-      )}
     </V2ComponentWrapper>
   );
 };
