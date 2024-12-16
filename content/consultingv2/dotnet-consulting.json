@@ -180,23 +180,18 @@
           }
         },
         {
-          "guid": null,
+          "guid": "pbju9n",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "SkyScanner",
+          "description": "The team behind the product are excellent. Being able to speak directly with Product Owners & Engineers makes a world of difference in our partnership with incident.io",
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "John Paris",
+                "description": "Principal Systems Engineer",
+                "icon": "BiUserPin"
               }
             ]
           },
