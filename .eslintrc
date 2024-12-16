@@ -25,7 +25,7 @@
     "tailwindcss/no-custom-classname": [
       "error",
       {
-        "whitelist": ["g\\-yt.+", "prose-.+", "legend", "dark"],
+        "whitelist": ["g\\-yt.+", "prose-.+", "text-3xl/9", "legend", "dark"],
       },
     ],
     "prettier/prettier": [

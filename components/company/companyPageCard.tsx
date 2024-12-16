@@ -1,5 +1,4 @@
 import { companyIndexSchemaConstants } from "@/tina-collections/company";
-import classNames from "classnames";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
@@ -47,7 +46,7 @@ const proseClass = "prose-h2:text-3xl/9";
 const CompanyPageCardContent = ({ title, body, schema, index }) => {
   return (
     <article className="col-span-1 size-full rounded border-1 border-gray-300 bg-white px-8 py-4 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
-      <div className={classNames("prose", proseClass)}>
+      <div className="prose prose-h2:text-3xl/9">
         <h2
           className="my-1"
           data-tina-field={tinaField(
