@@ -90,6 +90,17 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "4a5e5e",
+          "altText": "Customer Status Pages",
+          "chips": {},
+          "icon": "info",
+          "heading": "Customer Status Pages",
+          "description": "Provide private, secure customer-specific pages for VIP customers. These pages are authenticated, and tailored to their specific needs.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "_template": "cardCarousel"
