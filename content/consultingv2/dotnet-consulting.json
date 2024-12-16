@@ -191,16 +191,16 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Lorem Ipsum",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "heading": "Have questions? We are here to help",
+      "body": "",
       "accordionItems": [
-        {
-          "label": "What is the purpose of an FAQ page?",
-          "content": "The purpose of an FAQ page is to provide quick answers to common questions that your business can anticipate. An FAQ page empowers customers to self-serve, enabling them to find solutions quickly on their own. FAQ pages aren't meant to solve every issue, which is why it's important to include an option for customers to contact a live agent.\n"
-        },
         {
           "label": "What is an FAQ page?",
           "content": "An FAQ (Frequently Asked Questions) page is a key part of a knowledge base because it addresses the most common questions customers have and is useful to customers at all stages of the customer journey. FAQs start with a question and then answer it concisely. Within a [knowledge base template](https://www.zendesk.com/blog/knowledge-base-article-template/), FAQs can function as their own articles (e.g., \"How do I set up a password?\") or be incorporated into a longer series (e.g., \"How to get started with your account\"). Outside of the help center, a [chatbot](https://www.zendesk.com/service/messaging/chatbot/) can also provide support through FAQs.\n"
+        },
+        {
+          "label": "What is the purpose of an FAQ page?",
+          "content": "The purpose of an FAQ page is to provide quick answers to common questions that your business can anticipate. An FAQ page empowers customers to self-serve, enabling them to find solutions quickly on their own. FAQ pages aren't meant to solve every issue, which is why it's important to include an option for customers to contact a live agent.\n"
         },
         {
           "label": "How to create an FAQ page",
@@ -209,7 +209,7 @@
       ],
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Contact Us",
           "colour": 0
         },
         {
