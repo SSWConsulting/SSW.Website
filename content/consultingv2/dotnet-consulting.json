@@ -199,8 +199,8 @@
           "content": "An FAQ (Frequently Asked Questions) page is a key part of a knowledge base because it addresses the most common questions customers have and is useful to customers at all stages of the customer journey. FAQs start with a question and then answer it concisely. Within a [knowledge base template](https://www.zendesk.com/blog/knowledge-base-article-template/), FAQs can function as their own articles (e.g., \"How do I set up a password?\") or be incorporated into a longer series (e.g., \"How to get started with your account\"). Outside of the help center, a [chatbot](https://www.zendesk.com/service/messaging/chatbot/) can also provide support through FAQs.\n"
         },
         {
-          "label": "Ipsum",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "How to create an FAQ page",
+          "content": "If you want to make an FAQ section that resonates with your customers, don’t just slap some ordinary questions and answers on a site page. Carefully think about what questions to include, consider who will answer (and how), and offer next-step solutions for when FAQs aren’t enough.\n\nTips for writing a good FAQ page\n\n1. Use data to pick the right questions\n2. Form clear criteria around responding\n3. Offer multiple solutions\n4. Track your progress\n5. Make your FAQ page easy to find\n"
         }
       ],
       "buttons": [
