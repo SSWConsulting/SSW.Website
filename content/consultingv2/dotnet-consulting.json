@@ -145,7 +145,7 @@
           "chips": {},
           "icon": "info",
           "heading": "",
-          "description": "\"With incident.io’s Status Pages, we’ve improved communication with our customers during critical moments and streamlined the visualization of incident information. It’s also really helpful for our workflows to be able to consolidate tools—we can move much faster and confidently as a result\"",
+          "description": "With incident.io’s Status Pages, we’ve improved communication with our customers during critical moments and streamlined the visualization of incident information. It’s also really helpful for our workflows to be able to consolidate tools—we can move much faster and confidently as a result",
           "featureList": {
             "features": [
               {
@@ -155,8 +155,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Visit their status page ",
-            "icon": "BiLogIn"
+            "buttonText": ""
           }
         },
         {
