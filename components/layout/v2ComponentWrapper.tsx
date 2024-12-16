@@ -98,7 +98,13 @@ export const backgroundSchema = {
       name: "backgroundImage",
       ui: {
         validate: (value) => {
-          if (value?.indexOf(" ") > -1) return "image names cannot have spaces";
+          const lastSegment = value?.split("/")?.slice(-1)[0];
+          if (!lastSegment) {
+            return;
+          }
+          if (lastSegment?.indexOf(" ") > -1) {
+            return "image names cannot have spaces";
+          }
         },
       },
       description:
