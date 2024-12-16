@@ -160,23 +160,18 @@
           }
         },
         {
-          "guid": null,
+          "guid": "wshxr9",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Smart Pension",
+          "description": "On-call feels refreshingly light and easy to configure compared to PagerDuty.",
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "Mark Sta Ana",
+                "description": "Site Reliability Tech Lead",
+                "icon": "BiUserPin"
               }
             ]
           },
