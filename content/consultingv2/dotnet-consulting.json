@@ -152,7 +152,8 @@
           "buttonText": "Contact Sales"
         },
         {
-          "buttonText": "Lorem Ipsum"
+          "buttonText": "Book a Demo",
+          "colour": 1
         }
       ],
       "mediaConfiguration": {
