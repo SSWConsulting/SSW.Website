@@ -8,6 +8,7 @@ export function MegaMenuWrapper(props) {
   return (
     <MegaMenuLayout
       menuBarItems={props.menu}
+      tagline="Enterprise Software Development"
       linkComponent={(props) => (
         <CustomLink
           {...props}
