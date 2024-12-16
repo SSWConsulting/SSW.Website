@@ -147,6 +147,14 @@
       "featureColumns": {
         "twoColumns": false
       },
+      "buttons": [
+        {
+          "buttonText": "Contact Sales"
+        },
+        {
+          "buttonText": "Lorem Ipsum"
+        }
+      ],
       "mediaConfiguration": {
         "placement": "Left",
         "imageSource": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image_(3).png"
