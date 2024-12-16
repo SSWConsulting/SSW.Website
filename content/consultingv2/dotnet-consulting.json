@@ -33,6 +33,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 3
+      },
       "mediaConfiguration": {
         "verticalPlacement": "Centered",
         "imageSource": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image_(4).png"
