@@ -135,8 +135,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Visit their status page ",
-            "icon": "BiLogIn"
+            "buttonText": ""
           }
         },
         {
