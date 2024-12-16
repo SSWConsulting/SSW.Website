@@ -143,6 +143,7 @@ export const Layout = ({
               )}
               <MegaMenuLayout
                 menuBarItems={menu.menuGroups}
+                tagline="Enterprise Software Development"
                 linkComponent={(props) => (
                   <CustomLink
                     {...props}
