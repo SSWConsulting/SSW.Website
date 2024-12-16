@@ -402,8 +402,9 @@
         }
       ],
       "background": {
+        "backgroundColour": 3,
         "backgroundImage": "/images/Louis Test Images/Tinybird/Tinybird · The Way to build Real-time Data Products/big-gradient-background.65a547c7.png",
-        "bleed": false
+        "bleed": true
       },
       "_template": "imageTextBlock"
     }
