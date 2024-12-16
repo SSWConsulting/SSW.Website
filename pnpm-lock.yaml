@@ -191,7 +191,7 @@ importers:
         specifier: 15.0.3
         version: 15.0.3
       '@playwright/test':
-        specifier: 1.48.2
+        specifier: ^1.48.2
         version: 1.48.2
       '@svgr/webpack':
         specifier: ^8.1.0
@@ -257,7 +257,7 @@ importers:
         specifier: ^13.0.1
         version: 13.0.1(postcss@8.4.47)
       prettier:
-        specifier: 3.3.3
+        specifier: ^3.3.3
         version: 3.3.3
       prettier-plugin-tailwindcss:
         specifier: ^0.6.8
