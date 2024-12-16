@@ -310,6 +310,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 5
+      },
       "_template": "accordionBlock"
     }
   ]
