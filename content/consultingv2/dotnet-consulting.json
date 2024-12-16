@@ -8,9 +8,9 @@
         "labelText": "Linear customers integrations",
         "icon": "BiOutline"
       },
-      "heading": "One platform for user feedback and customer support",
+      "heading": "Build customer trust even during downtime with Status Pages",
       "isH1": true,
-      "description": "Support your customers via email, Slack connect and a native widget, so you can follow up on all feedback and ship well crafted products. Local first and built on Linear.\n",
+      "description": "We’ve built an easy and delightful way to communicate with customers during an incident with our public and private Status Pages.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -25,7 +25,7 @@
           "colour": 0
         },
         {
-          "buttonText": "Get a demo",
+          "buttonText": "Book a demo",
           "colour": 1
         }
       ],
