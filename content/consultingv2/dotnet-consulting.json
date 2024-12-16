@@ -120,7 +120,7 @@
           {
             "heading": "Fast by default",
             "description": "Same-day ACH means funds land in as little as a few hours",
-            "icon": "BiFastForward"
+            "icon": "BiSolidFastForwardCircle"
           }
         ]
       },
