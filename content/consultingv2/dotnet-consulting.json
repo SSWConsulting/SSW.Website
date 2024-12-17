@@ -173,7 +173,8 @@
     },
     {
       "topLabel": {
-        "labelText": ""
+        "labelText": "",
+        "icon": "BiSolidCloud"
       },
       "heading": "Cloud-Native Architecture",
       "isH1": false,
