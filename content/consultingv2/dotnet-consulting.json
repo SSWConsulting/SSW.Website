@@ -104,8 +104,8 @@
         "features": [
           {
             "heading": "Strategic Assessment",
-            "description": "Returns are automatically correlated using unique trace identifiers.",
-            "icon": "BiMinusBack"
+            "description": "Comprehensive evaluation of your current solutions through our proven Specification Review process",
+            "icon": "BiClipboard"
           },
           {
             "heading": "Settlement tracking",
@@ -113,9 +113,9 @@
             "icon": "BiSolidSend"
           },
           {
-            "heading": "Predictable timing",
-            "description": "Submit at any FedACH window.",
-            "icon": "BiSolidTime"
+            "heading": "Migration Strategy",
+            "description": "Tailored approach selection between Strangler Fig pattern for gradual transformation or Big Bang for rapid modernization",
+            "icon": "BiGitBranch"
           },
           {
             "heading": "Fast by default",
