@@ -121,6 +121,11 @@
             "heading": "Controlled Migration",
             "description": "Systematic execution ensuring minimal disruption and maximum reliability during the transition",
             "icon": "BiNetworkChart"
+          },
+          {
+            "heading": "Performance Optimization",
+            "description": "Continuous enhancement and validation of your migrated systems for optimal performance",
+            "icon": "BiTrendingUp"
           }
         ]
       },
