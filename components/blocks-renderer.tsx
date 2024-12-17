@@ -1,6 +1,12 @@
 import dynamic from "next/dynamic";
 import { PaymentBlock } from "./blocks/payment-block";
 
+const TechnologyCardCarousel = dynamic(() =>
+  import("./blocks/cardCarousel/technologyCardCarousel").then(
+    (mod) => mod.default
+  )
+);
+
 const BookingButton = dynamic(() =>
   import("./bookingButton/bookingButton").then((mod) => mod.BookingButton)
 );
@@ -151,6 +157,7 @@ const componentMap = {
   VerticalImageLayout,
   ContentCard,
   VerticalListItem,
+  TechnologyCardCarousel,
   TrainingInformation,
   EventBooking,
   TrainingLearningOutcome,

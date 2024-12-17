@@ -1,7 +1,8 @@
 import type { Collection } from "tinacms";
+import { IconPickerInput } from "../../components/blocksSubtemplates/tinaFormElements/iconSelector";
 import { tipField } from "./shared-fields";
 
-export const technologiesSchema: Collection = {
+export const technologiesCardsCarouselSchema: Collection = {
   label: "Consulting - Technology Cards",
   name: "technologies",
   format: "mdx",
@@ -19,6 +20,15 @@ export const technologiesSchema: Collection = {
       type: "string",
       label: "Read More Slug",
       name: "readMoreSlug",
+    },
+    {
+      type: "string",
+      label: "Icon",
+      name: "icon",
+      ui: {
+        // @ts-expect-error – component is not being recognized
+        component: IconPickerInput,
+      },
     },
     {
       type: "image",

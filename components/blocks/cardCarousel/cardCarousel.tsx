@@ -4,7 +4,7 @@ import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
 import { Button } from "@/components/button/templateButton";
 import { Container } from "@/components/util/container";
 import {
-  Consultingv2BlocksCardCarousel as CardCarouselData,
+  Consultingv2BlocksCardCarousel,
   Consultingv2BlocksCardCarouselCards,
 } from "@/tina/types";
 import Image from "next/image";
@@ -17,7 +17,28 @@ import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 import { CardList } from "./cardCarouseSlideshow";
 import { Tabs, useTabCarousel } from "./cardCarouselTabs";
 
-type CardData = Consultingv2BlocksCardCarouselCards;
+type BackgroundData = Omit<
+  Consultingv2BlocksCardCarousel["background"],
+  "__typename"
+> & {
+  __typename?: string;
+};
+
+export type CardCarouselData = Omit<
+  Consultingv2BlocksCardCarousel,
+  "__typename" | "background" | "cards"
+> & {
+  __typename?: string;
+  background?: BackgroundData;
+  cards: CardData[];
+};
+
+export type CardData = Omit<
+  Consultingv2BlocksCardCarouselCards,
+  "__typename"
+> & {
+  __typename?: string;
+};
 export const CardCarousel = ({ data }: { data: CardCarouselData }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
   const [hasImages, setHasImages] = useState(false);
@@ -192,3 +213,4 @@ const Card = ({ data, placeholder }: CardProps) => {
 };
 
 export { Card };
+

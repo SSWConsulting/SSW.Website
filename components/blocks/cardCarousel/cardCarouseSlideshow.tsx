@@ -5,16 +5,16 @@ import {
   CarouselPickItem,
   useCarousel,
 } from "@/components/ui/carousel";
-import {
-  Consultingv2BlocksCardCarouselCards as CarouselCard,
-  Consultingv2BlocksCardCarouselCategoryGroup,
-} from "@/tina/types";
+
+import { CardData } from "./cardCarousel";
+
+import { Consultingv2BlocksCardCarouselCategoryGroup } from "@/tina/types";
 import { useEffect, useState } from "react";
 import { Card } from "./cardCarousel";
 
 type CardSlideshowProps = {
   data: {
-    cards: CarouselCard[];
+    cards: CardData[];
     cardStyle: number;
   };
   hasImages: boolean;
@@ -91,3 +91,4 @@ const CarouselButton = ({ index }) => {
 };
 
 export { CardList };
+
