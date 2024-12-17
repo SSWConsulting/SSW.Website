@@ -18,7 +18,7 @@ env:
 
 jobs:
   lint-infra:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -27,7 +27,7 @@ jobs:
           az bicep build --file ${{ env.bicepPath }}
 
   lint-code:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -38,7 +38,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version-file: ".nvmrc"
+          node-version: "20.18.1"
           cache: "pnpm"
 
       - run: pnpm install
