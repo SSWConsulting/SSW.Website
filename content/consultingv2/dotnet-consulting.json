@@ -107,7 +107,9 @@
         {
           "label": "4. Controlled Migration"
         },
-        {}
+        {
+          "label": "5. Performance Optimization"
+        }
       ],
       "buttons": [
         {
