@@ -21,7 +21,7 @@
     "quotes": ["error", "double"],
     "no-console": "warn",
     "tailwindcss/no-arbitrary-value": "error",
-    "tailwindcss/classnames-order": "off",
+    "tailwindcss/classnames-order": "error",
     "tailwindcss/no-custom-classname": [
       "error",
       {
