@@ -127,7 +127,8 @@
     },
     {
       "topLabel": {
-        "labelText": ""
+        "labelText": "",
+        "icon": "BiTrendingUp"
       },
       "heading": "Performance Transformation",
       "isH1": false,
@@ -161,12 +162,6 @@
           }
         ]
       },
-      "buttons": [
-        {
-          "buttonText": "Start Your Migration Assessment",
-          "colour": 0
-        }
-      ],
       "background": {
         "backgroundColour": 4
       },
