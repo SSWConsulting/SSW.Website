@@ -129,42 +129,15 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Strategic .NET 8 Migration Framework",
+      "heading": "Performance Transformation",
       "isH1": false,
-      "description": "Transform your legacy applications with our proven five-phase migration approach, backed by Microsoft-certified experts and years of enterprise migration success.\n",
+      "description": "Unlock unprecedented application speed with .NET 8's advanced runtime optimizations\n\n* Up to 80% reduction in startup time through Native AOT\n* Significant memory footprint reduction\n* Enhanced request processing capability\n* Improved response times across all endpoints\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": false,
-        "features": [
-          {
-            "heading": "Strategic Assessment",
-            "description": "Comprehensive evaluation of your current solutions through our proven Specification Review process",
-            "icon": "BiClipboard"
-          },
-          {
-            "heading": "Component Planning",
-            "description": "Strategic decision-making for each system component through our RRR approach: Refactor, Replace, or Rewrite",
-            "icon": "BiLayout"
-          },
-          {
-            "heading": "Migration Strategy",
-            "description": "Tailored approach selection between Strangler Fig pattern for gradual transformation or Big Bang for rapid modernization",
-            "icon": "BiGitBranch"
-          },
-          {
-            "heading": "Controlled Migration",
-            "description": "Systematic execution ensuring minimal disruption and maximum reliability during the transition",
-            "icon": "BiNetworkChart"
-          },
-          {
-            "heading": "Performance Optimization",
-            "description": "Continuous enhancement and validation of your migrated systems for optimal performance",
-            "icon": "BiTrendingUp"
-          }
-        ]
+        "twoColumns": false
       },
       "buttons": [
         {
