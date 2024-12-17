@@ -134,10 +134,6 @@
         {
           "buttonText": "Start Your Migration Assessment",
           "colour": 0
-        },
-        {
-          "buttonText": "View Migration Guide",
-          "colour": 1
         }
       ],
       "background": {
