@@ -108,9 +108,9 @@
             "icon": "BiClipboard"
           },
           {
-            "heading": "Settlement tracking",
-            "description": "Get up-to-date settlement information directly from the Federal Reserve",
-            "icon": "BiSolidSend"
+            "heading": "Component Planning",
+            "description": "Strategic decision-making for each system component through our RRR approach: Refactor, Replace, or Rewrite",
+            "icon": "BiLayout"
           },
           {
             "heading": "Migration Strategy",
