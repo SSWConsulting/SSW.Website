@@ -132,7 +132,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Book Initial Free Meeting"
+          "buttonText": "Start Your Migration Assessment",
+          "colour": 0
         },
         {
           "buttonText": "View Migration Guide",
