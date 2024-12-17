@@ -209,9 +209,6 @@
       },
       "buttons": [
         {
-          "buttonText": "Contact Sales"
-        },
-        {
           "buttonText": "Building Cloud Native apps with .NET 8",
           "icon": "BiSolidVideos",
           "iconFirst": true,
