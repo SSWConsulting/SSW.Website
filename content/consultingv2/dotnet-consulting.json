@@ -90,6 +90,34 @@
       "_template": "cardCarousel"
     },
     {
+      "heading": "Strategic .NET 8 Migration Framework",
+      "body": "Transform your legacy applications with our proven five-phase migration approach, backed by Microsoft-certified experts and years of enterprise migration success.",
+      "accordionItems": [
+        {
+          "label": "1. Strategic Assessment",
+          "content": "Comprehensive evaluation of your current solutions through our proven Specification Review process\n"
+        },
+        {
+          "label": "2. Component Planning",
+          "content": "Strategic decision-making for each system component through our RRR approach: Refactor, Replace, or Rewrite\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image_(3).png"
+      },
+      "_template": "accordionBlock"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
