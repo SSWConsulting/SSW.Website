@@ -141,7 +141,8 @@
         "features": [
           {
             "heading": "Up to 80% reduction in startup time through Native AOT",
-            "description": ""
+            "description": "",
+            "icon": "BiSolidFastForwardCircle"
           },
           {
             "heading": "Lorem",
