@@ -100,6 +100,9 @@
         {
           "label": "2. Component Planning",
           "content": "Strategic decision-making for each system component through our RRR approach: Refactor, Replace, or Rewrite\n"
+        },
+        {
+          "label": "3. Migration Strategy"
         }
       ],
       "buttons": [
