@@ -53,8 +53,8 @@
           "guid": "bdbyiu",
           "altText": "Lorem Ipsum",
           "chips": {},
-          "icon": "BiGroup",
-          "heading": "Give users instant clarity and maximum transparency",
+          "icon": "BiAward",
+          "heading": "25+ Years of .NET Excellence",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
@@ -64,8 +64,8 @@
           "guid": "pbb42d",
           "altText": "Lorem Ipsum",
           "chips": {},
-          "icon": "BiPlusCircle",
-          "heading": "Use subscriptions to minimize inbound queries",
+          "icon": "BiGlobe",
+          "heading": "1000+ Clients in 15 Countries",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
@@ -75,8 +75,8 @@
           "guid": "4vbdt",
           "altText": "Lorem Ipsum",
           "chips": {},
-          "icon": "BiTransfer",
-          "heading": "Transfer all your settings and subscribers in just a few clicks",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Microsoft Certified Experts",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
@@ -92,7 +92,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Effortless updates",
+      "heading": "SSW's Proven .NET 8 Migration Approach",
       "isH1": false,
       "description": "Public, private and internal Status Pages are integrated with your incident response workflow, and have automatic and manual update capabilities. Have multiple Status Pages you need to update at once? Sub-pages allow you to do just that without any additional overhead.\n",
       "chips": {
