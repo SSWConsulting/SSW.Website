@@ -137,7 +137,25 @@
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": false
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Up to 80% reduction in startup time through Native AOT",
+            "description": ""
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
       },
       "buttons": [
         {
