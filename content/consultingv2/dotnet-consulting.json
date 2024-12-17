@@ -125,6 +125,15 @@
           }
         ]
       },
+      "buttons": [
+        {
+          "buttonText": "Book Initial Free Meeting"
+        },
+        {
+          "buttonText": "View Migration Guide",
+          "colour": 1
+        }
+      ],
       "background": {
         "backgroundColour": 4
       },
