@@ -143,22 +143,22 @@
           {
             "heading": "Up to 80% reduction in startup time through Native AOT",
             "description": "",
-            "icon": "BiSolidFastForwardCircle"
+            "icon": "BiCheckSquare"
           },
           {
             "heading": "Significant memory footprint reduction",
             "description": "",
-            "icon": "BiSolidMemoryCard"
+            "icon": "BiCheckSquare"
           },
           {
             "heading": "Enhanced request processing capability",
             "description": "",
-            "icon": "BiGitPullRequest"
+            "icon": "BiCheckSquare"
           },
           {
             "heading": "Improved response times across all endpoints",
             "description": "",
-            "icon": "BiSolidTimer"
+            "icon": "BiCheckSquare"
           }
         ]
       },
