@@ -131,7 +131,7 @@
       },
       "heading": "Performance Transformation",
       "isH1": false,
-      "description": "Unlock unprecedented application speed with .NET 8's advanced runtime optimizations\n\n* Up to 80% reduction in startup time through Native AOT\n* Significant memory footprint reduction\n* Enhanced request processing capability\n* Improved response times across all endpoints\n",
+      "description": "Unlock unprecedented application speed with .NET 8's advanced runtime optimizations\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
