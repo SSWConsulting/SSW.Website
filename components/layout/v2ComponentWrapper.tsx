@@ -43,12 +43,13 @@ const V2ComponentWrapper = ({
         className
       )}
     >
-      {data.background?.bleed ? (
-        <div>
+      {data.background?.bleed && data.background?.backgroundImage ? (
+        <div className="absolute aspect-video w-full">
           <Image
             src={data.background?.backgroundImage}
-            className="absolute inset-0 w-full object-cover"
+            className="absolute inset-0 object-cover"
             alt="background image"
+            layout="fill"
             fill={true}
           />
         </div>
@@ -114,6 +115,20 @@ export const backgroundSchema = {
       type: "boolean",
       label: "Bleed",
       name: "bleed",
+      ui: {
+        validate: (value, data) => {
+          if (!data.background?.backgroundImage && value) {
+            for (const component of data.blocks) {
+              if (
+                !component.background?.backgroundImage &&
+                component.background?.bleed
+              ) {
+                return "Ensure all components images with bleed enabled have an image.";
+              }
+            }
+          }
+        },
+      },
       description: "If true, the background will bleed into lower blocks.",
     },
   ],
