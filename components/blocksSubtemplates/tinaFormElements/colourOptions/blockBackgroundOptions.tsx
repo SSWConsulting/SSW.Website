@@ -32,4 +32,9 @@ export const backgroundOptions: ColorPickerOptions[] = [
     classes: "bg-gray-900 text-white",
     reference: 5,
   },
+  {
+    name: "Black",
+    classes: "bg-black text-white",
+    reference: 6,
+  },
 ];
