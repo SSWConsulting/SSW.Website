@@ -9,12 +9,11 @@
     },
     {
       "topLabel": {
-        "labelText": "Status Pages",
-        "icon": "BiStation"
+        "labelText": ""
       },
-      "heading": "Transform Legacy Applications into Cloud-Native Solutions with .NET 8",
+      "heading": "Future-Proof Your Enterprise with .NET 8 Migration",
       "isH1": true,
-      "description": "We’ve built an easy and delightful way to communicate with customers during an incident with our public and private Status Pages.\n",
+      "description": "Accelerate your enterprise modernization with proven migration strategies, minimizing risk while maximizing performance gains\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -24,12 +23,12 @@
       },
       "buttons": [
         {
-          "buttonText": "Sign up with ",
-          "icon": "Tina",
+          "buttonText": "Book Free Migration Assessment",
+          "icon": "BiSolidCalendarCheck",
           "colour": 0
         },
         {
-          "buttonText": "Book a demo",
+          "buttonText": "View Case Studies",
           "colour": 1
         }
       ],
