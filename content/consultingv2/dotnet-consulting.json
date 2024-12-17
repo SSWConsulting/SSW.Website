@@ -4,7 +4,7 @@
       "background": {
         "backgroundColour": 4
       },
-      "finalBreadcrumb": "Status Pages",
+      "finalBreadcrumb": ".NET8 Migration",
       "_template": "breadcrumbs"
     },
     {
@@ -102,13 +102,16 @@
           "content": "Strategic decision-making for each system component through our RRR approach: Refactor, Replace, or Rewrite\n"
         },
         {
-          "label": "3. Migration Strategy"
+          "label": "3. Migration Strategy",
+          "content": ""
         },
         {
-          "label": "4. Controlled Migration"
+          "label": "4. Controlled Migration",
+          "content": ""
         },
         {
-          "label": "5. Performance Optimization"
+          "label": "5. Performance Optimization",
+          "content": ""
         }
       ],
       "buttons": [
