@@ -92,9 +92,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "SSW's Proven .NET 8 Migration Approach",
+      "heading": "Strategic .NET 8 Migration Framework",
       "isH1": false,
-      "description": "Public, private and internal Status Pages are integrated with your incident response workflow, and have automatic and manual update capabilities. Have multiple Status Pages you need to update at once? Sub-pages allow you to do just that without any additional overhead.\n",
+      "description": "Transform your legacy applications with our proven five-phase migration approach, backed by Microsoft-certified experts and years of enterprise migration success.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -103,7 +103,7 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Correlated returns",
+            "heading": "Strategic Assessment",
             "description": "Returns are automatically correlated using unique trace identifiers.",
             "icon": "BiMinusBack"
           },
