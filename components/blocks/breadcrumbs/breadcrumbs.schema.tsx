@@ -1,15 +1,18 @@
 import Link from "next/link";
 import React from "react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
-import { TinaInfo } from "../../../components/tina/tina-info";
+import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
+import { TinaInfo } from "../../tina/tina-info";
 
 export const BreadcrumbSchema: Template = {
   name: "breadcrumbs",
-  label: "Breadcrumbs",
+  label: "<V2> Breadcrumbs",
   ui: {
     previewSrc: "/images/thumbs/tina/breadcrumbs.jpg",
   },
   fields: [
+    //@ts-expect-error – custom component typing won't be pinned down
+    backgroundSchema,
     {
       type: "string",
       label: "Final Breadcrumb",
