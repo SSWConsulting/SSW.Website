@@ -282,11 +282,11 @@
           "image": "/images/Louis Test Images/Incident/Data Teams _ incident.io/image_(2).png",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": "Smart Pension"
+            "filledChipText": "Ceridian"
           },
           "icon": "info",
           "heading": "",
-          "description": "On-call feels refreshingly light and easy to configure compared to PagerDuty.",
+          "description": "I just wanted to thank you for the .NET Superpowers tour that you organized. The presentation and content were truly inspiring, and I received fantastic feedback from my colleagues at Ceridian.",
           "featureList": {
             "features": [
               {
