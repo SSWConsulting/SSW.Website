@@ -103,7 +103,11 @@
         },
         {
           "label": "3. Migration Strategy"
-        }
+        },
+        {
+          "label": "4. Controlled Migration"
+        },
+        {}
       ],
       "buttons": [
         {
