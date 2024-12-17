@@ -115,10 +115,6 @@
         {
           "buttonText": "Start Your Migration Assessment",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "mediaConfiguration": {
