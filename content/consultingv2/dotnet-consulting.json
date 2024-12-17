@@ -188,7 +188,7 @@
           {
             "heading": "Containerized deployment ready",
             "description": "",
-            "icon": "BiSolidMessageSquareAdd"
+            "icon": "BiCheckSquare"
           },
           {
             "heading": "Microservices architecture support",
