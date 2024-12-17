@@ -401,47 +401,15 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Have questions? We are here to help",
-      "body": "",
-      "accordionItems": [
-        {
-          "label": "What is an FAQ page?",
-          "content": "An FAQ (Frequently Asked Questions) page is a key part of a knowledge base because it addresses the most common questions customers have and is useful to customers at all stages of the customer journey. FAQs start with a question and then answer it concisely. Within a [knowledge base template](https://www.zendesk.com/blog/knowledge-base-article-template/), FAQs can function as their own articles (e.g., \"How do I set up a password?\") or be incorporated into a longer series (e.g., \"How to get started with your account\"). Outside of the help center, a [chatbot](https://www.zendesk.com/service/messaging/chatbot/) can also provide support through FAQs.\n"
-        },
-        {
-          "label": "What is the purpose of an FAQ page?",
-          "content": "The purpose of an FAQ page is to provide quick answers to common questions that your business can anticipate. An FAQ page empowers customers to self-serve, enabling them to find solutions quickly on their own. FAQ pages aren't meant to solve every issue, which is why it's important to include an option for customers to contact a live agent.\n"
-        },
-        {
-          "label": "How to create an FAQ page",
-          "content": "If you want to make an FAQ section that resonates with your customers, don’t just slap some ordinary questions and answers on a site page. Carefully think about what questions to include, consider who will answer (and how), and offer next-step solutions for when FAQs aren’t enough.\n\nTips for writing a good FAQ page\n\n1. Use data to pick the right questions\n2. Form clear criteria around responding\n3. Offer multiple solutions\n4. Track your progress\n5. Make your FAQ page easy to find\n"
-        }
-      ],
-      "buttons": [
-        {
-          "buttonText": "Contact Us",
-          "colour": 0
-        },
-        {
-          "buttonText": "Schedule a Demo",
-          "colour": 1
-        }
-      ],
-      "background": {
-        "backgroundColour": 5
-      },
-      "_template": "accordionBlock"
-    },
-    {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Talk to us about your .NET 8 project today",
       "isH1": false,
-      "description": "",
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
       "chips": {
-        "filledChipText": "Lorem",
-        "clearChipText": "Ipsum"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
         "twoColumns": true,
@@ -468,7 +436,7 @@
       ],
       "background": {
         "backgroundColour": 3,
-        "backgroundImage": "/images/Louis Test Images/Tinybird/Tinybird · The Way to build Real-time Data Products/big-gradient-background.65a547c7.png",
+        "backgroundImage": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image_(4).png",
         "bleed": true
       },
       "_template": "imageTextBlock"
