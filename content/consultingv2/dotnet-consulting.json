@@ -347,7 +347,7 @@
       "background": {
         "backgroundColour": 4,
         "backgroundImage": "",
-        "bleed": true
+        "bleed": false
       },
       "_template": "cardCarousel"
     },
