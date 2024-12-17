@@ -145,8 +145,9 @@
             "icon": "BiSolidFastForwardCircle"
           },
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Significant memory footprint reduction",
+            "description": "",
+            "icon": "BiSolidMemoryCard"
           },
           {
             "heading": "Lorem",
