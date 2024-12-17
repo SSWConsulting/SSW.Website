@@ -100,7 +100,7 @@
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Strategic Assessment",
