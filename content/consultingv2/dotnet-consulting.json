@@ -118,6 +118,9 @@
         }
       ],
       "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
         "imageSource": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image_(3).png"
       },
       "_template": "accordionBlock"
