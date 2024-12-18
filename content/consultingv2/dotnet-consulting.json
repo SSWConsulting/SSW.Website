@@ -130,7 +130,7 @@
     },
     {
       "topLabel": {
-        "labelText": "",
+        "labelText": "Labelt Text",
         "icon": "BiTrendingUp"
       },
       "heading": "Performance Transformation",
