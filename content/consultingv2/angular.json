@@ -2,5 +2,11 @@
   "seo": {
     "title": "Enterprise Development and Consulting for Angular Apps",
     "description": "With over 10ys experience creating enterprise Angular apps for private and public sectors, SSW can design, build, and deliver your dream Angular app."
-  }
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "Enterprise Development and Consulting for Angular Apps",
+      "_template": "breadcrumbs"
+    }
+  ]
 }
