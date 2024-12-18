@@ -20,15 +20,11 @@
         "clearChipText": "Ipsum"
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "",
+            "description": "Deliver scalable, maintainable, and high-performing applications with Angular, the framework trusted by industry leaders and backed by 25+ years of expertise."
           }
         ]
       },
