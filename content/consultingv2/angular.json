@@ -88,6 +88,31 @@
       "cardStyle": 0,
       "cards": [
         {
+          "guid": "b0rt7e",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Web Development",
+          "description": "Create stylish, functional, and user-friendly websites to elevate your online presence.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Responsive Design",
+                "description": "Ensure seamless user experiences across all devices",
+                "icon": "BiSolidMobile"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
           "guid": "ph03kn",
           "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image.png",
           "altText": "AI Development",
