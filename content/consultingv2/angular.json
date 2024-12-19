@@ -36,6 +36,10 @@
           "colour": 0
         }
       ],
+      "background": {
+        "backgroundImage": "",
+        "bleed": false
+      },
       "mediaConfiguration": {
         "placement": "Right",
         "verticalPlacement": "Centered",
@@ -88,7 +92,6 @@
           "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image.png",
           "altText": "AI Development",
           "chips": {},
-          "icon": "BiSolidBrain",
           "heading": "AI Development Services",
           "description": "From chatbots to smarter apps, we help you streamline operations and save time.",
           "featureList": {
