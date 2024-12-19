@@ -86,8 +86,10 @@
         {
           "guid": "k1rz64",
           "altText": "Lorem Ipsum",
-          "chips": {},
-          "icon": "info",
+          "chips": {
+            "filledChipText": "React | Angular | Vue",
+            "clearChipText": "React | Angular | Vue"
+          },
           "heading": "Frontend Frameworks & SPA Solutions",
           "description": "Build fast, dynamic UIs with leading JavaScript frameworks like React, Angular, and Vue. We ensure seamless integration with your backend and optimized performance.",
           "featureList": {
