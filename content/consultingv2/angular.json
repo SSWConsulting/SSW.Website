@@ -88,6 +88,31 @@
       "cardStyle": 0,
       "cards": [
         {
+          "guid": "gib7jf",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Database Development",
+          "description": "Develop robust and efficient systems for seamless data management.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Scalable Databases",
+                "description": "Implement solutions like SQL Server, PostgreSQL, or MongoDB to handle growing needs.",
+                "icon": "BiSolidData"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
           "guid": "5fwpm",
           "altText": "Lorem Ipsum",
           "chips": {},
