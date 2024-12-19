@@ -19,6 +19,7 @@ const Popup: React.FC<PopupProps> = (props) => {
         onClose={props.onClose}
         showCloseIcon={!!props.showCloseIcon}
         classNames={{
+          modalContainer: classNames(["flex"]),
           closeButton: styles.closeButton,
           modalAnimationIn: styles.formEnterModalAnimation,
           modalAnimationOut: styles.formLeaveModalAnimation,
