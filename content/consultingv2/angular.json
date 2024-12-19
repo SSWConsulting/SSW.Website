@@ -134,11 +134,11 @@
           }
         },
         {
-          "guid": null,
+          "guid": "oltw1q",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "CMS & Content Management",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
