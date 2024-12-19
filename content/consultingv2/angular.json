@@ -118,7 +118,7 @@
           "guid": "7f0p7d",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": ".NET 8 | SharePoint"
+            "filledChipText": ".NET 8 | SharePoint | PowerBI"
           },
           "icon": "info",
           "heading": "Backend & Enterprise Solutions",
@@ -126,14 +126,12 @@
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
+                "heading": "",
+                "description": "🔒 Enterprise-Grade Security"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "",
+                "description": "📊 Data-Driven Insights"
               }
             ]
           },
