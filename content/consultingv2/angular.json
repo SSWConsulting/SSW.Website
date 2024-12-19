@@ -102,9 +102,9 @@
                 "icon": "BiSolidData"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "Secure Management",
+                "description": "Protect your data with encryption and best practices",
+                "icon": "BiSolidLock"
               }
             ]
           },
