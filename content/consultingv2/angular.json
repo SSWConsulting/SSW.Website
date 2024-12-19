@@ -88,6 +88,31 @@
       "cardStyle": 0,
       "cards": [
         {
+          "guid": "8vjzd",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Video Production",
+          "description": "Create captivating, high-quality visual content for impactful storytelling.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Cinematic Editing",
+                "description": "Use advanced editing software like Premiere Pro to deliver polished videos.",
+                "icon": "BiSolidVideo"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
           "guid": "fwq6ac",
           "altText": "Lorem Ipsum",
           "chips": {},
