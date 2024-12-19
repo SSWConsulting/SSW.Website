@@ -102,9 +102,9 @@
                 "icon": "BiLogoAws"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "Infrastructure Security",
+                "description": "Implement best practices for a safe and reliable environment.",
+                "icon": "BiSolidCloudDownload"
               }
             ]
           },
