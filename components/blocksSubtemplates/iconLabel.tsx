@@ -10,12 +10,12 @@ export const IconLabel = ({ data }) => {
           <Icon
             data={{ name: data.icon }}
             tinaField={tinaField(data, "icon")}
-            className="size-4 text-gray-300"
+            className="size-5 text-gray-300"
           />
         </div>
       )}
       <p
-        className="text-xs font-bold dark:text-gray-300"
+        className="text-sm font-bold dark:text-gray-300"
         data-tina-field={tinaField(data, "labelText")}
       >
         {data.labelText}
