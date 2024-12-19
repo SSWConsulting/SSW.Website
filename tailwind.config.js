@@ -121,6 +121,7 @@ export default {
         102: "25.5rem",
         112: "28rem",
         172: "43rem",
+        overflow: "300%",
       },
       width: {
         88: "22rem",
