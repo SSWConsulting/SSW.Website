@@ -96,12 +96,14 @@
           "featureList": {
             "features": [
               {
-                "heading": "Improved user experience with responsive, interactive designs.",
-                "description": ""
+                "heading": "Lightning-Fast Performance",
+                "description": "Deliver responsive, interactive designs that load in a flash.",
+                "icon": "BiSolidFastForwardCircle"
               },
               {
-                "heading": "Faster development cycles for quicker go-to-market.",
-                "description": ""
+                "heading": "Accelerated Development",
+                "description": "Launch projects faster with streamlined workflows and efficient frameworks.",
+                "icon": "BiSolidRocket"
               }
             ]
           },
