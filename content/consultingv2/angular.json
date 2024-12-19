@@ -104,6 +104,10 @@
                 "heading": "Smarter Customer Support",
                 "description": "Deploy AI-driven chatbots for efficient customer service",
                 "icon": "BiSolidBot"
+              },
+              {
+                "heading": "",
+                "description": ""
               }
             ]
           },
