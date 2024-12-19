@@ -88,6 +88,31 @@
       "cardStyle": 0,
       "cards": [
         {
+          "guid": "fwq6ac",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "UI/UX Design",
+          "description": "Craft visually stunning and intuitive user interfaces for seamless experiences.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "User-Centered Design",
+                "description": "Focus on usability and aesthetic appeal for better engagement.",
+                "icon": "BiSolidUserPin"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
           "guid": "gib7jf",
           "altText": "Lorem Ipsum",
           "chips": {},
