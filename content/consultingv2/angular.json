@@ -68,7 +68,7 @@
           }
         },
         {
-          "categoryName": "Web",
+          "categoryName": "Consulting",
           "cardGuidList": {
             "guid": "r22d8r",
             "cardGuidList": [
@@ -76,13 +76,6 @@
               "7f0p7d",
               "oltw1q"
             ]
-          }
-        },
-        {
-          "categoryName": "Mobile",
-          "cardGuidList": {
-            "guid": "i084pl",
-            "cardGuidList": []
           }
         }
       ],
