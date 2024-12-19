@@ -198,25 +198,61 @@
       ],
       "sidebarItems": [
         {
-          "name": "What's New",
+          "name": "Latest Videos",
           "items": [
             {
-              "name": "TinaCMS V1.5",
-              "url": "https://www.tina.io",
-              "description": "The world's leading open source, headless CMS that is powered by Markdown and GitHub.",
-              "widgetType": "featured"
+              "name": "TinaCMS",
+              "url": "https://www.youtube.com/@TinaCMS",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
             },
             {
-              "name": "SugarLearning V1.50",
-              "url": "https://www.sugarlearning.com/",
-              "description": "The next generation on-boarding & induction tool for smart companies.",
-              "widgetType": "featured"
+              "name": "SugarLearning",
+              "url": "https://www.youtube.com/@sugarlearning",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
             },
             {
-              "name": "TimePro V2.10",
-              "url": "https://sswtimepro.com/",
-              "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
-              "widgetType": "featured"
+              "name": "TimePro",
+              "url": "https://www.youtube.com/@sswtimepro",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "CodeAuditor",
+              "url": "https://www.youtube.com/@codeauditor",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "EagleEye",
+              "url": "https://www.youtube.com/@SSWEagleEye",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "YakShaver",
+              "url": "https://www.youtube.com/@SSWYakShaver",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "SophieBot",
+              "url": "https://www.youtube.com/@sswsophiebot",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "SophieHub",
+              "url": "https://www.youtube.com/@sophiehub",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
+            },
+            {
+              "name": "SSW Rewards",
+              "url": "https://www.youtube.com/@sswrewards",
+              "widgetType": "standardLink",
+              "icon": "playCircle"
             }
           ]
         },
@@ -531,11 +567,148 @@
     },
     {
       "name": "SSW Rules",
-      "url": "https://www.ssw.com.au/rules"
+      "menuColumns": [
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Latest Rules",
+              "menuItems": [
+                {
+                  "name": "Do you allow users to comment and rate your pages?",
+                  "url": "https://www.ssw.com.au/rules/best-commenting-engine",
+                  "icon": "magnifyingGlass"
+                },
+                {
+                  "name": "Do you know how to record a quick and dirty 'Done Video'?",
+                  "url": "https://www.ssw.com.au/rules/record-a-quick-and-dirty-done-video/",
+                  "icon": "magnifyingGlass"
+                },
+                {
+                  "name": "Do you know how to record your screen?",
+                  "url": "https://www.ssw.com.au/rules/recording-screen/",
+                  "icon": "magnifyingGlass"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Top Categories",
+              "menuItems": [
+                {
+                  "name": "Artificial Intelligence",
+                  "url": "https://www.ssw.com.au/rules/rules-to-better-chatgpt-prompt-engineering/"
+                },
+                {
+                  "name": "Communication",
+                  "url": "https://www.ssw.com.au/rules/rules-to-better-communication/"
+                },
+                {
+                  "name": "Project Delivery",
+                  "url": "https://www.ssw.com.au/rules/rules-to-better-scrum/"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sidebarItems": [
+        {
+          "name": "Featured",
+          "items": [
+            {
+              "name": "RulesGPT",
+              "url": "https://rulesgpt.ssw.com.au/",
+              "description": "Try out our custom GPT used to write our Rules",
+              "widgetType": "featured",
+              "icon": "fingerPrint"
+            }
+          ]
+        }
+      ],
+      "viewAll": {
+        "name": "Check out all our Rules",
+        "url": "https://www.ssw.com.au/rules"
+      },
+      "url": ""
     },
     {
       "name": "SSW TV",
-      "url": "https://tv.ssw.com.au/"
+      "menuColumns": [
+        {
+          "menuColumnGroups": [
+            {
+              "name": "New Releases",
+              "menuItems": [
+                {
+                  "name": "Tech News # 42 | Nvidia Nemotron beats ChatGPT",
+                  "url": "https://youtu.be/U9TJ7jj6418?si=eMs9JmM9lQvU3VDA",
+                  "icon": "playCircle"
+                },
+                {
+                  "name": "Building Cross-platform Blazor Desktop Apps with Photino",
+                  "url": "https://youtu.be/PVRNOoO_iXA?si=IjCjj2b5jXn2LDxa",
+                  "icon": "playCircle"
+                },
+                {
+                  "name": "Naming Conventions | Jeoffrey Fischer",
+                  "url": "https://youtu.be/t-t7P2BZnS4?si=sRZv_P9gLuAUGp2g",
+                  "icon": "playCircle"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
+            {
+              "name": "Playlists",
+              "menuItems": [
+                {
+                  "name": "User Groups",
+                  "url": "https://youtube.com/playlist?list=PLpiOR7CBNvlpmhfwQeIVhbqZKxV-do0wY&si=77S27Tbts3ISbV-o",
+                  "icon": "magnifyingGlass"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "sidebarItems": [
+        {
+          "name": "Featured",
+          "items": [
+            {
+              "name": "The People Behind SSW",
+              "url": "https://www.youtube.com/watch?v=Jveq6VFjWTA&t=12s",
+              "description": "Why SSW is Australia's leading custom software development company",
+              "widgetType": "featured",
+              "icon": "fingerPrint"
+            },
+            {
+              "name": "Why work at SSW?",
+              "url": "https://www.youtube.com/watch?v=tWuutobJtdg&t=2s",
+              "description": "Check for employment opportunities in our team",
+              "widgetType": "featured",
+              "icon": "fingerPrint"
+            },
+            {
+              "name": "The Future of Business with AI",
+              "url": "https://www.youtube.com/watch?v=-q9lLqtkC00",
+              "description": "Investing early with AI will deliver the greatest rewards",
+              "widgetType": "featured",
+              "icon": "fingerPrint"
+            }
+          ]
+        }
+      ],
+      "viewAll": {
+        "name": "Visit our channel",
+        "url": "https://www.youtube.com/@SSWTV"
+      },
+      "url": ""
     }
   ]
 }
