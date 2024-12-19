@@ -1,0 +1,272 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Angular Apps",
+    "description": "With over 10ys experience creating enterprise Angular apps for private and public sectors, SSW can design, build, and deliver your dream Angular app."
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "Enterprise Development and Consulting for Angular Apps",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Find the Perfect Solution for Your Web Projects",
+      "isH1": false,
+      "description": "",
+      "chips": {
+        "filledChipText": "Lorem",
+        "clearChipText": "Ipsum"
+      },
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "",
+            "description": "We offer a full suite of consulting services—from frontend frameworks and enterprise integrations to design and CMS solutions"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Lorem Ipsum",
+      "logos": [
+        {
+          "logo": "",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "AI Development",
+          "cardGuidList": {
+            "guid": "uudy9e",
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Web Development",
+          "cardGuidList": {
+            "guid": "r22d8r",
+            "cardGuidList": [
+              "k1rz64",
+              "7f0p7d",
+              "oltw1q"
+            ]
+          }
+        },
+        {
+          "categoryName": "Mobile Development",
+          "cardGuidList": {
+            "guid": "i084pl",
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "k1rz64",
+          "image": "/images/Louis Test Images/Better Stack/Website Monitoring _ Better Stack/heartbeat-monitoring-b33f631a7a9fd3d3260de3ff24350826341161e10529f3b7dc6f54ca102d784f.png",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "React | Angular | Vue",
+            "clearChipText": ""
+          },
+          "heading": "Frontend & SPA Solutions",
+          "description": "Build fast, dynamic UIs with leading JavaScript frameworks like React, Angular, and Vue. We ensure seamless integration with your backend and optimized performance.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "",
+                "description": "⚡ Lightning-Fast Performance"
+              },
+              {
+                "heading": "",
+                "description": "⏩ Accelerated Development"
+              },
+              {
+                "heading": "",
+                "description": "📈 Future-Ready Scalability"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Explore Services ",
+            "icon": "BiRightArrowAlt"
+          }
+        },
+        {
+          "guid": "7f0p7d",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": ".NET 8 | SharePoint | PowerBI"
+          },
+          "icon": "info",
+          "heading": "Backend & Enterprise Solutions",
+          "description": "Build scalable and secure web applications with technologies like .NET 8, SharePoint, and Enterprise Reporting. Empower your business with reliable APIs and integrated systems.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "",
+                "description": "🔒 Enterprise-Grade Security"
+              },
+              {
+                "heading": "",
+                "description": "📊 Data-Driven Insights"
+              },
+              {
+                "heading": "",
+                "description": "🌐 Seamless Integrations"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "oltw1q",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "CMS & Content Management",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "description": "",
+      "chips": {
+        "filledChipText": "Lorem",
+        "clearChipText": "Ipsum"
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    }
+  ]
+}
