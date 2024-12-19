@@ -104,6 +104,11 @@
                 "heading": "Accelerated Development",
                 "description": "Launch projects faster with streamlined workflows and efficient frameworks.",
                 "icon": "BiSolidRocket"
+              },
+              {
+                "heading": "Future-Ready Scalability",
+                "description": "Design modular systems to grow with your business needs.",
+                "icon": "BiTrendingUp"
               }
             ]
           },
