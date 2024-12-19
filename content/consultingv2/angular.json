@@ -96,14 +96,12 @@
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
+                "heading": "Improved user experience with responsive, interactive designs.",
+                "description": ""
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "Faster development cycles for quicker go-to-market.",
+                "description": ""
               }
             ]
           },
