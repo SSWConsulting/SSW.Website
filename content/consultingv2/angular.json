@@ -117,7 +117,9 @@
         {
           "guid": "7f0p7d",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": ".NET 8 | SharePoint"
+          },
           "icon": "info",
           "heading": "Backend & Enterprise Solutions",
           "description": "Build scalable and secure web applications with technologies like .NET 8, SharePoint, and Enterprise Reporting. Empower your business with reliable APIs and integrated systems.",
