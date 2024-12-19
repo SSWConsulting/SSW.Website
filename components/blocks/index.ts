@@ -19,8 +19,9 @@ import { organizerSchema } from "../usergroup/organizer";
 import { customDownloadButtonSchema } from "./CustomDownloadButton";
 import { aboutUsBlockSchema } from "./aboutUs";
 import { agendaSchema } from "./agenda";
-import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs-schema";
+import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
+import { CardCarouselSchema } from "./cardCarousel/cardCarouselSchema";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
 import { colorBlockSchema } from "./colorBlock";
@@ -39,8 +40,11 @@ import { googleMapsSchema } from "./googleMapsWrapper";
 import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
 import { horizontalBlockSchema } from "./horizontalCard";
+import { AccordionSchema } from "./imageComponents/accordionBlock/accordionSchema";
+import { ImageTextBlockSchema } from "./imageComponents/imageTextBlock/imageTextBlock.schema";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
+import { LogoCarouselSchema } from "./logoCarousel/logoCarouselSchema";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
@@ -53,7 +57,13 @@ import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
+//NOTE: this is the order that blocks will appear in the Tina Editor
 export const pageBlocks: Template[] = [
+  BreadcrumbSchema,
+  ImageTextBlockSchema,
+  LogoCarouselSchema,
+  AccordionSchema,
+  CardCarouselSchema,
   aboutUsBlockSchema,
   agendaSchema,
   agreementFormBlockSchema,
@@ -61,7 +71,6 @@ export const pageBlocks: Template[] = [
   bookingButtonSchema,
   builtOnAzureBlockSchema,
   carouselBlockSchema,
-  BreadcrumbSchema,
   citationBlockSchema,
   clientListSchema,
   clientLogosBlockSchema,

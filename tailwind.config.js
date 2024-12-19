@@ -76,14 +76,24 @@ export default {
       DEFAULT: "3px",
       0: "0",
       1: "1px",
+      1.5: "1.5px",
       2: "2px",
       3: "3px",
       4: "4px",
       8: "8px",
     },
     extend: {
+      aspectRatio: {
+        "4/3": "4 / 3",
+      },
       textUnderlineOffset: {
         3: "3px",
+      },
+      outlineWidth: {
+        "-1.5": "1.5px",
+      },
+      outlineOffset: {
+        "-1.5": "-1.5px",
       },
       gridTemplateRows: {
         12: "repeat(12, minmax(min-content, 0fr))",
@@ -102,6 +112,7 @@ export default {
       zIndex: {
         1: 1,
         videoThumbnail: 11,
+        1000: "1000",
       },
       height: {
         22: "5.5rem",
@@ -113,6 +124,7 @@ export default {
       },
       width: {
         88: "22rem",
+        90: "22.5rem",
         104: "26rem",
       },
       minHeight: {
@@ -226,8 +238,30 @@ export default {
           "badge-bounce-down var(--animate-duration, 3s) infinite",
         ripple: "ripple-out 0.75s",
         "ripple-pseudo": "ripple-out-pseudo 0.75s",
+        rippling: "rippling 0.6s ease-out",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        marquee: "marquee 20s linear infinite",
+        "marquee-vertical": "marquee-vertical 20s linear infinite",
       },
       keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        rippling: {
+          "0%": {
+            opacity: "1",
+          },
+          "100%": {
+            transform: "scale(2)",
+            opacity: "0",
+          },
+        },
         "more-bounce": {
           "0%, 20%, 50%, 80%, 100%": { transform: "translateY(0)" },
           "40%": { transform: "translateY(-30px)" },
@@ -248,6 +282,14 @@ export default {
         "ripple-out-pseudo": {
           "0%": { background: "rgba(0, 0, 0, 0.25)" },
           "100%": { background: "transparent" },
+        },
+        marquee: {
+          from: { transform: "translateX(50%)" },
+          to: { transform: "translateX(calc(-50% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
         },
       },
       colors: {
@@ -409,6 +451,8 @@ export default {
         waveBackground: "url('/images/background/waveBackground.svg')",
         errorPage:
           "linear-gradient(#ffffff, transparent 75%), url(/images/404/broken-chain.png)",
+        glass:
+          "linear-gradient(152.97deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)",
       },
     },
     linearGradientColors: {
