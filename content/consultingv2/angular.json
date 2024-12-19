@@ -88,6 +88,31 @@
       "cardStyle": 0,
       "cards": [
         {
+          "guid": "9jy8rh",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Cloud and Infrastructure",
+          "description": "Design scalable, secure, and resilient cloud computing environments.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Cloud Solutions",
+                "description": "Utilize AWS, Azure, or Google Cloud for flexible and scalable infrastructure.",
+                "icon": "BiLogoAws"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
           "guid": "8vjzd",
           "altText": "Lorem Ipsum",
           "chips": {},
