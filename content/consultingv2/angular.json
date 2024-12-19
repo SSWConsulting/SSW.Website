@@ -67,10 +67,14 @@
       ],
       "categoryGroup": [
         {
-          "categoryName": "Lorem",
+          "categoryName": "Web Development",
           "cardGuidList": {
             "guid": "r22d8r",
-            "cardGuidList": []
+            "cardGuidList": [
+              "k1rz64",
+              "7f0p7d",
+              "oltw1q"
+            ]
           }
         },
         {
