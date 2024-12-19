@@ -30,9 +30,10 @@ export const TechnologyCardCarousel = ({ data }) => {
           embeddedButton: {
             buttonText: "Read More",
             buttonLink: card.node.readMoreSlug,
-            buttonIcon: "arrow-right",
+            icon: "BiChevronRight",
           },
           icon: card.node.icon,
+          contain: true,
         };
       });
       setCardList(cards);
@@ -43,15 +44,18 @@ export const TechnologyCardCarousel = ({ data }) => {
   //This data is a limited version of the data that is passed to the CardCarousel component via its schema
   const cardCarouselData = {
     isStacked: data.isStacked,
-    categoryGroup: data.technologyGroups?.map((group) => {
-      return {
-        categoryName: group.technologyGroup?.name,
-        cardGuidList: {
-          guid: group.technologyGroup?.name,
-          cardGuidList: [group.technologyGroup?.name],
-        },
-      };
-    }),
+    categoryGroup:
+      data.technologyGroups?.length > 1
+        ? data.technologyGroups?.map((group) => {
+            return {
+              categoryName: group.technologyGroup?.name,
+              cardGuidList: {
+                guid: group.technologyGroup?.name,
+                cardGuidList: [group.technologyGroup?.name],
+              },
+            };
+          })
+        : [],
     cardStyle: 1,
     cards: cardList,
     isH1: false,

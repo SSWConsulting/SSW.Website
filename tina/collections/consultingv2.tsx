@@ -72,11 +72,13 @@ export const consultingv2TechnologySchema: Collection = {
       uploadDir: () => "thumbs",
     },
     {
-      type: "rich-text",
+      type: "string",
       label: "Body",
       name: "body",
       isBody: true,
-      toolbarOverride: ["bold", "italic", "link", "ul", "ol", "code"],
+      ui: {
+        component: "textarea",
+      },
     },
     {
       type: "string",

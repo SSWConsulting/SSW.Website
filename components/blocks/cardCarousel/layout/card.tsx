@@ -38,7 +38,7 @@ const Card = ({ data, placeholder }: CardProps) => {
             onError={() => setUsePlaceholder(true)}
             alt={data.altText ?? "Card Image"}
             fill={true}
-            className="object-cover"
+            className={data.contain ? "object-contain" : "object-cover"}
           />
         </div>
       )}

@@ -1,5 +1,21 @@
 {
   "seo": {
     "title": "angular"
-  }
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/consultingv2/technologies/groups/Front-End.mdx"
+        },
+        {
+          "technologyGroup": "content/consultingv2/technologies/groups/Back-End.mdx"
+        }
+      ],
+      "_template": "technologyCardCarousel"
+    }
+  ]
 }
