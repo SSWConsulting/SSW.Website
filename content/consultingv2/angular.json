@@ -113,7 +113,8 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Explore Services ",
+            "icon": "BiRightArrowAlt"
           }
         },
         {
