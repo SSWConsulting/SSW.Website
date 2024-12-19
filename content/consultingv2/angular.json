@@ -56,22 +56,12 @@
     },
     {
       "isStacked": true,
-      "heading": "Lorem Ipsum",
+      "heading": "",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
+      "body": "",
       "categoryGroup": [
         {
-          "categoryName": "AI Development",
+          "categoryName": "AI",
           "cardGuidList": {
             "guid": "uudy9e",
             "cardGuidList": []
