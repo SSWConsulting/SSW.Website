@@ -113,8 +113,8 @@
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "CMS & Enterprise Integrations",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Backend & Enterprise Solutions",
+          "description": "Build scalable and secure web applications with technologies like .NET 8, SharePoint, and Enterprise Reporting. Empower your business with reliable APIs and integrated systems.",
           "featureList": {
             "features": [
               {
