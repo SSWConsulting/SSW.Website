@@ -44,7 +44,7 @@ export default function CompanyPage({ tinaProps, props }) {
         {data.company.subTitle && (
           <section
             className={classNames(
-              "prose prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 mx-auto w-full max-w-9xl flex-row px-8 pb-8",
+              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
               data.company.fullWidthBody ? "" : "md:flex"
             )}
           >

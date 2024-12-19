@@ -57,7 +57,7 @@ const ArticleCardContent = ({
           position={userPosition}
           image={userImage}
         />
-        <div className="prose-p:mt-0 font-normal">{body}</div>
+        <div className="font-normal prose-p:mt-0">{body}</div>
       </div>
     </div>
   );

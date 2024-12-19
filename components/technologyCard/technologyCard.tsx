@@ -32,7 +32,7 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
 
       <div
         data-tina-field={tinaField(props, "body")}
-        className="prose prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left md:prose-p:text-justify max-w-full grow descendant-div:!m-0"
+        className="prose max-w-full grow prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0 md:prose-p:text-justify"
       >
         <TinaMarkdown content={body} />
       </div>

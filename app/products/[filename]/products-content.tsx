@@ -17,7 +17,7 @@ export default function ProductsContent({ props }) {
       </Section>
       <Container
         className={
-          "prose prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0 flex-1 pt-4"
+          "prose flex-1 pt-4 prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0"
         }
       >
         <TinaMarkdown
