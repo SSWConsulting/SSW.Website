@@ -97,18 +97,15 @@
             "features": [
               {
                 "heading": "",
-                "description": "Lightning-Fast Performance",
-                "icon": "BiSolidFastForwardCircle"
+                "description": "⚡ Lightning-Fast Performance"
               },
               {
                 "heading": "",
-                "description": "Accelerated Development",
-                "icon": "BiSolidRocket"
+                "description": "⏩ Accelerated Development"
               },
               {
                 "heading": "",
-                "description": "Future-Ready Scalability",
-                "icon": "BiTrendingUp"
+                "description": "📈 Future-Ready Scalability"
               }
             ]
           },
