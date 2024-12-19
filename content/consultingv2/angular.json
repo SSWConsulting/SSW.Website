@@ -96,18 +96,18 @@
           "featureList": {
             "features": [
               {
-                "heading": "Lightning-Fast Performance",
-                "description": "Deliver responsive, interactive designs that load in a flash.",
+                "heading": "",
+                "description": "Lightning-Fast Performance",
                 "icon": "BiSolidFastForwardCircle"
               },
               {
-                "heading": "Accelerated Development",
-                "description": "Launch projects faster with streamlined workflows and efficient frameworks.",
+                "heading": "",
+                "description": "Accelerated Development",
                 "icon": "BiSolidRocket"
               },
               {
-                "heading": "Future-Ready Scalability",
-                "description": "Design modular systems to grow with your business needs.",
+                "heading": "",
+                "description": "Future-Ready Scalability",
                 "icon": "BiTrendingUp"
               }
             ]
