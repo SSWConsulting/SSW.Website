@@ -102,9 +102,9 @@
                 "icon": "BiSolidMobile"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "Modern Technologies",
+                "description": "Leverage frameworks like React, Angular, and .NET for fast, reliable websites.",
+                "icon": "BiLogoReact"
               }
             ]
           },
