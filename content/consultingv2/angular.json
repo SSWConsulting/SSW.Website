@@ -1,0 +1,160 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Angular Apps",
+    "description": "With over 10ys experience creating enterprise Angular apps for private and public sectors, SSW can design, build, and deliver your dream Angular app."
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "Enterprise Development and Consulting for Angular Apps",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Enterprise Ready",
+        "icon": "BiCodeBlock"
+      },
+      "heading": "Microsoft-Powered Solutions Built for Scale",
+      "isH1": false,
+      "description": "",
+      "chips": {
+        "filledChipText": "✓ 28+ Enterprise Clients",
+        "clearChipText": "5000+ Delivered Projects"
+      },
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "",
+            "description": "Accelerate your digital transformation with battle-tested development teams and enterprise-grade technology stack"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule Technical Consultation",
+          "icon": "BiRightArrowAlt",
+          "colour": 0
+        }
+      ],
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image_(4).png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Trusted by",
+      "logos": [
+        {
+          "logo": "",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "categoryGroup": [
+        {
+          "categoryName": "Development",
+          "cardGuidList": {
+            "guid": "uudy9e",
+            "cardGuidList": [
+              "ph03kn"
+            ]
+          }
+        },
+        {
+          "categoryName": "Consulting",
+          "cardGuidList": {
+            "guid": "r22d8r",
+            "cardGuidList": [
+              "k1rz64",
+              "7f0p7d",
+              "oltw1q"
+            ]
+          }
+        }
+      ],
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ph03kn",
+          "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image.png",
+          "altText": "AI Development",
+          "chips": {},
+          "icon": "BiSolidBrain",
+          "heading": "AI Development Services",
+          "description": "From chatbots to smarter apps, we help you streamline operations and save time.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "",
+                "description": ""
+              },
+              {
+                "heading": "Custom AI Applications",
+                "description": "Build tailored AI solutions using technologies like Python, TensorFlow, and Azure AI for vision, speech, and language capabilities.",
+                "icon": "BiSolidCustomize"
+              },
+              {
+                "heading": "Smarter Customer Support",
+                "description": "Deploy AI-driven chatbots for efficient customer service",
+                "icon": "BiSolidBot"
+              },
+              {
+                "heading": "",
+                "description": ""
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Explore AI Services"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "description": "",
+      "chips": {
+        "filledChipText": "Lorem",
+        "clearChipText": "Ipsum"
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    }
+  ]
+}
