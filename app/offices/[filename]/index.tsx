@@ -1,73 +1,58 @@
-import Image from "next/image";
+"use client";
 
-import { client } from "@/tina/client";
-import { tinaField, useTina } from "tinacms/dist/react";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
+import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { CustomLink } from "@/components/customLink";
+import ContactPanel from "@/components/offices/contactPanel";
+import MicrosoftPanel from "@/components/offices/microsoftPanel";
+import TestimonialPanel from "@/components/offices/testimonialPanel";
+import { Container } from "@/components/util/container";
+import { Section } from "@/components/util/section";
+import { removeExtension } from "@/services/client/utils.service";
+import { Breadcrumbs } from "app/components/breadcrumb";
+import Image from "next/image";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-import { TODAY } from "hooks/useFetchEvents";
-import { InferGetStaticPropsType } from "next";
-import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
-import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
-import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
-import { CustomLink } from "../../components/customLink";
-import { Layout } from "../../components/layout";
-import ContactPanel from "../../components/offices/contactPanel";
-import MicrosoftPanel from "../../components/offices/microsoftPanel";
-import TestimonialPanel from "../../components/offices/testimonialPanel";
-import { Container } from "../../components/util/container";
-import { Section } from "../../components/util/section";
-import { SEO } from "../../components/util/seo";
-import { removeExtension } from "../../services/client/utils.service";
-
-export default function OfficePage(
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) {
-  const { data } = useTina({
-    data: props.data,
-    query: props.query,
-    variables: props.variables,
-  });
+export default function OfficePage({ props, tinaProps }) {
+  const { data } = tinaProps;
 
   return (
     <>
-      <SEO seo={data.offices.seo} />
-      <Layout liveStreamData={props.data.userGroup} menu={data.megamenu}>
-        {data.offices.coverImg ? (
-          <div className="mx-auto max-w-9xl px-6 sm:px-8">
-            <div className="size-auto">
-              <Image
-                data-tina-field={tinaField(data.offices, "coverImg")}
-                width={1320}
-                height={485}
-                src={data.offices.coverImg}
-                alt="Cover image"
-                priority={true}
-              />
-            </div>
+      {data.offices.coverImg ? (
+        <div className="mx-auto max-w-9xl px-6 sm:px-8">
+          <div className="size-auto">
+            <Image
+              data-tina-field={tinaField(data.offices, "coverImg")}
+              width={1320}
+              height={485}
+              src={data.offices.coverImg}
+              alt="Cover image"
+              priority={true}
+            />
           </div>
-        ) : (
-          <></>
-        )}
+        </div>
+      ) : (
+        <></>
+      )}
 
-        <Container className="pt-2">
-          <Breadcrumbs
-            path={removeExtension(props.variables.relativePath)}
-            suffix={data.global.breadcrumbSuffix}
-            title={data.offices.seo.title}
-          />
-          <div className="mt-8 md:flex">
-            <div className="grow">
-              <OfficeLayout office={data.offices} />
-            </div>
-            <div className="md:max-w-sm md:pl-6">
-              <SidePanel office={data.offices} />
-            </div>
+      <Container className="pt-2">
+        <Breadcrumbs
+          path={removeExtension(props.variables.relativePath)}
+          title={data.offices.seo.title}
+        />
+        <div className="mt-8 md:flex">
+          <div className="grow">
+            <OfficeLayout office={data.offices} />
           </div>
-        </Container>
-        <Section>
-          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
-        </Section>
-      </Layout>
+          <div className="md:max-w-sm md:pl-6">
+            <SidePanel office={data.offices} />
+          </div>
+        </div>
+      </Container>
+      <Section>
+        <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+      </Section>
     </>
   );
 }
@@ -195,45 +180,4 @@ const SidePanel = ({ office }) => {
       <TestimonialPanel />
     </div>
   );
-};
-
-export const getStaticProps = async ({ params }) => {
-  const tinaProps = await client.queries.officeContentQuery({
-    relativePath: `${params.filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
-
-  if (tinaProps.data.offices.seo && !tinaProps.data.offices.seo.canonical) {
-    tinaProps.data.offices.seo.canonical = `${tinaProps.data.global.header.url}offices/${params.filename}`;
-  }
-
-  return {
-    props: {
-      data: tinaProps.data,
-      query: tinaProps.query,
-      variables: tinaProps.variables,
-    },
-  };
-};
-
-export const getStaticPaths = async () => {
-  let PageListData = await client.queries.officesConnection();
-  const allPagesListData = PageListData;
-
-  while (PageListData.data.officesConnection.pageInfo.hasNextPage) {
-    const lastCursor = PageListData.data.officesConnection.pageInfo.endCursor;
-    PageListData = await client.queries.officesConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.officesConnection.edges.push(
-      ...PageListData.data.officesConnection.edges
-    );
-  }
-  return {
-    paths: allPagesListData.data.officesConnection.edges.map((page) => ({
-      params: { filename: page.node._sys.filename },
-    })),
-    fallback: false,
-  };
 };
