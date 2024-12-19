@@ -67,6 +67,13 @@
       ],
       "categoryGroup": [
         {
+          "categoryName": "AI Development",
+          "cardGuidList": {
+            "guid": "uudy9e",
+            "cardGuidList": []
+          }
+        },
+        {
           "categoryName": "Web Development",
           "cardGuidList": {
             "guid": "r22d8r",
