@@ -97,9 +97,9 @@
                 "icon": "BiSolidBot"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
+                "heading": "Custom AI Applications",
+                "description": "Build tailored AI solutions using technologies like Python, TensorFlow, and Azure AI for vision, speech, and language capabilities.",
+                "icon": "BiSolidCustomize"
               }
             ]
           },
