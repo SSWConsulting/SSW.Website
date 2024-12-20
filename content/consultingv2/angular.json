@@ -137,20 +137,6 @@
           "icon": "info",
           "heading": "Database Development",
           "description": "Develop robust and efficient systems for seamless data management.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Scalable Databases",
-                "description": "Implement solutions like SQL Server, PostgreSQL, or MongoDB to handle growing needs.",
-                "icon": "BiSolidData"
-              },
-              {
-                "heading": "Secure Management",
-                "description": "Protect your data with encryption and best practices",
-                "icon": "BiSolidLock"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
