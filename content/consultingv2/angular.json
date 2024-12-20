@@ -302,13 +302,13 @@
         {
           "guid": "m0bkqf",
           "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Scale",
+          "description": "How Scale AI uses Mintlify for interactive API documentation",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read More"
           }
         }
       ],
