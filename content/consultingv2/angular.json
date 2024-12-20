@@ -248,16 +248,6 @@
           "content": "We focus on clear communication, transparency, and quick feedback. By following Scrum and DevOps, we make sure the software meets your needs every step of the way.\n"
         }
       ],
-      "buttons": [
-        {
-          "buttonText": "Client Testimonials",
-          "colour": 0
-        },
-        {
-          "buttonText": "Case Studies",
-          "colour": 1
-        }
-      ],
       "background": {
         "backgroundColour": 6
       },
