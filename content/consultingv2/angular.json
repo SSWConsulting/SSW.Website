@@ -232,8 +232,8 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "SSW’s Agile Approach",
-      "body": "We use Agile to ensure your project is delivered on time, on budget, and perfectly aligned with your needs",
+      "heading": "Why should you choose SSW for my project?",
+      "body": "SSW is a Microsoft Gold Certified Partner with 30 years of experience sharing best practices. We’ve developed a team of top-tier developers, including MVPs and regional directors, led by our Chief Architect Adam Cogan. Our rigorous processes ensure the right people are working on your project, reducing risks and delivering results right the first time. Additionally, we provide transparency, predictable costs, and a commitment to aligning your goals with our expertise.",
       "accordionItems": [
         {
           "label": "Frequent Updates",
@@ -246,11 +246,11 @@
       ],
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Client Testimonials",
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
+          "buttonText": "Case Studies",
           "colour": 1
         }
       ],
