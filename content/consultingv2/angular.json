@@ -217,7 +217,7 @@
         "bleed": false
       },
       "heading": "Trusted by",
-      "isWhiteImages": false,
+      "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (46).png"
