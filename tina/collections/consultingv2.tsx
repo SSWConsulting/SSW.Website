@@ -44,7 +44,7 @@ export const consultingv2TechnologySchema: Collection = {
   label: "Consultingv2 - Related Technologies",
   name: "technologiesv2",
   format: "mdx",
-  path: "content/consultingv2/technologies",
+  path: "content/consultingv2Technologies/technologies",
   fields: [
     tipField,
     {
@@ -104,7 +104,7 @@ export const consultingv2TechnologyGroupsSchema: Collection = {
   label: "Consultingv2 - Technology Groups",
   name: "technologyGroupsv2",
   format: "mdx",
-  path: "content/consultingv2/technologies/groups",
+  path: "content/consultingv2Technologies/groups",
   fields: [
     {
       type: "string",
