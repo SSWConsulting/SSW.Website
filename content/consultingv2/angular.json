@@ -127,20 +127,6 @@
           "icon": "info",
           "heading": "Video Production",
           "description": "Create captivating, high-quality visual content for impactful storytelling.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Cinematic Editing",
-                "description": "Use advanced editing software like Premiere Pro to deliver polished videos.",
-                "icon": "BiSolidVideo"
-              },
-              {
-                "heading": "Creative Visuals",
-                "description": "Develop engaging visuals for branding and marketing needs.",
-                "icon": "BiSolidEyedropper"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
