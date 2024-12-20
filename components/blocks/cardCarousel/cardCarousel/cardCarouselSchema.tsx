@@ -205,19 +205,20 @@ export const CardCarouselSchema: Template = {
                 input.value?.cardGuidList ?? []
               );
               const [options, setOptions] = useState([]);
-              const cardCarouselBlocks = formState.values.blocks.filter(
-                (block) => block._template === "cardCarousel"
-              );
+              const cardCarouselBlocks =
+                formState.values.blocks?.filter(
+                  (block) => block._template === "cardCarousel"
+                ) ?? [];
               useEffect(() => {
-                if (!input.value.guid) {
+                if (!input.value?.guid) {
                   input.onChange({
                     guid: GUIDFunction(),
                     cardGuidList: [],
                   });
                 }
                 cardCarouselBlocks.forEach((block) => {
-                  block.categoryGroup.forEach((category) => {
-                    if (category.cardGuidList.guid === input.value.guid) {
+                  block.categoryGroup?.forEach((category) => {
+                    if (category.cardGuidList?.guid === input.value?.guid) {
                       setOptions(block.cards ?? []);
                     }
                   });
