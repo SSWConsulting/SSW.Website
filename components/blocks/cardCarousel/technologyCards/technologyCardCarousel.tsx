@@ -56,11 +56,12 @@ export const TechnologyCardCarousel = ({ data }) => {
             };
           })
         : [],
-    cardStyle: 1,
+    cardStyle: data.techCardStyle,
     cards: cardList,
     isH1: false,
     heading: "Related Technologies",
     body: "",
+    background: data.background,
   };
 
   return <CardCarousel data={cardCarouselData} />;

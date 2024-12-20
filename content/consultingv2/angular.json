@@ -15,6 +15,10 @@
           "technologyGroup": "content/consultingv2/technologies/groups/Back-End.mdx"
         }
       ],
+      "background": {
+        "backgroundColour": 0,
+        "bleed": false
+      },
       "_template": "technologyCardCarousel"
     }
   ]

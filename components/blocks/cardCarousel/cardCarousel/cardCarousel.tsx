@@ -90,7 +90,7 @@ export const CardCarousel = ({ data }) => {
                     <Card
                       key={`card-${index}`}
                       placeholder={hasImages}
-                      data={{ ...cardData, cardStyle: data.cardStyle }}
+                      data={{ ...cardData, cardStyle: data.cardStyle ?? 0 }}
                     />
                   );
                 })}
@@ -102,7 +102,7 @@ export const CardCarousel = ({ data }) => {
           <Container size="custom" padding="sm:px-8" className="py-4">
             <CardList
               activeCategory={activeCategory}
-              data={{ cards: cardSet, cardStyle: data.cardStyle }}
+              data={{ cards: cardSet, cardStyle: data.cardStyle ?? 0 }}
               hasImages={hasImages}
             />
           </Container>

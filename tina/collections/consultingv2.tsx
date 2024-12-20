@@ -91,6 +91,11 @@ export const consultingv2TechnologySchema: Collection = {
       name: "associatedGroup",
       type: "reference",
       collections: ["technologyGroupsv2"],
+      ui: {
+        optionComponent: (props: { name: string }, _internalSys) => {
+          return props.name ?? _internalSys.path;
+        },
+      },
     },
   ],
 };

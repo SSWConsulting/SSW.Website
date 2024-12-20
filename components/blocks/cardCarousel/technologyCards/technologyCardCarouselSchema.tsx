@@ -1,5 +1,7 @@
 import { Template } from "tinacms";
 import { backgroundSchema } from "../../../../components/layout/v2ComponentWrapper";
+import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
+import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 
 export const TechnologyCardCarouselSchema: Template = {
   name: "technologyCardCarousel",
@@ -19,6 +21,11 @@ export const TechnologyCardCarouselSchema: Template = {
           label: "Technology Group",
           name: "technologyGroup",
           collections: ["technologyGroupsv2"],
+          ui: {
+            optionComponent: (props: { name: string }, _internalSys) => {
+              return props.name ?? _internalSys.path;
+            },
+          },
         },
       ],
     },
@@ -27,6 +34,15 @@ export const TechnologyCardCarouselSchema: Template = {
       label: "Stacked Mode",
       name: "isStacked",
       description: "Remove the carousel effect and stack card entries.",
+    },
+    {
+      type: "number",
+      label: "Card Style",
+      name: "techCardStyle",
+      ui: {
+        // @ts-expect-error – component is not being recognized
+        component: ColorPickerInput(cardOptions),
+      },
     },
     //@ts-expect-error – fields are not being recognized
     backgroundSchema,
