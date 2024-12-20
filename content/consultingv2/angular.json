@@ -149,20 +149,6 @@
           "icon": "info",
           "heading": "Mobile Development",
           "description": "Build cutting-edge, user-focused mobile apps for iOS and Android platforms.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Cross-Platform Solutions",
-                "description": "Use tools like Flutter and React Native to reach more users.",
-                "icon": "BiLogoFlutter"
-              },
-              {
-                "heading": "Native Performance",
-                "description": "Deliver optimized apps tailored to platform-specific needs",
-                "icon": "BiTrendingUp"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
