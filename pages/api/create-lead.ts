@@ -53,7 +53,7 @@ export default async function handler(
               JSON.stringify(createLeadFlow.data),
               createLeadFlow.status,
               JSON.stringify(req.body),
-              appInsight.Contracts.SeverityLevel.Critical,
+              appInsight.KnownSeverityLevel.Critical,
               STAGE.PA_FLOW
             );
           }
@@ -63,7 +63,7 @@ export default async function handler(
             JSON.stringify(recaptchaValidation.data),
             recaptchaValidation.status,
             JSON.stringify(req.body),
-            appInsight.Contracts.SeverityLevel.Error,
+            appInsight.KnownSeverityLevel.Error,
             STAGE.GOOGLE_RECAPTCHA
           );
         }
