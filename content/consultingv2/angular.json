@@ -69,16 +69,13 @@
     },
     {
       "isStacked": true,
-      "heading": "Built for modern teams",
+      "heading": "",
       "isH1": false,
       "body": "We build scalable, robust solutions designed to evolve with your business. Let's craft software your customers will love and drive your company forward.",
       "buttons": [
         {
-          "buttonText": "Contact Us",
+          "buttonText": "",
           "colour": 1
-        },
-        {
-          "buttonText": "Latest Projects"
         }
       ],
       "categoryGroup": [
