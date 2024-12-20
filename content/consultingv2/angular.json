@@ -125,20 +125,6 @@
           "icon": "info",
           "heading": "UI/UX Design",
           "description": "Craft visually stunning and intuitive user interfaces for seamless experiences.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "User-Centered Design",
-                "description": "Focus on usability and aesthetic appeal for better engagement.",
-                "icon": "BiSolidUserPin"
-              },
-              {
-                "heading": "Prototyping Tools",
-                "description": "Leverage tools like Figma and Adobe XD to bring ideas to life.",
-                "icon": "BiLogoProductHunt"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
