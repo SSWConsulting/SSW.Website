@@ -59,10 +59,10 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "",
       "isH1": false,
-      "body": "",
+      "body": "We build scalable, robust solutions designed to evolve with your business. Let's craft software your customers will love and drive your company forward.",
       "categoryGroup": [
         {
           "categoryName": "Development",
