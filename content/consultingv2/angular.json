@@ -282,9 +282,9 @@
           "chips": {},
           "icon": "info",
           "heading": "Pinecone",
-          "description": "How Pinecone unifies their support ecosystem with Mintlify",
+          "description": "How Pinecone unifies their support ecosystem with SSW",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read More"
           }
         },
         {
@@ -294,9 +294,9 @@
           "chips": {},
           "icon": "info",
           "heading": "Elevenlabs",
-          "description": "How ElevenLabs streamlines developer onboarding with Mintlify",
+          "description": "How ElevenLabs streamlines developer onboarding with SSW",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read More"
           }
         },
         {
