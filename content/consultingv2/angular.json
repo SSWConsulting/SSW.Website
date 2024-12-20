@@ -217,6 +217,7 @@
         "bleed": false
       },
       "heading": "Trusted by",
+      "isWhiteImages": false,
       "logos": [
         {
           "logo": "/images/ChinaFlag.jpg",
