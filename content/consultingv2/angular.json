@@ -306,7 +306,7 @@
           "chips": {},
           "icon": "info",
           "heading": "Scale",
-          "description": "How Scale AI uses Mintlify for interactive API documentation",
+          "description": "How Scale AI uses SSW for interactive API documentation",
           "embeddedButton": {
             "buttonText": "Read More"
           }
