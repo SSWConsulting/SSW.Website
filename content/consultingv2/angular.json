@@ -318,6 +318,42 @@
         "bleed": true
       },
       "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Talk to us about your  project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "chips": {
+        "filledChipText": "Lorem",
+        "clearChipText": "Ipsum"
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
     }
   ]
 }
