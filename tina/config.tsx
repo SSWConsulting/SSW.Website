@@ -12,7 +12,11 @@ import {
   consultingSchema,
   consultingTagSchema,
 } from "./collections/consulting";
-import { consultingv2Schema } from "./collections/consultingv2";
+import {
+  consultingv2Schema,
+  consultingv2TechnologyGroupsSchema,
+  consultingv2TechnologySchema,
+} from "./collections/consultingv2";
 import { employmentSchema } from "./collections/employment";
 import { eventsIndexSchema, eventsSchema } from "./collections/events";
 import { eventsCalendarSchema } from "./collections/events-calendar";
@@ -93,9 +97,11 @@ const config = defineStaticConfig({
       clientsCategorySchema,
       paymentDetailsSchema,
       caseStudySchema,
+      consultingv2Schema,
+      consultingv2TechnologyGroupsSchema,
+      consultingv2TechnologySchema,
       consultingIndexSchema,
       consultingSchema,
-      consultingv2Schema,
       videoProductionSchema,
       consultingCategorySchema,
       consultingTagSchema,
