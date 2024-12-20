@@ -146,10 +146,10 @@
         {
           "guid": "fwq6ac",
           "image": "/images/Louis Test Images/Incident/Supercharged with AI _ incident.io/image_(1).png",
-          "altText": "Lorem Ipsum",
+          "altText": "hi",
           "chips": {},
           "icon": "info",
-          "heading": "UI/UX Design",
+          "heading": "hi",
           "description": "Craft visually stunning and intuitive user interfaces for seamless experiences.",
           "embeddedButton": {
             "buttonText": "Lorem"
