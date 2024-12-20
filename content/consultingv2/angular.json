@@ -269,7 +269,7 @@
       "_template": "accordionBlock"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "How we enable next-gen companies succeed",
       "isH1": false,
       "body": "",
@@ -283,92 +283,16 @@
           "colour": 1
         }
       ],
-      "categoryGroup": [
-        {
-          "categoryName": "Lorem",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        },
-        {
-          "categoryName": "Dolor",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        }
-      ],
+      "cardStyle": 0,
       "cards": [
         {
-          "guid": null,
+          "guid": "ye7r7",
+          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": {},
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": {},
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Pinecone",
+          "description": "How Pinecone unifies their support ecosystem with Mintlify",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
