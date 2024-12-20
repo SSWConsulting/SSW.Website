@@ -101,20 +101,6 @@
           "icon": "info",
           "heading": "Cloud and Infrastructure",
           "description": "Design scalable, secure, and resilient cloud computing environments.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Cloud Solutions",
-                "description": "Utilize AWS, Azure, or Google Cloud for flexible and scalable infrastructure.",
-                "icon": "BiLogoAws"
-              },
-              {
-                "heading": "Infrastructure Security",
-                "description": "Implement best practices for a safe and reliable environment.",
-                "icon": "BiSolidCloudDownload"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
