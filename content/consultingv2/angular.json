@@ -172,28 +172,6 @@
           "chips": {},
           "heading": "AI Development Services",
           "description": "From chatbots to smarter apps, we help you streamline operations and save time.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "",
-                "description": ""
-              },
-              {
-                "heading": "Custom AI Applications",
-                "description": "Build tailored AI solutions using technologies like Python, TensorFlow, and Azure AI for vision, speech, and language capabilities.",
-                "icon": "BiSolidCustomize"
-              },
-              {
-                "heading": "Smarter Customer Support",
-                "description": "Deploy AI-driven chatbots for efficient customer service",
-                "icon": "BiSolidBot"
-              },
-              {
-                "heading": "",
-                "description": ""
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Explore AI Services"
           }
