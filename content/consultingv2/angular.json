@@ -17,7 +17,7 @@
         "icon": "BiCodeBlock"
       },
       "heading": "Microsoft-Powered Solutions Built for Scale",
-      "isH1": false,
+      "isH1": true,
       "description": "",
       "chips": {
         "filledChipText": "✓ 28+ Enterprise Clients",
@@ -40,6 +40,7 @@
         }
       ],
       "background": {
+        "backgroundColour": 6,
         "backgroundImage": "",
         "bleed": false
       },
