@@ -27,7 +27,7 @@ export const Marketing = (props) => {
   const backgroundImage = getBackgroundImage(srcSet);
 
   return (
-    <Section style={{ backgroundImage }} className="h-full bg-cover">
+    <Section style={{ backgroundImage }} className="bg-cover">
       <Container size="custom" className="h-full py-16 text-center text-white">
         <h1
           className="mt-0 pt-0 text-5xl text-white"
