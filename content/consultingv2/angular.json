@@ -347,10 +347,6 @@
         {
           "buttonText": "Book a Free Initial Meeting",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "_template": "imageTextBlock"
