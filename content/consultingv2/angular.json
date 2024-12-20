@@ -298,26 +298,12 @@
           }
         },
         {
-          "guid": null,
+          "guid": "imtiro",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Elevenlabs",
+          "description": "How ElevenLabs streamlines developer onboarding with Mintlify",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
