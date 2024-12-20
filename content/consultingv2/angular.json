@@ -257,6 +257,9 @@
       "background": {
         "backgroundColour": 6
       },
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image_(2).png"
+      },
       "_template": "accordionBlock"
     }
   ]
