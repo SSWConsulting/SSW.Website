@@ -161,20 +161,6 @@
           "icon": "info",
           "heading": "Web Development",
           "description": "Create stylish, functional, and user-friendly websites to elevate your online presence.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Responsive Design",
-                "description": "Ensure seamless user experiences across all devices",
-                "icon": "BiSolidMobile"
-              },
-              {
-                "heading": "Modern Technologies",
-                "description": "Leverage frameworks like React, Angular, and .NET for fast, reliable websites.",
-                "icon": "BiLogoReact"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
