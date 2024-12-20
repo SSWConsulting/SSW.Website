@@ -74,7 +74,28 @@
       "body": "We build scalable, robust solutions designed to evolve with your business. Let's craft software your customers will love and drive your company forward.",
       "categoryGroup": [
         {
-          "categoryName": "Development",
+          "categoryName": "AI",
+          "cardGuidList": {
+            "guid": "pnydz7",
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Web + APIs",
+          "cardGuidList": {
+            "guid": "s3hhhj",
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Mobile",
+          "cardGuidList": {
+            "guid": "gne5mm",
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Databases",
           "cardGuidList": {
             "guid": "uudy9e",
             "cardGuidList": [
@@ -86,7 +107,7 @@
           }
         },
         {
-          "categoryName": "Consulting",
+          "categoryName": "Platforms",
           "cardGuidList": {
             "guid": "r22d8r",
             "cardGuidList": [
