@@ -74,6 +74,10 @@
       "body": "We build scalable, robust solutions designed to evolve with your business. Let's craft software your customers will love and drive your company forward.",
       "buttons": [
         {
+          "buttonText": "Contact Us",
+          "colour": 1
+        },
+        {
           "buttonText": "Latest Projects"
         }
       ],
