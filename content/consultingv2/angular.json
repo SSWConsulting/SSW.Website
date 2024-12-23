@@ -75,6 +75,12 @@
       "heading": "Software Built to Perform.",
       "isH1": false,
       "body": "We handle everything: software, cloud, and AI, making your tech work together seamlessly.",
+      "buttons": [
+        {
+          "buttonText": "Check our Tech Stack",
+          "colour": 1
+        }
+      ],
       "categoryGroup": [
         {
           "categoryName": "AI",
