@@ -49,7 +49,12 @@
       "isStacked": true,
       "heading": "Software Built to Perform.",
       "isH1": false,
-      "body": "",
+      "body": "We're your partner for powerful, user-focused software. Get solutions that solve your challenges, delight your customers, and drive your business forward.",
+      "buttons": [
+        {
+          "buttonText": "Explore Our Tech Stack"
+        }
+      ],
       "categoryGroup": [
         {
           "categoryName": "AI",
