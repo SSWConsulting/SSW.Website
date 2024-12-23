@@ -19,11 +19,17 @@
       "isH1": true,
       "description": "Get secure, scalable software tailored to your needs. We build solutions that perform and evolve with your business.\n",
       "chips": {
-        "filledChipText": "🥇 Microsoft Gold Partner",
-        "clearChipText": "30+ Years Developing Enterprise Software"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": false
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Microsoft Software Experts",
+            "description": "We build powerful software using .NET and Azure, designed for your business success."
+          }
+        ]
       },
       "buttons": [
         {
