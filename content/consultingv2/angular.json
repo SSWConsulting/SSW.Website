@@ -162,7 +162,9 @@
           "guid": "8vjzd",
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (13).jpg",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": "Automate"
+          },
           "icon": "info",
           "heading": "AI Agents: Get More Done, Faster",
           "description": "Let AI do the tasks that take up your team's time. This makes work faster and lets your people focus on bigger things.",
@@ -174,7 +176,9 @@
           "guid": "fwq6ac",
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (14).jpg",
           "altText": "hi",
-          "chips": {},
+          "chips": {
+            "filledChipText": "Insights"
+          },
           "icon": "info",
           "heading": "AI Trained on Your Data",
           "description": "Get the information you need from your company data, right away. Provide your teams with the insights they need to make data-driven decisions",
@@ -210,7 +214,9 @@
           "guid": "b0rt7e",
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (14).jpg",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": "Insights"
+          },
           "icon": "info",
           "heading": "AI Trained on Your Data",
           "description": "Get the information you need from your company data, right away. Provide your teams with the insights they need to make data-driven decisions",
