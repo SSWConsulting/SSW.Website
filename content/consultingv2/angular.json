@@ -46,6 +46,31 @@
       "_template": "imageTextBlock"
     },
     {
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Better Stack/Infrastructure monitoring _ Better Stack/flare-d7d01fa723928dd1b472b4e1dec1f6c9c6cfe7e0da35e3ed594d96ee63d3e5e9.png",
+        "bleed": false
+      },
+      "heading": "Trusted by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (46).png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (41).png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (28).png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (47).png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
       "isStacked": true,
       "heading": "Software Built to Perform.",
       "isH1": false,
@@ -211,31 +236,6 @@
         "bleed": true
       },
       "_template": "cardCarousel"
-    },
-    {
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/Louis Test Images/Better Stack/Infrastructure monitoring _ Better Stack/flare-d7d01fa723928dd1b472b4e1dec1f6c9c6cfe7e0da35e3ed594d96ee63d3e5e9.png",
-        "bleed": false
-      },
-      "heading": "Trusted by",
-      "isWhiteImages": true,
-      "logos": [
-        {
-          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (46).png"
-        },
-        {
-          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (41).png"
-        },
-        {
-          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (28).png"
-        },
-        {
-          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (47).png",
-          "altText": "Logo"
-        }
-      ],
-      "_template": "logoCarousel"
     },
     {
       "heading": "Why should you choose SSW?",
