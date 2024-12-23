@@ -395,6 +395,9 @@
       "featureColumns": {
         "twoColumns": true
       },
+      "background": {
+        "backgroundColour": 5
+      },
       "_template": "imageTextBlock"
     }
   ]
