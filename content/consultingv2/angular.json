@@ -19,8 +19,8 @@
       "isH1": true,
       "description": "Get secure, scalable software tailored to your needs. We build solutions that perform and evolve with your business.\n",
       "chips": {
-        "filledChipText": "",
-        "clearChipText": ""
+        "filledChipText": "🥇 Microsoft Gold Partner",
+        "clearChipText": "30+ Years Developing Enterprise Software"
       },
       "featureColumns": {
         "twoColumns": false
