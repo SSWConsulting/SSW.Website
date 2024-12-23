@@ -1,0 +1,404 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Angular Apps",
+    "description": "With over 10ys experience creating enterprise Angular apps for private and public sectors, SSW can design, build, and deliver your dream Angular app."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for Angular Apps",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "The Software You Need, Delivered",
+      "isH1": true,
+      "description": "Get secure, scalable software tailored to your needs. We build solutions that perform and evolve with your business.\n",
+      "chips": {
+        "filledChipText": "🥇 Microsoft Gold Partner",
+        "clearChipText": "30+ Years Developing Enterprise Software"
+      },
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Tell Us About Your Project ",
+          "icon": "BiRightArrowAlt",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_2.png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Better Stack/Infrastructure monitoring _ Better Stack/flare-d7d01fa723928dd1b472b4e1dec1f6c9c6cfe7e0da35e3ed594d96ee63d3e5e9.png",
+        "bleed": false
+      },
+      "heading": "Trusted by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (46).png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (41).png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-3 (28).png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (47).png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Software Built to Perform.",
+      "isH1": false,
+      "body": "We handle everything: software, cloud, and AI, making your tech work together seamlessly.",
+      "buttons": [
+        {
+          "buttonText": "Check our Tech Stack",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "AI",
+          "cardGuidList": {
+            "guid": "pnydz7",
+            "cardGuidList": [
+              "ph03kn",
+              "b0rt7e",
+              "8vjzd"
+            ]
+          }
+        },
+        {
+          "categoryName": "Web + APIs",
+          "cardGuidList": {
+            "guid": "s3hhhj",
+            "cardGuidList": [
+              "5fwpm",
+              "gib7jf",
+              "b0rt7e"
+            ]
+          }
+        },
+        {
+          "categoryName": "Mobile",
+          "cardGuidList": {
+            "guid": "gne5mm",
+            "cardGuidList": [
+              "b0rt7e",
+              "9jy8rh",
+              "ph03kn"
+            ]
+          }
+        },
+        {
+          "categoryName": "Databases",
+          "cardGuidList": {
+            "guid": "uudy9e",
+            "cardGuidList": [
+              "b0rt7e",
+              "gib7jf",
+              "9jy8rh"
+            ]
+          }
+        },
+        {
+          "categoryName": "Platforms",
+          "cardGuidList": {
+            "guid": "r22d8r",
+            "cardGuidList": [
+              "k1rz64",
+              "7f0p7d",
+              "oltw1q",
+              "9jy8rh",
+              "ph03kn",
+              "gib7jf"
+            ]
+          }
+        }
+      ],
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "9jy8rh",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (16).jpg",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "clearChipText": ""
+          },
+          "icon": "info",
+          "heading": "Custom Chatbots",
+          "description": "Give your customers instant help and answers anytime they need it. AI chatbots handle questions and support, 24/7",
+          "embeddedButton": {
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
+          }
+        },
+        {
+          "guid": "8vjzd",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (13).jpg",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "",
+            "clearChipText": ""
+          },
+          "icon": "info",
+          "heading": "AI Agents",
+          "description": "AI Agents do the tasks that take up your team's time. This makes work faster and lets your people focus on bigger things.",
+          "embeddedButton": {
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
+          }
+        },
+        {
+          "guid": "fwq6ac",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (14).jpg",
+          "altText": "hi",
+          "chips": {
+            "filledChipText": "",
+            "clearChipText": ""
+          },
+          "icon": "info",
+          "heading": "Train AI on Your Data",
+          "description": "Stop searching through piles of information. AI can quickly find the exact answers you need from all your company data.",
+          "embeddedButton": {
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
+          }
+        },
+        {
+          "guid": "gib7jf",
+          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(2).png",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Database Development",
+          "description": "Develop robust and efficient systems for seamless data management.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "5fwpm",
+          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(5).png",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Mobile Development",
+          "description": "Build cutting-edge, user-focused mobile apps for iOS and Android platforms.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "b0rt7e",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (14).jpg",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "",
+            "clearChipText": ""
+          },
+          "icon": "info",
+          "heading": "AI Trained on Your Data",
+          "description": "Stop searching through piles of information. AI can quickly find the exact answers you need from all your company data.",
+          "embeddedButton": {
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
+          }
+        },
+        {
+          "guid": "ph03kn",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (16).jpg",
+          "altText": "AI Development",
+          "chips": {
+            "clearChipText": ""
+          },
+          "heading": "Custom Chatbots",
+          "description": "Give your customers instant help and answers anytime they need it. AI chatbots can handle questions and support, 24/7.",
+          "embeddedButton": {
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Better Stack/Infrastructure monitoring _ Better Stack/flare-d7d01fa723928dd1b472b4e1dec1f6c9c6cfe7e0da35e3ed594d96ee63d3e5e9.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Why should you choose SSW?",
+      "body": "At SSW, we focus on getting your project done right the first time. We reduce risks by using proven processes and keeping communication clear and open. Our team has 30 years of experience and is trusted by Microsoft as a Gold Certified Partner. With SSW, you’ll get experts who care about your success.",
+      "accordionItems": [
+        {
+          "label": "What services does SSW offer?",
+          "content": "We help businesses solve problems by building software that works. Using proven technology and best practices, we make the process faster, more reliable, and cost-effective.\n"
+        },
+        {
+          "label": "What methodologies do you use to develop software?",
+          "content": "We use Scrum and DevOps to stay aligned with your goals, adapt quickly, and deliver high-quality results.\n"
+        },
+        {
+          "label": "How does SSW ensure high-quality software development?",
+          "content": "We focus on clear communication, transparency, and quick feedback. By following Scrum and DevOps, we make sure the software meets your needs every step of the way.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "How we enable next-gen companies succeed",
+      "isH1": false,
+      "body": "",
+      "buttons": [
+        {
+          "buttonText": "Client Testimonials",
+          "colour": 0
+        },
+        {
+          "buttonText": "All Case Studies",
+          "colour": 1
+        }
+      ],
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ye7r7",
+          "image": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (35).png",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Custom Software Development",
+            "clearChipText": ""
+          },
+          "icon": "info",
+          "heading": "Solving Warehouse Woes for Streamline Supply Co.",
+          "description": "Streamline Supply Co., a national distributor, struggled with disorganized warehouse operations using outdated systems. We built them custom software to manage inventory and track shipments in real-time, leading to significantly faster processing and fewer errors.",
+          "embeddedButton": {
+            "buttonText": "Read More"
+          }
+        },
+        {
+          "guid": "imtiro",
+          "image": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (36).png",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Software Audit"
+          },
+          "icon": "info",
+          "heading": "A Software Check-Up Makes All the Difference",
+          "description": "Tech Solutions Inc.'s core business application was slow and unreliable, frustrating their team. We audited their software, identified key issues, and implemented optimizations that dramatically improved performance and user satisfaction.",
+          "embeddedButton": {
+            "buttonText": "Read More"
+          }
+        },
+        {
+          "guid": "m0bkqf",
+          "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image.png",
+          "altText": "",
+          "chips": {
+            "filledChipText": "Custom App Development"
+          },
+          "heading": "Connecting with Customers Like Never Before",
+          "description": "Fresh Eats Local, a farm-to-table food delivery service, needed a better way to engage customers. We developed a user-friendly mobile app allowing customers to easily order, track deliveries, and support local farmers, driving significant business growth.",
+          "embeddedButton": {
+            "buttonText": "Read More"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your  project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "",
+      "isH1": false,
+      "description": "",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
+}
