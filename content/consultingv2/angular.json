@@ -74,7 +74,7 @@
       "isStacked": true,
       "heading": "Software Built to Perform.",
       "isH1": false,
-      "body": "",
+      "body": "We handle everything: software, cloud, and AI, making your tech work together seamlessly.",
       "buttons": [
         {
           "buttonText": "Explore Our Tech Stack"
@@ -144,7 +144,7 @@
           }
         }
       ],
-      "cardStyle": 0,
+      "cardStyle": 1,
       "cards": [
         {
           "guid": "9jy8rh",
