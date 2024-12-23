@@ -19,17 +19,11 @@
       "isH1": true,
       "description": "Get secure, scalable software tailored to your needs. We build solutions that perform and evolve with your business.\n",
       "chips": {
-        "filledChipText": "✓ 28+ Enterprise Clients",
-        "clearChipText": "5000+ Delivered Projects"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": false,
-        "features": [
-          {
-            "heading": "",
-            "description": ""
-          }
-        ]
+        "twoColumns": false
       },
       "buttons": [
         {
