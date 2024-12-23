@@ -157,7 +157,8 @@
           "heading": "Better Customer Service with AI",
           "description": "Give your customers instant help and answers anytime they need it. AI chatbots handle questions and support, 24/7",
           "embeddedButton": {
-            "buttonText": "Read More"
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
           }
         },
         {
@@ -172,7 +173,8 @@
           "heading": "Get More Done, Faster",
           "description": "AI Agents do the tasks that take up your team's time. This makes work faster and lets your people focus on bigger things.",
           "embeddedButton": {
-            "buttonText": "Learn How"
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
           }
         },
         {
@@ -226,7 +228,8 @@
           "heading": "AI Trained on Your Data",
           "description": "Stop searching through piles of information. AI can quickly find the exact answers you need from all your company data.",
           "embeddedButton": {
-            "buttonText": "Learn How"
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
           }
         },
         {
@@ -239,7 +242,8 @@
           "heading": "Better Customer Service with AI",
           "description": "Give your customers instant help and answers anytime they need it. AI chatbots can handle questions and support, 24/7.",
           "embeddedButton": {
-            "buttonText": "Explore AI Services"
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
           }
         }
       ],
