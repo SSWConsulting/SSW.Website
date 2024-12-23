@@ -186,7 +186,7 @@
             "clearChipText": ""
           },
           "icon": "info",
-          "heading": "AI Trained on Your Data",
+          "heading": "Train AI on Your Data",
           "description": "Stop searching through piles of information. AI can quickly find the exact answers you need from all your company data.",
           "embeddedButton": {
             "buttonText": "Read More ",
