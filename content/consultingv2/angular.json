@@ -189,7 +189,8 @@
           "heading": "AI Trained on Your Data",
           "description": "Stop searching through piles of information. AI can quickly find the exact answers you need from all your company data.",
           "embeddedButton": {
-            "buttonText": "Learn How"
+            "buttonText": "Read More ",
+            "icon": "BiSolidRightArrow"
           }
         },
         {
