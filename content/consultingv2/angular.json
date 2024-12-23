@@ -208,23 +208,23 @@
         },
         {
           "guid": "b0rt7e",
-          "image": "/images/Louis Test Images/Incident/Status Pages _ incident.io/image_(1).png",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (14).jpg",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Web Development",
-          "description": "Create stylish, functional, and user-friendly websites to elevate your online presence.",
+          "heading": "AI Trained on Your Data",
+          "description": "Get the information you need from your company data, right away. Provide your teams with the insights they need to make data-driven decisions",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
         },
         {
           "guid": "ph03kn",
-          "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image.png",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (16).jpg",
           "altText": "AI Development",
           "chips": {},
-          "heading": "AI Development Services",
-          "description": "From chatbots to smarter apps, we help you streamline operations and save time.",
+          "heading": "Better Customer Service with AI",
+          "description": "Use AI to talk to your customers. Help them faster and give them better service, any time they need it.",
           "embeddedButton": {
             "buttonText": "Explore AI Services"
           }
