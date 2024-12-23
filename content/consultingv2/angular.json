@@ -151,7 +151,7 @@
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (16).jpg",
           "altText": "Lorem Ipsum",
           "chips": {
-            "clearChipText": "Connect"
+            "clearChipText": ""
           },
           "icon": "info",
           "heading": "Better Customer Service with AI",
@@ -166,7 +166,7 @@
           "altText": "Lorem Ipsum",
           "chips": {
             "filledChipText": "",
-            "clearChipText": "Automate"
+            "clearChipText": ""
           },
           "icon": "info",
           "heading": "AI Agents: Get More Done, Faster",
@@ -181,7 +181,7 @@
           "altText": "hi",
           "chips": {
             "filledChipText": "",
-            "clearChipText": "Insights"
+            "clearChipText": ""
           },
           "icon": "info",
           "heading": "AI Trained on Your Data",
@@ -220,7 +220,7 @@
           "altText": "Lorem Ipsum",
           "chips": {
             "filledChipText": "",
-            "clearChipText": "Insights"
+            "clearChipText": ""
           },
           "icon": "info",
           "heading": "AI Trained on Your Data",
@@ -234,7 +234,7 @@
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (16).jpg",
           "altText": "AI Development",
           "chips": {
-            "clearChipText": "Connect"
+            "clearChipText": ""
           },
           "heading": "Better Customer Service with AI",
           "description": "Give your customers instant help and answers anytime they need it. AI chatbots and voice systems can handle questions and support, making your customers happier and saving you time and money.",
