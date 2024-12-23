@@ -286,7 +286,7 @@
           "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": "Custom Software",
+            "filledChipText": "Custom Software Development",
             "clearChipText": ""
           },
           "icon": "info",
@@ -300,7 +300,9 @@
           "guid": "imtiro",
           "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": "Software Audit"
+          },
           "icon": "info",
           "heading": "A Software Check-Up Makes All the Difference",
           "description": "Tech Solutions Inc.'s core business application was slow and unreliable, frustrating their team. We audited their software, identified key issues, and implemented optimizations that dramatically improved performance and user satisfaction.",
@@ -313,7 +315,7 @@
           "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
           "altText": "",
           "chips": {
-            "filledChipText": "3 min Read"
+            "filledChipText": "Custom App Development"
           },
           "heading": "Connecting with Customers Like Never Before",
           "description": "Fresh Eats Local, a farm-to-table food delivery service, needed a better way to engage customers. We developed a user-friendly mobile app allowing customers to easily order, track deliveries, and support local farmers, driving significant business growth.",
