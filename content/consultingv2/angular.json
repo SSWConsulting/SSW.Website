@@ -165,7 +165,8 @@
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (13).jpg",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": "Automate"
+            "filledChipText": "",
+            "clearChipText": "Automate"
           },
           "icon": "info",
           "heading": "AI Agents: Get More Done, Faster",
@@ -179,7 +180,8 @@
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (14).jpg",
           "altText": "hi",
           "chips": {
-            "filledChipText": "Insights"
+            "filledChipText": "",
+            "clearChipText": "Insights"
           },
           "icon": "info",
           "heading": "AI Trained on Your Data",
@@ -217,7 +219,8 @@
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (14).jpg",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": "Insights"
+            "filledChipText": "",
+            "clearChipText": "Insights"
           },
           "icon": "info",
           "heading": "AI Trained on Your Data",
