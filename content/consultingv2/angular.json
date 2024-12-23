@@ -155,7 +155,7 @@
           },
           "icon": "info",
           "heading": "Better Customer Service with AI",
-          "description": "Use AI to talk to your customers. Help them faster and give them better service, any time they need it.",
+          "description": "Give your customers instant help and answers anytime they need it. AI chatbots and voice systems can handle questions and support, making your customers happier and saving you time and money.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -185,7 +185,7 @@
           },
           "icon": "info",
           "heading": "AI Trained on Your Data",
-          "description": "Get the information you need from your company data, right away. Provide your teams with the insights they need to make data-driven decisions",
+          "description": "Stop searching through piles of information. AI can quickly find the exact answers you need from all your company data, helping everyone make smarter decisions, faster.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -224,7 +224,7 @@
           },
           "icon": "info",
           "heading": "AI Trained on Your Data",
-          "description": "Get the information you need from your company data, right away. Provide your teams with the insights they need to make data-driven decisions",
+          "description": "Stop searching through piles of information. AI can quickly find the exact answers you need from all your company data, helping everyone make smarter decisions, faster.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -237,7 +237,7 @@
             "clearChipText": "Connect"
           },
           "heading": "Better Customer Service with AI",
-          "description": "Use AI to talk to your customers. Help them faster and give them better service, any time they need it.",
+          "description": "Give your customers instant help and answers anytime they need it. AI chatbots and voice systems can handle questions and support, making your customers happier and saving you time and money.",
           "embeddedButton": {
             "buttonText": "Explore AI Services"
           }
