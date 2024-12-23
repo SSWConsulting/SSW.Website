@@ -13,12 +13,11 @@
     },
     {
       "topLabel": {
-        "labelText": "Enterprise Ready",
-        "icon": "BiCodeBlock"
+        "labelText": ""
       },
-      "heading": "Microsoft-Powered Solutions Built for Scale",
+      "heading": "The Software You Need, Made Easy",
       "isH1": true,
-      "description": "",
+      "description": "Get secure, scalable software tailored to your needs. We build solutions that perform and evolve with your business.\n",
       "chips": {
         "filledChipText": "✓ 28+ Enterprise Clients",
         "clearChipText": "5000+ Delivered Projects"
@@ -28,7 +27,7 @@
         "features": [
           {
             "heading": "",
-            "description": "Accelerate your digital transformation with battle-tested development teams and enterprise-grade technology stack"
+            "description": ""
           }
         ]
       },
