@@ -123,36 +123,36 @@
       "cards": [
         {
           "guid": "9jy8rh",
-          "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(6).png",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (16).jpg",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Cloud and Infrastructure",
-          "description": "Design scalable, secure, and resilient cloud computing environments.",
+          "heading": "Better Customer Service with AI",
+          "description": "Use AI to talk to your customers. Help them faster and give them better service, any time they need it.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
         },
         {
           "guid": "8vjzd",
-          "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image_(6).png",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (13).jpg",
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Video Production",
-          "description": "Create captivating, high-quality visual content for impactful storytelling.",
+          "heading": "AI Agents: Get More Done, Faster",
+          "description": "Let AI do the tasks that take up your team's time. This makes work faster and lets your people focus on bigger things.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
         },
         {
           "guid": "fwq6ac",
-          "image": "/images/Louis Test Images/Incident/Supercharged with AI _ incident.io/image_(1).png",
+          "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (14).jpg",
           "altText": "hi",
           "chips": {},
           "icon": "info",
-          "heading": "hi",
-          "description": "Craft visually stunning and intuitive user interfaces for seamless experiences.",
+          "heading": "AI Trained on Your Data",
+          "description": "Get the information you need from your company data, right away. Provide your teams with the insights they need to make data-driven decisions",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -285,10 +285,13 @@
           "guid": "ye7r7",
           "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": "Custom Software",
+            "clearChipText": ""
+          },
           "icon": "info",
-          "heading": "Pinecone",
-          "description": "How Pinecone unifies their support ecosystem with SSW",
+          "heading": "Solving Warehouse Woes for Streamline Supply Co.",
+          "description": "Streamline Supply Co., a national distributor, struggled with disorganized warehouse operations using outdated systems. We built them custom software to manage inventory and track shipments in real-time, leading to significantly faster processing and fewer errors.",
           "embeddedButton": {
             "buttonText": "Read More"
           }
@@ -299,8 +302,8 @@
           "altText": "Lorem Ipsum",
           "chips": {},
           "icon": "info",
-          "heading": "Elevenlabs",
-          "description": "How ElevenLabs streamlines developer onboarding with SSW",
+          "heading": "A Software Check-Up Makes All the Difference",
+          "description": "Tech Solutions Inc.'s core business application was slow and unreliable, frustrating their team. We audited their software, identified key issues, and implemented optimizations that dramatically improved performance and user satisfaction.",
           "embeddedButton": {
             "buttonText": "Read More"
           }
@@ -309,10 +312,11 @@
           "guid": "m0bkqf",
           "image": "/images/Louis Test Images/Incident/On-call as it should be _ incident.io/image_(4).png",
           "altText": "",
-          "chips": {},
-          "icon": "info",
-          "heading": "Scale",
-          "description": "How Scale AI uses SSW for interactive API documentation",
+          "chips": {
+            "filledChipText": "3 min Read"
+          },
+          "heading": "Connecting with Customers Like Never Before",
+          "description": "Fresh Eats Local, a farm-to-table food delivery service, needed a better way to engage customers. We developed a user-friendly mobile app allowing customers to easily order, track deliveries, and support local farmers, driving significant business growth.",
           "embeddedButton": {
             "buttonText": "Read More"
           }
