@@ -52,11 +52,11 @@
       "body": "We're your partner for powerful, user-focused software. Get solutions that solve your challenges, delight your customers, and drive your business forward.",
       "buttons": [
         {
-          "buttonText": "Case Studies",
-          "colour": 1
+          "buttonText": "Explore Our Tech Stack"
         },
         {
-          "buttonText": "Explore Our Tech Stack"
+          "buttonText": "Case Studies",
+          "colour": 1
         }
       ],
       "categoryGroup": [
