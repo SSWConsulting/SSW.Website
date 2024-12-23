@@ -1,4 +1,5 @@
 import { NextSeo, NextSeoProps } from "next-seo";
+import React from "react";
 import layoutData from "../../content/global/index.json";
 import { NEXT_SEO_DEFAULT } from "../../next-seo.config";
 import { TextInputWithCount } from "../textInputWithCount/textInputWithCount";
@@ -40,13 +41,18 @@ export const SEO = ({ seo }) => {
 
 export const seoSchema = {
   type: "object",
-  label: "SEO Values",
+  label: "Page Metadata",
+  component: "group",
+  title: "SEO",
+  description: "Update the title, description, URL, and OG image",
   name: "seo",
   fields: [
     {
       type: "string",
       label: "Title (70 characters)",
       name: "title",
+      description:
+        "This is going to be the meta (SEO) title used, to be indexed by search engines. It should be 70 characters or less.",
       ui: {
         validate: (value) => {
           if (value && value.length > 70) {
@@ -61,6 +67,8 @@ export const seoSchema = {
       label: "Description (150 characters)",
       name: "description",
       component: "textarea",
+      description:
+        "This is going to be the meta (SEO) description used, to be indexed by search engines. It should be 150 characters or less.",
       ui: {
         validate: (value) => {
           if (value && value.length > 150) {
@@ -77,6 +85,8 @@ export const seoSchema = {
     },
     {
       type: "boolean",
+      desciption:
+        "DISREGARD THIS FIELD. This is for the old breadcrumb components only.",
       name: "showBreadcrumb",
       label: "Show Breadcrumb",
     },

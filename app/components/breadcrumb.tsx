@@ -3,21 +3,28 @@ import React, { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 
 interface BreadcrumbsProps {
+  additionalReplacements?: { from: string; to: string }[];
   path: string;
-  suffix: string;
   title: string;
   seoSchema?: {
     title?: string;
   };
 }
-export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
+export const Breadcrumbs: FC<BreadcrumbsProps> = ({
+  additionalReplacements = [],
+  path,
+  title,
+  seoSchema,
+}) => {
   const listItemStyling =
     "breadcrumb_item inline text-xs text-gray-700 no-underline not-first:before:content-bread not-first:before:px-2 before:list-none";
-
+  if (path && title) {
+    additionalReplacements.push({ from: path, to: `${title}` });
+  }
   return (
     <div
-      {...(props.seoSchema
-        ? { "data-tina-field": tinaField(props.seoSchema, "title") }
+      {...(seoSchema
+        ? { "data-tina-field": tinaField(seoSchema, "title") }
         : {})}
     >
       <NextBreadcrumbs
@@ -37,7 +44,8 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = (props) => {
           { from: "clients", to: "Clients" },
           { from: "live", to: "Live" },
           { from: "logo", to: "Logo" },
-          { from: props.path, to: `${props.title}` },
+          { from: "articles", to: "Articles" },
+          ...additionalReplacements,
         ]}
         useDefaultStyle={true}
         activeItemClassName={listItemStyling}

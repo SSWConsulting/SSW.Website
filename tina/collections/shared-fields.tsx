@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { TinaField } from "tinacms";
-
+import { TinaInfo } from "../../components/tina/tina-info";
 // TODO: Remove Warning message once fixed by Tina
 // Link: https://github.com/SSWConsulting/SSW.Website/issues/1404
 export const tipField: TinaField = {
@@ -11,11 +11,11 @@ export const tipField: TinaField = {
   ui: {
     component: () => {
       return (
-        <div className="whitespace-pre-wrap">
+        <TinaInfo>
           {" "}
-          💡 Please fill out the 'Filename' field first at the botton of the
+          💡 Please fill out the 'Filename' field first at the bottom of the
           page.
-        </div>
+        </TinaInfo>
       );
     },
   },

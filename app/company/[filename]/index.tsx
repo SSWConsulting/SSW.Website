@@ -28,7 +28,6 @@ export default function CompanyPage({ tinaProps, props }) {
             <Section className="mx-auto min-h-24 w-full max-w-9xl px-8 py-5 md:min-h-16">
               <Breadcrumbs
                 path={removeExtension(props.variables.relativePath)}
-                suffix={data.global.breadcrumbSuffix}
                 title={data.company.seo?.title}
                 seoSchema={data.company.seo}
               />
@@ -45,7 +44,7 @@ export default function CompanyPage({ tinaProps, props }) {
         {data.company.subTitle && (
           <section
             className={classNames(
-              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
+              "prose prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 mx-auto w-full max-w-9xl flex-row px-8 pb-8",
               data.company.fullWidthBody ? "" : "md:flex"
             )}
           >

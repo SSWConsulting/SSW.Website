@@ -43,6 +43,73 @@
   },
   "youtubeChannelLink": "https://www.youtube.com/@SSWTV",
   "breadcrumbSuffix": "SSW Consulting - Sydney, Brisbane, Melbourne, Newcastle",
+  "breadcrumbReplacements": [
+    {
+      "from": "consulting",
+      "to": "Services"
+    },
+    {
+      "from": "products",
+      "to": "Products"
+    },
+    {
+      "from": "offices",
+      "to": "Offices"
+    },
+    {
+      "from": "training",
+      "to": "Training"
+    },
+    {
+      "from": "employment",
+      "to": "Employment"
+    },
+    {
+      "from": "video-production",
+      "to": "Video Production"
+    },
+    {
+      "from": "Training-videos",
+      "to": "Training Videos"
+    },
+    {
+      "from": "industry",
+      "to": "Industry"
+    },
+    {
+      "from": "company",
+      "to": "Company"
+    },
+    {
+      "from": "events",
+      "to": "Events"
+    },
+    {
+      "from": "partners",
+      "to": "Partners"
+    },
+    {
+      "from": "netug",
+      "to": ".NET User Group"
+    },
+    {
+      "from": "clients",
+      "to": "Clients"
+    },
+    {
+      "from": "live",
+      "to": "Live"
+    },
+    {
+      "from": "logo",
+      "to": "Logo"
+    },
+    {
+      "from": "articles",
+      "to": "Articles"
+    }
+  ],
+  "breadcrumbHomeRoute": "Home",
   "bookingButtonText": "Book a FREE Initial Meeting",
   "bookingPhone": "+61 2 9953 3000",
   "defaultOGImage": "/images/ssw-default-og.jpg",
@@ -50,7 +117,7 @@
     {
       "url": "/offices/sydney",
       "name": "SSW Sydney Office",
-      "streetAddress": "Level 1, 81 - 91 Military Road",
+      "streetAddress": "Level 1, 81-91 Military Road",
       "suburb": "Neutral Bay",
       "addressLocality": "Sydney",
       "addressRegion": "NSW",
@@ -114,7 +181,7 @@
     {
       "url": "https://ssw.fr",
       "name": "SSW Europe Office",
-      "streetAddress": "Level 4 – 19 Rue du Fossé des Treize",
+      "streetAddress": "Level 4–19 Rue du Fossé des Treize",
       "addressLocality": "Strasbourg, France",
       "addressRegion": "Strasbourg",
       "addressCountry": "France",
