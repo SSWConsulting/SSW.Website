@@ -27,7 +27,8 @@
         "features": [
           {
             "heading": "Microsoft Software Experts",
-            "description": "We build powerful software using .NET and Azure, designed for your business success."
+            "description": "We build powerful software using .NET and Azure, designed for your business success.",
+            "icon": "BiLogoMicrosoft"
           }
         ]
       },
