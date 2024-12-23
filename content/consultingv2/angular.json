@@ -15,7 +15,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "The Software You Need, Made Easy",
+      "heading": "The Software You Need, Delivered",
       "isH1": true,
       "description": "Get secure, scalable software tailored to your needs. We build solutions that perform and evolve with your business.\n",
       "chips": {
@@ -27,7 +27,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule Technical Consultation",
+          "buttonText": "Tell Us About Your Project ",
           "icon": "BiRightArrowAlt",
           "colour": 0
         }
