@@ -329,7 +329,7 @@ export default function NETUGPage(
               />
             </Section>
           )}
-          <Container className="prose py-4 prose-h1:pt-2" size="custom">
+          <Container className="prose prose-h1:pt-2 py-4" size="custom">
             <TinaMarkdown
               content={data.userGroupPage._body}
               components={componentRenderer}

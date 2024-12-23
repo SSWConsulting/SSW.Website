@@ -91,6 +91,12 @@ const LatestTech = dynamic(() =>
 
 import { EventBooking } from "./training/eventBooking";
 
+const AccordionBlock = dynamic(() =>
+  import("./blocks/imageComponents/accordionBlock/accordionBlock").then(
+    (mod) => mod.AccordionBlock
+  )
+);
+
 const Breadcrumbs = dynamic(() =>
   import("./blocks/breadcrumbs/breadcrumbs").then((mod) => mod.Breadcrumbs)
 );
@@ -115,6 +121,28 @@ const TrainingInformation = dynamic(() =>
 const TrainingLearningOutcome = dynamic(() =>
   import("./training/trainingLearningOutcome").then(
     (mod) => mod.TrainingLearningOutcome
+  )
+);
+
+const LogoCarousel = dynamic(() =>
+  import("./blocks/logoCarousel/logoCarousel").then((mod) => mod.LogoCarousel)
+);
+
+const ImageTextBlock = dynamic(() =>
+  import("./blocks/imageComponents/imageTextBlock/imageTextBlock").then(
+    (mod) => mod.ImageTextBlock
+  )
+);
+
+const CardCarousel = dynamic(() =>
+  import("./blocks/cardCarousel/cardCarousel/cardCarousel").then(
+    (mod) => mod.CardCarousel
+  )
+);
+
+const TechnologyCardCarousel = dynamic(() =>
+  import("./blocks/cardCarousel/technologyCards/technologyCardCarousel").then(
+    (mod) => mod.TechnologyCardCarousel
   )
 );
 
@@ -150,6 +178,11 @@ const componentMap = {
   GridLayout,
   FixedColumns,
   HorizontalCard,
+  LogoCarousel,
+  ImageTextBlock,
+  AccordionBlock,
+  CardCarousel,
+  TechnologyCardCarousel,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
