@@ -150,7 +150,9 @@
           "guid": "9jy8rh",
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (16).jpg",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "clearChipText": "Connect"
+          },
           "icon": "info",
           "heading": "Better Customer Service with AI",
           "description": "Use AI to talk to your customers. Help them faster and give them better service, any time they need it.",
@@ -228,7 +230,9 @@
           "guid": "ph03kn",
           "image": "/images/Louis Test Images/Incident-io-batch/image_fx_ (16).jpg",
           "altText": "AI Development",
-          "chips": {},
+          "chips": {
+            "clearChipText": "Connect"
+          },
           "heading": "Better Customer Service with AI",
           "description": "Use AI to talk to your customers. Help them faster and give them better service, any time they need it.",
           "embeddedButton": {
