@@ -2,5 +2,55 @@
   "seo": {
     "title": "Enterprise Development and Consulting Services",
     "description": "Enterprise Development and Consulting Services"
-  }
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "Enterprise Development and Consulting Services",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Build Smarter Software, Faster.",
+      "isH1": false,
+      "description": "Whether you need custom software, better cloud setups, or AI-powered tools, we you solve tough problems with clean, scalable solutions.\n",
+      "chips": {
+        "filledChipText": "Lorem",
+        "clearChipText": "Ipsum"
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Global Reach",
+            "description": "We work with clients all over the world"
+          },
+          {
+            "heading": "Agile to the Core",
+            "description": "We deliver fast, iterate often, and keep you in the loop."
+          },
+          {
+            "heading": "30+ Years in the Game",
+            "description": "We've seen it all, from mainframes to microservices."
+          },
+          {
+            "heading": "Microsoft Gold Partner",
+            "description": "We know our stuff when it comes to the Microsoft stack."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Solution Architect",
+          "colour": 0
+        },
+        {
+          "buttonText": "Explore our Tech Stack",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    }
+  ]
 }
