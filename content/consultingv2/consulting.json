@@ -81,7 +81,7 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Solve Your Toughest Tech Challenges",
       "isH1": false,
       "body": "Whether you're grappling with outdated systems, struggling to scale, or looking to harness the power of AI, our team of experts has the experience and the tools to help you succeed.",
@@ -97,19 +97,14 @@
       ],
       "categoryGroup": [
         {
-          "categoryName": "Lorem",
+          "categoryName": "AI",
           "cardGuidList": {
             "guid": "eadrjs",
             "cardGuidList": []
           }
-        },
-        {
-          "categoryName": "Dolor",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
         }
       ],
+      "cardStyle": 1,
       "cards": [
         {
           "guid": "pcms6a",
