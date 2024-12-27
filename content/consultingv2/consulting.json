@@ -299,6 +299,10 @@
         {
           "label": "What's your approach to project management?",
           "content": "We keep it simple and efficient. No unnecessary bureaucracy or red tape. We use tools like GitHub and Azure DevOps to manage projects, track progress, and collaborate effectively. You'll have full visibility into what we're doing and how we're doing it.\n"
+        },
+        {
+          "label": "Okay, I'm intrigued. What's the next step?",
+          "content": "Let's chat! Book a free consultation, and we can discuss your project, answer your questions, and see if we're a good fit. No pressure, just a friendly conversation about your tech challenges.\n"
         }
       ],
       "buttons": [
