@@ -5,6 +5,9 @@
   },
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "finalBreadcrumb": "Enterprise Development and Consulting Services",
       "_template": "breadcrumbs"
     },
@@ -63,6 +66,16 @@
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (12).jpg"
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Lorem Ipsum",
+      "logos": [
+        {
+          "logo": "",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
     }
   ]
 }
