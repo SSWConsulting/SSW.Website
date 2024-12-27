@@ -112,6 +112,17 @@
       ],
       "cards": [
         {
+          "guid": "nlxn9",
+          "altText": "Data-Driven Insights",
+          "chips": {},
+          "icon": "info",
+          "heading": "Data-Driven Insights",
+          "description": "Unlock the hidden potential in your data. We'll help you build AI models that reveal valuable insights, predict trends, and optimize your business strategies.",
+          "embeddedButton": {
+            "buttonText": "Harness Your Data"
+          }
+        },
+        {
           "guid": "sbmjj4",
           "altText": "AI-Powered Automation",
           "chips": {},
