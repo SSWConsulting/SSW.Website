@@ -178,13 +178,13 @@
         },
         {
           "guid": "cveslo",
-          "altText": "Mobile App Development",
+          "altText": "API Integrations and Microservices",
           "chips": {},
           "icon": "info",
-          "heading": "Mobile App Development",
-          "description": "Need a mobile app that delights users and achieves your business goals? We build native and cross-platform apps that deliver exceptional experiences.",
+          "heading": "API Integrations and Microservices",
+          "description": "Seamlessly integrate your systems and data with robust APIs. We can also help you adopt a microservices architecture for greater scalability and flexibility.",
           "embeddedButton": {
-            "buttonText": "Build Your Mobile App"
+            "buttonText": "Explore API Solutions"
           }
         },
         {
