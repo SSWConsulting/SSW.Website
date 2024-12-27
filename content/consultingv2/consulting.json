@@ -291,6 +291,10 @@
         {
           "label": "My project is complex. Can you actually handle it?",
           "content": "Bring it on. We love a good challenge. We've tackled everything from legacy system overhauls to cutting-edge AI projects. Our team has the experience and the brainpower to handle even the most complex projects. We're not afraid to dive deep into the technical weeds and come up with innovative solutions.\n"
+        },
+        {
+          "label": "I've been burned by developers before. How do I know you'll deliver?",
+          "content": "We understand the skepticism. We're all about transparency and communication. You'll have direct access to our developers, and we'll keep you in the loop every step of the way. Plus, our rigorous testing process and commitment to best practices ensure that we deliver high-quality, reliable software.\n"
         }
       ],
       "buttons": [
