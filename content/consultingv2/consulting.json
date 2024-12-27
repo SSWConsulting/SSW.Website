@@ -387,10 +387,11 @@
       "cards": [
         {
           "guid": "y71k79",
+          "image": "/images/Louis Test Images/Incident-io-batch/naming_conventions.png",
           "altText": "Lorem Ipsum",
           "chips": {
             "filledChipText": "Coding Tips",
-            "clearChipText": "3 minutes"
+            "clearChipText": "5 minutes"
           },
           "icon": "BiLogoYoutube",
           "heading": "Coding Naming Conventions: The Secret to Readable and Maintainable Code",
