@@ -97,7 +97,7 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "",
       "isH1": false,
       "body": "",
