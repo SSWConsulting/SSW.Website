@@ -383,7 +383,7 @@
       "isStacked": true,
       "heading": "Insights: Tech Wisdom from the Trenches",
       "isH1": false,
-      "body": "We've spent decades in the software trenches, battling legacy code, chasing down bugs, and wrestling with the latest tech. We've learned a few things along the way - often the hard way. This series is about sharing that hard-won wisdom. No fluff, no jargon, just straight talk to help you build better software.",
+      "body": "We've spent decades in the software trenches, battling legacy code, chasing down bugs, and wrestling with the latest tech. We've learned a few things along the way - often the hard way. SSW is all about sharing that hard-won wisdom. No fluff, no jargon, just straight talk to help you build better software.",
       "cards": [
         {
           "guid": "y71k79",
@@ -404,28 +404,14 @@
           "guid": "skk29c",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": "Clean Code",
+            "filledChipText": ".NET8",
             "clearChipText": "3 minutes"
           },
-          "icon": "info",
-          "heading": "Simplicity: The Secret Weapon of Great Developers",
-          "description": "\"Simplicity is the ultimate sophistication.\" - Leonardo da Vinci. He wasn't a programmer, but he nailed it. In software, complexity is the enemy. It breeds bugs, slows down development, and makes maintenance a nightmare.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "icon": "BiSolidSpreadsheet",
+          "heading": ".NET 8: Why Your CTO is Probably Eyeing It (and You Should Too)",
+          "description": "CTOs have a tough job. They need to keep your company's tech stack from turning into a digital dinosaur while also making sure everything runs smoothly and securely. That's why .NET 8 is turning heads. It's not just another boring framework update; it's a legit upgrade for modern app development. Let's break down why.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Discover .NET 8"
           }
         },
         {
