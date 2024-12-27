@@ -216,13 +216,13 @@
         },
         {
           "guid": "31ni1q",
-          "altText": "Modern Web Experiences",
+          "altText": "Data Analytics and Insights",
           "chips": {},
           "icon": "info",
-          "heading": "Modern Web Experiences",
-          "description": "Need a website that's fast, responsive, and user-friendly? We build modern web applications that deliver exceptional experiences across all devices.",
+          "heading": "Data Analytics and Insights",
+          "description": "Unlock the hidden potential in your data. We'll help you build data pipelines, create insightful dashboards, and make data-driven decisions.",
           "embeddedButton": {
-            "buttonText": "Build Your Web Presence"
+            "buttonText": "Harness Your Data"
           }
         },
         {
