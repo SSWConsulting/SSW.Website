@@ -119,6 +119,17 @@
       "cardStyle": 1,
       "cards": [
         {
+          "guid": "d2c797",
+          "altText": "Scalable API Integrations",
+          "chips": {},
+          "icon": "info",
+          "heading": "Scalable API Integrations",
+          "description": "Seamlessly integrate your systems and data with powerful APIs. We'll help you build robust and scalable integrations that drive efficiency and growth.",
+          "embeddedButton": {
+            "buttonText": "Unlock Integration"
+          }
+        },
+        {
           "guid": "31ni1q",
           "altText": "Modern Web Experiences",
           "chips": {},
