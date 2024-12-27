@@ -260,13 +260,13 @@
         },
         {
           "guid": "nlxn9",
-          "altText": "Data-Driven Insights",
+          "altText": " Secure and Reliable Infrastructure",
           "chips": {},
           "icon": "info",
-          "heading": "Data-Driven Insights",
-          "description": "Unlock the hidden potential in your data. We'll help you build AI models that reveal valuable insights, predict trends, and optimize your business strategies.",
+          "heading": " Secure and Reliable Infrastructure",
+          "description": "Ensure your applications are always available and secure with a well-designed infrastructure. We offer both cloud and on-premises solutions",
           "embeddedButton": {
-            "buttonText": "Harness Your Data"
+            "buttonText": "Optimize Your Infrastructure"
           }
         }
       ],
