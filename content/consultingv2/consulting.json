@@ -167,13 +167,13 @@
         },
         {
           "guid": "w0s5o",
-          "altText": "Mobile-First Transformation",
+          "altText": "Mobile App Development",
           "chips": {},
           "icon": "info",
-          "heading": "Mobile-First Transformation",
-          "description": "Transform your business with a mobile-first strategy. We'll help you reach more customers, improve engagement, and drive growth through mobile channels.",
+          "heading": "Mobile App Development",
+          "description": "From concept to launch, we build native and cross-platform mobile apps that deliver exceptional user experiences and achieve your business objectives.",
           "embeddedButton": {
-            "buttonText": "Embrace Mobile"
+            "buttonText": "Build Your Mobile App"
           }
         },
         {
