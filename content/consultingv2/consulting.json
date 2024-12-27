@@ -131,13 +131,13 @@
       "cards": [
         {
           "guid": "xqr4pi",
-          "altText": "Lorem Ipsum",
+          "altText": "Enterprise Mobility Solutions",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Enterprise Mobility Solutions",
+          "description": "Equip your team with secure and efficient mobile tools. We'll help you manage devices, secure data, and improve productivity on the go.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Mobilize Your Team"
           }
         },
         {
