@@ -136,6 +136,20 @@
               "cveslo"
             ]
           }
+        },
+        {
+          "categoryName": "Training",
+          "cardGuidList": {
+            "guid": "h21nk5",
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Design & Marketing",
+          "cardGuidList": {
+            "guid": "ex59xr",
+            "cardGuidList": []
+          }
         }
       ],
       "cardStyle": 1,
