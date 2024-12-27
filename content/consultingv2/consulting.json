@@ -100,6 +100,18 @@
           "categoryName": "AI",
           "cardGuidList": {
             "guid": "eadrjs",
+            "cardGuidList": [
+              "pcms6a",
+              "sbmjj4",
+              "pyymtm",
+              "nlxn9"
+            ]
+          }
+        },
+        {
+          "categoryName": "Web + APIs",
+          "cardGuidList": {
+            "guid": "3u1nom",
             "cardGuidList": []
           }
         }
