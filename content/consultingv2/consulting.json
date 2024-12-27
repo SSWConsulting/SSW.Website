@@ -181,10 +181,10 @@
         },
         {
           "guid": "cveslo",
-          "altText": "Mobile App Developmen",
+          "altText": "Mobile App Development",
           "chips": {},
           "icon": "info",
-          "heading": "Mobile App Developmen",
+          "heading": "Mobile App Development",
           "description": "Need a mobile app that delights users and achieves your business goals? We build native and cross-platform apps that deliver exceptional experiences.",
           "embeddedButton": {
             "buttonText": "Build Your Mobile App"
