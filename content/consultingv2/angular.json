@@ -15,15 +15,37 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "The Software You Need, Delivered",
+      "heading": "Full Stack Mastery: From Front-End to Cloud",
       "isH1": true,
-      "description": "Get secure, scalable software tailored to your needs. We build solutions that perform and evolve with your business.\n",
+      "description": "",
       "chips": {
-        "filledChipText": "🥇 Microsoft Gold Partner",
-        "clearChipText": "30+ Years Developing Enterprise Software"
+        "filledChipText": "",
+        "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": true
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Modern UI/UX",
+            "description": "Engaging, high-performance UIs. Built with React, Angular, Blazor, Next.js, and Vue.js.",
+            "icon": "BiLogoReact"
+          },
+          {
+            "heading": "Scalable & Secure",
+            "description": ".NET 8, Clean Architecture, and Vertical Slices for a solid, scalable foundation.",
+            "icon": "BiSolidLock"
+          },
+          {
+            "heading": "Azure Mastery",
+            "description": "Maximize Azure's power. Deployment, automation, and resilience with Kubernetes and PowerShell.",
+            "icon": "BiLogoKubernetes"
+          },
+          {
+            "heading": "Data & AI Solutions",
+            "description": "Data-driven insights and intelligent applications. Powered by Power BI, Azure Synapse, and AI.",
+            "icon": "BiSolidMagicWand"
+          }
+        ]
       },
       "buttons": [
         {
@@ -72,9 +94,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Software Built to Perform.",
+      "heading": "Our Tech Stack: The Right Tools for the Job",
       "isH1": false,
-      "body": "We handle everything: software, cloud, and AI, making your tech work together seamlessly.",
+      "body": "We Speak Your Language: .NET, React, Azure, and a Whole Lot More.",
       "buttons": [
         {
           "buttonText": "Check our Tech Stack",
