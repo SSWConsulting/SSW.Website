@@ -327,25 +327,25 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": "Case Study"
       },
-      "heading": "Lorem Ipsum",
+      "heading": "BizCover: From Microservice Maze to Monolith Magic",
       "isH1": false,
-      "description": "",
+      "description": "We Marie Kondo'd BizCover's codebase, swapping their microservice sprawl for a tidy modular monolith. Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
       "chips": {
-        "filledChipText": "Lorem",
-        "clearChipText": "Ipsum"
+        "filledChipText": ".NET",
+        "clearChipText": "Modular Monolith (MoMo)"
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "New devs onboarded 85% faster.",
+            "description": "From 6 weeks to 5 days. Now that's what we call an improvement!"
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "Feature delivery speed? Boosted by 40%",
+            "description": "They're shipping code like there's no tomorrow."
           }
         ]
       },
