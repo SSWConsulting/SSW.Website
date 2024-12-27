@@ -97,6 +97,13 @@
       ],
       "categoryGroup": [
         {
+          "categoryName": "Modern Software",
+          "cardGuidList": {
+            "guid": "vt55qe",
+            "cardGuidList": []
+          }
+        },
+        {
           "categoryName": "🤖 AI",
           "cardGuidList": {
             "guid": "eadrjs",
