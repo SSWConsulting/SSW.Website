@@ -79,6 +79,51 @@
         }
       ],
       "_template": "logoCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "Solve Your Toughest Tech Challenges",
+      "isH1": false,
+      "body": "Whether you're grappling with outdated systems, struggling to scale, or looking to harness the power of AI, our team of experts has the experience and the tools to help you succeed.",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "Lorem",
+          "cardGuidList": {
+            "guid": "eadrjs",
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Dolor",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "guid": "sbmjj4",
+          "altText": "AI-Powered Automation",
+          "chips": {},
+          "icon": "info",
+          "heading": "AI-Powered Automation",
+          "description": " Tired of repetitive tasks eating up your team's time? We'll help you leverage AI to automate workflows, improve efficiency, and free up your people to focus on higher-value work.",
+          "embeddedButton": {
+            "buttonText": "Unlock Automation"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
     }
   ]
 }
