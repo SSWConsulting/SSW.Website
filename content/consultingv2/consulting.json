@@ -351,11 +351,11 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Read the Full Story",
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
+          "buttonText": "Why you should care?",
           "colour": 1
         }
       ],
