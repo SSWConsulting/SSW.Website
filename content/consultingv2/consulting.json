@@ -97,10 +97,10 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "",
       "isH1": false,
-      "body": "Whether you're grappling with outdated systems, struggling to scale, or looking to harness the power of AI, our team of experts has the experience and the tools to help you succeed.",
+      "body": "",
       "categoryGroup": [
         {
           "categoryName": "Modern Software",
@@ -162,7 +162,7 @@
           }
         }
       ],
-      "cardStyle": 1,
+      "cardStyle": 0,
       "cards": [
         {
           "guid": "xqr4pi",
