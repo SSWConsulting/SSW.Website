@@ -97,14 +97,7 @@
       ],
       "categoryGroup": [
         {
-          "categoryName": " Mobile",
-          "cardGuidList": {
-            "guid": "dqznen",
-            "cardGuidList": []
-          }
-        },
-        {
-          "categoryName": "AI",
+          "categoryName": "🤖AI",
           "cardGuidList": {
             "guid": "eadrjs",
             "cardGuidList": [
@@ -124,6 +117,13 @@
               "d2c797",
               "31ni1q"
             ]
+          }
+        },
+        {
+          "categoryName": " Mobile",
+          "cardGuidList": {
+            "guid": "dqznen",
+            "cardGuidList": []
           }
         }
       ],
