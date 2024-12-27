@@ -142,13 +142,13 @@
         },
         {
           "guid": "w0s5o",
-          "altText": "Lorem Ipsum",
+          "altText": "Mobile-First Transformation",
           "chips": {},
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Mobile-First Transformation",
+          "description": "Transform your business with a mobile-first strategy. We'll help you reach more customers, improve engagement, and drive growth through mobile channels.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Embrace Mobile"
           }
         },
         {
