@@ -112,14 +112,14 @@
       ],
       "cards": [
         {
-          "guid": "nlxn9",
-          "altText": "Data-Driven Insights",
+          "guid": "pcms6a",
+          "altText": "Custom AI Solutions",
           "chips": {},
           "icon": "info",
-          "heading": "Data-Driven Insights",
-          "description": "Unlock the hidden potential in your data. We'll help you build AI models that reveal valuable insights, predict trends, and optimize your business strategies.",
+          "heading": "Custom AI Solutions",
+          "description": "Need a specific AI solution tailored to your exact needs? We'll work with you to build custom AI models and applications that give you a competitive edge.",
           "embeddedButton": {
-            "buttonText": "Harness Your Data"
+            "buttonText": "Build Your AI Edge"
           }
         },
         {
@@ -142,6 +142,17 @@
           "description": "Build smarter chatbots, personalize interactions, and provide 24/7 support with AI-powered solutions. Enhance customer satisfaction and drive loyalty.",
           "embeddedButton": {
             "buttonText": "Transform Customer Service"
+          }
+        },
+        {
+          "guid": "nlxn9",
+          "altText": "Data-Driven Insights",
+          "chips": {},
+          "icon": "info",
+          "heading": "Data-Driven Insights",
+          "description": "Unlock the hidden potential in your data. We'll help you build AI models that reveal valuable insights, predict trends, and optimize your business strategies.",
+          "embeddedButton": {
+            "buttonText": "Harness Your Data"
           }
         }
       ],
