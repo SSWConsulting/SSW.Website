@@ -249,13 +249,13 @@
         },
         {
           "guid": "pyymtm",
-          "altText": "Intelligent Customer Experiences",
+          "altText": "Cloud Migration and Modernization",
           "chips": {},
           "icon": "info",
-          "heading": "Intelligent Customer Experiences",
-          "description": "Build smarter chatbots, personalize interactions, and provide 24/7 support with AI-powered solutions. Enhance customer satisfaction and drive loyalty.",
+          "heading": "Cloud Migration and Modernization",
+          "description": "Unlock scalability, flexibility, and cost savings by migrating to the cloud. We're Azure experts and can guide you through every step.",
           "embeddedButton": {
-            "buttonText": "Transform Customer Service"
+            "buttonText": "Go to Cloud"
           }
         },
         {
