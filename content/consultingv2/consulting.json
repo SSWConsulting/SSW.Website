@@ -205,13 +205,13 @@
         },
         {
           "guid": "d2c797",
-          "altText": "Scalable API Integrations",
+          "altText": "AI-Driven Automation",
           "chips": {},
           "icon": "info",
-          "heading": "Scalable API Integrations",
-          "description": "Seamlessly integrate your systems and data with powerful APIs. We'll help you build robust and scalable integrations that drive efficiency and growth.",
+          "heading": "AI-Driven Automation",
+          "description": "Automate repetitive tasks, streamline workflows, and free up your team to focus on more strategic initiatives with the power of AI.",
           "embeddedButton": {
-            "buttonText": "Unlock Integration"
+            "buttonText": "Unlock Automation"
           }
         },
         {
