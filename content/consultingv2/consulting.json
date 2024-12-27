@@ -121,6 +121,17 @@
           "embeddedButton": {
             "buttonText": "Unlock Automation"
           }
+        },
+        {
+          "guid": "pyymtm",
+          "altText": "Intelligent Customer Experiences",
+          "chips": {},
+          "icon": "info",
+          "heading": "Intelligent Customer Experiences",
+          "description": "Build smarter chatbots, personalize interactions, and provide 24/7 support with AI-powered solutions. Enhance customer satisfaction and drive loyalty.",
+          "embeddedButton": {
+            "buttonText": "Transform Customer Service"
+          }
         }
       ],
       "_template": "cardCarousel"
