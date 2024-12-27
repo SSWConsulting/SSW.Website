@@ -381,9 +381,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Insights: Tech Wisdom from the Trenches",
+      "heading": "Tech Wisdom from the Trenches",
       "isH1": false,
-      "body": "We've spent decades in the software trenches, battling legacy code, chasing down bugs, and wrestling with the latest tech. We've learned a few things along the way - often the hard way. SSW is all about sharing that hard-won wisdom. No fluff, no jargon, just straight talk to help you build better software.",
+      "body": "At SSW, we share decades of hands-on experience in software—tackling legacy code, fixing bugs, and navigating new tech. No fluff, no jargon—just practical advice to help you build better software.",
       "cards": [
         {
           "guid": "y71k79",
