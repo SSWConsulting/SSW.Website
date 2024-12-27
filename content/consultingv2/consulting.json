@@ -189,13 +189,13 @@
         },
         {
           "guid": "tj35hr",
-          "altText": "Legacy System Modernization",
+          "altText": "Legacy Modernization",
           "chips": {},
           "icon": "info",
-          "heading": "Legacy System Modernization",
-          "description": "Is your old software holding you back? We can help you modernize your legacy systems, improve performance, and reduce technical debt.",
+          "heading": "Legacy Modernization",
+          "description": " Don't let legacy software hold you back. We'll help you modernize your existing systems, improving performance, security, and maintainability.",
           "embeddedButton": {
-            "buttonText": "Modernize Your Systems"
+            "buttonText": "Modernize Now"
           }
         },
         {
