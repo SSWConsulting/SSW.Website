@@ -321,7 +321,7 @@
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Top",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_2.png"
       },
       "_template": "accordionBlock"
     },
@@ -365,7 +365,7 @@
       "mediaConfiguration": {
         "placement": "Right",
         "verticalPlacement": "Top",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (17).jpg"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
       },
       "_template": "imageTextBlock"
     }
