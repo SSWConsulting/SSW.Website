@@ -313,16 +313,6 @@
           "content": "We keep it simple and efficient. No unnecessary bureaucracy or red tape. We use tools like GitHub and Azure DevOps to manage projects, track progress, and collaborate effectively. You'll have full visibility into what we're doing and how we're doing it.\n"
         }
       ],
-      "buttons": [
-        {
-          "buttonText": "Case Studies",
-          "colour": 0
-        },
-        {
-          "buttonText": "Client Testimonials",
-          "colour": 1
-        }
-      ],
       "background": {
         "backgroundColour": 6
       },
