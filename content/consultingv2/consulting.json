@@ -237,13 +237,13 @@
         },
         {
           "guid": "sbmjj4",
-          "altText": "AI-Powered Automation",
+          "altText": " Enhanced Customer Experiences",
           "chips": {},
           "icon": "info",
-          "heading": "AI-Powered Automation",
-          "description": " Tired of repetitive tasks eating up your team's time? We'll help you leverage AI to automate workflows, improve efficiency, and free up your people to focus on higher-value work.",
+          "heading": " Enhanced Customer Experiences",
+          "description": "Build smarter chatbots, personalize interactions, and provide exceptional customer service with AI-powered solutions.",
           "embeddedButton": {
-            "buttonText": "Unlock Automation"
+            "buttonText": "Transform Customer Service"
           }
         },
         {
