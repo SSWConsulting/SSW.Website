@@ -72,10 +72,23 @@
         "backgroundColour": 6
       },
       "heading": "Lorem Ipsum",
+      "isWhiteImages": true,
       "logos": [
         {
-          "logo": "",
+          "logo": "/images/Louis Test Images/Incident-io-batch/xkInZMdrWkfsJk4MoLdXsAOQ.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/N7PtMlSPCIEq5WcTZJR2ZFVow.png",
           "altText": "Logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/SwgZrB14vBJ3e0b4SoNzOg9DnE.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/nLVeWBlDCvYsJZmYoJMrTlvc6U.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/NznFdPaT7rFFggVDNojLOiFYavk.png"
         }
       ],
       "_template": "logoCarousel"
