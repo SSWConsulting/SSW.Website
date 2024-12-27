@@ -370,6 +370,25 @@
       "_template": "accordionBlock"
     },
     {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "",
+      "isH1": false,
+      "description": "",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
       "isStacked": true,
       "heading": "Tech Wisdom from the Trenches",
       "isH1": false,
@@ -453,22 +472,6 @@
         "backgroundColour": 5,
         "backgroundImage": "/images/Louis Test Images/Incident-io-batch/image_fx_22.jpg",
         "bleed": false
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "",
-      "isH1": false,
-      "description": "",
-      "chips": {
-        "filledChipText": "",
-        "clearChipText": ""
-      },
-      "featureColumns": {
-        "twoColumns": true
       },
       "_template": "imageTextBlock"
     }
