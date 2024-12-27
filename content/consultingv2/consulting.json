@@ -380,6 +380,99 @@
       "_template": "imageTextBlock"
     },
     {
+      "isStacked": true,
+      "heading": "Insights: Tech Wisdom from the Trenches",
+      "isH1": false,
+      "body": "We've spent decades in the software trenches, battling legacy code, chasing down bugs, and wrestling with the latest tech. We've learned a few things along the way - often the hard way. This series is about sharing that hard-won wisdom. No fluff, no jargon, just straight talk to help you build better software.",
+      "cards": [
+        {
+          "guid": "y71k79",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Tech Trends",
+            "clearChipText": "3 minutes"
+          },
+          "icon": "info",
+          "heading": "Coding Naming Conventions: The Secret to Readable and Maintainable Code",
+          "description": "Is your code a mess of cryptic abbreviations and random capitalization? Learn the secrets of proper naming conventions (PascalCase, camelCase, snake_case, oh my!) and level up your code readability. Jeoffrey from SSW breaks it down in this video.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "skk29c",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Clean Code",
+            "clearChipText": "3 minutes"
+          },
+          "icon": "info",
+          "heading": "Simplicity: The Secret Weapon of Great Developers",
+          "description": "\"Simplicity is the ultimate sophistication.\" - Leonardo da Vinci. He wasn't a programmer, but he nailed it. In software, complexity is the enemy. It breeds bugs, slows down development, and makes maintenance a nightmare.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "cl1gwu",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Embrace the Refactor: Keeping Your Codebase Clean",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
