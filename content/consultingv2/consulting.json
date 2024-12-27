@@ -364,7 +364,7 @@
       },
       "mediaConfiguration": {
         "placement": "Left",
-        "verticalPlacement": "Centered",
+        "verticalPlacement": "Top",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (17).jpg"
       },
       "_template": "imageTextBlock"
