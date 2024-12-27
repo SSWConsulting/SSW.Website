@@ -295,6 +295,10 @@
         {
           "label": "I've been burned by developers before. How do I know you'll deliver?",
           "content": "We understand the skepticism. We're all about transparency and communication. You'll have direct access to our developers, and we'll keep you in the loop every step of the way. Plus, our rigorous testing process and commitment to best practices ensure that we deliver high-quality, reliable software.\n"
+        },
+        {
+          "label": "What's your approach to project management?",
+          "content": "We keep it simple and efficient. No unnecessary bureaucracy or red tape. We use tools like GitHub and Azure DevOps to manage projects, track progress, and collaborate effectively. You'll have full visibility into what we're doing and how we're doing it.\n"
         }
       ],
       "buttons": [
