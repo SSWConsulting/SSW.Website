@@ -416,12 +416,13 @@
         },
         {
           "guid": "cl1gwu",
+          "image": "/images/Louis Test Images/Incident-io-batch/photino_matt.png",
           "altText": "Lorem Ipsum",
           "chips": {
             "filledChipText": "Live Coding",
             "clearChipText": "1 hour"
           },
-          "icon": "info",
+          "icon": "BiLogoYoutube",
           "heading": "Watch Matt Parker Build a Blazor Desktop App with Photino (Live!)",
           "description": "Think you need Electron for desktop apps? Think again! Join Matt Parker as he explores Photino, a lightweight framework that lets you build cross-platform desktop apps with Blazor. Watch him build a real app live and learn how to get started.",
           "embeddedButton": {
