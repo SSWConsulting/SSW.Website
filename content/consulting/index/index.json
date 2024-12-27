@@ -924,7 +924,7 @@
         {
           "title": "Microsoft Teams",
           "description": "Teams is the premier Office 365 chat, collaboration and phone system from Microsoft.",
-          "logo": "/images/thumbs/thumb-teams.svg",
+          "logo": "/images/thumbs/consulting/thumb-teams.svg",
           "page": "content/consulting/microsoft-teams.mdx",
           "tags": [
             {
