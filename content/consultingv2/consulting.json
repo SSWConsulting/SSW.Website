@@ -287,6 +287,10 @@
         {
           "label": "Lots of companies claim to be \"Agile.\" What makes you different?",
           "content": "We don't just throw the word \"Agile\" around. We live and breathe it. Short sprints, daily stand-ups, continuous feedback loops - it's all baked into our DNA. We're all about shipping early and often, getting your product in front of users fast, and iterating based on real-world feedback. No waterfall nightmares here. We're also big on Scrum, and our devs are certified Scrum Masters, so you are in good hands.\n"
+        },
+        {
+          "label": "My project is complex. Can you actually handle it?",
+          "content": "Bring it on. We love a good challenge. We've tackled everything from legacy system overhauls to cutting-edge AI projects. Our team has the experience and the brainpower to handle even the most complex projects. We're not afraid to dive deep into the technical weeds and come up with innovative solutions.\n"
         }
       ],
       "buttons": [
