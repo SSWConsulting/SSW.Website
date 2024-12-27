@@ -81,20 +81,10 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "Solve Your Toughest Tech Challenges",
       "isH1": false,
       "body": "Whether you're grappling with outdated systems, struggling to scale, or looking to harness the power of AI, our team of experts has the experience and the tools to help you succeed.",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
       "categoryGroup": [
         {
           "categoryName": "Modern Software",
