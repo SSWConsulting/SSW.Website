@@ -119,6 +119,17 @@
       "cardStyle": 1,
       "cards": [
         {
+          "guid": "tj35hr",
+          "altText": "Legacy System Modernization",
+          "chips": {},
+          "icon": "info",
+          "heading": "Legacy System Modernization",
+          "description": "Is your old software holding you back? We can help you modernize your legacy systems, improve performance, and reduce technical debt.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
           "guid": "d2c797",
           "altText": "Scalable API Integrations",
           "chips": {},
