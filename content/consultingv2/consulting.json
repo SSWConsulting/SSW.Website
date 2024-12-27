@@ -156,13 +156,13 @@
       "cards": [
         {
           "guid": "xqr4pi",
-          "altText": "Enterprise Mobility Solutions",
+          "altText": "Custom Software Solutions",
           "chips": {},
           "icon": "info",
-          "heading": "Enterprise Mobility Solutions",
-          "description": "Equip your team with secure and efficient mobile tools. We'll help you manage devices, secure data, and improve productivity on the go.",
+          "heading": "Custom Software Solutions",
+          "description": "Need a web or mobile application tailored to your exact needs? We build custom software solutions that drive efficiency, engagement, and growth.",
           "embeddedButton": {
-            "buttonText": "Mobilize Your Team"
+            "buttonText": "Start Your Project"
           }
         },
         {
