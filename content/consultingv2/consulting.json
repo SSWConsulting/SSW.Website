@@ -417,26 +417,15 @@
         {
           "guid": "cl1gwu",
           "altText": "Lorem Ipsum",
-          "chips": {},
-          "icon": "info",
-          "heading": "Embrace the Refactor: Keeping Your Codebase Clean",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
+          "chips": {
+            "filledChipText": "Live Coding",
+            "clearChipText": "1 hour"
           },
+          "icon": "info",
+          "heading": "Watch Matt Parker Build a Blazor Desktop App with Photino (Live!)",
+          "description": "Think you need Electron for desktop apps? Think again! Join Matt Parker as he explores Photino, a lightweight framework that lets you build cross-platform desktop apps with Blazor. Watch him build a real app live and learn how to get started.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Watch Now"
           }
         }
       ],
