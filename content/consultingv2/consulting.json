@@ -392,25 +392,11 @@
             "filledChipText": "Tech Trends",
             "clearChipText": "3 minutes"
           },
-          "icon": "info",
+          "icon": "BiLogoYoutube",
           "heading": "Coding Naming Conventions: The Secret to Readable and Maintainable Code",
           "description": "Is your code a mess of cryptic abbreviations and random capitalization? Learn the secrets of proper naming conventions (PascalCase, camelCase, snake_case, oh my!) and level up your code readability. Jeoffrey from SSW breaks it down in this video.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Watch the Video "
           }
         },
         {
