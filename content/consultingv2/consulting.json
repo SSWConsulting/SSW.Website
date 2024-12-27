@@ -15,8 +15,8 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Build Smarter Software, Faster.",
-      "isH1": false,
+      "heading": "Build Better Software, Faster.",
+      "isH1": true,
       "description": "Whether you need custom software, better cloud setups, or AI-powered tools, we you solve tough problems with clean, scalable solutions.\n",
       "chips": {
         "filledChipText": "",
