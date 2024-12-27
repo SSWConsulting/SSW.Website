@@ -460,9 +460,9 @@
         }
       ],
       "background": {
-        "backgroundColour": 6,
+        "backgroundColour": 5,
         "backgroundImage": "/images/Louis Test Images/Incident-io-batch/image_fx_22.jpg",
-        "bleed": true
+        "bleed": false
       },
       "_template": "imageTextBlock"
     }
