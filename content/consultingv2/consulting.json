@@ -119,6 +119,17 @@
       "cardStyle": 1,
       "cards": [
         {
+          "guid": "31ni1q",
+          "altText": "Modern Web Experiences",
+          "chips": {},
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Need a website that's fast, responsive, and user-friendly? We build modern web applications that deliver exceptional experiences across all devices.",
+          "embeddedButton": {
+            "buttonText": "Build Your Web Presence"
+          }
+        },
+        {
           "guid": "pcms6a",
           "altText": "Custom AI Solutions",
           "chips": {},
