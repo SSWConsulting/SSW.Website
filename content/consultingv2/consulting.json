@@ -364,7 +364,7 @@
       },
       "mediaConfiguration": {
         "placement": "Left",
-        "verticalPlacement": "Top",
+        "verticalPlacement": "Bottom",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (20).png"
       },
       "_template": "accordionBlock"
