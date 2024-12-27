@@ -315,6 +315,14 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Top",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
+      },
       "_template": "accordionBlock"
     }
   ]
