@@ -341,11 +341,13 @@
         "features": [
           {
             "heading": "New devs onboarded 85% faster.",
-            "description": "From 6 weeks to 5 days. Now that's what we call an improvement!"
+            "description": "From 6 weeks to 5 days. Now that's what we call an improvement!",
+            "icon": "BiSolidUserCheck"
           },
           {
             "heading": "Feature delivery speed? Boosted by 40%",
-            "description": "They're shipping code like there's no tomorrow."
+            "description": "They're shipping code like there's no tomorrow.",
+            "icon": "BiLineChart"
           }
         ]
       },
