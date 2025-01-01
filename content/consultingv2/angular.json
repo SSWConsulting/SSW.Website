@@ -94,7 +94,7 @@
     },
     {
       "heading": "Why should you choose SSW?",
-      "body": "At SSW, we focus on getting your project done right the first time. We reduce risks by using proven processes and keeping communication clear and open. Our team has 30 years of experience and is trusted by Microsoft as a Gold Certified Partner. With SSW, you’ll get experts who care about your success.",
+      "body": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.",
       "accordionItems": [
         {
           "label": "What services does SSW offer?",
@@ -121,9 +121,9 @@
     },
     {
       "isStacked": true,
-      "heading": "How we enable next-gen companies succeed",
+      "heading": "Why .NET 8?",
       "isH1": false,
-      "body": "",
+      "body": ".NET 8 is Microsoft’s newest Long-Term Support (LTS) release—perfect for stability, security, and modern development. By moving to .NET 8, you gain:",
       "buttons": [
         {
           "buttonText": "Client Testimonials",
@@ -145,8 +145,8 @@
             "clearChipText": ""
           },
           "icon": "info",
-          "heading": "Solving Warehouse Woes for Streamline Supply Co.",
-          "description": "Streamline Supply Co., a national distributor, struggled with disorganized warehouse operations using outdated systems. We built them custom software to manage inventory and track shipments in real-time, leading to significantly faster processing and fewer errors.",
+          "heading": "Reliable Updates",
+          "description": "Regular improvements and bug fixes for peace of mind.",
           "embeddedButton": {
             "buttonText": "Read More"
           }
@@ -159,8 +159,8 @@
             "filledChipText": "Software Audit"
           },
           "icon": "info",
-          "heading": "A Software Check-Up Makes All the Difference",
-          "description": "Tech Solutions Inc.'s core business application was slow and unreliable, frustrating their team. We audited their software, identified key issues, and implemented optimizations that dramatically improved performance and user satisfaction.",
+          "heading": "Advanced Features",
+          "description": "Explore cutting-edge tools like C# 12, Native AOT, and source code generation.",
           "embeddedButton": {
             "buttonText": "Read More"
           }
@@ -172,7 +172,7 @@
           "chips": {
             "filledChipText": "Custom App Development"
           },
-          "heading": "Connecting with Customers Like Never Before",
+          "heading": "Cloud-Native Options",
           "description": "Fresh Eats Local, a farm-to-table food delivery service, needed a better way to engage customers. We developed a user-friendly mobile app allowing customers to easily order, track deliveries, and support local farmers, driving significant business growth.",
           "embeddedButton": {
             "buttonText": "Read More"
