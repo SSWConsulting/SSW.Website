@@ -17,7 +17,7 @@
       },
       "heading": "Upgrade to .NET 8 for Faster, More Secure Applications",
       "isH1": true,
-      "description": "Future-proof your applications with the latest LTS release. Accelerate development, enhance security, and reap the benefits of new features like C# 12 and Native AOT— all backed by SSW’s proven .NET expertise.\n",
+      "description": "Achieve cloud-native innovation in a proven, enterprise-ready ecosystem trusted by Microsoft.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -26,24 +26,24 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Modern UI/UX",
-            "description": "Engaging, high-performance UIs. Built with React, Angular, Blazor, Next.js, and Vue.js.",
-            "icon": "BiLogoReact"
+            "heading": "Lightning-Fast Performance",
+            "description": "Use Native AOT for smaller memory footprints, quicker load times, and a better user experience",
+            "icon": "BiSolidBolt"
           },
           {
-            "heading": "Scalable & Secure",
-            "description": ".NET 8, Clean Architecture, and Vertical Slices for a solid, scalable foundation.",
-            "icon": "BiSolidLock"
+            "heading": "Cloud-Ready Scalability",
+            "description": "Deploy in any environment, so your apps can grow alongside your organization.",
+            "icon": "BiSolidCloud"
           },
           {
-            "heading": "Azure Mastery",
-            "description": "Maximize Azure's power. Deployment, automation, and resilience with Kubernetes and PowerShell.",
-            "icon": "BiLogoKubernetes"
+            "heading": "Strong Security",
+            "description": "Guard your solutions with built-in encryption and compliance tools backed by Microsoft’s platform.",
+            "icon": "BiSolidLockAlt"
           },
           {
-            "heading": "Data & AI Solutions",
-            "description": "Data-driven insights and intelligent applications. Powered by Power BI, Azure Synapse, and AI.",
-            "icon": "BiSolidMagicWand"
+            "heading": "Future-Proof Platform",
+            "description": "Enjoy Long-Term Support (LTS), regular updates, and new features like C# 12.",
+            "icon": "BiSolidCalendarCheck"
           }
         ]
       },
@@ -63,7 +63,7 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_2.png"
+        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png"
       },
       "_template": "imageTextBlock"
     },
