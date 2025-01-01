@@ -49,8 +49,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Tell Us About Your Project ",
-          "icon": "BiRightArrowAlt",
+          "buttonText": "Talk to a .NET 8 Specialist",
+          "icon": "BiSolidPhone",
           "colour": 0
         }
       ],
