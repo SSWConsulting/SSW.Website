@@ -151,7 +151,7 @@
             "filledChipText": "",
             "clearChipText": ""
           },
-          "icon": "info",
+          "icon": "BiTachometer",
           "heading": "Enhanced Performance",
           "description": "Up to 25% faster startup times and improved runtime performance with Native AOT compilation. Benefit from optimized garbage collection and reduced memory usage in cloud-native applications.",
           "embeddedButton": {
@@ -165,7 +165,7 @@
           "chips": {
             "filledChipText": ""
           },
-          "icon": "info",
+          "icon": "BiCodeBlock",
           "heading": "Modern Development",
           "description": "Access to C# 12 features including primary constructors and collection expressions. Enhanced debugging capabilities and improved tooling support across all development environments.",
           "embeddedButton": {
@@ -179,6 +179,7 @@
           "chips": {
             "filledChipText": ""
           },
+          "icon": "BiSolidLockAlt",
           "heading": "Security & Support",
           "description": "Latest security features and patches with long-term support until November 2026. Improved authentication systems and built-in protection against common vulnerabilities.",
           "embeddedButton": {
