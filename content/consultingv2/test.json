@@ -2,5 +2,39 @@
   "seo": {
     "title": "a",
     "description": "a"
-  }
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Stop Playing AI Catch-Up: Level Up Your Entire Company in One Workshop",
+      "isH1": true,
+      "description": "We deliver hands-on, jargon-free AI training, tailored to your industry. No PhDs required.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Get Your Custom AI Cheat Sheet",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_2.png"
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
 }
