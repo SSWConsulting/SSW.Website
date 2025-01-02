@@ -183,6 +183,10 @@
         {
           "label": "4. Execution",
           "content": "Our team follows a careful migration plan that reduces downtime and keeps disruptions to a minimum.\n"
+        },
+        {
+          "label": "5. Ongoing Support",
+          "content": "After go-live, we stay available for any tweaks and help your team settle into the new environment.\n"
         }
       ],
       "background": {
