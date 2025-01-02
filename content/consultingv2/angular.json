@@ -125,7 +125,7 @@
           "heading": "Modern Development",
           "description": "Access to C# 12 features including primary constructors and collection expressions. Enhanced debugging capabilities and improved tooling support across all development environments.",
           "embeddedButton": {
-            "buttonText": "Read More"
+            "buttonText": ""
           }
         },
         {
