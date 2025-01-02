@@ -47,6 +47,112 @@
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_2.png"
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "Lorem",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Dolor",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "h1b0g",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Get Ahead of AI",
+          "description": "2 in 3 companies are already using AI tools. Don't get left behind - learn how to use AI better than your competition.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Competitive Advantage",
+                "description": "Turn AI from buzzwords into real results your team can use today",
+                "icon": "BiTrendingUp"
+              },
+              {
+                "heading": "Measurable ROI",
+                "description": "See measurable productivity gains within weeks, not months",
+                "icon": "BiMoneyWithdraw"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "See What Others are Doing",
+            "buttonLink": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+          }
+        },
+        {
+          "guid": "2vxiy",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "icon": "info",
+          "heading": "Real-World Impact",
+          "description": "Skip the theory. Our workshop focuses on practical applications that your team can implement immediately for tangible business results",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Learn by Doing",
+                "description": "Learn through hands-on exercises with real business scenarios and your actual company data"
+              },
+              {
+                "heading": "Master In-Demand Tools",
+                "description": "Master industry-leading AI tools that integrate seamlessly with your existing workflow"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "3rvqua",
+          "altText": "AI Across Your Company",
+          "chips": {},
+          "icon": "info",
+          "heading": "AI Across Your Company",
+          "description": "Elevate every department with AI capabilities. Create a unified approach to innovation across your entire organization.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Company-Wide Upskilling",
+                "description": "Custom training paths for each department, from marketing to operations to HR"
+              },
+              {
+                "heading": "Tailored to You",
+                "description": "Build a culture of innovation with department-specific AI implementation strategies"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
     }
   ]
 }
