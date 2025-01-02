@@ -251,23 +251,10 @@
           },
           "icon": "BiLogoYoutube",
           "heading": "Collections in .NET: The Performance Deep Dive You Didn't Know You Needed 🚀",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Watch Now",
+            "icon": "BiPlay"
           }
         },
         {
@@ -279,23 +266,9 @@
           },
           "icon": "BiSolidSpreadsheet",
           "heading": ".NET 8: Why Your CTO is Probably Eyeing It (and You Should Too)",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "description": "CTOs have a tough job. They need to keep your company's tech stack from turning into a digital dinosaur while also making sure everything runs smoothly and securely. That's why .NET 8 is turning heads. It's not just another boring framework update; it's a legit upgrade for modern app development. ",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Let's break down why"
           }
         },
         {
