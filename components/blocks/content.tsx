@@ -2,9 +2,9 @@ import classNames from "classnames";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { clientLogosBlockSchema } from "../../components/blocks/clientLogos";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { clientLogosBlockSchema } from "./clientLogos";
 import { colorBlockSchema } from "./colorBlock";
 import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
@@ -50,6 +50,7 @@ export const Content = ({ data }: ContentProps) => {
     <Section
       color={data.backgroundColor}
       data-tina-field={tinaField(data, contentBlock.title)}
+      className="px-8 md:px-0"
     >
       <Container
         size="medium"

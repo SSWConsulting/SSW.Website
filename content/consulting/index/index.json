@@ -305,7 +305,7 @@
         {
           "title": "Microsoft Azure",
           "description": "Enables you to build and run highly available applications without focusing on the infrastructure. Azure makes it easy, scalable, and cheap... for others it is difficult and expensive :)",
-          "logo": "/images/thumbs/thumb-azure-2023.png",
+          "logo": "/images/thumbs/consulting/thumb-azure.svg",
           "page": "content/consulting/azure.mdx",
           "tags": [
             {
@@ -682,7 +682,7 @@
         {
           "title": "Video Production",
           "description": "Use a great video to promote your message and build more customers.",
-          "logo": "/images/thumbs/thumb-video-production.jpg",
+          "logo": "/images/thumbs/consulting/thumb-sswtv.svg",
           "page": "content/consulting/video-production.mdx",
           "externalUrl": "",
           "tags": [
@@ -712,12 +712,12 @@
         {
           "title": "SSW Chapel Conference Rental",
           "description": "Do you have an event idea? Then we have the venue! The SSW Chapel conference rooms are spacious and quiet retreats in convenient locations.",
-          "logo": "/images/thumbs/thumb-chapelrental.jpg",
+          "logo": "/images/thumbs/consulting/thumb-chapel.svg",
           "page": "content/consulting/angular.mdx",
-          "externalUrl": "https://sswchapel.com.au/",
+          "externalUrl": "https://sswchapel.com.au",
           "tags": [
             {
-              "tag": "content/consulting/tag/design.json"
+              "tag": "content/consulting/tag/consulting.json"
             },
             {
               "tag": "content/consulting/tag/video.json"
@@ -856,7 +856,7 @@
         {
           "title": "Network Architecture",
           "description": "In such a fast paced moving industry, it's important to have a well designed and maintained Network Infrastructure.",
-          "logo": "/images/thumbs/thumb-network.jpg",
+          "logo": "/images/thumbs/consulting/thumb-networkarchitecture.svg",
           "page": "content/consulting/network-architecture.mdx",
           "tags": [
             {
@@ -867,7 +867,7 @@
         {
           "title": "PowerShell",
           "description": "Get your infrastructure automation from snail's pace to blazing fast.",
-          "logo": "/images/thumbs/thumb-powershell.jpg",
+          "logo": "/images/thumbs/consulting/thumb-powershell.svg",
           "page": "content/consulting/powershell.mdx",
           "tags": [
             {
@@ -878,7 +878,7 @@
         {
           "title": "On-Premises: Hyper-V",
           "description": "We recommend Microsoft Hyper-V - the fastest growing virtualization solution on the market today.",
-          "logo": "/images/thumbs/thumb-hyper-v.jpg",
+          "logo": "/images/thumbs/consulting/thumb-hyperv.svg",
           "page": "content/consulting/hyper-v.mdx",
           "tags": [
             {
@@ -889,7 +889,7 @@
         {
           "title": "On-Premises: Data Protection Manager",
           "description": "Microsoft System Center Data Protection Manager can take the stress out of backups by allowing you to control all backups from one central console.",
-          "logo": "/images/thumbs/thumb-data-protection.jpg",
+          "logo": "/images/thumbs/consulting/thumb-dataprotection.svg",
           "page": "content/consulting/data-protection-manager.mdx",
           "externalUrl": "",
           "tags": [
@@ -901,7 +901,7 @@
         {
           "title": "BackBlaze and CloudBerry",
           "description": "Backblaze has introduced a simple backup system utilizing B2 Cloud Storage which is cheap, requires little on premises infrastructure and fast to setup.",
-          "logo": "/images/thumbs/thumb-backblaze.jpg",
+          "logo": "/images/thumbs/consulting/thumb-backblaze.svg",
           "page": "content/consulting/backblaze-and-cloudberry-backup.mdx",
           "externalUrl": "",
           "tags": [
@@ -913,7 +913,7 @@
         {
           "title": "Backup/Disaster Recovery Audit",
           "description": "If you have good backups and a thorough Disaster Recovery plan, you can mitigate or completely overcome potential catastrophes.",
-          "logo": "/images/thumbs/thumb-backup-icon.jpg",
+          "logo": "/images/thumbs/consulting/thumb-backup.svg",
           "page": "content/consulting/backup-recovery.mdx",
           "tags": [
             {
@@ -924,7 +924,7 @@
         {
           "title": "Microsoft Teams",
           "description": "Teams is the premier Office 365 chat, collaboration and phone system from Microsoft.",
-          "logo": "/images/thumbs/thumb-teams-2023.png",
+          "logo": "/images/thumbs/consulting/thumb-teams.svg",
           "page": "content/consulting/microsoft-teams.mdx",
           "tags": [
             {

@@ -2,9 +2,10 @@
 
 import classNames from "classnames";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+
 import { FaPlayCircle } from "react-icons/fa";
+
 import {
   MATCH_URL_VIMEO,
   MATCH_URL_YOUTUBE,
@@ -12,23 +13,20 @@ import {
   getYouTubeId,
 } from "../helpers/embeds";
 
-const YouTubeEmbed = dynamic(
-  () => import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed),
-  {
-    ssr: false,
-  }
+const Image = dynamic(() => import("next/image"));
+
+const YouTubeEmbed = dynamic(() =>
+  import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed)
 );
 
-const VimeoEmbed = dynamic(
-  () => import("./embeds/vimeoEmbed").then((mod) => mod.VimeoEmbed),
-  {
-    ssr: false,
-  }
+const VimeoEmbed = dynamic(() =>
+  import("./embeds/vimeoEmbed").then((mod) => mod.VimeoEmbed)
 );
 
 type VideoModalProps = {
   children?: React.ReactNode;
   className?: string;
+  roundedEdges?: boolean;
   url: string;
   overflow?: boolean;
 };
@@ -43,12 +41,12 @@ export const VideoModal = ({
   children = null,
   url,
   overflow,
+  roundedEdges,
   className,
 }: VideoModalProps) => {
   const [videoId, setVideoId] = useState<string>();
   const [clicked, setClicked] = useState<boolean>(false);
   const [imageSrc, setImageSrc] = useState<string>("");
-
   const isYouTube = MATCH_URL_YOUTUBE.test(url);
   const isVimeo = MATCH_URL_VIMEO.test(url);
 
@@ -72,7 +70,8 @@ export const VideoModal = ({
   return (
     <div
       className={classNames(
-        "h-full rounded",
+        "h-full",
+        roundedEdges !== false ? "rounded" : "rounded-none",
         overflow ? "clear-both" : "overflow-hidden",
         className
       )}

@@ -1,5 +1,5 @@
 import type { Template } from "tinacms";
-
+import { clientLogosBlockSchema } from "../../components/blocks/clientLogos";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { utilityButtonSchema } from "../button/utilityButton";
 import { clientListSchema } from "../company/clientList";
@@ -19,10 +19,12 @@ import { organizerSchema } from "../usergroup/organizer";
 import { customDownloadButtonSchema } from "./CustomDownloadButton";
 import { aboutUsBlockSchema } from "./aboutUs";
 import { agendaSchema } from "./agenda";
+import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
+import { CardCarouselSchema } from "./cardCarousel/cardCarousel/cardCarouselSchema";
+import { TechnologyCardCarouselSchema } from "./cardCarousel/technologyCards/technologyCardCarouselSchema";
 import { carouselBlockSchema } from "./carousel";
 import { citationBlockSchema } from "./citation";
-import { clientLogosBlockSchema } from "./clientLogos";
 import { colorBlockSchema } from "./colorBlock";
 import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";
@@ -39,8 +41,11 @@ import { googleMapsSchema } from "./googleMapsWrapper";
 import { gridLayoutSchema } from "./gridLayout";
 import { heroBlockSchema } from "./hero";
 import { horizontalBlockSchema } from "./horizontalCard";
+import { AccordionSchema } from "./imageComponents/accordionBlock/accordionSchema";
+import { ImageTextBlockSchema } from "./imageComponents/imageTextBlock/imageTextBlock.schema";
 import { internalCarouselBlockSchema } from "./internalCarousel";
 import { jotFormEmbedSchema } from "./jotFormEmbed";
+import { LogoCarouselSchema } from "./logoCarousel/logoCarouselSchema";
 import { newslettersTableBlockSchema } from "./newslettersTable";
 import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
@@ -53,7 +58,14 @@ import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
+//NOTE: this is the order that blocks will appear in the Tina Editor
 export const pageBlocks: Template[] = [
+  BreadcrumbSchema,
+  ImageTextBlockSchema,
+  LogoCarouselSchema,
+  AccordionSchema,
+  CardCarouselSchema,
+  TechnologyCardCarouselSchema,
   aboutUsBlockSchema,
   agendaSchema,
   agreementFormBlockSchema,
@@ -107,46 +119,3 @@ export const pageBlocks: Template[] = [
   videoEmbedBlockSchema,
   inlineJotFormSchema,
 ];
-
-export * from "../bookingButton/bookingButton";
-export * from "../button/utilityButton";
-export * from "../embeds/tweetEmbed";
-export * from "../inlineJotForm/inlineJotForm";
-export * from "../terms-and-conditions/agreementForm";
-export * from "../training/eventBooking";
-export * from "../training/presenterBlock";
-export * from "../training/trainingInformation";
-export * from "../training/trainingLearningOutcome";
-export * from "../usergroup/joinAsPresenter";
-export * from "../usergroup/joinGithub";
-export * from "../usergroup/latestTech";
-export * from "../usergroup/organizer";
-export * from "./CustomDownloadButton";
-export * from "./aboutUs";
-export * from "./builtOnAzure";
-export * from "./carousel";
-export * from "./citation";
-export * from "./clientLogos";
-export * from "./colorBlock";
-export * from "./colorPalette";
-export * from "./content";
-export * from "./contentCard";
-export * from "./customImage";
-export * from "./domainFromQuery";
-export * from "./dynamicColumns";
-export * from "./eventLink";
-export * from "./fixedColumns";
-export * from "./flag";
-export * from "./googleMapsWrapper";
-export * from "./hero";
-export * from "./jotFormEmbed";
-export * from "./newslettersTable";
-export * from "./recurringEvent";
-export * from "./sectionHeader";
-export * from "./serviceCards";
-export * from "./tableLayout";
-export * from "./testimonialsList";
-export * from "./upcomingEvents";
-export * from "./verticalImageLayout";
-export * from "./verticalListItem";
-export * from "./videoEmbed";

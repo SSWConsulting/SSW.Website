@@ -1,4 +1,5 @@
 import { EventFilterAllCategories } from "@/components/filter/FilterBlock";
+import { formatCategory, getTrimmedEvent } from "@/helpers/getTrimmedEvents";
 import { EVENTS_MAX_SIZE_OVERRIDE } from "@/services/server/getEvents";
 import { GetPastEventsQueryQuery } from "@/tina/types";
 import { useInfiniteQuery } from "@tanstack/react-query";
@@ -20,18 +21,7 @@ const getCategoriesForFilter = (category: string) => {
   return lookup ? lookup : [category];
 };
 
-const formatCategory = (category: string): string => {
-  {
-    const categoryReplacements = {
-      "Non-English Courses": "Other",
-    };
-    const lookup = categoryReplacements[category];
-
-    return lookup ? lookup : category;
-  }
-};
-
-const TODAY = new Date();
+export const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
 export const getFutureEvents = async (
@@ -69,15 +59,7 @@ export const useFetchFutureEvents = (filters: SelectedCategories) => {
       },
     });
   return {
-    futureEvents:
-      data?.pages.flat().flatMap((item) =>
-        item.eventsCalendarConnection.edges.map((edge) => ({
-          ...edge.node,
-          startDateTime: new Date(edge.node.startDateTime),
-          endDateTime: new Date(edge.node.endDateTime),
-          category: formatCategory(edge.node.category),
-        }))
-      ) || [],
+    futureEvents: getTrimmedEvent(data),
     error,
     isLoadingFuturePages: isLoading,
     fetchFutureNextPage: fetchNextPage,
@@ -88,10 +70,10 @@ export const useFetchFutureEvents = (filters: SelectedCategories) => {
   };
 };
 
-const getPastEvents = async (
-  pageParam: string,
-  category: string = undefined,
-  calendarType: string = undefined
+export const getPastEvents = async (
+  pageParam?: string,
+  category?: string,
+  calendarType?: string
 ) => {
   const categories = getCategoriesForFilter(category);
   const res = await client.queries.getPastEventsQuery({
@@ -117,15 +99,7 @@ export const useFetchPastEvents = (filters: SelectedCategories) => {
     });
 
   return {
-    pastEvents:
-      data?.pages.flat().flatMap((item) =>
-        item.eventsCalendarConnection.edges.map((edge) => ({
-          ...edge.node,
-          startDateTime: new Date(edge.node.startDateTime),
-          endDateTime: new Date(edge.node.endDateTime),
-          category: formatCategory(edge.node.category),
-        }))
-      ) || [],
+    pastEvents: getTrimmedEvent(data),
     error,
     isLoadingPastPages: isLoading,
     fetchNextPastPage: fetchNextPage,

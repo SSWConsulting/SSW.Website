@@ -1,12 +1,12 @@
 import Image from "next/image";
-import type { Template } from "tinacms";
+import { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
 
 const clientsData = layoutData.clients.clientsList;
 
 export const ClientLogos = () => {
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap justify-center gap-4">
       {clientsData.length &&
         clientsData.map((client) => (
           <Image
@@ -15,9 +15,8 @@ export const ClientLogos = () => {
             alt={client.clientName + " logo"}
             height={113}
             width={200}
-            // commented out to test whether this is breaking images on the homepage see #2368
-            //sizes="20vw"
-            className="my-4 max-w-full rounded-lg"
+            loading="lazy"
+            className="max-w-full rounded-lg"
           />
         ))}
     </div>

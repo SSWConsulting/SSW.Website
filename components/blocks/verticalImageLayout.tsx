@@ -11,6 +11,7 @@ const RawImage = ({ data }) => {
       height={data.height ?? 0}
       width={data.width ?? 0}
       sizes={data.sizes}
+      loading="lazy"
     />
   );
 };

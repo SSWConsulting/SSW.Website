@@ -1,22 +1,35 @@
 "use client";
 
+import { MenuWrapper } from "app/components/MenuWrapper";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
-
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
 
-import { EventInfo } from "@/services/server/events";
+import {
+  EventInfo,
+  EventInfoStatic,
+  formatDates,
+} from "@/services/server/events";
 import { PropsWithChildren, useEffect, useState } from "react";
-
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
 dayjs.extend(isBetween);
+
+const LiveStreamClient = dynamic(
+  () => {
+    return import("./live-stream-client").then((mod) => mod.LiveStreamClient);
+  },
+  {
+    loading: () => <></>,
+    ssr: false,
+  }
+);
 
 const LiveStreamWidget = dynamic(
   () => {
@@ -28,27 +41,22 @@ const LiveStreamWidget = dynamic(
   }
 );
 
-const LiveStreamBanner = dynamic(
-  () => {
-    return import("@/components/liveStream/liveStreamBanner").then(
-      (mod) => mod.LiveStreamBanner
-    );
-  },
-  {
-    loading: () => <></>,
-    ssr: true,
-  }
-);
+import LiveStreamBanner from "@/components/liveStream/liveStreamBanner";
 
 const INTERVAL_MINUTES = 1;
 
 interface LiveStreamProps extends PropsWithChildren {
-  event: EventInfo;
+  event: EventInfoStatic;
 }
 
-export function LiveSteam({ event, children }: LiveStreamProps) {
+export function LiveStream({ event, children }: LiveStreamProps) {
   const [countdownMins, setCountdownMins] = useState<number>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
+
+  const eventDynamic: EventInfo = {
+    ...event,
+    ...formatDates(event),
+  };
 
   useEffect(() => {
     if (!event?.startDateTime || !event?.endDateTime) {
@@ -98,21 +106,41 @@ export function LiveSteam({ event, children }: LiveStreamProps) {
 
   return (
     <>
-      {showBanner && (
+      {showBanner ? (
         <LiveStreamBanner
-          {...{ countdownMins, liveStreamDelayMinutes, isLive, event }}
+          countdownMins={countdownMins}
+          liveStreamData={eventDynamic}
           isLive={!!isLive}
         />
-      )}
-      <div className="mx-auto max-w-9xl px-8">
-        {isLive && (
-          <LiveStreamWidget
-            {...{ event, liveStreamDelayMinutes }}
+      ) : (
+        <LiveStreamClient param={"liveBanner"}>
+          {" "}
+          <LiveStreamBanner
+            countdownMins={countdownMins}
+            liveStreamData={eventDynamic}
             isLive={!!isLive}
           />
+        </LiveStreamClient>
+      )}
+
+      <MenuWrapper>
+        {isLive ? (
+          <LiveStreamWidget
+            {...{ eventDynamic, liveStreamDelayMinutes }}
+            event={eventDynamic}
+            isLive={!!isLive}
+          />
+        ) : (
+          <LiveStreamClient param={"liveStream"}>
+            <LiveStreamWidget
+              {...{ eventDynamic, liveStreamDelayMinutes }}
+              event={eventDynamic}
+              isLive={!!isLive}
+            />
+          </LiveStreamClient>
         )}
         {children}
-      </div>
+      </MenuWrapper>
     </>
   );
 }

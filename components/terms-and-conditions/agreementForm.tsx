@@ -7,7 +7,7 @@ export const AgreementForm = ({ data }) => {
   const sectionColorCss =
     sectionColors[data.backgroundColor] || sectionColors.default;
   return (
-    <div>
+    <>
       <div className={classnames("pagebreak my-10 p-8", sectionColorCss)}>
         {data.fields.map((field) => (
           <FormField
@@ -31,7 +31,7 @@ export const AgreementForm = ({ data }) => {
           Print and sign
         </button>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -40,7 +40,7 @@ const FormField = ({ label, id, placeholder, resizeable }) => {
 
   return (
     <div className="relative inline-block w-full pb-3 md:flex">
-      <div className="w-96 py-2.5 pr-2 text-left font-bold sm:grow-0 md:text-right">
+      <div className="py-2.5 pr-2 text-left font-bold sm:grow-0 md:text-right">
         <label className="mb-1" htmlFor={id}>
           {label}
         </label>

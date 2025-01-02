@@ -9,6 +9,7 @@ import { BiChevronRightCircle } from "react-icons/bi";
 
 import { tinaField } from "tinacms/dist/react";
 import layoutData from "../../content/global/index.json";
+import useIsMobile from "../../hooks/useIsMobile";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -106,6 +107,8 @@ export const AboutUs = ({ data }) => {
     defaultOffice?.addressRegion || ""
   );
 
+  const isMobile = useIsMobile();
+
   const [mapHoveredTrigger, setMapHoveredTrigger] = useState(false);
   const [mapClickedTrigger, setMapClickedTrigger] = useState(false);
 
@@ -116,7 +119,9 @@ export const AboutUs = ({ data }) => {
         data-tina-field={tinaField(data, aboutUsBlock.backgroundColor)}
       >
         <div className="grid grid-cols-3 gap-6">
-          <TV className="col-span-3 max-md:hidden sm:col-span-1" />
+          {!isMobile && (
+            <TV className="col-span-3 max-md:hidden sm:col-span-1" />
+          )}
           <div className="col-span-3 md:col-span-2">
             <div
               className={`grid grid-cols-1 gap-6 ${!data.hideMap ? "sm:grid-cols-2" : ""}`}
@@ -133,7 +138,7 @@ export const AboutUs = ({ data }) => {
                 setMapClickedTrigger={setMapClickedTrigger}
                 mapClickedTrigger={mapClickedTrigger}
               />
-              {(data.showMap ?? true) && (
+              {(data.showMap ?? true) && !isMobile && (
                 <Map
                   className="hidden sm:block"
                   offices={offices}

@@ -103,7 +103,7 @@ export const consultingIndexSchema: Collection = {
               type: "reference",
               label: "Page",
               name: "page",
-              collections: ["consulting"],
+              collections: ["consulting", "consultingv2"],
               required: true,
             },
             {

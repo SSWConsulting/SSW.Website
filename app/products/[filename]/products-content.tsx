@@ -12,13 +12,12 @@ export default function ProductsContent({ props }) {
       <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
         <Breadcrumbs
           path={removeExtension(variables.relativePath)}
-          suffix={data.global?.breadcrumbSuffix}
           title={data.products?.seo?.title}
         />
       </Section>
       <Container
         className={
-          "prose flex-1 pt-4 prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0"
+          "prose prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0 flex-1 pt-4"
         }
       >
         <TinaMarkdown
