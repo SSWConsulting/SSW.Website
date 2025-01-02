@@ -244,6 +244,7 @@
       "cards": [
         {
           "guid": "qmlcq9",
+          "image": "/images/Louis Test Images/Incident-io-batch/dotnet_collections.png",
           "altText": "Lorem Ipsum",
           "chips": {
             "filledChipText": ".NET User Groups",
@@ -259,16 +260,18 @@
         },
         {
           "guid": "s76w3",
+          "image": "/images/Louis Test Images/Incident-io-batch/donet8_cloud-native.png",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": ".NET8",
-            "clearChipText": "3 minutes"
+            "filledChipText": ".NET Aspire",
+            "clearChipText": "1 hour "
           },
           "icon": "BiSolidSpreadsheet",
-          "heading": ".NET 8: Why Your CTO is Probably Eyeing It (and You Should Too)",
-          "description": "CTOs have a tough job. They need to keep your company's tech stack from turning into a digital dinosaur while also making sure everything runs smoothly and securely. That's why .NET 8 is turning heads. It's not just another boring framework update; it's a legit upgrade for modern app development. ",
+          "heading": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
+          "description": "SSW's Matt Wicks teams up with Octopus Deploy's Rob Pearson to demystify .NET Aspire. Dive into real-world orchestration, service integration, and deployment strategies that'll level up your cloud-native game.",
           "embeddedButton": {
-            "buttonText": "Let's break down why"
+            "buttonText": "Watch Now ",
+            "icon": "BiPlay"
           }
         },
         {
