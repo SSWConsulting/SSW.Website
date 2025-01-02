@@ -200,44 +200,6 @@
     },
     {
       "topLabel": {
-        "labelText": ".NET Experts"
-      },
-      "heading": "Why SSW?",
-      "isH1": false,
-      "description": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.\n",
-      "chips": {
-        "filledChipText": "",
-        "clearChipText": ""
-      },
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Expert Guidance",
-            "description": "Our team has years of experience moving legacy applications to the latest .NET version, consistently reducing risk and cutting costs for our clients.",
-            "icon": "BiSolidAward"
-          },
-          {
-            "heading": "Documented Best Practices",
-            "description": "We’ve recorded our hard-earned insights in our Rules to Better .NET 8 Migration to ensure nothing is overlooked.",
-            "icon": "BiSolidBookmarks"
-          }
-        ]
-      },
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": ""
-      },
-      "mediaConfiguration": {
-        "placement": "Left",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "topLabel": {
         "labelText": "Case Study"
       },
       "heading": "How XYZ Corp Saved Costs with .NET 8",
@@ -275,6 +237,44 @@
       },
       "mediaConfiguration": {
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (19).png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ".NET Experts"
+      },
+      "heading": "Why SSW?",
+      "isH1": false,
+      "description": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Expert Guidance",
+            "description": "Our team has years of experience moving legacy applications to the latest .NET version, consistently reducing risk and cutting costs for our clients.",
+            "icon": "BiSolidAward"
+          },
+          {
+            "heading": "Documented Best Practices",
+            "description": "We’ve recorded our hard-earned insights in our Rules to Better .NET 8 Migration to ensure nothing is overlooked.",
+            "icon": "BiSolidBookmarks"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": ""
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
       },
       "_template": "imageTextBlock"
     },
