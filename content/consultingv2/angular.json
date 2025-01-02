@@ -158,7 +158,8 @@
           "buttonText": "Case Studies"
         },
         {
-          "buttonText": "Lorem Ipsum"
+          "buttonText": "Testimonials",
+          "colour": 1
         }
       ],
       "background": {
