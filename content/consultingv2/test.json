@@ -9,21 +9,33 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": "Generative AI Workshop"
       },
-      "heading": "Stop Playing AI Catch-Up: Level Up Your Entire Company in One Workshop",
+      "heading": "Level Up Your Entire Company in One AI Workshop",
       "isH1": true,
-      "description": "We deliver hands-on, jargon-free AI training, tailored to your industry. No PhDs required.\n",
+      "description": "Our tailored AI workshop empowers your entire company to use generative AI. Practical skills, no jargon, real results.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": false
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "No Cookie-Cutter Training",
+            "description": "We customize the workshop to your industry and team's needs. Get AI strategies that actually work for your business",
+            "icon": "BiTargetLock"
+          },
+          {
+            "heading": "Learn by Doing, Not Just Listening",
+            "description": "Hands-on exercises with real AI tools. Build practical skills you can use on day one. No boring lectures, we promise",
+            "icon": "BiWrench"
+          }
+        ]
       },
       "buttons": [
         {
-          "buttonText": "Get Your Custom AI Cheat Sheet",
+          "buttonText": "Get Your Free AI Cheat Sheet",
           "colour": 0
         },
         {
