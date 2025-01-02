@@ -94,19 +94,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Why .NET 8?",
+      "heading": "",
       "isH1": false,
-      "body": ".NET 8 is Microsoft’s newest Long-Term Support (LTS) release—perfect for stability, security, and modern development. By moving to .NET 8, you gain:",
-      "buttons": [
-        {
-          "buttonText": "Client Testimonials",
-          "colour": 0
-        },
-        {
-          "buttonText": "All Case Studies",
-          "colour": 1
-        }
-      ],
+      "body": "",
       "cardStyle": 0,
       "cards": [
         {
