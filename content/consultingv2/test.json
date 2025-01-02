@@ -131,6 +131,40 @@
         }
       ],
       "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Save 10+ Hours Every Week with AI"
+      },
+      "heading": "Get Your Custom AI Cheat Sheet",
+      "isH1": false,
+      "description": "Learn which AI tools can save your team hours of work each week, tailored to your industry.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Ready-to-Use Prompts",
+            "description": "Copy-paste prompts customized for your role, tested with real teams",
+            "icon": "BiSolidMagicWand"
+          },
+          {
+            "heading": "Action Checklist",
+            "description": "Step-by-step guide to implement AI in your workflow, starting today",
+            "icon": "BiCheckSquare"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Get Your Cheat Sheet Now",
+          "colour": 0
+        }
+      ],
+      "_template": "imageTextBlock"
     }
   ]
 }
