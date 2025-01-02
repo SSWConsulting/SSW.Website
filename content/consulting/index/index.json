@@ -913,7 +913,7 @@
         {
           "title": "Backup/Disaster Recovery Audit",
           "description": "If you have good backups and a thorough Disaster Recovery plan, you can mitigate or completely overcome potential catastrophes.",
-          "logo": "/images/thumbs/thumb-backup.svg",
+          "logo": "/images/thumbs/consulting/thumb-backup.svg",
           "page": "content/consulting/backup-recovery.mdx",
           "tags": [
             {
