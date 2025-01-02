@@ -145,8 +145,8 @@
           "chips": {
             "filledChipText": "Custom App Development"
           },
-          "heading": "Cloud-Native Options",
-          "description": "Fresh Eats Local, a farm-to-table food delivery service, needed a better way to engage customers. We developed a user-friendly mobile app allowing customers to easily order, track deliveries, and support local farmers, driving significant business growth.",
+          "heading": "Security & Support",
+          "description": "Latest security features and patches with long-term support until November 2026. Improved authentication systems and built-in protection against common vulnerabilities.",
           "embeddedButton": {
             "buttonText": "Read More"
           }
