@@ -121,7 +121,8 @@
       ],
       "buttons": [
         {
-          "buttonText": "Case Studies"
+          "buttonText": "Case Studies",
+          "buttonLink": "https://www.ssw.com.au/company/clients"
         },
         {
           "buttonText": "Rules for Better .NET8 Migration",
