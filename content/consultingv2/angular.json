@@ -238,6 +238,45 @@
     },
     {
       "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "How XYZ Corp Saved Costs with .NET 8",
+      "isH1": false,
+      "description": "XYZ Corp’s aging application struggled with slow performance, scaling challenges, and rising costs. SSW stepped in to migrate their platform to .NET 8, implementing Native AOT for faster response times and optimizing resources to reduce hosting expenses—all without disrupting daily operations.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "30% Faster Load Times",
+            "description": "Using .NET 8 with Native AOT improved startup speed, optimized bottlenecks, and enabled efficient handling of high traffic."
+          },
+          {
+            "heading": "Significant Cost Savings",
+            "description": "Refactored code, better memory management, and dynamic scaling cut resource usage and hosting expenses."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Read the full story",
+          "colour": 0
+        },
+        {
+          "buttonText": "Talk to a .NET Expert Today",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (19).png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
         "labelText": ""
       },
       "heading": "Talk to us about your  project today",
