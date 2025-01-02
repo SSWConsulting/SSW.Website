@@ -157,8 +157,8 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       ssw.megamenu:
-        specifier: 4.8.0
-        version: 4.8.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.9.0
+        version: 4.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       tailwind-merge:
         specifier: ^2.5.4
         version: 2.5.4
@@ -7953,8 +7953,8 @@ packages:
     peerDependencies:
       sucrase: ^3.35.0
 
-  ssw.megamenu@4.8.0:
-    resolution: {integrity: sha512-MQcUEke7h90Q7DQ+LhCEaz+StqGOv/LNc0p0hcmDaazrVJh2PDxNwIxUc8BNh25rJXtnn0+Litpi+qR3c8dFTA==}
+  ssw.megamenu@4.9.0:
+    resolution: {integrity: sha512-c2e2RKlWXcCtPvCURTA4GBcmd57RUXGx3zCi06tB2IO0fEMPf1eHRLErpk9DX8UYMTx4cwlVYP3erh56FRUNQQ==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -18598,7 +18598,7 @@ snapshots:
       module-error: 1.0.2
       sucrase: 3.35.0
 
-  ssw.megamenu@4.8.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  ssw.megamenu@4.9.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@heroicons/react': 2.1.5(react@18.3.1)
