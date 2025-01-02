@@ -140,15 +140,15 @@
         },
         {
           "guid": "m0bkqf",
-          "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image.png",
+          "image": "",
           "altText": "",
           "chips": {
-            "filledChipText": "Custom App Development"
+            "filledChipText": ""
           },
           "heading": "Security & Support",
           "description": "Latest security features and patches with long-term support until November 2026. Improved authentication systems and built-in protection against common vulnerabilities.",
           "embeddedButton": {
-            "buttonText": "Read More"
+            "buttonText": ""
           }
         }
       ],
