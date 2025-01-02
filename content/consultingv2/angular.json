@@ -270,6 +270,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (19).png"
       },
