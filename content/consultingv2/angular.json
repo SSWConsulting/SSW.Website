@@ -153,7 +153,14 @@
         ]
       },
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 6,
+        "backgroundImage": ""
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png"
       },
       "_template": "imageTextBlock"
     },
