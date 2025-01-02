@@ -179,6 +179,10 @@
         {
           "label": "3. Planning",
           "content": "Refactor: Update existing code to run on .NET 8.\n\nReplace: Find a ready-made product with the functions you need.\n\nRewrite: Build from the ground up if no equivalents exist.\n"
+        },
+        {
+          "label": "4. Execution",
+          "content": "Our team follows a careful migration plan that reduces downtime and keeps disruptions to a minimum.\n"
         }
       ],
       "background": {
