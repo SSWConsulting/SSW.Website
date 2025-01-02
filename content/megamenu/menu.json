@@ -200,7 +200,7 @@
         {
           "name": "Latest Videos",
           "iconImg": "/images/megamenu-icons/YoutubePlayButton.svg",
-          "icon": "chevronLeft",
+          "icon": "",
           "items": [
             {
               "name": "TinaCMS",
