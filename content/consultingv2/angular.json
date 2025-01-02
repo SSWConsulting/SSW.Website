@@ -173,8 +173,8 @@
           "content": "We evaluate your current systems in a Specification Review, determining how each component aligns with .NET 8\n"
         },
         {
-          "label": "What methodologies do you use to develop software?",
-          "content": "We use Scrum and DevOps to stay aligned with your goals, adapt quickly, and deliver high-quality results.\n"
+          "label": "2. Strategy Selection",
+          "content": "We recommend either a gradual rollout or a full upgrade, depending on your priorities and timelines.\n"
         },
         {
           "label": "How does SSW ensure high-quality software development?",
