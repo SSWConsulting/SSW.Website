@@ -50,33 +50,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Lorem Ipsum",
+      "heading": "",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
-      "categoryGroup": [
-        {
-          "categoryName": "Lorem",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        },
-        {
-          "categoryName": "Dolor",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        }
-      ],
+      "body": "",
       "cardStyle": 0,
       "cards": [
         {
@@ -111,16 +87,18 @@
           "chips": {},
           "icon": "info",
           "heading": "Real-World Impact",
-          "description": "Skip the theory. Our workshop focuses on practical applications that your team can implement immediately for tangible business results",
+          "description": "No boring slides. Get hands-on with AI tools you'll actually use. Work on real tasks that matter to your team.",
           "featureList": {
             "features": [
               {
                 "heading": "Learn by Doing",
-                "description": "Learn through hands-on exercises with real business scenarios and your actual company data"
+                "description": "Try out AI tools on your actual work problems, not made-up examples",
+                "icon": "BiSolidBulb"
               },
               {
                 "heading": "Master In-Demand Tools",
-                "description": "Master industry-leading AI tools that integrate seamlessly with your existing workflow"
+                "description": "Walk away with new skills you can use right away",
+                "icon": "BiSolidBadgeCheck"
               }
             ]
           },
@@ -133,17 +111,17 @@
           "altText": "AI Across Your Company",
           "chips": {},
           "icon": "info",
-          "heading": "AI Across Your Company",
-          "description": "Elevate every department with AI capabilities. Create a unified approach to innovation across your entire organization.",
+          "heading": "AI for Everyone",
+          "description": "Every team can work smarter with AI. We'll show your whole company how to use AI tools that make their jobs easier.",
           "featureList": {
             "features": [
               {
                 "heading": "Company-Wide Upskilling",
-                "description": "Custom training paths for each department, from marketing to operations to HR"
+                "description": "Training that fits each team's needs - from marketing to HR"
               },
               {
                 "heading": "Tailored to You",
-                "description": "Build a culture of innovation with department-specific AI implementation strategies"
+                "description": "Get your whole company excited about using AI in their daily work"
               }
             ]
           },
