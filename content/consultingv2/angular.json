@@ -132,8 +132,8 @@
             "filledChipText": "Software Audit"
           },
           "icon": "info",
-          "heading": "Advanced Features",
-          "description": "Explore cutting-edge tools like C# 12, Native AOT, and source code generation.",
+          "heading": "Modern Development",
+          "description": "Access to C# 12 features including primary constructors and collection expressions. Enhanced debugging capabilities and improved tooling support across all development environments.",
           "embeddedButton": {
             "buttonText": "Read More"
           }
