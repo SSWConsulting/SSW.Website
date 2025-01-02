@@ -177,8 +177,8 @@
           "content": "We recommend either a gradual rollout or a full upgrade, depending on your priorities and timelines.\n"
         },
         {
-          "label": "How does SSW ensure high-quality software development?",
-          "content": "We focus on clear communication, transparency, and quick feedback. By following Scrum and DevOps, we make sure the software meets your needs every step of the way.\n"
+          "label": "3. Planning",
+          "content": "Refactor: Update existing code to run on .NET 8.\n\nReplace: Find a ready-made product with the functions you need.\n\nRewrite: Build from the ground up if no equivalents exist.\n"
         }
       ],
       "background": {
