@@ -124,7 +124,8 @@
           "buttonText": "Case Studies"
         },
         {
-          "buttonText": "Testimonials",
+          "buttonText": "Rules for Better .NET8 Migration",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
           "colour": 1
         }
       ],
