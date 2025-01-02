@@ -93,6 +93,73 @@
       "_template": "logoCarousel"
     },
     {
+      "isStacked": true,
+      "heading": "Why .NET 8?",
+      "isH1": false,
+      "body": ".NET 8 is Microsoft’s newest Long-Term Support (LTS) release—perfect for stability, security, and modern development. By moving to .NET 8, you gain:",
+      "buttons": [
+        {
+          "buttonText": "Client Testimonials",
+          "colour": 0
+        },
+        {
+          "buttonText": "All Case Studies",
+          "colour": 1
+        }
+      ],
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ye7r7",
+          "image": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (35).png",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Custom Software Development",
+            "clearChipText": ""
+          },
+          "icon": "info",
+          "heading": "Enhanced Performance",
+          "description": "Up to 25% faster startup times and improved runtime performance with Native AOT compilation. Benefit from optimized garbage collection and reduced memory usage in cloud-native applications.",
+          "embeddedButton": {
+            "buttonText": "Read More"
+          }
+        },
+        {
+          "guid": "imtiro",
+          "image": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (36).png",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Software Audit"
+          },
+          "icon": "info",
+          "heading": "Advanced Features",
+          "description": "Explore cutting-edge tools like C# 12, Native AOT, and source code generation.",
+          "embeddedButton": {
+            "buttonText": "Read More"
+          }
+        },
+        {
+          "guid": "m0bkqf",
+          "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image.png",
+          "altText": "",
+          "chips": {
+            "filledChipText": "Custom App Development"
+          },
+          "heading": "Cloud-Native Options",
+          "description": "Fresh Eats Local, a farm-to-table food delivery service, needed a better way to engage customers. We developed a user-friendly mobile app allowing customers to easily order, track deliveries, and support local farmers, driving significant business growth.",
+          "embeddedButton": {
+            "buttonText": "Read More"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
       "heading": "Our Phased Approach",
       "body": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.",
       "accordionItems": [
@@ -171,73 +238,6 @@
         "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png"
       },
       "_template": "imageTextBlock"
-    },
-    {
-      "isStacked": true,
-      "heading": "Why .NET 8?",
-      "isH1": false,
-      "body": ".NET 8 is Microsoft’s newest Long-Term Support (LTS) release—perfect for stability, security, and modern development. By moving to .NET 8, you gain:",
-      "buttons": [
-        {
-          "buttonText": "Client Testimonials",
-          "colour": 0
-        },
-        {
-          "buttonText": "All Case Studies",
-          "colour": 1
-        }
-      ],
-      "cardStyle": 0,
-      "cards": [
-        {
-          "guid": "ye7r7",
-          "image": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (35).png",
-          "altText": "Lorem Ipsum",
-          "chips": {
-            "filledChipText": "Custom Software Development",
-            "clearChipText": ""
-          },
-          "icon": "info",
-          "heading": "Reliable Updates",
-          "description": "Regular improvements and bug fixes for peace of mind.",
-          "embeddedButton": {
-            "buttonText": "Read More"
-          }
-        },
-        {
-          "guid": "imtiro",
-          "image": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (36).png",
-          "altText": "Lorem Ipsum",
-          "chips": {
-            "filledChipText": "Software Audit"
-          },
-          "icon": "info",
-          "heading": "Advanced Features",
-          "description": "Explore cutting-edge tools like C# 12, Native AOT, and source code generation.",
-          "embeddedButton": {
-            "buttonText": "Read More"
-          }
-        },
-        {
-          "guid": "m0bkqf",
-          "image": "/images/Louis Test Images/Incident/Move fast when you break things _ incident.io/image.png",
-          "altText": "",
-          "chips": {
-            "filledChipText": "Custom App Development"
-          },
-          "heading": "Cloud-Native Options",
-          "description": "Fresh Eats Local, a farm-to-table food delivery service, needed a better way to engage customers. We developed a user-friendly mobile app allowing customers to easily order, track deliveries, and support local farmers, driving significant business growth.",
-          "embeddedButton": {
-            "buttonText": "Read More"
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 2,
-        "backgroundImage": "",
-        "bleed": true
-      },
-      "_template": "cardCarousel"
     },
     {
       "topLabel": {
