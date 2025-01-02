@@ -101,25 +101,25 @@
       "cards": [
         {
           "guid": "ye7r7",
-          "image": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (35).png",
+          "image": "",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": "Custom Software Development",
+            "filledChipText": "",
             "clearChipText": ""
           },
           "icon": "info",
           "heading": "Enhanced Performance",
           "description": "Up to 25% faster startup times and improved runtime performance with Native AOT compilation. Benefit from optimized garbage collection and reduced memory usage in cloud-native applications.",
           "embeddedButton": {
-            "buttonText": "Read More"
+            "buttonText": ""
           }
         },
         {
           "guid": "imtiro",
-          "image": "/images/Louis Test Images/Incident-io-batch/incident-io-batch-2 (36).png",
+          "image": "",
           "altText": "Lorem Ipsum",
           "chips": {
-            "filledChipText": "Software Audit"
+            "filledChipText": ""
           },
           "icon": "info",
           "heading": "Modern Development",
