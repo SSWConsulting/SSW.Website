@@ -48,7 +48,7 @@ jobs:
             echo "${{ steps.check_file_changed.outputs.sourceDiff }}"
           }
 
-      - uses: nearform-actions/github-action-check-linked-issues@v1.6.4
+      - uses: nearform-actions/github-action-check-linked-issues@v1.6.5
         if: ${{steps.check_file_changed.outputs.hasCodeChanges == 'True' }}
         id: check-linked-issues
         with:
