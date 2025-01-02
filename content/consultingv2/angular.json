@@ -51,6 +51,10 @@
         {
           "buttonText": "Talk to a .NET 8 Specialist",
           "colour": 0
+        },
+        {
+          "buttonText": "Rules for Better .NET 8 Migration",
+          "colour": 1
         }
       ],
       "background": {
