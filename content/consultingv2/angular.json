@@ -129,6 +129,49 @@
       "_template": "logoCarousel"
     },
     {
+      "heading": "Our Phased Approach",
+      "body": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.",
+      "accordionItems": [
+        {
+          "label": "1. Initial Assessment",
+          "content": "We evaluate your current systems in a Specification Review, determining how each component aligns with .NET 8\n"
+        },
+        {
+          "label": "2. Strategy Selection",
+          "content": "We recommend either a gradual rollout or a full upgrade, depending on your priorities and timelines.\n"
+        },
+        {
+          "label": "3. Planning",
+          "content": "Refactor: Update existing code to run on .NET 8.\n\nReplace: Find a ready-made product with the functions you need.\n\nRewrite: Build from the ground up if no equivalents exist.\n"
+        },
+        {
+          "label": "4. Execution",
+          "content": "Our team follows a careful migration plan that reduces downtime and keeps disruptions to a minimum.\n"
+        },
+        {
+          "label": "5. Ongoing Support",
+          "content": "After go-live, we stay available for any tweaks and help your team settle into the new environment.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Case Studies"
+        },
+        {
+          "buttonText": "Lorem Ipsum"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png"
+      },
+      "_template": "accordionBlock"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
@@ -163,41 +206,6 @@
         "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png"
       },
       "_template": "imageTextBlock"
-    },
-    {
-      "heading": "Our Phased Approach",
-      "body": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.",
-      "accordionItems": [
-        {
-          "label": "1. Initial Assessment",
-          "content": "We evaluate your current systems in a Specification Review, determining how each component aligns with .NET 8\n"
-        },
-        {
-          "label": "2. Strategy Selection",
-          "content": "We recommend either a gradual rollout or a full upgrade, depending on your priorities and timelines.\n"
-        },
-        {
-          "label": "3. Planning",
-          "content": "Refactor: Update existing code to run on .NET 8.\n\nReplace: Find a ready-made product with the functions you need.\n\nRewrite: Build from the ground up if no equivalents exist.\n"
-        },
-        {
-          "label": "4. Execution",
-          "content": "Our team follows a careful migration plan that reduces downtime and keeps disruptions to a minimum.\n"
-        },
-        {
-          "label": "5. Ongoing Support",
-          "content": "After go-live, we stay available for any tweaks and help your team settle into the new environment.\n"
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "placement": "Right",
-        "verticalPlacement": "Top",
-        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png"
-      },
-      "_template": "accordionBlock"
     },
     {
       "isStacked": true,
