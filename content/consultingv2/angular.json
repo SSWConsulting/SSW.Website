@@ -50,7 +50,6 @@
       "buttons": [
         {
           "buttonText": "Talk to a .NET 8 Specialist",
-          "icon": "BiSolidPhone",
           "colour": 0
         }
       ],
