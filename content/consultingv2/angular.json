@@ -165,12 +165,12 @@
       "_template": "imageTextBlock"
     },
     {
-      "heading": "Why should you choose SSW?",
+      "heading": "Our Phased Approach",
       "body": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.",
       "accordionItems": [
         {
-          "label": "What services does SSW offer?",
-          "content": "We help businesses solve problems by building software that works. Using proven technology and best practices, we make the process faster, more reliable, and cost-effective.\n"
+          "label": "1. Initial Assessment",
+          "content": "We evaluate your current systems in a Specification Review, determining how each component aligns with .NET 8\n"
         },
         {
           "label": "What methodologies do you use to develop software?",
@@ -185,7 +185,7 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "placement": "Left",
+        "placement": "Right",
         "verticalPlacement": "Centered",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
       },
