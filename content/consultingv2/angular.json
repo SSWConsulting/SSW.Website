@@ -243,11 +243,14 @@
       "body": "At SSW, we share decades of hands-on experience in software—tackling legacy code, fixing bugs, and navigating new tech. No fluff, no jargon—just practical advice to help you build better software",
       "cards": [
         {
-          "guid": null,
+          "guid": "qmlcq9",
           "altText": "Lorem Ipsum",
-          "chips": {},
-          "icon": "info",
-          "heading": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "User Groups",
+            "clearChipText": "1 hour"
+          },
+          "icon": "BiLogoYoutube",
+          "heading": "Collections in .NET: The Performance Deep Dive You Didn't Know You Needed 🚀",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
@@ -274,7 +277,7 @@
             "filledChipText": ".NET8",
             "clearChipText": "3 minutes"
           },
-          "icon": "info",
+          "icon": "BiSolidSpreadsheet",
           "heading": ".NET 8: Why Your CTO is Probably Eyeing It (and You Should Too)",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
