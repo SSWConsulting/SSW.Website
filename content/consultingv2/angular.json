@@ -145,6 +145,10 @@
           {
             "heading": "Expert Guidance",
             "description": "Our team has years of experience moving legacy applications to the latest .NET version, consistently reducing risk and cutting costs for our clients."
+          },
+          {
+            "heading": "Documented Best Practices",
+            "description": "We’ve recorded our hard-earned insights in our Rules to Better .NET 8 Migration to ensure nothing is overlooked."
           }
         ]
       },
