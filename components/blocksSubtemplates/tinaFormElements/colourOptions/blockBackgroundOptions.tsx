@@ -22,13 +22,13 @@ export const backgroundOptions: ColorPickerOptions[] = [
     reference: 3,
   },
   {
-    name: "Dark Gray",
+    name: "Dark Grey",
     classes: "bg-gray-950 text-white",
     reference: 4,
     editorClasses: "bg-[#222222] text-white",
   },
   {
-    name: "Gray",
+    name: "Grey",
     classes: "bg-gray-900 text-white",
     reference: 5,
   },

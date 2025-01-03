@@ -148,7 +148,7 @@ export const backgroundSchema = {
       type: "boolean",
       label: "Bleed",
       name: "bleed",
-      description: "If true, the background will bleed into lower blocks.",
+      description: "The background will bleed (overflow) into lower blocks.",
     },
   ],
 };
