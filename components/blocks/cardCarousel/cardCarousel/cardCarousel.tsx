@@ -10,6 +10,21 @@ import { Card } from "../layout/card";
 import { CardList } from "../layout/cardCarouseSlideshow";
 import { Tabs, useTabCarousel } from "../layout/cardCarouselTabs";
 
+export type Card = {
+  guid: string;
+  image: string;
+  title: string;
+  altText: string;
+  description: string;
+  embeddedButton: {
+    buttonText: string;
+    buttonLink: string;
+    icon: string;
+  };
+  icon: string;
+  contain: boolean;
+};
+
 export const CardCarousel = ({ data }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
   const [hasImages, setHasImages] = useState(false);
