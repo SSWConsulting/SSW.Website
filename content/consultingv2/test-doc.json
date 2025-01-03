@@ -1,0 +1,23 @@
+{
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/consultingv2Technologies/groups/Front-End.mdx"
+        },
+        {
+          "technologyGroup": "content/consultingv2Technologies/groups/Back-End.mdx"
+        }
+      ],
+      "isStacked": true,
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "technologyCardCarousel"
+    }
+  ]
+}
