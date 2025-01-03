@@ -1,0 +1,335 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for .NET8 Migration",
+    "description": "With over 10ys experience creating enterprise Angular apps for private and public sectors, SSW can design, build, and deliver your dream Angular app."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for .NET 8 Migration",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Upgrade to .NET 8 for Faster, More Secure Applications",
+      "isH1": true,
+      "description": "",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lightning-Fast Performance",
+            "description": "Use Native AOT for smaller memory footprints, quicker load times, and a better user experience",
+            "icon": "BiSolidBolt"
+          },
+          {
+            "heading": "Cloud-Ready Scalability",
+            "description": "Deploy in any environment, so your apps can grow alongside your organization.",
+            "icon": "BiSolidCloud"
+          },
+          {
+            "heading": "Strong Security",
+            "description": "Guard your solutions with built-in encryption and compliance tools backed by Microsoft’s platform.",
+            "icon": "BiSolidLockAlt"
+          },
+          {
+            "heading": "Future-Proof Platform",
+            "description": "Enjoy Long-Term Support (LTS), regular updates, and new features like C# 12.",
+            "icon": "BiSolidCalendarCheck"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Talk to a .NET 8 Specialist",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/net-8/replicate-prediction-k3390gb95drgc0cm4m1beddha4-ezgif.com-video-to-gif-converter.gif"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Better Stack/Infrastructure monitoring _ Better Stack/flare-d7d01fa723928dd1b472b4e1dec1f6c9c6cfe7e0da35e3ed594d96ee63d3e5e9.png",
+        "bleed": false
+      },
+      "heading": "Trusted by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/xkInZMdrWkfsJk4MoLdXsAOQ.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/NznFdPaT7rFFggVDNojLOiFYavk.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/N7PtMlSPCIEq5WcTZJR2ZFVow.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/SwgZrB14vBJ3e0b4SoNzOg9DnE.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/nLVeWBlDCvYsJZmYoJMrTlvc6U.png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "heading": "Our Phased Approach",
+      "body": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.",
+      "accordionItems": [
+        {
+          "label": "1. Initial Assessment",
+          "content": "We evaluate your current systems in a Specification Review, determining how each component aligns with .NET 8\n"
+        },
+        {
+          "label": "2. Strategy Selection",
+          "content": "We recommend either a gradual rollout or a full upgrade, depending on your priorities and timelines.\n"
+        },
+        {
+          "label": "3. Planning",
+          "content": "Refactor: Update existing code to run on .NET 8.\n\nReplace: Find a ready-made product with the functions you need.\n\nRewrite: Build from the ground up if no equivalents exist.\n"
+        },
+        {
+          "label": "4. Execution",
+          "content": "Our team follows a careful migration plan that reduces downtime and keeps disruptions to a minimum.\n"
+        },
+        {
+          "label": "5. Ongoing Support",
+          "content": "After go-live, we stay available for any tweaks and help your team settle into the new environment.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Case Studies",
+          "buttonLink": "https://www.ssw.com.au/company/clients"
+        },
+        {
+          "buttonText": "Rules for Better .NET8 Migration",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png"
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ye7r7",
+          "image": "",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "",
+            "clearChipText": ""
+          },
+          "icon": "BiTachometer",
+          "heading": "Enhanced Performance",
+          "description": "Up to 25% faster startup times and improved runtime performance with Native AOT compilation. Benefit from optimized garbage collection and reduced memory usage in cloud-native applications.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "imtiro",
+          "image": "",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": ""
+          },
+          "icon": "BiCodeBlock",
+          "heading": "Modern Development",
+          "description": "Access to C# 12 features including primary constructors and collection expressions. Enhanced debugging capabilities and improved tooling support across all development environments.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "m0bkqf",
+          "image": "",
+          "altText": "",
+          "chips": {
+            "filledChipText": ""
+          },
+          "icon": "BiSolidLockAlt",
+          "heading": "Security & Support",
+          "description": "Latest security features and patches with long-term support until November 2026. Improved authentication systems and built-in protection against common vulnerabilities.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ".NET Experts"
+      },
+      "heading": "Why SSW?",
+      "isH1": false,
+      "description": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Expert Guidance",
+            "description": "Our team has years of experience moving legacy applications to the latest .NET version, consistently reducing risk and cutting costs for our clients.",
+            "icon": "BiSolidAward"
+          },
+          {
+            "heading": "Documented Best Practices",
+            "description": "We’ve recorded our hard-earned insights in our Rules to Better .NET 8 Migration to ensure nothing is overlooked.",
+            "icon": "BiSolidBookmarks"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": ""
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech Wisdom from the Trenches",
+      "isH1": false,
+      "body": "At SSW, we share decades of hands-on experience in software—tackling legacy code, fixing bugs, and navigating new tech. No fluff, no jargon—just practical advice to help you build better software",
+      "cards": [
+        {
+          "guid": "qmlcq9",
+          "image": "/images/Louis Test Images/Incident-io-batch/dotnet_collections.png",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": ".NET User Groups",
+            "clearChipText": "1 hour"
+          },
+          "icon": "BiLogoYoutube",
+          "heading": "Collections in .NET: The Performance Deep Dive You Didn't Know You Needed 🚀",
+          "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
+          "embeddedButton": {
+            "buttonText": "Watch Now ",
+            "icon": "BiPlay"
+          }
+        },
+        {
+          "guid": "s76w3",
+          "image": "/images/Louis Test Images/Incident-io-batch/donet8_cloud-native.png",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": ".NET Aspire",
+            "clearChipText": "1 hour "
+          },
+          "icon": "BiSolidSpreadsheet",
+          "heading": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
+          "description": "SSW's Matt Wicks teams up with Octopus Deploy's Rob Pearson to demystify .NET Aspire. Dive into real-world orchestration, service integration, and deployment strategies that'll level up your cloud-native game.",
+          "embeddedButton": {
+            "buttonText": "Watch Now ",
+            "icon": "BiPlay"
+          }
+        },
+        {
+          "guid": "s22wwo",
+          "image": "/images/Louis Test Images/Incident-io-batch/dotnet_cleanarchitecture.png",
+          "altText": "Full-Stack Clean Architecture: The Right Way to Share Code",
+          "chips": {
+            "filledChipText": ".NET User Groups",
+            "clearChipText": "1 hour"
+          },
+          "icon": "BiLogoYoutube",
+          "heading": "Full-Stack Clean Architecture: The Right Way to Share Code",
+          "description": "Stop wrestling with UI and API code! Matt Goldman (author of .NET MAUI in Action) reveals how to nail Clean Architecture across MAUI and ASP.NET Core without the classic pitfalls. Expect real demos, not just theory.",
+          "embeddedButton": {
+            "buttonText": "Watch Now ",
+            "icon": "BiPlay"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your  project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
+}
