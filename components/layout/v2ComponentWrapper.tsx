@@ -92,7 +92,7 @@ const V2ComponentWrapper = ({
       <section
         ref={ref}
         className={classNames(
-          "relative transition-opacity duration-300 z-30",
+          "relative transition-opacity duration-300 z-5",
           isInInitialViewport === false && "opacity-0",
           !isInInitialViewport && isInView && "opacity-100"
         )}
