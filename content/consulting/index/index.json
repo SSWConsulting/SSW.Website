@@ -913,7 +913,7 @@
         {
           "title": "Backup/Disaster Recovery Audit",
           "description": "If you have good backups and a thorough Disaster Recovery plan, you can mitigate or completely overcome potential catastrophes.",
-          "logo": "/images/thumbs/thumb-backup-icon.jpg",
+          "logo": "/images/thumbs/consulting/thumb-backup.svg",
           "page": "content/consulting/backup-recovery.mdx",
           "tags": [
             {
@@ -924,7 +924,7 @@
         {
           "title": "Microsoft Teams",
           "description": "Teams is the premier Office 365 chat, collaboration and phone system from Microsoft.",
-          "logo": "/images/thumbs/thumb-teams-2023.png",
+          "logo": "/images/thumbs/consulting/thumb-teams.svg",
           "page": "content/consulting/microsoft-teams.mdx",
           "tags": [
             {
