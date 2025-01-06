@@ -64,12 +64,6 @@
                   "url": "/consulting?tag=Cloud-and+Infrastructure",
                   "description": "Designing scalable, secure, and resilient cloud computing environments",
                   "iconImg": "/images/megamenu-icons/CloudAndInfrastructure.svg"
-                },
-                {
-                  "name": "Other SSW Services",
-                  "url": "/consulting?tag=Other-SSW+Services",
-                  "description": "SSW's other enterprise software development services",
-                  "iconImg": "/images/megamenu-icons/OtherSSWService.svg"
                 }
               ]
             }
