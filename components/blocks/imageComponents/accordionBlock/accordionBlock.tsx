@@ -60,7 +60,7 @@ export const AccordionBlock = ({ data }) => {
               />
             );
 
-            return button.buttonLink ? (
+            return button.buttonLink && !button.showLeadCaptureForm ? (
               <Link href={button.buttonLink} key={`link-wrapper-${index}`}>
                 {buttonElement}
               </Link>
