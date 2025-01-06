@@ -2,11 +2,16 @@
 import { Card, CardCarousel } from "../cardCarousel/cardCarousel";
 import { useTechnologyCardContext } from "./technologyCardProvider";
 const TechnologyCardContents = ({ cardMap }) => {
-  const { data } = useTechnologyCardContext();
-  console.log("data", data);
-  if (!data) return <></>;
+  const data = useTechnologyCardContext();
+  if (!cardMap) {
+    return <></>;
+  }
+  if (!data?.technologyGroups) {
+    return <></>;
+  }
   const cardList: Card[] = data?.technologyGroups.reduce((arr, val) => {
-    return [...cardMap[val.technologyGroup.name], ...arr];
+    if (!val.technologyGroup) return arr;
+    return [...cardMap[val.technologyGroup?.name || ""], ...arr];
   }, []);
   const cardCarouselData = {
     isStacked: data?.isStacked,

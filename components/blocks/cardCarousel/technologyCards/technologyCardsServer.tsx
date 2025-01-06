@@ -25,7 +25,6 @@ async function fetchCategoryDataMap() {
       contain: true,
     };
   });
-  console.log("mappedTechnologyCards", mappedTechnologyCards);
   const technologyCategoryData = Object.groupBy(
     mappedTechnologyCards,
     ({ name }) => name

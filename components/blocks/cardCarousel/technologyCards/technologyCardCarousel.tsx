@@ -1,3 +1,4 @@
+"use client";
 import { Consultingv2BlocksCardCarousel } from "@/tina/types";
 import { TechnologyCardsProvider } from "./technologyCardProvider";
 
