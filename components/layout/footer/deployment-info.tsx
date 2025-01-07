@@ -23,7 +23,7 @@ export const DeploymentInfo = () => {
   return (
     <div className="text-center sm:text-left">
       This website is under{" "}
-      <CustomLink href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment">
+      <CustomLink href="/rules/rules-to-better-websites-deployment">
         CONSTANT CONTINUOUS DEPLOYMENT
       </CustomLink>
       .&nbsp;
