@@ -43,8 +43,8 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/TmiCfUq2Ne6fn24iuMP7KviIYg.png",
-        "bleed": false
+        "backgroundImage": "",
+        "bleed": true
       },
       "_template": "imageTextBlock"
     },
