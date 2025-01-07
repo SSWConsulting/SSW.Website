@@ -1,6 +1,10 @@
 {
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "2-day AI Workshop",
       "_template": "breadcrumbs"
     },
     {
