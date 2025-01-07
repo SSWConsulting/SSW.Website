@@ -9,6 +9,11 @@ export const buttonSchema = [
     name: "buttonText",
   },
   {
+    type: "boolean",
+    label: "Show lead capture form",
+    name: "showLeadCaptureForm",
+  },
+  {
     type: "string",
     label: "Button Link",
     name: "buttonLink",

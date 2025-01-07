@@ -18,6 +18,7 @@ interface RippleButtonProps
   fontClassName?: string;
   duration?: string;
   variant: ColorVariant;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
@@ -30,6 +31,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
       rippleColor = "rgba(0, 0, 0, 0.25)",
       duration = "600ms",
       textTinaField,
+      onClick = () => {},
       ...props
     },
     ref
@@ -64,6 +66,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
 
     return (
       <button
+        onClick={(e) => onClick(e)}
         className={cn(
           "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-md px-6 py-3 text-center",
           "",

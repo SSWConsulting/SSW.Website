@@ -59,7 +59,7 @@ const V2ComponentWrapper = ({
         backgroundOptions.find((value) => {
           return value.reference === data.background?.backgroundColour;
         })?.classes,
-        "w-full relative overflow-visible",
+        "relative w-full overflow-visible",
         className
       )}
     >
@@ -67,7 +67,7 @@ const V2ComponentWrapper = ({
         <Image
           ref={bleed}
           src={data.background?.backgroundImage}
-          className="absolute w-full z-0 overflow-visible grid inset-0 place-items-center"
+          className="absolute inset-0 z-0 grid w-full place-items-center overflow-visible"
           alt="background image"
           width={
             (elementWidth || bleed.current?.getBoundingClientRect()?.width) ?? 0
@@ -92,7 +92,7 @@ const V2ComponentWrapper = ({
       <section
         ref={ref}
         className={classNames(
-          "relative transition-opacity duration-300 z-5",
+          "z-5 relative transition-opacity duration-300",
           isInInitialViewport === false && "opacity-0",
           !isInInitialViewport && isInView && "opacity-100"
         )}
