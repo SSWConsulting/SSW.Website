@@ -18,6 +18,7 @@ type CarouselProps = {
   plugins?: CarouselPlugin;
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
+  itemLength?: number;
 };
 
 type CarouselContextProps = {
@@ -54,6 +55,7 @@ const Carousel = React.forwardRef<
       plugins,
       className,
       children,
+      itemLength,
       ...props
     },
     ref
@@ -69,7 +71,7 @@ const Carousel = React.forwardRef<
         AutoPlay({
           delay: 5000,
           playOnInit: true,
-          stopOnInteraction: false,
+          stopOnInteraction: true,
           stopOnMouseEnter: true,
         }),
         ...(plugins || []),
@@ -135,6 +137,11 @@ const Carousel = React.forwardRef<
         api?.off("select", onSelect);
       };
     }, [api, onSelect]);
+
+    React.useEffect(() => {
+      api?.scrollTo(Math.floor((itemLength - 1) / 2));
+      setSelectedIndex(Math.floor((itemLength - 1) / 2));
+    }, [itemLength, api]);
 
     return (
       <CarouselContext.Provider
