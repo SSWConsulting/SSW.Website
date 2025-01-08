@@ -935,7 +935,7 @@
         {
           "title": "Video Conferencing",
           "description": "Engage remote teams and employees to work from home; promote collaboration across the team; run webinars and live events; meet clients; interview job candidates.",
-          "logo": "/images/thumbs/thumb-video-conferencing.jpg",
+          "logo": "/images/thumbs/consulting/thumb-video-conference.svg",
           "page": "content/consulting/video-conferencing.mdx",
           "tags": [
             {
@@ -946,7 +946,7 @@
         {
           "title": "Service Desk",
           "description": "Potential costs savings as you are only paying for support when you need it.",
-          "logo": "/images/thumbs/thumb-servicedesk.jpg",
+          "logo": "/images/thumbs/consulting/thumb-service-desk.svg",
           "page": "content/consulting/service-desk.mdx",
           "tags": [
             {
@@ -957,7 +957,7 @@
         {
           "title": "Support Plans",
           "description": "Gain peace of mind that you'll be covered in case of an emergency.",
-          "logo": "/images/thumbs/thumb-supportplans.jpg",
+          "logo": "/images/thumbs/consulting/thumb-support.svg",
           "page": "content/consulting/support-plans.mdx",
           "tags": [
             {
@@ -968,7 +968,7 @@
         {
           "title": "Intune",
           "description": "Intune is a cloud-based service in the enterprise mobility management (EMM) space that helps enable your workforce to be productive while keeping your corporate data protected.",
-          "logo": "/images/thumbs/thumb-intune.png",
+          "logo": "/images/thumbs/consulting/thumb-intune.svg",
           "page": "content/consulting/intune.mdx",
           "tags": [
             {
