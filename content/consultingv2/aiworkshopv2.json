@@ -101,8 +101,8 @@
           "content": "We start with a comprehensive evaluation of your current system through our Specification Review. This critical first step helps us:\n\n* Map out your application's architecture and dependencies\n* Identify potential migration challenges and compatibility issues\n* Document critical business functionality that must be preserved\n* Assess your team's readiness and training needs\n"
         },
         {
-          "label": "2. Strategy Selection",
-          "content": "We recommend either a gradual rollout or a full upgrade, depending on your priorities and timelines.\n"
+          "label": "Phase 2: Strategy Selection",
+          "content": "Based on your business priorities and technical requirements, we'll help you choose the optimal migration strategy:\n\n* Strangler Fig Pattern: Perfect for large, complex applications where a gradual transition is preferred. We incrementally replace legacy components while maintaining system stability.\n* Big Bang Approach: Ideal for smaller applications or when a quick transition is required. The entire application is migrated in one coordinated effort.\n"
         },
         {
           "label": "3. Planning",
