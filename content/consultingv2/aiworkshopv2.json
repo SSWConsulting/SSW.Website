@@ -49,12 +49,6 @@
           "showLeadCaptureForm": true,
           "buttonLink": "https://www.jotform.com/form/233468468973070",
           "colour": 0
-        },
-        {
-          "buttonText": "Explore our Migration Guide",
-          "showLeadCaptureForm": false,
-          "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy/",
-          "colour": 1
         }
       ],
       "background": {
