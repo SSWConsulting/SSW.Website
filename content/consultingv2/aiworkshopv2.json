@@ -113,8 +113,8 @@
           "content": "We implement the migration using industry best practices:\n\n* Maintain parallel environments for testing and validation\n* Follow a robust CI/CD pipeline for deployment\n* Perform thorough testing at each stage\n* Monitor system performance and stability\n* Provide rollback procedures for risk mitigation\n"
         },
         {
-          "label": "5. Ongoing Support",
-          "content": "After go-live, we stay available for any tweaks and help your team settle into the new environment.\n"
+          "label": "Phase 5: Optimization",
+          "content": "Post-migration support ensures your application performs at its best:\n\n* Performance tuning and optimization\n* Security hardening\n* Knowledge transfer to your team\n* Documentation updates\n* Monitoring and maintenance planning\n"
         }
       ],
       "buttons": [
