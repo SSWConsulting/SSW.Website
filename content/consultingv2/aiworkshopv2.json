@@ -13,8 +13,7 @@
     },
     {
       "topLabel": {
-        "labelText": "",
-        "icon": "BiSolidBadgeCheck"
+        "labelText": ""
       },
       "heading": "Expert .NET 8 migration. Zero business disruption.",
       "isH1": true,
