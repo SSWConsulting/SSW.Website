@@ -67,8 +67,8 @@
     {
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/Louis Test Images/Better Stack/Infrastructure monitoring _ Better Stack/flare-d7d01fa723928dd1b472b4e1dec1f6c9c6cfe7e0da35e3ed594d96ee63d3e5e9.png",
-        "bleed": true
+        "backgroundImage": "",
+        "bleed": false
       },
       "heading": "Trusted by",
       "isWhiteImages": true,
