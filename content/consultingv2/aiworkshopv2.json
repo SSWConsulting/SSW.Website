@@ -216,8 +216,8 @@
             "icon": "BiLogoMicrosoft"
           },
           {
-            "heading": "Documented Best Practices",
-            "description": "We’ve recorded our hard-earned insights in our Rules to Better .NET 8 Migration to ensure nothing is overlooked.",
+            "heading": "Risk-Proof Migration Process",
+            "description": "Our 5-stage migration framework isn't theoretical - it's battle-tested across 1,000+ clients in 15 countries. Each stage (Assessment → Strategy → Plan → Migrate → Optimize) has clear deliverables and checkpoints.",
             "icon": "BiSolidBookmarks"
           }
         ]
