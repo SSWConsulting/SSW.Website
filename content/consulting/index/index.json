@@ -761,7 +761,7 @@
         {
           "title": "Kentico",
           "description": "Kentico is the only fully integrated ASP.NET CMS, E-commerce, and Online Marketing platform.",
-          "logo": "/images/thumbs/thumb-kentico.jpg",
+          "logo": "/images/thumbs/consulting/thumb-kentico.svg",
           "page": "content/consulting/kentico.mdx",
           "externalUrl": "",
           "tags": [
@@ -776,7 +776,7 @@
         {
           "title": "DNN - DotNetNuke",
           "description": "DNN (AKA Evoq) can be used as a web content management system (CMS) for simple web sites or as a powerful application development framework.",
-          "logo": "/images/thumbs/thumb-dnn.jpg",
+          "logo": "/images/thumbs/consulting/thumb-dnn.svg",
           "page": "content/consulting/dnn-dotnetnuke.mdx",
           "externalUrl": "",
           "tags": [
