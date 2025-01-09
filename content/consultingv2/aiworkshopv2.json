@@ -129,8 +129,8 @@
           "buttonLink": "https://www.ssw.com.au/company/clients"
         },
         {
-          "buttonText": "Rules for Better .NET8 Migration",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
+          "buttonText": "Explore our Migration Guide",
+          "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy/",
           "colour": 1
         }
       ],
