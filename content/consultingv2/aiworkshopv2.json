@@ -208,16 +208,16 @@
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
-            "heading": "Deep Microsoft DNA",
-            "description": "We're not just certified - we're contributors. With multiple MVPs and a Microsoft Regional Director on the team, we've helped shape the very platform you're migrating to.",
+            "heading": "Microsoft-Grade Expertise",
+            "description": "With multiple MVPs and a Regional Director on the team, we don't just follow best practices - we help create them. Check out our Rules to Better .NET 8 Migration.",
             "icon": "BiLogoMicrosoft"
           },
           {
-            "heading": "Risk-Proof Migration Process",
-            "description": "Our 5-stage migration framework isn't theoretical - it's battle-tested across 1,000+ clients in 15 countries. Each stage (Assessment → Strategy → Plan → Migrate → Optimize) has clear deliverables and checkpoints.",
+            "heading": "Battle-Tested Process",
+            "description": "Our 5-stage migration framework (Assessment → Strategy → Plan → Migrate → Optimize) removes the guesswork. Each phase has clear deliverables and checkpoints.",
             "icon": "BiSolidBookmarks"
           }
         ]
