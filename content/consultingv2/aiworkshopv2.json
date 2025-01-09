@@ -200,9 +200,9 @@
       "topLabel": {
         "labelText": ".NET Experts"
       },
-      "heading": "Why SSW?",
+      "heading": "Why SSW For Your .NET 8 Migration?",
       "isH1": false,
-      "description": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.\n",
+      "description": "Migrating to .NET 8 isn't just a version bump - it's a critical project that needs the right expertise. Here's why tech leaders trust us:\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -211,9 +211,9 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Expert Guidance",
-            "description": "Our team has years of experience moving legacy applications to the latest .NET version, consistently reducing risk and cutting costs for our clients.",
-            "icon": "BiSolidAward"
+            "heading": "Deep Microsoft DNA",
+            "description": "We're not just certified - we're contributors. With multiple MVPs and a Microsoft Regional Director on the team, we've helped shape the very platform you're migrating to.",
+            "icon": "BiLogoMicrosoft"
           },
           {
             "heading": "Documented Best Practices",
