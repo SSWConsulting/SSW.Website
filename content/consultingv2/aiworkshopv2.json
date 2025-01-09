@@ -105,8 +105,8 @@
           "content": "Based on your business priorities and technical requirements, we'll help you choose the optimal migration strategy:\n\n* Strangler Fig Pattern: Perfect for large, complex applications where a gradual transition is preferred. We incrementally replace legacy components while maintaining system stability.\n* Big Bang Approach: Ideal for smaller applications or when a quick transition is required. The entire application is migrated in one coordinated effort.\n"
         },
         {
-          "label": "3. Planning",
-          "content": "Refactor: Update existing code to run on .NET 8.\n\nReplace: Find a ready-made product with the functions you need.\n\nRewrite: Build from the ground up if no equivalents exist.\n"
+          "label": "Phase 3: Planning",
+          "content": "For each component in your system, we develop a detailed action plan following one of three approaches:\n\nRefactor\n\n* Modernize existing code to leverage .NET 8 features\n* Preserve business logic while improving performance\n* Update dependencies and packages\n\nReplace\n\n* Identify modern alternatives for legacy components\n* Evaluate third-party solutions that match your requirements\n* Ensure seamless integration with your existing ecosystem\n\nRewrite\n\n* Create new components from scratch when necessary\n* Implement using modern best practices and patterns\n* Take advantage of .NET 8's latest capabilities\n"
         },
         {
           "label": "4. Execution",
