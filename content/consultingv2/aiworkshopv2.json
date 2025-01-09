@@ -13,11 +13,11 @@
     },
     {
       "topLabel": {
-        "labelText": ""
+        "labelText": ".NET 8 Migration & Modernization"
       },
-      "heading": "Upgrade to .NET 8 for Faster, More Secure Applications",
+      "heading": "Future-proof your enterprise apps. Ship faster. Scale smarter.",
       "isH1": true,
-      "description": "",
+      "description": "Ready to upgrade your .NET applications? Our battle-tested migration process has helped 1000+ clients modernize their systems with zero downtime and enhanced performance.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -26,24 +26,20 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Lightning-Fast Performance",
-            "description": "Use Native AOT for smaller memory footprints, quicker load times, and a better user experience",
-            "icon": "BiSolidBolt"
+            "heading": "⚡ Faster Time-to-Market",
+            "description": "Use Native AOT for smaller memory footprints, quicker load times, and a better user experience"
           },
           {
-            "heading": "Cloud-Ready Scalability",
-            "description": "Deploy in any environment, so your apps can grow alongside your organization.",
-            "icon": "BiSolidCloud"
+            "heading": "🔄 Zero-Downtime Migration",
+            "description": "Our proven strangler fig pattern ensures your systems stay operational during transition."
           },
           {
-            "heading": "Strong Security",
-            "description": "Guard your solutions with built-in encryption and compliance tools backed by Microsoft’s platform.",
-            "icon": "BiSolidLockAlt"
+            "heading": "💻 Modern Dev Experience",
+            "description": "Leverage C# 12's latest features and minimal APIs for cleaner, more maintainable code."
           },
           {
-            "heading": "Future-Proof Platform",
-            "description": "Enjoy Long-Term Support (LTS), regular updates, and new features like C# 12.",
-            "icon": "BiSolidCalendarCheck"
+            "heading": "📈 Cloud-Native Performance",
+            "description": "Built-in container support and Azure integration for instant scalability."
           }
         ]
       },
