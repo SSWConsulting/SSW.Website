@@ -248,45 +248,6 @@
       "_template": "imageTextBlock"
     },
     {
-      "topLabel": {
-        "labelText": "Lorem Ipsum"
-      },
-      "heading": "Lorem Ipsum",
-      "isH1": false,
-      "description": "",
-      "chips": {
-        "filledChipText": "Lorem",
-        "clearChipText": "Ipsum"
-      },
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Seamless Migration",
-            "description": "Zero disruption to 5+ million daily transactions while modernizing 200+ microservices"
-          },
-          {
-            "heading": "Future-Ready Architecture",
-            "description": "Leveraging .NET 8's Native AOT, minimal APIs, and built-in container support"
-          }
-        ]
-      },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
-      "mediaConfiguration": {
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (19).png"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
       "isStacked": true,
       "heading": "Tech Wisdom from the Trenches",
       "isH1": false,
