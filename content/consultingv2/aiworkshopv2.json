@@ -211,7 +211,7 @@
         "clearChipText": "Azure"
       },
       "featureColumns": {
-        "twoColumns": false,
+        "twoColumns": true,
         "features": [
           {
             "heading": "75% Faster Deployments",
