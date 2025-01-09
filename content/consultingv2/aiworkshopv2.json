@@ -207,8 +207,8 @@
       "isH1": false,
       "description": "Transforming a 12-year-old claims processing system to modern .NET\n\n\n",
       "chips": {
-        "filledChipText": "",
-        "clearChipText": ""
+        "filledChipText": ".NET 8",
+        "clearChipText": "Azure"
       },
       "featureColumns": {
         "twoColumns": false,
