@@ -13,11 +13,11 @@
     },
     {
       "topLabel": {
-        "labelText": ".NET 8 Migration & Modernization"
+        "labelText": ""
       },
       "heading": "Future-proof your enterprise apps. Ship faster. Scale smarter.",
       "isH1": true,
-      "description": "Ready to upgrade your .NET applications? Our battle-tested migration process has helped 1000+ clients modernize their systems with zero downtime and enhanced performance.\n",
+      "description": "",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
