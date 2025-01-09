@@ -109,8 +109,8 @@
           "content": "For each component in your system, we develop a detailed action plan following one of three approaches:\n\nRefactor\n\n* Modernize existing code to leverage .NET 8 features\n* Preserve business logic while improving performance\n* Update dependencies and packages\n\nReplace\n\n* Identify modern alternatives for legacy components\n* Evaluate third-party solutions that match your requirements\n* Ensure seamless integration with your existing ecosystem\n\nRewrite\n\n* Create new components from scratch when necessary\n* Implement using modern best practices and patterns\n* Take advantage of .NET 8's latest capabilities\n"
         },
         {
-          "label": "4. Execution",
-          "content": "Our team follows a careful migration plan that reduces downtime and keeps disruptions to a minimum.\n"
+          "label": "Phase 4: Migration Execution",
+          "content": "We implement the migration using industry best practices:\n\n* Maintain parallel environments for testing and validation\n* Follow a robust CI/CD pipeline for deployment\n* Perform thorough testing at each stage\n* Monitor system performance and stability\n* Provide rollback procedures for risk mitigation\n"
         },
         {
           "label": "5. Ongoing Support",
