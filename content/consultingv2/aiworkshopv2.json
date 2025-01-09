@@ -201,11 +201,12 @@
     },
     {
       "topLabel": {
-        "labelText": ""
+        "labelText": "Success Story",
+        "icon": "BiBarChartAlt"
       },
-      "heading": "Why SSW For Your .NET 8 Migration?",
+      "heading": "Legacy Insurance System Upgrade",
       "isH1": false,
-      "description": "Migrating to .NET 8 isn't just a version bump - it's a critical project that needs the right expertise. Here's why tech leaders trust us:\n",
+      "description": "Transforming a 12-year-old claims processing system to modern .NET\n\n\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -214,13 +215,13 @@
         "twoColumns": false,
         "features": [
           {
-            "heading": "Microsoft-Grade Expertise",
-            "description": "With multiple MVPs and a Regional Director on the team, we don't just follow best practices - we help create them. Check out our Rules to Better .NET 8 Migration.",
+            "heading": "75% Faster Deployments",
+            "description": "Cut release cycles from weeks to days with modern CI/CD",
             "icon": "BiLogoMicrosoft"
           },
           {
-            "heading": "Battle-Tested Process",
-            "description": "Our 5-stage migration framework (Assessment → Strategy → Plan → Migrate → Optimize) removes the guesswork. Each phase has clear deliverables and checkpoints.",
+            "heading": "$1.5M Annual Savings",
+            "description": "Reduced infrastructure costs through cloud optimization",
             "icon": "BiFingerprint"
           }
         ]
@@ -271,6 +272,9 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (19).png"
+      },
       "_template": "imageTextBlock"
     },
     {
