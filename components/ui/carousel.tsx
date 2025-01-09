@@ -139,10 +139,10 @@ const Carousel = React.forwardRef<
     }, [api, onSelect]);
 
     React.useEffect(() => {
-      const lengthOrApiMissing = !api || !itemLength
-      if (!lengthOrApiMissing ) {
-           api?.scrollTo(Math.floor((itemLength - 1) / 2));
-           setSelectedIndex(Math.floor((itemLength - 1) / 2));
+      const lengthOrApiMissing = !api || !itemLength;
+      if (!lengthOrApiMissing) {
+        api?.scrollTo(Math.floor((itemLength - 1) / 2));
+        setSelectedIndex(Math.floor((itemLength - 1) / 2));
       }
     }, [itemLength, api]);
 
