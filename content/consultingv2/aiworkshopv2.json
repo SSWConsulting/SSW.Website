@@ -181,7 +181,7 @@
           "chips": {
             "filledChipText": ""
           },
-          "icon": "BiAnalyse",
+          "icon": "BiRocket",
           "heading": "Mobile & Cross-Platform Ready",
           "description": "Leverage your .NET 8 upgrade to extend into mobile apps using React Native, Xamarin, or Flutter with our cross-platform expertise.",
           "embeddedButton": {
