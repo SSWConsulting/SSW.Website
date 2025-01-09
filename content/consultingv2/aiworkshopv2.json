@@ -227,7 +227,12 @@
       },
       "buttons": [
         {
-          "buttonText": "Read the full story"
+          "buttonText": "Read the Full Story"
+        },
+        {
+          "buttonText": "Book Your Migration Assessment",
+          "showLeadCaptureForm": true,
+          "colour": 1
         }
       ],
       "background": {
