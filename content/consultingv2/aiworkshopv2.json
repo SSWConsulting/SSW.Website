@@ -93,12 +93,12 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Our Phased Approach",
-      "body": "Migrating to .NET 8 can be complex and expensive if not done correctly. SSW is here to guide you through a proven approach with Microsoft-certified consultants who understand the .NET ecosystem inside and out.",
+      "heading": "Strategic .NET 8 Migration: A Phased Approach",
+      "body": "Migrating to .NET 8 requires careful planning and execution. Our battle-tested approach breaks down this complex process into manageable phases, ensuring a smooth transition while minimizing business disruption.",
       "accordionItems": [
         {
-          "label": "1. Initial Assessment",
-          "content": "We evaluate your current systems in a Specification Review, determining how each component aligns with .NET 8\n"
+          "label": "Phase 1: Assessment",
+          "content": "We start with a comprehensive evaluation of your current system through our Specification Review. This critical first step helps us:\n\n* Map out your application's architecture and dependencies\n* Identify potential migration challenges and compatibility issues\n* Document critical business functionality that must be preserved\n* Assess your team's readiness and training needs\n"
         },
         {
           "label": "2. Strategy Selection",
