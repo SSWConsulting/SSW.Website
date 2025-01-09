@@ -225,6 +225,11 @@
           }
         ]
       },
+      "buttons": [
+        {
+          "buttonText": "Read the full story"
+        }
+      ],
       "background": {
         "backgroundColour": 2,
         "backgroundImage": ""
