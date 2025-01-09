@@ -52,6 +52,7 @@
         },
         {
           "buttonText": "Talk to a .NET 8 Specialist",
+          "showLeadCaptureForm": true,
           "buttonLink": "https://www.jotform.com/form/233468468973070",
           "colour": 0
         }
