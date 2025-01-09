@@ -117,6 +117,7 @@
           "content": "Post-migration support ensures your application performs at its best:\n\n* Performance tuning and optimization\n* Security hardening\n* Knowledge transfer to your team\n* Documentation updates\n* Monitoring and maintenance planning\n"
         }
       ],
+      "isMultipleOpen": true,
       "buttons": [
         {
           "buttonText": "Case Studies",
