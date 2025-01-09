@@ -1,0 +1,20 @@
+{
+  "title": "Building HAL: Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "TJ Gokken",
+  "presenterProfileUrl": "tjgokken.com",
+  "startDateTime": "2025-01-15T08:00:00.000Z",
+  "endDateTime": "2025-01-15T11:00:00.000Z",
+  "startShowBannerDateTime": "2025-01-14T14:00:00.000Z",
+  "endShowBannerDateTime": "2025-01-15T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": ".NET Core",
+  "abstract": "Building HAL: Creating Multi-Language AI-Powered Applications with Rust, Python, and Blazor with TJ Gokken\n\nLet’s do some polyglot programming. We’ll create a modern system diagnostics tool called HAL (Hardware Assistant that Learns). We’ll combine Rust's system-level performance, Python's AI capabilities with AutoGen, a multi-agent framework, and Blazor's modern web interface into a cohesive application.\nKey Takeaways:\n\nInter-process communication between Rust, Python, and .NET\nUnderstand when and why to use different languages in AI applications\nLearn to implement Microsoft's AutoGen for multi-agent AI systems",
+  "description": "Building HAL: Creating Multi-Language AI-Powered Applications with Rust, Python, and Blazor with TJ Gokken\n\nLet’s do some polyglot programming. We’ll create a modern system diagnostics tool called HAL (Hardware Assistant that Learns). We’ll combine Rust's system-level performance, Python's AI capabilities with AutoGen, a multi-agent framework, and Blazor's modern web interface into a cohesive application.\n\n\nKey Takeaways:\n\n* Inter-process communication between Rust, Python, and .NET\n* Understand when and why to use different languages in AI applications\n* Learn to implement Microsoft's AutoGen for multi-agent AI systems\n\nAgenda (AEDT)\n6:00 pm - Pizza and networking at SSW Sydney!\n6:15pm - The tech news with Eve & Adam Cogan\n6:30 pm - Building HAL: Creating Multi-Language AI-Powered Applications with Rust, Python, and Blazor with TJ Gokken\n\nCan't make it? Join us on the live stream➡️ [https://www.ssw.com.au/live](https://www.ssw.com.au/live)\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
