@@ -131,7 +131,7 @@
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "",
-        "bleed": true
+        "bleed": false
       },
       "mediaConfiguration": {
         "placement": "Right",
