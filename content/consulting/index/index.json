@@ -746,7 +746,7 @@
         {
           "title": "WordPress",
           "description": "WordPress the most popular content management system (CMS) on the web, and is trusted by content publishers from both large and small businesses.",
-          "logo": "/images/thumbs/thumb-wordpress.jpg",
+          "logo": "/images/thumbs/consulting/thumb-wordpress.svg",
           "page": "content/consulting/wordpress.mdx",
           "externalUrl": "",
           "tags": [
