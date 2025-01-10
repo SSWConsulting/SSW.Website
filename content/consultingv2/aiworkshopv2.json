@@ -311,6 +311,13 @@
       "_template": "cardCarousel"
     },
     {
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
