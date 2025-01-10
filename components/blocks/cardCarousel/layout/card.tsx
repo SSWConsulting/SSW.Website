@@ -1,5 +1,6 @@
 import { ListItem } from "@/components/blocksSubtemplates/listItem";
 import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
+import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import Image from "next/image";
 import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -24,23 +25,27 @@ const Card = ({ data, placeholder }: CardProps) => {
         })?.classes
       }`}
     >
-      {(data.image || placeholder) && (
-        <div
-          className="relative mb-2 min-h-36 w-full overflow-hidden rounded-md"
-          data-tina-field={tinaField(data, "image")}
-        >
-          <Image
-            src={
-              usePlaceholder
-                ? placeholderImage
-                : (data.image ?? placeholderImage)
-            }
-            onError={() => setUsePlaceholder(true)}
-            alt={data.altText ?? "Card Image"}
-            fill={true}
-            className={data.contain ? "object-contain" : "object-cover"}
-          />
-        </div>
+      {data.embed ? (
+        <YouTubeEmbed className="mb-2 min-h-36 w-full" id={data.embed} />
+      ) : (
+        (data.image || placeholder) && (
+          <div
+            className="relative mb-2 min-h-36 w-full overflow-hidden rounded-md"
+            data-tina-field={tinaField(data, "image")}
+          >
+            <Image
+              src={
+                usePlaceholder
+                  ? placeholderImage
+                  : (data.image ?? placeholderImage)
+              }
+              onError={() => setUsePlaceholder(true)}
+              alt={data.altText ?? "Card Image"}
+              fill={true}
+              className={data.contain ? "object-contain" : "object-cover"}
+            />
+          </div>
+        )
       )}
       <Icon data={{ name: data.icon }} className="size-6 text-sswRed" />
       {data.chips && <PillGroup data={data.chips} />}
@@ -80,3 +85,4 @@ const Card = ({ data, placeholder }: CardProps) => {
 };
 
 export { Card };
+
