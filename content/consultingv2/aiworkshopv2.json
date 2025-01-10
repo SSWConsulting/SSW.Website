@@ -26,20 +26,24 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "⚡ Faster Time-to-Market",
-            "description": "Use Native AOT for smaller memory footprints, quicker load times, and a better user experience"
+            "heading": "Faster Time-to-Market",
+            "description": "Use Native AOT for smaller memory footprints, quicker load times, and a better user experience",
+            "icon": "BiGridAlt"
           },
           {
-            "heading": "🔄 Zero-Downtime Migration",
-            "description": "Our proven strangler fig pattern ensures your systems stay operational during transition."
+            "heading": "Zero-Downtime Migration",
+            "description": "Our proven strangler fig pattern ensures your systems stay operational during transition.",
+            "icon": "BiAlarm"
           },
           {
-            "heading": "💻 Modern Dev Experience",
-            "description": "Leverage C# 12's latest features and minimal APIs for cleaner, more maintainable code."
+            "heading": "Modern Dev Experience",
+            "description": "Leverage C# 12's latest features and minimal APIs for cleaner, more maintainable code.",
+            "icon": "BiLaptop"
           },
           {
-            "heading": "📈 Cloud-Native Performance",
-            "description": "Built-in container support and Azure integration for instant scalability."
+            "heading": "Cloud-Native Performance",
+            "description": "Built-in container support and Azure integration for instant scalability.",
+            "icon": "BiLineChart"
           }
         ]
       },
