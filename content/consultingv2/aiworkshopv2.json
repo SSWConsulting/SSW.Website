@@ -78,25 +78,19 @@
       "isWhiteImages": true,
       "logos": [
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/xkInZMdrWkfsJk4MoLdXsAOQ.png"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/NznFdPaT7rFFggVDNojLOiFYavk.png"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/N7PtMlSPCIEq5WcTZJR2ZFVow.png"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/SwgZrB14vBJ3e0b4SoNzOg9DnE.png"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png"
-        },
-        {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png"
-        },
-        {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "logo": "/images/Louis Test Images/Incident-io-batch/nLVeWBlDCvYsJZmYoJMrTlvc6U.png",
           "altText": "Logo"
         }
       ],
@@ -135,7 +129,7 @@
           "colour": 1
         },
         {
-          "buttonText": "Rules to Better .NET 8 Migrations sushsjhsjhjashjabnajsjahshs",
+          "buttonText": "Rules to Better .NET 8 Migrations",
           "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
           "colour": 1
         }
@@ -212,7 +206,7 @@
     },
     {
       "topLabel": {
-        "labelText": ""
+        "labelText": "Top Label"
       },
       "heading": "Why Choose SSW for Your .NET Migration?",
       "isH1": false,
