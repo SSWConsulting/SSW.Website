@@ -208,9 +208,9 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "Legacy Insurance System Upgrade",
+      "heading": "Why Choose SSW for Your .NET Migration?",
       "isH1": false,
-      "description": "A major insurer was drowning in tech debt: 3-week deployments, [skyrocketing](https://sswcom.sharepoint.com/sites/SSWDesigners/Shared%20Documents/Forms/AllItems.aspx?isAscending=false\\&sortField=Modified\\&id=%2Fsites%2FSSWDesigners%2FShared%20Documents%2FGeneral%2F2%2DSSW%2DMarketing%2DAnd%2DSocial%2DMedia%2FUser%2DGroups%2FSocialMedia%2F2024%2D04%2DCloud%2ENative%2DAspirations%2Dwith%2D%2ENet%2DAspire%2FNet%2DUG%2FCloud%2ENative%2DAspirations%2Dwith%2D%2ENet%2DAspire%2D16x9%2DCountdown%2Ejpg\\&viewid=2d692eea%2Da503%2D40f2%2Da1c3%2D3af443adf996\\&parent=%2Fsites%2FSSWDesigners%2FShared%20Documents%2FGeneral%2F2%2DSSW%2DMarketing%2DAnd%2DSocial%2DMedia%2FUser%2DGroups%2FSocialMedia%2F2024%2D04%2DCloud%2ENative%2DAspirations%2Dwith%2D%2ENet%2DAspire%2FNet%2DUG) costs, and a creaking .NET 4.5 monolith. We transformed their system using Azure DevOps CI/CD, containerization, and a slick microservices architecture\n",
+      "description": "We've tackled gnarly legacy systems since 1990. That's 30+ years of turning messy monoliths into clean, cloud-ready code. No theory, just battle-tested expertise from devs who've been in your shoes.\n",
       "chips": {
         "filledChipText": ".NET 8",
         "clearChipText": "Azure"
@@ -219,13 +219,17 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "75% Faster Deployments",
-            "description": "Cut release cycles from weeks to days with modern CI/CD",
+            "heading": "Zero Production Hiccups",
+            "description": "Your system keeps running while we modernize. We're experts at staged migrations that don't disrupt your business."
+          },
+          {
+            "heading": "Skip the Learning Curve",
+            "description": "We've already solved the tricky bits of .NET migration. Access our proven patterns and avoid the common pitfalls.",
             "icon": "BiLogoMicrosoft"
           },
           {
-            "heading": "$1.5M Annual Savings",
-            "description": "Reduced infrastructure costs through cloud optimization",
+            "heading": "Future-Proof Architecture",
+            "description": "Get more than just a migration. We'll help you build a system that's ready for whatever comes next.",
             "icon": "BiFingerprint"
           }
         ]
