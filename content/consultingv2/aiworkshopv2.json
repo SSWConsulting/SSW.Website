@@ -235,7 +235,7 @@
         },
         {
           "buttonText": "Book Your Migration Assessment",
-          "showLeadCaptureForm": false,
+          "showLeadCaptureForm": true,
           "buttonLink": "https://form.jotform.com/250066954570056",
           "colour": 1
         }
