@@ -1,18 +1,11 @@
 "use client";
 import { Container } from "@/components/util/container";
+import getYouTubeVideoId from "@/services/client/youtube.service";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { classNames } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
-
-const getYouTubeVideoId = (url: string) => {
-  if (!url) return null;
-  // Handle different YouTube URL formats
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-  const match = url.match(regExp);
-  return match && match[2].length === 11 ? match[2] : null;
-};
 
 export const ImageComponentLayout = ({ data, children }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
