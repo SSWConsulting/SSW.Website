@@ -32,17 +32,17 @@
           },
           {
             "heading": "Zero-Downtime Migration",
-            "description": "Our proven strangler fig pattern ensures your systems stay operational during transition.",
+            "description": "Our proven strangler fig pattern ensures your systems stay operational during transition",
             "icon": "BiAlarm"
           },
           {
             "heading": "Modern Dev Experience",
-            "description": "Leverage C# 12's latest features and minimal APIs for cleaner, more maintainable code.",
+            "description": "Leverage C# 12's latest features and minimal APIs for cleaner, more maintainable code",
             "icon": "BiLaptop"
           },
           {
             "heading": "Cloud-Native Performance",
-            "description": "Built-in container support and Azure integration for instant scalability.",
+            "description": "Built-in container support and Azure integration for instant scalability",
             "icon": "BiLineChart"
           }
         ]
