@@ -311,11 +311,6 @@
       "_template": "cardCarousel"
     },
     {
-      "technologyGroups": [
-        {
-          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
-        }
-      ],
       "techCardStyle": 0,
       "background": {
         "backgroundColour": 5
