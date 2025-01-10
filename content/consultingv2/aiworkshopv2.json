@@ -127,6 +127,11 @@
           "buttonText": "Explore our Migration Guide",
           "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy/",
           "colour": 1
+        },
+        {
+          "buttonText": "Rules to Better .NET 8 Migrations",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
+          "colour": 1
         }
       ],
       "background": {
