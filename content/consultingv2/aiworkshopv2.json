@@ -209,7 +209,7 @@
       },
       "heading": "Legacy Insurance System Upgrade",
       "isH1": false,
-      "description": "A major insurer was drowning in tech debt: 3-week deployments, skyrocketing costs, and a creaking .NET 4.5 monolith. We transformed their system using Azure DevOps CI/CD, containerization, and a slick microservices architecture\n",
+      "description": "A major insurer was drowning in tech debt: 3-week deployments, [skyrocketing](https://sswcom.sharepoint.com/sites/SSWDesigners/Shared%20Documents/Forms/AllItems.aspx?isAscending=false\\&sortField=Modified\\&id=%2Fsites%2FSSWDesigners%2FShared%20Documents%2FGeneral%2F2%2DSSW%2DMarketing%2DAnd%2DSocial%2DMedia%2FUser%2DGroups%2FSocialMedia%2F2024%2D04%2DCloud%2ENative%2DAspirations%2Dwith%2D%2ENet%2DAspire%2FNet%2DUG%2FCloud%2ENative%2DAspirations%2Dwith%2D%2ENet%2DAspire%2D16x9%2DCountdown%2Ejpg\\&viewid=2d692eea%2Da503%2D40f2%2Da1c3%2D3af443adf996\\&parent=%2Fsites%2FSSWDesigners%2FShared%20Documents%2FGeneral%2F2%2DSSW%2DMarketing%2DAnd%2DSocial%2DMedia%2FUser%2DGroups%2FSocialMedia%2F2024%2D04%2DCloud%2ENative%2DAspirations%2Dwith%2D%2ENet%2DAspire%2FNet%2DUG) costs, and a creaking .NET 4.5 monolith. We transformed their system using Azure DevOps CI/CD, containerization, and a slick microservices architecture\n",
       "chips": {
         "filledChipText": ".NET 8",
         "clearChipText": "Azure"
@@ -235,7 +235,8 @@
         },
         {
           "buttonText": "Book Your Migration Assessment",
-          "showLeadCaptureForm": true,
+          "showLeadCaptureForm": false,
+          "buttonLink": "https://form.jotform.com/250066954570056",
           "colour": 1
         }
       ],
