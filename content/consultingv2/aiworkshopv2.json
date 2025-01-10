@@ -220,7 +220,8 @@
         "features": [
           {
             "heading": "Zero Production Hiccups",
-            "description": "Your system keeps running while we modernize. We're experts at staged migrations that don't disrupt your business."
+            "description": "Your system keeps running while we modernize. We're experts at staged migrations that don't disrupt your business.",
+            "icon": "BiCheckDouble"
           },
           {
             "heading": "Skip the Learning Curve",
