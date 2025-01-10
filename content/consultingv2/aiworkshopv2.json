@@ -50,8 +50,8 @@
       "buttons": [
         {
           "buttonText": "Talk to a .NET 8 Specialist",
-          "showLeadCaptureForm": true,
-          "buttonLink": "https://form.jotform.com/240991361342051",
+          "showLeadCaptureForm": false,
+          "buttonLink": "     <a       href=\"javascript:void(         window.open(           'https://form.jotform.com/240991361342051',           'blank',           'scrollbars=yes,           toolbar=no,           width=700,           height=500'         )       )     \">       SSW Newsletter signup form     </a>",
           "colour": 0
         }
       ],
