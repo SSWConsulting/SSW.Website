@@ -216,7 +216,7 @@
         "clearChipText": "Azure"
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Zero Production Hiccups",
@@ -237,13 +237,10 @@
       },
       "buttons": [
         {
-          "buttonText": "Read the Full Story"
-        },
-        {
           "buttonText": "Book Your Migration Assessment",
           "showLeadCaptureForm": true,
           "buttonLink": "https://form.jotform.com/250066954570056",
-          "colour": 1
+          "colour": 0
         }
       ],
       "background": {
