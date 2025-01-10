@@ -50,8 +50,8 @@
       "buttons": [
         {
           "buttonText": "Talk to a .NET 8 Specialist",
-          "showLeadCaptureForm": false,
-          "buttonLink": "https://www.jotform.com/form/233468468973070",
+          "showLeadCaptureForm": true,
+          "buttonLink": "https://form.jotform.com/240991361342051",
           "colour": 0
         }
       ],
