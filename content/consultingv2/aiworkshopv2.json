@@ -64,7 +64,7 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/net-8/replicate-prediction-k3390gb95drgc0cm4m1beddha4-ezgif.com-video-to-gif-converter.gif"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/devs_planning_office.png"
       },
       "_template": "imageTextBlock"
     },
@@ -78,19 +78,25 @@
       "isWhiteImages": true,
       "logos": [
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/xkInZMdrWkfsJk4MoLdXsAOQ.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/NznFdPaT7rFFggVDNojLOiFYavk.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/N7PtMlSPCIEq5WcTZJR2ZFVow.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/SwgZrB14vBJ3e0b4SoNzOg9DnE.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/nLVeWBlDCvYsJZmYoJMrTlvc6U.png",
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
           "altText": "Logo"
         }
       ],
@@ -206,7 +212,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Top Label"
+        "labelText": ""
       },
       "heading": "Why Choose SSW for Your .NET Migration?",
       "isH1": false,
