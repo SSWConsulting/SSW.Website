@@ -124,10 +124,6 @@
       "isMultipleOpen": true,
       "buttons": [
         {
-          "buttonText": "Case Studies",
-          "buttonLink": "https://www.ssw.com.au/company/clients"
-        },
-        {
           "buttonText": "Explore our Migration Guide",
           "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy/",
           "colour": 1
