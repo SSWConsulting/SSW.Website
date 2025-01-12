@@ -26,11 +26,11 @@ const Card = ({ data, placeholder }: CardProps) => {
       }`}
     >
       {data.embed ? (
-        <YouTubeEmbed className="mb-2 min-h-36 w-full" id={data.embed} />
+        <YouTubeEmbed className="mb-2 aspect-video w-full" id={data.embed} />
       ) : (
         (data.image || placeholder) && (
           <div
-            className="relative mb-2 min-h-36 w-full overflow-hidden rounded-md"
+            className="relative mb-2 aspect-video w-full shrink-0 overflow-hidden rounded-md"
             data-tina-field={tinaField(data, "image")}
           >
             <Image
@@ -85,3 +85,4 @@ const Card = ({ data, placeholder }: CardProps) => {
 };
 
 export { Card };
+
