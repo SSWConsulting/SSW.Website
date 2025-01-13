@@ -68,12 +68,12 @@
               {
                 "heading": "Competitive Advantage",
                 "description": "Turn AI from buzzwords into real results your team can use today",
-                "icon": "BiTrendingUp"
+                "icon": "BiCheck"
               },
               {
                 "heading": "Measurable ROI",
                 "description": "See measurable productivity gains within weeks, not months",
-                "icon": "BiMoneyWithdraw"
+                "icon": "BiCheck"
               }
             ]
           },
