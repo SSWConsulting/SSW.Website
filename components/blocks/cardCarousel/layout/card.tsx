@@ -94,4 +94,3 @@ const Card = ({ data, placeholder }: CardProps) => {
 };
 
 export { Card };
-
