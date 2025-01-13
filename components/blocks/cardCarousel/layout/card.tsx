@@ -26,7 +26,12 @@ const Card = ({ data, placeholder }: CardProps) => {
       }`}
     >
       {data.embed ? (
-        <YouTubeEmbed className="mb-2 aspect-video w-full" id={data.embed} />
+        <YouTubeEmbed
+          showSeparateChannelPreviews={false}
+          controls={0}
+          className="mb-2 aspect-video w-full"
+          id={data.embed}
+        />
       ) : (
         (data.image || placeholder) && (
           <div
