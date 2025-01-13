@@ -1,4 +1,5 @@
 import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
+import { mediaTypeField } from "../mediaType.schema";
 
 export const ImageComponentLayoutSchema = [
   backgroundSchema,
@@ -14,17 +15,7 @@ export const ImageComponentLayoutSchema = [
       },
     },
     fields: [
-      {
-        type: "string",
-        label: "Media Type",
-        name: "mediaType",
-        description: "Choose between image or YouTube video",
-        default: "image",
-        ui: {
-          component: "select",
-          options: ["image", "youtube"],
-        },
-      },
+      mediaTypeField,
       {
         type: "string",
         label: "Media Placement",

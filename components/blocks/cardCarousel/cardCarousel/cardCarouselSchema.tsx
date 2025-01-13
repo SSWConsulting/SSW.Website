@@ -7,6 +7,9 @@ import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/c
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper";
+import { mediaTypeField } from "../../mediaType.schema";
+import { youtubeEmbedField } from "../../youtubeEmbed.schema";
+
 import { Checkbox } from "../../../ui/checkbox";
 
 const GUIDFunction = () => Math.random().toString(36).substring(7);
@@ -306,13 +309,17 @@ export const CardCarouselSchema: Template = {
             component: GUIDGeneratorComponent,
           },
         },
-        {
-          type: "string",
-          label: "Embed",
-          name: "embed",
-          description:
-            "The YouTube video ID to embed (https://www.youtube.com/watch?v=[embed]).",
-        },
+        // @ts-expect-error – Tina doen't reconize imported fields
+        mediaTypeField,
+        // @ts-expect-error – Tina doen't reconize imported fields
+        youtubeEmbedField,
+        // {
+        //   type: "string",
+        //   label: "Embed",
+        //   name: "embed",
+        //   description:
+        //     "The YouTube video ID to embed (https://www.youtube.com/watch?v=[embed]).",
+        // },
         {
           type: "image",
           label: "Image",
