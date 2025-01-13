@@ -33,7 +33,7 @@ const Card = ({ data, placeholder }: CardProps) => {
         <YouTubeEmbed
           showSeparateChannelPreviews={false}
           controls={0}
-          className="mb-2 aspect-video w-full"
+          className="mb-2 aspect-video w-full rounded-md"
           id={youtubeEmbedId}
         />
       ) : (
