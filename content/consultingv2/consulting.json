@@ -62,8 +62,8 @@
       },
       "mediaConfiguration": {
         "placement": "Right",
-        "verticalPlacement": "Bottom",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/6.png"
+        "verticalPlacement": "Centered",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/8.png"
       },
       "_template": "imageTextBlock"
     },
