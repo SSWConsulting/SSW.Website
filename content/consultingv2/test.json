@@ -78,8 +78,8 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "See What Others are Doing",
-            "buttonLink": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+            "buttonText": "",
+            "buttonLink": ""
           }
         },
         {
