@@ -60,7 +60,7 @@
           "guid": "h1b0g",
           "altText": "Lorem Ipsum",
           "chips": {},
-          "icon": "info",
+          "icon": "BiBrain",
           "heading": "Get Ahead of AI",
           "description": "2 in 3 companies are already using AI tools. Don't get left behind - learn how to use AI better than your competition.",
           "featureList": {
@@ -86,7 +86,7 @@
           "guid": "2vxiy",
           "altText": "Lorem Ipsum",
           "chips": {},
-          "icon": "info",
+          "icon": "BiWrench",
           "heading": "Real-World Impact",
           "description": "No boring slides. Get hands-on with AI tools you'll actually use. Work on real tasks that matter to your team.",
           "featureList": {
@@ -111,7 +111,7 @@
           "guid": "3rvqua",
           "altText": "AI Across Your Company",
           "chips": {},
-          "icon": "info",
+          "icon": "BiBody",
           "heading": "AI for Everyone",
           "description": "Every team can work smarter with AI. We'll show your whole company how to use AI tools that make their jobs easier.",
           "featureList": {
