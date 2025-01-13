@@ -94,12 +94,12 @@
               {
                 "heading": "Learn by Doing",
                 "description": "Try out AI tools on your actual work problems, not made-up examples",
-                "icon": "BiSolidBulb"
+                "icon": "BiCheck"
               },
               {
                 "heading": "Master In-Demand Tools",
                 "description": "Walk away with new skills you can use right away",
-                "icon": "BiSolidBadgeCheck"
+                "icon": "BiCheck"
               }
             ]
           },
@@ -118,11 +118,13 @@
             "features": [
               {
                 "heading": "Company-Wide Upskilling",
-                "description": "Training that fits each team's needs - from marketing to HR"
+                "description": "Training that fits each team's needs - from marketing to HR",
+                "icon": "BiCheck"
               },
               {
                 "heading": "Tailored to You",
-                "description": "Get your whole company excited about using AI in their daily work"
+                "description": "Get your whole company excited about using AI in their daily work",
+                "icon": "BiCheck"
               }
             ]
           },
