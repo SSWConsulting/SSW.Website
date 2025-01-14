@@ -148,7 +148,8 @@
       "mediaConfiguration": {
         "placement": "Right",
         "verticalPlacement": "Top",
-        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png"
+        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png",
+        "youtubeUrl": "https://www.youtube.com/watch?v=N9QOoTwOo_U"
       },
       "_template": "accordionBlock"
     },
