@@ -300,9 +300,8 @@
           "heading": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
           "description": "SSW's Matt Wicks teams up with Octopus Deploy's Rob Pearson to demystify .NET Aspire. Dive into real-world orchestration, service integration, and deployment strategies that'll level up your cloud-native game.",
           "embeddedButton": {
-            "buttonText": "Watch Now ",
-            "buttonLink": "https://youtu.be/59G9Cd-rV9w?si=Ql7MoBHGmlAi_HI3",
-            "icon": "BiPlay"
+            "buttonText": "",
+            "buttonLink": ""
           }
         },
         {
