@@ -24,7 +24,7 @@ export const TechnologyCardCarousel = ({ data }) => {
         return {
           guid: card.node.associatedGroup?.name,
           image: card.node.thumbnail,
-          title: card.node.name,
+          heading: card.node.name,
           altText: card.node.name,
           description: card.node.body,
           embeddedButton: {
