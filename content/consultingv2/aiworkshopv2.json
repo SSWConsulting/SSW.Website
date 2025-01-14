@@ -284,6 +284,7 @@
           "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
           "embeddedButton": {
             "buttonText": "Watch Now ",
+            "buttonLink": "https://www.youtube.com/watch?v=ocbPkNROnlc",
             "icon": "BiPlay"
           }
         },
