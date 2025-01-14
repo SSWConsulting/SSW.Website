@@ -271,8 +271,9 @@
       "cards": [
         {
           "guid": "qmlcq9",
+          "embed": "https://youtu.be/ocbPkNROnlc?si=OS6roRVr0lgMLejl",
           "image": "/images/Louis Test Images/Incident-io-batch/dotnet_collections.png",
-          "altText": "Lorem Ipsum",
+          "altText": "Collections in .NET: The Performance Deep Dive You Didn't Know You Needed 🚀",
           "chips": {
             "filledChipText": ".NET User Groups",
             "clearChipText": "1 hour"
