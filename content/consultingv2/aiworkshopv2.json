@@ -287,8 +287,9 @@
         },
         {
           "guid": "s76w3",
+          "embed": "https://youtu.be/59G9Cd-rV9w?si=Ql7MoBHGmlAi_HI3",
           "image": "/images/Louis Test Images/Incident-io-batch/cloud_native_net-aspire_16-9.jpg",
-          "altText": "Lorem Ipsum",
+          "altText": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
           "chips": {
             "filledChipText": ".NET Aspire",
             "clearChipText": "1 hour "
