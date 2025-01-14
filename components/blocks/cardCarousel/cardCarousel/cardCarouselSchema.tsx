@@ -307,6 +307,13 @@ export const CardCarouselSchema: Template = {
           },
         },
         {
+          type: "string",
+          label: "Embed",
+          name: "embed",
+          description:
+            "The YouTube video ID to embed (https://www.youtube.com/watch?v=[embed]).",
+        },
+        {
           type: "image",
           label: "Image",
           name: "image",
