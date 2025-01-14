@@ -364,6 +364,7 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
+          "showLeadCaptureForm": true,
           "colour": 0
         }
       ],
