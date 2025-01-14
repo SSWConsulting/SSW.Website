@@ -146,6 +146,7 @@
         "bleed": false
       },
       "mediaConfiguration": {
+        "mediaType": "youtube",
         "placement": "Right",
         "verticalPlacement": "Top",
         "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png",
