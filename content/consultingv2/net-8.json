@@ -23,7 +23,7 @@
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Faster Time-to-Market",
@@ -39,11 +39,6 @@
             "heading": "Modern Dev Experience",
             "description": "C# 12's primary constructors and minimal APIs cut boilerplate. Built-in caching and rate limiting boost performance.",
             "icon": "BiLaptop"
-          },
-          {
-            "heading": "Cloud-Native Performance",
-            "description": "Built-in container support and Azure integration for instant scalability",
-            "icon": "BiLineChart"
           }
         ]
       },
