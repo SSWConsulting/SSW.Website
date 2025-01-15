@@ -17,10 +17,11 @@ export type BuiltOnAzureProps = {
 export const BuiltOnAzure = ({
   data,
 }: BuiltOnAzureProps) => {
+  console.log("data", data);
   if(data?.azureBanner?.showAzureFooter === false) return <></>
   //show the azure banner by default unless it's disabled
   return (
-    <Section color={data?.azureBanner?.azureFooterColor || "lightgray"}>
+    <Section color={data?.azureBanner?.azureFooterColor || "default"}>
       <Container className="grid grid-cols-1 text-lg lg:grid-cols-2">
         <Link
           data={data}
