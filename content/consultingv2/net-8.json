@@ -340,6 +340,11 @@
       "heading": "Frequently Asked Questions",
       "body": "Need quick answers about .NET 8 migration? Here's what tech teams commonly ask us during assessment calls.",
       "accordionItems": [
+        {},
+        {
+          "label": "How do we prep our team?",
+          "content": "Quick checklist:\n\n1. Set up .NET 8 SDK\n2. Review breaking changes\n3. Run compatibility analyzer\n4. Test on a small project\n5. Plan deployment strategy\n"
+        },
         {
           "label": "What about our existing dependencies?",
           "content": "We audit your NuGet packages first. Most popular packages already support .NET 8. For others, we'll either:\n\n* Update to compatible versions\n* Find modern alternatives\n* Create compatibility shims\n"
