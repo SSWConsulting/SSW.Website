@@ -345,18 +345,21 @@
           "content": "Yes, if you're running applications on older .NET versions. .NET 8 offers:\n\n* Extended support until November 2026\n* Significant performance improvements\n* Better cloud integration\n* Latest security features and patches\n* Access to new C# 12 features\n"
         },
         {
-          "label": "What about our existing dependencies?",
-          "content": "We audit your NuGet packages first. Most popular packages already support .NET 8. For others, we'll either:\n\n* Update to compatible versions\n* Find modern alternatives\n* Create compatibility shims\n"
-        },
-        {
           "label": "What's the typical timeline for a .NET 8 migration?",
           "content": "Migration timelines vary based on:\n\n* Application complexity: 2-12 weeks\n* Codebase size: Factor in \\~1 week per 50k lines of code\n* Dependencies: Third-party libraries might need updates\n* Team availability: Dedicated team vs. part-time effort\n\nOur experience shows most enterprise applications can be migrated within 1-3 months with proper planning.\n"
+        },
+        {
+          "label": "What about our existing dependencies?",
+          "content": "We audit your NuGet packages first. Most popular packages already support .NET 8. For others, we'll either:\n\n* Update to compatible versions\n* Find modern alternatives\n* Create compatibility shims\n"
         },
         {
           "label": "How do we prep our team for .NET8?",
           "content": "Quick checklist:\n\n1. Set up .NET 8 SDK\n2. Review breaking changes\n3. Run compatibility analyzer\n4. Test on a small project\n5. Plan deployment strategy\n"
         },
-        {}
+        {
+          "label": "What kind of support is available post-migration?",
+          "content": "Our support includes:\n\n* 24/7 critical issue resolution\n* Performance monitoring\n* Security updates\n* Optional managed services\n* Regular health checks\n* Continuous optimization\n"
+        }
       ],
       "_template": "accordionBlock"
     },
