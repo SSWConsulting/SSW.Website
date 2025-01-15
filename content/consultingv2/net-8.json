@@ -215,7 +215,7 @@
     },
     {
       "topLabel": {
-        "labelText": ""
+        "labelText": "Case Study"
       },
       "heading": "BizCover: From Microservice Maze to Monolith Magic",
       "isH1": false,
