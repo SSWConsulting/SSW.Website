@@ -1,4 +1,5 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
+import azureBannerSchema from "../components/util/showAzureBanner";
 import { articlesIndexSchema, articlesSchema } from "./collections/articles";
 import { caseStudySchema } from "./collections/case-study";
 import {
@@ -35,6 +36,7 @@ import { partnerIndexSchema } from "./collections/partner";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { presenterSchema } from "./collections/presenter";
 import { productsIndexSchema, productsSchema } from "./collections/products";
+import { tipField } from "./collections/shared-fields";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
@@ -45,6 +47,74 @@ import {
 } from "./collections/usergroup";
 import { videoProductionSchema } from "./collections/videoProduction";
 
+const appendSharedSchemas = (
+  schemas,
+  leadingFields = [],
+  trailingFields = []
+) => {
+  for (const schema of schemas) {
+    if (!schema.fields) {
+      continue;
+    }
+    schema.fields = [...leadingFields, ...schema.fields, ...trailingFields];
+  }
+  return schemas;
+};
+
+const formattedSchemas = () => {
+  return [
+    ...schemas,
+    ...appendSharedSchemas(pageSchemas, [], [azureBannerSchema]),
+  ].sort((a, b) => a.name.localeCompare(b.name));
+};
+
+const pageSchemas = [
+  caseStudySchema,
+  pagesSchema,
+  articlesIndexSchema,
+  articlesSchema,
+  companyIndexSchema,
+  companySchema,
+  consultingv2Schema,
+  consultingIndexSchema,
+  consultingSchema,
+  videoProductionSchema,
+  employmentSchema,
+  eventsIndexSchema,
+  eventsSchema,
+  industrySchema,
+  liveSchema,
+  marketingSchema,
+  officeIndexSchema,
+  officeSchema,
+  partnerIndexSchema,
+  productsIndexSchema,
+  industryIndexSchema,
+  productsSchema,
+  userGroupPageSchema,
+  trainingSchema,
+];
+
+const schemas = [
+  consultingv2TechnologySchema,
+  consultingv2TechnologyGroupsSchema,
+  paymentDetailsSchema,
+  clientsCategorySchema,
+  eventsCalendarSchema,
+  consultingCategorySchema,
+  consultingTagSchema,
+  technologiesSchema,
+  locationSchema,
+  presenterSchema,
+  newsletterSchema,
+  testimonialSchema,
+  testimonialCategoriesSchema,
+  opportunitiesSchema,
+  globalSchema,
+  megaMenuSchema,
+  logosSchema,
+  userGroupGlobalSchema,
+];
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   branch:
@@ -86,50 +156,7 @@ const config = defineStaticConfig({
     return cms;
   },
   schema: {
-    collections: [
-      pagesSchema,
-      globalSchema,
-      megaMenuSchema,
-      articlesIndexSchema,
-      articlesSchema,
-      companyIndexSchema,
-      companySchema,
-      clientsCategorySchema,
-      paymentDetailsSchema,
-      caseStudySchema,
-      consultingv2Schema,
-      consultingv2TechnologyGroupsSchema,
-      consultingv2TechnologySchema,
-      consultingIndexSchema,
-      consultingSchema,
-      videoProductionSchema,
-      consultingCategorySchema,
-      consultingTagSchema,
-      technologiesSchema,
-      employmentSchema,
-      opportunitiesSchema,
-      eventsIndexSchema,
-      eventsSchema,
-      eventsCalendarSchema,
-      locationSchema,
-      presenterSchema,
-      logosSchema,
-      industrySchema,
-      liveSchema,
-      marketingSchema,
-      newsletterSchema,
-      officeIndexSchema,
-      officeSchema,
-      partnerIndexSchema,
-      productsIndexSchema,
-      industryIndexSchema,
-      productsSchema,
-      testimonialSchema,
-      testimonialCategoriesSchema,
-      trainingSchema,
-      userGroupPageSchema,
-      userGroupGlobalSchema,
-    ],
+    collections: formattedSchemas(),
   },
   search: {
     tina: {

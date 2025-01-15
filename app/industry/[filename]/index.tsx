@@ -5,6 +5,9 @@ import {
   DownloadWhitepaperLink,
   industryRenderer,
 } from "@/components/blocks/industryRenderer";
+
+
+import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { Container } from "@/components/util/container";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
@@ -61,7 +64,7 @@ export default function IndustryPage({ props, tinaProps }) {
           />
         </div>
       </Container>
-      <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+      <BuiltOnAzure data={industry} />
     </>
   );
 }

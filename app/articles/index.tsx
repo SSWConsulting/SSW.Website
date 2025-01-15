@@ -2,6 +2,7 @@
 
 import ArticlesHeader from "@/components/articles/articlesHeader";
 import ArticlesList from "@/components/articles/articlesList";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
@@ -96,7 +97,7 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
             </div>
           )}
         </section>
-        {data.articlesIndex.showAzureFooter && <PreFooter />}
+        <PreFooter data={data.articlesIndex} />
       </HydrationBoundary>
     </>
   );

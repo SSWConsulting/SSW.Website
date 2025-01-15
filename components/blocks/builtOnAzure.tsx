@@ -3,14 +3,25 @@ import dynamic from "next/dynamic";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
+import { SectionColor } from "../util/constants/styles";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
 const Image = dynamic(() => import("next/image"));
 
-export const BuiltOnAzure = ({ data }) => {
+export type BuiltOnAzureProps = {
+  data: {
+    azureBanner?: { showAzureFooter?: boolean; azureFooterColor?: string };
+  };
+}
+export const BuiltOnAzure = ({
+  data,
+}: BuiltOnAzureProps) => {
+  console.log("data", data);
+  if(data?.azureBanner?.showAzureFooter === false) return <></>
+  //show the azure banner by default unless it's disabled
   return (
-    <Section color={data.backgroundColor}>
+    <Section color={data?.azureBanner?.azureFooterColor || "default"}>
       <Container className="grid grid-cols-1 text-lg lg:grid-cols-2">
         <Link
           data={data}
@@ -52,7 +63,7 @@ const Link = ({ data, href, className, text, image }) => {
   return (
     <CustomLink
       href={href}
-      data-tina-field={tinaField(data, builtOnAzureBlock.backgroundColor)}
+      data-tina-field={tinaField(data, "azureBanner")}
       className={classNames(
         "unstyled flex items-center justify-center",
         className

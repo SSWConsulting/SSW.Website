@@ -18,7 +18,7 @@ import {
   callToActionSchema,
 } from "../../components/callToAction/callToAction";
 import { seoSchema } from "../../components/util/seo";
-import azureBannerSchema from "../../components/util/showAzureBanner";
+import AzureBannerFields from "../../components/util/showAzureBanner";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
 import { tipField } from "./shared-fields";
 
@@ -137,7 +137,7 @@ export const articlesSchema: Collection = {
         ...callToActionSchema.fields,
       ],
     },
-    azureBannerSchema,
+    // azureBannerSchema,
   ],
 };
 
@@ -208,7 +208,7 @@ export const articlesIndexSchema: Collection = {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
-    azureBannerSchema,
+    // azureBannerSchema,
   ],
 };
 export const clientsCategorySchema: Collection = {

@@ -63,7 +63,7 @@ export default function CompanyIndexPage({ props, tinaProps }) {
         <></>
       )}
       <Section>
-        <BuiltOnAzure data={{ backgroundColor: "default" }} />
+        <BuiltOnAzure data={data.companyIndex} />
       </Section>
     </>
   );

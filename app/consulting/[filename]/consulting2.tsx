@@ -1,5 +1,6 @@
 "use client";
 import { Blocks } from "@/components/blocks-renderer";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { SectionColor } from "@/components/util/constants/styles";
 import { Container } from "@/components/util/container";
@@ -24,7 +25,7 @@ const Consulting2 = memo(
     return (
       <>
         <div className="dark flex h-full flex-col">
-          <Section color={SectionColor.ToggleLightMode}>
+          <Section color={"toggleLightmode"}>
             <Container
               size="custom"
               width="custom"
@@ -43,7 +44,7 @@ const Consulting2 = memo(
               </div>
             </Container>
           </Section>
-          <PreFooter />
+          <PreFooter data={data.consultingv2} />
         </div>
       </>
     );

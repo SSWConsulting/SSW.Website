@@ -1,4 +1,6 @@
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { PageCard } from "@/components/blocks/pageCards";
+import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { tinaField } from "tinacms/dist/react";
@@ -32,6 +34,7 @@ export default function ProductsIndexContent({ props }) {
           </div>
         </div>
       </Container>
+      <BuiltOnAzure data={props} />
     </>
   );
 }

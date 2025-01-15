@@ -1,6 +1,7 @@
 "use client";
 
 import ArticleAuthor from "@/components/articles/articleAuthor";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
@@ -26,9 +27,9 @@ export type ArticlePageProps = {
 const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
   const { data } = tinaProps;
   const showCallToAction = data.articles.callToAction.showCallToAction;
-  const azureBannerColor = showCallToAction
-    ? SectionColor.Default
-    : SectionColor.LightGray;
+  const azureBannerColor: SectionColor = showCallToAction
+    ? "default"
+    : "lightgray";
   const { author } = data.articles;
   return (
     <>
@@ -85,7 +86,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
       {data.articles.subTitle && (
         <section
           className={classNames(
-            "prose prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 mx-auto w-full max-w-9xl flex-row px-8 pb-8 lg:flex"
+            "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 lg:flex"
           )}
         >
           <div data-tina-field={tinaField(data.articles, "subTitle")}>
@@ -138,9 +139,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
           )}
         </CallToAction>
       )}
-      {data.articles.showAzureFooter && (
-        <PreFooter backgroundColor={azureBannerColor} />
-      )}
+      <PreFooter data={data.articles} />
     </>
   );
 };
