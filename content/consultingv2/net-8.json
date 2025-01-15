@@ -241,10 +241,6 @@
       },
       "buttons": [
         {
-          "buttonText": "Read the Full Story",
-          "colour": 1
-        },
-        {
           "buttonText": "Book a FREE Initial Meeting",
           "showLeadCaptureForm": true,
           "buttonLink": "https://form.jotform.com/250066954570056",
