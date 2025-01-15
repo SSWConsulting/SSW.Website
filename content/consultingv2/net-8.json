@@ -340,23 +340,23 @@
       "heading": "Frequently Asked Questions",
       "body": "Need quick answers about .NET 8 migration? Here's what tech teams commonly ask us during assessment calls.",
       "accordionItems": [
-        {},
         {
-          "label": "How do we prep our team?",
-          "content": "Quick checklist:\n\n1. Set up .NET 8 SDK\n2. Review breaking changes\n3. Run compatibility analyzer\n4. Test on a small project\n5. Plan deployment strategy\n"
+          "label": "Is .NET 8 worth the migration effort?",
+          "content": "For most teams, yes. You get native AOT compilation (60% faster startup), improved cloud integration, and complete C# 12 support. Plus, LTS support until November 2026 means better long-term stability.\n"
         },
         {
           "label": "What about our existing dependencies?",
           "content": "We audit your NuGet packages first. Most popular packages already support .NET 8. For others, we'll either:\n\n* Update to compatible versions\n* Find modern alternatives\n* Create compatibility shims\n"
         },
         {
-          "label": "Is .NET 8 worth the migration effort?",
-          "content": "For most teams, yes. You get native AOT compilation (60% faster startup), improved cloud integration, and complete C# 12 support. Plus, LTS support until November 2026 means better long-term stability.\n"
-        },
-        {
           "label": "How long will migration take?",
           "content": "Typical timelines:\n\n* Small apps (\\<50k LOC): 2-4 weeks\n* Medium apps (50k-200k LOC): 1-3 months\n* Large apps (>200k LOC): 3-6 months Factors: codebase complexity, test coverage, and dependency count.\n"
-        }
+        },
+        {
+          "label": "How do we prep our team for .NET8?",
+          "content": "Quick checklist:\n\n1. Set up .NET 8 SDK\n2. Review breaking changes\n3. Run compatibility analyzer\n4. Test on a small project\n5. Plan deployment strategy\n"
+        },
+        {}
       ],
       "_template": "accordionBlock"
     },
