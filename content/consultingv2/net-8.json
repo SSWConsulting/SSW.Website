@@ -337,6 +337,21 @@
       "_template": "technologyCardCarousel"
     },
     {
+      "heading": "Frequently Asked Questions",
+      "body": "Need quick answers about .NET 8 migration? Here's what tech teams commonly ask us during assessment calls.",
+      "accordionItems": [
+        {
+          "label": "Is .NET 8 worth the migration effort?",
+          "content": "For most teams, yes. You get native AOT compilation (60% faster startup), improved cloud integration, and complete C# 12 support. Plus, LTS support until November 2026 means better long-term stability.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "_template": "accordionBlock"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
