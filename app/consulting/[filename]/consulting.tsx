@@ -133,11 +133,17 @@ export default function Consulting({ tinaProps, props }) {
         </CallToAction>
       )}
       <Section>
-        <BuiltOnAzure data={data.consulting?.azureBanner?.azureBannerColor ? data.consulting : {
-          azureBanner: { 
-            azureFooterColor: "default",
+        <BuiltOnAzure
+          data={
+            data.consulting?.azureBanner?.azureFooterColor
+              ? data.consulting
+              : {
+                  azureBanner: {
+                    azureFooterColor: "default",
+                  },
+                }
           }
-        }} />
+        />
       </Section>
     </>
   );
