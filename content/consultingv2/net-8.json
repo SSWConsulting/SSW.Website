@@ -345,8 +345,8 @@
           "content": "For most teams, yes. You get native AOT compilation (60% faster startup), improved cloud integration, and complete C# 12 support. Plus, LTS support until November 2026 means better long-term stability.\n"
         },
         {
-          "label": "Ipsum",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "How long will migration take?",
+          "content": "Typical timelines:\n\n* Small apps (\\<50k LOC): 2-4 weeks\n* Medium apps (50k-200k LOC): 1-3 months\n* Large apps (>200k LOC): 3-6 months Factors: codebase complexity, test coverage, and dependency count.\n"
         }
       ],
       "_template": "accordionBlock"
