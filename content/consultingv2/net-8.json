@@ -160,7 +160,7 @@
     },
     {
       "isStacked": true,
-      "heading": "Why should you choose SSW?",
+      "heading": "How We Handle .NET Migration Differently",
       "isH1": false,
       "body": "",
       "cardStyle": 0,
@@ -174,8 +174,8 @@
             "clearChipText": ""
           },
           "icon": "BiRun",
-          "heading": "Zero Production Hiccups",
-          "description": "Your system keeps running while we modernize. We're experts at staged migrations that don't disrupt your business.",
+          "heading": "Zero Production Risk",
+          "description": "Your systems stay live during migration. We use battle-tested patterns and parallel environments to ensure business continuity.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -202,8 +202,8 @@
             "filledChipText": ""
           },
           "icon": "BiRocket",
-          "heading": "Future-Proof Architecture",
-          "description": "Get more than just a migration. We'll help you build a system that's ready for whatever comes next.",
+          "heading": "Beyond Basic Migration",
+          "description": "We architect for what's next: cloud-native features, containerization, and microservices – all baked into your migration.",
           "embeddedButton": {
             "buttonText": ""
           }
