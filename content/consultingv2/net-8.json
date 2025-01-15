@@ -349,8 +349,8 @@
           "content": "We audit your NuGet packages first. Most popular packages already support .NET 8. For others, we'll either:\n\n* Update to compatible versions\n* Find modern alternatives\n* Create compatibility shims\n"
         },
         {
-          "label": "How long will migration take?",
-          "content": "Typical timelines:\n\n* Small apps (\\<50k LOC): 2-4 weeks\n* Medium apps (50k-200k LOC): 1-3 months\n* Large apps (>200k LOC): 3-6 months Factors: codebase complexity, test coverage, and dependency count.\n"
+          "label": "What's the typical timeline for a .NET 8 migration?",
+          "content": "Migration timelines vary based on:\n\n* Application complexity: 2-12 weeks\n* Codebase size: Factor in \\~1 week per 50k lines of code\n* Dependencies: Third-party libraries might need updates\n* Team availability: Dedicated team vs. part-time effort\n\nOur experience shows most enterprise applications can be migrated within 1-3 months with proper planning.\n"
         },
         {
           "label": "How do we prep our team for .NET8?",
