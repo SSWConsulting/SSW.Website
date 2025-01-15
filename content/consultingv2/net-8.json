@@ -37,7 +37,7 @@
           },
           {
             "heading": "Modern Dev Experience",
-            "description": "Leverage C# 12's latest features and minimal APIs for cleaner, more maintainable code",
+            "description": "C# 12's primary constructors and minimal APIs cut boilerplate. Built-in caching and rate limiting boost performance.",
             "icon": "BiLaptop"
           },
           {
