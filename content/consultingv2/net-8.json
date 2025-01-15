@@ -325,18 +325,6 @@
       "_template": "cardCarousel"
     },
     {
-      "technologyGroups": [
-        {
-          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
-        }
-      ],
-      "techCardStyle": 0,
-      "background": {
-        "backgroundColour": 5
-      },
-      "_template": "technologyCardCarousel"
-    },
-    {
       "heading": "Frequently Asked Questions",
       "body": "Need quick answers about .NET 8 migration? Here's what tech teams commonly ask us during assessment calls.",
       "accordionItems": [
@@ -366,6 +354,18 @@
         "backgroundColour": 5
       },
       "_template": "accordionBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "technologyCardCarousel"
     },
     {
       "topLabel": {
