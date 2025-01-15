@@ -23,7 +23,7 @@
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": false,
+        "twoColumns": true,
         "features": [
           {
             "heading": "Faster Time-to-Market",
