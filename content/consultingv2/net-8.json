@@ -157,7 +157,7 @@
     },
     {
       "isStacked": true,
-      "heading": "",
+      "heading": "Why should you choose SSW?",
       "isH1": false,
       "body": "",
       "cardStyle": 0,
@@ -171,8 +171,8 @@
             "clearChipText": ""
           },
           "icon": "BiAnalyse",
-          "heading": "Choice of Migration Paths",
-          "description": "Whether you need a gradual Strangler Fig approach or a Big Bang migration, we'll help you choose and execute the right strategy for your system's complexity.",
+          "heading": "Zero Production Hiccups",
+          "description": "Your system keeps running while we modernize. We're experts at staged migrations that don't disrupt your business.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -185,8 +185,8 @@
             "filledChipText": ""
           },
           "icon": "BiGlobe",
-          "heading": "Multi-Industry Experience",
-          "description": "From financial services to entertainment, we've helped companies like Commonwealth Bank, Allianz, and Event Cinemas modernize their .NET applications.",
+          "heading": "Skip the Learning Curve",
+          "description": "We've already solved the tricky bits of .NET migration. Access our proven patterns and avoid the common pitfalls.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -199,8 +199,8 @@
             "filledChipText": ""
           },
           "icon": "BiRocket",
-          "heading": "Mobile & Cross-Platform Ready",
-          "description": "Leverage your .NET 8 upgrade to extend into mobile apps using React Native, Xamarin, or Flutter with our cross-platform expertise.",
+          "heading": "Future-Proof Architecture",
+          "description": "Get more than just a migration. We'll help you build a system that's ready for whatever comes next.",
           "embeddedButton": {
             "buttonText": ""
           }
