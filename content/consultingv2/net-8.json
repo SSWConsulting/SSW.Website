@@ -341,10 +341,10 @@
         },
         {
           "label": "What kind of support is available post-migration?",
-          "content": "Our support includes:\n\n* Performance monitoring\n* Security updates\n* Optional managed services\n* Regular health checks\n* Continuous optimization\n"
+          "content": "Our support includes:\n\n* Performance monitoring\n* Security updates\n* Optional managed services\n* Regular health checks\n* Continuous optimization\n\nLearn more about our support plans: [https://www.ssw.com.au/consulting/support-plans](https://www.ssw.com.au/consulting/support-plans)\n"
         }
       ],
-      "isMultipleOpen": true,
+      "isMultipleOpen": false,
       "background": {
         "backgroundColour": 5
       },
