@@ -362,7 +362,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a FREE Initial Meeting",
           "showLeadCaptureForm": true,
           "colour": 0
         }
