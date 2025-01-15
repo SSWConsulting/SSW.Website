@@ -28,7 +28,7 @@
           {
             "heading": "Faster Time-to-Market",
             "description": "Native AOT compilation delivers 60% faster startup and 40% smaller memory footprint. Deploy faster, scale better.",
-            "icon": "BiGridAlt"
+            "icon": "BiFastForward"
           },
           {
             "heading": "Zero-Downtime Migration",
