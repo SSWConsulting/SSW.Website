@@ -341,6 +341,10 @@
       "body": "Need quick answers about .NET 8 migration? Here's what tech teams commonly ask us during assessment calls.",
       "accordionItems": [
         {
+          "label": "What about our existing dependencies?",
+          "content": "We audit your NuGet packages first. Most popular packages already support .NET 8. For others, we'll either:\n\n* Update to compatible versions\n* Find modern alternatives\n* Create compatibility shims\n"
+        },
+        {
           "label": "Is .NET 8 worth the migration effort?",
           "content": "For most teams, yes. You get native AOT compilation (60% faster startup), improved cloud integration, and complete C# 12 support. Plus, LTS support until November 2026 means better long-term stability.\n"
         },
