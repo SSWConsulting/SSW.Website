@@ -791,7 +791,7 @@
         {
           "title": "Sitefinity",
           "description": "Sitefinity's mix of benefits for marketers, IT managers, Developers and designers make it the ideal choice for medium sized businesses.",
-          "logo": "/images/thumbs/thumb-sitefinity.jpg",
+          "logo": "/images/thumbs/consulting/thumb-sitefinity.svg",
           "page": "content/consulting/sitefinity.mdx",
           "externalUrl": "",
           "tags": [
@@ -806,7 +806,7 @@
         {
           "title": "Orchard",
           "description": "A free, open source, community-focused project aimed at delivering applications and reusable components on the rock-solid ASP.NET MVC platform.",
-          "logo": "/images/thumbs/thumb-orchard.jpg",
+          "logo": "/images/thumbs/consulting/thumb-orchard.svg",
           "page": "content/consulting/orchard.mdx",
           "externalUrl": "",
           "tags": [
@@ -821,7 +821,7 @@
         {
           "title": "Sitecore",
           "description": "A mix of powerful marketing and business features, rich development support and scalability make it the ideal solution for leading websites.",
-          "logo": "/images/thumbs/thumb-sitecore.jpg",
+          "logo": "/images/thumbs/consulting/thumb-sitecore.svg",
           "page": "content/consulting/sitecore.mdx",
           "externalUrl": "",
           "tags": [
@@ -836,7 +836,7 @@
         {
           "title": "Umbraco",
           "description": "With over than 200.000 installations, Umbraco is one of the most deployed Web Content Management Systems on the Microsoft stack.",
-          "logo": "/images/thumbs/thumb-umbraco.jpg",
+          "logo": "/images/thumbs/consulting/thumb-umbraco.svg",
           "page": "content/consulting/umbraco.mdx",
           "externalUrl": "",
           "tags": [
