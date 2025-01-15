@@ -62,9 +62,9 @@
       },
       "mediaConfiguration": {
         "placement": "Right",
-        "verticalPlacement": "Top",
+        "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/Untitled design (1).png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_hero_1.png"
       },
       "_template": "imageTextBlock"
     },
