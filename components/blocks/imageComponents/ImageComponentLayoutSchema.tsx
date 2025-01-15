@@ -6,13 +6,25 @@ export const ImageComponentLayoutSchema = [
     type: "object",
     label: "Media",
     name: "mediaConfiguration",
-    description: "Media configuration including layout and image upload.",
+    description: "Media configuration including layout and image/video upload.",
     ui: {
       defaultItem: {
         placement: "Right",
+        mediaType: "image",
       },
     },
     fields: [
+      {
+        type: "string",
+        label: "Media Type",
+        name: "mediaType",
+        description: "Choose between image or YouTube video",
+        default: "image",
+        ui: {
+          component: "select",
+          options: ["image", "youtube"],
+        },
+      },
       {
         type: "string",
         label: "Media Placement",
@@ -29,7 +41,7 @@ export const ImageComponentLayoutSchema = [
         type: "string",
         label: "Media placement (vertical)",
         name: "verticalPlacement",
-        description: "Where the image sits vertically in desktop view",
+        description: "Where the media sits vertically in desktop view",
         ui: {
           component: "select",
           options: ["Centered", "Top", "Bottom"],
@@ -62,6 +74,13 @@ export const ImageComponentLayoutSchema = [
         name: "imageSource",
         description:
           "Upload an image or other media to display in the media text block. 4/3 aspect ratio recommended.",
+      },
+      {
+        type: "string",
+        label: "YouTube URL",
+        name: "youtubeUrl",
+        description:
+          "Enter the YouTube video URL (only used if Media Type is set to youtube)",
       },
       {
         type: "string",
