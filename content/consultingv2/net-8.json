@@ -184,7 +184,7 @@
           "chips": {
             "filledChipText": ""
           },
-          "icon": "BiGlobe",
+          "icon": "BiSkipNext",
           "heading": "Skip the Learning Curve",
           "description": "We've already solved the tricky bits of .NET migration. Access our proven patterns and avoid the common pitfalls.",
           "embeddedButton": {
