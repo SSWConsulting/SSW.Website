@@ -361,6 +361,9 @@
           "content": "Our support includes:\n\n* 24/7 critical issue resolution\n* Performance monitoring\n* Security updates\n* Optional managed services\n* Regular health checks\n* Continuous optimization\n"
         }
       ],
+      "background": {
+        "backgroundColour": 5
+      },
       "_template": "accordionBlock"
     },
     {
