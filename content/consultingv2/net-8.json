@@ -142,8 +142,8 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
+        "backgroundImage": "/images/Louis Test Images/Better Stack/Infrastructure monitoring _ Better Stack/flare-d7d01fa723928dd1b472b4e1dec1f6c9c6cfe7e0da35e3ed594d96ee63d3e5e9.png",
+        "bleed": true
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
@@ -253,8 +253,9 @@
         }
       ],
       "background": {
-        "backgroundColour": 2,
-        "backgroundImage": ""
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": true
       },
       "mediaConfiguration": {
         "placement": "Left",
