@@ -233,9 +233,9 @@
             "icon": "BiChalkboard"
           },
           {
-            "heading": "Skip the Learning Curve",
-            "description": "We've already solved the tricky bits of .NET migration. Access our proven patterns and avoid the common pitfalls.",
-            "icon": "BiCheckDouble"
+            "heading": "Feature delivery speed? Boosted by 40%",
+            "description": "They're shipping code like there's no tomorrow",
+            "icon": "BiFastForward"
           },
           {
             "heading": "Future-Proof Architecture",
