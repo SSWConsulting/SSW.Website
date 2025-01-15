@@ -27,7 +27,7 @@
         "features": [
           {
             "heading": "Faster Time-to-Market",
-            "description": "Use Native AOT for smaller memory footprints, quicker load times, and a better user experience",
+            "description": "Native AOT compilation delivers 60% faster startup and 40% smaller memory footprint. Deploy faster, scale better.",
             "icon": "BiGridAlt"
           },
           {
