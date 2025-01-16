@@ -4,7 +4,6 @@ import { Blocks } from "@/components/blocks-renderer";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import EventsHeader from "@/components/events/eventsHeader";
-import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
@@ -78,7 +77,7 @@ export default function EventsPage({ props, tinaProps }) {
         </div>
 
         {data.events.showTestimonials && (
-          <Section color="white" className="">
+          <Section color="default" className="">
             <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
               <div
                 data-tina-field={tinaField(data.events.testimonials, "tagline")}
