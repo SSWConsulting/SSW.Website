@@ -28,7 +28,7 @@
           {
             "heading": "Blazing Fast Performance",
             "description": "Native AOT compilation delivers 60% faster startups and 40% less memory usage. Your apps run lean and mean.",
-            "icon": "BiSolidBoltCircle"
+            "icon": "BiBoltCircle"
           },
           {
             "heading": "Zero-Downtime Migration",
