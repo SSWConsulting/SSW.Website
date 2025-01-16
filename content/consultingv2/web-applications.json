@@ -80,20 +80,6 @@
           "icon": "info",
           "heading": "Agile Development That Doesn't Waste Your Time.",
           "description": "We actually do Agile properly: Short sprints, regular demos, and transparent communication. See progress fast—no hidden black boxes. We're here to code, not plan meetings.\n",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -105,20 +91,6 @@
           "icon": "info",
           "heading": "Don't Build a Web App That Will Be Obsolete Next Year.",
           "description": "We build scalable, maintainable web apps with the latest tech and best practices. No technical debt, just systems that support your business long-term.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
