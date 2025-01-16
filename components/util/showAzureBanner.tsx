@@ -4,19 +4,19 @@ import { sectionColors } from "./constants/styles";
 const azureBannerSchema: TinaField = {
   type: "object",
   name: "azureBanner",
-  label: "Azure Footer",
+  label: "Azure/Tina Footer",
   required: false,
   fields: [
     {
       type: "boolean",
       name: "showAzureFooter",
-      label: "Show Azure Footer",
+      label: "Show Azure/Tina Footer",
       required: false,
     },
     {
       type: "string",
       name: "azureFooterColor",
-      label: "Azure Footer Color",
+      label: "Azure/Tina Footer Background Color",
       required: false,
       options: Object.keys(sectionColors),
     },
