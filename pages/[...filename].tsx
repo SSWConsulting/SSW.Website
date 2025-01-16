@@ -59,11 +59,7 @@ export default function HomePage(
       )}
 
       <SEO seo={data.page.seo} />
-      <Layout
-        menu={data.megamenu}
-        liveStreamData={props.data.userGroup}
-        showAzureBanner={data.page.showAzureFooter}
-      >
+      <Layout menu={data.megamenu} liveStreamData={props.data.userGroup}>
         {data.page.breadcrumbs && (
           <Section className="mx-auto w-full max-w-9xl px-8 py-5">
             <Breadcrumbs

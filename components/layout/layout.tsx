@@ -53,7 +53,6 @@ interface LayoutProps {
     menuGroups: NavMenuGroup[];
   };
   children: React.ReactNode;
-  showAzureBanner?: boolean;
   liveStreamData: LiveStreamData;
 }
 
