@@ -1,6 +1,10 @@
 {
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for Web Applications",
       "_template": "breadcrumbs"
     },
     {
