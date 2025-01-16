@@ -315,7 +315,12 @@
         {
           "label": "Design: User-Centric Web Application Design",
           "content": "We combine aesthetics and functionality to deliver a great user experience. We plan out the architecture and user interface with your business goals and your end users in mind. We don't just make it look good, we make sure that it works seamlessly.\n"
-        }
+        },
+        {
+          "label": "Development: High-Quality Web Application Development",
+          "content": "Our expert developers use modern frameworks and best practices to craft clean, testable, and scalable code. Our web application development process prioritizes quality and maintainability, so your application is built to last.\n"
+        },
+        {}
       ],
       "buttons": [
         {
