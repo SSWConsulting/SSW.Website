@@ -45,6 +45,9 @@
           "colour": 0
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "verticalPlacement": "Centered",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_2.png"
