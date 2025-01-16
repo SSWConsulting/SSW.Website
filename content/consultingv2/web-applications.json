@@ -361,6 +361,10 @@
           "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-web-api/",
           "icon": "BiNotepad",
           "iconFirst": false
+        },
+        {
+          "buttonText": "Do you have a PWA?",
+          "colour": 1
         }
       ],
       "background": {
