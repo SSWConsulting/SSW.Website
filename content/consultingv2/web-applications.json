@@ -9,7 +9,7 @@
       },
       "heading": "Build High-Performing Web Apps with .NET, Azure, Angular & React",
       "isH1": false,
-      "description": "Your team’s toolkit to stop worrying about overhead and start satisfying users.\n\nSecurely build and scale a world class developer experience with Mintlify.\n",
+      "description": "",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -19,19 +19,23 @@
         "features": [
           {
             "heading": "Lightning-Fast Development",
-            "description": "Ship MVPs and new features quickly through short, focused sprints."
+            "description": "Ship MVPs and new features quickly through short, focused sprints.",
+            "icon": "BiSolidBolt"
           },
           {
             "heading": "Rock-Solid Architecture",
-            "description": "We design for performance and scalability from day one, so your app won’t buckle under load."
+            "description": "We design for performance and scalability from day one, so your app won’t buckle under load.",
+            "icon": "BiSolidBadgeCheck"
           },
           {
             "heading": "Microsoft MVPs on Board",
-            "description": "Real experts certified by Microsoft."
+            "description": "Real experts certified by Microsoft.",
+            "icon": "BiLogoMicrosoft"
           },
           {
             "heading": "Transparent Agile Process",
-            "description": "Frequent demos, constant communication, no hidden surprises."
+            "description": "Frequent demos, constant communication, no hidden surprises.",
+            "icon": "BiStreetView"
           }
         ]
       },
