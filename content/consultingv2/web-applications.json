@@ -376,7 +376,8 @@
         "features": [
           {
             "heading": "Faster onboarding for new devs",
-            "description": "From 6 weeks to 5 days. Now that's what we call an improvement!"
+            "description": "From 6 weeks to 5 days. Now that's what we call an improvement!",
+            "icon": "BiChalkboard"
           },
           {
             "heading": "Feature delivery speed? ",
