@@ -12,7 +12,7 @@
         "labelText": ""
       },
       "heading": "Build High-Performing Web Apps with .NET, Azure, Angular & React",
-      "isH1": false,
+      "isH1": true,
       "description": "",
       "chips": {
         "filledChipText": "",
