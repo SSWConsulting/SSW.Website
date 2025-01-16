@@ -220,12 +220,12 @@
               {
                 "heading": "Framework Flexibility",
                 "description": "We match the right tool to your needs - Angular for enterprise-scale applications, React for dynamic interfaces, or Vue for rapid development.",
-                "icon": "Tina"
+                "icon": "BiSelection"
               },
               {
                 "heading": "Modern Development Workflow",
                 "description": "Built-in state management, component libraries, and development tools that streamline your frontend pipeline.",
-                "icon": "Tina"
+                "icon": "BiNetworkChart"
               }
             ]
           },
