@@ -5,6 +5,7 @@ import { CustomLink } from "../customLink";
 import { SectionColor } from "../util/constants/styles";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+import { Template } from "tinacms";
 
 const Image = dynamic(() => import("next/image"));
 
