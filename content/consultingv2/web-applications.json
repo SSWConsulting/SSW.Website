@@ -333,16 +333,6 @@
           "content": "Our relationship doesn't end after deployment. We provide ongoing web application support, maintenance, and upgrades. Our team is always available to ensure your app continues to deliver value.\n"
         }
       ],
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Right",
