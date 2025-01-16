@@ -303,6 +303,37 @@
         }
       ],
       "_template": "cardCarousel"
+    },
+    {
+      "heading": "Our Proven Process",
+      "body": "We don't just write code; we build solutions. Our process is designed to be transparent, efficient, and to deliver results you can rely on. We believe in predictability, not endless guessing games.",
+      "accordionItems": [
+        {
+          "label": "Lorem",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
+      },
+      "_template": "accordionBlock"
     }
   ]
 }
