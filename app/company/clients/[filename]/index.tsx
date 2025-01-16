@@ -56,11 +56,9 @@ export default function CompanyPage({ tinaProps, props }) {
         <BuiltOnAzure
           data={
             data.caseStudy?.azureBanner?.azureFooterColor
-              ? data.caseStudy
+              ? data.caseStudy.azureBanner
               : {
-                  azureBanner: {
-                    azureFooterColor: "white",
-                  },
+                  azureFooterColor: "white",
                 }
           }
         />

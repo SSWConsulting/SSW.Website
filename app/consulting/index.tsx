@@ -117,7 +117,7 @@ export default function ConsultingIndex({ tinaProps }) {
           </div>
         </div>
       </Container>
-      <BuiltOnAzure data={tinaProps} />
+      <BuiltOnAzure data={tinaProps.azureBanner} />
     </>
   );
 }

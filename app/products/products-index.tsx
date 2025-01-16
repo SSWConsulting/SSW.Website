@@ -33,7 +33,7 @@ export default function ProductsIndexContent({ props }) {
           </div>
         </div>
       </Container>
-      <BuiltOnAzure data={props} />
+      <BuiltOnAzure data={props.productsIndex.azureBanner} />
     </>
   );
 }

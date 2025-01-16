@@ -163,11 +163,9 @@ export default function EmploymentPage({ tinaProps, props }) {
         <BuiltOnAzure
           data={
             data.azureBanner?.azureFooterColor
-              ? data
+              ? data.azureBanner
               : {
-                  azureBanner: {
-                    azureFooterColor: "white",
-                  },
+                  azureFooterColor: "white",
                 }
           }
         />

@@ -92,7 +92,7 @@ export default function PageContent({ props }) {
       <div className="no-print">
         <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
       </div>
-      <BuiltOnAzure data={data.page} />
+      <BuiltOnAzure data={data.page.azureBanner} />
     </>
   );
 }

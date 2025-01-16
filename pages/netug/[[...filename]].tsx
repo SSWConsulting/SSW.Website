@@ -304,7 +304,7 @@ export default function NETUGPage(
           </Container>
 
           <Section>
-            <BuiltOnAzure data={data.userGroupPage} />
+            <BuiltOnAzure data={data.userGroupPage.azureBanner} />
           </Section>
         </Layout>
       </>
@@ -328,14 +328,14 @@ export default function NETUGPage(
               />
             </Section>
           )}
-          <Container className="prose prose-h1:pt-2 py-4" size="custom">
+          <Container className="prose py-4 prose-h1:pt-2" size="custom">
             <TinaMarkdown
               content={data.userGroupPage._body}
               components={componentRenderer}
               data-tina-field={tinaField(data.userGroupPage, "_body")}
             />
           </Container>
-          <BuiltOnAzure data={data.userGroupPage} />
+          <BuiltOnAzure data={data.userGroupPage.azureBanner} />
         </Layout>
       </>
     );

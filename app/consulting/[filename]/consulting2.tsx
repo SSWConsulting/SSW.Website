@@ -42,7 +42,7 @@ const Consulting2 = memo(
               </div>
             </Container>
           </Section>
-          <PreFooter data={data.consultingv2} />
+          <PreFooter data={data.consultingv2.azureBanner} />
         </div>
       </>
     );

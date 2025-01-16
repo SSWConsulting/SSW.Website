@@ -25,7 +25,7 @@ export default function IndustriesPage({ tinaProps }) {
           </div>
         </div>
       </Container>
-      <BuiltOnAzure data={data.industryIndex} />
+      <BuiltOnAzure data={data.industryIndex.azureBanner} />
     </>
   );
 }

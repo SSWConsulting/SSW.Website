@@ -138,9 +138,7 @@ export default function Consulting({ tinaProps, props }) {
             data.consulting?.azureBanner?.azureFooterColor
               ? data.consulting
               : {
-                  azureBanner: {
-                    azureFooterColor: "white",
-                  },
+                  azureFooterColor: "white",
                 }
           }
         />

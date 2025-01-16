@@ -92,11 +92,9 @@ export default function VideoProductionPage({ props, tinaProps }) {
         <BuiltOnAzure
           data={
             data.videoProduction?.azureBanner?.azureFooterColor
-              ? data.videoProduction
+              ? data.videoProduction.azureBanner
               : {
-                  azureBanner: {
-                    azureFooterColors: "white",
-                  },
+                  azureFooterColors: "white",
                 }
           }
         />

@@ -115,7 +115,7 @@ export default function EventsPage({ props, tinaProps }) {
           components={componentRenderer}
         />
       </div>
-      <BuiltOnAzure data={data} />
+      <BuiltOnAzure data={data.events.azureBanner} />
     </>
   );
 }

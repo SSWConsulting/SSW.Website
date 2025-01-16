@@ -101,7 +101,7 @@ export default function TrainingPage({ props, tinaProps }) {
           components={componentRenderer}
         />
       </div>
-      <BuiltOnAzure data={data} />
+      <BuiltOnAzure data={data.training.azureBanner} />
     </>
   );
 }

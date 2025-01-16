@@ -57,7 +57,7 @@ export default function LogosPage(
           </Section>
         )}
       </Container>
-      <BuiltOnAzure data={data.logos} />
+      <BuiltOnAzure data={data.logos.azureBanner} />
     </Layout>
   );
 }

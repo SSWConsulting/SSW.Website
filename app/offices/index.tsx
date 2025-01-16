@@ -110,7 +110,7 @@ export default function OfficesPage({ tinaProps }) {
               </div>
             </div>
           </Container>
-          <BuiltOnAzure data={tinaProps} />
+          <BuiltOnAzure data={tinaProps.azureBanner} />
           {/* <PreFooter /> */}
         </>
       )}

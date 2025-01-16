@@ -1,11 +1,11 @@
 import classNames from "classnames";
 import dynamic from "next/dynamic";
+import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { SectionColor } from "../util/constants/styles";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
-import { Template } from "tinacms";
 
 const Image = dynamic(() => import("next/image"));
 
@@ -18,23 +18,20 @@ export const azureFooterColors: Array<string> = [
 type AzureFooterColors = (typeof azureFooterColors)[number];
 
 export type BuiltOnAzureProps = {
-  data: {
-    azureBanner?: {
-      showAzureFooter?: boolean;
-      azureFooterColor?: AzureFooterColors;
-    };
+  data?: {
+    showAzureFooter?: boolean;
+    azureFooterColor?: AzureFooterColors;
   };
 };
 export const BuiltOnAzure = ({ data }: BuiltOnAzureProps) => {
-  let footerColor: AzureFooterColors =
-    data?.azureBanner?.azureFooterColor || "lightgray";
+  let footerColor: AzureFooterColors = data?.azureFooterColor || "lightgray";
 
   if (footerColor === "white") {
     footerColor = "default";
   }
   //show the azure banner by default unless it's disabled
 
-  if (data?.azureBanner?.showAzureFooter === false) {
+  if (data?.showAzureFooter === false) {
     return <></>;
   }
 

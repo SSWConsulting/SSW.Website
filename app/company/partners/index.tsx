@@ -22,7 +22,7 @@ export default function PartnersIndex({ tinaProps }) {
           </div>
         </div>
       </Container>
-      <BuiltOnAzure data={data.partnerIndex} />
+      <BuiltOnAzure data={data.partnerIndex.azureBanner} />
     </>
   );
 }
