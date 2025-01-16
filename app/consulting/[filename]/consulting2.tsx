@@ -23,7 +23,7 @@ const Consulting2 = memo(
     return (
       <>
         <div className="dark flex h-full flex-col">
-          <Section color={"toggleLightmode"}>
+          <Section color={"toggleLightMode"}>
             <Container
               size="custom"
               width="custom"
