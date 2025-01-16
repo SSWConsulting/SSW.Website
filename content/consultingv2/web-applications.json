@@ -323,6 +323,10 @@
         {
           "label": "Testing: Rigorous Web Application Testing",
           "content": "We're meticulous about testing. Our thorough web application testing process includes unit, integration, and user acceptance testing. This ensures your app is bug-free, secure, and ready to provide a smooth user experience.\n"
+        },
+        {
+          "label": "Deployment: Seamless Web Application Deployment",
+          "content": "We handle the web application deployment process end-to-end, ensuring a smooth and hassle-free launch. We leverage our experience to deploy your solution reliably and efficiently to your environment of choice.\n"
         }
       ],
       "buttons": [
