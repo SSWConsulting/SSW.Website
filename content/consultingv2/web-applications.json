@@ -301,12 +301,12 @@
               {
                 "heading": "Single Codebase Development",
                 "description": "Build a single codebase that works seamlessly on Windows, macOS, Android, and iOS.",
-                "icon": "Tina"
+                "icon": "BiData"
               },
               {
                 "heading": "Native Performance",
                 "description": "Enjoy fast, responsive apps that feel native on every platform.",
-                "icon": "Tina"
+                "icon": "BiSolidHomeCircle"
               }
             ]
           },
