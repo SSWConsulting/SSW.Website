@@ -381,7 +381,8 @@
           },
           {
             "heading": "Feature delivery speed? ",
-            "description": "Boosted by 40%. They're shipping code like there's no tomorrow"
+            "description": "Boosted by 40%. They're shipping code like there's no tomorrow",
+            "icon": "BiFastForward"
           }
         ]
       },
