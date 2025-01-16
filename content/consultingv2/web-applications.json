@@ -55,8 +55,10 @@
         "bleed": true
       },
       "mediaConfiguration": {
+        "mediaType": "youtube",
         "verticalPlacement": "Centered",
-        "imageSource": ""
+        "imageSource": "",
+        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
       },
       "_template": "imageTextBlock"
     },
