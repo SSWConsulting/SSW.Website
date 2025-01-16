@@ -247,12 +247,12 @@
               {
                 "heading": "Enterprise-Grade Performance",
                 "description": "Handle complex queries with advanced optimizations and in-memory OLTP for high-speed apps.",
-                "icon": "BiChart"
+                "icon": "BiBarChart"
               },
               {
                 "heading": "Data Security & Compliance",
                 "description": "Encryption, row-level security, and audits keep your data safe without slowing things down.",
-                "icon": "BiLock"
+                "icon": "BiShieldPlus"
               }
             ]
           },
