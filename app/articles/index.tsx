@@ -2,7 +2,6 @@
 
 import ArticlesHeader from "@/components/articles/articlesHeader";
 import ArticlesList from "@/components/articles/articlesList";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
@@ -62,7 +61,7 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
         </Section>
         <section
           className={classNames(
-            "prose prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 mx-auto w-full max-w-9xl flex-row px-8 pb-8 md:flex"
+            "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 md:flex"
           )}
         >
           {data.articlesIndex._body.children.length > 0 && (
