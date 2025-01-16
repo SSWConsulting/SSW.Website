@@ -1,23 +1,44 @@
 import classNames from "classnames";
 import dynamic from "next/dynamic";
-import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
+import { SectionColor } from "../util/constants/styles";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
 const Image = dynamic(() => import("next/image"));
 
+export const azureFooterColors: Array<string> = [
+  "white",
+  "lightgray",
+  "darkgray",
+];
+
+type AzureFooterColors = (typeof azureFooterColors)[number];
+
 export type BuiltOnAzureProps = {
   data: {
-    azureBanner?: { showAzureFooter?: boolean; azureFooterColor?: string };
+    azureBanner?: {
+      showAzureFooter?: boolean;
+      azureFooterColor?: AzureFooterColors;
+    };
   };
 };
 export const BuiltOnAzure = ({ data }: BuiltOnAzureProps) => {
-  if (data?.azureBanner?.showAzureFooter === false) return <></>;
+  let footerColor: AzureFooterColors =
+    data?.azureBanner?.azureFooterColor || "lightgray";
+
+  if (footerColor === "white") {
+    footerColor = "default";
+  }
   //show the azure banner by default unless it's disabled
+
+  if (data?.azureBanner?.showAzureFooter === false) {
+    return <></>;
+  }
+
   return (
-    <Section color={data?.azureBanner?.azureFooterColor || "lightgray"}>
+    <Section color={footerColor as SectionColor} className="py-2">
       <Container className="grid grid-cols-1 text-lg lg:grid-cols-2">
         <Link
           data={data}

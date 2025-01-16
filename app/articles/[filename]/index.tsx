@@ -138,7 +138,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
             ? data.articles
             : {
                 azureBanner: {
-                  azureFooterColor: "default",
+                  azureFooterColor: "white",
                 },
               }
         }
