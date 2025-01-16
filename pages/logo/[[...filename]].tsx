@@ -24,11 +24,7 @@ export default function LogosPage(
   });
 
   return (
-    <Layout
-      liveStreamData={props.data.userGroup}
-      menu={data?.megamenu}
-      showAzureBanner
-    >
+    <Layout liveStreamData={props.data.userGroup} menu={data?.megamenu}>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         {props?.seo?.showBreadcrumb && (
