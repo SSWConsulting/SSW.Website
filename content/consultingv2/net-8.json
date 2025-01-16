@@ -31,9 +31,9 @@
             "icon": "BiBoltCircle"
           },
           {
-            "heading": "Zero-Downtime Migration",
-            "description": "Battle-tested strangler fig pattern keeps your systems running while we migrate. Gradual, safe, proven.",
-            "icon": "BiAlarm"
+            "heading": "Zero-Risk Migration",
+            "description": "Battle-tested strangler pattern keeps production systems running while we upgrade. No surprises, no downtime.",
+            "icon": "BiShieldPlus"
           },
           {
             "heading": "Modern Dev Experience",
