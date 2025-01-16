@@ -58,7 +58,7 @@
     },
     {
       "isStacked": true,
-      "heading": "",
+      "heading": "Get More Than Just Code: Real Solutions for Your Business.",
       "isH1": false,
       "body": "",
       "cards": [
@@ -66,7 +66,7 @@
           "guid": "rwsorp",
           "altText": "Lorem Ipsum",
           "chips": {},
-          "icon": "info",
+          "icon": "BiBlock",
           "heading": "Stop Cramming Your Business into Off-the-Shelf Software.",
           "description": "Generic software rarely fits. We build custom web apps, tailored to your workflows. No more compromises—get a solution designed for you.",
           "embeddedButton": {
@@ -77,7 +77,7 @@
           "guid": "znkpt9",
           "altText": "Lorem Ipsum",
           "chips": {},
-          "icon": "info",
+          "icon": "BiFastForward",
           "heading": "Agile Development That Doesn't Waste Your Time.",
           "description": "We actually do Agile properly: Short sprints, regular demos, and transparent communication. See progress fast—no hidden black boxes. We're here to code, not plan meetings.\n",
           "embeddedButton": {
@@ -88,7 +88,7 @@
           "guid": "7iei72",
           "altText": "",
           "chips": {},
-          "icon": "info",
+          "icon": "BiSolidCheckShield",
           "heading": "Don't Build a Web App That Will Be Obsolete Next Year.",
           "description": "We build scalable, maintainable web apps with the latest tech and best practices. No technical debt, just systems that support your business long-term.",
           "embeddedButton": {
