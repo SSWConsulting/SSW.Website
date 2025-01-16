@@ -320,7 +320,10 @@
           "label": "Development: High-Quality Web Application Development",
           "content": "Our expert developers use modern frameworks and best practices to craft clean, testable, and scalable code. Our web application development process prioritizes quality and maintainability, so your application is built to last.\n"
         },
-        {}
+        {
+          "label": "Testing: Rigorous Web Application Testing",
+          "content": "We're meticulous about testing. Our thorough web application testing process includes unit, integration, and user acceptance testing. This ensures your app is bug-free, secure, and ready to provide a smooth user experience.\n"
+        }
       ],
       "buttons": [
         {
