@@ -273,12 +273,12 @@
             "features": [
               {
                 "heading": "Full-Stack C# Development",
-                "description": "Share business logic and validation between frontend and backend. No context switching between languages needed.",
+                "description": "Share logic between frontend and backend—no need to juggle languages.",
                 "icon": "BiCodeBlock"
               },
               {
                 "heading": "Native Desktop Integration",
-                "description": "Deploy as Progressive Web Apps or package for desktop with deep OS integration - same codebase, multiple targets.",
+                "description": "Build Progressive Web Apps or deploy native desktop solutions—all from a single codebase.",
                 "icon": "BiDesktop"
               }
             ]
