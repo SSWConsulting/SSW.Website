@@ -59,6 +59,9 @@
       "_template": "imageTextBlock"
     },
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "heading": "Trusted by top companies",
       "isWhiteImages": true,
       "logos": [
@@ -127,6 +130,9 @@
           }
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "cardCarousel"
     },
     {
