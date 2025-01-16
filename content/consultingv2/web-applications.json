@@ -299,13 +299,13 @@
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "heading": "Write Once, Deploy Anywhere",
+                "description": "Build a single codebase that works seamlessly on Windows, macOS, Android, and iOS.",
                 "icon": "Tina"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "heading": "Native Performance, Everywhere",
+                "description": "Enjoy fast, responsive apps that feel native on every platform.",
                 "icon": "Tina"
               }
             ]
