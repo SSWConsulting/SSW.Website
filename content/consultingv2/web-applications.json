@@ -200,8 +200,8 @@
             "filledChipText": " Frontend"
           },
           "icon": "info",
-          "heading": " Angular & React: For Front-Ends That Don't Make You Want to Throw Your Monitor Out the Window.",
-          "description": "We build responsive, user-friendly front-ends that look great and actually work. We're fluent in both Angular and React. We choose what's best for your project.",
+          "heading": "Angular, React, Vue.js: Choose the Right Tool",
+          "description": "We're fluent in all the major front-end frameworks. From Angular's structure to React's flexibility and Vue.js's simplicity, we know how to build responsive, user-friendly interfaces.",
           "featureList": {
             "features": [
               {
