@@ -272,13 +272,13 @@
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "heading": "Full-Stack C# Development",
+                "description": "Share business logic and validation between frontend and backend. No context switching between languages needed.",
                 "icon": "Tina"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "heading": "Native Desktop Integration",
+                "description": "Deploy as Progressive Web Apps or package for desktop with deep OS integration - same codebase, multiple targets.",
                 "icon": "Tina"
               }
             ]
