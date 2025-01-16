@@ -93,7 +93,7 @@ export default function EventsPage({ props, tinaProps }) {
           </Section>
         )}
 
-        <Section color="white">
+        <Section color="default">
           <Container padding={"md:px-8 px-4"} className={"flex-1 pt-0"}>
             <div className="flex flex-col items-center pb-15 text-center">
               <h2>
