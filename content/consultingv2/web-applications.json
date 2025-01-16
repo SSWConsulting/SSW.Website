@@ -294,7 +294,7 @@
             "filledChipText": "Cross-Platform"
           },
           "icon": "info",
-          "heading": ".NET MAUI: Truly Cross-Platform Apps",
+          "heading": ".NET MAUI: Build Once, Run Everywhere",
           "description": "",
           "featureList": {
             "features": [
