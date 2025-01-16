@@ -193,9 +193,11 @@
           }
         },
         {
-          "guid": null,
+          "guid": "d5utmw",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": " Frontend"
+          },
           "icon": "info",
           "heading": "Lorem Ipsum",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
