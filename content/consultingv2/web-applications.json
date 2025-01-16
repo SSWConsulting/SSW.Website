@@ -408,19 +408,9 @@
     },
     {
       "isStacked": false,
-      "heading": "Lorem Ipsum",
+      "heading": "Tech Wisdom from the Trenches",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
+      "body": "At SSW, we share decades of hands-on experience in software—tackling legacy code, fixing bugs, and navigating new tech. No fluff, no jargon—just practical advice to help you build better software.",
       "cards": [
         {
           "guid": null,
