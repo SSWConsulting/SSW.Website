@@ -1,5 +1,5 @@
 import { TinaField } from "tinacms";
-import { sectionColors } from "./constants/styles";
+import { azureFooterColors } from "../blocks/builtOnAzure";
 
 const azureBannerSchema: TinaField = {
   type: "object",
@@ -18,7 +18,7 @@ const azureBannerSchema: TinaField = {
       name: "azureFooterColor",
       label: "Azure/Tina Footer Background Color",
       required: false,
-      options: Object.keys(sectionColors),
+      options: azureFooterColors,
     },
   ],
 };
