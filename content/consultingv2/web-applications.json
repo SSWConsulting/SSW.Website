@@ -102,7 +102,7 @@
           "altText": "Lorem Ipsum",
           "chips": {},
           "heading": "Stop Cramming Your Business into Off-the-Shelf Software.",
-          "description": "Generic software rarely fits. We build custom web apps, tailored to your workflows. No more compromises—get a solution designed for you.",
+          "description": "Generic solutions rarely fit. We create custom apps tailored to your workflows—no compromises. Get software that works the way you do.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -112,7 +112,7 @@
           "altText": "Lorem Ipsum",
           "chips": {},
           "heading": "Agile Development That Doesn't Waste Your Time.",
-          "description": "We actually do Agile properly: Short sprints, regular demos, and transparent communication. See progress fast—no hidden black boxes. We're here to code, not plan meetings.\n",
+          "description": "We do Agile the right way: short sprints, regular demos, and complete transparency. No black boxes—just fast progress without wasted time.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -122,7 +122,7 @@
           "altText": "",
           "chips": {},
           "heading": "Don't Build a Web App That Will Be Obsolete Next Year.",
-          "description": "We build scalable, maintainable web apps with the latest tech and best practices. No technical debt, just systems that support your business long-term.",
+          "description": "Build scalable, maintainable apps using the latest tech. No technical debt—just future-proof solutions designed to grow with your business.",
           "embeddedButton": {
             "buttonText": ""
           }
