@@ -11,7 +11,10 @@ import { Section } from "@/components/util/section";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { ReactElement } from "react";
 
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
+import {
+  azureFooterColors,
+  BuiltOnAzure,
+} from "@/components/blocks/builtOnAzure";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
 import ReactDOMServer from "react-dom/server";
@@ -90,7 +93,17 @@ export default function VideoProductionPage({ props, tinaProps }) {
       )}
 
       <Section>
-        <BuiltOnAzure data={{ backgroundColor: "default" }} />
+        <BuiltOnAzure
+          data={
+            data.videoProduction?.azureBanner?.azureFooterColor
+              ? data.videoProduction
+              : {
+                  azureBanner: {
+                    azureFooterColors: "white",
+                  },
+                }
+          }
+        />
       </Section>
     </>
   );
