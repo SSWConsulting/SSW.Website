@@ -145,8 +145,8 @@
             "filledChipText": " Backend"
           },
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": ".NET: The Backbone of Robust Web Apps.",
+          "description": " We've been in the trenches with .NET since day one, building everything from APIs to complex backends. It's powerful, reliable, and it just gets the job done.",
           "featureList": {
             "features": [
               {
