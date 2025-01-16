@@ -60,7 +60,6 @@ const appendSharedSchemas = (
   }
   return schemas;
 };
-
 const formattedSchemas = () => {
   return [
     ...schemas,
@@ -92,6 +91,7 @@ const pageSchemas = [
   industryIndexSchema,
   productsSchema,
   userGroupPageSchema,
+  logosSchema,
   trainingSchema,
 ];
 
@@ -112,7 +112,6 @@ const schemas = [
   opportunitiesSchema,
   globalSchema,
   megaMenuSchema,
-  logosSchema,
   userGroupGlobalSchema,
 ];
 const config = defineStaticConfig({
