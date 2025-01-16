@@ -1,12 +1,9 @@
 "use client";
-
 import ArticleAuthor from "@/components/articles/articleAuthor";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
 import SidebarPanel from "@/components/sidebar/sidebarPanel";
-import { SectionColor } from "@/components/util/constants/styles";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import client from "@/tina/client";
@@ -26,10 +23,6 @@ export type ArticlePageProps = {
 
 const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
   const { data } = tinaProps;
-  const showCallToAction = data.articles.callToAction.showCallToAction;
-  const azureBannerColor: SectionColor = showCallToAction
-    ? "default"
-    : "lightgray";
   const { author } = data.articles;
   return (
     <>
@@ -139,7 +132,17 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
           )}
         </CallToAction>
       )}
-      <PreFooter data={data.articles} />
+      <PreFooter
+        data={
+          data.articles?.azureBanner?.azureFooterColor
+            ? data.articles
+            : {
+                azureBanner: {
+                  azureFooterColor: "default",
+                },
+              }
+        }
+      />
     </>
   );
 };
