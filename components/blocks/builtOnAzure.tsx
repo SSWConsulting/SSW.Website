@@ -70,29 +70,3 @@ const Link = ({ data, href, className, text, image }) => {
     </CustomLink>
   );
 };
-
-export const builtOnAzureBlock = {
-  backgroundColor: "backgroundColor",
-};
-
-export const builtOnAzureBlockSchema: Template = {
-  name: "BuiltOnAzure",
-  label: "Built on Azure",
-  ui: {
-    previewSrc: "/images/thumbs/tina/built-on-azure.jpg",
-  },
-  // Todo: Turn into util field
-  fields: [
-    {
-      type: "string",
-      label: "Background Color",
-      name: "backgroundColor",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Light Gray", value: "lightgray" },
-        { label: "Red", value: "red" },
-        { label: "Black", value: "black" },
-      ],
-    },
-  ],
-};
