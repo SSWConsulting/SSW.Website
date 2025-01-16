@@ -268,7 +268,7 @@
           },
           "icon": "info",
           "heading": "Blazor: C# in the Browser - A Powerful Option",
-          "description": "Need C# in your frontend, or even using the same components for desktop, web, mobile apps? We're fluent in Blazor and able to make the most of this cutting-edge framework.",
+          "description": "",
           "featureList": {
             "features": [
               {
