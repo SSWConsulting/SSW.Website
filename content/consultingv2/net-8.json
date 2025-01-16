@@ -48,7 +48,7 @@
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "",
-        "bleed": false
+        "bleed": true
       },
       "mediaConfiguration": {
         "placement": "Right",
