@@ -355,6 +355,14 @@
           "content": "Our relationship doesn't end after deployment. We provide ongoing web application support, maintenance, and upgrades. Our team is always available to ensure your app continues to deliver value.\n\n* Dedicated Support Team\n* Regular Maintenance\n* Proactive Updates\n"
         }
       ],
+      "buttons": [
+        {
+          "buttonText": "Rules to Better Web API ",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-web-api/",
+          "icon": "BiNotepad",
+          "iconFirst": false
+        }
+      ],
       "background": {
         "backgroundColour": 6
       },
