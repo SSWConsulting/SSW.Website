@@ -116,7 +116,7 @@ export default function LivePage(
       <Container size="xsmall">
         <YoutubePlaylistBlock {...data.live.youtubePlaylist} />
       </Container>
-      <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+      <BuiltOnAzure data={data.live} />
     </Layout>
   );
 }

@@ -51,7 +51,7 @@ export default function OfficePage({ props, tinaProps }) {
         </div>
       </Container>
       <Section>
-        <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+        <BuiltOnAzure data={data.offices} />
       </Section>
     </>
   );
