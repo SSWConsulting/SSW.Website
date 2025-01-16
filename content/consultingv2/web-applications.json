@@ -172,8 +172,8 @@
             "filledChipText": "Cloud"
           },
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Azure: Scalable and Reliable Cloud Infrastructure",
+          "description": " We know how to make Azure sing. It's scalable, reliable, and we use it to deploy your web app quickly and efficiently. Cloud done right.",
           "featureList": {
             "features": [
               {
@@ -199,8 +199,8 @@
             "filledChipText": " Frontend"
           },
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": " Angular & React: For Front-Ends That Don't Make You Want to Throw Your Monitor Out the Window.",
+          "description": "We build responsive, user-friendly front-ends that look great and actually work. We're fluent in both Angular and React. We choose what's best for your project.",
           "featureList": {
             "features": [
               {
@@ -226,8 +226,8 @@
             "filledChipText": "Database"
           },
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "   SQL Server: Serious Data Power for Serious Apps",
+          "description": "  We use Microsoft's enterprise level database. When you need high availability, scalability, and performance, this is the tool for the job.",
           "featureList": {
             "features": [
               {
@@ -253,8 +253,8 @@
             "filledChipText": "Web Framework"
           },
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Blazor: C# in the Browser - A Powerful Option",
+          "description": "Need C# in your frontend, or even using the same components for desktop, web, mobile apps? We're fluent in Blazor and able to make the most of this cutting-edge framework.",
           "featureList": {
             "features": [
               {
