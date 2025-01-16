@@ -159,13 +159,13 @@
             "filledChipText": " Backend"
           },
           "icon": "info",
-          "heading": ".NET: The Backbone of Robust Web Apps.",
-          "description": " We've been in the trenches with .NET since day one, building everything from APIs to complex backends. It's powerful, reliable, and it just gets the job done.",
+          "heading": ".NET: The Backbone of Robust Web Apps",
+          "description": "",
           "featureList": {
             "features": [
               {
                 "heading": "Scalable APIs, Built Right",
-                "description": "Power everything from lightweight APIs to enterprise-grade backends.",
+                "description": "From lightweight APIs to enterprise backends, .NET handles it all with ease.",
                 "icon": "BiTrendingUp"
               },
               {
