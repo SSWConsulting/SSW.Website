@@ -274,12 +274,12 @@
               {
                 "heading": "Full-Stack C# Development",
                 "description": "Share business logic and validation between frontend and backend. No context switching between languages needed.",
-                "icon": "Tina"
+                "icon": "BiCodeBlock"
               },
               {
                 "heading": "Native Desktop Integration",
                 "description": "Deploy as Progressive Web Apps or package for desktop with deep OS integration - same codebase, multiple targets.",
-                "icon": "Tina"
+                "icon": "BiDesktop"
               }
             ]
           },
