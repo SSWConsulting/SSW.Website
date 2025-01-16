@@ -62,7 +62,6 @@ export const Layout = ({
   children,
   menu,
   className = "",
-  showAzureBanner,
 }: LayoutProps) => {
   const eventJson: EventInfoStatic = liveStreamData?.edges[0]?.node;
 

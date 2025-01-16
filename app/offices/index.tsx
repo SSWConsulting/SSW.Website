@@ -2,7 +2,6 @@
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Flag } from "@/components/blocks/flag";
 import { CustomLink } from "@/components/customLink";
-import { PreFooter } from "@/components/layout/footer/pre-footer";
 import MicrosoftPanel from "@/components/offices/microsoftPanel";
 import TestimonialPanel from "@/components/offices/testimonialPanel";
 import { Countries } from "@/components/util/constants/country";

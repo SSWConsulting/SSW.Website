@@ -5,7 +5,6 @@ import { Blocks } from "@/components/blocks-renderer";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
-import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { TestimonialRow } from "@/components/testimonials/TestimonialRow";
 import TrainingCarousel from "@/components/training/trainingHeader";
 import { Container } from "@/components/util/container";
@@ -61,7 +60,7 @@ export default function TrainingPage({ props, tinaProps }) {
         </div>
 
         {data.training.showTestimonials && (
-          <Section color="white" className="">
+          <Section color="default" className="">
             <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
               <div
                 data-tina-field={tinaField(

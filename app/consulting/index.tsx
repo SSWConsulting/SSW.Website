@@ -3,7 +3,6 @@
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
-import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { Container } from "@/components/util/container";
 import { wrapGrid } from "animate-css-grid";
 import { Breadcrumbs } from "app/components/breadcrumb";

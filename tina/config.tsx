@@ -36,7 +36,6 @@ import { partnerIndexSchema } from "./collections/partner";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { presenterSchema } from "./collections/presenter";
 import { productsIndexSchema, productsSchema } from "./collections/products";
-import { tipField } from "./collections/shared-fields";
 import { technologiesSchema } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
