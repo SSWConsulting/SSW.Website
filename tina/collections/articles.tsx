@@ -18,7 +18,6 @@ import {
   callToActionSchema,
 } from "../../components/callToAction/callToAction";
 import { seoSchema } from "../../components/util/seo";
-import AzureBannerFields from "../../components/util/showAzureBanner";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
 import { tipField } from "./shared-fields";
 
@@ -137,7 +136,6 @@ export const articlesSchema: Collection = {
         ...callToActionSchema.fields,
       ],
     },
-    // azureBannerSchema,
   ],
 };
 
