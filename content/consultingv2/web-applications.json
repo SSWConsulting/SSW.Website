@@ -218,13 +218,13 @@
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "heading": "Framework Flexibility",
+                "description": "We match the right tool to your needs - Angular for enterprise-scale applications, React for dynamic interfaces, or Vue for rapid development.",
                 "icon": "Tina"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "heading": "Modern Development Workflow",
+                "description": "Built-in state management, component libraries, and development tools that streamline your frontend pipeline.",
                 "icon": "Tina"
               }
             ]
