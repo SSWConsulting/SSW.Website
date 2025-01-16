@@ -213,7 +213,7 @@
             "filledChipText": " Frontend"
           },
           "icon": "info",
-          "heading": "Angular, React, Vue.js: Choose the Right Tool",
+          "heading": "Angular, React, Vue: Build Frontends That Users Love",
           "description": "",
           "featureList": {
             "features": [
@@ -267,7 +267,7 @@
             "filledChipText": "Web Framework"
           },
           "icon": "info",
-          "heading": "Blazor: C# in the Browser - A Powerful Option",
+          "heading": "Blazor: Full-Stack C# for Modern Web Apps",
           "description": "",
           "featureList": {
             "features": [
