@@ -34,16 +34,6 @@
             "heading": "Zero-Risk Migration",
             "description": "Battle-tested strangler pattern keeps production systems running while we upgrade. No surprises, no downtime.",
             "icon": "BiShieldPlus"
-          },
-          {
-            "heading": "Modern Dev Experience",
-            "description": "C# 12's primary constructors and minimal APIs cut boilerplate. Built-in caching and rate limiting boost performance.",
-            "icon": "BiLaptop"
-          },
-          {
-            "heading": "Cloud-Native Performance",
-            "description": "Built-in container support and Azure integration. Instant scaling with Kubernetes and Container Apps.",
-            "icon": "BiCloud"
           }
         ]
       },
