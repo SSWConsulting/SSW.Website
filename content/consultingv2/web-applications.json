@@ -159,7 +159,7 @@
             "filledChipText": " Backend"
           },
           "icon": "info",
-          "heading": ".NET: The Backbone of Robust Web Apps",
+          "heading": ".NET: Scalable APIs and Rock-Solid Performance",
           "description": "",
           "featureList": {
             "features": [
@@ -186,7 +186,7 @@
             "filledChipText": "Cloud"
           },
           "icon": "info",
-          "heading": "Azure: Scalable and Reliable Cloud Infrastructure",
+          "heading": "Azure: Reliable Cloud Infrastructure That Scales",
           "description": "",
           "featureList": {
             "features": [
@@ -301,7 +301,7 @@
               {
                 "heading": "Single Codebase Development",
                 "description": "Write one codebase, run it everywhere—Windows, macOS, Android, and iOS.",
-                "icon": "BiData"
+                "icon": "BiCodeBlock"
               },
               {
                 "heading": "Native Performance",
