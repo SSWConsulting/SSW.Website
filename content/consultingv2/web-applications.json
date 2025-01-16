@@ -220,12 +220,12 @@
               {
                 "heading": "Framework Flexibility",
                 "description": "We pick the best fit—Angular for enterprise apps, React for dynamic interfaces, or Vue for quick, scalable solutions.",
-                "icon": "BiSelection"
+                "icon": "BiCubeAlt"
               },
               {
                 "heading": "Modern Development Workflow",
                 "description": "Streamlined state management, component libraries, and tools to supercharge your frontend pipeline.",
-                "icon": "BiNetworkChart"
+                "icon": "BiGitBranch"
               }
             ]
           },
