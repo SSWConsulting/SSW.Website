@@ -191,14 +191,14 @@
           "featureList": {
             "features": [
               {
-                "heading": "Deploy Faster, Scale Smarte",
+                "heading": "Deploy Faster, Scale Smarter",
                 "description": "Get your app live quickly, with cloud resources that adapt as you grow.",
-                "icon": "Tina"
+                "icon": "BiSolidSend"
               },
               {
                 "heading": "Built-in Security",
                 "description": "Leverage Azure’s robust tools to keep your app safe and compliant.",
-                "icon": "Tina"
+                "icon": "BiShowAlt"
               }
             ]
           },
