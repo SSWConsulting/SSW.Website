@@ -84,6 +84,5 @@ export const pagesSchema: Collection = {
       },
       templates: [...Schemas.pageBlocks],
     },
-    // azureBannerSchema,
   ],
 };
