@@ -359,11 +359,11 @@
         {
           "buttonText": "Rules to Better Web API ",
           "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-web-api/",
-          "icon": "BiNotepad",
           "iconFirst": false
         },
         {
           "buttonText": "Do you have a PWA?",
+          "buttonLink": "https://www.ssw.com.au/rules/progressive-web-app/",
           "colour": 1
         }
       ],
