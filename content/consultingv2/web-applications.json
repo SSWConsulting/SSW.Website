@@ -187,12 +187,12 @@
           },
           "icon": "info",
           "heading": "Azure: Scalable and Reliable Cloud Infrastructure",
-          "description": " We know how to make Azure sing. It's scalable, reliable, and we use it to deploy your web app quickly and efficiently. Cloud done right.",
+          "description": "",
           "featureList": {
             "features": [
               {
                 "heading": "Deploy Faster, Scale Smarter",
-                "description": "Get your app live quickly, with cloud resources that adapt as you grow.",
+                "description": "Get your app live quickly and scale effortlessly as you grow.",
                 "icon": "BiSolidSend"
               },
               {
