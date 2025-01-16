@@ -56,7 +56,7 @@
       },
       "mediaConfiguration": {
         "mediaType": "image",
-        "verticalPlacement": "Top",
+        "verticalPlacement": "Centered",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px.png",
         "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
       },
