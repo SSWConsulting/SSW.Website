@@ -191,13 +191,13 @@
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "heading": "Deploy Faster, Scale Smarte",
+                "description": "Get your app live quickly, with cloud resources that adapt as you grow.",
                 "icon": "Tina"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "heading": "Built-in Security",
+                "description": "Leverage Azure’s robust tools to keep your app safe and compliant.",
                 "icon": "Tina"
               }
             ]
