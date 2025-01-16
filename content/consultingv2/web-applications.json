@@ -295,17 +295,17 @@
           },
           "icon": "info",
           "heading": ".NET MAUI: Truly Cross-Platform Apps",
-          "description": "Need a single codebase for all platforms? From Windows to MacOS, Android to iOS we leverage the power of .NET MAUI for seamless cross-platform experiences.",
+          "description": "",
           "featureList": {
             "features": [
               {
                 "heading": "Single Codebase Development",
-                "description": "Build a single codebase that works seamlessly on Windows, macOS, Android, and iOS.",
+                "description": "Write one codebase, run it everywhere—Windows, macOS, Android, and iOS.",
                 "icon": "BiData"
               },
               {
                 "heading": "Native Performance",
-                "description": "Enjoy fast, responsive apps that feel native on every platform.",
+                "description": "Fast, responsive apps that feel like they belong on every platform.",
                 "icon": "BiSolidHomeCircle"
               }
             ]
