@@ -206,7 +206,6 @@ export const articlesIndexSchema: Collection = {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     sidebarPanelSchema,
-    // azureBannerSchema,
   ],
 };
 export const clientsCategorySchema: Collection = {
