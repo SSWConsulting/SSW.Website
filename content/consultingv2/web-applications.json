@@ -245,8 +245,8 @@
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "heading": "Enterprise-Grade Performance",
+                "description": "Advanced query optimization, columnstore indexes, and in-memory OLTP for applications that need serious horsepower.",
                 "icon": "Tina"
               },
               {
