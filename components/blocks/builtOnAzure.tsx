@@ -3,7 +3,6 @@ import dynamic from "next/dynamic";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
-import { SectionColor } from "../util/constants/styles";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
@@ -13,12 +12,9 @@ export type BuiltOnAzureProps = {
   data: {
     azureBanner?: { showAzureFooter?: boolean; azureFooterColor?: string };
   };
-}
-export const BuiltOnAzure = ({
-  data,
-}: BuiltOnAzureProps) => {
-  console.log("data", data);
-  if(data?.azureBanner?.showAzureFooter === false) return <></>
+};
+export const BuiltOnAzure = ({ data }: BuiltOnAzureProps) => {
+  if (data?.azureBanner?.showAzureFooter === false) return <></>;
   //show the azure banner by default unless it's disabled
   return (
     <Section color={data?.azureBanner?.azureFooterColor || "lightgray"}>
