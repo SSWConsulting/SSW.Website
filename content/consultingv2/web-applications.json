@@ -241,17 +241,17 @@
           },
           "icon": "info",
           "heading": "   SQL Server: Serious Data Power for Serious Apps",
-          "description": "  We use Microsoft's enterprise level database. When you need high availability, scalability, and performance, this is the tool for the job.",
+          "description": "",
           "featureList": {
             "features": [
               {
                 "heading": "Enterprise-Grade Performance",
-                "description": "Advanced query optimization, columnstore indexes, and in-memory OLTP for applications that need serious horsepower.",
+                "description": "Handle complex queries with advanced optimizations and in-memory OLTP for high-speed apps.",
                 "icon": "BiChart"
               },
               {
                 "heading": "Data Security & Compliance",
-                "description": "Built-in encryption, row-level security, and audit capabilities that keep your data locked down without sacrificing speed.",
+                "description": "Encryption, row-level security, and audits keep your data safe without slowing things down.",
                 "icon": "BiLock"
               }
             ]
