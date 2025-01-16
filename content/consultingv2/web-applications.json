@@ -305,12 +305,12 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Our Proven Process",
+      "heading": "Our Development Process: Transparent, Efficient, and Results-Driven",
       "body": "We don't just write code; we build solutions. Our process is designed to be transparent, efficient, and to deliver results you can rely on. We believe in predictability, not endless guessing games.",
       "accordionItems": [
         {
-          "label": "Lorem",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "Discovery: We Get the Gist of Your Web Application Needs",
+          "content": "We don't jump into coding blindly. Our discovery phase focuses on understanding \\*your\\* specific business needs and \\*your\\* web application challenges. We work closely with you to gather requirements, ensuring a clear roadmap for success, \\*without\\* unnecessary complexities or wasted efforts. We uncover the best path to solve your challenges.\n"
         },
         {
           "label": "Ipsum",
