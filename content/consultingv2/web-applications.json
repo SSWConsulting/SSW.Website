@@ -273,6 +273,33 @@
           "embeddedButton": {
             "buttonText": "Lorem"
           }
+        },
+        {
+          "guid": "4ax3gl",
+          "altText": "",
+          "chips": {
+            "filledChipText": "Cross-Platform"
+          },
+          "icon": "info",
+          "heading": ".NET MAUI: Truly Cross-Platform Apps",
+          "description": "Need a single codebase for all platforms? From Windows to MacOS, Android to iOS we leverage the power of .NET MAUI for seamless cross-platform experiences.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
         }
       ],
       "_template": "cardCarousel"
