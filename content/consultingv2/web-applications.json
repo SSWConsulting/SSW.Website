@@ -141,7 +141,9 @@
         {
           "guid": "ozox9t",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": " Backend"
+          },
           "icon": "info",
           "heading": "Lorem Ipsum",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -164,9 +166,11 @@
           }
         },
         {
-          "guid": null,
+          "guid": "wdurt",
           "altText": "Lorem Ipsum",
-          "chips": {},
+          "chips": {
+            "filledChipText": "Cloud"
+          },
           "icon": "info",
           "heading": "Lorem Ipsum",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
