@@ -327,6 +327,10 @@
         {
           "label": "Deployment: Seamless Web Application Deployment",
           "content": "We handle the web application deployment process end-to-end, ensuring a smooth and hassle-free launch. We leverage our experience to deploy your solution reliably and efficiently to your environment of choice.\n"
+        },
+        {
+          "label": "Support: Ongoing Web Application Support and Maintenance",
+          "content": "Our relationship doesn't end after deployment. We provide ongoing web application support, maintenance, and upgrades. Our team is always available to ensure your app continues to deliver value.\n"
         }
       ],
       "buttons": [
