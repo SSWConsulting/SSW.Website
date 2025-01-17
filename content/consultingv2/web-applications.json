@@ -30,16 +30,6 @@
             "heading": "Rock-Solid Architecture",
             "description": "We design for performance and scalability from day one, so your app won’t buckle under load.",
             "icon": "BiSolidBadgeCheck"
-          },
-          {
-            "heading": "Microsoft MVPs on Board",
-            "description": "Real experts certified by Microsoft.",
-            "icon": "BiLogoMicrosoft"
-          },
-          {
-            "heading": "Transparent Agile Process",
-            "description": "Frequent demos, constant communication, no hidden surprises.",
-            "icon": "BiStreetView"
           }
         ]
       },
