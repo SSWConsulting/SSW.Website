@@ -367,6 +367,7 @@
         "mediaType": "youtube",
         "placement": "Right",
         "verticalPlacement": "Top",
+        "mobilePlacement": "Above",
         "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
       },
       "_template": "accordionBlock"
