@@ -41,13 +41,15 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/background_test_4.png",
+        "backgroundImage": "",
         "bleed": true
       },
       "mediaConfiguration": {
         "mediaType": "image",
+        "placement": "Left",
         "verticalPlacement": "Centered",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero placeholder.png",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_640_480px(4).png",
         "youtubeUrl": ""
       },
       "_template": "imageTextBlock"
