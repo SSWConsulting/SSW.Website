@@ -413,6 +413,7 @@
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/backgrounds/plain_dark.png"
       },
       "_template": "imageTextBlock"
