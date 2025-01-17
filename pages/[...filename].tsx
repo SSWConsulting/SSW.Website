@@ -1,14 +1,14 @@
 import { Blocks } from "@/components/blocks-renderer";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { client } from "@/tina/client";
 import classNames from "classnames";
+import { TODAY } from "hooks/useFetchEvents";
 import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { WebSite, WithContext } from "schema-dts";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-import { client } from "@/tina/client";
-import { TODAY } from "hooks/useFetchEvents";
 import { pageBlocks } from "../components/blocks";
 import { Breadcrumbs } from "../components/blocks/breadcrumbs";
 import { Layout } from "../components/layout";
@@ -120,6 +120,7 @@ export default function HomePage(
         <div className="no-print">
           <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
         </div>
+        <BuiltOnAzure data={data.page.azureBanner} />
       </Layout>
     </>
   );
