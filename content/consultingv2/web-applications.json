@@ -19,7 +19,7 @@
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Lightning-Fast Development",
