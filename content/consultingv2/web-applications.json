@@ -266,6 +266,7 @@
         },
         {
           "guid": "srvxuxr",
+          "image": "",
           "altText": "Lorem Ipsum",
           "chips": {
             "filledChipText": "Web Framework"
