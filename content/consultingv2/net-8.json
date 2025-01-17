@@ -26,24 +26,14 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Faster Time-to-Market",
-            "description": "Native AOT compilation delivers 60% faster startup and 40% smaller memory footprint. Deploy faster, scale better.",
-            "icon": "BiFastForward"
+            "heading": "Blazing Fast Performance",
+            "description": "Native AOT compilation delivers 60% faster startups and 40% less memory usage. Your apps run lean and mean.",
+            "icon": "BiBoltCircle"
           },
           {
-            "heading": "Zero-Downtime Migration",
-            "description": "Battle-tested strangler fig pattern keeps your systems running while we migrate. Gradual, safe, proven.",
-            "icon": "BiAlarm"
-          },
-          {
-            "heading": "Modern Dev Experience",
-            "description": "C# 12's primary constructors and minimal APIs cut boilerplate. Built-in caching and rate limiting boost performance.",
-            "icon": "BiLaptop"
-          },
-          {
-            "heading": "Cloud-Native Performance",
-            "description": "Built-in container support and Azure integration. Instant scaling with Kubernetes and Container Apps.",
-            "icon": "BiCloud"
+            "heading": "Zero-Risk Migration",
+            "description": "Battle-tested strangler pattern keeps production systems running while we upgrade. No surprises, no downtime.",
+            "icon": "BiShieldPlus"
           }
         ]
       },
@@ -58,7 +48,7 @@
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "",
-        "bleed": false
+        "bleed": true
       },
       "mediaConfiguration": {
         "placement": "Right",
