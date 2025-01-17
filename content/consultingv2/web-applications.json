@@ -46,8 +46,8 @@
       },
       "mediaConfiguration": {
         "mediaType": "image",
-        "verticalPlacement": "Bottom",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_700_600px(6).png",
+        "verticalPlacement": "Top",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/backgrounds/Code_fac35ef2d3.svg",
         "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
       },
       "_template": "imageTextBlock"
@@ -312,7 +312,7 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/Code_fac35ef2d3.svg",
         "bleed": true
       },
       "_template": "cardCarousel"
@@ -411,7 +411,7 @@
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Centered",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_640_480px(5).png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/backgrounds/plain_dark.png"
       },
       "_template": "imageTextBlock"
     },
