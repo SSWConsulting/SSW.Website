@@ -1,4 +1,5 @@
 import { Blocks } from "@/components/blocks-renderer";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
@@ -91,6 +92,7 @@ export default function PageContent({ props }) {
       <div className="no-print">
         <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
       </div>
+      <BuiltOnAzure data={data.page.azureBanner} />
     </>
   );
 }
