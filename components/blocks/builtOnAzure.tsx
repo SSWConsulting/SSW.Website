@@ -78,7 +78,7 @@ const Link = ({ data, href, className, text, image }) => {
   return (
     <CustomLink
       href={href}
-      data-tina-field={tinaField(data, "azureBanner")}
+      data-tina-field={tinaField(data)}
       className={classNames(
         "unstyled flex items-center justify-center",
         className
