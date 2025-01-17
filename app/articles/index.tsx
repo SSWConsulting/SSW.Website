@@ -96,7 +96,7 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
             </div>
           )}
         </section>
-        {data.articlesIndex.showAzureFooter && <PreFooter />}
+        <PreFooter data={data.articlesIndex.azureBanner} />
       </HydrationBoundary>
     </>
   );

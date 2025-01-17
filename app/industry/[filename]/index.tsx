@@ -61,7 +61,7 @@ export default function IndustryPage({ props, tinaProps }) {
           />
         </div>
       </Container>
-      <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+      <BuiltOnAzure data={industry.azureBanner} />
     </>
   );
 }
