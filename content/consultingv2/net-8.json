@@ -96,7 +96,7 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Strategic .NET 8 Migration: A Phased Approach",
+      "heading": "Strategic .NET 8 migration: A phased approach",
       "body": "Migrating to .NET 8 requires careful planning and execution. Our battle-tested approach breaks down this complex process into manageable phases, ensuring a smooth transition while minimizing business disruption.",
       "accordionItems": [
         {
@@ -150,7 +150,7 @@
     },
     {
       "isStacked": true,
-      "heading": "How We Handle .NET Migration Differently",
+      "heading": "How we handle .NET migrations differently",
       "isH1": false,
       "body": "",
       "cardStyle": 0,
@@ -210,7 +210,7 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "BizCover: From Microservice Maze to Monolith Magic",
+      "heading": "BizCover: From microservice maze to monolith magic",
       "isH1": false,
       "description": "We Marie Kondo'd BizCover's codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
       "chips": {
@@ -384,7 +384,9 @@
         }
       ],
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 5,
+        "backgroundImage": "",
+        "bleed": true
       },
       "_template": "imageTextBlock"
     },
