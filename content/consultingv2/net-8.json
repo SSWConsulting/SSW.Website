@@ -213,7 +213,8 @@
               },
               {
                 "heading": "Ready-to-use test suites",
-                "description": ""
+                "description": "",
+                "icon": "BiCheck"
               }
             ]
           },
