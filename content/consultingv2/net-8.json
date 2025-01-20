@@ -163,7 +163,7 @@
             "filledChipText": "",
             "clearChipText": ""
           },
-          "icon": "BiRun",
+          "icon": "BiChevronUpSquare",
           "heading": "Unlock Performance Gains",
           "description": "Speed up your systems without rewriting everything .NET 8 brings:",
           "featureList": {
