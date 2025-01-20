@@ -165,16 +165,11 @@
           },
           "icon": "BiRun",
           "heading": "Unlock Performance Gains",
-          "description": "Speed up your systems without rewriting everything. .NET 8 brings:",
+          "description": "Speed up your systems without rewriting everything .NET 8 brings:",
           "featureList": {
             "features": [
               {
-                "heading": "Improved cloud scaling",
-                "description": "",
-                "icon": "BiCheck"
-              },
-              {
-                "heading": "Native AOT compilation",
+                "heading": "2-3x faster API responses",
                 "description": "",
                 "icon": "BiCheck"
               },
@@ -184,7 +179,12 @@
                 "icon": "BiCheck"
               },
               {
-                "heading": "2-3x faster API responses",
+                "heading": "Native AOT compilation",
+                "description": "",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Improved cloud scaling",
                 "description": "",
                 "icon": "BiCheck"
               }
