@@ -207,6 +207,11 @@
           "featureList": {
             "features": [
               {
+                "heading": "Breaking changes mapped out",
+                "description": "",
+                "icon": "BiCheck"
+              },
+              {
                 "heading": "Ready-to-use test suites",
                 "description": ""
               }
