@@ -241,7 +241,8 @@
             "features": [
               {
                 "heading": "Spot architecture debt early",
-                "description": ""
+                "description": "",
+                "icon": "BiCheck"
               },
               {
                 "heading": "Review security gaps",
