@@ -117,7 +117,7 @@
         },
         {
           "label": "Phase 5: Optimization",
-          "content": "Post-migration support ensures your application performs at its best:\n\n* Performance tuning and optimization\n* Security hardening\n* Knowledge transfer to your team\n* Documentation updates\n* Monitoring and maintenance planning\n"
+          "content": "After the upgrade, we make sure everything runs at peak performance:\n\n* Speed up slow spots in your code\n* Lock down security\n* Train your team on the new setup\n* Update all your docs\n* Set up long-term monitoring\n"
         }
       ],
       "isMultipleOpen": true,
