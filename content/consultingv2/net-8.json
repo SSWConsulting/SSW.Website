@@ -299,7 +299,7 @@
       },
       "mediaConfiguration": {
         "placement": "Left",
-        "verticalPlacement": "Centered",
+        "verticalPlacement": "Top",
         "mobilePlacement": "Above",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
       },
