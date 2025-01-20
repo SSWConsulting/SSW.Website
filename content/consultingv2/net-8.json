@@ -17,7 +17,7 @@
       },
       "heading": "Expert .NET 8 migrations. Zero business disruption.",
       "isH1": true,
-      "description": "",
+      "description": "Enjoy 60% faster startups and 40% less memory usage with Native AOT. Keep your systems live while we handle the heavy work.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -26,13 +26,23 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Blazing Fast Performance",
-            "description": "Native AOT compilation delivers 60% faster startups and 40% less memory usage. Your apps run lean and mean.",
-            "icon": "BiBoltCircle"
+            "heading": "Zero Downtime",
+            "description": "Your app stays online during upgrades.",
+            "icon": "BiAlarmExclamation"
           },
           {
-            "heading": "Zero-Risk Migration",
-            "description": "Battle-tested strangler pattern keeps production systems running while we upgrade. No surprises, no downtime.",
+            "heading": "Faster Response",
+            "description": "Launch your services in a flash.",
+            "icon": "BiSolidBolt"
+          },
+          {
+            "heading": "Lower Memory Usage",
+            "description": "Boost efficiency and cut costs.",
+            "icon": "BiMemoryCard"
+          },
+          {
+            "heading": "Proven Process",
+            "description": "Tested in real setups to reduce risk and keep you on track",
             "icon": "BiShieldPlus"
           }
         ]
