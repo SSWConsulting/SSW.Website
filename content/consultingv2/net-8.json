@@ -279,13 +279,8 @@
         "features": [
           {
             "heading": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly.",
-            "description": "Dino Tius, BizCover",
+            "description": "- Dino Tius, BizCover",
             "icon": "BiSolidQuoteLeft"
-          },
-          {
-            "heading": "Feature delivery speed? Boosted by 40%",
-            "description": "They're shipping code like there's no tomorrow",
-            "icon": "BiFastForward"
           }
         ]
       },
