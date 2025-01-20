@@ -6,7 +6,7 @@
   "blocks": [
     {
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 3
       },
       "finalBreadcrumb": "Enterprise Development and Consulting for .NET 8 Migration",
       "_template": "breadcrumbs"
