@@ -269,7 +269,7 @@
             "filledChipText": ".NET User Groups",
             "clearChipText": "1 hour"
           },
-          "heading": "Collections in .NET: The Performance Deep Dive You Didn't Know You Needed 🚀",
+          "heading": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
           "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
           "embeddedButton": {
             "buttonText": "",
