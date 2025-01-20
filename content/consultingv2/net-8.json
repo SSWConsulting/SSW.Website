@@ -169,6 +169,11 @@
           "featureList": {
             "features": [
               {
+                "heading": "Improved cloud scaling",
+                "description": "",
+                "icon": "BiCheckCircle"
+              },
+              {
                 "heading": "Native AOT compilation",
                 "description": ""
               },
