@@ -23,29 +23,7 @@
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Zero Downtime",
-            "description": "Your app stays online during upgrades.",
-            "icon": "BiAlarmExclamation"
-          },
-          {
-            "heading": "Faster Response",
-            "description": "Launch your services in a flash.",
-            "icon": "BiSolidBolt"
-          },
-          {
-            "heading": "Lower Memory Usage",
-            "description": "Boost efficiency and cut costs.",
-            "icon": "BiMemoryCard"
-          },
-          {
-            "heading": "Proven Process",
-            "description": "Tested in real setups to reduce risk and keep you on track",
-            "icon": "BiShieldPlus"
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
