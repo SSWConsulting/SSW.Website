@@ -54,7 +54,7 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/devs_planning_office.png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS1).png"
       },
       "_template": "imageTextBlock"
     },
@@ -179,7 +179,7 @@
           },
           "icon": "BiSkipNext",
           "heading": "Skip the Learning Curve",
-          "description": "We've already solved the tricky bits of .NET migration. Access our proven patterns and avoid the common pitfalls.",
+          "description": "We've already solved the tricky bits of .NET migrations. Access our proven patterns and avoid the common pitfalls.",
           "embeddedButton": {
             "buttonText": ""
           }
