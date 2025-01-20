@@ -51,10 +51,10 @@
         "bleed": true
       },
       "mediaConfiguration": {
-        "placement": "Right",
+        "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS1).png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png"
       },
       "_template": "imageTextBlock"
     },
