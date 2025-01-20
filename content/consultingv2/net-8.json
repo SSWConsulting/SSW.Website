@@ -384,7 +384,7 @@
         }
       ],
       "background": {
-        "backgroundColour": 5,
+        "backgroundColour": 6,
         "backgroundImage": "",
         "bleed": true
       },
@@ -405,7 +405,7 @@
         "twoColumns": true
       },
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 6
       },
       "_template": "imageTextBlock"
     }
