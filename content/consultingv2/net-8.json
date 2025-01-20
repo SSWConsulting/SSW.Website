@@ -236,7 +236,27 @@
           },
           "icon": "BiRocket",
           "heading": "Beyond Basic Migration",
-          "description": "We architect for what's next: cloud-native features, containerization, and microservices – all baked into your migration.",
+          "description": "While we're in your code, we'll help you:",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Spot architecture debt early",
+                "description": ""
+              },
+              {
+                "heading": "Lorem Ipsum",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              },
+              {
+                "heading": "Lorem Ipsum",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              },
+              {
+                "heading": "Lorem Ipsum",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
