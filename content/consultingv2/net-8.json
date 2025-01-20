@@ -275,11 +275,11 @@
         "clearChipText": "Modular Monolith (MoMo)"
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Faster onboarding for new devs",
-            "description": "From 6 weeks to 5 days. Now that's what we call an improvement!",
+            "description": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly",
             "icon": "BiChalkboard"
           },
           {
