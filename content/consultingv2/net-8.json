@@ -171,22 +171,22 @@
               {
                 "heading": "Improved cloud scaling",
                 "description": "",
-                "icon": "BiCheckCircle"
+                "icon": "BiCheck"
               },
               {
                 "heading": "Native AOT compilation",
                 "description": "",
-                "icon": "BiCheckCircle"
+                "icon": "BiCheck"
               },
               {
                 "heading": "Better memory management",
                 "description": "",
-                "icon": "BiCheckCircle"
+                "icon": "BiCheck"
               },
               {
                 "heading": "2-3x faster API responses",
                 "description": "",
-                "icon": "BiCheckCircle"
+                "icon": "BiCheck"
               }
             ]
           },
