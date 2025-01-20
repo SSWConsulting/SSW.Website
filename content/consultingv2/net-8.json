@@ -185,7 +185,8 @@
               },
               {
                 "heading": "2-3x faster API responses",
-                "description": ""
+                "description": "",
+                "icon": "BiCheckCircle"
               }
             ]
           },
