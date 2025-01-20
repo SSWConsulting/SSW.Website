@@ -96,8 +96,8 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Strategic .NET 8 migration: a phased approach",
-      "body": "Migrating to .NET 8 requires careful planning and execution. Our battle-tested approach breaks down this complex process into manageable phases, ensuring a smooth transition while minimizing business disruption.",
+      "heading": "Strategic .NET 8 migration",
+      "body": "Your .NET applications need careful planning to upgrade to version 8. Our tested process splits this technical update into clear steps that keep your business running while improving your systems",
       "accordionItems": [
         {
           "label": "Phase 1: Assessment",
