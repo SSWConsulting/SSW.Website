@@ -150,7 +150,7 @@
     },
     {
       "isStacked": true,
-      "heading": "How we handle .NET migrations differently",
+      "heading": "How We Make .NET Migrations Work",
       "isH1": false,
       "body": "",
       "cardStyle": 0,
@@ -158,13 +158,13 @@
         {
           "guid": "ye7r7",
           "image": "",
-          "altText": "Unlock Performance Gains",
+          "altText": "Speed Up Your Apps",
           "chips": {
             "filledChipText": "",
             "clearChipText": ""
           },
           "icon": "BiTachometer",
-          "heading": "Unlock Performance Gains",
+          "heading": "Speed Up Your Apps",
           "description": "Speed up your systems without rewriting everything .NET 8 brings:",
           "featureList": {
             "features": [
