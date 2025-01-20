@@ -175,7 +175,8 @@
               },
               {
                 "heading": "Native AOT compilation",
-                "description": ""
+                "description": "",
+                "icon": "BiCheckCircle"
               },
               {
                 "heading": "Better memory management",
