@@ -336,7 +336,7 @@
       ],
       "isMultipleOpen": true,
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 3
       },
       "_template": "accordionBlock"
     },
