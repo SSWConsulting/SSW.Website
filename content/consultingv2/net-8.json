@@ -278,9 +278,9 @@
         "twoColumns": false,
         "features": [
           {
-            "heading": "Faster onboarding for new devs",
-            "description": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly",
-            "icon": "BiChalkboard"
+            "heading": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly.",
+            "description": "Dino Tius, BizCover",
+            "icon": "BiSolidQuoteLeft"
           },
           {
             "heading": "Feature delivery speed? Boosted by 40%",
