@@ -235,17 +235,17 @@
           "featureList": {
             "features": [
               {
-                "heading": "Spot architecture debt early",
+                "heading": "Spot performance bottlenecks",
                 "description": "",
                 "icon": "BiCheck"
               },
               {
-                "heading": "Review security gaps",
+                "heading": "Catch security issues early",
                 "description": "",
                 "icon": "BiCheck"
               },
               {
-                "heading": "Build a tech roadmap that fits your budget",
+                "heading": "Plan your next tech moves",
                 "description": "",
                 "icon": "BiCheck"
               }
