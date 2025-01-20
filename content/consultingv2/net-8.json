@@ -163,7 +163,7 @@
             "filledChipText": "",
             "clearChipText": ""
           },
-          "icon": "BiChevronUpSquare",
+          "icon": "BiTachometer",
           "heading": "Unlock Performance Gains",
           "description": "Speed up your systems without rewriting everything .NET 8 brings:",
           "featureList": {
@@ -204,6 +204,14 @@
           "icon": "BiSkipNext",
           "heading": "Skip the Learning Curve",
           "description": "We've already solved the tricky bits of .NET migrations. Access our proven patterns and avoid the common pitfalls.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Ready-to-use test suites",
+                "description": ""
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
