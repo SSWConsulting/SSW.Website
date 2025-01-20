@@ -17,13 +17,23 @@
       },
       "heading": "Expert .NET 8 migrations. Zero business disruption.",
       "isH1": true,
-      "description": "Enjoy 60% faster startups and 40% less memory usage with Native AOT. Keep your systems live while we handle the heavy work.\n",
+      "description": "",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": true
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Faster Apps",
+            "description": "Native AOT compilation turbocharges startup times and cuts memory use. Your systems run leaner and faster."
+          },
+          {
+            "heading": "Zero-Risk Process",
+            "description": "Production stays stable during upgrades. Our battle-tested patterns keep everything running smoothly."
+          }
+        ]
       },
       "buttons": [
         {
