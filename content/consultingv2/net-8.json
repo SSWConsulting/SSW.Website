@@ -158,14 +158,30 @@
         {
           "guid": "ye7r7",
           "image": "",
-          "altText": "Lorem Ipsum",
+          "altText": "Unlock Performance Gains",
           "chips": {
             "filledChipText": "",
             "clearChipText": ""
           },
           "icon": "BiRun",
-          "heading": "Zero Production Risk",
-          "description": "Your systems stay live during migration. We use battle-tested patterns and parallel environments to ensure business continuity.",
+          "heading": "Unlock Performance Gains",
+          "description": "Speed up your systems without rewriting everything. .NET 8 brings:",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Native AOT compilation",
+                "description": ""
+              },
+              {
+                "heading": "Better memory management",
+                "description": ""
+              },
+              {
+                "heading": "2-3x faster API responses",
+                "description": ""
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
