@@ -180,7 +180,8 @@
               },
               {
                 "heading": "Better memory management",
-                "description": ""
+                "description": "",
+                "icon": "BiCheckCircle"
               },
               {
                 "heading": "2-3x faster API responses",
