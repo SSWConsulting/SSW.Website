@@ -109,7 +109,7 @@
         },
         {
           "label": "Phase 3: Planning",
-          "content": "For each component in your system, we develop a detailed action plan following one of three approaches:\n\nRefactor\n\n* Modernize existing code to leverage .NET 8 features\n* Preserve business logic while improving performance\n* Update dependencies and packages\n\nReplace\n\n* Identify modern alternatives for legacy components\n* Evaluate third-party solutions that match your requirements\n* Ensure seamless integration with your existing ecosystem\n\nRewrite\n\n* Create new components from scratch when necessary\n* Implement using modern best practices and patterns\n* Take advantage of .NET 8's latest capabilities\n"
+          "content": "For each part of your system, we'll pick one of these three paths:\n\nPath 1: Refactor\n\n* Add .NET 8's new features to your existing code\n* Keep your business logic intact while making it faster\n* Get your packages and dependencies up to date\n\nPath 2: Replace\n\n* Find better options for older components\n* Pick third-party tools that fit your needs\n* Hook everything into your current setup smoothly\n\nPath 3: Rebuild\n\n* Start fresh when old code isn't worth fixing\n* Build with clean, modern patterns\n* Use .NET 8's best features from the ground up\n"
         },
         {
           "label": "Phase 4: Migration Execution",
