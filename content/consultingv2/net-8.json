@@ -301,7 +301,7 @@
             "filledChipText": ".NET User Groups",
             "clearChipText": "1 hour"
           },
-          "heading": "Full-Stack Clean Architecture: The Right Way to Share Code",
+          "heading": "Full-Stack Clean Architecture: The right way to share code",
           "description": "Stop wrestling with UI and API code! Matt Goldman (author of .NET MAUI in Action) reveals how to nail Clean Architecture across MAUI and ASP.NET Core without the classic pitfalls. Expect real demos, not just theory.",
           "embeddedButton": {
             "buttonText": ""
