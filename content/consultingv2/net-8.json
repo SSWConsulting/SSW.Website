@@ -113,7 +113,7 @@
         },
         {
           "label": "Phase 4: Migration Execution",
-          "content": "We implement the migration using industry best practices:\n\n* Maintain parallel environments for testing and validation\n* Follow a robust CI/CD pipeline for deployment\n* Perform thorough testing at each stage\n* Monitor system performance and stability\n* Provide rollback procedures for risk mitigation\n"
+          "content": "We stick to proven dev practices:\n\n* Run parallel test environments to catch issues early\n* Deploy through automated CI/CD pipelines\n* Test thoroughly at every step\n* Watch system health in real-time\n* Keep rollback plans ready (just in case)\n"
         },
         {
           "label": "Phase 5: Optimization",
