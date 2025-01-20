@@ -1,6 +1,7 @@
 "use client";
 
 import { Blocks } from "@/components/blocks-renderer";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import EventsHeader from "@/components/events/eventsHeader";
 import { Container } from "@/components/util/container";
@@ -10,7 +11,6 @@ import { Breadcrumbs } from "app/components/breadcrumb";
 import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
 const ClientLogos = dynamic(() =>
   import("@/components/blocks/clientLogos").then((mod) => mod.ClientLogos)
 );
@@ -77,7 +77,7 @@ export default function EventsPage({ props, tinaProps }) {
         </div>
 
         {data.events.showTestimonials && (
-          <Section color="white" className="">
+          <Section color="default" className="">
             <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
               <div
                 data-tina-field={tinaField(data.events.testimonials, "tagline")}
@@ -93,7 +93,7 @@ export default function EventsPage({ props, tinaProps }) {
           </Section>
         )}
 
-        <Section color="white">
+        <Section color="default">
           <Container padding={"md:px-8 px-4"} className={"flex-1 pt-0"}>
             <div className="flex flex-col items-center pb-15 text-center">
               <h2>
@@ -115,6 +115,7 @@ export default function EventsPage({ props, tinaProps }) {
           components={componentRenderer}
         />
       </div>
+      <BuiltOnAzure data={data.events.azureBanner} />
     </>
   );
 }
