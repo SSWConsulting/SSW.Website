@@ -182,11 +182,6 @@
                 "heading": "Native AOT compilation",
                 "description": "",
                 "icon": "BiCheck"
-              },
-              {
-                "heading": "Improved cloud scaling",
-                "description": "",
-                "icon": "BiCheck"
               }
             ]
           },
