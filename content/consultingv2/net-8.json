@@ -190,7 +190,7 @@
           "featureList": {
             "features": [
               {
-                "heading": "Security patches built-in",
+                "heading": "Built-in security patches ",
                 "description": ".NET 8 has the latest security patches baked in.",
                 "icon": "BiCheck"
               },
