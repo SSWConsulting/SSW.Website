@@ -6,7 +6,7 @@
   "blocks": [
     {
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 3
       },
       "finalBreadcrumb": "Enterprise Development and Consulting for .NET 8 Migration",
       "_template": "breadcrumbs"
@@ -15,27 +15,15 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Expert .NET 8 migration. Zero business disruption.",
+      "heading": "Expert .NET 8 migrations. Minimal business disruption.",
       "isH1": true,
-      "description": "",
+      "description": "Move to .NET 8 while your systems stay online. Our proven process reduces downtime and keeps your services running smoothly.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
       },
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Blazing Fast Performance",
-            "description": "Native AOT compilation delivers 60% faster startups and 40% less memory usage. Your apps run lean and mean.",
-            "icon": "BiBoltCircle"
-          },
-          {
-            "heading": "Zero-Risk Migration",
-            "description": "Battle-tested strangler pattern keeps production systems running while we upgrade. No surprises, no downtime.",
-            "icon": "BiShieldPlus"
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
@@ -51,10 +39,10 @@
         "bleed": true
       },
       "mediaConfiguration": {
-        "placement": "Right",
+        "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/devs_planning_office.png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/ssw_here_fx41_v2.png"
       },
       "_template": "imageTextBlock"
     },
@@ -96,8 +84,8 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Strategic .NET 8 Migration: A Phased Approach",
-      "body": "Migrating to .NET 8 requires careful planning and execution. Our battle-tested approach breaks down this complex process into manageable phases, ensuring a smooth transition while minimizing business disruption.",
+      "heading": "Strategic .NET 8 migration",
+      "body": "Your .NET applications need care and planning to upgrade to version 8. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
       "accordionItems": [
         {
           "label": "Phase 1: Assessment",
@@ -105,19 +93,19 @@
         },
         {
           "label": "Phase 2: Strategy Selection",
-          "content": "Based on your business priorities and technical requirements, we'll help you choose the optimal migration strategy:\n\n* Strangler Fig Pattern: Perfect for large, complex applications where a gradual transition is preferred. We incrementally replace legacy components while maintaining system stability.\n* Big Bang Approach: Ideal for smaller applications or when a quick transition is required. The entire application is migrated in one coordinated effort.\n"
+          "content": "Strangler Fig Method: Perfect for bigger, complex apps. We replace old parts bit by bit, keeping your system stable. This works well when you need to:\n\n* Keep critical systems running 24/7\n* Test changes safely in production\n* Manage risk with gradual updates\n\nBig Bang Approach: Built for smaller apps or quick switches. We upgrade everything at once in a coordinated push. This fits best when you:\n\n* Have a simpler codebase\n* Need to move fast\n* Can handle brief downtime\n"
         },
         {
           "label": "Phase 3: Planning",
-          "content": "For each component in your system, we develop a detailed action plan following one of three approaches:\n\nRefactor\n\n* Modernize existing code to leverage .NET 8 features\n* Preserve business logic while improving performance\n* Update dependencies and packages\n\nReplace\n\n* Identify modern alternatives for legacy components\n* Evaluate third-party solutions that match your requirements\n* Ensure seamless integration with your existing ecosystem\n\nRewrite\n\n* Create new components from scratch when necessary\n* Implement using modern best practices and patterns\n* Take advantage of .NET 8's latest capabilities\n"
+          "content": "For each part of your system, we'll pick one of these three paths:\n\nPath 1: Refactor\n\n* Add .NET 8's new features to your existing code\n* Keep your business logic intact while making it faster\n* Get your packages and dependencies up to date\n\nPath 2: Replace\n\n* Find better options for older components\n* Pick third-party tools that fit your needs\n* Hook everything into your current setup smoothly\n\nPath 3: Rebuild\n\n* Start fresh when old code isn't worth fixing\n* Build with clean, modern patterns\n* Use .NET 8's best features from the ground up\n"
         },
         {
           "label": "Phase 4: Migration Execution",
-          "content": "We implement the migration using industry best practices:\n\n* Maintain parallel environments for testing and validation\n* Follow a robust CI/CD pipeline for deployment\n* Perform thorough testing at each stage\n* Monitor system performance and stability\n* Provide rollback procedures for risk mitigation\n"
+          "content": "We stick to proven dev practices:\n\n* Run parallel test environments to catch issues early\n* Deploy through automated CI/CD pipelines\n* Test thoroughly at every step\n* Watch system health in real-time\n* Keep rollback plans ready (just in case)\n"
         },
         {
           "label": "Phase 5: Optimization",
-          "content": "Post-migration support ensures your application performs at its best:\n\n* Performance tuning and optimization\n* Security hardening\n* Knowledge transfer to your team\n* Documentation updates\n* Monitoring and maintenance planning\n"
+          "content": "After the upgrade, we make sure everything runs at peak performance:\n\n* Speed up slow spots in your code\n* Lock down security\n* Train your team on the new setup\n* Update all your docs\n* Set up long-term monitoring\n"
         }
       ],
       "isMultipleOpen": true,
@@ -135,8 +123,8 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
+        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
@@ -150,7 +138,7 @@
     },
     {
       "isStacked": true,
-      "heading": "How We Handle .NET Migration Differently",
+      "heading": "Why move to .NET 8 with us?",
       "isH1": false,
       "body": "",
       "cardStyle": 0,
@@ -158,14 +146,33 @@
         {
           "guid": "ye7r7",
           "image": "",
-          "altText": "Lorem Ipsum",
+          "altText": "Speed Up Your Apps",
           "chips": {
             "filledChipText": "",
             "clearChipText": ""
           },
-          "icon": "BiRun",
-          "heading": "Zero Production Risk",
-          "description": "Your systems stay live during migration. We use battle-tested patterns and parallel environments to ensure business continuity.",
+          "icon": "BiTachometer",
+          "heading": "Speed Up Your Apps",
+          "description": ".NET 8 is all about performance, and we'll make sure you're getting the most out of it.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Faster Performance",
+                "description": "With .NET 8's features, your code runs faster without major rewrites.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Reduced Load Times",
+                "description": "Benefit from quicker startup thanks to enhancements in .NET 8.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Lower Memory Use",
+                "description": ".NET 8 is leaner. We help you use fewer resources, even under load.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
@@ -173,13 +180,32 @@
         {
           "guid": "imtiro",
           "image": "",
-          "altText": "Lorem Ipsum",
+          "altText": "Skip the Upgrade Hassles",
           "chips": {
             "filledChipText": ""
           },
           "icon": "BiSkipNext",
-          "heading": "Skip the Learning Curve",
-          "description": "We've already solved the tricky bits of .NET migration. Access our proven patterns and avoid the common pitfalls.",
+          "heading": "Skip the Upgrade Hassles",
+          "description": "We've already solved the tricky bits of .NET migrations. Avoid common pitfalls with",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Built-in security patches ",
+                "description": " We'll ensure you're on the latest security patches.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Breaking changes mapped out",
+                "description": "We identify and address breaking changes before they impact your users.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Testing You Can Trust",
+                "description": "We've got test suites ready to go, so your upgrade goes smoothly.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
@@ -187,13 +213,32 @@
         {
           "guid": "m0bkqf",
           "image": "",
-          "altText": "",
+          "altText": "Beyond Basic Migration",
           "chips": {
             "filledChipText": ""
           },
           "icon": "BiRocket",
           "heading": "Beyond Basic Migration",
-          "description": "We architect for what's next: cloud-native features, containerization, and microservices – all baked into your migration.",
+          "description": "Our team isn't just good with upgrades. We're .NET 8 experts and can optimize your code for this new version.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Find and fix bottlenecks",
+                "description": "We'll pinpoint where your code can be improved and make it faster using new .NET 8 features.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Catch security issues early",
+                "description": "We hunt for potential security issues.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Plan your next tech moves",
+                "description": "We'll make sure your apps are ready for what's coming next in .NET.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
@@ -210,7 +255,7 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "BizCover: From Microservice Maze to Monolith Magic",
+      "heading": "BizCover: From microservice maze to monolith magic",
       "isH1": false,
       "description": "We Marie Kondo'd BizCover's codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
       "chips": {
@@ -218,17 +263,12 @@
         "clearChipText": "Modular Monolith (MoMo)"
       },
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
-            "heading": "Faster onboarding for new devs",
-            "description": "From 6 weeks to 5 days. Now that's what we call an improvement!",
-            "icon": "BiChalkboard"
-          },
-          {
-            "heading": "Feature delivery speed? Boosted by 40%",
-            "description": "They're shipping code like there's no tomorrow",
-            "icon": "BiFastForward"
+            "heading": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly.",
+            "description": "- Dino Tius, BizCover",
+            "icon": "BiSolidQuoteLeft"
           }
         ]
       },
@@ -249,27 +289,28 @@
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/image_fx_ (3)_nb_3.png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "altText": "BizCover: From microservice maze to monolith magic"
       },
       "_template": "imageTextBlock"
     },
     {
       "isStacked": true,
-      "heading": "Tech Wisdom from the Trenches",
+      "heading": "Tech wisdom from the trenches",
       "isH1": false,
-      "body": "At SSW, we share decades of hands-on experience in software—tackling legacy code, fixing bugs, and navigating new tech. No fluff, no jargon—just practical advice to help you build better software",
+      "body": "At SSW, we’ve been knee-deep in .NET projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork—just proven tips that help you build better software.",
       "cardStyle": 1,
       "cards": [
         {
           "guid": "qmlcq9",
           "embed": "ocbPkNROnlc?si=VCUDDWZwfo2ad53s",
           "image": "",
-          "altText": "Collections in .NET: The Performance Deep Dive You Didn't Know You Needed 🚀",
+          "altText": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
           "chips": {
             "filledChipText": ".NET User Groups",
             "clearChipText": "1 hour"
           },
-          "heading": "Collections in .NET: The Performance Deep Dive You Didn't Know You Needed 🚀",
+          "heading": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
           "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
           "embeddedButton": {
             "buttonText": "",
@@ -280,7 +321,7 @@
           "guid": "s76w3",
           "embed": "59G9Cd-rV9w?si=Ql7MoBHGmlAi_HI3",
           "image": "/images/Louis Test Images/Incident-io-batch/cloud_native_net-aspire_16-9.jpg",
-          "altText": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
+          "altText": "Breaking down .NET Aspire: Your gateway to cloud native apps",
           "chips": {
             "filledChipText": ".NET Aspire",
             "clearChipText": "1 hour "
@@ -301,7 +342,7 @@
             "filledChipText": ".NET User Groups",
             "clearChipText": "1 hour"
           },
-          "heading": "Full-Stack Clean Architecture: The Right Way to Share Code",
+          "heading": "Full-Stack Clean Architecture: The right way to share code",
           "description": "Stop wrestling with UI and API code! Matt Goldman (author of .NET MAUI in Action) reveals how to nail Clean Architecture across MAUI and ASP.NET Core without the classic pitfalls. Expect real demos, not just theory.",
           "embeddedButton": {
             "buttonText": ""
@@ -336,7 +377,7 @@
       ],
       "isMultipleOpen": true,
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 3
       },
       "_template": "accordionBlock"
     },
@@ -348,7 +389,7 @@
       ],
       "techCardStyle": 0,
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 6
       },
       "_template": "technologyCardCarousel"
     },
@@ -384,7 +425,9 @@
         }
       ],
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
       },
       "_template": "imageTextBlock"
     },
@@ -403,7 +446,7 @@
         "twoColumns": true
       },
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 6
       },
       "_template": "imageTextBlock"
     }
