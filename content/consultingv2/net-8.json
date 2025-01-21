@@ -157,7 +157,7 @@
           "featureList": {
             "features": [
               {
-                "heading": "Faster Performance, no code rewrite",
+                "heading": "Faster Performance",
                 "description": "With .NET 8's features, your code runs faster without major rewrites.",
                 "icon": "BiCheck"
               },
