@@ -287,7 +287,7 @@
       },
       "mediaConfiguration": {
         "placement": "Left",
-        "verticalPlacement": "Top",
+        "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/bizcover_case_study.png",
         "altText": "BizCover: From microservice maze to monolith magic"
