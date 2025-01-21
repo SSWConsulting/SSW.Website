@@ -85,7 +85,7 @@
     },
     {
       "heading": "Strategic .NET 8 migration",
-      "body": "Your .NET applications need careful planning to upgrade to version 8. Our tested process splits this technical update into clear steps that keep your business running while improving your systems",
+      "body": "Your .NET applications need care and planning to upgrade to version 8. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
       "accordionItems": [
         {
           "label": "Phase 1: Assessment",
@@ -153,7 +153,7 @@
           },
           "icon": "BiTachometer",
           "heading": "Speed Up Your Apps",
-          "description": "Speed up your systems without rewriting everything – .NET 8 brings",
+          "description": ".NET 8 is faster, thanks to features like Dynamic PGO and a tuned-up JIT. We'll make sure you get those speed gains without rewriting your code.",
           "featureList": {
             "features": [
               {
@@ -163,12 +163,12 @@
               },
               {
                 "heading": "Better memory management",
-                "description": "",
+                "description": " Get more done with the resources you have.",
                 "icon": "BiCheck"
               },
               {
                 "heading": "Native AOT compilation",
-                "description": "",
+                "description": "Want faster startup? Smaller memory footprint? This is how.",
                 "icon": "BiCheck"
               }
             ]
@@ -191,17 +191,17 @@
             "features": [
               {
                 "heading": "Security patches built-in",
-                "description": "",
+                "description": ".NET 8 has the latest security patches baked in.",
                 "icon": "BiCheck"
               },
               {
                 "heading": "Breaking changes mapped out",
-                "description": "",
+                "description": " We'll find and fix any breaking changes.",
                 "icon": "BiCheck"
               },
               {
                 "heading": "Ready-to-use test suites",
-                "description": "",
+                "description": "We've got test suites ready to go, so your upgrade goes smoothly.",
                 "icon": "BiCheck"
               }
             ]
@@ -219,22 +219,22 @@
           },
           "icon": "BiRocket",
           "heading": "Beyond Basic Migration",
-          "description": "While we're in your code, our architects will help you",
+          "description": "Our team isn't just good with upgrades. We're .NET 8 experts and can optimize your code for this new version.",
           "featureList": {
             "features": [
               {
-                "heading": "Spot performance bottlenecks",
-                "description": "",
+                "heading": "Find and fix bottlenecks",
+                "description": "We'll pinpoint where your code can be improved and make it faster using new .NET 8 features.",
                 "icon": "BiCheck"
               },
               {
                 "heading": "Catch security issues early",
-                "description": "",
+                "description": "We find the holes before they're a problem",
                 "icon": "BiCheck"
               },
               {
                 "heading": "Plan your next tech moves",
-                "description": "",
+                "description": "We'll make sure your apps are ready for what's coming next in .NET.",
                 "icon": "BiCheck"
               }
             ]
