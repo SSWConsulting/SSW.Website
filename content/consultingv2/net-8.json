@@ -289,7 +289,8 @@
         "placement": "Left",
         "verticalPlacement": "Top",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/bizcover_case_study.png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "altText": "BizCover: From microservice maze to monolith magic"
       },
       "_template": "imageTextBlock"
     },
