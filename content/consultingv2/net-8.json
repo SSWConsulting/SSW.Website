@@ -153,7 +153,7 @@
           },
           "icon": "BiTachometer",
           "heading": "Speed Up Your Apps",
-          "description": ".NET 8 is faster, thanks to features like Dynamic PGO and a tuned-up JIT. We'll make sure you get those speed gains without rewriting your code.",
+          "description": ".NET 8 is faster, thanks to features like Dynamic PGO and a tuned-up JIT. ",
           "featureList": {
             "features": [
               {
