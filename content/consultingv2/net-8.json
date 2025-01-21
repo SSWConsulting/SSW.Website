@@ -186,7 +186,7 @@
           },
           "icon": "BiSkipNext",
           "heading": "Skip the Upgrade Hassles",
-          "description": "We've already solved the tricky bits of .NET migrations. Avoid common pitfalls with:",
+          "description": "We've already solved the tricky bits of .NET migrations. Avoid common pitfalls with",
           "featureList": {
             "features": [
               {
