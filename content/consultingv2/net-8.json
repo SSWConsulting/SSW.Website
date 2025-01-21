@@ -153,22 +153,22 @@
           },
           "icon": "BiTachometer",
           "heading": "Speed Up Your Apps",
-          "description": ".NET 8 is faster, thanks to features like Dynamic PGO and a tuned-up JIT. ",
+          "description": ".NET 8 is all about performance, and we'll make sure you're getting the most out of it.",
           "featureList": {
             "features": [
               {
-                "heading": "2-3x faster API responses",
-                "description": " Your customers will notice the difference.",
+                "heading": "Faster Performance, no code rewrite",
+                "description": "With .NET 8's features, your code runs faster without major rewrites.",
                 "icon": "BiCheck"
               },
               {
-                "heading": "Better memory management",
-                "description": " Get more done with the resources you have.",
+                "heading": "Reduced Load Times",
+                "description": "Benefit from quicker startup thanks to enhancements in .NET 8.",
                 "icon": "BiCheck"
               },
               {
-                "heading": "Native AOT compilation",
-                "description": "Want faster startup? Smaller memory footprint? This is how.",
+                "heading": "Lower Memory Use",
+                "description": ".NET 8 is leaner. We help you use fewer resources, even under load.",
                 "icon": "BiCheck"
               }
             ]
@@ -191,16 +191,16 @@
             "features": [
               {
                 "heading": "Built-in security patches ",
-                "description": ".NET 8 has the latest security patches baked in.",
+                "description": " We'll ensure you're on the latest security patches.",
                 "icon": "BiCheck"
               },
               {
                 "heading": "Breaking changes mapped out",
-                "description": " We'll find and fix any breaking changes.",
+                "description": "We identify and address breaking changes before they impact your users.",
                 "icon": "BiCheck"
               },
               {
-                "heading": "Ready-to-use test suites",
+                "heading": "Testing You Can Trust",
                 "description": "We've got test suites ready to go, so your upgrade goes smoothly.",
                 "icon": "BiCheck"
               }
@@ -229,7 +229,7 @@
               },
               {
                 "heading": "Catch security issues early",
-                "description": "We find the holes before they're a problem",
+                "description": "We hunt for potential security issues.",
                 "icon": "BiCheck"
               },
               {
