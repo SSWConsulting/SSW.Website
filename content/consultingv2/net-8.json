@@ -367,12 +367,8 @@
           "content": "We understand dependency compatibility is a key concern when planning a .NET 8 upgrade. During our assessment, we meticulously audit your NuGet packages first. The good news is: Most popular packages already support .NET 8.\n\n* For packages lacking direct .NET 8 support, we offer solutions:\n  * Update to compatible versions: Identify and upgrade to newer versions of packages that offer .NET 8 compatibility.\n  * Find modern alternatives: Explore and recommend modern, actively maintained alternative packages that are .NET 8 compliant and offer similar functionality.\n  * Create compatibility shims (as a last resort): In rare cases, we can develop compatibility shims to bridge gaps for essential packages without direct .NET 8 support, ensuring a functional migration to .NET 8.\n"
         },
         {
-          "label": "How do we prep our team for .NET8?",
-          "content": "Quick checklist:\n\n1. Set up .NET 8 SDK\n2. Review breaking changes\n3. Run compatibility analyzer\n4. Test on a small project\n5. Plan deployment strategy\n"
-        },
-        {
           "label": "What kind of support is available post-migration?",
-          "content": "Our support includes:\n\n* Performance monitoring\n* Security updates\n* Optional managed services\n* Regular health checks\n* Continuous optimization\n"
+          "content": "Our Support Includes:\n\n* Performance monitoring: Continuous performance monitoring and analysis to identify and address any performance regressions or areas for .NET 8 optimization.\n\n<!---->\n\n* Security updates: Ongoing monitoring for security vulnerabilities and assistance with applying timely security updates to your .NET 8 environment.\n\n<!---->\n\n* Optional managed services: Consider our managed services for proactive ongoing support, maintenance, and .NET 8 optimization of your upgraded applications.\n\n<!---->\n\n* Regular health checks: Scheduled health checks and system reviews to proactively identify potential issues and ensure the continued stability and performance of your .NET 8 systems.\n\n<!---->\n\n* Continuous optimization: Ongoing recommendations and support for further .NET 8 optimization, helping you leverage new features and maintain peak application performance over time.\n"
         }
       ],
       "isMultipleOpen": true,
