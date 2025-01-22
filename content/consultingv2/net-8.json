@@ -93,7 +93,7 @@
         },
         {
           "label": "Phase 2: Strategy Selection",
-          "content": "Strangler Fig Method: Perfect for bigger, complex apps. We replace old parts bit by bit, keeping your system stable. This works well when you need to:\\\n\n\n* Keep critical systems running 24/7\n* Test changes safely in production\n* Manage risk with gradual updates\\\n\n\nBig Bang Approach: Built for smaller apps or quick switches. We upgrade everything at once in a coordinated push. This fits best when you:\n\n* Have a simpler codebase\n* Need to move fast\n* Can handle brief downtime\n"
+          "content": "Strangler Fig Method: Perfect for bigger, complex apps. We replace old parts bit by bit, keeping your system stable. This works well when you need to:\n\n* Keep critical systems running 24/7\n* Test changes safely in production\n* Manage risk with gradual updates\\\n\n\nBig Bang Approach: Built for smaller apps or quick switches. We upgrade everything at once in a coordinated push. This fits best when you:\n\n* Have a simpler codebase\n* Need to move fast\n* Can handle brief downtime\n"
         },
         {
           "label": "Phase 3: Planning",
