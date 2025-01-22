@@ -360,7 +360,7 @@
       "accordionItems": [
         {
           "label": "Is .NET 8 worth the migration effort?",
-          "content": "Yes, if you're running applications on older .NET versions. .NET 8 offers:\n\n* Extended support until November 2026\n* Significant performance improvements\n* Better cloud integration\n* Latest security features and patches\n* Access to new C# 12 features\n"
+          "content": "Yes, especially if you're currently running older .NET versions like .NET Framework, .NET Core 3.1, .NET 6, or .NET 7. A strategic migration to .NET 8 offers significant advantages:\n\n* Extended Support & Security: Benefit from Microsoft's Long-Term Support (LTS) until November 2026, ensuring you receive crucial security updates and patches for your .NET 8 applications.\n* Significant Performance Improvements: Unlock faster application performance, reduced load times, and lower memory usage thanks to .NET 8's performance enhancements.\n* Better Cloud Integration: Seamlessly integrate with Azure and other cloud platforms, leveraging the latest cloud-native features in .NET 8.\n* Latest Security Features and Patches: Enhance your application security with the newest security features and built-in patches available in .NET 8.\n* Access to New C# 12 Features: Empower your developers with the latest language features and productivity enhancements in C# 12, fully supported by .NET 8.\n"
         },
         {
           "label": "What about our existing dependencies?",
