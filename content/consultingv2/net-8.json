@@ -89,7 +89,7 @@
       "accordionItems": [
         {
           "label": "Phase 1: Assessment",
-          "content": "We start with a comprehensive evaluation of your current system through our Specification Review. This critical first step helps us:\\\n\n\n* Map out your application's architecture and dependencies\n* Identify potential migration challenges and compatibility issues\n* Document critical business functionality that must be preserved\n* Assess your team's readiness and training needs\n"
+          "content": "We start with a comprehensive evaluation of your current system through our Specification Review. This critical first step helps us:\n\n* Map out your application's architecture and dependencies\n* Identify potential migration challenges and compatibility issues\n* Document critical business functionality that must be preserved\n* Assess your team's readiness and training needs\n"
         },
         {
           "label": "Phase 2: Strategy Selection",
