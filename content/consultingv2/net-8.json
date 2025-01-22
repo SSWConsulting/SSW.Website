@@ -88,7 +88,7 @@
       "body": "Your .NET applications need care and planning to upgrade to version 8. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
       "accordionItems": [
         {
-          "label": "Phase 1: Assessment",
+          "label": "Phase 1: Assessment | Understanding Your .NET Landscape",
           "content": "We start with a comprehensive evaluation of your current system through our **Specification Review.** This critical first step helps us:\n\n* Map out your application's architecture and dependencies: Gain a clear understanding of your current .NET Framework or previous .NET Core versions, identifying all components and their inter-relationships for a smoother upgrade process.\n\n<!---->\n\n* Identify potential migration challenges and compatibility issues: Proactively pinpoint roadblocks and .NET 8 compatibility concerns early on, minimizing risks during the migration execution. This is where our expertise with tools like the .NET Upgrade Assistant proves invaluable.\n\n<!---->\n\n* Document critical business functionality that must be preserved: Ensure no essential features are overlooked during the .NET upgrade, safeguarding core business operations throughout the migration to .NET 8.\n\n<!---->\n\n* Assess your team's readiness and training needs: Evaluate your team's current skill set and identify any training requirements to effectively manage and maintain your applications post .NET 8 migration.\n"
         },
         {
