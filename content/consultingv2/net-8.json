@@ -1,0 +1,454 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for .NET8 Migration",
+    "description": "With over 10ys experience creating enterprise Angular apps for private and public sectors, SSW can design, build, and deliver your dream Angular app."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for .NET 8 Migration",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Expert .NET 8 migrations. Minimal business disruption.",
+      "isH1": true,
+      "description": "Move to .NET 8 while your systems stay online. Our proven process reduces downtime and keeps your services running smoothly.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Meeting",
+          "showLeadCaptureForm": true,
+          "buttonLink": "",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/ssw_here_fx41_v2.png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "heading": "Trusted by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/event_cinemas_logo.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "heading": "Strategic .NET 8 migration",
+      "body": "Your .NET applications need care and planning to upgrade to version 8. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
+      "accordionItems": [
+        {
+          "label": "Phase 1: Assessment",
+          "content": "We start with a comprehensive evaluation of your current system through our Specification Review. This critical first step helps us:\n\n* Map out your application's architecture and dependencies\n* Identify potential migration challenges and compatibility issues\n* Document critical business functionality that must be preserved\n* Assess your team's readiness and training needs\n"
+        },
+        {
+          "label": "Phase 2: Strategy Selection",
+          "content": "Strangler Fig Method: Perfect for bigger, complex apps. We replace old parts bit by bit, keeping your system stable. This works well when you need to:\n\n* Keep critical systems running 24/7\n* Test changes safely in production\n* Manage risk with gradual updates\n\nBig Bang Approach: Built for smaller apps or quick switches. We upgrade everything at once in a coordinated push. This fits best when you:\n\n* Have a simpler codebase\n* Need to move fast\n* Can handle brief downtime\n"
+        },
+        {
+          "label": "Phase 3: Planning",
+          "content": "For each part of your system, we'll pick one of these three paths:\n\nPath 1: Refactor\n\n* Add .NET 8's new features to your existing code\n* Keep your business logic intact while making it faster\n* Get your packages and dependencies up to date\n\nPath 2: Replace\n\n* Find better options for older components\n* Pick third-party tools that fit your needs\n* Hook everything into your current setup smoothly\n\nPath 3: Rebuild\n\n* Start fresh when old code isn't worth fixing\n* Build with clean, modern patterns\n* Use .NET 8's best features from the ground up\n"
+        },
+        {
+          "label": "Phase 4: Migration Execution",
+          "content": "We stick to proven dev practices:\n\n* Run parallel test environments to catch issues early\n* Deploy through automated CI/CD pipelines\n* Test thoroughly at every step\n* Watch system health in real-time\n* Keep rollback plans ready (just in case)\n"
+        },
+        {
+          "label": "Phase 5: Optimization",
+          "content": "After the upgrade, we make sure everything runs at peak performance:\n\n* Speed up slow spots in your code\n* Lock down security\n* Train your team on the new setup\n* Update all your docs\n* Set up long-term monitoring\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "buttons": [
+        {
+          "buttonText": "Explore our Migration Guide",
+          "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy/",
+          "colour": 1
+        },
+        {
+          "buttonText": "Rules to Better .NET 8 Migrations",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png",
+        "youtubeUrl": "https://youtu.be/N9QOoTwOo_U?si=nFwcvCSFgc0k37Nn",
+        "altText": "Strategic .NET 8 Migration: A Phased Approach"
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Why move to .NET 8 with us?",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ye7r7",
+          "image": "",
+          "altText": "Speed Up Your Apps",
+          "chips": {
+            "filledChipText": "",
+            "clearChipText": ""
+          },
+          "icon": "BiTachometer",
+          "heading": "Speed Up Your Apps",
+          "description": ".NET 8 is all about performance, and we'll make sure you're getting the most out of it.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Faster Performance",
+                "description": "With .NET 8's features, your code runs faster without major rewrites.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Reduced Load Times",
+                "description": "Benefit from quicker startup thanks to enhancements in .NET 8.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Lower Memory Use",
+                "description": ".NET 8 is leaner. We help you use fewer resources, even under load.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "imtiro",
+          "image": "",
+          "altText": "Skip the Upgrade Hassles",
+          "chips": {
+            "filledChipText": ""
+          },
+          "icon": "BiSkipNext",
+          "heading": "Skip the Upgrade Hassles",
+          "description": "We've already solved the tricky bits of .NET migrations. Avoid common pitfalls with",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Built-in security patches ",
+                "description": " We'll ensure you're on the latest security patches.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Breaking changes mapped out",
+                "description": "We identify and address breaking changes before they impact your users.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Testing You Can Trust",
+                "description": "We've got test suites ready to go, so your upgrade goes smoothly.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "m0bkqf",
+          "image": "",
+          "altText": "Beyond Basic Migration",
+          "chips": {
+            "filledChipText": ""
+          },
+          "icon": "BiRocket",
+          "heading": "Beyond Basic Migration",
+          "description": "Our team isn't just good with upgrades. We're .NET 8 experts and can optimize your code for this new version.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Find and fix bottlenecks",
+                "description": "We'll pinpoint where your code can be improved and make it faster using new .NET 8 features.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Catch security issues early",
+                "description": "We hunt for potential security issues.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Plan your next tech moves",
+                "description": "We'll make sure your apps are ready for what's coming next in .NET.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "BizCover: From microservice maze to monolith magic",
+      "isH1": false,
+      "description": "We Marie Kondo'd BizCover's codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
+      "chips": {
+        "filledChipText": ".NET8",
+        "clearChipText": "Modular Monolith (MoMo)"
+      },
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly.",
+            "description": "- Dino Tius, BizCover",
+            "icon": "BiSolidQuoteLeft"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Meeting",
+          "showLeadCaptureForm": true,
+          "buttonLink": "https://form.jotform.com/250066954570056",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "altText": "BizCover: From microservice maze to monolith magic"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in .NET projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork—just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "qmlcq9",
+          "embed": "ocbPkNROnlc?si=VCUDDWZwfo2ad53s",
+          "image": "",
+          "altText": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
+          "chips": {
+            "filledChipText": ".NET User Groups",
+            "clearChipText": "1 hour"
+          },
+          "heading": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
+          "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "s76w3",
+          "embed": "59G9Cd-rV9w?si=Ql7MoBHGmlAi_HI3",
+          "image": "/images/Louis Test Images/Incident-io-batch/cloud_native_net-aspire_16-9.jpg",
+          "altText": "Breaking down .NET Aspire: Your gateway to cloud native apps",
+          "chips": {
+            "filledChipText": ".NET Aspire",
+            "clearChipText": "1 hour "
+          },
+          "heading": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
+          "description": "SSW's Matt Wicks teams up with Octopus Deploy's Rob Pearson to demystify .NET Aspire. Dive into real-world orchestration, service integration, and deployment strategies that'll level up your cloud-native game.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "s22wwo",
+          "embed": "Ft2JArXEXcI?si=FnoENuD0MO8JIQMJ",
+          "image": "/images/Louis Test Images/Incident-io-batch/dotnet_cleanarchitecture.png",
+          "altText": "Full-Stack Clean Architecture: The Right Way to Share Code",
+          "chips": {
+            "filledChipText": ".NET User Groups",
+            "clearChipText": "1 hour"
+          },
+          "heading": "Full-Stack Clean Architecture: The right way to share code",
+          "description": "Stop wrestling with UI and API code! Matt Goldman (author of .NET MAUI in Action) reveals how to nail Clean Architecture across MAUI and ASP.NET Core without the classic pitfalls. Expect real demos, not just theory.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "Need quick answers about .NET 8 migration? Here's what tech teams commonly ask us during assessment calls.",
+      "accordionItems": [
+        {
+          "label": "Is .NET 8 worth the migration effort?",
+          "content": "Yes, if you're running applications on older .NET versions. .NET 8 offers:\n\n* Extended support until November 2026\n* Significant performance improvements\n* Better cloud integration\n* Latest security features and patches\n* Access to new C# 12 features\n"
+        },
+        {
+          "label": "What about our existing dependencies?",
+          "content": "We audit your NuGet packages first. Most popular packages already support .NET 8. For others, we'll either:\n\n* Update to compatible versions\n* Find modern alternatives\n* Create compatibility shims\n"
+        },
+        {
+          "label": "How do we prep our team for .NET8?",
+          "content": "Quick checklist:\n\n1. Set up .NET 8 SDK\n2. Review breaking changes\n3. Run compatibility analyzer\n4. Test on a small project\n5. Plan deployment strategy\n"
+        },
+        {
+          "label": "What kind of support is available post-migration?",
+          "content": "Our support includes:\n\n* Performance monitoring\n* Security updates\n* Optional managed services\n* Regular health checks\n* Continuous optimization\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 3
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your .NET 8 project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Meeting",
+          "showLeadCaptureForm": true,
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "",
+      "isH1": false,
+      "description": "",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
+}

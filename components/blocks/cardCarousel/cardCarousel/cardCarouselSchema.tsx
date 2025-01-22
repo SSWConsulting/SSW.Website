@@ -313,13 +313,6 @@ export const CardCarouselSchema: Template = {
         mediaTypeField,
         // @ts-expect-error – Tina doen't reconize imported fields
         youtubeEmbedField,
-        // {
-        //   type: "string",
-        //   label: "Embed",
-        //   name: "embed",
-        //   description:
-        //     "The YouTube video ID to embed (https://www.youtube.com/watch?v=[embed]).",
-        // },
         {
           type: "image",
           label: "Image",

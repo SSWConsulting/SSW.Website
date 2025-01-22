@@ -95,7 +95,7 @@ export default function CompanyPage({ tinaProps, props }) {
           </Section>
         )}
         <Section>
-          <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+          <BuiltOnAzure data={data.company.azureBanner} />
         </Section>
       </div>
     </>

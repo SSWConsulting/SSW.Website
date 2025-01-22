@@ -1,15 +1,14 @@
+import { GoogleMapsWrapper } from "@/components/blocks/googleMapsWrapper";
+import { JoinAsPresenter } from "@/components/usergroup/joinAsPresenter";
+import { JoinGithub } from "@/components/usergroup/joinGithub";
+import { LatestTech } from "@/components/usergroup/latestTech";
+import { Organizer } from "@/components/usergroup/organizer";
 import client from "@/tina/client";
 import classNames from "classnames";
 import { InferGetStaticPropsType } from "next";
 import ReactDomServer from "react-dom/server";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-import { GoogleMapsWrapper } from "@/components/blocks/googleMapsWrapper";
-import { JoinAsPresenter } from "@/components/usergroup/joinAsPresenter";
-import { JoinGithub } from "@/components/usergroup/joinGithub";
-import { LatestTech } from "@/components/usergroup/latestTech";
-import { Organizer } from "@/components/usergroup/organizer";
 import { Breadcrumbs } from "../../components/blocks/breadcrumbs";
 import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
@@ -305,7 +304,7 @@ export default function NETUGPage(
           </Container>
 
           <Section>
-            <BuiltOnAzure data={{ backgroundColor: "lightgray" }} />
+            <BuiltOnAzure data={data.userGroupPage.azureBanner} />
           </Section>
         </Layout>
       </>
@@ -336,6 +335,7 @@ export default function NETUGPage(
               data-tina-field={tinaField(data.userGroupPage, "_body")}
             />
           </Container>
+          <BuiltOnAzure data={data.userGroupPage.azureBanner} />
         </Layout>
       </>
     );

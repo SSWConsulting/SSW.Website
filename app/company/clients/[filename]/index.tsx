@@ -53,7 +53,15 @@ export default function CompanyPage({ tinaProps, props }) {
         <TechUpgrade />
       </Section>
       <Section>
-        <BuiltOnAzure data={{ backgroundColor: "transparent" }} />
+        <BuiltOnAzure
+          data={
+            data.caseStudy?.azureBanner?.azureFooterColor
+              ? data.caseStudy.azureBanner
+              : {
+                  azureFooterColor: "white",
+                }
+          }
+        />
       </Section>
     </>
   );
