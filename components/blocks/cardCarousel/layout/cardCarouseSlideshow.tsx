@@ -23,6 +23,8 @@ type CardSlideshowProps = {
 
 const CardList = ({ activeCategory, data, hasImages }: CardSlideshowProps) => {
   const [cardData, setCardData] = useState(data.cards);
+  const [indexLength, setIndexLength] = useState(0);
+
   useEffect(() => {
     if (
       activeCategory &&
@@ -40,14 +42,20 @@ const CardList = ({ activeCategory, data, hasImages }: CardSlideshowProps) => {
   }, [activeCategory, data.cards]);
   useEffect(() => {
     setCardData(data.cards);
+    setIndexLength(data.cards?.length ?? 0);
   }, [data]);
 
   return (
     <div>
       <div className="mask-horizontal-fade">
         <Carousel
-          opts={{ align: "center", loop: true, containScroll: false }}
+          opts={{
+            align: "center",
+            loop: true,
+            containScroll: false,
+          }}
           className="w-full max-w-9xl"
+          itemLength={indexLength}
         >
           <CarouselContent>
             {cardData?.map((cardData, index) => {

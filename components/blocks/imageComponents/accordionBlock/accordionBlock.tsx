@@ -60,7 +60,7 @@ export const AccordionBlock = ({ data }) => {
               />
             );
 
-            return button.buttonLink ? (
+            return button.buttonLink && !button.showLeadCaptureForm ? (
               <Link href={button.buttonLink} key={`link-wrapper-${index}`}>
                 {buttonElement}
               </Link>
@@ -96,7 +96,7 @@ export const AccordionBlock = ({ data }) => {
                       p: (props) => (
                         <p
                           {...props}
-                          className="text-sm font-light text-white"
+                          className="mb-3 text-sm font-light text-white last:mb-0 [&>strong]:text-base [&>strong]:font-extrabold [&>strong]:text-white"
                         />
                       ),
                       h6: (props) => <h6 {...props} className="py-2" />,
@@ -106,7 +106,9 @@ export const AccordionBlock = ({ data }) => {
                       h2: (props) => <h2 {...props} className="py-2" />,
                       h1: (props) => <h2 {...props} className="py-2" />,
                       //Import sadly needed as somewhere up the food chain the default ul is overridden
-                      ul: (props) => <ul className="my-0 !ml-5" {...props} />,
+                      ul: (props) => (
+                        <ul className="!ml-5 mb-3 mt-0" {...props} />
+                      ),
                       ol: (props) => (
                         <ol className="my-0 ml-5 list-decimal" {...props} />
                       ),

@@ -1,7 +1,7 @@
 type YouTubeEmbedProps = {
   className?: string;
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
   id: string;
   autoplay?: boolean;
 };
