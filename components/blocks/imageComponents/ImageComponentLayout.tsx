@@ -49,7 +49,7 @@ export const ImageComponentLayout = ({ data, children }) => {
             {isYouTube && youtubeVideoId ? (
               <iframe
                 className={classNames(
-                  "absolute inset-0 aspect-4/3 w-full rounded-md",
+                  "absolute inset-0 aspect-video w-full rounded-md",
                   data.mediaConfiguration?.verticalPlacement === "Centered" &&
                     "my-auto",
                   data.mediaConfiguration?.verticalPlacement === "Bottom" &&
