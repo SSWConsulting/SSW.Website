@@ -1,17 +1,54 @@
 import client from "@/tina/client";
+import { createStaleWhileRevalidateCache } from "stale-while-revalidate-cache";
 
 const WEBSITE_URL = "https://www.ssw.com.au";
 export const EVENTS_MAX_SIZE_OVERRIDE = 999;
 const DEFAULT_PAGE_SIZE = 10;
 
-export const getPastEvents = async (top, presenterName) => {
+const CACHE_MAX_TTL = 60 * 60 * 1000; // 60 mins
+const CACHE_STALE_TIME = 15 * 60 * 1000; // 15 mins
+
+const inMemoryStorage = {
+  store: {},
+
+  getItem: async (key) => inMemoryStorage.store[key] || null,
+
+  setItem: async (key, value) => {
+    inMemoryStorage.store[key] = value;
+  },
+
+  removeItem: async (key) => {
+    delete inMemoryStorage.store[key];
+  },
+};
+
+const swr = createStaleWhileRevalidateCache({
+  storage: inMemoryStorage,
+});
+
+const configOverrides = {
+  maxTimeToLive: CACHE_MAX_TTL,
+  minTimeToStale: CACHE_STALE_TIME,
+};
+
+const getEvents = async (type: "past" | "upcoming", top, presenterName) => {
+  const cacheKey = `${type}-${presenterName ?? ""}-${top ?? ""}`;
+  const fetcher =
+    type === "past"
+      ? () => fetchPastEvents(top, presenterName)
+      : () => fetchUpcomingEvents(top, presenterName);
+
+  return (await swr(cacheKey, fetcher, configOverrides)).value;
+};
+
+const fetchPastEvents = async (top, presenterName) => {
   const eventClient = await client.queries.getPastEventsQuery(
     formatEventParams(top, presenterName)
   );
   return await fetchEventsWithClient(eventClient, presenterName, top);
 };
 
-export const getUpcomingEvents = async (top, presenterName) => {
+const fetchUpcomingEvents = async (top, presenterName) => {
   const eventClient = await client.queries.getFutureEventsQuery(
     formatEventParams(top, presenterName)
   );
@@ -53,6 +90,7 @@ const formatEvent = (event) => {
         : null,
   };
 };
+
 export const fetchEventsWithClient = async (
   eventClient,
   presenterName: string | undefined,
@@ -120,3 +158,9 @@ type eventEdge = {
     presenterName: string | null | undefined;
   };
 };
+
+export const getPastEvents = (top, presenterName) =>
+  getEvents("past", top, presenterName);
+
+export const getUpcomingEvents = (top, presenterName) =>
+  getEvents("upcoming", top, presenterName);
