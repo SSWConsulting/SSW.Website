@@ -82,6 +82,7 @@
     "formik": "^2.4.6",
     "framer-motion": "^11.12.0",
     "lodash": "^4.17.21",
+    "lru-cache": "^11.0.2",
     "lucide-react": "^0.460.0",
     "next": "^14.2.15",
     "next-plugin-preval": "^1.2.6",
