@@ -101,7 +101,7 @@
         }
       ],
       "viewAll": {
-        "name": "View all services",
+        "name": "View all SSW services",
         "url": "/consulting"
       }
     },
@@ -269,7 +269,7 @@
         }
       ],
       "viewAll": {
-        "name": "View all products",
+        "name": "View all SSW products",
         "url": "/products"
       }
     },
@@ -435,7 +435,7 @@
         }
       ],
       "viewAll": {
-        "name": "View all events & training",
+        "name": "View all SSW events & training",
         "url": "/events"
       }
     },
@@ -625,7 +625,7 @@
         }
       ],
       "viewAll": {
-        "name": "Check out all our Rules",
+        "name": "View all SSW Rules",
         "url": "https://www.ssw.com.au/rules"
       },
       "url": ""
