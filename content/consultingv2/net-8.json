@@ -108,7 +108,7 @@
           "content": "After the upgrade, we make sure everything runs at peak performance:\n\n* Speed up slow spots in your code: Identify and address performance bottlenecks within your code, leveraging .NET 8's performance enhancements to maximize application speed and responsiveness.\n* Lock down security: Implement robust security measures and best practices to protect your .NET 8 applications from potential vulnerabilities, ensuring a secure and reliable environment.\n* Train your team on the new setup: Provide comprehensive training and knowledge transfer to your team, empowering them to effectively manage and maintain your newly upgraded .NET 8 systems.\n* Update all your docs: Ensure all documentation is updated to reflect the .NET 8 migration, providing a clear and accurate reference for ongoing maintenance and development.\n* Set up long-term monitoring: Establish proactive, long-term monitoring solutions to continuously track system health, performance, and security, ensuring the ongoing stability and efficiency of your .NET 8 applications.\n"
         }
       ],
-      "isMultipleOpen": false,
+      "isMultipleOpen": true,
       "buttons": [
         {
           "buttonText": "Explore our Migration Guide",
