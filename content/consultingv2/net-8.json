@@ -15,9 +15,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Expert .NET upgrades & migrations. Minimal business disruption",
+      "heading": "Expert .NET upgrades. New features with minimal downtime",
       "isH1": true,
-      "description": "We specialize in smooth, efficient upgrades to the latest .NET versions including .NET8 (STS) and .NET9 (LTS). \n\nWe ensure your applications are running at their best, minimizing disruptions and maximizing performance.\n",
+      "description": "Upgrade your .NET applications to .NET 8 (STS) or .NET 9 (LTS). We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
