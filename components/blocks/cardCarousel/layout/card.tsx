@@ -1,6 +1,7 @@
 import { ListItem } from "@/components/blocksSubtemplates/listItem";
 import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
 import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
+import getYouTubeVideoId from "@/services/client/youtube.service";
 import Image from "next/image";
 import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -13,7 +14,10 @@ type CardProps = {
 };
 
 const Card = ({ data, placeholder }: CardProps) => {
-  //If image fails to load, use placeholder (Piers)
+  const isYoutubeEmbed = data.mediaType === "youtube";
+  const youtubeEmbedId = isYoutubeEmbed
+    ? getYouTubeVideoId(data.youtubeUrl)
+    : null;
   const [usePlaceholder, setUsePlaceholder] = useState(false);
   const placeholderImage = "/images/videoPlaceholder.png";
 
@@ -25,12 +29,17 @@ const Card = ({ data, placeholder }: CardProps) => {
         })?.classes
       }`}
     >
-      {data.embed ? (
-        <YouTubeEmbed className="mb-2 min-h-36 w-full" id={data.embed} />
+      {youtubeEmbedId && isYoutubeEmbed ? (
+        <YouTubeEmbed
+          showSeparateChannelPreviews={false}
+          controls={0}
+          className="mb-2 aspect-video w-full rounded-md"
+          id={youtubeEmbedId}
+        />
       ) : (
         (data.image || placeholder) && (
           <div
-            className="relative mb-2 min-h-36 w-full overflow-hidden rounded-md"
+            className="relative mb-2 aspect-video w-full shrink-0 overflow-hidden rounded-md"
             data-tina-field={tinaField(data, "image")}
           >
             <Image
