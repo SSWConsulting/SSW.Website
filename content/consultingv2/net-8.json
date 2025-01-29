@@ -304,7 +304,7 @@
         {
           "guid": "qmlcq9",
           "mediaType": "youtube",
-          "youtubeUrl": "ocbPkNROnlc",
+          "youtubeUrl": "https://www.youtube.com/watch?v=ocbPkNROnlc",
           "image": "",
           "altText": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
           "chips": {
@@ -320,6 +320,8 @@
         },
         {
           "guid": "s76w3",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=EjYczs7RYD8",
           "image": "/images/Louis Test Images/Incident-io-batch/cloud_native_net-aspire_16-9.jpg",
           "altText": "Breaking down .NET Aspire: Your gateway to cloud native apps",
           "chips": {
