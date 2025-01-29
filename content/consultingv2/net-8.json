@@ -15,7 +15,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Expert .NET 8 migrations. Minimal business disruption.",
+      "heading": "Upgrade to the latest .NET framework. Minimal business disruption.",
       "isH1": true,
       "description": "Minimize downtime and maximize performance. We specialize in smooth, expert .NET 8 upgrades, ensuring your business stays online and benefits from the latest .NET features\n",
       "chips": {
@@ -303,7 +303,6 @@
       "cards": [
         {
           "guid": "qmlcq9",
-          "embed": "ocbPkNROnlc?si=VCUDDWZwfo2ad53s",
           "image": "",
           "altText": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
           "chips": {
@@ -319,7 +318,6 @@
         },
         {
           "guid": "s76w3",
-          "embed": "59G9Cd-rV9w?si=Ql7MoBHGmlAi_HI3",
           "image": "/images/Louis Test Images/Incident-io-batch/cloud_native_net-aspire_16-9.jpg",
           "altText": "Breaking down .NET Aspire: Your gateway to cloud native apps",
           "chips": {
@@ -335,7 +333,6 @@
         },
         {
           "guid": "s22wwo",
-          "embed": "Ft2JArXEXcI?si=FnoENuD0MO8JIQMJ",
           "image": "/images/Louis Test Images/Incident-io-batch/dotnet_cleanarchitecture.png",
           "altText": "Full-Stack Clean Architecture: The Right Way to Share Code",
           "chips": {
