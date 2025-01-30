@@ -274,7 +274,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE .NET 8 Migration Meeting",
+          "buttonText": "Schedule a FREE .NET 8 Upgrade Meeting",
           "showLeadCaptureForm": true,
           "buttonLink": "https://form.jotform.com/250066954570056",
           "colour": 0
@@ -426,7 +426,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE .NET 8 Migration Meeting",
+          "buttonText": "Schedule a FREE .NET 8 Upgrade Meeting",
           "showLeadCaptureForm": true,
           "colour": 0
         }
