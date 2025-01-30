@@ -366,7 +366,7 @@
           "content": "We support upgrades to the latest .NET versions, including .NET 8 (LTS) and .NET 9 (STS). .NET major versions are released annually in November. STS releases (like .NET 9) occur every even-numbered year and receive free support and patches for 18 months. LTS releases (like .NET 8) occur every odd-numbered year and receive free support and patches for 3 years.\n"
         },
         {
-          "label": "How often are new .NET versions released, and what's the difference between STS and LTS?",
+          "label": "What's the difference between STS and LTS?",
           "content": "New major .NET versions are released annually in November. Each release is designated as either Standard Term Support (STS) or Long Term Support (LTS). STS releases occur in even-numbered years and get support for 18 months, while LTS releases are in odd-numbered years and receive free support and patches for 3 years. Both types of releases are identical in quality, the only difference is their support lifecycle.\n"
         },
         {
