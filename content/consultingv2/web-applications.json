@@ -1,0 +1,480 @@
+{
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for Web Applications",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Build High-Performing Web Apps with .NET, Azure, Angular & React",
+      "isH1": true,
+      "description": "",
+      "chips": {
+        "filledChipText": "",
+        "clearChipText": ""
+      },
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Lightning-Fast Development",
+            "description": "Ship MVPs and new features quickly through short, focused sprints.",
+            "icon": "BiSolidBolt"
+          },
+          {
+            "heading": "Rock-Solid Architecture",
+            "description": "We design for performance and scalability from day one, so your app won’t buckle under load.",
+            "icon": "BiSolidBadgeCheck"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Meeting",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px.png",
+        "youtubeUrl": ""
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by top companies",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Get More Than Just Code: Real Solutions for Your Business.",
+      "isH1": false,
+      "body": "Software isn’t just about writing code. It’s about solving real problems, saving time, and building systems that last. Here’s how we help you succeed:",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "rwsorp",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "heading": "Stop Cramming Your Business into Off-the-Shelf Software.",
+          "description": "Generic solutions rarely fit. We create custom apps tailored to your workflows—no compromises. Get software that works the way you do.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "znkpt9",
+          "altText": "Lorem Ipsum",
+          "chips": {},
+          "heading": "Agile Development That Doesn't Waste Your Time.",
+          "description": "We do Agile the right way: short sprints, regular demos, and complete transparency. No black boxes—just fast progress without wasted time.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "7iei72",
+          "altText": "",
+          "chips": {},
+          "heading": "Don't Build a Web App That Will Be Obsolete Next Year.",
+          "description": "Build scalable, maintainable apps using the latest tech. No technical debt—just future-proof solutions designed to grow with your business.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "The Tech Stack That Powers Our Solutions",
+      "isH1": false,
+      "body": "Our expertise isn't limited to a single stack. We use the best tools for the job, focusing on the tech that provides the most value for our clients.",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ozox9t",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": " Backend"
+          },
+          "icon": "info",
+          "heading": ".NET: Scalable APIs and Rock-Solid Performance",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Scalable APIs, Built Right",
+                "description": "From lightweight APIs to enterprise backends, .NET handles it all with ease.",
+                "icon": "BiServer"
+              },
+              {
+                "heading": "Proven Stability",
+                "description": "Battle-tested performance that won’t flinch under heavy loads.",
+                "icon": "BiShieldQuarter"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "wdurt",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Cloud"
+          },
+          "icon": "info",
+          "heading": "Azure: Reliable Cloud Infrastructure That Scales",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Deploy Faster, Scale Smarter",
+                "description": "Get your app live quickly and scale effortlessly as you grow.",
+                "icon": "BiCloudUpload"
+              },
+              {
+                "heading": "Built-in Security",
+                "description": "Stay secure with Azure’s powerful tools baked right in.",
+                "icon": "BiLock"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "d5utmw",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": " Frontend"
+          },
+          "icon": "info",
+          "heading": "Angular, React, Vue: Build Frontends That Users Love",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Framework Flexibility",
+                "description": "We pick the best fit—Angular for enterprise apps, React for dynamic interfaces, or Vue for quick, scalable solutions.",
+                "icon": "BiCubeAlt"
+              },
+              {
+                "heading": "Modern Development Workflow",
+                "description": "Streamlined state management, component libraries, and tools to supercharge your frontend pipeline.",
+                "icon": "BiGitBranch"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "ijk6u",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Database"
+          },
+          "icon": "info",
+          "heading": "   SQL Server: Serious Data Power for Serious Apps",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Enterprise-Grade Performance",
+                "description": "Handle complex queries with advanced optimizations and in-memory OLTP for high-speed apps.",
+                "icon": "BiBarChart"
+              },
+              {
+                "heading": "Data Security & Compliance",
+                "description": "Encryption, row-level security, and audits keep your data safe without slowing things down.",
+                "icon": "BiShieldPlus"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "srvxuxr",
+          "image": "",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": "Web Framework"
+          },
+          "icon": "info",
+          "heading": "Blazor: Full-Stack C# for Modern Web Apps",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Full-Stack C# Development",
+                "description": "Share logic between frontend and backend—no need to juggle languages.",
+                "icon": "BiCodeAlt"
+              },
+              {
+                "heading": "Native Desktop Integration",
+                "description": "Build Progressive Web Apps or deploy native desktop solutions—all from a single codebase.",
+                "icon": "BiDesktop"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "4ax3gl",
+          "altText": "",
+          "chips": {
+            "filledChipText": "Cross-Platform"
+          },
+          "icon": "info",
+          "heading": ".NET MAUI: Build Once, Run Everywhere",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Single Codebase Development",
+                "description": "Write one codebase, run it everywhere—Windows, macOS, Android, and iOS.",
+                "icon": "BiCodeBlock"
+              },
+              {
+                "heading": "Native Performance",
+                "description": "Fast, responsive apps that feel like they belong on every platform.",
+                "icon": "BiRocket"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Our Development Process: Transparent, Efficient, and Results-Driven",
+      "body": "We don't just write code; we build solutions. Our process is designed to be transparent, efficient, and to deliver results you can rely on. We believe in predictability, not endless guessing games.",
+      "accordionItems": [
+        {
+          "label": "Discovery: We Get the Gist of Your Web Application Needs",
+          "content": "We don't jump into coding blindly. Our discovery phase focuses on understanding your specific business needs and your web application challenges. We work closely with you to gather requirements, ensuring a clear roadmap for success, without unnecessary complexities or wasted efforts.\n"
+        },
+        {
+          "label": "Design: User-Centric Web Application Design",
+          "content": "We combine aesthetics and functionality to deliver a great user experience. We plan out the architecture and user interface with your business goals and your end users in mind. We don't just make it look good, we make sure that it works seamlessly.\n"
+        },
+        {
+          "label": "Development: High-Quality Web Application Development",
+          "content": "Our expert developers use modern frameworks and best practices to craft clean, testable, and scalable code. Our web application development process prioritizes quality and maintainability, so your application is built to last.\n\n* Clean Code\n* Scalable Architecture\n* Future-Proof Design\n"
+        },
+        {
+          "label": "Testing: Rigorous Web Application Testing",
+          "content": "We're meticulous about testing. Our thorough web application testing process includes:\n\n* Unit Testing\n* Integration Testing\n* User Acceptance Testing\n"
+        },
+        {
+          "label": "Deployment: Seamless Web Application Deployment",
+          "content": "We handle the web application deployment process end-to-end, ensuring a smooth and hassle-free launch. We leverage our experience to deploy your solution reliably and efficiently to your environment of choice.\n"
+        },
+        {
+          "label": "Support: Ongoing Web Application Support and Maintenance",
+          "content": "Our relationship doesn't end after deployment. We provide ongoing web application support, maintenance, and upgrades. Our team is always available to ensure your app continues to deliver value.\n\n* Dedicated Support Team\n* Regular Maintenance\n* Proactive Updates\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Rules to Better Web API ",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-web-api/",
+          "iconFirst": false
+        },
+        {
+          "buttonText": "Do you have a PWA?",
+          "buttonLink": "https://www.ssw.com.au/rules/progressive-web-app/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "BizCover: From Microservice Maze to Monolith Magic",
+      "isH1": false,
+      "description": "We Marie Kondo'd BizCover's codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
+      "chips": {
+        "filledChipText": ".NET8",
+        "clearChipText": "Modular Monolith (MoMo)"
+      },
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Faster onboarding for new devs",
+            "description": "From 6 weeks to 5 days. Now that's what we call an improvement!",
+            "icon": "BiChalkboard"
+          },
+          {
+            "heading": "Feature delivery speed? ",
+            "description": "Boosted by 40%. They're shipping code like there's no tomorrow",
+            "icon": "BiFastForward"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/backgrounds/plain_dark.png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Tech Wisdom from the Trenches",
+      "isH1": false,
+      "body": "At SSW, we share decades of hands-on experience in software—tackling legacy code, fixing bugs, and navigating new tech. No fluff, no jargon—just practical advice to help you build better software.",
+      "cards": [
+        {
+          "guid": "ithz2n",
+          "embed": "ocbPkNROnlc",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": ".NET User Groups",
+            "clearChipText": "1 hour"
+          },
+          "icon": "info",
+          "heading": "Collections in .NET: The Performance Deep Dive You Didn't Know You Needed 🚀",
+          "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "9xx5wf",
+          "embed": "59G9Cd-rV9w",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": ".NET Aspire",
+            "clearChipText": "1 hour"
+          },
+          "icon": "info",
+          "heading": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
+          "description": "SSW's Matt Wicks teams up with Octopus Deploy's Rob Pearson to demystify .NET Aspire. Dive into real-world orchestration, service integration, and deployment strategies that'll level up your cloud-native game.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "gmulrj",
+          "embed": "Ft2JArXEXcI",
+          "altText": "Lorem Ipsum",
+          "chips": {
+            "filledChipText": ".NET User Groups",
+            "clearChipText": "1 hour"
+          },
+          "icon": "info",
+          "heading": "Full-Stack Clean Architecture: The Right Way to Share Code",
+          "description": "Stop wrestling with UI and API code! Matt Goldman (author of .NET MAUI in Action) reveals how to nail Clean Architecture across MAUI and ASP.NET Core without the classic pitfalls. Expect real demos, not just theory.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
+    }
+  ]
+}
