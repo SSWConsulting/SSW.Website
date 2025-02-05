@@ -220,12 +220,12 @@
           },
           "icon": "BiRocket",
           "heading": "Beyond Basic Migration",
-          "description": "Our team isn't just good with upgrades. We're .NET 8 experts and can optimize your code for this new version.",
+          "description": "Our team isn't just good with upgrades. We're .NET experts and can optimize your code for this new version.",
           "featureList": {
             "features": [
               {
                 "heading": "Find and fix bottlenecks",
-                "description": "We'll pinpoint where your code can be improved and make it faster using new .NET 8 features.",
+                "description": "We'll pinpoint where your code can be improved and make it faster using new .NET features.",
                 "icon": "BiCheck"
               },
               {
