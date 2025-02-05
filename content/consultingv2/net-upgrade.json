@@ -154,22 +154,22 @@
           },
           "icon": "BiTachometer",
           "heading": "Speed Up Your Apps",
-          "description": ".NET 8 is all about performance, and we'll make sure you're getting the most out of it.",
+          "description": ".NET's latest updates are all about performance, and we'll make sure you're getting the most out of it.",
           "featureList": {
             "features": [
               {
                 "heading": "Faster Performance",
-                "description": "With .NET 8's features, your code runs faster without major rewrites.",
+                "description": "Code executes quicker due to JIT compiler and runtime optimizations.",
                 "icon": "BiCheck"
               },
               {
                 "heading": "Reduced Load Times",
-                "description": "Benefit from quicker startup thanks to enhancements in .NET 8.",
+                "description": "Benefit from quicker startup via ReadyToRun (R2R) compilation and optimized assembly loading.",
                 "icon": "BiCheck"
               },
               {
                 "heading": "Lower Memory Use",
-                "description": ".NET 8 is leaner. We help you use fewer resources, even under load.",
+                "description": "NET is now leaner with improved Garbage Collection and efficient data structures.",
                 "icon": "BiCheck"
               }
             ]
