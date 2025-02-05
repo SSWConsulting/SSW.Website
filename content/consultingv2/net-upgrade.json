@@ -17,7 +17,7 @@
       },
       "heading": "Expert .NET upgrade. Get new features with minimal downtime",
       "isH1": true,
-      "description": "Upgrade your .NET applications to .NET 8 (LTS) or .NET 9 (STS). We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
+      "description": "Upgrade your .NET applications to the latest .NET framework. We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -27,7 +27,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE .NET Upgrade Meeting",
+          "buttonText": "Schedule a FREE Initial Meeting",
           "showLeadCaptureForm": true,
           "buttonLink": "",
           "colour": 0
