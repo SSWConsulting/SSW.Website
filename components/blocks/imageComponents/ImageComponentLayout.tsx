@@ -62,10 +62,12 @@ export const ImageComponentLayout = ({ data, children }) => {
                 data-tina-field={tinaField(data, "mediaConfiguration")}
               />
             ) : (
-              data.mediaConfiguration?.imageSource && (
+              data.mediaConfiguration?.imageSource &&
+              data.mediaConfiguration?.imageWidth &&
+              data.mediaConfiguration?.imageHeight && (
                 <Image
-                  objectFit="contain"
-                  fill={true}
+                  width={data.mediaConfiguration?.imageWidth}
+                  height={data.mediaConfiguration?.imageHeight}
                   className={classNames(
                     data.mediaConfiguration?.verticalPlacement === "Centered" &&
                       "my-auto",
