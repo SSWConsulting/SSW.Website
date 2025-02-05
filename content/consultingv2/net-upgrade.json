@@ -30,6 +30,7 @@
           "buttonText": "Schedule a FREE Initial Meeting",
           "showLeadCaptureForm": true,
           "buttonLink": "",
+          "iconFirst": false,
           "colour": 0
         }
       ],
