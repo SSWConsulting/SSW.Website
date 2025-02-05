@@ -104,13 +104,13 @@ export const optimizedImageSchema = (description: string) => [
     description: description,
   },
   {
-    type: "string",
+    type: "number",
     component: "hidden",
     name: "imageHeight",
   },
   {
     type: "string",
-    component: "hidden",
+    component: "number",
     name: "imageWidth",
   },
 ];
