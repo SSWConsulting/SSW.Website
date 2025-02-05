@@ -18,7 +18,9 @@ export const ImageTextBlock = ({ data }) => {
 
   return (
     <ImageComponentLayout data={data}>
-      {data.topLabel && <IconLabel data={data.topLabel} />}
+      {data.topLabel && (data.toplabel?.icon || data.topLabel?.labelText) && (
+        <IconLabel data={data.topLabel} />
+      )}
       {data.isH1 ? (
         <h1
           data-tina-field={tinaField(data, "heading")}
