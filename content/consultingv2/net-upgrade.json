@@ -85,8 +85,8 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Strategic .NET 8 migration",
-      "body": "Your .NET applications need care and planning to upgrade to version 8. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat.",
+      "heading": "Our strategic .NET migration approach",
+      "body": "Your .NET applications need care and planning to upgrade to the latest version. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat.",
       "accordionItems": [
         {
           "label": "Phase 1: Understanding Your .NET Landscape",
@@ -117,7 +117,7 @@
           "colour": 1
         },
         {
-          "buttonText": "Rules to Better .NET 8 Migrations",
+          "buttonText": "Rules to Better .NET Migrations",
           "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
           "colour": 1
         }
