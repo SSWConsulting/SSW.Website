@@ -11,7 +11,6 @@ import { PillGroup } from "../../../blocksSubtemplates/pillGroup";
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
 export const ImageTextBlock = ({ data }) => {
-  const headingClasses = "my-0 py-2 dark:text-gray-200";
   const noImageCenter = data.mediaConfiguration?.imageSource
     ? ""
     : "justify-center";
@@ -21,47 +20,30 @@ export const ImageTextBlock = ({ data }) => {
       {data.topLabel && (data.toplabel?.icon || data.topLabel?.labelText) && (
         <IconLabel data={data.topLabel} />
       )}
-      {data.isH1 ? (
-        <h1
-          data-tina-field={tinaField(data, "heading")}
-          className={classNames(
-            headingClasses,
-            "text-3xl font-bold lg:text-4xl"
-          )}
-        >
-          {data.heading}
-        </h1>
-      ) : (
-        <h2
-          data-tina-field={tinaField(data, "heading")}
-          className={classNames(
-            "text-2xl font-semibold lg:text-3xl",
-            headingClasses
-          )}
-        >
-          {data.heading}
-        </h2>
+      {data.heading && <Heading data={data} />}
+
+      {data.description && (
+        <TinaMarkdown
+          content={data.description}
+          components={{
+            p: (props) => (
+              <p
+                {...props}
+                className={classNames(
+                  "py-2 text-base font-light dark:text-gray-300"
+                )}
+                data-tina-field={tinaField(data, "description")}
+              />
+            ),
+            h6: () => <></>,
+            h5: () => <></>,
+            h4: () => <></>,
+            h3: () => <></>,
+            h2: () => <></>,
+            h1: () => <></>,
+          }}
+        />
       )}
-      <TinaMarkdown
-        content={data.description}
-        components={{
-          p: (props) => (
-            <p
-              {...props}
-              className={classNames(
-                "py-2 text-base font-light dark:text-gray-300"
-              )}
-              data-tina-field={tinaField(data, "description")}
-            />
-          ),
-          h6: () => <></>,
-          h5: () => <></>,
-          h4: () => <></>,
-          h3: () => <></>,
-          h2: () => <></>,
-          h1: () => <></>,
-        }}
-      />
 
       {data.chips && <PillGroup data={data.chips} />}
       <div
@@ -95,3 +77,34 @@ export const ImageTextBlock = ({ data }) => {
     </ImageComponentLayout>
   );
 };
+
+const Heading = ({ data }) => {
+  const headingClasses = "my-0 py-2 dark:text-gray-200";
+  return (
+    <>
+      {data.isH1 ? (
+        <h1
+          data-tina-field={tinaField(data, "heading")}
+          className={classNames(
+            headingClasses,
+            "text-3xl font-bold lg:text-4xl"
+          )}
+        >
+          {data.heading}
+        </h1>
+      ) : (
+        <h2
+          data-tina-field={tinaField(data, "heading")}
+          className={classNames(
+            "text-2xl font-semibold lg:text-3xl",
+            headingClasses
+          )}
+        >
+          {data.heading}
+        </h2>
+      )}
+    </>
+  );
+};
+
+const Description = ({ data }) => {};
