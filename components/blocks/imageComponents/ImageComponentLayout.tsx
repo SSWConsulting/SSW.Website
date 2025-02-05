@@ -93,7 +93,7 @@ export const ImageComponentLayout = ({ data, children }) => {
                   height={data.mediaConfiguration?.imageHeight}
                   className={classNames(
                     getVerticalImagePlacement(),
-                    "rounded-md"
+                    "w-full rounded-md"
                   )}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
