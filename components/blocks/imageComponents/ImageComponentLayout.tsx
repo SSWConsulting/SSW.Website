@@ -11,8 +11,7 @@ export const ImageComponentLayout = ({ data, children }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
   const youtubeVideoId = getYouTubeVideoId(data.mediaConfiguration?.youtubeUrl);
-
-  const getVerticalPlacement = () => {
+  const getVerticalImagePlacement = () => {
     switch (data.mediaConfiguration?.verticalPlacement) {
       case "Top":
         return "mb-auto";
@@ -20,6 +19,17 @@ export const ImageComponentLayout = ({ data, children }) => {
         return "mt-auto";
       default:
         return "my-auto";
+    }
+  };
+
+  const getVerticalTextPlacement = () => {
+    switch (data.mediaConfiguration?.verticalPlacement) {
+      case "Top":
+        return "justify-start";
+      case "Bottom":
+        return "justify-end";
+      default:
+        return "justify-center";
     }
   };
 
@@ -42,10 +52,12 @@ export const ImageComponentLayout = ({ data, children }) => {
       >
         <div
           className={classNames(
-            "flex w-full flex-col justify-center",
+            "flex w-full flex-col",
             (data?.mediaConfiguration?.imageSource || youtubeVideoId) &&
-              "items-center md:items-start",
+              "md:items-start",
+            getVerticalTextPlacement(),
             imageIsLeftAligined && "md:order-2"
+
             // data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
           )}
         >
@@ -78,7 +90,7 @@ export const ImageComponentLayout = ({ data, children }) => {
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
                   height={data.mediaConfiguration?.imageHeight}
-                  className={classNames(getVerticalPlacement())}
+                  className={classNames(getVerticalImagePlacement())}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}
