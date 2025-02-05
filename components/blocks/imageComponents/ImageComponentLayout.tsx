@@ -9,7 +9,14 @@ import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 
 export const ImageComponentLayout = ({ data, children }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
+
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
+  const isImage =
+    !isYouTube &&
+    data.mediaConfiguration?.imageSource &&
+    data.mediaConfiguration?.imageWidth &&
+    data.mediaConfiguration?.imageHeight;
+  const hasMedia = isYouTube || isImage;
   const youtubeVideoId = getYouTubeVideoId(data.mediaConfiguration?.youtubeUrl);
   const getVerticalImagePlacement = () => {
     switch (data.mediaConfiguration?.verticalPlacement) {
@@ -53,8 +60,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         <div
           className={classNames(
             "flex w-full flex-col",
-            (data?.mediaConfiguration?.imageSource || youtubeVideoId) &&
-              "md:items-start",
+            hasMedia ? "md:items-start" : "text-center",
             getVerticalTextPlacement(),
             imageIsLeftAligined && "md:order-2"
 
@@ -73,9 +79,7 @@ export const ImageComponentLayout = ({ data, children }) => {
           >
             {isYouTube && youtubeVideoId ? (
               <iframe
-                className={classNames(
-                  "absolute inset-0 aspect-video w-full rounded-md"
-                )}
+                className={classNames("aspect-video w-full rounded-md")}
                 src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0`}
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -83,14 +87,14 @@ export const ImageComponentLayout = ({ data, children }) => {
                 data-tina-field={tinaField(data, "mediaConfiguration")}
               />
             ) : (
-              !isYouTube &&
-              data.mediaConfiguration?.imageSource &&
-              data.mediaConfiguration?.imageWidth &&
-              data.mediaConfiguration?.imageHeight && (
+              isImage && (
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
                   height={data.mediaConfiguration?.imageHeight}
-                  className={classNames(getVerticalImagePlacement())}
+                  className={classNames(
+                    getVerticalImagePlacement(),
+                    "rounded-md"
+                  )}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}
