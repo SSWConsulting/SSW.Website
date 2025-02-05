@@ -31,7 +31,9 @@ export const ImageComponentLayout = ({ data, children }) => {
       >
         <div
           className={classNames(
-            `flex aspect-auto w-full flex-col justify-center ${data?.mediaConfiguration?.imageSource || youtubeVideoId ? "md:aspect-4/3" : "items-center"}`,
+            "flex w-full flex-col justify-center",
+            (data?.mediaConfiguration?.imageSource || youtubeVideoId) &&
+              "items-center md:items-start",
             imageIsLeftAligined && "md:order-2",
             data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
           )}
@@ -42,7 +44,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         {(data.mediaConfiguration?.imageSource || youtubeVideoId) && (
           <div
             className={classNames(
-              "relative aspect-4/3 w-full md:aspect-auto",
+              "relative flex w-full md:aspect-auto",
               imageIsLeftAligined && "md:order-1"
             )}
           >
@@ -62,6 +64,7 @@ export const ImageComponentLayout = ({ data, children }) => {
                 data-tina-field={tinaField(data, "mediaConfiguration")}
               />
             ) : (
+              !isYouTube &&
               data.mediaConfiguration?.imageSource &&
               data.mediaConfiguration?.imageWidth &&
               data.mediaConfiguration?.imageHeight && (
