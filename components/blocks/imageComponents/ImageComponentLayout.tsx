@@ -12,6 +12,17 @@ export const ImageComponentLayout = ({ data, children }) => {
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
   const youtubeVideoId = getYouTubeVideoId(data.mediaConfiguration?.youtubeUrl);
 
+  const getVerticalPlacement = () => {
+    switch (data.mediaConfiguration?.verticalPlacement) {
+      case "Top":
+        return "mb-auto";
+      case "Bottom":
+        return "mt-auto";
+      default:
+        return "my-auto";
+    }
+  };
+
   return (
     <V2ComponentWrapper data={data}>
       <Container
@@ -34,8 +45,8 @@ export const ImageComponentLayout = ({ data, children }) => {
             "flex w-full flex-col justify-center",
             (data?.mediaConfiguration?.imageSource || youtubeVideoId) &&
               "items-center md:items-start",
-            imageIsLeftAligined && "md:order-2",
-            data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
+            imageIsLeftAligined && "md:order-2"
+            // data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
           )}
         >
           {children}
@@ -51,11 +62,7 @@ export const ImageComponentLayout = ({ data, children }) => {
             {isYouTube && youtubeVideoId ? (
               <iframe
                 className={classNames(
-                  "absolute inset-0 aspect-video w-full rounded-md",
-                  data.mediaConfiguration?.verticalPlacement === "Centered" &&
-                    "my-auto",
-                  data.mediaConfiguration?.verticalPlacement === "Bottom" &&
-                    "mt-auto"
+                  "absolute inset-0 aspect-video w-full rounded-md"
                 )}
                 src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0`}
                 title="YouTube video player"
@@ -71,13 +78,7 @@ export const ImageComponentLayout = ({ data, children }) => {
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
                   height={data.mediaConfiguration?.imageHeight}
-                  className={classNames(
-                    data.mediaConfiguration?.verticalPlacement === "Centered" &&
-                      "my-auto",
-                    data.mediaConfiguration?.verticalPlacement === "Bottom" &&
-                      "mt-auto",
-                    "!h-auto rounded-md"
-                  )}
+                  className={classNames(getVerticalPlacement())}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}
