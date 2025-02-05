@@ -38,9 +38,9 @@ const CustomImageField = (props) => {
     const leadingFieldName = match[1];
     form.change(`${leadingFieldName}.${target}`, value);
   };
+  const { field, form, input } = props;
   useEffect(() => {
-    const { field, form } = props;
-    getMeta(props.input.value).then((img) => {
+    getMeta(input.value).then((img) => {
       if (!img) return;
       updateAdjacentField({
         field,
@@ -55,7 +55,7 @@ const CustomImageField = (props) => {
         form,
       });
     });
-  }, [props]);
+  }, [field, form, input.value]);
   return ImageField(props);
 };
 
@@ -100,7 +100,6 @@ export const optimizedImageSchema = (description: string) => [
     ui: {
       component: CustomImageField,
     },
-    //description: "Upload an image or other media to display in the media text block. 4/3 aspect ratio recommended.",
     description: description,
   },
   {
@@ -109,8 +108,8 @@ export const optimizedImageSchema = (description: string) => [
     name: "imageHeight",
   },
   {
-    type: "string",
-    component: "number",
+    type: "number",
+    component: "hidden",
     name: "imageWidth",
   },
 ];
