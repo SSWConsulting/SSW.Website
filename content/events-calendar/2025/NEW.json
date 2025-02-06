@@ -1,0 +1,15 @@
+{
+  "title": "/NEW",
+  "url": "https://slashnew.tech/",
+  "thumbnail": "/images/events/slashnew_logo.jpg",
+  "thumbnailDescription": "/NEW",
+  "startDateTime": "2025-05-27T23:00:00.000Z",
+  "endDateTime": "2025-05-29T06:30:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Newcastle",
+  "category": "Other",
+  "abstract": "SlashNEW is a celebration of all things technology, uniting the most innovative thinkers and passionate techies that are building a brighter future for the Hunter.\n\nSlashNEW is Newcastle’s biggest technology conference. Running in 2025 for its third year, the two-day conference aims to celebrate the vibrant Newcastle technology scene and give technology professionals in the area access to upskilling and networking locally.\n\nIn 2025, SlashNEW will be held on the 28th and 29th of May, at NEX in Newcastle. SlashNEW showcases fantastic Keynotes, a line-up of speakers from Newcastle and beyond, panel discussions, workshops, and ample networking opportunities.",
+  "description": "SlashNEW is a celebration of all things technology, uniting the most innovative thinkers and passionate techies that are building a brighter future for the Hunter.\n\nSlashNEW is Newcastle’s biggest technology conference. Running in 2025 for its third year, the two-day conference aims to celebrate the vibrant Newcastle technology scene and give technology professionals in the area access to upskilling and networking locally.\n\nIn 2025, SlashNEW will be held on the 28th and 29th of May, at NEX in Newcastle. SlashNEW showcases fantastic Keynotes, a line-up of speakers from Newcastle and beyond, panel discussions, workshops, and ample networking opportunities.\n\nYou can see a copy of the Agenda here: [https://slashnew.tech/program/](https://slashnew.tech/program/) \n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
