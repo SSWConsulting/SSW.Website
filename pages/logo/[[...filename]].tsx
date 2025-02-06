@@ -4,6 +4,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Breadcrumbs } from "@/blocks/breadcrumbs";
 import { componentRenderer } from "@/blocks/mdxComponentRenderer";
 import { Blocks } from "@/components/blocks-renderer";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Layout } from "@/components/layout";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
@@ -23,11 +24,7 @@ export default function LogosPage(
   });
 
   return (
-    <Layout
-      liveStreamData={props.data.userGroup}
-      menu={data?.megamenu}
-      showAzureBanner
-    >
+    <Layout liveStreamData={props.data.userGroup} menu={data?.megamenu}>
       <SEO seo={props.seo} />
       <Container className="flex-1 pt-2">
         {props?.seo?.showBreadcrumb && (
@@ -60,6 +57,7 @@ export default function LogosPage(
           </Section>
         )}
       </Container>
+      <BuiltOnAzure data={data.logos.azureBanner} />
     </Layout>
   );
 }

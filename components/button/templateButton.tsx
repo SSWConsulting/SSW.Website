@@ -1,7 +1,12 @@
 import { Icon } from "@/components/blocksSubtemplates/tinaFormElements/icon";
 import classNames from "classnames";
+import { useState } from "react";
+import Jotform from "react-jotform";
 import { tinaField } from "tinacms/dist/react";
+import Popup from "../popup/popup";
 import RippleButton, { ButtonTinaFields, ColorVariant } from "./rippleButtonV2";
+
+import globals from "../../content/global/index.json";
 
 enum ButtonColors {
   Red = 0,
@@ -13,6 +18,8 @@ export interface TemplateButtonOptions extends ButtonTinaFields {
   colour?: ButtonColors;
   iconFirst?: boolean;
   icon?: string;
+  showLeadCaptureForm?: boolean;
+  onClick?: () => void;
 }
 
 export const Button = ({
@@ -22,27 +29,44 @@ export const Button = ({
   className: string;
   data: TemplateButtonOptions;
 }) => {
+  const [open, setOpen] = useState(false);
   const variants: ColorVariant[] = ["primary", "secondary"];
   const { iconFirst, buttonText, colour } = data;
   return (
-    <RippleButton
-      textTinaField={tinaField(data, "buttonText")}
-      className={className}
-      fontClassName={classNames(
-        "gap-0.5",
-        iconFirst ? "flex-row" : "flex-row-reverse"
-      )}
-      variant={variants[colour]}
-    >
-      <Icon
-        tinaField={tinaField(data, "icon")}
-        className="size-6"
-        data={{
-          name: data.icon,
+    <>
+      <RippleButton
+        onClick={() => {
+          if (data.showLeadCaptureForm) setOpen(true);
         }}
-      />
+        textTinaField={tinaField(data, "buttonText")}
+        className={className}
+        fontClassName={classNames(
+          "gap-0.5",
+          iconFirst ? "flex-row" : "flex-row-reverse"
+        )}
+        variant={variants[colour]}
+      >
+        <Icon
+          tinaField={tinaField(data, "icon")}
+          className="size-6"
+          data={{
+            name: data.icon,
+          }}
+        />
 
-      {buttonText}
-    </RippleButton>
+        {buttonText}
+      </RippleButton>
+      {data.showLeadCaptureForm && (
+        <Popup
+          isVisible={open}
+          showCloseIcon={true}
+          onClose={() => setOpen(false)}
+        >
+          <Jotform
+            src={`https://form.jotform.com/${globals.bookingJotFormId}`}
+          ></Jotform>
+        </Popup>
+      )}
+    </>
   );
 };

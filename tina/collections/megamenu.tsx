@@ -129,6 +129,20 @@ export const megaMenuSchema: Collection = {
               required: true,
             },
             {
+              type: "image",
+              name: "iconImg",
+              label: "Icon",
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              uploadDir: () => "/megamenu-icons",
+            },
+            {
+              type: "string",
+              name: "icon",
+              label: "Icon (optional override of above image field)",
+              options: Object.keys(iconMap),
+            },
+            {
               type: "object",
               name: "items",
               label: "Items",
