@@ -17,6 +17,7 @@ export function LogoCarousel({ data }) {
           </h2>
           <div className="mask-horizontal-fade relative h-17 w-full md:h-40">
             <Marquee
+              paused={data?.paused === true}
               pauseOnHover
               className="h-full justify-center overflow-hidden"
             >
@@ -25,14 +26,15 @@ export function LogoCarousel({ data }) {
                   data.logos.map((logo, index) => (
                     <div
                       className="relative h-17 min-w-36 md:h-22 md:min-w-48"
+                      data-tina-field={tinaField(logo, "altText")}
                       key={`logo-${index}`}
                     >
                       <Image
                         src={logo?.logo ?? "/images/placeholder.png"}
+                        style={{ scale: logo?.scale ? logo.scale / 100 : 1 }}
                         alt={logo?.altText ?? "Logo"}
                         fill={true}
                         objectFit="contain"
-                        data-tina-field={tinaField(logo, "altText")}
                         className={
                           data.isWhiteImages ? "brightness-0 invert" : ""
                         }
