@@ -55,31 +55,40 @@
         "bleed": false
       },
       "heading": "Trusted by",
+      "paused": false,
       "isWhiteImages": true,
       "logos": [
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/event_cinemas_logo.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 120
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 200
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 180
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 190
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 200
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 200
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 160
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
           "altText": "Logo"
         }
       ],
