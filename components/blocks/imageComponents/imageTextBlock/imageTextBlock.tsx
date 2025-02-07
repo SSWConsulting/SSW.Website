@@ -1,5 +1,6 @@
 "use client";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
+import { cn } from "@/lib/utils";
 import "aos/dist/aos.css";
 import classNames from "classnames";
 import React from "react";
@@ -53,7 +54,7 @@ export const ImageTextBlock = ({ data }) => {
           return <ListItem key={index} data={item} />;
         })}
       </div>
-      <ButtonRow data={data} className={noImageCenter} />
+      <ButtonRow data={data} className={cn(noImageCenter, "mt-5 flex-wrap")} />
     </ImageComponentLayout>
   );
 };

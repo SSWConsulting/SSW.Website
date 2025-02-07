@@ -1,6 +1,9 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+
 import classNames from "classnames";
-import { Link } from "lucide-react";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { useResizeObserver } from "usehooks-ts";
 import { Button } from "../button/templateButton";
@@ -14,20 +17,24 @@ const ButtonRow = ({ className, data }) => {
   );
 
   useEffect(() => {
-    setFirstOffenderIndex(null);
-  }, [data.buttons]);
-  useEffect(() => {
     const checkForButtonWidth = () => {
-      if (!buttonRefs.current) return;
       for (let i = 0; i < buttonRefs.current.length; i++) {
         const el = buttonRefs.current[i];
+        if (!el) return;
         if (i === firstOffenderIndex && el.clientWidth < buttonContainerWidth) {
+          console.log(
+            "first offend init",
+            buttonContainerWidth,
+            el.clientWidth
+          );
           childIsContainerWidth(false);
           return;
         }
         if (buttonRefs.current[i].clientWidth === buttonContainerWidth) {
+          console.log("first not init", buttonContainerWidth, el.clientWidth);
           childIsContainerWidth(true);
           if (firstOffenderIndex === null) {
+            console.log("setting first offend index", i);
             setFirstOffenderIndex(i);
           }
           return;
@@ -36,13 +43,15 @@ const ButtonRow = ({ className, data }) => {
       childIsContainerWidth(false);
     };
     checkForButtonWidth();
-  }, [buttonContainerWidth, firstOffenderIndex, data?.buttons?.length]);
+  }, [buttonContainerWidth, firstOffenderIndex, data.buttons]);
 
   const [buttonIsContainerWidth, childIsContainerWidth] = React.useState(false);
   useResizeObserver({
     ref: buttonContainer,
     onResize: () => {
-      setButtonContainerWidth(buttonContainer.current.clientWidth);
+      const width = buttonContainer?.current?.clientWidth;
+
+      width && setButtonContainerWidth(width);
     },
   });
   return (
@@ -57,6 +66,10 @@ const ButtonRow = ({ className, data }) => {
               <Button
                 ref={(node) => {
                   buttonRefs.current[index] = node;
+                  return () => {
+                    index === firstOffenderIndex && setFirstOffenderIndex(null);
+                    delete buttonRefs.current[index];
+                  };
                 }}
                 className={cn(
                   "text-base font-semibold",
@@ -70,7 +83,11 @@ const ButtonRow = ({ className, data }) => {
             );
 
             return button.buttonLink && !button.showLeadCaptureForm ? (
-              <Link href={button.buttonLink} key={`link-wrapper-${index}`}>
+              <Link
+                className="w-full"
+                href={button.buttonLink}
+                key={`link-wrapper-${index}`}
+              >
                 {buttonElement}
               </Link>
             ) : (

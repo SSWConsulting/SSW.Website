@@ -1,8 +1,7 @@
 "use client";
 
-import { Button } from "@/components/button/templateButton";
+import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { Container } from "@/components/util/container";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import V2ComponentWrapper from "../../../layout/v2ComponentWrapper";
@@ -61,27 +60,7 @@ export const CardCarousel = ({ data }) => {
               {data.body}
             </p>
           )}
-          {data.buttons?.length > 0 && (
-            <div className={"mb-4 mt-2 flex justify-center gap-3"}>
-              {data.buttons?.map((button, index) => {
-                const buttonElement = (
-                  <Button
-                    className="text-base font-semibold"
-                    key={`image-text-button-${index}`}
-                    data={button}
-                  />
-                );
-
-                return button.buttonLink && !button.showLeadCaptureForm ? (
-                  <Link href={button.buttonLink} key={`link-wrapper-${index}`}>
-                    {buttonElement}
-                  </Link>
-                ) : (
-                  <>{buttonElement}</>
-                );
-              })}
-            </div>
-          )}
+          <ButtonRow data={data} className="mb-4 mt-2 justify-center" />
           {data.isStacked && data.cards && (
             <>
               <div className="flex flex-wrap items-stretch justify-center gap-4 lg:gap-8">
