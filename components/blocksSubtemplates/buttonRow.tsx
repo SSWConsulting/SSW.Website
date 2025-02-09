@@ -22,19 +22,12 @@ const ButtonRow = ({ className, data }) => {
         const el = buttonRefs.current[i];
         if (!el) return;
         if (i === firstOffenderIndex && el.clientWidth < buttonContainerWidth) {
-          console.log(
-            "first offend init",
-            buttonContainerWidth,
-            el.clientWidth
-          );
           childIsContainerWidth(false);
           return;
         }
         if (buttonRefs.current[i].clientWidth === buttonContainerWidth) {
           console.log("first not init", buttonContainerWidth, el.clientWidth);
-          childIsContainerWidth(true);
           if (firstOffenderIndex === null) {
-            console.log("setting first offend index", i);
             setFirstOffenderIndex(i);
           }
           return;
