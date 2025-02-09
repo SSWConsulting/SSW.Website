@@ -26,7 +26,6 @@ const ButtonRow = ({ className, data }) => {
           return;
         }
         if (buttonRefs.current[i].clientWidth === buttonContainerWidth) {
-          console.log("first not init", buttonContainerWidth, el.clientWidth);
           if (firstOffenderIndex === null) {
             setFirstOffenderIndex(i);
           }
