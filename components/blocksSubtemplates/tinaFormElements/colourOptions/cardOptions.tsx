@@ -11,7 +11,7 @@ export const cardOptions: ColorPickerOptions[] = [
   },
   {
     name: "Transparent",
-    classes: "bg-transparent text-black py-4",
+    classes: "bg-transparent text-black",
     reference: 1,
   },
 ];
