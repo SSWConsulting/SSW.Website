@@ -2,6 +2,7 @@
 
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import V2ComponentWrapper from "../../../layout/v2ComponentWrapper";
@@ -35,7 +36,7 @@ export const CardCarousel = ({ data }) => {
   return (
     <V2ComponentWrapper data={data}>
       <Container padding="px-4 sm:px-8">
-        <div className="flex flex-col gap-4 text-center">
+        <div className="flex flex-col gap-4 sm:text-center">
           <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
           {data.isH1 ? (
             <h1
@@ -63,7 +64,12 @@ export const CardCarousel = ({ data }) => {
           <ButtonRow data={data} className="mb-4 mt-2 justify-center" />
           {data.isStacked && data.cards && (
             <>
-              <div className="flex flex-wrap items-stretch justify-center gap-4 lg:gap-8">
+              <div
+                className={cn(
+                  data.cardStyle === 1 ? "gap-8" : "gap-4",
+                  "flex flex-wrap items-stretch justify-center lg:gap-8"
+                )}
+              >
                 {cardSet?.map((cardData, index) => {
                   return (
                     <Card
