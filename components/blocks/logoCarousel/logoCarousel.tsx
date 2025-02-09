@@ -15,7 +15,7 @@ export function LogoCarousel({ data }) {
           >
             {data.heading}
           </h2>
-          <div className="mask-horizontal-fade relative h-17 w-full md:h-40">
+          <div className="mask-horizontal-fade relative h-20 w-full md:h-40">
             <Marquee
               paused={data?.paused === true}
               pauseOnHover
@@ -25,7 +25,7 @@ export function LogoCarousel({ data }) {
                 {data.logos &&
                   data.logos.map((logo, index) => (
                     <div
-                      className="relative h-17 min-w-32 md:h-22 md:min-w-48"
+                      className="relative h-17 min-w-36 md:h-22 md:min-w-48"
                       data-tina-field={tinaField(logo, "altText")}
                       key={`logo-${index}`}
                     >
