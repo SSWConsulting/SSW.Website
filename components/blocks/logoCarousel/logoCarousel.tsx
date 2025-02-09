@@ -25,7 +25,7 @@ export function LogoCarousel({ data }) {
                 {data.logos &&
                   data.logos.map((logo, index) => (
                     <div
-                      className="relative h-17 min-w-36 md:h-22 md:min-w-48"
+                      className="relative h-17 min-w-36 md:h-22"
                       data-tina-field={tinaField(logo, "altText")}
                       key={`logo-${index}`}
                     >

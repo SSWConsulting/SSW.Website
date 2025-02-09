@@ -55,7 +55,7 @@
         "bleed": false
       },
       "heading": "Trusted by",
-      "paused": false,
+      "paused": true,
       "isWhiteImages": true,
       "logos": [
         {
@@ -68,7 +68,7 @@
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
-          "scale": 175
+          "scale": 160
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
@@ -80,7 +80,7 @@
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
-          "scale": 195
+          "scale": 190
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
