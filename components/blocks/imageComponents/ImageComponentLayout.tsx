@@ -58,7 +58,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         <div
           className={classNames(
             "flex w-full flex-col",
-            hasMedia ? "md:items-start" : "text-center",
+            hasMedia ? "md:items-start" : "sm:text-center",
             getVerticalTextPlacement(),
             imageIsLeftAligined && "md:order-2"
 
