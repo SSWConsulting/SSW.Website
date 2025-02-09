@@ -12,37 +12,40 @@ const ButtonRow = ({ className, data }) => {
   const buttonContainer = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<HTMLButtonElement[]>([]);
   const [buttonContainerWidth, setButtonContainerWidth] = React.useState(0);
-  const [firstOffenderIndex, setFirstOffenderIndex] = useState<number | null>(
-    null
-  );
+  const [fullWidthButtonIndex, setFullWidthButtonIndex] = useState<
+    number | null
+  >(null);
 
   useEffect(() => {
-    const checkForButtonWidth = () => {
+    const findFullWidthButton = () => {
       for (let i = 0; i < buttonRefs.current.length; i++) {
         const el = buttonRefs.current[i];
         if (!el) return;
-        if (i === firstOffenderIndex && el.clientWidth < buttonContainerWidth) {
-          childIsContainerWidth(false);
+        if (
+          i === fullWidthButtonIndex &&
+          el.clientWidth < buttonContainerWidth
+        ) {
+          setButtonIsFullWidth(false);
           return;
         }
         if (buttonRefs.current[i].clientWidth === buttonContainerWidth) {
-          if (firstOffenderIndex === null) {
-            setFirstOffenderIndex(i);
+          setButtonIsFullWidth(true);
+          if (fullWidthButtonIndex === null) {
+            setFullWidthButtonIndex(i);
           }
           return;
         }
       }
-      childIsContainerWidth(false);
+      setButtonIsFullWidth(false);
     };
-    checkForButtonWidth();
-  }, [buttonContainerWidth, firstOffenderIndex, data.buttons]);
+    findFullWidthButton();
+  }, [buttonContainerWidth, fullWidthButtonIndex, data.buttons]);
 
-  const [buttonIsContainerWidth, childIsContainerWidth] = React.useState(false);
+  const [buttonIsFullWidth, setButtonIsFullWidth] = React.useState(false);
   useResizeObserver({
     ref: buttonContainer,
     onResize: () => {
       const width = buttonContainer?.current?.clientWidth;
-
       width && setButtonContainerWidth(width);
     },
   });
@@ -59,14 +62,15 @@ const ButtonRow = ({ className, data }) => {
                 ref={(node) => {
                   buttonRefs.current[index] = node;
                   return () => {
-                    index === firstOffenderIndex && setFirstOffenderIndex(null);
+                    index === fullWidthButtonIndex &&
+                      setFullWidthButtonIndex(null);
                     delete buttonRefs.current[index];
                   };
                 }}
                 className={cn(
                   "text-base font-semibold",
-                  index !== firstOffenderIndex &&
-                    buttonIsContainerWidth &&
+                  index !== fullWidthButtonIndex &&
+                    buttonIsFullWidth &&
                     "w-full sm:w-auto"
                 )}
                 key={`image-text-button-${index}`}
