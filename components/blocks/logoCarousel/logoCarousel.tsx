@@ -7,7 +7,7 @@ import { tinaField } from "tinacms/dist/react";
 export function LogoCarousel({ data }) {
   return (
     <V2ComponentWrapper data={data}>
-      <Container size="custom">
+      <Container size="custom" padding="px-4 sm:px-8">
         <div className="flex w-full flex-col items-center justify-center pb-14">
           <h2
             className="p-2 text-xl font-semibold text-white md:text-2xl"
@@ -21,11 +21,11 @@ export function LogoCarousel({ data }) {
               pauseOnHover
               className="h-full justify-center overflow-hidden"
             >
-              <div className="flex h-full items-center justify-center gap-3">
+              <div className="flex h-full items-center justify-center gap-1 sm:gap-3">
                 {data.logos &&
                   data.logos.map((logo, index) => (
                     <div
-                      className="relative h-17 min-w-36 md:h-22 md:min-w-48"
+                      className="relative h-17 min-w-32 md:h-22 md:min-w-48"
                       data-tina-field={tinaField(logo, "altText")}
                       key={`logo-${index}`}
                     >

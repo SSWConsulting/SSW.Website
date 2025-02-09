@@ -44,17 +44,15 @@ export const ImageComponentLayout = ({ data, children }) => {
     <V2ComponentWrapper data={data}>
       <Container
         size="custom"
+        padding="px-4 sm:px-8"
         className={classNames(
-          "mx-auto flex flex-col gap-8 align-middle md:grid md:gap-16",
+          "mx-auto flex flex-col gap-8 py-12 align-middle md:grid md:gap-16",
           data.mediaConfiguration?.imageSource || youtubeVideoId
             ? "md:grid-cols-2"
             : "md:grid-cols-1",
           data.mediaConfiguration?.mobilePlacement === "Above"
             ? "flex-col-reverse"
-            : "flex-col",
-          data.mediaConfiguration?.verticalPlacement === "Bottom"
-            ? "pt-12"
-            : "py-12"
+            : "flex-col"
         )}
       >
         <div
@@ -73,7 +71,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         {(data.mediaConfiguration?.imageSource || youtubeVideoId) && (
           <div
             className={classNames(
-              "relative flex w-full md:aspect-auto",
+              "relative flex w-full",
               imageIsLeftAligined && "md:order-1"
             )}
           >

@@ -34,7 +34,7 @@ export const CardCarousel = ({ data }) => {
 
   return (
     <V2ComponentWrapper data={data}>
-      <Container>
+      <Container padding="px-4 sm:px-8">
         <div className="flex flex-col gap-4 text-center">
           <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
           {data.isH1 ? (
