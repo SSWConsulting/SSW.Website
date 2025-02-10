@@ -32,9 +32,14 @@ export const Button = ({
 }) => {
   const [open, setOpen] = useState(false);
   const variants: ColorVariant[] = ["primary", "secondary"];
-  const { iconFirst, buttonText, colour } = data;
-  // eslint-disable-next-line no-console
-  console.log(data);
+  const { iconFirst, buttonText, colour, leadCaptureFormOption } = data;
+  const selectedForm = globals.forms[leadCaptureFormOption];
+  let jotFormLink = "https://form.jotform.com/";
+
+  if (selectedForm) {
+    jotFormLink += selectedForm.id;
+  }
+
   return (
     <>
       <RippleButton
@@ -65,9 +70,7 @@ export const Button = ({
           showCloseIcon={true}
           onClose={() => setOpen(false)}
         >
-          <Jotform
-            src={`https://form.jotform.com/${globals.bookingJotFormId}`}
-          ></Jotform>
+          <Jotform src={jotFormLink}></Jotform>
         </Popup>
       )}
     </>

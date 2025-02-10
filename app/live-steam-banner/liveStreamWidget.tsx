@@ -291,7 +291,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                 <SocialIcons />
               </div>
             </div>
-            <InlineJotForm jotFormId={globals.newsletterJotFormId} />
+            <InlineJotForm jotFormId={globals.forms.newsletterJotForm.id} />
           </div>
 
           {!!event?.presenterList?.length &&
