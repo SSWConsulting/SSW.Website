@@ -35,7 +35,7 @@ export const CardCarousel = ({ data }) => {
 
   return (
     <V2ComponentWrapper data={data}>
-      <Container padding="px-4 sm:px-8">
+      <Container size="custom" className="py-4 sm:py-12" padding="px-4 sm:px-8">
         <div className="flex flex-col gap-4 sm:text-center">
           <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
           {data.isH1 ? (
@@ -84,7 +84,7 @@ export const CardCarousel = ({ data }) => {
           )}
         </div>
         {data.cards && !data.isStacked && (
-          <Container size="custom" padding="sm:px-8" className="py-4">
+          <Container size="custom" padding="sm:pt-8" className="pt-4">
             <CardList
               activeCategory={activeCategory}
               data={{ cards: cardSet, cardStyle: data.cardStyle ?? 0 }}
