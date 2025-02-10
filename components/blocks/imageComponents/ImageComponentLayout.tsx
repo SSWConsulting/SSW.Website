@@ -18,14 +18,14 @@ export const ImageComponentLayout = ({ data, children }) => {
     data.mediaConfiguration?.imageHeight;
   const hasMedia = isYouTube || isImage;
   const youtubeVideoId = getYouTubeVideoId(data.mediaConfiguration?.youtubeUrl);
-  const getVerticalImagePlacement = () => {
+  const getVerticalMediaPlacement = () => {
     switch (data.mediaConfiguration?.verticalPlacement) {
       case "Top":
-        return "mb-auto";
+        return "items-start";
       case "Bottom":
-        return "mt-auto";
+        return "items-end";
       default:
-        return "my-auto";
+        return "items-center";
     }
   };
 
@@ -72,6 +72,7 @@ export const ImageComponentLayout = ({ data, children }) => {
           <div
             className={classNames(
               "relative flex w-full",
+              getVerticalMediaPlacement(),
               imageIsLeftAligined && "md:order-1"
             )}
           >
@@ -89,10 +90,7 @@ export const ImageComponentLayout = ({ data, children }) => {
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
                   height={data.mediaConfiguration?.imageHeight}
-                  className={classNames(
-                    getVerticalImagePlacement(),
-                    "w-full rounded-md"
-                  )}
+                  className={classNames("w-full rounded-md")}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}
