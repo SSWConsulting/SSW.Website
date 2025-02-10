@@ -19,6 +19,7 @@ export interface TemplateButtonOptions extends ButtonTinaFields {
   iconFirst?: boolean;
   icon?: string;
   showLeadCaptureForm?: boolean;
+  leadCaptureFormOption?: string;
   onClick?: () => void;
 }
 
@@ -32,6 +33,8 @@ export const Button = ({
   const [open, setOpen] = useState(false);
   const variants: ColorVariant[] = ["primary", "secondary"];
   const { iconFirst, buttonText, colour } = data;
+  // eslint-disable-next-line no-console
+  console.log(data);
   return (
     <>
       <RippleButton

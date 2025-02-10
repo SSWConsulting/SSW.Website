@@ -29,6 +29,7 @@
         {
           "buttonText": "Schedule a FREE Initial Meeting",
           "showLeadCaptureForm": true,
+          "leadCaptureFormOption": "bookingJotForm",
           "buttonLink": "",
           "iconFirst": false,
           "colour": 0

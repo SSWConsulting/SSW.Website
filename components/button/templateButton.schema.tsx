@@ -15,6 +15,24 @@ export const buttonSchema = [
   },
   {
     type: "string",
+    label: "Select lead capture form",
+    name: "leadCaptureFormOption",
+    ui: {
+      component: "select",
+      options: [
+        {
+          label: "Booking Form",
+          value: "bookingJotForm",
+        },
+        {
+          label: "Registration of Interest Form",
+          value: "registrationOfInterestJotForm",
+        },
+      ],
+    },
+  },
+  {
+    type: "string",
     label: "Button Link",
     name: "buttonLink",
   },
