@@ -61,31 +61,38 @@
       "logos": [
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/event_cinemas_logo.png",
-          "scale": 200
+          "scale": 200,
+          "altText": "Event cinmemas logo"
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
-          "scale": 195
+          "scale": 195,
+          "altText": "Toll logo"
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
-          "scale": 160
+          "scale": 160,
+          "altText": "Symantec logo"
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
-          "scale": 175
+          "scale": 175,
+          "altText": "Domain logo"
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
-          "scale": 195
+          "scale": 195,
+          "altText": "Allianz logo"
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
-          "scale": 180
+          "scale": 180,
+          "altText": "Microsoft logo"
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
-          "scale": 175
+          "scale": 175,
+          "altText": "Cisco logo"
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
