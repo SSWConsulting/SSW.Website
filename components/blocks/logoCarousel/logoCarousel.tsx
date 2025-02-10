@@ -17,6 +17,7 @@ export function LogoCarousel({ data }) {
           </h2>
           <div className="mask-horizontal-fade relative h-20 w-full md:h-40">
             <Marquee
+              gap="[--gap:0.25rem] sm:[--gap:0.75rem]"
               paused={data?.paused === true}
               pauseOnHover
               className="h-full justify-center overflow-hidden"

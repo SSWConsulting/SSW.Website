@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 interface MarqueeProps {
   className?: string;
+  gap: string;
   reverse?: boolean;
   paused?: boolean;
   pauseOnHover?: boolean;
@@ -14,6 +15,7 @@ interface MarqueeProps {
 
 export function Marquee({
   className,
+  gap = "--[gap:1rem]",
   reverse,
   paused,
   pauseOnHover = false,
@@ -26,7 +28,8 @@ export function Marquee({
     <div
       {...props}
       className={cn(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        "group flex overflow-hidden p-2 [--duration:40s] [gap:var(--gap)]",
+        gap,
         {
           "flex-row": !vertical,
           "flex-col": vertical,
