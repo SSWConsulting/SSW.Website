@@ -46,7 +46,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         size="custom"
         padding="px-4 sm:px-8"
         className={classNames(
-          "mx-auto flex flex-col gap-8 py-4 align-middle sm:py-12 md:grid md:gap-16",
+          "mx-auto flex flex-col gap-8 py-4 align-middle sm:py-12 md:gap-16 xl:grid",
           data.mediaConfiguration?.imageSource || youtubeVideoId
             ? "md:grid-cols-2"
             : "md:grid-cols-1",
