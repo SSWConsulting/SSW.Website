@@ -18,7 +18,7 @@
       "heading": "Expert .NET upgrade. Get new features with minimal downtime",
       "isH1": true,
       "description": "Upgrade your .NET applications to .NET 8 (LTS) or .NET 9 (STS). We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
-      "mobileTextAlignment": "Center",
+      "mobileTextAlignment": "Left",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -65,7 +65,7 @@
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
-          "scale": 200
+          "scale": 195
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
@@ -73,7 +73,7 @@
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
-          "scale": 185
+          "scale": 175
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
@@ -81,11 +81,11 @@
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
-          "scale": 190
+          "scale": 180
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
-          "scale": 160
+          "scale": 175
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
@@ -98,6 +98,7 @@
     {
       "heading": "Strategic .NET 8 migration",
       "body": "Your .NET applications need care and planning to upgrade to version 8. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
+      "mobileTextAlignment": "Left",
       "accordionItems": [
         {
           "label": "Phase 1: Understanding Your .NET Landscape",
@@ -270,6 +271,7 @@
       "heading": "BizCover: From microservice maze to monolith magic",
       "isH1": false,
       "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
+      "mobileTextAlignment": "Left",
       "chips": {
         "filledChipText": ".NET8",
         "clearChipText": "Modular Monolith (MoMo)"
@@ -313,6 +315,7 @@
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "At SSW, we’ve been knee-deep in .NET projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork—just proven tips that help you build better software.\n",
+      "textAlignment": "Left",
       "cardStyle": 1,
       "cards": [
         {
@@ -421,6 +424,7 @@
       "heading": "Talk to us about your .NET 8 project today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "mobileTextAlignment": "Center",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -440,9 +444,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE .NET 8 Upgrade Meeting",
-          "showLeadCaptureForm": true,
-          "colour": 0
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "showLeadCaptureForm": true
         }
       ],
       "background": {
