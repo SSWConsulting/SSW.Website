@@ -80,7 +80,7 @@ const ButtonRow = ({ className, data }) => {
 
             return button.buttonLink && !button.showLeadCaptureForm ? (
               <Link
-                className="w-full"
+                className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
                 href={button.buttonLink}
                 key={`link-wrapper-${index}`}
               >

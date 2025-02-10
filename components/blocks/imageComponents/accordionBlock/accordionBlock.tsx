@@ -15,44 +15,57 @@ import { ImageComponentLayout } from "../ImageComponentLayout";
 
 export const AccordionBlock = ({ data }) => {
   const headingClasses = "my-0 py-2 dark:text-gray-200";
-
+  const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
+  const isImage =
+    !isYouTube &&
+    data.mediaConfiguration?.imageSource &&
+    data.mediaConfiguration?.imageWidth &&
+    data.mediaConfiguration?.imageHeight;
+  const hasMedia = isYouTube || isImage;
   return (
     <ImageComponentLayout data={data}>
-      {data.isH1 ? (
-        <h1
-          data-tina-field={tinaField(data, "heading")}
-          className={classNames(
-            headingClasses,
-            "text-3xl font-bold lg:text-4xl"
-          )}
-        >
-          {data.heading}
-        </h1>
-      ) : (
-        <h2
-          data-tina-field={tinaField(data, "heading")}
-          className={classNames(
-            "text-2xl font-semibold lg:text-3xl",
-            headingClasses
-          )}
-        >
-          {data.heading}
-        </h2>
-      )}
-      {data.body && (
-        <p
-          className="py-2 text-base font-light dark:text-gray-300"
-          data-tina-field={tinaField(data, "body")}
-        >
-          {data.body}
-        </p>
-      )}
-
+      <section
+        className={cn(
+          data.mobileTextAlignment === "Center" && "text-center",
+          hasMedia && "xl:text-left"
+        )}
+      >
+        {data.isH1 ? (
+          <h1
+            data-tina-field={tinaField(data, "heading")}
+            className={classNames(
+              headingClasses,
+              "text-3xl font-bold lg:text-4xl"
+            )}
+          >
+            {data.heading}
+          </h1>
+        ) : (
+          <h2
+            data-tina-field={tinaField(data, "heading")}
+            className={classNames(
+              "text-2xl font-semibold lg:text-3xl",
+              headingClasses
+            )}
+          >
+            {data.heading}
+          </h2>
+        )}
+        {data.body && (
+          <p
+            className="py-2 text-base font-light dark:text-gray-300"
+            data-tina-field={tinaField(data, "body")}
+          >
+            {data.body}
+          </p>
+        )}
+      </section>
       <ButtonRow
         data={data}
         className={cn(
           "mt-5 flex-wrap",
-          data.mediaConfiguration?.imageSource && "justify-center"
+          data.mobileTextAlignment === "Center" && "justify-center",
+          hasMedia && "xl:justify-start"
         )}
       />
       {data.accordionItems && (

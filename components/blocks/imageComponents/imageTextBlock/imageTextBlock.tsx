@@ -12,39 +12,49 @@ import { PillGroup } from "../../../blocksSubtemplates/pillGroup";
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
 export const ImageTextBlock = ({ data }) => {
-  const noImageCenter = data.mediaConfiguration?.imageSource
-    ? ""
-    : "justify-center";
-
+  const hasMedia =
+    data.mediaConfiguration?.imageSource || data.mediaConfiguration?.youtubeUrl;
+  const noImageCenter = hasMedia ? "xl:justify-start" : "xl:justify-center";
+  const getTabletAlignment = () => {
+    switch (data.mobileTextAlignment) {
+      case "Left":
+        return "text-left";
+      default:
+        return "text-center";
+    }
+  };
   return (
     <ImageComponentLayout data={data}>
       {data.topLabel && (data.toplabel?.icon || data.topLabel?.labelText) && (
         <IconLabel data={data.topLabel} />
       )}
-      {data.heading && <Heading data={data} />}
 
-      {data.description && (
-        <TinaMarkdown
-          content={data.description}
-          components={{
-            p: (props) => (
-              <p
-                {...props}
-                className={classNames(
-                  "py-2 text-base font-light dark:text-gray-300"
-                )}
-                data-tina-field={tinaField(data, "description")}
-              />
-            ),
-            h6: () => <></>,
-            h5: () => <></>,
-            h4: () => <></>,
-            h3: () => <></>,
-            h2: () => <></>,
-            h1: () => <></>,
-          }}
-        />
-      )}
+      <section className={cn(getTabletAlignment(), hasMedia && "xl:text-left")}>
+        {data.heading && <Heading data={data} />}
+
+        {data.description && (
+          <TinaMarkdown
+            content={data.description}
+            components={{
+              p: (props) => (
+                <p
+                  {...props}
+                  className={classNames(
+                    "py-2 text-base font-light dark:text-gray-300"
+                  )}
+                  data-tina-field={tinaField(data, "description")}
+                />
+              ),
+              h6: () => <></>,
+              h5: () => <></>,
+              h4: () => <></>,
+              h3: () => <></>,
+              h2: () => <></>,
+              h1: () => <></>,
+            }}
+          />
+        )}
+      </section>
 
       {data.chips && <PillGroup data={data.chips} />}
       <div
@@ -54,7 +64,14 @@ export const ImageTextBlock = ({ data }) => {
           return <ListItem key={index} data={item} />;
         })}
       </div>
-      <ButtonRow data={data} className={cn(noImageCenter, "mt-5 flex-wrap")} />
+      <ButtonRow
+        data={data}
+        className={cn(
+          noImageCenter,
+          "mt-5 flex-wrap",
+          data.mobileTextAlignment === "Center" && "justify-center"
+        )}
+      />
     </ImageComponentLayout>
   );
 };

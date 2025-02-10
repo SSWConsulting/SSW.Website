@@ -76,6 +76,12 @@ export const ImageTextBlockSchema: Template = {
       toolbarOverride: ["bold", "italic", "link"],
     },
     {
+      type: "string",
+      label: "Text Alignment (Tablet)",
+      name: "mobileTextAlignment",
+      options: ["Left", "Center"],
+    },
+    {
       name: "chips",
       label: "Chips",
       type: "object",

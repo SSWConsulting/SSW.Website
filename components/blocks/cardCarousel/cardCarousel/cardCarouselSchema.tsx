@@ -138,6 +138,12 @@ export const CardCarouselSchema: Template = {
       },
     },
     {
+      type: "string",
+      label: "Text Alignment",
+      name: "textAlignment",
+      options: ["Left", "Center"],
+    },
+    {
       name: "buttons",
       label: "Button Row",
       type: "object",

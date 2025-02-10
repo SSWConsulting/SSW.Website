@@ -78,6 +78,12 @@ export const AccordionSchema: Template = {
       description: "Flavour text under the block title.",
     },
     {
+      type: "string",
+      label: "Text Alignment (Tablet)",
+      name: "mobileTextAlignment",
+      options: ["Left", "Center"],
+    },
+    {
       type: "object",
       label: "Accordion",
       name: "accordionItems",

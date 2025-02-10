@@ -18,6 +18,7 @@ export const ImageComponentLayout = ({ data, children }) => {
     data.mediaConfiguration?.imageHeight;
   const hasMedia = isYouTube || isImage;
   const youtubeVideoId = getYouTubeVideoId(data.mediaConfiguration?.youtubeUrl);
+
   const getVerticalMediaPlacement = () => {
     switch (data.mediaConfiguration?.verticalPlacement) {
       case "Top":
@@ -58,7 +59,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         <div
           className={classNames(
             "flex w-full flex-col",
-            hasMedia ? "md:items-start" : "sm:text-center",
+            hasMedia && "xl:items-start xl:text-start",
             getVerticalTextPlacement(),
             imageIsLeftAligined && "md:order-2"
 

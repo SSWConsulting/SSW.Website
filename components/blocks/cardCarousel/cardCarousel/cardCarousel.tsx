@@ -12,6 +12,7 @@ import { Tabs, useTabCarousel } from "../layout/cardCarouselTabs";
 
 export const CardCarousel = ({ data }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
+  const isTextLeft = data.textAlignment === "Left";
   const [hasImages, setHasImages] = useState(false);
   const { tabsData, activeCategory, categoryGroup } = useTabCarousel({
     categoryGroup: data.categoryGroup,
@@ -36,32 +37,40 @@ export const CardCarousel = ({ data }) => {
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" className="py-4 sm:py-12" padding="px-4 sm:px-8">
-        <div className="flex flex-col gap-4 sm:text-center">
+        <div className="flex flex-col gap-4">
           <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
-          {data.isH1 ? (
-            <h1
-              data-tina-field={tinaField(data, "heading")}
-              className="my-0 py-2 text-3xl font-bold lg:text-4xl dark:text-gray-200"
-            >
-              {data.heading}
-            </h1>
-          ) : (
-            <h2
-              data-tina-field={tinaField(data, "heading")}
-              className="my-0 py-2 text-2xl font-semibold lg:text-3xl dark:text-gray-200"
-            >
-              {data.heading}
-            </h2>
-          )}
-          {data.body && (
-            <p
-              className="m-auto max-w-4xl py-2 text-base font-light dark:text-gray-300"
-              data-tina-field={tinaField(data, "body")}
-            >
-              {data.body}
-            </p>
-          )}
-          <ButtonRow data={data} className="mb-4 mt-2 justify-center" />
+          <section className={cn(isTextLeft || "text-center")}>
+            {data.isH1 ? (
+              <h1
+                data-tina-field={tinaField(data, "heading")}
+                className="my-0 py-2 text-3xl font-bold lg:text-4xl dark:text-gray-200"
+              >
+                {data.heading}
+              </h1>
+            ) : (
+              <h2
+                data-tina-field={tinaField(data, "heading")}
+                className="my-0 py-2 text-2xl font-semibold lg:text-3xl dark:text-gray-200"
+              >
+                {data.heading}
+              </h2>
+            )}
+            {data.body && (
+              <p
+                className={cn(
+                  isTextLeft || "m-auto",
+                  "max-w-4xl py-2 text-base font-light dark:text-gray-300"
+                )}
+                data-tina-field={tinaField(data, "body")}
+              >
+                {data.body}
+              </p>
+            )}
+          </section>
+          <ButtonRow
+            data={data}
+            className={cn("mb-4 mt-2", isTextLeft || "justify-center")}
+          />
           {data.isStacked && data.cards && (
             <>
               <div

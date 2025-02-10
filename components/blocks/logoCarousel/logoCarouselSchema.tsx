@@ -58,6 +58,12 @@ export const LogoCarouselSchema: Template = {
       description: "Heading text for the logo carousel.",
     },
     {
+      type: "string",
+      label: "Text Alignment",
+      name: "textAlignment",
+      options: ["Left", "Center"],
+    },
+    {
       type: "boolean",
       name: "paused",
       label: "Paused",
