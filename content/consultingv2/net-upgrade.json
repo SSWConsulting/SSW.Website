@@ -18,6 +18,7 @@
       "heading": "Expert .NET upgrade. Get new features with minimal downtime",
       "isH1": true,
       "description": "Upgrade your .NET applications to .NET 8 (LTS) or .NET 9 (STS). We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
+      "mobileTextAlignment": "Center",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -301,6 +302,8 @@
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "imageHeight": 700,
+        "imageWidth": 1400,
         "altText": "BizCover: From microservice maze to monolith magic"
       },
       "_template": "imageTextBlock"
