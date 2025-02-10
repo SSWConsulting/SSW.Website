@@ -37,7 +37,7 @@ export const BuiltOnAzure = ({ data }: BuiltOnAzureProps) => {
 
   return (
     <Section color={footerColor as SectionColor} className="py-2">
-      <Container className="grid grid-cols-1 text-lg lg:grid-cols-2">
+      <Container className="grid grid-cols-1 text-base md:text-lg lg:grid-cols-2">
         <Link
           data={data}
           href="/consulting/azure"
