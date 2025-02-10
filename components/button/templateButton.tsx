@@ -35,7 +35,6 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             if (data.showLeadCaptureForm) setOpen(true);
           }}
           ref={ref}
-          onResize={(e) => console.log(e)}
           textTinaField={tinaField(data, "buttonText")}
           className={className}
           fontClassName={classNames(
