@@ -36,13 +36,7 @@ export const CardCarousel = ({ data }) => {
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" className="py-4 sm:py-12" padding="px-4 sm:px-8">
-        <div
-          className={cn(
-            "flex flex-col gap-4",
-            !data.body && "text-center",
-            "sm:text-center"
-          )}
-        >
+        <div className="flex flex-col gap-4 sm:text-center">
           <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
           {data.isH1 ? (
             <h1
