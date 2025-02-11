@@ -38,7 +38,9 @@ export const CardCarousel = ({ data }) => {
     <V2ComponentWrapper data={data}>
       <Container size="custom" className="py-8 sm:py-12" padding="px-4 sm:px-8">
         <div className="flex flex-col gap-4">
-          <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
+          {data.categoryGroup && (
+            <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
+          )}
           <section
             className={cn(
               tabletTextLeft ? "text-left md:text-center" : "text-center"
