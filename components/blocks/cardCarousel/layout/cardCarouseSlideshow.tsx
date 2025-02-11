@@ -65,6 +65,7 @@ const CardList = ({ activeCategory, data, hasImages }: CardSlideshowProps) => {
                   key={`card-carousel-${index}`}
                 >
                   <Card
+                    className="w-90"
                     placeholder={hasImages}
                     data={{ ...cardData, cardStyle: data.cardStyle }}
                   />

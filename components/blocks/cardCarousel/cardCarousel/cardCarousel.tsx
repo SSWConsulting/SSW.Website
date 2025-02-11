@@ -82,6 +82,7 @@ export const CardCarousel = ({ data }) => {
                 {cardSet?.map((cardData, index) => {
                   return (
                     <Card
+                      className="w-full md:w-90"
                       key={`card-${index}`}
                       placeholder={hasImages}
                       data={{ ...cardData, cardStyle: data.cardStyle ?? 0 }}
