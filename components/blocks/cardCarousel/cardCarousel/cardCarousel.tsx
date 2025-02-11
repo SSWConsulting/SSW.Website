@@ -12,7 +12,7 @@ import { Tabs, useTabCarousel } from "../layout/cardCarouselTabs";
 
 export const CardCarousel = ({ data }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
-  const isTextLeft = data.textAlignment === "Left";
+  const tabletTextLeft = data.tabletTextAlignment === "Left";
   const [hasImages, setHasImages] = useState(false);
   const { tabsData, activeCategory, categoryGroup } = useTabCarousel({
     categoryGroup: data.categoryGroup,
@@ -39,7 +39,11 @@ export const CardCarousel = ({ data }) => {
       <Container size="custom" className="py-4 sm:py-12" padding="px-4 sm:px-8">
         <div className="flex flex-col gap-4">
           <Tabs tabsData={tabsData} categoryGroup={categoryGroup} />
-          <section className={cn(isTextLeft || "text-center")}>
+          <section
+            className={cn(
+              tabletTextLeft ? "text-left md:text-center" : "text-center"
+            )}
+          >
             {data.isH1 ? (
               <h1
                 data-tina-field={tinaField(data, "heading")}
@@ -58,8 +62,8 @@ export const CardCarousel = ({ data }) => {
             {data.body && (
               <p
                 className={cn(
-                  isTextLeft || "m-auto",
-                  "max-w-4xl py-2 text-base font-light dark:text-gray-300"
+                  tabletTextLeft || "mx-auto",
+                  "max-w-4xl py-2 text-base font-light md:mx-auto dark:text-gray-300"
                 )}
                 data-tina-field={tinaField(data, "body")}
               >
@@ -69,7 +73,7 @@ export const CardCarousel = ({ data }) => {
           </section>
           <ButtonRow
             data={data}
-            className={cn("mb-4 mt-2", isTextLeft || "justify-center")}
+            className={cn("mb-4 mt-2", tabletTextLeft || "justify-center")}
           />
           {data.isStacked && data.cards && (
             <>

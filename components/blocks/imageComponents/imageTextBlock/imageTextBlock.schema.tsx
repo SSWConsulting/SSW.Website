@@ -1,4 +1,5 @@
-import { Template } from "tinacms";
+import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletTextAlignment.schema";
+import { Template, TinaField } from "tinacms";
 import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
@@ -75,12 +76,7 @@ export const ImageTextBlockSchema: Template = {
       description: "Main body text for the block.",
       toolbarOverride: ["bold", "italic", "link"],
     },
-    {
-      type: "string",
-      label: "Text Alignment (Tablet)",
-      name: "mobileTextAlignment",
-      options: ["Left", "Center"],
-    },
+    tabletTextAlignmentField as TinaField,
     {
       name: "chips",
       label: "Chips",

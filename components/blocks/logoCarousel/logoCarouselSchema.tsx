@@ -1,5 +1,6 @@
 import React from "react";
-import { Template, wrapFieldsWithMeta } from "tinacms";
+import { Template, TinaField, wrapFieldsWithMeta } from "tinacms";
+import tabletTextAlignmentField from "../../../components/blocksSubtemplates/tabletTextAlignment.schema";
 import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
 
 import { Button } from "tinacms";
@@ -57,12 +58,7 @@ export const LogoCarouselSchema: Template = {
       name: "heading",
       description: "Heading text for the logo carousel.",
     },
-    {
-      type: "string",
-      label: "Text Alignment",
-      name: "textAlignment",
-      options: ["Left", "Center"],
-    },
+    tabletTextAlignmentField as TinaField,
     {
       type: "boolean",
       name: "paused",

@@ -16,7 +16,7 @@ export const ImageTextBlock = ({ data }) => {
     data.mediaConfiguration?.imageSource || data.mediaConfiguration?.youtubeUrl;
   const noImageCenter = hasMedia ? "xl:justify-start" : "xl:justify-center";
   const getTabletAlignment = () => {
-    switch (data.mobileTextAlignment) {
+    switch (data.tabletTextAlignment) {
       case "Left":
         return "text-left";
       default:
@@ -69,7 +69,7 @@ export const ImageTextBlock = ({ data }) => {
         className={cn(
           noImageCenter,
           "mt-5 flex-wrap",
-          data.mobileTextAlignment === "Center" && "justify-center"
+          data.tabletTextAlignment === "Left" || "justify-center"
         )}
       />
     </ImageComponentLayout>

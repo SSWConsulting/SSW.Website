@@ -61,7 +61,7 @@ export const ImageComponentLayout = ({ data, children }) => {
             "flex w-full flex-col",
             hasMedia && "xl:items-start xl:text-start",
             getVerticalTextPlacement(),
-            imageIsLeftAligined && "md:order-2"
+            imageIsLeftAligined && "xl:order-2"
 
             // data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
           )}
@@ -74,7 +74,7 @@ export const ImageComponentLayout = ({ data, children }) => {
             className={classNames(
               "relative flex w-full",
               getVerticalMediaPlacement(),
-              imageIsLeftAligined && "md:order-1"
+              imageIsLeftAligined && "xl:order-1"
             )}
           >
             {isYouTube && youtubeVideoId ? (

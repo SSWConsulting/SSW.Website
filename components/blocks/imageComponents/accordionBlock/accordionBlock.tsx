@@ -26,8 +26,8 @@ export const AccordionBlock = ({ data }) => {
     <ImageComponentLayout data={data}>
       <section
         className={cn(
-          data.mobileTextAlignment === "Center" && "text-center",
-          hasMedia && "xl:text-left"
+          data.tabletTextAlignment === "Center" && "text-center",
+          hasMedia && "md:text-center"
         )}
       >
         {data.isH1 ? (
@@ -64,7 +64,7 @@ export const AccordionBlock = ({ data }) => {
         data={data}
         className={cn(
           "mt-5 flex-wrap",
-          data.mobileTextAlignment === "Center" && "justify-center",
+          data.tabletTextAlignment === "Center" && "justify-center",
           hasMedia && "xl:justify-start"
         )}
       />

@@ -1,16 +1,32 @@
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Marquee } from "@/components/ui/marquee";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 
 export function LogoCarousel({ data }) {
+  const getTabletAlignment = () => {
+    switch (data.tabletTextAlignment) {
+      case "Left":
+        return "text-left justify-start md:text-center md:justify-center";
+      default:
+        return "text-center justify-center";
+    }
+  };
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" padding="px-4 sm:px-8">
-        <div className="flex w-full flex-col items-center justify-center pb-4 sm:pb-14">
+        <div
+          className={cn(
+            "flex w-full flex-col pb-4 sm:pb-14",
+            getTabletAlignment()
+          )}
+        >
           <h2
-            className="!mt-4 p-2 text-xl font-semibold text-white md:text-2xl"
+            className={cn(
+              "!mt-4 p-2 text-xl font-semibold text-white md:text-2xl"
+            )}
             data-tina-field={tinaField(data, "heading")}
           >
             {data.heading}
