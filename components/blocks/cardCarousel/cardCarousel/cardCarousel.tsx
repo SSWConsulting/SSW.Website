@@ -80,13 +80,16 @@ export const CardCarousel = ({ data }) => {
               <div
                 className={cn(
                   data.cardStyle === 1 ? "gap-8" : "gap-4",
-                  "flex flex-wrap items-stretch justify-center lg:gap-8"
+                  data.cards?.length === 2 && "sm:grid-cols-2",
+                  data.cards?.length === 3 &&
+                    "sm:grid-cols-2 md:grid-cols-3 lg:gap-8",
+                  "grid items-stretch justify-center"
                 )}
               >
                 {cardSet?.map((cardData, index) => {
                   return (
                     <Card
-                      className="w-full md:w-90"
+                      className="w-full"
                       key={`card-${index}`}
                       placeholder={hasImages}
                       data={{ ...cardData, cardStyle: data.cardStyle ?? 0 }}
