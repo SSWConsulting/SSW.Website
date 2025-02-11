@@ -29,7 +29,7 @@ export const ImageTextBlock = ({ data }) => {
         <IconLabel data={data.topLabel} />
       )}
 
-      <section className={cn(getTabletAlignment(), hasMedia && "xl:text-left")}>
+      <section className={cn(getTabletAlignment(), hasMedia && "sm:text-left")}>
         {data.heading && <Heading data={data} />}
 
         {data.description && (

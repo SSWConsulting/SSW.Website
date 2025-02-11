@@ -26,8 +26,9 @@ export const AccordionBlock = ({ data }) => {
     <ImageComponentLayout data={data}>
       <section
         className={cn(
+          hasMedia && "thisHasMediaSomehow",
           data.tabletTextAlignment === "Center" && "text-center",
-          hasMedia && "md:text-center"
+          hasMedia || "sm:text-center"
         )}
       >
         {data.isH1 ? (

@@ -17,9 +17,8 @@
       },
       "heading": "Expert .NET upgrade. Get new features with minimal downtime",
       "isH1": true,
-      "description": "Upgrade your .NET applications to .NET 8 (LTS) or .NET 9 (STS). We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
-      "mobileTextAlignment": "Left",
       "description": "Upgrade your .NET applications to the latest .NET framework. We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
+      "tabletTextAlignment": "Left",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -105,11 +104,8 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Our strategic .NET migration approach",
-      "body": "Your .NET applications need care and planning to upgrade to the latest version. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat.",
       "heading": "Strategic .NET 8 migration",
       "body": "Your .NET applications need care and planning to upgrade to version 8. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
-      "mobileTextAlignment": "Left",
       "accordionItems": [
         {
           "label": "Phase 1: Understanding Your .NET Landscape",
@@ -165,6 +161,7 @@
       "heading": "Why move to the latest .NET with us?",
       "isH1": false,
       "body": "",
+      "tabletTextAlignment": "Left",
       "cardStyle": 0,
       "cards": [
         {
@@ -282,7 +279,7 @@
       "heading": "BizCover: From microservice maze to monolith magic",
       "isH1": false,
       "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
-      "mobileTextAlignment": "Left",
+      "tabletTextAlignment": "Left",
       "chips": {
         "filledChipText": ".NET8",
         "clearChipText": "Modular Monolith (MoMo)"
@@ -326,7 +323,7 @@
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "At SSW, we’ve been knee-deep in .NET projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork—just proven tips that help you build better software.\n",
-      "textAlignment": "Left",
+      "tabletTextAlignment": "Left",
       "cardStyle": 1,
       "cards": [
         {
@@ -435,7 +432,6 @@
       "heading": "Talk to us about your .NET project today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
-      "mobileTextAlignment": "Center",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
