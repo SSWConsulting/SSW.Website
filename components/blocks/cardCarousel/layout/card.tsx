@@ -83,7 +83,7 @@ const Card = ({ data, placeholder, className }: CardProps) => {
         <div className="flex h-full flex-col-reverse justify-between">
           <a
             href={data.embeddedButton.buttonLink}
-            className="pt-2 font-semibold text-white !decoration-gray-400 !decoration-1 hover:!decoration-sswRed"
+            className="pt-2 font-semibold text-white w-fit !decoration-gray-400 !decoration-1 hover:!decoration-sswRed"
           >
             {data.embeddedButton.buttonText}
             <Icon
