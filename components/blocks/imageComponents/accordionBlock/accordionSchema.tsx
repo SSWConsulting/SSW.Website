@@ -1,4 +1,5 @@
-import { Template } from "tinacms";
+import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletTextAlignment.schema";
+import { Template, TinaField } from "tinacms";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
 
@@ -77,6 +78,7 @@ export const AccordionSchema: Template = {
       name: "body",
       description: "Flavour text under the block title.",
     },
+    tabletTextAlignmentField as TinaField,
     {
       type: "object",
       label: "Accordion",

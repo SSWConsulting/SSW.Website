@@ -1,7 +1,8 @@
 import { default as React, useEffect, useState } from "react";
-import { Template, wrapFieldsWithMeta } from "tinacms";
+import { Template, TinaField, wrapFieldsWithMeta } from "tinacms";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
+import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
@@ -137,6 +138,7 @@ export const CardCarouselSchema: Template = {
         component: "textarea",
       },
     },
+    tabletTextAlignmentField as TinaField,
     {
       name: "buttons",
       label: "Button Row",

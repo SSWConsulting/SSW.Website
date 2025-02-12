@@ -1,6 +1,6 @@
 import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
+import { optimizedImageSchema } from "../../../tina/collections/shared-fields";
 import { mediaTypeField } from "../mediaType.schema";
-
 export const ImageComponentLayoutSchema = [
   backgroundSchema,
   {
@@ -59,13 +59,9 @@ export const ImageComponentLayoutSchema = [
           ],
         },
       },
-      {
-        type: "image",
-        label: "Image Source",
-        name: "imageSource",
-        description:
-          "Upload an image or other media to display in the media text block. 4/3 aspect ratio recommended.",
-      },
+      ...optimizedImageSchema(
+        "Upload an image or other media to display in the media text block. 4/3 aspect ratio recommended."
+      ),
       {
         type: "string",
         label: "YouTube URL",
