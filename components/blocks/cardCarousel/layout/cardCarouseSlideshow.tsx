@@ -65,6 +65,7 @@ const CardList = ({ activeCategory, data, hasImages }: CardSlideshowProps) => {
                   key={`card-carousel-${index}`}
                 >
                   <Card
+                    className="w-90"
                     placeholder={hasImages}
                     data={{ ...cardData, cardStyle: data.cardStyle }}
                   />
@@ -72,7 +73,7 @@ const CardList = ({ activeCategory, data, hasImages }: CardSlideshowProps) => {
               );
             })}
           </CarouselContent>
-          <div className="m-auto flex w-3/4 justify-center gap-2 p-6">
+          <div className="m-auto flex w-3/4 justify-center gap-2 pt-6">
             {cardData?.map((_, index) => {
               return (
                 <CarouselButton
