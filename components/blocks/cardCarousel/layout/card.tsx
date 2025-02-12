@@ -70,7 +70,7 @@ const Card = ({ data, placeholder, className }: CardProps) => {
       </h3>
       {data.description && (
         <p
-          className="text-sm font-light dark:text-gray-300"
+          className="text-base font-light dark:text-gray-300"
           data-tina-field={tinaField(data, "description")}
         >
           {data.description}

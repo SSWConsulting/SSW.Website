@@ -95,7 +95,7 @@ export const AccordionBlock = ({ data }) => {
                       p: (props) => (
                         <p
                           {...props}
-                          className="mb-3 text-sm font-light text-white last:mb-0 [&>strong]:text-base [&>strong]:font-extrabold [&>strong]:text-white"
+                          className="mb-3 text-base font-light text-white last:mb-0 [&>strong]:text-base [&>strong]:font-extrabold [&>strong]:text-white"
                         />
                       ),
                       h6: (props) => <h6 {...props} className="py-2" />,
@@ -113,7 +113,7 @@ export const AccordionBlock = ({ data }) => {
                       ),
                       li: (props) => (
                         <li
-                          className="text-sm font-light text-white"
+                          className="text-base font-light text-white"
                           {...props}
                         />
                       ),
