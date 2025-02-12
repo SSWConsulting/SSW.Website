@@ -1,6 +1,6 @@
 const tabletTextAlignmentField = {
   type: "string",
-  label: "Text Alignment (Tablet)",
+  label: "Text Alignment (Mobile)",
   name: "tabletTextAlignment",
   options: ["Left", "Center"],
 };
