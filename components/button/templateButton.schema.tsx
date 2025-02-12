@@ -22,11 +22,11 @@ export const buttonSchema = [
       options: [
         {
           label: "Booking Form",
-          value: "bookingJotForm",
+          value: "bookingJotFormId",
         },
         {
           label: "Registration of Interest Form",
-          value: "registrationOfInterestJotForm",
+          value: "registrationOfInterestJotFormId",
         },
       ],
     },

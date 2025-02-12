@@ -5,7 +5,7 @@ import { JotFormEmbed } from "../blocks/jotFormEmbed";
 export const InterestForm = (props) => {
   return (
     <JotFormEmbed
-      jotFormId={`${globals.forms.registrationOfInterestJotForm.id}`}
+      jotFormId={`${globals.forms.registrationOfInterestJotFormId}`}
       buttonText={props.buttonText || "I am interested"}
       containerClass=""
     />

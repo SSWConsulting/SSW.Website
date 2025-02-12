@@ -285,14 +285,8 @@
     ]
   },
   "forms": {
-    "bookingJotForm": {
-      "id": "233468468973070"
-    },
-    "newsletterJotForm": {
-      "id": "240991361342051"
-    },
-    "registrationOfInterestJotForm": {
-      "id": "241638083078865"
-    }
+    "bookingJotFormId": "233468468973070",
+    "newsletterJotFormId": "240991361342051",
+    "registrationOfInterestJotFormId": "241638083078865"
   }
 }

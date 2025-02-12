@@ -33,11 +33,11 @@ export const Button = ({
   const [open, setOpen] = useState(false);
   const variants: ColorVariant[] = ["primary", "secondary"];
   const { iconFirst, buttonText, colour, leadCaptureFormOption } = data;
-  const selectedForm = globals.forms[leadCaptureFormOption];
+  const selectedFormId = globals.forms[leadCaptureFormOption];
   let jotFormLink = "https://www.jotform.com/";
 
-  if (selectedForm) {
-    jotFormLink += selectedForm.id;
+  if (selectedFormId) {
+    jotFormLink += selectedFormId;
   }
 
   return (
