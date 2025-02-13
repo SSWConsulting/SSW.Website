@@ -140,6 +140,7 @@
           "description": "Upgrade to the latest .NET framework for better performance, security, and long-term support. We streamline migrations to keep your apps modern and efficient.",
           "logo": "/images/thumbs/NET-Framework-Logo_2.png",
           "page": "content/consultingv2/net-upgrade.json",
+          "externalUrl": "/consulting/net-upgrade",
           "tags": [
             {
               "tag": "content/consulting/tag/platform-development.json"
