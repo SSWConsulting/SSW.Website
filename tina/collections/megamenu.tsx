@@ -101,13 +101,13 @@ export const megaMenuSchema: Collection = {
                     },
                     {
                       type: "string",
-                      name: 'documentationLink',
-                      label: 'Link to Documentation'
+                      name: "documentationLink",
+                      label: "Link to Documentation"
                     },
                     {
                       type: "string",
-                      name: 'youtubeLink',
-                      label: 'Link to YouTube Channel'
+                      name: "youtubeLink",
+                      label: "Link to YouTube Channel"
                     },
                     {
                       type: "string",
