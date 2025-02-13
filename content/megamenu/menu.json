@@ -117,7 +117,9 @@
                   "name": "TinaCMS",
                   "url": "https://tina.io",
                   "description": "Tina is a fully open source headless CMS that supports Git and Markdown. It's a great choice for any website with its friendly UX and DevEx",
-                  "iconImg": "/images/megamenu-icons/TinaDefault.svg"
+                  "iconImg": "/images/megamenu-icons/TinaDefault.svg",
+                  "documentationLink": "https://tina.io/docs",
+                  "youtubeLink": "https://www.youtube.com/c/tinacms"
                 },
                 {
                   "name": "SugarLearning",
