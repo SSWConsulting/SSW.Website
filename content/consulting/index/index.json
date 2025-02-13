@@ -138,7 +138,7 @@
         {
           "title": ".NET Upgrade",
           "description": "Upgrade to the latest .NET framework for better performance, security, and long-term support. We streamline migrations to keep your apps modern and efficient.",
-          "logo": "/images/thumbs/thumb-net-8.jpg",
+          "logo": "/images/thumbs/NET-Framework-Logo_2.png",
           "page": "content/consulting/net-8.mdx",
           "tags": [
             {
