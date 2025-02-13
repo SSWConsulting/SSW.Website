@@ -1,7 +1,7 @@
 import { default as React, useEffect, useState } from "react";
 import { Template, TinaField, wrapFieldsWithMeta } from "tinacms";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
-import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
+import { pillGroupSchemaV2 } from "../../../blocksSubtemplates/pillGroup";
 import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
@@ -27,14 +27,16 @@ const GUIDGeneratorComponent = (props) => {
 const defaultCardItem = {
   guid: null,
   altText: "Lorem Ipsum",
-  chips: {
-    chips: [
-      {
-        filledChipText: "Lorem",
-        clearChipText: "Ipsum",
-      },
-    ],
-  },
+  chips: [
+    {
+      chipText: "Lorem",
+      chipType: "filledChip",
+    },
+    {
+      chipText: "Ipsum",
+      chipType: "clearChip",
+    },
+  ],
   icon: "info",
   heading: "Lorem Ipsum",
   description:
@@ -331,9 +333,20 @@ export const CardCarouselSchema: Template = {
           name: "chips",
           label: "Chips",
           type: "object",
-          description: "Add chips to the bottom of the media text block.",
+          description: "The list of chips that displayed on card",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.label ?? "Chip" };
+            },
+            defaultItem: {
+              chipText: "Lorem",
+              chipType: "filledChip",
+            },
+            max: 6,
+          },
           //@ts-expect-error – fields are not being recognized
-          fields: pillGroupSchema,
+          fields: pillGroupSchemaV2,
         },
         {
           type: "string",
