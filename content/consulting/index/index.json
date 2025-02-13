@@ -136,8 +136,8 @@
           ]
         },
         {
-          "title": ".NET 8",
-          "description": ".NET 8 is the latest LTS (Long Term Support) version of the platform. It provides enterprise functionality and cloud-native development all within a stable ecosystem backed by Microsoft.",
+          "title": ".NET Upgrade",
+          "description": "Upgrade to the latest .NET framework for better performance, security, and long-term support. We streamline migrations to keep your apps modern and efficient.",
           "logo": "/images/thumbs/thumb-net-8.jpg",
           "page": "content/consulting/net-8.mdx",
           "tags": [
