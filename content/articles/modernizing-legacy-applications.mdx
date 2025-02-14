@@ -13,132 +13,162 @@ seo:
       width: 630
       height: 630
       alt: SSW Consulting - Enterprise Software Development
-bannerImg: /images/articles/dot-Net8-v2.jpg
+bannerImg: /images/articles/m21iUhS4Sx6lcS21dOrOvg.webp
 title: 'Modernizing Legacy Applications: A Comprehensive Guide to .NET Upgrades'
 subTitle: >
-  Many organizations still run legacy .NET applications that, although
-  functional, can hold back innovation and competitiveness in today’s digital
-  landscape. Outdated systems often suffer from performance bottlenecks,
-  security vulnerabilities, and limited scalability—issues that directly affect
-  business operations and customer satisfaction. Upgrading to the latest .NET
-  versions is essential for mitigating these risks and unlocking the benefits of
-  modern software development.
+  <VideoEmbed url="https://youtu.be/VvdyBgL_RBU" videoWidth="w-full"
+  caption="Luke and Mike discuss the pitfalls for not upgrading your app." />
 
 
-  ## Why Upgrade Your Legacy .NET Applications?
+  You. Yes, you. I see you there, with your old WebForms app running on ye olde
+  faithful .NET Framework. This article is for you.
 
 
-  There are several common reasons to move forward with an upgrade:
+  I am a big believer in the "if it ain't broke; don't fix it" philosophy. Some
+  young upstart comes to you one day and spends 30 minutes yelling about how
+  your application is now considered legacy and - \*gasp\* - not running on the
+  latest tech stack! In the famous words of Jeremy
+  Clarkson:![](/images/68747470733a2f2f6d65646961312e74656e6f722e636f6d2f6d2f6e776f4a3442533058485941414141642f6f682d6e6f2d616e797761792e676966.gif)
 
 
-  • Unsupported Versions: Running on an outdated .NET version exposes you to
-  security risks and limits access to critical bug fixes and performance
-  enhancements. For more insights, see SSW’s article, Do You Know Why to Upgrade
-  from .NET Framework to the Latest .NET?
-  ([https://www.ssw.com.au/rules/why-upgrade-to-latest-dotnet/](https://www.ssw.com.au/rules/why-upgrade-to-latest-dotnet/)).
+  So you kick the can down the road. For now. Maybe you'll look at updating it,
+  at some as-yet-undefined moment in the future. It's just not high on your
+  priority list right now. After all, if it ain't broke; why fix it?
 
 
-  • Operating System Compatibility: Newer .NET versions are designed to work
-  seamlessly with the latest operating systems, allowing you to take full
-  advantage of current OS features and security updates.
+  ## Oh no. My app isn't working anymore
 
 
-  • New APIs, Performance, and Security Enhancements: Upgrading provides access
-  to important improvements that can dramatically boost performance and
-  security.
+  Chances are, your app doesn't exist as a perfect sphere in a vaccuum. You
+  probably integrate with other services/apps/products/whatever. You aren't a
+  perfect sphere; there are some rough edges in your system. You aren't in a
+  vaccuum; friction with the outside world exists.
 
 
-  Streamlining the Upgrade Process with the .NET Upgrade Assistant
+  And one day, you'll get the call that some up/downstream service has magically
+  stopped working with your app.
 
 
-  The .NET Upgrade Assistant is a valuable tool that simplifies the migration
-  process by analyzing your code to identify compatibility issues and offering
-  step-by-step guidance for resolving them. It supports a wide range of project
-  types—including ASP.NET, Azure Functions, WPF, Windows Forms, class libraries,
-  console apps, Xamarin Forms, .NET MAUI, and .NET Native UWP. For more details,
-  visit Do You Know How to Modernise Your .NET Applications?
-  ([https://www.ssw.com.au/rules/dotnet-upgrade-assistant/](https://www.ssw.com.au/rules/dotnet-upgrade-assistant/)).
+  If I were a betting man, I'd put money on you having received one/many emails
+  prior to this moment, from an engineer or sysadmin, warning you this was going
+  to happen.
 
 
-  ## Modernization Opens the Door to AI Integration
+  Side note: if you didn't, you should [probably give us a
+  call](https://www.ssw.com.au/company/contact-us) to make sure you do get
+  notified next time.
 
 
-  Upgrading your legacy applications is not just about fixing old problems—it’s
-  about preparing your business for the future. Modernized applications are
-  inherently more AI-friendly, offering a robust platform for integrating
-  advanced AI solutions. With a modern system, you can easily incorporate
-  personalised data into your workflows using advanced techniques.
+  You find out that the outside world has deprecated some feature or function
+  that you've been relying on for the last 10 years. Even worse; their
+  replacement feature/function isn't compatible with your old tech stack. Oh,
+  sure, that new feature has been around for the last few years, but it only
+  existed in the SDK that your "legacy" application didn't support.
 
 
-  For example, if your business data is dynamic—such as seasonal updates or
-  real-time company information—Retrieval-Augmented Generation (RAG) allows your
-  application to pull in the latest data on the fly. Alternatively, for more
-  static, context-rich datasets, post-training fine-tuning customizes the AI
-  model to your specific domain. While these methods are powerful, the key point
-  is that modernizing your .NET applications creates a foundation that makes
-  them adaptable for future AI integrations. To learn more about AI best
-  practices, check out Rules to Better AI Development
-  ([https://www.ssw.com.au/rules/rules-to-better-ai-development/](https://www.ssw.com.au/rules/rules-to-better-ai-development/)).
+  So instead of being able to modernize your application at leisure while
+  business ticks along, you now have to modernize at breakneck speed while your
+  whole system is offline. And as we all know, those upgrades that we have to do
+  in a panic always go smoothly, right?
 
 
-  ## Business Benefits of Upgrading
+  ## Oh no. My data got stolen
 
 
-  Modernizing your legacy applications can lead to tangible business
-  improvements:
+  The typical "security vulnerabilities" bogeyman gets thrown around a lot as
+  justification for coughing up dough to work on not-feature-delivery stuff.
+  It's an interesting talking point, as it strikes fear into the hearts of 2
+  groups of people:
 
 
-  • Enhanced Website Performance: Upgraded .NET frameworks can improve response
-  times up to 4x and boost operational speed by 5–10x, resulting in a smoother,
-  more engaging user experience and higher conversion rates.
+  * Those who are new to the game
+
+  * Those who have already had a data breach
 
 
-  • Cost Savings: Improved efficiency often translates to reduced infrastructure
-  costs and lower resource consumption.
+  If you're in neither of those groups, then you've probably heard this
+  sky-is-probably-about-to-fall argument many times and have become adept at
+  tuning it out. Oh that's just Bob, going on about possible security issues
+  again. Yawn.
 
 
-  • Increased Scalability: Modern applications are built to scale, ensuring your
-  business can grow without being hindered by technical limitations.
+  Let's just pause a moment, and consider the following:
 
 
-  For more on modern development practices, refer to Do You Update Your NuGet
-  Packages?
-  ([https://www.ssw.com.au/rules/do-you-update-your-nuget-packages/](https://www.ssw.com.au/rules/do-you-update-your-nuget-packages/))
-  and Rules to Better NuGet Package Management
-  ([https://www.ssw.com.au/rules/rules-to-better-nuget-package-management/](https://www.ssw.com.au/rules/rules-to-better-nuget-package-management/)).
+  * Hackers exist
+
+  * Data is valuable
+
+  * Many, many, many companies much larger than yours are doing everything
+  possible to stop aforementioned hackers gaining access to the aforementioned
+  booty
 
 
-  ## Best Practices for a Successful .NET Upgrade
+  You know what those companies are doing? Releasing new versions! Those new
+  versions have - among other things - changes specifically built to stop the
+  baddies getting at your goodies.
 
 
-  To ensure a smooth transition, consider these best practices:
+  You know what your app uses? The old versions! Without those security patches!
 
 
-  1. Assess and Audit Your Code
-     Evaluate your existing codebase for compatibility issues. Utilize tools like the .NET Upgrade Assistant to streamline this process.
-  2. Update Dependencies
-     Keeping your NuGet packages current is critical for performance and security. For guidance, see Rules to Better NuGet Package Management.
-  3. Benchmark and Test Performance
-     Set up benchmarks to measure improvements in response times and resource utilisation before and after the upgrade.
-  4. Plan for AI Integration
-     Modernised applications are more adaptable for AI capabilities. Whether you opt for RAG to handle dynamic data or post-training to fine-tune on static data, a modern platform makes it easier to harness these advanced techniques.
-  5. Consult with Experts
-     If you’re unsure where to start, SSW offers a free one-hour consultation to help you map out the best upgrade strategy for your business. Book your free consultation at [https://ssw.com.au](https://ssw.com.au).
-
-  ## The Bottom Line
+  I'm not saying it's inevitable that you're going to get hacked. What I am
+  saying, however, is that if it happens, the resignation letter you should be
+  expecting is your own. Bob is going to go home that evening and sleep like a
+  baby.
 
 
-  Modernizing your legacy .NET applications is not just a technical upgrade—it’s
-  a strategic investment in your business’s future. By upgrading, you enhance
-  performance, security, and scalability while paving the way for seamless AI
-  integration. Whether it’s achieving faster response times, reducing operating
-  costs, or setting the stage for advanced AI capabilities, a modernised
-  application empowers your business to innovate and compete in today’s
-  fast-paced digital environment.
+  ## Oh no. My engineer(s) quit
 
 
-  Take control of your future, secure your data, and drive efficiency by
-  modernizing your legacy applications today.
+  Devs have to keep up with tech, or they become less valuable over time. If
+  your company is stuck using an outdated tech stack, your developers don't have
+  the opportunity to grow. While your existing tech stack might be "fine" for
+  your business, developers won't want to stick around and risk being left
+  behind. I've interviewed many developers over the years, and one of the
+  questions I ask is "why are you interviewing for this job?", and I often hear
+  the reply "I want to work with modern tech. I feel like I'm stagnating where I
+  am".
+
+
+  Sure, there are still devs around who know and love Cobol. But not many.
+
+
+  ## Oh no. What do I do?
+
+
+  The first step is accepting that you have a problem. Done that? Great! Now how
+  to address the problem.
+
+
+  SSW have done plenty of .NET migrations, and we make all our battle scars
+  available on our [Rules to better .NET
+  migrations](https://www.ssw.com.au/rules/rules-to-better-net8-migrations/). If
+  you and your developers want to go it alone, read those rules and start making
+  a [migration plan](https://www.ssw.com.au/rules/migration-plans/).
+
+
+  Depending on just how "legacy" your legacy app is, you may run into problems
+  with dependencies that simply don't have a modern equivalent. We ran into this
+  with one of our internal products, where a CRM SDK didn't have a modern
+  alternative. There are a few ways you can overcome this, but the worst case
+  scenario is that you isolate and abstract that particular integration point
+  and leave it on the old tech, while modernizing the rest of your solution.
+
+
+  And of course, if you want to throw your hands in the air and make it someone
+  else's problem - [we'll do it for
+  you.](https://www.ssw.com.au/company/contact-us)
+
+
+  ## Okay okay. How can I avoid getting into this situation in the first
+  place/again?
+
+
+  If you are constantly refactoring to address tech debt and upgrade your tech
+  stack, you can avoid your application ever becoming "legacy" and ending up at
+  this sticky situation. That's why SSW recommends dedicating 15-20% of every
+  Sprint on [Tech Debt](https://www.ssw.com.au/rules/technical-debt/)
 author: content/presenters/luke-cook.mdx
 sidebarPanel:
   title: '.NET Application Modernisation: 3-day Assessment'
@@ -162,7 +192,4 @@ callToAction:
   animated: true
   buttonSubtitle: or call +61 2 9953 3000
 ---
-
-
-
 
