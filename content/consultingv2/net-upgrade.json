@@ -15,9 +15,10 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Expert .NET upgrade. Get new features with minimal downtime",
+      "heading": ".NET upgrade - Get new features with minimal downtime",
       "isH1": true,
-      "description": "Upgrade your .NET applications to the latest .NET framework. We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
+      "description": "Upgrade to the latest .NET for better performance, security, and long-term support. We streamline migrations to keep your apps modern and efficient.\n",
+      "tabletTextAlignment": "Left",
       "chips": {
         "filledChipText": "",
         "clearChipText": ""
@@ -29,6 +30,7 @@
         {
           "buttonText": "Schedule a FREE Initial Meeting",
           "showLeadCaptureForm": true,
+          "leadCaptureFormOption": "bookingJotFormId",
           "buttonLink": "",
           "iconFirst": false,
           "colour": 0
@@ -43,7 +45,9 @@
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/ssw_here_fx41_v2.png"
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/ssw_here_fx41_v2.png",
+        "imageHeight": 700,
+        "imageWidth": 1400
       },
       "_template": "imageTextBlock"
     },
@@ -54,39 +58,55 @@
         "bleed": false
       },
       "heading": "Trusted by",
+      "paused": false,
       "isWhiteImages": true,
       "logos": [
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/event_cinemas_logo.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event cinmemas logo"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195,
+          "altText": "Toll logo"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160,
+          "altText": "Symantec logo"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175,
+          "altText": "Domain logo"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Allianz logo"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180,
+          "altText": "Microsoft logo"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175,
+          "altText": "Cisco logo"
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
           "altText": "Logo"
         }
       ],
       "_template": "logoCarousel"
     },
     {
-      "heading": "Our strategic .NET migration approach",
-      "body": "Your .NET applications need care and planning to upgrade to the latest version. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat.",
+      "heading": "Strategic .NET 8 or 9 migration",
+      "body": "Your .NET applications need care and planning to upgrade to the latest version. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
       "accordionItems": [
         {
           "label": "Phase 1: Understanding Your .NET Landscape",
@@ -142,6 +162,7 @@
       "heading": "Why move to the latest .NET with us?",
       "isH1": false,
       "body": "",
+      "tabletTextAlignment": "Left",
       "cardStyle": 0,
       "cards": [
         {
@@ -259,6 +280,7 @@
       "heading": "BizCover: From microservice maze to monolith magic",
       "isH1": false,
       "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
+      "tabletTextAlignment": "Left",
       "chips": {
         "filledChipText": ".NET8",
         "clearChipText": "Modular Monolith (MoMo)"
@@ -277,7 +299,8 @@
         {
           "buttonText": "Schedule a FREE Initial Meeting",
           "showLeadCaptureForm": true,
-          "buttonLink": "https://form.jotform.com/250066954570056",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonLink": "https://www.jotform.com/250066954570056",
           "colour": 0
         }
       ],
@@ -291,6 +314,8 @@
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "imageHeight": 700,
+        "imageWidth": 1400,
         "altText": "BizCover: From microservice maze to monolith magic"
       },
       "_template": "imageTextBlock"
@@ -300,6 +325,7 @@
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "At SSW, we’ve been knee-deep in .NET projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork—just proven tips that help you build better software.\n",
+      "tabletTextAlignment": "Left",
       "cardStyle": 1,
       "cards": [
         {
@@ -429,6 +455,7 @@
         {
           "buttonText": "Schedule a FREE Initial Meeting",
           "showLeadCaptureForm": true,
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],

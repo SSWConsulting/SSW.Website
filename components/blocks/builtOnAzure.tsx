@@ -37,7 +37,7 @@ export const BuiltOnAzure = ({ data }: BuiltOnAzureProps) => {
 
   return (
     <Section color={footerColor as SectionColor} className="py-2">
-      <Container className="grid grid-cols-1 text-lg lg:grid-cols-2">
+      <Container className="grid grid-cols-1 text-base md:text-lg lg:grid-cols-2">
         <Link
           data={data}
           href="/consulting/azure"
@@ -64,7 +64,7 @@ export const BuiltOnAzure = ({ data }: BuiltOnAzureProps) => {
               src="/images/logos/tina-llama-orange.png"
               alt="TinaCMS logo"
               height={30}
-              width={22}
+              width={30}
               loading="lazy"
             />
           }
@@ -85,7 +85,9 @@ const Link = ({ data, href, className, text, image }) => {
       )}
     >
       {image}
-      <div className="ml-2 text-center uppercase tracking-widest">{text}</div>
+      <div className="ml-2 whitespace-nowrap uppercase tracking-widest">
+        {text}
+      </div>
     </CustomLink>
   );
 };
