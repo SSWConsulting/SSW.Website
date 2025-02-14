@@ -1,4 +1,5 @@
 import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletTextAlignment.schema";
+import { cn } from "@/lib/utils";
 import { Template, TinaField } from "tinacms";
 import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
