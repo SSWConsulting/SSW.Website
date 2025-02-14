@@ -23,7 +23,7 @@ export const PillGroup = ({ data }) => {
   );
 };
 
-export const pillGroupSchemaV2 = [
+export const pillGroupSchema = [
   {
     type: "string",
     label: "Chip text",

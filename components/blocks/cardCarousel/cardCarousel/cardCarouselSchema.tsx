@@ -1,7 +1,7 @@
 import { default as React, useEffect, useState } from "react";
 import { Template, TinaField, wrapFieldsWithMeta } from "tinacms";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
-import { pillGroupSchemaV2 } from "../../../blocksSubtemplates/pillGroup";
+import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
@@ -346,7 +346,7 @@ export const CardCarouselSchema: Template = {
             max: 6,
           },
           //@ts-expect-error – fields are not being recognized
-          fields: pillGroupSchemaV2,
+          fields: pillGroupSchema,
         },
         {
           type: "string",

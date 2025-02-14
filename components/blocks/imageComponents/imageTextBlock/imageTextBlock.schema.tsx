@@ -2,7 +2,7 @@ import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletText
 import { Template, TinaField } from "tinacms";
 import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
-import { pillGroupSchemaV2 } from "../../../blocksSubtemplates/pillGroup";
+import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
 
@@ -94,7 +94,7 @@ export const ImageTextBlockSchema: Template = {
         max: 6,
       },
       //@ts-expect-error – fields are not being recognized
-      fields: pillGroupSchemaV2,
+      fields: pillGroupSchema,
     },
     {
       name: "featureColumns",
