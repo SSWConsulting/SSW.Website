@@ -22,6 +22,8 @@ const Card = ({ data, placeholder, className }: CardProps) => {
     : null;
   const [usePlaceholder, setUsePlaceholder] = useState(false);
   const placeholderImage = "/images/videoPlaceholder.png";
+  // eslint-disable-next-line no-console
+  console.log(data.chips);
 
   return (
     <div

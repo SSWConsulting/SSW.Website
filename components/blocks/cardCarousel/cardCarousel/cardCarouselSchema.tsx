@@ -333,11 +333,11 @@ export const CardCarouselSchema: Template = {
           name: "chips",
           label: "Chips",
           type: "object",
-          description: "The list of chips that displayed on card",
+          description: "The chips displayed on card. Max 6.",
           list: true,
           ui: {
             itemProps: (item) => {
-              return { label: item?.label ?? "Chip" };
+              return { label: item?.chipText ?? "Chip" };
             },
             defaultItem: {
               chipText: "Lorem",

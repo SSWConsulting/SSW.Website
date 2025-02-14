@@ -81,7 +81,18 @@ export const ImageTextBlockSchema: Template = {
       name: "chips",
       label: "Chips",
       type: "object",
-      description: "Add chips to the bottom of the media text block.",
+      description: "The chips displayed on card. Max 6.",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.chipText ?? "Chip" };
+        },
+        defaultItem: {
+          chipText: "Lorem",
+          chipType: "filledChip",
+        },
+        max: 6,
+      },
       //@ts-expect-error – fields are not being recognized
       fields: pillGroupSchemaV2,
     },
