@@ -1,12 +1,11 @@
 import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletTextAlignment.schema";
-import { cn } from "@/lib/utils";
 import { Template, TinaField } from "tinacms";
+import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
-
 export const ImageTextBlockSchema: Template = {
   name: "imageTextBlock",
   label: "<V2> Image Text Block",
@@ -58,12 +57,7 @@ export const ImageTextBlockSchema: Template = {
       //@ts-expect-error – fields are not being recognized
       fields: IconLabelSchema,
     },
-    {
-      type: "string",
-      label: "Heading",
-      name: "heading",
-      description: "Heading text for the media text block.",
-    },
+    alternatingHeadingSchema,
     {
       type: "boolean",
       label: "Use as H1",
