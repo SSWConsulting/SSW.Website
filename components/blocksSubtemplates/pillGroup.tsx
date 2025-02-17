@@ -28,11 +28,12 @@ export const pillGroupSchema = [
     type: "string",
     label: "Chip text",
     name: "chipText",
+    description: "Max 30 characters.",
     ui: {
       validate: (value: string) => {
         const lenghtOfText = value?.length || 0;
         if (lenghtOfText > 30) {
-          return "Chip text should be less than 30 characters";
+          return "Chip text should be less than 30 characters.";
         }
       },
     },
