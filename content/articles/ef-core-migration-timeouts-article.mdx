@@ -29,12 +29,12 @@ subTitle: >
   of your database schema. Every time you run a migration, EF Core compares the
   snapshot to your current schema and generates scripts to bring them in sync.
   However, in legacy systems, this snapshot can become out of sync with the real
-  database, a phenomenon known as schema drift.
+  database, a phenomenon known as **schema drift.**
 
 
-  This drift can occur due to manual database modifications, incomplete
+  **This drift can occur due to manual database modifications, incomplete
   deployments, or even subtle differences in how different database systems
-  handle schema definitions. The first signs of trouble are often minor, but
+  handle schema definitions.** The first signs of trouble are often minor, but
   eventually, they can lead to complete migration failures.
 
 
@@ -67,15 +67,17 @@ subTitle: >
   the real culprit was the sheer scale of the schema changes needed to realign
   the snapshot with the actual database. Specifically, we had a primary key on
   that gigantic table that was changed from `nvarchar(450)` down to `char(40)`.
-  Dropping the key wasn't just a simple "Ctrl+Z" situation, it required
+  Dropping the key wasn't just a simple *"Ctrl+Z"* situation, it required
   gracefully removing the entire constraint before updating the key.
 
 
   Adding to the challenge, our diagnostic toolkit wasn’t exactly top-notch:
   working with a legacy system meant limited access to modern diagnostic tools.
-  Instead of using powerful tools like SQL Server Profiler, we relied on basic
-  IIS event logs and EF Core logging on the VM to provide hints that we were
-  running into timeout issues. It wasn’t glamorous, but it got the job done.
+  Instead of using powerful tools like [SQL Server
+  Profiler](https://learn.microsoft.com/en-us/sql/tools/sql-server-profiler/sql-server-profiler),
+  we relied on basic IIS event logs and EF Core logging on the VM to provide
+  hints that we were running into timeout issues. It wasn’t glamorous, but it
+  got the job done.
 
 
   ![](</images/Louis Test Images/Incident-io-batch/hero/Example of enabling
@@ -145,8 +147,8 @@ subTitle: >
   ## Long-term Strategies to Prevent Schema Drift
 
 
-  Of course, a reactive approach is only half the battle. One of the best
-  preventive measures is to stick to one technology for schema management. In
+  Of course, a reactive approach is only half the battle. **One of the best
+  preventive measures is to stick to one technology for schema management. **In
   other words, if you're modelling your database entirely through EF Core, try
   to resist the temptation to make ad hoc changes directly in the database. This
   helps ensure that all changes are recorded as migrations, maintaining a
