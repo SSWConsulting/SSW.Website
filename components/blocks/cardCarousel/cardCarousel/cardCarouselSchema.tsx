@@ -28,14 +28,16 @@ const GUIDGeneratorComponent = (props) => {
 const defaultCardItem = {
   guid: null,
   altText: "Lorem Ipsum",
-  chips: {
-    chips: [
-      {
-        filledChipText: "Lorem",
-        clearChipText: "Ipsum",
-      },
-    ],
-  },
+  chips: [
+    {
+      chipText: "Lorem",
+      chipType: "filledChip",
+    },
+    {
+      chipText: "Ipsum",
+      chipType: "clearChip",
+    },
+  ],
   icon: "info",
   heading: "Lorem Ipsum",
   description:
@@ -327,7 +329,18 @@ export const CardCarouselSchema: Template = {
           name: "chips",
           label: "Chips",
           type: "object",
-          description: "Add chips to the bottom of the media text block.",
+          description: "The chips displayed on card. Max 6.",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.chipText ?? "Chip" };
+            },
+            defaultItem: {
+              chipText: "Lorem",
+              chipType: "filledChip",
+            },
+            max: 6,
+          },
           //@ts-expect-error – fields are not being recognized
           fields: pillGroupSchema,
         },
