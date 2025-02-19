@@ -1,10 +1,10 @@
+import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Marquee } from "@/components/ui/marquee";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
-
 export function LogoCarousel({ data }) {
   const getTabletAlignment = () => {
     switch (data.tabletTextAlignment) {
@@ -29,7 +29,7 @@ export function LogoCarousel({ data }) {
             )}
             data-tina-field={tinaField(data, "heading")}
           >
-            {data.heading}
+            <AlternatingText text={data.heading} />
           </h2>
           <div className="mask-horizontal-fade relative h-20 w-full md:h-40">
             <Marquee

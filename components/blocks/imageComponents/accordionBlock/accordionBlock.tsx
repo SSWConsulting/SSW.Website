@@ -1,4 +1,5 @@
 "use client";
+import AlternatingText from "@/components/alternating-text";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import {
   Accordion,
@@ -39,7 +40,7 @@ export const AccordionBlock = ({ data }) => {
               "text-3xl font-bold lg:text-4xl"
             )}
           >
-            {data.heading}
+            <AlternatingText text={data.heading} />
           </h1>
         ) : (
           <h2
@@ -49,7 +50,7 @@ export const AccordionBlock = ({ data }) => {
               headingClasses
             )}
           >
-            {data.heading}
+            <AlternatingText text={data.heading} />
           </h2>
         )}
         {data.body && (

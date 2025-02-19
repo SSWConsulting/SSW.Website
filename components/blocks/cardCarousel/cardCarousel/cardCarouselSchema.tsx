@@ -11,6 +11,7 @@ import { backgroundSchema } from "../../../layout/v2ComponentWrapper";
 import { mediaTypeField } from "../../mediaType.schema";
 import { youtubeEmbedField } from "../../youtubeEmbed.schema";
 
+import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { Checkbox } from "../../../ui/checkbox";
 
 const GUIDFunction = () => Math.random().toString(36).substring(7);
@@ -119,12 +120,7 @@ export const CardCarouselSchema: Template = {
       name: "isStacked",
       description: "Remove the carousel effect and stack card entries.",
     },
-    {
-      type: "string",
-      label: "Heading",
-      name: "heading",
-      description: "Heading text for the block.",
-    },
+    alternatingHeadingSchema,
     {
       type: "boolean",
       label: "Use as H1",
