@@ -66,7 +66,7 @@ subTitle: >
   relationships and large data volumes. While some performance tuning helped,
   the real culprit was the sheer scale of the schema changes needed to realign
   the snapshot with the actual database. Specifically, we had a primary key on
-  that gigantic table that was changed from `nvarchar(450)` down to `char(40)`.
+  that gigantic table that was changed from `nvarchar(450)` down to `nvarchar(40)`.
   Dropping the key wasn't just a simple *"Ctrl+Z"* situation, it required
   gracefully removing the entire constraint before updating the key.
 
