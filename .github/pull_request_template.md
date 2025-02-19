@@ -8,6 +8,9 @@
 
 - [ ] If adding a new page, I have followed the [📃 New Webpage](https://github.com/SSWConsulting/SSW.Website/issues/new?assignees=&labels=&projects=&template=new_webpage.yml&title=%F0%9F%93%84+%7B%7B+TITLE+%7D%7D+) issue template
 
-- [ ] Include done video or screenshots
+- [ ] If updating the livestream banner, I have tested and followed the steps in [Wiki - Testing the live banner](https://github.com/SSWConsulting/SSW.Website/wiki/Testing-the-live-banner) 
+
+- [ ] Include Done Video or screenshots
+
 
 
