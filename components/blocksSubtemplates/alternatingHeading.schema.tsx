@@ -4,6 +4,6 @@ const alternatingHeadingSchema: TinaField = {
   type: "string",
   label: "Heading",
   name: "heading",
-  description: "use curly braces ({{}}) to add red text",
+  description: "use double asterisks (**text**) to add red text",
 };
 export default alternatingHeadingSchema;
