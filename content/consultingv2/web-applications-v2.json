@@ -20,40 +20,6 @@
       "body": "",
       "cards": [
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
           "guid": "ix86q",
           "altText": "",
           "chips": [
@@ -101,7 +67,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Industry-Leading Microsoft Expertise.",
+          "heading": "Industry-Leading Microsoft Expertise",
           "description": "Work with certified professionals, MVPs, and a Microsoft Regional Director.",
           "featureList": {
             "features": [
@@ -135,7 +101,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Scalable & Future-Proof Architecture.",
+          "heading": "Scalable & Future-Proof Architecture",
           "description": "Designed to evolve with your business, ensuring long-term adaptability.",
           "featureList": {
             "features": [
@@ -156,7 +122,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "5pvsls",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -169,7 +135,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Agile Development for Faster Delivery",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
