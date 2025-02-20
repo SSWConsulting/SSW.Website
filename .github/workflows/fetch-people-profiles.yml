@@ -30,7 +30,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd ${{ env.GITHUB_WORKSPACE }}
           pnpm add gray-matter
 
       - name: Fetch SSW.People.Profiles
