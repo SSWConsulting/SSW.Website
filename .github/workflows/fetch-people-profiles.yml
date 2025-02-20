@@ -29,10 +29,7 @@ jobs:
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
-      - run: node --version
-      - name: Install pnpm
-        run: npm install -g pnpm
-
+      - run: pnpm i -g corepack@latest
       - run: corepack enable pnpm
       - run: pnpm add -w gray-matter
 
