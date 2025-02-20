@@ -101,7 +101,7 @@
         }
       ],
       "viewAll": {
-        "name": "View all services",
+        "name": "View all SSW services",
         "url": "/consulting"
       }
     },
@@ -117,7 +117,9 @@
                   "name": "TinaCMS",
                   "url": "https://tina.io",
                   "description": "Tina is a fully open source headless CMS that supports Git and Markdown. It's a great choice for any website with its friendly UX and DevEx",
-                  "iconImg": "/images/megamenu-icons/TinaDefault.svg"
+                  "iconImg": "/images/megamenu-icons/TinaDefault.svg",
+                  "documentationLink": "https://tina.io/docs",
+                  "youtubeLink": "https://www.youtube.com/c/tinacms"
                 },
                 {
                   "name": "SugarLearning",
@@ -156,7 +158,9 @@
                   "name": "YakShaver",
                   "url": "https://www.sswyakshaver.com",
                   "description": "An AI tool that records your screen and voice, then assigns tasks to the appropriate people based on the content",
-                  "iconImg": "/images/megamenu-icons/YakShaver-v3.svg"
+                  "iconImg": "/images/megamenu-icons/YakShaver-v3.svg",
+                  "documentationLink": "https://yakshaver.ai/docs",
+                  "youtubeLink": "https://www.youtube.com/@SSWYakShaver"
                 },
                 {
                   "name": "SophieBot",
@@ -269,7 +273,7 @@
         }
       ],
       "viewAll": {
-        "name": "View all products",
+        "name": "View all SSW products",
         "url": "/products"
       }
     },
@@ -435,7 +439,7 @@
         }
       ],
       "viewAll": {
-        "name": "View all events & training",
+        "name": "View all SSW events & training",
         "url": "/events"
       }
     },
@@ -625,7 +629,7 @@
         }
       ],
       "viewAll": {
-        "name": "Check out all our Rules",
+        "name": "View all SSW Rules",
         "url": "https://www.ssw.com.au/rules"
       },
       "url": ""

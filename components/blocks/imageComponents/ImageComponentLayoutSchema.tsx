@@ -1,18 +1,21 @@
 import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
-
+import { optimizedImageSchema } from "../../../tina/collections/shared-fields";
+import { mediaTypeField } from "../mediaType.schema";
 export const ImageComponentLayoutSchema = [
   backgroundSchema,
   {
     type: "object",
     label: "Media",
     name: "mediaConfiguration",
-    description: "Media configuration including layout and image upload.",
+    description: "Media configuration including layout and image/video upload.",
     ui: {
       defaultItem: {
         placement: "Right",
+        mediaType: "image",
       },
     },
     fields: [
+      mediaTypeField,
       {
         type: "string",
         label: "Media Placement",
@@ -29,7 +32,7 @@ export const ImageComponentLayoutSchema = [
         type: "string",
         label: "Media placement (vertical)",
         name: "verticalPlacement",
-        description: "Where the image sits vertically in desktop view",
+        description: "Where the media sits vertically in desktop view",
         ui: {
           component: "select",
           options: ["Centered", "Top", "Bottom"],
@@ -56,12 +59,15 @@ export const ImageComponentLayoutSchema = [
           ],
         },
       },
+      ...optimizedImageSchema(
+        "Upload an image or other media to display in the media text block. 4/3 aspect ratio recommended."
+      ),
       {
-        type: "image",
-        label: "Image Source",
-        name: "imageSource",
+        type: "string",
+        label: "YouTube URL",
+        name: "youtubeUrl",
         description:
-          "Upload an image or other media to display in the media text block. 4/3 aspect ratio recommended.",
+          "Enter the YouTube video URL (only used if Media Type is set to youtube)",
       },
       {
         type: "string",

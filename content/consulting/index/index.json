@@ -136,10 +136,11 @@
           ]
         },
         {
-          "title": ".NET 8",
-          "description": ".NET 8 is the latest LTS (Long Term Support) version of the platform. It provides enterprise functionality and cloud-native development all within a stable ecosystem backed by Microsoft.",
-          "logo": "/images/thumbs/thumb-net-8.jpg",
-          "page": "content/consulting/net-8.mdx",
+          "title": ".NET Upgrade",
+          "description": "Upgrade to the latest .NET framework for better performance, security, and long-term support. We streamline migrations to keep your apps modern and efficient.",
+          "logo": "/images/thumbs/NET-Framework-Logo_2.png",
+          "page": "content/consultingv2/net-upgrade.json",
+          "externalUrl": "/consulting/net-upgrade",
           "tags": [
             {
               "tag": "content/consulting/tag/platform-development.json"
@@ -732,7 +733,7 @@
         {
           "title": "TinaCMS",
           "description": "TinaCMS is the world's leading open source, headless CMS that is powered by Markdown and GitHub.",
-          "logo": "/images/thumbs/tina-logo-icon.jpg",
+          "logo": "/images/thumbs/consulting/thumb-tina.svg",
           "page": "content/consulting/tinacms.mdx",
           "tags": [
             {
@@ -746,7 +747,7 @@
         {
           "title": "WordPress",
           "description": "WordPress the most popular content management system (CMS) on the web, and is trusted by content publishers from both large and small businesses.",
-          "logo": "/images/thumbs/thumb-wordpress.jpg",
+          "logo": "/images/thumbs/consulting/thumb-wordpress.svg",
           "page": "content/consulting/wordpress.mdx",
           "externalUrl": "",
           "tags": [
@@ -761,7 +762,7 @@
         {
           "title": "Kentico",
           "description": "Kentico is the only fully integrated ASP.NET CMS, E-commerce, and Online Marketing platform.",
-          "logo": "/images/thumbs/thumb-kentico.jpg",
+          "logo": "/images/thumbs/consulting/thumb-kentico.svg",
           "page": "content/consulting/kentico.mdx",
           "externalUrl": "",
           "tags": [
@@ -776,7 +777,7 @@
         {
           "title": "DNN - DotNetNuke",
           "description": "DNN (AKA Evoq) can be used as a web content management system (CMS) for simple web sites or as a powerful application development framework.",
-          "logo": "/images/thumbs/thumb-dnn.jpg",
+          "logo": "/images/thumbs/consulting/thumb-dnn.svg",
           "page": "content/consulting/dnn-dotnetnuke.mdx",
           "externalUrl": "",
           "tags": [
@@ -791,7 +792,7 @@
         {
           "title": "Sitefinity",
           "description": "Sitefinity's mix of benefits for marketers, IT managers, Developers and designers make it the ideal choice for medium sized businesses.",
-          "logo": "/images/thumbs/thumb-sitefinity.jpg",
+          "logo": "/images/thumbs/consulting/thumb-sitefinity.svg",
           "page": "content/consulting/sitefinity.mdx",
           "externalUrl": "",
           "tags": [
@@ -806,7 +807,7 @@
         {
           "title": "Orchard",
           "description": "A free, open source, community-focused project aimed at delivering applications and reusable components on the rock-solid ASP.NET MVC platform.",
-          "logo": "/images/thumbs/thumb-orchard.jpg",
+          "logo": "/images/thumbs/consulting/thumb-orchard.svg",
           "page": "content/consulting/orchard.mdx",
           "externalUrl": "",
           "tags": [
@@ -821,7 +822,7 @@
         {
           "title": "Sitecore",
           "description": "A mix of powerful marketing and business features, rich development support and scalability make it the ideal solution for leading websites.",
-          "logo": "/images/thumbs/thumb-sitecore.jpg",
+          "logo": "/images/thumbs/consulting/thumb-sitecore.svg",
           "page": "content/consulting/sitecore.mdx",
           "externalUrl": "",
           "tags": [
@@ -836,7 +837,7 @@
         {
           "title": "Umbraco",
           "description": "With over than 200.000 installations, Umbraco is one of the most deployed Web Content Management Systems on the Microsoft stack.",
-          "logo": "/images/thumbs/thumb-umbraco.jpg",
+          "logo": "/images/thumbs/consulting/thumb-umbraco.svg",
           "page": "content/consulting/umbraco.mdx",
           "externalUrl": "",
           "tags": [
@@ -935,7 +936,7 @@
         {
           "title": "Video Conferencing",
           "description": "Engage remote teams and employees to work from home; promote collaboration across the team; run webinars and live events; meet clients; interview job candidates.",
-          "logo": "/images/thumbs/thumb-video-conferencing.jpg",
+          "logo": "/images/thumbs/consulting/thumb-video-conference.svg",
           "page": "content/consulting/video-conferencing.mdx",
           "tags": [
             {
@@ -946,7 +947,7 @@
         {
           "title": "Service Desk",
           "description": "Potential costs savings as you are only paying for support when you need it.",
-          "logo": "/images/thumbs/thumb-servicedesk.jpg",
+          "logo": "/images/thumbs/consulting/thumb-service-desk.svg",
           "page": "content/consulting/service-desk.mdx",
           "tags": [
             {
@@ -957,7 +958,7 @@
         {
           "title": "Support Plans",
           "description": "Gain peace of mind that you'll be covered in case of an emergency.",
-          "logo": "/images/thumbs/thumb-supportplans.jpg",
+          "logo": "/images/thumbs/consulting/thumb-support.svg",
           "page": "content/consulting/support-plans.mdx",
           "tags": [
             {
@@ -968,7 +969,7 @@
         {
           "title": "Intune",
           "description": "Intune is a cloud-based service in the enterprise mobility management (EMM) space that helps enable your workforce to be productive while keeping your corporate data protected.",
-          "logo": "/images/thumbs/thumb-intune.png",
+          "logo": "/images/thumbs/consulting/thumb-intune.svg",
           "page": "content/consulting/intune.mdx",
           "tags": [
             {

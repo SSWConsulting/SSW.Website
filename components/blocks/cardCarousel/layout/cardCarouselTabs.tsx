@@ -52,6 +52,7 @@ const useTabCarousel = ({ categoryGroup }: Consultingv2BlocksCardCarousel) => {
   useResizeObserver({
     ref: tabWrapperRef,
     onResize: () => {
+      if (!tabWrapperRef.current) return;
       const { clientWidth, clientHeight } = tabWrapperRef.current;
       setContainerDimensions({ width: clientWidth, height: clientHeight });
     },
@@ -67,7 +68,7 @@ const useTabCarousel = ({ categoryGroup }: Consultingv2BlocksCardCarousel) => {
     height: 0,
   });
   useEffect(() => {
-    if (tabWrapperRef) {
+    if (tabWrapperRef && tabWrapperRef.current) {
       const { clientHeight, clientWidth } = tabWrapperRef.current;
       setContainerDimensions({ width: clientWidth, height: clientHeight });
     }

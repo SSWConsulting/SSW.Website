@@ -2,6 +2,7 @@
 
 import { Breadcrumbs } from "@/app/components/breadcrumb";
 import { Blocks } from "@/components/blocks-renderer";
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TestimonialRow } from "@/components/testimonials/TestimonialRow";
@@ -59,7 +60,7 @@ export default function TrainingPage({ props, tinaProps }) {
         </div>
 
         {data.training.showTestimonials && (
-          <Section color="white" className="">
+          <Section color="default" className="">
             <Container padding={"md:px-8 px-2"} className={"flex-1 pt-0"}>
               <div
                 data-tina-field={tinaField(
@@ -78,7 +79,7 @@ export default function TrainingPage({ props, tinaProps }) {
           </Section>
         )}
 
-        <Section color="white">
+        <Section color="default">
           <Container padding={"md:px-8 px-4"} className={"flex-1 pt-0"}>
             <div className="flex flex-col items-center pb-15 text-center">
               <h2>
@@ -100,6 +101,7 @@ export default function TrainingPage({ props, tinaProps }) {
           components={componentRenderer}
         />
       </div>
+      <BuiltOnAzure data={data.training.azureBanner} />
     </>
   );
 }

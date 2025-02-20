@@ -105,7 +105,7 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
 
   return (
     <V2ComponentWrapper data={data}>
-      <Container size="custom" className="pt-8 sm:pt-12">
+      <Container size="custom" padding="px-4 sm:px-8" className="pt-8 sm:pt-12">
         <Breadcrumb className="text-gray-300">
           <BreadcrumbList>
             {links.map((link, index) => (

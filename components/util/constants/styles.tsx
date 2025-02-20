@@ -7,13 +7,10 @@ export const sectionColors = {
   toggleLightMode: "dark:bg-gray-950 dark:text-gray-300",
 };
 
-export enum SectionColor {
-  Default = "default",
-  LightGray = "lightgray",
-  DarkGray = "darkgray",
-  Red = "red",
-  Black = "black",
-  ToggleLightMode = "toggleLightMode",
-}
-
-export enum SectionColorConsulting {}
+export type SectionColor =
+  | "default"
+  | "lightgray"
+  | "darkgray"
+  | "red"
+  | "black"
+  | "toggleLightMode";
