@@ -27,8 +27,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version-file: "20"
-          cache: "pnpm"
+          node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
+
+      - run: echo node --version
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - run: corepack enable pnpm
       - run: pnpm add -w gray-matter
