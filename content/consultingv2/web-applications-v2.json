@@ -78,11 +78,11 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "",
               "chipType": "clearChip"
             }
           ],
