@@ -29,15 +29,16 @@ jobs:
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
-      - name: enable corepack
+      - name: Enable corepack
         run: |
           corepack enable
 
       - name: Install pnpm
         run: |
-          corepack prepare pnpm@9.15.1 --activate
+          corepack prepare pnpm@9.15.1 --activate # It doesn't work well with pnpm@latest, therefore we use a specific version as per - https://github.com/pnpm/pnpm/issues/9029
 
-      - run: |
+      - name: Install dependencies
+        run: |
           cd ${{ env.GITHUB_WORKSPACE }}
           pnpm add gray-matter
 
