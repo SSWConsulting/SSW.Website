@@ -30,7 +30,7 @@ jobs:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
       - run: corepack enable pnpm
-      - run: pnpm i -g corepack@latest
+      - run: corepack prepare pnpm@9.15.0 --activate
       - run: pnpm add -w gray-matter
 
       - name: Fetch SSW.People.Profiles
