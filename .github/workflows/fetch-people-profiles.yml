@@ -1,9 +1,6 @@
 name: Weekly - Fetch SSW People Profiles
 
 on:
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * TUE"
@@ -33,7 +30,7 @@ jobs:
         run: |
           corepack enable
 
-      - name: Install pnpm
+      - name: Prepare pnpm
         run: |
           corepack prepare pnpm@9.15.1 --activate # It doesn't work well with pnpm@latest, therefore we use a specific version as per - https://github.com/pnpm/pnpm/issues/9029
 
