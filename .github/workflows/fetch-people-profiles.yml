@@ -26,13 +26,7 @@ jobs:
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
-      - name: Enable corepack
-        run: |
-          corepack enable
-
-      - name: Prepare pnpm
-        run: |
-          corepack prepare pnpm@9.15.1 --activate # It doesn't work well with pnpm@latest, therefore we use a specific version as per - https://github.com/pnpm/pnpm/issues/9029
+      - uses: pnpm/action-setup@v4
 
       - name: Install dependencies
         run: |
