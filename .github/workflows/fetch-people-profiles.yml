@@ -29,9 +29,12 @@ jobs:
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
-      - name: Install latest pnpm
+      - name: enable corepack
         run: |
           corepack enable
+
+      - name: Install pnpm
+        run: |
           corepack prepare pnpm@latest --activate
           pnpm --version  # Verify latest pnpm version
 
