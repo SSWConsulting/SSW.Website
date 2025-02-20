@@ -56,16 +56,6 @@
         {
           "guid": "6hp27d",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Industry-Leading Microsoft Expertise",
           "description": "Work with certified professionals, MVPs, and a Microsoft Regional Director.",
