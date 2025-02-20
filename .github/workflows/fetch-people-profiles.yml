@@ -1,9 +1,6 @@
 name: Weekly - Fetch SSW People Profiles
 
 on:
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * TUE"
