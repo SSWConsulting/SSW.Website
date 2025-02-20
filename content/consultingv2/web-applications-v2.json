@@ -14,31 +14,6 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Lorem Ipsum",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "accordionItems": [
-        {
-          "label": "Lorem",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
-        },
-        {
-          "label": "Ipsum",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
-        }
-      ],
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
-      "_template": "accordionBlock"
-    },
-    {
       "isStacked": false,
       "heading": "Lorem Ipsum",
       "isH1": false,
@@ -103,8 +78,8 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "ix86q",
+          "altText": "",
           "chips": [
             {
               "chipText": "Lorem",
@@ -116,8 +91,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Custom Solutions, No Compromises",
+          "description": "Get software built to match your exact requirements, not just something \"close enough.\"",
           "featureList": {
             "features": [
               {
@@ -137,7 +112,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "6hp27d",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -150,8 +125,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Industry-Leading Microsoft Expertise.",
+          "description": "Work with certified professionals, MVPs, and a Microsoft Regional Director.",
           "featureList": {
             "features": [
               {
@@ -171,7 +146,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "uk2o9",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -184,8 +159,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Scalable & Future-Proof Architecture.",
+          "description": "Designed to evolve with your business, ensuring long-term adaptability.",
           "featureList": {
             "features": [
               {
@@ -240,6 +215,31 @@
         }
       ],
       "_template": "cardCarousel"
+    },
+    {
+      "heading": "Lorem Ipsum",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "accordionItems": [
+        {
+          "label": "Lorem",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "accordionBlock"
     },
     {
       "_template": "technologyCardCarousel"
