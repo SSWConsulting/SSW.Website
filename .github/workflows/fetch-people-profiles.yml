@@ -1,6 +1,9 @@
 name: Weekly - Fetch SSW People Profiles
 
 on:
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
   schedule:
     - cron: "0 0 * * TUE"
@@ -25,6 +28,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - run: corepack enable pnpm
       - run: pnpm add -w gray-matter
