@@ -76,7 +76,8 @@
           "altText": "Logo"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png"
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 120
         }
       ],
       "_template": "logoCarousel"
