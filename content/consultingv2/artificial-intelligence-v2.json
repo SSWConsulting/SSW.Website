@@ -110,8 +110,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Make Smarter Business Decisions",
-          "description": "Unlock hidden patterns in your data and make smarter decisions—faster",
+          "heading": "Smarter Business Decisions",
+          "description": "AI finds patterns in your data that dashboards miss. Predict sales, detect fraud, and optimize operations with real insights.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
