@@ -231,12 +231,12 @@
         "features": [
           {
             "heading": "Seamless Automation",
-            "description": "No more manual documentation. YakShaver creates backlog items in Azure DevOps or GitHub with just a recorded conversation.",
+            "description": "No more manual documentation. YakShaver creates backlog items in Azure DevOps or GitHub from a recorded conversation on Teams.",
             "icon": "BiLogoGithub"
           },
           {
             "heading": "AI That Understands Context",
-            "description": "Using Whisper for speech-to-text and GPT-4o for structured outputs, it ensures accurate and detailed issue reports.",
+            "description": "Using Whisper for speech-to-text and GPT-4o for structured outputs, YakShaver ensures clear, detailed issue reports with minimal effort.",
             "icon": "BiSolidBot"
           }
         ]
