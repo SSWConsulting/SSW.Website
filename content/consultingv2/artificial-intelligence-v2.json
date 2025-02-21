@@ -59,11 +59,11 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "",
       "isH1": false,
       "body": "",
-      "cardStyle": 1,
+      "cardStyle": 0,
       "cards": [
         {
           "guid": "ib0xbk",
