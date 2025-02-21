@@ -180,12 +180,12 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Built for Real Workflows",
+            "description": "Integrated with Microsoft Teams, YakShaver turns meeting discussions into actionable tasks without disrupting the flow."
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "AI That Understands Context",
+            "description": "Using Whisper for speech-to-text and GPT-4O for structured outputs, it ensures accurate and detailed issue reports."
           }
         ]
       },
