@@ -32,10 +32,6 @@
           "buttonText": "Book a Free Initial Meeting",
           "showLeadCaptureForm": true,
           "colour": 0
-        },
-        {
-          "buttonText": "",
-          "colour": 1
         }
       ],
       "background": {
