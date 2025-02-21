@@ -120,7 +120,7 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
+          "icon": "BiSolidLockAlt",
           "heading": "Secure, Compliant AI Implementations",
           "description": "Our Microsoft-certified team ensures your AI projects meet rigorous security and compliance standards, minimizing risks and protecting your customers’ data.  ",
           "embeddedButton": {
