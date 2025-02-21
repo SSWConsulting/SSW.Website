@@ -1,6 +1,7 @@
 import { ListItem } from "@/components/blocksSubtemplates/listItem";
 import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
 import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
+import { cn } from "@/lib/utils";
 import getYouTubeVideoId from "@/services/client/youtube.service";
 import Image from "next/image";
 import { useState } from "react";
@@ -11,9 +12,10 @@ import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
 type CardProps = {
   data;
   placeholder: boolean;
+  className?: string;
 };
 
-const Card = ({ data, placeholder }: CardProps) => {
+const Card = ({ data, placeholder, className }: CardProps) => {
   const isYoutubeEmbed = data.mediaType === "youtube";
   const youtubeEmbedId = isYoutubeEmbed
     ? getYouTubeVideoId(data.youtubeUrl)
@@ -23,11 +25,13 @@ const Card = ({ data, placeholder }: CardProps) => {
 
   return (
     <div
-      className={`flex w-90 shrink flex-col rounded-md text-start ${
+      className={cn(
+        "flex shrink flex-col rounded-md text-start",
+        className,
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
-      }`}
+      )}
     >
       {youtubeEmbedId && isYoutubeEmbed ? (
         <YouTubeEmbed
@@ -66,7 +70,7 @@ const Card = ({ data, placeholder }: CardProps) => {
       </h3>
       {data.description && (
         <p
-          className="text-sm font-light dark:text-gray-300"
+          className="text-base font-light dark:text-gray-300"
           data-tina-field={tinaField(data, "description")}
         >
           {data.description}

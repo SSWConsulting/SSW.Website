@@ -1,7 +1,8 @@
 import { default as React, useEffect, useState } from "react";
-import { Template, wrapFieldsWithMeta } from "tinacms";
+import { Template, TinaField, wrapFieldsWithMeta } from "tinacms";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
+import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
@@ -10,6 +11,7 @@ import { backgroundSchema } from "../../../layout/v2ComponentWrapper";
 import { mediaTypeField } from "../../mediaType.schema";
 import { youtubeEmbedField } from "../../youtubeEmbed.schema";
 
+import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { Checkbox } from "../../../ui/checkbox";
 
 const GUIDFunction = () => Math.random().toString(36).substring(7);
@@ -26,14 +28,16 @@ const GUIDGeneratorComponent = (props) => {
 const defaultCardItem = {
   guid: null,
   altText: "Lorem Ipsum",
-  chips: {
-    chips: [
-      {
-        filledChipText: "Lorem",
-        clearChipText: "Ipsum",
-      },
-    ],
-  },
+  chips: [
+    {
+      chipText: "Lorem",
+      chipType: "filledChip",
+    },
+    {
+      chipText: "Ipsum",
+      chipType: "clearChip",
+    },
+  ],
   icon: "info",
   heading: "Lorem Ipsum",
   description:
@@ -116,12 +120,7 @@ export const CardCarouselSchema: Template = {
       name: "isStacked",
       description: "Remove the carousel effect and stack card entries.",
     },
-    {
-      type: "string",
-      label: "Heading",
-      name: "heading",
-      description: "Heading text for the block.",
-    },
+    alternatingHeadingSchema,
     {
       type: "boolean",
       label: "Use as H1",
@@ -137,6 +136,7 @@ export const CardCarouselSchema: Template = {
         component: "textarea",
       },
     },
+    tabletTextAlignmentField as TinaField,
     {
       name: "buttons",
       label: "Button Row",
@@ -329,7 +329,18 @@ export const CardCarouselSchema: Template = {
           name: "chips",
           label: "Chips",
           type: "object",
-          description: "Add chips to the bottom of the media text block.",
+          description: "The chips displayed on card. Max 6.",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.chipText ?? "Chip" };
+            },
+            defaultItem: {
+              chipText: "Lorem",
+              chipType: "filledChip",
+            },
+            max: 6,
+          },
           //@ts-expect-error – fields are not being recognized
           fields: pillGroupSchema,
         },
