@@ -92,20 +92,6 @@
           "icon": "info",
           "heading": "Work Smarter, Not Harder",
           "description": "Ditch manual tasks. AI automates workflows, streamlining emails, documents, and repetitive data entry tasks",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Automate Complex Tasks",
-                "description": "Process invoices, manage customer support, and optimize supply chains with AI that adapts in real-time",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Boost Efficiency",
-                "description": "Cut errors, save time, and let employees focus on high-value work.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
