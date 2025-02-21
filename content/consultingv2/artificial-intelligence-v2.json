@@ -121,16 +121,16 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Smarter Customer Engagement",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Personalized Customer Engagement at Scale",
+          "heading": "Personalization at Scale",
           "description": "Customers expect tailored experiences. We help you deliver AI-powered interactions that feel natural, relevant, and personal.",
           "embeddedButton": {
             "buttonText": "Lorem"
