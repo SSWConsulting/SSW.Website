@@ -130,11 +130,11 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Data-driven Insights",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "",
               "chipType": "clearChip"
             }
           ],
