@@ -266,6 +266,9 @@
       ],
       "isStacked": false,
       "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "technologyCardCarousel"
     }
   ]
