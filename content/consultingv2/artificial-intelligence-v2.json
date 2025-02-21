@@ -100,7 +100,7 @@
               "chipType": "filledChip"
             }
           ],
-          "icon": "info",
+          "icon": "BiSolidNetworkChart",
           "heading": "Tailored Solutions for Complex Workflows",
           "description": "We analyze your current processes and data structures, then build AI tools that address real business needs—no fluff, just measurable outcomes.",
           "embeddedButton": {
