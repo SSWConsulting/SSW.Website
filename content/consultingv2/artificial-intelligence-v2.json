@@ -132,20 +132,6 @@
           "icon": "info",
           "heading": "Personalized Customer Engagement at Scale",
           "description": "Customers expect tailored experiences. We help you deliver AI-powered interactions that feel natural, relevant, and personal.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "AI Chatbots & Recommendations",
-                "description": "Deliver instant support and relevant product suggestions.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Sentiment Analysis & NLP",
-                "description": "Understand customer needs in real-time and personalize communication at every touchpoint.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
