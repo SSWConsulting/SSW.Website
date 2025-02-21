@@ -33,6 +33,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
         "imageHeight": 700,
@@ -137,6 +140,10 @@
           }
         }
       ],
+      "background": {
+        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
+      },
       "_template": "cardCarousel"
     },
     {
