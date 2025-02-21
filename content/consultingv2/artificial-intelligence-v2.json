@@ -156,7 +156,8 @@
           },
           {
             "heading": "Custom AI, Tailored to You",
-            "description": "No one-size-fits-all models. We design AI solutions that align with your unique challenges and goals."
+            "description": "No one-size-fits-all models. We design AI solutions that align with your unique challenges and goals.",
+            "icon": "BiCustomize"
           }
         ]
       },
