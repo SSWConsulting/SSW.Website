@@ -63,6 +63,38 @@
       "_template": "logoCarousel"
     },
     {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "From quick prototypes to secure AI models, we're here to help.",
+      "isH1": false,
+      "description": "Using AI can give your business an edge by automating tasks, predicting trends, and understanding customer feedback. We create AI solutions tailored to your needs.\\\n\\\nNeed expert guidance? We can help you work smarter, gain insights, and improve customer experience. Let's talk.\n",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Book an initial meeting"
+        },
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "youtubeUrl": "https://youtu.be/-q9lLqtkC00?si=ep-UD9gBNQ_gUcSR",
+        "altText": "The Future of Business with AI: Automation, Intelligence, and Customer Relations"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
       "isStacked": true,
       "heading": "",
       "isH1": false,
@@ -135,33 +167,6 @@
         "bleed": true
       },
       "_template": "cardCarousel"
-    },
-    {
-      "topLabel": {
-        "labelText": "Lorem Ipsum"
-      },
-      "heading": "From quick prototypes to secure AI models, we're here to help.",
-      "isH1": false,
-      "description": "Using AI can give your business an edge by automating tasks, predicting trends, and understanding customer feedback. We create AI solutions tailored to your needs.\\\n\\\nNeed expert guidance? We can help you work smarter, gain insights, and improve customer experience. Let's talk.\n",
-      "featureColumns": {
-        "twoColumns": false
-      },
-      "buttons": [
-        {
-          "buttonText": "Book an initial meeting"
-        },
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 1
-        }
-      ],
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Right",
-        "youtubeUrl": "https://youtu.be/-q9lLqtkC00?si=ep-UD9gBNQ_gUcSR",
-        "altText": "The Future of Business with AI: Automation, Intelligence, and Customer Relations"
-      },
-      "_template": "imageTextBlock"
     },
     {
       "topLabel": {
