@@ -263,6 +263,11 @@
       "_template": "imageTextBlock"
     },
     {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
       "_template": "technologyCardCarousel"
     }
   ]
