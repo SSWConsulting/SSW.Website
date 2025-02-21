@@ -150,12 +150,13 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Microsoft AI Experts",
+            "description": "Get AI right the first time with our expertise in Azure AI, Semantic Kernel, and more.",
+            "icon": "BiLogoMicrosoft"
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "Custom AI, Tailored to You",
+            "description": "No one-size-fits-all models. We design AI solutions that align with your unique challenges and goals."
           }
         ]
       },
