@@ -185,7 +185,7 @@
           },
           {
             "heading": "AI That Understands Context",
-            "description": "Using Whisper for speech-to-text and GPT-4O for structured outputs, it ensures accurate and detailed issue reports."
+            "description": "Using Whisper for speech-to-text and GPT-4o for structured outputs, it ensures accurate and detailed issue reports."
           }
         ]
       },
