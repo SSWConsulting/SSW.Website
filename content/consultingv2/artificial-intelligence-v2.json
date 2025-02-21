@@ -160,7 +160,7 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
+          "icon": "BiSupport",
           "heading": "End-to-End Support and Guidance",
           "description": "We help you dodge potential pitfalls, manage project risks, and seamlessly integrate AI, so you can focus on delivering value to your stakeholders.",
           "embeddedButton": {
