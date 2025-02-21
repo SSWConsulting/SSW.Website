@@ -261,6 +261,9 @@
         "altText": "YakShaver - AI to make the perfect PBI in 30 seconds"
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "_template": "technologyCardCarousel"
     }
   ]
 }
