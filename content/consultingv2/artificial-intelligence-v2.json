@@ -243,11 +243,11 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Learn More",
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
+          "buttonText": "Book a Live Demo",
           "colour": 1
         }
       ],
