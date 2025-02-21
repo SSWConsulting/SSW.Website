@@ -112,20 +112,6 @@
           "icon": "info",
           "heading": "Make Smarter Business Decisions",
           "description": "Unlock hidden patterns in your data and make smarter decisions—faster",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Predict Trends",
-                "description": "AI models forecast outcomes beyond basic dashboards.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Optimize Operations",
-                "description": "Improve sales, reduce risks, and enhance strategy with AI-driven insights.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
