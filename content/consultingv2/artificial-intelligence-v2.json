@@ -147,7 +147,7 @@
       "isH1": false,
       "description": "AI isn’t the future—it’s the present. SSW helps you cut through the noise and apply AI where it matters, delivering real results.\n",
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Microsoft AI Experts",
@@ -183,9 +183,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "YakShaver: AI That Solves Real Problems",
+      "heading": "YakShaver: Our In-House AI in Action",
       "isH1": false,
-      "description": "At SSW, we don’t just talk about AI, we build it. YakShaver is our in-house AI tool that streamlines work item management for developers by capturing voice and video, transcribing conversations, and automatically generating structured work items.\n",
+      "description": "At SSW, we don’t just talk about AI, we build it. YakShaver is our custom solution that converts meeting recordings into clear, actionable work items.\\\n\\\nFully integrated with Microsoft Teams, it captures our voice and video, then takes care of the rest.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
