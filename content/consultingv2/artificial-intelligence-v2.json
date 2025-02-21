@@ -72,20 +72,6 @@
           ],
           "heading": "Unlock AI’s Full Potential",
           "description": "AI should work with your systems, not against them. We make integration seamless with Microsoft Semantic Kernel and Azure AI.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Smart AI Orchestration",
-                "description": "Semantic Kernel connects multiple AI models into one intelligent workflow.",
-                "icon": "BiCheckCircle"
-              },
-              {
-                "heading": "Enterprise-Grade AI Deployment",
-                "description": "Azure AI Services ensure your AI solutions are secure, scalable, and optimized for performance.",
-                "icon": "BiCheckCircle"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
