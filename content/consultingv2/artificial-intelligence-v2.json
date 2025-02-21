@@ -257,6 +257,7 @@
         "mediaType": "youtube",
         "placement": "Left",
         "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
         "youtubeUrl": "https://youtu.be/CBes1SEvV54?si=LV2O5t0MthCIaYIF",
         "altText": "YakShaver - AI to make the perfect PBI in 30 seconds"
       },
