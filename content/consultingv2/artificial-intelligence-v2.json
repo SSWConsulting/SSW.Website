@@ -1,6 +1,10 @@
 {
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Artificial Intelligence",
       "_template": "breadcrumbs"
     },
     {
