@@ -184,7 +184,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
       "heading": "From quick prototypes to secure AI models, we're here to help.",
       "isH1": false,
@@ -194,7 +194,10 @@
       },
       "buttons": [
         {
-          "buttonText": "Book an initial meeting"
+          "buttonText": "Book an Initial Meeting",
+          "showLeadCaptureForm": true,
+          "icon": "BiCalendarPlus",
+          "iconFirst": true
         },
         {
           "buttonText": "Lorem Ipsum",
