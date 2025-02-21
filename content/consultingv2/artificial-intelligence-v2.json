@@ -83,8 +83,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Work Smarter, Not Harder",
-          "description": "Stop wasting time on repetitive tasks. AI automates workflows, streamlining emails, documents, and repetitive data entry",
+          "heading": "Tailored Solutions for Complex Workflows",
+          "description": "We analyze your current processes and data structures, then build AI tools that address real business needs—no fluff, just measurable outcomes.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -103,8 +103,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Smarter Business Decisions",
-          "description": "AI finds patterns in your data that dashboards miss. Predict sales, detect fraud, and optimize operations with deeper, actionable insights",
+          "heading": "Secure, Compliant AI Implementations",
+          "description": "Our Microsoft-certified team ensures your AI projects meet rigorous security and compliance standards, minimizing risks and protecting your customers’ data.  ",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -123,8 +123,28 @@
             }
           ],
           "icon": "info",
-          "heading": "Personalization at Scale",
-          "description": "Customers expect tailored experiences. We help you deliver AI-powered interactions that feel natural, relevant, and personal",
+          "heading": "Trusted Expertise at Scale",
+          "description": "From operational efficiency to customer engagement, our AI consultants have a track record of success working with enterprise-level systems and sensitive datasets.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "le07tl",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "End-to-End Support and Guidance",
+          "description": "We help you dodge potential pitfalls, manage project risks, and seamlessly integrate AI, so you can focus on delivering value to your stakeholders.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
