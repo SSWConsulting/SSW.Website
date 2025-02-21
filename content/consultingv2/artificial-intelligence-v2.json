@@ -7,9 +7,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Lorem Ipsum",
-      "isH1": false,
-      "description": "",
+      "heading": "Transform Your Business with Practical AI Solutions",
+      "isH1": true,
+      "description": "Boost efficiency and innovation with AI-driven automation, smart insights, and better customer interactions. We’ll help you integrate AI solutions that make a real impact.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -33,6 +33,11 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
       "_template": "imageTextBlock"
     },
     {
@@ -44,6 +49,209 @@
         }
       ],
       "_template": "logoCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "Why Use AI?",
+      "isH1": false,
+      "body": "AI isn’t just hype—it’s a tool to make your business faster, smarter, and more efficient. We help companies integrate AI into their workflows, automate repetitive tasks, and extract real insights from data. No fluff. Just practical solutions",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "Lorem",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Dolor",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "guid": "d960uc",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Seamless AI Integration with Microsoft AI Tools",
+          "description": "AI should work with your systems, not against them. We make integration seamless with Microsoft Semantic Kernel and Azure AI.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Smart AI Orchestration",
+                "description": "Semantic Kernel connects multiple AI models into one intelligent workflow.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "ib0xbk",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "AI-Powered Automation",
+              "chipType": "filledChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Work Smarter, Not Harder",
+          "description": "Ditch manual tasks. AI automates workflows, streamlining emails, documents, and repetitive data entry tasks",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Automate Complex Tasks",
+                "description": "Process invoices, manage customer support, and optimize supply chains with AI that adapts in real-time",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Boost Efficiency",
+                "description": "Cut errors, save time, and let employees focus on high-value work.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "hukqtq",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Data-Driven Decisions with AI-Powered Insights",
+          "description": "Unlock hidden patterns in your data and make smarter decisions—faster",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Predict Trends",
+                "description": "AI models forecast outcomes beyond basic dashboards.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Optimize Operations",
+                "description": "Improve sales, reduce risks, and enhance strategy with AI-driven insights.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "65qp3c",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Personalized Customer Engagement at Scale",
+          "description": "Customers expect tailored experiences. We help you deliver AI-powered interactions that feel natural, relevant, and personal.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "AI Chatbots & Recommendations",
+                "description": "Deliver instant support and relevant product suggestions.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Sentiment Analysis & NLP",
+                "description": "Understand customer needs in real-time and personalize communication at every touchpoint.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
     },
     {
       "topLabel": {
