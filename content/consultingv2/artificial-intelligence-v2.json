@@ -196,11 +196,12 @@
         {
           "buttonText": "Book an Initial Meeting",
           "showLeadCaptureForm": true,
-          "icon": "BiCalendarPlus",
           "iconFirst": true
         },
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Rules to Better AI",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-ai/",
+          "icon": "BiSolidWrench",
           "colour": 1
         }
       ],
