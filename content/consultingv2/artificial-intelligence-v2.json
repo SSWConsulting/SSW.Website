@@ -228,8 +228,8 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Seamless Automation",
-            "description": "No more manual documentation. YakShaver creates backlog items in Azure DevOps or GitHub from a recorded conversation on Teams.",
+            "heading": "No more manual documentation",
+            "description": "YakShaver creates backlog items in Azure DevOps or GitHub from a recorded conversation on Teams.",
             "icon": "BiLogoGithub"
           },
           {
