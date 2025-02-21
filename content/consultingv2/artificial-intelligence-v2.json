@@ -71,7 +71,7 @@
             }
           ],
           "heading": "Easy AI Integration",
-          "description": "AI should work with your systems, not against them. We make integration seamless with Microsoft Semantic Kernel and Azure AI.",
+          "description": "AI should work with your systems, not against them. We make integration seamless with Microsoft Semantic Kernel and Azure AI",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -91,7 +91,7 @@
           ],
           "icon": "info",
           "heading": "Work Smarter, Not Harder",
-          "description": "Ditch manual tasks. AI automates workflows, streamlining emails, documents, and repetitive data entry tasks",
+          "description": "Stop wasting time on repetitive tasks. AI automates workflows, streamlining emails, documents, and repetitive data entry",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -111,7 +111,7 @@
           ],
           "icon": "info",
           "heading": "Smarter Business Decisions",
-          "description": "AI finds patterns in your data that dashboards miss. Predict sales, detect fraud, and optimize operations with real insights.",
+          "description": "AI finds patterns in your data that dashboards miss. Predict sales, detect fraud, and optimize operations with real insights",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -131,7 +131,7 @@
           ],
           "icon": "info",
           "heading": "Personalization at Scale",
-          "description": "Customers expect tailored experiences. We help you deliver AI-powered interactions that feel natural, relevant, and personal.",
+          "description": "Customers expect tailored experiences. We help you deliver AI-powered interactions that feel natural, relevant, and personal",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
