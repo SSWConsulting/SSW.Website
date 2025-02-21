@@ -72,6 +72,7 @@
         },
         {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 120,
           "altText": "Logo"
         },
         {
