@@ -42,6 +42,7 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
+        "mobilePlacement": "Above",
         "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
         "imageHeight": 700,
         "imageWidth": 1400
