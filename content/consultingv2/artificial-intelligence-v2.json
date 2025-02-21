@@ -55,30 +55,6 @@
       "heading": "Why Use AI?",
       "isH1": false,
       "body": "AI isn’t just hype—it’s a tool to make your business faster, smarter, and more efficient. We help companies integrate AI into their workflows, automate repetitive tasks, and extract real insights from data. No fluff. Just practical solutions",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
-      "categoryGroup": [
-        {
-          "categoryName": "Lorem",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        },
-        {
-          "categoryName": "Dolor",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        }
-      ],
       "cardStyle": 0,
       "cards": [
         {
