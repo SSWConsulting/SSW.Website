@@ -52,7 +52,7 @@
         "backgroundColour": 6
       },
       "heading": "Trusted by top companies",
-      "paused": true,
+      "paused": false,
       "isWhiteImages": true,
       "logos": [
         {
@@ -105,7 +105,7 @@
               "chipType": "filledChip"
             }
           ],
-          "icon": "BiSolidNetworkChart",
+          "icon": "BiLogoMicrosoft",
           "heading": "Intelligent Automation, Precisely Applied",
           "description": "Go beyond basic task automation. We leverage Semantic Kernel and Azure AI Services to build intelligent workflows that adapt to your specific business logic, handling complex scenarios and \"fuzzy\" data with ease",
           "embeddedButton": {
