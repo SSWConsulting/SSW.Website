@@ -56,6 +56,9 @@
       "isWhiteImages": true,
       "logos": [
         {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png"
+        },
+        {
           "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
           "altText": "Logo"
         },
