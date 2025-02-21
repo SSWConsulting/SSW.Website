@@ -158,6 +158,11 @@
             "heading": "Custom AI, Tailored to You",
             "description": "No one-size-fits-all models. We design AI solutions that align with your unique challenges and goals.",
             "icon": "BiCustomize"
+          },
+          {
+            "heading": "Proven Track Record",
+            "description": "With decades of software development and consulting experience, we know how to turn AI into a competitive advantage.",
+            "icon": "BiSolidAward"
           }
         ]
       },
