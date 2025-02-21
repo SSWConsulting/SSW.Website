@@ -175,7 +175,7 @@
       },
       "heading": "YakShaver: Our In-House AI in Action",
       "isH1": false,
-      "description": "At SSW, we don’t just talk about AI, we build it. YakShaver is our custom solution that converts meeting recordings into clear, actionable work items.\\\n\\\nFully integrated with Microsoft Teams, it captures our voice and video, then takes care of the rest.\n",
+      "description": "At SSW, we don’t just talk about AI, we build it. YakShaver is our custom solution that converts our tech meeting recordings into clear, actionable work items.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
