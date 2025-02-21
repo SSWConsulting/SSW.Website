@@ -1,5 +1,6 @@
 "use client";
 
+import AlternatingText from "@/components/alternating-text";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
@@ -51,14 +52,14 @@ export const CardCarousel = ({ data }) => {
                 data-tina-field={tinaField(data, "heading")}
                 className="my-0 py-2 text-3xl font-bold lg:text-4xl dark:text-gray-200"
               >
-                {data.heading}
+                <AlternatingText text={data.heading} />
               </h1>
             ) : (
               <h2
                 data-tina-field={tinaField(data, "heading")}
                 className="my-0 py-2 text-2xl font-semibold lg:text-3xl dark:text-gray-200"
               >
-                {data.heading}
+                <AlternatingText text={data.heading} />
               </h2>
             )}
             {data.body && (

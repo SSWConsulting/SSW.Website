@@ -1,4 +1,5 @@
 "use client";
+import AlternatingText from "@/components/alternating-text";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { cn } from "@/lib/utils";
 import "aos/dist/aos.css";
@@ -9,6 +10,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { IconLabel } from "../../../blocksSubtemplates/iconLabel";
 import { ListItem } from "../../../blocksSubtemplates/listItem";
 import { PillGroup } from "../../../blocksSubtemplates/pillGroup";
+
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
 export const ImageTextBlock = ({ data }) => {
@@ -88,7 +90,7 @@ const Heading = ({ data }) => {
             "text-3xl font-bold lg:text-4xl"
           )}
         >
-          {data.heading}
+          <AlternatingText text={data.heading} />
         </h1>
       ) : (
         <h2
@@ -98,7 +100,7 @@ const Heading = ({ data }) => {
             headingClasses
           )}
         >
-          {data.heading}
+          <AlternatingText text={data.heading} />
         </h2>
       )}
     </>

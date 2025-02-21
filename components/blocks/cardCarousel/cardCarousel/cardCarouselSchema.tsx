@@ -11,6 +11,7 @@ import { backgroundSchema } from "../../../layout/v2ComponentWrapper";
 import { mediaTypeField } from "../../mediaType.schema";
 import { youtubeEmbedField } from "../../youtubeEmbed.schema";
 
+import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { Checkbox } from "../../../ui/checkbox";
 
 const GUIDFunction = () => Math.random().toString(36).substring(7);
@@ -27,14 +28,16 @@ const GUIDGeneratorComponent = (props) => {
 const defaultCardItem = {
   guid: null,
   altText: "Lorem Ipsum",
-  chips: {
-    chips: [
-      {
-        filledChipText: "Lorem",
-        clearChipText: "Ipsum",
-      },
-    ],
-  },
+  chips: [
+    {
+      chipText: "Lorem",
+      chipType: "filledChip",
+    },
+    {
+      chipText: "Ipsum",
+      chipType: "clearChip",
+    },
+  ],
   icon: "info",
   heading: "Lorem Ipsum",
   description:
@@ -117,12 +120,7 @@ export const CardCarouselSchema: Template = {
       name: "isStacked",
       description: "Remove the carousel effect and stack card entries.",
     },
-    {
-      type: "string",
-      label: "Heading",
-      name: "heading",
-      description: "Heading text for the block.",
-    },
+    alternatingHeadingSchema,
     {
       type: "boolean",
       label: "Use as H1",
@@ -331,7 +329,18 @@ export const CardCarouselSchema: Template = {
           name: "chips",
           label: "Chips",
           type: "object",
-          description: "Add chips to the bottom of the media text block.",
+          description: "The chips displayed on card. Max 6.",
+          list: true,
+          ui: {
+            itemProps: (item) => {
+              return { label: item?.chipText ?? "Chip" };
+            },
+            defaultItem: {
+              chipText: "Lorem",
+              chipType: "filledChip",
+            },
+            max: 6,
+          },
           //@ts-expect-error – fields are not being recognized
           fields: pillGroupSchema,
         },
