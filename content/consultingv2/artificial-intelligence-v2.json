@@ -18,12 +18,12 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "",
+            "description": ""
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "",
+            "description": ""
           }
         ]
       },
@@ -106,8 +106,8 @@
             }
           ],
           "icon": "BiSolidNetworkChart",
-          "heading": "Tailored Solutions for Complex Workflows",
-          "description": "We analyze your current processes and data structures, then build AI tools that address real business needs—no fluff, just measurable outcomes.",
+          "heading": "Intelligent Automation, Precisely Applied",
+          "description": "Go beyond basic task automation. We leverage Semantic Kernel and Azure AI Services to build intelligent workflows that adapt to your specific business logic, handling complex scenarios and \"fuzzy\" data with ease",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
