@@ -225,7 +225,7 @@
       "isH1": false,
       "description": "At SSW, we don’t just talk about AI, we build it. YakShaver is our internal AI solution that automates work item creation, proving how AI can streamline repetitive dev tasks.\n",
       "featureColumns": {
-        "twoColumns": false,
+        "twoColumns": true,
         "features": [
           {
             "heading": "Seamless Automation",
@@ -243,10 +243,6 @@
         {
           "buttonText": "Learn More",
           "colour": 0
-        },
-        {
-          "buttonText": "Book a Live Demo",
-          "colour": 1
         }
       ],
       "background": {
@@ -268,6 +264,8 @@
           "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
         }
       ],
+      "isStacked": false,
+      "techCardStyle": 0,
       "_template": "technologyCardCarousel"
     }
   ]
