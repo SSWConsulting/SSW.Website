@@ -52,9 +52,9 @@
     },
     {
       "isStacked": false,
-      "heading": "Why Use AI?",
+      "heading": "",
       "isH1": false,
-      "body": "AI isn’t just hype—it’s a tool to make your business faster, smarter, and more efficient. We help companies integrate AI into their workflows, automate repetitive tasks, and extract real insights from data. No fluff. Just practical solutions",
+      "body": "",
       "cardStyle": 0,
       "cards": [
         {
@@ -143,9 +143,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Lorem Ipsum",
+      "heading": "AI That Works for Your Business",
       "isH1": false,
-      "description": "",
+      "description": "AI isn’t the future—it’s the present. SSW helps you cut through the noise and apply AI where it matters, delivering real results.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
