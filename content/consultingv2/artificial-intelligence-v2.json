@@ -198,19 +198,6 @@
       "_template": "cardCarousel"
     },
     {
-      "technologyGroups": [
-        {
-          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
-        }
-      ],
-      "isStacked": false,
-      "techCardStyle": 0,
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "technologyCardCarousel"
-    },
-    {
       "topLabel": {
         "labelText": "Case Study"
       },
@@ -250,6 +237,19 @@
         "altText": "YakShaver - AI to make the perfect PBI in 30 seconds"
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "isStacked": false,
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
     }
   ]
 }
