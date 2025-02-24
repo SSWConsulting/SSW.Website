@@ -178,8 +178,8 @@ importers:
         specifier: ^5.6.3
         version: 5.6.3
       usehooks-ts:
-        specifier: ^3.1.0
-        version: 3.1.0(react@18.3.1)
+        specifier: ^3.1.1
+        version: 3.1.1(react@18.3.1)
       xss:
         specifier: ^1.0.15
         version: 1.0.15
@@ -1576,8 +1576,8 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@graphql-tools/utils@10.8.1':
-    resolution: {integrity: sha512-fI5NNuqeEAHyp7NuCDjvxWR5PTUXM4AqY9BoC59ZcX4nePAJje27ZsFHbAMS6EKDosY1K/D4ADxsO0P5+FH07A==}
+  '@graphql-tools/utils@10.8.2':
+    resolution: {integrity: sha512-JjWpf9Dj2LXFccAB7CON6jUcXduJlE5XcJfLmKTWBk46Ei2dhDntVAmvIa97YPdLanrgFN5SRt3hSAe3qo/FYg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
@@ -8996,11 +8996,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  usehooks-ts@3.1.0:
-    resolution: {integrity: sha512-bBIa7yUyPhE1BCc0GmR96VU/15l/9gP1Ch5mYdLcFBaFGQsdmXkvjV0TtOqW1yUd6VjIwDunm+flSciCQXujiw==}
+  usehooks-ts@3.1.1:
+    resolution: {integrity: sha512-I4diPp9Cq6ieSUH2wu+fDAVQO43xwtulo+fKEidHUwZPnYImbtkTjzIJYcDcJqxgmX31GVqNFURodvcgHcW0pA==}
     engines: {node: '>=16.15.0'}
     peerDependencies:
-      react: ^16.8.0  || ^17 || ^18
+      react: ^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -10742,7 +10742,7 @@ snapshots:
 
   '@graphql-codegen/plugin-helpers@5.1.0(graphql@15.8.0)':
     dependencies:
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.2(graphql@15.8.0)
       change-case-all: 1.0.15
       common-tags: 1.8.2
       graphql: 15.8.0
@@ -10753,7 +10753,7 @@ snapshots:
   '@graphql-codegen/schema-ast@4.1.0(graphql@15.8.0)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.2(graphql@15.8.0)
       graphql: 15.8.0
       tslib: 2.6.3
 
@@ -10803,7 +10803,7 @@ snapshots:
       '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
       '@graphql-tools/optimize': 2.0.0(graphql@15.8.0)
       '@graphql-tools/relay-operation-optimizer': 7.0.2(graphql@15.8.0)
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.2(graphql@15.8.0)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       dependency-graph: 0.11.0
@@ -10867,7 +10867,7 @@ snapshots:
   '@graphql-tools/relay-operation-optimizer@7.0.2(graphql@15.8.0)':
     dependencies:
       '@ardatan/relay-compiler': 12.0.0(graphql@15.8.0)
-      '@graphql-tools/utils': 10.8.1(graphql@15.8.0)
+      '@graphql-tools/utils': 10.8.2(graphql@15.8.0)
       graphql: 15.8.0
       tslib: 2.8.1
     transitivePeerDependencies:
@@ -10890,7 +10890,7 @@ snapshots:
       graphql: 15.8.0
       tslib: 2.8.1
 
-  '@graphql-tools/utils@10.8.1(graphql@15.8.0)':
+  '@graphql-tools/utils@10.8.2(graphql@15.8.0)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@15.8.0)
       cross-inspect: 1.0.1
@@ -20086,7 +20086,7 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  usehooks-ts@3.1.0(react@18.3.1):
+  usehooks-ts@3.1.1(react@18.3.1):
     dependencies:
       lodash.debounce: 4.0.8
       react: 18.3.1
