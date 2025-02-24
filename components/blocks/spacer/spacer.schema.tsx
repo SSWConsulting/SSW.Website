@@ -6,6 +6,14 @@ export const SpacerSchema: Template = {
   label: "<V2> Spacer",
   ui: {
     previewSrc: "/images/thumbs/tina/spacer.png",
+    defaultItem: {
+      spacerHeight: "50px",
+      background: {
+        backgroundColour: 4,
+        backgroundImage: "",
+        bleed: false,
+      },
+    },
   },
   fields: [
     {
