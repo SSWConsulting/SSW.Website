@@ -53,7 +53,7 @@
     "ts-node": "^10.9.2"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@headlessui/react": "^1.7.19",
     "@headlessui/tailwindcss": "^0.2.1",
     "@marketsystems/nextjs13-appdir-breadcrumbs": "^1.0.4",
