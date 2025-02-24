@@ -164,10 +164,6 @@
       "_template": "accordionBlock"
     },
     {
-      "spacerHeight": "10",
-      "_template": "spacer"
-    },
-    {
       "isStacked": true,
       "heading": "Why move to the latest .NET with us?",
       "isH1": false,
