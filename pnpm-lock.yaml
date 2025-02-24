@@ -157,8 +157,8 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       ssw.megamenu:
-        specifier: 4.9.4
-        version: 4.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 4.10.0
+        version: 4.10.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -8238,8 +8238,8 @@ packages:
     peerDependencies:
       sucrase: ^3.35.0
 
-  ssw.megamenu@4.9.4:
-    resolution: {integrity: sha512-nyaha9jjJiCdaXcR8m+V84dQhLbI720l3/Ohrx8shhRP2TvL4qTBJOaFIS6tYlkFjsP6LXhA18aqDXf2ZNJGTA==}
+  ssw.megamenu@4.10.0:
+    resolution: {integrity: sha512-IQji6WY65Nfsajl5nkGPCbgF20ykwxT/0px8e74R5gteC9c75fllw8FWryJc4N8NJYumrXLVeMwJuVO7vghLbg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -15225,7 +15225,7 @@ snapshots:
       debug: 4.3.7
       enhanced-resolve: 5.17.1
       eslint: 8.57.1
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)
       fast-glob: 3.3.2
       get-tsconfig: 4.8.1
       is-bun-module: 1.2.1
@@ -15238,7 +15238,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -15260,7 +15260,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 8.57.1
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3)(eslint@8.57.1)
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.3(@typescript-eslint/parser@8.23.0(eslint@8.57.1)(typescript@5.6.3))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.31.0)(eslint@8.57.1))(eslint@8.57.1)
       hasown: 2.0.2
       is-core-module: 2.15.1
       is-glob: 4.0.3
@@ -18999,7 +18999,7 @@ snapshots:
       module-error: 1.0.2
       sucrase: 3.35.0
 
-  ssw.megamenu@4.9.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  ssw.megamenu@4.10.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@headlessui/react': 1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@heroicons/react': 2.1.5(react@18.3.1)
