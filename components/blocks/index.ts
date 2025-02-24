@@ -51,6 +51,7 @@ import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
 import { sectionHeaderSchema } from "./sectionHeader";
 import { serviceCardsBlockSchema } from "./serviceCards";
+import { SpacerSchema } from "./spacer/spacer.schema";
 import { tableBlockSchema } from "./tableLayout";
 import { testimonialsListSchema } from "./testimonialsList";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
@@ -66,6 +67,7 @@ export const pageBlocks: Template[] = [
   AccordionSchema,
   CardCarouselSchema,
   TechnologyCardCarouselSchema,
+  SpacerSchema,
   aboutUsBlockSchema,
   agendaSchema,
   agreementFormBlockSchema,
