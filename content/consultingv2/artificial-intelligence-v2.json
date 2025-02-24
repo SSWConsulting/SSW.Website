@@ -123,7 +123,7 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "",
       "isH1": false,
       "body": "",
@@ -185,26 +185,6 @@
           "icon": "BiSolidStar",
           "heading": "Trusted Expertise at Scale",
           "description": "From operational efficiency to customer engagement, our AI consultants have a track record of success working with enterprise-level systems and sensitive datasets.",
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": "le07tl",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "BiSupport",
-          "heading": "End-to-End Support and Guidance",
-          "description": "We help you dodge potential pitfalls, manage project risks, and seamlessly integrate AI, so you can focus on delivering value to your stakeholders.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
