@@ -15,14 +15,20 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Expert .NET upgrade. Get new features with minimal downtime",
+      "heading": ".NET upgrade - Get new features with minimal downtime",
       "isH1": true,
-      "description": "Upgrade your .NET applications to the latest .NET framework. We guide you past common pitfalls, ensuring you benefit from all the new features.\n",
+      "description": "Upgrade to the latest .NET for better performance, security, and long-term support. We streamline migrations to keep your apps modern and efficient.\n",
       "tabletTextAlignment": "Left",
-      "chips": {
-        "filledChipText": "",
-        "clearChipText": ""
-      },
+      "chips": [
+        {
+          "chipText": "",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "",
+          "chipType": "clearChip"
+        }
+      ],
       "featureColumns": {
         "twoColumns": true
       },
@@ -105,8 +111,8 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Strategic .NET 8 migration",
-      "body": "Your .NET applications need care and planning to upgrade to version 8. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
+      "heading": "Strategic .NET 8 or 9 migration",
+      "body": "Your .NET applications need care and planning to upgrade to the latest version. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
       "accordionItems": [
         {
           "label": "Phase 1: Understanding Your .NET Landscape",
@@ -169,10 +175,16 @@
           "guid": "ye7r7",
           "image": "",
           "altText": "Speed Up Your Apps",
-          "chips": {
-            "filledChipText": "",
-            "clearChipText": ""
-          },
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
           "icon": "BiTachometer",
           "heading": "Speed Up Your Apps",
           "description": ".NET's latest updates are all about performance, and we'll make sure you're getting the most out of it.",
@@ -203,9 +215,12 @@
           "guid": "imtiro",
           "image": "",
           "altText": "Skip the Upgrade Hassles",
-          "chips": {
-            "filledChipText": ""
-          },
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            }
+          ],
           "icon": "BiSkipNext",
           "heading": "Skip the Upgrade Hassles",
           "description": "We've already solved the tricky bits of .NET migrations. Avoid common pitfalls with",
@@ -236,9 +251,12 @@
           "guid": "m0bkqf",
           "image": "",
           "altText": "Beyond Basic Migration",
-          "chips": {
-            "filledChipText": ""
-          },
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            }
+          ],
           "icon": "BiRocket",
           "heading": "Beyond Basic Migration",
           "description": "Our team isn't just good with upgrades. We're .NET experts and can optimize your code for this new version.",
@@ -281,10 +299,16 @@
       "isH1": false,
       "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
       "tabletTextAlignment": "Left",
-      "chips": {
-        "filledChipText": ".NET8",
-        "clearChipText": "Modular Monolith (MoMo)"
-      },
+      "chips": [
+        {
+          "chipText": ".NET8",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Modular Monolith (MoMo)",
+          "chipType": "clearChip"
+        }
+      ],
       "featureColumns": {
         "twoColumns": false,
         "features": [
@@ -334,10 +358,16 @@
           "youtubeUrl": "https://www.youtube.com/watch?v=ocbPkNROnlc",
           "image": "",
           "altText": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
-          "chips": {
-            "filledChipText": ".NET User Groups",
-            "clearChipText": "1 hour"
-          },
+          "chips": [
+            {
+              "chipText": ".NET User Groups",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "1 hour",
+              "chipType": "clearChip"
+            }
+          ],
           "heading": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
           "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
           "embeddedButton": {
@@ -351,10 +381,16 @@
           "youtubeUrl": "https://www.youtube.com/watch?v=EjYczs7RYD8",
           "image": "/images/Louis Test Images/Incident-io-batch/cloud_native_net-aspire_16-9.jpg",
           "altText": "Breaking down .NET Aspire: Your gateway to cloud native apps",
-          "chips": {
-            "filledChipText": ".NET Aspire",
-            "clearChipText": "1 hour "
-          },
+          "chips": [
+            {
+              "chipText": ".NET Aspire",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "1 hour",
+              "chipType": "clearChip"
+            }
+          ],
           "heading": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
           "description": "SSW's Matt Wicks teams up with Octopus Deploy's Rob Pearson to demystify .NET Aspire. Dive into real-world orchestration, service integration, and deployment strategies that'll level up your cloud-native game.",
           "embeddedButton": {
@@ -368,10 +404,16 @@
           "youtubeUrl": "https://www.youtube.com/watch?v=Ft2JArXEXcI",
           "image": "/images/Louis Test Images/Incident-io-batch/dotnet_cleanarchitecture.png",
           "altText": "Full-Stack Clean Architecture: The Right Way to Share Code",
-          "chips": {
-            "filledChipText": ".NET User Groups",
-            "clearChipText": "1 hour"
-          },
+          "chips": [
+            {
+              "chipText": ".NET User Groups",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "1 hour",
+              "chipType": "clearChip"
+            }
+          ],
           "heading": "Full-Stack Clean Architecture: The right way to share code",
           "description": "Stop wrestling with UI and API code! Matt Goldman (author of .NET MAUI in Action) reveals how to nail Clean Architecture across MAUI and ASP.NET Core without the classic pitfalls. Expect real demos, not just theory.",
           "embeddedButton": {
@@ -434,10 +476,16 @@
       "heading": "Talk to us about your .NET project today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
-      "chips": {
-        "filledChipText": "",
-        "clearChipText": ""
-      },
+      "chips": [
+        {
+          "chipText": "",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "",
+          "chipType": "clearChip"
+        }
+      ],
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -473,10 +521,16 @@
       "heading": "",
       "isH1": false,
       "description": "",
-      "chips": {
-        "filledChipText": "",
-        "clearChipText": ""
-      },
+      "chips": [
+        {
+          "chipText": "",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "",
+          "chipType": "clearChip"
+        }
+      ],
       "featureColumns": {
         "twoColumns": true
       },
