@@ -292,7 +292,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "20ehn",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -306,23 +306,10 @@
           ],
           "icon": "info",
           "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Watch Now",
+            "buttonLink": "https://www.youtube.com/watch?v=Us04IRcNJ9c"
           }
         }
       ],
