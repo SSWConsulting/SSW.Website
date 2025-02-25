@@ -250,11 +250,11 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Artificial Intelligence",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "90 min",
               "chipType": "clearChip"
             }
           ],
