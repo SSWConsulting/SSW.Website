@@ -134,7 +134,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "",
+              "chipText": "Semantic Kernel",
               "chipType": "filledChip"
             },
             {
