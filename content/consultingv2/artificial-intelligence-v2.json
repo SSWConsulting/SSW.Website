@@ -173,21 +173,9 @@
       },
       "heading": "**YakShaver:** Our In-House AI in Action",
       "isH1": false,
-      "description": "At SSW, we don’t just talk about AI, we build it. YakShaver is our internal AI solution that automates work item creation, proving how AI can streamline repetitive dev tasks.\n",
+      "description": "At SSW, we don't just talk about AI—we build it. YakShaver is our internal AI solution that automates work item creation, proving how AI can streamline repetitive dev tasks.\n\nBeyond the typical chatbot, YakShaver shows how AI capabilities can transform development workflows.\n\nIt's the same approach we bring to your projects, practical AI that delivers real results.\n",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "No more manual documentation",
-            "description": "YakShaver creates backlog items in Azure DevOps or GitHub from a recorded conversation on Teams.",
-            "icon": "BiLogoGithub"
-          },
-          {
-            "heading": "AI That Understands Context",
-            "description": "Using Whisper for speech-to-text and GPT-4o for structured outputs, YakShaver ensures clear, detailed issue reports with minimal effort.",
-            "icon": "BiSolidBot"
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
