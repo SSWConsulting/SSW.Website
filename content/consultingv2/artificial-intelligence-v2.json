@@ -252,7 +252,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Artificial Intelligence",
+              "chipText": "AI Trends",
               "chipType": "filledChip"
             },
             {
@@ -275,7 +275,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Artificial Intelligence",
+              "chipText": "AI Model Guides",
               "chipType": "filledChip"
             },
             {
@@ -298,7 +298,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Artificial Intelligence",
+              "chipText": "Multi-Language AI Apps",
               "chipType": "filledChip"
             },
             {
