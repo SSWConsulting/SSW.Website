@@ -193,7 +193,9 @@
         }
       ],
       "background": {
-        "backgroundColour": 2
+        "backgroundColour": 2,
+        "backgroundImage": "",
+        "bleed": false
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
