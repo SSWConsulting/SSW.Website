@@ -136,7 +136,7 @@
           "heading": "Intelligent automation, precisely applied",
           "description": "We build automation that cuts through complexity and adapts to your specific business needs. No generic solutions, just practical AI that solves real problems.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
@@ -146,7 +146,7 @@
           "heading": "Secure, compliant implementations",
           "description": "AI models offer incredible capabilities but require proper security and compliance guardrails. We implement safeguards that protect your customer data, ensuring your solutions stay both powerful and compliant.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
@@ -156,7 +156,7 @@
           "heading": "Trusted expertise at scale",
           "description": "From operational efficiency to customer experience, we scale AI solutions that deliver measurable results. Our team brings enterprise-level expertise to organizations of all size.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
