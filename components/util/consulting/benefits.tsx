@@ -1,8 +1,10 @@
 import classNames from "classnames";
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../../customLink";
+
+const Image = dynamic(() => import("next/image"));
 
 const BenefitCard = (props) => {
   const { image, title, description, linkURL, linkName } = props.data;
@@ -25,6 +27,7 @@ const BenefitCard = (props) => {
             width={120}
             height={120}
             alt={title || "benefit icon"}
+            loading="lazy"
           />
         )}
       </figure>
@@ -38,7 +41,7 @@ const BenefitCard = (props) => {
         </h4>
         <section
           data-tina-field={tinaField(props.data, "description")}
-          className="mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold prose-ul:list-disc prose-li:m-0 prose-li:list-item prose-li:font-normal md:text-left md:text-base"
+          className="prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold prose-ul:list-disc prose-li:m-0 prose-li:list-item prose-li:font-normal mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal md:text-left md:text-base"
         >
           <TinaMarkdown content={description} />
         </section>

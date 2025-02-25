@@ -14,13 +14,22 @@ import {
   EventInfoStatic,
   formatDates,
 } from "@/services/server/events";
-import { ReadonlyURLSearchParams, useSearchParams } from "next/navigation";
 import { PropsWithChildren, useEffect, useState } from "react";
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
 dayjs.extend(isBetween);
+
+const LiveStreamClient = dynamic(
+  () => {
+    return import("./live-stream-client").then((mod) => mod.LiveStreamClient);
+  },
+  {
+    loading: () => <></>,
+    ssr: false,
+  }
+);
 
 const LiveStreamWidget = dynamic(
   () => {
@@ -32,13 +41,7 @@ const LiveStreamWidget = dynamic(
   }
 );
 
-const LiveStreamBanner = dynamic(
-  () => import("../../components/liveStream/liveStreamBanner"),
-  {
-    loading: () => <></>,
-    ssr: true,
-  }
-);
+import LiveStreamBanner from "@/components/liveStream/liveStreamBanner";
 
 const INTERVAL_MINUTES = 1;
 
@@ -47,7 +50,6 @@ interface LiveStreamProps extends PropsWithChildren {
 }
 
 export function LiveStream({ event, children }: LiveStreamProps) {
-  const params: ReadonlyURLSearchParams = useSearchParams();
   const [countdownMins, setCountdownMins] = useState<number>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
 
@@ -104,20 +106,38 @@ export function LiveStream({ event, children }: LiveStreamProps) {
 
   return (
     <>
-      {(showBanner || params?.get("liveBanner")) && (
+      {showBanner ? (
         <LiveStreamBanner
           countdownMins={countdownMins}
           liveStreamData={eventDynamic}
           isLive={!!isLive}
         />
+      ) : (
+        <LiveStreamClient param={"liveBanner"}>
+          {" "}
+          <LiveStreamBanner
+            countdownMins={countdownMins}
+            liveStreamData={eventDynamic}
+            isLive={!!isLive}
+          />
+        </LiveStreamClient>
       )}
+
       <MenuWrapper>
-        {(isLive || params?.get("liveStream")) && (
+        {isLive ? (
           <LiveStreamWidget
             {...{ eventDynamic, liveStreamDelayMinutes }}
             event={eventDynamic}
             isLive={!!isLive}
           />
+        ) : (
+          <LiveStreamClient param={"liveStream"}>
+            <LiveStreamWidget
+              {...{ eventDynamic, liveStreamDelayMinutes }}
+              event={eventDynamic}
+              isLive={!!isLive}
+            />
+          </LiveStreamClient>
         )}
         {children}
       </MenuWrapper>

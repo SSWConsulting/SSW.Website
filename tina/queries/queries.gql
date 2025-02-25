@@ -102,6 +102,9 @@ query articlesContentQuery($relativePath: String!, $date: String) {
   articles(relativePath: $relativePath) {
     ...ArticlesParts
   }
+  articlesIndex(relativePath: "index.mdx") {
+    title
+  }
   userGroup: eventsCalendarConnection(
     filter: {
       calendarType: { eq: "User Groups" }
@@ -117,6 +120,12 @@ query articlesContentQuery($relativePath: String!, $date: String) {
 query getArticlesQuery($after: String, $top: Float!) {
   articlesConnection(first: $top, after: $after) {
     ...GetArticleParts
+  }
+}
+
+query articlesIndexTitleQuery($relativePath: String!) {
+  articlesIndex(relativePath: $relativePath) {
+    title
   }
 }
 

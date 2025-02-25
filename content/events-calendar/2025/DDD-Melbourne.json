@@ -1,0 +1,20 @@
+{
+  "title": "DDD Melbourne",
+  "url": "https://www.dddmelbourne.com/",
+  "thumbnail": "/images/events/ddd-logo.png",
+  "thumbnailDescription": "DDD Melbourne",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/bryden-oliver.mdx"
+    }
+  ],
+  "startDateTime": "2025-02-21T23:00:00.000Z",
+  "endDateTime": "2025-02-22T08:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "category": "Other",
+  "abstract": "DDD Melbourne is an inclusive non-profit conference for the software community. Our goal is to create an approachable event that appeals to the whole community, especially people who usually don’t have the opportunity to attend, or speak at, conferences.\n\nYou can see the Event Agenda and Speakers here: https://www.dddmelbourne.com/agenda ",
+  "description": "DDD Melbourne is an inclusive non-profit conference for the software community. Our goal is to create an approachable event that appeals to the whole community, especially people who usually don’t have the opportunity to attend or speak at, conferences.\n\nYou can see the Event Agenda and Speakers here: [https://www.dddmelbourne.com/agenda](https://www.dddmelbourne.com/agenda) \n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}

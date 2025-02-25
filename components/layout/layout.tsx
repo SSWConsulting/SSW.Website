@@ -2,7 +2,6 @@ import classNames from "classnames";
 import { useRouter } from "next/router";
 import { useLiveStreamTimer } from "../../hooks/useLiveStreamProps";
 import { Footer } from "./footer/footer";
-import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
 import {
@@ -13,14 +12,14 @@ import {
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
-import { Open_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 import { useReportWebVitals } from "next/web-vitals";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
 import { ErrorBoundary } from "../util/error/error-boundary";
 
-const openSans = Open_Sans({
-  variable: "--open-sans-font",
+const inter = Inter({
+  variable: "--inter-font",
   subsets: ["latin"],
 });
 
@@ -54,7 +53,6 @@ interface LayoutProps {
     menuGroups: NavMenuGroup[];
   };
   children: React.ReactNode;
-  showAzureBanner?: boolean;
   liveStreamData: LiveStreamData;
 }
 
@@ -63,7 +61,6 @@ export const Layout = ({
   children,
   menu,
   className = "",
-  showAzureBanner,
 }: LayoutProps) => {
   const eventJson: EventInfoStatic = liveStreamData?.edges[0]?.node;
 
@@ -114,13 +111,13 @@ export const Layout = ({
         {/* Ensures next/font CSS variable is accessible for all components */}
         <style jsx global>{`
           :root {
-            --open-sans-font: ${openSans.style.fontFamily};
+            --inter-font: ${inter.style.fontFamily};
           }
         `}</style>
         <div
           className={classNames(
             "flex min-h-screen flex-col font-sans",
-            openSans.className,
+            inter.className,
             className
           )}
         >
@@ -143,6 +140,7 @@ export const Layout = ({
               )}
               <MegaMenuLayout
                 menuBarItems={menu.menuGroups}
+                tagline="Enterprise Software Development"
                 linkComponent={(props) => (
                   <CustomLink
                     {...props}
@@ -154,8 +152,6 @@ export const Layout = ({
           </header>
           <ErrorBoundary key={router.asPath}>
             <main className={classNames("grow bg-white")}>{children}</main>
-
-            {showAzureBanner && <PreFooter />}
             <Footer />
           </ErrorBoundary>
         </div>

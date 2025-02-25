@@ -1,24 +1,19 @@
 "use client";
 import { Tab, Transition } from "@headlessui/react";
 import Image from "next/image";
-import React, {
-  Fragment,
-  useEffect,
-  useMemo,
-  useReducer,
-  useState,
-} from "react";
+import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { BluredBase64Image } from "../../helpers/images";
 import { useEvents } from "../../hooks/useEvents";
 import {
   useFetchFutureEvents,
   useFetchPastEvents,
 } from "../../hooks/useFetchEvents";
 import { useFormatDates } from "../../hooks/useFormatDates";
-import { UtilityButton } from "../blocks";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
+import { UtilityButton } from "../button/utilityButton";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { Presenter, PresenterLinks } from "../presenters/presenterList";
@@ -29,12 +24,8 @@ import { FilterGroupProps } from "./FilterGroup";
 
 const EVENTS_JSON_LD_LIMIT = 5;
 
-export const DEFAULT_TECHNOLOGY_FITLER = undefined;
-export const DEFAULT_CATEGORY_FILTER = undefined;
-
 interface EventsFilterProps {
   sidebarBody: TinaMarkdownContent;
-  defaultToPastTab?: boolean;
   filterCategories: EventFilterAllCategories;
 }
 
@@ -62,12 +53,12 @@ export type EventTrimmed = {
 export const EventsFilter = ({
   filterCategories,
   sidebarBody,
-  defaultToPastTab,
 }: EventsFilterProps) => {
-  const [pastSelected, setPastSelected] = useState<boolean>(defaultToPastTab);
+  const [pastSelected, setPastSelected] = useState<boolean>(false);
   const { past, upcoming } = filterCategories;
   const { filters: futureFilters } = useEvents(upcoming);
   const { filters: pastFilters } = useEvents(past);
+
   const pastSelectedFilters = useMemo<SelectedFilters>(() => {
     const filters = getFilterState(pastFilters);
     return filters;
@@ -94,6 +85,16 @@ export const EventsFilter = ({
     isLoadingPastPages,
   } = useFetchPastEvents(pastSelectedFilters);
 
+  useEffect(() => {
+    // Using Next.js's useSearchParams function leads to complete client-side rendering, which impacts SEO and page load performance, therefore using javascript's function
+    const params = new URLSearchParams(window.location.search);
+    const queryTab = params.get("past");
+
+    if (queryTab === "1") {
+      setPastSelected(true);
+    }
+  }, []);
+
   return (
     <FilterBlock
       sidebarChildren={
@@ -105,7 +106,7 @@ export const EventsFilter = ({
     >
       <Tab.Group
         onChange={(index) => setPastSelected(index === 1)}
-        defaultIndex={defaultToPastTab ? 1 : 0}
+        selectedIndex={pastSelected ? 1 : 0}
       >
         <Tab.List className="mb-8 flex flex-row">
           <EventTab>Upcoming Events</EventTab>
@@ -160,23 +161,6 @@ interface EventsListProps {
   isLoading?: boolean;
 }
 
-const eventsReducer = (state, action) => {
-  if (!state.visible && arraysEqual(state.firstEvents, action.payload)) {
-    return state;
-  }
-  if (state.visible && arraysEqual(state.secondEvents, action.payload)) {
-    return state;
-  }
-  switch (action.type) {
-    case "SET_EVENTS":
-      return state.visible
-        ? { ...state, firstEvents: action.payload, visible: !state.visible }
-        : { ...state, secondEvents: action.payload, visible: !state.visible };
-    default:
-      return state;
-  }
-};
-
 // TODO: Compare arrays by reference instead of value https://github.com/SSWConsulting/SSW.Website/issues/3066
 const arraysEqual = (arr1: EventTrimmed[], arr2: EventTrimmed[]): boolean => {
   if (arr1.length !== arr2.length) return false;
@@ -185,18 +169,22 @@ const arraysEqual = (arr1: EventTrimmed[], arr2: EventTrimmed[]): boolean => {
   );
 };
 
-const initialState = {
-  firstEvents: [],
-  secondEvents: [],
-  isFetching: false,
-  visible: true,
-};
-
 const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
-  const [state, dispatch] = useReducer(eventsReducer, initialState);
+  const [firstEvents, setFirstEvents] = useState(events);
+  const [secondEvents, setSecondEvents] = useState(events);
+  const [visible, setVisible] = useState(true);
+
+  // Update events and toggle visibility if `events` changes
   useEffect(() => {
-    dispatch({ type: "SET_EVENTS", payload: events });
-  }, [events]);
+    if (!arraysEqual(visible ? firstEvents : secondEvents, events)) {
+      if (visible) {
+        setFirstEvents(events);
+      } else {
+        setSecondEvents(events);
+      }
+      setVisible(!visible); // Toggle visibility
+    }
+  }, [events, visible, firstEvents, secondEvents]);
 
   return (
     <div>
@@ -205,15 +193,15 @@ const EventsList = ({ events, isUpcoming, isLoading }: EventsListProps) => {
       ) : (
         <>
           <LoadedEvents
-            visible={!state.visible}
-            events={state.firstEvents}
+            visible={!visible}
+            events={firstEvents}
             isUpcoming={isUpcoming}
-          ></LoadedEvents>
+          />
           <LoadedEvents
-            visible={state.visible}
-            events={state.secondEvents}
+            visible={visible}
+            events={secondEvents}
             isUpcoming={isUpcoming}
-          ></LoadedEvents>
+          />
         </>
       )}
     </div>
@@ -295,10 +283,10 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
 
   We need this because there's an issue preventing us from syncing the files in the repo
   to Tina cloud. Images that aren't synced will 404.
-   
+
    */
 
-  const [thumbnail, setFallbackImage] = useState("");
+  const [thumbnail, setFallbackImage] = useState(event.thumbnail);
   useEffect(() => {
     setFallbackImage(event.thumbnail);
   }, [event.thumbnail]);
@@ -334,14 +322,17 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <div className="mb-8 flex max-md:flex-col md:flex-row">
-          <div className="mr-3 shrink-0">
+        <div className="mb-8 block md:flex md:flex-row">
+          <div className="float-left mb-3 mr-3 shrink-0 pr-2 md:float-none md:pr-0">
             <Image
-              className="rounded-md max-md:pb-3"
+              className={"rounded-md"}
               height={100}
               width={100}
+              placeholder="blur"
               alt={`${event.thumbnailDescription || event.title} logo`}
               src={thumbnail}
+              loading="lazy"
+              blurDataURL={BluredBase64Image}
               onError={handleImageError}
             />
           </div>
@@ -398,7 +389,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             </div>
           </div>
         </div>
-        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
+        <div className="prose prose-img:mx-1 prose-img:my-0 prose-img:inline max-w-full">
           <TinaMarkdown content={event?.description} />
         </div>
         <div className="mb-1 mt-6 p-0 text-end">

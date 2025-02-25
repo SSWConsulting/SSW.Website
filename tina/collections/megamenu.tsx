@@ -101,6 +101,16 @@ export const megaMenuSchema: Collection = {
                     },
                     {
                       type: "string",
+                      name: "documentationLink",
+                      label: "Link to Documentation",
+                    },
+                    {
+                      type: "string",
+                      name: "youtubeLink",
+                      label: "Link to YouTube Channel",
+                    },
+                    {
+                      type: "string",
                       name: "icon",
                       label: "Icon (optional override of above image field)",
                       options: Object.keys(iconMap),
@@ -127,6 +137,20 @@ export const megaMenuSchema: Collection = {
               name: "name",
               label: "Name",
               required: true,
+            },
+            {
+              type: "image",
+              name: "iconImg",
+              label: "Icon",
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
+              uploadDir: () => "/megamenu-icons",
+            },
+            {
+              type: "string",
+              name: "icon",
+              label: "Icon (optional override of above image field)",
+              options: Object.keys(iconMap),
             },
             {
               type: "object",

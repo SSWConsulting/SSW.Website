@@ -75,7 +75,7 @@ export const Hero = ({ data, parentField }) => {
             className="relative row-start-1 flex justify-center lg:col-span-2"
           >
             <Image
-              className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 saturate-200 dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150 lg:max-w-none"
+              className="absolute h-auto w-full max-w-xs rounded-lg opacity-50 mix-blend-multiply blur-2xl brightness-150 saturate-200 lg:max-w-none dark:opacity-30 dark:mix-blend-hard-light dark:brightness-150"
               src={data.image.src}
               alt={data.image.alt}
               aria-hidden="true"

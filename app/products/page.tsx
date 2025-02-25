@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   const seo = tinaProps.data.productsIndex.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.data.global.header.url}/products`;
+    seo.canonical = `${tinaProps.data.global.header.url}products`;
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks

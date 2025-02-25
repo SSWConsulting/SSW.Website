@@ -1,7 +1,8 @@
 "use client";
 
-import { InlineJotForm, VideoEmbed } from "@/components/blocks";
+import { VideoEmbed } from "@/components/blocks/videoEmbed";
 import { CustomLink } from "@/components/customLink";
+import { InlineJotForm } from "@/components/inlineJotForm/inlineJotForm";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import layoutData, { default as globals } from "@/content/global/index.json";
 import { EventInfo } from "@/services/server/events";
@@ -290,7 +291,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                 <SocialIcons />
               </div>
             </div>
-            <InlineJotForm jotFormId={globals.newsletterJotFormId} />
+            <InlineJotForm jotFormId={globals.forms.newsletterJotFormId} />
           </div>
 
           {!!event?.presenterList?.length &&

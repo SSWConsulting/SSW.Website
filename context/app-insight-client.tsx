@@ -5,7 +5,7 @@ import {
   ReactPlugin,
 } from "@microsoft/applicationinsights-react-js";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
-import { ReactNode, useEffect, useMemo } from "react";
+import React, { ReactNode, useEffect, useMemo } from "react";
 
 export function AppInsightsProvider({ children }: { children: ReactNode }) {
   const reactPlugin = useMemo(() => new ReactPlugin(), []);

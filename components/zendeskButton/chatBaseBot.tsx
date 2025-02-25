@@ -8,6 +8,7 @@ const ChatBaseBot = () => {
       <Script
         src="https://www.chatbase.co/embed.min.js"
         id={chatBaseBotId}
+        async
         defer
         strategy="lazyOnload"
       />
