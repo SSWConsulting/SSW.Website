@@ -89,9 +89,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "From quick prototypes to secure AI models, **we're here to help.**",
+      "heading": "From quick prototypes to secure AI models, **we make AI work for you.**",
       "isH1": false,
-      "description": "Using AI can give your business an edge by automating tasks, predicting trends, and understanding customer feedback. We create AI solutions tailored to your needs.\n",
+      "description": "New Generation AI models—trained with 10x more computing power than previous generations—can do more than just automate tasks. They can solve complex problems, anticipate needs, and handle work that used to require expert teams. We help you implement AI that delivers real business value.\n",
       "featureColumns": {
         "twoColumns": false
       },
@@ -144,7 +144,7 @@
           ],
           "icon": "BiLogoMicrosoft",
           "heading": "Intelligent Automation, Precisely Applied",
-          "description": "Go beyond basic task automation. We leverage Semantic Kernel and Azure AI Services to build intelligent workflows that adapt to your specific business logic, handling complex scenarios and \"fuzzy\" data with ease",
+          "description": "We build smart, task-specific automation that works. Our tech combines modern AI frameworks with your business processes to create systems that adapt to your specific needs. No generic solutions, just practical AI that solves real problems.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
