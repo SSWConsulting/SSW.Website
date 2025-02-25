@@ -348,10 +348,6 @@
           "buttonText": "Schedule a free initial meeting",
           "showLeadCaptureForm": true,
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "background": {
