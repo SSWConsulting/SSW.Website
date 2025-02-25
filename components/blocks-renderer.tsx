@@ -146,6 +146,10 @@ const TechnologyCardCarousel = dynamic(() =>
   )
 );
 
+const Spacer = dynamic(() =>
+  import("./blocks/spacer/spacer").then((mod) => mod.Spacer)
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -183,6 +187,7 @@ const componentMap = {
   AccordionBlock,
   CardCarousel,
   TechnologyCardCarousel,
+  Spacer,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
