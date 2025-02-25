@@ -134,15 +134,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiLogoMicrosoft",
           "heading": "Intelligent Automation, Precisely Applied",
-          "description": "We build automation that cuts through complexity and adapts to your specific business needs",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Azure OpenAI Integration",
-                "description": "Direct access to the latests AI capabilities with minimal disruption."
-              }
-            ]
-          },
+          "description": "We build automation that cuts through complexity and adapts to your specific business needs. No generic solutions, just practical AI that solves real problems.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -152,7 +144,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidLockAlt",
           "heading": "Secure, Compliant AI Implementations",
-          "description": "We implement Microsoft's enterprise-grade security. Our solutions keep your data protected while maximizing AI effectiveness in regulated environments.",
+          "description": "We implement Microsoft's enterprise-grade security. Our solutions protect your data while maximizing effectiveness.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
