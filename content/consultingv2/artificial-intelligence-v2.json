@@ -246,7 +246,7 @@
       "cardStyle": 1,
       "cards": [
         {
-          "guid": null,
+          "guid": "ui7a6e",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -259,22 +259,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "The Year of the AI Agent: Automation to Intelligence",
+          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
