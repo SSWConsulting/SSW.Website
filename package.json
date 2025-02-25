@@ -22,6 +22,8 @@
     "test-and-coverage": "jest --ci --json --coverage --testLocationInResults"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.21.0",
     "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "14.2.15",
     "@playwright/test": "^1.48.2",
@@ -33,9 +35,9 @@
     "@types/node": "^20.17.6",
     "@types/react": "^18.3.12",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
-    "@typescript-eslint/parser": "^8.18.2",
+    "@typescript-eslint/parser": "^8.23.0",
     "autoprefixer": "^10.4.20",
-    "eslint": "^8.57.1",
+    "eslint": "^9.21.0",
     "eslint-config-next": "15.1.7",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
@@ -50,7 +52,8 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "source-map-explorer": "^2.5.3",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -107,7 +110,6 @@
     "tailwindcss": "^3.4.14",
     "tailwindcss-gradients": "^3.0.0",
     "tinacms": "2.6.1",
-    "typescript": "^5.6.3",
     "usehooks-ts": "^3.1.1",
     "xss": "^1.0.15",
     "yup": "^0.32.11"
