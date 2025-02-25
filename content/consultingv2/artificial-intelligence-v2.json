@@ -247,6 +247,8 @@
       "cards": [
         {
           "guid": "ui7a6e",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -262,7 +264,8 @@
           "heading": "The Year of the AI Agent: Automation to Intelligence",
           "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Watch Now",
+            "buttonLink": "https://www.youtube.com/watch?v=BlqJ7bnivLE"
           }
         },
         {
