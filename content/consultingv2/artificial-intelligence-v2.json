@@ -132,19 +132,17 @@
         {
           "guid": "ib0xbk",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Semantic Kernel",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            }
-          ],
           "icon": "BiLogoMicrosoft",
           "heading": "Intelligent Automation, Precisely Applied",
-          "description": "We build smart automation that integrates seamlessly with your Microsoft stack. Our solutions adapt to your specific business needs, delivering practical AI that solves real problems.",
+          "description": "We build automation that cuts through complexity and adapts to your specific business needs",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Azure OpenAI Integration",
+                "description": "Direct access to the latests AI capabilities with minimal coding. Connect your data sources and deploy enterprise-grade AI solutions in days, not months."
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -152,19 +150,9 @@
         {
           "guid": "hukqtq",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "BiSolidLockAlt",
           "heading": "Secure, Compliant AI Implementations",
-          "description": "Our Microsoft-certified team ensures your AI projects meet rigorous security and compliance standards, minimizing risks and protecting your customers’ data.  ",
+          "description": "We implement Microsoft's enterprise-grade security. Our solutions keep your data protected while maximizing AI effectiveness in regulated environments.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -172,19 +160,9 @@
         {
           "guid": "65qp3c",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "BiSolidStar",
           "heading": "Trusted Expertise at Scale",
-          "description": "From operational efficiency to customer engagement, our AI consultants have a track record of success working with enterprise-level systems and sensitive datasets.",
+          "description": "From Azure ML to Microsoft Fabric, we scale AI solutions across your organization. Our Microsoft-certified team helps you transform complex data into valuable business insights.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
