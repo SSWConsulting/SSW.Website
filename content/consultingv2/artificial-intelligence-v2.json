@@ -139,7 +139,7 @@
             "features": [
               {
                 "heading": "Azure OpenAI Integration",
-                "description": "Direct access to the latests AI capabilities with minimal coding. Connect your data sources and deploy enterprise-grade AI solutions in days, not months."
+                "description": "Direct access to the latests AI capabilities with minimal disruption."
               }
             ]
           },
@@ -162,7 +162,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidStar",
           "heading": "Trusted Expertise at Scale",
-          "description": "From Azure ML to Microsoft Fabric, we scale AI solutions across your organization. Our Microsoft-certified team helps you transform complex data into valuable business insights.",
+          "description": "From operational efficiency to customer insights, we deploy AI solutions that scale with your business and deliver tangible results",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
