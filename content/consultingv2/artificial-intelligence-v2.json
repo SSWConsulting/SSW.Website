@@ -329,7 +329,7 @@
       "isStacked": false,
       "techCardStyle": 0,
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 3
       },
       "_template": "technologyCardCarousel"
     }
