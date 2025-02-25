@@ -143,8 +143,8 @@
           "guid": "hukqtq",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidLockAlt",
-          "heading": "Secure, Compliant AI Implementations",
-          "description": "We implement Microsoft's enterprise-grade security. Our solutions protect your data while maximizing effectiveness.",
+          "heading": "Secure, Compliant Implementations",
+          "description": "AI models offer incredible capabilities but require proper security and compliance guardrails. We implement safeguards that protect your customer data, ensuring your solutions stay both powerful and compliant.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -154,7 +154,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidStar",
           "heading": "Trusted Expertise at Scale",
-          "description": "From operational efficiency to customer insights, we deploy AI solutions that scale with your business and deliver tangible results",
+          "description": "From operational efficiency to customer experience, we scale AI solutions that deliver measurable results. Our team brings enterprise-level expertise to organizations of all size.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
