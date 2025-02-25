@@ -168,6 +168,15 @@
       "_template": "cardCarousel"
     },
     {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
