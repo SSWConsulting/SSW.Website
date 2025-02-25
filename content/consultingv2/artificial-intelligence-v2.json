@@ -293,10 +293,12 @@
         },
         {
           "guid": "20ehn",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Artificial Intelligence",
               "chipType": "filledChip"
             },
             {
@@ -305,7 +307,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
           "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
           "embeddedButton": {
             "buttonText": "Watch Now",
