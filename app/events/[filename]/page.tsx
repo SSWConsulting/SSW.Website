@@ -8,9 +8,9 @@ import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import EventsPages from "./index";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
-export const revalidate = 60;
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const pagesListData = await client.queries.eventsConnection();
