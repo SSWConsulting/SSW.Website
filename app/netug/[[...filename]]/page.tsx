@@ -10,9 +10,12 @@ export const dynamicParams = false;
 
 export const revalidate = 3600; // 1 hour
 
-const getData = async (filename: string) => {
+const getData = async (params) => {
+  let filename = params?.filename;
   if (!filename) {
     filename = "index";
+  } else {
+    filename = filename.join("/");
   }
 
   const tinaProps = await client.queries.userGroupPageContentQuery({
@@ -146,12 +149,12 @@ export async function generateStaticParams() {
     (page) => {
       if (page.node._sys.filename === "index") {
         return {
-          filename: "/",
+          filename: [],
         };
       }
 
       return {
-        filename: page.node._sys.filename,
+        filename: page.node._sys.breadcrumbs,
       };
     }
   );
@@ -163,7 +166,6 @@ export default async function NetUG({
 }: {
   params: { filename: string };
 }) {
-  const { filename } = params;
-  const { props } = await getData(filename);
+  const { props } = await getData(params);
   return <TinaClient props={props} Component={NetUGPage} />;
 }
