@@ -64,7 +64,7 @@ const getData = async (filename: string[]) => {
   };
 };
 
-export default async function Logo({
+export default async function Logos({
   params,
 }: {
   params: { filename: string[] };
