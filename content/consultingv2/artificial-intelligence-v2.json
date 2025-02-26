@@ -178,9 +178,9 @@
     },
     {
       "topLabel": {
-        "labelText": "Our AI Agent"
+        "labelText": ""
       },
-      "heading": "**YakShaver:** Our In-House AI in Action",
+      "heading": "**YakShaver:** Our AI Agent in Action",
       "isH1": false,
       "description": "At SSW, we don't just talk about AI—we build it. YakShaver is our AI solution that automates work item creation, proving how AI can streamline repetitive dev tasks.\n\nBeyond the typical chatbot, YakShaver shows how AI capabilities can transform development workflows.\n\nIt's the same approach we bring to your projects, practical AI that delivers real results.\n",
       "featureColumns": {
