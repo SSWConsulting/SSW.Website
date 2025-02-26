@@ -5,7 +5,7 @@
 # This script finds files with duplicated titles in the /public/images/newsletter-uploads folder and
 # generates new titles for them using Azure AI.
 
-# Don't forget to update with your Azure AI endpoint and key on lines 26-27
+# Don't forget to update with your Azure AI endpoint and key on lines 30-31
 # Run the script using "python fix-newsletter-titles.py" from script directory
 
 import os
