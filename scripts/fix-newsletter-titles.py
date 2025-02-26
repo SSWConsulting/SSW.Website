@@ -6,6 +6,8 @@ import re
 import time
 import chardet # type: ignore
 from collections import defaultdict
+
+# This script Azure AI API, recommended to test things with Azure AI Foundry and get API endpoint and key from there
 from azure.ai.inference import ChatCompletionsClient # type: ignore
 from azure.ai.inference.models import SystemMessage, UserMessage # type: ignore
 from azure.core.credentials import AzureKeyCredential # type: ignore
@@ -17,9 +19,10 @@ system_prompt = """
         YOUR RESPONSE MUST BE UNDER 100 CHARACTERS OR UNDER. DO NOT INCLUDE AIR QUOTES IN YOUR RESPONSE.
     """
 
+# Update with your Azure OpenAI endpoint and key
 endpoint = os.getenv("AZURE_INFERENCE_SDK_ENDPOINT", "{{ENDPOINT}}")
-model_name = os.getenv("DEPLOYMENT_NAME", "gpt-4o-mini")
 key = os.getenv("AZURE_INFERENCE_SDK_KEY", "{{API_KEY}}")
+model_name = os.getenv("DEPLOYMENT_NAME", "gpt-4o-mini")
 client = ChatCompletionsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
 
 def detect_file_encoding(file_path):
