@@ -7,14 +7,14 @@ import LogoPage from ".";
 
 export const dynamicParams = false;
 
-type GenerateMetadataProps = {
-  params: { filename: string };
+type GenerateMetaDataProps = {
+  params: { filename: string[] };
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
 export async function generateMetadata({
   params,
-}: GenerateMetadataProps): Promise<Metadata> {
+}: GenerateMetaDataProps): Promise<Metadata> {
   const tinaProps = await getData(params.filename);
   const seo = tinaProps.props.seo;
 
@@ -30,14 +30,24 @@ export async function generateMetadata({
 export async function generateStaticParams() {
   const pagesListData = await client.queries.logosConnection();
 
-  return pagesListData.data.logosConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
+  return pagesListData.data.logosConnection.edges.map((page) => {
+    if (page.node._sys.filename === "index") {
+      return {
+        filename: [],
+      };
+    }
+
+    return {
+      filename: page.node._sys.breadcrumbs,
+    };
+  });
 }
 
-const getData = async (filename: string) => {
+const getData = async (filename: string[]) => {
+  const fileNameUpdated = filename ? filename.join("/") : "index";
+
   const tinaProps = await client.queries.logosContentQuery({
-    relativePath: `${filename}.mdx`,
+    relativePath: `${fileNameUpdated}.mdx`,
     date: TODAY.toISOString(),
   });
 
@@ -54,10 +64,10 @@ const getData = async (filename: string) => {
   };
 };
 
-export default async function Logos({
+export default async function Logo({
   params,
 }: {
-  params: { filename: string };
+  params: { filename: string[] };
 }) {
   const { filename } = params;
   const { props } = await getData(filename);

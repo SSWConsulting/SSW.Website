@@ -1,3 +1,5 @@
+"use client";
+
 import { Breadcrumbs } from "@/app/components/breadcrumb";
 import { Blocks } from "@/components/blocks-renderer";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
