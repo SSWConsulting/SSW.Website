@@ -69,7 +69,7 @@ const Card = ({ card, gridLayout }: CardProps) => {
           />
         </div>
       )}
-      <div className="not-prose bottom-0 flex w-full flex-col content-center justify-center bg-gray-50 p-4 text-center md:h-24">
+      <div className="not-prose bottom-0 flex w-full flex-col place-content-center bg-gray-50 p-4 text-center md:h-24">
         <h4 className="font-bold">{title}</h4>
         {link?.url && (
           <CustomLink

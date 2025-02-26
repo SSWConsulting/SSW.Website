@@ -98,7 +98,7 @@ const CarouselBody = ({
 }: InternalCarouselProps) => {
   return (
     <div key={header} className={header ? "" : "hidden"}>
-      <div className="prose-p:py-0 mt-2 flex items-center justify-between text-left font-semibold text-sswRed">
+      <div className="mt-2 flex items-center justify-between text-left font-semibold text-sswRed prose-p:py-0">
         <h3>{header}</h3>
         <span className={website ? "" : "hidden"}>
           {website && (
@@ -108,7 +108,7 @@ const CarouselBody = ({
           )}
         </span>
       </div>
-      <div className="prose-p:py-2 text-left">
+      <div className="text-left prose-p:py-2">
         <TinaMarkdown content={paragraph} />
       </div>
       <div className="flex flex-wrap">
