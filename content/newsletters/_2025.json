@@ -1,3 +1,10 @@
 {
-  "newsletters_year": "2025"
+  "newsletters_year": "2025",
+  "newsletters": [
+    {
+      "month": 1,
+      "file": "/images/newsletter-uploads/2025/_2025_01__Adam's%25202024%2520Year%2520in%2520Review__.html",
+      "description": "Adam’s 2024 Year in Review"
+    }
+  ]
 }
