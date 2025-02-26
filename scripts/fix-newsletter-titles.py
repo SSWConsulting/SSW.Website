@@ -2,8 +2,8 @@
 # pip install azure.identity
 # pip install chardet
 
-# Don't forget update with your Azure AI endpoint and key on line 26-27
-# Run the script using "python fix-newsletter-titles.py"
+# Don't forget to update with your Azure AI endpoint and key on lines 26-27
+# Run the script using "python fix-newsletter-titles.py" from script directory
 
 import os
 import re
