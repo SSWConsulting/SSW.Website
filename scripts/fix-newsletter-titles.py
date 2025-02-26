@@ -14,9 +14,9 @@ system_prompt = """
         YOUR RESPONSE MUST BE UNDER 100 CHARACTERS OR UNDER. DO NOT INCLUDE AIR QUOTES IN YOUR RESPONSE.
     """
 
-endpoint = os.getenv("AZURE_INFERENCE_SDK_ENDPOINT", "https://ai-babakamyljanov3480ai888542621622.services.ai.azure.com/models")
+endpoint = os.getenv("AZURE_INFERENCE_SDK_ENDPOINT", "{{ENDPOINT}}")
 model_name = os.getenv("DEPLOYMENT_NAME", "gpt-4o-mini")
-key = os.getenv("AZURE_INFERENCE_SDK_KEY", "3aykEwxZBmm8yt3nQIpdUqnta7CdXY3X2Je6c5Ff7Nnu7gZO4oxYJQQJ99BBACYeBjFXJ3w3AAAAACOGmxrR")
+key = os.getenv("AZURE_INFERENCE_SDK_KEY", "{{API_KEY}}")
 client = ChatCompletionsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
 
 def detect_file_encoding(file_path):
