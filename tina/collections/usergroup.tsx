@@ -20,6 +20,9 @@ export const userGroupPageSchema: Collection = {
   },
   ui: {
     router: ({ document }) => {
+      if (document._sys.filename === "index") {
+        return "/netug";
+      }
       return `/netug/${document._sys.filename}`;
     },
   },
