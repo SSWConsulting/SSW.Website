@@ -109,7 +109,7 @@ export async function generateMetadata({
   const seo = tinaProps.props.seo;
 
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.props.header.url}netug/${params?.filename ?? ""}`;
+    seo.canonical = `${tinaProps.props.header.url}netug${params.filename ? `/${params.filename}` : ""}`;
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
