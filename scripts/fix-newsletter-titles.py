@@ -1,6 +1,7 @@
 # pip install azure-ai-inference
 # pip install azure.identity
 # pip install chardet
+# Run the script using "python fix-newsletter-titles.py"
 import os
 import re
 import time
@@ -19,7 +20,7 @@ system_prompt = """
         YOUR RESPONSE MUST BE UNDER 100 CHARACTERS OR UNDER. DO NOT INCLUDE AIR QUOTES IN YOUR RESPONSE.
     """
 
-# Update with your Azure OpenAI endpoint and key
+# Update with your Azure AI endpoint and key
 endpoint = os.getenv("AZURE_INFERENCE_SDK_ENDPOINT", "{{ENDPOINT}}")
 key = os.getenv("AZURE_INFERENCE_SDK_KEY", "{{API_KEY}}")
 model_name = os.getenv("DEPLOYMENT_NAME", "gpt-4o-mini")
