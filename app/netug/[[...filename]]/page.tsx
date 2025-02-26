@@ -80,13 +80,6 @@ const getData = async (filename) => {
     }
   }
 
-  if (
-    tinaProps.data.userGroupPage.seo &&
-    !tinaProps.data.userGroupPage.seo.canonical
-  ) {
-    tinaProps.data.userGroupPage.seo.canonical = `${tinaProps.data.global.header.url}netug${filename && filename !== "index" ? `/${filename}` : ""}`;
-  }
-
   return {
     props: {
       data: tinaProps.data,
@@ -117,7 +110,6 @@ export async function generateMetadata({
 
   if (seo && !seo.canonical) {
     seo.canonical = `${tinaProps.props.header.url}netug/${params?.filename ?? ""}`;
-    seo.canonical = `${tinaProps.props.header.url}netug/${params.filename}`;
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
