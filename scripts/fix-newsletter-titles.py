@@ -1,3 +1,6 @@
+# pip install azure-ai-inference
+# pip install azure.identity
+# pip install chardet
 import os
 import re
 import time
