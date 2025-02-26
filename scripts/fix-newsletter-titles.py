@@ -1,14 +1,17 @@
 # pip install azure-ai-inference
 # pip install azure.identity
 # pip install chardet
+
+# Don't forget update with your Azure AI endpoint and key on line 26-27
 # Run the script using "python fix-newsletter-titles.py"
+
 import os
 import re
 import time
 import chardet # type: ignore
 from collections import defaultdict
 
-# This script Azure AI API, recommended to test things with Azure AI Foundry and get API endpoint and key from there
+# This script Azure AI, recommended to test things with Azure AI Foundry and get API endpoint and key from there
 from azure.ai.inference import ChatCompletionsClient # type: ignore
 from azure.ai.inference.models import SystemMessage, UserMessage # type: ignore
 from azure.core.credentials import AzureKeyCredential # type: ignore
