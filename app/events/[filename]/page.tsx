@@ -74,9 +74,8 @@ export async function generateMetadata({
   if (seo && !seo.canonical) {
     seo.canonical = `${tinaProps.props.header.url}events/${params.filename}`;
   }
-
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
+  const { seoProps } = useSEO(seo || {});
 
   return { ...seoProps };
 }
