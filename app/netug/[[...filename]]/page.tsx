@@ -10,13 +10,8 @@ export const dynamicParams = false;
 
 export const revalidate = 3600; // 1 hour
 
-const getData = async (params) => {
-  let filename = params?.filename;
-  if (!filename) {
-    filename = "index";
-  } else {
-    filename = filename.join("/");
-  }
+const getData = async (filename) => {
+  filename = filename ? filename.join("/") : "index";
 
   const tinaProps = await client.queries.userGroupPageContentQuery({
     relativePath: `${filename}.mdx`,
@@ -89,7 +84,7 @@ const getData = async (params) => {
     tinaProps.data.userGroupPage.seo &&
     !tinaProps.data.userGroupPage.seo.canonical
   ) {
-    tinaProps.data.userGroupPage.seo.canonical = `${tinaProps.data.global.header.url}netug${filename ? `/${filename}` : ""}`;
+    tinaProps.data.userGroupPage.seo.canonical = `${tinaProps.data.global.header.url}netug${filename && filename !== "index" ? `/${filename}` : ""}`;
   }
 
   return {
@@ -122,6 +117,7 @@ export async function generateMetadata({
 
   if (seo && !seo.canonical) {
     seo.canonical = `${tinaProps.props.header.url}netug/${params?.filename ?? ""}`;
+    seo.canonical = `${tinaProps.props.header.url}netug/${params.filename}`;
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -164,8 +160,9 @@ export async function generateStaticParams() {
 export default async function NetUG({
   params,
 }: {
-  params: { filename: string };
+  params: { filename: string[] };
 }) {
-  const { props } = await getData(params);
+  const { filename } = params;
+  const { props } = await getData(filename);
   return <TinaClient props={props} Component={NetUGPage} />;
 }
