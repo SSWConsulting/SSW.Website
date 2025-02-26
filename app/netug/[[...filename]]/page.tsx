@@ -146,12 +146,12 @@ export async function generateStaticParams() {
     (page) => {
       if (page.node._sys.filename === "index") {
         return {
-          params: { filename: [] },
+          filename: "/",
         };
       }
 
       return {
-        params: { filename: page.node._sys.breadcrumbs },
+        filename: page.node._sys.filename,
       };
     }
   );
