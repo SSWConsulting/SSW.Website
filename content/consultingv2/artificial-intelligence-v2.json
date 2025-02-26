@@ -143,7 +143,7 @@
           "guid": "hukqtq",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidLockAlt",
-          "heading": "Secure, compliant implementations",
+          "heading": "Secure, compliant implementation",
           "description": "AI models offer incredible capabilities but require proper security and compliance guardrails. We implement safeguards that protect your customer data, ensuring your solutions stay both powerful and compliant.",
           "embeddedButton": {
             "buttonText": ""
