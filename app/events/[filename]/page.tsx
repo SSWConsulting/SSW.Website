@@ -10,6 +10,8 @@ import EventsPages from "./index";
 
 export const dynamicParams = false;
 
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const pagesListData = await client.queries.eventsConnection();
 
