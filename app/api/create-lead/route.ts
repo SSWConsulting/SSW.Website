@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
           throw new CustomError(
             JSON.stringify(createLeadFlow.data),
             createLeadFlow.status,
-            JSON.stringify(req.body),
+            JSON.stringify(request.body),
             appInsight.KnownSeverityLevel.Critical,
             STAGE.PA_FLOW
           );
