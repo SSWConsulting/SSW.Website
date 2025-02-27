@@ -301,20 +301,6 @@
           "icon": "info",
           "heading": "How to supercharge a company with AI",
           "description": "Supercharge your company with AI!  🚀  See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features.  Discover actionable tips to implement AI",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
