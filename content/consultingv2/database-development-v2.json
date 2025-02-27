@@ -106,7 +106,7 @@
               {
                 "heading": "Partitioning & In-Memory OLTP",
                 "description": "Segregates frequently accessed data for faster retrieval while optimizing historical storage.",
-                "icon": "Tina"
+                "icon": "BiSolidChevronRight"
               },
               {
                 "heading": "Elastic Query & Fabric Integration",
