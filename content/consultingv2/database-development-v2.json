@@ -133,8 +133,8 @@
                 "icon": "Tina"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "heading": "Extended Events for Deep Insights",
+                "description": "Tracks lock contention, memory grants, and execution patterns for fine-tuned optimization.",
                 "icon": "Tina"
               }
             ]
