@@ -100,12 +100,12 @@
           "altText": "Lorem Ipsum",
           "icon": "BiTrendingUp",
           "heading": "Seamless Scalability",
-          "description": "Ensure your database grows with your business without performance bottlenecks.",
+          "description": "Keep your database fast and efficient as workloads grow.",
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "heading": "Partitioning & In-Memory OLTP",
+                "description": "Segregates frequently accessed data for faster retrieval while optimizing historical storage.",
                 "icon": "Tina"
               },
               {
