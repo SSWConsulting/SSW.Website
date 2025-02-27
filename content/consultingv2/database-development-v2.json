@@ -178,17 +178,7 @@
       "isH1": false,
       "description": "Don't wait for database performance issues to hit! Bryden Oliver reveals how to plan for optimal SQL performance from the start. Learn essential strategies to design efficient databases, anticipate bottlenecks, and build for speed.\n",
       "featureColumns": {
-        "twoColumns": false,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
+        "twoColumns": false
       },
       "buttons": [
         {
