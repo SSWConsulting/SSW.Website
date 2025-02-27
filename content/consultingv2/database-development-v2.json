@@ -63,7 +63,7 @@
               {
                 "heading": "Optimized Locking Mechanisms",
                 "description": "Reduces contention in high-transaction environments, ensuring smoother performance under load.",
-                "icon": "Tina"
+                "icon": "BiSolidChevronRight"
               }
             ]
           },
