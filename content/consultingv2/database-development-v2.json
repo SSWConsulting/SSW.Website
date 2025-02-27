@@ -351,12 +351,12 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "60 min.",
-              "chipType": "clearChip"
-            },
-            {
               "chipText": "SQL Optimization",
               "chipType": "filledChip"
+            },
+            {
+              "chipText": "60 min.",
+              "chipType": "clearChip"
             }
           ],
           "icon": "info",
