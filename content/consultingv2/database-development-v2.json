@@ -48,7 +48,7 @@
       "body": "",
       "cards": [
         {
-          "guid": null,
+          "guid": "74jtva",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -61,7 +61,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Faster Query Performance",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
@@ -95,7 +95,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Stronger Security & Compliance",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
@@ -116,7 +116,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "qpeuw",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -129,7 +129,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Seamless Scalability",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
