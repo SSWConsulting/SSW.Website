@@ -58,7 +58,7 @@
               {
                 "heading": "Adaptive Query Processing",
                 "description": "Dynamically adjusts execution plans using parameter-sensitive plan optimization to prevent slow queries.",
-                "icon": "Tina"
+                "icon": "BiSolidChevronRight"
               },
               {
                 "heading": "Optimized Locking Mechanisms",
