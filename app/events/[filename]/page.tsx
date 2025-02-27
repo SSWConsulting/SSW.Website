@@ -8,7 +8,9 @@ import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import EventsPages from "./index";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
+
+export const revalidate = 3600;
 
 export async function generateStaticParams() {
   const pagesListData = await client.queries.eventsConnection();
@@ -72,9 +74,8 @@ export async function generateMetadata({
   if (seo && !seo.canonical) {
     seo.canonical = `${tinaProps.props.header.url}events/${params.filename}`;
   }
-
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
+  const { seoProps } = useSEO(seo || {});
 
   return { ...seoProps };
 }
