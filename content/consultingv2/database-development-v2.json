@@ -153,11 +153,13 @@
             "features": [
               {
                 "heading": "Hybrid & Multi-Cloud Support ",
-                "description": "Seamlessly run workloads on Azure SQL, AWS RDS for SQL Server, or on-premises with minimal configuration."
+                "description": "Seamlessly run workloads on Azure SQL, AWS RDS for SQL Server, or on-premises with minimal configuration.",
+                "icon": "BiSolidData"
               },
               {
                 "heading": "Always On Availability Groups ",
-                "description": "Ensures uptime with automatic failover and real-time data replication across multiple locations."
+                "description": "Ensures uptime with automatic failover and real-time data replication across multiple locations.",
+                "icon": "BiSolidData"
               }
             ]
           },
