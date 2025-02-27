@@ -130,7 +130,7 @@
               {
                 "heading": "Query Store & Plan Correction",
                 "description": "Monitors query performance and reverts to stable execution plans if regressions occur.",
-                "icon": "Tina"
+                "icon": "BiSolidChevronRight"
               },
               {
                 "heading": "Extended Events for Deep Insights",
