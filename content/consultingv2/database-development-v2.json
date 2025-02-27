@@ -85,8 +85,8 @@
                 "icon": "Tina"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "heading": "Row-Level Security (RLS)",
+                "description": "Controls access by filtering data at the user level to enforce least-privilege policies.",
                 "icon": "Tina"
               }
             ]
