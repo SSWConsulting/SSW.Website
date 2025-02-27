@@ -30,8 +30,8 @@ export async function GET(request: NextRequest) {
     }
   } catch (error) {
     console.error("Error occurred:", error);
-    return (
-      NextResponse.json({ message: error.message }),
+    return NextResponse.json(
+      { message: error.message },
       { status: error.statusCode }
     );
   }
