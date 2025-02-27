@@ -111,7 +111,7 @@
               {
                 "heading": "Elastic Query & Fabric Integration",
                 "description": "Runs distributed queries across multiple databases without performance degradation.",
-                "icon": "Tina"
+                "icon": "BiSolidChevronRight"
               }
             ]
           },
