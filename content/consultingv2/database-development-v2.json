@@ -135,7 +135,7 @@
               {
                 "heading": "Extended Events for Deep Insights",
                 "description": "Tracks lock contention, memory grants, and execution patterns for fine-tuned optimization.",
-                "icon": "Tina"
+                "icon": "BiSolidChevronRight"
               }
             ]
           },
