@@ -352,7 +352,7 @@
           "chips": [
             {
               "chipText": "60 min.",
-              "chipType": "filledChip"
+              "chipType": "clearChip"
             },
             {
               "chipText": "SQL Optimization",
