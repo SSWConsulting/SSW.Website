@@ -32,9 +32,10 @@
     },
     {
       "heading": "Trusted by",
+      "isWhiteImages": true,
       "logos": [
         {
-          "logo": "",
+          "logo": "/images/Louis%2520Test%2520Images/Incident-io-batch/Logos/1-removebg-preview.png",
           "altText": "Logo"
         }
       ],
