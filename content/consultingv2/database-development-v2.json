@@ -182,7 +182,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Book a FREE Initial Consultation",
+          "showLeadCaptureForm": true,
           "colour": 0
         },
         {
