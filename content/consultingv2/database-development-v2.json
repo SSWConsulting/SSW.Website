@@ -11,17 +11,7 @@
       "isH1": false,
       "description": "Ensure your database is fast, secure, and built for growth, ***without the guesswork. ***Our expert consultants help you fine-tune your SQL Server for maximum efficiency.  \n",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
