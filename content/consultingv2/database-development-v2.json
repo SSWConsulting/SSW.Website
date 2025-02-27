@@ -43,9 +43,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Lorem Ipsum",
+      "heading": "Why Choose SSW for **SQL Server Optimization?**",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "body": "",
       "cards": [
         {
           "guid": null,
