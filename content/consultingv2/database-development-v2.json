@@ -146,16 +146,6 @@
         {
           "guid": "4jrsum",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "BiSolidCloudUpload",
           "heading": "Flexible Deployment",
           "description": "Deploy SQL Server anywhere with built-in redundancy and failover support.",
