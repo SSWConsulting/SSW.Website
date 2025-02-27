@@ -1,18 +1,20 @@
 import client from "@/tina/client";
 import * as appInsights from "applicationinsights";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import { cache } from "services/server/cacheService";
-import megaMenuJson from "../../content/megamenu/menu.json";
+import megaMenuJson from "../../../content/megamenu/menu.json";
 
 const CACHE_MINS = 60;
 const CACHE_SECS = CACHE_MINS * 60;
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Cache-Control", `s-maxage=${CACHE_SECS}`);
+export async function GET() {
+  const responseHeaders = {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Cache-Control": `s-maxage=${CACHE_SECS}`,
+    },
+  };
 
   try {
     const cached = cache.get("megamenu");
@@ -24,9 +26,9 @@ export default async function handler(
 
       cache.set("megamenu", tinaData.data.megamenu, CACHE_SECS);
 
-      res.status(200).json(tinaData.data.megamenu);
+      return NextResponse.json(tinaData.data.megamenu, responseHeaders);
     } else {
-      res.status(200).json(cached);
+      return NextResponse.json(cached, responseHeaders);
     }
   } catch (err) {
     appInsights?.defaultClient?.trackException({
@@ -40,6 +42,6 @@ export default async function handler(
 
     console.error(err);
 
-    res.status(200).json(megaMenuJson);
+    return NextResponse.json(megaMenuJson, responseHeaders);
   }
 }
