@@ -186,7 +186,9 @@
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
+          "buttonText": "Rules to Better SQL Databases",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-databases-developers/",
+          "icon": "BiWrench",
           "colour": 1
         }
       ],
