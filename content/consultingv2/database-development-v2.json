@@ -142,6 +142,40 @@
           "embeddedButton": {
             "buttonText": "Lorem"
           }
+        },
+        {
+          "guid": "4jrsum",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiSolidCloudUpload",
+          "heading": "Flexible Deployment",
+          "description": "Deploy SQL Server anywhere with built-in redundancy and failover support.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
         }
       ],
       "_template": "cardCarousel"
