@@ -8,7 +8,7 @@
         "labelText": "Lorem Ipsum"
       },
       "heading": "Optimize Your SQL Server for Performance, Security, and Scalability",
-      "isH1": false,
+      "isH1": true,
       "description": "Ensure your database is fast, secure, and built for growth, ***without the guesswork. ***Our expert consultants help you fine-tune your SQL Server for maximum efficiency.  \n",
       "featureColumns": {
         "twoColumns": true
@@ -24,6 +24,10 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/Louis%2520Test%2520Images/Incident-io-batch/hero/hero_640_480px(2).png"
+      },
       "_template": "imageTextBlock"
     },
     {
