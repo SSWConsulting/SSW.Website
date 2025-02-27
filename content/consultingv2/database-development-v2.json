@@ -122,14 +122,14 @@
         {
           "guid": "u9xr5",
           "altText": "Lorem Ipsum",
-          "icon": "info",
-          "heading": "Proactive Monitoring & Automated Tuning",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "icon": "BiSolidCamera",
+          "heading": "Proactive Monitoring",
+          "description": "Detect and resolve performance issues before they impact users.",
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "heading": "Query Store & Automatic Plan Correction",
+                "description": "Monitors query performance and reverts to stable execution plans if regressions occur.",
                 "icon": "Tina"
               },
               {
