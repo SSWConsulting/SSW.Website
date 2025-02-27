@@ -87,7 +87,7 @@
               {
                 "heading": "Row-Level Security (RLS)",
                 "description": "Controls access by filtering data at the user level to enforce least-privilege policies.",
-                "icon": "Tina"
+                "icon": "BiSolidChevronRight"
               }
             ]
           },
