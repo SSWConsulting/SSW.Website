@@ -279,8 +279,8 @@
           "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
           "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
           "embeddedButton": {
-            "buttonText": "Watch Now",
-            "buttonLink": "https://www.youtube.com/watch?v=Us04IRcNJ9c"
+            "buttonText": "",
+            "buttonLink": ""
           }
         },
         {
@@ -302,7 +302,7 @@
           "heading": "How to supercharge a company with AI",
           "description": "Supercharge your company with AI!  🚀  See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features.  Discover actionable tips to implement AI",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
