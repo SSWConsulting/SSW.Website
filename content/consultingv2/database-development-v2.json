@@ -109,8 +109,8 @@
                 "icon": "Tina"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "heading": "Elastic Query & Fabric Integration",
+                "description": "Runs distributed queries across multiple databases without performance degradation.",
                 "icon": "Tina"
               }
             ]
