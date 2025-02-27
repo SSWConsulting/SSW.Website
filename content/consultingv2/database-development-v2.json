@@ -207,6 +207,7 @@
       "heading": "Lorem Ipsum",
       "isH1": false,
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cardStyle": 1,
       "cards": [
         {
           "guid": null,
@@ -311,7 +312,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "94i2u",
           "altText": "Lorem Ipsum",
           "chips": [
             {
