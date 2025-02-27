@@ -82,7 +82,7 @@
               {
                 "heading": "Always Encrypted with Secure Enclaves",
                 "description": "Encrypts sensitive data at the column level without exposing it to database administrators.",
-                "icon": "Tina"
+                "icon": "BiSolidChevronRight"
               },
               {
                 "heading": "Row-Level Security (RLS)",
