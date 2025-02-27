@@ -6,6 +6,8 @@ import { Metadata } from "next";
 import Page from ".";
 import { TinaClient } from "../tina-client";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   let PageListData = await client.queries.pageConnection();
   const allPagesListData = PageListData;
@@ -20,12 +22,13 @@ export async function generateStaticParams() {
       ...PageListData.data.pageConnection.edges
     );
   }
+  const pages = allPagesListData.data.pageConnection.edges
+    .filter((page) => page.node._sys.filename !== "home") // Remove "home" page as it is not handled by this route
+    .map((page) => ({
+      filename: page.node._sys.filename,
+    }));
 
-  return allPagesListData.data.pageConnection.edges.map((page) => {
-    return {
-      params: { filename: page.node._sys.breadcrumbs },
-    };
-  });
+  return pages;
 }
 
 type GenerateMetaDataProps = {
