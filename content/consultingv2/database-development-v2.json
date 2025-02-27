@@ -52,17 +52,17 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidBolt",
           "heading": "Faster Query Performance",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "Reduce execution times and optimize response speeds.",
           "featureList": {
             "features": [
               {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "heading": "Indexing & Query Tuning",
+                "description": "Optimize indexes and queries to minimize CPU load and speed up data retrieval.",
                 "icon": "Tina"
               },
               {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "heading": "Adaptive Query Processing",
+                "description": "Automatically adjust execution plans based on real-time performance metrics.",
                 "icon": "Tina"
               }
             ]
@@ -76,7 +76,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidLock",
           "heading": "Stronger Security & Compliance",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "Protect sensitive data and ensure regulatory compliance.\n\n",
           "featureList": {
             "features": [
               {
