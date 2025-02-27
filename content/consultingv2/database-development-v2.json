@@ -172,11 +172,11 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
       "heading": "**Stop SQL Slowdowns Before They Start:** Proactive Performance Planning",
       "isH1": false,
-      "description": "",
+      "description": "Don't wait for database performance issues to hit! Bryden Oliver reveals how to plan for optimal SQL performance from the start. Learn essential strategies to design efficient databases, anticipate bottlenecks, and build for speed.\n",
       "featureColumns": {
         "twoColumns": false,
         "features": [
