@@ -98,16 +98,6 @@
         {
           "guid": "qpeuw",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Seamless Scalability",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
