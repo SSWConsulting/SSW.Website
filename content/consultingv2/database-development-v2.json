@@ -386,7 +386,7 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "accordionItems": [
         {
-          "label": " What are the key differences between Always Encrypted and Transparent Data Encryption?",
+          "label": " What are the key differences between Always Encrypted and Transparent Data Encryption (TDE)?",
           "content": "Always Encrypted and Transparent Data Encryption (TDE) serve different encryption purposes in SQL Server:\n\n* Always Encrypted protects specific columns and ensures data is encrypted at rest, in transit, and in use. It prevents database administrators from viewing sensitive data by encrypting and decrypting it client-side. However, it requires application changes and limits operations on encrypted data.\n\n<!---->\n\n* TDE encrypts the entire database, including logs and backups, but only at rest. Encryption and decryption happen within the database engine, making it easy to implement without modifying applications. However, it does not prevent privileged users from accessing data in real time.\n\nWhich One Should You Use?\n\n* Use Always Encrypted if you need strict access control for sensitive data, even from database administrators.\n* Use TDE for broad data-at-rest encryption without altering application logic, ensuring compliance with regulations like GDPR and HIPAA.\n"
         },
         {
