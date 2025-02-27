@@ -361,7 +361,7 @@
           ],
           "icon": "info",
           "heading": "SQL Bottleneck? Fix it FAST with Proven Performance Techniques",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "Database slowdowns killing your app's performance? Bryden Oliver (SSW User Group) reveals essential SQL optimization techniques to identify and eliminate bottlenecks. Get actionable strategies to reclaim speed and deliver a better user experience.",
           "embeddedButton": {
             "buttonText": ""
           }
