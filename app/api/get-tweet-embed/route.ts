@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
       severity: appInsights.KnownSeverityLevel.Error,
     });
 
-    return NextResponse.json({ message: err.message }), { status: 500 };
+    return NextResponse.json({ message: err.message }, { status: 500 });
   }
 }
 
