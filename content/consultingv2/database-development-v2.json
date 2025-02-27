@@ -159,7 +159,7 @@
               {
                 "heading": "Always On Availability Groups ",
                 "description": "Ensures uptime with automatic failover and real-time data replication across multiple locations.",
-                "icon": "BiSolidData"
+                "icon": "BiSolidChevronRight"
               }
             ]
           },
