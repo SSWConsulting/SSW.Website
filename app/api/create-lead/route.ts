@@ -15,7 +15,7 @@ const RECAPATCHA_VALIDATION_SUCCESS_RESULT = {
 export async function POST(request: NextRequest) {
   try {
     // this is the code to validate with the recaptcha service
-    const requestBody = await request.json();
+    const requestBody = await request.json().then((data) => data);
     const { Recaptcha } = requestBody;
     const Note = requestBody.Note;
     // Note: bypassing recaptcha is intended for weekly testing the lead capture form only
