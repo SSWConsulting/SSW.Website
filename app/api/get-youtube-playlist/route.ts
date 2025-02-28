@@ -6,7 +6,7 @@ const CACHE_HOURS = 6 * 60 * 60; // ~ 6 hours
 
 export async function GET(request: NextRequest) {
   try {
-    const playlistId = request.nextUrl.searchParams.get("getPlaylistId");
+    const playlistId = request.nextUrl.searchParams.get("playlistId");
     const videosCount = request.nextUrl.searchParams.get("videosCount");
     if (!playlistId) {
       return Response.json({ message: "Invalid PlaylistId" }, { status: 400 });
