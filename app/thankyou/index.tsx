@@ -1,23 +1,15 @@
-import client from "@/tina/client";
-import { TODAY } from "hooks/useFetchEvents";
-import { InferGetStaticPropsType } from "next";
-import { FaGlobe, FaUsers } from "react-icons/fa";
-import { CustomLink } from "../components/customLink";
-import { Layout } from "../components/layout";
-import { Container } from "../components/util/container";
+"use client";
 
-const ThankyouPage = (
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+import { CustomLink } from "@/components/customLink";
+import { Container } from "@/components/util/container";
+import { FaGlobe, FaUsers } from "react-icons/fa";
+
+const ThankyouPage = () => {
   const textContentClass = "px-[100px] text-lg mb-4";
   const doneButtonClass = "done p-3 inline-flex cursor-pointer";
 
   return (
-    <Layout
-      liveStreamData={props.tinaProps.data.userGroup}
-      className="bg-gray-75"
-      menu={props.tinaProps.data.megamenu}
-    >
+    <>
       <div className="!max-w-full !bg-white">
         <Container padding="px-4" className="pb-8 text-center">
           <h1>
@@ -55,19 +47,8 @@ const ThankyouPage = (
           </div>
         </Container>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export const getStaticProps = async () => {
-  const tinaProps = await client.queries.layoutQuery({
-    date: TODAY.toISOString(),
-  });
-  return {
-    props: {
-      tinaProps,
-    },
-  };
 };
 
 export default ThankyouPage;

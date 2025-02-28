@@ -1,47 +1,29 @@
-import { ReadMore } from "@/components/usergroup/readMore";
-import { client } from "@/tina/client";
-import { TODAY } from "hooks/useFetchEvents";
-import { InferGetStaticPropsType } from "next";
-import { FaYoutube } from "react-icons/fa";
-import { useTina } from "tinacms/dist/react";
-import { Breadcrumbs } from "../components/blocks/breadcrumbs";
-import { BuiltOnAzure } from "../components/blocks/builtOnAzure";
-import { YoutubePlaylistBlock } from "../components/blocks/youtubePlaylist";
-import { UtilityButton } from "../components/button/utilityButton";
-import { CustomLink } from "../components/customLink";
-import { Layout } from "../components/layout";
-import { LiveHeader } from "../components/live/header";
-import { Container } from "../components/util/container";
-import { Section } from "../components/util/section";
-import { SEO } from "../components/util/seo";
-import { VideoCard } from "../components/util/videoCards";
-import { removeExtension } from "../services/client/utils.service";
-import {
-  convertEventDatesToStrings,
-  getNextEventToBeLiveStreamed,
-} from "../services/server/events";
+"use client";
 
-const ISR_TIME = 60 * 60;
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
+import { YoutubePlaylistBlock } from "@/components/blocks/youtubePlaylist";
+import { UtilityButton } from "@/components/button/utilityButton";
+import { CustomLink } from "@/components/customLink";
+import { LiveHeader } from "@/components/live/header";
+import { ReadMore } from "@/components/usergroup/readMore";
+import { Container } from "@/components/util/container";
+import { Section } from "@/components/util/section";
+import { VideoCard } from "@/components/util/videoCards";
+import { removeExtension } from "@/services/client/utils.service";
+import { Breadcrumbs } from "app/components/breadcrumb";
+import { FaYoutube } from "react-icons/fa";
 
 const PREVIEW_SENTENCE_COUNT = 9; // Max number of sentences to be previewed to match the Video height
 
-export default function LivePage(
-  props: InferGetStaticPropsType<typeof getStaticProps>
-) {
-  const { data } = useTina({
-    data: props.data,
-    query: props.query,
-    variables: props.variables,
-  });
+export default function LivePage({ props, tinaProps }) {
+  const { data } = tinaProps;
 
   return (
-    <Layout liveStreamData={data.userGroup} menu={data.megamenu}>
-      <SEO seo={data.live.seo} />
+    <>
       <LiveHeader title={data.live.title} subtitle={data.live.subtitle} />
       <Section className="mx-auto w-full max-w-9xl px-8 py-5">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
-          suffix={data.global.breadcrumbSuffix}
           title={data.live.seo?.title}
         />
       </Section>
@@ -117,25 +99,6 @@ export default function LivePage(
         <YoutubePlaylistBlock {...data.live.youtubePlaylist} />
       </Container>
       <BuiltOnAzure data={data.live.azureBanner} />
-    </Layout>
+    </>
   );
 }
-
-export const getStaticProps = async () => {
-  const tinaProps = await client.queries.liveContentQuery({
-    relativePath: "index.mdx",
-    date: TODAY.toISOString(),
-  });
-
-  const event = await getNextEventToBeLiveStreamed();
-  const eventWithStaticProperties = convertEventDatesToStrings(event);
-  return {
-    props: {
-      data: tinaProps.data,
-      query: tinaProps.query,
-      variables: tinaProps.variables,
-      event: eventWithStaticProperties || null,
-    },
-    revalidate: ISR_TIME,
-  };
-};

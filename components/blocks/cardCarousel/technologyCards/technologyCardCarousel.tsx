@@ -1,3 +1,5 @@
+"use client";
+
 import client from "@/tina/client";
 import { useEffect, useState } from "react";
 import { CardCarousel } from "../cardCarousel/cardCarousel";
