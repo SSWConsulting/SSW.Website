@@ -1,10 +1,6 @@
-import * as appInsight from "applicationinsights";
+// import * as appInsight from "applicationinsights";
 import { NextRequest, NextResponse } from "next/server";
-import {
-  HttpStatusCode,
-  PowerAutomate_Endpoint,
-  STAGE,
-} from "../../../services/model";
+import { HttpStatusCode } from "../../../services/model";
 import { CustomError } from "../../../services/server/customError";
 import { validateRecaptcha } from "../../../services/server/google-recaptcha";
 import { invokePowerAutomateFlow } from "../../../services/server/power-automate-flow";
@@ -42,26 +38,26 @@ export async function POST(request: NextRequest) {
           process.env.CREATE_LEAD_ENDPOINT
         );
         if (createLeadFlow.status !== HttpStatusCode.Accepted) {
-          throw new CustomError(
-            JSON.stringify(createLeadFlow.data),
-            createLeadFlow.status,
-            JSON.stringify(request.body),
-            appInsight.KnownSeverityLevel.Critical,
-            STAGE.PA_FLOW
-          );
+          // throw new CustomError(
+          //   JSON.stringify(createLeadFlow.data),
+          //   createLeadFlow.status,
+          //   JSON.stringify(request.body),
+          //   appInsight.KnownSeverityLevel.Critical,
+          //   STAGE.PA_FLOW
+          // );
         }
         return NextResponse.json(
           { success: true },
           { status: createLeadFlow.status }
         );
       } else {
-        throw new CustomError(
-          JSON.stringify(recaptchaValidation.data),
-          recaptchaValidation.status,
-          JSON.stringify(requestBody),
-          appInsight.KnownSeverityLevel.Error,
-          STAGE.GOOGLE_RECAPTCHA
-        );
+        // throw new CustomError(
+        //   JSON.stringify(recaptchaValidation.data),
+        //   recaptchaValidation.status,
+        //   JSON.stringify(requestBody),
+        //   appInsight.KnownSeverityLevel.Error,
+        //   STAGE.GOOGLE_RECAPTCHA
+        // );
       }
     } else {
       return NextResponse.json(
@@ -71,15 +67,15 @@ export async function POST(request: NextRequest) {
     }
   } catch (error) {
     if (error instanceof CustomError) {
-      appInsight.defaultClient?.trackException({
-        exception: new Error(error.message),
-        properties: {
-          Method: `${PowerAutomate_Endpoint.CREATE_LEAD} - ${error.method}`,
-          RequestBody: error.requestBody,
-          Status: error.statusCode,
-        },
-        severity: error.severity,
-      });
+      // appInsight.defaultClient?.trackException({
+      //   exception: new Error(error.message),
+      //   properties: {
+      //     Method: `${PowerAutomate_Endpoint.CREATE_LEAD} - ${error.method}`,
+      //     RequestBody: error.requestBody,
+      //     Status: error.statusCode,
+      //   },
+      //   severity: error.severity,
+      // });
       return NextResponse.json(
         { message: error.message },
         { status: error.statusCode }

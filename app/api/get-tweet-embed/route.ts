@@ -1,4 +1,4 @@
-import * as appInsights from "applicationinsights";
+// import * as appInsights from "applicationinsights";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -18,14 +18,14 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json(body, { status: 200 });
   } catch (err) {
-    appInsights.defaultClient.trackException({
-      properties: {
-        Request: "GET /api/get-tweet-embed",
-        Status: 500,
-      },
-      exception: err,
-      severity: appInsights.KnownSeverityLevel.Error,
-    });
+    // appInsights.defaultClient.trackException({
+    //   properties: {
+    //     Request: "GET /api/get-tweet-embed",
+    //     Status: 500,
+    //   },
+    //   exception: err,
+    //   severity: appInsights.KnownSeverityLevel.Error,
+    // });
 
     return NextResponse.json({ message: err.message }, { status: 500 });
   }

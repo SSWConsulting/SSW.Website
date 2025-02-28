@@ -1,5 +1,5 @@
 import client from "@/tina/client";
-import * as appInsights from "applicationinsights";
+// import * as appInsights from "applicationinsights";
 import { NextResponse } from "next/server";
 import { cache } from "services/server/cacheService";
 import megaMenuJson from "../../../content/megamenu/menu.json";
@@ -31,14 +31,14 @@ export async function GET() {
       return NextResponse.json(cached, responseHeaders);
     }
   } catch (err) {
-    appInsights?.defaultClient?.trackException({
-      exception: err,
-      properties: {
-        Request: "GET /api/get-megamenu",
-        Status: 500,
-      },
-      severity: appInsights.KnownSeverityLevel.Error,
-    });
+    // appInsights?.defaultClient?.trackException({
+    //   exception: err,
+    //   properties: {
+    //     Request: "GET /api/get-megamenu",
+    //     Status: 500,
+    //   },
+    //   severity: appInsights.KnownSeverityLevel.Error,
+    // });
 
     console.error(err);
 
