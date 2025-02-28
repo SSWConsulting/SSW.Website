@@ -17,7 +17,6 @@ export async function GET() {
 
   try {
     const cached = cache.get("megamenu");
-
     if (cached == undefined) {
       const tinaData = await client.queries.megamenu({
         relativePath: "menu.json",
@@ -36,7 +35,19 @@ export async function GET() {
       },
       severity: appInsights.KnownSeverityLevel.Error,
     });
-    console.error(err);
     return Response.json(megaMenuJson, responseHeaders);
   }
+}
+
+// Handle unsupported methods
+export async function POST() {
+  return Response.json({ message: "Unsupported method" }, { status: 405 });
+}
+
+export async function PUT() {
+  return Response.json({ message: "Unsupported method" }, { status: 405 });
+}
+
+export async function DELETE() {
+  return Response.json({ message: "Unsupported method" }, { status: 405 });
 }

@@ -1,3 +1,4 @@
+import * as appInsights from "applicationinsights";
 import { NextRequest } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -14,10 +15,16 @@ export async function GET(request: NextRequest) {
       `https://publish.twitter.com/oembed?url=${url}&omit_script=1`
     );
     const body = await response.json();
-
     return Response.json(body, { status: 200 });
   } catch (err) {
-    console.error(err);
+    appInsights.defaultClient.trackException({
+      properties: {
+        Request: "GET /api/get-tweet-embed",
+        Status: 500,
+      },
+      exception: err,
+      severity: appInsights.KnownSeverityLevel.Error,
+    });
     return Response.json({ message: err.message }, { status: 500 });
   }
 }
