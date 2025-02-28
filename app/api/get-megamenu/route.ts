@@ -1,4 +1,5 @@
 import client from "@/tina/client";
+import * as appInsights from "applicationinsights";
 import { cache } from "services/server/cacheService";
 import megaMenuJson from "../../../content/megamenu/menu.json";
 
@@ -21,14 +22,20 @@ export async function GET() {
       const tinaData = await client.queries.megamenu({
         relativePath: "menu.json",
       });
-
       cache.set("megamenu", tinaData.data.megamenu, CACHE_SECS);
-
       return Response.json(tinaData.data.megamenu, responseHeaders);
     } else {
       return Response.json(cached, responseHeaders);
     }
   } catch (err) {
+    appInsights?.defaultClient?.trackException({
+      exception: err,
+      properties: {
+        Request: "GET /api/get-megamenu",
+        Status: 500,
+      },
+      severity: appInsights.KnownSeverityLevel.Error,
+    });
     console.error(err);
     return Response.json(megaMenuJson, responseHeaders);
   }
