@@ -1,0 +1,416 @@
+{
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "**Optimize Your SQL Server** for Performance, Security, and Scalability",
+      "isH1": true,
+      "description": "Ensure your database is fast, secure, and built for growth, ***without the guesswork. ***Our expert consultants help you fine-tune your SQL Server for maximum efficiency.  \n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Consultation",
+          "showLeadCaptureForm": true,
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/Louis%2520Test%2520Images/Incident-io-batch/hero/hero_640_480px(2).png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Trusted by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis%2520Test%2520Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "Why Choose SSW for **SQL Server Optimization?**",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "74jtva",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidBolt",
+          "heading": "Faster Query Performance",
+          "description": "Reduce execution time with advanced query optimization.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Adaptive Query Processing",
+                "description": "Dynamically adjusts execution plans using parameter-sensitive plan optimization to prevent slow queries.",
+                "icon": "BiSolidChevronRight"
+              },
+              {
+                "heading": "Optimized Locking Mechanisms",
+                "description": "Reduces contention in high-transaction environments, ensuring smoother performance under load.",
+                "icon": "BiSolidChevronRight"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "hjsgm",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidLock",
+          "heading": "Stronger Security & Compliance",
+          "description": "Ensure data protection with industry-leading security features.\n",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Always Encrypted with Secure Enclaves",
+                "description": "Encrypts sensitive data at the column level without exposing it to database administrators.",
+                "icon": "BiSolidChevronRight"
+              },
+              {
+                "heading": "Row-Level Security (RLS)",
+                "description": "Controls access by filtering data at the user level to enforce least-privilege policies.",
+                "icon": "BiSolidChevronRight"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "qpeuw",
+          "altText": "Lorem Ipsum",
+          "icon": "BiTrendingUp",
+          "heading": "Seamless Scalability",
+          "description": "Keep your database fast and efficient as workloads grow.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Partitioning & In-Memory OLTP",
+                "description": "Segregates frequently accessed data for faster retrieval while optimizing historical storage.",
+                "icon": "BiSolidChevronRight"
+              },
+              {
+                "heading": "Elastic Query & Fabric Integration",
+                "description": "Runs distributed queries across multiple databases without performance degradation.",
+                "icon": "BiSolidChevronRight"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "u9xr5",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidCamera",
+          "heading": "Proactive Monitoring",
+          "description": "Detect and resolve performance issues before they impact users.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Query Store & Plan Correction",
+                "description": "Monitors query performance and reverts to stable execution plans if regressions occur.",
+                "icon": "BiSolidChevronRight"
+              },
+              {
+                "heading": "Extended Events for Deep Insights",
+                "description": "Tracks lock contention, memory grants, and execution patterns for fine-tuned optimization.",
+                "icon": "BiSolidChevronRight"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "4jrsum",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidCloudUpload",
+          "heading": "Flexible Deployment",
+          "description": "Deploy SQL Server anywhere with built-in redundancy and failover support.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Hybrid & Multi-Cloud Support ",
+                "description": "Seamlessly run workloads on Azure SQL, AWS RDS for SQL Server, or on-premises with minimal configuration.",
+                "icon": "BiSolidChevronRight"
+              },
+              {
+                "heading": "Always On Availability Groups ",
+                "description": "Ensures uptime with automatic failover and real-time data replication across multiple locations.",
+                "icon": "BiSolidChevronRight"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "**Stop SQL Slowdowns Before They Start:** Proactive Performance Planning",
+      "isH1": false,
+      "description": "Don't wait for database performance issues to hit! [Bryden Oliver](https://www.ssw.com.au/people/bryden-oliver/) reveals how to plan for optimal SQL performance from the start. Learn essential strategies to design efficient databases, anticipate bottlenecks, and build for speed.\n",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Consultation",
+          "showLeadCaptureForm": true,
+          "colour": 0
+        },
+        {
+          "buttonText": "Rules to Better SQL Databases",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-databases-developers/",
+          "icon": "BiWrench",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://www.youtube.com/watch?v=7ZTVCGDTj5g"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "94i2u",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "pjdkza",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=7ZTVCGDTj5g",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "SQL Optimization",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "60 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "SQL Bottleneck? Fix it FAST with Proven Performance Techniques",
+          "description": "Database slowdowns killing your app's performance? Bryden Oliver (SSW User Group) reveals essential SQL optimization techniques to identify and eliminate bottlenecks. Get actionable strategies to reclaim speed and deliver a better user experience.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Lorem Ipsum",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "accordionItems": [
+        {
+          "label": " What are the key differences between Always Encrypted and Transparent Data Encryption (TDE)?",
+          "content": "Always Encrypted and Transparent Data Encryption (TDE) serve different encryption purposes in SQL Server:\n\n* Always Encrypted protects specific columns and ensures data is encrypted at rest, in transit, and in use. It prevents database administrators from viewing sensitive data by encrypting and decrypting it client-side. However, it requires application changes and limits operations on encrypted data.\n\n<!---->\n\n* TDE encrypts the entire database, including logs and backups, but only at rest. Encryption and decryption happen within the database engine, making it easy to implement without modifying applications. However, it does not prevent privileged users from accessing data in real time.\n\nWhich One Should You Use?\n\n* Use Always Encrypted if you need strict access control for sensitive data, even from database administrators.\n* Use TDE for broad data-at-rest encryption without altering application logic, ensuring compliance with regulations like GDPR and HIPAA.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
