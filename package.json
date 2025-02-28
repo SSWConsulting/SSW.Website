@@ -73,7 +73,7 @@
     "@tanstack/react-query-devtools": "^5.59.0",
     "animate-css-grid": "^1.5.1",
     "aos": "^2.3.4",
-    "applicationinsights": "^3.5.0",
+    "applicationinsights": "^2.9.6",
     "axios": "^1.7.7",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
