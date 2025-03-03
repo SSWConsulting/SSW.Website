@@ -1,17 +1,13 @@
+import { Blocks } from "@/components/blocks-renderer";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import classNames from "classnames";
-import dynamic from "next/dynamic";
 import { useEffect, useMemo } from "react";
 import { WebSite, WithContext } from "schema-dts";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-const Blocks = dynamic(() =>
-  import("@/components/blocks-renderer").then((mod) => mod.Blocks)
-);
 
 export default function PageContent({ props }) {
   const { data } = props;
