@@ -1,6 +1,7 @@
 "use client";
 
 import { Breadcrumbs } from "@/app/components/breadcrumb";
+import { Blocks } from "@/components/blocks-renderer";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
@@ -11,13 +12,8 @@ import { Section } from "@/components/util/section";
 import VideoCards, { VideoCardType } from "@/components/util/videoCards";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
-import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-const Blocks = dynamic(() =>
-  import("@/components/blocks-renderer").then((mod) => mod.Blocks)
-);
 
 export default function TrainingPage({ props, tinaProps }) {
   const { data } = tinaProps;
