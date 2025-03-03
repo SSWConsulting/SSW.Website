@@ -1,5 +1,6 @@
 "use client";
 
+import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "@/components/filter/events";
 import { Container } from "@/components/util/container";
@@ -7,12 +8,7 @@ import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import dynamic from "next/dynamic";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-const Blocks = dynamic(() =>
-  import("@/components/blocks-renderer").then((mod) => mod.Blocks)
-);
 
 export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories } = props;
