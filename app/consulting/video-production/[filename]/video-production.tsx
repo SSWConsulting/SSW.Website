@@ -2,6 +2,7 @@
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
@@ -11,13 +12,8 @@ import { Section } from "@/components/util/section";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import dynamic from "next/dynamic";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
-
-const Blocks = dynamic(() =>
-  import("@/components/blocks-renderer").then((mod) => mod.Blocks)
-);
 
 export default function VideoProductionPage({ props, tinaProps }) {
   const { data } = tinaProps;
