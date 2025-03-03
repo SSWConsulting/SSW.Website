@@ -1,5 +1,6 @@
 "use client";
 
+import { Blocks } from "@/components/blocks-renderer";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/components/blocks/techUpgrade";
@@ -10,13 +11,8 @@ import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import classNames from "classnames";
-import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
-const Blocks = dynamic(() =>
-  import("@/components/blocks-renderer").then((mod) => mod.Blocks)
-);
 
 export default function CompanyPage({ tinaProps, props }) {
   const { data } = tinaProps;
