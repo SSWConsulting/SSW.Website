@@ -1,6 +1,5 @@
 "use client";
 
-import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
@@ -17,10 +16,15 @@ import { Section } from "@/components/util/section";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
+import dynamic from "next/dynamic";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+
+const Blocks = dynamic(() =>
+  import("@/components/blocks-renderer").then((mod) => mod.Blocks)
+);
 
 export default function Consulting({ tinaProps, props }) {
   const { techCards, marketingData, categories, mediaCardProps } = props;

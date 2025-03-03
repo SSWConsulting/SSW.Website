@@ -1,6 +1,5 @@
 "use client";
 
-import { Blocks } from "@/components/blocks-renderer";
 import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import EventsHeader from "@/components/events/eventsHeader";
@@ -13,6 +12,10 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 const ClientLogos = dynamic(() =>
   import("@/components/blocks/clientLogos").then((mod) => mod.ClientLogos)
+);
+
+const Blocks = dynamic(() =>
+  import("@/components/blocks-renderer").then((mod) => mod.Blocks)
 );
 
 const TestimonialRow = dynamic(() =>
