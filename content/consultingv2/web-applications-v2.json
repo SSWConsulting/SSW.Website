@@ -197,7 +197,7 @@
           "heading": "Spies, screen readers and semantic HTML",
           "description": "We all know the power of ALT text in making images accessible for screen readers. But when an image is rich with detail like textures, placement, and text ALT text alone can't capture the full picture.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
