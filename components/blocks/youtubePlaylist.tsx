@@ -1,8 +1,8 @@
 "use client";
 
-import { BsArrowRightCircle } from "@react-icons/all-files/bs/bsArrowRightCircle";
 import axios from "axios";
 import { Key, useEffect, useState } from "react";
+import { BsArrowRightCircle } from "react-icons/bs";
 import { Template, TinaField } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { VideoLink } from "../../services/server/youtube";
