@@ -89,9 +89,10 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Custom Software Solutions for Complex Business Needs",
       "isH1": false,
-      "description": "",
+      "description": "At SSW, we understand that off-the-shelf software often falls short. We specialize in building custom, future-proof web applications and APIs using Microsoft technologies. With over 30 years of experience, our team of expert developers delivers solutions tailored to your unique business needs.\n",
+      "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
       },
