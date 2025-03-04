@@ -5,11 +5,22 @@
     },
     {
       "topLabel": {
-        "labelText": ""
+        "labelText": "Enterprise Ready",
+        "icon": "Tina"
       },
       "heading": "Build High-Performance Web Applications with Experts You Can Trust ",
-      "isH1": false,
+      "isH1": true,
       "description": "Partner with Australia's leading .NET experts to build custom solutions that drive your business forward.\n",
+      "chips": [
+        {
+          "chipText": "Lorem",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Lorem",
+          "chipType": "clearChip"
+        }
+      ],
       "featureColumns": {
         "twoColumns": true
       },
