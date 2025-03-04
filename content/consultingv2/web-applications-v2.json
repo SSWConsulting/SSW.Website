@@ -74,16 +74,6 @@
         {
           "guid": "5pvsls",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Agile Development for Faster Delivery",
           "description": "Stay involved throughout the process with our transparent, Scrum-based approach.",
