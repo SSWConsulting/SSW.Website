@@ -228,7 +228,29 @@
           "heading": "How to visualise SQL indexes?",
           "description": "It's hard to understand what indexes are on SQL Databases. Find out how to visualise what's happening so you can easily follow what your database queries are doing.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "pjdkza",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=7ZTVCGDTj5g",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "SQL Optimization",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "60 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "SQL Bottleneck? Fix it FAST with Proven Performance Techniques",
+          "description": "Database slowdowns killing your app's performance? Bryden Oliver (SSW User Group) reveals essential SQL optimization techniques to identify and eliminate bottlenecks. Get actionable strategies to reclaim speed and deliver a better user experience.",
+          "embeddedButton": {
+            "buttonText": ""
           }
         },
         {
@@ -331,28 +353,6 @@
           },
           "embeddedButton": {
             "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": "pjdkza",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=7ZTVCGDTj5g",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "SQL Optimization",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "60 min.",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "SQL Bottleneck? Fix it FAST with Proven Performance Techniques",
-          "description": "Database slowdowns killing your app's performance? Bryden Oliver (SSW User Group) reveals essential SQL optimization techniques to identify and eliminate bottlenecks. Get actionable strategies to reclaim speed and deliver a better user experience.",
-          "embeddedButton": {
-            "buttonText": ""
           }
         }
       ],
