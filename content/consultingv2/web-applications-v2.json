@@ -44,16 +44,6 @@
         {
           "guid": "ix86q",
           "altText": "",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Custom Solutions, No Compromises",
           "description": "Get software built to match your exact requirements, not just something \"close enough.\"",
