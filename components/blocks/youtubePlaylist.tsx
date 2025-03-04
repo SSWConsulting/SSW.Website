@@ -2,7 +2,7 @@
 
 import axios from "axios";
 import { Key, useEffect, useState } from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
+import { BsArrowRightCircle } from "@react-icons/all-files/bs/BsArrowRightCircle";
 import { Template, TinaField } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { VideoLink } from "../../services/server/youtube";

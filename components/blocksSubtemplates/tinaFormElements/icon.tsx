@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import * as BoxIcons from "react-icons/bi";
 
 export const IconOptions = {
   Tina: (props) => (
@@ -21,7 +20,6 @@ export const IconOptions = {
       />
     </svg>
   ),
-  ...BoxIcons,
 };
 
 export const Icon = ({ data, className = "", tinaField = "" }) => {
