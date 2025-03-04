@@ -150,10 +150,10 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "description": "The world of modern web development was SPAs like Angular, React and Blazor. Now customers are choosing Next.JS and shadcn/UI - these tools are revolutionizing how we build on the web. This beginner-friendly session will guide you through the process of creating sleek, responsive websites with ease and confidence. ",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
