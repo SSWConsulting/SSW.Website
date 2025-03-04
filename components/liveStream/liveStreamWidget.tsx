@@ -3,12 +3,13 @@
 import "react-tooltip/dist/react-tooltip.css";
 
 import { EventInfo } from "@/services/server/events";
+import { TfiAngleDown } from "@react-icons/all-files/tfi/TfiAngleDown";
+import { TfiAngleUp } from "@react-icons/all-files/tfi/TfiAngleUp";
 import classNames from "classnames";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
 import { Tooltip } from "react-tooltip";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import layoutData, {

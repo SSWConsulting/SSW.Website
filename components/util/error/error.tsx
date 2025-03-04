@@ -2,9 +2,10 @@
 
 import { CustomLink } from "@/components/customLink";
 import { Disclosure } from "@headlessui/react";
+import { BiChevronRight } from "@react-icons/all-files/bi/BiChevronRight";
+import { FaXmark } from "@react-icons/all-files/fa6/FaXmark";
 import classNames from "classnames";
-import { BiChevronRight } from "react-icons/bi";
-import { FaXmark } from "react-icons/fa6";
+
 import { Container } from "../container";
 
 type ErrorPageProps = {

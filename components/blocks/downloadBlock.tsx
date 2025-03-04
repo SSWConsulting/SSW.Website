@@ -1,9 +1,9 @@
 "use client";
 
+import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload";
 import classNames from "classnames";
 import Image from "next/image";
 import { useState } from "react";
-import { FaFileDownload } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";

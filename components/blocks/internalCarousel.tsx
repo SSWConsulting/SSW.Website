@@ -8,7 +8,8 @@ import { Container } from "../util/container";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import { BsArrowRightCircle, BsYoutube } from "react-icons/bs";
+import { BsArrowRightCircle } from "@react-icons/all-files/bs/BsArrowRightCircle";
+import { BsYoutube } from "@react-icons/all-files/bs/BsYoutube";
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 import { UtilityButton } from "../button/utilityButton";
 

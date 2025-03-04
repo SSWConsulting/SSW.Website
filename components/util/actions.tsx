@@ -1,5 +1,5 @@
+import { BiRightArrowAlt } from "@react-icons/all-files/bi/BiRightArrowAlt";
 import * as React from "react";
-import { BiRightArrowAlt } from "react-icons/bi";
 import { classNames } from "tinacms";
 import { CustomLink } from "../customLink";
 // import { useTheme } from "../layout";

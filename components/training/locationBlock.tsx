@@ -1,6 +1,7 @@
+import { FaGlobe } from "@react-icons/all-files/fa/FaGlobe";
+import { FaLocationArrow } from "@react-icons/all-files/fa/FaLocationArrow";
+import { MdLocationOn } from "@react-icons/all-files/md/MdLocationOn";
 import classNames from "classnames";
-import { FaGlobe, FaLocationArrow } from "react-icons/fa";
-import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { locationSchemaConstants } from "../../tina/collections/location"; // TODO: Use alias - https://github.com/tinacms/tinacms/issues/4488

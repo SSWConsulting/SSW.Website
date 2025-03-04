@@ -1,8 +1,8 @@
 "use client";
 
+import { MdOutlineKeyboardArrowDown } from "@react-icons/all-files/md/MdOutlineKeyboardArrowDown";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { sanitiseXSS } from "../../helpers/validator";
 
 type ReadMoreProps = {

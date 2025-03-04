@@ -1,22 +1,26 @@
 "use client";
+
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { isMobile } from "react-device-detect";
-import { IconType } from "react-icons";
 
-import {
-  FaFacebookF,
-  FaGithub,
-  FaInstagram,
-  FaLinkedinIn,
-  FaMeetup,
-  FaTiktok,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaFacebookF } from "@react-icons/all-files/fa/FaFacebookF";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
+import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
+import { FaMeetup } from "@react-icons/all-files/fa/FaMeetup";
+import { FaTiktok } from "@react-icons/all-files/fa/FaTiktok";
+import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
+import { FaXTwitter } from "@react-icons/all-files/fa6/FaXTwitter";
 
-import { FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
+
+type CustomIconProps = {
+  size?: string | number;
+  color?: string;
+  className?: string;
+};
 
 export type SocialTypes =
   | "youtube"
@@ -30,7 +34,7 @@ export type SocialTypes =
 
 export const socialStyles: Record<
   SocialTypes,
-  { icon: IconType; bgClassName: string; fill?: string }
+  { icon: CustomIconProps; bgClassName: string; fill?: string }
 > = {
   youtube: {
     icon: FaYoutube,

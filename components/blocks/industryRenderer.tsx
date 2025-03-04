@@ -1,4 +1,4 @@
-import { FaFileDownload } from "react-icons/fa";
+import { FaFileDownload } from "@react-icons/all-files/fa/FaFileDownload";
 import { toast } from "react-toastify";
 import { Components } from "tinacms/dist/rich-text";
 import { getYouTubeId } from "../../helpers/embeds";

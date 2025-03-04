@@ -1,7 +1,7 @@
+import { MdLocationOn } from "@react-icons/all-files/md/MdLocationOn";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { FC } from "react";
-import { MdLocationOn } from "react-icons/md";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";

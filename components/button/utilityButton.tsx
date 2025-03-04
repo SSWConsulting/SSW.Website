@@ -1,7 +1,8 @@
 "use client";
 
+import { BsArrowLeftCircle } from "@react-icons/all-files/bs/BsArrowLeftCircle";
+import { BsArrowRightCircle } from "@react-icons/all-files/bs/BsArrowRightCircle";
 import classNames from "classnames";
-import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 import Button from "./rippleButton";

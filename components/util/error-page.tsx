@@ -3,9 +3,9 @@ import { CustomLink } from "../customLink";
 import { Container } from "./container";
 
 import { Disclosure } from "@headlessui/react";
+import { BiChevronRight } from "@react-icons/all-files/bi/BiChevronRight";
+import { FaXmark } from "@react-icons/all-files/fa6/FaXmark";
 import React from "react";
-import { BiChevronRight } from "react-icons/bi";
-import { FaXmark } from "react-icons/fa6";
 import { LiveStreamData } from "../layout/layout";
 
 //TODO: consolidate all of the error components into one https://github.com/SSWConsulting/SSW.Website/issues/3350

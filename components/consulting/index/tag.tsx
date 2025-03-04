@@ -1,6 +1,6 @@
+import { BsArrowRightCircle } from "@react-icons/all-files/bs/BsArrowRightCircle";
 import classNames from "classnames";
 import { useRef } from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { useHover } from "usehooks-ts";
 
 export const Tag = ({ label, tag, selectedTag, setSelectedTag }) => {

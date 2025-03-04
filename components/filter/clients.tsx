@@ -1,9 +1,9 @@
 "use client";
 
 import { Transition } from "@headlessui/react";
+import { BsArrowRightCircle } from "@react-icons/all-files/bs/BsArrowRightCircle";
 import Image from "next/image";
 import { useMemo, useState } from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { UtilityButton } from "../button/utilityButton";

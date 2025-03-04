@@ -1,9 +1,7 @@
-import {
-  LuGraduationCap,
-  LuMessagesSquare,
-  LuPizza,
-  LuSmile,
-} from "react-icons/lu";
+import { LuGraduationCap } from "@react-icons/all-files/lu/LuGraduationCap";
+import { LuMessagesSquare } from "@react-icons/all-files/lu/LuMessagesSquare";
+import { LuPizza } from "@react-icons/all-files/lu/LuPizza";
+import { LuSmile } from "@react-icons/all-files/lu/LuSmile";
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";

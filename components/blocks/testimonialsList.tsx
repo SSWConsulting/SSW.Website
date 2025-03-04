@@ -1,7 +1,7 @@
 "use client";
 
+import { FaSpinner } from "@react-icons/all-files/fa/FaSpinner";
 import { useEffect, useState } from "react";
-import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { extractFileName } from "../../helpers/functions";
 import { getTestimonialsExcludingCategories } from "../../helpers/getTestimonials";

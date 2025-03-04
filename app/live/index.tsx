@@ -10,8 +10,9 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { VideoCard } from "@/components/util/videoCards";
 import { removeExtension } from "@/services/client/utils.service";
+import { FaYoutube } from "@react-icons/all-files/fa/FaYoutube";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { FaYoutube } from "react-icons/fa";
+import React from "react";
 
 const PREVIEW_SENTENCE_COUNT = 9; // Max number of sentences to be previewed to match the Video height
 

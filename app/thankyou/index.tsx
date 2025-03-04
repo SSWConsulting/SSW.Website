@@ -2,7 +2,8 @@
 
 import { CustomLink } from "@/components/customLink";
 import { Container } from "@/components/util/container";
-import { FaGlobe, FaUsers } from "react-icons/fa";
+import { FaGlobe } from "@react-icons/all-files/fa/FaGlobe";
+import { FaUsers } from "@react-icons/all-files/fa/faUsers";
 
 const ThankyouPage = () => {
   const textContentClass = "px-[100px] text-lg mb-4";

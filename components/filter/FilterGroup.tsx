@@ -1,9 +1,9 @@
 "use client";
 
 import { Transition } from "@headlessui/react";
+import { BsArrowRightCircle } from "@react-icons/all-files/bs/BsArrowRightCircle";
 import classNames from "classnames";
 import { useState } from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
 import { NO_SELECTION } from "./FilterBlock";
 
 export interface FilterGroupProps {

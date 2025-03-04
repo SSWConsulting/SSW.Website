@@ -1,7 +1,7 @@
+import { FaAngleDown } from "@react-icons/all-files/fa/FaAngleDown";
 import useIsMobile from "hooks/useIsMobile";
 import dynamic from "next/dynamic";
 import { FC } from "react";
-import { FaAngleDown } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { CustomLink } from "../customLink";
