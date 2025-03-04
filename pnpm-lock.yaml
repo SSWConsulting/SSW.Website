@@ -49,8 +49,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(@types/react@18.3.12)(react@18.3.1)
       '@react-icons/all-files':
-        specifier: file:react-icons-all-files-5.5.0.tgz
-        version: file:react-icons-all-files-5.5.0.tgz(react@18.3.1)
+        specifier: https://github.com/react-icons/react-icons/releases/download/v5.5.0/react-icons-all-files-5.5.0.tgz
+        version: https://github.com/react-icons/react-icons/releases/download/v5.5.0/react-icons-all-files-5.5.0.tgz(react@18.3.1)
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.6)(typescript@5.6.3)))
@@ -3216,8 +3216,8 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
-  '@react-icons/all-files@file:react-icons-all-files-5.5.0.tgz':
-    resolution: {integrity: sha512-SFs2VrQaybncj7qsOjGch23QQc3nJvWtiZXzXGDqPZk2Vw06tw0aRbLuppg74MMYgmLnzkbIgZZYPkoFYP/DZw==, tarball: file:react-icons-all-files-5.5.0.tgz}
+  '@react-icons/all-files@https://github.com/react-icons/react-icons/releases/download/v5.5.0/react-icons-all-files-5.5.0.tgz':
+    resolution: {tarball: https://github.com/react-icons/react-icons/releases/download/v5.5.0/react-icons-all-files-5.5.0.tgz}
     version: 5.5.0
     peerDependencies:
       react: '*'
@@ -13139,7 +13139,7 @@ snapshots:
       '@react-hook/throttle': 2.2.0(react@18.3.1)
       react: 18.3.1
 
-  '@react-icons/all-files@file:react-icons-all-files-5.5.0.tgz(react@18.3.1)':
+  '@react-icons/all-files@https://github.com/react-icons/react-icons/releases/download/v5.5.0/react-icons-all-files-5.5.0.tgz(react@18.3.1)':
     dependencies:
       react: 18.3.1
 
