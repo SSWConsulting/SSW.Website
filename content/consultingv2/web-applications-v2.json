@@ -157,21 +157,13 @@
           }
         },
         {
-          "guid": null,
+          "guid": "uqyhw",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/PVRNOoO_iXA?si=EhyIFXvGPsEw5P3K",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Building Cross-platform Blazor Desktop Apps with Photino",
+          "description": "Are you a Blazor developer wishing you could build cross-platform desktop apps (yes, even for Linux!) with familiar syntax? Join us to explore Photino, a lightweight framework that brings Blazor to the desktop with direct access to desktop APIs like file system access and multithreading. ",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
