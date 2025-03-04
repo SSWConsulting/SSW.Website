@@ -5,22 +5,11 @@
     },
     {
       "topLabel": {
-        "labelText": "Enterprise Ready",
-        "icon": "Tina"
+        "labelText": "Enterprise Ready"
       },
       "heading": "Build High-Performance Web Applications with Experts You Can Trust ",
       "isH1": true,
       "description": "Partner with Australia's leading .NET experts to build custom solutions that drive your business forward.\n",
-      "chips": [
-        {
-          "chipText": "Lorem",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Lorem",
-          "chipType": "clearChip"
-        }
-      ],
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -44,6 +33,9 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis%2520Test%2520Images/Incident-io-batch/hero/hero_1400_700px(MS2).png"
+      },
       "_template": "imageTextBlock"
     },
     {
