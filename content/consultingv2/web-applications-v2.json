@@ -138,6 +138,8 @@
       "cards": [
         {
           "guid": "567hv7",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/U8LyScigrcA?si=DTC40Vv-cl14nBXg",
           "altText": "Lorem Ipsum",
           "chips": [
             {
