@@ -46,9 +46,9 @@
           "altText": "",
           "icon": "info",
           "heading": "Custom Solutions, No Compromises",
-          "description": "Get software built to match your exact requirements, not just something \"close enough.\"",
+          "description": "Get software built to match your exact requirements, not just something \"close enough.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
