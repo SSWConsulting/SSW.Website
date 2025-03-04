@@ -22,7 +22,17 @@
         }
       ],
       "featureColumns": {
-        "twoColumns": true
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
       },
       "buttons": [
         {
