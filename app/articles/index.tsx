@@ -4,7 +4,7 @@ import ArticlesHeader from "@/components/articles/articlesHeader";
 import ArticlesList from "@/components/articles/articlesList";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
-import SidebarPanel from "@/components/sidebar/sidebarPanel";
+import { SidebarPanel } from "@/components/sidebar/sidebarPanel";
 import { Section } from "@/components/util/section";
 import client from "@/tina/client";
 import { DehydratedState, HydrationBoundary } from "@tanstack/react-query";

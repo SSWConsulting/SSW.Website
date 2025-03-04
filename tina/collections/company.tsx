@@ -12,6 +12,7 @@ import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";
 
+import { companyIndexSchemaConstants } from "@/components/company/companyHeader";
 import type { Collection } from "tinacms";
 import { colorBlockSchema } from "../../components/blocks/colorBlock";
 import { colorPaletteSchema } from "../../components/blocks/colorPalette";
@@ -173,25 +174,6 @@ export const companySchema: Collection = {
       ],
     },
   ],
-};
-
-export const companyIndexSchemaConstants = {
-  value: "companyIndex",
-  title: "title",
-  headerImage: {
-    value: "headerImage",
-    heroBackground: "heroBackground",
-    altText: "altText",
-    txtOverlay: "txtOverlay",
-  },
-  _body: "_body",
-  companyPages: {
-    value: "companyPages",
-    title: "title",
-    body: "body",
-    pageURL: "pageURL",
-    isExternal: "isExternal",
-  },
 };
 
 export const companyIndexSchema: Collection = {
