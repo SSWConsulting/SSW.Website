@@ -19,7 +19,7 @@ import { organizerSchema } from "../usergroup/organizer";
 import { customDownloadButtonSchema } from "./CustomDownloadButton";
 import { aboutUsBlockSchema } from "./aboutUs";
 import { agendaSchema } from "./agenda";
-import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
+// import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { CardCarouselSchema } from "./cardCarousel/cardCarousel/cardCarouselSchema";
 import { TechnologyCardCarouselSchema } from "./cardCarousel/technologyCards/technologyCardCarouselSchema";
@@ -59,9 +59,11 @@ import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed";
 
+import { breadcrumbBlock } from "ssw-tinacms-landingkit";
+
 //NOTE: this is the order that blocks will appear in the Tina Editor
 export const pageBlocks: Template[] = [
-  BreadcrumbSchema,
+  breadcrumbBlock("/images/thumbs/tina/breadcrumbs.jpg"),
   ImageTextBlockSchema,
   LogoCarouselSchema,
   AccordionSchema,

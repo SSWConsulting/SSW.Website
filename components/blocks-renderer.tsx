@@ -98,7 +98,9 @@ const AccordionBlock = dynamic(() =>
 );
 
 const Breadcrumbs = dynamic(() =>
-  import("./blocks/breadcrumbs/breadcrumbs").then((mod) => mod.Breadcrumbs)
+  import("./blocks/breadcrumbs/breadcrumbs").then(
+    (mod) => mod.BreadcrumbsComponent
+  )
 );
 
 const InterestForm = dynamic(
