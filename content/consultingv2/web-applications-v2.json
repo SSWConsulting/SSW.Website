@@ -180,6 +180,8 @@
         },
         {
           "guid": "hkhsxs",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/6LwZH4-62Fo?si=F2JOkaqb-eJyBUpR",
           "altText": "Lorem Ipsum",
           "chips": [
             {
