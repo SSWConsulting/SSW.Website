@@ -115,6 +115,14 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://youtu.be/zorbI0iDFQk?si=MO-dsKdvoS6-EWzT",
+        "altText": "Web Application development is hard - Why choose SSW"
+      },
       "_template": "imageTextBlock"
     },
     {
