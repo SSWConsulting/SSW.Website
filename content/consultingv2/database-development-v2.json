@@ -9,7 +9,7 @@
       },
       "heading": "**Optimize Your SQL Server** for Performance, Security, and Scalability",
       "isH1": true,
-      "description": "Ensure your database is fast, secure, and built for growth, ***without the guesswork. ***Our expert consultants help you fine-tune your SQL Server for maximum efficiency.  \n",
+      "description": "Ensure your database is fast, secure, and built for growth, \\*\\*\\*without the guesswork. \\*\\*\\*Our expert consultants help you fine-tune your SQL Server for maximum efficiency.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -210,8 +210,10 @@
       "cardStyle": 1,
       "cards": [
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "f731pm",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/KkRpgtwBXvI?si=oyzJryenggG3K8wE",
+          "altText": "How to visualise SQL indexes?",
           "chips": [
             {
               "chipText": "Lorem",
@@ -223,22 +225,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "How to visualise SQL indexes?",
+          "description": "It's hard to understand what indexes are on SQL Databases. Find out how to visualise what's happening so you can easily follow what your database queries are doing.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
