@@ -3,7 +3,7 @@ import ArticleAuthor from "@/components/articles/articleAuthor";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
-import SidebarPanel from "@/components/sidebar/sidebarPanel";
+import { SidebarPanel } from "@/components/sidebar/sidebarPanel";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import client from "@/tina/client";
