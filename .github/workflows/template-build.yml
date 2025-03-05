@@ -87,12 +87,14 @@ jobs:
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
-      - name: Docker - Build and push
+      - name: Docker - Build
         uses: docker/build-push-action@v6
+        id: docker-build
         with:
           context: .
-          push: true
+          push: false
           build-args: |
+            BUNDLE_ANALYSE=true
             NODE_OPTIONS=--max_old_space_size=8192
             NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
             NEXT_PUBLIC_GOOGLE_ANALYTICS=${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS }}
@@ -120,5 +122,21 @@ jobs:
             TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
             NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{github.event.number}}.azurewebsites.net/
 
+          # tags: |
+          #   ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
+
+      - name: Upload bundle analysis report
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v3
+        with:
+          name: bundle-analysis
+          path: .next/analyze
+
+      - name: Docke - Push
+        if: github.event_name == 'pull_request'
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
