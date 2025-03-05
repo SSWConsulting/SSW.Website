@@ -13,12 +13,12 @@ Get-Content .env | ForEach-Object {
   }
 }
 
-# Initialize the docker build command
-$dockerCmd = "docker build"
+# Initialize the docker build command as an array
+$dockerCmdArray = @("docker", "build")
 
 # Add the image name and tag
 $imageName = "ssw-website"
-$dockerCmd += " -t $imageName"
+$dockerCmdArray += "-t", "$imageName"
 
 # Define the list of valid prefixes for environment variables
 $validPrefixes = @("NEXT_PUBLIC_", "GOOGLE_", "MICROSOFT_", "KEY_VAULT", "TINA_", "DYNAMICS_", "SITE_URL")
@@ -27,19 +27,25 @@ $validPrefixes = @("NEXT_PUBLIC_", "GOOGLE_", "MICROSOFT_", "KEY_VAULT", "TINA_"
 foreach ($key in $envVars.Keys) {
   foreach ($prefix in $validPrefixes) {
       if ($key.StartsWith($prefix)) {
-          $dockerCmd += " --build-arg $key=$($envVars[$key])"
+          $dockerCmdArray += "--build-arg", "$key=$($envVars[$key])"
       }
   }
 }
 
 # Add the docker build context (assuming current directory is the context)
-$dockerCmd += " ."
+$dockerCmdArray += "."
+
+# Join the array with spaces and newlines for output
+$dockerCmd = $dockerCmdArray -join "`n"
 
 # Output the final command
 Write-Host "Generated Docker build command:"
 Write-Host $dockerCmd
 
+# Join the array with spaces for clipboard
+$dockerCmdClipboard = $dockerCmdArray -join " "
+
 # Copy the command to the clipboard
-$dockerCmd | Set-Clipboard
+$dockerCmdClipboard | Set-Clipboard
 
 Write-Host "Docker build command copied to clipboard."
