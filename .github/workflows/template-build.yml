@@ -87,12 +87,12 @@ jobs:
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
-      - name: Docker - Build
+      - name: Docker - Build and Push
         uses: docker/build-push-action@v6
         id: docker-build
         with:
           context: .
-          push: false
+          push: true
           build-args: |
             BUNDLE_ANALYSE=true
             NODE_OPTIONS=--max_old_space_size=8192
@@ -122,14 +122,18 @@ jobs:
             TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
             NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{github.event.number}}.azurewebsites.net/
 
-          # tags: |
-          #   ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
+          tags: |
+            ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
 
-      - name: Copy analyze folder from Docker container
+      - name: Pull Docker image
+        run: |
+          docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
+
+      - name: Extract analyze folder from Docker image
         run: |
           # Create a temporary container and copy the analyze folder
           docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-          docker cp temp-container:/app/.next/analyze .next/analyze
+          docker cp temp-container:/app/.next/analyze ./.next/analyze
           docker rm temp-container
 
       - name: Upload bundle analysis report
@@ -137,13 +141,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: bundle-analysis
-          path: .next/analyze
-
-      - name: Docker - Push
-        if: github.event_name == 'pull_request'
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          tags: |
-            ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
+          path: ./.next/analyze
