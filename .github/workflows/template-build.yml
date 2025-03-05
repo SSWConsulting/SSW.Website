@@ -127,7 +127,7 @@ jobs:
 
       - name: Upload bundle analysis report
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: bundle-analysis
           path: .next/analyze
