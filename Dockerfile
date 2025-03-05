@@ -32,6 +32,8 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+ARG BUNDLE_ANALYSE
+ENV BUNDLE_ANALYSE $BUNDLE_ANALYSE
 ENV NODE_OPTIONS --max_old_space_size=8192
 ARG NEXT_PUBLIC_GOOGLE_GTM_ID
 ENV NEXT_PUBLIC_GOOGLE_GTM_ID $NEXT_PUBLIC_GOOGLE_GTM_ID
@@ -88,8 +90,8 @@ ENV NEXT_PUBLIC_SLOT_URL $NEXT_PUBLIC_SLOT_URL
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run build; \
+  elif [ -f package-lock.json ]; then BUNDLE_ANALYSE=true npm run build; \
+  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && BUNDLE_ANALYSE=true pnpm run build; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
