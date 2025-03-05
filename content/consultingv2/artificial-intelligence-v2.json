@@ -305,6 +305,26 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "y3sb5r",
+          "altText": "AI Powered Navigation for French Payroll Expert",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "AI Powered Navigation for French Payroll Expert",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "background": {
