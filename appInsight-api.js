@@ -29,7 +29,6 @@ if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
       error
     );
   }
-  console.log("✅ App Insights - Server Side logging is turned on!");
 } else {
   console.log(
     "🚨 App Insights - Server Side logging is not turned on, Please add NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING variable!"
