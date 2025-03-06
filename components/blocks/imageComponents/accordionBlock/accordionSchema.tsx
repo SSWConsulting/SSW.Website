@@ -1,5 +1,6 @@
 import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletTextAlignment.schema";
 import { Template, TinaField } from "tinacms";
+import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
 
@@ -60,12 +61,7 @@ export const AccordionSchema: Template = {
     },
   },
   fields: [
-    {
-      type: "string",
-      label: "Heading",
-      name: "heading",
-      description: "Heading text for the block.",
-    },
+    alternatingHeadingSchema,
     {
       type: "boolean",
       label: "Use as H1",

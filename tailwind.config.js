@@ -123,6 +123,7 @@ export default {
         172: "43rem",
       },
       width: {
+        modal: "calc(100% - 2.4rem)",
         88: "22rem",
         90: "22.5rem",
         104: "26rem",

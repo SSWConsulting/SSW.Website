@@ -1,0 +1,194 @@
+---
+showSidebarPanel: true
+showAzureFooter: true
+seo:
+  title: Why Upgrading to .NET 8 is Crucial for Your App's Future | SSW
+  description: >-
+    Upgrading to .NET 8 boosts your app's performance, security, and future
+    growth. Discover the essential benefits and transform your application
+    today.
+  showBreadcrumb: true
+  images:
+    - url: /images/dot-Net8.png
+      width: 630
+      height: 630
+      alt: SSW Consulting - Enterprise Software Development
+bannerImg: /images/articles/m21iUhS4Sx6lcS21dOrOvg.webp
+title: Modernize Your .NET Applications! Please!
+subTitle: >
+  <VideoEmbed url="https://youtu.be/VvdyBgL_RBU" videoWidth="w-full"
+  caption="Luke and Mike discuss the pitfalls for not upgrading your app." />
+
+
+  You. Yes, you. I see you there, with your old WebForms app running on ye olde
+  faithful .NET Framework. This article is for you.
+
+
+  I am a big believer in the "if it ain't broke; don't fix it" philosophy. Some
+  young upstart comes to you one day and spends 30 minutes yelling about how
+  your application is now considered legacy and - \*gasp\* - not running on the
+  latest tech stack! In the famous words of Jeremy
+  Clarkson:![](/images/68747470733a2f2f6d65646961312e74656e6f722e636f6d2f6d2f6e776f4a3442533058485941414141642f6f682d6e6f2d616e797761792e676966.gif)
+
+
+  So you kick the can down the road. For now. Maybe you'll look at updating it,
+  at some as-yet-undefined moment in the future. It's just not high on your
+  priority list right now. After all, if it ain't broke; why fix it?
+
+
+  ## Oh no. My app isn't working anymore
+
+
+  Chances are, your app doesn't exist as a perfect sphere in a vaccuum. You
+  probably integrate with other services/apps/products/whatever. You aren't a
+  perfect sphere; there are some rough edges in your system. You aren't in a
+  vaccuum; friction with the outside world exists.
+
+
+  And one day, you'll get the call that some up/downstream service has magically
+  stopped working with your app.
+
+
+  If I were a betting man, I'd put money on you having received one/many emails
+  prior to this moment, from an engineer or sysadmin, warning you this was going
+  to happen.
+
+
+  Side note: if you didn't, you should [probably give us a
+  call](https://www.ssw.com.au/company/contact-us) to make sure you do get
+  notified next time.
+
+
+  You find out that the outside world has deprecated some feature or function
+  that you've been relying on for the last 10 years. Even worse; their
+  replacement feature/function isn't compatible with your old tech stack. Oh,
+  sure, that new feature has been around for the last few years, but it only
+  existed in the SDK that your "legacy" application didn't support.
+
+
+  So instead of being able to modernize your application at leisure while
+  business ticks along, you now have to modernize at breakneck speed while your
+  whole system is offline. And as we all know, those upgrades that we have to do
+  in a panic always go smoothly, right?
+
+
+  ## Oh no. My data got stolen
+
+
+  The typical "security vulnerabilities" bogeyman gets thrown around a lot as
+  justification for coughing up dough to work on not-feature-delivery stuff.
+  It's an interesting talking point, as it strikes fear into the hearts of 2
+  groups of people:
+
+
+  * Those who are new to the game
+
+  * Those who have already had a data breach
+
+
+  If you're in neither of those groups, then you've probably heard this
+  sky-is-probably-about-to-fall argument many times and have become adept at
+  tuning it out. Oh that's just Bob, going on about possible security issues
+  again. Yawn.
+
+
+  Let's just pause a moment, and consider the following:
+
+
+  * Hackers exist
+
+  * Data is valuable
+
+  * Many, many, many companies much larger than yours are doing everything
+  possible to stop aforementioned hackers gaining access to the aforementioned
+  booty
+
+
+  You know what those companies are doing? Releasing new versions! Those new
+  versions have - among other things - changes specifically built to stop the
+  baddies getting at your goodies.
+
+
+  You know what your app uses? The old versions! Without those security patches!
+
+
+  I'm not saying it's inevitable that you're going to get hacked. What I am
+  saying, however, is that if it happens, the resignation letter you should be
+  expecting is your own. Bob is going to go home that evening and sleep like a
+  baby.
+
+
+  ## Oh no. My engineer(s) quit
+
+
+  Devs have to keep up with tech, or they become less valuable over time. If
+  your company is stuck using an outdated tech stack, your developers don't have
+  the opportunity to grow. While your existing tech stack might be "fine" for
+  your business, developers won't want to stick around and risk being left
+  behind. I've interviewed many developers over the years, and one of the
+  questions I ask is "why are you interviewing for this job?", and I often hear
+  the reply "I want to work with modern tech. I feel like I'm stagnating where I
+  am".
+
+
+  Sure, there are still devs around who know and love Cobol. But not many.
+
+
+  ## Oh no. What do I do?
+
+
+  The first step is accepting that you have a problem. Done that? Great! Now how
+  to address the problem.
+
+
+  SSW have done plenty of .NET migrations, and we make all our battle scars
+  available on our [Rules to better .NET
+  migrations](https://www.ssw.com.au/rules/rules-to-better-net8-migrations/). If
+  you and your developers want to go it alone, read those rules and start making
+  a [migration plan](https://www.ssw.com.au/rules/migration-plans/).
+
+
+  Depending on just how "legacy" your legacy app is, you may run into problems
+  with dependencies that simply don't have a modern equivalent. We ran into this
+  with one of our internal products, where a CRM SDK didn't have a modern
+  alternative. There are a few ways you can overcome this, but the worst case
+  scenario is that you isolate and abstract that particular integration point
+  and leave it on the old tech, while modernizing the rest of your solution.
+
+
+  And of course, if you want to throw your hands in the air and make it someone
+  else's problem - [we'll do it for
+  you.](https://www.ssw.com.au/company/contact-us)
+
+
+  ## Okay okay. How can I avoid getting into this situation in the first
+  place/again?
+
+
+  If you are constantly refactoring to address tech debt and upgrade your tech
+  stack, you can avoid your application ever becoming "legacy" and ending up at
+  this sticky situation. That's why SSW recommends dedicating 15-20% of every
+  Sprint on [Tech Debt](https://www.ssw.com.au/rules/technical-debt/)
+author: content/presenters/luke-cook.mdx
+sidebarPanel:
+  title: '.NET Application Modernisation: 3-day Assessment'
+  description: >-
+    Transform your applications with SSW's .NET Application Modernisation 3-Day
+    Assessment. Day 1 focuses on analyzing your current app, identifying
+    performance, security, and architectural issues. Day 2 involves creating a
+    tailored modernization strategy, including a roadmap for upgrading to .NET
+    9. Day 3 presents a comprehensive action plan with detailed recommendations
+    and best practices. Future-proof your business by leveraging the latest .NET
+    technologies with SSW's expert guidance.
+  showSidebarPanel: true
+  actionUrl: /consulting/app-and-infrastructure-implementation
+  actionText: Learn More
+callToAction:
+  title: Talk to us about your project
+  subTitle: Connect with our Account Managers to discuss how we can help.
+  showCallToAction: true
+  buttonText: Book a FREE Initial Meeting
+  animated: true
+  buttonSubtitle: or call +61 2 9953 3000
+---
+

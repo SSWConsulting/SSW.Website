@@ -70,7 +70,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
                   </CustomLink>
                 </div>
               )}
-              <div className="prose prose-img:my-0 max-w-full">
+              <div className="prose max-w-full prose-img:my-0">
                 <TinaMarkdown
                   content={client.content}
                   components={componentRenderer}

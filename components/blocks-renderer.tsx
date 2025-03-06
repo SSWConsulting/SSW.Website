@@ -1,5 +1,8 @@
 import dynamic from "next/dynamic";
-import { PaymentBlock } from "./blocks/payment-block";
+
+const PaymentBlock = dynamic(() =>
+  import("./blocks/payment-block").then((mod) => mod.PaymentBlock)
+);
 
 const BookingButton = dynamic(() =>
   import("./bookingButton/bookingButton").then((mod) => mod.BookingButton)
@@ -146,6 +149,10 @@ const TechnologyCardCarousel = dynamic(() =>
   )
 );
 
+const Spacer = dynamic(() =>
+  import("./blocks/spacer/spacer").then((mod) => mod.Spacer)
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -183,6 +190,7 @@ const componentMap = {
   AccordionBlock,
   CardCarousel,
   TechnologyCardCarousel,
+  Spacer,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
