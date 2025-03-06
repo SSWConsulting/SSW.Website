@@ -4,13 +4,33 @@ const datetimeFormat = {
   timeFormat: "hh:mm a",
   dateFormat: "ddd DD MMMM YYYY,",
 };
-
+const removeEmptyObjects = (formValues: object, fieldKey: string) => {
+  let field = formValues[fieldKey];
+  if (!field) return formValues;
+  field = field.filter((item: object) => {
+    return Object.keys(item).length > 0;
+  });
+  if (field.length) {
+    return {
+      ...formValues,
+      [fieldKey]: field,
+    };
+  }
+  delete formValues[fieldKey];
+  return formValues;
+};
 export const eventsCalendarSchema: Collection = {
   label: "Events - Calendar",
   name: "eventsCalendar",
   path: "content/events-calendar",
   format: "json",
   ui: {
+    beforeSubmit: async ({ values }) => {
+      return removeEmptyObjects(values, "presenterList") as Record<
+        string,
+        unknown
+      >;
+    },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - upload dir not included in Tina type but works anyway
     defaultItem: () => ({ enabled: true, liveStreamDelayMinutes: 30 }),
