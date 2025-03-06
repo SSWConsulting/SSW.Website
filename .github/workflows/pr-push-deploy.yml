@@ -44,6 +44,14 @@ jobs:
           skip-step: all
           annotations: none
 
+      - name: Run Lighthouse audits
+        uses: foo-software/lighthouse-check-action@master
+        with:
+          accessToken: ${{ secrets.GITHUB_TOKEN }}
+          urls: |
+            https://www.ssw.com.au
+            https://www.ssw.com.au/events
+
   build:
     name: Build and upload artifacts
     uses: ./.github/workflows/template-build.yml
