@@ -101,6 +101,16 @@ export const megaMenuSchema: Collection = {
                     },
                     {
                       type: "string",
+                      name: "documentationLink",
+                      label: "Link to Documentation",
+                    },
+                    {
+                      type: "string",
+                      name: "youtubeLink",
+                      label: "Link to YouTube Channel",
+                    },
+                    {
+                      type: "string",
                       name: "icon",
                       label: "Icon (optional override of above image field)",
                       options: Object.keys(iconMap),

@@ -361,19 +361,26 @@ export const globalSchema: Collection = {
       ],
     },
     {
-      type: "string",
-      name: "bookingJotFormId",
-      label: "Booking JotForm Id",
-    },
-    {
-      type: "string",
-      name: "newsletterJotFormId",
-      label: "Newsletter JotForm Id",
-    },
-    {
-      type: "string",
-      name: "registrationOfInterestJotFormId",
-      label: "Registration of Interest JotForm Id",
+      type: "object",
+      label: "Forms",
+      name: "forms",
+      fields: [
+        {
+          type: "string",
+          name: "bookingJotFormId",
+          label: "Booking JotForm Id",
+        },
+        {
+          type: "string",
+          name: "newsletterJotFormId",
+          label: "Newsletter JotForm Id",
+        },
+        {
+          type: "string",
+          name: "registrationOfInterestJotFormId",
+          label: "Registration of Interest JotForm Id",
+        },
+      ],
     },
   ],
 };

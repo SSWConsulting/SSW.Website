@@ -1,15 +1,12 @@
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
-import { SectionColor } from "@/components/util/constants/styles";
+import {
+  BuiltOnAzure,
+  BuiltOnAzureProps,
+} from "@/components/blocks/builtOnAzure";
 import { Section } from "@/components/util/section";
-
-export const PreFooter = ({
-  backgroundColor = SectionColor.LightGray,
-}: {
-  backgroundColor?: SectionColor;
-}) => {
+export const PreFooter = ({ data }: BuiltOnAzureProps) => {
   return (
     <Section className="w-full flex-none">
-      <BuiltOnAzure data={{ backgroundColor }} />
+      <BuiltOnAzure data={data} />
     </Section>
   );
 };

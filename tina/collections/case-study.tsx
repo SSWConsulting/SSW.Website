@@ -5,7 +5,7 @@ import { tipField } from "./shared-fields";
 
 export const caseStudySchema: Collection = {
   name: "caseStudy",
-  label: "Company - Case Studies",
+  label: "Company - Case Study - Pages",
   format: "mdx",
   path: "content/company/case-study",
   ui: {

@@ -2,7 +2,6 @@ import classNames from "classnames";
 import { useRouter } from "next/router";
 import { useLiveStreamTimer } from "../../hooks/useLiveStreamProps";
 import { Footer } from "./footer/footer";
-import { PreFooter } from "./footer/pre-footer";
 import { Theme } from "./theme";
 
 import {
@@ -54,7 +53,6 @@ interface LayoutProps {
     menuGroups: NavMenuGroup[];
   };
   children: React.ReactNode;
-  showAzureBanner?: boolean;
   liveStreamData: LiveStreamData;
 }
 
@@ -63,7 +61,6 @@ export const Layout = ({
   children,
   menu,
   className = "",
-  showAzureBanner,
 }: LayoutProps) => {
   const eventJson: EventInfoStatic = liveStreamData?.edges[0]?.node;
 
@@ -155,8 +152,6 @@ export const Layout = ({
           </header>
           <ErrorBoundary key={router.asPath}>
             <main className={classNames("grow bg-white")}>{children}</main>
-
-            {showAzureBanner && <PreFooter />}
             <Footer />
           </ErrorBoundary>
         </div>

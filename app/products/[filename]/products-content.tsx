@@ -1,10 +1,10 @@
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-
 export default function ProductsContent({ props }) {
   const { data, variables } = props;
   return (
@@ -17,7 +17,7 @@ export default function ProductsContent({ props }) {
       </Section>
       <Container
         className={
-          "prose prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0 flex-1 pt-4"
+          "prose flex-1 pt-4 prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0"
         }
       >
         <TinaMarkdown
@@ -25,6 +25,7 @@ export default function ProductsContent({ props }) {
           components={componentRenderer}
         />
       </Container>
+      <BuiltOnAzure data={data.products} />
     </>
   );
 }

@@ -24,7 +24,7 @@ export const ColorBlock = (data: ColorBlockProps) => {
   const { title, subTitle, colorRow } = data;
   return (
     <Container padding="md:px-8 px-0">
-      <div className="prose prose-p:my-0.75 max-w-full">
+      <div className="prose max-w-full prose-p:my-0.75">
         <div className="container mx-auto py-4">
           <h2 data-tina-field={tinaField(data, "title")}>{title}</h2>
           <p data-tina-field={tinaField(data, "subTitle")} className="mb-0.5">

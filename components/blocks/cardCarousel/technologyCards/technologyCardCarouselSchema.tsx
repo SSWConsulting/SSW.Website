@@ -19,7 +19,9 @@ export const TechnologyCardCarouselSchema: Template = {
         itemProps: (item) => {
           const name = item.technologyGroup?.split("/");
           return {
-            label: name[name.length - 1].split(".")[0] ?? "Technology Group",
+            label: name
+              ? name[name.length - 1].split(".")[0]
+              : "Technology Group",
           };
         },
       },

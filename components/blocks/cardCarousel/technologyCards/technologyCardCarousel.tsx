@@ -1,3 +1,5 @@
+"use client";
+
 import client from "@/tina/client";
 import { useEffect, useState } from "react";
 import { CardCarousel } from "../cardCarousel/cardCarousel";
@@ -24,7 +26,7 @@ export const TechnologyCardCarousel = ({ data }) => {
         return {
           guid: card.node.associatedGroup?.name,
           image: card.node.thumbnail,
-          title: card.node.name,
+          heading: card.node.name,
           altText: card.node.name,
           description: card.node.body,
           embeddedButton: {

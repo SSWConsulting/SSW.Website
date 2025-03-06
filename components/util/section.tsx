@@ -1,14 +1,22 @@
 import classNames from "classnames";
 import React from "react";
-import { sectionColors } from "./constants/styles";
+import { SectionColor, sectionColors } from "./constants/styles";
+
+type SectionProps = {
+  children: React.ReactNode;
+  color?: SectionColor;
+  className?: string;
+  style?: React.CSSProperties;
+  id?: string;
+};
 
 export const Section = ({
   children,
-  color = "",
+  color = "default",
   className = "",
   style = {},
   id = "",
-}) => {
+}: SectionProps) => {
   const sectionColorCss = sectionColors[color] || sectionColors.default;
 
   return (

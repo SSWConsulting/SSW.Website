@@ -284,7 +284,9 @@
       }
     ]
   },
-  "bookingJotFormId": "233468468973070",
-  "newsletterJotFormId": "240991361342051",
-  "registrationOfInterestJotFormId": "241638083078865"
+  "forms": {
+    "bookingJotFormId": "233468468973070",
+    "newsletterJotFormId": "240991361342051",
+    "registrationOfInterestJotFormId": "241638083078865"
+  }
 }
