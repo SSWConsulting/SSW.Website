@@ -47,9 +47,12 @@ jobs:
       - name: Run Lighthouse audits and post results
         uses: treosh/lighthouse-ci-action@v2
         with:
-            urls: |
+          uploadArtifacts: true
+          configPath: './lighthouserc.json'
+          urls: |
               https://www.ssw.com.au
               https://www.ssw.com.au/events
+
 
   build:
     name: Build and upload artifacts
