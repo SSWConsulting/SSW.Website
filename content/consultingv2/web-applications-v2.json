@@ -1,0 +1,217 @@
+{
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Enterprise Ready"
+      },
+      "heading": "Build High-Performance Web Applications with Experts You Can Trust ",
+      "isH1": true,
+      "description": "Partner with Australia's leading .NET experts to build custom solutions that drive your business forward.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis%2520Test%2520Images/Incident-io-batch/hero/hero_1400_700px(MS2).png"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Trusted by top companies",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "ix86q",
+          "altText": "",
+          "icon": "info",
+          "heading": "Custom Solutions, No Compromises",
+          "description": "Get software built to match your exact requirements, not just something \"close enough.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "6hp27d",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Industry-Leading Microsoft Expertise",
+          "description": "Work with certified professionals, MVPs, and a Microsoft Regional Director.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "uk2o9",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Scalable & Future-Proof Architecture",
+          "description": "Designed to evolve with your business, ensuring long-term adaptability.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "5pvsls",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Agile Development for Faster Delivery",
+          "description": "Stay involved throughout the process with our transparent, Scrum-based approach.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Custom Software Solutions for Complex Business Needs",
+      "isH1": false,
+      "description": "At SSW, we understand that off-the-shelf software often falls short. We specialize in building custom, future-proof web applications and APIs using Microsoft technologies. With over 30 years of experience, our team of expert developers delivers solutions tailored to your unique business needs.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://youtu.be/zorbI0iDFQk?si=MO-dsKdvoS6-EWzT",
+        "altText": "Web Application development is hard - Why choose SSW"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "567hv7",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/U8LyScigrcA?si=DTC40Vv-cl14nBXg",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "description": "The world of modern web development was SPAs like Angular, React and Blazor. Now customers are choosing Next.JS and shadcn/UI - these tools are revolutionizing how we build on the web. This beginner-friendly session will guide you through the process of creating sleek, responsive websites with ease and confidence. ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "uqyhw",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/PVRNOoO_iXA?si=EhyIFXvGPsEw5P3K",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Building Cross-platform Blazor Desktop Apps with Photino",
+          "description": "Are you a Blazor developer wishing you could build cross-platform desktop apps (yes, even for Linux!) with familiar syntax? Join us to explore Photino, a lightweight framework that brings Blazor to the desktop with direct access to desktop APIs like file system access and multithreading. ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "hkhsxs",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/6LwZH4-62Fo?si=F2JOkaqb-eJyBUpR",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Spies, screen readers and semantic HTML",
+          "description": "We all know the power of ALT text in making images accessible for screen readers. But when an image is rich with detail like textures, placement, and text ALT text alone can't capture the full picture.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "_template": "technologyCardCarousel"
+    }
+  ]
+}
