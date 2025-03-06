@@ -35,6 +35,8 @@ permissions:
 jobs:
   build-site:
     runs-on: ubuntu-latest
+    outputs:
+      bundle-artifact-url: ${{ steps.upload-bundle-artifact.outputs.artifact-url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -122,3 +124,21 @@ jobs:
 
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
+
+      - name: Pull Docker image
+        run: |
+          docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
+
+      - name: Extract bundle analyze artifacts from Docker image
+        run: |
+          mkdir -p ./bundle-analyze-artifacts
+          docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
+          docker cp temp-container:/website/bundle-analyze-artifact ./bundle-analyze-artifact
+          docker rm temp-container
+
+      - name: Upload bundle analyze artifacts
+        id: upload-bundle-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-analyze-artifact
+          path: ./bundle-analyze-artifact
