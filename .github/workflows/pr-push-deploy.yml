@@ -44,13 +44,12 @@ jobs:
           skip-step: all
           annotations: none
 
-      - name: Run Lighthouse audits
-        uses: foo-software/lighthouse-check-action@master
+      - name: Run Lighthouse audits and post results
+        uses: treosh/lighthouse-ci-action@v2
         with:
-          accessToken: ${{ secrets.GITHUB_TOKEN }}
-          urls: |
-            https://www.ssw.com.au
-            https://www.ssw.com.au/events
+            urls: |
+              https://www.ssw.com.au
+              https://www.ssw.com.au/events
 
   build:
     name: Build and upload artifacts
