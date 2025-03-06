@@ -13,11 +13,9 @@ if (-not $match.Success) {
 
 try {
   $chartData = $match.Groups[1].Value | ConvertFrom-Json
-
   $totalParsedSize = ($chartData | Measure-Object -Property parsedSize -Sum).Sum
-  
   $totalParsedSizeMB = [math]::Round($totalParsedSize / (1024 * 1024), 2)
-  
+
   Write-Output "$totalParsedSizeMB MB"
 } catch {
   Write-Error "Failed to process chartData"

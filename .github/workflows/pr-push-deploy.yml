@@ -55,7 +55,7 @@ jobs:
     secrets: inherit
 
   bundle-analyze:
-    name: Bundle analyze
+    name: Bundle analyze report
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -85,7 +85,7 @@ jobs:
 
             - Total Bundle Size: ${{ steps.calculate-bundle-size.outputs.total_parsed_size_mb }}
 
-            - Download report via: ${{ steps.upload-bundle-artifact.outputs.artifact-url }}
+            - Download bundle analyze artifact via: ${{ needs.build.outputs.bundle-artifact-url }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
 
