@@ -5,7 +5,7 @@ param (
 # Read the HTML content
 $htmlContent = Get-Content -Path $HtmlFilePath -Raw
 
-# Extract the window.chartData array of objects which contains contains information about each "static/chunks/*"
+# Extract the array of objects from html file which contains information for each "static/chunks/*"
 $match = [regex]::Match($htmlContent, 'window\.chartData\s*=\s*(\[.*?\]);')
 if (-not $match.Success) {
   Write-Error "Failed to find window.chartData in $HtmlFilePath"

@@ -65,12 +65,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download bundle analyze artifact
-        run: |
-          echo "Downloading bundle analyze artifact from ${{ needs.build.outputs.bundle-artifact-url }}"
-          curl -L -o bundle-analyze-artifact.zip \
-            -H "Authorization: Bearer ${{ github.token }}" \
-            "${{ needs.build.outputs.bundle-artifact-url }}"
-          unzip bundle-analyze-artifact.zip -d ./bundle-analyze-artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: bundle-analyze-artifact
+          path: ./bundle-analyze-artifact
 
       - name: Run PowerShell script to calculate bundle size
         id: calculate-bundle-size

@@ -6,6 +6,10 @@ on:
       tag:
         type: string
         required: true
+    outputs:
+      bundle-artifact-url:
+        description: "The URL of the uploaded bundle artifact"
+        value: ${{ jobs.build-site.outputs.bundle-artifact-url }}
     secrets:
       AZURE_CLIENT_ID:
         required: true
