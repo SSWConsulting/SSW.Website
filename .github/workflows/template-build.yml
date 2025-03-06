@@ -88,6 +88,7 @@ jobs:
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
       - name: Docker - Build and Push
+        if: github.event_name == 'pull_request'
         uses: docker/build-push-action@v6
         id: docker-build
         with:
@@ -126,22 +127,33 @@ jobs:
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
 
       - name: Pull Docker image
+        if: github.event_name == 'pull_request'
         run: |
           docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
 
-      - name: Extract analyze folder from Docker image
+      - name: Extract bundle analyze artifacts from Docker image
+        if: github.event_name == 'pull_request'
         run: |
-          # Create the .next directory in the local working directory
-          mkdir -p ./.next
-
-          # Create a temporary container and copy the analyze folder
+          mkdir -p ./bundle-analyze-artifacts
           docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-          docker cp temp-container:/app/.next/analyze ./.next/analyze
+          docker cp temp-container:/app/bundle-analyze-artifacts ./bundle-analyze-artifacts
           docker rm temp-container
 
-      - name: Upload bundle analysis report
+      - name: Upload bundle analyze artifacts
+        id: upload-bundle-artifact
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
           name: bundle-analysis
-          path: ./.next/analyze
+          path: ./bundle-analyze-artifacts
+
+      - name: Comment on PR with bundle analyze report
+        if: github.event_name == 'pull_request'
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            ## Bundle Analyze Report
+
+            Download report via: ${{ steps.upload-bundle-artifact.outputs.artifact-url}}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
