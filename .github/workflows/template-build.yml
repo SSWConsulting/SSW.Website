@@ -142,3 +142,7 @@ jobs:
         with:
           name: bundle-analyze-artifact
           path: ./bundle-analyze-artifact
+
+      - name: Print artifact URL
+        run: |
+          echo "Artifact URL: ${{ steps.upload-bundle-artifact.outputs.artifact-url }}"

@@ -66,6 +66,7 @@ jobs:
 
       - name: Download bundle analyze artifact
         run: |
+          echo "Downloading bundle analyze artifact from ${{ needs.build.outputs.bundle-artifact-url }}"
           curl -L -o bundle-analyze-artifact.zip \
             -H "Authorization: Bearer ${{ github.token }}" \
             "${{ needs.build.outputs.bundle-artifact-url }}"
