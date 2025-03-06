@@ -65,8 +65,7 @@ Once, the docker image is ready, run the following command:
  docker run --env-file .env -p 3000:3000 ssw-website
 ```
 
-⚠️ **Important**: Ensure that all required secrets are present in your .env file and stored in the root directory of your project. Additionally, make sure to update the `NEXT_PUBLIC_TINA_BRANCH`
- to match the branch you're testing on.
+⚠️ **Important**: Ensure that all required secrets are present in your .env file and stored in the root directory of your project. Additionally, make sure to update the `NEXT_PUBLIC_TINA_BRANCH` to match the branch you're testing on.
 
 
 ## Get Started with Dev Container
