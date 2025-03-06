@@ -51,7 +51,11 @@ const config = {
     ],
   },
   output: "standalone", // required for Docker support
-  webpack(config) {
+  webpack(config, { isServer }) {
+    if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push("applicationinsights");
+    }
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
@@ -78,6 +82,7 @@ const config = {
     ];
   },
   experimental: {
+    instrumentationHook: true,
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
     turbo: {
       resolveExtensions: [
