@@ -122,7 +122,7 @@ COPY --from=builder --chown=nextjs:nodejs /website/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /website/appInsight-api.js ./
 
 # Copy the analyze folder from the builder stage
-COPY --from=builder --chown=nextjs:nodejs /website/.next/analyze ./bundle-analyze-artifacts
+COPY --from=builder --chown=nextjs:nodejs /website/.next/analyze ./bundle-analyze-artifact
 
 USER nextjs
 

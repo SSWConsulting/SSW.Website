@@ -35,8 +35,6 @@ permissions:
 jobs:
   build-site:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
@@ -126,36 +124,3 @@ jobs:
 
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-
-      # TODO: Separate these into separate job and workflow file
-      - name: Pull Docker image
-        if: github.event_name == 'pull_request'
-        run: |
-          docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-
-      - name: Extract bundle analyze artifacts from Docker image
-        if: github.event_name == 'pull_request'
-        run: |
-          mkdir -p ./bundle-analyze-artifacts
-          docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-          docker cp temp-container:/website/bundle-analyze-artifacts ./bundle-analyze-artifacts
-          docker rm temp-container
-
-      - name: Upload bundle analyze artifacts
-        id: upload-bundle-artifact
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: bundle-analysis
-          path: ./bundle-analyze-artifacts
-
-      - name: Comment on PR with bundle analyze report
-        if: github.event_name == 'pull_request'
-        uses: mshick/add-pr-comment@v2
-        with:
-          message: |
-            ## Bundle Analyze Report
-
-            Download report via: ${{ steps.upload-bundle-artifact.outputs.artifact-url}}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-repeats: true

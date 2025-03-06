@@ -54,6 +54,59 @@ jobs:
       contents: read
     secrets: inherit
 
+  bundle-analyze:
+    name: Bundle analyze
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Pull Docker image
+        run: |
+          docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
+
+      - name: Extract bundle analyze artifacts from Docker image
+        run: |
+          mkdir -p ./bundle-analyze-artifacts
+          docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
+          docker cp temp-container:/website/bundle-analyze-artifact ./bundle-analyze-artifact
+          docker rm temp-container
+
+      - name: Upload bundle analyze artifacts
+        id: upload-bundle-artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundle-analyze-artifact
+          path: ./bundle-analyze-artifact
+
+      - name: Download bundle analyze artifact
+        run: |
+          curl -L -o bundle-analyze-artifact.zip \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            "${{ steps.upload-bundle-artifact.outputs.artifact-url }}"
+          unzip bundle-analyze-artifact.zip -d ./bundle-analyze-artifact
+
+      - name: Run PowerShell script to calculate bundle size
+        id: calculate-bundle-size
+        shell: pwsh
+        run: |
+          $totalSizeMB = .\scripts\calculate-bundle-size.ps1 -HtmlFilePath ./bundle-analyze-artifact/client.html
+          echo "total_parsed_size_mb=$totalSizeMB" | Out-File -FilePath $env:GITHUB_OUTPUT utf8 -Append
+
+      - name: Comment on PR with bundle analyze report
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            ## Bundle Analyze Report
+            - Total Bundle Size: ${{ steps.calculate-bundle-size.outputs.total_parsed_size_mb }}
+
+            - Download report via: ${{ steps.upload-bundle-artifact.outputs.artifact-url }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
+
   pr-deploy:
     name: Deploy to slot
     needs: build
