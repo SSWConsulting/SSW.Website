@@ -26,6 +26,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
+      - name: Run Lighthouse audits and post results
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          uploadArtifacts: true
+          configPath: './lighthouserc.json'
+          urls: |
+              https://www.ssw.com.au
+              https://www.ssw.com.au/events
+
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: package.json
@@ -43,15 +52,6 @@ jobs:
           base-coverage-file: coverage-report.json
           skip-step: all
           annotations: none
-
-      - name: Run Lighthouse audits and post results
-        uses: treosh/lighthouse-ci-action@v2
-        with:
-          uploadArtifacts: true
-          configPath: './lighthouserc.json'
-          urls: |
-              https://www.ssw.com.au
-              https://www.ssw.com.au/events
 
 
   build:
