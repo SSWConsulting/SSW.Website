@@ -30,7 +30,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v2
         with:
           uploadArtifacts: true
-          configPath: './lighthouserc.json'
+          configPath: './.github/workflows/lighthouserc.json'
           urls: |
               https://www.ssw.com.au
               https://www.ssw.com.au/events
