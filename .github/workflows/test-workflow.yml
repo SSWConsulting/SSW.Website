@@ -35,17 +35,17 @@ jobs:
 
           $getWorkflowRunResponse = Invoke-RestMethod -Uri $getWorkflowRunUrl -Headers $headers -Body $queryParams -Method Get
 
-          if ($response.total_count -gt 0) {
-            $latestRun = $response.workflow_runs[0]
+          if ($getWorkflowRunResponse.total_count -gt 0) {
+            $latestRun = $getWorkflowRunResponse.workflow_runs[0]
             Write-Host "Found latest successful production workflow run: $($latestRun.html_url)"
             Write-Host "----------------------------------------"
 
             $getArtifactsUrl = "https://api.github.com/repos/$owner/$repo/actions/runs/$($latestRun.id)/artifacts"
-            $getArtifactsResponse = Invoke-RestMethod -Uri $artifactsUrl -Headers $headers -Method Get
+            $getArtifactsResponse = Invoke-RestMethod -Uri $getArtifactsUrl -Headers $headers -Method Get
 
-            if ($artifactsResponse.total_count -gt 0) {
+            if ($getArtifactsResponse.total_count -gt 0) {
               # Find the artifact by name
-              $artifact = $artifactsResponse.artifacts | Where-Object { $_.name -eq $artifactName }
+              $artifact = $getArtifactsResponse.artifacts | Where-Object { $_.name -eq $artifactName }
 
               if ($artifact) {
                 Write-Host "$($artifact.name) artifact found"
