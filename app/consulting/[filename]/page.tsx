@@ -6,6 +6,7 @@ import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import { cache } from "react";
 import { TinaClient } from "../../tina-client";
 import OldConsultingPage from "./consulting";
 import ConsultingPage2 from "./consulting2";
@@ -76,7 +77,7 @@ export async function generateStaticParams(): Promise<ConsultingPageParams[]> {
   return [...consultingPages, ...newConsultingPagesData];
 }
 
-const newConsultingPageData = async (filename: string) => {
+const newConsultingPageData = cache(async (filename: string) => {
   const tinaProps: NewConsultingPage = await client.queries.consultingv2({
     relativePath: `${filename}.json`,
   });
@@ -94,9 +95,9 @@ const newConsultingPageData = async (filename: string) => {
       ...tinaProps,
     },
   };
-};
+});
 
-const consultingPageData = async (filename: string) => {
+const consultingPageData = cache(async (filename: string) => {
   const tinaProps = await client.queries.consultingContentQuery({
     relativePath: `${filename}.mdx`,
     date: TODAY.toISOString(),
@@ -165,7 +166,7 @@ const consultingPageData = async (filename: string) => {
       ...tinaProps,
     },
   };
-};
+});
 
 type GenerateMetaDataProps = {
   params: { filename: string };
