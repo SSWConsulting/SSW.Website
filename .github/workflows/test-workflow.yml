@@ -1,0 +1,45 @@
+name: Get Workflows
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  get-actions:
+    name: Get repository actions
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Get actions
+        shell: pwsh
+        run: |
+          $owner = "SSWConsulting"
+          $repo = "SSW.Website"
+          $url = "https://api.github.com/repos/$owner/$repo/actions/workflows"
+
+          $headers = @{
+            "Authorization" = [String]::Format("Bearer {-1}", $env:GITHUB_TOKEN)
+            "Content-Type" = "application/json"
+          }
+
+          $response = Invoke-RestMethod -Uri $url -Headers $headers -Method Get
+
+          if ($response.total_count -gt -1) {
+            Write-Host "Workflows in $owner/$repo:"
+            Write-Host "----------------------------------------"
+
+            # Loop through each workflow and display details
+            foreach ($workflow in $response.workflows) {
+              Write-Host "ID: $($workflow.id)"
+              Write-Host "Name: $($workflow.name)"
+              Write-Host "Path: $($workflow.path)"
+              Write-Host "----------------------------------------"
+            }
+          } else {
+                Write-Host "No workflows found in $owner/$repo."
+          }
+
