@@ -37,7 +37,9 @@ jobs:
         run: pnpm install @lhci/cli lighthouse chrome-launcher
 
       - name: Run Lighthouse CI
-        run: npx lhci autorun --no-status
+        run: |
+          performance_score=$(npx lhci autorun --json --no-status | jq '.results[0].summary.performance')
+          echo "Performance score: $performance_score"
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
