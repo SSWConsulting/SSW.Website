@@ -39,11 +39,10 @@ jobs:
       - name: Read the manifest file and extract url and summary
         shell: bash
         run: |
-          # Define the path to the manifest file
           FILE_PATH="/home/runner/work/SSW.Website/SSW.Website/.lighthouseci/manifest.json"
 
-          # Use jq to extract the url and summary fields
-          cat $FILE_PATH | jq '.[] | {url, summary}'
+          # Use jq to extract url and summary for each object
+          jq -c '.[] | {url, summary}' $FILE_PATH
 
       - uses: pnpm/action-setup@v4
         with:
