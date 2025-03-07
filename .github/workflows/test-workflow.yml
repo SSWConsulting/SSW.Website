@@ -28,7 +28,6 @@ jobs:
           }
 
           $queryParams = @{
-            "status" = "completed"
             "conclusion" = "success"
             "per_page" = 1
           }
