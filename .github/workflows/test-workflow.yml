@@ -30,7 +30,6 @@ jobs:
           $queryParams = @{
             "status" = "completed"
             "conclusion" = "success"
-            "head_branch" = "3671-bundle-size"
             "per_page" = 1
           }
 
@@ -80,4 +79,3 @@ jobs:
           } else {
               Write-Host "No workflows found in $owner/$repo."
           }
-
