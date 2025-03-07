@@ -56,7 +56,7 @@ jobs:
               $artifactsUrl = "https://api.github.com/repos/$owner/$repo/actions/runs/$($latestRun.id)/artifacts"
               $artifactsResponse = Invoke-RestMethod -Uri $artifactsUrl -Headers $headers -Method Get
 
-              if ($artifactsResponse.total_count -g 0) {
+              if ($artifactsResponse.total_count -gt 0) {
                 Write-Host "Artifacts for run $($latestRun.id)"
                 Write-Host "----------------------------------------"
 
