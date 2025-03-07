@@ -34,7 +34,7 @@ jobs:
             https://www.ssw.com.au/
 
       - name: Check the result
-        run: ls
+        run: ls -a /home/runner/work/SSW.Website/SSW.Website/.lighthouseci
 
       - uses: pnpm/action-setup@v4
         with:
