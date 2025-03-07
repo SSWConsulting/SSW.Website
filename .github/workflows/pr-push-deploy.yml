@@ -37,19 +37,16 @@ jobs:
         run: pnpm install @lhci/cli lighthouse chrome-launcher
 
       - name: Run Lighthouse CI
-        shell: bash
-        run: |
-          performance_score=$(npx lhci autorun --json --no-status | jq '.results[0].summary.performance')
-          echo "Performance score: $performance_score"
+        id: lighthouse
+        run: npx lhci autorun --json --no-status
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload Lighthouse Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-reports
-          path: .lighthouseci/
-        if: always()
+      - name: Parse Lighthouse Results
+        shell: bash
+        run: |
+          performance_score=$(echo "${{ steps.lighthouse.outputs.stdout }}" | jq '.results[0].summary.performance')
+          echo "Performance score: $performance_score"
 
       - name: Run Tests & Coverage
         run: pnpm test-and-coverage --outputFile=coverage-report.json
