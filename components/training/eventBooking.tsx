@@ -32,9 +32,11 @@ export const formatTimeWithAmPm = (date) => {
     : `${hours}:${formattedMinutes}${amPm}`;
 };
 
-const TimePicker = ({ input }) => {
+const TimePicker = ({ input, defaultValue }) => {
   const { onChange, value: inputValue, ...props } = input;
-  const [value, setValue] = React.useState(dayjs(inputValue).format("HH:mm"));
+  const [value, setValue] = React.useState(
+    inputValue ? dayjs(inputValue).format("HH:mm") : defaultValue
+  );
   return (
     <input
       className="focus:shadow-outline block w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-base text-gray-600 shadow-inner transition-all duration-150 ease-out placeholder:text-gray-300 focus:border-blue-500 focus:text-gray-900 focus:outline-none"
@@ -146,10 +148,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 />
               </div>
               <div
-                data-tina-field={tinaField(
-                  schema.eventList[index],
-                  "startTime"
-                )}
+                data-tina-field={tinaField(schema.eventList[index])}
                 className="py-0.5 text-xs uppercase text-gray-500"
               >
                 {formatTimes(event)}
@@ -391,7 +390,9 @@ export const eventBookingSchema: Template = {
           label: "Start Time",
           type: "datetime",
           ui: {
-            component: wrapFieldsWithMeta(TimePicker),
+            component: wrapFieldsWithMeta(({ input }) => (
+              <TimePicker defaultValue={"09:00"} input={input} />
+            )),
           },
           name: "startTime",
         },
@@ -399,7 +400,9 @@ export const eventBookingSchema: Template = {
           label: "End Time",
           type: "datetime",
           ui: {
-            component: wrapFieldsWithMeta(TimePicker),
+            component: wrapFieldsWithMeta(({ input }) => (
+              <TimePicker input={input} defaultValue={"05:00"} />
+            )),
           },
           name: "endTime",
         },
