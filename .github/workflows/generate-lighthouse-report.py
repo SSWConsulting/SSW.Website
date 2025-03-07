@@ -5,7 +5,7 @@ with open("/home/runner/work/SSW.Website/SSW.Website/.lighthouseci/manifest.json
     data = json.load(file)
 
 # Create the Markdown Table Header
-print("## PageSpeed Insights")
+print("## Lighthouse")
 print("")
 print("| URL                               | Performance | Accessibility | Best Practices | SEO       |")
 print("| ---------------------------------- | ----------- | ------------- | -------------- | --------- |")

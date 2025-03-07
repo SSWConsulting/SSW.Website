@@ -53,7 +53,7 @@ jobs:
 
       - name: Display Lighthouse Results as a Table
         run: |
-          python3 ./.github/workflows/generate_lighthouse_report.py  # Running the Python script
+          python3 .github/workflows/generate_lighthouse_report.py
 
       - uses: pnpm/action-setup@v4
         with:
