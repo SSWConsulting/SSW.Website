@@ -46,6 +46,15 @@ jobs:
           # Use jq to extract url and summary for each object
           jq -c '.[] | {url, summary}' $FILE_PATH
 
+      - name: Install Python
+        run: |
+          python --version  # Optional: Check Python version
+          python -m pip install --upgrade pip  # Upgrade pip
+
+      - name: Display Lighthouse Results as a Table
+        run: |
+          python3 ./.github/workflows/generate_lighthouse_report.py  # Running the Python script
+
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: package.json
