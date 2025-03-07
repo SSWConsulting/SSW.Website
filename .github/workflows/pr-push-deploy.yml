@@ -27,6 +27,14 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          urls: |
+            https://www.ssw.com.au/
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: package.json
