@@ -44,7 +44,7 @@ jobs:
         with:
           name: lighthouse-reports
           path: .lighthouseci/
-        if: always() # Ensure artifacts are uploaded even if tests fail
+        if: always()
 
       - name: Run Tests & Coverage
         run: pnpm test-and-coverage --outputFile=coverage-report.json
