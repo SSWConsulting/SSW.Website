@@ -1,0 +1,25 @@
+{
+  "title": "Building Cross-platform Blazor Desktop Apps with Photino",
+  "url": "/netug/brisbane",
+  "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/matt-parker.mdx"
+    }
+  ],
+  "startDateTime": "2024-11-20T07:00:00.000Z",
+  "endDateTime": "2024-11-20T09:00:00.000Z",
+  "startShowBannerDateTime": "2024-11-19T14:00:00.000Z",
+  "endShowBannerDateTime": "2024-11-20T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "category": "Other",
+  "abstract": "Are you a Blazor developer wishing you could build cross-platform desktop apps (yes, even for Linux!) with familiar syntax? Join us to explore Photino, a lightweight framework that brings Blazor to the desktop with direct access to desktop APIs like file system access and multithreading. We’ll compare options like Electron, MAUI and Avalonia, then dive into a live example to show how quickly you can build a Blazor desktop app using Photino—no complex setups or new frameworks required!",
+  "description": "Are you a Blazor developer wishing you could build cross-platform desktop apps (yes, even for Linux!) with familiar syntax? Join us to explore Photino, a lightweight framework that brings Blazor to the desktop with direct access to desktop APIs like file system access and multithreading. We’ll compare options like Electron, MAUI and Avalonia, then dive into a live example to show how quickly you can build a Blazor desktop app using Photino—no complex setups or new frameworks required!\n",
+  "youTubeId": "Mjz8AMIsnMc",
+  "delayedLiveStreamStart": true,
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}

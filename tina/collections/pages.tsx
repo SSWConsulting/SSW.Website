@@ -84,10 +84,5 @@ export const pagesSchema: Collection = {
       },
       templates: [...Schemas.pageBlocks],
     },
-    {
-      type: "boolean",
-      name: "showAzureFooter",
-      label: "Show Azure Footer",
-    },
   ],
 };

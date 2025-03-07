@@ -26,8 +26,11 @@ jobs:
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
-      - run: corepack enable pnpm
-      - run: pnpm add -w gray-matter
+      - uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: |
+          pnpm add gray-matter
 
       - name: Fetch SSW.People.Profiles
         uses: actions/github-script@v7
@@ -54,7 +57,7 @@ jobs:
 
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ steps.get-app-token.outputs.token }}
           commit-message: "Fetch People Profiles"

@@ -1,8 +1,12 @@
+import dynamic from "next/dynamic";
 import { SocialIcons } from "../../socialIcons/socialIcons";
 import { Container } from "../../util/container";
 import { CopyrightInfo } from "./copyright-info";
 import { DeploymentInfo } from "./deployment-info";
-import { SiteInfo } from "./site-info";
+
+const SiteInfo = dynamic(() => import("./site-info").then((x) => x.SiteInfo), {
+  ssr: false,
+});
 
 export const Footer = () => {
   return (

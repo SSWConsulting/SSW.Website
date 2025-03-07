@@ -1,17 +1,6 @@
-import "styles.css";
-
-// import { CustomLink } from "@/components/customLink";
-// import { Footer } from "@/components/layout/footer";
-import classNames from "classnames";
-import { Open_Sans } from "next/font/google";
-// import Head from "next/head";
-// import { Theme } from "../components/layout/theme";
-import { Footer } from "@/components/layout/footer/footer";
-import { MenuWrapper } from "@/components/server/MenuWrapper";
-import ChatBaseBot from "@/components/zendeskButton/chatBaseBot";
-import { Metadata, Viewport } from "next";
-
-import { EventInfo } from "@/services/server/events";
+import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
+import { AppInsightsProvider } from "@/context/app-insight-client";
+import { EventInfoStatic } from "@/services/server/events";
 import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
@@ -19,10 +8,18 @@ import isBetween from "dayjs/plugin/isBetween";
 import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import { LiveSteam } from "./live-steam-banner/live-stream";
-import { DEFAULT } from "./meta-data/default";
-import { getMegamenu } from "./utils/get-mega-menu";
+import { Metadata, Viewport } from "next";
+import dynamic from "next/dynamic";
+import { Inter } from "next/font/google";
+import "styles.css";
 import client from "../tina/__generated__/client";
+import { MenuWrapper } from "./components/MenuWrapper";
+import PageLayout from "./components/page-layout";
+import { WebVitals } from "./components/web-vitals";
+import { LiveStream } from "./live-steam-banner/live-stream";
+import { DEFAULT } from "./meta-data/default";
+import { QueryProvider } from "./providers/query-provider";
+import { getMegamenu, MegaMenuProps } from "./utils/get-mega-menu";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -30,10 +27,17 @@ dayjs.extend(utc);
 dayjs.extend(advancedFormat);
 dayjs.extend(isBetween);
 
-const openSans = Open_Sans({
-  variable: "--open-sans-font",
+const inter = Inter({
+  variable: "--inter-font",
   subsets: ["latin"],
+  display: "swap",
+  weight: ["200", "300", "400", "500", "600", "700"],
 });
+
+const ChatBaseBot = dynamic(
+  () => import("@/components/zendeskButton/chatBaseBot"),
+  { ssr: false }
+);
 
 export const DEFAULT_METADATA: Metadata = {
   ...DEFAULT,
@@ -44,6 +48,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
+export const revalidate = 3600;
 
 export default async function RootLayout({
   children,
@@ -56,40 +62,54 @@ export default async function RootLayout({
     top: 1,
     calendarType: "User Groups",
   });
-
-  const liveStreamData: EventInfo =
-    nextUG.data.eventsCalendarConnection.edges.map((edge) => ({
-      ...edge.node,
-      startDateTime: new Date(edge.node.startDateTime),
-      endDateTime: new Date(edge.node.endDateTime),
-      startShowBannerDateTime: new Date(edge.node.startShowBannerDateTime),
-      endShowBannerDateTime: new Date(edge.node.endShowBannerDateTime),
-    }))[0] ?? null;
-
+  const liveStreamData: EventInfoStatic =
+    nextUG?.data?.eventsCalendarConnection?.edges?.length > 0
+      ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
+      : null;
   return (
-    <html lang="en" className={openSans.className}>
+    <html lang="en" className={inter.className}>
       <body>
-        {/* <Theme> */}
-        {/* Ensures next/font CSS variable is accessible for all components */}
-        <div
-          className={classNames(
-            "flex min-h-screen flex-col font-sans",
-            openSans.className
-          )}
-        >
-          <header className="no-print">
-            <LiveSteam event={liveStreamData}>
-              <MenuWrapper menu={menuData.data.megamenu.menuGroups} />
-            </LiveSteam>
-          </header>
-          <main className="grow bg-white">{children}</main>
-
-          <Footer />
-        </div>
-        {/* </Theme> */}
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
-        <ChatBaseBot />
+        <QueryProvider>
+          {/* <Theme> */}
+          {/* Ensures next/font CSS variable is accessible for all components */}
+          <PageLayout
+            megaMenu={MegaMenu({
+              menuData: menuData,
+              liveStreamData: liveStreamData,
+            })}
+          >
+            <AppInsightsProvider>
+              <WebVitals />
+              {children}
+            </AppInsightsProvider>
+            {/* </Theme> */}
+          </PageLayout>
+          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+          <ChatBaseBot />
+        </QueryProvider>
       </body>
     </html>
   );
 }
+
+const MegaMenu = ({
+  liveStreamData,
+  menuData,
+}: {
+  liveStreamData: EventInfoStatic;
+  menuData: MegaMenuProps;
+}) => {
+  return (
+    <>
+      {liveStreamData ? (
+        <LiveStream event={liveStreamData}>
+          <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+        </LiveStream>
+      ) : (
+        <MenuWrapper>
+          <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
+        </MenuWrapper>
+      )}
+    </>
+  );
+};

@@ -1,9 +1,13 @@
 import * as Schemas from "../../components/blocks";
+import { joinGithubSchema } from "../../components/usergroup/joinGithub";
 import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sections";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
 import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist";
+import { joinAsPresenterSchema } from "../../components/usergroup/joinAsPresenter";
+import { latestTechSchema } from "../../components/usergroup/latestTech";
+import azureBannerSchema from "../../components/util/showAzureBanner";
 import { tipField } from "./shared-fields";
 
 export const userGroupPageSchema: Collection = {
@@ -16,6 +20,9 @@ export const userGroupPageSchema: Collection = {
   },
   ui: {
     router: ({ document }) => {
+      if (document._sys.filename === "index") {
+        return "/netug";
+      }
       return `/netug/${document._sys.filename}`;
     },
   },
@@ -44,7 +51,7 @@ export const userGroupPageSchema: Collection = {
           type: "object",
           label: "Join GitHub Panel",
           name: "joinGithub",
-          fields: Schemas.joinGithubSchema.fields,
+          fields: joinGithubSchema.fields,
         },
         {
           type: "object",
@@ -125,7 +132,7 @@ export const userGroupPageSchema: Collection = {
           type: "object",
           label: "Latest Tech",
           name: "latestTech",
-          fields: Schemas.latestTechSchema.fields,
+          fields: latestTechSchema.fields,
         },
         {
           type: "object",
@@ -151,6 +158,7 @@ export const userGroupPageSchema: Collection = {
           name: "testimonialCategories",
           collections: ["testimonialCategories"],
         },
+        azureBannerSchema,
       ],
     },
     {
@@ -168,6 +176,7 @@ export const userGroupPageSchema: Collection = {
           isBody: true,
           templates: [...Schemas.pageBlocks],
         },
+        azureBannerSchema,
       ],
     },
   ],
@@ -256,7 +265,7 @@ export const userGroupGlobalSchema: Collection = {
       type: "object",
       label: "Join Us Panel",
       name: "joinUs",
-      fields: Schemas.joinAsPresenterSchema.fields,
+      fields: joinAsPresenterSchema.fields,
     },
     {
       type: "object",

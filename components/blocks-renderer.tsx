@@ -1,25 +1,75 @@
 import dynamic from "next/dynamic";
 
-import { AboutUs } from "./blocks/aboutUs";
-import { Agenda } from "./blocks/agenda";
-import { BuiltOnAzure } from "./blocks/builtOnAzure";
-import { Carousel } from "./blocks/carousel";
-import { ClientLogos } from "./blocks/clientLogos";
-import { Content } from "./blocks/content";
-import { ContentCard } from "./blocks/contentCard";
-import { CustomImage } from "./blocks/customImage";
-import { FixedColumns } from "./blocks/fixedColumns";
-import { HorizontalCard } from "./blocks/horizontalCard";
-import { JotFormEmbed } from "./blocks/jotFormEmbed";
-import { ServiceCards } from "./blocks/serviceCards";
-import { TableLayout } from "./blocks/tableLayout";
-import { UpcomingEvents } from "./blocks/upcomingEvents";
-import { VerticalImageLayout } from "./blocks/verticalImageLayout";
-import { VerticalListItem } from "./blocks/verticalListItem";
-import { VideoEmbed } from "./blocks/videoEmbed";
+const PaymentBlock = dynamic(() =>
+  import("./blocks/payment-block").then((mod) => mod.PaymentBlock)
+);
 
 const BookingButton = dynamic(() =>
   import("./bookingButton/bookingButton").then((mod) => mod.BookingButton)
+);
+
+const UpcomingEvents = dynamic(() =>
+  import("./blocks/upcomingEvents").then((mod) => mod.UpcomingEvents)
+);
+
+const AboutUs = dynamic(() =>
+  import("./blocks/aboutUs").then((mod) => mod.AboutUs)
+);
+
+import { Agenda } from "./blocks/agenda";
+
+const BuiltOnAzure = dynamic(() =>
+  import("./blocks/builtOnAzure").then((mod) => mod.BuiltOnAzure)
+);
+
+import { Carousel } from "./blocks/carousel";
+const ClientLogos = dynamic(() =>
+  import("./blocks/clientLogos").then((mod) => mod.ClientLogos)
+);
+
+const Content = dynamic(() =>
+  import("./blocks/content").then((mod) => mod.Content)
+);
+
+const ContentCard = dynamic(() =>
+  import("./blocks/contentCard").then((mod) => mod.ContentCard)
+);
+
+const CustomImage = dynamic(() =>
+  import("./blocks/customImage").then((mod) => mod.CustomImage)
+);
+
+const FixedColumns = dynamic(() =>
+  import("./blocks/fixedColumns").then((mod) => mod.FixedColumns)
+);
+
+const HorizontalCard = dynamic(() =>
+  import("./blocks/horizontalCard").then((mod) => mod.HorizontalCard)
+);
+
+const JotFormEmbed = dynamic(
+  () => import("./blocks/jotFormEmbed").then((mod) => mod.JotFormEmbed),
+  {
+    ssr: false,
+  }
+);
+
+import { ServiceCards } from "./blocks/serviceCards";
+
+const TableLayout = dynamic(() =>
+  import("./blocks/tableLayout").then((mod) => mod.TableLayout)
+);
+
+const VerticalImageLayout = dynamic(() =>
+  import("./blocks/verticalImageLayout").then((mod) => mod.VerticalImageLayout)
+);
+
+const VerticalListItem = dynamic(() =>
+  import("./blocks/verticalListItem").then((mod) => mod.VerticalListItem)
+);
+
+const VideoEmbed = dynamic(() =>
+  import("./blocks/videoEmbed").then((mod) => mod.VideoEmbed)
 );
 
 const ClientList = dynamic(() =>
@@ -42,16 +92,21 @@ const LatestTech = dynamic(() =>
   import("./usergroup/latestTech").then((mod) => mod.LatestTech)
 );
 
-const PaymentBlock = dynamic(() =>
-  import("./blocks/payment-block").then((mod) => mod.PaymentBlock)
+import { EventBooking } from "./training/eventBooking";
+
+const AccordionBlock = dynamic(() =>
+  import("./blocks/imageComponents/accordionBlock/accordionBlock").then(
+    (mod) => mod.AccordionBlock
+  )
 );
 
-const EventBooking = dynamic(() =>
-  import("./training/eventBooking").then((mod) => mod.EventBooking)
+const Breadcrumbs = dynamic(() =>
+  import("./blocks/breadcrumbs/breadcrumbs").then((mod) => mod.Breadcrumbs)
 );
 
-const InterestForm = dynamic(() =>
-  import("./events/interestForm").then((mod) => mod.InterestForm)
+const InterestForm = dynamic(
+  () => import("./events/interestForm").then((mod) => mod.InterestForm),
+  { ssr: false }
 );
 
 const LocationBlock = dynamic(() =>
@@ -72,10 +127,37 @@ const TrainingLearningOutcome = dynamic(() =>
   )
 );
 
+const LogoCarousel = dynamic(() =>
+  import("./blocks/logoCarousel/logoCarousel").then((mod) => mod.LogoCarousel)
+);
+
+const ImageTextBlock = dynamic(() =>
+  import("./blocks/imageComponents/imageTextBlock/imageTextBlock").then(
+    (mod) => mod.ImageTextBlock
+  )
+);
+
+const CardCarousel = dynamic(() =>
+  import("./blocks/cardCarousel/cardCarousel/cardCarousel").then(
+    (mod) => mod.CardCarousel
+  )
+);
+
+const TechnologyCardCarousel = dynamic(() =>
+  import("./blocks/cardCarousel/technologyCards/technologyCardCarousel").then(
+    (mod) => mod.TechnologyCardCarousel
+  )
+);
+
+const Spacer = dynamic(() =>
+  import("./blocks/spacer/spacer").then((mod) => mod.Spacer)
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
   Content,
+  Breadcrumbs,
   ServiceCards,
   UpcomingEvents,
   BuiltOnAzure,
@@ -103,6 +185,12 @@ const componentMap = {
   GridLayout,
   FixedColumns,
   HorizontalCard,
+  LogoCarousel,
+  ImageTextBlock,
+  AccordionBlock,
+  CardCarousel,
+  TechnologyCardCarousel,
+  Spacer,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
