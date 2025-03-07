@@ -38,7 +38,7 @@ jobs:
 
       - name: Run Lighthouse CI
         id: lighthouse
-        run: npx lhci autorun --json --no-status > lighthouse-results.json
+        run: lhci autorun --json --no-status --assert.fail-fast=false > lighthouse-results.json
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
