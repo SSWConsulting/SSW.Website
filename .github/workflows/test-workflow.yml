@@ -29,7 +29,7 @@ jobs:
           $response = Invoke-RestMethod -Uri $url -Headers $headers -Method Get
 
           if ($response.total_count -gt -1) {
-            Write-Host "Workflows in $owner/$repo:"
+            Write-Host "Workflows in $owner/$repo"
             Write-Host "----------------------------------------"
 
             # Loop through each workflow and display details
