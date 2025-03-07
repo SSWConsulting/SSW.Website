@@ -32,7 +32,7 @@ jobs:
         with:
           urls: |
             https://www.ssw.com.au/
-          configPath: ./lighthouserc.json
+          configPath: ./.lighthouserc.json
 
       - name: Check the result
         run: ls -a /home/runner/work/SSW.Website/SSW.Website/.lighthouseci/
