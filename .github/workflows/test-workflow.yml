@@ -56,7 +56,7 @@ jobs:
                 $artifactZip = Join-Path -Path $downloadFolder -ChildPath "$($artifact.name).zip"
                 $extractPath = Join-Path -Path $downloadFolder -ChildPath "extracted"
 
-                if (-not (Test-Path) -Path $downloadFolder)) {
+                if (-not (Test-Path -Path $downloadFolder)) {
                   New-Item -ItemType Directory -Path $downloadFolder | Out-Null
                 }
 
