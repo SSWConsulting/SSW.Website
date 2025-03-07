@@ -29,6 +29,8 @@ jobs:
 
           $queryParams = @{
             "conclusion" = "success"
+            "status" = "completed"
+            "branch" = "3671-bundle-size"
             "per_page" = 1
           }
 
@@ -41,7 +43,7 @@ jobs:
             Write-Host "----------------------------------------"
 
             # Loop through each workflow and display details
-            foreach ($workflow in $response.workflows) {
+            foreach ($workflow in $response.workflow_runs) {
               Write-Host "Latest successful workflow run:"
               Write-Host "----------------------------------------"
               Write-Host "Run ID: $($latestRun.id)"
@@ -53,30 +55,30 @@ jobs:
             }
           }
 
-#     $artifactsUrl = "https://api.github.com/repos/$owner/$repo/actions/runs/$($latestRun.id)/artifacts"
-#     $artifactsResponse = Invoke-RestMethod -Uri $artifactsUrl -Headers $headers -Method Get
+          $artifactsUrl = "https://api.github.com/repos/$owner/$repo/actions/runs/$($latestRun.id)/artifacts"
+          $artifactsResponse = Invoke-RestMethod -Uri $artifactsUrl -Headers $headers -Method Get
 
-#     if ($artifactsResponse.total_count -gt 0) {
-#       Write-Host "Artifacts for run $($latestRun.id)"
-#       Write-Host "----------------------------------------"
+          if ($artifactsResponse.total_count -gt 0) {
+            Write-Host "Artifacts for run $($latestRun.id)"
+            Write-Host "----------------------------------------"
 
-#       # Find the artifact by name
-#       $artifact = $artifactsResponse.artifacts | Where-Object { $_.name -eq $artifactName }
+            # Find the artifact by name
+            $artifact = $artifactsResponse.artifacts | Where-Object { $_.name -eq $artifactName }
 
-#       if ($artifact) {
-#         Write-Host "Artifact found:"
-#         Write-Host "Artifact ID: $($artifact.id)"
-#         Write-Host "Name: $($artifact.name)"
-#         Write-Host "Size: $($artifact.size_in_bytes) bytes"
-#         Write-Host "Download URL: $($artifact.archive_download_url)"
-#         Write-Host "----------------------------------------"
-#       } else {
-#         Write-Host "No artifact found with name '$artifactName'."
-#       }
-#     } else {
-#       Write-Host "No artifacts found for run $($latestRun.id)."
-#     }
-#   }
-# } else {
-#     Write-Host "No workflows found in $owner/$repo."
-# }
+            if ($artifact) {
+              Write-Host "Artifact found:"
+              Write-Host "Artifact ID: $($artifact.id)"
+              Write-Host "Name: $($artifact.name)"
+              Write-Host "Size: $($artifact.size_in_bytes) bytes"
+              Write-Host "Download URL: $($artifact.archive_download_url)"
+              Write-Host "----------------------------------------"
+            } else {
+              Write-Host "No artifact found with name '$artifactName'."
+            }
+          } else {
+            Write-Host "No artifacts found for run $($latestRun.id)."
+          }
+        }
+      } else {
+          Write-Host "No workflows found in $owner/$repo."
+      }
