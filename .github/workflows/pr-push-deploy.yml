@@ -45,30 +45,11 @@ jobs:
           # Use jq to extract the url and summary fields
           cat $FILE_PATH | jq '.[] | {url, summary}'
 
-
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: package.json
       - name: Install dependencies
         run: pnpm install
-
-      - name: Install Lighthouse
-        run: pnpm install @lhci/cli lighthouse chrome-launcher
-
-      - name: Run Lighthouse CI
-        id: lighthouse
-        run: npx lhci autorun --json --no-status > lighthouse-results.json
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Debug Lighthouse Output
-        run: cat lighthouse-results.json
-
-      - name: Parse Lighthouse Results
-        shell: bash
-        run: |
-          performance_score=$(jq '.categories.performance.score' lighthouse-results.json)
-          echo "Performance score: $performance_score"
 
       - name: Run Tests & Coverage
         run: pnpm test-and-coverage --outputFile=coverage-report.json

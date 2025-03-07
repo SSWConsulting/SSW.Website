@@ -2,7 +2,8 @@
   "ci": {
     "collect": {
       "url": [
-        "https://www.ssw.com.au/"
+        "https://www.ssw.com.au/",
+        "https://www.ssw.com.au/events"
       ],
       "settings": {
         "preset": "desktop",
