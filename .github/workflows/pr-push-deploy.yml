@@ -26,20 +26,25 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-      - name: Run Lighthouse audits and post results
-        uses: treosh/lighthouse-ci-action@v2
-        with:
-          uploadArtifacts: true
-          configPath: './.github/workflows/lighthouserc.json'
-          urls: |
-              https://www.ssw.com.au
-              https://www.ssw.com.au/events
 
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: package.json
       - name: Install dependencies
         run: pnpm install
+
+      - name: Install dependencies (pnpm)
+        run: pnpm install @lhci/cli lighthouse chrome-launcher
+
+      - name: Run Lighthouse CI
+        run: npx lhci autorun --url=https://www.ssw.com.au
+
+      - name: Upload Lighthouse Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+        if: always() # Ensure artifacts are uploaded even if tests fail
 
       - name: Run Tests & Coverage
         run: pnpm test-and-coverage --outputFile=coverage-report.json
