@@ -28,6 +28,7 @@ jobs:
           }
 
           $queryParams = @{
+            "status" = "completed"
             "conclusion" = "success"
             "branch" = "3671-bundle-size"
             "per_page" = 1
@@ -52,7 +53,7 @@ jobs:
                 Write-Host "Download URL: $($artifact.archive_download_url)"
                 Write-Host "----------------------------------------"
 
-                $downloadFolder = "./prod-$artifact.name"
+                $downloadFolder = "./prod-$($artifact.name)"
                 $artifactZip = Join-Path -Path $downloadFolder -ChildPath "$($artifact.name).zip"
                 $extractPath = Join-Path -Path $downloadFolder -ChildPath "extracted"
 
@@ -66,7 +67,7 @@ jobs:
                 Expand-Archive -Path $artifactZip -DestinationPath $extractPath -Force
                 Write-Host "Artifact extracted to $extractPath"
 
-                $htmlFilePath = JoinPath -Path $extractPath -ChildPath "client.html"
+                $htmlFilePath = Join-Path -Path $extractPath -ChildPath "client.html"
 
                 if (Test-Path -Path $htmlFilePath) {
                   Write-Host "Found client.html at $htmlFilePath"
