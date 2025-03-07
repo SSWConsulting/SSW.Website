@@ -37,7 +37,7 @@ jobs:
         run: pnpm install @lhci/cli lighthouse chrome-launcher
 
       - name: Run Lighthouse CI
-        run: npx lhci autorun
+        run: npx lhci autorun --no-status
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
