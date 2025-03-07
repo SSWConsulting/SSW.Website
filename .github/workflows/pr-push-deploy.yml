@@ -34,7 +34,7 @@ jobs:
             https://www.ssw.com.au/
 
       - name: Check the result
-        run: ls -a /home/runner/work/SSW.Website/SSW.Website/.lighthouseci/menifests.json
+        run: ls -a /home/runner/work/SSW.Website/SSW.Website/.lighthouseci/
 
       - name: Read the manifest file and extract url and summary
         shell: bash
