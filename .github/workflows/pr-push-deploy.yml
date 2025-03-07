@@ -33,11 +33,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install dependencies (pnpm)
+      - name: Install Lighthouse
         run: pnpm install @lhci/cli lighthouse chrome-launcher
 
       - name: Run Lighthouse CI
-        run: npx lhci autorun --url=https://www.ssw.com.au
+        run: npx lhci autorun
 
       - name: Upload Lighthouse Artifacts
         uses: actions/upload-artifact@v4
