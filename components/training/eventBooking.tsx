@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
-import { FC } from "react";
+import React, { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
-import type { Template } from "tinacms";
+import { wrapFieldsWithMeta, type Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
@@ -14,6 +14,39 @@ export const isEmpty = (value) => {
     value === null ||
     (typeof value == "number" && value <= 0) ||
     (typeof value == "string" && value === "")
+  );
+};
+
+export const formatTimeWithAmPm = (date) => {
+  let hours = date.getHours();
+  const minutes = date.getMinutes();
+  const amPm = hours >= 12 ? "PM" : "AM";
+
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+
+  const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+
+  return minutes === 0
+    ? `${hours}${amPm}`
+    : `${hours}:${formattedMinutes}${amPm}`;
+};
+
+const TimePicker = ({ input }) => {
+  const { onChange, value: inputValue, ...props } = input;
+  const [value, setValue] = React.useState(dayjs(inputValue).format("HH:mm"));
+  return (
+    <input
+      className="focus:shadow-outline block w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-base text-gray-600 shadow-inner transition-all duration-150 ease-out placeholder:text-gray-300 focus:border-blue-500 focus:text-gray-900 focus:outline-none"
+      value={value}
+      {...props}
+      onChange={(e) => {
+        setValue(e.target.value);
+        const date = new Date(`0000/01/01 ${e.target.value}`).toISOString();
+        onChange(date);
+      }}
+      type="time"
+    />
   );
 };
 
@@ -60,6 +93,23 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
 };
 
 const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
+  const formatTimes = (event) => {
+    if (event.startTime && event.endTime) {
+      return `${formatTimeWithAmPm(new Date(event.startTime))} - ${formatTimeWithAmPm(new Date(event.endTime))}`;
+    }
+    if (event.startTime && !event.endTime) {
+      return `${formatTimeWithAmPm(new Date(event.startTime))} - 5PM`;
+    }
+    if (!event.date && event.endTime) {
+      return `9AM - ${formatTimeWithAmPm(new Date(event.endTime))}`;
+    }
+
+    if (event.date && event.endTime) {
+      return `${formatTimeWithAmPm(new Date(event.startTime))} - ${formatTimeWithAmPm(new Date(event.endTime))}`;
+    }
+    return "9AM - 5PM";
+  };
+
   return (
     <div
       className={classNames(
@@ -95,8 +145,14 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                   date={event.date}
                 />
               </div>
-              <div className="py-0.5 text-xs uppercase text-gray-500">
-                {EventModel.TIMINGS}
+              <div
+                data-tina-field={tinaField(
+                  schema.eventList[index],
+                  "startTime"
+                )}
+                className="py-0.5 text-xs uppercase text-gray-500"
+              >
+                {formatTimes(event)}
               </div>
             </>
           )}
@@ -262,6 +318,7 @@ export const eventBookingBlock = {
     value: "eventList",
     city: "city",
     date: "date",
+    endDate: "endDate",
     bookingURL: "bookingURL",
     location: "location",
   },
@@ -326,7 +383,33 @@ export const eventBookingSchema: Template = {
           label: "Start Date",
           name: eventBookingBlock.eventList.date,
           ui: {
-            parse: (value) => value && value.format("YYYY-MM-DD"),
+            parse: (value) => value && value.format("YYYY-MM-DD HH"),
+            timeFormat: "HH:mm",
+          },
+        },
+        {
+          label: "Start Time",
+          type: "datetime",
+          ui: {
+            component: wrapFieldsWithMeta(TimePicker),
+          },
+          name: "startTime",
+        },
+        {
+          label: "End Time",
+          type: "datetime",
+          ui: {
+            component: wrapFieldsWithMeta(TimePicker),
+          },
+          name: "endTime",
+        },
+        {
+          type: "datetime",
+          label: "End Date (for time only)",
+          name: eventBookingBlock.eventList.endDate,
+          ui: {
+            parse: (value) => value && value.format("YYYY-MM-DD HH:mm"),
+            timeFormat: "HH:mm",
           },
         },
         {
