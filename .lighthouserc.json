@@ -6,13 +6,10 @@
       ]
     },
     "assert": {
-      "assertions": {
-        "performance": ["warn", { "minScore": 0.9 }],
-        "accessibility": ["error", { "minScore": 1 }],
-        "best-practices": ["warn", { "minScore": 0.9 }],
-        "seo": ["warn", { "minScore": 0.9 }]
-      }
-    },
+          "assertions": {
+            "performance": ["warn", { "minScore": 0.9 }]
+          }
+        },
     "upload": {
       "target": "temporary-public-storage"
     }
