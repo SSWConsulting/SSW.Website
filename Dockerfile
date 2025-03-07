@@ -32,7 +32,8 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-ENV NODE_OPTIONS=--max_old_space_size=8192
+ENV BUNDLE_ANALYSE true
+ENV NODE_OPTIONS --max_old_space_size=8192
 ARG NEXT_PUBLIC_GOOGLE_GTM_ID
 ENV NEXT_PUBLIC_GOOGLE_GTM_ID=$NEXT_PUBLIC_GOOGLE_GTM_ID
 ARG NEXT_PUBLIC_GOOGLE_ANALYTICS
@@ -88,8 +89,8 @@ ENV NEXT_PUBLIC_SLOT_URL=$NEXT_PUBLIC_SLOT_URL
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run build; \
+  elif [ -f package-lock.json ]; then BUNDLE_ANALYSE=true npm run build; \
+  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && BUNDLE_ANALYSE=true pnpm run build; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
@@ -119,6 +120,9 @@ RUN chown nextjs:nodejs .next
 COPY --from=builder --chown=nextjs:nodejs /website/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /website/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /website/appInsight-api.js ./
+
+# Copy the analyze folder from the builder stage
+COPY --from=builder --chown=nextjs:nodejs /website/.next/analyze ./bundle-analyze-artifact
 
 USER nextjs
 
