@@ -28,8 +28,7 @@ jobs:
           }
 
           $queryParams = @{
-            "status" = "completed"
-            "conclusion" = "success"
+            "status" = "success"
             "branch" = "3671-bundle-size"
             "per_page" = 1
           }
