@@ -52,33 +52,31 @@ jobs:
               Write-Host "Artifacts URL: $($latestRun.artifacts_url)"
               Write-Host "Run URL: $($latestRun.html_url)"
               Write-Host "----------------------------------------"
-            }
-          }
 
-          $artifactsUrl = "https://api.github.com/repos/$owner/$repo/actions/runs/$($latestRun.id)/artifacts"
-          $artifactsResponse = Invoke-RestMethod -Uri $artifactsUrl -Headers $headers -Method Get
+              $artifactsUrl = "https://api.github.com/repos/$owner/$repo/actions/runs/$($latestRun.id)/artifacts"
+              $artifactsResponse = Invoke-RestMethod -Uri $artifactsUrl -Headers $headers -Method Get
 
-          if ($artifactsResponse.total_count -gt 0) {
-            Write-Host "Artifacts for run $($latestRun.id)"
-            Write-Host "----------------------------------------"
+              if ($artifactsResponse.total_count -gt 0) {
+                Write-Host "Artifacts for run $($latestRun.id)"
+                Write-Host "----------------------------------------"
 
-            # Find the artifact by name
-            $artifact = $artifactsResponse.artifacts | Where-Object { $_.name -eq $artifactName }
+                # Find the artifact by name
+                $artifact = $artifactsResponse.artifacts | Where-Object { $_.name -eq $artifactName }
 
-            if ($artifact) {
-              Write-Host "Artifact found:"
-              Write-Host "Artifact ID: $($artifact.id)"
-              Write-Host "Name: $($artifact.name)"
-              Write-Host "Size: $($artifact.size_in_bytes) bytes"
-              Write-Host "Download URL: $($artifact.archive_download_url)"
-              Write-Host "----------------------------------------"
-            } else {
-              Write-Host "No artifact found with name '$artifactName'."
+                if ($artifact) {
+                  Write-Host "Artifact found:"
+                  Write-Host "Artifact ID: $($artifact.id)"
+                  Write-Host "Name: $($artifact.name)"
+                  Write-Host "Size: $($artifact.size_in_bytes) bytes"
+                  Write-Host "Download URL: $($artifact.archive_download_url)"
+                  Write-Host "----------------------------------------"
+                } else {
+                  Write-Host "No artifact found with name '$artifactName'."
+                }
+              } else {
+                Write-Host "No artifacts found for run $($latestRun.id)."
+              }
             }
           } else {
-            Write-Host "No artifacts found for run $($latestRun.id)."
+              Write-Host "No workflows found in $owner/$repo."
           }
-        }
-      } else {
-          Write-Host "No workflows found in $owner/$repo."
-      }
