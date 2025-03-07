@@ -34,7 +34,17 @@ jobs:
             https://www.ssw.com.au/
 
       - name: Check the result
-        run: ls -a /home/runner/work/SSW.Website/SSW.Website/.lighthouseci
+        run: ls -a /home/runner/work/SSW.Website/SSW.Website/.lighthouseci/menifests.json
+
+      - name: Read the manifest file and extract url and summary
+        shell: bash
+        run: |
+          # Define the path to the manifest file
+          FILE_PATH="/home/runner/work/SSW.Website/SSW.Website/.lighthouseci/manifest.json"
+
+          # Use jq to extract the url and summary fields
+          cat $FILE_PATH | jq '.[] | {url, summary}'
+
 
       - uses: pnpm/action-setup@v4
         with:
