@@ -32,8 +32,9 @@ jobs:
         with:
           urls: |
             https://www.ssw.com.au/
-          uploadArtifacts: true
-          temporaryPublicStorage: true
+
+      - name: Check the result
+        run: ls
 
       - uses: pnpm/action-setup@v4
         with:
