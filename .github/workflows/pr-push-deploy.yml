@@ -30,8 +30,6 @@ jobs:
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
-          urls: |
-            https://www.ssw.com.au/
           configPath: ./.lighthouserc.json
 
       - name: Check the result
