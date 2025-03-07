@@ -39,6 +39,8 @@ jobs:
           if ($getWorkflowRunResponse.total_count -gt 0) {
             $latestRun = $getWorkflowRunResponse.workflow_runs[0]
             Write-Host "Found latest successful production workflow run: $($latestRun.html_url)"
+            Write-Host "Status: $($latestRun.status)"
+            Write-Host "Conclusion: $($latestRun.conclusion)"
             Write-Host "----------------------------------------"
 
             $getArtifactsUrl = "https://api.github.com/repos/$owner/$repo/actions/runs/$($latestRun.id)/artifacts"
