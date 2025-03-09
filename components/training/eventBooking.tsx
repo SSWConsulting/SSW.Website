@@ -164,9 +164,9 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 eventBookingBlock.eventList.bookingURL
               )}
             >
-              {new Date(event.date) > new Date() && (
+              {new Date(event.date) > new Date() && event.bookingURL && (
                 <CustomLink
-                  href={event.bookingURL == null ? "" : event.bookingURL}
+                  href={event.bookingURL}
                   className="done inline-flex cursor-pointer"
                 >
                   {EventModel.BOOKING_BTN_TEXT}
@@ -176,11 +176,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
               <div className="prose py-1 pr-0 text-xs">
                 <CustomLink
                   className="flex items-center justify-end font-normal md:justify-start"
-                  href={
-                    event.location.directionURL == null
-                      ? ""
-                      : event.location.directionURL
-                  }
+                  href={event.location?.directionURL || ""}
                 >
                   <MdLocationOn className="m-icon" />
                   <span className="capitalize">
