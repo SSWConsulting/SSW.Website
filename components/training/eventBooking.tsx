@@ -1,3 +1,4 @@
+import { Events_BodyEventBookingEventList as Event } from "@/tina/types";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import React, { FC } from "react";
@@ -174,15 +175,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
               )}
 
               <div className="prose py-1 pr-0 text-xs">
-                <CustomLink
-                  className="flex items-center justify-end font-normal md:justify-start"
-                  href={event.location?.directionURL || ""}
-                >
-                  <MdLocationOn className="m-icon" />
-                  <span className="capitalize">
-                    {EventModel.SSW} {event.city?.split(" ")[0]}
-                  </span>
-                </CustomLink>
+                <EventLocation />
               </div>
             </div>
           </div>
@@ -291,6 +284,35 @@ const EventHeader = ({
         </div>
       </div>
     </div>
+  );
+};
+
+const EventLocation = (event: Event) => {
+  const classes = "flex items-center justify-end font-normal md:justify-start";
+
+  const Contents = () => (
+    <>
+      <MdLocationOn className="m-icon" />
+      <span className="capitalize">
+        {EventModel.SSW} {event.city?.split(" ")[0]}
+      </span>
+    </>
+  );
+  if (event.location?.directionURL) {
+    return (
+      <CustomLink className={classes} href={event.location?.directionURL || ""}>
+        <Contents />
+        {/* <MdLocationOn className="m-icon" />
+        <span className="capitalize">
+          {EventModel.SSW} {event.city?.split(" ")[0]}
+        </span> */}
+      </CustomLink>
+    );
+  }
+  return (
+    <span>
+      <Contents />
+    </span>
   );
 };
 
