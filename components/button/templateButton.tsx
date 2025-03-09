@@ -61,7 +61,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
           {buttonText}
         </RippleButton>
-        {data.showLeadCaptureForm && (
+        {data.showLeadCaptureForm && open && (
           <Popup
             isVisible={open}
             showCloseIcon={true}
