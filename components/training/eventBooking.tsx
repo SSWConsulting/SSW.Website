@@ -95,8 +95,6 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
 };
 
 const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
-  console.log("start time", event.startTime);
-  console.log("end time", event.endTime);
   const formatTimes = (event) => {
     const startTime = event.startTime
       ? formatTimeWithAmPm(new Date(event.startTime))
@@ -106,20 +104,6 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
       : "5PM";
 
     return `${startTime} - ${endTime}`;
-    if (event.startTime && event.endTime) {
-      return `${formatTimeWithAmPm(new Date(event.startTime))} - ${formatTimeWithAmPm(new Date(event.endTime))}`;
-    }
-    if (event.startTime && !event.endTime) {
-      return `${formatTimeWithAmPm(new Date(event.startTime))} - 5PM`;
-    }
-    if (!event.startTime && event.endTime) {
-      return `9AM - ${formatTimeWithAmPm(new Date(event.endTime))}`;
-    }
-
-    if (event.startTime && event.endTime) {
-      return `${formatTimeWithAmPm(new Date(event.startTime))} - ${formatTimeWithAmPm(new Date(event.endTime))}`;
-    }
-    return "9AM - 5PM";
   };
 
   return (
