@@ -95,18 +95,28 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
 };
 
 const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
+  console.log("start time", event.startTime);
+  console.log("end time", event.endTime);
   const formatTimes = (event) => {
+    const startTime = event.startTime
+      ? formatTimeWithAmPm(new Date(event.startTime))
+      : "9AM";
+    const endTime = event.endTime
+      ? formatTimeWithAmPm(new Date(event.endTime))
+      : "5PM";
+
+    return `${startTime} - ${endTime}`;
     if (event.startTime && event.endTime) {
       return `${formatTimeWithAmPm(new Date(event.startTime))} - ${formatTimeWithAmPm(new Date(event.endTime))}`;
     }
     if (event.startTime && !event.endTime) {
       return `${formatTimeWithAmPm(new Date(event.startTime))} - 5PM`;
     }
-    if (!event.date && event.endTime) {
+    if (!event.startTime && event.endTime) {
       return `9AM - ${formatTimeWithAmPm(new Date(event.endTime))}`;
     }
 
-    if (event.date && event.endTime) {
+    if (event.startTime && event.endTime) {
       return `${formatTimeWithAmPm(new Date(event.startTime))} - ${formatTimeWithAmPm(new Date(event.endTime))}`;
     }
     return "9AM - 5PM";
@@ -382,8 +392,7 @@ export const eventBookingSchema: Template = {
           label: "Start Date",
           name: eventBookingBlock.eventList.date,
           ui: {
-            parse: (value) => value && value.format("YYYY-MM-DD HH"),
-            timeFormat: "HH:mm",
+            parse: (value) => value && value.format("YYYY-MM-DD"),
           },
         },
         {
@@ -405,15 +414,6 @@ export const eventBookingSchema: Template = {
             )),
           },
           name: "endTime",
-        },
-        {
-          type: "datetime",
-          label: "End Date (for time only)",
-          name: eventBookingBlock.eventList.endDate,
-          ui: {
-            parse: (value) => value && value.format("YYYY-MM-DD HH:mm"),
-            timeFormat: "HH:mm",
-          },
         },
         {
           type: "string",
