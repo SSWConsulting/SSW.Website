@@ -401,7 +401,7 @@ export const eventBookingSchema: Template = {
           type: "datetime",
           ui: {
             component: wrapFieldsWithMeta(({ input }) => (
-              <TimePicker input={input} defaultValue={"05:00"} />
+              <TimePicker input={input} defaultValue={"17:00"} />
             )),
           },
           name: "endTime",
