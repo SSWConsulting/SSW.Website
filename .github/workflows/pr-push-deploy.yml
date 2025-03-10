@@ -32,8 +32,8 @@ jobs:
         with:
           configPath: ./.lighthouserc.json
           urls: |
-             https://www.ssw.com.au
-             https://www.ssw.com.au/events
+            https://www.ssw.com.au
+            https://www.ssw.com.au/events
 
       - name: Check the result
         run: ls -a /home/runner/work/SSW.Website/SSW.Website/.lighthouseci/
@@ -53,7 +53,7 @@ jobs:
 
       - name: Display Lighthouse Results as a Table
         run: |
-          python3 scripts/generate_lighthouse_report.py
+          python scripts/generate_lighthouse_report.py
 
       - uses: pnpm/action-setup@v4
         with:
@@ -72,7 +72,6 @@ jobs:
           base-coverage-file: coverage-report.json
           skip-step: all
           annotations: none
-
 
   build:
     name: Build and upload artifacts

@@ -1,9 +1,15 @@
 {
   "ci": {
     "collect": {
+      "url": ["https://www.ssw.com.au/", "https://www.ssw.com.au/events"],
       "settings": {
         "preset": "desktop",
-        "onlyCategories": ["performance", "accessibility", "best-practices", "seo"]
+        "onlyCategories": [
+          "performance",
+          "accessibility",
+          "best-practices",
+          "seo"
+        ]
       },
       "numberOfRuns": 1
     },
