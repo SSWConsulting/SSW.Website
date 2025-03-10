@@ -27,45 +27,6 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          configPath: ./.lighthouserc.json
-          urls: |
-            https://www.ssw.com.au
-            https://www.ssw.com.au/events
-
-      - name: Check the result
-        run: ls -a /home/runner/work/SSW.Website/SSW.Website/.lighthouseci/
-
-      - name: Read the manifest file and extract url and summary
-        shell: bash
-        run: |
-          FILE_PATH="/home/runner/work/SSW.Website/SSW.Website/.lighthouseci/manifest.json"
-
-          # Use jq to extract url and summary for each object
-          jq -c '.[] | {url, summary}' $FILE_PATH
-
-      - name: Install Python
-        run: |
-          python --version  # Optional: Check Python version
-
-      - name: Display Lighthouse Results as a Table
-        id: lighthouse-results-generate
-        run: |
-          python scripts/generate-lighthouse-report.py
-
-      - name: Upload Lighthouse Results to PR
-        run: echo "${{ steps.lighthouse-results-generate.outputs.report }}"
-
-      - name: Comment on PR with insights
-        uses: mshick/add-pr-comment@v2
-        with:
-          message: |
-            ${{ steps.lighthouse-results-generate.outputs.report }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-repeats: true
-
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: package.json
@@ -142,40 +103,50 @@ jobs:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
       tests_to_run: "images seo-noindex"
 
-  pagespeedInsights:
-    name: Run PageSpeed Insights
+  lighthouseInsights:
+    name: Run Lighthouse Insights
     needs: pr-deploy
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     steps:
-      - uses: wicksipedia/pagespeed-insights@main
-        id: pagespeed-insights
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+      - name: Wait for Slot to be available
+        uses: jtalk/url-health-check-action@v2
         with:
           url: ${{ needs.pr-deploy.outputs.url }}
-          categories: |
-            accessibility
-            best_practices
-            performance
-            SEO
-          strategy: mobile
-          delayBetweenRetries: 30000
-          maximumNumberOfRetries: 4
-          key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
+          max-attempts: 5
+          retry-delay: 40s
 
-      - name: Comment on PR with insights
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        with:
+          configPath: ./.lighthouserc.json
+          urls: |
+            ${{ needs.pr-deploy.outputs.url }}
+            ${{ needs.pr-deploy.outputs.url }}/events
+            ${{ needs.pr-deploy.outputs.url }}/consulting
+
+      - name: Read the manifest file and extract url and summary
+        shell: bash
+        run: |
+          FILE_PATH="/.lighthouseci/manifest.json"
+
+          # Use jq to extract url and summary for each object
+          jq -c '.[] | {url, summary}' $FILE_PATH
+
+      - name: Display Lighthouse Results as a Table
+        id: lighthouse-results-generate
+        run: |
+          python scripts/generate-lighthouse-report.py
+
+      - name: Comment on PR with Lighthouse insights
         uses: mshick/add-pr-comment@v2
         with:
           message: |
-            ## PageSpeed Insights
-
-            | Category        | Score                                                   |
-            | ---             | ---                                                     |
-            | Accessibility   | ${{ steps.pagespeed-insights.outputs.accessibility }}   |
-            | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
-            | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
-            | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
-
-            View the full report <https://pagespeed.web.dev/report?url=${{ needs.pr-deploy.outputs.url }}>
+            ${{ steps.lighthouse-results-generate.outputs.report }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
