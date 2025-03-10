@@ -1,8 +1,9 @@
+import { Events_BodyEventBookingEventList as Event } from "@/tina/types";
 import classNames from "classnames";
 import dayjs from "dayjs";
-import { FC } from "react";
+import React, { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
-import type { Template } from "tinacms";
+import { wrapFieldsWithMeta, type Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
@@ -14,6 +15,41 @@ export const isEmpty = (value) => {
     value === null ||
     (typeof value == "number" && value <= 0) ||
     (typeof value == "string" && value === "")
+  );
+};
+
+export const formatTimeWithAmPm = (date) => {
+  let hours = date.getHours();
+  const minutes = date.getMinutes();
+  const amPm = hours >= 12 ? "PM" : "AM";
+
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+
+  const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
+
+  return minutes === 0
+    ? `${hours}${amPm}`
+    : `${hours}:${formattedMinutes}${amPm}`;
+};
+
+const TimePicker = ({ input, defaultValue }) => {
+  const { onChange, value: inputValue, ...props } = input;
+  const [value, setValue] = React.useState(
+    inputValue ? dayjs(inputValue).format("HH:mm") : defaultValue
+  );
+  return (
+    <input
+      className="focus:shadow-outline block w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-base text-gray-600 shadow-inner transition-all duration-150 ease-out placeholder:text-gray-300 focus:border-blue-500 focus:text-gray-900 focus:outline-none"
+      value={value}
+      {...props}
+      onChange={(e) => {
+        setValue(e.target.value);
+        const date = new Date(`0000/01/01 ${e.target.value}`).toISOString();
+        onChange(date);
+      }}
+      type="time"
+    />
   );
 };
 
@@ -60,6 +96,17 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
 };
 
 const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
+  const formatTimes = (event) => {
+    const startTime = event.startTime
+      ? formatTimeWithAmPm(new Date(event.startTime))
+      : "9AM";
+    const endTime = event.endTime
+      ? formatTimeWithAmPm(new Date(event.endTime))
+      : "5PM";
+
+    return `${startTime} - ${endTime}`;
+  };
+
   return (
     <div
       className={classNames(
@@ -95,8 +142,11 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                   date={event.date}
                 />
               </div>
-              <div className="py-0.5 text-xs uppercase text-gray-500">
-                {EventModel.TIMINGS}
+              <div
+                data-tina-field={tinaField(schema.eventList[index])}
+                className="py-0.5 text-xs uppercase text-gray-500"
+              >
+                {formatTimes(event)}
               </div>
             </>
           )}
@@ -115,9 +165,9 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 eventBookingBlock.eventList.bookingURL
               )}
             >
-              {new Date(event.date) > new Date() && (
+              {new Date(event.date) > new Date() && event.bookingURL && (
                 <CustomLink
-                  href={event.bookingURL == null ? "" : event.bookingURL}
+                  href={event.bookingURL}
                   className="done inline-flex cursor-pointer"
                 >
                   {EventModel.BOOKING_BTN_TEXT}
@@ -125,19 +175,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
               )}
 
               <div className="prose py-1 pr-0 text-xs">
-                <CustomLink
-                  className="flex items-center justify-end font-normal md:justify-start"
-                  href={
-                    event.location.directionURL == null
-                      ? ""
-                      : event.location.directionURL
-                  }
-                >
-                  <MdLocationOn className="m-icon" />
-                  <span className="capitalize">
-                    {EventModel.SSW} {event.city?.split(" ")[0]}
-                  </span>
-                </CustomLink>
+                <EventLocation />
               </div>
             </div>
           </div>
@@ -249,6 +287,35 @@ const EventHeader = ({
   );
 };
 
+const EventLocation = (event: Event) => {
+  const classes = "flex items-center justify-end font-normal md:justify-start";
+
+  const Contents = () => (
+    <>
+      <MdLocationOn className="m-icon" />
+      <span className="capitalize">
+        {EventModel.SSW} {event.city?.split(" ")[0]}
+      </span>
+    </>
+  );
+  if (event.location?.directionURL) {
+    return (
+      <CustomLink className={classes} href={event.location?.directionURL || ""}>
+        <Contents />
+        {/* <MdLocationOn className="m-icon" />
+        <span className="capitalize">
+          {EventModel.SSW} {event.city?.split(" ")[0]}
+        </span> */}
+      </CustomLink>
+    );
+  }
+  return (
+    <span>
+      <Contents />
+    </span>
+  );
+};
+
 const gstTypeOptions = ["inc GST", "+ GST"];
 
 export const eventBookingBlock = {
@@ -262,6 +329,7 @@ export const eventBookingBlock = {
     value: "eventList",
     city: "city",
     date: "date",
+    endDate: "endDate",
     bookingURL: "bookingURL",
     location: "location",
   },
@@ -328,6 +396,26 @@ export const eventBookingSchema: Template = {
           ui: {
             parse: (value) => value && value.format("YYYY-MM-DD"),
           },
+        },
+        {
+          label: "Start Time",
+          type: "datetime",
+          ui: {
+            component: wrapFieldsWithMeta(({ input }) => (
+              <TimePicker defaultValue={"09:00"} input={input} />
+            )),
+          },
+          name: "startTime",
+        },
+        {
+          label: "End Time",
+          type: "datetime",
+          ui: {
+            component: wrapFieldsWithMeta(({ input }) => (
+              <TimePicker input={input} defaultValue={"17:00"} />
+            )),
+          },
+          name: "endTime",
         },
         {
           type: "string",

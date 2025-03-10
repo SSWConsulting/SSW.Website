@@ -66,7 +66,14 @@ export default [
       "tailwindcss/no-custom-classname": [
         "error",
         {
-          whitelist: ["g\\-yt.+", "prose-.+", "text-3xl/9", "legend", "dark"],
+          whitelist: [
+            "g\\-yt.+",
+            "prose-.+",
+            "text-3xl/9",
+            "legend",
+            "dark",
+            "shadow-outline",
+          ],
         },
       ],
       "prettier/prettier": [
