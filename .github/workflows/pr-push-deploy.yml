@@ -49,7 +49,6 @@ jobs:
       - name: Install Python
         run: |
           python --version  # Optional: Check Python version
-          python -m pip install --upgrade pip  # Upgrade pip
 
       - name: Display Lighthouse Results as a Table
         run: |
