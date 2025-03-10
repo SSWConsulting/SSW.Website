@@ -1,7 +1,7 @@
 import json
 
 def generate_lighthouse_mdx():
-    with open("./lighthouseci/manifest.json", "r") as file:
+    with open("./.lighthouseci/manifest.json", "r") as file:
         data = json.load(file)
 
     mdx_output = [
