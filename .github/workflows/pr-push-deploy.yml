@@ -53,7 +53,7 @@ jobs:
       - name: Display Lighthouse Results as a Table
         shell: bash
         run: |
-          python scripts/generate_lighthouse_report.py
+          python scripts/generate-lighthouse-report.py
 
       - uses: pnpm/action-setup@v4
         with:
