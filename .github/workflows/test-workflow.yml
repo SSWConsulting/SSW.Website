@@ -1,0 +1,100 @@
+name: Get workflow run for feature branch
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  get-actions:
+    name: Get repository actions
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Get actions
+        shell: pwsh
+        run: |
+          $owner = "SSWConsulting"
+          $repo = "SSW.Website"
+          $getWorkflowRunUrl = "https://api.github.com/repos/$owner/$repo/actions/workflows/45437805/runs"
+          $artifactName = "bundle-analyze-artifact"
+
+          $headers = @{
+            "Authorization" = "Bearer $env:GITHUB_TOKEN"
+            "Content-Type" = "application/json"
+          }
+
+          $queryParams = @{
+            "status" = "success"
+            "branch" = "3671-bundle-size"
+            "per_page" = 1
+          }
+
+          $getWorkflowRunResponse = Invoke-RestMethod -Uri $getWorkflowRunUrl -Headers $headers -Body $queryParams -Method Get
+
+          if ($getWorkflowRunResponse.total_count -gt 0) {
+            $latestRun = $getWorkflowRunResponse.workflow_runs[0]
+            Write-Host "Found latest successful production workflow run: $($latestRun.html_url)"
+            Write-Host "Status: $($latestRun.status)"
+            Write-Host "Conclusion: $($latestRun.conclusion)"
+            Write-Host "----------------------------------------"
+
+            $getArtifactsUrl = "https://api.github.com/repos/$owner/$repo/actions/runs/$($latestRun.id)/artifacts"
+            $getArtifactsResponse = Invoke-RestMethod -Uri $getArtifactsUrl -Headers $headers -Method Get
+
+            if ($getArtifactsResponse.total_count -gt 0) {
+              # Find the artifact by name
+              $artifact = $getArtifactsResponse.artifacts | Where-Object { $_.name -eq $artifactName }
+
+              if ($artifact) {
+                Write-Host "$($artifact.name) artifact found"
+                Write-Host "Download URL: $($artifact.archive_download_url)"
+                Write-Host "----------------------------------------"
+
+                $downloadFolder = "./prod-$($artifact.name)"
+                $artifactZip = Join-Path -Path $downloadFolder -ChildPath "$($artifact.name).zip"
+                $extractPath = Join-Path -Path $downloadFolder -ChildPath "extracted"
+
+                if (-not (Test-Path -Path $downloadFolder)) {
+                  New-Item -ItemType Directory -Path $downloadFolder | Out-Null
+                }
+
+                Invoke-RestMethod -Uri $artifact.archive_download_url -Headers $headers -OutFile $artifactZip
+                Write-Host "Artifact downloaded to $artifactZip"
+
+                Expand-Archive -Path $artifactZip -DestinationPath $extractPath -Force
+                Write-Host "Artifact extracted to $extractPath"
+
+                $htmlFilePath = Join-Path -Path $extractPath -ChildPath "client.html"
+
+                if (Test-Path -Path $htmlFilePath) {
+                  Write-Host "Found client.html at $htmlFilePath"
+                  $htmlContent = Get-Content -Path $htmlFilePath -Raw
+                  $match = [regex]::Match($htmlContent, 'window\.chartData\s*=\s*(\[.*?\]);')
+                  if (-not $match.Success) {
+                    Write-Error "Failed to find window.chartData in $HtmlFilePath"
+                  }
+
+                  try {
+                    $chartData = $match.Groups[1].Value | ConvertFrom-Json
+                    $totalParsedSize = ($chartData | Measure-Object -Property parsedSize -Sum).Sum
+                    $totalParsedSizeMB = [math]::Round($totalParsedSize / (1024 * 1024), 2)
+
+                    Write-Host "$totalParsedSizeMB MB"
+                  } catch {
+                    Write-Error "Failed to process chartData"
+                    exit 1
+                  }
+                }
+              } else {
+                Write-Host "No artifact found with name '$artifactName'."
+              }
+            } else {
+              Write-Host "No artifacts found for run $($latestRun.id)."
+            }
+          } else {
+              Write-Host "No successful production workflows found"
+          }
