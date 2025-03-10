@@ -51,6 +51,7 @@ jobs:
           python --version  # Optional: Check Python version
 
       - name: Display Lighthouse Results as a Table
+        shell: bash
         run: |
           python scripts/generate_lighthouse_report.py
 
