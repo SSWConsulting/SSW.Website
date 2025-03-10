@@ -72,7 +72,7 @@ export default [
             "text-3xl/9",
             "legend",
             "dark",
-            "focus:shadow-outline",
+            "shadow-outline",
           ],
         },
       ],
