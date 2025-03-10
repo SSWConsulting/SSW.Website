@@ -6,8 +6,8 @@ def generate_lighthouse_mdx():
 
     mdx_output = [
         "## Lighthouse Report\n",
-        "| URL | Performance | Accessibility | Best Practices | SEO | Total Bundle Size |",
-        "| --- | ----------- | ------------- | -------------- | --- | ---------------- |"
+        "| URL | Performance | Accessibility | Best Practices | SEO |",
+        "| --- | ----------- | ------------- | -------------- | --- |"
     ]
 
     for result in data:

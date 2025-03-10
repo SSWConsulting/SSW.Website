@@ -58,6 +58,14 @@ jobs:
       - name: Upload Lighthouse Results to PR
         run: echo "${{ steps.lighthouse-results-generate.outputs.report }}"
 
+      - name: Comment on PR with insights
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            ${{ steps.lighthouse-results-generate.outputs.report }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
+
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: package.json
