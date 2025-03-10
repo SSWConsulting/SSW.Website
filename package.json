@@ -32,7 +32,7 @@
     "@testing-library/react": "^16.2.0",
     "@tinacms/cli": "1.9.0",
     "@types/js-cookie": "^3.0.6",
-    "@types/node": "^20.17.6",
+    "@types/node": "^20.17.24",
     "@types/react": "^18.3.12",
     "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@typescript-eslint/parser": "^8.26.0",
