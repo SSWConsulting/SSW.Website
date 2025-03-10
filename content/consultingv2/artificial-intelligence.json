@@ -30,7 +30,6 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
-          "showLeadCaptureForm": true,
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -99,7 +98,6 @@
       "buttons": [
         {
           "buttonText": "Book an Initial Meeting",
-          "showLeadCaptureForm": true,
           "leadCaptureFormOption": "bookingJotFormId",
           "iconFirst": true
         },
@@ -362,7 +360,6 @@
       "buttons": [
         {
           "buttonText": "Schedule a free initial meeting",
-          "showLeadCaptureForm": true,
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
