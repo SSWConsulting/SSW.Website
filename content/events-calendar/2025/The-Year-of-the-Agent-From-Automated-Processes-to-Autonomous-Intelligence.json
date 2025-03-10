@@ -3,6 +3,11 @@
   "url": "/netug/sydney",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/ulysses-maclaren.mdx"
+    }
+  ],
   "startDateTime": "2025-02-19T07:00:00.000Z",
   "endDateTime": "2025-02-19T10:00:00.000Z",
   "startShowBannerDateTime": "2025-02-18T14:00:00.000Z",
@@ -12,6 +17,7 @@
   "category": "Other",
   "abstract": "This talk explores the evolution of AI from static, rules-based systems to dynamic, autonomous agents capable of perceiving their environment, making decisions, and taking action without step-by-step instructions. Attendees will discover how AI agents differ from traditional AI-enabled workflows, delving into their capacity to autonomously gather data, reason through complex challenges, and seamlessly integrate diverse tools to achieve targeted outcomes.\n\nThrough real-world examples—ranging from self-driving cars to innovative coding agents—we’ll examine the transformative role of these intelligent systems in reshaping industries and redefining automation. The session will also address both the potential and limitations of AI agents, providing practical strategies for leveraging low-code and pro-code frameworks in their development and deployment.",
   "description": "The Year of the Agent: From Automated Processes to Autonomous Intelligence with Ulysses Maclaren\n\nThis talk explores the evolution of AI from static, rules-based systems to dynamic, autonomous agents capable of perceiving their environment, making decisions, and taking action without step-by-step instructions. Attendees will discover how AI agents differ from traditional AI-enabled workflows, delving into their capacity to autonomously gather data, reason through complex challenges, and seamlessly integrate diverse tools to achieve targeted outcomes.\n\nThrough real-world examples—ranging from self-driving cars to innovative coding agents—we’ll examine the transformative role of these intelligent systems in reshaping industries and redefining automation. The session will also address both the potential and limitations of AI agents, providing practical strategies for leveraging low-code and pro-code frameworks in their development and deployment.\n\nAgenda:\n\n6:00 pm - Pizza and networking at SSW Sydney!\n6:15pm - The tech news with Eve & Adam Cogan\n6:30 pm - The Year of the Agent: From Automated Processes to Autonomous Intelligence with Ulysses Maclaren\n\nCan't make it? Join us on the live stream➡️ \\[\\[[https://www.ssw.com.au/live](https://www.ssw.com.au/live)]\\([https://www.ssw.com.au/live)\\](https://www.ssw.com.au/live](https://www.ssw.com.au/live\\)]\\(https://www.ssw.com.au/live))\n",
+  "youTubeId": "QUn03Sq0dJc",
   "delayedLiveStreamStart": true,
   "liveStreamDelayMinutes": 30,
   "enabled": true
