@@ -51,9 +51,12 @@ jobs:
           python --version  # Optional: Check Python version
 
       - name: Display Lighthouse Results as a Table
-        shell: bash
+        id: lighthouse-results-generate
         run: |
           python scripts/generate-lighthouse-report.py
+
+      - name: Upload Lighthouse Results to PR
+        run: echo "${{ steps.lighthouse-results-generate.outputs.report }}"
 
       - uses: pnpm/action-setup@v4
         with:
