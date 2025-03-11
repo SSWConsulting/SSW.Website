@@ -3,7 +3,11 @@ import os
 import glob
 
 # Path to the folder where your JSON files are located
-TREEMAP_FOLDER = "./.lighthouseci"  # Folder with the JSON files (you may change this path)
+# On local machine, it is without the `.` in the beginning
+# On GitHub Actions, it is with the `.` in the beginning
+# Example: "./lighthouseci" or ".lighthouseci"
+
+TREEMAP_FOLDER = "./.lighthouseci"
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
