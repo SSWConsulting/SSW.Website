@@ -7,7 +7,7 @@ import glob
 # On GitHub Actions, it is with the `.` in the beginning
 # Example: "./lighthouseci" or ".lighthouseci"
 
-TREEMAP_FOLDER = "./.lighthouseci"
+TREEMAP_FOLDER = "./lighthouseci"
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
@@ -54,7 +54,9 @@ def get_total_and_unused_bytes_for_url(url):
         return 0, 0
 
 def generate_lighthouse_mdx():
-    with open("./lighthouseci/manifest.json", "r") as file:
+
+    manifest_file = glob.glob(os.path.join(TREEMAP_FOLDER, "manifest.json"))
+    with open(manifest_file[0], "r") as file:
         data = json.load(file)
 
     mdx_output = [
@@ -82,7 +84,9 @@ mdx_content = generate_lighthouse_mdx()
 mdx_content = mdx_content.replace("\n", "%0A")
 
 # Output the report string for GitHub Actions
-with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+output_file = os.environ.get('GITHUB_OUTPUT', 'default_output.txt')  # Default to 'default_output.txt' if not set
+
+with open(output_file, 'a') as fh:
     print(f"report={mdx_content}", file=fh)
 
 print("Lighthouse report generated successfully!")
