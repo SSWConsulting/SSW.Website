@@ -3,7 +3,7 @@ import os
 import glob
 
 # Define paths
-TREEMAP_FOLDER = "./lighthouseci"
+TREEMAP_FOLDER = "./.lighthouseci"
 OUTPUT_FILE_PATH = "lighthouse-report.mdx"  # The MDX file to be created
 
 def format_url_for_filename(url):
