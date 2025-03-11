@@ -105,6 +105,7 @@ jobs:
   lighthouseInsights:
     name: Run Lighthouse Insights
     runs-on: ubuntu-latest
+    needs: pr-deploy
     permissions:
       pull-requests: write
     steps:
@@ -124,19 +125,19 @@ jobs:
         with:
           configPath: ./.lighthouserc.json
           urls: |
-            https://www.ssw.com.au
-            https://www.ssw.com.au/articles
-            https://www.ssw.com.au/company/about-us
-            https://www.ssw.com.au/company/clients
-            https://www.ssw.com.au/company/contact-us
-            https://www.ssw.com.au/consulting
-            https://www.ssw.com.au/consulting/net-upgrade
-            https://www.ssw.com.au/consulting/web-applications
-            https://www.ssw.com.au/employment
-            https://www.ssw.com.au/events/angular-superpowers-tour
-            https://www.ssw.com.au/events/ai-workshop
-            https://www.ssw.com.au/netug/sydney
-            https://www.ssw.com.au/training/internship-fullstack
+            ${{ needs.pr-deploy.outputs.url }}
+            ${{ needs.pr-deploy.outputs.url }}/articles
+            ${{ needs.pr-deploy.outputs.url }}/company/about-us
+            ${{ needs.pr-deploy.outputs.url }}/company/clients
+            ${{ needs.pr-deploy.outputs.url }}/company/contact-us
+            ${{ needs.pr-deploy.outputs.url }}/consulting
+            ${{ needs.pr-deploy.outputs.url }}/consulting/net-upgrade
+            ${{ needs.pr-deploy.outputs.url }}/consulting/web-applications
+            ${{ needs.pr-deploy.outputs.url }}/employment
+            ${{ needs.pr-deploy.outputs.url }}/events/angular-superpowers-tour
+            ${{ needs.pr-deploy.outputs.url }}/events/ai-workshop
+            ${{ needs.pr-deploy.outputs.url }}/netug/sydney
+            ${{ needs.pr-deploy.outputs.url }}/training/internship-fullstack
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
