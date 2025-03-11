@@ -1,6 +1,7 @@
 import json
 import os
 import glob
+import urllib.parse
 
 # Path to the folder where your JSON files are located
 # On local machine, it is without the `.` in the beginning
@@ -81,7 +82,7 @@ def generate_lighthouse_mdx():
 # Generate the report
 mdx_content = generate_lighthouse_mdx()
 
-mdx_content = mdx_content.replace("\n", "%0A")
+mdx_content = urllib.parse.quote(mdx_content)
 
 # Output the report string for GitHub Actions
 output_file = os.environ.get('GITHUB_OUTPUT', 'default_output.txt')  # Default to 'default_output.txt' if not set
