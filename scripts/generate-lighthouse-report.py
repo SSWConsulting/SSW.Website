@@ -52,8 +52,8 @@ def generate_lighthouse_mdx():
         data = json.load(file)
 
     mdx_output = [
-        "## Lighthouse Report\n",
-        "| URL | Performance | Accessibility | Best Practices | SEO | Total Bundle Size | Unused Bundle Size |",
+        "## 🚀 Lighthouse Report\n",
+        "| 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Total Bundle Size | 🗑️ Unused Bundle Size |",
         "| --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |"
     ]
 
