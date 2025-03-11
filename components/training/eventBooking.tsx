@@ -175,7 +175,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
               )}
 
               <div className="prose py-1 pr-0 text-xs">
-                <EventLocation />
+                <EventLocation event={event} />
               </div>
             </div>
           </div>
@@ -287,9 +287,8 @@ const EventHeader = ({
   );
 };
 
-const EventLocation = (event: Event) => {
+const EventLocation = ({ event }: { event: Event }) => {
   const classes = "flex items-center justify-end font-normal md:justify-start";
-
   const Contents = () => (
     <>
       <MdLocationOn className="m-icon" />
@@ -302,15 +301,11 @@ const EventLocation = (event: Event) => {
     return (
       <CustomLink className={classes} href={event.location?.directionURL || ""}>
         <Contents />
-        {/* <MdLocationOn className="m-icon" />
-        <span className="capitalize">
-          {EventModel.SSW} {event.city?.split(" ")[0]}
-        </span> */}
       </CustomLink>
     );
   }
   return (
-    <span>
+    <span className={classes}>
       <Contents />
     </span>
   );
