@@ -39,7 +39,6 @@ type ConsultingPageParams = {
 
 async function extractAllPages(query, field: string) {
   let consultingFetch = await query();
-
   const accmulatedPages = consultingFetch;
 
   while (consultingFetch.data[field].pageInfo.hasNextPage) {

@@ -8,15 +8,15 @@ import React, { memo } from "react";
 import { useTina } from "tinacms/dist/react";
 import client from "../../../tina/__generated__/client";
 
-type EventsPageData = Awaited<ReturnType<typeof client.queries.eventsv2>>;
+export type EventsV2Data = Awaited<ReturnType<typeof client.queries.eventsv2>>;
 
-type ConsultingV2PageProps<T> = {
-  tinaProps: EventsPageData;
+type EventsV2PageProps<T> = {
+  tinaProps: EventsV2Data;
   props: T;
 };
 
 const Events2 = memo(
-  function Events2({ tinaProps }: ConsultingV2PageProps<object>) {
+  function Events2({ tinaProps }: EventsV2PageProps<object>) {
     const { data } = useTina({
       data: tinaProps.data,
       query: tinaProps.query,
