@@ -3,7 +3,7 @@ import os
 import glob
 
 # Define paths
-TREEMAP_FOLDER = "./.lighthouseci"
+TREEMAP_FOLDER = "./lighthouseci"
 OUTPUT_FILE_PATH = "lighthouse-report.mdx"  # The MDX file to be created
 from urllib.parse import urlparse
 
@@ -13,7 +13,7 @@ important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
     formatted_url = url.replace("https://", "").replace("http://", "")
-    return formatted_url.replace("-", "_").replace("/", "-_").replace(".", "_")
+    return formatted_url.replace("-", "_").replace("/", "-_",1).replace("/", "_").replace(".", "_")
 
 def get_total_and_unused_bytes_for_url(url):
     """Reads the corresponding JSON file for the URL and calculates total and unused bytes in MB."""
