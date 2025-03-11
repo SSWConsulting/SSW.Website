@@ -5,6 +5,10 @@ import glob
 # Define paths
 TREEMAP_FOLDER = "./.lighthouseci"
 OUTPUT_FILE_PATH = "lighthouse-report.mdx"  # The MDX file to be created
+from urllib.parse import urlparse
+
+
+important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
@@ -68,9 +72,11 @@ def generate_lighthouse_mdx():
         seo = result["summary"]["seo"] * 100
 
         total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url)
+        parsed_url = urlparse(url)
+        url_display = f"⭐ {url}" if parsed_url.path in important_paths else url
 
         mdx_output.append(
-            f"| {url} | {performance:.2f} | {accessibility:.2f} | {best_practices:.2f} | {seo:.2f} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
+            f"| {url_display} | {performance:.2f} | {accessibility:.2f} | {best_practices:.2f} | {seo:.2f} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
         )
 
     return "\n".join(mdx_output)
