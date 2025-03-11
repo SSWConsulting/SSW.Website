@@ -7,7 +7,7 @@ import glob
 # On GitHub Actions, it is with the `.` in the beginning
 # Example: "./lighthouseci" or ".lighthouseci"
 
-TREEMAP_FOLDER = "./lighthouseci"
+TREEMAP_FOLDER = "./.lighthouseci"
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
