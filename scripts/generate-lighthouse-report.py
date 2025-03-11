@@ -1,51 +1,38 @@
 import json
 import os
 import glob
-import urllib.parse
 
-# Path to the folder where your JSON files are located
-# On local machine, it is without the `.` in the beginning
-# On GitHub Actions, it is with the `.` in the beginning
-# Example: "./lighthouseci" or ".lighthouseci"
-
-TREEMAP_FOLDER = "./.lighthouseci"
+# Define paths
+TREEMAP_FOLDER = "./lighthouseci"
+OUTPUT_FILE_PATH = "lighthouse-report.mdx"  # The MDX file to be created
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
     formatted_url = url.replace("https://", "").replace("http://", "")
-
-    formatted_url = formatted_url.replace("/", "-_").replace(".", "_")
-
-    return formatted_url
+    return formatted_url.replace("/", "-_").replace(".", "_")
 
 def get_total_and_unused_bytes_for_url(url):
     """Reads the corresponding JSON file for the URL and calculates total and unused bytes in MB."""
     try:
-        # Generate the filename pattern for the URL
         formatted_url = format_url_for_filename(url)
         filename_pattern = formatted_url + "*.report.json"
-        print(f"Looking for {filename_pattern} in {TREEMAP_FOLDER}")
         matching_files = glob.glob(os.path.join(TREEMAP_FOLDER, filename_pattern))
 
         if not matching_files:
             print(f"Error: No matching JSON file found for {url}.")
             return 0, 0
 
-        # Assuming we want to pick the first file if multiple matches are found
         treemap_data_file = matching_files[0]
-
         with open(treemap_data_file, "r", encoding="utf-8") as file:
             data = json.load(file)
 
         script_data = data.get("audits", {}).get("script-treemap-data", {})
-
         nodes = script_data.get("details", {}).get("nodes", [])
 
         total_bytes = sum(node.get("resourceBytes", 0) for node in nodes)
         unused_bytes = sum(node.get("unusedBytes", 0) for node in nodes)
 
-        # Convert bytes to MB (1 MB = 1,048,576 bytes)
-        return total_bytes / 1048576, unused_bytes / 1048576  # Returns values in MB
+        return total_bytes / 1048576, unused_bytes / 1048576  # Convert bytes to MB
 
     except FileNotFoundError:
         print(f"Error: {treemap_data_file} not found.")
@@ -55,15 +42,19 @@ def get_total_and_unused_bytes_for_url(url):
         return 0, 0
 
 def generate_lighthouse_mdx():
-
+    """Generates an MDX-formatted Lighthouse report from the manifest.json file."""
     manifest_file = glob.glob(os.path.join(TREEMAP_FOLDER, "manifest.json"))
+
+    if not manifest_file:
+        raise FileNotFoundError("Error: manifest.json not found in " + TREEMAP_FOLDER)
+
     with open(manifest_file[0], "r") as file:
         data = json.load(file)
 
     mdx_output = [
         "## Lighthouse Report\n",
         "| URL | Performance | Accessibility | Best Practices | SEO | Total Bundle Size | Unused Bundle Size |",
-        "| --- | ----------- | ------------- | -------------- | --- | --------------------- | ---------------------- |"
+        "| --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |"
     ]
 
     for result in data:
@@ -75,19 +66,25 @@ def generate_lighthouse_mdx():
 
         total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url)
 
-        mdx_output.append(f"| {url} | {performance:.2f} | {accessibility:.2f} | {best_practices:.2f} | {seo:.2f} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |")
+        mdx_output.append(
+            f"| {url} | {performance:.2f} | {accessibility:.2f} | {best_practices:.2f} | {seo:.2f} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
+        )
 
     return "\n".join(mdx_output)
 
-# Generate the report
+# Generate the report and save to an MDX file
 mdx_content = generate_lighthouse_mdx()
 
-mdx_content = urllib.parse.quote(mdx_content)
+# Write the MDX content to a file
+with open(OUTPUT_FILE_PATH, "w", encoding="utf-8") as mdx_file:
+    mdx_file.write(mdx_content)
 
-# Output the report string for GitHub Actions
-output_file = os.environ.get('GITHUB_OUTPUT', 'default_output.txt')  # Default to 'default_output.txt' if not set
+print(f"Lighthouse report successfully saved to {OUTPUT_FILE_PATH}!")
 
-with open(output_file, 'a') as fh:
-    print(f"report={mdx_content}", file=fh)
+# Output to GitHub Actions (if running in GitHub Actions)
+github_output = os.getenv('GITHUB_OUTPUT')
 
-print("Lighthouse report generated successfully!")
+if github_output:
+    with open(github_output, 'a') as fh:
+        print(f"report<<EOF\n{mdx_content}\nEOF", file=fh)
+    print("Lighthouse report outputted to GitHub Actions!")
