@@ -21,6 +21,7 @@ import {
 import { employmentSchema } from "./collections/employment";
 import { eventsIndexSchema, eventsSchema } from "./collections/events";
 import { eventsCalendarSchema } from "./collections/events-calendar";
+import { eventsv2Schema } from "./collections/eventsv2";
 import { globalSchema } from "./collections/global";
 import { industryIndexSchema, industrySchema } from "./collections/industry";
 import { liveSchema } from "./collections/live";
@@ -78,6 +79,7 @@ const pageSchemas = [
   consultingSchema,
   videoProductionSchema,
   employmentSchema,
+  eventsv2Schema,
   eventsIndexSchema,
   eventsSchema,
   industrySchema,

@@ -6,7 +6,7 @@ import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
-import EventsPages from "./index";
+import EventsPages from "./events";
 
 export const dynamicParams = false;
 
