@@ -105,7 +105,6 @@ jobs:
 
   lighthouseInsights:
     name: Run Lighthouse Insights
-    needs: pr-deploy
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -117,7 +116,7 @@ jobs:
       - name: Wait for Slot to be available
         uses: jtalk/url-health-check-action@v2
         with:
-          url: ${{ needs.pr-deploy.outputs.url }}
+          url: https://www.ssw.com.au
           max-attempts: 5
           retry-delay: 40s
 
@@ -126,17 +125,9 @@ jobs:
         with:
           configPath: ./.lighthouserc.json
           urls: |
-            ${{ needs.pr-deploy.outputs.url }}
-            ${{ needs.pr-deploy.outputs.url }}/events
-            ${{ needs.pr-deploy.outputs.url }}/consulting
-
-      - name: Read the manifest file and extract url and summary
-        shell: bash
-        run: |
-          FILE_PATH="/.lighthouseci/manifest.json"
-
-          # Use jq to extract url and summary for each object
-          jq -c '.[] | {url, summary}' $FILE_PATH
+            https://www.ssw.com.au
+            https://www.ssw.com.au/events
+            https://www.ssw.com.au/consulting
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
