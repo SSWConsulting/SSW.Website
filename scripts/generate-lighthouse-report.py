@@ -76,7 +76,7 @@ def generate_lighthouse_mdx():
         url_display = f"⭐ {url}" if parsed_url.path in important_paths else url
 
         mdx_output.append(
-            f"| {url_display} | {performance:.2f} | {accessibility:.2f} | {best_practices:.2f} | {seo:.2f} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
+            f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
         )
 
     return "\n".join(mdx_output)
