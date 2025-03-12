@@ -31,8 +31,6 @@ type ConsultingPages = Awaited<
   ReturnType<typeof client.queries.consultingConnection>
 >;
 
-export const dynamicParams = false;
-
 type ConsultingPageParams = {
   filename: string;
 };
