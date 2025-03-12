@@ -50,7 +50,7 @@ jobs:
             ${{ inputs.url }}/events/angular-superpowers-tour
             ${{ inputs.url }}/events/ai-workshop
             ${{ inputs.url }}/netug/sydney
-            ${{ inputs.url }}/training/inputs
+            ${{ inputs.url }}/training/internship-fullstack
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
