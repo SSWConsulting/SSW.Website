@@ -25,8 +25,7 @@ export const PaymentBlockConstants = {
 };
 
 export const PaymentBlock = ({ data }) => {
-  if (!data.title) return <></>;
-
+  if (!data) return <></>;
   const { title, subTitle, creditImgSrc, altText } = data;
   const payments: PaymentBlockProps = data.payments;
   const headerClass =
@@ -41,89 +40,86 @@ export const PaymentBlock = ({ data }) => {
       <p data-tina-field={tinaField(data, paymentBlockConstants.subTitle)}>
         {subTitle}
       </p>
-      {!data.hidePayments &&
-        data?.payments(
-          <div className="mx-auto my-4 grid max-w-4xl grid-cols-3 gap-0.5 py-4 text-left">
-            <div className={headerClass}>{PaymentBlockConstants.BANK_NAME}</div>
-            <div
-              className={bodyClass}
-              data-tina-field={tinaField(
-                data.payments,
-                paymentDetailsBlockConstant.bankName
-              )}
-            >
-              {payments.bankName}
-            </div>
-            <div className={headerClass}>
-              {PaymentBlockConstants.ACCOUNT_NAME}
-            </div>
-            <div
-              className={bodyClass}
-              data-tina-field={tinaField(
-                data.payments,
-                paymentDetailsBlockConstant.accountName
-              )}
-            >
-              {payments.accountName}
-            </div>
-            <div className={headerClass}>
-              {PaymentBlockConstants.BSB_NUMBER}
-            </div>
-            <div
-              className={bodyClass}
-              data-tina-field={tinaField(
-                data.payments,
-                paymentDetailsBlockConstant.bsbNumber
-              )}
-            >
-              {payments.bsbNumber}
-            </div>
-            <div className={headerClass}>
-              {PaymentBlockConstants.ACCOUNT_NUMBER}
-            </div>
-            <div
-              className={bodyClass}
-              data-tina-field={tinaField(
-                data.payments,
-                paymentDetailsBlockConstant.accountNumber
-              )}
-            >
-              {payments.accountNumber}
-            </div>
-            <div className={headerClass}>
-              {PaymentBlockConstants.SWIFT_NUMBER}
-            </div>
-            <div
-              className={bodyClass}
-              data-tina-field={tinaField(
-                data.payments,
-                paymentDetailsBlockConstant.swiftNumber
-              )}
-            >
-              {payments.swiftNumber}
-            </div>
-            <div className={headerClass}>{PaymentBlockConstants.ABN}</div>
-            <div
-              className={bodyClass}
-              data-tina-field={tinaField(
-                data.payments,
-                paymentDetailsBlockConstant.abn
-              )}
-            >
-              {payments.abn}
-            </div>
-            <div className={headerClass}>{PaymentBlockConstants.ACN}</div>
-            <div
-              className={bodyClass}
-              data-tina-field={tinaField(
-                data.payments,
-                paymentDetailsBlockConstant.acn
-              )}
-            >
-              {payments.acn}
-            </div>
+      {!data?.hidePayments && data?.payments && (
+        <div className="mx-auto my-4 grid max-w-4xl grid-cols-3 gap-0.5 py-4 text-left">
+          <div className={headerClass}>{PaymentBlockConstants.BANK_NAME}</div>
+          <div
+            className={bodyClass}
+            data-tina-field={tinaField(
+              data.payments,
+              paymentDetailsBlockConstant.bankName
+            )}
+          >
+            {payments.bankName}
           </div>
-        )}
+          <div className={headerClass}>
+            {PaymentBlockConstants.ACCOUNT_NAME}
+          </div>
+          <div
+            className={bodyClass}
+            data-tina-field={tinaField(
+              data.payments,
+              paymentDetailsBlockConstant.accountName
+            )}
+          >
+            {payments.accountName}
+          </div>
+          <div className={headerClass}>{PaymentBlockConstants.BSB_NUMBER}</div>
+          <div
+            className={bodyClass}
+            data-tina-field={tinaField(
+              data.payments,
+              paymentDetailsBlockConstant.bsbNumber
+            )}
+          >
+            {payments.bsbNumber}
+          </div>
+          <div className={headerClass}>
+            {PaymentBlockConstants.ACCOUNT_NUMBER}
+          </div>
+          <div
+            className={bodyClass}
+            data-tina-field={tinaField(
+              data.payments,
+              paymentDetailsBlockConstant.accountNumber
+            )}
+          >
+            {payments.accountNumber}
+          </div>
+          <div className={headerClass}>
+            {PaymentBlockConstants.SWIFT_NUMBER}
+          </div>
+          <div
+            className={bodyClass}
+            data-tina-field={tinaField(
+              data.payments,
+              paymentDetailsBlockConstant.swiftNumber
+            )}
+          >
+            {payments.swiftNumber}
+          </div>
+          <div className={headerClass}>{PaymentBlockConstants.ABN}</div>
+          <div
+            className={bodyClass}
+            data-tina-field={tinaField(
+              data.payments,
+              paymentDetailsBlockConstant.abn
+            )}
+          >
+            {payments.abn}
+          </div>
+          <div className={headerClass}>{PaymentBlockConstants.ACN}</div>
+          <div
+            className={bodyClass}
+            data-tina-field={tinaField(
+              data.payments,
+              paymentDetailsBlockConstant.acn
+            )}
+          >
+            {payments.acn}
+          </div>
+        </div>
+      )}
       <div
         className="mx-auto max-w-4xl"
         data-tina-field={tinaField(data, paymentBlockConstants.footer)}
