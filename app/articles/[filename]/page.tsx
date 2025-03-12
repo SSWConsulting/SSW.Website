@@ -37,7 +37,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const tinaProps = await getArticle(params.filename);
   const seo = tinaProps.data.articles.seo;
-  seo.canonical = `${tinaProps.data.global.header.url}articles/${params.filename}`;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${tinaProps.data.global.header.url}articles/${params.filename}`;
+  }
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { seoProps } = useSEO(seo || {});
   return {
