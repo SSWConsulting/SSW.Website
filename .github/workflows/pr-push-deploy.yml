@@ -116,7 +116,7 @@ jobs:
       - name: Wait for Slot to be available
         uses: jtalk/url-health-check-action@v2
         with:
-          url: https://www.ssw.com.au
+          url: ${{ needs.pr-deploy.outputs.url }}
           max-attempts: 5
           retry-delay: 40s
 
