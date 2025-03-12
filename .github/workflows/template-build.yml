@@ -59,6 +59,7 @@ jobs:
         shell: bash
         run: |
           PROD_URL=$(az webapp show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.APP_SERVICE_NAME }} --query "defaultHostName" -o tsv)
+          echo PROD_URL
           echo "production_url=${PROD_URL}" >> $env:GITHUB_OUTPUT
 
       - name: keyVault - Secrets
