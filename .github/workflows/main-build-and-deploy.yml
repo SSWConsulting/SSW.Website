@@ -125,11 +125,6 @@ jobs:
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
-      - name: Testing AZ CLI CMD
-        run: |
-          PROD_URL=$(az webapp show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.APP_SERVICE_NAME }} --query "defaultHostName" -o tsv)
-          echo "production_url=${PROD_URL}" >> $env:GITHUB_OUTPUT
-
       - name: Tag Production ACR Image
         run: |
           # Pull the staging image from ACR
