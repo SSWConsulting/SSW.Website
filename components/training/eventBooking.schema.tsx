@@ -30,9 +30,7 @@ const TimePicker = ({ input, defaultValue }) => {
     dayjs.extend(timezone);
     dayjs.extend(utc);
     dayjs.tz.setDefault("UTC");
-    console.log("time", time);
     const formatted = dayjs.tz(time).format("HH:mm");
-    console.log("formatted", formatted);
     return formatted;
   };
 
@@ -41,8 +39,6 @@ const TimePicker = ({ input, defaultValue }) => {
   dayjs.tz.setDefault("UTC");
 
   const { onChange, value: inputValue, ...props } = input;
-  console.log("input", inputValue);
-
   const [value, setValue] = useState(
     inputValue ? formatDefaultTime(inputValue) : defaultValue
   );
@@ -129,7 +125,6 @@ const eventBookingSchema: Template = {
             format: (value) => {
               const val =
                 value && dateFormat.format(new Date(Date.parse(value)));
-              console.log("val", val);
               return val;
             },
           },
@@ -143,9 +138,6 @@ const eventBookingSchema: Template = {
             )),
             //@ts-expect-error - Tina supports UTC but typing doesn't work
             utc: true,
-            // format: (value) => {
-            //   return value && dateFormat.format(new Date(Date.parse(value)));
-            // },
           },
           name: "startTime",
         },
@@ -158,9 +150,6 @@ const eventBookingSchema: Template = {
             )),
             //@ts-expect-error - Tina supports UTC but typing doesn't work
             utc: true,
-            // format: (value) => {
-            //   return value && dateFormat.format(new Date(Date.parse(value)));
-            // },
           },
           name: "endTime",
         },
