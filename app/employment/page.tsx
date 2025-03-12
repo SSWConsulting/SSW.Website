@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(data);
+  const { seoProps } = useSEO(data || {});
   return seoProps;
 }
 

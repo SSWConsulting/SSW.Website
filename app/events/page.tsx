@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
+  const { seoProps } = useSEO(seo || {});
 
   return { ...seoProps };
 }
