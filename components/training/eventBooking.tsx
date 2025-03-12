@@ -1,6 +1,8 @@
 import { Events_BodyEventBookingEventList as Event } from "@/tina/types";
 import classNames from "classnames";
 import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import React, { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { wrapFieldsWithMeta, type Template } from "tinacms";
@@ -8,7 +10,6 @@ import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { EventBookingType, EventModel } from "./eventBookingType";
-
 export const isEmpty = (value) => {
   return (
     value === undefined ||
@@ -18,25 +19,32 @@ export const isEmpty = (value) => {
   );
 };
 
+const dateFormat = Intl.DateTimeFormat("en-AU", {
+  timeZone: "UTC",
+  day: "numeric",
+  year: "numeric",
+  month: "short",
+});
+
 export const formatTimeWithAmPm = (date) => {
-  let hours = date.getHours();
-  const minutes = date.getMinutes();
-  const amPm = hours >= 12 ? "PM" : "AM";
+  if (!date) return null;
+  dayjs.extend(timezone);
+  dayjs.extend(utc);
+  dayjs.tz.setDefault("UTC");
 
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-
-  const formattedMinutes = minutes < 10 ? "0" + minutes : minutes;
-
-  return minutes === 0
-    ? `${hours}${amPm}`
-    : `${hours}:${formattedMinutes}${amPm}`;
+  const day = dayjs.tz(date);
+  console.log("true date", day.format("hh:mm A D M YYYY"));
+  return day.format("hA");
 };
 
 const TimePicker = ({ input, defaultValue }) => {
+  dayjs.extend(timezone);
+
+  dayjs.extend(utc);
+  dayjs.tz.setDefault("UTC");
   const { onChange, value: inputValue, ...props } = input;
   const [value, setValue] = React.useState(
-    inputValue ? dayjs(inputValue).format("HH:mm") : defaultValue
+    inputValue ? dayjs.tz(inputValue).format("HH:mm") : defaultValue
   );
   return (
     <input
@@ -45,7 +53,12 @@ const TimePicker = ({ input, defaultValue }) => {
       {...props}
       onChange={(e) => {
         setValue(e.target.value);
-        const date = new Date(`0000/01/01 ${e.target.value}`).toISOString();
+        const time = e.target.value.split(":");
+        const hours = time[0];
+        const minutes = time[1];
+        const date = new Date(
+          Date.UTC(0, 0, 0, Number(hours), Number(minutes))
+        ).toUTCString();
         onChange(date);
       }}
       type="time"
@@ -218,21 +231,26 @@ const addRightBorder = (index) => {
 
 const EventDates = ({ eventDurationInDays, date }) => {
   // this will return date fragment if the eventDurationInDays is equal to 1 => (28TH (WED) AUGUST 2023) or (this 28TH - 30TH SEPTEMBER 2022 \n (WED - FRI))
-  const startDate = dayjs(date);
+  dayjs.tz.setDefault("UTC");
+  const isSingleDayEvent = eventDurationInDays === 1;
+  const startDate = dayjs.tz(date);
+  console.log("startDate", startDate.format("Do (ddd) MMMM YYYY"));
   const endDate = startDate.add(eventDurationInDays - 1, "day"); // subtracting a day because it includes the start date as well
+  const dates = isSingleDayEvent
+    ? startDate.format("Do (ddd) MMMM YYYY")
+    : `${startDate.format("Do")} - ${endDate.format("Do MMMM YYYY")}`;
 
   return (
     <>
-      {eventDurationInDays === 1 ? (
-        startDate.format("Do (ddd) MMMM YYYY")
-      ) : (
-        <>
-          {startDate.format("Do")} - {endDate.format("Do MMMM YYYY")}
-          <div>
+      {dates}
+      <div>
+        {isSingleDayEvent || (
+          <>
             ({startDate.format("ddd")} - {endDate.format("ddd")})
-          </div>
-        </>
-      )}
+          </>
+        )}{" "}
+        AEST
+      </div>
     </>
   );
 };
@@ -389,7 +407,11 @@ export const eventBookingSchema: Template = {
           label: "Start Date",
           name: eventBookingBlock.eventList.date,
           ui: {
-            parse: (value) => value && value.format("YYYY-MM-DD"),
+            //@ts-expect-error - Tina supports UTC but typing doesn't work
+            utc: true,
+            format: (value) => {
+              return value && dateFormat.format(new Date(Date.parse(value)));
+            },
           },
         },
         {
@@ -399,6 +421,11 @@ export const eventBookingSchema: Template = {
             component: wrapFieldsWithMeta(({ input }) => (
               <TimePicker defaultValue={"09:00"} input={input} />
             )),
+            //@ts-expect-error - Tina supports UTC but typing doesn't work
+            utc: true,
+            format: (value) => {
+              return value && dateFormat.format(new Date(Date.parse(value)));
+            },
           },
           name: "startTime",
         },
@@ -409,6 +436,11 @@ export const eventBookingSchema: Template = {
             component: wrapFieldsWithMeta(({ input }) => (
               <TimePicker input={input} defaultValue={"17:00"} />
             )),
+            //@ts-expect-error - Tina supports UTC but typing doesn't work
+            utc: true,
+            format: (value) => {
+              return value && dateFormat.format(new Date(Date.parse(value)));
+            },
           },
           name: "endTime",
         },
