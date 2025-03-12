@@ -155,7 +155,12 @@ jobs:
 
           # Fetch the production URL and store it as an output
           PROD_URL=$(az webapp show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.APP_SERVICE_NAME }} --query "defaultHostName" -o tsv)
-          echo "production_url=${PROD_URL}" >> $env:GITHUB_OUTPUT
+
+          # Debugging - print the extracted value
+          echo "Extracted production URL: $PROD_URL"
+
+          # Save to outputs
+          echo "production_url=${PROD_URL}" >> $GITHUB_OUTPUT
 
   lighthouse-insights:
     name: Run Lighthouse Insights
