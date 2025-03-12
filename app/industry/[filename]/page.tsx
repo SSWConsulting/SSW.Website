@@ -5,8 +5,6 @@ import { Metadata } from "next";
 import IndustryPage from ".";
 import { TinaClient } from "../../tina-client";
 
-export const dynamicParams = false;
-
 type GenerateMetadataProps = {
   params: { filename: string };
   searchParams: { [key: string]: string | string[] | undefined };
