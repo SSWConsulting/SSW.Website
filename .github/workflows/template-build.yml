@@ -55,6 +55,11 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
+      - name: Testing AZ CLI CMD
+        run: |
+          PROD_URL=$(az webapp show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.APP_SERVICE_NAME }} --query "defaultHostName" -o tsv)
+          echo "production_url=${PROD_URL}" >> $env:GITHUB_OUTPUT
+
       - name: keyVault - Secrets
         uses: theotow/keyvault-secret-azure@v1
         id: KeyVaultSecrets
