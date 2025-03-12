@@ -26,13 +26,25 @@ export const eventBookingBlock = {
 };
 
 const TimePicker = ({ input, defaultValue }) => {
-  dayjs.extend(timezone);
+  const formatDefaultTime = (time: string) => {
+    dayjs.extend(timezone);
+    dayjs.extend(utc);
+    dayjs.tz.setDefault("UTC");
+    console.log("time", time);
+    const formatted = dayjs.tz(time).format("HH:mm");
+    console.log("formatted", formatted);
+    return formatted;
+  };
 
+  dayjs.extend(timezone);
   dayjs.extend(utc);
   dayjs.tz.setDefault("UTC");
+
   const { onChange, value: inputValue, ...props } = input;
+  console.log("input", inputValue);
+
   const [value, setValue] = useState(
-    inputValue ? dayjs.tz(inputValue).format("HH:mm") : defaultValue
+    inputValue ? formatDefaultTime(inputValue) : defaultValue
   );
   return (
     <input
@@ -46,7 +58,7 @@ const TimePicker = ({ input, defaultValue }) => {
         const minutes = time[1];
         const date = new Date(
           Date.UTC(0, 0, 0, Number(hours), Number(minutes))
-        ).toUTCString();
+        ).toISOString();
         onChange(date);
       }}
       type="time"
@@ -115,7 +127,10 @@ const eventBookingSchema: Template = {
             //@ts-expect-error - Tina supports UTC but typing doesn't work
             utc: true,
             format: (value) => {
-              return value && dateFormat.format(new Date(Date.parse(value)));
+              const val =
+                value && dateFormat.format(new Date(Date.parse(value)));
+              console.log("val", val);
+              return val;
             },
           },
         },
@@ -128,9 +143,9 @@ const eventBookingSchema: Template = {
             )),
             //@ts-expect-error - Tina supports UTC but typing doesn't work
             utc: true,
-            format: (value) => {
-              return value && dateFormat.format(new Date(Date.parse(value)));
-            },
+            // format: (value) => {
+            //   return value && dateFormat.format(new Date(Date.parse(value)));
+            // },
           },
           name: "startTime",
         },
@@ -143,9 +158,9 @@ const eventBookingSchema: Template = {
             )),
             //@ts-expect-error - Tina supports UTC but typing doesn't work
             utc: true,
-            format: (value) => {
-              return value && dateFormat.format(new Date(Date.parse(value)));
-            },
+            // format: (value) => {
+            //   return value && dateFormat.format(new Date(Date.parse(value)));
+            // },
           },
           name: "endTime",
         },
