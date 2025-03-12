@@ -58,9 +58,19 @@ jobs:
       - name: Testing AZ CLI CMD
         shell: bash
         run: |
+          # Print all properties to check what's inside
+          echo "Fetching full web app details..."
+          az webapp show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.APP_SERVICE_NAME }} -o json
+
+          # Now extract the defaultHostName
           PROD_URL=$(az webapp show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.APP_SERVICE_NAME }} --query "defaultHostName" -o tsv)
-          echo PROD_URL
-          echo "production_url=${PROD_URL}" >> $env:GITHUB_OUTPUT
+
+          # Debugging - print the extracted value
+          echo "Extracted production URL: $PROD_URL"
+
+          # Save to outputs
+          echo "production_url=${PROD_URL}" >> $GITHUB_ENV
+          echo "production_url=${PROD_URL}" >> $GITHUB_OUTPUT
 
       - name: keyVault - Secrets
         uses: theotow/keyvault-secret-azure@v1
