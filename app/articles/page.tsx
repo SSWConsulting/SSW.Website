@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
     date: new Date().toISOString(),
   });
   // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(data.data.articlesIndex.seo || {});
+  const { seoProps } = useSEO(data.data.articlesIndex.seo);
   return { ...seoProps };
 }
 
