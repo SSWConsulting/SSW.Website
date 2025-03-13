@@ -104,50 +104,7 @@ jobs:
 
   lighthouseInsights:
     name: Run Lighthouse Insights
-    runs-on: ubuntu-latest
+    uses: ./.github/workflows/template-lighthouse.yml
     needs: pr-deploy
-    permissions:
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: ".nvmrc"
-      - name: Wait for Slot to be available
-        uses: jtalk/url-health-check-action@v2
-        with:
-          url: ${{ needs.pr-deploy.outputs.url }}
-          max-attempts: 5
-          retry-delay: 40s
-
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          configPath: ./.lighthouserc.json
-          urls: |
-            ${{ needs.pr-deploy.outputs.url }}
-            ${{ needs.pr-deploy.outputs.url }}/articles
-            ${{ needs.pr-deploy.outputs.url }}/company/about-us
-            ${{ needs.pr-deploy.outputs.url }}/company/clients
-            ${{ needs.pr-deploy.outputs.url }}/company/contact-us
-            ${{ needs.pr-deploy.outputs.url }}/consulting
-            ${{ needs.pr-deploy.outputs.url }}/consulting/net-upgrade
-            ${{ needs.pr-deploy.outputs.url }}/consulting/web-applications
-            ${{ needs.pr-deploy.outputs.url }}/employment
-            ${{ needs.pr-deploy.outputs.url }}/events/angular-superpowers-tour
-            ${{ needs.pr-deploy.outputs.url }}/events/ai-workshop
-            ${{ needs.pr-deploy.outputs.url }}/netug/sydney
-            ${{ needs.pr-deploy.outputs.url }}/training/internship-fullstack
-
-      - name: Display Lighthouse Results as a Table
-        id: lighthouse-results-generate
-        run: |
-          python scripts/generate-lighthouse-report.py
-
-      - name: Comment on PR with Lighthouse insights
-        uses: mshick/add-pr-comment@v2
-        with:
-          message: |
-            ${{ steps.lighthouse-results-generate.outputs.report }}
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-repeats: true
+    with:
+      url: ${{ needs.pr-deploy.outputs.url }}
