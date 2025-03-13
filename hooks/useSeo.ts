@@ -2,7 +2,6 @@ import { DEFAULT_METADATA } from "app/layout";
 import { Metadata } from "next";
 
 export function useSEO(seo) {
-  seo = seo || {};
   if (!seo) return null;
 
   let dynamicSEO: Metadata = {};
