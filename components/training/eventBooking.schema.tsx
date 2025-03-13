@@ -1,8 +1,6 @@
-import dayjs from "dayjs";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
 import { Template, wrapFieldsWithMeta } from "tinacms";
 
+import { utcDateToHoursMinutes } from "@/services/client/date.service";
 import React, { useState } from "react";
 
 const gstTypeOptions = ["inc GST", "+ GST"];
@@ -26,21 +24,9 @@ export const eventBookingBlock = {
 };
 
 const TimePicker = ({ input, defaultValue }) => {
-  const formatDefaultTime = (time: string) => {
-    dayjs.extend(timezone);
-    dayjs.extend(utc);
-    dayjs.tz.setDefault("UTC");
-    const formatted = dayjs.tz(time).format("HH:mm");
-    return formatted;
-  };
-
-  dayjs.extend(timezone);
-  dayjs.extend(utc);
-  dayjs.tz.setDefault("UTC");
-
   const { onChange, value: inputValue, ...props } = input;
   const [value, setValue] = useState(
-    inputValue ? formatDefaultTime(inputValue) : defaultValue
+    inputValue ? utcDateToHoursMinutes(inputValue) : defaultValue
   );
   return (
     <input

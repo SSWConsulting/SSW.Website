@@ -1,3 +1,4 @@
+import { utcDateToHoursMinutes } from "@/services/client/date.service";
 import { Events_BodyEventBookingEventList as Event } from "@/tina/types";
 import classNames from "classnames";
 import dayjs from "dayjs";
@@ -21,12 +22,7 @@ export const isEmpty = (value) => {
 
 export const formatTimeWithAmPm = (date) => {
   if (!date) return null;
-  dayjs.extend(timezone);
-  dayjs.extend(utc);
-  dayjs.tz.setDefault("UTC");
-
-  const day = dayjs.tz(date);
-  console.log("true date", day.format("hh:mm A D M YYYY"));
+  const day = dayjs.tz(date, "UTC");
   return day.format("hA");
 };
 
@@ -198,7 +194,6 @@ const EventDates = ({ eventDurationInDays, date }) => {
   dayjs.tz.setDefault("UTC");
   const isSingleDayEvent = eventDurationInDays === 1;
   const startDate = dayjs.tz(date);
-  console.log("startDate", startDate.format("Do (ddd) MMMM YYYY"));
   const endDate = startDate.add(eventDurationInDays - 1, "day"); // subtracting a day because it includes the start date as well
   const dates = isSingleDayEvent
     ? startDate.format("Do (ddd) MMMM YYYY")
