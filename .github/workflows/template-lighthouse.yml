@@ -11,6 +11,10 @@ defaults:
   run:
     shell: pwsh
 
+permissions:
+  contents: read
+  actions: write
+
 jobs:
   lighthouse-insights:
     name: Run Lighthouse Insights
