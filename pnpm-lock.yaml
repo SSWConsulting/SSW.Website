@@ -105,9 +105,6 @@ importers:
       lucide-react:
         specifier: ^0.477.0
         version: 0.477.0(react@18.3.1)
-      moment:
-        specifier: ^2.30.1
-        version: 2.30.1
       next:
         specifier: ^14.2.21
         version: 14.2.24(@babel/core@7.26.9)(@opentelemetry/api@1.9.0)(@playwright/test@1.51.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -174,18 +171,12 @@ importers:
       tailwindcss-gradients:
         specifier: ^3.0.0
         version: 3.0.0
-      timezone:
-        specifier: ^1.0.23
-        version: 1.0.23
       tinacms:
         specifier: 2.6.1
         version: 2.6.1(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.23.2)(sucrase@3.35.0)(typescript@5.8.2)
       usehooks-ts:
         specifier: ^3.1.1
         version: 3.1.1(react@18.3.1)
-      utc:
-        specifier: ^0.1.0
-        version: 0.1.0
       xss:
         specifier: ^1.0.15
         version: 1.0.15
@@ -4431,12 +4422,6 @@ packages:
   codemirror@5.65.18:
     resolution: {integrity: sha512-Gaz4gHnkbHMGgahNt3CA5HBk5lLQBqmD/pBgeB4kQU6OedZmqMBjlRF0LSrp2tJ4wlLNPm2FfaUd1pDy0mdlpA==}
 
-  coffee-script@1.12.7:
-    resolution: {integrity: sha512-fLeEhqwymYat/MpTPUjSKHVYYl0ec2mOyALEMLmzr5i1isuG+6jfI2j2d5oBO3VIzgUXgBVIcOT9uH1TFxBckw==}
-    engines: {node: '>=0.8.0'}
-    deprecated: CoffeeScript on NPM has moved to "coffeescript" (no hyphen)
-    hasBin: true
-
   collect-v8-coverage@1.0.2:
     resolution: {integrity: sha512-lHl4d5/ONEbLlJvaJNtsF/Lz+WvB07u2ycqTYbdrq7UypDXailES4valYb2eWiJFxZlVmpGekfqoxQhzyFdT4Q==}
 
@@ -6993,9 +6978,6 @@ packages:
   moment@2.29.4:
     resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
 
-  moment@2.30.1:
-    resolution: {integrity: sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==}
-
   monaco-editor@0.31.0:
     resolution: {integrity: sha512-H3QmysEwxxY8oxmFhIFcY9JkuwilUDa6txdAxb797cVr7XFZX27a3SDwcGJmTlV9iGPwdh132r3KKCS5aNL4Gg==}
 
@@ -7977,11 +7959,6 @@ packages:
     resolution: {integrity: sha512-gAZ+kLqBdHarXB64XpAe2VCjB7rIRv+mU8tfRWziHRJ5umKsIHN2tLLv6EtMw7WCdP19S0ERVMldNvxYCHnhSQ==}
     engines: {node: '>=8.6.0'}
 
-  requirejs@2.3.7:
-    resolution: {integrity: sha512-DouTG8T1WanGok6Qjg2SXuCMzszOo0eHeH9hDZ5Y4x8Je+9JB38HdTLT4/VA8OaUhBa0JPVHJ0pyBkM1z+pDsw==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-
   requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
 
@@ -8573,9 +8550,6 @@ packages:
     resolution: {integrity: sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg==}
     engines: {node: '>=10'}
 
-  timezone@1.0.23:
-    resolution: {integrity: sha512-yhQgk6qmSLB+TF8HGmApZAVI5bfzR1CoKUGr+WMZWmx75ED1uDewAZA8QMGCQ70TEv4GmM8pDB9jrHuxdaQ1PA==}
-
   tinacms@2.6.1:
     resolution: {integrity: sha512-wxxLOIhmxG15zNTR/fJO4NMuskcQE32yUXk8ghk7ORxKPBDFICIcUqmTVpPussCC7DRjWs17B+ywSsdy/+s93g==}
     peerDependencies:
@@ -8780,9 +8754,6 @@ packages:
     resolution: {integrity: sha512-eXL4nmJT7oCpkZsHZUOJo8hcX3GbsiDOa0Qu9F646fi8dT3XuSVopVqAcEiVzSKKH7UoDti23wNX3qGFxcW5Qg==}
     engines: {node: '>=0.10.0'}
 
-  underscore@1.13.7:
-    resolution: {integrity: sha512-GMXzWtsc57XAtguZgaQViUOzs0KTkk8ojr3/xAxXLITqf/3EMwxC0inyETfDFjH/Krbhuep0HNbbjI9i/q3F3g==}
-
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
@@ -8946,11 +8917,6 @@ packages:
     engines: {node: '>=16.15.0'}
     peerDependencies:
       react: ^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc
-
-  utc@0.1.0:
-    resolution: {integrity: sha512-CTHAsqD+4Zj41+6gJsOH8AecynE/L7GcAalKW2dMSMhQ2UCfZ3vM87pCs4K79bXl8HvGLUlzCnKyayiGHiOt+g==}
-    engines: {node: '>= 0.6.17'}
-    hasBin: true
 
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
@@ -14499,8 +14465,6 @@ snapshots:
 
   codemirror@5.65.18: {}
 
-  coffee-script@1.12.7: {}
-
   collect-v8-coverage@1.0.2: {}
 
   color-convert@1.9.3:
@@ -17750,8 +17714,6 @@ snapshots:
 
   moment@2.29.4: {}
 
-  moment@2.30.1: {}
-
   monaco-editor@0.31.0: {}
 
   motion-dom@12.4.10:
@@ -18795,8 +18757,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  requirejs@2.3.7: {}
-
   requires-port@1.0.0: {}
 
   reselect@4.1.8: {}
@@ -19531,8 +19491,6 @@ snapshots:
 
   throttle-debounce@3.0.1: {}
 
-  timezone@1.0.23: {}
-
   tinacms@2.6.1(@types/react@18.3.18)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(scheduler@0.23.2)(sucrase@3.35.0)(typescript@5.8.2):
     dependencies:
       '@ariakit/react': 0.4.15(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -19890,8 +19848,6 @@ snapshots:
 
   unc-path-regex@0.1.2: {}
 
-  underscore@1.13.7: {}
-
   undici-types@6.19.8: {}
 
   undici@5.28.5:
@@ -20066,14 +20022,6 @@ snapshots:
     dependencies:
       lodash.debounce: 4.0.8
       react: 18.3.1
-
-  utc@0.1.0:
-    dependencies:
-      coffee-script: 1.12.7
-      commander: 7.2.0
-      glob: 10.4.5
-      requirejs: 2.3.7
-      underscore: 1.13.7
 
   util-deprecate@1.0.2: {}
 
