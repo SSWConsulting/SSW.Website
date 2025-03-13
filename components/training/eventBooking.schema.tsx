@@ -106,7 +106,7 @@ const eventBookingSchema: Template = {
           label: "Start Date",
           name: eventBookingBlock.eventList.date,
           ui: {
-            //@ts-expect-error - Tina supports UTC but typing doesn't work
+            //@ts-expect-error - TODO: update when tina datetime picker is updated to support utc https://github.com/tinacms/tina.io/issues/2989
             utc: true,
             format: (value) => {
               const val =
@@ -122,7 +122,7 @@ const eventBookingSchema: Template = {
             component: wrapFieldsWithMeta(({ input }) => (
               <TimePicker defaultValue={"09:00"} input={input} />
             )),
-            //@ts-expect-error - Tina supports UTC but typing doesn't work
+            //@ts-expect-error - TODO: update when tina datetime picker is updated to support utc https://github.com/tinacms/tina.io/issues/2989
             utc: true,
           },
           name: "startTime",
@@ -134,7 +134,7 @@ const eventBookingSchema: Template = {
             component: wrapFieldsWithMeta(({ input }) => (
               <TimePicker input={input} defaultValue={"17:00"} />
             )),
-            //@ts-expect-error - Tina supports UTC but typing doesn't work
+            //@ts-expect-error - TODO: update when tina datetime picker is updated to support utc https://github.com/tinacms/tina.io/issues/2989
             utc: true,
           },
           name: "endTime",
