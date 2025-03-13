@@ -116,7 +116,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 data-tina-field={tinaField(schema.eventList[index])}
                 className="py-0.5 text-xs uppercase text-gray-500"
               >
-                {formatTimes(event)}
+                {formatTimes(event)} AEDT
               </div>
             </>
           )}
@@ -204,8 +204,7 @@ const EventDates = ({ eventDurationInDays, date }) => {
           <>
             ({startDate.format("ddd")} - {endDate.format("ddd")})
           </>
-        )}{" "}
-        AEST
+        )}
       </div>
     </>
   );
