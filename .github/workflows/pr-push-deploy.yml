@@ -43,13 +43,6 @@ jobs:
           base-coverage-file: coverage-report.json
           skip-step: all
           annotations: none
-  lighthouseInsight-test:
-    name: Run Lighthouse Insights
-    uses: ./.github/workflows/template-lighthouse.yml
-    permissions:
-      pull-requests: write
-    with:
-      url: "https://www.ssw.com.au"
 
   build:
     name: Build and upload artifacts
