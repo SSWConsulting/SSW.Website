@@ -4,7 +4,7 @@ import ThankyouPage from ".";
 export const dynamicParams = false;
 
 export const metadata: Metadata = {
-  title: "Thank you for consulting with SSW",
+  title: "Thank you for working with SSW",
 };
 
 export default async function Thankyou() {
