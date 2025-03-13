@@ -1,9 +1,6 @@
-import { utcDateToHoursMinutes } from "@/services/client/date.service";
 import { Events_BodyEventBookingEventList as Event } from "@/tina/types";
 import classNames from "classnames";
 import dayjs from "dayjs";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
 import React, { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { tinaField } from "tinacms/dist/react";
