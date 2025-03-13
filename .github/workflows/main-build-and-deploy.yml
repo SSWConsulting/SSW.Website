@@ -163,6 +163,3 @@ jobs:
     needs: swap-staging
     with:
       url: ${{ needs.swap-staging.outputs.app_service_prod_url }}
-    permissions:
-      id-token: write
-      contents: read
