@@ -163,5 +163,6 @@ jobs:
     needs: swap-staging
     permissions:
       actions: write
+      contents: read
     with:
       url: ${{ needs.swap-staging.outputs.app_service_prod_url }}
