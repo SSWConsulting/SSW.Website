@@ -161,5 +161,7 @@ jobs:
     name: Run Lighthouse Insights
     uses: ./.github/workflows/template-lighthouse.yml
     needs: swap-staging
+    permissions:
+      contents: write
     with:
       url: ${{ needs.swap-staging.outputs.app_service_prod_url }}
