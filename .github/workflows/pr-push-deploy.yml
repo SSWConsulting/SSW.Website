@@ -108,3 +108,5 @@ jobs:
     needs: pr-deploy
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
+    permissions:
+      pull-requests: write
