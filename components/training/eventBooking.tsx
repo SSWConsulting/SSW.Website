@@ -1,13 +1,13 @@
+import { Events_BodyEventBookingEventList as Event } from "@/tina/types";
 import classNames from "classnames";
 import dayjs from "dayjs";
-import { FC } from "react";
+import React, { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
-import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
+import { eventBookingBlock } from "./eventBooking.schema";
 import { EventBookingType, EventModel } from "./eventBookingType";
-
 export const isEmpty = (value) => {
   return (
     value === undefined ||
@@ -15,6 +15,12 @@ export const isEmpty = (value) => {
     (typeof value == "number" && value <= 0) ||
     (typeof value == "string" && value === "")
   );
+};
+
+export const formatTimeWithAmPm = (date) => {
+  if (!date) return null;
+  const day = dayjs.tz(date, "UTC");
+  return day.format("hA");
 };
 
 const classes = {
@@ -60,6 +66,17 @@ export const EventBooking: FC<EventBookingType> = ({ data }) => {
 };
 
 const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
+  const formatTimes = (event) => {
+    const startTime = event.startTime
+      ? formatTimeWithAmPm(new Date(event.startTime))
+      : "9AM";
+    const endTime = event.endTime
+      ? formatTimeWithAmPm(new Date(event.endTime))
+      : "5PM";
+
+    return `${startTime} - ${endTime}`;
+  };
+
   return (
     <div
       className={classNames(
@@ -95,8 +112,11 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                   date={event.date}
                 />
               </div>
-              <div className="py-0.5 text-xs uppercase text-gray-500">
-                {EventModel.TIMINGS}
+              <div
+                data-tina-field={tinaField(schema.eventList[index])}
+                className="py-0.5 text-xs uppercase text-gray-500"
+              >
+                {formatTimes(event)} AEDT
               </div>
             </>
           )}
@@ -115,9 +135,9 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
                 eventBookingBlock.eventList.bookingURL
               )}
             >
-              {new Date(event.date) > new Date() && (
+              {new Date(event.date) > new Date() && event.bookingURL && (
                 <CustomLink
-                  href={event.bookingURL == null ? "" : event.bookingURL}
+                  href={event.bookingURL}
                   className="done inline-flex cursor-pointer"
                 >
                   {EventModel.BOOKING_BTN_TEXT}
@@ -125,19 +145,7 @@ const EventCard = ({ event, count, index, eventDurationInDays, schema }) => {
               )}
 
               <div className="prose py-1 pr-0 text-xs">
-                <CustomLink
-                  className="flex items-center justify-end font-normal md:justify-start"
-                  href={
-                    event.location.directionURL == null
-                      ? ""
-                      : event.location.directionURL
-                  }
-                >
-                  <MdLocationOn className="m-icon" />
-                  <span className="capitalize">
-                    {EventModel.SSW} {event.city?.split(" ")[0]}
-                  </span>
-                </CustomLink>
+                <EventLocation event={event} />
               </div>
             </div>
           </div>
@@ -180,21 +188,24 @@ const addRightBorder = (index) => {
 
 const EventDates = ({ eventDurationInDays, date }) => {
   // this will return date fragment if the eventDurationInDays is equal to 1 => (28TH (WED) AUGUST 2023) or (this 28TH - 30TH SEPTEMBER 2022 \n (WED - FRI))
-  const startDate = dayjs(date);
+  dayjs.tz.setDefault("UTC");
+  const isSingleDayEvent = eventDurationInDays === 1;
+  const startDate = dayjs.tz(date);
   const endDate = startDate.add(eventDurationInDays - 1, "day"); // subtracting a day because it includes the start date as well
+  const dates = isSingleDayEvent
+    ? startDate.format("Do (ddd) MMMM YYYY")
+    : `${startDate.format("Do")} - ${endDate.format("Do MMMM YYYY")}`;
 
   return (
     <>
-      {eventDurationInDays === 1 ? (
-        startDate.format("Do (ddd) MMMM YYYY")
-      ) : (
-        <>
-          {startDate.format("Do")} - {endDate.format("Do MMMM YYYY")}
-          <div>
+      {dates}
+      <div>
+        {isSingleDayEvent || (
+          <>
             ({startDate.format("ddd")} - {endDate.format("ddd")})
-          </div>
-        </>
-      )}
+          </>
+        )}
+      </div>
     </>
   );
 };
@@ -249,98 +260,26 @@ const EventHeader = ({
   );
 };
 
-const gstTypeOptions = ["inc GST", "+ GST"];
-
-export const eventBookingBlock = {
-  eventBooking: "EventBooking",
-  eventDurationInDays: "eventDurationInDays",
-  price: "price",
-  discountPrice: "discountPrice",
-  discountNote: "discountNote",
-  suffix: "suffix",
-  eventList: {
-    value: "eventList",
-    city: "city",
-    date: "date",
-    bookingURL: "bookingURL",
-    location: "location",
-  },
-  gstText: "gstText",
-};
-
-export const eventBookingSchema: Template = {
-  name: eventBookingBlock.eventBooking,
-  label: "Events Booking",
-  ui: {
-    previewSrc: "/images/thumbs/tina/events-booking.jpg",
-  },
-  fields: [
-    {
-      type: "number",
-      label: "Duration (In Days)",
-      name: eventBookingBlock.eventDurationInDays,
-      required: true,
-    },
-    {
-      type: "number",
-      label: "Price",
-      name: eventBookingBlock.price,
-      required: true,
-    },
-    {
-      type: "number",
-      label: "Discount Price",
-      name: eventBookingBlock.discountPrice,
-    },
-    {
-      type: "string",
-      name: eventBookingBlock.gstText,
-      label: "Select GST Option",
-      options: gstTypeOptions,
-      required: true,
-    },
-
-    {
-      type: "string",
-      label: "Discount Note",
-      name: eventBookingBlock.discountNote,
-    },
-    {
-      type: "object",
-      label: "Event",
-      name: eventBookingBlock.eventList.value,
-      ui: {
-        itemProps: (item) => {
-          return { label: item?.city };
-        },
-      },
-      list: true,
-      fields: [
-        {
-          type: "string",
-          label: "City",
-          name: eventBookingBlock.eventList.city,
-        },
-        {
-          type: "datetime",
-          label: "Start Date",
-          name: eventBookingBlock.eventList.date,
-          ui: {
-            parse: (value) => value && value.format("YYYY-MM-DD"),
-          },
-        },
-        {
-          type: "string",
-          label: "Booking URL",
-          name: eventBookingBlock.eventList.bookingURL,
-        },
-        {
-          type: "reference",
-          label: "Location",
-          name: eventBookingBlock.eventList.location,
-          collections: ["locations"],
-        },
-      ],
-    },
-  ],
+const EventLocation = ({ event }: { event: Event }) => {
+  const classes = "flex items-center justify-end font-normal md:justify-start";
+  const Contents = () => (
+    <>
+      <MdLocationOn className="m-icon" />
+      <span className="capitalize">
+        {EventModel.SSW} {event.city?.split(" ")[0]}
+      </span>
+    </>
+  );
+  if (event.location?.directionURL) {
+    return (
+      <CustomLink className={classes} href={event.location?.directionURL || ""}>
+        <Contents />
+      </CustomLink>
+    );
+  }
+  return (
+    <span className={classes}>
+      <Contents />
+    </span>
+  );
 };
