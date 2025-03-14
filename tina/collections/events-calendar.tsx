@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Collection, TextField } from "tinacms";
 
 const datetimeFormat = {
@@ -94,6 +95,51 @@ export const eventsCalendarSchema: Collection = {
         {
           type: "reference",
           ui: {
+            optionComponent: (
+              props: { presenter: { name?: string }; profileImg: string },
+              _internalSys: { path: string }
+            ) => {
+              const presenter = props.presenter;
+              const ProfilePicture = ({
+                src,
+                alt,
+              }: {
+                src: string;
+                alt: string;
+              }) => {
+                const [imgLoaded, setImgLoaded] = useState(true);
+
+                return (
+                  <>
+                    {imgLoaded ? (
+                      // next image component is not available in the tina editor
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        onError={() => setImgLoaded(false)}
+                        className="size-8 rounded-full object-cover"
+                        src={src}
+                        alt={alt}
+                      />
+                    ) : (
+                      <div className="size-8 rounded-full bg-gray-400"></div>
+                    )}
+                  </>
+                );
+              };
+              if (!presenter.name) return _internalSys.path;
+
+              return (
+                <p className="flex min-h-8 items-center gap-4">
+                  {props.profileImg && (
+                    <ProfilePicture
+                      src={props.profileImg}
+                      alt={`${presenter.name} Profile`}
+                    />
+                  )}
+                  {presenter.name}{" "}
+                </p>
+              );
+            },
             validate: (value) => {
               if (!value) return "Please select a presenter";
             },
