@@ -5,8 +5,6 @@ import client from "@/tina/client";
 import { Metadata } from "next";
 import LogoPage from ".";
 
-export const dynamicParams = false;
-
 type GenerateMetaDataProps = {
   params: { filename: string[] };
   searchParams: { [key: string]: string | string[] | undefined };

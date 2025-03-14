@@ -6,8 +6,6 @@ import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import CompanyPage from "./index";
 
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
   let pageListData = await client.queries.companyConnection();
   const allPagesListData = pageListData;

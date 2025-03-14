@@ -3,8 +3,6 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ProductsPreview from "./products-preview";
 
-export const dynamicParams = false; // False will not allow Next to generate any routes on request - https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
-
 // Equavalent to getStaticPaths in Page Routing
 export async function generateStaticParams() {
   let PageListData = await client.queries.productsConnection();
