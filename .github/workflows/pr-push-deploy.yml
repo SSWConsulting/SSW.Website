@@ -54,6 +54,41 @@ jobs:
       contents: read
     secrets: inherit
 
+  bundle-analyze:
+    name: Bundle analyze report
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download bundle analyze artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: bundle-analyze-artifact
+          path: ./bundle-analyze-artifact
+
+      - name: Run PowerShell script to calculate bundle size
+        id: calculate-bundle-size
+        shell: pwsh
+        run: |
+          $totalSizeMB = .\scripts\calculate-bundle-size.ps1 -HtmlFilePath ./bundle-analyze-artifact/client.html
+          echo "total_parsed_size_mb=$totalSizeMB" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
+      - name: Comment on PR with bundle analyze report
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            ## Bundle Analyze Report
+
+            - Total Bundle Size: ${{ steps.calculate-bundle-size.outputs.total_parsed_size_mb }}
+
+            - Download bundle analyze artifact via: ${{ needs.build.outputs.bundle-artifact-url }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
+
   pr-deploy:
     name: Deploy to slot
     needs: build
