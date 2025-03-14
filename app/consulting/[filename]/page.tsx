@@ -31,8 +31,6 @@ type ConsultingPages = Awaited<
   ReturnType<typeof client.queries.consultingConnection>
 >;
 
-export const dynamicParams = false;
-
 type ConsultingPageParams = {
   filename: string;
 };
@@ -226,14 +224,18 @@ export default async function Consulting({
 const findConsultingPageType = async (
   filename: string
 ): Promise<ConsultingPageType> => {
-  const v2Pages = await client.queries.consultingv2Connection();
+  try {
+    const v2Pages = await client.queries.consultingv2({
+      relativePath: `${filename}.json`,
+    });
 
-  for (const page of v2Pages.data.consultingv2Connection.edges) {
-    if (page.node._sys.filename === filename) {
+    if (v2Pages) {
       return ConsultingPageType.New;
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (error) {
+    return ConsultingPageType.Old;
   }
-  return ConsultingPageType.Old;
 };
 
 enum ConsultingPageType {

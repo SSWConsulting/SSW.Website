@@ -37,10 +37,12 @@ export default function OfficePage({ props, tinaProps }) {
       )}
 
       <Container className="pt-2">
-        <Breadcrumbs
-          path={removeExtension(props.variables.relativePath)}
-          title={data.offices.seo.title}
-        />
+        {data.offices?.seo && (
+          <Breadcrumbs
+            path={removeExtension(props.variables.relativePath)}
+            title={data.offices.seo.title}
+          />
+        )}
         <div className="mt-8 md:flex">
           <div className="grow">
             <OfficeLayout office={data.offices} />
