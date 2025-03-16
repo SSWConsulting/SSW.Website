@@ -20,12 +20,14 @@ export const buttonSchema = [
   },
   {
     type: "string",
+    description: "The button link must be blank if you want to use this option",
     label: "Select lead capture form",
     name: "leadCaptureFormOption",
     options: bookingForms,
   },
   {
     type: "string",
+    description: "Leave this blank if you want to use lead capture form option",
     label: "Button Link",
     name: "buttonLink",
   },
