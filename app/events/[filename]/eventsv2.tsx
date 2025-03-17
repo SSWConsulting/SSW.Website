@@ -35,7 +35,7 @@ const Events2 = memo(
             >
               <div className="w-full">
                 {blocks ? (
-                  <Blocks prefix={"Consultingv2Blocks"} blocks={blocks} />
+                  <Blocks prefix={"EventsV2Blocks"} blocks={blocks} />
                 ) : (
                   <></>
                 )}
