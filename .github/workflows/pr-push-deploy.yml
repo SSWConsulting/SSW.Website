@@ -103,30 +103,10 @@ jobs:
       tests_to_run: "images seo-noindex"
 
   lighthouseInsights:
-    name: Lighthouse Insights
-    runs-on: ubuntu-latest
+    name: Run Lighthouse Insights
+    uses: ./.github/workflows/template-lighthouse.yml
     permissions:
       pull-requests: write
     needs: pr-deploy
-    steps:
-      - name: "Run Lighthouse Insights"
-        uses: ./.github/workflows/template-lighthouse.yml
-        with:
-          url: ${{ needs.pr-deploy.outputs.url }}
-
-      - name: Pull Docker image
-        run: |
-          docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
-
-      - name: Extract bundle analyze artifacts from Docker image
-        run: |
-          mkdir -p ./lighthouse-report
-          docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
-          docker cp temp-container:/website/.lighthouseci ./lighthouse-report
-          docker rm temp-container
-
-      - name: Upload Lighthouse report as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-report
-          path: ./lighthouse-report
+    with:
+      url: ${{ needs.pr-deploy.outputs.url }}
