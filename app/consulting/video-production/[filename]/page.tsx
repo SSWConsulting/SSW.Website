@@ -6,8 +6,6 @@ import { Metadata } from "next";
 import { TinaClient } from "../../../tina-client";
 import VideoProduction from "./video-production";
 
-export const dynamicParams = false;
-
 export async function generateStaticParams() {
   let pageListData = await client.queries.videoProductionConnection();
   const allPagesListData = pageListData;
