@@ -18,9 +18,9 @@ defaults:
   run:
     shell: pwsh
 
-permissions:
-  id-token: write
-  contents: read
+# permissions:
+#   id-token: write
+#   contents: read
 
 jobs:
   lighthouse-insights:
@@ -64,33 +64,33 @@ jobs:
             ${{ inputs.url }}/netug/sydney
             ${{ inputs.url }}/training/internship-fullstack
 
-      - name: Azure CLI - Login
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      # - name: Azure CLI - Login
+      #   uses: azure/login@v2
+      #   with:
+      #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
+      #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+      #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: ACR - Login
-        run: |
-          az acr login --name ${{ env.ACR_LOGIN_SERVER }}
+      # - name: ACR - Login
+      #   run: |
+      #     az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
-      - name: Pull Docker image
-        run: |
-          docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
+      # - name: Pull Docker image
+      #   run: |
+      #     docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
 
-      - name: Extract Lighthouse report from Docker image
-        run: |
-          mkdir -p ./lighthouse-report
-          docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
-          docker cp temp-container:/website/.lighthouseci ./lighthouse-report
-          docker rm temp-container
+      # - name: Extract Lighthouse report from Docker image
+      #   run: |
+      #     mkdir -p ./lighthouse-report
+      #     docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
+      #     docker cp temp-container:/website/.lighthouseci ./lighthouse-report
+      #     docker rm temp-container
 
       - name: Upload Lighthouse report as artifact
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
-          path: ./lighthouse-report
+          path: /home/runner/work/SSW.Website/SSW.Website/.lighthouseci
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
