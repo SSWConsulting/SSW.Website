@@ -46,12 +46,18 @@ jobs:
             ${{ inputs.url }}/netug/sydney
             ${{ inputs.url }}/training/internship-fullstack
 
+      - name: Log root directory
+        run: |
+          echo "Current working directory: $(pwd)"
+          echo "Listing contents of the repository root:"
+          ls -la
+
       - name: Upload Lighthouse report as artifact
         if: github.event_name != 'pull request'
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
-          path: .lighthouseci/
+          path: ./.lighthouseci
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
