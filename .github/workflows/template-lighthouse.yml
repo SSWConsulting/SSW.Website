@@ -7,11 +7,11 @@ on:
         type: string
         required: true
     secrets:
-      secrets.AZURE_CLIENT_ID:
+      AZURE_CLIENT_ID:
         required: true
-      secrets.AZURE_TENANT_ID:
+      AZURE_TENANT_ID:
         required: true
-      secrets.AZURE_SUBSCRIPTION_ID:
+      AZURE_SUBSCRIPTION_ID:
         required: true
 
 defaults:
@@ -24,13 +24,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
         with:
           path: ./.github
+
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
+
       - name: Wait for Slot to be available
         uses: jtalk/url-health-check-action@v2
         with:
@@ -84,6 +87,7 @@ jobs:
         with:
           name: lighthouse-report
           path: ./lighthouse-report
+
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
         run: |
