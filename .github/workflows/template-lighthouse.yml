@@ -18,6 +18,10 @@ defaults:
   run:
     shell: pwsh
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   lighthouse-insights:
     name: Run Lighthouse Insights
@@ -75,7 +79,7 @@ jobs:
         run: |
           docker pull ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
 
-      - name: Extract bundle analyze artifacts from Docker image
+      - name: Extract Lighthouse report from Docker image
         run: |
           mkdir -p ./lighthouse-report
           docker create --name temp-container ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.number }}
