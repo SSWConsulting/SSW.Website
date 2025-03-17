@@ -163,8 +163,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0
       tailwind-merge:
-        specifier: ^2.5.4
-        version: 2.6.0
+        specifier: ^3.0.2
+        version: 3.0.2
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17(ts-node@10.9.2(@types/node@20.17.24)(typescript@5.8.2))
@@ -8520,6 +8520,9 @@ packages:
 
   tailwind-merge@2.6.0:
     resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
+
+  tailwind-merge@3.0.2:
+    resolution: {integrity: sha512-l7z+OYZ7mu3DTqrL88RiKrKIqO3NcpEO8V/Od04bNpvk0kiIFndGEoqfuzvj4yuhRkHKjRkII2z+KS2HfPcSxw==}
 
   tailwindcss-gradients@3.0.0:
     resolution: {integrity: sha512-EM1OreQggjWW6WuaiHKy02j1ZxgQIEp2zj0cruf4XMZ1RoCBpb1a14i/CiTE9rjl+APk57oCb3l+kbsJy4W4EA==}
@@ -19483,6 +19486,8 @@ snapshots:
   tabbable@6.2.0: {}
 
   tailwind-merge@2.6.0: {}
+
+  tailwind-merge@3.0.2: {}
 
   tailwindcss-gradients@3.0.0:
     dependencies:
