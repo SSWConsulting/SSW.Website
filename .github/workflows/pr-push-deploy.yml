@@ -110,3 +110,4 @@ jobs:
     needs: pr-deploy
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
+    secrets: inherit

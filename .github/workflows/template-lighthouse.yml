@@ -6,6 +6,13 @@ on:
       url:
         type: string
         required: true
+    secrets:
+      secrets.AZURE_CLIENT_ID:
+        required: true
+      secrets.AZURE_TENANT_ID:
+        required: true
+      secrets.AZURE_SUBSCRIPTION_ID:
+        required: true
 
 defaults:
   run:
