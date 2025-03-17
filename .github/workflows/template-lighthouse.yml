@@ -46,6 +46,12 @@ jobs:
             ${{ inputs.url }}/netug/sydney
             ${{ inputs.url }}/training/internship-fullstack
 
+      - name: Upload Lighthouse report as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-report
+          path: lighthouseci/
+
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
         run: |
