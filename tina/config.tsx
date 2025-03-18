@@ -13,11 +13,8 @@ import {
   consultingSchema,
   consultingTagSchema,
 } from "./collections/consulting";
-import {
-  consultingv2Schema,
-  consultingv2TechnologyGroupsSchema,
-  consultingv2TechnologySchema,
-} from "./collections/consultingv2";
+
+import { consultingv2Schema } from "./collections/consultingv2";
 import { employmentSchema } from "./collections/employment";
 import { eventsIndexSchema, eventsSchema } from "./collections/events";
 import { eventsCalendarSchema } from "./collections/events-calendar";
@@ -37,7 +34,11 @@ import { partnerIndexSchema } from "./collections/partner";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { presenterSchema } from "./collections/presenter";
 import { productsIndexSchema, productsSchema } from "./collections/products";
-import { technologiesSchema } from "./collections/technologies";
+import {
+  technologiesSchema,
+  v2TechnologyGroupsSchema,
+  v2TechnologySchema,
+} from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
@@ -97,8 +98,8 @@ const pageSchemas = [
 ];
 
 const schemas = [
-  consultingv2TechnologySchema,
-  consultingv2TechnologyGroupsSchema,
+  v2TechnologySchema,
+  v2TechnologyGroupsSchema,
   paymentDetailsSchema,
   clientsCategorySchema,
   eventsCalendarSchema,

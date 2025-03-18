@@ -341,7 +341,7 @@
     {
       "technologyGroups": [
         {
-          "technologyGroup": "content/consultingv2Technologies/groups/Artificial-Intelligence.mdx"
+          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
         }
       ],
       "isStacked": false,

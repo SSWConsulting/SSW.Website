@@ -174,7 +174,7 @@ export async function generateMetadata({
   params: { filename },
 }: GenerateMetaDataProps): Promise<Metadata> {
   const isNewConsultingPage = Boolean(await findConsultingPageType(filename));
-
+  console.log("isNewConsultingPage", isNewConsultingPage);
   const tinaProps = isNewConsultingPage
     ? await newConsultingPageData(filename)
     : await consultingPageData(filename);
@@ -231,10 +231,11 @@ const findConsultingPageType = async (
     if (v2Pages) {
       return ConsultingPageType.New;
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
+    console.log("my error", error);
     return ConsultingPageType.Old;
   }
+  console.log("Consulting page fetch returned void");
 };
 
 enum ConsultingPageType {

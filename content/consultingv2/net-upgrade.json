@@ -458,7 +458,7 @@
     {
       "technologyGroups": [
         {
-          "technologyGroup": "content/consultingv2Technologies/groups/Some-other-tech.mdx"
+          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
         }
       ],
       "techCardStyle": 0,
