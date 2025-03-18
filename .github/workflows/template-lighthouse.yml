@@ -34,7 +34,6 @@ jobs:
         id: LHSAction
         with:
           configPath: ./.lighthouserc.json
-          # uploadArtifacts: true
           urls: |
             ${{ inputs.url }}
             ${{ inputs.url }}/articles
@@ -56,15 +55,6 @@ jobs:
           name: lighthouse-report
           include-hidden-files: true
           path: ${{ steps.LHSAction.outputs.resultsPath }}
-
-      - name: Log root folder
-        run: |
-          echo "Current working directory: $(pwd)"
-          echo "Listing contents of the repository root:"
-          ls -la
-
-      - name: Log .lighthouseci folder
-        run: ls -la .lighthouseci
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
