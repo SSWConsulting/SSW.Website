@@ -33,6 +33,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc.json
+          uploadArtifacts: true
           urls: |
             ${{ inputs.url }}
             ${{ inputs.url }}/articles
@@ -54,11 +55,14 @@ jobs:
           echo "Listing contents of the repository root:"
           ls -la
 
-      - name: Upload Lighthouse report as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-report
-          path: /home/runner/work/SSW.Website/SSW.Website/.lighthouseci
+      - name: Debug - List .lighthouseci Contents
+        run: ls -la .lighthouseci
+
+      # - name: Upload Lighthouse report as artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: lighthouse-report
+      #     path: /home/runner/work/SSW.Website/SSW.Website/.lighthouseci
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
