@@ -31,7 +31,7 @@ jobs:
 
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
-        id: LHSAction
+        id: lighthouse-test-run
         with:
           configPath: ./.lighthouserc.json
           urls: |
@@ -54,7 +54,7 @@ jobs:
         with:
           name: lighthouse-report
           include-hidden-files: true
-          path: ${{ steps.LHSAction.outputs.resultsPath }}
+          path: ${{ steps.lighthouse-test-run.outputs.resultsPath }}
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
