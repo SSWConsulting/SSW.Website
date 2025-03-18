@@ -31,9 +31,10 @@ jobs:
 
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
+        id: LHSAction
         with:
           configPath: ./.lighthouserc.json
-          uploadArtifacts: true
+          # uploadArtifacts: true
           urls: |
             ${{ inputs.url }}
             ${{ inputs.url }}/articles
@@ -49,20 +50,20 @@ jobs:
             ${{ inputs.url }}/netug/sydney
             ${{ inputs.url }}/training/internship-fullstack
 
-      - name: Log root directory
+      - name: Upload Lighthouse report as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: ${{ steps.LHSAction.outputs.resultsPath }}
+
+      - name: Log root folder
         run: |
           echo "Current working directory: $(pwd)"
           echo "Listing contents of the repository root:"
           ls -la
 
-      - name: Debug - List .lighthouseci Contents
+      - name: Log .lighthouseci folder
         run: ls -la .lighthouseci
-
-      # - name: Upload Lighthouse report as artifact
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: lighthouse-report
-      #     path: /home/runner/work/SSW.Website/SSW.Website/.lighthouseci
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate

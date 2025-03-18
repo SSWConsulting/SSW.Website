@@ -106,10 +106,7 @@ jobs:
     name: Run Lighthouse Insights
     uses: ./.github/workflows/template-lighthouse.yml
     permissions:
-      # id-token: write
-      # contents: read
       pull-requests: write
     needs: pr-deploy
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
-    # secrets: inherit
