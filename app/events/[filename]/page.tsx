@@ -5,10 +5,14 @@ import "aos/dist/aos.css"; // This is important to keep the animation
 import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { TinaClient } from "../../tina-client";
 import EventsPage from "./events";
 import EventsV2Page from "./eventsv2";
 
+type EventsContentQuery = Awaited<
+  ReturnType<typeof client.queries.eventsContentQuery>
+>;
 export async function generateStaticParams() {
   const pagesListData = await client.queries.eventsConnection();
 
@@ -39,10 +43,15 @@ const newEventsPageData = async (filename: string) => {
 };
 
 const getData = async (filename: string) => {
-  const tinaProps = await client.queries.eventsContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  let tinaProps: EventsContentQuery;
+  try {
+    tinaProps = await client.queries.eventsContentQuery({
+      relativePath: `${filename}.mdx`,
+      date: TODAY.toISOString(),
+    });
+  } catch {
+    notFound();
+  }
 
   const seo = tinaProps.data.events.seo;
 
@@ -85,9 +94,9 @@ export async function generateMetadata({
 }: GenerateMetaDataProps): Promise<Metadata> {
   let tinaProps;
   if (await isNewEventsPage(params.filename)) {
-    tinaProps = await getData(params.filename);
-  } else {
     tinaProps = await newEventsPageData(params.filename);
+  } else {
+    tinaProps = await getData(params.filename);
   }
 
   const seo = tinaProps.props.seo;
