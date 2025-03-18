@@ -48,7 +48,7 @@ const TimePicker = ({ input, defaultValue }) => {
   );
 };
 
-const eventBookingSchema: Template = {
+export const eventBookingSchema: Template = {
   name: eventBookingBlock.eventBooking,
   label: "Events Booking",
   ui: {
@@ -161,5 +161,3 @@ const dateFormat = Intl.DateTimeFormat("en-AU", {
   year: "numeric",
   month: "short",
 });
-
-export default eventBookingSchema;
