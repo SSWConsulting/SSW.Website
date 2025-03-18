@@ -1,5 +1,6 @@
 import client from "@/tina/client";
 
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
@@ -8,7 +9,6 @@ import {
   getFutureEvents,
   getPastEvents,
   PAST_EVENTS_QUERY_KEY,
-  TODAY,
 } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
@@ -33,10 +33,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const getData = async () => {
-  const tinaProps = await client.queries.eventsIndexContentQuery({
-    relativePath: "index.mdx",
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.eventsIndexContentQuery,
+    "index"
+  );
 
   const queryClient = new QueryClient();
 

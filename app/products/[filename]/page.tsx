@@ -1,3 +1,4 @@
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
@@ -27,11 +28,12 @@ export async function generateStaticParams() {
 }
 
 const getData = async (filename: string) => {
-  const data = await client.queries.productContentQuery({
-    relativePath: `${filename}.mdx`,
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.productContentQuery,
+    filename
+  );
 
-  return { ...data };
+  return { ...tinaProps };
 };
 
 type GenerateMetaDataProps = {

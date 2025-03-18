@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { TinaClient } from "../tina-client";
 
-import { TODAY } from "@/hooks/useFetchEvents";
 import { useSEO } from "@/hooks/useSeo";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import EmploymentPage from "./";
 
@@ -15,10 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const getData = async () => {
-  const tinaProps = await client.queries.employmentPageQuery({
-    relativePath: "index.mdx",
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.employmentPageQuery,
+    "index"
+  );
 
   const seo = tinaProps.data.employment.seo;
   if (seo && !seo.canonical) {
