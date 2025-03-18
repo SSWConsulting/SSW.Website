@@ -4,7 +4,14 @@ import client from "@/tina/client";
 import { useEffect, useState } from "react";
 import { CardCarousel } from "../cardCarousel/cardCarousel";
 
-export const TechnologyCardCarousel = ({ data }) => {
+import { Consultingv2BlocksTechnologyCardCarousel as TechnologyCarouselData } from "@/tina/types";
+
+type TechnologyCardCarouselProps = {
+  data: TechnologyCarouselData;
+};
+export const TechnologyCardCarousel = ({
+  data,
+}: TechnologyCardCarouselProps) => {
   const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
@@ -14,9 +21,11 @@ export const TechnologyCardCarousel = ({ data }) => {
           associatedGroup: {
             technologyGroupsv2: {
               name: {
-                in: data.technologyGroups?.map(
-                  (group) => group.technologyGroup?.name
-                ),
+                in: data.technologyGroups
+                  ?.map((group) => {
+                    return group.technologyGroup?.name;
+                  })
+                  .filter((name) => name),
               },
             },
           },
