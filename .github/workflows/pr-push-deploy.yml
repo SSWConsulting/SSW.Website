@@ -107,6 +107,6 @@ jobs:
     uses: ./.github/workflows/template-lighthouse.yml
     permissions:
       pull-requests: write
-      contents: read
+      contents: write
     with:
       url: https://app-sswwebsite-9eb3-pr-3740.azurewebsites.net
