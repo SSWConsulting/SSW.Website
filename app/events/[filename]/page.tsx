@@ -1,8 +1,8 @@
 import { VideoCardType } from "@/components/util/videoCards";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
-import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -43,15 +43,10 @@ const newEventsPageData = async (filename: string) => {
 };
 
 const getData = async (filename: string) => {
-  let tinaProps: EventsContentQuery;
-  try {
-    tinaProps = await client.queries.eventsContentQuery({
-      relativePath: `${filename}.mdx`,
-      date: TODAY.toISOString(),
-    });
-  } catch {
-    notFound();
-  }
+  const tinaProps = await fetchTinaData(
+    client.queries.eventsContentQuery,
+    filename
+  );
 
   const seo = tinaProps.data.events.seo;
 

@@ -1,8 +1,8 @@
 import { MediaCardProps } from "@/components/consulting/mediaCard/mediaCard";
 import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
+import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
-import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
@@ -16,9 +16,6 @@ const openSans = Open_Sans({
   display: "swap",
   weight: ["300", "400", "600"],
 });
-type NewConsultingPage = Awaited<
-  ReturnType<typeof client.queries.consultingv2>
->;
 
 type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
@@ -75,9 +72,12 @@ export async function generateStaticParams(): Promise<ConsultingPageParams[]> {
 }
 
 const newConsultingPageData = cache(async (filename: string) => {
-  const tinaProps: NewConsultingPage = await client.queries.consultingv2({
-    relativePath: `${filename}.json`,
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.consultingv2,
+    filename,
+    FileType.JSON
+  );
+
   const global = await client.queries.global({ relativePath: "index.json" });
   const seo = tinaProps.data.consultingv2.seo;
   return {
@@ -95,10 +95,10 @@ const newConsultingPageData = cache(async (filename: string) => {
 });
 
 const consultingPageData = cache(async (filename: string) => {
-  const tinaProps = await client.queries.consultingContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.consultingContentQuery,
+    filename
+  );
 
   const seo = tinaProps.data.consulting.seo;
 
