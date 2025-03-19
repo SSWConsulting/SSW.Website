@@ -1,14 +1,18 @@
 import json
 import os
 import glob
+from urllib.parse import urlparse
 
 # Define paths
 TREEMAP_FOLDER = "./.lighthouseci"
-OUTPUT_FILE_PATH = "lighthouse-report.mdx"  # The MDX file to be created
-from urllib.parse import urlparse
-
+PROD_TREEMAP_FOLDER = "./prod-lighthouseci"
+OUTPUT_FILE_PATH = "lighthouse-report.md"
+PROD_OUTPUT_FILE_PATH = "prod-lighthouse-report.md"
 
 important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
+
+github_event_name = os.getenv("GITHUB_EVENT_NAME")
+print(f"🔍 GitHub event name: {github_event_name}")
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
@@ -48,17 +52,17 @@ def get_total_and_unused_bytes_for_url(url):
         print(f"❌ Error: Failed to parse {treemap_data_file}.")
         return 0, 0
 
-def generate_lighthouse_mdx():
-    """Generates an MDX-formatted Lighthouse report from the manifest.json file."""
-    manifest_file = glob.glob(os.path.join(TREEMAP_FOLDER, "manifest.json"))
+def generate_lighthouse_md(treemap_folder):
+    """Generates an MD-formatted Lighthouse report from the manifest.json file."""
+    manifest_file = glob.glob(os.path.join(treemap_folder, "manifest.json"))
 
     if not manifest_file:
-        raise FileNotFoundError("❌ Error: manifest.json not found in " + TREEMAP_FOLDER)
+        raise FileNotFoundError("❌ Error: manifest.json not found in " + treemap_folder)
 
     with open(manifest_file[0], "r") as file:
         data = json.load(file)
 
-    mdx_output = [
+    md_output = [
         "## 🚀 Lighthouse Report\n",
         "| 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |",
         "| --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |"
@@ -75,19 +79,27 @@ def generate_lighthouse_mdx():
         parsed_url = urlparse(url)
         url_display = f"⭐ {url}" if parsed_url.path in important_paths else url
 
-        mdx_output.append(
+        md_output.append(
             f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
         )
 
-    return "\n".join(mdx_output)
+    return "\n".join(md_output)
 
-# Generate the report and save to an MDX file
-mdx_content = generate_lighthouse_mdx()
+def write_report_to_file(report_content, output_file_path):
+    # Write the MD content to a file
+    with open(OUTPUT_FILE_PATH, "w", encoding="utf-8") as md_file:
+        md_file.write(md_content)
 
-# Write the MDX content to a file
-with open(OUTPUT_FILE_PATH, "w", encoding="utf-8") as mdx_file:
-    mdx_file.write(mdx_content)
+# Generate the report for already deployed production site and write to file
+if github_event_name == "pulll_request":
+    prod_md_content = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
+    write_report_to_file(prod_md_content, PROD_OUTPUT_FILE_PATH)
+    print(f"✅ Lighthouse report successfully saved to {PROD_OUTPUT_FILE_PATH}!")
 
+# Generate the report for just deployed site and write to file
+# TODO: compare with prod report if it is pull request event and generate comparison report
+md_content = generate_lighthouse_md(TREEMAP_FOLDER)
+write_report_to_file(md_content, OUTPUT_FILE_PATH)
 print(f"✅ Lighthouse report successfully saved to {OUTPUT_FILE_PATH}!")
 
 # Output to GitHub Actions (if running in GitHub Actions)
@@ -95,5 +107,5 @@ github_output = os.getenv('GITHUB_OUTPUT')
 
 if github_output:
     with open(github_output, 'a') as fh:
-        print(f"report<<EOF\n{mdx_content}\nEOF", file=fh)
+        print(f"report<<EOF\n{md_content}\nEOF", file=fh)
     print("✅ Lighthouse report outputted to GitHub Actions!")
