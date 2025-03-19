@@ -107,6 +107,7 @@ jobs:
     uses: ./.github/workflows/template-lighthouse.yml
     permissions:
       pull-requests: write
+      contents: read
     needs: pr-deploy
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
