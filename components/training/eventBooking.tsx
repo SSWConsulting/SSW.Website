@@ -3,7 +3,7 @@ import classNames from "classnames";
 import dayjs from "dayjs";
 import React, { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
-import { Template, wrapFieldsWithMeta } from "tinacms";
+import { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
@@ -376,9 +376,9 @@ export const eventBookingSchema: Template = {
           label: "Start Time",
           type: "datetime",
           ui: {
-            component: wrapFieldsWithMeta(({ input }) => (
+            component: ({ input }) => (
               <TimePicker defaultValue={"09:00"} input={input} />
-            )),
+            ),
             //@ts-expect-error - TODO: update when tina datetime picker is updated to support utc https://github.com/tinacms/tina.io/issues/2989
             utc: true,
           },
@@ -388,9 +388,9 @@ export const eventBookingSchema: Template = {
           label: "End Time",
           type: "datetime",
           ui: {
-            component: wrapFieldsWithMeta(({ input }) => (
+            component: ({ input }) => (
               <TimePicker input={input} defaultValue={"17:00"} />
-            )),
+            ),
             //@ts-expect-error - TODO: update when tina datetime picker is updated to support utc https://github.com/tinacms/tina.io/issues/2989
             utc: true,
           },
