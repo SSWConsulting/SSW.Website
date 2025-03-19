@@ -66,10 +66,10 @@ def generate_lighthouse_mdx():
 
     for result in data:
         url = result["url"]
-        performance = (result["summary"]["performance"] or 0) * 100
-        accessibility = (result["summary"]["accessibility"] or 0) * 100
-        best_practices = (result["summary"]["best-practices"] or 0) * 100
-        seo = (result["summary"]["seo"] or 0) * 100
+        performance = result["summary"]["performance"] * 100
+        accessibility = result["summary"]["accessibility"] * 100
+        best_practices = result["summary"]["best-practices"] * 100
+        seo = result["summary"]["seo"] * 100
 
         total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url)
         parsed_url = urlparse(url)
