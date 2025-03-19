@@ -34,6 +34,7 @@ jobs:
         id: lighthouse-test-run
         with:
           configPath: ./.lighthouserc.json
+          uploadArtifacts: true
           urls: |
             ${{ inputs.url }}
             ${{ inputs.url }}/articles
@@ -49,12 +50,12 @@ jobs:
             ${{ inputs.url }}/netug/sydney
             ${{ inputs.url }}/training/internship-fullstack
 
-      - name: Upload Lighthouse report as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-report
-          include-hidden-files: true
-          path: ${{ steps.lighthouse-test-run.outputs.resultsPath }}
+      # - name: Upload Lighthouse report as artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: lighthouse-report
+      #     include-hidden-files: true
+      #     path: ${{ steps.lighthouse-test-run.outputs.resultsPath }}
 
       - name: Display Lighthouse Results as a Table
         id: lighthouse-results-generate
@@ -79,3 +80,9 @@ jobs:
         run: |
           $report_content='${{ steps.lighthouse-results-generate.outputs.report }}'
           "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+
+      - name: Commit lighthouse report to repo
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          file_pattern: lighthouse-report.mdx
+          commit_message: "Update Lighthouse markdown report - ${{ github.run_number }}"
