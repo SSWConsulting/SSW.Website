@@ -19,15 +19,15 @@ def format_url_for_filename(url):
     formatted_url = url.replace("https://", "").replace("http://", "")
     return formatted_url.replace("-", "_").replace("/", "-_",1).replace("/", "_").replace(".", "_")
 
-def get_total_and_unused_bytes_for_url(url):
+def get_total_and_unused_bytes_for_url(url, treemap_folder):
     """Reads the corresponding JSON file for the URL and calculates total and unused bytes in MB."""
     try:
         formatted_url = format_url_for_filename(url)
         filename_pattern = formatted_url + "*.report.json"
 
-        print(f"🔍 Searching for {filename_pattern} in {TREEMAP_FOLDER}...")
+        print(f"🔍 Searching for {filename_pattern} in {treemap_folder}...")
 
-        matching_files = glob.glob(os.path.join(TREEMAP_FOLDER, filename_pattern))
+        matching_files = glob.glob(os.path.join(treemap_folder, filename_pattern))
 
         if not matching_files:
             print(f"❌ Error: No matching JSON file found for {url}.")
@@ -75,7 +75,7 @@ def generate_lighthouse_md(treemap_folder):
         best_practices = (result["summary"]["best-practices"] or 0) * 100
         seo = (result["summary"]["seo"] or 0) * 100
 
-        total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url)
+        total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url, treemap_folder)
         parsed_url = urlparse(url)
         url_display = f"⭐ {url}" if parsed_url.path in important_paths else url
 
@@ -86,9 +86,8 @@ def generate_lighthouse_md(treemap_folder):
     return "\n".join(md_output)
 
 def write_report_to_file(report_content, output_file_path):
-    # Write the MD content to a file
-    with open(OUTPUT_FILE_PATH, "w", encoding="utf-8") as md_file:
-        md_file.write(md_content)
+    with open(output_file_path, "w", encoding="utf-8") as md_file:
+        md_file.write(report_content)
 
 # Generate the report for already deployed production site and write to file
 if github_event_name == "pulll_request":
