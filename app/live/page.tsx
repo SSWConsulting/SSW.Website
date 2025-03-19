@@ -1,9 +1,9 @@
-import { TODAY } from "@/hooks/useFetchEvents";
 import { useSEO } from "@/hooks/useSeo";
 import {
   convertEventDatesToStrings,
   getNextEventToBeLiveStreamed,
 } from "@/services/server/events";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import LivePage from ".";
@@ -12,10 +12,10 @@ import { TinaClient } from "../tina-client";
 export const revalidate = 3600; // 1 hour
 
 const getData = async () => {
-  const tinaProps = await client.queries.liveContentQuery({
-    relativePath: "index.mdx",
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.liveContentQuery,
+    "index"
+  );
 
   const event = await getNextEventToBeLiveStreamed();
   const eventWithStaticProperties = convertEventDatesToStrings(event);

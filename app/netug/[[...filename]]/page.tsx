@@ -1,5 +1,6 @@
 import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
 import { useSEO } from "@/hooks/useSeo";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { EventInfo } from "framer-motion";
 import { Metadata } from "next";
@@ -11,9 +12,10 @@ export const revalidate = 3600; // 1 hour
 const getData = async (filename) => {
   filename = filename ? filename.join("/") : "index";
 
-  const tinaProps = await client.queries.userGroupPageContentQuery({
-    relativePath: `${filename}.mdx`,
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.userGroupPageContentQuery,
+    filename
+  );
 
   if (!tinaProps?.data?.userGroupPage?.__typename) {
     return {
