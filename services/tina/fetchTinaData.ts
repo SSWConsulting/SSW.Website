@@ -26,8 +26,7 @@ export async function fetchTinaData<T, V>(
     const response = await queryFunction(variables);
 
     return response;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  } catch {
     notFound();
   }
 }
