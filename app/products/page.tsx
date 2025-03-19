@@ -1,10 +1,11 @@
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ProductsIndexPreview from "./products-index-preview";
 
 const getData = async () => {
-  return await client.queries.productsIndexQuery();
+  return await fetchTinaData(client.queries.productsIndexQuery);
 };
 
 export async function generateMetadata(): Promise<Metadata> {
