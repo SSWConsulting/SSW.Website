@@ -30,7 +30,7 @@ export default function ConsultingIndex({ tinaProps }) {
             return {
               url:
                 p.externalUrl ||
-                p.page.id.replace("content/", "").replace(".mdx", ""),
+                p.page.id.replace("content", "").replace(".mdx", ""),
               title: p.title,
               description: p.description,
               logo: p.logo,

@@ -18,7 +18,6 @@ export interface TemplateButtonOptions extends ButtonTinaFields {
   colour?: ButtonColors;
   iconFirst?: boolean;
   icon?: string;
-  showLeadCaptureForm?: boolean;
   leadCaptureFormOption?: string;
   onClick?: () => void;
 }
@@ -29,7 +28,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const [open, setOpen] = useState(false);
     const variants: ColorVariant[] = ["primary", "secondary"];
     const { iconFirst, buttonText, colour, leadCaptureFormOption } = data;
-    const selectedFormId = globals.forms[leadCaptureFormOption];
+    const selectedFormId =
+      globals.forms[leadCaptureFormOption] || globals.forms[0];
     let jotFormLink = "https://www.jotform.com/";
 
     if (selectedFormId) {
@@ -40,7 +40,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <>
         <RippleButton
           onClick={() => {
-            if (data.showLeadCaptureForm) setOpen(true);
+            if (leadCaptureFormOption) setOpen(true);
           }}
           ref={ref}
           textTinaField={tinaField(data, "buttonText")}
@@ -61,7 +61,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
           {buttonText}
         </RippleButton>
-        {data.showLeadCaptureForm && (
+        {leadCaptureFormOption && open && (
           <Popup
             isVisible={open}
             showCloseIcon={true}

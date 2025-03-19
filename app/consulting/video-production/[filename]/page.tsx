@@ -1,12 +1,10 @@
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
-import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../../tina-client";
 import VideoProduction from "./video-production";
-
-export const dynamicParams = false;
 
 export async function generateStaticParams() {
   let pageListData = await client.queries.videoProductionConnection();
@@ -34,10 +32,10 @@ export async function generateStaticParams() {
 }
 
 const getData = async (filename: string) => {
-  const tinaProps = await client.queries.videoProductionContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.videoProductionContentQuery,
+    filename
+  );
 
   const seo = tinaProps.data.videoProduction.seo;
 

@@ -1,17 +1,15 @@
 import { useSEO } from "@/hooks/useSeo";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
-import { TODAY } from "hooks/useFetchEvents";
 import { Metadata } from "next";
 import OfficePage from ".";
 import { TinaClient } from "../../tina-client";
 
-export const dynamicParams = false;
-
 const getData = async (filename: string) => {
-  const tinaProps = await client.queries.officeContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.officeContentQuery,
+    filename
+  );
 
   return {
     props: {

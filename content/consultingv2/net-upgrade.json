@@ -35,7 +35,6 @@
       "buttons": [
         {
           "buttonText": "Schedule a FREE Initial Meeting",
-          "showLeadCaptureForm": true,
           "leadCaptureFormOption": "bookingJotFormId",
           "buttonLink": "",
           "iconFirst": false,
@@ -322,9 +321,8 @@
       "buttons": [
         {
           "buttonText": "Schedule a FREE Initial Meeting",
-          "showLeadCaptureForm": true,
           "leadCaptureFormOption": "bookingJotFormId",
-          "buttonLink": "https://www.jotform.com/250066954570056",
+          "buttonLink": "",
           "colour": 0
         }
       ],
@@ -502,7 +500,6 @@
       "buttons": [
         {
           "buttonText": "Schedule a FREE Initial Meeting",
-          "showLeadCaptureForm": true,
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

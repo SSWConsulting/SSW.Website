@@ -1,11 +1,12 @@
 import { MediaCardProps } from "@/components/consulting/mediaCard/mediaCard";
 import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
+import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
-import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import { cache } from "react";
 import { TinaClient } from "../../tina-client";
 import OldConsultingPage from "./consulting";
 import ConsultingPage2 from "./consulting2";
@@ -15,9 +16,6 @@ const openSans = Open_Sans({
   display: "swap",
   weight: ["300", "400", "600"],
 });
-type NewConsultingPage = Awaited<
-  ReturnType<typeof client.queries.consultingv2>
->;
 
 type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
@@ -29,8 +27,6 @@ type NewConsultingPages = Awaited<
 type ConsultingPages = Awaited<
   ReturnType<typeof client.queries.consultingConnection>
 >;
-
-export const dynamicParams = false;
 
 type ConsultingPageParams = {
   filename: string;
@@ -76,10 +72,13 @@ export async function generateStaticParams(): Promise<ConsultingPageParams[]> {
   return [...consultingPages, ...newConsultingPagesData];
 }
 
-const newConsultingPageData = async (filename: string) => {
-  const tinaProps: NewConsultingPage = await client.queries.consultingv2({
-    relativePath: `${filename}.json`,
-  });
+const newConsultingPageData = cache(async (filename: string) => {
+  const tinaProps = await fetchTinaData(
+    client.queries.consultingv2,
+    filename,
+    FileType.JSON
+  );
+
   const global = await client.queries.global({ relativePath: "index.json" });
   const seo = tinaProps.data.consultingv2.seo;
   return {
@@ -94,13 +93,13 @@ const newConsultingPageData = async (filename: string) => {
       ...tinaProps,
     },
   };
-};
+});
 
-const consultingPageData = async (filename: string) => {
-  const tinaProps = await client.queries.consultingContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+const consultingPageData = cache(async (filename: string) => {
+  const tinaProps = await fetchTinaData(
+    client.queries.consultingContentQuery,
+    filename
+  );
 
   const seo = tinaProps.data.consulting.seo;
 
@@ -165,7 +164,7 @@ const consultingPageData = async (filename: string) => {
       ...tinaProps,
     },
   };
-};
+});
 
 type GenerateMetaDataProps = {
   params: { filename: string };
@@ -225,14 +224,18 @@ export default async function Consulting({
 const findConsultingPageType = async (
   filename: string
 ): Promise<ConsultingPageType> => {
-  const v2Pages = await client.queries.consultingv2Connection();
+  try {
+    const v2Pages = await client.queries.consultingv2({
+      relativePath: `${filename}.json`,
+    });
 
-  for (const page of v2Pages.data.consultingv2Connection.edges) {
-    if (page.node._sys.filename === filename) {
+    if (v2Pages) {
       return ConsultingPageType.New;
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  } catch (error) {
+    return ConsultingPageType.Old;
   }
-  return ConsultingPageType.Old;
 };
 
 enum ConsultingPageType {

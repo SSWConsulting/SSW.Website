@@ -7,7 +7,7 @@ import { tweetEmbedSchema } from "../embeds/tweetEmbed";
 import { interestFormSchema } from "../events/interestForm";
 import { inlineJotFormSchema } from "../inlineJotForm/inlineJotForm";
 import { agreementFormBlockSchema } from "../terms-and-conditions/agreementForm";
-import { eventBookingSchema } from "../training/eventBooking";
+import { eventBookingSchema } from "../training/eventBooking.schema";
 import { locationBlockSchema } from "../training/locationBlock";
 import { presenterBlockSchema } from "../training/presenterBlock";
 import { trainingInformationSchema } from "../training/trainingInformation";

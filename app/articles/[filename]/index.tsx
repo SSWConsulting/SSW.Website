@@ -3,7 +3,7 @@ import ArticleAuthor from "@/components/articles/articleAuthor";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
-import SidebarPanel from "@/components/sidebar/sidebarPanel";
+import { SidebarPanel } from "@/components/sidebar/sidebarPanel";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import client from "@/tina/client";
@@ -79,7 +79,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
       {data.articles.subTitle && (
         <section
           className={classNames(
-            "prose prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 mx-auto w-full max-w-9xl flex-row px-8 pb-8 lg:flex"
+            "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 lg:flex"
           )}
         >
           <div data-tina-field={tinaField(data.articles, "subTitle")}>

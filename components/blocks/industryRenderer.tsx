@@ -1,8 +1,6 @@
 import { FaFileDownload } from "react-icons/fa";
-import { toast } from "react-toastify";
 import { Components } from "tinacms/dist/rich-text";
 import { getYouTubeId } from "../../helpers/embeds";
-import { BookingForm } from "../bookingForm/bookingForm";
 import Button from "../button/rippleButton";
 import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
@@ -56,14 +54,6 @@ export const VideoEmbed = ({ url }) => (
   </div>
 );
 
-const showSuccessToast = () => {
-  toast.success(
-    <div className="text-left">
-      {"Form submitted. We'll be in contact as soon as possible."}
-    </div>
-  );
-};
-
 export const industryRenderer: Components<{
   VideoEmbed: {
     url: string;
@@ -74,7 +64,6 @@ export const industryRenderer: Components<{
     buttonText: string;
     whitepaperFile: string;
   };
-  BookingForm: Record<string, never>;
   ContactUs: {
     buttonText: string;
     link: string;
@@ -94,7 +83,6 @@ export const industryRenderer: Components<{
   ...componentRenderer,
   VideoEmbed: (props) => <VideoEmbed {...props} />,
   Whitepaper: (props) => <Whitepaper {...props} />,
-  BookingForm: () => <BookingForm showSuccessToast={showSuccessToast} />,
   ContactUs: (props) => <ContactUs {...props} />,
   SolutionsRow: (props) => <SolutionsRow {...props} />,
 };

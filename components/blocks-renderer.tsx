@@ -1,5 +1,8 @@
 import dynamic from "next/dynamic";
-import { PaymentBlock } from "./blocks/payment-block";
+
+const PaymentBlock = dynamic(() =>
+  import("./blocks/payment-block").then((mod) => mod.PaymentBlock)
+);
 
 const BookingButton = dynamic(() =>
   import("./bookingButton/bookingButton").then((mod) => mod.BookingButton)

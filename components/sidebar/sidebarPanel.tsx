@@ -1,6 +1,6 @@
 "use client";
 
-import { classNames } from "tinacms";
+import classNames from "classnames";
 
 type SidebarPanelProps = {
   title?: string;
@@ -13,7 +13,7 @@ type SidebarPanelProps = {
   actionUrl?: string;
   actionText?: string;
 };
-const SidebarPanel = ({
+export const SidebarPanel = ({
   title,
   description,
   tinaFields,
@@ -44,5 +44,3 @@ const SidebarPanel = ({
     </>
   );
 };
-
-export default SidebarPanel;

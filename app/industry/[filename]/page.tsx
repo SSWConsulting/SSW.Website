@@ -1,11 +1,9 @@
-import { TODAY } from "@/hooks/useFetchEvents";
 import { useSEO } from "@/hooks/useSeo";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import IndustryPage from ".";
 import { TinaClient } from "../../tina-client";
-
-export const dynamicParams = false;
 
 type GenerateMetadataProps = {
   params: { filename: string };
@@ -28,10 +26,10 @@ export async function generateMetadata({
 }
 
 const getData = async (filename: string) => {
-  const tinaProps = await client.queries.industryContentQuery({
-    date: TODAY.toISOString(),
-    relativePath: `${filename}.mdx`,
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.industryContentQuery,
+    filename
+  );
 
   return {
     props: {

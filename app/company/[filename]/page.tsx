@@ -1,12 +1,10 @@
 import { HistoryTimelineCardProps } from "@/components/company/historyTimelineCard";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
-import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import CompanyPage from "./index";
-
-export const dynamicParams = false;
 
 export async function generateStaticParams() {
   let pageListData = await client.queries.companyConnection();
@@ -31,10 +29,10 @@ export async function generateStaticParams() {
 }
 
 const getData = async (filename: string) => {
-  const tinaProps = await client.queries.companyContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.companyContentQuery,
+    filename
+  );
 
   const seo = tinaProps.data.company.seo;
 

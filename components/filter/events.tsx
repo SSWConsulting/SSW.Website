@@ -389,7 +389,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             </div>
           </div>
         </div>
-        <div className="prose prose-img:mx-1 prose-img:my-0 prose-img:inline max-w-full">
+        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
           <TinaMarkdown content={event?.description} />
         </div>
         <div className="mb-1 mt-6 p-0 text-end">

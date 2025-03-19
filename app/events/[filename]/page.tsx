@@ -1,14 +1,12 @@
 import { VideoCardType } from "@/components/util/videoCards";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
-import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import EventsPages from "./index";
-
-export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const pagesListData = await client.queries.eventsConnection();
@@ -21,10 +19,10 @@ export async function generateStaticParams() {
 }
 
 const getData = async (filename: string) => {
-  const tinaProps = await client.queries.eventsContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.eventsContentQuery,
+    filename
+  );
 
   const seo = tinaProps.data.events.seo;
 
