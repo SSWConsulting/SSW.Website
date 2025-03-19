@@ -90,7 +90,7 @@ def write_report_to_file(report_content, output_file_path):
         md_file.write(report_content)
 
 # Generate the report for already deployed production site and write to file
-if github_event_name == "pulll_request":
+if github_event_name == "pull_request":
     prod_md_content = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
     write_report_to_file(prod_md_content, PROD_OUTPUT_FILE_PATH)
     print(f"✅ Lighthouse report successfully saved to {PROD_OUTPUT_FILE_PATH}!")
