@@ -1,4 +1,4 @@
-import { Template, wrapFieldsWithMeta } from "tinacms";
+import { Template } from "tinacms";
 
 import { utcDateToHoursMinutes } from "@/services/client/date.service";
 import React, { useState } from "react";
@@ -48,7 +48,7 @@ const TimePicker = ({ input, defaultValue }) => {
   );
 };
 
-const eventBookingSchema: Template = {
+export const eventBookingSchema: Template = {
   name: eventBookingBlock.eventBooking,
   label: "Events Booking",
   ui: {
@@ -119,9 +119,9 @@ const eventBookingSchema: Template = {
           label: "Start Time",
           type: "datetime",
           ui: {
-            component: wrapFieldsWithMeta(({ input }) => (
+            component: ({ input }) => (
               <TimePicker defaultValue={"09:00"} input={input} />
-            )),
+            ),
             //@ts-expect-error - TODO: update when tina datetime picker is updated to support utc https://github.com/tinacms/tina.io/issues/2989
             utc: true,
           },
@@ -131,9 +131,9 @@ const eventBookingSchema: Template = {
           label: "End Time",
           type: "datetime",
           ui: {
-            component: wrapFieldsWithMeta(({ input }) => (
+            component: ({ input }) => (
               <TimePicker input={input} defaultValue={"17:00"} />
-            )),
+            ),
             //@ts-expect-error - TODO: update when tina datetime picker is updated to support utc https://github.com/tinacms/tina.io/issues/2989
             utc: true,
           },
@@ -161,5 +161,3 @@ const dateFormat = Intl.DateTimeFormat("en-AU", {
   year: "numeric",
   month: "short",
 });
-
-export default eventBookingSchema;

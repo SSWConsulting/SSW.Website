@@ -1,5 +1,5 @@
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
-import { TODAY } from "hooks/useFetchEvents";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../../tina-client";
@@ -28,10 +28,10 @@ export async function generateStaticParams() {
 }
 
 const getData = async (filename: string) => {
-  const tinaProps = await client.queries.caseStudyContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.caseStudyContentQuery,
+    filename
+  );
 
   const seo = tinaProps.data.caseStudy.seo;
 

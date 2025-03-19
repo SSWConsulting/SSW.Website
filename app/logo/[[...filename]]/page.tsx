@@ -1,6 +1,6 @@
 import { TinaClient } from "@/app/tina-client";
-import { TODAY } from "@/hooks/useFetchEvents";
 import { useSEO } from "@/hooks/useSeo";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import LogoPage from ".";
@@ -44,10 +44,10 @@ export async function generateStaticParams() {
 const getData = async (filename: string[]) => {
   const fileNameUpdated = filename ? filename.join("/") : "index";
 
-  const tinaProps = await client.queries.logosContentQuery({
-    relativePath: `${fileNameUpdated}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.logosContentQuery,
+    fileNameUpdated
+  );
 
   return {
     props: {

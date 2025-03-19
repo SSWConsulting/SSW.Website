@@ -1,5 +1,5 @@
-import { TODAY } from "@/hooks/useFetchEvents";
 import { useSEO } from "@/hooks/useSeo";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import IndustryPage from ".";
@@ -19,9 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const getData = async () => {
-  const tinaProps = await client.queries.industryIndexQuery({
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(client.queries.industryIndexQuery);
 
   return {
     props: {

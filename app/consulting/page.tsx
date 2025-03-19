@@ -1,7 +1,7 @@
 import client from "@/tina/client";
 import { TinaClient } from "app/tina-client";
 
-import { TODAY } from "hooks/useFetchEvents";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ConsultingIndex from "./index";
@@ -21,9 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const getData = async () => {
-  const tinaProps = await client.queries.consultingIndexQuery({
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(client.queries.consultingIndexQuery);
 
   const seo = tinaProps.data.consultingIndex.seo;
   if (seo && !seo.canonical) {

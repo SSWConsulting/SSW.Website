@@ -1,3 +1,4 @@
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { dehydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import { ARTICLES_QUERY_KEY, getArticles } from "hooks/useFetchArticles";
@@ -27,18 +28,18 @@ async function getDehydratedClient(): Promise<DehydratedState> {
 }
 
 async function getData() {
-  const pageData = await client.queries.articlesIndexContentQuery({
-    relativePath: "index.mdx",
-    date: new Date().toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.articlesIndexContentQuery,
+    "index"
+  );
 
   const queryClient: DehydratedState = await getDehydratedClient();
   return {
     props: {
-      data: pageData.data,
-      query: pageData.query,
-      variables: pageData.variables,
-      relativePath: pageData.variables.relativePath,
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+      relativePath: tinaProps.variables.relativePath,
       dehydratedState: queryClient,
     },
   };
