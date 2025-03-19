@@ -163,6 +163,6 @@ jobs:
     needs: swap-staging
     permissions:
       actions: write
-      contents: read
+      contents: write
     with:
       url: https://${{ needs.swap-staging.outputs.app_service_prod_url }}
