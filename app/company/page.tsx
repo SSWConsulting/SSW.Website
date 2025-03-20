@@ -2,7 +2,7 @@ import client from "@/tina/client";
 import { TinaClient } from "app/tina-client";
 
 import { CompanyIndexProps } from "@/components/company/companyPageCard";
-import { TODAY } from "hooks/useFetchEvents";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import CompanyIndex from "./index";
@@ -22,10 +22,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const getData = async () => {
-  const tinaProps = await client.queries.companyIndexContentQuery({
-    relativePath: "index.mdx",
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.companyIndexContentQuery,
+    "index"
+  );
 
   const seo = tinaProps.data.companyIndex.seo;
 

@@ -1,6 +1,6 @@
 import client from "@/tina/client";
 
-import { TODAY } from "hooks/useFetchEvents";
+import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import Page from ".";
@@ -54,10 +54,8 @@ const getData = async (filename: string) => {
   if (!filename) {
     filename = "home";
   }
-  const tinaProps = await client.queries.contentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+
+  const tinaProps = await fetchTinaData(client.queries.contentQuery, filename);
 
   const sideBars = tinaProps.data.page?.sideBar || [];
   const preFetchedUpcomingEvents = await Promise.all(
