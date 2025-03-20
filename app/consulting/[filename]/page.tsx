@@ -21,56 +21,9 @@ type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
 >;
 
-type NewConsultingPages = Awaited<
-  ReturnType<typeof client.queries.consultingv2Connection>
->;
-type ConsultingPages = Awaited<
-  ReturnType<typeof client.queries.consultingConnection>
->;
-
 type ConsultingPageParams = {
   filename: string;
 };
-
-async function extractAllPages(query, field: string) {
-  let consultingFetch = await query();
-
-  const accmulatedPages = consultingFetch;
-
-  while (consultingFetch.data[field].pageInfo.hasNextPage) {
-    const lastCursor = consultingFetch.data[field].pageInfo.endCursor;
-
-    consultingFetch = await query({ after: lastCursor });
-
-    accmulatedPages.data[field].edges.push(
-      ...consultingFetch.data[field].edges
-    );
-  }
-  return accmulatedPages;
-}
-
-export async function generateStaticParams(): Promise<ConsultingPageParams[]> {
-  const newConsultingPages: NewConsultingPages = await extractAllPages(
-    client.queries.consultingv2Connection,
-    "consultingv2Connection"
-  );
-
-  const newConsultingPagesData: ConsultingPageParams[] =
-    newConsultingPages.data.consultingv2Connection.edges.map((page) => {
-      return { filename: page.node._sys.filename, isNewConsultingPage: true };
-    });
-
-  const consultingPagesData: ConsultingPages = await extractAllPages(
-    client.queries.consultingConnection,
-    "consultingConnection"
-  );
-  const consultingPages: ConsultingPageParams[] =
-    consultingPagesData.data.consultingConnection.edges.map((page) => {
-      return { filename: page.node._sys.filename, isNewConsultingPage: false };
-    });
-
-  return [...consultingPages, ...newConsultingPagesData];
-}
 
 const newConsultingPageData = cache(async (filename: string) => {
   const tinaProps = await fetchTinaData(

@@ -25,22 +25,6 @@ export async function generateMetadata({
   return { ...seoProps };
 }
 
-export async function generateStaticParams() {
-  const pagesListData = await client.queries.logosConnection();
-
-  return pagesListData.data.logosConnection.edges.map((page) => {
-    if (page.node._sys.filename === "index") {
-      return {
-        filename: [],
-      };
-    }
-
-    return {
-      filename: page.node._sys.breadcrumbs,
-    };
-  });
-}
-
 const getData = async (filename: string[]) => {
   const fileNameUpdated = filename ? filename.join("/") : "index";
 
