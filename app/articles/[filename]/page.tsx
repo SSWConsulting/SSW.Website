@@ -5,8 +5,6 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ArticlePage, { ArticleData, ArticlePageProps } from ".";
 
-type Articles = Awaited<ReturnType<typeof client.queries.articlesConnection>>;
-
 const getData = async (
   filename: string
 ): Promise<{
