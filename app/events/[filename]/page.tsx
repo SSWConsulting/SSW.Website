@@ -1,18 +1,14 @@
 import { VideoCardType } from "@/components/util/videoCards";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
-import { fetchTinaData } from "@/services/tina/fetchTinaData";
+import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import { TinaClient } from "../../tina-client";
 import EventsPage from "./events";
 import EventsV2Page from "./eventsv2";
 
-type EventsContentQuery = Awaited<
-  ReturnType<typeof client.queries.eventsContentQuery>
->;
 export async function generateStaticParams() {
   const pagesListData = await client.queries.eventsConnection();
 
@@ -24,9 +20,11 @@ export async function generateStaticParams() {
 }
 
 const newEventsPageData = async (filename: string) => {
-  const tinaProps = await client.queries.eventsv2({
-    relativePath: `${filename}.json`,
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.eventsv2,
+    filename,
+    FileType.JSON
+  );
   const global = await client.queries.global({ relativePath: "index.json" });
   const seo = tinaProps.data.eventsv2.seo;
   return {
@@ -110,7 +108,6 @@ const isNewEventsPage = async (filename: string): Promise<boolean> => {
     const v2Pages = await client.queries.eventsv2({
       relativePath: `${filename}.json`,
     });
-
     if (v2Pages) {
       return true;
     }
