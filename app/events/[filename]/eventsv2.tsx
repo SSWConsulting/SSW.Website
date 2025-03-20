@@ -18,25 +18,25 @@ const EventsV2Page = memo(
   function EventsV2Page({ tinaProps }: EventsV2PageProps<object>) {
     const { blocks, azureBanner } = tinaProps.data.eventsv2;
     return (
-        <div className="dark flex h-full flex-col">
-          <Section color={"toggleLightMode"}>
-            <Container
-              size="custom"
-              width="custom"
-              padding="custom"
-              className="w-full p-0"
-            >
-              <div className="w-full">
-                {blocks ? (
-                  <Blocks prefix={"Eventsv2Blocks"} blocks={blocks} />
-                ) : (
-                  <></>
-                )}
-              </div>
-            </Container>
-          </Section>
-          <PreFooter data={azureBanner} />
-        </div>
+      <div className="dark flex h-full flex-col">
+        <Section color={"toggleLightMode"}>
+          <Container
+            size="custom"
+            width="custom"
+            padding="custom"
+            className="w-full p-0"
+          >
+            <div className="w-full">
+              {blocks ? (
+                <Blocks prefix={"Eventsv2Blocks"} blocks={blocks} />
+              ) : (
+                <></>
+              )}
+            </div>
+          </Container>
+        </Section>
+        <PreFooter data={azureBanner} />
+      </div>
     );
   },
   (prevProps, newProps) => _.isEqual(prevProps, newProps)
