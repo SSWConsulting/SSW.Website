@@ -15,92 +15,92 @@ defaults:
     shell: pwsh
 
 jobs:
-  # run-tests-and-coverage:
-  #   name: Run tests & coverage
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     contents: write
-  #     pull-requests: write
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4
-  #       with:
-  #         node-version-file: ".nvmrc"
-  #     - uses: pnpm/action-setup@v4
-  #       with:
-  #         package_json_file: package.json
-  #     - name: Install dependencies
-  #       run: pnpm install
+  run-tests-and-coverage:
+    name: Run tests & coverage
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: package.json
+      - name: Install dependencies
+        run: pnpm install
 
-  #     - name: Run Tests & Coverage
-  #       run: pnpm test-and-coverage --outputFile=coverage-report.json
+      - name: Run Tests & Coverage
+        run: pnpm test-and-coverage --outputFile=coverage-report.json
 
-  #     - name: Upload Coverage Report to PR
-  #       uses: ArtiomTr/jest-coverage-report-action@v2
-  #       with:
-  #         github-token: ${{ secrets.GITHUB_TOKEN }}
-  #         coverage-file: coverage-report.json
-  #         base-coverage-file: coverage-report.json
-  #         skip-step: all
-  #         annotations: none
+      - name: Upload Coverage Report to PR
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: coverage-report.json
+          base-coverage-file: coverage-report.json
+          skip-step: all
+          annotations: none
 
-  # build:
-  #   name: Build and upload artifacts
-  #   uses: ./.github/workflows/template-build.yml
-  #   with:
-  #     tag: pr-${{ github.event.number }}
-  #   permissions:
-  #     id-token: write
-  #     contents: read
-  #   secrets: inherit
+  build:
+    name: Build and upload artifacts
+    uses: ./.github/workflows/template-build.yml
+    with:
+      tag: pr-${{ github.event.number }}
+    permissions:
+      id-token: write
+      contents: read
+    secrets: inherit
 
-  # pr-deploy:
-  #   name: Deploy to slot
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   permissions:
-  #     id-token: write
-  #     contents: read
-  #     pull-requests: write
-  #   outputs:
-  #     url: ${{ steps.deploy.outputs.url }}
-  #   steps:
-  #     - uses: actions/checkout@v4
+  pr-deploy:
+    name: Deploy to slot
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - uses: actions/checkout@v4
 
-  #     - name: Load .env file
-  #       uses: xom9ikk/dotenv@v2
-  #       with:
-  #         path: ./.github
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
 
-  #     - name: Deploy to slot
-  #       uses: ./.github/actions/deploy
-  #       id: deploy
-  #       with:
-  #         slot_name: pr-${{ github.event.number }}
-  #         AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-  #         AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-  #         AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-  #         AZURE_RESOURCE_GROUP: ${{ env.AZURE_RESOURCE_GROUP }}
-  #         APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
-  #         ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
-  #         IMAGE_NAME: ${{ env.IMAGE_NAME }}
-  #         AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
+      - name: Deploy to slot
+        uses: ./.github/actions/deploy
+        id: deploy
+        with:
+          slot_name: pr-${{ github.event.number }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          AZURE_RESOURCE_GROUP: ${{ env.AZURE_RESOURCE_GROUP }}
+          APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
+          ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
+          IMAGE_NAME: ${{ env.IMAGE_NAME }}
+          AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
 
-  #     - name: Comment on PR
-  #       uses: mshick/add-pr-comment@v2
-  #       with:
-  #         message: |
-  #           Deployed changes to <${{ steps.deploy.outputs.url }}>
-  #         repo-token: ${{ secrets.GITHUB_TOKEN }}
-  #         allow-repeats: true
+      - name: Comment on PR
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            Deployed changes to <${{ steps.deploy.outputs.url }}>
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
 
-  # ui-test:
-  #   name: Run Playwright Tests
-  #   needs: pr-deploy
-  #   uses: ./.github/workflows/template-ui-tests.yml
-  #   with:
-  #     deploy_url: ${{ needs.pr-deploy.outputs.url }}
-  #     tests_to_run: "images seo-noindex"
+  ui-test:
+    name: Run Playwright Tests
+    needs: pr-deploy
+    uses: ./.github/workflows/template-ui-tests.yml
+    with:
+      deploy_url: ${{ needs.pr-deploy.outputs.url }}
+      tests_to_run: "images seo-noindex"
 
   lighthouseInsights:
     name: Run Lighthouse Insights
