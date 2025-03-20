@@ -156,13 +156,3 @@ jobs:
 
           # Save to outputs
           echo "production_url=${PROD_URL}" >> $GITHUB_OUTPUT
-
-  lighthouse-insights:
-    name: Run Lighthouse Insights
-    uses: ./.github/workflows/template-lighthouse.yml
-    needs: swap-staging
-    permissions:
-      actions: write
-      contents: write
-    with:
-      url: https://${{ needs.swap-staging.outputs.app_service_prod_url }}

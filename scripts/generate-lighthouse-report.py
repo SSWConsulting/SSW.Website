@@ -6,11 +6,12 @@ from urllib.parse import urlparse
 # Define paths
 TREEMAP_FOLDER = "./.lighthouseci"
 PROD_TREEMAP_FOLDER = "./prod-lighthouseci"
-# OUTPUT_FILE_PATH = "lighthouse-report.md"
 PROD_OUTPUT_FILE_PATH = "prod-lighthouse-report.md"
 
 important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
 github_event_name = os.getenv("GITHUB_EVENT_NAME")
+github_output = os.getenv('GITHUB_OUTPUT')
+prod_scores = []
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
@@ -50,8 +51,6 @@ def get_total_and_unused_bytes_for_url(url, treemap_folder):
         print(f"❌ Error: Failed to parse {treemap_data_file}.")
         return 0, 0
 
-prod_scores = []
-
 def extract_path(url):
     if url.startswith("⭐ "):
         url = url[2:]
@@ -65,14 +64,12 @@ def generate_lighthouse_md(treemap_folder):
     with open(manifest_file[0], "r") as file:
         data = json.load(file)
 
-    prod_md_output = [
-        "## 🚀 Lighthouse Report\n",
-        "| 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |",
-        "| --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |"
-    ]
+    report_header = "🚀 Lighthouse Report"
+    if treemap_folder != PROD_TREEMAP_FOLDER:
+        report_header = "🚀 Lighthouse score comparison for PR slot and production"
 
-    pr_md_output = [
-        "## 🚀 Lighthouse score comparison for PR slot and production\n",
+    md_output = [
+        f"## {report_header}\n",
         "| 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |",
         "| --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |"
     ]
@@ -96,41 +93,32 @@ def generate_lighthouse_md(treemap_folder):
                 "total_bundle_size": total_bundle_size,
                 "unused_bundle_size": unused_bundle_size
             })
-            prod_md_output.append(
+            md_output.append(
                 f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
             )
-            return "\n".join(prod_md_output)
 
         if github_event_name == "pull_request" and treemap_folder == TREEMAP_FOLDER:
             prod_score = next((entry for entry in prod_scores if extract_path(entry["url_display"]) == extract_path(url_display)), None)
-            pr_md_output.append(
+            md_output.append(
                 f"| {url_display}<br>{prod_score['url_display']} | {int(performance)}<br>{prod_score['performance']} | {int(accessibility)}<br>{prod_score['accessibility']} | {int(best_practices)}<br>{prod_score['best_practices']} | {int(seo)}<br>{prod_score['seo']} | {total_bundle_size:.2f} MB<br>{prod_score['total_bundle_size']:.2f} MB | {unused_bundle_size:.2f} MB<br>{prod_score['unused_bundle_size']:.2f} MB |"
             )
-            return "\n".join(pr_md_output)
+
+        return "\n".join(md_output)
 
 def write_report_to_file(report_content, output_file_path):
     with open(output_file_path, "w", encoding="utf-8") as md_file:
         md_file.write(report_content)
 
-# Generate the report for already deployed production site and write to file
+# Generate the report for production and PR slot
 if github_event_name == "pull_request":
-    prod_md_content = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
-    write_report_to_file(prod_md_content, PROD_OUTPUT_FILE_PATH)
-    print(f"✅ Production Lighthouse report successfully saved to {PROD_OUTPUT_FILE_PATH}")
+    prod_output = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
+    write_report_to_file(prod_output, PROD_OUTPUT_FILE_PATH)
+    print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
 
-    md_content = generate_lighthouse_md(TREEMAP_FOLDER)
-    # write_report_to_file(md_content, OUTPUT_FILE_PATH)
-
-# Generate the report for just deployed site and write to file
-# TODO: compare with prod report if it is pull request event and generate comparison report
-# md_content = generate_lighthouse_md(TREEMAP_FOLDER)
-# write_report_to_file(md_content, OUTPUT_FILE_PATH)
-# print(f"✅ Lighthouse report successfully saved to {OUTPUT_FILE_PATH}!")
-
-# Output to GitHub Actions (if running in GitHub Actions)
-github_output = os.getenv('GITHUB_OUTPUT')
+    pr_output = generate_lighthouse_md(TREEMAP_FOLDER)
+    print(f"✅ PR slot Lighthouse report successfully generated")
 
 if github_output:
     with open(github_output, 'a') as fh:
-        print(f"report<<EOF\n{md_content}\nEOF", file=fh)
+        print(f"report<<EOF\n{pr_output}\nEOF", file=fh)
     print("✅ Lighthouse report outputted to GitHub Actions!")

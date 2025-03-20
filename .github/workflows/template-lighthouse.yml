@@ -29,7 +29,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - name: Audit production URLs using Lighthouse so we can commit report to repo
+      - name: Audit production using Lighthouse
         id: prod-lighthouse-test-run
         if: github.event_name == 'pull_request'
         uses: treosh/lighthouse-ci-action@v12
@@ -61,7 +61,7 @@ jobs:
           max-attempts: 5
           retry-delay: 40s
 
-      - name: Audit input URLs using Lighthouse
+      - name: Audit PR slot using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         id: lighthouse-test-run
         with:
@@ -81,16 +81,12 @@ jobs:
             ${{ inputs.url }}/netug/sydney
             ${{ inputs.url }}/training/internship-fullstack
 
-      - name: Display Lighthouse Results as a Table
+      - name: Create production lighthouse report file and PR report comment
         id: lighthouse-results-generate
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           python scripts/generate-lighthouse-report.py
-
-      - name: Log root folder structure
-        run: |
-          ls -la
 
       - name: Comment on PR with Lighthouse insights
         uses: mshick/add-pr-comment@v2
@@ -100,12 +96,6 @@ jobs:
             ${{ steps.lighthouse-results-generate.outputs.report }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
-
-      - name: Add Lighthouse Insights to Summary
-        if: github.event_name != 'pull_request'
-        run: |
-          $report_content='${{ steps.lighthouse-results-generate.outputs.report }}'
-          "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
       - name: Commit lighthouse report to repo
         if: github.event_name == 'pull_request'
