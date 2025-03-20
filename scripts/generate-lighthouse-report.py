@@ -9,7 +9,6 @@ PROD_TREEMAP_FOLDER = "./prod-lighthouseci"
 PROD_OUTPUT_FILE_PATH = "prod-lighthouse-report.md"
 
 important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
-github_event_name = os.getenv("GITHUB_EVENT_NAME")
 github_output = os.getenv('GITHUB_OUTPUT')
 prod_scores = []
 
@@ -83,7 +82,7 @@ def generate_lighthouse_md(treemap_folder):
         seo = (result["summary"]["seo"] or 0) * 100
         total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url, treemap_folder)
 
-        if github_event_name == "pull_request" and treemap_folder == PROD_TREEMAP_FOLDER:
+        if treemap_folder == PROD_TREEMAP_FOLDER:
             prod_scores.append({
                 "url_display": url_display,
                 "performance": int(performance),
@@ -97,27 +96,26 @@ def generate_lighthouse_md(treemap_folder):
                 f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
             )
 
-        if github_event_name == "pull_request" and treemap_folder == TREEMAP_FOLDER:
+        if treemap_folder == TREEMAP_FOLDER:
             prod_score = next((entry for entry in prod_scores if extract_path(entry["url_display"]) == extract_path(url_display)), None)
             md_output.append(
                 f"| {url_display}<br>{prod_score['url_display']} | {int(performance)}<br>{prod_score['performance']} | {int(accessibility)}<br>{prod_score['accessibility']} | {int(best_practices)}<br>{prod_score['best_practices']} | {int(seo)}<br>{prod_score['seo']} | {total_bundle_size:.2f} MB<br>{prod_score['total_bundle_size']:.2f} MB | {unused_bundle_size:.2f} MB<br>{prod_score['unused_bundle_size']:.2f} MB |"
             )
 
-        return "\n".join(md_output)
+    return "\n".join(md_output)
 
 def write_report_to_file(report_content, output_file_path):
     with open(output_file_path, "w", encoding="utf-8") as md_file:
         md_file.write(report_content)
 
-# Generate the report for production and PR slot
-if github_event_name == "pull_request":
-    prod_output = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
-    write_report_to_file(prod_output, PROD_OUTPUT_FILE_PATH)
-    print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
+# Generate the report for Production and PR slot
+prod_output = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
+write_report_to_file(prod_output, PROD_OUTPUT_FILE_PATH)
+print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
+pr_output = generate_lighthouse_md(TREEMAP_FOLDER)
+print(f"✅ PR slot Lighthouse report successfully generated")
 
-    pr_output = generate_lighthouse_md(TREEMAP_FOLDER)
-    print(f"✅ PR slot Lighthouse report successfully generated")
-
+# Output to GitHub Actions step
 if github_output:
     with open(github_output, 'a') as fh:
         print(f"report<<EOF\n{pr_output}\nEOF", file=fh)

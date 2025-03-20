@@ -18,6 +18,7 @@ jobs:
   lighthouse-insights:
     name: Run Lighthouse Insights
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,9 +30,7 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      - name: Audit production using Lighthouse
-        id: prod-lighthouse-test-run
-        if: github.event_name == 'pull_request'
+      - name: Audit Production site using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc.json
@@ -54,7 +53,7 @@ jobs:
         run: |
           mv .lighthouseci prod-lighthouseci
 
-      - name: Wait for Slot to be available
+      - name: Wait for slot to be available
         uses: jtalk/url-health-check-action@v4
         with:
           url: ${{ inputs.url }}
@@ -63,7 +62,6 @@ jobs:
 
       - name: Audit PR slot using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
-        id: lighthouse-test-run
         with:
           configPath: ./.lighthouserc.json
           urls: |
@@ -90,7 +88,6 @@ jobs:
 
       - name: Comment on PR with Lighthouse insights
         uses: mshick/add-pr-comment@v2
-        if: github.event_name == 'pull_request'
         with:
           message: |
             ${{ steps.lighthouse-results-generate.outputs.report }}
@@ -98,7 +95,6 @@ jobs:
           allow-repeats: true
 
       - name: Commit lighthouse report to repo
-        if: github.event_name == 'pull_request'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
