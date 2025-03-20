@@ -18,7 +18,6 @@ const EventsV2Page = memo(
   function EventsV2Page({ tinaProps }: EventsV2PageProps<object>) {
     const { blocks, azureBanner } = tinaProps.data.eventsv2;
     return (
-      <>
         <div className="dark flex h-full flex-col">
           <Section color={"toggleLightMode"}>
             <Container
@@ -38,7 +37,6 @@ const EventsV2Page = memo(
           </Section>
           <PreFooter data={azureBanner} />
         </div>
-      </>
     );
   },
   (prevProps, newProps) => _.isEqual(prevProps, newProps)
