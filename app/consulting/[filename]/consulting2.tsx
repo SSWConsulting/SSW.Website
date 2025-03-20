@@ -30,7 +30,7 @@ const Consulting2 = memo(
               padding="custom"
               className="w-full p-0"
             >
-              <div className="w-full">
+              <div className="relative z-0 w-full">
                 {data.consultingv2.blocks ? (
                   <Blocks
                     prefix={"Consultingv2Blocks"}

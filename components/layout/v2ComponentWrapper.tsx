@@ -6,7 +6,6 @@ import Image from "next/image";
 import { UseInViewOptions } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
-import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 
 type BackgroundData = {
   background?: {
@@ -63,11 +62,11 @@ const V2ComponentWrapper = ({
         className
       )}
     >
-      {data.background?.bleed && data.background?.backgroundImage ? (
+      {data.background?.bleed && data.background?.backgroundImage && (
         <Image
           ref={bleed}
           src={data.background?.backgroundImage}
-          className="absolute inset-0 z-0 grid w-full place-items-center overflow-visible"
+          className="absolute inset-0 z-20 grid w-full place-items-center overflow-visible"
           alt="background image"
           width={
             (elementWidth || bleed.current?.getBoundingClientRect()?.width) ?? 0
@@ -86,13 +85,11 @@ const V2ComponentWrapper = ({
             );
           }}
         />
-      ) : (
-        <></>
       )}
       <section
         ref={ref}
         className={classNames(
-          "z-5 relative transition-opacity duration-300",
+          "relative z-30 transition-opacity duration-300",
           isInInitialViewport === false && "opacity-0",
           !isInInitialViewport && isInView && "opacity-100"
         )}
@@ -111,46 +108,6 @@ const V2ComponentWrapper = ({
       </section>
     </section>
   );
-};
-
-export const backgroundSchema = {
-  type: "object",
-  label: "Background",
-  name: "background",
-  fields: [
-    {
-      type: "number",
-      label: "Background Colour",
-      name: "backgroundColour",
-      ui: {
-        component: ColorPickerInput(backgroundOptions),
-      },
-    },
-    {
-      type: "image",
-      label: "Background Image",
-      name: "backgroundImage",
-      ui: {
-        validate: (value) => {
-          const lastSegment = value?.split("/")?.slice(-1)[0];
-          if (!lastSegment) {
-            return;
-          }
-          if (lastSegment?.indexOf(" ") > -1) {
-            return "image names cannot have spaces";
-          }
-        },
-      },
-      description:
-        "An optional background image, overlay on top of the colour. Streched to fit. File names cannot contain spaces.",
-    },
-    {
-      type: "boolean",
-      label: "Bleed",
-      name: "bleed",
-      description: "If true, the background will bleed into lower blocks.",
-    },
-  ],
 };
 
 export default V2ComponentWrapper;
