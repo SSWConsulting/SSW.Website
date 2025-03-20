@@ -5,28 +5,6 @@ import { Metadata } from "next";
 import { TinaClient } from "../../../tina-client";
 import CaseStudies from "./index";
 
-export async function generateStaticParams() {
-  let pageListData = await client.queries.caseStudyConnection();
-  const allPagesListData = pageListData;
-
-  while (pageListData.data.caseStudyConnection.pageInfo.hasNextPage) {
-    const lastCursor = pageListData.data.caseStudyConnection.pageInfo.endCursor;
-    pageListData = await client.queries.caseStudyConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.caseStudyConnection.edges.push(
-      ...pageListData.data.caseStudyConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.caseStudyConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
-
-  return pages;
-}
-
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.caseStudyContentQuery,

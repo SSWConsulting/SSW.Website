@@ -26,14 +26,6 @@ export async function generateMetadata({
   return { ...seoProps };
 }
 
-export async function generateStaticParams() {
-  const pagesListData = await client.queries.trainingConnection();
-
-  return pagesListData.data.trainingConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
-}
-
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.trainingContentQuery,

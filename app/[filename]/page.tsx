@@ -6,29 +6,6 @@ import { Metadata } from "next";
 import Page from ".";
 import { TinaClient } from "../tina-client";
 
-export async function generateStaticParams() {
-  let PageListData = await client.queries.pageConnection();
-  const allPagesListData = PageListData;
-
-  while (PageListData.data.pageConnection.pageInfo.hasNextPage) {
-    const lastCursor = PageListData.data.pageConnection.pageInfo.endCursor;
-    PageListData = await client.queries.pageConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.pageConnection.edges.push(
-      ...PageListData.data.pageConnection.edges
-    );
-  }
-  const pages = allPagesListData.data.pageConnection.edges
-    .filter((page) => page.node._sys.filename !== "home") // Remove "home" page as it is not handled by this route
-    .map((page) => ({
-      filename: page.node._sys.filename,
-    }));
-
-  return pages;
-}
-
 type GenerateMetaDataProps = {
   params: { filename: string };
   searchParams: { [key: string]: string | string[] | undefined };

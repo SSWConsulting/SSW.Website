@@ -40,14 +40,6 @@ const getData = async (filename: string) => {
   };
 };
 
-export async function generateStaticParams() {
-  const pagesListData = await client.queries.industryConnection();
-
-  return pagesListData.data.industryConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
-}
-
 export default async function Industry({
   params,
 }: {

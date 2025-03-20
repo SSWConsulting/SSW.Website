@@ -8,16 +8,6 @@ import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import EventsPages from "./index";
 
-export async function generateStaticParams() {
-  const pagesListData = await client.queries.eventsConnection();
-
-  const pages = pagesListData.data.eventsConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
-
-  return pages;
-}
-
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.eventsContentQuery,

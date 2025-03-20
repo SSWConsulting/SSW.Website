@@ -6,31 +6,6 @@ import { Metadata } from "next";
 import { TinaClient } from "../../../tina-client";
 import VideoProduction from "./video-production";
 
-export async function generateStaticParams() {
-  let pageListData = await client.queries.videoProductionConnection();
-  const allPagesListData = pageListData;
-
-  while (pageListData.data.videoProductionConnection.pageInfo.hasNextPage) {
-    const lastCursor =
-      pageListData.data.videoProductionConnection.pageInfo.endCursor;
-    pageListData = await client.queries.videoProductionConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.videoProductionConnection.edges.push(
-      ...pageListData.data.videoProductionConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.videoProductionConnection.edges.map(
-    (page) => ({
-      filename: page.node._sys.filename,
-    })
-  );
-
-  return pages;
-}
-
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.videoProductionContentQuery,

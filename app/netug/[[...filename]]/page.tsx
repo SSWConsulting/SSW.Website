@@ -117,38 +117,6 @@ export async function generateMetadata({
   return { ...seoProps };
 }
 
-export async function generateStaticParams() {
-  let pagesListData = await client.queries.userGroupPageConnection();
-  const allPagesListData = pagesListData;
-
-  while (pagesListData.data.userGroupPageConnection.pageInfo.hasNextPage) {
-    const lastCursor =
-      pagesListData.data.userGroupPageConnection.pageInfo.endCursor;
-    pagesListData = await client.queries.userGroupPageConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.userGroupPageConnection.edges.push(
-      ...pagesListData.data.userGroupPageConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.userGroupPageConnection.edges.map(
-    (page) => {
-      if (page.node._sys.filename === "index") {
-        return {
-          filename: [],
-        };
-      }
-
-      return {
-        filename: page.node._sys.breadcrumbs,
-      };
-    }
-  );
-  return pages;
-}
-
 export default async function NetUG({
   params,
 }: {

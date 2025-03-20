@@ -6,28 +6,6 @@ import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import CompanyPage from "./index";
 
-export async function generateStaticParams() {
-  let pageListData = await client.queries.companyConnection();
-  const allPagesListData = pageListData;
-
-  while (pageListData.data.companyConnection.pageInfo.hasNextPage) {
-    const lastCursor = pageListData.data.companyConnection.pageInfo.endCursor;
-    pageListData = await client.queries.companyConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.companyConnection.edges.push(
-      ...pageListData.data.companyConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.companyConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
-
-  return pages;
-}
-
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.companyContentQuery,

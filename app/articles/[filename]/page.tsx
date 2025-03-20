@@ -24,12 +24,6 @@ const getData = async (
   };
 };
 
-export async function generateStaticParams(): Promise<{ filename: string }[]> {
-  const articles: Articles = await client.queries.articlesConnection();
-  return articles.data.articlesConnection.edges.map((edge) => {
-    return { filename: edge.node._sys.filename };
-  });
-}
 export async function generateMetadata({
   params,
 }: {
