@@ -2,4 +2,4 @@
 
 | 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |
 | --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |
-| ⭐ https://www.ssw.com.au/ | 94 | 91 | 74 | 100 | 4.00 MB | 1.89 MB |
+| ⭐ https://www.ssw.com.au/ | 77 | 91 | 74 | 100 | 7.31 MB | 4.52 MB |
