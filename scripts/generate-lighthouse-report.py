@@ -6,13 +6,11 @@ from urllib.parse import urlparse
 # Define paths
 TREEMAP_FOLDER = "./.lighthouseci"
 PROD_TREEMAP_FOLDER = "./prod-lighthouseci"
-OUTPUT_FILE_PATH = "lighthouse-report.md"
+# OUTPUT_FILE_PATH = "lighthouse-report.md"
 PROD_OUTPUT_FILE_PATH = "prod-lighthouse-report.md"
 
 important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
-
 github_event_name = os.getenv("GITHUB_EVENT_NAME")
-print(f"🔍 GitHub event name: {github_event_name}")
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
@@ -67,8 +65,14 @@ def generate_lighthouse_md(treemap_folder):
     with open(manifest_file[0], "r") as file:
         data = json.load(file)
 
-    md_output = [
+    prod_md_output = [
         "## 🚀 Lighthouse Report\n",
+        "| 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |",
+        "| --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |"
+    ]
+
+    pr_md_output = [
+        "## 🚀 Lighthouse score comparison for PR slot and production\n",
         "| 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |",
         "| --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |"
     ]
@@ -92,22 +96,17 @@ def generate_lighthouse_md(treemap_folder):
                 "total_bundle_size": total_bundle_size,
                 "unused_bundle_size": unused_bundle_size
             })
-            md_output.append(
+            prod_md_output.append(
                 f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
             )
+            return "\n".join(prod_md_output)
 
         if github_event_name == "pull_request" and treemap_folder == TREEMAP_FOLDER:
             prod_score = next((entry for entry in prod_scores if extract_path(entry["url_display"]) == extract_path(url_display)), None)
-            md_output.append(
-                f"| {url_display}\n{prod_score['url']} | {int(performance)} / {prod_score['performance']} | {int(accessibility)} / {prod_score['accessibility']} | {int(best_practices)} / {prod_score['best_practices']} | {int(seo)} / {prod_score['seo']} | {total_bundle_size:.2f} MB / {prod_score['total_bundle_size']} MB | {unused_bundle_size:.2f} MB / {prod_score['unused_bundle_size']} MB |"
+            pr_md_output.append(
+                f"| {url_display}<br>{prod_score['url_display']} | {int(performance)}<br>{prod_score['performance']} | {int(accessibility)}<br>{prod_score['accessibility']} | {int(best_practices)}<br>{prod_score['best_practices']} | {int(seo)}<br>{prod_score['seo']} | {total_bundle_size:.2f} MB<br>{prod_score['total_bundle_size']:.2f} MB | {unused_bundle_size:.2f} MB<br>{prod_score['unused_bundle_size']:.2f} MB |"
             )
-
-        if github_event_name != "pull_request":
-            md_output.append(
-                f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
-            )
-
-    return "\n".join(md_output)
+            return "\n".join(pr_md_output)
 
 def write_report_to_file(report_content, output_file_path):
     with open(output_file_path, "w", encoding="utf-8") as md_file:
@@ -120,6 +119,7 @@ if github_event_name == "pull_request":
     print(f"✅ Production Lighthouse report successfully saved to {PROD_OUTPUT_FILE_PATH}")
 
     md_content = generate_lighthouse_md(TREEMAP_FOLDER)
+    # write_report_to_file(md_content, OUTPUT_FILE_PATH)
 
 # Generate the report for just deployed site and write to file
 # TODO: compare with prod report if it is pull request event and generate comparison report
