@@ -6,6 +6,8 @@ import { Metadata } from "next";
 import Page from ".";
 import { TinaClient } from "../tina-client";
 
+export const revalidate = 3600; // 1 hour
+
 type GenerateMetaDataProps = {
   params: { filename: string };
   searchParams: { [key: string]: string | string[] | undefined };

@@ -17,6 +17,8 @@ const openSans = Open_Sans({
   weight: ["300", "400", "600"],
 });
 
+export const revalidate = 3600; // 1 hour
+
 type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
 >;

@@ -5,6 +5,8 @@ import client from "@/tina/client";
 import { Metadata } from "next";
 import LogoPage from ".";
 
+export const revalidate = 3600; // 1 hour
+
 type GenerateMetaDataProps = {
   params: { filename: string[] };
   searchParams: { [key: string]: string | string[] | undefined };

@@ -6,6 +6,8 @@ import { Metadata } from "next";
 import { TinaClient } from "../../../tina-client";
 import VideoProduction from "./video-production";
 
+export const revalidate = 3600; // 1 hour
+
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.videoProductionContentQuery,

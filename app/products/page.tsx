@@ -4,6 +4,8 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ProductsIndexPreview from "./products-index-preview";
 
+export const revalidate = 3600; // 1 hour
+
 const getData = async () => {
   return await fetchTinaData(client.queries.productsIndexQuery);
 };

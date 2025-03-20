@@ -7,6 +7,8 @@ import { Metadata } from "next";
 import client from "tina/__generated__/client";
 import ArticlesIndexPage from "./index";
 
+export const revalidate = 3600; // 1 hour
+
 export async function generateMetadata(): Promise<Metadata> {
   const data = await client.queries.articlesIndexContentQuery({
     relativePath: "index.mdx",

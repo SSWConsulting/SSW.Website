@@ -8,6 +8,8 @@ import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import EventsPages from "./index";
 
+export const revalidate = 3600; // 1 hour
+
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.eventsContentQuery,

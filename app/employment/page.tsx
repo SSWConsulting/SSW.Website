@@ -6,6 +6,8 @@ import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import EmploymentPage from "./";
 
+export const revalidate = 3600; // 1 hour
+
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
 

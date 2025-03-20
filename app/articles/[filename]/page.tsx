@@ -5,6 +5,8 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ArticlePage, { ArticleData, ArticlePageProps } from ".";
 
+export const revalidate = 3600; // 1 hour
+
 const getData = async (
   filename: string
 ): Promise<{

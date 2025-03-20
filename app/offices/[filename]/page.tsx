@@ -5,6 +5,8 @@ import { Metadata } from "next";
 import OfficePage from ".";
 import { TinaClient } from "../../tina-client";
 
+export const revalidate = 3600; // 1 hour
+
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.officeContentQuery,
