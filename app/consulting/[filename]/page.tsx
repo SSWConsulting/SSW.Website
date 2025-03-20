@@ -130,7 +130,6 @@ export async function generateMetadata({
   params: { filename },
 }: GenerateMetaDataProps): Promise<Metadata> {
   const isNewConsultingPage = Boolean(await findConsultingPageType(filename));
-
   const tinaProps = isNewConsultingPage
     ? await newConsultingPageData(filename)
     : await consultingPageData(filename);
@@ -187,8 +186,7 @@ const findConsultingPageType = async (
     if (v2Pages) {
       return ConsultingPageType.New;
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  } catch {
     return ConsultingPageType.Old;
   }
 };
