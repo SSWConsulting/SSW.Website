@@ -3,7 +3,9 @@ import { useSEO } from "@/hooks/useSeo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { EventInfo } from "framer-motion";
+import fs from "fs/promises";
 import { Metadata } from "next";
+import path from "path";
 import NetUGPage from ".";
 import { TinaClient } from "../../tina-client";
 
@@ -118,35 +120,20 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  let pagesListData = await client.queries.userGroupPageConnection();
-  const allPagesListData = pagesListData;
+  const contentDir = path.join(process.cwd(), "content/netug");
+  const files = await fs.readdir(contentDir);
 
-  while (pagesListData.data.userGroupPageConnection.pageInfo.hasNextPage) {
-    const lastCursor =
-      pagesListData.data.userGroupPageConnection.pageInfo.endCursor;
-    pagesListData = await client.queries.userGroupPageConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.userGroupPageConnection.edges.push(
-      ...pagesListData.data.userGroupPageConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.userGroupPageConnection.edges.map(
-    (page) => {
-      if (page.node._sys.filename === "index") {
-        return {
-          filename: [],
-        };
-      }
-
+  return files.map((file) => {
+    if (file === "index") {
       return {
-        filename: page.node._sys.breadcrumbs,
+        filename: [],
       };
     }
-  );
-  return pages;
+
+    return {
+      filename: [file],
+    };
+  });
 }
 
 export default async function NetUG({

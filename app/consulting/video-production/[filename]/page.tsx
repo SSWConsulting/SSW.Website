@@ -1,34 +1,21 @@
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
+import fs from "fs/promises";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
+import path from "path";
 import { TinaClient } from "../../../tina-client";
 import VideoProduction from "./video-production";
 
 export async function generateStaticParams() {
-  let pageListData = await client.queries.videoProductionConnection();
-  const allPagesListData = pageListData;
+  const contentDir = path.join(process.cwd(), "content/video-production");
 
-  while (pageListData.data.videoProductionConnection.pageInfo.hasNextPage) {
-    const lastCursor =
-      pageListData.data.videoProductionConnection.pageInfo.endCursor;
-    pageListData = await client.queries.videoProductionConnection({
-      after: lastCursor,
-    });
+  const files = await fs.readdir(contentDir);
 
-    allPagesListData.data.videoProductionConnection.edges.push(
-      ...pageListData.data.videoProductionConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.videoProductionConnection.edges.map(
-    (page) => ({
-      filename: page.node._sys.filename,
-    })
-  );
-
-  return pages;
+  return files.map((file) => ({
+    filename: path.parse(file).name,
+  }));
 }
 
 const getData = async (filename: string) => {

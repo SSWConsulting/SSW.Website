@@ -1,7 +1,9 @@
 import { useSEO } from "@/hooks/useSeo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
+import fs from "fs/promises";
 import { Metadata } from "next";
+import path from "path";
 import IndustryPage from ".";
 import { TinaClient } from "../../tina-client";
 
@@ -41,10 +43,11 @@ const getData = async (filename: string) => {
 };
 
 export async function generateStaticParams() {
-  const pagesListData = await client.queries.industryConnection();
+  const contentDir = path.join(process.cwd(), "content/industry");
+  const files = await fs.readdir(contentDir);
 
-  return pagesListData.data.industryConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+  return files.map((file) => ({
+    filename: path.parse(file).name,
   }));
 }
 

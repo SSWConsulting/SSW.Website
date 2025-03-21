@@ -2,7 +2,9 @@ import { TinaClient } from "@/app/tina-client";
 import { useSEO } from "@/hooks/useSeo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
+import fs from "fs/promises";
 import { Metadata } from "next";
+import path from "path";
 import LogoPage from ".";
 
 type GenerateMetaDataProps = {
@@ -26,17 +28,19 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const pagesListData = await client.queries.logosConnection();
+  const contentDir = path.join(process.cwd(), "content/logos");
 
-  return pagesListData.data.logosConnection.edges.map((page) => {
-    if (page.node._sys.filename === "index") {
+  const files = await fs.readdir(contentDir);
+
+  return files.map((file) => {
+    if (file === "index") {
       return {
         filename: [],
       };
     }
 
     return {
-      filename: page.node._sys.breadcrumbs,
+      filename: [file], // Assuming each file is treated as a breadcrumb
     };
   });
 }

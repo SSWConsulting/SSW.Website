@@ -1,7 +1,9 @@
 import { useSEO } from "@/hooks/useSeo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
+import fs from "fs/promises";
 import { Metadata } from "next";
+import path from "path";
 import OfficePage from ".";
 import { TinaClient } from "../../tina-client";
 
@@ -46,24 +48,13 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  let pagesListData = await client.queries.officesConnection();
-  const allPagesListData = pagesListData;
+  const contentDir = path.join(process.cwd(), "content/offices");
 
-  while (pagesListData.data.officesConnection.pageInfo.hasNextPage) {
-    const lastCursor = pagesListData.data.officesConnection.pageInfo.endCursor;
-    pagesListData = await client.queries.officesConnection({
-      after: lastCursor,
-    });
+  const files = await fs.readdir(contentDir);
 
-    allPagesListData.data.officesConnection.edges.push(
-      ...pagesListData.data.officesConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.officesConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+  return files.map((file) => ({
+    filename: path.parse(file).name,
   }));
-  return pages;
 }
 
 export default async function Office({

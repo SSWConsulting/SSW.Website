@@ -3,20 +3,22 @@ import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
 import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
+import fs from "fs/promises";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
+import path from "path";
 import { TinaClient } from "../../tina-client";
 import EventsPage from "./events";
 import EventsV2Page from "./eventsv2";
 
 export async function generateStaticParams() {
-  const pagesListData = await client.queries.eventsConnection();
+  const contentDir = path.join(process.cwd(), "content/events");
 
-  const pages = pagesListData.data.eventsConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+  const files = await fs.readdir(contentDir);
+
+  return files.map((file) => ({
+    filename: path.parse(file).name,
   }));
-
-  return pages;
 }
 
 const newEventsPageData = async (filename: string) => {

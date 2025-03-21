@@ -1,11 +1,11 @@
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { TinaClient, UseTinaProps } from "app/tina-client";
+import fs from "fs/promises";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
+import path from "path";
 import ArticlePage, { ArticleData, ArticlePageProps } from ".";
-
-type Articles = Awaited<ReturnType<typeof client.queries.articlesConnection>>;
 
 const getData = async (
   filename: string
@@ -25,10 +25,13 @@ const getData = async (
 };
 
 export async function generateStaticParams(): Promise<{ filename: string }[]> {
-  const articles: Articles = await client.queries.articlesConnection();
-  return articles.data.articlesConnection.edges.map((edge) => {
-    return { filename: edge.node._sys.filename };
-  });
+  const contentDir = path.join(process.cwd(), "content/articles");
+
+  const files = await fs.readdir(contentDir);
+
+  return files.map((file) => ({
+    filename: path.parse(file).name,
+  }));
 }
 export async function generateMetadata({
   params,

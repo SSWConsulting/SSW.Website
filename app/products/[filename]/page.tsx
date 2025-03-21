@@ -1,30 +1,19 @@
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
+import fs from "fs/promises";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
+import path from "path";
 import ProductsPreview from "./products-preview";
 
-// Equavalent to getStaticPaths in Page Routing
 export async function generateStaticParams() {
-  let PageListData = await client.queries.productsConnection();
-  const allPagesListData = PageListData;
+  const contentDir = path.join(process.cwd(), "content/products");
 
-  while (PageListData.data.productsConnection.pageInfo.hasNextPage) {
-    const lastCursor = PageListData.data.productsConnection.pageInfo.endCursor;
-    PageListData = await client.queries.productsConnection({
-      after: lastCursor,
-    });
+  const files = await fs.readdir(contentDir);
 
-    allPagesListData.data.productsConnection.edges.push(
-      ...PageListData.data.productsConnection.edges
-    );
-  }
-
-  const pages = PageListData.data.productsConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+  return files.map((file) => ({
+    filename: path.parse(file).name,
   }));
-
-  return pages;
 }
 
 const getData = async (filename: string) => {

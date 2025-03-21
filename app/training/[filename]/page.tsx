@@ -2,7 +2,9 @@ import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
 import { useSEO } from "@/hooks/useSeo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
+import fs from "fs/promises";
 import { Metadata } from "next";
+import path from "path";
 import TrainingPage from ".";
 import { TinaClient } from "../../tina-client";
 
@@ -27,10 +29,12 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const pagesListData = await client.queries.trainingConnection();
+  const contentDir = path.join(process.cwd(), "content/training");
 
-  return pagesListData.data.trainingConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+  const files = await fs.readdir(contentDir);
+
+  return files.map((file) => ({
+    filename: path.parse(file).name,
   }));
 }
 

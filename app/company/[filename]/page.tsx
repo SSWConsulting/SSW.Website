@@ -1,31 +1,21 @@
 import { HistoryTimelineCardProps } from "@/components/company/historyTimelineCard";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
+import fs from "fs/promises";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
+import path from "path";
 import { TinaClient } from "../../tina-client";
 import CompanyPage from "./index";
 
 export async function generateStaticParams() {
-  let pageListData = await client.queries.companyConnection();
-  const allPagesListData = pageListData;
+  const contentDir = path.join(process.cwd(), "content/company");
 
-  while (pageListData.data.companyConnection.pageInfo.hasNextPage) {
-    const lastCursor = pageListData.data.companyConnection.pageInfo.endCursor;
-    pageListData = await client.queries.companyConnection({
-      after: lastCursor,
-    });
+  const files = await fs.readdir(contentDir);
 
-    allPagesListData.data.companyConnection.edges.push(
-      ...pageListData.data.companyConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.companyConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+  return files.map((file) => ({
+    filename: path.parse(file).name,
   }));
-
-  return pages;
 }
 
 const getData = async (filename: string) => {

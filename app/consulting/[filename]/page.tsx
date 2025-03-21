@@ -3,9 +3,11 @@ import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
 import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
+import fs from "fs/promises";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
+import path from "path";
 import { cache } from "react";
 import { TinaClient } from "../../tina-client";
 import OldConsultingPage from "./consulting";
@@ -21,52 +23,30 @@ type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
 >;
 
-type NewConsultingPages = Awaited<
-  ReturnType<typeof client.queries.consultingv2Connection>
->;
-type ConsultingPages = Awaited<
-  ReturnType<typeof client.queries.consultingConnection>
->;
-
 type ConsultingPageParams = {
   filename: string;
 };
 
-async function extractAllPages(query, field: string) {
-  let consultingFetch = await query();
-  const accmulatedPages = consultingFetch;
-
-  while (consultingFetch.data[field].pageInfo.hasNextPage) {
-    const lastCursor = consultingFetch.data[field].pageInfo.endCursor;
-
-    consultingFetch = await query({ after: lastCursor });
-
-    accmulatedPages.data[field].edges.push(
-      ...consultingFetch.data[field].edges
-    );
-  }
-  return accmulatedPages;
-}
-
 export async function generateStaticParams(): Promise<ConsultingPageParams[]> {
-  const newConsultingPages: NewConsultingPages = await extractAllPages(
-    client.queries.consultingv2Connection,
-    "consultingv2Connection"
+  const newConsultingDir = path.join(process.cwd(), "content/consultingv2");
+  const consultingDir = path.join(process.cwd(), "content/consulting");
+
+  const newConsultingFiles = await fs.readdir(newConsultingDir);
+  const consultingFiles = await fs.readdir(consultingDir);
+
+  const newConsultingPagesData: ConsultingPageParams[] = newConsultingFiles.map(
+    (file) => ({
+      filename: path.parse(file).name,
+      isNewConsultingPage: true,
+    })
   );
 
-  const newConsultingPagesData: ConsultingPageParams[] =
-    newConsultingPages.data.consultingv2Connection.edges.map((page) => {
-      return { filename: page.node._sys.filename, isNewConsultingPage: true };
-    });
-
-  const consultingPagesData: ConsultingPages = await extractAllPages(
-    client.queries.consultingConnection,
-    "consultingConnection"
+  const consultingPages: ConsultingPageParams[] = consultingFiles.map(
+    (file) => ({
+      filename: path.parse(file).name,
+      isNewConsultingPage: false,
+    })
   );
-  const consultingPages: ConsultingPageParams[] =
-    consultingPagesData.data.consultingConnection.edges.map((page) => {
-      return { filename: page.node._sys.filename, isNewConsultingPage: false };
-    });
 
   return [...consultingPages, ...newConsultingPagesData];
 }
