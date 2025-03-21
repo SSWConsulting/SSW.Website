@@ -1,29 +1,31 @@
 import json
 import os
 import glob
+from urllib.parse import urlparse
 
 # Define paths
 TREEMAP_FOLDER = "./.lighthouseci"
-OUTPUT_FILE_PATH = "lighthouse-report.mdx"  # The MDX file to be created
-from urllib.parse import urlparse
-
+PROD_TREEMAP_FOLDER = "./prod-lighthouseci"
+PROD_OUTPUT_FILE_PATH = "prod-lighthouse-report.md"
 
 important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
+github_output = os.getenv('GITHUB_OUTPUT')
+prod_scores = []
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""
     formatted_url = url.replace("https://", "").replace("http://", "")
     return formatted_url.replace("-", "_").replace("/", "-_",1).replace("/", "_").replace(".", "_")
 
-def get_total_and_unused_bytes_for_url(url):
+def get_total_and_unused_bytes_for_url(url, treemap_folder):
     """Reads the corresponding JSON file for the URL and calculates total and unused bytes in MB."""
     try:
         formatted_url = format_url_for_filename(url)
         filename_pattern = formatted_url + "*.report.json"
 
-        print(f"🔍 Searching for {filename_pattern} in {TREEMAP_FOLDER}...")
+        print(f"🔍 Searching for {filename_pattern} in {treemap_folder}...")
 
-        matching_files = glob.glob(os.path.join(TREEMAP_FOLDER, filename_pattern))
+        matching_files = glob.glob(os.path.join(treemap_folder, filename_pattern))
 
         if not matching_files:
             print(f"❌ Error: No matching JSON file found for {url}.")
@@ -48,52 +50,73 @@ def get_total_and_unused_bytes_for_url(url):
         print(f"❌ Error: Failed to parse {treemap_data_file}.")
         return 0, 0
 
-def generate_lighthouse_mdx():
-    """Generates an MDX-formatted Lighthouse report from the manifest.json file."""
-    manifest_file = glob.glob(os.path.join(TREEMAP_FOLDER, "manifest.json"))
+def extract_path(url):
+    if url.startswith("⭐ "):
+        url = url[2:]
+    parsed_url = urlparse(url)
+    return parsed_url.path
 
+def generate_lighthouse_md(treemap_folder):
+    manifest_file = glob.glob(os.path.join(treemap_folder, "manifest.json"))
     if not manifest_file:
-        raise FileNotFoundError("❌ Error: manifest.json not found in " + TREEMAP_FOLDER)
-
+        raise FileNotFoundError("❌ Error: manifest.json not found in " + treemap_folder)
     with open(manifest_file[0], "r") as file:
         data = json.load(file)
 
-    mdx_output = [
-        "## 🚀 Lighthouse Report\n",
+    report_header = "🚀 Lighthouse Report"
+    if treemap_folder != PROD_TREEMAP_FOLDER:
+        report_header = "🚀 Lighthouse score comparison for PR slot and production"
+
+    md_output = [
+        f"## {report_header}\n",
         "| 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |",
         "| --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |"
     ]
 
     for result in data:
         url = result["url"]
-        performance = result["summary"]["performance"] * 100
-        accessibility = result["summary"]["accessibility"] * 100
-        best_practices = result["summary"]["best-practices"] * 100
-        seo = result["summary"]["seo"] * 100
+        url_display = f"⭐ {url}" if extract_path(url) in important_paths else url
+        performance = (result["summary"]["performance"] or 0) * 100
+        accessibility = (result["summary"]["accessibility"] or 0) * 100
+        best_practices = (result["summary"]["best-practices"] or 0) * 100
+        seo = (result["summary"]["seo"] or 0) * 100
+        total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url, treemap_folder)
 
-        total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url)
-        parsed_url = urlparse(url)
-        url_display = f"⭐ {url}" if parsed_url.path in important_paths else url
+        if treemap_folder == PROD_TREEMAP_FOLDER:
+            prod_scores.append({
+                "url_display": url_display,
+                "performance": int(performance),
+                "accessibility": int(accessibility),
+                "best_practices": int(best_practices),
+                "seo": int(seo),
+                "total_bundle_size": total_bundle_size,
+                "unused_bundle_size": unused_bundle_size
+            })
+            md_output.append(
+                f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
+            )
 
-        mdx_output.append(
-            f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
-        )
+        if treemap_folder == TREEMAP_FOLDER:
+            prod_score = next((entry for entry in prod_scores if extract_path(entry["url_display"]) == extract_path(url_display)), None)
+            md_output.append(
+                f"| {url_display}<br>{prod_score['url_display']} | {int(performance)}<br>{prod_score['performance']} | {int(accessibility)}<br>{prod_score['accessibility']} | {int(best_practices)}<br>{prod_score['best_practices']} | {int(seo)}<br>{prod_score['seo']} | {total_bundle_size:.2f} MB<br>{prod_score['total_bundle_size']:.2f} MB | {unused_bundle_size:.2f} MB<br>{prod_score['unused_bundle_size']:.2f} MB |"
+            )
 
-    return "\n".join(mdx_output)
+    return "\n".join(md_output)
 
-# Generate the report and save to an MDX file
-mdx_content = generate_lighthouse_mdx()
+def write_report_to_file(report_content, output_file_path):
+    with open(output_file_path, "w", encoding="utf-8") as md_file:
+        md_file.write(report_content)
 
-# Write the MDX content to a file
-with open(OUTPUT_FILE_PATH, "w", encoding="utf-8") as mdx_file:
-    mdx_file.write(mdx_content)
+# Generate the report for Production and save it to a file
+prod_output = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
+write_report_to_file(prod_output, PROD_OUTPUT_FILE_PATH)
+print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
 
-print(f"✅ Lighthouse report successfully saved to {OUTPUT_FILE_PATH}!")
-
-# Output to GitHub Actions (if running in GitHub Actions)
-github_output = os.getenv('GITHUB_OUTPUT')
-
+# Generate the report for PR slot and output to GitHub Actions step
+pr_output = generate_lighthouse_md(TREEMAP_FOLDER)
+print(f"✅ PR slot Lighthouse report successfully generated")
 if github_output:
     with open(github_output, 'a') as fh:
-        print(f"report<<EOF\n{mdx_content}\nEOF", file=fh)
+        print(f"report<<EOF\n{pr_output}\nEOF", file=fh)
     print("✅ Lighthouse report outputted to GitHub Actions!")
