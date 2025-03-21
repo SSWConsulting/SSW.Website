@@ -105,6 +105,7 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /website/public ./public
+COPY --from=builder /website/content ./content
 
 # Set the correct permissions for the tina cache folder
 RUN mkdir -p /website/tina
