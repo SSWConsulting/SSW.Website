@@ -2,16 +2,16 @@
 
 | 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |
 | --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |
-| ⭐ https://www.ssw.com.au/ | 96 | 91 | 74 | 100 | 7.62 MB | 4.75 MB |
-| https://www.ssw.com.au/articles | 100 | 96 | 74 | 92 | 4.13 MB | 1.96 MB |
-| https://www.ssw.com.au/company/about-us | 79 | 100 | 74 | 100 | 3.94 MB | 1.87 MB |
-| https://www.ssw.com.au/company/clients | 95 | 94 | 74 | 100 | 4.35 MB | 2.11 MB |
-| https://www.ssw.com.au/company/contact-us | 76 | 90 | 74 | 92 | 7.35 MB | 4.57 MB |
-| https://www.ssw.com.au/consulting | 100 | 90 | 70 | 100 | 7.62 MB | 4.75 MB |
-| ⭐ https://www.ssw.com.au/consulting/net-upgrade | 75 | 90 | 56 | 85 | 7.62 MB | 4.75 MB |
-| ⭐ https://www.ssw.com.au/consulting/web-applications | 81 | 98 | 74 | 92 | 4.28 MB | 2.06 MB |
-| https://www.ssw.com.au/employment | 82 | 94 | 74 | 100 | 4.26 MB | 1.92 MB |
-| https://www.ssw.com.au/events/angular-superpowers-tour | 99 | 96 | 70 | 100 | 7.43 MB | 4.59 MB |
-| https://www.ssw.com.au/events/ai-workshop | 98 | 90 | 70 | 92 | 7.39 MB | 4.62 MB |
-| https://www.ssw.com.au/netug/sydney | 79 | 92 | 74 | 92 | 4.49 MB | 2.19 MB |
-| https://www.ssw.com.au/training/internship-fullstack | 80 | 87 | 74 | 100 | 4.01 MB | 1.89 MB |
+| ⭐ https://app-sswwebsite-9eb3-staging.azurewebsites.net/ | 65 | 91 | 74 | 69 | 4.26 MB | 2.04 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/articles | 83 | 96 | 74 | 57 | 4.09 MB | 1.93 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/company/about-us | 66 | 100 | 74 | 69 | 3.99 MB | 1.89 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/company/clients | 67 | 94 | 74 | 69 | 4.35 MB | 2.11 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/company/contact-us | 70 | 90 | 74 | 61 | 7.58 MB | 4.73 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/consulting | 85 | 90 | 70 | 69 | 4.26 MB | 2.04 MB |
+| ⭐ https://app-sswwebsite-9eb3-staging.azurewebsites.net/consulting/net-upgrade | 50 | 95 | 56 | 61 | 7.59 MB | 4.66 MB |
+| ⭐ https://app-sswwebsite-9eb3-staging.azurewebsites.net/consulting/web-applications | 66 | 98 | 74 | 61 | 4.26 MB | 2.04 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/employment | 67 | 94 | 74 | 66 | 4.23 MB | 1.90 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/events/angular-superpowers-tour | 81 | 96 | 70 | 69 | 7.34 MB | 4.54 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/events/ai-workshop | 83 | 90 | 70 | 61 | 7.34 MB | 4.54 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/netug/sydney | 71 | 92 | 74 | 61 | 4.46 MB | 2.11 MB |
+| https://app-sswwebsite-9eb3-staging.azurewebsites.net/training/internship-fullstack | 59 | 87 | 74 | 69 | 3.98 MB | 1.86 MB |
