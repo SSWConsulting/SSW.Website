@@ -16,6 +16,10 @@ import EventIndex from "./index";
 
 export const revalidate = 3600;
 
+export async function generateStaticParams() {
+  return [];
+}
+
 const DEFAULT_FILTERS = "undefinedundefined";
 
 export async function generateMetadata(): Promise<Metadata> {

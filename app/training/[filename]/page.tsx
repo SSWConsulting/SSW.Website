@@ -8,6 +8,10 @@ import { TinaClient } from "../../tina-client";
 
 export const revalidate = 3600; // 1 hour
 
+export async function generateStaticParams() {
+  return [];
+}
+
 type GenerateMetaDataProps = {
   params: { filename: string };
   searchParams: { [key: string]: string | string[] | undefined };

@@ -6,6 +6,10 @@ import ProductsIndexPreview from "./products-index-preview";
 
 export const revalidate = 3600; // 1 hour
 
+export async function generateStaticParams() {
+  return [];
+}
+
 const getData = async () => {
   return await fetchTinaData(client.queries.productsIndexQuery);
 };

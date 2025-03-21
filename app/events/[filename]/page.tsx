@@ -11,6 +11,10 @@ import EventsV2Page from "./eventsv2";
 
 export const revalidate = 3600; // 1 hour
 
+export async function generateStaticParams() {
+  return [];
+}
+
 const newEventsPageData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.eventsv2,

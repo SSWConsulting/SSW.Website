@@ -7,6 +7,10 @@ import ArticlePage, { ArticleData, ArticlePageProps } from ".";
 
 export const revalidate = 3600; // 1 hour
 
+export async function generateStaticParams() {
+  return [];
+}
+
 const getData = async (
   filename: string
 ): Promise<{

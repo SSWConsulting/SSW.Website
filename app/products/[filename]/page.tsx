@@ -6,6 +6,10 @@ import ProductsPreview from "./products-preview";
 
 export const revalidate = 3600; // 1 hour
 
+export async function generateStaticParams() {
+  return [];
+}
+
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.productContentQuery,
