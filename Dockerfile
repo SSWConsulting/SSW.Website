@@ -24,6 +24,7 @@ WORKDIR /website
 COPY --from=deps /website/node_modules ./node_modules
 COPY . .
 
+COPY --from=builder /website/content ./content
 # Add env for production
 # COPY .docker/production/.env.local .env.local
 
@@ -105,7 +106,6 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /website/public ./public
-COPY --from=builder /website/content ./content
 
 # Set the correct permissions for the tina cache folder
 RUN mkdir -p /website/tina
