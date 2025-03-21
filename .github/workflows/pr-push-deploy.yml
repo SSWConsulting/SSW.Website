@@ -108,5 +108,6 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
+    needs: pr-deploy
     with:
-      url: https://app-sswwebsite-9eb3-pr-3740.azurewebsites.net
+      url: ${{ needs.pr-deploy.outputs.url }}
