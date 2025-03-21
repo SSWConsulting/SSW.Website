@@ -22,9 +22,9 @@ FROM base AS builder
 WORKDIR /website
 
 COPY --from=deps /website/node_modules ./node_modules
+COPY ./content ./website/content
 COPY . .
 
-COPY --from=builder /website/content ./content
 # Add env for production
 # COPY .docker/production/.env.local .env.local
 
