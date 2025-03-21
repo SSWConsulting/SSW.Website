@@ -1,4 +1,4 @@
-import { backgroundSchema } from "@/components/layout/v2ComponentWrapper";
+import { backgroundSchema } from "@/components/layout/v2ComponentWrapper.schema";
 import { Template } from "tinacms";
 
 export const SpacerSchema: Template = {

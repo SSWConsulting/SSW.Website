@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Button, Input, Template, wrapFieldsWithMeta } from "tinacms";
-import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
+import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper.schema";
 import { TinaInfo } from "../../tina/tina-info";
 
 export const BreadcrumbSchema: Template = {

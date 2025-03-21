@@ -7,7 +7,7 @@ import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colour
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
 import { buttonSchema } from "../../../button/templateButton.schema";
-import { backgroundSchema } from "../../../layout/v2ComponentWrapper";
+import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { mediaTypeField } from "../../mediaType.schema";
 import { youtubeEmbedField } from "../../youtubeEmbed.schema";
 
