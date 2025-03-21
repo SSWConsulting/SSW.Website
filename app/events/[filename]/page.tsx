@@ -9,14 +9,10 @@ import { TinaClient } from "../../tina-client";
 import EventsPage from "./events";
 import EventsV2Page from "./eventsv2";
 
+export const revalidate = 3600; // 1 hour
+
 export async function generateStaticParams() {
-  const pagesListData = await client.queries.eventsConnection();
-
-  const pages = pagesListData.data.eventsConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
-
-  return pages;
+  return [];
 }
 
 const newEventsPageData = async (filename: string) => {

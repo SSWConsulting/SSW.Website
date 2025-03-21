@@ -5,6 +5,12 @@ import { Metadata } from "next";
 import IndustryPage from ".";
 import { TinaClient } from "../../tina-client";
 
+export const revalidate = 3600; // 1 hour
+
+export async function generateStaticParams() {
+  return [];
+}
+
 type GenerateMetadataProps = {
   params: { filename: string };
   searchParams: { [key: string]: string | string[] | undefined };
@@ -39,14 +45,6 @@ const getData = async (filename: string) => {
     },
   };
 };
-
-export async function generateStaticParams() {
-  const pagesListData = await client.queries.industryConnection();
-
-  return pagesListData.data.industryConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
-}
 
 export default async function Industry({
   params,

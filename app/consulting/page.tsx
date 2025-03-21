@@ -6,6 +6,12 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ConsultingIndex from "./index";
 
+export const revalidate = 3600; // 1 hour
+
+export async function generateStaticParams() {
+  return [];
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
 

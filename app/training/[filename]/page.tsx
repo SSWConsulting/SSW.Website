@@ -6,6 +6,12 @@ import { Metadata } from "next";
 import TrainingPage from ".";
 import { TinaClient } from "../../tina-client";
 
+export const revalidate = 3600; // 1 hour
+
+export async function generateStaticParams() {
+  return [];
+}
+
 type GenerateMetaDataProps = {
   params: { filename: string };
   searchParams: { [key: string]: string | string[] | undefined };
@@ -24,14 +30,6 @@ export async function generateMetadata({
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { seoProps } = useSEO(seo);
   return { ...seoProps };
-}
-
-export async function generateStaticParams() {
-  const pagesListData = await client.queries.trainingConnection();
-
-  return pagesListData.data.trainingConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
 }
 
 const getData = async (filename: string) => {

@@ -5,6 +5,12 @@ import client from "@/tina/client";
 import { Metadata } from "next";
 import LogoPage from ".";
 
+export const revalidate = 3600; // 1 hour
+
+export async function generateStaticParams() {
+  return [];
+}
+
 type GenerateMetaDataProps = {
   params: { filename: string[] };
   searchParams: { [key: string]: string | string[] | undefined };
@@ -23,22 +29,6 @@ export async function generateMetadata({
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { seoProps } = useSEO(seo);
   return { ...seoProps };
-}
-
-export async function generateStaticParams() {
-  const pagesListData = await client.queries.logosConnection();
-
-  return pagesListData.data.logosConnection.edges.map((page) => {
-    if (page.node._sys.filename === "index") {
-      return {
-        filename: [],
-      };
-    }
-
-    return {
-      filename: page.node._sys.breadcrumbs,
-    };
-  });
 }
 
 const getData = async (filename: string[]) => {

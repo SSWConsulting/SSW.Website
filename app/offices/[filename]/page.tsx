@@ -5,6 +5,12 @@ import { Metadata } from "next";
 import OfficePage from ".";
 import { TinaClient } from "../../tina-client";
 
+export const revalidate = 3600; // 1 hour
+
+export async function generateStaticParams() {
+  return [];
+}
+
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.officeContentQuery,
@@ -43,27 +49,6 @@ export async function generateMetadata({
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { seoProps } = useSEO(seo);
   return { ...seoProps };
-}
-
-export async function generateStaticParams() {
-  let pagesListData = await client.queries.officesConnection();
-  const allPagesListData = pagesListData;
-
-  while (pagesListData.data.officesConnection.pageInfo.hasNextPage) {
-    const lastCursor = pagesListData.data.officesConnection.pageInfo.endCursor;
-    pagesListData = await client.queries.officesConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.officesConnection.edges.push(
-      ...pagesListData.data.officesConnection.edges
-    );
-  }
-
-  const pages = allPagesListData.data.officesConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
-  }));
-  return pages;
 }
 
 export default async function Office({
