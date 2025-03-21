@@ -28,7 +28,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const contentDir = path.join(process.cwd(), "content/logos");
+  const contentDir = path.join(process.cwd(), "content/logo");
 
   const files = await fs.readdir(contentDir);
 
