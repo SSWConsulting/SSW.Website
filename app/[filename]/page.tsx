@@ -30,13 +30,12 @@ export async function generateStaticParams() {
 }
 
 type GenerateMetaDataProps = {
-  params: { filename: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ filename: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({
-  params,
-}: GenerateMetaDataProps): Promise<Metadata> {
+export async function generateMetadata(props0: GenerateMetaDataProps): Promise<Metadata> {
+  const params = await props0.params;
   const { props } = await getData(params.filename);
 
   const seo = props.data.page.seo;
@@ -100,11 +99,12 @@ const getData = async (filename: string) => {
   };
 };
 
-export default async function HomePage({
-  params,
-}: {
-  params: { filename: string };
-}) {
+export default async function HomePage(
+  props0: {
+    params: Promise<{ filename: string }>;
+  }
+) {
+  const params = await props0.params;
   const { filename } = params;
   const { props } = await getData(filename);
   return <TinaClient props={props} Component={Page} />;

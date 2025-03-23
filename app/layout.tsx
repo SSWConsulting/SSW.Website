@@ -35,8 +35,7 @@ const inter = Inter({
 });
 
 const ChatBaseBot = dynamic(
-  () => import("@/components/zendeskButton/chatBaseBot"),
-  { ssr: false }
+  () => import("@/components/zendeskButton/chatBaseBot")
 );
 
 export const DEFAULT_METADATA: Metadata = {

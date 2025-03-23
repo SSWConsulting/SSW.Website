@@ -166,13 +166,17 @@ const consultingPageData = cache(async (filename: string) => {
 });
 
 type GenerateMetaDataProps = {
-  params: { filename: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ filename: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({
-  params: { filename },
-}: GenerateMetaDataProps): Promise<Metadata> {
+export async function generateMetadata(props0: GenerateMetaDataProps): Promise<Metadata> {
+  const params = await props0.params;
+
+  const {
+    filename
+  } = params;
+
   const isNewConsultingPage = Boolean(await findConsultingPageType(filename));
   const tinaProps = isNewConsultingPage
     ? await newConsultingPageData(filename)
@@ -191,11 +195,12 @@ export async function generateMetadata({
   return seoData ? { ...seoData.seoProps } : {};
 }
 
-export default async function Consulting({
-  params,
-}: {
-  params: ConsultingPageParams;
-}) {
+export default async function Consulting(
+  props0: {
+    params: Promise<ConsultingPageParams>;
+  }
+) {
+  const params = await props0.params;
   const isNewConsultingPage: boolean = Boolean(
     await findConsultingPageType(params.filename)
   );

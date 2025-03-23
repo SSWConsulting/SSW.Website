@@ -98,13 +98,12 @@ const getData = async (filename) => {
 };
 
 type GenerateMetaDataProps = {
-  params: { filename: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ filename: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({
-  params,
-}: GenerateMetaDataProps): Promise<Metadata> {
+export async function generateMetadata(props0: GenerateMetaDataProps): Promise<Metadata> {
+  const params = await props0.params;
   const tinaProps = await getData(params.filename);
   const seo = tinaProps.props.seo;
 
@@ -149,11 +148,12 @@ export async function generateStaticParams() {
   return pages;
 }
 
-export default async function NetUG({
-  params,
-}: {
-  params: { filename: string[] };
-}) {
+export default async function NetUG(
+  props0: {
+    params: Promise<{ filename: string[] }>;
+  }
+) {
+  const params = await props0.params;
   const { filename } = params;
   const { props } = await getData(filename);
   return <TinaClient props={props} Component={NetUGPage} />;
