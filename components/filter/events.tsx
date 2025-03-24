@@ -313,7 +313,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   return (
     <>
       <Transition
-        className="mb-15 border-b-1 bg-white pb-8"
         show={visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
