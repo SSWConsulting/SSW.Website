@@ -10,6 +10,7 @@ PROD_OUTPUT_FILE_PATH = "prod-lighthouse-report.md"
 
 important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
 github_output = os.getenv('GITHUB_OUTPUT')
+github_event = os.getenv('GITHUB_EVENT_NAME')
 prod_scores = []
 
 def format_url_for_filename(url):
@@ -58,11 +59,11 @@ def extract_path(url):
 
 def get_score_display(score, difference):
     if (difference > 0):
-        return f"{int(score)} (⬇️ down by {abs(difference)})"
+        return f"{int(score)} (⬇️{abs(difference)})"
     elif (difference < 0):
-        return f"{int(score)} (⬆️ up by {abs(difference)})"
+        return f"{int(score)} (⬆️{abs(difference)})"
     else:
-        return f"{int(score)} (same)"
+        return f"{int(score)}"
 
 def get_display_text(prod_score, pr_score):
     difference = int(prod_score) - int(pr_score)
@@ -70,11 +71,11 @@ def get_display_text(prod_score, pr_score):
 
 def get_bundle_display(size, difference):
     if difference > 0:
-        return f"{size:.2f} MB (⬇️ down by {abs(difference):.2f} MB)"
+        return f"{size:.2f} MB (⬇️{abs(difference):.2f} MB)"
     elif difference < 0:
-        return f"{size:.2f} MB (⬆️ up by {abs(difference):.2f} MB)"
+        return f"{size:.2f} MB (⬆️{abs(difference):.2f} MB)"
     else:
-        return f"{size:.2f} MB (same)"
+        return f"{size:.2f} MB"
 
 def generate_lighthouse_md(treemap_folder):
     manifest_file = glob.glob(os.path.join(treemap_folder, "manifest.json"))
@@ -141,9 +142,10 @@ write_report_to_file(prod_output, PROD_OUTPUT_FILE_PATH)
 print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
 
 # Generate the report for PR slot and output to GitHub Actions step
-pr_output = generate_lighthouse_md(TREEMAP_FOLDER)
-print(f"✅ PR slot Lighthouse report successfully generated")
-if github_output:
-    with open(github_output, 'a') as fh:
-        print(f"report<<EOF\n{pr_output}\nEOF", file=fh)
-    print("✅ Lighthouse report outputted to GitHub Actions!")
+if github_event == 'pull_request':
+    pr_output = generate_lighthouse_md(TREEMAP_FOLDER)
+    print(f"✅ PR slot Lighthouse report successfully generated")
+    if github_output:
+        with open(github_output, 'a') as fh:
+            print(f"report<<EOF\n{pr_output}\nEOF", file=fh)
+        print("✅ Lighthouse report outputted to GitHub Actions!")

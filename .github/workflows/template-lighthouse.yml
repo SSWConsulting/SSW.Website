@@ -12,13 +12,12 @@ defaults:
     shell: pwsh
 
 env:
-  PROD_URL: https://app-sswwebsite-9eb3-staging.azurewebsites.net
+  PROD_URL: ${{ github.event_name != 'pull_request' && inputs.url || 'https://app-sswwebsite-9eb3-staging.azurewebsites.net' }}
 
 jobs:
   lighthouse-insights:
     name: Run Lighthouse Insights
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,6 +28,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
+
+      - name: Wait for Production slot to be available
+        uses: jtalk/url-health-check-action@v4
+        with:
+          url: ${{ env.PROD_URL }}
+          max-attempts: 5
+          retry-delay: 40s
 
       - name: Audit Production site using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
@@ -53,8 +59,9 @@ jobs:
         run: |
           mv .lighthouseci prod-lighthouseci
 
-      - name: Wait for slot to be available
+      - name: Wait for PR slot to be available
         uses: jtalk/url-health-check-action@v4
+        if: github.event_name == 'pull_request'
         with:
           url: ${{ inputs.url }}
           max-attempts: 5
@@ -62,6 +69,7 @@ jobs:
 
       - name: Audit PR slot using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
+        if: github.event_name == 'pull_request'
         with:
           configPath: ./.lighthouserc.json
           urls: |
@@ -81,11 +89,14 @@ jobs:
 
       - name: Create production lighthouse report file and PR report comment
         id: lighthouse-results-generate
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         run: |
           python scripts/generate-lighthouse-report.py
 
       - name: Comment on PR with Lighthouse insights
         uses: mshick/add-pr-comment@v2
+        if: github.event_name == 'pull_request'
         with:
           message: |
             ${{ steps.lighthouse-results-generate.outputs.report }}
@@ -93,6 +104,7 @@ jobs:
           allow-repeats: true
 
       - name: Commit lighthouse report to repo
+        if: github.event_name != 'pull_request'
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
