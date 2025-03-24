@@ -70,6 +70,7 @@ def get_display_text(prod_score, pr_score):
     return get_score_display(pr_score, difference)
 
 def get_bundle_display(size, difference):
+    difference = round(difference, 2)
     if difference > 0:
         return f"{size:.2f} MB (⬇️{abs(difference):.2f} MB)"
     elif difference < 0:
