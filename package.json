@@ -25,7 +25,7 @@
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.22.0",
     "@jest/globals": "^29.7.0",
-    "@next/eslint-plugin-next": "14.2.15",
+    "@next/eslint-plugin-next": "15.2.3",
     "@playwright/test": "^1.51.0",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.4.6",
