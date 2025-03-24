@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@headlessui/react": "0.0.0-insiders.0a8de01",
+    "@headlessui/react": "2.1.0",
     "@headlessui/tailwindcss": "^0.2.1",
     "@marketsystems/nextjs13-appdir-breadcrumbs": "^1.0.4",
     "@microsoft/applicationinsights-react-js": "^17.3.4",
