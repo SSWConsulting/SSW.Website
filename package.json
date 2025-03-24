@@ -93,9 +93,9 @@
     "next-seo": "^6.6.0",
     "nextjs-breadcrumbs2": "^2.0.4",
     "node-cache": "^5.1.2",
-    "react": "19.0.0",
+    "react": "18.0.0",
     "react-device-detect": "^2.2.3",
-    "react-dom": "19.0.0",
+    "react-dom": "18.0.0",
     "react-google-recaptcha": "^3.1.0",
     "react-hotkeys-hook": "^4.6.1",
     "react-icons": "^5.5.0",
@@ -117,8 +117,7 @@
     "yup": "^0.32.11"
   },
   "resolutions": {
-    "final-form": "4.20.1",
-    "@types/react": "19.0.12"
+    "final-form": "4.20.1"
   },
   "packageManager": "pnpm@9.15.5"
 }
