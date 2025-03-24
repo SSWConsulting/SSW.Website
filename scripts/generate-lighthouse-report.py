@@ -56,6 +56,26 @@ def extract_path(url):
     parsed_url = urlparse(url)
     return parsed_url.path
 
+def get_score_display(score, difference):
+    if (difference > 0):
+        return f"{int(score)} (⬇️ down by {abs(difference)})"
+    elif (difference < 0):
+        return f"{int(score)} (⬆️ up by {abs(difference)})"
+    else:
+        return f"{int(score)} (same)"
+
+def get_display_text(prod_score, pr_score):
+    difference = int(prod_score) - int(pr_score)
+    return get_score_display(pr_score, difference)
+
+def get_bundle_display(size, difference):
+    if difference > 0:
+        return f"{size:.2f} MB (⬇️ down by {abs(difference):.2f} MB)"
+    elif difference < 0:
+        return f"{size:.2f} MB (⬆️ up by {abs(difference):.2f} MB)"
+    else:
+        return f"{size:.2f} MB (same)"
+
 def generate_lighthouse_md(treemap_folder):
     manifest_file = glob.glob(os.path.join(treemap_folder, "manifest.json"))
     if not manifest_file:
@@ -98,8 +118,15 @@ def generate_lighthouse_md(treemap_folder):
 
         if treemap_folder == TREEMAP_FOLDER:
             prod_score = next((entry for entry in prod_scores if extract_path(entry["url_display"]) == extract_path(url_display)), None)
+            performance_display = get_display_text(prod_score['performance'], performance)
+            accessibility_display = get_display_text(prod_score['accessibility'], accessibility)
+            best_practices_display = get_display_text(prod_score['best_practices'], best_practices)
+            seo_display = get_display_text(prod_score['seo'], seo)
+            total_bundle_display = get_bundle_display(total_bundle_size, prod_score["total_bundle_size"] - total_bundle_size)
+            unused_bundle_display = get_bundle_display(unused_bundle_size, prod_score["unused_bundle_size"] - unused_bundle_size)
+
             md_output.append(
-                f"| {url_display}<br>{prod_score['url_display']} | {int(performance)}<br>{prod_score['performance']} | {int(accessibility)}<br>{prod_score['accessibility']} | {int(best_practices)}<br>{prod_score['best_practices']} | {int(seo)}<br>{prod_score['seo']} | {total_bundle_size:.2f} MB<br>{prod_score['total_bundle_size']:.2f} MB | {unused_bundle_size:.2f} MB<br>{prod_score['unused_bundle_size']:.2f} MB |"
+                f"| {url_display} | {performance_display} | {accessibility_display} | {best_practices_display} | {seo_display} | {total_bundle_display} | {unused_bundle_display} |"
             )
 
     return "\n".join(md_output)
