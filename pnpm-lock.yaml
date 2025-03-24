@@ -158,8 +158,8 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       ssw.megamenu:
-        specifier: 4.10.0
-        version: 4.10.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: link:ssw.megamenu
+        version: link:ssw.megamenu
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -1609,11 +1609,6 @@ packages:
     resolution: {integrity: sha512-JJCXydOFWMDpCP4q13iEplA503MQO3xLoZiKum+955ZCtHINWnx26CUxVxxFQu/uLb4LW3ge15ZpzIkXKkJ8oQ==}
     peerDependencies:
       react: '>= 16'
-
-  '@heroicons/react@2.2.0':
-    resolution: {integrity: sha512-LMcepvRaS9LYHJGsF0zzmgKCUim/X3N/DQKc4jepAXJ7l8QxJ1PmxJzqplF2Z3FE4PqBAIGyJAQ/w4B5dsqbtQ==}
-    peerDependencies:
-      react: '>= 16 || ^19.0.0-rc'
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -7723,11 +7718,6 @@ packages:
       react: '>=16.8.1'
       react-dom: '>=16.8.1'
 
-  react-icons@4.12.0:
-    resolution: {integrity: sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==}
-    peerDependencies:
-      react: '*'
-
   react-icons@5.5.0:
     resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
     peerDependencies:
@@ -8288,12 +8278,6 @@ packages:
     resolution: {integrity: sha512-MzeGQSp0kvQv/K1WWaLm2Oi4cnr42oelLbZnrveCLP1Up21Ks7+PJYb+3uc+3kC7O6VdrhqJFhFkpUuK0E4pWA==}
     peerDependencies:
       sucrase: ^3.35.0
-
-  ssw.megamenu@4.10.0:
-    resolution: {integrity: sha512-IQji6WY65Nfsajl5nkGPCbgF20ykwxT/0px8e74R5gteC9c75fllw8FWryJc4N8NJYumrXLVeMwJuVO7vghLbg==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
 
   stable-hash@0.0.4:
     resolution: {integrity: sha512-LjdcbuBeLcdETCrPn9i8AYAZ1eCtu4ECAWtP7UleOiZ9LzVxRzzUZEoZ8zB24nhkQnDWyET0I+3sWokSDS3E7g==}
@@ -10805,13 +10789,6 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@headlessui/react@1.7.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
-    dependencies:
-      '@tanstack/react-virtual': 3.13.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      client-only: 0.0.1
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
-
   '@headlessui/react@2.1.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react': 0.26.28(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -10848,10 +10825,6 @@ snapshots:
       react: 18.3.1
 
   '@heroicons/react@1.0.6(react@19.0.0)':
-    dependencies:
-      react: 19.0.0
-
-  '@heroicons/react@2.2.0(react@19.0.0)':
     dependencies:
       react: 19.0.0
 
@@ -19717,10 +19690,6 @@ snapshots:
       react: 19.0.0
       react-dom: 19.0.0(react@19.0.0)
 
-  react-icons@4.12.0(react@19.0.0):
-    dependencies:
-      react: 19.0.0
-
   react-icons@5.5.0(react@18.3.1):
     dependencies:
       react: 18.3.1
@@ -20532,18 +20501,6 @@ snapshots:
       better-sqlite3: 11.8.1
       module-error: 1.0.2
       sucrase: 3.35.0
-
-  ssw.megamenu@4.10.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
-    dependencies:
-      '@headlessui/react': 1.7.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      '@heroicons/react': 2.2.0(react@19.0.0)
-      clsx: 2.1.1
-      react: 19.0.0
-      react-device-detect: 2.2.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react-dom: 19.0.0(react@19.0.0)
-      react-hotkeys-hook: 4.6.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
-      react-icons: 4.12.0(react@19.0.0)
-      tailwind-merge: 2.6.0
 
   stable-hash@0.0.4: {}
 
