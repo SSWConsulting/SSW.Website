@@ -17,8 +17,8 @@ importers:
         specifier: ^6.7.2
         version: 6.7.2
       '@headlessui/react':
-        specifier: ^1.7.19
-        version: 1.7.19(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        specifier: 0.0.0-insiders.0a8de01
+        version: 0.0.0-insiders.0a8de01(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@headlessui/tailwindcss':
         specifier: ^0.2.1
         version: 0.2.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.24)(typescript@5.8.2)))
@@ -1577,6 +1577,13 @@ packages:
     resolution: {integrity: sha512-AiXO/bfe9bmxBjxxtYxFAXGZvMaN5s8kO+jBHAJCON8rJoB5YS/D6X7ZNc6XQkuHNmyl4CYaMI1fJ/Gn27RGGw==}
     engines: {node: '>=6'}
     hasBin: true
+
+  '@headlessui/react@0.0.0-insiders.0a8de01':
+    resolution: {integrity: sha512-2PrWg0z1sOFHiEeAkoWeoB7nf3TkyoDdcdriNh8g7JR0lKBe3OZGU0OLKVL0YfP5rGokX4eHLc++/cMn1rqGxQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^18 || ^19 || ^19.0.0-rc
+      react-dom: ^18 || ^19 || ^19.0.0-rc
 
   '@headlessui/react@1.7.19':
     resolution: {integrity: sha512-Ll+8q3OlMJfJbAKM/+/Y2q6PPYbryqNTXDbryx7SXLIDamkF6iQFbriYHga0dY44PvDhvvBWCx1Xj4U5+G4hOw==}
@@ -10790,6 +10797,15 @@ snapshots:
       long: 5.3.1
       protobufjs: 7.4.0
       yargs: 17.7.2
+
+  '@headlessui/react@0.0.0-insiders.0a8de01(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+    dependencies:
+      '@floating-ui/react': 0.26.28(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@react-aria/focus': 3.19.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@react-aria/interactions': 3.23.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@tanstack/react-virtual': 3.13.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   '@headlessui/react@1.7.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
