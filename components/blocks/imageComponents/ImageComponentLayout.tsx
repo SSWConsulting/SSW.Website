@@ -90,6 +90,7 @@ export const ImageComponentLayout = ({ data, children }) => {
               isImage && (
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
+                  loading="eager"
                   height={data.mediaConfiguration?.imageHeight}
                   className={classNames("w-full rounded-md")}
                   src={data.mediaConfiguration?.imageSource}
