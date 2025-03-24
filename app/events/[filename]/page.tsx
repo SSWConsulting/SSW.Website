@@ -82,7 +82,9 @@ type GenerateMetaDataProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata(props0: GenerateMetaDataProps): Promise<Metadata> {
+export async function generateMetadata(
+  props0: GenerateMetaDataProps
+): Promise<Metadata> {
   const params = await props0.params;
   let tinaProps;
   if (await isNewEventsPage(params.filename)) {
@@ -116,11 +118,9 @@ const isNewEventsPage = async (filename: string): Promise<boolean> => {
   }
 };
 
-export default async function Events(
-  props0: {
-    params: Promise<{ filename: string }>;
-  }
-) {
+export default async function Events(props0: {
+  params: Promise<{ filename: string }>;
+}) {
   const params = await props0.params;
   const { filename } = params;
   if (await isNewEventsPage(filename)) {

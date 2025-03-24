@@ -30,11 +30,9 @@ export async function generateStaticParams(): Promise<{ filename: string }[]> {
     return { filename: edge.node._sys.filename };
   });
 }
-export async function generateMetadata(
-  props: {
-    params: Promise<{ filename: string }>;
-  }
-): Promise<Metadata> {
+export async function generateMetadata(props: {
+  params: Promise<{ filename: string }>;
+}): Promise<Metadata> {
   const params = await props.params;
   const tinaProps = await getArticle(params.filename);
   const seo = tinaProps.data.articles.seo;

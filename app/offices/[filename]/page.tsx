@@ -30,7 +30,9 @@ type GenerateMetaDataProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata(props0: GenerateMetaDataProps): Promise<Metadata> {
+export async function generateMetadata(
+  props0: GenerateMetaDataProps
+): Promise<Metadata> {
   const params = await props0.params;
   const tinaProps = await getData(params.filename);
   const seo = tinaProps.props.seo;
@@ -65,11 +67,9 @@ export async function generateStaticParams() {
   return pages;
 }
 
-export default async function Office(
-  props0: {
-    params: Promise<{ filename: string }>;
-  }
-) {
+export default async function Office(props0: {
+  params: Promise<{ filename: string }>;
+}) {
   const params = await props0.params;
   const { filename } = params;
   const { props } = await getData(filename);

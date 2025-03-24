@@ -32,7 +32,9 @@ type GenerateMetaDataProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata(props: GenerateMetaDataProps): Promise<Metadata> {
+export async function generateMetadata(
+  props: GenerateMetaDataProps
+): Promise<Metadata> {
   const params = await props.params;
   const tinaProps = await getData(params.filename);
 
@@ -86,11 +88,9 @@ const getData = async (filename: string) => {
   return { ...tinaProps };
 };
 
-export default async function HomePage(
-  props0: {
-    params: Promise<{ filename: string }>;
-  }
-) {
+export default async function HomePage(props0: {
+  params: Promise<{ filename: string }>;
+}) {
   const params = await props0.params;
   const { filename } = params;
   const tinaProps = await getData(filename);
