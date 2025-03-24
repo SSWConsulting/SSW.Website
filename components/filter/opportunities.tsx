@@ -180,6 +180,7 @@ const OpportunityDropdown = ({
 
   return (
     <Transition
+      as="div"
       show={visible}
       enter="transition-opacity duration-300"
       enterFrom="opacity-0"
@@ -210,6 +211,7 @@ const OpportunityDropdown = ({
           </Disclosure.Button>
 
           <Transition
+            as="div"
             show={isOpened}
             enter="transition duration-100 ease-out"
             enterFrom="transform scale-95 opacity-0"
