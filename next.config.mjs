@@ -81,8 +81,8 @@ const config = {
       },
     ];
   },
+  instrumentationHook: true,
   experimental: {
-    instrumentationHook: true,
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
     turbo: {
       resolveExtensions: [
