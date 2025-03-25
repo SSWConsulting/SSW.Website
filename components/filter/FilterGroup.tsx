@@ -75,6 +75,7 @@ const FilterOption = ({
     >
       <div className="inline-block h-3.5 w-6 text-sswRed">
         <Transition
+          as={"div"}
           show={hovered || index === selected}
           enter="transition-opacity transition-transform duration-300"
           enterFrom="opacity-0 -translate-x-2"
