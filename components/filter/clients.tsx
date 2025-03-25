@@ -46,7 +46,8 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
       {clients.map((client, index) => {
         return (
           <Transition
-            as={"div"}
+            as="div"
+            className="flex w-full flex-col"
             key={index}
             show={filteredClients?.some((c) => c.name === client.name)}
             enter="transition-opacity duration-300"
