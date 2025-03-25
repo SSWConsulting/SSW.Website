@@ -45,6 +45,9 @@ type VideoState = {
   videoType: VideoType | undefined;
   videoId: string | undefined;
   imageSrc: string;
+  isVimeo?: boolean;
+
+  isYoutube?: boolean;
 };
 
 export const VideoModal = ({
@@ -65,23 +68,11 @@ export const VideoModal = ({
 
   const setVideoThumbnail = useCallback(({ isYouTube, isVimeo, videoId }) => {
     if (isYouTube) {
-      const maxResYoutubeImg = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-      axios
-        .get(maxResYoutubeImg)
-        .then(() => {
-          setVideoState({
-            videoId,
-            videoType: "youtube",
-            imageSrc: maxResYoutubeImg,
-          });
-        })
-        .catch(() => {
-          setVideoState({
-            videoId,
-            videoType: "youtube",
-            imageSrc: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
-          });
-        });
+      setVideoState({
+        videoId,
+        videoType: "youtube",
+        imageSrc: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+      });
       return;
     }
     if (isVimeo)
