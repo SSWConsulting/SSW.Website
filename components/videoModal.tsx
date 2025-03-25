@@ -60,8 +60,6 @@ export const VideoModal = ({
     videoId: undefined,
     imageSrc: "",
   });
-  // const [videoType, setVideoType] = useState<VideoType | undefined>(undefined);
-  // const [videoId, setVideoId] = useState<string>(youtubeVideoId || undefined);
   const [clicked, setClicked] = useState<boolean>(false);
   // const [imageSrc, setImageSrc] = useState<string>("");
 
@@ -134,6 +132,15 @@ export const VideoModal = ({
                   src={videoState.imageSrc}
                   fill
                   alt="Video player"
+                  onError={() => {
+                    setVideoState({
+                      ...videoState,
+                      imageSrc:
+                        videoState.videoType === "youtube"
+                          ? `https://img.youtube.com/vi/${videoState.videoId}/mqdefault.jpg`
+                          : "",
+                    });
+                  }}
                 />
                 <PlayArrow />{" "}
               </>
