@@ -103,8 +103,8 @@ importers:
         specifier: ^11.0.2
         version: 11.1.0
       lucide-react:
-        specifier: ^0.477.0
-        version: 0.477.0(react@18.3.1)
+        specifier: ^0.483.0
+        version: 0.483.0(react@18.3.1)
       next:
         specifier: 15.2.3
         version: 15.2.3(@babel/core@7.26.10)(@opentelemetry/api@1.9.0)(@playwright/test@1.51.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -178,8 +178,8 @@ importers:
         specifier: ^1.0.15
         version: 1.0.15
       yup:
-        specifier: ^0.32.11
-        version: 0.32.11
+        specifier: ^1.6.1
+        version: 1.6.1
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3.3.0
@@ -6638,8 +6638,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
-  lucide-react@0.477.0:
-    resolution: {integrity: sha512-yCf7aYxerFZAbd8jHJxjwe1j7jEMPptjnaOqdYeirFnEy85cNR3/L+o0I875CYFYya+eEVzZSbNuRk8BZPDpVw==}
+  lucide-react@0.483.0:
+    resolution: {integrity: sha512-WldsY17Qb/T3VZdMnVQ9C3DDIP7h1ViDTHVdVGnLZcvHNg30zH/MTQ04RTORjexoGmpsXroiQXZ4QyR0kBy0FA==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -17000,7 +17000,7 @@ snapshots:
     dependencies:
       react: 18.3.1
 
-  lucide-react@0.477.0(react@18.3.1):
+  lucide-react@0.483.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 

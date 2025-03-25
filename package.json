@@ -86,7 +86,7 @@
     "framer-motion": "^12.4.7",
     "lodash": "^4.17.21",
     "lru-cache": "^11.0.2",
-    "lucide-react": "^0.477.0",
+    "lucide-react": "^0.483.0",
     "next": "15.2.3",
     "next-plugin-preval": "^1.2.6",
     "next-seo": "^6.6.0",
@@ -111,7 +111,7 @@
     "tinacms": "2.7.3",
     "usehooks-ts": "^3.1.1",
     "xss": "^1.0.15",
-    "yup": "^0.32.11"
+    "yup": "^1.6.1"
   },
   "resolutions": {
     "final-form": "4.20.1"
