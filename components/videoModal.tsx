@@ -2,10 +2,11 @@
 
 import classNames from "classnames";
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { FaPlayCircle } from "react-icons/fa";
 
+import axios from "axios";
 import {
   MATCH_URL_VIMEO,
   MATCH_URL_YOUTUBE,
@@ -27,6 +28,7 @@ type VideoModalProps = {
   children?: React.ReactNode;
   className?: string;
   roundedEdges?: boolean;
+  youtubeVideoId?: string;
   url: string;
   overflow?: boolean;
 };
@@ -40,32 +42,58 @@ const getVimeoData = async (id: string) => {
 export const VideoModal = ({
   children = null,
   url,
+  youtubeVideoId,
   overflow,
   roundedEdges,
   className,
 }: VideoModalProps) => {
-  const [videoId, setVideoId] = useState<string>();
+  const [videoId, setVideoId] = useState<string>(youtubeVideoId || undefined);
   const [clicked, setClicked] = useState<boolean>(false);
   const [imageSrc, setImageSrc] = useState<string>("");
   const isYouTube = MATCH_URL_YOUTUBE.test(url);
   const isVimeo = MATCH_URL_VIMEO.test(url);
 
-  useEffect(() => {
+  const setVideoThumbnail = useCallback(() => {
     if (isYouTube) {
+      axios
+        .get(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`)
+        .then(() => {
+          setImageSrc(
+            `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+          );
+        })
+        .catch(() => {
+          setImageSrc(`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`);
+        });
+      return;
+    }
+    if (isVimeo)
+      getVimeoData(videoId).then((res) => {
+        setImageSrc(res[0].thumbnail_large);
+      });
+  }, [videoId, isYouTube, isVimeo]);
+
+  const extractVideoId = useCallback(() => {
+    if (youtubeVideoId) {
+      return;
+    }
+    if (isYouTube) {
+      console.log("extracting youtube id");
       const id = getYouTubeId(url);
       setVideoId(id);
-      setImageSrc(`https://img.youtube.com/vi/${id}/maxresdefault.jpg`);
     } else if (isVimeo) {
       const id = getVimeoId(url);
       setVideoId(id);
       getVimeoData(id).then((res) => {
         setImageSrc(res[0].thumbnail_large);
       });
-    } else {
-      setVideoId("");
-      setImageSrc("");
     }
-  }, [url, isYouTube, isVimeo]);
+  }, [url, isVimeo, isYouTube, youtubeVideoId]);
+
+  useEffect(() => {
+    extractVideoId();
+    setVideoThumbnail();
+  }, [setVideoThumbnail, extractVideoId]);
 
   return (
     <div
@@ -83,16 +111,9 @@ export const VideoModal = ({
               <>
                 <Image
                   className="!my-0"
-                  src={imageSrc || ""}
+                  src={imageSrc}
                   fill
                   alt="Video player"
-                  onError={() => {
-                    if (imageSrc.includes("maxresdefault")) {
-                      setImageSrc(
-                        `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-                      );
-                    }
-                  }}
                 />
                 <PlayArrow />{" "}
               </>

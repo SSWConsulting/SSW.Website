@@ -1,5 +1,7 @@
 "use client";
+import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { Container } from "@/components/util/container";
+import { VideoModal } from "@/components/videoModal";
 import getYouTubeVideoId from "@/services/client/youtube.service";
 import "aos/dist/aos.css";
 import Image from "next/image";
@@ -78,14 +80,7 @@ export const ImageComponentLayout = ({ data, children }) => {
             )}
           >
             {isYouTube && youtubeVideoId ? (
-              <iframe
-                className={classNames("aspect-video w-full rounded-md")}
-                src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                data-tina-field={tinaField(data, "mediaConfiguration")}
-              />
+              <VideoModal youtubeVideoId={youtubeVideoId} />
             ) : (
               isImage && (
                 <Image

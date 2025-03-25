@@ -9,7 +9,7 @@ import Button from "../button/rippleButton";
 import { customImageBlockSchema } from "./customImage";
 import { expertBlockSchema } from "./expertBlock";
 import { componentRenderer } from "./mdxComponentRenderer";
-import { videoEmbedBlockSchema } from "./videoEmbed";
+import { videoEmbedBlockSchema } from "./videoEmbed.schema";
 import { youtubePlayListBlockSchema } from "./youtubePlaylist";
 
 const fixedTabsBlocks: Template[] = [
