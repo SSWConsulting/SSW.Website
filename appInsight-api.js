@@ -1,10 +1,9 @@
-let appInsights;
+import * as appInsights from "applicationinsights";
 
 if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
-  const appInsights = require("applicationinsights");
   try {
     appInsights
-      ?.setup(process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING)
+      .setup(process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING)
       .setAutoCollectConsole(true)
       .setAutoCollectExceptions(true)
       .setAutoCollectRequests(true)
@@ -36,4 +35,4 @@ if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
   );
 }
 
-export default appInsights || null;
+export default appInsights;
