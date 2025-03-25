@@ -9,7 +9,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "dev": "tinacms dev -c \"node node_modules/next/dist/bin/next dev\"",
+    "dev": "tinacms dev -c \"next dev\"",
     "build": "tinacms build && next build && next-sitemap --config next-sitemap.config.js",
     "partytown": "partytown copylib public/~partytown",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
