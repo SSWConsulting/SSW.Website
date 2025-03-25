@@ -80,7 +80,7 @@ export const ImageComponentLayout = ({ data, children }) => {
             )}
           >
             {isYouTube && youtubeVideoId ? (
-              <VideoModal youtubeVideoId={youtubeVideoId} />
+              <VideoModal className="w-full" youtubeVideoId={youtubeVideoId} />
             ) : (
               isImage && (
                 <Image

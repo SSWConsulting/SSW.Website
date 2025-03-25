@@ -29,7 +29,7 @@ type VideoModalProps = {
   className?: string;
   roundedEdges?: boolean;
   youtubeVideoId?: string;
-  url: string;
+  url?: string;
   overflow?: boolean;
 };
 
@@ -46,7 +46,6 @@ type VideoState = {
   videoId: string | undefined;
   imageSrc: string;
   isVimeo?: boolean;
-
   isYoutube?: boolean;
 };
 
@@ -85,11 +84,13 @@ export const VideoModal = ({
       });
   }, []);
 
-  const extractVideoId = useCallback((url: string) => {
+  const extractVideoId = useCallback((url: string, youtubeVideoId?: string) => {
+    if (youtubeVideoId) {
+      return { isYouTube: true, isVimeo: false, videoId: youtubeVideoId };
+    }
+    let videoId;
     const isYouTube = MATCH_URL_YOUTUBE.test(url);
     const isVimeo = MATCH_URL_VIMEO.test(url);
-    let videoId;
-
     if (isYouTube) {
       videoId = getYouTubeId(url);
     } else if (isVimeo) {
@@ -100,7 +101,7 @@ export const VideoModal = ({
   }, []);
 
   useEffect(() => {
-    const { isVimeo, isYouTube, videoId } = extractVideoId(url);
+    const { isVimeo, isYouTube, videoId } = extractVideoId(url, youtubeVideoId);
     setVideoThumbnail({ isVimeo, isYouTube, videoId });
   }, [setVideoThumbnail, extractVideoId, url]);
 
