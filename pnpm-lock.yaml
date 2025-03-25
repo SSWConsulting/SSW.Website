@@ -163,8 +163,8 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       ssw.megamenu:
-        specifier: link:ssw.megamenu
-        version: link:ssw.megamenu
+        specifier: 4.10.1
+        version: 4.10.1(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -7728,6 +7728,11 @@ packages:
       react: '>=16.8.1'
       react-dom: '>=16.8.1'
 
+  react-icons@4.12.0:
+    resolution: {integrity: sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==}
+    peerDependencies:
+      react: '*'
+
   react-icons@5.5.0:
     resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
     peerDependencies:
@@ -8291,6 +8296,12 @@ packages:
     resolution: {integrity: sha512-MzeGQSp0kvQv/K1WWaLm2Oi4cnr42oelLbZnrveCLP1Up21Ks7+PJYb+3uc+3kC7O6VdrhqJFhFkpUuK0E4pWA==}
     peerDependencies:
       sucrase: ^3.35.0
+
+  ssw.megamenu@4.10.1:
+    resolution: {integrity: sha512-OUU5Gy3NhZTiLJOWXbDSxSMn1OXal9yJuZ9UHADaChxCce6uJ48pxZnKz6Y5LNGmg2vsSjATw2jEOg7ZKoVRJQ==}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
 
   stable-hash@0.0.4:
     resolution: {integrity: sha512-LjdcbuBeLcdETCrPn9i8AYAZ1eCtu4ECAWtP7UleOiZ9LzVxRzzUZEoZ8zB24nhkQnDWyET0I+3sWokSDS3E7g==}
@@ -19708,6 +19719,10 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
+  react-icons@4.12.0(react@18.0.0):
+    dependencies:
+      react: 18.0.0
+
   react-icons@5.5.0(react@18.0.0):
     dependencies:
       react: 18.0.0
@@ -20525,6 +20540,18 @@ snapshots:
       better-sqlite3: 11.8.1
       module-error: 1.0.2
       sucrase: 3.35.0
+
+  ssw.megamenu@4.10.1(react-dom@18.0.0(react@18.0.0))(react@18.0.0):
+    dependencies:
+      '@headlessui/react': 2.2.0(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
+      '@heroicons/react': 2.2.0(react@18.0.0)
+      clsx: 2.1.1
+      react: 18.0.0
+      react-device-detect: 2.2.3(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
+      react-dom: 18.0.0(react@18.0.0)
+      react-hotkeys-hook: 4.6.1(react-dom@18.0.0(react@18.0.0))(react@18.0.0)
+      react-icons: 4.12.0(react@18.0.0)
+      tailwind-merge: 2.6.0
 
   stable-hash@0.0.4: {}
 
