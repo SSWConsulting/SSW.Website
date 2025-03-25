@@ -84,6 +84,7 @@ const config = {
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
     turbo: {
+      moduleIdStrategy: 'deterministic',
       resolveExtensions: [
         ".mdx",
         ".tsx",
