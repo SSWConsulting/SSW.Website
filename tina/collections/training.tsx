@@ -3,7 +3,7 @@ import * as Schemas from "../../components/blocks";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { trainingHeaderSchema } from "../../components/training/trainingHeader";
 import { seoSchema } from "../../components/util/seo";
-import { videoCardSchema } from "../../components/util/videoCards";
+import { videoCardSchema } from "../../components/util/videoCards.schema";
 import { tipField } from "./shared-fields";
 
 export const trainingSchema: Collection = {
