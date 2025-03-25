@@ -1,6 +1,5 @@
 import headlessuiPlugin from "@headlessui/tailwindcss";
 import typographyPlugin from "@tailwindcss/typography";
-import gradientsPlugin from "tailwindcss-gradients";
 import colors from "tailwindcss/colors";
 import plugin from "tailwindcss/plugin";
 
@@ -471,7 +470,6 @@ export default {
   },
   plugins: [
     typographyPlugin,
-    gradientsPlugin,
     headlessuiPlugin({ prefix: "ui" }),
 
     // Use flex-basis with gap
