@@ -1,7 +1,7 @@
 let appInsights;
 
 if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
-  const appInsights = required("applicationinsights");
+  const appInsights = require("applicationinsights");
   try {
     appInsights
       ?.setup(process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING)
