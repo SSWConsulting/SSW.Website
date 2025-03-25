@@ -103,6 +103,12 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
 
+      - name: Add Lighthouse Insights to Summary
+        if: github.event_name != 'pull_request'
+        run: |
+          $report_content='${{ steps.lighthouse-results-generate.outputs.report }}'
+          "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+
       - name: Commit lighthouse report to repo
         if: github.event_name != 'pull_request'
         run: |

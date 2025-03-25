@@ -137,16 +137,20 @@ def write_report_to_file(report_content, output_file_path):
     with open(output_file_path, "w", encoding="utf-8") as md_file:
         md_file.write(report_content)
 
+def output_to_github_actions(report_content): 
+    if github_output:
+        with open(github_output, 'a') as fh:
+            print(f"report<<EOF\n{report_content}\nEOF", file=fh)
+        print("✅ Lighthouse report outputted to GitHub Actions!")
+
 # Generate the report for Production and save it to a file
 prod_output = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
 write_report_to_file(prod_output, PROD_OUTPUT_FILE_PATH)
 print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
+output_to_github_actions(prod_output)
 
 # Generate the report for PR slot and output to GitHub Actions step
 if github_event == 'pull_request':
     pr_output = generate_lighthouse_md(TREEMAP_FOLDER)
     print(f"✅ PR slot Lighthouse report successfully generated")
-    if github_output:
-        with open(github_output, 'a') as fh:
-            print(f"report<<EOF\n{pr_output}\nEOF", file=fh)
-        print("✅ Lighthouse report outputted to GitHub Actions!")
+    output_to_github_actions(pr_output)
