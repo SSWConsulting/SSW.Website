@@ -5,8 +5,6 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useState } from "react";
 
 import { FaPlayCircle } from "react-icons/fa";
-
-import axios from "axios";
 import {
   MATCH_URL_VIMEO,
   MATCH_URL_YOUTUBE,
@@ -78,7 +76,7 @@ export const VideoModal = ({
       getVimeoData(videoId).then((res) => {
         setVideoState({
           videoId,
-          videoType: "youtube",
+          videoType: "vimeo",
           imageSrc: res[0].thumbnail_large,
         });
       });
@@ -103,7 +101,7 @@ export const VideoModal = ({
   useEffect(() => {
     const { isVimeo, isYouTube, videoId } = extractVideoId(url, youtubeVideoId);
     setVideoThumbnail({ isVimeo, isYouTube, videoId });
-  }, [setVideoThumbnail, extractVideoId, url]);
+  }, [setVideoThumbnail, extractVideoId, url, youtubeVideoId]);
 
   return (
     <div
@@ -141,20 +139,24 @@ export const VideoModal = ({
         ) : (
           <>
             {videoState.videoType === "youtube" && (
-              <YouTubeEmbed
-                className="absolute left-0 top-0"
-                id={videoState.videoId}
-                width={"100%"}
-                height={"100%"}
-                autoplay={true}
-              />
+              <>
+                <YouTubeEmbed
+                  className="absolute left-0 top-0"
+                  id={videoState.videoId}
+                  width={"100%"}
+                  height={"100%"}
+                  autoplay={true}
+                />
+              </>
             )}
             {videoState.videoType === "vimeo" && (
-              <VimeoEmbed
-                className="absolute left-0 top-0"
-                id={videoState.videoId}
-                autoplay={true}
-              />
+              <>
+                <VimeoEmbed
+                  className="absolute left-0 top-0"
+                  id={videoState.videoId}
+                  autoplay={true}
+                />
+              </>
             )}
           </>
         )}
