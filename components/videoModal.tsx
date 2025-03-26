@@ -31,14 +31,9 @@ type VideoModalProps = {
 };
 
 const getVimeoData = async (id: string) => {
-  try {
     const videoData = await fetch(`https://vimeo.com/api/v2/video/${id}.json`);
     const video = await videoData.json();
     return video[0]?.thumbnail_large || "";
-  } catch (error) {
-    console.warn("Error fetching Vimeo data", error);
-    return "";
-  }
 };
 
 export const VideoModal = ({
