@@ -31,9 +31,9 @@ type VideoModalProps = {
 };
 
 const getVimeoData = async (id: string) => {
-    const videoData = await fetch(`https://vimeo.com/api/v2/video/${id}.json`);
-    const video = await videoData.json();
-    return video[0]?.thumbnail_large || "";
+  const videoData = await fetch(`https://vimeo.com/api/v2/video/${id}.json`);
+  const video = await videoData.json();
+  return video[0]?.thumbnail_large || "";
 };
 
 export const VideoModal = ({
