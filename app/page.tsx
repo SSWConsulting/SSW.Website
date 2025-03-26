@@ -5,6 +5,8 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { PageClient } from "./page-client";
 
+export const dynamicParams = false;
+
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
