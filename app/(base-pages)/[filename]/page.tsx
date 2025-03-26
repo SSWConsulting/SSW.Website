@@ -4,7 +4,7 @@ import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import Page from ".";
-import { TinaClient } from "../tina-client";
+import { TinaClient } from "../../tina-client";
 
 export async function generateStaticParams() {
   let PageListData = await client.queries.pageConnection();
