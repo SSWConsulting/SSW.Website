@@ -7,7 +7,7 @@ import { tableBlockSchema } from "../../components/blocks/tableLayout";
 import { testimonialsListSchema } from "../../components/blocks/testimonialsList";
 import { verticalImageLayoutBlockSchema } from "../../components/blocks/verticalImageLayout";
 
-import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";

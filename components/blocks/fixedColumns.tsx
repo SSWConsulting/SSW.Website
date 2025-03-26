@@ -1,6 +1,6 @@
 import type { Template } from "tinacms";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { contentCardBlockSchema } from "./contentCard";
+import { contentCardBlockSchema } from "./contentCard.schema";
 import { customImageBlockSchema } from "./customImage";
 import { eventLinkSchema } from "./eventLink";
 import { componentRenderer } from "./mdxComponentRenderer";

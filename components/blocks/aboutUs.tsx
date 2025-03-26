@@ -3,7 +3,6 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { memo, useEffect, useState } from "react";
-
 import { BiChevronRightCircle } from "react-icons/bi";
 
 import { tinaField } from "tinacms/dist/react";
