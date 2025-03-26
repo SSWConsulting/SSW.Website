@@ -38,7 +38,7 @@ const ChatBaseBot = dynamic(
   () => import("@/components/zendeskButton/chatBaseBot")
 );
 
-export const DEFAULT_METADATA: Metadata = {
+export const metadata: Metadata = {
   ...DEFAULT,
 };
 
