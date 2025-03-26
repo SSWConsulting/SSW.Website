@@ -68,7 +68,7 @@ export const VideoModal = ({
       setVideoState({
         videoId,
         videoType: "youtube",
-        imageSrc: `https://img.youtube.com/vi/${videoId}/maxresdefault.jp`,
+        imageSrc: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
       });
       return;
     }
