@@ -81,7 +81,7 @@ const config = {
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
     turbo: {
-      moduleIdStrategy: 'deterministic',
+      moduleIdStrategy: "deterministic",
       resolveExtensions: [
         ".mdx",
         ".tsx",
@@ -98,6 +98,7 @@ const config = {
     },
   },
   productionBrowserSourceMaps: true,
+  expireTime: 3600,
 };
 
 const withBundleAnalyzer = bundleAnalyser({
