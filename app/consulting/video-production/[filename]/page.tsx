@@ -1,7 +1,7 @@
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../../tina-client";
 import VideoProduction from "./video-production";
@@ -69,10 +69,7 @@ export async function generateMetadata(
     seo.canonical = `${props.header.url}consulting/video-production/${params.filename}`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 export default async function Consulting(props0: {

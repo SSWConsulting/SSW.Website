@@ -1,7 +1,7 @@
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { TinaClient, UseTinaProps } from "app/tina-client";
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ArticlePage, { ArticleData, ArticlePageProps } from ".";
 
@@ -39,11 +39,8 @@ export async function generateMetadata(props: {
   if (seo && !seo.canonical) {
     seo.canonical = `${tinaProps.data.global.header.url}articles/${params.filename}`;
   }
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-  return {
-    ...seoProps,
-  };
+
+  return getSEOProps(seo);
 }
 const getArticle = async (filename: string): Promise<ArticleData> => {
   const tinaProps = await fetchTinaData(
