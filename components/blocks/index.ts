@@ -30,7 +30,7 @@ import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";
 import { contentCardBlockSchema } from "./contentCard.schema";
 import { customImageBlockSchema } from "./customImage";
-import { domainFromQuerySchema } from "./domainFromQuery";
+import { domainFromQuerySchema } from "./domainFromQuery.schema";
 import { downloadBlockSchema } from "./downloadBlock";
 import { dynamicColumnsSchema } from "./dynamicColumns";
 import { eventLinkSchema } from "./eventLink";
