@@ -36,6 +36,7 @@ const getVimeoData = async (id: string) => {
     const video = await videoData.json();
     return video[0]?.thumbnail_large || "";
   } catch (error) {
+    console.warn("Error fetching Vimeo data", error);
     return "";
   }
 };
@@ -75,7 +76,7 @@ export const VideoModal = ({
       setVideoId(null);
       setImageSrc(null);
     }
-  }, [url]);
+  }, [url, videoId, imageSrc]);
 
   return (
     <div
