@@ -119,7 +119,9 @@ export const AboutUs = ({ data }) => {
         data-tina-field={tinaField(data, aboutUsBlock.backgroundColor)}
       >
         <div className="grid grid-cols-3 gap-6">
+          {!isMobile && (
             <TV className="col-span-3 max-md:hidden sm:col-span-1" />
+          )}
           <div className="col-span-3 md:col-span-2">
             <div
               className={`grid grid-cols-1 gap-6 ${!data.hideMap ? "sm:grid-cols-2" : ""}`}

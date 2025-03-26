@@ -36,7 +36,6 @@ const getVimeoData = async (id: string) => {
     const video = await videoData.json();
     return video[0]?.thumbnail_large || "";
   } catch (error) {
-    console.error("Failed to fetch Vimeo thumbnail:", error);
     return "";
   }
 };
