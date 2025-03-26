@@ -5,28 +5,6 @@ import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { PageClient } from "./page-client";
 
-export async function generateStaticParams() {
-  let PageListData = await client.queries.pageConnection();
-  const allPagesListData = PageListData;
-
-  while (PageListData.data.pageConnection.pageInfo.hasNextPage) {
-    const lastCursor = PageListData.data.pageConnection.pageInfo.endCursor;
-    PageListData = await client.queries.pageConnection({
-      after: lastCursor,
-    });
-
-    allPagesListData.data.pageConnection.edges.push(
-      ...PageListData.data.pageConnection.edges
-    );
-  }
-
-  return allPagesListData.data.pageConnection.edges.map((page) => {
-    return {
-      params: { filename: page.node._sys.breadcrumbs },
-    };
-  });
-}
-
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
