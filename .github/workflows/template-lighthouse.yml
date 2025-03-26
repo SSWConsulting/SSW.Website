@@ -12,7 +12,7 @@ defaults:
     shell: pwsh
 
 env:
-  PROD_URL: ${{ github.event_name != 'pull_request' && inputs.url || 'https://app-sswwebsite-9eb3-staging.azurewebsites.net' }}
+  PROD_URL: ${{ github.event_name != 'pull_request' && inputs.url || 'https://app-sswwebsite-9eb3.azurewebsites.net' }}
 
 jobs:
   lighthouse-insights:
