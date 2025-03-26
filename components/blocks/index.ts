@@ -17,7 +17,7 @@ import { joinGithubSchema } from "../usergroup/joinGithub";
 import { latestTechSchema } from "../usergroup/latestTech";
 import { organizerSchema } from "../usergroup/organizer";
 import { customDownloadButtonSchema } from "./CustomDownloadButton";
-import { aboutUsBlockSchema } from "./aboutUs";
+import { aboutUsBlockSchema } from "./aboutUs.schema";
 import { agendaSchema } from "./agenda";
 import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
