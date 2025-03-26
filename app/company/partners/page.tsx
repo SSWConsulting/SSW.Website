@@ -1,9 +1,9 @@
 import client from "@/tina/client";
 import { TinaClient } from "app/tina-client";
 
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { TODAY } from "hooks/useFetchEvents";
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import PartnerIndex from "./index";
 
@@ -15,10 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
     seo.canonical = `${tinaProps.props.header.url}company/partners`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 const getData = async () => {

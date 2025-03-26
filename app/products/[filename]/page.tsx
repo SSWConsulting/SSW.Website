@@ -1,6 +1,6 @@
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ProductsPreview from "./products-preview";
 
@@ -52,10 +52,7 @@ export async function generateMetadata(
     seo.canonical = `${tinaProps.data.global.header.url}products/${params.filename}`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 export default async function Products(props0: {

@@ -1,7 +1,7 @@
 import { HistoryTimelineCardProps } from "@/components/company/historyTimelineCard";
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import CompanyPage from "./index";
@@ -77,10 +77,7 @@ export async function generateMetadata(
     seo.canonical = `${tinaProps.props.header.url}company/${params.filename}`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 export default async function Consulting(props0: {

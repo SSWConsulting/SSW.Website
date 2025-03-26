@@ -1,5 +1,6 @@
 import client from "@/tina/client";
 
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
@@ -10,7 +11,6 @@ import {
   getPastEvents,
   PAST_EVENTS_QUERY_KEY,
 } from "hooks/useFetchEvents";
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import EventIndex from "./index";
 
@@ -26,10 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
     seo.canonical = `${tinaProps.props.header.url}events`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 const getData = async () => {

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { TinaClient } from "../tina-client";
 
-import { useSEO } from "@/hooks/useSeo";
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import EmploymentPage from "./";
@@ -9,9 +9,7 @@ import EmploymentPage from "./";
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getData();
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(data);
-  return seoProps;
+  return getSEOProps(data.props.seo);
 }
 
 const getData = async () => {

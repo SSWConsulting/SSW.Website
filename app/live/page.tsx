@@ -1,4 +1,4 @@
-import { useSEO } from "@/hooks/useSeo";
+import { getSEOProps } from "@/lib/seo";
 import {
   convertEventDatesToStrings,
   getNextEventToBeLiveStreamed,
@@ -43,9 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
     seo.canonical = `${props.header.url}live`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 export default async function Live() {

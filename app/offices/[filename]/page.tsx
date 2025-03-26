@@ -1,4 +1,4 @@
-import { useSEO } from "@/hooks/useSeo";
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
@@ -41,9 +41,7 @@ export async function generateMetadata(
     seo.canonical = `${tinaProps.props.header.url}offices/${params.filename}`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 export async function generateStaticParams() {

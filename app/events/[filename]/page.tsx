@@ -1,9 +1,9 @@
 import { VideoCardType } from "@/components/util/videoCards";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { TinaClient } from "../../tina-client";
 import EventsPage from "./events";
@@ -98,10 +98,7 @@ export async function generateMetadata(
     seo.canonical = `${tinaProps.props.header.url}events/${params.filename}`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 const isNewEventsPage = async (filename: string): Promise<boolean> => {
