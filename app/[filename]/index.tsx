@@ -9,7 +9,7 @@ import { removeExtension } from "@/services/client/utils.service";
 import classNames from "classnames";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { Breadcrumbs } from "../../components/breadcrumb";
+import { Breadcrumbs } from "../components/breadcrumb";
 
 export default function PageContent({ props, tinaProps }) {
   const { data } = tinaProps;
