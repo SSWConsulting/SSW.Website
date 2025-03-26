@@ -10,7 +10,7 @@ import { customImageBlockSchema } from "./customImage";
 import { expertBlockSchema } from "./expertBlock";
 import { componentRenderer } from "./mdxComponentRenderer";
 import { videoEmbedBlockSchema } from "./videoEmbed.schema";
-import { youtubePlayListBlockSchema } from "./youtubePlaylist";
+import { youtubePlayListBlockSchema } from "./youtubePlaylist.schema";
 
 const fixedTabsBlocks: Template[] = [
   videoEmbedBlockSchema,

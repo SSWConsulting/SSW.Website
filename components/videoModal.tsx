@@ -23,10 +23,10 @@ const VimeoEmbed = dynamic(() =>
 );
 
 type VideoModalProps = {
+  frameClassName?: string;
   children?: React.ReactNode;
   className?: string;
   roundedEdges?: boolean;
-  youtubeVideoId?: string;
   url?: string;
   overflow?: boolean;
 };
@@ -42,6 +42,8 @@ const getVimeoData = async (id: string) => {
 type VideoState = {
   videoType: VideoType | undefined;
   videoId: string | undefined;
+
+  test?: string;
   imageSrc: string;
   isVimeo?: boolean;
   isYoutube?: boolean;
@@ -50,7 +52,7 @@ type VideoState = {
 export const VideoModal = ({
   children = null,
   url,
-  youtubeVideoId,
+  frameClassName,
   overflow,
   roundedEdges,
   className,
@@ -61,14 +63,12 @@ export const VideoModal = ({
     imageSrc: "",
   });
   const [clicked, setClicked] = useState<boolean>(false);
-  // const [imageSrc, setImageSrc] = useState<string>("");
-
   const setVideoThumbnail = useCallback(({ isYouTube, isVimeo, videoId }) => {
     if (isYouTube) {
       setVideoState({
         videoId,
         videoType: "youtube",
-        imageSrc: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+        imageSrc: `https://img.youtube.com/vi/${videoId}/maxresdefault.jp`,
       });
       return;
     }
@@ -82,10 +82,7 @@ export const VideoModal = ({
       });
   }, []);
 
-  const extractVideoId = useCallback((url: string, youtubeVideoId?: string) => {
-    if (youtubeVideoId) {
-      return { isYouTube: true, isVimeo: false, videoId: youtubeVideoId };
-    }
+  const extractVideoId = useCallback((url: string) => {
     let videoId;
     const isYouTube = MATCH_URL_YOUTUBE.test(url);
     const isVimeo = MATCH_URL_VIMEO.test(url);
@@ -99,9 +96,9 @@ export const VideoModal = ({
   }, []);
 
   useEffect(() => {
-    const { isVimeo, isYouTube, videoId } = extractVideoId(url, youtubeVideoId);
+    const { isVimeo, isYouTube, videoId } = extractVideoId(url);
     setVideoThumbnail({ isVimeo, isYouTube, videoId });
-  }, [setVideoThumbnail, extractVideoId, url, youtubeVideoId]);
+  }, [setVideoThumbnail, extractVideoId, url]);
 
   return (
     <div
@@ -118,7 +115,7 @@ export const VideoModal = ({
             {videoState.imageSrc && (
               <>
                 <Image
-                  className="!my-0"
+                  className={classNames("!my-0", frameClassName)}
                   src={videoState.imageSrc}
                   fill
                   alt="Video player"
@@ -141,7 +138,10 @@ export const VideoModal = ({
             {videoState.videoType === "youtube" && (
               <>
                 <YouTubeEmbed
-                  className="absolute left-0 top-0"
+                  className={classNames(
+                    "absolute left-0 top-0",
+                    frameClassName
+                  )}
                   id={videoState.videoId}
                   width={"100%"}
                   height={"100%"}
@@ -152,7 +152,10 @@ export const VideoModal = ({
             {videoState.videoType === "vimeo" && (
               <>
                 <VimeoEmbed
-                  className="absolute left-0 top-0"
+                  className={classNames(
+                    "absolute left-0 top-0",
+                    frameClassName
+                  )}
                   id={videoState.videoId}
                   autoplay={true}
                 />

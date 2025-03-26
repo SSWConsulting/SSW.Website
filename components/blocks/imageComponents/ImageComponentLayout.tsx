@@ -1,8 +1,6 @@
 "use client";
-import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
-import getYouTubeVideoId from "@/services/client/youtube.service";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { classNames } from "tinacms";
@@ -19,7 +17,8 @@ export const ImageComponentLayout = ({ data, children }) => {
     data.mediaConfiguration?.imageWidth &&
     data.mediaConfiguration?.imageHeight;
   const hasMedia = isYouTube || isImage;
-  const youtubeVideoId = getYouTubeVideoId(data.mediaConfiguration?.youtubeUrl);
+
+  const youtubeUrl = data.mediaConfiguration?.youtubeUrl;
 
   const getVerticalMediaPlacement = () => {
     switch (data.mediaConfiguration?.verticalPlacement) {
@@ -50,7 +49,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         padding="px-4 sm:px-8"
         className={classNames(
           "mx-auto flex flex-col gap-8 py-8 align-middle sm:py-12 md:gap-16 xl:grid",
-          data.mediaConfiguration?.imageSource || youtubeVideoId
+          data.mediaConfiguration?.imageSource || youtubeUrl
             ? "md:grid-cols-2"
             : "md:grid-cols-1",
           data.mediaConfiguration?.mobilePlacement === "Above"
@@ -64,14 +63,12 @@ export const ImageComponentLayout = ({ data, children }) => {
             hasMedia && "xl:items-start xl:text-start",
             getVerticalTextPlacement(),
             imageIsLeftAligined && "xl:order-2"
-
-            // data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
           )}
         >
           {children}
         </div>
 
-        {(data.mediaConfiguration?.imageSource || youtubeVideoId) && (
+        {(data.mediaConfiguration?.imageSource || youtubeUrl) && (
           <div
             className={classNames(
               "relative flex w-full",
@@ -79,8 +76,12 @@ export const ImageComponentLayout = ({ data, children }) => {
               imageIsLeftAligined && "xl:order-1"
             )}
           >
-            {isYouTube && youtubeVideoId ? (
-              <VideoModal className="w-full" youtubeVideoId={youtubeVideoId} />
+            {isYouTube && youtubeUrl ? (
+              <VideoModal
+                frameClassName="rounded"
+                className="w-full"
+                url={youtubeUrl}
+              />
             ) : (
               isImage && (
                 <Image
