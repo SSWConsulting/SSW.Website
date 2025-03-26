@@ -3,7 +3,6 @@
 import classNames from "classnames";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
-
 import { FaPlayCircle } from "react-icons/fa";
 
 import {
@@ -13,14 +12,14 @@ import {
   getYouTubeId,
 } from "../helpers/embeds";
 
-const Image = dynamic(() => import("next/image"));
-
-const YouTubeEmbed = dynamic(() =>
-  import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed)
+const Image = dynamic(() => import("next/image"), { ssr: false });
+const YouTubeEmbed = dynamic(
+  () => import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed),
+  { ssr: false }
 );
-
-const VimeoEmbed = dynamic(() =>
-  import("./embeds/vimeoEmbed").then((mod) => mod.VimeoEmbed)
+const VimeoEmbed = dynamic(
+  () => import("./embeds/vimeoEmbed").then((mod) => mod.VimeoEmbed),
+  { ssr: false }
 );
 
 type VideoModalProps = {
@@ -32,9 +31,14 @@ type VideoModalProps = {
 };
 
 const getVimeoData = async (id: string) => {
-  const videoData = await fetch(`https://vimeo.com/api/v2/video/${id}.json`);
-  const video = await videoData.json();
-  return video;
+  try {
+    const videoData = await fetch(`https://vimeo.com/api/v2/video/${id}.json`);
+    const video = await videoData.json();
+    return video[0]?.thumbnail_large || "";
+  } catch (error) {
+    console.error("Failed to fetch Vimeo thumbnail:", error);
+    return "";
+  }
 };
 
 export const VideoModal = ({
@@ -44,28 +48,35 @@ export const VideoModal = ({
   roundedEdges,
   className,
 }: VideoModalProps) => {
-  const [videoId, setVideoId] = useState<string>();
+  const [videoId, setVideoId] = useState<string | null>(null);
+  const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [clicked, setClicked] = useState<boolean>(false);
-  const [imageSrc, setImageSrc] = useState<string>("");
-  const isYouTube = MATCH_URL_YOUTUBE.test(url);
-  const isVimeo = MATCH_URL_VIMEO.test(url);
 
   useEffect(() => {
-    if (isYouTube) {
+    const youtubeMatch = MATCH_URL_YOUTUBE.test(url);
+    const vimeoMatch = MATCH_URL_VIMEO.test(url);
+
+    if (youtubeMatch) {
       const id = getYouTubeId(url);
-      setVideoId(id);
-      setImageSrc(`https://img.youtube.com/vi/${id}/maxresdefault.jpg`);
-    } else if (isVimeo) {
+      if (id && id !== videoId) {
+        setVideoId(id);
+        setImageSrc(`https://img.youtube.com/vi/${id}/maxresdefault.jpg`);
+      }
+    } else if (vimeoMatch) {
       const id = getVimeoId(url);
-      setVideoId(id);
-      getVimeoData(id).then((res) => {
-        setImageSrc(res[0].thumbnail_large);
-      });
+      if (id && id !== videoId) {
+        setVideoId(id);
+        getVimeoData(id).then((thumbnail) => {
+          if (thumbnail && thumbnail !== imageSrc) {
+            setImageSrc(thumbnail);
+          }
+        });
+      }
     } else {
-      setVideoId("");
-      setImageSrc("");
+      setVideoId(null);
+      setImageSrc(null);
     }
-  }, [url, isYouTube, isVimeo]);
+  }, [url]);
 
   return (
     <div
@@ -83,7 +94,7 @@ export const VideoModal = ({
               <>
                 <Image
                   className="!my-0"
-                  src={imageSrc || ""}
+                  src={imageSrc}
                   fill
                   alt="Video player"
                   onError={() => {
@@ -94,25 +105,25 @@ export const VideoModal = ({
                     }
                   }}
                 />
-                <PlayArrow />{" "}
+                <PlayArrow />
               </>
             )}
           </div>
         ) : (
           <>
-            {isYouTube && (
+            {videoId && MATCH_URL_YOUTUBE.test(url) && (
               <YouTubeEmbed
                 className="absolute left-0 top-0"
-                id={videoId || ""}
+                id={videoId}
                 width={"100%"}
                 height={"100%"}
                 autoplay={true}
               />
             )}
-            {isVimeo && (
+            {videoId && MATCH_URL_VIMEO.test(url) && (
               <VimeoEmbed
                 className="absolute left-0 top-0"
-                id={videoId || ""}
+                id={videoId}
                 autoplay={true}
               />
             )}

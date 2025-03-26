@@ -3,7 +3,6 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { memo, useEffect, useState } from "react";
-import type { Template } from "tinacms";
 
 import { BiChevronRightCircle } from "react-icons/bi";
 
@@ -14,6 +13,7 @@ import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { VideoModal } from "../videoModal";
+import { aboutUsBlock } from "./aboutUs.schema";
 
 const DAY_KEYS = {
   Sunday: 0,
@@ -119,9 +119,7 @@ export const AboutUs = ({ data }) => {
         data-tina-field={tinaField(data, aboutUsBlock.backgroundColor)}
       >
         <div className="grid grid-cols-3 gap-6">
-          {!isMobile && (
             <TV className="col-span-3 max-md:hidden sm:col-span-1" />
-          )}
           <div className="col-span-3 md:col-span-2">
             <div
               className={`grid grid-cols-1 gap-6 ${!data.hideMap ? "sm:grid-cols-2" : ""}`}
@@ -450,36 +448,4 @@ const Map = ({
       </svg>
     </div>
   );
-};
-
-export const aboutUsBlock = {
-  backgroundColor: "backgroundColor",
-};
-
-export const aboutUsBlockSchema: Template = {
-  name: "AboutUs",
-  label: "About Us",
-
-  ui: {
-    previewSrc: "/images/thumbs/tina/about-us.jpg",
-  },
-  fields: [
-    {
-      type: "string",
-      label: "Background Color",
-      name: "backgroundColor",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Light Gray", value: "lightgray" },
-        { label: "Red", value: "red" },
-        { label: "Black", value: "black" },
-      ],
-    },
-    {
-      type: "boolean",
-      label: "Show Map",
-      name: "showMap",
-      required: false,
-    },
-  ],
 };

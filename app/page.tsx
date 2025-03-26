@@ -68,10 +68,10 @@ const getData = async (filename: string) => {
   return { ...tinaProps };
 };
 
-export default async function HomePage(props0: {
+export default async function HomePage(props: {
   params: Promise<{ filename: string }>;
 }) {
-  const params = await props0.params;
+  const params = await props.params;
   const { filename } = params;
   const tinaProps = await getData(filename);
   return <PageClient props={{ ...tinaProps }} />;
