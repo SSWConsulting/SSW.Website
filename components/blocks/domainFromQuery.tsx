@@ -1,5 +1,6 @@
 "use client";
 
+import Loading from "@/app/loading";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
@@ -31,7 +32,7 @@ const DomainFromQueryContent = ({
 
 export const DomainFromQuery = (props: DomainFromQueryProps) => {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
+    <Suspense fallback={<Loading />}>
       <DomainFromQueryContent {...props} />
     </Suspense>
   );
