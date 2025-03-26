@@ -3,7 +3,7 @@ import * as Schemas from "../../components/blocks";
 import { eventsHeaderSchema } from "../../components/events/eventsHeader";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { seoSchema } from "../../components/util/seo";
-import { videoCardSchema } from "../../components/util/videoCards";
+import { videoCardSchema } from "../../components/util/videoCards.schema";
 import { tipField } from "./shared-fields";
 
 export const eventsSchema: Collection = {

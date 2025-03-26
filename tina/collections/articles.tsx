@@ -12,7 +12,7 @@ import { sectionHeaderSchema } from "../../components/blocks/sectionHeader";
 import { tableBlockSchema } from "../../components/blocks/tableLayout";
 import { testimonialsListSchema } from "../../components/blocks/testimonialsList";
 import { verticalImageLayoutBlockSchema } from "../../components/blocks/verticalImageLayout";
-import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { utilityButtonSchema } from "../../components/button/utilityButton";
 import {
   callToActionDefaults,

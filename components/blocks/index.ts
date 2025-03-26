@@ -17,7 +17,7 @@ import { joinGithubSchema } from "../usergroup/joinGithub";
 import { latestTechSchema } from "../usergroup/latestTech";
 import { organizerSchema } from "../usergroup/organizer";
 import { customDownloadButtonSchema } from "./CustomDownloadButton";
-import { aboutUsBlockSchema } from "./aboutUs";
+import { aboutUsBlockSchema } from "./aboutUs.schema";
 import { agendaSchema } from "./agenda";
 import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
@@ -28,7 +28,7 @@ import { citationBlockSchema } from "./citation";
 import { colorBlockSchema } from "./colorBlock";
 import { colorPaletteSchema } from "./colorPalette";
 import { contentBlockSchema } from "./content";
-import { contentCardBlockSchema } from "./contentCard";
+import { contentCardBlockSchema } from "./contentCard.schema";
 import { customImageBlockSchema } from "./customImage";
 import { domainFromQuerySchema } from "./domainFromQuery";
 import { downloadBlockSchema } from "./downloadBlock";
@@ -57,7 +57,7 @@ import { testimonialsListSchema } from "./testimonialsList";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
-import { videoEmbedBlockSchema } from "./videoEmbed";
+import { videoEmbedBlockSchema } from "./videoEmbed.schema";
 
 //NOTE: this is the order that blocks will appear in the Tina Editor
 export const pageBlocks: Template[] = [

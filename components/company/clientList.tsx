@@ -1,8 +1,8 @@
 import type { Template } from "tinacms";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
-import { contentCardBlockSchema } from "../../components/blocks/contentCard";
+import { contentCardBlockSchema } from "../../components/blocks/contentCard.schema";
 import { customImageBlockSchema } from "../../components/blocks/customImage";
-import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { utilityButtonSchema } from "../../components/button/utilityButton";
 import { ClientsFilter } from "../filter/clients";
 import { Container } from "../util/container";
