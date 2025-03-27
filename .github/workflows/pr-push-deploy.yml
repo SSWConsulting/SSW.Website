@@ -117,7 +117,7 @@ jobs:
     uses: ./.github/workflows/template-lighthouse.yml
     permissions:
       pull-requests: write
-    # needs: pr-deploy
+    needs: prodLighthouseInsights
     with:
       url: https://app-sswwebsite-9eb3-pr-3740.azurewebsites.net
       environment: "staging"
