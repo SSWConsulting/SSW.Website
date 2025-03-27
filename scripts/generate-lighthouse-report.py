@@ -7,10 +7,12 @@ from urllib.parse import urlparse
 TREEMAP_FOLDER = "./.lighthouseci"
 PROD_TREEMAP_FOLDER = "./prod-lighthouseci"
 PROD_OUTPUT_FILE_PATH = "prod-lighthouse-report.md"
+PROD_SCORES_JSON_FILE = "prod_scores.json"
 
 important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
 github_output = os.getenv('GITHUB_OUTPUT')
 github_event = os.getenv('GITHUB_EVENT_NAME')
+environment = os.getenv('ENVIRONMENT')
 prod_scores = []
 
 def format_url_for_filename(url):
@@ -133,9 +135,21 @@ def generate_lighthouse_md(treemap_folder):
 
     return "\n".join(md_output)
 
+def get_scores_json():
+    try:
+        with open(PROD_SCORES_JSON_FILE, "r") as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        print("⚠️ No production scores found or json decoding failed")
+        return []
+
 def write_report_to_file(report_content, output_file_path):
     with open(output_file_path, "w", encoding="utf-8") as md_file:
         md_file.write(report_content)
+
+def write_prod_scores_to_json():
+    with open(PROD_SCORES_JSON_FILE, "w") as file:
+        json.dump(prod_scores, file, indent=2)
 
 def output_to_github_actions(report_content): 
     if github_output:
@@ -143,14 +157,22 @@ def output_to_github_actions(report_content):
             print(f"report<<EOF\n{report_content}\nEOF", file=fh)
         print("✅ Lighthouse report outputted to GitHub Actions!")
 
-# Generate the report for Production and save it to a file
-prod_output = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
-write_report_to_file(prod_output, PROD_OUTPUT_FILE_PATH)
-print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
-output_to_github_actions(prod_output)
+# Generate the report for Production url when it is called from Production workflow
+if github_event != 'pull_request' and environment == 'production':
+    prod_markdown_summary = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
+    print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
+    write_report_to_file(prod_markdown_summary, PROD_OUTPUT_FILE_PATH)
+    output_to_github_actions(prod_markdown_summary)
 
-# Generate the report for PR slot and output to GitHub Actions step
-if github_event == 'pull_request':
-    pr_output = generate_lighthouse_md(TREEMAP_FOLDER)
+# Generate the report for Production url when it is called from PR workflow and save scores to json 
+if github_event == 'pull_request' and environment == 'production':
+    generate_lighthouse_md(PROD_TREEMAP_FOLDER)
+    print(f"✅ Production Lighthouse report successfully generated")
+    write_prod_scores_to_json()
+
+# Generate the report for PR slot
+if github_event == 'pull_request' and environment == 'staging':
+    prod_scores = get_scores_json();
+    pr_markdown_summary = generate_lighthouse_md(TREEMAP_FOLDER)
     print(f"✅ PR slot Lighthouse report successfully generated")
-    output_to_github_actions(pr_output)
+    output_to_github_actions(pr_markdown_summary)

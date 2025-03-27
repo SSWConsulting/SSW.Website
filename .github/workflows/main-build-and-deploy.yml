@@ -166,3 +166,4 @@ jobs:
       contents: write
     with:
       url: https://${{ needs.swap-staging.outputs.app_service_prod_url }}
+      environment: "production"

@@ -6,15 +6,14 @@ on:
       url:
         type: string
         required: true
+      environment:
+        type: string
+        required: true
+        default: "staging"
 
 defaults:
   run:
     shell: pwsh
-
-# TODO: Remove this as url will be passed from parent workflow
-# Issue: https://github.com/SSWConsulting/SSW.Website/issues/3785
-env:
-  PROD_URL: "https://app-sswwebsite-9eb3.azurewebsites.net"
 
 jobs:
   lighthouse-insights:
@@ -31,92 +30,48 @@ jobs:
         with:
           node-version-file: ".nvmrc"
 
-      # TODO: Remove steps that separate for production and make it generic for both workflows after markdown is committed to main
-      # Issue: https://github.com/SSWConsulting/SSW.Website/issues/3785
-      - name: Wait for Production slot to be available
+      - name: Wait for slot to be available
         uses: jtalk/url-health-check-action@v4
-        with:
-          url: ${{ env.PROD_URL }}
-          max-attempts: 5
-          retry-delay: 40s
-
-      - name: Generate URLs
-        id: generate-urls
-        uses: actions/github-script@v7
-        env:
-          GITHUB_EVENT_NAME: ${{ github.event_name }}
-          INPUTS_URL: ${{ inputs.url }}
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const prodUrl = 'https://app-sswwebsite-9eb3.azurewebsites.net';
-            const prUrl = process.env.GITHUB_EVENT_NAME === 'pull_request'
-              ? process.env.INPUTS_URL
-              : '';
-
-            const paths = [
-              '',
-              '/articles',
-              '/company/about-us',
-              '/company/clients',
-              '/company/contact-us',
-              '/consulting',
-              '/consulting/net-upgrade',
-              '/consulting/web-applications',
-              '/employment',
-              '/events/angular-superpowers-tour',
-              '/events/ai-workshop',
-              '/netug/sydney',
-              '/training/internship-fullstack'
-            ];
-
-            // Generate production URLs
-            const prodUrls = paths.map(path => prodUrl + path).join('\n');
-            core.setOutput('prod_urls', prodUrls);
-
-            // Generate PR URLs
-            if (process.env.GITHUB_EVENT_NAME === 'pull_request') {
-              const prUrls = paths.map(path => prUrl + path).join('\n');
-              core.setOutput('pr_urls', prUrls);
-            }
-
-      - name: Audit Production site using Lighthouse
-        uses: treosh/lighthouse-ci-action@v12
-        with:
-          configPath: ./.lighthouserc.json
-          urls: |
-            ${{ steps.generate-urls.outputs.prod_urls }}
-
-      - name: Rename .lighthouseci folder to prod-lighthouseci
-        run: |
-          mv .lighthouseci prod-lighthouseci
-
-      - name: Wait for PR slot to be available
-        uses: jtalk/url-health-check-action@v4
-        if: github.event_name == 'pull_request'
         with:
           url: ${{ inputs.url }}
           max-attempts: 5
           retry-delay: 40s
 
-      - name: Audit PR slot using Lighthouse
+      - name: Audit slot using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
-        if: github.event_name == 'pull_request'
         with:
           configPath: ./.lighthouserc.json
           urls: |
-            ${{ steps.generate-urls.outputs.pr_urls }}
+            ${{ inputs.url }}
+            ${{ inputs.url }}/articles
+            ${{ inputs.url }}/company/about-us
+            ${{ inputs.url }}/company/clients
+            ${{ inputs.url }}/company/contact-us
+            ${{ inputs.url }}/consulting
+            ${{ inputs.url }}/consulting/net-upgrade
+            ${{ inputs.url }}/consulting/web-applications
+            ${{ inputs.url }}/employment
+            ${{ inputs.url }}/events/angular-superpowers-tour
+            ${{ inputs.url }}/events/ai-workshop
+            ${{ inputs.url }}/netug/sydney
+            ${{ inputs.url }}/training/internship-fullstack
 
-      - name: Create production lighthouse report file and PR report comment
+      - name: Rename .lighthouseci folder to prod-lighthouseci
+        if: ${{ github.event_name == 'pull_request' && inputs.environment == 'production' }}
+        run: |
+          mv .lighthouseci prod-lighthouseci
+
+      - name: Create lighthouse report
         id: lighthouse-results-generate
         env:
           GITHUB_EVENT_NAME: ${{ github.event_name }}
+          ENVIRONMENT: ${{ inputs.environment }}
         run: |
           python scripts/generate-lighthouse-report.py
 
       - name: Comment on PR with Lighthouse insights
         uses: mshick/add-pr-comment@v2
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && inputs.environment == 'staging'
         with:
           message: |
             ${{ steps.lighthouse-results-generate.outputs.report }}

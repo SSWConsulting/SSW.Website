@@ -102,7 +102,17 @@ jobs:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
       tests_to_run: "images seo-noindex"
 
-  lighthouseInsights:
+  prodLighthouseInsights:
+    name: Run Lighthouse Insights
+    uses: ./.github/workflows/template-lighthouse.yml
+    permissions:
+      pull-requests: write
+    needs: pr-deploy
+    with:
+      url: https://app-sswwebsite-9eb3.azurewebsites.net
+      environment: "production"
+
+  prLighthouseInsights:
     name: Run Lighthouse Insights
     uses: ./.github/workflows/template-lighthouse.yml
     permissions:
@@ -110,3 +120,4 @@ jobs:
     needs: pr-deploy
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
+      environment: "staging"
