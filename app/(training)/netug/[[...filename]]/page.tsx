@@ -7,8 +7,6 @@ import { Metadata } from "next";
 import NetUGPage from ".";
 import { TinaClient } from "../../../tina-client";
 
-export const revalidate = 3600; // 1 hour
-
 const getData = async (filename) => {
   filename = filename ? filename.join("/") : "index";
 
