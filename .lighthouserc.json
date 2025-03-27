@@ -1,21 +1,7 @@
 {
   "ci": {
     "collect": {
-      "url": [
-        "https://app-sswwebsite-9eb3.azurewebsites.net",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/articles",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/company/about-us",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/company/clients",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/company/contact-us",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/consulting",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/consulting/net-upgrade",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/consulting/web-applications",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/employment",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/events/angular-superpowers-tour",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/events/ai-workshop",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/netug/sydney",
-        "https://app-sswwebsite-9eb3.azurewebsites.net/training/internship-fullstack"
-      ],
+      "url": ["https://www.ssw.com.au/", "https://www.ssw.com.au/events"],
       "settings": {
         "preset": "desktop",
         "onlyCategories": [
