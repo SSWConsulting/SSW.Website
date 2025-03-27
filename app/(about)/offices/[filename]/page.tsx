@@ -1,9 +1,9 @@
+import { TinaClient } from "@/app/tina-client";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import OfficePage from ".";
-import { TinaClient } from "../../../tina-client";
 
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(

@@ -1,3 +1,4 @@
+import { TinaClient } from "@/app/tina-client";
 import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
@@ -5,7 +6,6 @@ import client from "@/tina/client";
 import { EventInfo } from "framer-motion";
 import { Metadata } from "next";
 import NetUGPage from ".";
-import { TinaClient } from "../../../tina-client";
 
 const getData = async (filename) => {
   filename = filename ? filename.join("/") : "index";

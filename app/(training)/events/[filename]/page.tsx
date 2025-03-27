@@ -1,3 +1,4 @@
+import { TinaClient } from "@/app/tina-client";
 import { VideoCardType } from "@/components/util/videoCards";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
 import { getSEOProps } from "@/lib/seo";
@@ -5,7 +6,6 @@ import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
-import { TinaClient } from "../../../tina-client";
 import EventsPage from "./events";
 import EventsV2Page from "./eventsv2";
 

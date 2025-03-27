@@ -1,3 +1,4 @@
+import { TinaClient } from "@/app/tina-client";
 import { MediaCardProps } from "@/components/consulting/mediaCard/mediaCard";
 import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
 import { getSEOProps } from "@/lib/seo";
@@ -7,7 +8,6 @@ import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { cache } from "react";
-import { TinaClient } from "../../tina-client";
 import OldConsultingPage from "./consulting";
 import ConsultingPage2 from "./consulting2";
 const openSans = Open_Sans({

@@ -1,9 +1,9 @@
+import { TinaClient } from "@/app/tina-client";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
-import { TinaClient } from "../../../tina-client";
 import VideoProduction from "./video-production";
 
 export async function generateStaticParams() {

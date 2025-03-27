@@ -1,10 +1,10 @@
 import client from "@/tina/client";
 
+import { TinaClient } from "@/app/tina-client";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { Metadata } from "next";
 import Page from ".";
-import { TinaClient } from "../../tina-client";
 
 export async function generateStaticParams() {
   let PageListData = await client.queries.pageConnection();

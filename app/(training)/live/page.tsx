@@ -1,3 +1,4 @@
+import { TinaClient } from "@/app/tina-client";
 import { getSEOProps } from "@/lib/seo";
 import {
   convertEventDatesToStrings,
@@ -7,7 +8,6 @@ import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import LivePage from ".";
-import { TinaClient } from "../../tina-client";
 
 const getData = async () => {
   const tinaProps = await fetchTinaData(
