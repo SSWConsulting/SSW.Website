@@ -66,7 +66,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: prod_scores
-          path: ./prod_scores.json
+          path: prod_scores.json
 
       - name: List all files and directories
         run: |
@@ -88,7 +88,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: prod_scores
-          path: ./prod_scores.json
+          path: prod_scores.json
           retention-days: 1
 
       - name: List all files and directories
