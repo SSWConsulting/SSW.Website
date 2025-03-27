@@ -92,10 +92,6 @@ const config = {
         ".json",
       ],
     },
-    staleTimes: {
-      dynamic: 1800, // 30 minutes
-      static: 3600, // 1 hour
-    },
     staticGenerationRetryCount: 2,
     staticGenerationMaxConcurrency: 8,
     staticGenerationMinPagesPerWorker: 25,
