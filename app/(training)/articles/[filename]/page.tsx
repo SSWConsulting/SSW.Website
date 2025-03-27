@@ -51,8 +51,8 @@ const getArticle = async (filename: string): Promise<ArticleData> => {
   return tinaProps;
 };
 
-const Article = async (props0: { params: Promise<{ filename: string }> }) => {
-  const params = await props0.params;
+const Article = async (prop: { params: Promise<{ filename: string }> }) => {
+  const params = await prop.params;
   const { props } = await getData(params.filename);
 
   return <TinaClient Component={ArticlePage} props={props}></TinaClient>;

@@ -35,9 +35,9 @@ type GenerateMetaDataProps = {
 };
 
 export async function generateMetadata(
-  props0: GenerateMetaDataProps
+  prop: GenerateMetaDataProps
 ): Promise<Metadata> {
-  const params = await props0.params;
+  const params = await prop.params;
   const { props } = await getData(params.filename);
 
   const seo = props.data.page.seo;
@@ -98,10 +98,10 @@ const getData = async (filename: string) => {
   };
 };
 
-export default async function HomePage(props0: {
+export default async function HomePage(prop: {
   params: Promise<{ filename: string }>;
 }) {
-  const params = await props0.params;
+  const params = await prop.params;
   const { filename } = params;
   const { props } = await getData(filename);
   return <TinaClient props={props} Component={Page} />;

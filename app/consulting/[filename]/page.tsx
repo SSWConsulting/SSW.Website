@@ -171,9 +171,9 @@ type GenerateMetaDataProps = {
 };
 
 export async function generateMetadata(
-  props0: GenerateMetaDataProps
+  prop: GenerateMetaDataProps
 ): Promise<Metadata> {
-  const params = await props0.params;
+  const params = await prop.params;
 
   const { filename } = params;
 
@@ -192,10 +192,10 @@ export async function generateMetadata(
   return getSEOProps(seo);
 }
 
-export default async function Consulting(props0: {
+export default async function Consulting(prop: {
   params: Promise<ConsultingPageParams>;
 }) {
-  const params = await props0.params;
+  const params = await prop.params;
   const isNewConsultingPage: boolean = Boolean(
     await findConsultingPageType(params.filename)
   );

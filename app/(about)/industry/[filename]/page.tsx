@@ -11,9 +11,9 @@ type GenerateMetadataProps = {
 };
 
 export async function generateMetadata(
-  props0: GenerateMetadataProps
+  prop: GenerateMetadataProps
 ): Promise<Metadata> {
-  const params = await props0.params;
+  const params = await prop.params;
   const tinaProps = await getData(params.filename);
   const seo = tinaProps.props.data.industry.seo;
 
@@ -47,10 +47,10 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Industry(props0: {
+export default async function Industry(prop: {
   params: Promise<{ filename: string }>;
 }) {
-  const params = await props0.params;
+  const params = await prop.params;
   const { filename } = params;
   const { props } = await getData(filename);
   return <TinaClient props={props} Component={IndustryPage} />;

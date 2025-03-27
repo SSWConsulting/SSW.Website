@@ -83,9 +83,9 @@ type GenerateMetaDataProps = {
 };
 
 export async function generateMetadata(
-  props0: GenerateMetaDataProps
+  prop: GenerateMetaDataProps
 ): Promise<Metadata> {
-  const params = await props0.params;
+  const params = await prop.params;
   let tinaProps;
   if (await isNewEventsPage(params.filename)) {
     tinaProps = await newEventsPageData(params.filename);
@@ -115,10 +115,10 @@ const isNewEventsPage = async (filename: string): Promise<boolean> => {
   }
 };
 
-export default async function Events(props0: {
+export default async function Events(prop: {
   params: Promise<{ filename: string }>;
 }) {
-  const params = await props0.params;
+  const params = await prop.params;
   const { filename } = params;
   if (await isNewEventsPage(filename)) {
     const { props } = await newEventsPageData(filename);

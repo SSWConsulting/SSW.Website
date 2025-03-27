@@ -55,10 +55,10 @@ export async function generateMetadata(
   return getSEOProps(seo);
 }
 
-export default async function Products(props0: {
+export default async function Products(prop: {
   params: Promise<{ filename: string }>;
 }) {
-  const params = await props0.params;
+  const params = await prop.params;
   const { filename } = params;
 
   const tinaProps = await getData(filename);
