@@ -2,7 +2,7 @@ import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
-import { TinaClient } from "../../../tina-client";
+import { TinaClient } from "../../../../tina-client";
 import CaseStudies from "./index";
 
 export async function generateStaticParams() {

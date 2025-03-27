@@ -7,7 +7,7 @@ import TestimonialPanel from "@/components/offices/testimonialPanel";
 import { Countries } from "@/components/util/constants/country";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
-import { Breadcrumbs } from "../components/breadcrumb";
+import { Breadcrumbs } from "../../components/breadcrumb";
 
 export default function OfficesPage({ tinaProps }) {
   const { data } = tinaProps;

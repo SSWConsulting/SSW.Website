@@ -5,7 +5,7 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import _ from "lodash";
 import React, { memo } from "react";
-import client from "../../../tina/__generated__/client";
+import client from "../../../../tina/__generated__/client";
 
 export type EventsV2Data = Awaited<ReturnType<typeof client.queries.eventsv2>>;
 
