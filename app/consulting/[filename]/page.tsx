@@ -10,6 +10,9 @@ import { Open_Sans } from "next/font/google";
 import { cache } from "react";
 import OldConsultingPage from "./consulting";
 import ConsultingPage2 from "./consulting2";
+
+export const dynamicParams = false;
+
 const openSans = Open_Sans({
   variable: "--open-sans-font",
   subsets: ["latin"],
