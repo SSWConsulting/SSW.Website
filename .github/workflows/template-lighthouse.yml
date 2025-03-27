@@ -9,7 +9,6 @@ on:
       environment:
         type: string
         required: true
-        default: "staging"
 
 defaults:
   run:
@@ -62,18 +61,11 @@ jobs:
           mv .lighthouseci prod-lighthouseci
 
       - name: Download production scores json file
-        if: github.event_name == 'pull_request' && inputs.environment == 'staging'
+        if: github.event_name == 'pull_request' && inputs.environment == 'pr-slot'
         uses: actions/download-artifact@v4
         with:
           name: prod_scores
           path: .
-
-      - name: List all files and directories
-        run: |
-          echo "Listing all files and directories:"
-          ls -al
-          echo "Contents of scripts directory:"
-          ls -al scripts/
 
       - name: Create lighthouse report
         id: lighthouse-results-generate
@@ -91,16 +83,9 @@ jobs:
           path: prod_scores.json
           retention-days: 1
 
-      - name: List all files and directories
-        run: |
-          echo "Listing all files and directories:"
-          ls -al
-          echo "Contents of scripts directory:"
-          ls -al scripts/
-
       - name: Comment on PR with Lighthouse insights
         uses: mshick/add-pr-comment@v2
-        if: github.event_name == 'pull_request' && inputs.environment == 'staging'
+        if: github.event_name == 'pull_request' && inputs.environment == 'pr-slot'
         with:
           message: |
             ${{ steps.lighthouse-results-generate.outputs.report }}

@@ -172,7 +172,7 @@ if github_event == 'pull_request' and environment == 'production':
     write_prod_scores_to_json()
 
 # Generate the report for PR slot
-if github_event == 'pull_request' and environment == 'staging':
+if github_event == 'pull_request' and environment == 'pr-slot':
     prod_scores = get_scores_json();
     pr_markdown_summary = generate_lighthouse_md(TREEMAP_FOLDER)
     print(f"✅ PR slot Lighthouse report successfully generated")
