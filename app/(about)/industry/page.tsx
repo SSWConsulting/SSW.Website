@@ -3,7 +3,7 @@ import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import IndustryPage from ".";
-import { TinaClient } from "../tina-client";
+import { TinaClient } from "../../tina-client";
 
 export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();

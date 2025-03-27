@@ -4,7 +4,7 @@ import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import TrainingPage from ".";
-import { TinaClient } from "../../tina-client";
+import { TinaClient } from "../../../tina-client";
 
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;

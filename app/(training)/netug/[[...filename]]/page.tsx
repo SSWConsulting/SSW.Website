@@ -5,7 +5,7 @@ import client from "@/tina/client";
 import { EventInfo } from "framer-motion";
 import { Metadata } from "next";
 import NetUGPage from ".";
-import { TinaClient } from "../../tina-client";
+import { TinaClient } from "../../../tina-client";
 
 export const revalidate = 3600; // 1 hour
 

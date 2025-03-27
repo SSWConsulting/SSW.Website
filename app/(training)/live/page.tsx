@@ -7,7 +7,7 @@ import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import LivePage from ".";
-import { TinaClient } from "../tina-client";
+import { TinaClient } from "../../tina-client";
 
 export const revalidate = 3600; // 1 hour
 
