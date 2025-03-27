@@ -95,8 +95,8 @@ const config = {
     staticGenerationRetryCount: 2,
     staticGenerationMaxConcurrency: 20,
     staticGenerationMinPagesPerWorker: 30,
-    productionBrowserSourceMaps: true,
   },
+  productionBrowserSourceMaps: true,
   expireTime: 3600,
 };
 

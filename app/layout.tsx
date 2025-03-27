@@ -35,7 +35,8 @@ const inter = Inter({
 });
 
 const ChatBaseBot = dynamic(
-  () => import("@/components/zendeskButton/chatBaseBot")
+  () => import("@/components/zendeskButton/chatBaseBot"),
+  { ssr: false }
 );
 
 export const metadata: Metadata = {
@@ -48,7 +49,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export const revalidate = 1800; // 30 minutes
+export const revalidate = 1800; // 30 minutes - Stale time is 1 hour
 
 export default async function RootLayout({
   children,
