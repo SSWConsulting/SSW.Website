@@ -136,10 +136,9 @@ def generate_lighthouse_md(treemap_folder):
     return "\n".join(md_output)
 
 def get_scores_json():
-    file_path = f"./{PROD_SCORES_JSON_FILE}"
-
+    abs_path = os.path.abspath(PROD_SCORES_JSON_FILE)
     try:
-        with open(file_path, "r") as file:
+        with open(abs_path, "r") as file:
             return json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         print("⚠️ No production scores found or json decoding failed")
