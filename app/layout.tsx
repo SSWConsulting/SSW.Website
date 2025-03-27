@@ -48,7 +48,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export const revalidate = 1800; // 30 minutes - Stale time is 1 hour
+export const revalidate = 1800; // 30 minutes
 
 export default async function RootLayout({
   children,
