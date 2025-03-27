@@ -4,15 +4,13 @@
   "thumbnail": "/images/events/newcastle-coders-group.png",
   "thumbnailDescription": "Newcastle Coders Group",
   "presenterName": "Kelvin Htat, Cameron Moore, Steven Hodgson, & Josh Leask",
-  "startDateTime": "2025-03-27T08:00:00.000Z",
-  "endDateTime": "2025-03-27T12:00:00.000Z",
-  "startShowBannerDateTime": "2025-03-26T13:00:00.000Z",
-  "endShowBannerDateTime": "2025-03-27T13:00:00.000Z",
+  "startDateTime": "2025-02-05T08:00:00.000Z",
+  "endDateTime": "2025-02-05T12:00:00.000Z",
   "calendarType": "User Groups",
   "city": "Newcastle",
   "category": "Other",
   "abstract": "Startup tech stacks!\n\nFour technical cofounders will share a rapid-fire overview of the tech they are using to build and run their businesses. Come hear how they have designed their architecture, what they love, and what they regret.\n\nFeaturing:\n- Kelvin Htat, Licode (App builder)\n- Cameron Moore, Lyngo (Phone assistant for allied health clinics)\n- Steven Hodgson, NoVamps (Web app hosting)\n- Josh Leask, Seestone (Buying optimisation for fashion retailers)\n\nWe'll have free pizza and drinks thanks to our sponsors:\nSSW\nSaphi Engineering\n\nCome along to see how great products are being created here in Newcastle.\n",
-  "description": "**Startup tech stacks!**\\\\\n\nFour technical cofounders will share a rapid-fire overview of the tech they are using to build and run their businesses. Come hear how they have designed their architecture, what they love, and what they regret.\n\nFeaturing:\n\n\\- Kelvin Htat, Licode (App builder)\n\n\\- Cameron Moore, Lyngo (Phone assistant for allied health clinics)\n\n\\- Steven Hodgson, NoVamps (Web app hosting)\n\n\\- Josh Leask, Seestone (Buying optimisation for fashion retailers)\n\nWe'll have free pizza and drinks thanks to our sponsors:\n\n* SSW\n* Saphi Engineering\n\n\\\nCome along to see how great products are being created here in Newcastle.\n",
+  "description": "**Startup tech stacks!**\\\n\n\nFour technical cofounders will share a rapid-fire overview of the tech they are using to build and run their businesses. Come hear how they have designed their architecture, what they love, and what they regret.\n\nFeaturing:\n\n\\- Kelvin Htat, Licode (App builder)\n\n\\- Cameron Moore, Lyngo (Phone assistant for allied health clinics)\n\n\\- Steven Hodgson, NoVamps (Web app hosting)\n\n\\- Josh Leask, Seestone (Buying optimisation for fashion retailers)\n\nWe'll have free pizza and drinks thanks to our sponsors:\n\n* SSW\n* Saphi Engineering\n\n\\\nCome along to see how great products are being created here in Newcastle.\n",
   "liveStreamDelayMinutes": 30,
   "enabled": true
 }
