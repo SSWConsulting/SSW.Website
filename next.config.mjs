@@ -96,7 +96,7 @@ const config = {
     staticGenerationMaxConcurrency: 20,
     staticGenerationMinPagesPerWorker: 30,
   },
-  expireTime: 3600,
+  expireTime: 3600, // to set the cache-control header - https://nextjs.org/docs/app/api-reference/config/next-config-js/expireTime
 };
 
 const withBundleAnalyzer = bundleAnalyser({
