@@ -43,11 +43,13 @@ jobs:
       - name: Generate URLs
         id: generate-urls
         uses: actions/github-script@v7
+        env:
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const prodUrl = 'https://app-sswwebsite-9eb3.azurewebsites.net';
-            const prUrl = github.event_name === 'pull_request'
+            const prUrl = process.env.GITHUB_EVENT_NAME === 'pull_request'
               ? `https://app-sswwebsite-9eb3-pr-${github.event.number}.azurewebsites.net`
               : '';
 
@@ -72,7 +74,7 @@ jobs:
             core.setOutput('prod_urls', prodUrls);
 
             // Generate PR URLs
-            if (github.event_name === 'pull_request') {
+            if (process.env.GITHUB_EVENT_NAME === 'pull_request') {
               const prUrls = paths.map(path => prUrl + path).join('\n');
               core.setOutput('pr_urls', prUrls);
             }
