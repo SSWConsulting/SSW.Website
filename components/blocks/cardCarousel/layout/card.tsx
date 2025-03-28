@@ -1,8 +1,8 @@
 import { ListItem } from "@/components/blocksSubtemplates/listItem";
 import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
-import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { cn } from "@/lib/utils";
-import getYouTubeVideoId from "@/services/client/youtube.service";
+
+import { VideoModal } from "@/components/videoModal";
 import Image from "next/image";
 import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -17,9 +17,7 @@ type CardProps = {
 
 const Card = ({ data, placeholder, className }: CardProps) => {
   const isYoutubeEmbed = data.mediaType === "youtube";
-  const youtubeEmbedId = isYoutubeEmbed
-    ? getYouTubeVideoId(data.youtubeUrl)
-    : null;
+  const youtubeUrl = data.youtubeUrl;
   const [usePlaceholder, setUsePlaceholder] = useState(false);
   const placeholderImage = "/images/videoPlaceholder.png";
 
@@ -33,12 +31,12 @@ const Card = ({ data, placeholder, className }: CardProps) => {
         })?.classes
       )}
     >
-      {youtubeEmbedId && isYoutubeEmbed ? (
-        <YouTubeEmbed
-          showSeparateChannelPreviews={false}
-          controls={0}
-          className="mb-2 aspect-video w-full rounded-md"
-          id={youtubeEmbedId}
+      {youtubeUrl && isYoutubeEmbed ? (
+        <VideoModal
+          className="mb-2"
+          frameClassName="rounded mb-2"
+          overflow={true}
+          url={youtubeUrl}
         />
       ) : (
         (data.image || placeholder) && (

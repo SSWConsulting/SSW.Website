@@ -1,8 +1,8 @@
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { dehydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import { ARTICLES_QUERY_KEY, getArticles } from "hooks/useFetchArticles";
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import client from "tina/__generated__/client";
 import ArticlesIndexPage from "./index";
@@ -12,9 +12,8 @@ export async function generateMetadata(): Promise<Metadata> {
     relativePath: "index.mdx",
     date: new Date().toISOString(),
   });
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(data.data.articlesIndex.seo);
-  return { ...seoProps };
+
+  return getSEOProps(data.data.articlesIndex.seo);
 }
 
 async function getDehydratedClient(): Promise<DehydratedState> {
