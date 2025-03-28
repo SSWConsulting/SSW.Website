@@ -57,16 +57,16 @@ To build the Docker image, execute the following command to extract the necessar
 ```pswh
 ./docker-build-cmd.ps1
 ```
+
 This script will generate the final Docker build command and automatically copy it to your clipboard. Simply paste the command into your terminal (CMD), and the Docker image build process will commence.
 
-Once, the docker image is ready, run the following command: 
+Once, the docker image is ready, run the following command:
 
 ```docker
  docker run --env-file .env -p 3000:3000 ssw-website
 ```
 
 ⚠️ **Important**: Ensure that all required secrets are present in your .env file and stored in the root directory of your project. Additionally, make sure to update the `NEXT_PUBLIC_TINA_BRANCH` to match the branch you're testing on.
-
 
 ## Get Started with Dev Container
 
@@ -110,6 +110,14 @@ Test locally to make sure everything still works.
 - 1 Make sure you have `CREATE_LEAD_ENDPOINT` environment variable in your `.env` - [Follow steps to setup](https://github.com/SSWConsulting/SSW.Website/wiki/Accessing-the-Third%E2%80%90Party-APIs-Locally)
 
 - 2 Run `npx playwright test --ui` in your terminal and make sure your local instance is running in the background.
+
+## Run Lighthouse tests locally
+
+```bash
+pnpm lhci autorun
+```
+
+It generates report and saves into `.lighthouseci` folder. You can also change the URLs of the pages you want to test in the `.lighthouserc.json` file.
 
 ## Pull Requests
 
