@@ -10,9 +10,6 @@ export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
 
   const seo = tinaProps.props.seo;
-  if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.props.header.url}consulting`;
-  }
 
   return getSEOProps(seo);
 }
@@ -22,7 +19,10 @@ const getData = async () => {
 
   const seo = tinaProps.data.consultingIndex.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.data.global.header.url}/consulting`;
+    seo.canonical = new URL(
+      "/consulting",
+      tinaProps.data.global.header.url
+    ).toString();
   }
 
   return {
