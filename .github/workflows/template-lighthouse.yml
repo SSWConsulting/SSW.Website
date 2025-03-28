@@ -62,6 +62,13 @@ jobs:
         run: |
           mv .lighthouseci prod-lighthouseci
 
+      - name: Download production scores json file
+        if: github.event_name == 'pull_request' && inputs.environment == 'pr-slot'
+        uses: actions/download-artifact@v4
+        with:
+          name: prod_scores
+          path: .
+
       - name: Create lighthouse report
         id: lighthouse-results-generate
         env:
@@ -69,6 +76,14 @@ jobs:
           ENVIRONMENT: ${{ inputs.environment }}
         run: |
           python scripts/generate-lighthouse-report.py
+
+      - name: Upload production scores json file
+        if: github.event_name == 'pull_request' && inputs.environment == 'production'
+        uses: actions/upload-artifact@v4
+        with:
+          name: prod_scores
+          path: prod_scores.json
+          retention-days: 1
 
       - name: Comment on PR with Lighthouse insights
         uses: mshick/add-pr-comment@v2
