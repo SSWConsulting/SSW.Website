@@ -36,7 +36,7 @@ jobs:
           max-attempts: 5
           retry-delay: 40s
 
-      - name: Audit slot using Lighthouse
+      - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc.json
@@ -55,6 +55,8 @@ jobs:
             ${{ inputs.url }}/netug/sydney
             ${{ inputs.url }}/training/internship-fullstack
 
+      # TODO: Remove the steps that are specific to prod/pr after we have committed report file
+      # Issue: https://github.com/SSWConsulting/SSW.Website/issues/3785
       - name: Rename .lighthouseci folder to prod-lighthouseci
         if: ${{ github.event_name == 'pull_request' && inputs.environment == 'production' }}
         run: |
