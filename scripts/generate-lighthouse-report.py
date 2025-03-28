@@ -160,7 +160,7 @@ def output_to_github_actions(report_content):
 
 # Generate the report for Production url when it is called from Production workflow
 if github_event != 'pull_request' and environment == 'production':
-    prod_markdown_summary = generate_lighthouse_md(PROD_TREEMAP_FOLDER)
+    prod_markdown_summary = generate_lighthouse_md(TREEMAP_FOLDER)
     print(f"✅ Production Lighthouse report file successfully saved to {PROD_OUTPUT_FILE_PATH}")
     write_report_to_file(prod_markdown_summary, PROD_OUTPUT_FILE_PATH)
     output_to_github_actions(prod_markdown_summary)
