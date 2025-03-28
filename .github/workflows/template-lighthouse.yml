@@ -1,5 +1,8 @@
 name: Template - Lighthouse Insights
 
+# TODO: This template breaks Single Responsibility Principle and it will be addressed in below issue:
+# https://github.com/SSWConsulting/SSW.Website/issues/3785
+
 on:
   workflow_call:
     inputs:
