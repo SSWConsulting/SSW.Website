@@ -88,7 +88,7 @@ def generate_lighthouse_md(treemap_folder):
         data = json.load(file)
 
     report_header = "🚀 Lighthouse Report"
-    if treemap_folder != PROD_TREEMAP_FOLDER:
+    if environment != "pr-slot":
         report_header = "🚀 Lighthouse score comparison for PR slot and production"
 
     md_output = [
@@ -106,7 +106,7 @@ def generate_lighthouse_md(treemap_folder):
         seo = (result["summary"]["seo"] or 0) * 100
         total_bundle_size, unused_bundle_size = get_total_and_unused_bytes_for_url(url, treemap_folder)
 
-        if treemap_folder == PROD_TREEMAP_FOLDER:
+        if environment == "production":
             prod_scores.append({
                 "url_display": url_display,
                 "performance": int(performance),
@@ -120,7 +120,7 @@ def generate_lighthouse_md(treemap_folder):
                 f"| {url_display} | {int(performance)} | {int(accessibility)} | {int(best_practices)} | {int(seo)} | {total_bundle_size:.2f} MB | {unused_bundle_size:.2f} MB |"
             )
 
-        if treemap_folder == TREEMAP_FOLDER:
+        if environment == "pr-slot":
             prod_score = next((entry for entry in prod_scores if extract_path(entry["url_display"]) == extract_path(url_display)), None)
             performance_display = get_display_text(prod_score['performance'], performance)
             accessibility_display = get_display_text(prod_score['accessibility'], accessibility)
