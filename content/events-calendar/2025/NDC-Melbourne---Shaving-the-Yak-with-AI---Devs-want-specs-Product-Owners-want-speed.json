@@ -1,0 +1,20 @@
+{
+  "title": "NDC Melbourne - Shaving the Yak with AI - Devs want specs, Product Owners want speed",
+  "url": "https://ndcmelbourne.com/",
+  "thumbnail": "/images/events/NDC-Conferences.png",
+  "thumbnailDescription": "NDC Melbourne",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "startDateTime": "2025-04-30T04:00:00.000Z",
+  "endDateTime": "2025-04-30T05:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "category": "Other",
+  "abstract": "Learn how AI can change the game in an important scenario. The age-old battle between Product Owners and Developers rages on: POs push for speed, while devs demand clarity. When specs are too vague, developers waste time making assumptions. When specs are too detailed, POs get bogged down in documentation. \n\nThe result? Context switching, frustration, and a backlog filled with half-baked work items.\nIn this talk, Adam Cogan will show how AI powered tools like YakShaver (for GitHub and Azure DevOps) and recently Loom (for Jira) can act as the ultimate peacemaker.\n\nThese tools capture discussions, structuring work items, and ensuring that every backlog item is ready… and assigned to the right backlog—all automatically.\n\nLearn the lessons from deploying AI to solve one of the most persistent struggles in software development. This talk will show you how AI brings balance to your team.\n\nBonus: See how a solution can be \n* better with Microsoft Teams to capture audio + video, and leverage Whisper for transcription, all glued together with GPT-4o to generate structured content. \n* have a decision-tree architecture with Semantic Kernel orchestration to enable seamless integration with Azure DevOps, GitHub, and more.",
+  "description": "Learn how AI can change the game in an important scenario. The age-old battle between Product Owners and Developers rages on: POs push for speed, while devs demand clarity. When specs are too vague, developers waste time making assumptions. When specs are too detailed, POs get bogged down in documentation. \n\n The result? Context switching, frustration, and a backlog filled with half-baked work items.\n\nIn this talk, Adam Cogan will show how AI powered tools like YakShaver (for GitHub and Azure DevOps) and recently Loom (for Jira) can act as the ultimate peacemaker.\n\nThese tools capture discussions, structuring work items, and ensuring that every backlog item is ready… and assigned to the right backlog—all automatically.\n\nLearn the lessons from deploying AI to solve one of the most persistent struggles in software development. This talk will show you how AI brings balance to your team.\n\nBonus: See how a solution can be:\n\n* better with Microsoft Teams to capture audio + video, and leverage Whisper for transcription, all glued together with GPT-4o to generate structured content. \n* have a decision-tree architecture with Semantic Kernel orchestration to enable seamless integration with Azure DevOps, GitHub, and more.\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}

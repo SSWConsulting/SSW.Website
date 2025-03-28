@@ -19,10 +19,6 @@ export const ImageTextBlockSchema: Template = {
       heading: "Lorem Ipsum",
       isH1: false,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      chips: {
-        filledChipText: "Lorem",
-        clearChipText: "Ipsum",
-      },
       featureColumns: {
         twoColumns: true,
         features: [

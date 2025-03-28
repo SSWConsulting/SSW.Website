@@ -1,0 +1,228 @@
+---
+sidebarTestimonial: shawn rosewarne
+showMicroservices: true
+microservicesTitle: 2-Day Pre-Migration Assessment Engagement
+microservicesDescription: >-
+  Get a solid foundation for your .NET 8 migration project, ensuring you are
+  well-prepared to tackle the migration with confidence.
+microservicesUrl: /
+articleAuthor:
+  authorName: Adam Cogan
+  authorPosition: Chief Architect
+  authorImage: /images/articles/2024-07-13_12-01-05.png
+fullWidthBody: false
+hideSidebarOnMobile: false
+showSidebarPanel: true
+historyCards:
+  - year: 2020
+    title: thing
+    location: Australia
+    description: |
+      asdadasd
+showAzureFooter: true
+seo:
+  title: Why CTOs are Choosing .NET 9 for Modern App Development
+  description: >-
+    Upgrade to .NET 9 for faster performance, cost savings & enhanced security;
+    discover proven tips & book your free 1-hour consultation with SSW. 
+  canonical: 'https://www.ssw.com.au/articles/net-9-upgrade-future-proof-your-business'
+bannerImg: /images/articles/4LtbacXcLOVHQGk3nigxp_fa59c02320ad42cdb5f39527a69c2eda.jpg
+title: ".NET\_9 Upgrade: Future-Proof Your Business with Superior Performance and Security"
+subTitle: >
+  <VideoEmbed url="https://youtu.be/WI8QwCKr99E?si=HoKC8pyO_MFZazXv"
+  videoWidth="w-full" removeMargin={true} caption="Mike and Gert discuss the
+  benefits of upgrading to .net 9" />
+
+
+  Upgrading your software platform is about more than just adopting the latest
+  technology—it’s a strategic business decision that drives efficiency,
+  security, and competitive advantage. In today’s fast-paced market, sticking
+  with outdated frameworks can be as costly as it is risky. Let’s explore the
+  journey towards .NET 9 and understand how this upgrade can bring tangible
+  benefits to your business.
+
+
+  ## A Story of Transformation
+
+
+  Imagine a development manager in Sydney discussing his team’s hesitation over
+  upgrading from a legacy framework. His concern wasn’t unfounded: technical
+  debt and the fear of disruption are real. Yet, by choosing to upgrade, his
+  organisation not only enhanced its application performance but also reaped
+  significant cost savings and opened the door to modern AI capabilities. This
+  is the kind of transformative story that many businesses experience when they
+  invest in modernisation.
+
+
+  ## Why Upgrade? Business and Technical Benefits
+
+
+  ### Enhanced Performance and Cost Savings
+
+
+  .NET 9 delivers impressive performance gains that can directly impact your
+  bottom line:
+
+
+  * Faster Startups: Applications now launch approximately 15% quicker, meaning
+  your users can get to work without delay.
+
+  * Improved Resource Efficiency: With a reduction in memory usage by 8–12% and
+  faster JSON processing (up to 35% improvement), you can expect lower cloud
+  costs and a smoother user experience.
+
+  * Optimised Web Requests: Kestrel’s improvements translate into web requests
+  being processed 20% faster with 25% less latency.
+
+
+  These technical enhancements often lead to real business savings. For
+  instance, one client reported nearly a 20% drop in their Azure spend after
+  moving to .NET 9—a clear example of technology investments paying for
+  themselves.
+
+
+  ### Unlocking Advanced AI Capabilities
+
+
+  In a world where data drives decision-making, .NET 9’s native support for AI
+  can be a game changer:
+
+
+  * Built-In AI Support: Leverage large language models directly within your
+  applications.
+
+  * Efficient Data Processing: New tensor types and vector storage make it
+  simpler to integrate AI without complex workarounds.
+
+
+  A real-world example saw a team cut their AI integration code by 60%, which
+  not only streamlined their development process but also accelerated their time
+  to market. For more on modernising your AI integration and other migration
+  benefits, see SSW’s rule [Do you know why to upgrade from .NET Framework to
+  the latest .NET?](https://www.ssw.com.au/rules/why-upgrade-to-latest-dotnet/).
+
+
+  ### Mitigating Migration Challenges
+
+
+  Of course, every upgrade comes with its challenges. Here’s how to navigate
+  some common issues:
+
+
+  #### NuGet Dependency Resolution
+
+
+  A new NuGet dependency resolver might download unexpected packages—this can
+  slow your build process. The simple fix is to use the
+  RestoreUseLegacyDependencyResolver flag in your MSBuild configuration.
+  Although this may temporarily reduce restore speed, it allows you to manage
+  your dependencies carefully. For further guidance, check out SSW’s [Rules to
+  Better
+  Nuget](https://www.ssw.com.au/rules/rules-to-better-nuget-package-management/)
+  rule.
+
+
+  #### Removing Legacy Technologies
+
+
+  .NET 9 has bid farewell to the insecure BinaryFormatter. Transitioning to
+  modern serializers like System.Text.Json not only improves performance but
+  also enhances security. While this might seem daunting at first, many
+  businesses find that the upgrade paves the way for cleaner, more maintainable
+  code. To see how best to approach this change, read SSW’s [modernisation
+  guidance](https://www.ssw.com.au/rules/dotnet-upgrade-assistant/).
+
+
+  #### Fine-Tuning API Changes
+
+
+  Some adjustments—such as switching to an integer overload for
+  TimeSpan.FromSeconds—ensure greater precision in time-sensitive code. These
+  small changes help avoid bugs and maintain the integrity of your applications.
+
+
+  ## A Structured Approach to Migration
+
+
+  A successful migration is built on careful planning and execution. Consider
+  these steps:
+
+
+  1. Begin with a Proof of Concept:
+     Test the new environment on a non-critical application. This helps your team familiarise itself with the new framework features without risking business continuity.
+  2. Audit Your Dependencies:
+     Use robust tools to identify and update outdated NuGet packages. For a comprehensive approach, refer to SSW’s [Rules to Better Nuget](https://www.ssw.com.au/rules/rules-to-better-nuget-package-management/) and related content on updating your packages.
+  3. Benchmark and Validate:
+     Set up performance tests to measure improvements before and after migration. This data not only builds confidence internally but also provides a clear picture of ROI.
+  4. Leverage Expert Consultation:
+     Sometimes, a guided approach makes all the difference. SSW offers a one-hour free call consultation to help you map out the best upgrade strategy tailored to your business needs. [Book a FREE Initial Meeting](https://ssw.com.au) with SSW today.
+
+  ## FAQ
+
+
+  Q: What makes .NET 9 a worthwhile upgrade for my business?
+
+  A: Upgrading to .NET 9 brings faster performance, improved resource
+  efficiency, and enhanced security—all of which can reduce operating costs and
+  improve user satisfaction.
+
+
+  Q: How can I manage the transition from legacy technologies like
+  BinaryFormatter?
+
+  A: Migrating away from BinaryFormatter to modern serializers such as
+  System.Text.Json is essential for security and performance. SSW’s migration
+  guides provide step-by-step advice on how to approach these changes.
+
+
+  Q: What kind of support is available during the migration?
+
+  A: Besides detailed online guides and rules, SSW offers a one-hour free
+  consultation to help plan your migration strategy, ensuring minimal disruption
+  and a smooth transition.
+
+
+  ## Next Steps and Additional Resources
+
+
+  Upgrading to .NET 9 is not just a technical refresh—it’s a forward-looking
+  strategy that prepares your business for tomorrow’s challenges. For more
+  detailed guidance on upgrade methodologies, explore the following resources:
+
+
+  * Microsoft’s Official Migration Guide: [Read more about migrating to .NET
+  9](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-9/overview)
+
+  * Breaking Changes Documentation: [Review breaking changes in .NET
+  9](https://learn.microsoft.com/en-us/dotnet/core/compatibility/9.0)
+
+  * SSW’s Modernisation Rule: [Do you know how to modernise your .NET
+  applications?](https://www.ssw.com.au/rules/dotnet-upgrade-assistant/)
+
+
+  Remember, a strategic upgrade today can result in substantial business
+  benefits tomorrow. Don’t hesitate to take advantage of our one hour free
+  consultation to help guide your journey to a more secure and efficient future.
+
+
+  ```javascript
+
+  ```
+author: content/presenters/gert-marx.mdx
+sidebarPanel:
+  title: 2-Day Pre-Migration Assessment Engagement
+  description: >-
+    Get a solid foundation for your .NET 9 migration project, ensuring you are
+    well-prepared to tackle the migration with confidence.
+  showSidebarPanel: true
+  actionUrl: 'https://www.ssw.com.au/consulting/net-upgrade'
+  actionText: Learn more
+callToAction:
+  title: Talk to us about your project
+  subTitle: Connect with our Account Managers to discuss how we can help.
+  showCallToAction: true
+  buttonText: Book a FREE Initial Meeting
+  animated: true
+  buttonSubtitle: or call +61 2 9953 3000
+---
+

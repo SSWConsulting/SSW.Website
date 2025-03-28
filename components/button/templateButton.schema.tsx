@@ -1,6 +1,16 @@
 import { buttonOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../blocksSubtemplates/tinaFormElements/iconSelector";
+export const bookingForms = [
+  {
+    label: "Booking Form",
+    value: "bookingJotFormId",
+  },
+  {
+    label: "Registration of Interest Form",
+    value: "registrationOfInterestJotFormId",
+  },
+];
 
 export const buttonSchema = [
   {
@@ -9,30 +19,15 @@ export const buttonSchema = [
     name: "buttonText",
   },
   {
-    type: "boolean",
-    label: "Show lead capture form",
-    name: "showLeadCaptureForm",
-  },
-  {
     type: "string",
+    description: "The button link must be blank if you want to use this option",
     label: "Select lead capture form",
     name: "leadCaptureFormOption",
-    ui: {
-      component: "select",
-      options: [
-        {
-          label: "Booking Form",
-          value: "bookingJotFormId",
-        },
-        {
-          label: "Registration of Interest Form",
-          value: "registrationOfInterestJotFormId",
-        },
-      ],
-    },
+    options: bookingForms,
   },
   {
     type: "string",
+    description: "Leave this blank if you want to use lead capture form option",
     label: "Button Link",
     name: "buttonLink",
   },

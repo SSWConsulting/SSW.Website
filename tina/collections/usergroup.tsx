@@ -4,7 +4,7 @@ import { pageBlocks as sectionPageBlocks } from "../../components/usergroup/sect
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
-import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist";
+import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist.schema";
 import { joinAsPresenterSchema } from "../../components/usergroup/joinAsPresenter";
 import { latestTechSchema } from "../../components/usergroup/latestTech";
 import azureBannerSchema from "../../components/util/showAzureBanner";
@@ -20,6 +20,9 @@ export const userGroupPageSchema: Collection = {
   },
   ui: {
     router: ({ document }) => {
+      if (document._sys.filename === "index") {
+        return "/netug";
+      }
       return `/netug/${document._sys.filename}`;
     },
   },

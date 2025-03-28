@@ -103,6 +103,8 @@ jobs:
   swap-staging:
     name: Swap staging with production
     needs: test
+    outputs:
+      app_service_prod_url: ${{ steps.swap.outputs.production_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -138,9 +140,30 @@ jobs:
           docker push ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.DESTINATION_IMG }}
 
       - name: ♻️ Swap slots
+        id: swap
         run: |
           az webapp deployment slot swap \
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} \
             --name ${{ env.APP_SERVICE_NAME }} \
             --slot staging \
             --target-slot production
+
+          # Fetch the production URL and store it as an output
+          PROD_URL=$(az webapp show --resource-group ${{ env.AZURE_RESOURCE_GROUP }} --name ${{ env.APP_SERVICE_NAME }} --query "defaultHostName" -o tsv)
+
+          # Debugging - print the extracted value
+          echo "Extracted production URL: $PROD_URL"
+
+          # Save to outputs
+          echo "production_url=${PROD_URL}" >> $GITHUB_OUTPUT
+
+  lighthouse-insights:
+    name: Run Lighthouse Insights
+    uses: ./.github/workflows/template-lighthouse.yml
+    needs: swap-staging
+    permissions:
+      actions: write
+      contents: write
+    with:
+      url: https://${{ needs.swap-staging.outputs.app_service_prod_url }}
+      environment: "production"

@@ -1,7 +1,8 @@
 "use client";
 
+import Loading from "@/app/loading";
 import { useSearchParams } from "next/navigation";
-import { Template } from "tinacms";
+import { Suspense } from "react";
 
 export type DomainFromQueryProps = {
   title: string;
@@ -10,8 +11,10 @@ export type DomainFromQueryProps = {
 
 const DOMAIN_PARAM_KEY = "domain";
 
-export const DomainFromQuery = (props: DomainFromQueryProps) => {
-  const { showDomain, title } = props;
+const DomainFromQueryContent = ({
+  title,
+  showDomain,
+}: DomainFromQueryProps) => {
   const searchParams = useSearchParams();
   const domain = searchParams.get(DOMAIN_PARAM_KEY);
 
@@ -27,24 +30,10 @@ export const DomainFromQuery = (props: DomainFromQueryProps) => {
   );
 };
 
-export const domainFromQuerySchema: Template = {
-  name: "DomainFromQuery",
-  label: "Domain from query",
-  ui: {
-    previewSrc: "/images/thumbs/tina/domain-from-query.jpg",
-  },
-  fields: [
-    {
-      name: "title",
-      label: "Title",
-      type: "string",
-      description: "This is a H1 heading",
-    },
-    {
-      name: "showDomain",
-      label: "Show domain name",
-      type: "boolean",
-      description: "Query param in URL must have key of 'domain'",
-    },
-  ],
+export const DomainFromQuery = (props: DomainFromQueryProps) => {
+  return (
+    <Suspense fallback={<Loading />}>
+      <DomainFromQueryContent {...props} />
+    </Suspense>
+  );
 };

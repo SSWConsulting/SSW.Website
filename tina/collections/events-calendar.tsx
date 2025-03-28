@@ -1,16 +1,37 @@
+import React, { useState } from "react";
 import { Collection, TextField } from "tinacms";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
   dateFormat: "ddd DD MMMM YYYY,",
 };
-
+const removeEmptyObjects = (formValues: object, fieldKey: string) => {
+  let field = formValues[fieldKey];
+  if (!field) return formValues;
+  field = field.filter((item: object) => {
+    return Object.keys(item).length > 0;
+  });
+  if (field.length) {
+    return {
+      ...formValues,
+      [fieldKey]: field,
+    };
+  }
+  delete formValues[fieldKey];
+  return formValues;
+};
 export const eventsCalendarSchema: Collection = {
   label: "Events - Calendar",
   name: "eventsCalendar",
   path: "content/events-calendar",
   format: "json",
   ui: {
+    beforeSubmit: async ({ values }) => {
+      return removeEmptyObjects(values, "presenterList") as Record<
+        string,
+        unknown
+      >;
+    },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - upload dir not included in Tina type but works anyway
     defaultItem: () => ({ enabled: true, liveStreamDelayMinutes: 30 }),
@@ -74,6 +95,51 @@ export const eventsCalendarSchema: Collection = {
         {
           type: "reference",
           ui: {
+            optionComponent: (
+              props: { presenter: { name?: string }; profileImg: string },
+              _internalSys: { path: string }
+            ) => {
+              const presenter = props.presenter;
+              const ProfilePicture = ({
+                src,
+                alt,
+              }: {
+                src: string;
+                alt: string;
+              }) => {
+                const [imgLoaded, setImgLoaded] = useState(true);
+
+                return (
+                  <>
+                    {imgLoaded ? (
+                      // next image component is not available in the tina editor
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        onError={() => setImgLoaded(false)}
+                        className="size-8 rounded-full object-cover"
+                        src={src}
+                        alt={alt}
+                      />
+                    ) : (
+                      <div className="size-8 rounded-full bg-gray-400"></div>
+                    )}
+                  </>
+                );
+              };
+              if (!presenter.name) return _internalSys.path;
+
+              return (
+                <p className="flex min-h-8 items-center gap-4">
+                  {props.profileImg && (
+                    <ProfilePicture
+                      src={props.profileImg}
+                      alt={`${presenter.name} Profile`}
+                    />
+                  )}
+                  {presenter.name}{" "}
+                </p>
+              );
+            },
             validate: (value) => {
               if (!value) return "Please select a presenter";
             },

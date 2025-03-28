@@ -1,6 +1,27 @@
-import { articlesIndexSchemaConstants } from "@/tina-collections/articles";
 import { tinaField } from "tinacms/dist/react";
 import { Section } from "../util/section";
+
+export const articlesIndexSchemaConstants = {
+  value: "articlesIndex",
+  title: "title",
+  headerImage: {
+    value: "headerImage",
+    heroBackground: "heroBackground",
+    altText: "altText",
+    txtOverlay: "txtOverlay",
+  },
+  _body: "_body",
+  articles: {
+    value: "articles",
+    title: "title",
+    body: "body",
+    pageURL: "pageURL",
+    isExternal: "isExternal",
+    userName: "userName",
+    userPosition: "userPosition",
+    userImage: "userImage",
+  },
+};
 
 const ArticlesHeader = ({ data, schema }) => {
   return (

@@ -23,8 +23,9 @@ const Popup: React.FC<PopupProps> = (props) => {
           modalAnimationIn: styles.formEnterModalAnimation,
           modalAnimationOut: styles.formLeaveModalAnimation,
           overlay: "bg-black/50",
+
           modal: classNames([
-            "sm:max-w-2xl sm:m-5 sm:p-5",
+            "sm:max-w-2xl w-modal",
             "w-full mx-0",
             "shadow-none bg-black/0",
             props.className,

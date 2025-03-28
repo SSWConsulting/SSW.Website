@@ -1,135 +1,130 @@
 {
-	"newsletters_year": "2010",
-	"newsletters": [
-		{
-			"month": 1,
-			"file": "/images/newsletter-uploads/2010/_2010_01_Mini_SSW Brain Quest Brisbane- Team Foundation Server and SharePoint 2010_.htm",
-			"description": "Mini - SSW Brain Quest Brisbane- Team Foundation Server and SharePoint 2010"
-		},
-		{
-			"month": 1,
-			"file": "/images/newsletter-uploads/2010/_2010_01_Mini_SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010_.htm",
-			"description": "Mini - SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010"
-		},
-		{
-			"month": 1,
-			"file": "/images/newsletter-uploads/2010/_2010_01__Do you format and comment your regular expressions_.htm",
-			"description": "Do you format and comment your regular expressions"
-		},
-		{
-			"month": 2,
-			"file": "/images/newsletter-uploads/2010/_2010_02_Mini_SSW Brain Quest Perth- Team Foundation Server and SharePoint 2010_.htm",
-			"description": "Mini - SSW Brain Quest Perth- Team Foundation Server and SharePoint 2010"
-		},
-		{
-			"month": 2,
-			"file": "/images/newsletter-uploads/2010/_2010_02_Mini_UTS Short Courses_.htm",
-			"description": "Mini - UTS Short Courses"
-		},
-		{
-			"month": 2,
-			"file": "/images/newsletter-uploads/2010/_2010_02__Do you know the benefits of using source control_.htm",
-			"description": "Do you know the benefits of using source control"
-		},
-		{
-			"month": 3,
-			"file": "/images/newsletter-uploads/2010/_2010_03_Mini_SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010_.htm",
-			"description": "Mini - SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010"
-		},
-		{
-			"month": 3,
-			"file": "/images/newsletter-uploads/2010/_2010_03_Mini_SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010_.htm",
-			"description": "Mini - SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010"
-		},
-		{
-			"month": 3,
-			"file": "/images/newsletter-uploads/2010/_2010_03_Mini_SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010_.htm",
-			"description": "Mini - SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010"
-		},
-		{
-			"month": 3,
-			"file": "/images/newsletter-uploads/2010/_2010_03__11 Great Events Coming-VersionResend-DoNotAddtoXMLList.htm",
-			"description": "11 Great Events Coming-VersionResend-DoNotAddtoXMLList"
-		},
-		{
-			"month": 3,
-			"file": "/images/newsletter-uploads/2010/_2010_03__11 Great Events Coming_.htm",
-			"description": "11 Great Events Coming"
-		},
-		{
-			"month": 3,
-			"file": "/images/newsletter-uploads/2010/_2010_03__Make a separate database for your Data Warehouse_.htm",
-			"description": "Make a separate database for your Data Warehouse"
-		},
-		{
-			"month": 4,
-			"file": "/images/newsletter-uploads/2010/_2010_04_Mini_SSW Brain Quest Canberra- Team Foundation Server and SharePoint 2010_.htm",
-			"description": "Mini - SW Brain Quest Canberra- Team Foundation Server and SharePoint 2010"
-		},
-		{
-			"month": 4,
-			"file": "/images/newsletter-uploads/2010/_2010_04__Where appropriate do you use text rather than images_.htm",
-			"description": "Where appropriate do you use text rather than images"
-		},
-		{
-			"month": 5,
-			"file": "/images/newsletter-uploads/2010/_2010_05__Steve Forte Day_.htm",
-			"description": "Steve Forte Day"
-		},
-		{
-			"month": 6,
-			"file": "/images/newsletter-uploads/2010/_2010_06_Mini_SSW Scrum and Brain Quest in Milan_London _Team Foundation Server and SharePoint 2010_.htm",
-			"description": "Mini - SSW Scrum and Brain Quest in Milan_London _Team Foundation Server and SharePoint 2010"
-		},
-		{
-			"month": 6,
-			"file": "/images/newsletter-uploads/2010/_2010_06__Professional Scrum Developer Training_.htm",
-			"description": "Professional Scrum Developer Training"
-		},
-		{
-			"month": 7,
-			"file": "/images/newsletter-uploads/2010/_2010_07__ChinaPSDEDM_.htm",
-			"description": "ChinaPSDEDM"
-		},
-		{
-			"month": 7,
-			"file": "/images/newsletter-uploads/2010/_2010_07__Do you know that developers should do all their custom work in their own SharePoint development environment_.htm",
-			"description": "Do you know that developers should do all their custom work in their own SharePoint development environment"
-		},
-		{
-			"month": 8,
-			"file": "/images/newsletter-uploads/2010/_2010_08__Do you know how to create nice URLs using ASP.NET 4_.htm",
-			"description": "Do you know how to create nice URLs using ASP.NET 4"
-		},
-		{
-			"month": 9,
-			"file": "/images/newsletter-uploads/2010/_2010_09_Mini_Visual Studio 2010 Training_.htm",
-			"description": "Mini - Visual Studio 2010 Training"
-		},
-		{
-			"month": 9,
-			"file": "/images/newsletter-uploads/2010/_2010_09__Do you know the best way to take SharePoint data offline_.htm",
-			"description": "Do you know the best way to take SharePoint data offline"
-		},
-		{
-			"month": 10,
-			"file": "/images/newsletter-uploads/2010/_2010_10__Are your settings and the customizable settings in different files_.htm",
-			"description": "Are your settings and the customizable settings in different files"
-		},
-		{
-			"month": 11,
-			"file": "/images/newsletter-uploads/2010/_2010_11__SSW Silverlight application goes live for DispatchKing_.htm",
-			"description": "SSW Silverlight application goes live for DispatchKing"
-		},
-		{
-			"month": 12,
-			"file": "/images/newsletter-uploads/2010/_2010_12_Mini_SSW Scrum Training in USA_.htm",
-			"description": "Mini - SSW Scrum Training in USA"
-		},
-		{
-			"month": 12,
-			"file": "/images/newsletter-uploads/2010/_2010_12__Do you add the image and the text of the error message for SEO_.htm",
-			"description": "Do you add the image and the text of the error message for SEO"
-		}
-	]
+  "newsletters_year": "2010",
+  "newsletters": [
+    {
+      "month": 1,
+      "file": "/images/newsletter-uploads/2010/_2010_01_Mini_SSW Brain Quest Brisbane- Team Foundation Server and SharePoint 2010_.htm",
+      "description": "Mini - SSW Brain Quest Brisbane- Team Foundation Server and SharePoint 2010"
+    },
+    {
+      "month": 1,
+      "file": "/images/newsletter-uploads/2010/_2010_01_Mini_SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010_.htm",
+      "description": "Mini - SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010"
+    },
+    {
+      "month": 1,
+      "file": "/images/newsletter-uploads/2010/_2010_01__Do you format and comment your regular expressions_.htm",
+      "description": "Do you format and comment your regular expressions"
+    },
+    {
+      "month": 2,
+      "file": "/images/newsletter-uploads/2010/_2010_02_Mini_SSW Brain Quest Perth- Team Foundation Server and SharePoint 2010_.htm",
+      "description": "Mini - SSW Brain Quest Perth- Team Foundation Server and SharePoint 2010"
+    },
+    {
+      "month": 2,
+      "file": "/images/newsletter-uploads/2010/_2010_02_Mini_UTS Short Courses_.htm",
+      "description": "Mini - UTS Short Courses"
+    },
+    {
+      "month": 2,
+      "file": "/images/newsletter-uploads/2010/_2010_02__Do you know the benefits of using source control_.htm",
+      "description": "Do you know the benefits of using source control"
+    },
+    {
+      "month": 3,
+      "file": "/images/newsletter-uploads/2010/_2010_03_Mini_SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010_.htm",
+      "description": "Mini - SSW Brain Quest Adelaide- Team Foundation Server and SharePoint 2010"
+    },
+    {
+      "month": 3,
+      "file": "/images/newsletter-uploads/2010/_2010_03_Mini_SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010_.htm",
+      "description": "Mini - SSW Brain Quest Melbourne- Team Foundation Server and SharePoint 2010"
+    },
+    {
+      "month": 3,
+      "file": "/images/newsletter-uploads/2010/_2010_03_Mini_SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010_.htm",
+      "description": "Mini - SSW Brain Quest Sydney- Team Foundation Server and SharePoint 2010"
+    },
+    {
+      "month": 3,
+      "file": "/images/newsletter-uploads/2010/_2010_03__11 Great Events Coming-VersionResend-DoNotAddtoXMLList.htm",
+      "description": "11 Great Events Coming-VersionResend-DoNotAddtoXMLList"
+    },
+    {
+      "month": 3,
+      "file": "/images/newsletter-uploads/2010/_2010_03__11 Great Events Coming_.htm",
+      "description": "11 Great Events Coming"
+    },
+    {
+      "month": 4,
+      "file": "/images/newsletter-uploads/2010/_2010_04_Mini_SSW Brain Quest Canberra- Team Foundation Server and SharePoint 2010_.htm",
+      "description": "Mini - SW Brain Quest Canberra- Team Foundation Server and SharePoint 2010"
+    },
+    {
+      "month": 4,
+      "file": "/images/newsletter-uploads/2010/_2010_04__Where appropriate do you use text rather than images_.htm",
+      "description": "Where appropriate do you use text rather than images"
+    },
+    {
+      "month": 5,
+      "file": "/images/newsletter-uploads/2010/_2010_05__Steve Forte Day_.htm",
+      "description": "Steve Forte Day"
+    },
+    {
+      "month": 6,
+      "file": "/images/newsletter-uploads/2010/_2010_06_Mini_SSW Scrum and Brain Quest in Milan_London _Team Foundation Server and SharePoint 2010_.htm",
+      "description": "Mini - SSW Scrum and Brain Quest in Milan_London _Team Foundation Server and SharePoint 2010"
+    },
+    {
+      "month": 6,
+      "file": "/images/newsletter-uploads/2010/_2010_06__Professional Scrum Developer Training_.htm",
+      "description": "Professional Scrum Developer Training"
+    },
+    {
+      "month": 7,
+      "file": "/images/newsletter-uploads/2010/_2010_07__ChinaPSDEDM_.htm",
+      "description": "ChinaPSDEDM"
+    },
+    {
+      "month": 7,
+      "file": "/images/newsletter-uploads/2010/_2010_07__Do you know that developers should do all their custom work in their own SharePoint development environment_.htm",
+      "description": "Do you know that developers should do all their custom work in their own SharePoint development environment"
+    },
+    {
+      "month": 8,
+      "file": "/images/newsletter-uploads/2010/_2010_08__Do you know how to create nice URLs using ASP.NET 4_.htm",
+      "description": "Do you know how to create nice URLs using ASP.NET 4"
+    },
+    {
+      "month": 9,
+      "file": "/images/newsletter-uploads/2010/_2010_09_Mini_Visual Studio 2010 Training_.htm",
+      "description": "Mini - Visual Studio 2010 Training"
+    },
+    {
+      "month": 9,
+      "file": "/images/newsletter-uploads/2010/_2010_09__Do you know the best way to take SharePoint data offline_.htm",
+      "description": "Do you know the best way to take SharePoint data offline"
+    },
+    {
+      "month": 10,
+      "file": "/images/newsletter-uploads/2010/_2010_10__Are your settings and the customizable settings in different files_.htm",
+      "description": "Are your settings and the customizable settings in different files"
+    },
+    {
+      "month": 11,
+      "file": "/images/newsletter-uploads/2010/_2010_11__SSW Silverlight application goes live for DispatchKing_.htm",
+      "description": "SSW Silverlight application goes live for DispatchKing"
+    },
+    {
+      "month": 12,
+      "file": "/images/newsletter-uploads/2010/_2010_12_Mini_SSW Scrum Training in USA_.htm",
+      "description": "Mini - SSW Scrum Training in USA"
+    },
+    {
+      "month": 12,
+      "file": "/images/newsletter-uploads/2010/_2010_12__Do you add the image and the text of the error message for SEO_.htm",
+      "description": "Do you add the image and the text of the error message for SEO"
+    }
+  ]
 }

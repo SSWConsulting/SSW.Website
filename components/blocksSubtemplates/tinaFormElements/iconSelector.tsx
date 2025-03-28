@@ -55,6 +55,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
               style={{ zIndex: 1000 }}
             >
               <Transition
+                as="div"
                 enter="transition duration-150 ease-out"
                 enterFrom="transform opacity-0 -translate-y-2"
                 enterTo="transform opacity-100 translate-y-0"

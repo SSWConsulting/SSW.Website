@@ -102,40 +102,23 @@ jobs:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
       tests_to_run: "images seo-noindex"
 
-  pagespeedInsights:
-    name: Run PageSpeed Insights
-    needs: pr-deploy
-    runs-on: ubuntu-latest
+  # TODO: Remove this step after we have committed report file
+  # Issue: https://github.com/SSWConsulting/SSW.Website/issues/3785
+  prodLighthouseInsights:
+    name: Run Prod Lighthouse Insights
+    uses: ./.github/workflows/template-lighthouse.yml
     permissions:
       pull-requests: write
-    steps:
-      - uses: wicksipedia/pagespeed-insights@main
-        id: pagespeed-insights
-        with:
-          url: ${{ needs.pr-deploy.outputs.url }}
-          categories: |
-            accessibility
-            best_practices
-            performance
-            SEO
-          strategy: mobile
-          delayBetweenRetries: 30000
-          maximumNumberOfRetries: 4
-          key: ${{ secrets.PAGESPEED_INSIGHTS_API_KEY }}
+    with:
+      url: https://app-sswwebsite-9eb3.azurewebsites.net
+      environment: "production"
 
-      - name: Comment on PR with insights
-        uses: mshick/add-pr-comment@v2
-        with:
-          message: |
-            ## PageSpeed Insights
-
-            | Category        | Score                                                   |
-            | ---             | ---                                                     |
-            | Accessibility   | ${{ steps.pagespeed-insights.outputs.accessibility }}   |
-            | Best practices  | ${{ steps.pagespeed-insights.outputs.best_practices }}  |
-            | Performance     | ${{ steps.pagespeed-insights.outputs.performance }}     |
-            | SEO             | ${{ steps.pagespeed-insights.outputs.seo }}             |
-
-            View the full report <https://pagespeed.web.dev/report?url=${{ needs.pr-deploy.outputs.url }}>
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-repeats: true
+  prLighthouseInsights:
+    name: Run PR Lighthouse Insights
+    uses: ./.github/workflows/template-lighthouse.yml
+    permissions:
+      pull-requests: write
+    needs: [pr-deploy, prodLighthouseInsights]
+    with:
+      url: ${{ needs.pr-deploy.outputs.url }}
+      environment: "pr-slot"

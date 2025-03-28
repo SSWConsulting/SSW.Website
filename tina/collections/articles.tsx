@@ -1,3 +1,4 @@
+import { articlesIndexSchemaConstants } from "@/components/articles/articlesHeader";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { carouselBlockSchema } from "../../components/blocks/carousel";
@@ -11,7 +12,7 @@ import { sectionHeaderSchema } from "../../components/blocks/sectionHeader";
 import { tableBlockSchema } from "../../components/blocks/tableLayout";
 import { testimonialsListSchema } from "../../components/blocks/testimonialsList";
 import { verticalImageLayoutBlockSchema } from "../../components/blocks/verticalImageLayout";
-import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { utilityButtonSchema } from "../../components/button/utilityButton";
 import {
   callToActionDefaults,
@@ -20,28 +21,6 @@ import {
 import { seoSchema } from "../../components/util/seo";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
 import { tipField } from "./shared-fields";
-
-export const articlesIndexSchemaConstants = {
-  value: "articlesIndex",
-  title: "title",
-  headerImage: {
-    value: "headerImage",
-    heroBackground: "heroBackground",
-    altText: "altText",
-    txtOverlay: "txtOverlay",
-  },
-  _body: "_body",
-  articles: {
-    value: "articles",
-    title: "title",
-    body: "body",
-    pageURL: "pageURL",
-    isExternal: "isExternal",
-    userName: "userName",
-    userPosition: "userPosition",
-    userImage: "userImage",
-  },
-};
 
 export const articlesSchema: Collection = {
   label: "Articles - Pages",
