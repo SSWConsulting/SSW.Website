@@ -1,5 +1,5 @@
 # SSW Website
-> SSW is a technology consulting company specializing in .NET, Azure, and web development, providing expert consulting, training, and development services since 1990.
+>  SSW is a technology consulting company specializing in .NET, Azure, AI, and web development, providing expert consulting, training, and development services since 1990.
 
 ## Core Resources
 - [About SSW](https://www.ssw.com.au/company/about-us/): Company information and mission
