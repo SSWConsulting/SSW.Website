@@ -1,0 +1,30 @@
+# SSW Website
+> SSW is a technology consulting company specializing in .NET, Azure, and web development, providing expert consulting, training, and development services since 1990.
+
+## Core Resources
+- [About SSW](https://www.ssw.com.au/company/about-us/): Company information and mission
+- [Services](https://www.ssw.com.au/consulting/): Our technology services
+- [Rules](https://www.ssw.com.au/rules/): Development best practices
+
+## Technology Focus
+- [.NET Development](https://www.ssw.com.au/rules/rules-to-better-net-projects/): .NET guidelines
+- [Azure Solutions](https://www.ssw.com.au/rules/rules-to-better-azure/): Azure implementation
+- [Successful Projects](https://www.ssw.com.au/rules/rules-to-successful-projects/): Project standards
+
+## Knowledge Base
+- [Articles](https://www.ssw.com.au/articles/): Technical articles and insights from our team
+  - Latest articles cover topics like EF Core migrations, Microsoft tools in education, and .NET modernization
+  - Expert insights from our software engineers and architects
+  - Real-world solutions and case studies
+
+## AI Solutions
+- [AI Consulting](https://www.ssw.com.au/consulting/artificial-intelligence/): Custom AI implementation services
+  - Intelligent automation solutions
+  - Secure and compliant AI models
+  - Enterprise-level AI expertise
+  - Featured solution: YakShaver - AI-powered work item management
+
+## Optional
+- [Blog](https://www.ssw.com.au/articles/): Latest articles
+- [Events](https://www.ssw.com.au/events/): Training and events
+- [Contact](https://www.ssw.com.au/company/contact-us/): Contact information
