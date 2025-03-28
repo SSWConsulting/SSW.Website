@@ -106,19 +106,37 @@ jobs:
   # Issue: https://github.com/SSWConsulting/SSW.Website/issues/3785
   prodLighthouseInsights:
     name: Run Prod Lighthouse Insights
-    uses: ./.github/workflows/template-lighthouse.yml
+    runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    with:
-      url: https://app-sswwebsite-9eb3.azurewebsites.net
-      environment: "production"
+    steps:
+      - name: Upload production scores json file
+        uses: actions/upload-artifact@v4
+        with:
+          name: prod_scores
+          path: prod_scores.json
+          retention-days: 1
+
+      - name: Run Lighthouse
+        uses: ./.github/workflows/template-lighthouse.yml
+        with:
+          url: https://app-sswwebsite-9eb3.azurewebsites.net
+          environment: "production"
 
   prLighthouseInsights:
     name: Run PR Lighthouse Insights
-    uses: ./.github/workflows/template-lighthouse.yml
+    runs-on: ubuntu-latest
     permissions:
       pull-requests: write
     needs: [pr-deploy, prodLighthouseInsights]
-    with:
-      url: ${{ needs.pr-deploy.outputs.url }}
-      environment: "pr-slot"
+    steps:
+      - name: Download production scores json file
+        uses: actions/download-artifact@v4
+        with:
+          name: prod_scores
+          path: .
+      - name: Run Lighthouse
+        uses: ./.github/workflows/template-lighthouse.yml
+        with:
+          url: ${{ needs.pr-deploy.outputs.url }}
+          environment: "pr-slot"
