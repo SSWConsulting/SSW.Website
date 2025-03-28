@@ -12,14 +12,14 @@ import {
   getYouTubeId,
 } from "../helpers/embeds";
 
-const Image = dynamic(() => import("next/image"));
-
-const YouTubeEmbed = dynamic(() =>
-  import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed)
+const Image = dynamic(() => import("next/image"), { ssr: false });
+const YouTubeEmbed = dynamic(
+  () => import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed),
+  { ssr: false }
 );
-
-const VimeoEmbed = dynamic(() =>
-  import("./embeds/vimeoEmbed").then((mod) => mod.VimeoEmbed)
+const VimeoEmbed = dynamic(
+  () => import("./embeds/vimeoEmbed").then((mod) => mod.VimeoEmbed),
+  { ssr: false }
 );
 
 type VideoModalProps = {
@@ -36,7 +36,7 @@ type VideoType = "youtube" | "vimeo";
 const getVimeoData = async (id: string) => {
   const videoData = await fetch(`https://vimeo.com/api/v2/video/${id}.json`);
   const video = await videoData.json();
-  return video;
+  return video[0]?.thumbnail_large || "";
 };
 
 type VideoState = {
@@ -129,7 +129,7 @@ export const VideoModal = ({
                     });
                   }}
                 />
-                <PlayArrow />{" "}
+                <PlayArrow />
               </>
             )}
           </div>

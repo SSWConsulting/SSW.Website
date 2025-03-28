@@ -24,6 +24,7 @@
       "@/services/*": ["services/*"],
       "@/content/*": ["content/*"],
       "@/helpers/*": ["helpers/*"],
+      "@/app/*": ["app/*"],
       "@/*": ["./*"]
     },
     "plugins": [
