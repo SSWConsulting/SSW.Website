@@ -1,10 +1,11 @@
-import { Template } from "tinacms";
+import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletTextAlignment.schema";
+import { Template, TinaField } from "tinacms";
+import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";
-
 export const ImageTextBlockSchema: Template = {
   name: "imageTextBlock",
   label: "<V2> Image Text Block",
@@ -18,10 +19,6 @@ export const ImageTextBlockSchema: Template = {
       heading: "Lorem Ipsum",
       isH1: false,
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      chips: {
-        filledChipText: "Lorem",
-        clearChipText: "Ipsum",
-      },
       featureColumns: {
         twoColumns: true,
         features: [
@@ -56,12 +53,7 @@ export const ImageTextBlockSchema: Template = {
       //@ts-expect-error – fields are not being recognized
       fields: IconLabelSchema,
     },
-    {
-      type: "string",
-      label: "Heading",
-      name: "heading",
-      description: "Heading text for the media text block.",
-    },
+    alternatingHeadingSchema,
     {
       type: "boolean",
       label: "Use as H1",
@@ -75,11 +67,23 @@ export const ImageTextBlockSchema: Template = {
       description: "Main body text for the block.",
       toolbarOverride: ["bold", "italic", "link"],
     },
+    tabletTextAlignmentField as TinaField,
     {
       name: "chips",
       label: "Chips",
       type: "object",
-      description: "Add chips to the bottom of the media text block.",
+      description: "The chips displayed on card. Max 6.",
+      list: true,
+      ui: {
+        itemProps: (item) => {
+          return { label: item?.chipText ?? "Chip" };
+        },
+        defaultItem: {
+          chipText: "Lorem",
+          chipType: "filledChip",
+        },
+        max: 6,
+      },
       //@ts-expect-error – fields are not being recognized
       fields: pillGroupSchema,
     },

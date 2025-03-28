@@ -1,4 +1,5 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
+import azureBannerSchema from "../components/util/showAzureBanner";
 import { articlesIndexSchema, articlesSchema } from "./collections/articles";
 import { caseStudySchema } from "./collections/case-study";
 import {
@@ -12,14 +13,12 @@ import {
   consultingSchema,
   consultingTagSchema,
 } from "./collections/consulting";
-import {
-  consultingv2Schema,
-  consultingv2TechnologyGroupsSchema,
-  consultingv2TechnologySchema,
-} from "./collections/consultingv2";
+
+import { consultingv2Schema } from "./collections/consultingv2";
 import { employmentSchema } from "./collections/employment";
 import { eventsIndexSchema, eventsSchema } from "./collections/events";
 import { eventsCalendarSchema } from "./collections/events-calendar";
+import { eventsv2Schema } from "./collections/eventsv2";
 import { globalSchema } from "./collections/global";
 import { industryIndexSchema, industrySchema } from "./collections/industry";
 import { liveSchema } from "./collections/live";
@@ -35,7 +34,11 @@ import { partnerIndexSchema } from "./collections/partner";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { presenterSchema } from "./collections/presenter";
 import { productsIndexSchema, productsSchema } from "./collections/products";
-import { technologiesSchema } from "./collections/technologies";
+import {
+  technologiesSchema,
+  v2TechnologyGroupsSchema,
+  v2TechnologySchema,
+} from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
 import { trainingSchema } from "./collections/training";
@@ -45,6 +48,74 @@ import {
 } from "./collections/usergroup";
 import { videoProductionSchema } from "./collections/videoProduction";
 
+const appendSharedSchemas = (
+  schemas,
+  leadingFields = [],
+  trailingFields = []
+) => {
+  for (const schema of schemas) {
+    if (!schema.fields) {
+      continue;
+    }
+    schema.fields = [...leadingFields, ...schema.fields, ...trailingFields];
+  }
+  return schemas;
+};
+const formattedSchemas = () => {
+  return [
+    ...schemas,
+    ...appendSharedSchemas(pageSchemas, [], [azureBannerSchema]),
+  ].sort((a, b) => a.name.localeCompare(b.name));
+};
+
+const pageSchemas = [
+  caseStudySchema,
+  pagesSchema,
+  articlesIndexSchema,
+  articlesSchema,
+  companyIndexSchema,
+  companySchema,
+  consultingv2Schema,
+  consultingIndexSchema,
+  consultingSchema,
+  videoProductionSchema,
+  employmentSchema,
+  eventsv2Schema,
+  eventsIndexSchema,
+  eventsSchema,
+  industrySchema,
+  liveSchema,
+  marketingSchema,
+  officeIndexSchema,
+  officeSchema,
+  partnerIndexSchema,
+  productsIndexSchema,
+  industryIndexSchema,
+  productsSchema,
+  userGroupPageSchema,
+  logosSchema,
+  trainingSchema,
+];
+
+const schemas = [
+  v2TechnologySchema,
+  v2TechnologyGroupsSchema,
+  paymentDetailsSchema,
+  clientsCategorySchema,
+  eventsCalendarSchema,
+  consultingCategorySchema,
+  consultingTagSchema,
+  technologiesSchema,
+  locationSchema,
+  presenterSchema,
+  newsletterSchema,
+  testimonialSchema,
+  testimonialCategoriesSchema,
+  opportunitiesSchema,
+  globalSchema,
+  megaMenuSchema,
+  userGroupGlobalSchema,
+];
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
   branch:
@@ -86,50 +157,7 @@ const config = defineStaticConfig({
     return cms;
   },
   schema: {
-    collections: [
-      pagesSchema,
-      globalSchema,
-      megaMenuSchema,
-      articlesIndexSchema,
-      articlesSchema,
-      companyIndexSchema,
-      companySchema,
-      clientsCategorySchema,
-      paymentDetailsSchema,
-      caseStudySchema,
-      consultingv2Schema,
-      consultingv2TechnologyGroupsSchema,
-      consultingv2TechnologySchema,
-      consultingIndexSchema,
-      consultingSchema,
-      videoProductionSchema,
-      consultingCategorySchema,
-      consultingTagSchema,
-      technologiesSchema,
-      employmentSchema,
-      opportunitiesSchema,
-      eventsIndexSchema,
-      eventsSchema,
-      eventsCalendarSchema,
-      locationSchema,
-      presenterSchema,
-      logosSchema,
-      industrySchema,
-      liveSchema,
-      marketingSchema,
-      newsletterSchema,
-      officeIndexSchema,
-      officeSchema,
-      partnerIndexSchema,
-      productsIndexSchema,
-      industryIndexSchema,
-      productsSchema,
-      testimonialSchema,
-      testimonialCategoriesSchema,
-      trainingSchema,
-      userGroupPageSchema,
-      userGroupGlobalSchema,
-    ],
+    collections: formattedSchemas(),
   },
   search: {
     tina: {

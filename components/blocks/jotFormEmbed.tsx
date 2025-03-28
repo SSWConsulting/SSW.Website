@@ -45,7 +45,7 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
         showCloseIcon={true}
         onClose={() => setOpen(false)}
       >
-        <Jotform src={`https://form.jotform.com/${jotFormId}`}></Jotform>
+        <Jotform src={`https://www.jotform.com/${jotFormId}`}></Jotform>
       </Popup>
     </>
   );

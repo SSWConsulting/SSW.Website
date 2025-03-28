@@ -1,0 +1,15 @@
+{
+  "title": "AI Hack Day- Brisbane",
+  "url": "https://aihackday.com/brisbane/",
+  "thumbnail": "/images/events/AIHackDaySSWEvents.jpg",
+  "thumbnailDescription": "AI Hack Day",
+  "startDateTime": "2025-03-21T23:00:00.000Z",
+  "endDateTime": "2025-03-22T06:00:00.000Z",
+  "calendarType": "Hack Days",
+  "city": "Brisbane",
+  "category": "Other",
+  "abstract": "AI Hack Days are community-run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you’re a beginner then there’s plenty to learn on the day.\n\nIf you then want to build something yourself, you’ll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you’ve never played with AI or ML before it would be good to do a little bit of learning before the day but it’s not a requirement as all experience levels are welcome.",
+  "description": "AI Hack Days are community-run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you’re a beginner then there’s plenty to learn on the day.\n\nIf you then want to build something yourself, you’ll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you’ve never played with AI or ML before it would be good to do a little bit of learning before the day but it’s not a requirement as all experience levels are welcome.\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}

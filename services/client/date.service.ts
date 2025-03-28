@@ -1,3 +1,6 @@
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import { months } from "../../components/util/constants";
 
 /**
@@ -18,4 +21,12 @@ export const transformIntToMonth = (monthNumber: number): string => {
 export const stringifyMonth = (month: number): string => {
   const monthString = month.toString().padStart(2, "0");
   return monthString;
+};
+
+export const utcDateToHoursMinutes = (date: string): string => {
+  dayjs.extend(timezone);
+  dayjs.extend(utc);
+  dayjs.tz.setDefault("UTC");
+  const formatted = dayjs.tz(date).format("HH:mm");
+  return formatted;
 };

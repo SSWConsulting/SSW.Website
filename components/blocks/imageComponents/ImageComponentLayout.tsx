@@ -1,6 +1,6 @@
 "use client";
 import { Container } from "@/components/util/container";
-import getYouTubeVideoId from "@/services/client/youtube.service";
+import { VideoModal } from "@/components/videoModal";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { classNames } from "tinacms";
@@ -9,70 +9,86 @@ import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 
 export const ImageComponentLayout = ({ data, children }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
+
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
-  const youtubeVideoId = getYouTubeVideoId(data.mediaConfiguration?.youtubeUrl);
+  const isImage =
+    !isYouTube &&
+    data.mediaConfiguration?.imageSource &&
+    data.mediaConfiguration?.imageWidth &&
+    data.mediaConfiguration?.imageHeight;
+  const hasMedia = isYouTube || isImage;
+
+  const youtubeUrl = data.mediaConfiguration?.youtubeUrl;
+
+  const getVerticalMediaPlacement = () => {
+    switch (data.mediaConfiguration?.verticalPlacement) {
+      case "Top":
+        return "items-start";
+      case "Bottom":
+        return "items-end";
+      default:
+        return "items-center";
+    }
+  };
+
+  const getVerticalTextPlacement = () => {
+    switch (data.mediaConfiguration?.verticalPlacement) {
+      case "Top":
+        return "justify-start";
+      case "Bottom":
+        return "justify-end";
+      default:
+        return "justify-center";
+    }
+  };
 
   return (
     <V2ComponentWrapper data={data}>
       <Container
         size="custom"
+        padding="px-4 sm:px-8"
         className={classNames(
-          "mx-auto flex flex-col gap-8 align-middle md:grid md:gap-16",
-          data.mediaConfiguration?.imageSource || youtubeVideoId
+          "mx-auto flex flex-col gap-8 py-8 align-middle sm:py-12 md:gap-16 xl:grid",
+          data.mediaConfiguration?.imageSource || youtubeUrl
             ? "md:grid-cols-2"
             : "md:grid-cols-1",
           data.mediaConfiguration?.mobilePlacement === "Above"
             ? "flex-col-reverse"
-            : "flex-col",
-          data.mediaConfiguration?.verticalPlacement === "Bottom"
-            ? "pt-12"
-            : "py-12"
+            : "flex-col"
         )}
       >
         <div
           className={classNames(
-            `flex aspect-auto w-full flex-col justify-center ${data?.mediaConfiguration?.imageSource || youtubeVideoId ? "md:aspect-4/3" : "items-center"}`,
-            imageIsLeftAligined && "md:order-2",
-            data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
+            "flex w-full flex-col",
+            hasMedia && "xl:items-start xl:text-start",
+            getVerticalTextPlacement(),
+            imageIsLeftAligined && "xl:order-2"
           )}
         >
           {children}
         </div>
 
-        {(data.mediaConfiguration?.imageSource || youtubeVideoId) && (
+        {(data.mediaConfiguration?.imageSource || youtubeUrl) && (
           <div
             className={classNames(
-              "relative aspect-4/3 w-full md:aspect-auto",
-              imageIsLeftAligined && "md:order-1"
+              "relative flex w-full",
+              getVerticalMediaPlacement(),
+              imageIsLeftAligined && "xl:order-1"
             )}
           >
-            {isYouTube && youtubeVideoId ? (
-              <iframe
-                className={classNames(
-                  "absolute inset-0 aspect-4/3 w-full rounded-md",
-                  data.mediaConfiguration?.verticalPlacement === "Centered" &&
-                    "my-auto",
-                  data.mediaConfiguration?.verticalPlacement === "Bottom" &&
-                    "mt-auto"
-                )}
-                src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                data-tina-field={tinaField(data, "mediaConfiguration")}
+            {isYouTube && youtubeUrl ? (
+              <VideoModal
+                frameClassName="rounded"
+                className="w-full"
+                url={youtubeUrl}
               />
             ) : (
-              data.mediaConfiguration?.imageSource && (
+              isImage && (
                 <Image
-                  objectFit="contain"
-                  fill={true}
-                  className={classNames(
-                    data.mediaConfiguration?.verticalPlacement === "Centered" &&
-                      "my-auto",
-                    data.mediaConfiguration?.verticalPlacement === "Bottom" &&
-                      "mt-auto",
-                    "!h-auto rounded-md"
-                  )}
+                  width={data.mediaConfiguration?.imageWidth}
+                  loading="eager"
+                  height={data.mediaConfiguration?.imageHeight}
+                  className={classNames("w-full rounded-md")}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}

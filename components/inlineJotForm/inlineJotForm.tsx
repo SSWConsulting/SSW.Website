@@ -13,7 +13,7 @@ export const InlineJotForm = (props: InlineJotFormProps) => {
       {props.title && <h2 className="text-center">{props.title}</h2>}
       <Jotform
         className={props.additionalClasses}
-        src={`https://form.jotform.com/${props.jotFormId}`}
+        src={`https://www.jotform.com/${props.jotFormId}`}
       />
     </>
   );

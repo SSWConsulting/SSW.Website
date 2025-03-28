@@ -1,0 +1,386 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for AI/ML/GPT",
+    "description": "Maximize efficiency with AI and Machine Learning solutions. Improve your workflows, gain insights for decision making, and save costs."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Expert AI Consultants",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Custom AI Solutions, **Expertly Implemented.**",
+      "isH1": true,
+      "description": "Our solutions go beyond basic automation to create real business value, turning AI into a genuine intellectual partner for your specific business challenges.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by top companies",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "From quick prototypes to secure AI models, **we make AI work for you.**",
+      "isH1": false,
+      "description": "AI can be overwhelming, but we make it simple. Our consultants analyze your systems and recommend practical AI solutions to improve efficiency, automate tasks, and extract insights from data.\n\nGet expert guidance to integrate AI where it matters most.\n",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Book an Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "iconFirst": true
+        },
+        {
+          "buttonText": "Rules to Better AI",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-ai/",
+          "icon": "BiSolidWrench",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://youtu.be/-q9lLqtkC00?si=ep-UD9gBNQ_gUcSR",
+        "altText": "The Future of Business with AI: Automation, Intelligence, and Customer Relations"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ib0xbk",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Intelligent automation, precisely applied",
+          "description": "We build automation that cuts through complexity and adapts to your specific business needs. No generic solutions, just practical AI that solves real problems.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "hukqtq",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidLockAlt",
+          "heading": "Secure, compliant implementation",
+          "description": "AI models offer incredible capabilities but require proper security and compliance guardrails. We implement safeguards that protect your customer data, ensuring your solutions stay both powerful and compliant.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "65qp3c",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidStar",
+          "heading": "Trusted expertise at scale",
+          "description": "From operational efficiency to customer experience, we scale AI solutions that deliver measurable results. Our team brings enterprise-level expertise to organizations of all size.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "**YakShaver:** Our AI Agent in Action",
+      "isH1": false,
+      "description": "At SSW, we don't just talk about AI—we build it. YakShaver is our AI solution that automates work item creation, proving how AI can streamline repetitive dev tasks.\n\nBeyond the typical chatbot, YakShaver shows how AI capabilities can transform development workflows.\n\nIt's the same approach we bring to your projects, practical AI that delivers real results.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Learn More",
+          "buttonLink": "https://www.ssw.com.au/articles/yakshaver-article",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://youtu.be/CBes1SEvV54?si=LV2O5t0MthCIaYIF",
+        "altText": "YakShaver - AI to make the perfect PBI in 30 seconds"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "ui7a6e",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Trends",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "90 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "The Year of the AI Agent: Automation to Intelligence",
+          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "hhszy",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/sVELvhGdSfs?si=YgXhKVW1AOiyx-CQ",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Model Guides",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "3 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
+          "description": "Confused about selecting the perfect AI model? Join Isaac Lombard and Caleb Williams as they explore how GitHub Models simplifies the process! Discover the ease of finding and utilizing AI models for your projects in this quick guide.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "20ehn",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Multi-Language AI Apps",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "60 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
+          "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "hupqdh",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=WwF69cj8490",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Strategy",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "8 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "How to supercharge a company with AI",
+          "description": "Supercharge your company with AI!  🚀  See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features.  Discover actionable tips to implement AI",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "y3sb5r",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/YlsbPEvVyq4?si=fzSXmmJOOkDC5-nz",
+          "altText": "AI Powered Navigation for French Payroll Expert",
+          "chips": [
+            {
+              "chipText": "Case Study",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "6 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "AI Powered Navigation for French Payroll Expert",
+          "description": "Join us as we explore the journey of French Payroll Expert (FPE), a company that provides payroll services from A to Z to foreign companies working in France. Discover how integrating an AI-powered chatbot, developed in collaboration with SSW, has revolutionized customer service, addressing common queries efficiently and accurately. ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
+        }
+      ],
+      "isStacked": false,
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 3
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your AI project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a free initial meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "100px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}

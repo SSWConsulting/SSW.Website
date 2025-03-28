@@ -3,8 +3,6 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { memo, useEffect, useState } from "react";
-import type { Template } from "tinacms";
-
 import { BiChevronRightCircle } from "react-icons/bi";
 
 import { tinaField } from "tinacms/dist/react";
@@ -14,6 +12,7 @@ import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { VideoModal } from "../videoModal";
+import { aboutUsBlock } from "./aboutUs.schema";
 
 const DAY_KEYS = {
   Sunday: 0,
@@ -450,36 +449,4 @@ const Map = ({
       </svg>
     </div>
   );
-};
-
-export const aboutUsBlock = {
-  backgroundColor: "backgroundColor",
-};
-
-export const aboutUsBlockSchema: Template = {
-  name: "AboutUs",
-  label: "About Us",
-
-  ui: {
-    previewSrc: "/images/thumbs/tina/about-us.jpg",
-  },
-  fields: [
-    {
-      type: "string",
-      label: "Background Color",
-      name: "backgroundColor",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Light Gray", value: "lightgray" },
-        { label: "Red", value: "red" },
-        { label: "Black", value: "black" },
-      ],
-    },
-    {
-      type: "boolean",
-      label: "Show Map",
-      name: "showMap",
-      required: false,
-    },
-  ],
 };

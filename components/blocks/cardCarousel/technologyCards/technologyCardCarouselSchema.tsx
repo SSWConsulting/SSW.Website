@@ -1,5 +1,5 @@
 import { Template } from "tinacms";
-import { backgroundSchema } from "../../../../components/layout/v2ComponentWrapper";
+import { backgroundSchema } from "../../../../components/layout/v2ComponentWrapper.schema";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 

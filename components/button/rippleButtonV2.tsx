@@ -80,7 +80,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
         <div
           data-tina-field={textTinaField}
           className={classNames(
-            "relative z-10 flex items-center gap-2",
+            "relative z-10 flex items-center justify-center gap-2",
             fontClassName
           )}
         >

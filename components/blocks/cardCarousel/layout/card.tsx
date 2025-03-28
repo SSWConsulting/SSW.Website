@@ -1,6 +1,8 @@
 import { ListItem } from "@/components/blocksSubtemplates/listItem";
 import { PillGroup } from "@/components/blocksSubtemplates/pillGroup";
-import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
+import { cn } from "@/lib/utils";
+
+import { VideoModal } from "@/components/videoModal";
 import Image from "next/image";
 import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -10,27 +12,36 @@ import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
 type CardProps = {
   data;
   placeholder: boolean;
+  className?: string;
 };
 
-const Card = ({ data, placeholder }: CardProps) => {
-  //If image fails to load, use placeholder (Piers)
+const Card = ({ data, placeholder, className }: CardProps) => {
+  const isYoutubeEmbed = data.mediaType === "youtube";
+  const youtubeUrl = data.youtubeUrl;
   const [usePlaceholder, setUsePlaceholder] = useState(false);
   const placeholderImage = "/images/videoPlaceholder.png";
 
   return (
     <div
-      className={`flex w-90 shrink flex-col rounded-md text-start ${
+      className={cn(
+        "flex shrink flex-col rounded-md text-start",
+        className,
         cardOptions.find((value) => {
           return value.reference === data.cardStyle;
         })?.classes
-      }`}
+      )}
     >
-      {data.embed ? (
-        <YouTubeEmbed className="mb-2 min-h-36 w-full" id={data.embed} />
+      {youtubeUrl && isYoutubeEmbed ? (
+        <VideoModal
+          className="mb-2"
+          frameClassName="rounded mb-2"
+          overflow={true}
+          url={youtubeUrl}
+        />
       ) : (
         (data.image || placeholder) && (
           <div
-            className="relative mb-2 min-h-36 w-full overflow-hidden rounded-md"
+            className="relative mb-2 aspect-video w-full shrink-0 overflow-hidden rounded-md"
             data-tina-field={tinaField(data, "image")}
           >
             <Image
@@ -57,7 +68,7 @@ const Card = ({ data, placeholder }: CardProps) => {
       </h3>
       {data.description && (
         <p
-          className="text-sm font-light dark:text-gray-300"
+          className="text-base font-light dark:text-gray-300"
           data-tina-field={tinaField(data, "description")}
         >
           {data.description}

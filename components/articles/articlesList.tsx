@@ -16,9 +16,10 @@ const ArticlesList = () => {
     const {
       author,
       title,
-      seo: { description },
+      seo,
       _sys: { filename },
     } = article;
+    const description = seo?.description ?? null;
     const prop: ArticleProps = {
       url: `/articles/${filename}`,
       title,

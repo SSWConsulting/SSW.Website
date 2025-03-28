@@ -160,7 +160,15 @@ export default function EmploymentPage({ tinaProps, props }) {
         </Container>
       </Section>
       <Section>
-        <BuiltOnAzure data={{ backgroundColor: "default" }} />
+        <BuiltOnAzure
+          data={
+            data.azureBanner?.azureFooterColor
+              ? data.azureBanner
+              : {
+                  azureFooterColor: "white",
+                }
+          }
+        />
       </Section>
     </>
   );

@@ -22,7 +22,7 @@ export const ListItem = ({ data }) => {
           {data.heading}
         </h6>
         <p
-          className="w-full p-1 text-sm font-light dark:text-gray-200"
+          className="w-full p-1 text-base font-light dark:text-gray-200"
           data-tina-field={tinaField(data, "description")}
         >
           {data.description}

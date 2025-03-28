@@ -1,75 +1,75 @@
 "use client";
-import { Button } from "@/components/button/templateButton";
+import AlternatingText from "@/components/alternating-text";
+import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 import "aos/dist/aos.css";
 import classNames from "classnames";
-import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
 export const AccordionBlock = ({ data }) => {
   const headingClasses = "my-0 py-2 dark:text-gray-200";
-
+  const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
+  const isImage =
+    !isYouTube &&
+    data.mediaConfiguration?.imageSource &&
+    data.mediaConfiguration?.imageWidth &&
+    data.mediaConfiguration?.imageHeight;
+  const hasMedia = isYouTube || isImage;
   return (
     <ImageComponentLayout data={data}>
-      {data.isH1 ? (
-        <h1
-          data-tina-field={tinaField(data, "heading")}
-          className={classNames(
-            headingClasses,
-            "text-3xl font-bold lg:text-4xl"
-          )}
-        >
-          {data.heading}
-        </h1>
-      ) : (
-        <h2
-          data-tina-field={tinaField(data, "heading")}
-          className={classNames(
-            "text-2xl font-semibold lg:text-3xl",
-            headingClasses
-          )}
-        >
-          {data.heading}
-        </h2>
-      )}
-      {data.body && (
-        <p
-          className="py-2 text-base font-light dark:text-gray-300"
-          data-tina-field={tinaField(data, "body")}
-        >
-          {data.body}
-        </p>
-      )}
-      {data.buttons?.length > 0 && (
-        <div
-          className={`mt-5 flex ${data.mediaConfiguration?.imageSource ? "" : "justify-center"} flex-wrap gap-3`}
-        >
-          {data.buttons?.map((button, index) => {
-            const buttonElement = (
-              <Button
-                className="text-base font-semibold"
-                key={`image-text-button-${index}`}
-                data={button}
-              />
-            );
-
-            return button.buttonLink && !button.showLeadCaptureForm ? (
-              <Link href={button.buttonLink} key={`link-wrapper-${index}`}>
-                {buttonElement}
-              </Link>
-            ) : (
-              <>{buttonElement}</>
-            );
-          })}
-        </div>
-      )}
+      <section
+        className={cn(
+          hasMedia && "thisHasMediaSomehow",
+          data.tabletTextAlignment === "Center" && "text-center",
+          hasMedia || "sm:text-center"
+        )}
+      >
+        {data.isH1 ? (
+          <h1
+            data-tina-field={tinaField(data, "heading")}
+            className={classNames(
+              headingClasses,
+              "text-3xl font-bold lg:text-4xl"
+            )}
+          >
+            <AlternatingText text={data.heading} />
+          </h1>
+        ) : (
+          <h2
+            data-tina-field={tinaField(data, "heading")}
+            className={classNames(
+              "text-2xl font-semibold lg:text-3xl",
+              headingClasses
+            )}
+          >
+            <AlternatingText text={data.heading} />
+          </h2>
+        )}
+        {data.body && (
+          <p
+            className="py-2 text-base font-light dark:text-gray-300"
+            data-tina-field={tinaField(data, "body")}
+          >
+            {data.body}
+          </p>
+        )}
+      </section>
+      <ButtonRow
+        data={data}
+        className={cn(
+          "mt-5 flex-wrap",
+          data.tabletTextAlignment === "Center" && "justify-center",
+          hasMedia && "xl:justify-start"
+        )}
+      />
       {data.accordionItems && (
         <Accordion
           type={data.isMultipleOpen ? "multiple" : "single"}
@@ -96,7 +96,7 @@ export const AccordionBlock = ({ data }) => {
                       p: (props) => (
                         <p
                           {...props}
-                          className="text-sm font-light text-white"
+                          className="mb-3 text-base font-light text-white last:mb-0 [&>strong]:text-base [&>strong]:font-extrabold [&>strong]:text-white"
                         />
                       ),
                       h6: (props) => <h6 {...props} className="py-2" />,
@@ -106,13 +106,15 @@ export const AccordionBlock = ({ data }) => {
                       h2: (props) => <h2 {...props} className="py-2" />,
                       h1: (props) => <h2 {...props} className="py-2" />,
                       //Import sadly needed as somewhere up the food chain the default ul is overridden
-                      ul: (props) => <ul className="my-0 !ml-5" {...props} />,
+                      ul: (props) => (
+                        <ul className="!ml-5 mb-3 mt-0" {...props} />
+                      ),
                       ol: (props) => (
                         <ol className="my-0 ml-5 list-decimal" {...props} />
                       ),
                       li: (props) => (
                         <li
-                          className="text-sm font-light text-white"
+                          className="text-base font-light text-white"
                           {...props}
                         />
                       ),

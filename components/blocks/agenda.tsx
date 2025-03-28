@@ -32,7 +32,7 @@ const AgendaItem: FC<AgendaItemProps> = ({ body }) => {
 
 export const Agenda = ({ data }) => {
   return (
-    <Section color="white">
+    <Section color="default">
       <Container
         padding={"md:px-8 px-2"}
         size={"xsmall"}

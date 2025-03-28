@@ -23,7 +23,7 @@ export const BookingButton: React.FC<BookingButtonProps | undefined> = ({
   const dataTinaField = data?.tinaField || undefined;
   const animated = data?.animated ?? true;
   const jotFormBookingForm: JotFormEmbedProps = {
-    jotFormId: globals.bookingJotFormId,
+    jotFormId: globals.forms.bookingJotFormId,
     containerClass: data?.containerClass || "",
     buttonClass: data?.buttonClass || "",
     buttonText: buttonText,

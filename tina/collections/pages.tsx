@@ -2,7 +2,6 @@ import type { Collection } from "tinacms";
 
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import azureBannerSchema from "../../components/util/showAzureBanner";
 import { tipField } from "./shared-fields";
 
 export const pagesSchema: Collection = {
@@ -85,6 +84,5 @@ export const pagesSchema: Collection = {
       },
       templates: [...Schemas.pageBlocks],
     },
-    azureBannerSchema,
   ],
 };

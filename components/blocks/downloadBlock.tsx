@@ -36,7 +36,7 @@ const bgOptions = {
 export const DownloadBlock = (data: DownloadBlockProps) => {
   const { title, downloads, bottomBorder } = data;
   return (
-    <Container className="prose prose-img:my-0 !px-0 py-4">
+    <Container className="prose !px-0 py-4 prose-img:my-0">
       <h2 data-tina-field={tinaField(data, "title")}>{title}</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">

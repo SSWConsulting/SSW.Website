@@ -1,0 +1,540 @@
+{
+  "seo": {
+    "title": "Expert .NET Upgrade Services | Minimal Downtime",
+    "description": "Seamlessly upgrade to the latest .NET framework with SSW. Enjoy faster performance, reduced load times, and lower memory usage."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for .NET Upgrades",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": ".NET upgrade - Get new features with minimal downtime",
+      "isH1": true,
+      "description": "Upgrade to the latest .NET for better performance, security, and long-term support. We streamline migrations to keep your apps modern and efficient.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "",
+          "chipType": "clearChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonLink": "",
+          "iconFirst": false,
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/ssw_here_fx41_v2.png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "heading": "Trusted by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event cinmemas logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195,
+          "altText": "Toll logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160,
+          "altText": "Symantec logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175,
+          "altText": "Domain logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Allianz logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180,
+          "altText": "Microsoft logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175,
+          "altText": "Cisco logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "heading": "Strategic .NET 8 or 9 migration",
+      "body": "Your .NET applications need care and planning to upgrade to the latest version. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
+      "accordionItems": [
+        {
+          "label": "Phase 1: Understanding Your .NET Landscape",
+          "content": "We start with a comprehensive evaluation of your current system through our **Specification Review.** This critical first step helps us:\n\n* Map out your application's architecture and dependencies: Gain a clear understanding of your current .NET Framework or previous .NET Core versions, identifying all components and their inter-relationships for a smoother upgrade process.\n* Identify potential migration challenges and compatibility issues: Proactively pinpoint roadblocks and latest version compatibility concerns early on, minimizing risks during the migration execution. This is where our expertise with tools like the .NET Upgrade Assistant proves invaluable.\n* Document critical business functionality that must be preserved: Ensure no essential features are overlooked during the .NET upgrade, safeguarding core business operations throughout the migration to the latest .NET framework.\n* Assess your team's readiness and training needs: Evaluate your team's current skill set and identify any training requirements to effectively manage and maintain your applications post .NET upgrade.\n"
+        },
+        {
+          "label": "Phase 2: Tailoring the Right Migration Path",
+          "content": "Based on the assessment, we'll recommend the optimal migration strategy for your specific needs. We often leverage two proven approaches:\n\nStrangler Fig Method: Gradual and Low-Risk for Complex Applications\n\nPerfect for larger, more complex applications, this migration approach allows us to replace older parts incrementally, ensuring system stability and minimal business disruption. This upgrade strategy is ideal when you need to:\n\n* Keep critical systems running 24/7: Maintain continuous uptime and availability for mission-critical applications throughout the .NET upgrade.\n* Test changes safely in production: Implement and validate changes in a controlled, live environment, reducing the risks associated with a large-scale .NET migration.\n* Manage risk with gradual updates: Mitigate potential issues by rolling out the .NET upgrade in manageable stages, ensuring a more controlled and predictable migration process.\n\nBig Bang Approach: Swift and Efficient for Simpler Systems\n\nBuilt for smaller applications or scenarios requiring a rapid transition, the Big Bang approach involves upgrading everything at once in a coordinated effort. This upgrade strategy is most suitable when you:\n\n* Have a simpler codebase: Applications with fewer dependencies and less complexity can benefit from a faster, more direct .NET migration.\n* Need to move fast: Accelerate your .NET upgrade timeline when speed is paramount, quickly realizing the benefits of the latest version's performance\n* Can handle brief downtime: This approach may involve a short, planned downtime window for the final cutover.\n"
+        },
+        {
+          "label": "Phase 3: Charting Your Course to the latest version",
+          "content": "For each part of your system, we'll pick one of these three paths:\n\nPath 1: Refactor - Enhance and Optimize Existing Code\n\n* Add .NET's new features to your existing code: Modernize your application by strategically incorporating the latest enhancements and functionalities offered.\n* Keep your business logic intact while making it faster: Preserve your core business rules and processes while leveraging .NET's performance improvements to optimize efficiency.\n* Get your packages and dependencies up to date: Ensure compatibility and security by updating all necessary packages and dependencies.\n\nPath 2: Replace - Modernize Components with Superior Alternatives\n\n* Find better options for older components: Identify outdated or inefficient components within your system and explore modern, more performant replacements.\n* Pick third-party tools that fit your needs: Select and integrate best-of-breed third-party tools and libraries that align with your specific requirements and .NET ecosystem.\n* Hook everything into your current setup smoothly: Ensure seamless integration of new components and tools into your existing infrastructure during the .NET upgrade, maintaining overall system coherence.\n\nPath 3: Rebuild - A Fresh Start with Modern Architecture\n\n* Start fresh when old code isn't worth fixing: For legacy or heavily technical debt-laden components, a complete rebuild may be the most effective path to a future-proof .NET application.\n* Build with clean, modern patterns: Leverage contemporary architectural patterns and best practices to create a robust and maintainable .NET solution.\n* Use the latest .NET's best features from the ground up: Capitalize on the full potential of .NET's cutting-edge capabilities by designing and developing new components from scratch, optimized for the latest framework.\n"
+        },
+        {
+          "label": "Phase 4: Proven Development Practices in Action",
+          "content": "During the migration execution phase, we adhere to industry-leading development practices to guarantee a smooth and reliable .NET upgrade:\n\n* Run parallel test environments to catch issues early: Establish comprehensive testing environments that mirror production to identify and resolve potential issues before they impact live systems during the migration.\n* Deploy through automated CI/CD pipelines: Implement robust Continuous Integration and Continuous Deployment (CI/CD) pipelines to automate the deployment process, ensuring consistency and reducing manual errors.\n* Test thoroughly at every step: Conduct rigorous testing at each stage of the .NET migration process, including unit, integration, and user acceptance testing, to validate functionality and performance.\n* Watch system health in real-time: Implement real-time monitoring and logging to track system performance and identify any anomalies during and after the .NET upgrade, ensuring immediate issue detection and resolution\n* Keep rollback plans ready (just in case): Develop and maintain comprehensive rollback plans to quickly revert to the previous system state in the unlikely event of critical issues during the migration.\n"
+        },
+        {
+          "label": "Phase 5: Ensuring Peak Performance and Long-Term Success",
+          "content": "After the upgrade, we make sure everything runs at peak performance:\n\n* Speed up slow spots in your code: Identify and address performance bottlenecks within your code, leveraging .NET's performance enhancements to maximize application speed and responsiveness.\n* Lock down security: Implement robust security measures and best practices to protect your .NET applications from potential vulnerabilities, ensuring a secure and reliable environment.\n* Train your team on the new setup: Provide comprehensive training and knowledge transfer to your team, empowering them to effectively manage and maintain your newly upgraded .NET systems.\n* Update all your docs: Ensure all documentation is updated to reflect the .NET upgrade, providing a clear and accurate reference for ongoing maintenance and development.\n* Set up long-term monitoring: Establish proactive, long-term monitoring solutions to continuously track system health, performance, and security, ensuring the ongoing stability and efficiency of your .NET applications.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "buttons": [
+        {
+          "buttonText": "Explore our Migration Guide",
+          "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy/",
+          "colour": 1
+        },
+        {
+          "buttonText": "Rules to Better .NET Migrations",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png",
+        "youtubeUrl": "https://youtu.be/N9QOoTwOo_U?si=nFwcvCSFgc0k37Nn",
+        "altText": "Strategic .NET 8 Migration: A Phased Approach"
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Why move to the latest .NET with us?",
+      "isH1": false,
+      "body": "",
+      "tabletTextAlignment": "Left",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ye7r7",
+          "image": "",
+          "altText": "Speed Up Your Apps",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiTachometer",
+          "heading": "Speed Up Your Apps",
+          "description": ".NET's latest updates are all about performance, and we'll make sure you're getting the most out of it.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Faster Performance",
+                "description": "Code executes quicker due to JIT compiler and runtime optimizations.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Reduced Load Times",
+                "description": "Benefit from quicker startup via ReadyToRun (R2R) compilation and optimized assembly loading.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Lower Memory Use",
+                "description": "NET is now leaner with improved Garbage Collection and efficient data structures.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "imtiro",
+          "image": "",
+          "altText": "Skip the Upgrade Hassles",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            }
+          ],
+          "icon": "BiSkipNext",
+          "heading": "Skip the Upgrade Hassles",
+          "description": "We've already solved the tricky bits of .NET migrations. Avoid common pitfalls with",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Built-in security patches ",
+                "description": " We'll ensure you're on the latest security patches.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Breaking changes mapped out",
+                "description": "We identify and address breaking changes before they impact your users.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Testing You Can Trust",
+                "description": "We've got test suites ready to go, so your upgrade goes smoothly.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "m0bkqf",
+          "image": "",
+          "altText": "Beyond Basic Migration",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            }
+          ],
+          "icon": "BiRocket",
+          "heading": "Beyond Basic Migration",
+          "description": "Our team isn't just good with upgrades. We're .NET experts and can optimize your code for this new version.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Find and fix bottlenecks",
+                "description": "We'll pinpoint where your code can be improved and make it faster using new .NET features.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Catch security issues early",
+                "description": "We hunt for potential security issues.",
+                "icon": "BiCheck"
+              },
+              {
+                "heading": "Plan your next tech moves",
+                "description": "We'll make sure your apps are ready for what's coming next in .NET.",
+                "icon": "BiCheck"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "BizCover: From microservice maze to monolith magic",
+      "isH1": false,
+      "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": ".NET8",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Modular Monolith (MoMo)",
+          "chipType": "clearChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly.",
+            "description": "- Dino Tius, BizCover",
+            "icon": "BiSolidQuoteLeft"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonLink": "",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "imageHeight": 700,
+        "imageWidth": 1400,
+        "altText": "BizCover: From microservice maze to monolith magic"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in .NET projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork—just proven tips that help you build better software.\n",
+      "tabletTextAlignment": "Left",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "qmlcq9",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=ocbPkNROnlc",
+          "image": "",
+          "altText": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
+          "chips": [
+            {
+              "chipText": ".NET User Groups",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "1 hour",
+              "chipType": "clearChip"
+            }
+          ],
+          "heading": "Collections in .NET: The performance deep dive you didn't know you needed 🚀",
+          "description": "Think you know .NET collections? Think again. From array memory layouts to dictionary collision handling, Anton Polkanov breaks down the nitty-gritty details that separate good code from great code.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "s76w3",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=EjYczs7RYD8",
+          "image": "/images/Louis Test Images/Incident-io-batch/cloud_native_net-aspire_16-9.jpg",
+          "altText": "Breaking down .NET Aspire: Your gateway to cloud native apps",
+          "chips": [
+            {
+              "chipText": ".NET Aspire",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "1 hour",
+              "chipType": "clearChip"
+            }
+          ],
+          "heading": "Breaking Down .NET Aspire: Your Gateway to Cloud Native Apps",
+          "description": "SSW's Matt Wicks teams up with Octopus Deploy's Rob Pearson to demystify .NET Aspire. Dive into real-world orchestration, service integration, and deployment strategies that'll level up your cloud-native game.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "s22wwo",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=Ft2JArXEXcI",
+          "image": "/images/Louis Test Images/Incident-io-batch/dotnet_cleanarchitecture.png",
+          "altText": "Full-Stack Clean Architecture: The Right Way to Share Code",
+          "chips": [
+            {
+              "chipText": ".NET User Groups",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "1 hour",
+              "chipType": "clearChip"
+            }
+          ],
+          "heading": "Full-Stack Clean Architecture: The right way to share code",
+          "description": "Stop wrestling with UI and API code! Matt Goldman (author of .NET MAUI in Action) reveals how to nail Clean Architecture across MAUI and ASP.NET Core without the classic pitfalls. Expect real demos, not just theory.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "Need quick answers about .NET upgrades? Here's what tech teams commonly ask us during assessment calls.",
+      "accordionItems": [
+        {
+          "label": "Which .NET versions do you support for upgrades?",
+          "content": "We support upgrades to the latest .NET versions, including .NET 8 (LTS) and .NET 9 (STS). .NET major versions are released annually in November. STS releases (like .NET 9) occur every even-numbered year and receive free support and patches for 18 months. LTS releases (like .NET 8) occur every odd-numbered year and receive free support and patches for 3 years.\n"
+        },
+        {
+          "label": "What's the difference between STS and LTS?",
+          "content": "New major .NET versions are released annually in November. Each release is designated as either Standard Term Support (STS) or Long Term Support (LTS). STS releases occur in even-numbered years and get support for 18 months, while LTS releases are in odd-numbered years and receive free support and patches for 3 years. Both types of releases are identical in quality, the only difference is their support lifecycle.\n"
+        },
+        {
+          "label": "Is migrating to .NET 9 worthwhile?",
+          "content": "Yes, especially if you are using older .NET versions like .NET Framework, .NET Core 3.1, .NET 6, .NET 7, or even .NET 8. A strategic move to .NET 9 provides several key advantages:\n\n* Current Platform & Support: Stay on a currently supported .NET release, receiving the latest updates and fixes from Microsoft. While .NET 9 is a Current release (not Long-Term Support), migrating ensures you benefit from ongoing development and community support during its lifecycle.\n* Improved Performance: Experience gains in application speed, startup times, and memory efficiency due to ongoing optimizations in .NET 9.\n* Advanced Cloud Capabilities: Utilize the newest cloud-native features and better integration with Azure and other cloud platforms offered by .NET 9.\n* Latest Security Updates: Improve application security with the most recent security features and patches incorporated in .NET 9.\n* Access to New C# Features: Equip your developers with the latest language features and productivity gains in the newest C# version supported by .NET 9.\n"
+        },
+        {
+          "label": "What about our existing dependencies?",
+          "content": "We understand dependency compatibility is a key concern when planning a .NET upgrade. During our assessment, we meticulously audit your NuGet packages first. The good news is: Most popular packages already support the latest .NET version.\n\n* For packages lacking direct support, we offer solutions:\n  * Update to compatible versions: Identify and upgrade to newer versions of packages that offer the latest .NET compatibility.\n  * Find modern alternatives: Explore and recommend modern, actively maintained alternative packages that are compliant and offer similar functionality.\n  * Create compatibility shims (as a last resort): In rare cases, we can develop compatibility shims to bridge gaps for essential packages without direct support for the latest version of .NET\n"
+        },
+        {
+          "label": "What kind of support is available post-migration?",
+          "content": "Our Support Includes:\n\n* Performance monitoring: Continuous performance monitoring and analysis to identify and address any performance regressions or areas for .NET 8 optimization.\n* Security updates: Ongoing monitoring for security vulnerabilities and assistance with applying timely security updates to your .NET 8 environment.\n* Optional managed services: Consider our managed services for proactive ongoing support, maintenance, and .NET 8 optimization of your upgraded applications.\n* Regular health checks: Scheduled health checks and system reviews to proactively identify potential issues and ensure the continued stability and performance of your .NET 8 systems.\n* Continuous optimization: Ongoing recommendations and support for further .NET 8 optimization, helping you leverage new features and maintain peak application performance over time.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 3
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your .NET project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "chips": [
+        {
+          "chipText": "",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "",
+          "chipType": "clearChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "",
+      "isH1": false,
+      "description": "",
+      "chips": [
+        {
+          "chipText": "",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "",
+          "chipType": "clearChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
+}

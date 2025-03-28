@@ -313,6 +313,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   return (
     <>
       <Transition
+        as="div"
         className="mb-15 border-b-1 bg-white pb-8"
         show={visible}
         enter="transition duration-100 ease-out"
@@ -389,7 +390,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             </div>
           </div>
         </div>
-        <div className="prose prose-img:mx-1 prose-img:my-0 prose-img:inline max-w-full">
+        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
           <TinaMarkdown content={event?.description} />
         </div>
         <div className="mb-1 mt-6 p-0 text-end">

@@ -1,0 +1,21 @@
+{
+  "title": "NDC Melbourne",
+  "url": "https://ndcmelbourne.com/",
+  "thumbnail": "/images/events/NDC-Conferences.png",
+  "thumbnailDescription": "NDC Melbourne",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "presenterName": "",
+  "startDateTime": "2025-04-28T23:00:00.000Z",
+  "endDateTime": "2025-05-01T08:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "category": "Other",
+  "abstract": "NDC Melbourne is a 3-day developers conference taking place at the Melbourne Convention and Exhibition Centre from 29 April - 1 May 2025.\n\nThere will be awesome workshops and presentations by some of the world's leading developer trainers and speakers.\n\nSee the Agenda here: https://ndcmelbourne.com/agenda",
+  "description": "NDC Melbourne is a 3-day developers conference taking place at the Melbourne Convention and Exhibition Centre from 29 April - 1 May 2025.\n\nThere will be awesome workshops and presentations by some of the world's leading developer trainers and speakers.\n\nSee the Agenda here: https\\://ndcmelbourne.com/agenda\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}

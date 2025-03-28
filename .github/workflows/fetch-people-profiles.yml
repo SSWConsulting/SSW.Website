@@ -26,8 +26,11 @@ jobs:
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
-      - run: corepack enable pnpm
-      - run: pnpm add -w gray-matter
+      - uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: |
+          pnpm add gray-matter
 
       - name: Fetch SSW.People.Profiles
         uses: actions/github-script@v7

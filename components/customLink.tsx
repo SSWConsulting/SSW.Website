@@ -65,6 +65,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           title={title}
           {...props}
           style={style}
+          prefetch={true}
         >
           {children}
         </Link>

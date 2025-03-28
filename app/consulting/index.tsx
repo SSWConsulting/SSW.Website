@@ -1,18 +1,15 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-
-import { useEffect, useMemo, useRef, useState } from "react";
-import { MdLiveHelp } from "react-icons/md";
-
-import { wrapGrid } from "animate-css-grid";
-
-import { tinaField } from "tinacms/dist/react";
-
+import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
+import { wrapGrid } from "animate-css-grid";
 import { Breadcrumbs } from "app/components/breadcrumb";
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { MdLiveHelp } from "react-icons/md";
+import { tinaField } from "tinacms/dist/react";
 
 const allServices = "All SSW Services";
 
@@ -33,7 +30,7 @@ export default function ConsultingIndex({ tinaProps }) {
             return {
               url:
                 p.externalUrl ||
-                p.page.id.replace("content/", "").replace(".mdx", ""),
+                p.page.id.replace("content", "").replace(".mdx", ""),
               title: p.title,
               description: p.description,
               logo: p.logo,
@@ -120,6 +117,7 @@ export default function ConsultingIndex({ tinaProps }) {
           </div>
         </div>
       </Container>
+      <BuiltOnAzure data={tinaProps.azureBanner} />
     </>
   );
 }

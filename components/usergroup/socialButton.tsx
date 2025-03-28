@@ -12,7 +12,7 @@ export const platformList = [
 
 export const platforms: Record<
   (typeof platformList)[number],
-  { icon: () => JSX.Element; color: string }
+  { icon: () => React.JSX.Element; color: string }
 > = {
   facebook: {
     icon: () => <SiFacebook className="text-white" size={40} />,

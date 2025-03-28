@@ -1,7 +1,7 @@
-import { companyIndexSchemaConstants } from "@/tina-collections/company";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
+import { companyIndexSchemaConstants } from "./companyHeader";
 
 export type CompanyIndexProps = {
   title: string;

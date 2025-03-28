@@ -77,9 +77,11 @@ const config = {
       },
     ];
   },
+  serverExternalPackages: ["applicationinsights"],
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
     turbo: {
+      moduleIdStrategy: "deterministic",
       resolveExtensions: [
         ".mdx",
         ".tsx",
@@ -90,8 +92,11 @@ const config = {
         ".json",
       ],
     },
+    staticGenerationRetryCount: 2,
+    staticGenerationMaxConcurrency: 20,
+    staticGenerationMinPagesPerWorker: 30,
   },
-  productionBrowserSourceMaps: true,
+  expireTime: 3600, // to set the cache-control header - https://nextjs.org/docs/app/api-reference/config/next-config-js/expireTime
 };
 
 const withBundleAnalyzer = bundleAnalyser({

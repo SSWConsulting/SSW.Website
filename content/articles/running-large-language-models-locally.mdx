@@ -1,0 +1,200 @@
+---
+bookingButton:
+  title: Talk to us about your project
+  subTitle: Connect with our Account Managers to discuss how we can help.
+  showContactForm: true
+  buttonText: Book a FREE Initial Meeting
+  animated: true
+  buttonSubtitle: or call +61 2 9953 3000
+showAzureFooter: true
+seo:
+  title: Llama 3.1 launched. Amazing!
+  description: >-
+    Discover the groundbreaking Llama 3.1 AI model, 405 billion parameters, a
+    new standard in open-source technology. 
+bannerImg: /images/articles/Lama3.1.jpg
+title: >-
+  Running Your Own Large Language Models Locally: Privacy, Cost Savings &
+  Customisation
+subTitle: >
+  A few months ago, I was talking with a client who faced a common dilemma. They
+  needed to process sensitive medical records using AI, but trusted cloud
+  services were simply not an option. Privacy concerns and soaring API costs
+  made a compelling case for exploring alternatives. That’s when I discovered
+  the beauty of running open‑source models like Llama locally.
+
+
+  ## Why Bother Running Your Own LLM?
+
+
+  Relying on third‑party AI services often means sacrificing control over your
+  data. When you run your own large language model (LLM) locally, you decide
+  exactly how your information is managed. No more worrying about sensitive
+  records being sent off to unknown servers—what happens on your machine or
+  cloud stays on your machine or cloud. This approach not only enhances security
+  but also brings significant cost savings. Instead of paying recurring fees,
+  you invest in hardware or a dedicated cloud instance.
+
+
+  There’s also a creative advantage. Running your own model means you can
+  fine‑tune it to speak your industry’s language—be it medical terminology,
+  legal jargon, or technical lingo. Customisation like this can set your
+  business apart by ensuring the AI understands your specific needs.
+
+  For further insights into choosing the right LLM, check out SSW’s [Do You Pick
+  The Best Large Language Model For Your
+  Project?](https://www.ssw.com.au/rules/choosing-large-language-models/)
+
+
+  ## Getting Started with Llama
+
+
+  Llama, now at version 3.3, is a standout model. It’s available in various
+  sizes (from 7B to 70B parameters), supports up to 128,000 tokens of context,
+  and even includes built‑in JSON output capabilities—all under a
+  commercial‑friendly license. If you’re interested in exploring different
+  models and making an informed choice, the SSW article on choosing the best LLM
+  is a great resource.
+
+
+  Before diving in, consider the hardware requirements:
+
+
+  * 7B Model: At least 16GB of RAM
+
+  * Larger Models (13B+): 32GB or more
+
+  * GPU: A solid NVIDIA GPU is typically recommended (Running a powerful MacBook
+  Pro also worked acceptably)
+
+  * SSD Storage: Around 20GB or more depending on the model
+
+
+  You can set up Llama locally by cloning its GitHub repository and installing
+  the dependencies. If local hardware isn’t ideal, cloud options like [Azure AI
+  Foundry](https://learn.microsoft.com/en-us/azure/ai-studio/what-is-ai-studio),
+  [Replicate.com](https://replicate.com/), [Hugging
+  Face](https://www.google.com/search?q=hugging+face\&rlz=1C5CHFA_enAU1016AU1017\&oq=hugging+face\&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyEwgBEC4YgwEYxwEYsQMY0QMYgAQyDQgCEAAYgwEYsQMYgAQyBggDEAAYAzINCAQQABiDARixAxiABDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDQ2MDRqMGo3qAIAsAIA\&sourceid=chrome\&ie=UTF-8#:~\:text=Hugging%20Face%20%E2%80%93%20The,https%3A//huggingface.co),
+  Vast.ai, RunPod, or Hyperstack offer competitive pricing for high‑performance
+  GPU access.
+
+
+  ## Fine‑Tuning: Making It Your Own
+
+
+  Fine‑tuning your LLM is like teaching a skilled employee new tricks. It
+  involves preparing training data and choosing a method that suits your
+  resources—whether that’s full‑parameter fine‑tuning, LoRA, or even the lighter
+  QLoRA option. This customisation ensures your AI is perfectly aligned with
+  your business needs.
+
+  For more on best practices in AI customisation, see SSW’s [Rules to Better AI
+  Development](https://www.ssw.com.au/rules/rules-to-better-ai-development/).
+
+
+  ## Personalising Your AI: RAG vs Post‑Training
+
+
+  When it comes to incorporating personalised data into your AI workflow, there
+  are two primary strategies: Retrieval‑Augmented Generation (RAG) and
+  post‑training.
+
+
+  RAG (Retrieval‑Augmented Generation) is ideal for data that changes
+  frequently. Think of seasonal updates, real‑time company news, or any
+  information that needs to be refreshed regularly. With RAG, the model can
+  dynamically pull in current data during each query, ensuring that the
+  responses are always up‑to‑date.
+
+
+  Post‑Training, on the other hand, involves fine‑tuning the model on a specific
+  dataset so it “learns” your particular context. This approach is perfect for
+  static data or use cases where you want the AI to become highly specialised in
+  your domain. Once the model is trained with your unique data, it can offer
+  responses that are finely tuned to your business requirements.
+
+
+  Choosing between RAG and post‑training depends on your use case. If your data
+  is dynamic and frequently updated, RAG is the way to go. For more stable,
+  context‑rich data that benefits from deep customisation, post‑training offers
+  a smart, tailored solution.
+
+
+  ## Real-World Success Stories
+
+
+  There are plenty of examples where local LLMs have made a real difference:
+
+
+  * A law firm using a fine‑tuned Llama 7B for contract analysis.
+
+  * A medical practice processing patient records securely with a customised AI.
+
+  * A manufacturing company predicting maintenance needs with precision.
+
+
+  ## Common Gotchas and How to Dodge Them
+
+
+  We have banged heads against the wall so you don’t have to. Here are some
+  pitfalls to watch out for:
+
+
+  * Memory Management: Keep an eye on VRAM usage—these models can be as thirsty
+  as a camel in the outback.
+
+  * Temperature Settings: Start with a lower value (around 0.7) to ensure
+  focused outputs.
+
+  * Prompt Engineering: Good outputs require good prompts; invest time in
+  crafting them.
+
+
+  ## The Bottom Line
+
+
+  Running your own LLM is more than a tech trend—it’s a strategic investment in
+  your business. The benefits in terms of privacy, cost savings, and
+  customisation are clear. If you’re ready to take control of your AI, start
+  with a smaller model like Llama 7B. Test it on a limited dataset, learn the
+  process, and scale up gradually.
+
+
+  And if you need a little guidance along the way, SSW offers a free one‑hour
+  consultation to help you map out the best strategy for your business. [Book
+  your free consultation](https://www.ssw.com.au) and let our experts help you
+  design the perfect upgrade plan.
+
+
+  By taking these steps, you’re not just keeping up with the times—you’re
+  shaping your future, securing your data, and making a smart investment in your
+  business’s growth.
+
+
+  <VideoEmbed url="https://youtu.be/-q9lLqtkC00?si=K5Mb19fSi7Was15x"
+  videoWidth="w-full" removeMargin={true} caption="Figure: SSW has many AI
+  capabilities." />
+author: content/presenters/michael-smedley.mdx
+sidebarPanel:
+  title: Artificial Intelligence (AI) and Machine Learning with SSW
+  description: >-
+    Discover SSW’s Artificial Intelligence Consulting services, offering expert
+    guidance on AI integration, machine learning, and data science solutions.
+    Our team specializes in transforming businesses with customized AI
+    strategies, from project planning to implementation. Benefit from our
+    extensive experience in Azure AI, data analytics, and advanced algorithms to
+    drive innovation and efficiency. Partner with SSW to leverage AI for
+    competitive advantage and business growth.
+  actionUrl: 'https://www.ssw.com.au/company/contact-us'
+  actionText: Contact us to learn more about AI
+callToAction:
+  title: Talk to us about your project
+  subTitle: Connect with our Account Managers to discuss how we can help.
+  showCallToAction: true
+  buttonText: Book a FREE Initial Meeting
+  animated: true
+  buttonSubtitle: or call +61 2 9953 3000
+---
+
+
+

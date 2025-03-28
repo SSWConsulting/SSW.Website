@@ -4,9 +4,7 @@ import { Container } from "../../util/container";
 import { CopyrightInfo } from "./copyright-info";
 import { DeploymentInfo } from "./deployment-info";
 
-const SiteInfo = dynamic(() => import("./site-info").then((x) => x.SiteInfo), {
-  ssr: false,
-});
+const SiteInfo = dynamic(() => import("./site-info").then((x) => x.SiteInfo));
 
 export const Footer = () => {
   return (

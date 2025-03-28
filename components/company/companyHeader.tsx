@@ -1,6 +1,24 @@
-import { companyIndexSchemaConstants } from "@/tina-collections/company";
 import { tinaField } from "tinacms/dist/react";
 import { Section } from "../util/section";
+
+export const companyIndexSchemaConstants = {
+  value: "companyIndex",
+  title: "title",
+  headerImage: {
+    value: "headerImage",
+    heroBackground: "heroBackground",
+    altText: "altText",
+    txtOverlay: "txtOverlay",
+  },
+  _body: "_body",
+  companyPages: {
+    value: "companyPages",
+    title: "title",
+    body: "body",
+    pageURL: "pageURL",
+    isExternal: "isExternal",
+  },
+};
 
 const CompanyHeader = ({ data, schema }) => {
   return (
