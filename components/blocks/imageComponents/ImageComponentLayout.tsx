@@ -1,6 +1,6 @@
 "use client";
 import { Container } from "@/components/util/container";
-import getYouTubeVideoId from "@/services/client/youtube.service";
+import { VideoModal } from "@/components/videoModal";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { classNames } from "tinacms";
@@ -17,7 +17,8 @@ export const ImageComponentLayout = ({ data, children }) => {
     data.mediaConfiguration?.imageWidth &&
     data.mediaConfiguration?.imageHeight;
   const hasMedia = isYouTube || isImage;
-  const youtubeVideoId = getYouTubeVideoId(data.mediaConfiguration?.youtubeUrl);
+
+  const youtubeUrl = data.mediaConfiguration?.youtubeUrl;
 
   const getVerticalMediaPlacement = () => {
     switch (data.mediaConfiguration?.verticalPlacement) {
@@ -48,7 +49,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         padding="px-4 sm:px-8"
         className={classNames(
           "mx-auto flex flex-col gap-8 py-8 align-middle sm:py-12 md:gap-16 xl:grid",
-          data.mediaConfiguration?.imageSource || youtubeVideoId
+          data.mediaConfiguration?.imageSource || youtubeUrl
             ? "md:grid-cols-2"
             : "md:grid-cols-1",
           data.mediaConfiguration?.mobilePlacement === "Above"
@@ -62,14 +63,12 @@ export const ImageComponentLayout = ({ data, children }) => {
             hasMedia && "xl:items-start xl:text-start",
             getVerticalTextPlacement(),
             imageIsLeftAligined && "xl:order-2"
-
-            // data.mediaConfiguration?.verticalPlacement === "Bottom" && "pb-12"
           )}
         >
           {children}
         </div>
 
-        {(data.mediaConfiguration?.imageSource || youtubeVideoId) && (
+        {(data.mediaConfiguration?.imageSource || youtubeUrl) && (
           <div
             className={classNames(
               "relative flex w-full",
@@ -77,19 +76,17 @@ export const ImageComponentLayout = ({ data, children }) => {
               imageIsLeftAligined && "xl:order-1"
             )}
           >
-            {isYouTube && youtubeVideoId ? (
-              <iframe
-                className={classNames("aspect-video w-full rounded-md")}
-                src={`https://www.youtube.com/embed/${youtubeVideoId}?rel=0`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                data-tina-field={tinaField(data, "mediaConfiguration")}
+            {isYouTube && youtubeUrl ? (
+              <VideoModal
+                frameClassName="rounded"
+                className="w-full"
+                url={youtubeUrl}
               />
             ) : (
               isImage && (
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
+                  loading="eager"
                   height={data.mediaConfiguration?.imageHeight}
                   className={classNames("w-full rounded-md")}
                   src={data.mediaConfiguration?.imageSource}

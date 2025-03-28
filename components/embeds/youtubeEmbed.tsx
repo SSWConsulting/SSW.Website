@@ -1,5 +1,6 @@
 type YouTubeEmbedProps = {
   className?: string;
+  tinaField?: string;
   width?: string;
   height?: string;
   id: string;
@@ -12,6 +13,7 @@ export const YouTubeEmbed = ({
   className,
   width,
   height,
+  tinaField,
   id,
   autoplay,
   showSeparateChannelPreviews = true,
@@ -28,6 +30,7 @@ export const YouTubeEmbed = ({
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowFullScreen
+      data-tina-field={tinaField}
     />
   );
 };

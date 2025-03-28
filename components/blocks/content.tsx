@@ -9,7 +9,7 @@ import { Section } from "../util/section";
 import { colorBlockSchema } from "./colorBlock";
 import { customImageBlockSchema } from "./customImage";
 import { componentRenderer } from "./mdxComponentRenderer";
-import { videoEmbedBlockSchema } from "./videoEmbed";
+import { videoEmbedBlockSchema } from "./videoEmbed.schema";
 
 const alignmentClasses = {
   left: "text-left",

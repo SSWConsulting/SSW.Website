@@ -1,6 +1,6 @@
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
-import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist";
+import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist.schema";
 import { seoSchema } from "../../components/util/seo";
 
 export const liveSchema: Collection = {

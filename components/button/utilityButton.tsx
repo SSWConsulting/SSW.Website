@@ -1,6 +1,7 @@
 "use client";
 
 import classNames from "classnames";
+import { JSX } from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
