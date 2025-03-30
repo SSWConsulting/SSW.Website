@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Our Offices",
+    "description": "Discover SSW’s global offices in Sydney, Brisbane, Melbourne, Newcastle, Strasbourg, Hangzhou. We work remotely worldwide - contact us for more info."
+  },
   "officesIndex": [
     {
       "office": "content/offices/sydney.mdx"
@@ -18,8 +22,5 @@
     {
       "office": "content/offices/hangzhou.mdx"
     }
-  ],
-  "seo": {
-    "title": "Our Offices"
-  }
+  ]
 }

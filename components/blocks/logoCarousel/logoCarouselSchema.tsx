@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Template, TinaField, wrapFieldsWithMeta } from "tinacms";
 import alternatingHeadingSchema from "../../../components/blocksSubtemplates/alternatingHeading.schema";
 import tabletTextAlignmentField from "../../../components/blocksSubtemplates/tabletTextAlignment.schema";
-import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper";
+import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper.schema";
 const RangeInput = wrapFieldsWithMeta((props) => {
   return (
     <div className="flex flex-col">

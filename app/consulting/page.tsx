@@ -1,8 +1,8 @@
 import client from "@/tina/client";
 import { TinaClient } from "app/tina-client";
 
+import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import ConsultingIndex from "./index";
 
@@ -10,14 +10,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const tinaProps = await getData();
 
   const seo = tinaProps.props.seo;
-  if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.props.header.url}consulting`;
-  }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { seoProps } = useSEO(seo);
-
-  return { ...seoProps };
+  return getSEOProps(seo);
 }
 
 const getData = async () => {
@@ -25,7 +19,10 @@ const getData = async () => {
 
   const seo = tinaProps.data.consultingIndex.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.data.global.header.url}/consulting`;
+    seo.canonical = new URL(
+      "/consulting",
+      tinaProps.data.global.header.url
+    ).toString();
   }
 
   return {

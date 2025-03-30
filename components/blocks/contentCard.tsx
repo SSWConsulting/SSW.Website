@@ -1,15 +1,9 @@
 import classNames from "classnames";
-import type { Template } from "tinacms";
 import type { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { colorBlockSchema } from "./colorBlock";
-import {
-  CustomImage,
-  CustomImageProps,
-  customImageBlockSchema,
-} from "./customImage";
-import { VerticalListItem, verticalListItemSchema } from "./verticalListItem";
-import { VideoEmbed, videoEmbedBlockSchema } from "./videoEmbed";
+import { CustomImage, CustomImageProps } from "./customImage";
+import { VerticalListItem } from "./verticalListItem";
+import { VideoEmbed } from "./videoEmbed";
 
 export type ContentCardProps = {
   data: {
@@ -62,39 +56,4 @@ export const ContentCard = ({ data }: ContentCardProps) => {
       </div>
     </>
   );
-};
-
-export const contentCardBlockSchema: Template = {
-  name: "ContentCard",
-  label: "Content Card",
-  ui: {
-    previewSrc: "/images/thumbs/tina/content-card.jpg",
-    defaultItem: {
-      content:
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
-    },
-  },
-  fields: [
-    {
-      type: "boolean",
-      label: "Prose",
-      name: "prose",
-    },
-    {
-      type: "boolean",
-      label: "Centered Aligned Text",
-      name: "centerAlignedText",
-    },
-    {
-      type: "rich-text",
-      label: "Content",
-      name: "content",
-      templates: [
-        customImageBlockSchema,
-        verticalListItemSchema,
-        videoEmbedBlockSchema,
-        colorBlockSchema,
-      ],
-    },
-  ],
 };

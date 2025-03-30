@@ -16,9 +16,7 @@ export const DeploymentInfo = () => {
     deploymentNumber,
   };
 
-  const DynamicDeploymentLink = dynamic(() => import("../deploymentLink"), {
-    ssr: false,
-  });
+  const DynamicDeploymentLink = dynamic(() => import("../deploymentLink"));
 
   return (
     <div className="text-center sm:text-left">
