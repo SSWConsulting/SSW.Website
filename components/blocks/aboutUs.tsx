@@ -5,9 +5,9 @@ import dayjs from "dayjs";
 import { memo, useEffect, useState } from "react";
 import { BiChevronRightCircle } from "react-icons/bi";
 
+import { isMobile } from "react-device-detect";
 import { tinaField } from "tinacms/dist/react";
 import layoutData from "../../content/global/index.json";
-import useIsMobile from "../../hooks/useIsMobile";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
@@ -105,8 +105,6 @@ export const AboutUs = ({ data }) => {
   const [stateBeingHovered, setStateBeingHovered] = useState<string>(
     defaultOffice?.addressRegion || ""
   );
-
-  const isMobile = useIsMobile();
 
   const [mapHoveredTrigger, setMapHoveredTrigger] = useState(false);
   const [mapClickedTrigger, setMapClickedTrigger] = useState(false);
