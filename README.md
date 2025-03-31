@@ -22,7 +22,7 @@ This repository is a v3 of the zzSSW.Website. This website uses NextJS with Tina
 
 ## Architecture Overview
 
-![architecture-diagram](https://user-images.githubusercontent.com/17246482/213947700-2ab46353-5e1b-4e65-9681-9fddf69fdda0.png)
+![architecture-diagram](_docs/architecture-diagram-ssw-website.png)
 
 ## Requirements
 
