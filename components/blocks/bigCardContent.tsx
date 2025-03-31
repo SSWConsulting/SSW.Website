@@ -1,10 +1,8 @@
-import dynamic from "next/dynamic";
+import Image from "next/image";
 import React, { memo } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
 import { serviceCards } from "./serviceCards.schema";
-
-const Image = dynamic(() => import("next/image"));
 
 interface BigCardContentProps {
   card: {
@@ -39,9 +37,10 @@ const BigCardContent = memo(
                   src={card.imgSrc ?? ""}
                   width={100}
                   height={100}
-                  sizes="20vw"
+                  sizes="(max-width: 600px) 50vw, (max-width: 1200px) 25vw, 100px"
                   alt={`Icon for ${card.title}`}
-                  loading="lazy"
+                  priority={index < 2} // Prioritize first image for LCP
+                  quality={80}
                 />
               </div>
             )}
