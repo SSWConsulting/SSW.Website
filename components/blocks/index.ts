@@ -50,7 +50,7 @@ import { newslettersTableBlockSchema } from "./newslettersTable";
 import { paymentBlockSchema } from "./payment-block";
 import { recurringEventSchema } from "./recurringEvent";
 import { sectionHeaderSchema } from "./sectionHeader";
-import { serviceCardsBlockSchema } from "./serviceCards";
+import { serviceCardsBlockSchema } from "./serviceCards.schema";
 import { SpacerSchema } from "./spacer/spacer.schema";
 import { tableBlockSchema } from "./tableLayout";
 import { testimonialsListSchema } from "./testimonialsList";
