@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import React, { memo } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
-import { serviceCards } from "./serviceCards";
+import { serviceCards } from "./serviceCards.schema";
 
 const Image = dynamic(() => import("next/image"));
 
