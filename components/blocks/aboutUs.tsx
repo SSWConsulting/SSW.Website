@@ -5,7 +5,6 @@ import dayjs from "dayjs";
 import { memo, useEffect, useState } from "react";
 import { BiChevronRightCircle } from "react-icons/bi";
 
-import { isMobile } from "react-device-detect";
 import { tinaField } from "tinacms/dist/react";
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
@@ -105,9 +104,13 @@ export const AboutUs = ({ data }) => {
   const [stateBeingHovered, setStateBeingHovered] = useState<string>(
     defaultOffice?.addressRegion || ""
   );
-
   const [mapHoveredTrigger, setMapHoveredTrigger] = useState(false);
   const [mapClickedTrigger, setMapClickedTrigger] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <Section color={data.backgroundColor}>
@@ -116,8 +119,10 @@ export const AboutUs = ({ data }) => {
         data-tina-field={tinaField(data, aboutUsBlock.backgroundColor)}
       >
         <div className="grid grid-cols-3 gap-6">
-          {!isMobile && (
-            <TV className="col-span-3 max-md:hidden sm:col-span-1" />
+          {isClient && (
+            <div className="hidden md:block">
+              <TV className="col-span-3 md:col-span-1" />
+            </div>
           )}
           <div className="col-span-3 md:col-span-2">
             <div
@@ -135,7 +140,7 @@ export const AboutUs = ({ data }) => {
                 setMapClickedTrigger={setMapClickedTrigger}
                 mapClickedTrigger={mapClickedTrigger}
               />
-              {(data.showMap ?? true) && !isMobile && (
+              {isClient && (data.showMap ?? true) && (
                 <Map
                   className="hidden sm:block"
                   offices={offices}
@@ -157,10 +162,26 @@ export const AboutUs = ({ data }) => {
 };
 
 const TV = memo(function TV({ className }: { className?: string }) {
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Set the video URL after hydration
+    setVideoUrl(layoutData.aboutUs.video.url);
+  }, []);
+
+  if (!videoUrl) {
+    return (
+      <div className={className}>
+        <h2 className="mt-0">tv.ssw.com</h2>
+        <div className="aspect-video w-full animate-pulse bg-gray-200" />
+      </div>
+    );
+  }
+
   return (
     <div className={className}>
       <h2 className="mt-0">tv.ssw.com</h2>
-      <VideoModal url={layoutData.aboutUs.video.url} />
+      <VideoModal url={videoUrl} />
     </div>
   );
 });
