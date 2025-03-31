@@ -1,7 +1,7 @@
 import { articlesIndexSchemaConstants } from "@/components/articles/articlesHeader";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
-import { carouselBlockSchema } from "../../components/blocks/carousel";
+import { carouselBlockSchema } from "../../components/blocks/carousel.schema";
 import { colorBlockSchema } from "../../components/blocks/colorBlock";
 import { colorPaletteSchema } from "../../components/blocks/colorPalette";
 import { customDownloadButtonSchema } from "../../components/blocks/CustomDownloadButton";
