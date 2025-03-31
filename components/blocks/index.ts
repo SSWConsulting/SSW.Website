@@ -23,7 +23,7 @@ import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
 import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { CardCarouselSchema } from "./cardCarousel/cardCarousel/cardCarouselSchema";
 import { TechnologyCardCarouselSchema } from "./cardCarousel/technologyCards/technologyCardCarouselSchema";
-import { carouselBlockSchema } from "./carousel";
+import { carouselBlockSchema } from "./carousel.schema";
 import { citationBlockSchema } from "./citation";
 import { colorBlockSchema } from "./colorBlock";
 import { colorPaletteSchema } from "./colorPalette";
