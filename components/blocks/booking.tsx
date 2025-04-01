@@ -1,15 +1,12 @@
 import dynamic from "next/dynamic";
 import { FC } from "react";
-import { isMobile } from "react-device-detect";
 import { FaAngleDown } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
 
-const VideoBackground = dynamic(() => import("./videoBackground"), {
-  ssr: false,
-});
+const VideoBackground = dynamic(() => import("./videoBackground"));
 
 export const Booking: FC<{
   title?: string;
@@ -39,13 +36,11 @@ export const Booking: FC<{
         </div>
       </Container>
 
-      {!isMobile && (
-        <VideoBackground
-          videoBackground={props.videoBackground}
-          tinaField={tinaField}
-          props={props}
-        />
-      )}
+      <VideoBackground
+        videoBackground={props.videoBackground}
+        tinaField={tinaField}
+        props={props}
+      />
     </div>
   );
 };
