@@ -87,7 +87,9 @@ const ButtonRow = ({ className, data }) => {
                 {buttonElement}
               </Link>
             ) : (
-              <>{buttonElement}</>
+              <React.Fragment key={`button-fragment-${index}`}>
+                {buttonElement}
+              </React.Fragment>
             );
           })}
         </div>
