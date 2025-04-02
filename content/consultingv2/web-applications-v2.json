@@ -164,6 +164,12 @@
       "_template": "imageTextBlock"
     },
     {
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
