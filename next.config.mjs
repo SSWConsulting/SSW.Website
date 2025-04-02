@@ -95,7 +95,6 @@ const config = {
     staticGenerationRetryCount: 2,
     staticGenerationMaxConcurrency: 20,
     staticGenerationMinPagesPerWorker: 30,
-    reactCompiler: true,
   },
   expireTime: 3600, // to set the cache-control header - https://nextjs.org/docs/app/api-reference/config/next-config-js/expireTime
 };

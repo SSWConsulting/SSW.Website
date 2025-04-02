@@ -76,7 +76,6 @@
     "aos": "^2.3.4",
     "applicationinsights": "^3.6.0",
     "axios": "^1.8.4",
-    "babel-plugin-react-compiler": "19.0.0-beta-e993439-20250328",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
