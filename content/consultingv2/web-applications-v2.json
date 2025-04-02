@@ -152,16 +152,13 @@
             "heading": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly.",
             "description": "- Dino Tius, BizCover",
             "icon": "BiSolidQuoteLeft"
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
           }
         ]
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Schedule a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         },
         {
