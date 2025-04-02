@@ -14,11 +14,6 @@ export async function fetchTinaData<T, V>(
     data: T;
     variables: V;
     query: string;
-    fetchOptions?: {
-      headers: {
-        "x-branch": string;
-      };
-    };
   }>,
   filename?: string,
   type: FileType = FileType.MDX
@@ -26,7 +21,6 @@ export async function fetchTinaData<T, V>(
   data: T;
   variables: V;
   query: string;
-  fetchOptions?: { headers: { "x-branch": string } };
 }> {
   try {
     const cookieStore = await cookies();
