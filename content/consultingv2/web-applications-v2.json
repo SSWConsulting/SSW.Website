@@ -89,6 +89,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "imageTextBlock"
     },
     {
