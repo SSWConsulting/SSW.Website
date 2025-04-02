@@ -116,20 +116,6 @@
           "icon": "info",
           "heading": " Technical Excellence That Scales With Your Business",
           "description": "Our solutions are architected for growth. We implement clean code practices, comprehensive testing, and cloud-native design patterns that support your evolving business requirements.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
