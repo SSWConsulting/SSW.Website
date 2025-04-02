@@ -50,6 +50,7 @@ export const formatRelativeEventDate = (startDate: Date, endDate: Date) => {
   const start = dayjs(startDate);
   const end = dayjs(endDate);
 
+  if (now.isBetween(start, end)) {
     return EventStatus.NOW_RUNNING;
   }
 
