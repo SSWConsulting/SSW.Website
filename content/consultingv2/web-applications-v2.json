@@ -175,12 +175,9 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "background": {
