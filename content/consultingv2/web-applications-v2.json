@@ -17,18 +17,15 @@
       },
       "heading": "De-risk Your Web Application Development. **Deliver Scalable Solutions, Faster.**",
       "isH1": true,
-      "description": "For over 25 years, SSW has been guiding Australian businesses to web application success.\n\nWe cut through the complexity of modern web development, ensuring robust, user-friendly applications built on future-proofed technology stacks like .NET, Azure, Angular, and React.\n",
+      "description": "For over 25 years, SSW has been guiding Australian businesses to web application success.\n\nWe cut through the complexity of modern web development, ensuring robust, user-friendly applications built on future-proofed technology stacks like **.NET, Azure, Angular, and React.**\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "background": {
