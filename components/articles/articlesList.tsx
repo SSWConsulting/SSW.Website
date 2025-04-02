@@ -12,7 +12,7 @@ const ArticlesList = () => {
     hasMoreArticles,
   } = useFetchArticles();
 
-  const list = nextArticles.map((article, i) => {
+  const list = nextArticles.map((article, index) => {
     const {
       author,
       title,
@@ -29,7 +29,7 @@ const ArticlesList = () => {
       body: description,
     };
 
-    return <ArticleCard data={prop} key={i} />;
+    return <ArticleCard data={prop} key={`article-card-${index}`} />;
   });
 
   return (
