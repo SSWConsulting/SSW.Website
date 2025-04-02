@@ -149,8 +149,9 @@
         "twoColumns": false,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly.",
+            "description": "- Dino Tius, BizCover",
+            "icon": "BiSolidQuoteLeft"
           },
           {
             "heading": "Ipsum",
