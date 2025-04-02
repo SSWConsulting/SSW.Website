@@ -363,10 +363,19 @@
       "isStacked": false,
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/background_test_7.png",
+        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/hero_1400_700px.png",
         "bleed": true
       },
       "_template": "technologyCardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
     },
     {
       "topLabel": {
