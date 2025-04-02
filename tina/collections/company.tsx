@@ -1,13 +1,13 @@
 import * as Schemas from "../../components/blocks";
 
-import { carouselBlockSchema } from "../../components/blocks/carousel";
+import { carouselBlockSchema } from "../../components/blocks/carousel.schema";
 import { fixedColumnsSchema } from "../../components/blocks/fixedColumns";
 import { sectionHeaderSchema } from "../../components/blocks/sectionHeader";
 import { tableBlockSchema } from "../../components/blocks/tableLayout";
 import { testimonialsListSchema } from "../../components/blocks/testimonialsList";
 import { verticalImageLayoutBlockSchema } from "../../components/blocks/verticalImageLayout";
 
-import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
 import { tipField } from "./shared-fields";

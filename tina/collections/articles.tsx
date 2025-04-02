@@ -1,7 +1,7 @@
 import { articlesIndexSchemaConstants } from "@/components/articles/articlesHeader";
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
-import { carouselBlockSchema } from "../../components/blocks/carousel";
+import { carouselBlockSchema } from "../../components/blocks/carousel.schema";
 import { colorBlockSchema } from "../../components/blocks/colorBlock";
 import { colorPaletteSchema } from "../../components/blocks/colorPalette";
 import { customDownloadButtonSchema } from "../../components/blocks/CustomDownloadButton";
@@ -12,7 +12,7 @@ import { sectionHeaderSchema } from "../../components/blocks/sectionHeader";
 import { tableBlockSchema } from "../../components/blocks/tableLayout";
 import { testimonialsListSchema } from "../../components/blocks/testimonialsList";
 import { verticalImageLayoutBlockSchema } from "../../components/blocks/verticalImageLayout";
-import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed";
+import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { utilityButtonSchema } from "../../components/button/utilityButton";
 import {
   callToActionDefaults,

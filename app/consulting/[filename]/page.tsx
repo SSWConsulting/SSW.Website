@@ -1,13 +1,13 @@
+import { TinaClient } from "@/app/tina-client";
 import { MediaCardProps } from "@/components/consulting/mediaCard/mediaCard";
 import { getRandomTestimonialsByCategory } from "@/helpers/getTestimonials";
+import { getSEOProps } from "@/lib/seo";
+import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
-import { TODAY } from "hooks/useFetchEvents";
-import { useSEO } from "hooks/useSeo";
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { cache } from "react";
-import { TinaClient } from "../../tina-client";
 import OldConsultingPage from "./consulting";
 import ConsultingPage2 from "./consulting2";
 const openSans = Open_Sans({
@@ -16,9 +16,6 @@ const openSans = Open_Sans({
   display: "swap",
   weight: ["300", "400", "600"],
 });
-type NewConsultingPage = Awaited<
-  ReturnType<typeof client.queries.consultingv2>
->;
 
 type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
@@ -37,7 +34,6 @@ type ConsultingPageParams = {
 
 async function extractAllPages(query, field: string) {
   let consultingFetch = await query();
-
   const accmulatedPages = consultingFetch;
 
   while (consultingFetch.data[field].pageInfo.hasNextPage) {
@@ -76,9 +72,12 @@ export async function generateStaticParams(): Promise<ConsultingPageParams[]> {
 }
 
 const newConsultingPageData = cache(async (filename: string) => {
-  const tinaProps: NewConsultingPage = await client.queries.consultingv2({
-    relativePath: `${filename}.json`,
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.consultingv2,
+    filename,
+    FileType.JSON
+  );
+
   const global = await client.queries.global({ relativePath: "index.json" });
   const seo = tinaProps.data.consultingv2.seo;
   return {
@@ -96,10 +95,10 @@ const newConsultingPageData = cache(async (filename: string) => {
 });
 
 const consultingPageData = cache(async (filename: string) => {
-  const tinaProps = await client.queries.consultingContentQuery({
-    relativePath: `${filename}.mdx`,
-    date: TODAY.toISOString(),
-  });
+  const tinaProps = await fetchTinaData(
+    client.queries.consultingContentQuery,
+    filename
+  );
 
   const seo = tinaProps.data.consulting.seo;
 
@@ -167,15 +166,18 @@ const consultingPageData = cache(async (filename: string) => {
 });
 
 type GenerateMetaDataProps = {
-  params: { filename: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: Promise<{ filename: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({
-  params: { filename },
-}: GenerateMetaDataProps): Promise<Metadata> {
-  const isNewConsultingPage = Boolean(await findConsultingPageType(filename));
+export async function generateMetadata(
+  prop: GenerateMetaDataProps
+): Promise<Metadata> {
+  const params = await prop.params;
 
+  const { filename } = params;
+
+  const isNewConsultingPage = Boolean(await findConsultingPageType(filename));
   const tinaProps = isNewConsultingPage
     ? await newConsultingPageData(filename)
     : await consultingPageData(filename);
@@ -187,17 +189,13 @@ export async function generateMetadata({
     seo.canonical = `${tinaProps.props.header.url}consulting/${filename}`;
   }
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const seoData = useSEO(seo);
-
-  return seoData ? { ...seoData.seoProps } : {};
+  return getSEOProps(seo);
 }
 
-export default async function Consulting({
-  params,
-}: {
-  params: ConsultingPageParams;
+export default async function Consulting(prop: {
+  params: Promise<ConsultingPageParams>;
 }) {
+  const params = await prop.params;
   const isNewConsultingPage: boolean = Boolean(
     await findConsultingPageType(params.filename)
   );
@@ -232,8 +230,7 @@ const findConsultingPageType = async (
     if (v2Pages) {
       return ConsultingPageType.New;
     }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  } catch (error) {
+  } catch {
     return ConsultingPageType.Old;
   }
 };

@@ -223,10 +223,11 @@ CarouselItem.displayName = "CarouselItem";
 const CarouselPickItem = React.forwardRef<
   HTMLButtonElement,
   { className?: string; index: number; onClick?; children?: React.ReactNode }
->(function ({ className, index, onClick, children }) {
+>(({ className, index, onClick, children }, ref) => {
   const { api } = useCarousel();
   return (
     <button
+      ref={ref}
       className={cn(className)}
       onClick={() => {
         api?.scrollTo(index);

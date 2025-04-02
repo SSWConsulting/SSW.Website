@@ -57,11 +57,11 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
         ))}
 
       {data.articles.title && (
-        <Section
-          className="mx-auto w-full max-w-9xl px-8"
-          data-tina-field={tinaField(data.articles, "title")}
-        >
-          <h1 data-tina-field={tinaField} className="mt-4 py-2">
+        <Section className="mx-auto w-full max-w-9xl px-8">
+          <h1
+            data-tina-field={tinaField(data.articles, "title")}
+            className="mt-4 py-2"
+          >
             {data.articles.title}
           </h1>
         </Section>

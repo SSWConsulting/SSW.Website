@@ -12,10 +12,9 @@ export type ArticleProps = {
 
 export type ArticleCardProps = {
   data: ArticleProps;
-  key: number;
 };
 
-const ArticleCard = (props: ArticleCardProps) => {
+const ArticleCard = ({ data }: ArticleCardProps) => {
   const {
     title,
     body,
@@ -23,13 +22,9 @@ const ArticleCard = (props: ArticleCardProps) => {
     authorName,
     authorPosition,
     url,
-  }: ArticleProps = props.data;
+  }: ArticleProps = data;
   return (
-    <CustomLink
-      href={url ?? ""}
-      className="unstyled no-underline"
-      key={props.key}
-    >
+    <CustomLink href={url ?? ""} className="unstyled no-underline">
       <ArticleCardContent
         title={title}
         body={body}
