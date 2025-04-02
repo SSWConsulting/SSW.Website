@@ -137,6 +137,10 @@
       "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
       "chips": [
         {
+          "chipText": "Modular Monolith (MoMo)",
+          "chipType": "filledChip"
+        },
+        {
           "chipText": ".NET8",
           "chipType": "filledChip"
         }
