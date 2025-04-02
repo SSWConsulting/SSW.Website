@@ -29,22 +29,20 @@ export async function fetchTinaData<T, V>(
   fetchOptions?: { headers: { "x-branch": string } };
 }> {
   try {
+    const cookieStore = await cookies();
     const variables: V = {
       relativePath: filename ? `${filename}.${type}` : "",
       date: TODAY.toISOString(),
-    } as V;
-
-    const cookieStore = await cookies();
-    const response = await queryFunction(variables);
-
-    return {
-      ...response,
       fetchOptions: {
         headers: {
           "x-branch": cookieStore.get("x-branch")?.value,
         },
       },
-    };
+    } as V;
+
+    const response = await queryFunction(variables);
+
+    return response;
   } catch {
     notFound();
   }
