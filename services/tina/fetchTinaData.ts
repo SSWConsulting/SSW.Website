@@ -1,5 +1,6 @@
 import { TODAY } from "@/hooks/useFetchEvents";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 
 export enum FileType {
   MDX = "mdx",
@@ -13,6 +14,11 @@ export async function fetchTinaData<T, V>(
     data: T;
     variables: V;
     query: string;
+    fetchOptions?: {
+      headers: {
+        "x-branch": string;
+      };
+    };
   }>,
   filename?: string,
   type: FileType = FileType.MDX
@@ -23,7 +29,14 @@ export async function fetchTinaData<T, V>(
       date: TODAY.toISOString(),
     } as V;
 
-    const response = await queryFunction(variables);
+    const cookieStore = await cookies();
+    const response = await queryFunction(variables, {
+      fetchOptions: {
+        headers: {
+          "x-branch": cookieStore.get("x-branch")?.value,
+        },
+      },
+    });
 
     return response;
   } catch {
