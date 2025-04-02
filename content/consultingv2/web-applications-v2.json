@@ -130,13 +130,19 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": "Case Study"
       },
-      "heading": "Lorem Ipsum",
+      "heading": "BizCover: From microservice maze to monolith magic",
       "isH1": false,
-      "description": "",
+      "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
+      "chips": [
+        {
+          "chipText": ".NET8",
+          "chipType": "filledChip"
+        }
+      ],
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Lorem",
