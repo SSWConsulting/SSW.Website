@@ -179,7 +179,9 @@
       "body": "At SSW, we’ve been knee-deep in .NET projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork—just proven tips that help you build better software.",
       "cards": [
         {
-          "guid": null,
+          "guid": "6o99x4do",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -194,20 +196,6 @@
           "icon": "info",
           "heading": "Lorem Ipsum",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
