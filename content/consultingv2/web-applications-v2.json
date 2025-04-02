@@ -123,9 +123,10 @@
           }
         }
       ],
+      "cardStyle": 0,
       "cards": [
         {
-          "guid": null,
+          "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -297,7 +298,7 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/background_test_4.png",
+        "backgroundImage": "",
         "bleed": true
       },
       "_template": "cardCarousel"
