@@ -123,8 +123,8 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": true
+        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/hero_1400_700px.png",
+        "bleed": false
       },
       "_template": "cardCarousel"
     },
