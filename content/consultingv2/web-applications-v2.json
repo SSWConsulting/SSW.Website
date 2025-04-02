@@ -34,6 +34,13 @@
       "background": {
         "backgroundColour": 6
       },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
+      },
       "_template": "imageTextBlock"
     },
     {
