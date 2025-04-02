@@ -29,7 +29,9 @@ export async function fetchTinaData<T, V>(
       date: TODAY.toISOString(),
       fetchOptions: {
         headers: {
-          "x-branch": cookieStore.get("x-branch")?.value,
+          "x-branch": cookieStore.get("x-branch")?.value
+            ? decodeURIComponent(cookieStore.get("x-branch")?.value || "")
+            : undefined,
         },
       },
     } as V;
