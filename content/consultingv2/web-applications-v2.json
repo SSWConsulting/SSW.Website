@@ -96,20 +96,6 @@
           "icon": "info",
           "heading": " Enterprise-Grade Security & Compliance Built In",
           "description": "We integrate security and compliance requirements from day one, not as afterthoughts. Our solutions meet industry standards while maintaining the flexibility your business needs.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
