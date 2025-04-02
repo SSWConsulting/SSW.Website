@@ -74,22 +74,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Risk Mitigation Through Transparency",
-          "description": "Our development process prioritizes visibility at every stage. You'll see working software from the first sprint, allowing for early course correction and eliminating costly late-stage surprises.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Benefit from 25+ Years of Proven Success",
+          "description": "Don't gamble on unproven teams. We have a demonstrable track record of delivering high-quality web applications for businesses of all sizes across Australia, ensuring a reliable partnership.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
