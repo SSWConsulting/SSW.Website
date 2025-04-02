@@ -1,0 +1,359 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Web APIs",
+    "description": "Ever since SSW developed the very first .NET website in Australia, we've been known as leaders in Website Development."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for Web APIs",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "De-risk Your Web Application Development. **Deliver Scalable Solutions, Faster.**",
+      "isH1": true,
+      "description": "For over 25 years, SSW has been guiding Australian businesses to web application success.\n\nWe cut through the complexity of modern web development, ensuring robust, user-friendly applications built on future-proofed technology stacks like **.NET, Azure, Angular, and React.**\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Lorem Ipsum",
+      "logos": [
+        {
+          "logo": "",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": " Why Technology Leaders Choose Our Development Approach",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "7mtu8j",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Benefit from 25+ Years of Proven Success",
+          "description": "Don't gamble on unproven teams. We have a demonstrable track record of delivering high-quality web applications for businesses of all sizes across Australia, ensuring a reliable partnership.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": " Enterprise-Grade Security & Compliance Built In",
+          "description": "We integrate security and compliance requirements from day one, not as afterthoughts. Our solutions meet industry standards while maintaining the flexibility your business needs.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "5q8kz",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": " Technical Excellence That Scales With Your Business",
+          "description": "Our solutions are architected for growth. We implement clean code practices, comprehensive testing, and cloud-native design patterns that support your evolving business requirements.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/hero_1400_700px.png",
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "BizCover: From microservice maze to monolith magic",
+      "isH1": false,
+      "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
+      "chips": [
+        {
+          "chipText": "Modular Monolith (MoMo)",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": ".NET8",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Thanks to the whole team for making this happen. This is a first and very important step in our strategy to support the business objective of being able to onboard new products and insurers quickly.",
+            "description": "- Dino Tius, BizCover",
+            "icon": "BiSolidQuoteLeft"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in .NET projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork—just proven tips that help you build better software.",
+      "cards": [
+        {
+          "guid": "6o99x4do",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "1avmdu",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=HyzlYwjoXOQ",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "z5i15",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=PVRNOoO_iXA",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
+        }
+      ],
+      "isStacked": false,
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/hero_1400_700px.png",
+        "bleed": true
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your **AI project today**",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
+}
