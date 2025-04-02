@@ -160,14 +160,15 @@
           "buttonText": "Schedule a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "background": {
         "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "imageHeight": 700,
+        "imageWidth": 1400
       },
       "_template": "imageTextBlock"
     },
