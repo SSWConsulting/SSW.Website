@@ -201,7 +201,9 @@
           }
         },
         {
-          "guid": null,
+          "guid": "1avmdu",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=HyzlYwjoXOQ",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -216,20 +218,6 @@
           "icon": "info",
           "heading": "Lorem Ipsum",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
