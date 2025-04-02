@@ -15,21 +15,11 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Lorem Ipsum",
-      "isH1": false,
-      "description": "",
+      "heading": "De-risk Your Web Application Development. **Deliver Scalable Solutions, Faster.**",
+      "isH1": true,
+      "description": "For over 25 years, SSW has been guiding Australian businesses to web application success.\n\nWe cut through the complexity of modern web development, ensuring robust, user-friendly applications built on future-proofed technology stacks like .NET, Azure, Angular, and React.\n",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
