@@ -26,10 +26,10 @@ export async function fetchTinaData<T, V>(
     const cookieStore = await cookies();
     const variables: V = {
       relativePath: filename ? `${filename}.${type}` : "",
-      date: TODAY.toISOString()
+      date: TODAY.toISOString(),
     } as V;
 
-    const response = await queryFunction(variables,{
+    const response = await queryFunction(variables, {
       fetchOptions: {
         headers: {
           "x-branch": cookieStore.get("x-branch")?.value,
