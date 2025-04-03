@@ -5,6 +5,9 @@
   "thumbnailDescription": "TinaCon",
   "presenterList": [
     {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    },
+    {
       "presenter": "content/presenters/adam-cogan.mdx"
     },
     {
