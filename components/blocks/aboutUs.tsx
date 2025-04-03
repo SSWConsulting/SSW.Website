@@ -2,6 +2,8 @@
 
 import classNames from "classnames";
 import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import { memo, useEffect, useState } from "react";
 import { BiChevronRightCircle } from "react-icons/bi";
 
@@ -12,6 +14,9 @@ import { Container } from "../util/container";
 import { Section } from "../util/section";
 import { VideoModal } from "../videoModal";
 import { aboutUsBlock } from "./aboutUs.schema";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const DAY_KEYS = {
   Sunday: 0,
