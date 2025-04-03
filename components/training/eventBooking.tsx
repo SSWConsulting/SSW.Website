@@ -1,6 +1,8 @@
 import { Events_BodyEventBookingEventList as Event } from "@/tina/types";
 import classNames from "classnames";
 import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import React, { FC } from "react";
 import { MdLocationOn } from "react-icons/md";
 import { tinaField } from "tinacms/dist/react";
@@ -16,6 +18,9 @@ export const isEmpty = (value) => {
     (typeof value == "string" && value === "")
   );
 };
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 export const formatTimeWithAmPm = (date) => {
   if (!date) return null;
