@@ -1,0 +1,36 @@
+{
+  "title": "TinaCon - Herding the Future!",
+  "url": "https://tina.io/conference",
+  "thumbnail": "/images/events/1x1-Socials-promo%20(10).jpg",
+  "thumbnailDescription": "TinaCon",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/isaac-lombard.mdx"
+    },
+    {
+      "presenter": "content/presenters/caleb-williams.mdx"
+    },
+    {
+      "presenter": "content/presenters/hajir-lesani.mdx"
+    },
+    {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    },
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    },
+    {
+      "presenter": "content/presenters/michelle-duke.mdx"
+    }
+  ],
+  "startDateTime": "2025-05-01T21:00:00.000Z",
+  "endDateTime": "2025-04-25T09:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Melbourne",
+  "category": "Other",
+  "abstract": "Join us for an exciting and hands-on mini conference at SSW Melbourne! This event will bring together developers, content creators, and tech enthusiasts for an afternoon filled with inspiring talks, practical workshops, and networking opportunities. With topics ranging from GitHub tips with MishManners, to creating documentation sites with TinaCMS, this is the perfect chance to deepen your knowledge, learn new skills, and connect with like-minded individuals.\n\nSee more: https://tina.io/conference",
+  "description": "Join us for an exciting and hands-on mini conference at SSW Melbourne! This event will bring together developers, content creators, and tech enthusiasts for an afternoon filled with inspiring talks, practical workshops, and networking opportunities. With topics ranging from GitHub tips with MishManners, to creating documentation sites with TinaCMS, this is the perfect chance to deepen your knowledge, learn new skills, and connect with like-minded individuals.\n\nThen unwind at the TinaCon After Party with refreshing drinks, and lively networking—celebrate a day of innovation in style!\n\nSee more: [https://tina.io/conference](https://tina.io/conference)\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
