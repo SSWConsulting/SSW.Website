@@ -1,0 +1,20 @@
+{
+  "title": "Agentic AI with Ulysses Maclaren",
+  "url": "https://member.eonetwork.org/sydney/Pages/upcoming-events.aspx?i=2&s=5",
+  "thumbnail": "/images/events/Uly%20Talk.png",
+  "thumbnailDescription": "Entrepreneurs Organization ",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/ulysses-maclaren.mdx"
+    }
+  ],
+  "startDateTime": "2025-04-28T07:00:00.000Z",
+  "endDateTime": "2025-04-28T08:00:00.000Z",
+  "calendarType": "Other",
+  "city": "Sydney",
+  "category": "Artificial Intelligence",
+  "abstract": "Join EO Sydney for an exclusive session with Ulysses Maclaren, General Manager of SSW and a leading authority on the strategic application of AI in business. Drawing on his extensive experience in workflow automation, data analysis, and customer engagement, Ulysses will explore the transformative power of Agentic AI —from enhancing operational efficiency to fostering more informed, data driven decision making.",
+  "description": "Join EO Sydney for an exclusive session with Ulysses Maclaren, General Manager of SSW and a leading authority on the strategic application of AI in business. Drawing on his extensive experience in workflow automation, data analysis, and customer engagement, Ulysses will explore the transformative power of Agentic AI —from enhancing operational efficiency to fostering more informed, data driven decision making.\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
