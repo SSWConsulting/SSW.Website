@@ -5,6 +5,9 @@
   "thumbnailDescription": "TinaCon",
   "presenterList": [
     {
+      "presenter": "content/presenters/isaac-lombard.mdx"
+    },
+    {
       "presenter": "content/presenters/caleb-williams.mdx"
     },
     {
