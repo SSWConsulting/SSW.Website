@@ -1,5 +1,12 @@
 "use client";
-import { Tab, Transition } from "@headlessui/react";
+import {
+  Tab,
+  TabGroup,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Transition,
+} from "@headlessui/react";
 import Image from "next/image";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -104,16 +111,16 @@ export const EventsFilter = ({
       }
       groups={!pastSelected ? futureFilters : pastFilters}
     >
-      <Tab.Group
+      <TabGroup
         onChange={(index) => setPastSelected(index === 1)}
         selectedIndex={pastSelected ? 1 : 0}
       >
-        <Tab.List className="mb-8 flex flex-row">
+        <TabList className="mb-8 flex flex-row">
           <EventTab>Upcoming Events</EventTab>
           <EventTab>Past Events</EventTab>
-        </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
             <EventsList
               events={futureEvents}
               isUpcoming
@@ -127,8 +134,8 @@ export const EventsFilter = ({
                 isLoading={isFetchingFuturePages}
               />
             )}
-          </Tab.Panel>
-          <Tab.Panel>
+          </TabPanel>
+          <TabPanel>
             <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
             {hasMorePastPages && (
               <LoadMore
@@ -138,9 +145,9 @@ export const EventsFilter = ({
                 isLoading={isFetchingPastPages}
               />
             )}
-          </Tab.Panel>
-        </Tab.Panels>
-      </Tab.Group>
+          </TabPanel>
+        </TabPanels>
+      </TabGroup>
     </FilterBlock>
   );
 };
