@@ -119,7 +119,7 @@ export const ErrorText = (props: ErrorTextProps) => {
         <div className="min-h-40">
           <Disclosure>
             {({ open }) => (
-              <>
+              <div>
                 <Disclosure.Button className={"mt-5"}>
                   <div className="flex flex-row items-center font-extralight text-gray-650">
                     See details{" "}
@@ -131,7 +131,7 @@ export const ErrorText = (props: ErrorTextProps) => {
                     <code>{props.details}</code>
                   </pre>
                 </Disclosure.Panel>
-              </>
+              </div>
             )}
           </Disclosure>
         </div>
