@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.22.0",
+    "@eslint/js": "^9.24.0",
     "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "15.2.4",
     "@playwright/test": "^1.51.0",
