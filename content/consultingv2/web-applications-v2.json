@@ -45,6 +45,7 @@
         "backgroundColour": 6
       },
       "heading": "Lorem Ipsum",
+      "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
