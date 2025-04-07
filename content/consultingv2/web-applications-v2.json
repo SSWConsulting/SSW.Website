@@ -32,10 +32,13 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "mediaType": "youtube",
+        "mediaType": "image",
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
+        "imageSource": "/images/ssw-web/hero/hero-3-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024,
         "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk"
       },
       "_template": "imageTextBlock"
@@ -136,8 +139,8 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/hero_1400_700px.png",
-        "bleed": false
+        "backgroundImage": "/images/ssw-web/background/bckg-5-85_opacity-ssw.png",
+        "bleed": true
       },
       "_template": "cardCarousel"
     },
