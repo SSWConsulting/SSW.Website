@@ -47,6 +47,9 @@
       "heading": "Lorem Ipsum",
       "logos": [
         {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png"
+        },
+        {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
           "scale": 90
         },
