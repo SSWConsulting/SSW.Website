@@ -29,7 +29,9 @@ export async function fetchTinaData<T, V>(
       fetchOptions: {
         headers: {
           /* Retrieve the active branch from cookie */
-          "x-branch": cookieStore.get("x-branch")?.value,
+          "x-branch":
+            cookieStore.get("x-branch")?.value ||
+            process.env.NEXT_PUBLIC_TINA_BRANCH,
         },
       },
     });
