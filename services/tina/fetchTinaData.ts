@@ -28,6 +28,7 @@ export async function fetchTinaData<T, V>(
     const response = await queryFunction(variables, {
       fetchOptions: {
         headers: {
+          /* Retrieve the active branch from cookie */
           "x-branch": cookieStore.get("x-branch")?.value,
         },
       },
