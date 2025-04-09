@@ -251,6 +251,7 @@ export const eventsCalendarSchema: Collection = {
         component: "select",
       },
       options: [
+        "Artificial Intelligence",
         "Angular and React",
         ".NET Core",
         "BI and Reporting Services",
