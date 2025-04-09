@@ -1,5 +1,4 @@
 import { TODAY } from "@/hooks/useFetchEvents";
-import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
 
 export enum FileType {
@@ -24,17 +23,7 @@ export async function fetchTinaData<T, V>(
       date: TODAY.toISOString(),
     } as V;
 
-    const cookieStore = await cookies();
-    const response = await queryFunction(variables, {
-      fetchOptions: {
-        headers: {
-          /* Retrieve the active branch from cookie */
-          "x-branch":
-            cookieStore.get("x-branch")?.value ||
-            process.env.NEXT_PUBLIC_TINA_BRANCH,
-        },
-      },
-    });
+    const response = await queryFunction(variables);
 
     return response;
   } catch {
