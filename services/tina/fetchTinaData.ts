@@ -7,6 +7,12 @@ export enum FileType {
   JSON = "json",
 }
 
+// Separate function for cookie handling
+async function getBranchFromCookie() {
+  const cookieStore = await cookies();
+  return cookieStore.get("x-branch")?.value;
+}
+
 export async function fetchTinaData<T, V>(
   queryFunction: (
     variables?: V,
@@ -28,11 +34,15 @@ export async function fetchTinaData<T, V>(
     // Get the branch from environment variable by default
     let branch = process.env.NEXT_PUBLIC_TINA_BRANCH;
 
-    // Only try to get cookies if we're not in static generation
-    if (typeof window !== "undefined") {
-      const cookieStore = await cookies();
-      branch = cookieStore.get("x-branch")?.value || branch;
+    // Only try to get cookies if we're not in build phase
+    if (process.env.NEXT_PHASE !== "phase-production-build") {
+      branch = (await getBranchFromCookie()) || branch;
+      // eslint-disable-next-line no-console
+      console.log("🚀 ~ branch from cookie:", branch);
     }
+
+    // eslint-disable-next-line no-console
+    console.log("🚀 ~ final branch:", branch);
 
     const response = await queryFunction(variables, {
       fetchOptions: {
