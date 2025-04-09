@@ -16,7 +16,7 @@ export const ClientLogos = () => {
             height={113}
             width={200}
             loading="lazy"
-            className="max-w-full rounded-lg my-0"
+            className="my-0 max-w-full rounded-lg"
           />
         ))}
     </div>
