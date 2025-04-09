@@ -1,16 +1,10 @@
 import { TODAY } from "@/hooks/useFetchEvents";
-import { cookies } from "next/headers";
 import { notFound } from "next/navigation";
+import { fetchCurrentBranch } from "./fetchCurrentBranch";
 
 export enum FileType {
   MDX = "mdx",
   JSON = "json",
-}
-
-// Separate function for cookie handling
-async function getBranchFromCookie() {
-  const cookieStore = await cookies();
-  return cookieStore.get("x-branch")?.value;
 }
 
 export async function fetchTinaData<T, V>(
@@ -31,23 +25,17 @@ export async function fetchTinaData<T, V>(
       date: TODAY.toISOString(),
     } as V;
 
-    // Get the branch from environment variable by default
-    let branch = process.env.NEXT_PUBLIC_TINA_BRANCH;
-
-    // Only try to get cookies if we're not in build phase
-    if (process.env.NEXT_PHASE !== "phase-production-build") {
-      branch = (await getBranchFromCookie()) || branch;
-      // eslint-disable-next-line no-console
-      console.log("🚀 ~ branch from cookie:", branch);
-    }
+    // Use provided branch or fallback to environment variable
+    const finalBranch =
+      (await fetchCurrentBranch()) || process.env.NEXT_PUBLIC_TINA_BRANCH;
 
     // eslint-disable-next-line no-console
-    console.log("🚀 ~ final branch:", branch);
+    console.log("🚀 ~ final branch:", finalBranch);
 
     const response = await queryFunction(variables, {
       fetchOptions: {
         headers: {
-          "x-branch": branch,
+          "x-branch": finalBranch,
         },
       },
     });
