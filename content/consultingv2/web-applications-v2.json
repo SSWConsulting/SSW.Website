@@ -91,7 +91,7 @@
     },
     {
       "isStacked": true,
-      "heading": " Why Technology Leaders Choose Our Development Approach",
+      "heading": "",
       "isH1": false,
       "body": "",
       "cardStyle": 0,
@@ -99,7 +99,7 @@
         {
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidComponent",
           "heading": "Reduce Risk on Complex Projects",
           "description": "We mitigate uncertainty through transparent Scrum processes, rigorous testing, and deep architectural planning, ensuring predictable outcomes for demanding builds.",
           "embeddedButton": {
@@ -111,7 +111,7 @@
         {
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidCustomize",
           "heading": "Solve Challenges Off-the-Shelf Software Can't",
           "description": "When standard solutions fall short, we build custom web apps, APIs, and LOB systems from scratch, tailored precisely to your unique operational needs.",
           "embeddedButton": {
