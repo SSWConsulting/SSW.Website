@@ -205,6 +205,28 @@
       "cardStyle": 1,
       "cards": [
         {
+          "guid": "mxnzv",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
+          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "description": "This session introduces Next.js and shadcn/UI, modern web development tools that simplify creating sleek and responsive websites. Join SSW's Jack Pettit for a beginner-friendly demo covering practical tips to supercharge your projects.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "3twol9",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=Y_HzdX7nHo0",
