@@ -111,16 +111,6 @@
         {
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": " Enterprise-Grade Security & Compliance Built In",
           "description": "We integrate security and compliance requirements from day one, not as afterthoughts. Our solutions meet industry standards while maintaining the flexibility your business needs.",
