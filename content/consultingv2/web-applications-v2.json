@@ -104,8 +104,7 @@
           "description": "We mitigate uncertainty through transparent Scrum processes, rigorous testing, and deep architectural planning, ensuring predictable outcomes for demanding builds.",
           "embeddedButton": {
             "buttonText": "",
-            "buttonLink": "",
-            "icon": "BiLogoGithub"
+            "buttonLink": ""
           }
         },
         {
