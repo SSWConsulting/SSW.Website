@@ -140,9 +140,9 @@
       "topLabel": {
         "labelText": "Client Stories"
       },
-      "heading": "BizCover: From microservice maze to monolith magic",
+      "heading": "The Shepherd Centre: Transforming Hearing Support for Children Worldwide",
       "isH1": false,
-      "description": "We Marie Kondo'd [BizCover's](https://www.bizcover.com.au/) codebase, swapping their microservice sprawl for a tidy .NET8 modular monolith (MoMo). Domain-driven design helped us define the modules, while OpenTelemetry, Prometheus, and Grafana kept things monitored.\n",
+      "description": "[The Shepherd Centre](https://shepherdcentre.org.au/) excels at helping children with hearing loss, but paper forms and separate records limited how many families they could reach. They worked with SSW to build \"HearHub,\" an online system bringing their proven assessment tools together. This made tracking a child's progress clearer and freed up staff time. The result? They can now support triple the number of children.\n",
       "chips": [
         {
           "chipText": "Modular Monolith (MoMo)",
@@ -164,6 +164,11 @@
         ]
       },
       "buttons": [
+        {
+          "buttonText": "Read the full story",
+          "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre",
+          "colour": 1
+        },
         {
           "buttonText": "Schedule a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
