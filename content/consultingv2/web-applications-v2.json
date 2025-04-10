@@ -51,6 +51,10 @@
       "isWhiteImages": true,
       "logos": [
         {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas Logo"
+        },
+        {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
           "altText": "Toll Logo"
         },
