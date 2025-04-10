@@ -57,7 +57,8 @@
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
-          "scale": 100
+          "scale": 100,
+          "altText": "CBA Logo"
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
