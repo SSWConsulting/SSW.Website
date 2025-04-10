@@ -57,7 +57,8 @@
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png"
         },
         {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png"
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "altText": "Symantec Logo"
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
