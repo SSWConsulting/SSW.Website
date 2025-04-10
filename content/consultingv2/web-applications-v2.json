@@ -1,0 +1,327 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Web APIs",
+    "description": "Ever since SSW developed the very first .NET website in Australia, we've been known as leaders in Website Development."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for Web APIs",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "De-risk Your Web Application Development. **Deliver Scalable Solutions, Faster.**",
+      "isH1": true,
+      "description": "From concept to production, our expert developers use clean architecture and Agile methods to build software that solves unique business challenges\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk",
+        "altText": "Web Application development is hard - Why choose SSW"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by top companies",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 120,
+          "altText": "Event Cinemas Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 120,
+          "altText": "Toll Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 120,
+          "altText": "Microsoft Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 120,
+          "altText": "Symantec Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 120,
+          "altText": "Domain Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 140,
+          "altText": "CBA Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 120,
+          "altText": "Cisco Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 120,
+          "altText": "Allianz Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "7mtu8j",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidError",
+          "heading": "Reduce Risk on Complex Projects",
+          "description": "We mitigate uncertainty through transparent Scrum processes, rigorous testing, and deep architectural planning, ensuring predictable outcomes for demanding builds.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidMedal",
+          "heading": "Solve Challenges Off-the-Shelf Software Can't",
+          "description": "When standard solutions fall short, we build custom web apps, APIs, and LOB systems from scratch, tailored precisely to your unique operational needs.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "5q8kz",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Elite Microsoft Stack Expertise",
+          "description": "Leverage our 30+ years of .NET & Azure experience, top-tier talent (MVPs, RDs), and direct Microsoft connections for superior solutions.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Transforming Hearing Support for Children Worldwide",
+      "isH1": false,
+      "description": "[The Shepherd Centre](https://shepherdcentre.org.au/) excels at helping children with hearing loss, but paper forms and separate records limited how many families they could reach. They worked with us to build [\"HearHub\"](https://hearhub.org/), an online system bringing their proven assessment tools together. This made tracking a child's progress clearer and freed up staff time, tripling their capacity to support families.\n",
+      "chips": [
+        {
+          "chipText": "Microsoft Dynamics",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Power Platform",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": ".NET",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "You need the data to understand the right level of support... [HearHub] will make a huge difference worldwide, not just for us here in Australia.",
+            "description": "- Jim Hungerford, CEO, The Shepherd Centre",
+            "icon": "BiSolidQuoteLeft"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": "Read the full story",
+          "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageHeight": 700,
+        "imageWidth": 1400,
+        "youtubeUrl": "https://www.youtube.com/watch?v=g4_MnAZJpxg",
+        "altText": "Helping Deaf Children Reach Their Full Potential | SSW Case Study"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "mxnzv",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
+          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "chips": [
+            {
+              "chipText": "Web Development",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "55 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "description": "This session introduces Next.js and shadcn/UI, modern web development tools that simplify creating sleek and responsive websites. Join SSW's Jack Pettit for a beginner-friendly demo covering practical tips to supercharge your projects.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "3twol9",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=Y_HzdX7nHo0",
+          "altText": "Unlocking Domain-Driven Design: Exploring Contextive | Gert Marx & Chris Simon",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Simplify Code, Speak Your Customer's Language",
+          "description": "See how Contextive helps developers avoid misunderstandings with customers. Capture key business terms, get suggestions right in your code, and even share definitions in Slack.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "6o99x4do",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/YqbdwNxA_sI?si=JYOgGVdzdk0CzRUi",
+          "altText": "Vercel - Development with Zero Config | Tylah Kapa",
+          "chips": [
+            {
+              "chipText": "Web Development",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "28 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Vercel - Development with Zero Config",
+          "description": "Vercel simplifies website deployment with GitHub integration, real-time editing, and scalable infrastructure. It's free to start and ideal for projects of any size. See Tylah's demo for a hands-on look.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
+        }
+      ],
+      "isStacked": false,
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-1-ssw.png",
+        "bleed": true
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your **AI project today**",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
+}
