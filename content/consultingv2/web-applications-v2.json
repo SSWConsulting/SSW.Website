@@ -186,6 +186,7 @@
         "mediaType": "youtube",
         "placement": "Left",
         "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
         "imageHeight": 700,
         "imageWidth": 1400,
         "youtubeUrl": "https://www.youtube.com/watch?v=g4_MnAZJpxg",
