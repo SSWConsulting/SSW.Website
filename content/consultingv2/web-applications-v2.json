@@ -204,15 +204,15 @@
         {
           "guid": "6o99x4do",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
-          "altText": "Lorem Ipsum",
+          "youtubeUrl": "https://youtu.be/YqbdwNxA_sI?si=JYOgGVdzdk0CzRUi",
+          "altText": "Vercel - Development with Zero Config | Tylah Kapa",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Web Development",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "28 min.",
               "chipType": "clearChip"
             }
           ],
