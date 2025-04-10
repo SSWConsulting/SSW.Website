@@ -211,11 +211,11 @@
           "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Web Development",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "55 min.",
               "chipType": "clearChip"
             }
           ],
