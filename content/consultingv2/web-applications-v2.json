@@ -99,7 +99,7 @@
         {
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidComponent",
+          "icon": "BiSolidError",
           "heading": "Reduce Risk on Complex Projects",
           "description": "We mitigate uncertainty through transparent Scrum processes, rigorous testing, and deep architectural planning, ensuring predictable outcomes for demanding builds.",
           "embeddedButton": {
