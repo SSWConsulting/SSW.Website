@@ -103,7 +103,7 @@
           "heading": "Reduce Risk on Complex Projects",
           "description": "We mitigate uncertainty through transparent Scrum processes, rigorous testing, and deep architectural planning, ensuring predictable outcomes for demanding builds.",
           "embeddedButton": {
-            "buttonText": "Check our Clean Architecture Template ",
+            "buttonText": "Check our Clean Architecture Template",
             "buttonLink": "https://github.com/SSWConsulting/SSW.CleanArchitecture",
             "icon": "BiLogoGithub"
           }
