@@ -62,6 +62,7 @@
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 120,
           "altText": "Microsoft Logo"
         },
         {
