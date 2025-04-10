@@ -202,6 +202,28 @@
       "cardStyle": 1,
       "cards": [
         {
+          "guid": "3twol9",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=Y_HzdX7nHo0",
+          "altText": "Unlocking Domain-Driven Design: Exploring Contextive | Gert Marx & Chris Simon",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Simplify Code, Speak Your Customer's Language",
+          "description": "See how Contextive, a free tool from SSW, helps developers avoid misunderstandings with customers. Capture key business terms, get suggestions right in your code, and even share definitions in Slack. But how does this tool prevent code that's technically correct, yet completely wrong from a business perspective?",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "6o99x4do",
           "mediaType": "youtube",
           "youtubeUrl": "https://youtu.be/YqbdwNxA_sI?si=JYOgGVdzdk0CzRUi",
