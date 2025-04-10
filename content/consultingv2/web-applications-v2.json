@@ -165,14 +165,14 @@
       },
       "buttons": [
         {
-          "buttonText": "Read the full story",
-          "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre",
-          "colour": 1
-        },
-        {
           "buttonText": "Schedule a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
+        },
+        {
+          "buttonText": "Read the full story",
+          "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre",
+          "colour": 1
         }
       ],
       "background": {
@@ -180,6 +180,7 @@
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
+        "verticalPlacement": "Bottom",
         "imageHeight": 700,
         "imageWidth": 1400,
         "youtubeUrl": "https://www.youtube.com/watch?v=g4_MnAZJpxg",
