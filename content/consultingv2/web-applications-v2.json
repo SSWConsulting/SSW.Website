@@ -174,9 +174,10 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/bizcover_case_study.png",
+        "mediaType": "youtube",
         "imageHeight": 700,
-        "imageWidth": 1400
+        "imageWidth": 1400,
+        "youtubeUrl": "https://www.youtube.com/watch?v=g4_MnAZJpxg"
       },
       "_template": "imageTextBlock"
     },
