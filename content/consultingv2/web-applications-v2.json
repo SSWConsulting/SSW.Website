@@ -243,7 +243,7 @@
           ],
           "icon": "info",
           "heading": "Simplify Code, Speak Your Customer's Language",
-          "description": "See how Contextive, a free tool from SSW, helps developers avoid misunderstandings with customers. Capture key business terms, get suggestions right in your code, and even share definitions in Slack.",
+          "description": "See how Contextive helps developers avoid misunderstandings with customers. Capture key business terms, get suggestions right in your code, and even share definitions in Slack.",
           "embeddedButton": {
             "buttonText": ""
           }
