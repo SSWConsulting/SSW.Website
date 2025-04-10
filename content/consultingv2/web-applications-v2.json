@@ -177,7 +177,8 @@
         "mediaType": "youtube",
         "imageHeight": 700,
         "imageWidth": 1400,
-        "youtubeUrl": "https://www.youtube.com/watch?v=g4_MnAZJpxg"
+        "youtubeUrl": "https://www.youtube.com/watch?v=g4_MnAZJpxg",
+        "altText": "Helping Deaf Children Reach Their Full Potential | SSW Case Study"
       },
       "_template": "imageTextBlock"
     },
