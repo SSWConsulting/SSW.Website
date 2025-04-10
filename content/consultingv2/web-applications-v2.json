@@ -243,7 +243,7 @@
           ],
           "icon": "info",
           "heading": "Vercel - Development with Zero Config",
-          "description": "Learn about Vercel, a platform that simplifies website deployment. It integrates with GitHub for quick setup, offers real-time editing, scales from personal projects to large applications, and is free to get started. Join Tylah's demo to see it in action.",
+          "description": "Vercel simplifies website deployment with GitHub integration, real-time editing, and scalable infrastructure. It's free to start and ideal for projects of any size. See Tylah's demo for a hands-on look.",
           "embeddedButton": {
             "buttonText": ""
           }
