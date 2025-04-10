@@ -121,16 +121,6 @@
         {
           "guid": "5q8kz",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": " Technical Excellence That Scales With Your Business",
           "description": "Our solutions are architected for growth. We implement clean code practices, comprehensive testing, and cloud-native design patterns that support your evolving business requirements.",
