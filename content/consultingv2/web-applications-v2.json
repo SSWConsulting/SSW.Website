@@ -52,6 +52,7 @@
       "logos": [
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 120,
           "altText": "Event Cinemas Logo"
         },
         {
