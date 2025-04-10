@@ -145,15 +145,15 @@
       "description": "[The Shepherd Centre](https://shepherdcentre.org.au/) excels at helping children with hearing loss, but paper forms and separate records limited how many families they could reach. They worked with SSW to build \"HearHub,\" an online system bringing their proven assessment tools together. This made tracking a child's progress clearer and freed up staff time. The result? They can now support triple the number of children.\n",
       "chips": [
         {
-          "chipText": ".NET",
-          "chipType": "filledChip"
-        },
-        {
           "chipText": "Microsoft Dynamics",
           "chipType": "filledChip"
         },
         {
           "chipText": "Power Platform",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": ".NET",
           "chipType": "filledChip"
         }
       ],
