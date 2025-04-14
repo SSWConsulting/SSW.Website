@@ -269,7 +269,7 @@
           ],
           "icon": "info",
           "heading": "Building Cross-platform Blazor Desktop Apps with Photino",
-          "description": "Are you a Blazor developer wishing you could build cross-platform desktop apps (yes, even for Linux!) with familiar syntax? Join us to explore Photino, a lightweight framework that brings Blazor to the desktop with direct access to desktop APIs like file system access and multithreading.",
+          "description": "Explore Photino, the lightweight way to build native-feeling desktop apps with Blazor. See how it compares to MAUI/Electron & watch a quickstart demo.",
           "embeddedButton": {
             "buttonText": ""
           }
