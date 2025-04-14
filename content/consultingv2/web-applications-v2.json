@@ -214,7 +214,7 @@
             },
             {
               "chipText": ".NET",
-              "chipType": "clearChip"
+              "chipType": "filledChip"
             }
           ],
           "icon": "info",
