@@ -205,6 +205,26 @@
       "cardStyle": 1,
       "cards": [
         {
+          "guid": "4wu07",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Testcontainers",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Ditch the Mocks: Test Like Production with Containers (MSSQL, SMTP, Azurite)",
+          "description": "Discover how using real services in Docker containers (MSSQL, SMTP, Azurite) via Testcontainers for .NET delivers robust integration tests and eliminates production surprises.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
           "guid": "mxnzv",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
