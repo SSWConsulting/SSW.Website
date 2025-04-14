@@ -206,6 +206,7 @@
       "cards": [
         {
           "guid": "4wu07",
+          "image": "/images/ssw-web/blog/test-containers-header-image.png",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -254,21 +255,21 @@
         {
           "guid": "3twol9",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Y_HzdX7nHo0",
+          "youtubeUrl": "https://www.youtube.com/watch?v=PVRNOoO_iXA",
           "altText": "Unlocking Domain-Driven Design: Exploring Contextive | Gert Marx & Chris Simon",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Web Development",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "50 min.",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Simplify Code, Speak Your Customer's Language",
-          "description": "See how Contextive helps developers avoid misunderstandings with customers. Capture key business terms, get suggestions right in your code, and even share definitions in Slack.",
+          "heading": "Building Cross-platform Blazor Desktop Apps with Photino",
+          "description": "Are you a Blazor developer wishing you could build cross-platform desktop apps (yes, even for Linux!) with familiar syntax? Join us to explore Photino, a lightweight framework that brings Blazor to the desktop with direct access to desktop APIs like file system access and multithreading.",
           "embeddedButton": {
             "buttonText": ""
           }
