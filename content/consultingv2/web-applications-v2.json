@@ -209,6 +209,10 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
+              "chipText": "5 min.",
+              "chipType": "clearChip"
+            },
+            {
               "chipText": "Testcontainers",
               "chipType": "filledChip"
             },
