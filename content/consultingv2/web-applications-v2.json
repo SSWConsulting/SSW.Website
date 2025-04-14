@@ -305,7 +305,7 @@
     {
       "technologyGroups": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Front-End.mdx"
+          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
         }
       ],
       "isStacked": false,
