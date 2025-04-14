@@ -79,7 +79,7 @@
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.5.0",
     "embla-carousel": "^8.5.1",
     "embla-carousel-autoplay": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
