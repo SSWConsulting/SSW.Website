@@ -47,12 +47,13 @@
         "bleed": true
       },
       "mediaConfiguration": {
+        "mediaType": "youtube",
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/ssw_here_fx41_v2.png",
         "imageHeight": 700,
-        "imageWidth": 1400
+        "imageWidth": 1400,
+        "youtubeUrl": "https://www.youtube.com/watch?v=gQ9Dg5WuUtQ"
       },
       "_template": "imageTextBlock"
     },
