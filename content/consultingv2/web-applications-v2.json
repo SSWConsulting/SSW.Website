@@ -301,7 +301,7 @@
         },
         {
           "label": "What technologies does SSW primarily use for development?",
-          "content": "Our core expertise lies in Microsoft technologies, particularly .NET (including modern .NET versions) and Azure cloud services. We are also proficient leaders in popular front-end frameworks like Angular and React. However, we prioritize using the most effective technology for the job, ensuring solutions are scalable, testable, and extensible, often utilizing Clean Architecture principles.\n"
+          "content": "Our core expertise lies in Microsoft technologies, particularly .NET and Azure cloud services. We are also proficient leaders in popular front-end frameworks like Angular and React. However, we prioritize using the most effective technology for the job, ensuring solutions are scalable, testable, and extensible, often utilizing Clean Architecture principles.\n"
         },
         {
           "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
