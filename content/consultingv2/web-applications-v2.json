@@ -277,7 +277,7 @@
       "_template": "cardCarousel"
     },
     {
-      "spacerHeight": "150px",
+      "spacerHeight": "100px",
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "",
