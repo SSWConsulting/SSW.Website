@@ -376,6 +376,28 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "akn4ur",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=_Lx1DmMMJbg",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Strategy",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "1 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Do you provide an llms.txt file to make your website LLM-friendly?",
+          "description": "Ever wondered how to make your website visible to AI models like ChatGPT, Claude, and Cursor? 🤖 Traditional SEO is all about optimizing for search engines, but in the AI era, we need to rethink our approach!",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "background": {
