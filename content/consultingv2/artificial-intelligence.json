@@ -182,6 +182,48 @@
     },
     {
       "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "Boosting Payroll Expertise with a **Custom AI Chatbot**",
+      "isH1": false,
+      "description": "French Payroll Expert (FPE) spent too much time answering the same questions about French labor law. We built them a custom AI chatbot that delivers accurate, multilingual answers 24/7, directly from official sources.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Instant Answers, Any Language",
+            "description": "Clients get fast, 24/7 payroll answers in their own language. The AI uses verified French legislation, breaking down barriers."
+          },
+          {
+            "heading": "AI Becomes a Selling Point",
+            "description": "The chatbot isn't just support, it's a competitive edge that helped FPE attract new clients and win more business."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://www.youtube.com/watch?v=YlsbPEvVyq4"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
         "labelText": ""
       },
       "heading": "**YakShaver:** Our AI Agent in Action",
