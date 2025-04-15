@@ -148,7 +148,7 @@
       "description": "Hutchison Weller, a company that focuses on managing the environmental impacts for their clients in the construction market, had a personalized noise management spreadsheet as part of their services that could be tailored for each client on Excel.\n",
       "chips": [
         {
-          "chipText": "Microsoft Dynamics",
+          "chipText": "Azure",
           "chipType": "filledChip"
         },
         {
