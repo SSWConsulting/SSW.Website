@@ -15,9 +15,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "De-risk Your Web Application Development. **Deliver Scalable Solutions, Faster.**",
+      "heading": "Complex .NET & Azure Challenges? **Solved**",
       "isH1": true,
-      "description": "From concept to production, our expert developers use Clean Architecture and Agile methods to build software that solves unique business challenges\n",
+      "description": "Get mission-critical custom web applications built by expert Australian engineers. Predictable results, quality code.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -107,8 +107,8 @@
           "heading": "Reduce Risk on Complex Projects",
           "description": "Our proven Agile (Scrum) process means clear communication, quality code, and reliable project delivery. No nasty surprises.",
           "embeddedButton": {
-            "buttonText": "",
-            "buttonLink": ""
+            "buttonText": "Rules to Better Scrum",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-scrum/"
           }
         },
         {
@@ -128,7 +128,8 @@
           "heading": "Elite Microsoft Stack Expertise",
           "description": "Take advantage of our 30+ years of .NET & Azure experience, top-tier talent (MVPs, RDs), and direct Microsoft connections.",
           "embeddedButton": {
-            "buttonText": ""
+            "buttonText": "SSW People",
+            "buttonLink": "https://www.ssw.com.au/people/"
           }
         }
       ],
