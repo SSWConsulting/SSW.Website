@@ -88,7 +88,7 @@ def generate_lighthouse_md(treemap_folder):
         data = json.load(file)
 
     report_header = "🚀 Lighthouse Report"
-    if environment != "pr-slot":
+    if environment == "pr-slot":
         report_header = "🚀 Lighthouse score comparison for PR slot and production"
 
     md_output = [

@@ -1,5 +1,7 @@
 import classNames from "classnames";
 import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import Image from "next/image";
 import { useMemo } from "react";
 import { BiVideo } from "react-icons/bi";
@@ -8,6 +10,9 @@ import { CustomLink } from "../../customLink";
 import { CITY_TIMEZONES } from "../../util/constants/country";
 import { Container } from "../../util/container";
 import { OnlineBadge } from "../onlineBadge";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 type UserGroupHeaderProps = {
   className?: string;
