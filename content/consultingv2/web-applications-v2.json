@@ -143,9 +143,9 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "Case Study - Hutchison Weller",
+      "heading": "Hutchison Weller",
       "isH1": false,
-      "description": "[The Shepherd Centre](https://shepherdcentre.org.au/) excels at helping children with hearing loss, but paper forms and separate records limited how many families they could reach. They worked with us to build [\"HearHub\"](https://hearhub.org/), an online system bringing their proven assessment tools together. This made tracking a child's progress clearer and freed up staff time, tripling their capacity to support families.\n",
+      "description": "Hutchison Weller, a company that focuses on managing the environmental impacts for their clients in the construction market, had a personalized noise management spreadsheet as part of their services that could be tailored for each client on Excel.\n",
       "chips": [
         {
           "chipText": "Microsoft Dynamics",
@@ -178,7 +178,7 @@
         },
         {
           "buttonText": "Read the full story",
-          "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre",
+          "buttonLink": "https://www.ssw.com.au/company/clients/hutchison-weller",
           "colour": 1
         }
       ],
@@ -192,8 +192,8 @@
         "mobilePlacement": "Above",
         "imageHeight": 700,
         "imageWidth": 1400,
-        "youtubeUrl": "https://www.youtube.com/watch?v=g4_MnAZJpxg",
-        "altText": "Helping Deaf Children Reach Their Full Potential | SSW Case Study"
+        "youtubeUrl": "https://www.youtube.com/watch?v=wiFadV5SOPc",
+        "altText": "Hutchison Weller"
       },
       "_template": "imageTextBlock"
     },
