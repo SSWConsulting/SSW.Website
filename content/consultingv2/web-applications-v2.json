@@ -293,7 +293,7 @@
       "accordionItems": [
         {
           "label": "How does SSW ensure the quality and success of a software project?",
-          "content": "Quality and success are built into our process. We use:\n\n\n* Clean Architecture: Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
+          "content": "Quality and success are built into our process. We use:\n\n\n* [Clean Architecture](https://github.com/SSWConsulting/SSW.CleanArchitecture): Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
         },
         {
           "label": "What types of web apps does SSW specialize in building?",
