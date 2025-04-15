@@ -17,7 +17,7 @@
       },
       "heading": "Custom AI solutions, **expertly implemented.**",
       "isH1": true,
-      "description": "Our solutions go beyond basic automation to create real business value, turning AI into a genuine intellectual partner for your specific business challenges. \n",
+      "description": "Our solutions go beyond basic automation to create real business value, turning AI into a genuine intellectual partner for your specific business challenges.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -198,7 +198,7 @@
         }
       ],
       "background": {
-        "backgroundColour": 2,
+        "backgroundColour": 6,
         "backgroundImage": "",
         "bleed": false
       },
