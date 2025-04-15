@@ -230,6 +230,15 @@
       "_template": "imageTextBlock"
     },
     {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
@@ -260,6 +269,15 @@
         "altText": "YakShaver - AI to make the perfect PBI in 30 seconds"
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
     },
     {
       "isStacked": false,
