@@ -119,7 +119,7 @@
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
-        "placement": "Right",
+        "placement": "Left",
         "mobilePlacement": "Above",
         "youtubeUrl": "https://youtu.be/-q9lLqtkC00?si=ep-UD9gBNQ_gUcSR",
         "altText": "The Future of Business with AI: Automation, Intelligence, and Customer Relations"
