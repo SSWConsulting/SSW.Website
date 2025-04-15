@@ -207,7 +207,7 @@
         {
           "guid": "4wu07",
           "image": "/images/ssw-web/blog/test-containers-header-image.png",
-          "altText": "Lorem Ipsum",
+          "altText": "Ditch the Mocks: Test Like Production with Containers (MSSQL, SMTP, Azurite)",
           "chips": [
             {
               "chipText": "Testcontainers",
