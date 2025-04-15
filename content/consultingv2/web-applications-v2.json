@@ -374,6 +374,15 @@
         "bleed": true
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
     }
   ]
 }
