@@ -165,6 +165,10 @@
         "twoColumns": true,
         "features": [
           {
+            "heading": "Instant, Interactive Noise Assessment",
+            "description": "Users can model noise levels by selecting work types, locations, and equipment, then instantly view risk profiles, impact maps, and exceedances. No consultant required"
+          },
+          {
             "heading": "From Spreadsheet to Web App",
             "description": "KNOWnoise replaced a complex Excel tool with a web-based platform built using Angular, NgRx, and .NET Core, deployed in just 3 months and designed for use on-site or in the office."
           }
