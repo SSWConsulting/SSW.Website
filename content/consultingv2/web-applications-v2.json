@@ -307,6 +307,10 @@
       "body": "",
       "accordionItems": [
         {
+          "label": "How does SSW ensure the quality and success of a software project?",
+          "content": "Quality and success are built into our process. We use:\nClean Architecture: Designing for scalability, testability, and maintainability.\nScrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\nDevOps Practices: Streamlining development and deployment for faster delivery and reliability.\nBest Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\nExpert Teams: Employing rigorously hired and continuously developed technical experts.\nStrong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
+        },
+        {
           "label": "What types of web applications and APIs does SSW specialize in building?",
           "content": "SSW specializes in building complex, custom web applications and APIs from the ground up. This includes CRM systems, ERP systems, line-of-business applications, customer portals, intranets, and mobile applications. We thrive on challenging projects that push the boundaries of technology\n"
         },
