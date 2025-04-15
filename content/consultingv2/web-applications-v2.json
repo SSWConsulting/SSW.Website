@@ -17,7 +17,7 @@
       },
       "heading": "De-risk Your Web Application Development. **Deliver Scalable Solutions, Faster.**",
       "isH1": true,
-      "description": "From concept to production, our expert developers use clean architecture and Agile methods to build software that solves unique business challenges\n",
+      "description": "From concept to production, our expert developers use Clean Architecture and Agile methods to build software that solves unique business challenges\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -47,7 +47,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "heading": "Trusted by top companies",
+      "heading": "Trusted by",
       "isWhiteImages": true,
       "logos": [
         {
@@ -105,7 +105,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
           "heading": "Reduce Risk on Complex Projects",
-          "description": "We mitigate uncertainty through transparent Scrum processes, rigorous testing, and deep architectural planning, ensuring predictable outcomes for demanding builds.",
+          "description": "Our proven Agile (Scrum) process means clear communication, quality code, and reliable project delivery. No nasty surprises.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -116,7 +116,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidMedal",
           "heading": "Solve Challenges Off-the-Shelf Software Can't",
-          "description": "When standard solutions fall short, we build custom web apps, APIs, and LOB systems from scratch, tailored precisely to your unique operational needs.",
+          "description": "We build the custom web apps and APIs you actually need when standard software just doesn't cut it.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -126,7 +126,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiLogoMicrosoft",
           "heading": "Elite Microsoft Stack Expertise",
-          "description": "Leverage our 30+ years of .NET & Azure experience, top-tier talent (MVPs, RDs), and direct Microsoft connections for superior solutions.",
+          "description": "Take advantage of our 30+ years of .NET & Azure experience, top-tier talent (MVPs, RDs), and direct Microsoft connections.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -141,9 +141,9 @@
     },
     {
       "topLabel": {
-        "labelText": ""
+        "labelText": "Case Study"
       },
-      "heading": "Transforming Hearing Support for Children Worldwide",
+      "heading": "Case Study - Hutchison Weller",
       "isH1": false,
       "description": "[The Shepherd Centre](https://shepherdcentre.org.au/) excels at helping children with hearing loss, but paper forms and separate records limited how many families they could reach. They worked with us to build [\"HearHub\"](https://hearhub.org/), an online system bringing their proven assessment tools together. This made tracking a child's progress clearer and freed up staff time, tripling their capacity to support families.\n",
       "chips": [
