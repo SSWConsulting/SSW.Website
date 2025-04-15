@@ -313,6 +313,10 @@
         {
           "label": "What technologies does SSW primarily use for development?",
           "content": "Our core expertise lies in Microsoft technologies, particularly .NET (including modern .NET versions) and Azure cloud services. We are also proficient leaders in popular front-end frameworks like Angular and React. However, we prioritize using the most effective technology for the job, ensuring solutions are scalable, testable, and extensible, often utilizing Clean Architecture principles.\n"
+        },
+        {
+          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\nProven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\nRepeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\nQuality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\nReduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
         }
       ],
       "background": {
