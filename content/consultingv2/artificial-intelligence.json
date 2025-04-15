@@ -212,7 +212,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Read the full Story",
+          "buttonLink": "https://www.ssw.com.au/company/clients/fpe",
           "colour": 0
         },
         {
