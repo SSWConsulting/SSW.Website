@@ -286,15 +286,6 @@
       "_template": "cardCarousel"
     },
     {
-      "spacerHeight": "100px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
       "heading": "Frequently Asked Questions",
       "body": "",
       "accordionItems": [
