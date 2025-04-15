@@ -250,6 +250,10 @@
       },
       "buttons": [
         {
+          "buttonText": "Give it a try",
+          "buttonLink": "https://chromewebstore.google.com/detail/yakshaver/glcoihkbmomiblcbpnlkafcipcfnikjc?pli=1"
+        },
+        {
           "buttonText": "Learn More",
           "buttonLink": "https://www.ssw.com.au/articles/yakshaver-article",
           "colour": 1
