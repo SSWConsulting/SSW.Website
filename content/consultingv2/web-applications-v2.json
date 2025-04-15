@@ -144,9 +144,9 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "Hutchison Weller: Transforming Noise Impact Management with KNOWnoise",
+      "heading": "Transforming Noise Impact Management with KNOWnoise",
       "isH1": false,
-      "description": "Hutchison Weller needed a better way to manage noise planning for construction projects. Their old Excel tool was slow and hard to customize. We built KNOWnoise, a web app that lets project teams quickly assess and manage noise impact in real time. It's faster, more flexible, and helps them engage better with the community.\n",
+      "description": "Hutchison Weller needed a better way to manage noise planning. Their old Excel tool was slow and inflexible. We built KNOWnoise, a web app for fast, real-time noise impact assessment.\n",
       "chips": [
         {
           "chipText": "Azure",
@@ -166,11 +166,11 @@
         "features": [
           {
             "heading": "Instant, Interactive Noise Assessment",
-            "description": "Users can model noise levels by selecting work types, locations, and equipment, then instantly view risk profiles, impact maps, and exceedances. No consultant required"
+            "description": "Model noise levels with simple selections, get instant risk profiles, impact maps, and exceedance data."
           },
           {
             "heading": "From Spreadsheet to Web App",
-            "description": "KNOWnoise replaced a complex Excel tool with a web-based platform built using Angular, NgRx, and .NET Core, deployed in just 3 months and designed for use on-site or in the office."
+            "description": "Replaced a complex Excel tool with a web-based platform: Angular, NgRx, .NET Core on Azure. Deployed in 3 months. Ready for field or office use."
           }
         ]
       },
