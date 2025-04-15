@@ -172,8 +172,9 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonText": "Read the full story",
+          "leadCaptureFormOption": "",
+          "buttonLink": "https://www.ssw.com.au/company/clients/hutchison-weller",
           "colour": 0
         },
         {
@@ -210,7 +211,7 @@
       "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
-      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "body": "At SSW, we’ve nuilding enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV",
       "cardStyle": 1,
       "cards": [
         {
