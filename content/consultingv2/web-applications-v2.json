@@ -15,9 +15,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Custom web application development, **without the risks.**",
+      "heading": "Complex .NET & Azure Challenges? **Solved**",
       "isH1": true,
-      "description": "Get mission-critical .NET and Azure web apps built by expert Australian engineers. Predictable results, quality code.\n",
+      "description": "Get mission-critical custom web applications built by expert Australian engineers. Predictable results, quality code.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -144,9 +144,9 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "Hutchison Weller",
+      "heading": "Hutchison Weller: Transforming Noise Impact Management with KNOWnoise",
       "isH1": false,
-      "description": "Hutchison Weller, a company that focuses on managing the environmental impacts for their clients in the construction market, had a personalized noise management spreadsheet as part of their services that could be tailored for each client on Excel.\n",
+      "description": "Hutchison Weller needed a better way to manage noise planning for construction projects. Their old Excel tool was slow and hard to customize. We built KNOWnoise, a web app that lets project teams quickly assess and manage noise impact in real time. It's faster, more flexible, and helps them engage better with the community.\n",
       "chips": [
         {
           "chipText": "Azure",
@@ -162,12 +162,11 @@
         }
       ],
       "featureColumns": {
-        "twoColumns": false,
+        "twoColumns": true,
         "features": [
           {
-            "heading": "You need the data to understand the right level of support... [HearHub] will make a huge difference worldwide, not just for us here in Australia.",
-            "description": "- John Hutchison, CEO, Hutchison Weller",
-            "icon": "BiSolidQuoteLeft"
+            "heading": "From Spreadsheet to Web App",
+            "description": "KNOWnoise replaced a complex Excel tool with a web-based platform built using Angular, NgRx, and .NET Core, deployed in just 3 months and designed for use on-site or in the office."
           }
         ]
       },
@@ -293,7 +292,7 @@
       "accordionItems": [
         {
           "label": "How does SSW ensure the quality and success of a software project?",
-          "content": "Quality and success are built into our process. We use:\n\n\n* [Clean Architecture](https://github.com/SSWConsulting/SSW.CleanArchitecture): Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
+          "content": "Quality and success are built into our process. We use:\n\n* [Clean Architecture](https://github.com/SSWConsulting/SSW.CleanArchitecture): Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
         },
         {
           "label": "What types of web apps does SSW specialize in building?",
@@ -309,7 +308,7 @@
         },
         {
           "label": "What is SSW's development process like, and how involved will I need to be?",
-          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback. \n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
         },
         {
           "label": "What happens in the free initial meeting?",
