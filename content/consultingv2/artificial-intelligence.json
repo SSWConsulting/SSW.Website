@@ -376,28 +376,6 @@
           "embeddedButton": {
             "buttonText": ""
           }
-        },
-        {
-          "guid": "y3sb5r",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/YlsbPEvVyq4?si=fzSXmmJOOkDC5-nz",
-          "altText": "AI Powered Navigation for French Payroll Expert",
-          "chips": [
-            {
-              "chipText": "Case Study",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "6 min.",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "AI Powered Navigation for French Payroll Expert",
-          "description": "Join us as we explore the journey of French Payroll Expert (FPE), a company that provides payroll services from A to Z to foreign companies working in France. Discover how integrating an AI-powered chatbot, developed in collaboration with SSW, has revolutionized customer service, addressing common queries efficiently and accurately. ",
-          "embeddedButton": {
-            "buttonText": ""
-          }
         }
       ],
       "background": {
