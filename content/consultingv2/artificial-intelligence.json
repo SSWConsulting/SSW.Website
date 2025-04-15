@@ -189,6 +189,10 @@
       "description": "French Payroll Expert (FPE) spent too much time answering the same questions about French labor law. We built them a custom AI chatbot that delivers accurate, multilingual answers 24/7, directly from official sources.\n",
       "chips": [
         {
+          "chipText": "Semantic Kernel",
+          "chipType": "filledChip"
+        },
+        {
           "chipText": "OpenAI",
           "chipType": "filledChip"
         }
