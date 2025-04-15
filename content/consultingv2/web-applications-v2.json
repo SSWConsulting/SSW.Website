@@ -198,38 +198,12 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
       "cardStyle": 1,
       "cards": [
-        {
-          "guid": "4wu07",
-          "image": "/images/ssw-web/blog/test-containers-header-image.png",
-          "altText": "Ditch the Mocks: Test Like Production with Containers (MSSQL, SMTP, Azurite)",
-          "chips": [
-            {
-              "chipText": "Testcontainers",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": ".NET",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "5 min.",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Ditch the Mocks: Test Like Production with Containers (MSSQL, SMTP, Azurite)",
-          "description": "Discover how using real services in Docker containers (MSSQL, SMTP, Azurite) via Testcontainers for .NET delivers robust integration tests and eliminates production surprises.",
-          "embeddedButton": {
-            "buttonText": "Learn how",
-            "buttonLink": "https://www.ssw.com.au/articles/integration-testing-with-containers"
-          }
-        },
         {
           "guid": "mxnzv",
           "mediaType": "youtube",
