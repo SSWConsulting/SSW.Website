@@ -303,6 +303,24 @@
       "_template": "cardCarousel"
     },
     {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "What types of web applications and APIs does SSW specialize in building?",
+          "content": "SSW specializes in building complex, custom web applications and APIs from the ground up. This includes CRM systems, ERP systems, line-of-business applications, customer portals, intranets, and mobile applications. We thrive on challenging projects that push the boundaries of technology\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
       "technologyGroups": [
         {
           "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
