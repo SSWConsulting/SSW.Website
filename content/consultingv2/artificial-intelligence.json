@@ -15,7 +15,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Custom AI Solutions, **Expertly Implemented.**",
+      "heading": "Custom AI solutions, **expertly implemented.**",
       "isH1": true,
       "description": "Our solutions go beyond basic automation to create real business value, turning AI into a genuine intellectual partner for your specific business challenges.\n",
       "featureColumns": {
@@ -53,7 +53,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "heading": "Trusted by top companies",
+      "heading": "Trusted by",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
@@ -114,12 +114,12 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/Louis Test Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
         "bleed": true
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
-        "placement": "Right",
+        "placement": "Left",
         "mobilePlacement": "Above",
         "youtubeUrl": "https://youtu.be/-q9lLqtkC00?si=ep-UD9gBNQ_gUcSR",
         "altText": "The Future of Business with AI: Automation, Intelligence, and Customer Relations"
@@ -182,15 +182,77 @@
     },
     {
       "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "Boosting Payroll Expertise with a **Custom AI Chatbot**",
+      "isH1": false,
+      "description": "French Payroll Expert (FPE) spent too much time answering the same questions about French labor law. We built them a custom AI chatbot that delivers accurate, multilingual answers 24/7, directly from official sources.\n",
+      "chips": [
+        {
+          "chipText": "Semantic Kernel",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "OpenAI",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Instant Answers, Any Language",
+            "description": "Clients get fast, 24/7 payroll answers in their own language. The AI uses verified French legislation, breaking down barriers."
+          },
+          {
+            "heading": "AI Becomes a Selling Point",
+            "description": "The chatbot isn't just support, it's a competitive edge that helped FPE attract new clients and win more business."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Read the full Story",
+          "buttonLink": "https://www.ssw.com.au/company/clients/fpe",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://www.youtube.com/watch?v=YlsbPEvVyq4"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
         "labelText": ""
       },
       "heading": "**YakShaver:** Our AI Agent in Action",
       "isH1": false,
-      "description": "At SSW, we don't just talk about AI—we build it. YakShaver is our AI solution that automates work item creation, proving how AI can streamline repetitive dev tasks.\n\nBeyond the typical chatbot, YakShaver shows how AI capabilities can transform development workflows.\n\nIt's the same approach we bring to your projects, practical AI that delivers real results.\n",
+      "description": "At SSW, we don't just talk about AI, we build it. YakShaver is our AI solution that automates work item creation, proving how AI can streamline repetitive dev tasks.\n\nBeyond the typical chatbot, YakShaver shows how AI capabilities can transform development workflows.\n\nIt's the same approach we bring to your projects, practical AI that delivers real results.\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
+        {
+          "buttonText": "Give it a try",
+          "buttonLink": "https://chromewebstore.google.com/detail/yakshaver/glcoihkbmomiblcbpnlkafcipcfnikjc?pli=1"
+        },
         {
           "buttonText": "Learn More",
           "buttonLink": "https://www.ssw.com.au/articles/yakshaver-article",
@@ -198,7 +260,7 @@
         }
       ],
       "background": {
-        "backgroundColour": 2,
+        "backgroundColour": 6,
         "backgroundImage": "",
         "bleed": false
       },
@@ -211,6 +273,15 @@
         "altText": "YakShaver - AI to make the perfect PBI in 30 seconds"
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
     },
     {
       "isStacked": false,
@@ -311,30 +382,30 @@
           }
         },
         {
-          "guid": "y3sb5r",
+          "guid": "akn4ur",
           "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/YlsbPEvVyq4?si=fzSXmmJOOkDC5-nz",
-          "altText": "AI Powered Navigation for French Payroll Expert",
+          "youtubeUrl": "https://www.youtube.com/watch?v=_Lx1DmMMJbg",
+          "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Case Study",
+              "chipText": "AI Strategy",
               "chipType": "filledChip"
             },
             {
-              "chipText": "6 min.",
+              "chipText": "1 min.",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "AI Powered Navigation for French Payroll Expert",
-          "description": "Join us as we explore the journey of French Payroll Expert (FPE), a company that provides payroll services from A to Z to foreign companies working in France. Discover how integrating an AI-powered chatbot, developed in collaboration with SSW, has revolutionized customer service, addressing common queries efficiently and accurately. ",
+          "heading": "Do you provide an llms.txt file to make your website LLM-friendly?",
+          "description": "Ever wondered how to make your website visible to AI models like ChatGPT, Claude, and Cursor? 🤖 Traditional SEO is all about optimizing for search engines, but in the AI era, we need to rethink our approach!",
           "embeddedButton": {
             "buttonText": ""
           }
         }
       ],
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 2
       },
       "_template": "cardCarousel"
     },
