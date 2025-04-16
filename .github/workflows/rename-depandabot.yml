@@ -1,0 +1,67 @@
+name: Dependabot Branch Rename Test
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'babakamyljanovssw' && github.repository == 'SSWConsulting/SSW.Website'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Rename Dependabot branch and create new PR
+        run: |
+          OLD_BRANCH=${{ github.event.pull_request.head.ref }}
+          # Remove 'bot' from branch name (e.g., dependabot/npm_and_yarn/lodash-4.17.21 -> dependabot/npm_and_yarn/lodash-4.17.21)
+          NEW_BRANCH=$(echo "$OLD_BRANCH" | sed 's/bot\///g')
+
+          # Check if the branch name has changed
+          if [ "$OLD_BRANCH" != "$NEW_BRANCH" ]; then
+            echo "Creating new branch $NEW_BRANCH from $OLD_BRANCH"
+            
+            # Create and push new branch
+            git checkout -b $NEW_BRANCH
+            git push origin $NEW_BRANCH
+            
+            # Get details from the original PR
+            ORIGINAL_PR_NUMBER=${{ github.event.pull_request.number }}
+            ORIGINAL_TITLE=$(gh pr view $ORIGINAL_PR_NUMBER --json title --jq '.title')
+            ORIGINAL_BODY=$(gh pr view $ORIGINAL_PR_NUMBER --json body --jq '.body')
+            ORIGINAL_BASE=${{ github.event.pull_request.base.ref }}
+            
+            # Create new PR from the new branch
+            NEW_PR_URL=$(gh pr create \
+              --title "$ORIGINAL_TITLE" \
+              --body "$ORIGINAL_BODY" \
+              --base "$ORIGINAL_BASE" \
+              --head "$NEW_BRANCH")
+            echo "Created new PR: $NEW_PR_URL"
+            
+            # Close the original PR
+            gh pr close $ORIGINAL_PR_NUMBER
+            echo "Closed original PR #$ORIGINAL_PR_NUMBER"
+            
+            # Delete the old branch
+            git push origin --delete $OLD_BRANCH
+            echo "Deleted old branch $OLD_BRANCH"
+          else
+            echo "No 'bot' subtext found in branch name, skipping rename"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
