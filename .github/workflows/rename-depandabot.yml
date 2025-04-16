@@ -2,6 +2,7 @@ name: Dependabot Branch Rename Test
 on:
   pull_request:
     types: [opened]
+
   workflow_dispatch:
     inputs:
       pr_number:
