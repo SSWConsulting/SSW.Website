@@ -176,4 +176,5 @@ if github_event == 'pull_request' and environment == 'pr-slot':
     prod_scores = get_scores_json();
     pr_markdown_summary = generate_lighthouse_md(TREEMAP_FOLDER)
     print(f"✅ PR slot Lighthouse report successfully generated")
+    write_report_to_file(pr_markdown_summary, PROD_OUTPUT_FILE_PATH)
     output_to_github_actions(pr_markdown_summary)
