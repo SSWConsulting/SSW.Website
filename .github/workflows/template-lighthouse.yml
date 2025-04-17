@@ -12,6 +12,9 @@ on:
       environment:
         type: string
         required: true
+    secrets:
+      GH_APP_TOKEN:
+        required: true
 
 defaults:
   run:

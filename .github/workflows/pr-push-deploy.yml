@@ -119,6 +119,7 @@ jobs:
     permissions:
       pull-requests: write
     needs: [pr-deploy, prodLighthouseInsights]
+    secrets: inherit
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
       environment: "pr-slot"
