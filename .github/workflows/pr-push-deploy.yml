@@ -102,23 +102,13 @@ jobs:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
       tests_to_run: "images seo-noindex"
 
-  # TODO: Remove this step after we have committed report file
-  # Issue: https://github.com/SSWConsulting/SSW.Website/issues/3785
-  prodLighthouseInsights:
-    name: Run Prod Lighthouse Insights
-    uses: ./.github/workflows/template-lighthouse.yml
-    permissions:
-      pull-requests: write
-    with:
-      url: https://app-sswwebsite-9eb3.azurewebsites.net
-      environment: "production"
-
   prLighthouseInsights:
     name: Run PR Lighthouse Insights
     uses: ./.github/workflows/template-lighthouse.yml
     permissions:
       pull-requests: write
-    needs: [pr-deploy, prodLighthouseInsights]
+    needs: [pr-deploy]
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
-      environment: "pr-slot"
+    secrets:
+      GH_APP_KEY: ${{ secrets.GH_APP_KEY }}
