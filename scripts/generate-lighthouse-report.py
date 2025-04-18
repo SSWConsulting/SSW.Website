@@ -84,6 +84,7 @@ def parse_prod_report():
             lines = file.read().strip().split('\n')
     except FileNotFoundError:
         print(f"❌ Error: production report file not found.")
+        return {}
     except Exception as e:
         print(f"❌ Error reading production report file: {e}")
         return{}
