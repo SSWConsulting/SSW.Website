@@ -1,0 +1,20 @@
+{
+  "title": "Choosing the Right Messaging Solution for Your Architecture",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterName": "Poornima Nayar",
+  "presenterProfileUrl": "https://poornimanayar.co.uk/",
+  "startDateTime": "2025-05-07T08:00:00.000Z",
+  "endDateTime": "2025-05-06T10:00:00.000Z",
+  "startShowBannerDateTime": "2025-05-06T14:00:00.000Z",
+  "endShowBannerDateTime": "2025-05-07T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Web Design",
+  "abstract": "Asynchronous messaging is becoming increasingly popular in the architecture of distributed systems. And why not, when you have the benefits of increased scalability, fault-tolerance, performance, and decoupling? From ordering your latest gadget to dealing with mission-critical, high-performance systems - messaging is gaining traction.\n\nA message queue is the most critical infrastructure in distributed systems that use messaging. There are plenty of choices, ranging from databases to cloud solutions. But how do you decide what is the best fit for your organization and your system?\n\nJoin me as I discuss some of the most popular queuing systems - benefits, trade-offs and gotchas, with code samples. By the end of this session, attendees will have a clear understanding of each system's strengths and weaknesses and will be equipped with the knowledge to make informed decisions on the best messaging solution for their specific application architecture.",
+  "description": "Join us fresh from NDC Melbourne with special speaker Poornima Nayar! ➡️ Choosing the Right Messaging Solution for Your Architecture\n\nAsynchronous messaging is becoming increasingly popular in the architecture of distributed systems. And why not, when you have the benefits of increased scalability, fault-tolerance, performance, and decoupling? From ordering your latest gadget to dealing with mission-critical, high-performance systems - messaging is gaining traction.\n\nA message queue is the most critical infrastructure in distributed systems that use messaging. There are plenty of choices, ranging from databases to cloud solutions. But how do you decide what is the best fit for your organization and your system?\n\nJoin me as I discuss some of the most popular queuing systems - benefits, trade-offs and gotchas, with code samples. By the end of this session, attendees will have a clear understanding of each system's strengths and weaknesses and will be equipped with the knowledge to make informed decisions on the best messaging solution for their specific application architecture.\n\nAgenda:\n6:00pm - Pizza and networking at SSW Sydney\n6:30pm - The Tech news with Eve and Adam Cogan, followed by\n⭐ Choosing the Right Messaging Solution for Your Architecture with Poornima Nayar\n\nCan't make it? Join us on the live stream! 🔴\n➡️ [https://www.ssw.com.au/live](https://www.ssw.com.au/live)\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
