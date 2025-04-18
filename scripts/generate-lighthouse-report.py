@@ -1,7 +1,6 @@
 import json
 import os
 import glob
-import requests # type: ignore
 from urllib.parse import urlparse
 
 # Define paths
@@ -11,7 +10,6 @@ PROD_OUTPUT_FILE_PATH = "prod-lighthouse-report.md"
 important_paths = {"/", "/consulting/net-upgrade", "/consulting/web-applications"}
 github_output = os.getenv('GITHUB_OUTPUT')
 github_event = os.getenv('GITHUB_EVENT_NAME')
-prod_lighthouse_report_url = os.getenv('PROD_LIGHTHOUSE_REPORT_URL')
 
 def format_url_for_filename(url):
     """Formats the URL to match the filename pattern by removing 'https://' and replacing slashes and dots."""

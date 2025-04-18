@@ -77,7 +77,7 @@ jobs:
           $report_content='${{ steps.lighthouse-results-generate.outputs.report }}'
           "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
-      - name: Craete token for GitHub App
+      - name: Create token for GitHub App
         uses: actions/create-github-app-token@v1
         if: github.event_name != 'pull_request'
         id: get-app-token
