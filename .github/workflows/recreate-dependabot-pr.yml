@@ -1,0 +1,107 @@
+name: Dependabot Branch Rename Test
+on:
+  pull_request:
+    types: [opened]
+
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "Pull Request number to process"
+        required: true
+        type: number
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: |
+      (github.event_name == 'pull_request' && github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'SSWConsulting/SSW.Website') ||
+      (github.event_name == 'workflow_dispatch')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.ref || '' }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set PR number and branch for workflow_dispatch
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          # Fetch PR details
+          PR_JSON=$(gh pr view ${{ inputs.pr_number }} --json headRefName,closed,user,repository)
+          PR_USER=$(echo "$PR_JSON" | jq -r '.user.login')
+          PR_CLOSED=$(echo "$PR_JSON" | jq -r '.closed')
+          PR_REPO=$(echo "$PR_JSON" | jq -r '.repository.nameWithOwner')
+          OLD_BRANCH=$(echo "$PR_JSON" | jq -r '.headRefName')
+
+          # Validate PR
+          if [ "$PR_USER" != "dependabot[bot]" ]; then
+            echo "Error: PR #${{ inputs.pr_number }} is not a Dependabot PR"
+            exit 1
+          fi
+          if [ "$PR_CLOSED" == "true" ]; then
+            echo "Error: PR #${{ inputs.pr_number }} is already closed"
+            exit 1
+          fi
+          if [ "$PR_REPO" != "${{ github.repository }}" ]; then
+            echo "Error: PR #${{ inputs.pr_number }} is not in this repository"
+            exit 1
+          fi
+
+          # Set OLD_BRANCH as output
+          echo "OLD_BRANCH=$OLD_BRANCH" >> $GITHUB_ENV
+          # Checkout the PR branch
+          git fetch origin $OLD_BRANCH
+          git checkout $OLD_BRANCH
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Rename Dependabot branch and create new PR
+        run: |
+          PR_NUMBER=${{ github.event_name == 'workflow_dispatch' && inputs.pr_number || github.event.pull_request.number }}
+          OLD_BRANCH=${{ env.OLD_BRANCH || github.event.pull_request.head.ref }}
+          NEW_BRANCH=$(echo "$OLD_BRANCH" | sed 's/bot\///g')
+
+          # Check if the branch name has changed
+          if [ "$OLD_BRANCH" != "$NEW_BRANCH" ]; then
+            echo "Creating new branch $NEW_BRANCH from $OLD_BRANCH"
+            
+            # Create and push new branch
+            git checkout -b $NEW_BRANCH
+            git push origin $NEW_BRANCH
+            
+            # Get details from the original PR
+            ORIGINAL_TITLE=$(gh pr view $PR_NUMBER --json title --jq '.title')
+            ORIGINAL_BODY=$(gh pr view $PR_NUMBER --json body --jq '.body')
+            ORIGINAL_BASE=$(gh pr view $PR_NUMBER --json baseRefName --jq '.baseRefName')
+            
+            # Create new PR from the new branch
+            NEW_PR_URL=$(gh pr create \
+              --title "$ORIGINAL_TITLE" \
+              --body "$ORIGINAL_BODY" \
+              --base "$ORIGINAL_BASE" \
+              --head "$NEW_BRANCH")
+            echo "Created new PR: $NEW_PR_URL"
+            
+            # Close the original PR
+            gh pr close $PR_NUMBER
+            echo "Closed original PR #$PR_NUMBER"
+            
+            # Delete the old branch
+            git push origin --delete $OLD_BRANCH
+            echo "Deleted old branch $OLD_BRANCH"
+          else
+            echo "No 'bot' subtext found in branch name, skipping rename"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
