@@ -78,7 +78,7 @@ jobs:
           "$report_content" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
 
       - name: Create token for GitHub App
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v2
         if: github.event_name != 'pull_request'
         id: get-app-token
         with:
