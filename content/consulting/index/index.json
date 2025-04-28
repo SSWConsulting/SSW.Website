@@ -128,7 +128,8 @@
           "title": "Web Applications + APIs",
           "description": "SSW has the resources to develop sites of any scope, from ongoing maintenance tasks to the implementation of large complex sites.",
           "logo": "/images/thumbs/thumb-web-mvc.jpg",
-          "page": "content/consulting/web-applications.mdx",
+          "page": "content/consultingv2/web-applications.json",
+          "externalUrl": "/consulting/web-applications",
           "tags": [
             {
               "tag": "content/consulting/tag/web-development.json"
