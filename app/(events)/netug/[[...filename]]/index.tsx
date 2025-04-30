@@ -34,12 +34,16 @@ export default function NETUGPage({ props, tinaProps }) {
     ? {
         name: props.event?.presenterName,
         url: props.event?.presenterProfileUrl,
-        image: speaker?.presenter?.torsoImg,
+        image: speaker?.presenter?.torsoImg
+          ? speaker?.presenter?.torsoImg
+          : speaker?.presenter?.profileImg,
       }
     : {
         name: speaker?.presenter?.presenter?.name,
         url: speaker?.presenter?.presenter?.peopleProfileURL,
-        image: speaker?.presenter?.torsoImg,
+        image: speaker?.presenter?.torsoImg
+          ? speaker?.presenter?.torsoImg
+          : speaker?.presenter?.profileImg,
       };
 
   // Converting element to string to render in presenter block
