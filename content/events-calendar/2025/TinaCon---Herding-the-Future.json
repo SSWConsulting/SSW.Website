@@ -5,6 +5,10 @@
   "thumbnailDescription": "TinaCon",
   "presenterList": [
     {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    },
+    {},
+    {
       "presenter": "content/presenters/isaac-lombard.mdx"
     },
     {
@@ -18,9 +22,6 @@
     },
     {
       "presenter": "content/presenters/adam-cogan.mdx"
-    },
-    {
-      "presenter": "content/presenters/michelle-duke.mdx"
     }
   ],
   "startDateTime": "2025-05-01T21:00:00.000Z",
