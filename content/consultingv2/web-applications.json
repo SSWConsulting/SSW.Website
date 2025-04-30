@@ -48,26 +48,27 @@
         "backgroundColour": 6
       },
       "heading": "Trusted by",
+      "paused": true,
       "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
-          "scale": 120,
+          "scale": 200,
           "altText": "Event Cinemas Logo"
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
-          "scale": 120,
+          "scale": 195,
           "altText": "Toll Logo"
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
-          "scale": 120,
+          "scale": 180,
           "altText": "Microsoft Logo"
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
-          "scale": 120,
+          "scale": 160,
           "altText": "Symantec Logo"
         },
         {
@@ -77,17 +78,17 @@
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
-          "scale": 140,
+          "scale": 170,
           "altText": "CBA Logo"
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
-          "scale": 120,
+          "scale": 175,
           "altText": "Cisco Logo"
         },
         {
           "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
-          "scale": 120,
+          "scale": 195,
           "altText": "Allianz Logo"
         }
       ],
