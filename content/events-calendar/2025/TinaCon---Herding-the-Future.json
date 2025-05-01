@@ -7,7 +7,6 @@
     {
       "presenter": "content/presenters/calum-simpson.mdx"
     },
-    {},
     {
       "presenter": "content/presenters/isaac-lombard.mdx"
     },
@@ -24,8 +23,8 @@
       "presenter": "content/presenters/adam-cogan.mdx"
     }
   ],
-  "startDateTime": "2025-05-01T08:00:00.000Z",
-  "endDateTime": "2025-05-02T19:00:00.000Z",
+  "startDateTime": "2025-05-01T22:00:00.000Z",
+  "endDateTime": "2025-05-02T09:00:00.000Z",
   "calendarType": "Conferences",
   "city": "Melbourne",
   "category": "Other",
