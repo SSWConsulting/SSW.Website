@@ -149,18 +149,18 @@
               "name": "AI",
               "menuItems": [
                 {
-                  "name": "EagleEye",
-                  "url": "https://www.ssweagleeye.com",
-                  "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
-                  "iconImg": "/images/megamenu-icons/EagleEye-Icon.svg"
-                },
-                {
                   "name": "YakShaver",
                   "url": "https://www.sswyakshaver.com",
                   "description": "An AI tool that records your screen and voice, then assigns tasks to the appropriate people based on the content",
                   "iconImg": "/images/megamenu-icons/YakShaver-v3.svg",
                   "documentationLink": "https://yakshaver.ai/docs",
                   "youtubeLink": "https://www.youtube.com/@SSWYakShaver"
+                {
+                  "name": "EagleEye",
+                  "url": "https://www.ssweagleeye.com",
+                  "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
+                  "iconImg": "/images/megamenu-icons/EagleEye-Icon.svg"
+                },
                 },
                 {
                   "name": "SophieBot",
