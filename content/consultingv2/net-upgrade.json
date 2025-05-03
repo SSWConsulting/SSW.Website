@@ -53,7 +53,8 @@
         "mobilePlacement": "Above",
         "imageHeight": 700,
         "imageWidth": 1400,
-        "youtubeUrl": "https://youtu.be/gQ9Dg5WuUtQ"
+        "youtubeUrl": "https://youtu.be/gQ9Dg5WuUtQ",
+        "altText": "Top 3 features in .NET 9"
       },
       "_template": "imageTextBlock"
     },
