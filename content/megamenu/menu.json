@@ -155,12 +155,12 @@
                   "iconImg": "/images/megamenu-icons/YakShaver-v3.svg",
                   "documentationLink": "https://yakshaver.ai/docs",
                   "youtubeLink": "https://www.youtube.com/@SSWYakShaver"
+                },
                 {
                   "name": "EagleEye",
                   "url": "https://www.ssweagleeye.com",
                   "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
                   "iconImg": "/images/megamenu-icons/EagleEye-Icon.svg"
-                },
                 },
                 {
                   "name": "SophieBot",
