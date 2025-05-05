@@ -49,7 +49,7 @@ jobs:
               peopleImagePath: `images/people`
             });
 
-      - uses: actions/create-github-app-token@v1
+      - uses: actions/create-github-app-token@v2
         id: get-app-token
         with:
           app-id: ${{ vars.GH_APP_ID }}
