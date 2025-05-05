@@ -1,0 +1,15 @@
+{
+  "title": "Content Management with TInaCMS: Giving Non-developers a Voice on the World Wide Web",
+  "url": "https://www.ssw.com.au/netug/sydney",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "startDateTime": "2025-05-05T14:00:00.000Z",
+  "endDateTime": "2025-05-06T02:00:00.000Z",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
