@@ -33,7 +33,7 @@
     "@tinacms/cli": "0.0.0-2088ad0-20250505233051",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.17.24",
-    "@types/react": "^19.0.0",
+    "@types/react": "^19.1.2",
     "@typescript-eslint/eslint-plugin": "^8.26.1",
     "@typescript-eslint/parser": "^8.26.0",
     "autoprefixer": "^10.4.20",
