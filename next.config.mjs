@@ -78,20 +78,11 @@ const config = {
     ];
   },
   serverExternalPackages: ["applicationinsights"],
+  turbopack: {
+    resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
+  },
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
-    turbo: {
-      moduleIdStrategy: "deterministic",
-      resolveExtensions: [
-        ".mdx",
-        ".tsx",
-        ".ts",
-        ".jsx",
-        ".js",
-        ".mjs",
-        ".json",
-      ],
-    },
     staticGenerationRetryCount: 2,
     staticGenerationMaxConcurrency: 20,
     staticGenerationMinPagesPerWorker: 30,
