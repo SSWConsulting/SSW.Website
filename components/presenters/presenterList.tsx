@@ -27,10 +27,12 @@ export const PresenterLinks: React.FC<PresenterLinksProps> = ({
             .slice(0, presenters.length - 1)
             .map((presenter, index) => {
               return (
-                <>
+                <React.Fragment
+                  key={`${presenter.presenter?.presenter?.name}-${index}`}
+                >
                   <Presenter presenter={presenter.presenter} />
                   {index < presenters.length - 2 && ", "}
-                </>
+                </React.Fragment>
               );
             })}{" "}
           &{" "}
@@ -56,10 +58,12 @@ export const PresenterList = ({ presenters }: PresenterListProps) => {
             .slice(0, presenters.length - 1)
             .map((presenter, index) => {
               return (
-                <>
-                  {presenter.presenter.presenter.name +
-                    (index < presenters.length - 2 ? ", " : "")}
-                </>
+                <React.Fragment
+                  key={`${presenter.presenter?.presenter?.name}-${index}`}
+                >
+                  <Presenter presenter={presenter.presenter} />
+                  {index < presenters.length - 2 && ", "}
+                </React.Fragment>
               );
             })}{" "}
           &{` ${presenters[presenters.length - 1].presenter.presenter.name}`}
