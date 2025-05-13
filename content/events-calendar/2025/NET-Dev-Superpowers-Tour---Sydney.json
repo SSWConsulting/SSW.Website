@@ -1,0 +1,16 @@
+{
+  "title": ".NET Dev Superpowers Tour - Sydney",
+  "url": "https://www.ssw.com.au/events/net-superpowers-tour",
+  "thumbnail": "/images/events/SuperPower-Icon-DotNet.jpg",
+  "thumbnailDescription": ".NET Dev Superpowers Tour - Sydney",
+  "startDateTime": "2025-07-10T23:00:00.000Z",
+  "endDateTime": "2025-07-11T07:00:00.000Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "category": ".NET Core",
+  "abstract": "SSW’s comprehensive .NET course covers everything from the latest .NET open-source cross-platform framework. Our modules include RESTful API creation with ASP.NET Core, data access with Entity Framework Core, web UI with Blazor and more. This course will set you up for success in modern enterprise development—available both in-person and online.",
+  "description": "SSW’s comprehensive .NET course covers everything from the latest .NET open-source cross-platform framework. Our modules include RESTful API creation with ASP.NET Core, data access with Entity Framework Core, web UI with Blazor and more. This course will set you up for success in modern enterprise development—available both in-person and online.\n\n## Agenda\n\nGetting Started with .NET 9\n\n* Learn how to get up and running quickly with .NET and the new language features of C# 12\n\nMinimal APIs with ASP.NET Core\n\nBuild functioning web APIs quickly without the boilerplate\n\n* Add authentication using the new ASP.NET Core Identity\n* Generate Client code to consume your API using Kiota\n\nWorking with Entity Framework Core\n\n* Enterprise data access with Entity Framework Core\n\nCommunication with Backend APIs in .NET\n\nLearn about the different API communication options available in .NET:\n\n* REST\n* Web API\n* Minimal APIs\n* gRPC\n* GraphQL\n* SignalR\n\nModern Web Dev with Blazor\n\n* Building an interactive UI that uses C# in the browser!\n\nCloud Native Development\n\nBuilding a production-ready distributed application that is resilient, observable, and hosted in the cloud\n\n* DAPR\n* .NET Aspire\n* Deploy to Azure using AZD\n\nSimplified Automated Testing\n\nLearn how to write automated tests\n\n* Unit testing with xUnit and NSubtitute\n* Integration Testing with TestContainers and Respawn\n\nMigrating to .NET 9\n\nHow to migrate your old .NET or .NET Framework apps to .NET 9\n\n* Upgrade Assistant in Visual Studio\n* Migration Patterns\n* YARP (Yet-Another-Reverse-Proxy)\n\nSource Generators\n\nHow to leverage source generators\n\n* Add code at compile time\n* Enhance your applications without losing performance\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
