@@ -3,6 +3,11 @@
   "url": "https://www.ssw.com.au/events/net-superpowers-tour",
   "thumbnail": "/images/events/SuperPower-Icon-DotNet.jpg",
   "thumbnailDescription": ".NET Dev Superpowers Tour - Melbourne",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/daniel-mackay.mdx"
+    }
+  ],
   "startDateTime": "2025-07-08T23:00:00.000Z",
   "endDateTime": "2025-07-09T07:00:00.000Z",
   "calendarType": "SSW Courses",
