@@ -5,6 +5,9 @@
   "thumbnailDescription": ".NET 9 Superpowers Tour - Brisbane",
   "presenterList": [
     {
+      "presenter": "content/presenters/gert-marx.mdx"
+    },
+    {
       "presenter": "content/presenters/daniel-mackay.mdx"
     }
   ],
