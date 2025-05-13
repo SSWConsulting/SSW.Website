@@ -5,6 +5,9 @@
   "thumbnailDescription": ".NET Dev Superpowers Tour - Sydney",
   "presenterList": [
     {
+      "presenter": "content/presenters/brady-stroud.mdx"
+    },
+    {
       "presenter": "content/presenters/daniel-mackay.mdx"
     }
   ],
