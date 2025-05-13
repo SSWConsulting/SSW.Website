@@ -30,7 +30,7 @@
     "@svgr/webpack": "^8.1.0",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.2.0",
-    "@tinacms/cli": "0.0.0-2088ad0-20250505233051",
+    "@tinacms/cli": "1.9.7",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^20.17.24",
     "@types/react": "^19.1.2",
@@ -108,7 +108,7 @@
     "stale-while-revalidate-cache": "^3.4.0",
     "tailwind-merge": "^3.2.0",
     "tailwindcss": "^3.4.17",
-    "tinacms": "0.0.0-2088ad0-20250505233051",
+    "tinacms": "2.7.7",
     "usehooks-ts": "^3.1.1",
     "xss": "^1.0.15",
     "yup": "^1.6.1"
