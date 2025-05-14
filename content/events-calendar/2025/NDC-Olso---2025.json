@@ -1,0 +1,16 @@
+{
+  "title": "NDC Olso - 2025",
+  "url": "https://ndcoslo.com/",
+  "thumbnail": "/images/events/NDC%20Conferences.png",
+  "thumbnailDescription": "NDC Oslo",
+  "startDateTime": "2025-05-18T22:00:00.000Z",
+  "endDateTime": "2025-05-23T06:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Other",
+  "cityOther": "Oslo",
+  "category": "Other",
+  "abstract": "The first NDC conference was held at the Radisson Scandinavia hotel in Oslo back in 2008. The conference had more than 800 attendees and included 1 day of Agile and 1 day of .NET. Since then the conference has come a long way. There are now NDC conferences in locations around the world, including Oslo, London, Sydney, Porto, and Copenhagen.\n\nNDC will cover all topics interesting to developers. You can see most of our previous talks on our YouTube channel → https://www.youtube.com/ndcconferences \n\nNDC Oslo 2025:\n\nNDC Oslo consists of 2 workshop days followed by 3 days of conference sessions in Oslo Spektrum. NDC will be an in-person event with multiple tracks, an expo and after-parties. We expect more than 2700 people to attend.",
+  "description": "The first NDC conference was held at the Radisson Scandinavia hotel in Oslo back in 2008. The conference had more than 800 attendees and included 1 day of Agile and 1 day of .NET. Since then the conference has come a long way. There are now NDC conferences in locations around the world, including Oslo, London, Sydney, Porto, and Copenhagen.\n\nNDC will cover all topics interesting to developers. You can see most of our previous talks on our YouTube channel [→ NDC Conferences](https://www.youtube.com/ndcconferences)\n\n**NDC Oslo 2025:**\n\nNDC Oslo consists of 2 workshop days followed by 3 days of conference sessions in Oslo Spektrum. NDC will be an in-person event with multiple tracks, an expo and after-parties. We expect more than 2700 people to attend.\n\nSee the Agenda: [https://ndcoslo.com/agenda](https://ndcoslo.com/agenda)\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
