@@ -23,7 +23,9 @@ export const PresenterList: React.FC<PresenterListProps> = ({ presenters }) => {
       {unwrappedPresenters.map((presenter, index) => (
         <React.Fragment key={`${presenter.name}-${index}`}>
           <Presenter {...presenter} />
-          {index < unwrappedPresenters.length - 1 && ", "}
+          {index < unwrappedPresenters.length - 1 && (
+            <span className="min-w-1.5">, </span>
+          )}
         </React.Fragment>
       ))}
     </>
