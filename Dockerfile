@@ -86,7 +86,7 @@ ENV NEXT_PUBLIC_SLOT_URL=$NEXT_PUBLIC_SLOT_URL
 
 
 
-RUN \
+RUN --mount=type=cache,target=.next \
   if [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
   elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run build; \
