@@ -23,7 +23,7 @@ import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { UtilityButton } from "../button/utilityButton";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
-import { Presenter, PresenterLinks } from "../presenters/presenterList";
+import { Presenter, PresenterList } from "../presenters/presenterList";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
@@ -372,7 +372,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                       linkValue={event.presenterProfileUrl}
                     />
                   ) : (
-                    <PresenterLinks presenters={event.presenterList} />
+                    <PresenterList presenters={event.presenterList} />
                   )}
                 </EventDescItem>
               )}
