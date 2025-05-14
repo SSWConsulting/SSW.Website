@@ -85,7 +85,7 @@ ARG NEXT_PUBLIC_SLOT_URL
 ENV NEXT_PUBLIC_SLOT_URL=$NEXT_PUBLIC_SLOT_URL
 
 
-
+# try to cache .next in between builds to improve build performance 
 RUN --mount=type=cache,target=.next \
   if [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
