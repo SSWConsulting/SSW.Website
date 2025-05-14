@@ -1,5 +1,12 @@
 "use client";
-import { Tab, Transition } from "@headlessui/react";
+import {
+  Tab,
+  TabGroup,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Transition,
+} from "@headlessui/react";
 import Image from "next/image";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
@@ -16,7 +23,7 @@ import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { UtilityButton } from "../button/utilityButton";
 import { CustomLink } from "../customLink";
 import { EventsRelativeBox } from "../events/eventsRelativeBox";
-import { Presenter, PresenterLinks } from "../presenters/presenterList";
+import { Presenter, PresenterList } from "../presenters/presenterList";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
 import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
@@ -104,16 +111,16 @@ export const EventsFilter = ({
       }
       groups={!pastSelected ? futureFilters : pastFilters}
     >
-      <Tab.Group
+      <TabGroup
         onChange={(index) => setPastSelected(index === 1)}
         selectedIndex={pastSelected ? 1 : 0}
       >
-        <Tab.List className="mb-8 flex flex-row">
+        <TabList className="mb-8 flex flex-row">
           <EventTab>Upcoming Events</EventTab>
           <EventTab>Past Events</EventTab>
-        </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
             <EventsList
               events={futureEvents}
               isUpcoming
@@ -127,8 +134,8 @@ export const EventsFilter = ({
                 isLoading={isFetchingFuturePages}
               />
             )}
-          </Tab.Panel>
-          <Tab.Panel>
+          </TabPanel>
+          <TabPanel>
             <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
             {hasMorePastPages && (
               <LoadMore
@@ -138,9 +145,9 @@ export const EventsFilter = ({
                 isLoading={isFetchingPastPages}
               />
             )}
-          </Tab.Panel>
-        </Tab.Panels>
-      </Tab.Group>
+          </TabPanel>
+        </TabPanels>
+      </TabGroup>
     </FilterBlock>
   );
 };
@@ -365,7 +372,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                       linkValue={event.presenterProfileUrl}
                     />
                   ) : (
-                    <PresenterLinks presenters={event.presenterList} />
+                    <PresenterList presenters={event.presenterList} />
                   )}
                 </EventDescItem>
               )}

@@ -2,88 +2,48 @@ import React from "react";
 import { CustomLink } from "../customLink";
 
 export type Presenter = {
-  presenter?: {
-    name?: string;
-    peopleProfileURL?: string;
-  };
-};
-
-type PresenterLinksProps = {
-  presenters: { presenter?: Presenter }[];
-};
-
-export const PresenterLinks: React.FC<PresenterLinksProps> = ({
-  presenters,
-}) => {
-  return (
-    <>
-      {presenters.length === 1 ? (
-        <>
-          <Presenter presenter={presenters[0].presenter} />
-        </>
-      ) : (
-        <>
-          {presenters
-            .slice(0, presenters.length - 1)
-            .map((presenter, index) => {
-              return (
-                <>
-                  <Presenter presenter={presenter.presenter} />
-                  {index < presenters.length - 2 && ", "}
-                </>
-              );
-            })}{" "}
-          &{" "}
-          <Presenter presenter={presenters[presenters.length - 1].presenter} />
-        </>
-      )}
-    </>
-  );
+  presenter?: PresenterProps;
 };
 
 type PresenterListProps = {
   presenters: { presenter?: Presenter }[];
 };
 
-export const PresenterList = ({ presenters }: PresenterListProps) => {
+export const PresenterList: React.FC<PresenterListProps> = ({ presenters }) => {
+  const unwrappedPresenters = presenters
+    .map((p) => p.presenter?.presenter)
+    .filter((p) => p.name);
+
+  if (unwrappedPresenters.length === 0) {
+    return null;
+  }
+
   return (
     <>
-      {presenters.length === 1 ? (
-        <>{presenters[0].presenter.presenter.name}</>
-      ) : (
-        <>
-          {presenters
-            .slice(0, presenters.length - 1)
-            .map((presenter, index) => {
-              return (
-                <>
-                  {presenter.presenter.presenter.name +
-                    (index < presenters.length - 2 ? ", " : "")}
-                </>
-              );
-            })}{" "}
-          &{` ${presenters[presenters.length - 1].presenter.presenter.name}`}
-        </>
-      )}
+      {unwrappedPresenters.map((presenter, index) => (
+        <React.Fragment key={`${presenter.name}-${index}`}>
+          <Presenter {...presenter} />
+          {index < unwrappedPresenters.length - 1 && ", "}
+        </React.Fragment>
+      ))}
     </>
   );
 };
 
 type PresenterProps = {
-  presenter: Presenter;
+  name?: string;
+  peopleProfileURL?: string;
 };
-const Presenter: React.FC<PresenterProps> = ({ presenter }) => {
-  if (!presenter?.presenter?.name) {
+const Presenter: React.FC<PresenterProps> = ({ name, peopleProfileURL }) => {
+  if (!name) {
     throw PresenterNameUndefinedException;
   }
   return (
     <>
-      {presenter.presenter.peopleProfileURL ? (
-        <CustomLink href={presenter.presenter.peopleProfileURL}>
-          {presenter.presenter.name}
-        </CustomLink>
+      {peopleProfileURL ? (
+        <CustomLink href={peopleProfileURL}>{name}</CustomLink>
       ) : (
-        presenter.presenter.name
+        name
       )}
     </>
   );

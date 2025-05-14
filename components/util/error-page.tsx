@@ -2,7 +2,11 @@ import classNames from "classnames";
 import { CustomLink } from "../customLink";
 import { Container } from "./container";
 
-import { Disclosure } from "@headlessui/react";
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
 import React from "react";
 import { BiChevronRight } from "react-icons/bi";
 import { FaXmark } from "react-icons/fa6";
@@ -119,19 +123,19 @@ export const ErrorText = (props: ErrorTextProps) => {
         <div className="min-h-40">
           <Disclosure>
             {({ open }) => (
-              <>
-                <Disclosure.Button className={"mt-5"}>
+              <div>
+                <DisclosureButton className={"mt-5"}>
                   <div className="flex flex-row items-center font-extralight text-gray-650">
                     See details{" "}
                     <BiChevronRight className={open ? "rotate-90" : ""} />
                   </div>
-                </Disclosure.Button>
-                <Disclosure.Panel className={"overflow-x-auto"}>
+                </DisclosureButton>
+                <DisclosurePanel className={"overflow-x-auto"}>
                   <pre>
                     <code>{props.details}</code>
                   </pre>
-                </Disclosure.Panel>
-              </>
+                </DisclosurePanel>
+              </div>
             )}
           </Disclosure>
         </div>
