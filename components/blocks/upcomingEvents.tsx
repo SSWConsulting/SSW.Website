@@ -86,13 +86,13 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
   const { relativeDate, formattedDate } = useFormatDates(event, false);
 
   return (
-    <CustomLink
-      href={event.url}
-      className="unstyled no-underline"
-      key={event.id}
-    >
-      <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
-        <div className="col-span-3 justify-center px-3">
+    <article className="my-2.5 grid grid-cols-4 rounded border-1 border-gray-300 bg-white p-2 shadow hover:border-ssw-black dark:border-gray-700 dark:bg-gray-800">
+      <div className="col-span-3 justify-center px-3">
+        <CustomLink
+          href={event.url}
+          className="unstyled block no-underline"
+          key={event.id}
+        >
           <h2 className="m-0 py-1 text-sm font-bold text-black">
             {event.title}
           </h2>
@@ -101,23 +101,30 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
             formattedDate={formattedDate}
             dateFontSize="text-xs"
           />
-          {!!(event.presenterName || event?.presenterList?.length > 0) && (
-            <span className="mt-1 inline-flex items-center text-xs text-black">
-              {event.presenterName ? (
-                <>{event.presenterName}</>
-              ) : (
-                <PresenterList presenters={event.presenterList} />
-              )}
-            </span>
-          )}
-        </div>
+        </CustomLink>
+        {!!(event.presenterName || event?.presenterList?.length > 0) && (
+          <span className="mt-1 inline-flex items-center text-xs text-black">
+            {event.presenterName ? (
+              <>{event.presenterName}</>
+            ) : (
+              <PresenterList presenters={event.presenterList} />
+            )}
+          </span>
+        )}
+      </div>
+      <CustomLink
+        href={event.url}
+        className="unstyled block no-underline"
+        aria-label={event.title}
+        tabIndex={-1}
+      >
         <EventImageClient
           thumbnail={event.thumbnail}
           title={event.title}
           thumbnailDescription={event.thumbnailDescription}
         />
-      </article>
-    </CustomLink>
+      </CustomLink>
+    </article>
   );
 };
 
