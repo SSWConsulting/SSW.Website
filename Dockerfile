@@ -84,6 +84,8 @@ ENV TINA_SEARCH_TOKEN=$TINA_SEARCH_TOKEN
 ARG NEXT_PUBLIC_SLOT_URL
 ENV NEXT_PUBLIC_SLOT_URL=$NEXT_PUBLIC_SLOT_URL
 
+# ensure .next directory exists, if not create it
+RUN mkdir -p .next
 
 # try to cache .next in between builds to improve build performance 
 RUN --mount=type=cache,target=.next \
