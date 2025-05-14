@@ -116,7 +116,6 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
         href={event.url}
         className="unstyled block no-underline"
         aria-label={event.title}
-        tabIndex={-1}
       >
         <EventImageClient
           thumbnail={event.thumbnail}
