@@ -6,7 +6,21 @@
     "typescript",
     "typescriptreact"
   ],
+  // Ensure Prettier is used instead of Biome
   "editor.formatOnSave": true,
+  "biome.enable": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // Runs Prettier, then ESLint
   "editor.codeActionsOnSave": ["source.fixAll.eslint", "source.sortImports"],
   "editor.formatOnPaste": false,
