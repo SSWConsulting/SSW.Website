@@ -56,7 +56,7 @@ _body:
             </>}
             icon=""
             afterBody={<>
-              * Learn how to get up and running quickly with .NET and the new language features of C# 12
+              * Learn how to get up and running quickly with .NET and the new language features of C# 13
             </>}
           />
       - placeholder: Stage 2
@@ -96,12 +96,10 @@ _body:
             afterBody={<>
               Learn about the different API communication options available in .NET:
               
-              * REST
-              * Web API
-              * Minimal APIs
               * gRPC
               * GraphQL
               * SignalR
+              * MCP Servers
             </>}
             icon=""
           />
@@ -127,7 +125,6 @@ _body:
             afterBody={<>
               Building a production-ready distributed application that is resilient, observable, and hosted in the cloud
               
-              * DAPR
               * .NET Aspire
               * Deploy to Azure using AZD
             </>}
@@ -136,7 +133,22 @@ _body:
       - placeholder: Stage 7
         body: |
           <VerticalListItem
+            content={<>
+              AI with .NET
+            </>}
+            afterBody={<>
+              Simplest and easiest to get running. \
+              An evolution of Semantic Kernel.
+              
+              * Use ollama local models
+              * Chat clients
+              * Image processing
+            </>}
             index={7}
+          />
+      - placeholder: Stage 8
+        body: |
+          <VerticalListItem
             content={<>
               Simplified Automated Testing
             </>}
@@ -147,11 +159,12 @@ _body:
               * Integration Testing with TestContainers and Respawn
             </>}
             icon=""
+            index={8}
           />
       - placeholder: Stage 8
         body: |
           <VerticalListItem
-            index={8}
+            index={9}
             content={<>
               Migrating to .NET 9
             </>}
@@ -164,25 +177,10 @@ _body:
             </>}
             icon=""
           />
-      - placeholder: Stage 9
-        body: |
-          <VerticalListItem
-            index={9}
-            content={<>
-              Source Generators
-            </>}
-            afterBody={<>
-              How to leverage source generators
-              
-              * Add code at compile time
-              * Enhance your applications without losing performance
-            </>}
-          />
     _template: Agenda
   - header: Presenters
     presenterList:
       - presenter: content/presenters/daniel-mackay.mdx
-      - presenter: content/presenters/matt-parker.mdx
     _template: PresenterBlock
   - title: ''
     content: >

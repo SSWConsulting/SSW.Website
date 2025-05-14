@@ -1,0 +1,24 @@
+{
+  "title": ".NET 9 Superpowers Tour - Sydney",
+  "url": "https://www.ssw.com.au/events/net-superpowers-tour",
+  "thumbnail": "/images/events/SuperPower-Icon-DotNet.jpg",
+  "thumbnailDescription": ".NET Dev Superpowers Tour - Sydney",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/brady-stroud.mdx"
+    },
+    {
+      "presenter": "content/presenters/daniel-mackay.mdx"
+    }
+  ],
+  "startDateTime": "2025-07-10T23:00:00.000Z",
+  "endDateTime": "2025-07-11T07:00:00.000Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "category": ".NET Core",
+  "abstract": "SSW’s comprehensive .NET course covers everything from the latest .NET open-source cross-platform framework. Our modules include RESTful API creation with ASP.NET Core, data access with Entity Framework Core, web UI with Blazor and more. This course will set you up for success in modern enterprise development—available both in-person and online.",
+  "description": "SSW’s comprehensive .NET course covers everything from the latest .NET open-source cross-platform framework. Our modules include RESTful API creation with ASP.NET Core, data access with Entity Framework Core, web UI with Blazor, and more. This course will set you up for success in modern enterprise development—available both in-person and online.\n\nSee the updated Agenda, including new sections on AI! \n\n[https://www.ssw.com.au/events/net-superpowers-tour](https://www.ssw.com.au/events/net-superpowers-tour)\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
