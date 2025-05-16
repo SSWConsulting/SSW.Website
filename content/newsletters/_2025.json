@@ -2,6 +2,11 @@
   "newsletters_year": "2025",
   "newsletters": [
     {
+      "month": 3,
+      "file": "/images/newsletter-uploads/2025/_2025_03__Why%20Rules%20are%20Cool%20-%20The%20Secret%20to%20Smarter%20Teams__.html",
+      "description": "Why Rules are Cool"
+    },
+    {
       "month": 2,
       "file": "/images/newsletter-uploads/2025/_2025_02__Cursor%2520Have%2520I%2520Found%2520My%2520New%2520Coding%2520Wingman__.html",
       "description": "Cursor: Have I Found My New Coding Wingman"
