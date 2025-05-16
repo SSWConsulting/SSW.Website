@@ -2,6 +2,11 @@
   "newsletters_year": "2025",
   "newsletters": [
     {
+      "month": 5,
+      "file": "/images/newsletter-uploads/2025/_2025_05__YakShaver%20%E2%80%93%20using%20AI%20to%20create%20the%20perfect%20task,%20PBI%20or%20work%20item%20in%2030%20seconds_.html",
+      "description": "YakShaver.ai – using AI to create the perfect task, PBI or work item in 30 seconds"
+    },
+    {
       "month": 4,
       "file": "/images/newsletter-uploads/2025/_2025_04__From%20Google%20to%20AI%20Your%20strategy%20with%20SEO%20has%20shifted_.html",
       "description": "From Google to AI: Your strategy with SEO has shifted"
