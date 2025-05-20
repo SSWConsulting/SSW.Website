@@ -291,6 +291,42 @@
       "cardStyle": 1,
       "cards": [
         {
+          "guid": "arf4s",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
+          "altText": "AI",
+          "chips": [
+            {
+              "chipText": "AI Use",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "6 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "If you think AI is cheating, you're doing it wrong!",
+          "description": "AI is the tool of this generation, but are we using it responsibly? Ulysses Maclaren dives into the best practices for AI use - covering transparency, critical thinking, data privacy, and how to leverage AI to boost productivity. Learn why using AI intelligently is the key to staying ahead in your career.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
           "guid": "ui7a6e",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
