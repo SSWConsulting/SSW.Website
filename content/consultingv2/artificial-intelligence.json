@@ -292,6 +292,7 @@
       "cards": [
         {
           "guid": "arf4s",
+          "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
           "altText": "AI",
           "chips": [
