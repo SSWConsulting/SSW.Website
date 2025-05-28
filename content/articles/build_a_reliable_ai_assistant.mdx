@@ -7,11 +7,14 @@ seo:
 title: Building a Reliable AI Payroll Assistant
 subTitle: >
   AI **hallucinations** happen when a model confidently supplies information
-  that isn’t real—misquoting regulations, inventing statistics, or citing
+  that isn’t real, misquoting regulations, inventing statistics, or citing
   studies that never existed. In low-stakes chat apps it’s an annoyance; in
-  finance, healthcare, legal, or compliance it’s existential risk. This guide
-  shows how to ship an assistant that crushes hallucinations with layered
-  safeguards, measurable benchmarks, and airtight DevSecOps.
+  finance, healthcare, legal, or compliance it’s existential risk.
+
+
+  In this guide, we will show you how to ship an assistant that handles
+  hallucinations with layered safeguards, measurable benchmarks, and airtight
+  DevSecOps.
 
 
   ***
@@ -49,8 +52,8 @@ subTitle: >
   | ---------------------------------- |
 
   | **Retrieval-Augmented Generation (RAG)** | Pulls fresh text from trusted
-  sources—regulatory sites, peer-reviewed papers, internal SOPs—*before*
-  composing an answer.                | ✅ Grounds replies in evidence      |
+  sources like regulatory sites, peer-reviewed papers, internal SOPs *before*
+  composing an answer.           | ✅ Grounds replies in evidence      |
 
   | **Guardrail Filter**                     | Post-processes every answer:
   blocks missing citations, scope creep (e.g., medical or legal advice), and
@@ -62,7 +65,7 @@ subTitle: >
   | ✅ Sharper queries; cleaner answers |
 
 
-  > **Rule of thumb:** Use all three—one patch isn’t enough.
+  > **Rule of thumb:** Use all three, one patch isn’t enough.
 
 
   ***
@@ -92,31 +95,37 @@ subTitle: >
   ### Components
 
 
-  | Block              | Key Choices /
-  Call-outs                                                                                                                                                                 
+  | Block              | Key
+  Choices                                                                                                                                                                                                                                                                                                                                                                 
   |
 
   | ------------------ |
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   |
 
   | **Vector Store**   | FAISS (speed, self-host), **Azure Cognitive Search**
   (managed, ACLs), **Pinecone** (serverless, multi-region). Use a domain-tuned
-  sentence-transformer or OpenAI text-embedding-3-small. |
+  sentence-transformer or OpenAI's text-embedding-3-small / Google's
+  gemini-embedding-001. For the latest text-embedding performance benchmarks,
+  head to [Hugging Face’s MTEB
+  leaderboards.](https://huggingface.co/spaces/mteb/leaderboard) |
 
-  | **Foundation LLM** | OpenAI `gpt-4o-mini`, or OSS (e.g., Llama 3-70B) with
-  GPU scaling. Record the *model hash* in every
-  log.                                                                                
+  | **Foundation LLM** | For the latest AI models, head to
+  [LiveBench](https://livebench.ai/#/). Record the *model hash* in every
+  log.                                                                                                                                                                                                                                                               
   |
 
-  | **Guardrails**     | OpenAI Function-calling w/ JSON schema, **Microsoft
+  | **Guardrails**     | OpenAI [built-in guardrail
+  tools](https://openai.com/index/new-tools-for-building-agents/), **Microsoft
   AutoGen** filters, or Regex-based
-  middleware.                                                                                       
+  middleware.                                                                                                                                                                                                                       
   |
 
   | **Audit Log**      | Append-only (Cosmos DB, DynamoDB, or Postgres WAL).
   Store prompt, retrieval doc IDs, model version, and guardrail decisions for
-  each answer.                                             |
+  each
+  answer.                                                                                                                                                                                                                                
+  |
 
 
   ***
@@ -145,7 +154,7 @@ subTitle: >
 
 
   config = AssistantConfig(
-      model="gpt-4o-mini",
+      model="gpt-4.1-mini",
       tools=[retriever],
       system_prompt=(
           "You are a compliance assistant. "
@@ -226,7 +235,7 @@ subTitle: >
   doubles prompt size with marginal gain.       |
 
   | **Hybrid Cache**          | SHA-256 of sanitized question → Redis. Cuts
-  repeat latency from 2 s → ">"200 ms.        |
+  repeat latency from 2 s → 200 ms.           |
 
   | **GPU vs. CPU Retrieval** | FAISS on CPU is fine 1 M docs; shard to GPUs for
   less than 1 M or more than 100 ms SLO. |
