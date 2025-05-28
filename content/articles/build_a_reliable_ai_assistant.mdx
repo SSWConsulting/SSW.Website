@@ -45,24 +45,30 @@ subTitle: >
 
   | Layer                                    | What It
   Does                                                                                                                            
-  | Win / Loss                         |
+  | Win /
+  Loss                                                                      |
 
   | ---------------------------------------- |
   ----------------------------------------------------------------------------------------------------------------------------------------
-  | ---------------------------------- |
+  |
+  -------------------------------------------------------------------------------
+  |
 
   | **Retrieval-Augmented Generation (RAG)** | Pulls fresh text from trusted
   sources like regulatory sites, peer-reviewed papers, internal SOPs *before*
-  composing an answer.           | ✅ Grounds replies in evidence      |
+  composing an answer.           | ✅ Grounds replies in evidence. ❌ Fails if
+  retrieval fetches the wrong document. |
 
   | **Guardrail Filter**                     | Post-processes every answer:
   blocks missing citations, scope creep (e.g., medical or legal advice), and
-  hand-wavy *always/never* claims. | ✅ Cuts risky output                |
+  hand-wavy *always/never* claims. | ✅ Cuts risky output. ❌ Over-filters if
+  rules are sloppy.                        |
 
   | **Question Sanitizer**                   | Rewrites the user prompt to
   remove ambiguity and hidden
   assumptions.                                                                    
-  | ✅ Sharper queries; cleaner answers |
+  | ✅ Sharper queries; cleaner answers. ❌ Needs solid NLU to keep the chat
+  natural. |
 
 
   > **Rule of thumb:** Use all three, one patch isn’t enough.
@@ -223,25 +229,22 @@ subTitle: >
   ## 5  Latency & Cost Notes
 
 
-  | Strategy                  |
-  Impact                                                                                 
+  | Strategy             |
+  Impact                                                                           
   |
 
-  | ------------------------- |
-  ---------------------------------------------------------------------------------------
+  | -------------------- |
+  ---------------------------------------------------------------------------------
   |
 
-  | **Top-K = 5**             | Balances recall vs. tokens. Jumping to 10
-  doubles prompt size with marginal gain.       |
+  | **Top-K = 5**        | Balances recall vs. tokens. Jumping to 10 doubles
+  prompt size with marginal gain. |
 
-  | **Hybrid Cache**          | SHA-256 of sanitized question → Redis. Cuts
-  repeat latency from 2 s → 200 ms.           |
+  | **Hybrid Cache**     | SHA-256 of sanitized question → Redis. Cuts repeat
+  latency from 2 s → 200 ms.     |
 
-  | **GPU vs. CPU Retrieval** | FAISS on CPU is fine 1 M docs; shard to GPUs for
-  less than 1 M or more than 100 ms SLO. |
-
-  | **Streaming Tokens**      | Send partial answer ASAP; user perceives speed
-  even if backend is 2 s.                  |
+  | **Streaming Tokens** | Send partial answer ASAP; user perceives speed even
+  if backend is 2 s.            |
 
 
   ***
