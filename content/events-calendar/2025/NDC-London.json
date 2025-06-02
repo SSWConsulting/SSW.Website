@@ -1,0 +1,17 @@
+{
+  "title": "NDC London",
+  "url": "https://ndclondon.com/",
+  "thumbnail": "/images/events/NDC%20Conferences.png",
+  "thumbnailDescription": "NDC London",
+  "presenterProfileUrl": "https://ndclondon.com/",
+  "startDateTime": "2026-01-25T22:00:00.000Z",
+  "endDateTime": "2026-01-30T06:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Other",
+  "cityOther": "London",
+  "category": "Other",
+  "abstract": "Since its start-up in Oslo 2008, the Norwegian Developers Conference (NDC) quickly became one of Europe`s largest conferences for .NET & Agile development. Today NDC Conferences are 5-day events with 2 days of pre-conference workshops and 3 days of conference sessions.",
+  "description": "Since its start-up in Oslo 2008, the Norwegian Developers Conference (NDC) quickly became one of Europe\\`s largest conferences for .NET & Agile development. Today NDC Conferences are 5-day events with 2 days of pre-conference workshops and 3 days of conference sessions.\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}

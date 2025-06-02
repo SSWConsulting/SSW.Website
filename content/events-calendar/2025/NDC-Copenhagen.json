@@ -1,0 +1,16 @@
+{
+  "title": "NDC Copenhagen",
+  "url": "https://ndccopenhagen.com/",
+  "thumbnail": "/images/events/NDC%20Conferences.png",
+  "thumbnailDescription": "NDC Copenhagen",
+  "startDateTime": "2025-09-07T22:00:00.000Z",
+  "endDateTime": "2025-09-11T14:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Other",
+  "cityOther": "Copenhagen",
+  "category": "Artificial Intelligence",
+  "abstract": "The NDC Copenhagen Developers Festival will be back in 2025 with more than 90 talented speakers and artists coming from all around the world! Don't miss out on, secure your tickets now!",
+  "description": "The NDC Copenhagen Developers Festival will be back in 2025 with more than 90 talented speakers and artists coming from all around the world! Don't miss out on, secure your tickets now!\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
