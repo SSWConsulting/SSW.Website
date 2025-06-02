@@ -1,0 +1,17 @@
+{
+  "title": "NDC Security",
+  "url": "https://ndcsecurity.co.uk/",
+  "thumbnail": "/images/events/NDC%20Conferences.png",
+  "thumbnailDescription": "NDC Security",
+  "presenterProfileUrl": "https://ndcsecurity.co.uk/",
+  "startDateTime": "2025-11-30T22:00:00.000Z",
+  "endDateTime": "2025-12-04T06:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Other",
+  "cityOther": "Manchester",
+  "category": "Other",
+  "abstract": "Speakers and workshops on security - More to come...",
+  "description": "Speakers and workshops on development security - More to come...\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
