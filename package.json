@@ -46,7 +46,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "next-sitemap": "^4.2.3",
     "playwright": "^1.52.0",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.4",
     "postcss-import": "^16.1.0",
     "postcss-nesting": "^13.0.1",
     "prettier": "^3.5.3",
