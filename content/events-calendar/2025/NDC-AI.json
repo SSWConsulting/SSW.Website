@@ -1,0 +1,17 @@
+{
+  "title": "NDC AI",
+  "url": "https://ndc-ai.com/",
+  "thumbnail": "/images/events/NDC%20Conferences.png",
+  "thumbnailDescription": "NDC AI",
+  "presenterProfileUrl": "https://ndc-ai.com/",
+  "startDateTime": "2025-11-10T22:00:00.000Z",
+  "endDateTime": "2025-11-13T06:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Other",
+  "cityOther": "Rebel, Oslo, Norway",
+  "category": "Artificial Intelligence",
+  "abstract": "NDC AI is a three-day event with two days of hands-on workshops and one conference day. This event is for software developers who want to use AI to create better applications. Attend this event to stay relevant and be ready for the future with AI.\n\n11-12 November - 2-day hands-on Workshops\n13 November - Conference with multiple tracks",
+  "description": "NDC AI is a three-day event with two days of hands-on workshops and one conference day. This event is for software developers who want to use AI to create better applications. Attend this event to stay relevant and be ready for the future with AI.\n\n11-12 November - 2-day hands-on Workshops\n13 November - Conference with multiple tracks\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
