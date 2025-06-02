@@ -1,0 +1,17 @@
+{
+  "title": "NDC Tech Town",
+  "url": "https://ndctechtown.com/",
+  "thumbnail": "/images/events/NDC%20Conferences.png",
+  "thumbnailDescription": "NDC TechTown - Magazinet Kongsberg, Norway",
+  "presenterProfileUrl": "https://ndctechtown.com/",
+  "startDateTime": "2025-09-21T22:00:00.000Z",
+  "endDateTime": "2025-09-24T14:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Other",
+  "cityOther": "Kongsberg, Norway",
+  "category": "Artificial Intelligence",
+  "abstract": "NDC TechTown is an annual conference focusing on C, C++ and Embedded development. If you have an idea for a talk or a workshop then please submit a proposal!\n\nNDC TechTown 2025 is in Kongsberg, Norway from 22-25 Sept.22-23 September will consist of hands-on workshops. 24-25 September will be a two-day, multi-track conference relevant for engineers and technical managers working with software for devices and appliances for industrial, automotive, medical, defence, consumer, and commercial use.",
+  "description": "NDC TechTown is an annual conference focusing on C, C++ and Embedded development. If you have an idea for a talk or a workshop then please submit a proposal!\n\nNDC TechTown 2025 is in Kongsberg, Norway from 22-25 Sept.22-23 September will consist of hands-on workshops. 24-25 September will be a two-day, multi-track conference relevant for engineers and technical managers working with software for devices and appliances for industrial, automotive, medical, defence, consumer, and commercial use.\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
