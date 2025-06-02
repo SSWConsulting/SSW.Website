@@ -4,7 +4,9 @@
   "thumbnail": "/images/events/NDC%20Conferences.png",
   "thumbnailDescription": "NDC Lisbon",
   "presenterList": [
-    {}
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
   ],
   "presenterName": "Adam Cogan",
   "startDateTime": "2025-10-12T22:00:00.000Z",
@@ -14,7 +16,7 @@
   "cityOther": "Lisbon",
   "category": "Artificial Intelligence",
   "abstract": "Azure Dev Summit 2025 is a premier event for software developers, initiated and supported by Microsoft. This conference is a collaborative effort between NDC Conferences and Techorama, bringing together some of the most influential voices from Microsoft and the broader Microsoft Community.\n\nAttendees can look forward to insightful sessions and workshops led by key figures in the industry, providing a unique opportunity to learn, network, and grow. For more information about the event promoters, visit Techorama and NDC Conferences.\n\nAzure Dev Summit will have more than 100 sessions and workshops. \n\nFormat and duration\nRegular talks: 60 minutes\nPost- Conference Workshops: 1 day",
-  "description": "Azure Dev Summit 2025 is a premier event for software developers, initiated and supported by Microsoft. This conference is a collaborative effort between NDC Conferences and Techorama, bringing together some of the most influential voices from Microsoft and the broader Microsoft Community.\n\nAttendees can look forward to insightful sessions and workshops led by key figures in the industry, providing a unique opportunity to learn, network, and grow. For more information about the event promoters, visit [Techorama](https://www.techorama.be/) and [NDC Conferences](https://www.ndcconferences.com/).\n\nAzure Dev Summit will have more than 100 sessions and workshops. \n\nFormat and duration\n\nRegular talks: 60 minutes\n\nPost-Conference Workshops: 1 day\n",
+  "description": "Azure Dev Summit 2025 is a premier event for software developers, initiated and supported by Microsoft. This conference is a collaborative effort between NDC Conferences and Techorama, bringing together some of the most influential voices from Microsoft and the broader Microsoft Community.\n\nAttendees can look forward to insightful sessions and workshops led by key figures in the industry, providing a unique opportunity to learn, network, and grow. For more information about the event promoters, visit [Techorama](https://www.techorama.be/) and [NDC Conferences](https://www.ndcconferences.com/).\n\nAzure Dev Summit will have more than 100 sessions and workshops.\n\nFormat and duration\n\nRegular talks: 60 minutes\n\nPost-Conference Workshops: 1 day\n",
   "liveStreamDelayMinutes": 30,
   "enabled": true
 }
