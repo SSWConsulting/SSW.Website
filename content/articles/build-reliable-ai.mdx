@@ -12,7 +12,7 @@ subTitle: >
   finance, healthcare, legal, or compliance it’s existential risk.
 
 
-  In this guide, we will show you how to ship an assistant that handles
+  In this article, we will show you how to ship an assistant that handles
   hallucinations with layered safeguards and measurable benchmarks.
 
 
@@ -46,28 +46,39 @@ subTitle: >
   Does                                                                                                                            
   | Win /
   Loss                                                                      |
+  Examples                                                                                                                                                                                                   
+  |
 
   | ---------------------------------------- |
   ----------------------------------------------------------------------------------------------------------------------------------------
   |
   -------------------------------------------------------------------------------
   |
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  |
 
   | **Retrieval-Augmented Generation (RAG)** | Pulls fresh text from trusted
   sources like regulatory sites, peer-reviewed papers, internal SOPs *before*
   composing an answer.           | ✅ Grounds replies in evidence. ❌ Fails if
-  retrieval fetches the wrong document. |
+  retrieval fetches the wrong document. | A company [built a support
+  bot](https://arxiv.org/abs/2404.17723) that queries past tickets and knowledge
+  bases via RAG/KG. It cut resolution time by \~29% and improved accuracy
+  significantly (MRR +77%)  |
 
   | **Guardrail Filter**                     | Post-processes every answer:
   blocks missing citations, scope creep (e.g., medical or legal advice), and
   hand-wavy *always/never* claims. | ✅ Cuts risky output. ❌ Over-filters if
-  rules are sloppy.                        |
+  rules are sloppy.                        | An [online banking
+  assistant](https://aws.amazon.com/blogs/machine-learning/build-safe-and-responsible-generative-ai-applications-with-guardrails)
+  uses output guardrails to block:                         |
 
   | **Question Sanitizer**                   | Rewrites the user prompt to
   remove ambiguity and hidden
   assumptions.                                                                    
   | ✅ Sharper queries; cleaner answers. ❌ Needs solid NLU to keep the chat
-  natural. |
+  natural.
+  |                                                                                                                                                                                                            
+  |
 
 
   > **Rule of thumb:** Use all three, one patch isn’t enough.
