@@ -20,7 +20,7 @@ subTitle: >
   ***
 
 
-  ## 1  Why High-Stakes Domains Beat Up Chatbots
+  ## Why High-Stakes Domains Beat Up Chatbots
 
 
   One wrong answer can trigger:
@@ -40,7 +40,7 @@ subTitle: >
   ***
 
 
-  ## 2  Three-Layer Defense Against Hallucination
+  ## Three-Layer Defense Against Hallucination
 
 
   | Layer                                    | What It
@@ -77,7 +77,7 @@ subTitle: >
   ***
 
 
-  ## 3  Reference Architecture
+  ## Reference Architecture
 
 
   ```mermaid
@@ -137,10 +137,10 @@ subTitle: >
   ***
 
 
-  ## 4  Implementation Blueprint
+  ## Implementation Blueprint
 
 
-  ### 4.1  Minimal RAG Pipeline (Microsoft AutoGen)
+  ### Minimal RAG Pipeline (Microsoft AutoGen)
 
 
   ```python
@@ -178,7 +178,7 @@ subTitle: >
   ```
 
 
-  ### 4.2  Guardrail Filter Skeleton
+  ### Guardrail Filter Skeleton
 
 
   ```python
@@ -189,14 +189,13 @@ subTitle: >
           return None
       if re.search(r"\b(always|guarantee|never)\b", reply, re.I):
           reply += (
-              "\n\n⚠️  Confirm with a certified professional "
-              "before acting on this information."
+              "Confirm with a certified professional before acting on this information."
           )
       return reply
   ```
 
 
-  ### 4.3  Prompt Template for Question Sanitizer
+  ### Prompt Template for Question Sanitizer
 
 
   ```
@@ -226,7 +225,7 @@ subTitle: >
   ***
 
 
-  ## 5  Latency & Cost Notes
+  ## Latency & Cost Notes
 
 
   | Strategy             |
@@ -250,7 +249,7 @@ subTitle: >
   ***
 
 
-  ## 6  Benchmark or Bust
+  ## Benchmark or Bust
 
 
   Ship nothing without numbers.
@@ -293,68 +292,7 @@ subTitle: >
   ***
 
 
-  ## 7  Monitoring & Alerting
-
-
-  | Signal                           | Alert Threshold      |
-
-  | -------------------------------- | -------------------- |
-
-  | Retrieval miss rate              | > 5 % in 1 h         |
-
-  | Guardrail rejects                | > 2 × weekly average |
-
-  | Latency P95                      | > 2 s for 5 m        |
-
-  | Hallucinations flagged by humans | Any critical         |
-
-
-  Stream metrics to Prometheus → Grafana; page on-call via PagerDuty.
-
-
-  ***
-
-
-  ## 8  Security & Privacy
-
-
-  * **Row-Level ACLs** on vector store; embed access tokens in query filter.
-
-  * **PII Redaction** before text hits the LLM (SHA or reversible vault).
-
-  * **Audit Trails** store prompt, sanitized query, doc IDs, model hash,
-  guardrail verdict. Immutable (S3 + Object Lock or Azure Blob WORM).
-
-  * **Dependency SBOM** (Syft or Trivy) baked into CI to track CVEs.
-
-
-  ***
-
-
-  ## 9  Governance & Versioning
-
-
-  | Asset           | Version Key                        |
-
-  | --------------- | ---------------------------------- |
-
-  | Model           | SHA-256 of weights + provider slug |
-
-  | Prompt          | Git commit hash                    |
-
-  | Retrieval Index | Vector Store snapshot ID           |
-
-  | Guardrail Rules | SemVer (e.g., `2.1.0`)             |
-
-
-  Every answer stores these four keys → reproducible for audits or legal
-  discovery.
-
-
-  ***
-
-
-  ## 10  Scaling & Release Strategy
+  ## Scaling & Release Strategy
 
 
   | Stage               | Accuracy Bar                              | Traffic |
@@ -383,7 +321,7 @@ subTitle: >
   ***
 
 
-  ## 11  Domain Experts Are Non-Negotiable
+  ## Domain Experts Are Non-Negotiable
 
 
   * **Source Curation** – SMEs tag gold paragraphs; retriever ignores the rest.
@@ -400,7 +338,7 @@ subTitle: >
   ***
 
 
-  ## 12  Key Takeaways
+  ## Key Takeaways
 
 
   1. **Layer your defenses** — RAG + guardrails + sanitizer kills most
