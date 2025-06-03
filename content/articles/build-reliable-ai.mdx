@@ -108,39 +108,44 @@ subTitle: >
   ```
 
 
-  ### Components
+  ### Components & Best Practices
 
 
-  | Block              | Key
+  | Block                             | Key
   Choices                                                                                                                                                                                                                                                                                                                                                                 
   |
 
-  | ------------------ |
+  | --------------------------------- |
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   |
 
-  | **Vector Store**   | FAISS (speed, self-host), **Azure Cognitive Search**
-  (managed, ACLs), **Pinecone** (serverless, multi-region). Use a domain-tuned
-  sentence-transformer or OpenAI's text-embedding-3-small / Google's
-  gemini-embedding-001. For the latest text-embedding performance benchmarks,
-  head to [Hugging Face’s MTEB
+  | **Vector Store & Embeddings**     | FAISS (speed, self-host), **Azure
+  Cognitive Search** (managed, ACLs), **Pinecone** (serverless, multi-region).
+  Use a domain-tuned sentence-transformer or OpenAI's text-embedding-3-small /
+  Google's gemini-embedding-001. For the latest text-embedding performance
+  benchmarks, head to [Hugging Face’s MTEB
   leaderboards.](https://huggingface.co/spaces/mteb/leaderboard) |
 
-  | **Foundation LLM** | For the latest AI models, head to
+  | Retrieval Tuning                  | Evaluate with metrics like recall\\@k,
+  MRR, NDCG, and validate retriever+chunking combos per established
+  frameworks.                                                                                                                                                                                                                                                        
+  |
+
+  | **Foundation Model & Versioning** | For the latest AI models, head to
   [LiveBench](https://livebench.ai/#/). Record the *model hash* in every
   log.                                                                                                                                                                                                                                                               
   |
 
-  | **Guardrails**     | OpenAI [built-in guardrail
+  | **Guardrails**                    | OpenAI [built-in guardrail
   tools](https://openai.com/index/new-tools-for-building-agents/), **Microsoft
-  AutoGen** filters, or Regex-based
-  middleware.                                                                                                                                                                                                                       
+  AutoGen** filters, or regex for citations/scope
+  checks                                                                                                                                                                                                              
   |
 
-  | **Audit Log**      | Append-only (Cosmos DB, DynamoDB, or Postgres WAL).
-  Store prompt, retrieval doc IDs, model version, and guardrail decisions for
-  each
-  answer.                                                                                                                                                                                                                                
+  | **Audit Log**                     | Append-only logs (e.g., Cosmos,
+  DynamoDB, Postgres WAL) should capture prompts, retrieval IDs, model info, and
+  guardrail
+  decisions.                                                                                                                                                                                                                                         
   |
 
 
