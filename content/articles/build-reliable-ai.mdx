@@ -1,0 +1,439 @@
+---
+seo:
+  title: 'Zero-Hallucination AI: Reliable Assistants for High-Stakes Domains'
+  description: >-
+    Guide to crush AI hallucinations with RAG, guardrails, benchmarks,
+    DevSecOps. Ship safe assistants for finance, health, and compliance.
+title: Building a Hallucination-Proof AI Assistant
+subTitle: >
+  AI **hallucinations** happen when a model confidently supplies information
+  that isn’t real, misquoting regulations, inventing statistics, or citing
+  studies that never existed. In low-stakes chat apps it’s an annoyance; in
+  finance, healthcare, legal, or compliance it’s existential risk.
+
+
+  In this guide, we will show you how to ship an assistant that handles
+  hallucinations with layered safeguards, measurable benchmarks, and airtight
+  DevSecOps.
+
+
+  ***
+
+
+  ## 1  Why High-Stakes Domains Beat Up Chatbots
+
+
+  One wrong answer can trigger:
+
+
+  * regulatory fines or legal action
+
+  * patient harm or misdiagnosis
+
+  * financial losses and reputational damage
+
+
+  Assistants in these settings must parse dense rules, handle edge cases, and
+  **never guess**. The error budget is effectively **zero**.
+
+
+  ***
+
+
+  ## 2  Three-Layer Defense Against Hallucination
+
+
+  | Layer                                    | What It
+  Does                                                                                                                            
+  | Win /
+  Loss                                                                      |
+
+  | ---------------------------------------- |
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  |
+  -------------------------------------------------------------------------------
+  |
+
+  | **Retrieval-Augmented Generation (RAG)** | Pulls fresh text from trusted
+  sources like regulatory sites, peer-reviewed papers, internal SOPs *before*
+  composing an answer.           | ✅ Grounds replies in evidence. ❌ Fails if
+  retrieval fetches the wrong document. |
+
+  | **Guardrail Filter**                     | Post-processes every answer:
+  blocks missing citations, scope creep (e.g., medical or legal advice), and
+  hand-wavy *always/never* claims. | ✅ Cuts risky output. ❌ Over-filters if
+  rules are sloppy.                        |
+
+  | **Question Sanitizer**                   | Rewrites the user prompt to
+  remove ambiguity and hidden
+  assumptions.                                                                    
+  | ✅ Sharper queries; cleaner answers. ❌ Needs solid NLU to keep the chat
+  natural. |
+
+
+  > **Rule of thumb:** Use all three, one patch isn’t enough.
+
+
+  ***
+
+
+  ## 3  Reference Architecture
+
+
+  ```mermaid
+
+  flowchart TD
+      subgraph Client
+          A[Web / Mobile / Chat]
+      end
+      A -->|Prompt| B[API Gateway]
+      B --> C[Question Sanitizer]
+      C --> D[RAG Service]
+      D -->|Query| E[(Vector Store)]
+      E --> D
+      D --> F[Foundation LLM]
+      F --> G[Guardrail Filter]
+      G -->|Logged Answer| H[(Audit Log)]
+      G -->|Response| A
+  ```
+
+
+  ### Components
+
+
+  | Block              | Key
+  Choices                                                                                                                                                                                                                                                                                                                                                                 
+  |
+
+  | ------------------ |
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  |
+
+  | **Vector Store**   | FAISS (speed, self-host), **Azure Cognitive Search**
+  (managed, ACLs), **Pinecone** (serverless, multi-region). Use a domain-tuned
+  sentence-transformer or OpenAI's text-embedding-3-small / Google's
+  gemini-embedding-001. For the latest text-embedding performance benchmarks,
+  head to [Hugging Face’s MTEB
+  leaderboards.](https://huggingface.co/spaces/mteb/leaderboard) |
+
+  | **Foundation LLM** | For the latest AI models, head to
+  [LiveBench](https://livebench.ai/#/). Record the *model hash* in every
+  log.                                                                                                                                                                                                                                                               
+  |
+
+  | **Guardrails**     | OpenAI [built-in guardrail
+  tools](https://openai.com/index/new-tools-for-building-agents/), **Microsoft
+  AutoGen** filters, or Regex-based
+  middleware.                                                                                                                                                                                                                       
+  |
+
+  | **Audit Log**      | Append-only (Cosmos DB, DynamoDB, or Postgres WAL).
+  Store prompt, retrieval doc IDs, model version, and guardrail decisions for
+  each
+  answer.                                                                                                                                                                                                                                
+  |
+
+
+  ***
+
+
+  ## 4  Implementation Blueprint
+
+
+  ### 4.1  Minimal RAG Pipeline (Microsoft AutoGen)
+
+
+  ```python
+
+  from autogen import AssistantConfig, RetrievalTool, AgentExecutor
+
+
+  retriever = RetrievalTool(
+      index_name="domain_knowledge",
+      sources=[
+          "https://gov-regs.example/",        # public legislation
+          "s3://internal-policies/",          # private docs
+          "https://journals.example/clinical" # peer-reviewed content
+      ],
+      top_k=5,  # empirically sweet-spot: latency ≈ 250 ms, recall ≈ 95 %
+  )
+
+
+  config = AssistantConfig(
+      model="gpt-4.1-mini",
+      tools=[retriever],
+      system_prompt=(
+          "You are a compliance assistant. "
+          "Cite every fact with source_URL. "
+          "If unsure, answer 'I don't know'."
+      ),
+  )
+
+
+  bot = AgentExecutor(config)
+
+
+  print(bot.run("Capital gains tax exemption for small businesses?"))
+
+  ```
+
+
+  ### 4.2  Guardrail Filter Skeleton
+
+
+  ```python
+
+  def guardrail(reply: str) -> str | None:
+      import re
+      if "http" not in reply:            # no citation → block
+          return None
+      if re.search(r"\b(always|guarantee|never)\b", reply, re.I):
+          reply += (
+              "\n\n⚠️  Confirm with a certified professional "
+              "before acting on this information."
+          )
+      return reply
+  ```
+
+
+  ### 4.3  Prompt Template for Question Sanitizer
+
+
+  ```
+
+  Rewrite the user question to be objective, specific, and free of assumptions.
+
+  Ask follow-up only when critical context is missing.
+
+  Return the cleaned question only.
+
+
+  User: {raw_user_input}
+
+  ```
+
+
+  **Example**
+
+
+  > **Raw:** “Is this drug safe for kids?”
+
+  > **Sanitized:** “According to current Therapeutic Goods Administration
+  guidelines, what is the approved dosage and contraindication list for \[Drug
+  X] in children aged 6–12?”
+
+
+  ***
+
+
+  ## 5  Latency & Cost Notes
+
+
+  | Strategy             |
+  Impact                                                                           
+  |
+
+  | -------------------- |
+  ---------------------------------------------------------------------------------
+  |
+
+  | **Top-K = 5**        | Balances recall vs. tokens. Jumping to 10 doubles
+  prompt size with marginal gain. |
+
+  | **Hybrid Cache**     | SHA-256 of sanitized question → Redis. Cuts repeat
+  latency from 2 s → 200 ms.     |
+
+  | **Streaming Tokens** | Send partial answer ASAP; user perceives speed even
+  if backend is 2 s.            |
+
+
+  ***
+
+
+  ## 6  Benchmark or Bust
+
+
+  Ship nothing without numbers.
+
+
+  | Metric                    | Why It Matters                          |
+
+  | ------------------------- | --------------------------------------- |
+
+  | **Exact-Answer Accuracy** | Strict match to human-expert answer     |
+
+  | **Citation Coverage**     | Every fact must show a source           |
+
+  | **Compliance Errors**     | Mismatched rules, dosages, rates        |
+
+  | **Hallucination Rate**    | Any uncited fact = hallucination        |
+
+  | **Retrieval Miss %**      | Alerts on index drift or ACL mis-config |
+
+
+  ### PyTest Harness for CI
+
+
+  ```python
+
+  from autogen import compare_answers
+
+
+  def test_batch():
+      for q, gold in gold_dataset:   # anonymised real questions
+          ai = bot.run(q)
+          score = compare_answers(ai, gold, rubric="strict")
+          assert score >= 0.95
+  ```
+
+
+  Gate every pull request; fail fast.
+
+
+  ***
+
+
+  ## 7  Monitoring & Alerting
+
+
+  | Signal                           | Alert Threshold      |
+
+  | -------------------------------- | -------------------- |
+
+  | Retrieval miss rate              | > 5 % in 1 h         |
+
+  | Guardrail rejects                | > 2 × weekly average |
+
+  | Latency P95                      | > 2 s for 5 m        |
+
+  | Hallucinations flagged by humans | Any critical         |
+
+
+  Stream metrics to Prometheus → Grafana; page on-call via PagerDuty.
+
+
+  ***
+
+
+  ## 8  Security & Privacy
+
+
+  * **Row-Level ACLs** on vector store; embed access tokens in query filter.
+
+  * **PII Redaction** before text hits the LLM (SHA or reversible vault).
+
+  * **Audit Trails** store prompt, sanitized query, doc IDs, model hash,
+  guardrail verdict. Immutable (S3 + Object Lock or Azure Blob WORM).
+
+  * **Dependency SBOM** (Syft or Trivy) baked into CI to track CVEs.
+
+
+  ***
+
+
+  ## 9  Governance & Versioning
+
+
+  | Asset           | Version Key                        |
+
+  | --------------- | ---------------------------------- |
+
+  | Model           | SHA-256 of weights + provider slug |
+
+  | Prompt          | Git commit hash                    |
+
+  | Retrieval Index | Vector Store snapshot ID           |
+
+  | Guardrail Rules | SemVer (e.g., `2.1.0`)             |
+
+
+  Every answer stores these four keys → reproducible for audits or legal
+  discovery.
+
+
+  ***
+
+
+  ## 10  Scaling & Release Strategy
+
+
+  | Stage               | Accuracy Bar                              | Traffic |
+  Human-in-Loop         |
+
+  | ------------------- | ----------------------------------------- | ------- |
+  --------------------- |
+
+  | **Shadow Mode**     | Observed ≥ 80 %                           | 0 %     |
+  Full review (offline) |
+
+  | **Pilot / Augment** | ≥ 80 %                                    | 5 %     |
+  Mandatory review      |
+
+  | **Limited Release** | ≥ 95 % on top queries                     | 25 %    |
+  Spot-check            |
+
+  | **Full Automation** | ≥ 99 % + zero critical errors for 30 days | 100 %   |
+  Exception             |
+
+
+  Blue-green or canary deploy. If live accuracy dips, auto-fallback to human
+  escalation.
+
+
+  ***
+
+
+  ## 11  Domain Experts Are Non-Negotiable
+
+
+  * **Source Curation** – SMEs tag gold paragraphs; retriever ignores the rest.
+
+  * **Prompt Reviews** – experts catch edge cases outsiders miss.
+
+  * **Error Triage** – every bad answer is labeled *why* it failed, not just
+  “wrong.”
+
+
+  Treat specialists as co-developers, not QA afterthoughts.
+
+
+  ***
+
+
+  ## 12  Key Takeaways
+
+
+  1. **Layer your defenses** — RAG + guardrails + sanitizer kills most
+  hallucinations.
+
+  2. **Measure everything** — no metrics, no deployment.
+
+  3. **Let experts drive** — great models still need domain brains.
+
+  4. **Secure & log by default** — audit trails and ACLs stop the legal pain
+  later.
+
+  5. **Scale slowly** — humans stay in the loop until the numbers prove you can
+  let go.
+
+
+  Nail these, and you’ll move from a flashy demo to a production-grade AI
+  advisor that never makes up the rules.
+author: content/presenters/calum-simpson.mdx
+sidebarPanel:
+  title: 2-Day Pre-Migration Assessment Engagement
+  description: >-
+    Get a solid foundation for your .NET 8 migration project, ensuring you are
+    well-prepared to tackle the migration with confidence.
+  showSidebarPanel: true
+  actionUrl: /
+  actionText: Learn more
+callToAction:
+  title: Talk to us about your project
+  subTitle: Connect with our Account Managers to discuss how we can help.
+  showCallToAction: true
+  buttonText: Book a FREE Initial Meeting
+  animated: true
+  buttonSubtitle: or call +61 2 9953 3000
+---
+
