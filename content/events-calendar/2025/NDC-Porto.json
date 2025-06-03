@@ -1,0 +1,17 @@
+{
+  "title": "NDC Porto",
+  "url": "https://ndcporto.com/",
+  "thumbnail": "/images/events/NDC%20Conferences.png",
+  "thumbnailDescription": "NDC Porto",
+  "presenterProfileUrl": "https://ndcporto.com/",
+  "startDateTime": "2025-10-19T22:00:00.000Z",
+  "endDateTime": "2025-10-24T06:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Other",
+  "cityOther": "Porto",
+  "category": "Artificial Intelligence",
+  "abstract": "This year, NDC Porto takes a deeper dive with the entire event dedicated solely to workshops. The event kicks off with a 2-day workshop followed by three days of 1-day and half-day workshops.\n\nMultiple workshops will be running in parallel, offering plenty of topics to choose from. The 2-day workshops are pre-booked and will be published soon, while the 1-day workshops will be selected from a formal Call for Papers in mid-May.\n\nThe conference will cover topics such as:\n\n.NET - AI - Architecture - Big Data - Cloud - Continuous Delivery - Cross-Platform - Database - Design - DevOps - Docker - Ethics - Fun - Functional Programming - JavaScript - Languages - Machine Learning - Microservices - Microsoft - Mobile - People - Security - Serverless - Soft Skills - Testing - Tools - UX - Web and more",
+  "description": "This year, NDC Porto takes a deeper dive with the entire event dedicated solely to workshops. The event kicks off with a 2-day workshop followed by three days of 1-day and half-day workshops.\n\nMultiple workshops will be running in parallel, offering plenty of topics to choose from. The 2-day workshops are pre-booked and will be published soon, while the 1-day workshops will be selected from a formal Call for Papers in mid-May.\n\nThe conference will cover topics such as:\n\n.NET - AI - Architecture - Big Data - Cloud - Continuous Delivery - Cross-Platform - Database - Design - DevOps - Docker - Ethics - Fun - Functional Programming - JavaScript - Languages - Machine Learning - Microservices - Microsoft - Mobile - People - Security - Serverless - Soft Skills - Testing - Tools - UX - Web and more\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}

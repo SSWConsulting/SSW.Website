@@ -1,10 +1,10 @@
 {
-  "title": "Come With Me If You Want to Code",
+  "title": "Can AI replace developers? Come with me if you want to code",
   "url": "/netug/sydney",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
   "presenterName": "TJ Gokken",
-  "presenterProfileUrl": "tjgokken.com",
+  "presenterProfileUrl": "https://www.tjgokken.com",
   "startDateTime": "2025-06-18T08:00:00.000Z",
   "endDateTime": "2025-06-18T10:00:00.000Z",
   "startShowBannerDateTime": "2025-06-17T14:00:00.000Z",
@@ -12,8 +12,8 @@
   "calendarType": "User Groups",
   "city": "Sydney",
   "category": "Artificial Intelligence",
-  "abstract": "Can AI replace developers? It's the hottest debate in tech, but tonight, we're putting it to the test—for real. In this AI-powered coding smackdown, two AI agents will battle it out in a heated debate, arguing whether AI will replace human developers or just be another tool in the toolbox. \n\nThen, we'll push this showdown further with an epic coding challenge: AI vs AI vs Human in a battle to write the best F# game logic. Expect laughs, surprises, and a plot twist that will leave you questioning who's really in control. \n\n🚀 AI vs Humans – The Ultimate Smackdown in Code Generation. Let's see who codes the future",
-  "description": "At this month's Sydney .NET User Group: Come With Me If You Want to Code with TJ Gokken\n\nCan AI replace developers? It's the hottest debate in tech, but tonight, we're putting it to the test—for real. In this AI-powered coding smackdown, two AI agents will battle it out in a heated debate, arguing whether AI will replace human developers or just be another tool in the toolbox. \n\nThen, we'll push this showdown further with an epic coding challenge: AI vs AI vs Human in a battle to write the best F# game logic. Expect laughs, surprises, and a plot twist that will leave you questioning who's really in control. \n\n🚀 AI vs Humans – The Ultimate Smackdown in Code Generation. Let's see who codes the future\n",
+  "abstract": "Can AI replace developers? It's the hottest debate in tech, but tonight, we're putting it to the test—for real. In this AI-powered coding smackdown, two AI agents will battle it out in a heated debate, arguing whether AI will replace human developers or just be another tool in the toolbox. \n\nThen, we'll push this showdown further with an epic coding challenge: AI vs AI vs Human in a battle to write the best F# game logic. Expect laughs, surprises, and a plot twist that will leave you questioning who's really in control. \n\n🚀 AI vs Humans – The Ultimate Smackdown in Code Generation. Let's see who codes the future.",
+  "description": "At this month's Sydney .NET User Group: Can AI replace developers? Come With Me If You Want to Code with TJ Gokken\n\nCan AI replace developers? It's the hottest debate in tech, but tonight, we're putting it to the test—for real. In this AI-powered coding smackdown, two AI agents will battle it out in a heated debate, arguing whether AI will replace human developers or just be another tool in the toolbox.\n\nThen, we'll push this showdown further with an epic coding challenge: AI vs AI vs Human in a battle to write the best F# game logic. Expect laughs, surprises, and a plot twist that will leave you questioning who's really in control.\n\n🚀 AI vs Humans – The Ultimate Smackdown in Code Generation. Let's see who codes the future\n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true
