@@ -34,6 +34,16 @@
       "_template": "imageTextBlock"
     },
     {
+      "heading": "Lorem Ipsum",
+      "logos": [
+        {
+          "logo": "",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
       "isStacked": false,
       "heading": "The Gap Between Trying AI and Using It Well",
       "isH1": false,
@@ -143,6 +153,31 @@
         }
       ],
       "_template": "cardCarousel"
+    },
+    {
+      "heading": "Lorem Ipsum",
+      "body": "A Practical Crash-Course Grounded in Research",
+      "accordionItems": [
+        {
+          "label": "How LLMs Think",
+          "content": "Tokens, context, randomness—explained in plain English so the next answer feels less like magic.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "accordionBlock"
     }
   ]
 }
