@@ -74,7 +74,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "uxx42",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -87,8 +87,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Creates errors",
+          "description": "Models hallucinate; people accept the answer.",
           "featureList": {
             "features": [
               {
