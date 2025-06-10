@@ -108,7 +108,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "64hyte",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -121,8 +121,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Wastes licences",
+          "description": "You pay for tools that deliver half the value.",
           "featureList": {
             "features": [
               {
