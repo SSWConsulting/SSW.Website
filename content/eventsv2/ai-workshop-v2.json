@@ -4,9 +4,10 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Lorem Ipsum",
-      "isH1": false,
-      "description": "",
+      "heading": "Turn AI Curiosity into Daily Practice",
+      "isH1": true,
+      "description": "A one-day, on-site workshop that takes your team from “I tried ChatGPT once” to “I rely on it every morning\"\n",
+      "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true,
         "features": [
