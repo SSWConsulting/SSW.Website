@@ -159,6 +159,10 @@
       "body": "A Practical Crash-Course Grounded in Research",
       "accordionItems": [
         {
+          "label": "Prompt Patterns That Work",
+          "content": "Role prompts, chain-of-thought, retrieval tricks. Tested with hundreds of managers and devs.\n"
+        },
+        {
           "label": "How LLMs Think",
           "content": "Tokens, context, randomness—explained in plain English so the next answer feels less like magic.\n"
         },
