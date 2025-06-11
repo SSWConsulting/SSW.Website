@@ -108,8 +108,8 @@
       "body": "A Practical Crash-Course Grounded in Research",
       "accordionItems": [
         {
-          "label": "How LLMs Think",
-          "content": "Tokens, context, randomness—explained in plain English so the next answer feels less like magic.\n"
+          "label": "A Practical Playbook for AI-Powered Work",
+          "content": "Six tightly-scoped modules combine theory, live demos, and hands-on labs. Your team leaves with repeatable workflows, not just prompt tricks.\n"
         },
         {
           "label": "Choosing the Right Model",
