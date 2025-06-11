@@ -330,6 +330,8 @@
       "cards": [
         {
           "guid": "uh77mq",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
           "altText": "Lorem Ipsum",
           "chips": [
             {
