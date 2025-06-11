@@ -80,7 +80,8 @@
               },
               {
                 "heading": "Compliance blind spots",
-                "description": ""
+                "description": "",
+                "icon": "BiMessageSquareX"
               }
             ]
           },
