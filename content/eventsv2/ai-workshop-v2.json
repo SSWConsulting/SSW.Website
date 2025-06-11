@@ -49,7 +49,7 @@
         {
           "guid": "qnv92",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidWrench",
           "heading": "Wrong Tool, Wrong Job",
           "description": "Teams apply general-purpose models to domain-specific problems. Results underwhelm.",
           "embeddedButton": {
@@ -59,7 +59,7 @@
         {
           "guid": "4bcikc",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidBong",
           "heading": "One-Off Wins, No Lasting Change",
           "description": "Employees try prompt tips from YouTube. Some work. Most don’t stick. Teams never build repeatable processes.",
           "embeddedButton": {
@@ -127,7 +127,7 @@
       "isMultipleOpen": true,
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Get The Full Agenda",
           "colour": 0
         },
         {
