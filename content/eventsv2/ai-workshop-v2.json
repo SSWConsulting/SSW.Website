@@ -352,6 +352,8 @@
         },
         {
           "guid": "itqfs7",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
           "altText": "Lorem Ipsum",
           "chips": [
             {
