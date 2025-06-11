@@ -230,18 +230,8 @@
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "",
           "description": "SSW’s Gert Marx reconnects with Chris Simon at NDC Melbourne to dive into the latest updates on Contextive, the powerful open-source tool helping developers write better, more business-aligned code.",
           "embeddedButton": {
             "buttonText": ""
@@ -252,18 +242,8 @@
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "embeddedButton": {
             "buttonText": ""
@@ -274,18 +254,8 @@
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=sVELvhGdSfs",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "embeddedButton": {
             "buttonText": ""
