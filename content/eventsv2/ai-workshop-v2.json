@@ -31,6 +31,14 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/ssw-web/hero/ssw-ai-workshop.png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
       "_template": "imageTextBlock"
     },
     {
