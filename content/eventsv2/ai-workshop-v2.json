@@ -45,17 +45,27 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "Why Results Lag Behind the Hype?",
       "isH1": false,
       "body": "Surveys say almost half of employees already dabble with AI, and lab studies show the right prompt can cut some tasks to a third of the time. So why isn’t the whole company moving faster? ",
       "cards": [
         {
+          "guid": "4bcikc",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Post-Workshop Drift",
+          "description": "New skills fade when the inbox backlog reappears. Early adopters move on; late adopters never start. Progress stalls when discoveries aren’t captured and shared.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "z57ea",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Hidden AI Use",
-          "description": "Many staff experiment with chatbots after hours. Quick wins, but stray data, zero governance, and insights that never leave their desks.",
+          "heading": "Fragmented Toolscape",
+          "description": "Legal likes Claude, engineering lives in GitHub Copilot, marketing experiments with Gemini. The org spends more time reconciling results than acting on them.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -65,19 +75,19 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Creates errors",
-          "description": "Models hallucinate; people accept the answer.",
+          "heading": "Shallow Integration",
+          "description": "Teams let AI handle fringe tasks—quick summaries, draft blurbs—while the heavy-lift steps stay manual. Edge-only use never compounds to firm-level gains",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
@@ -85,17 +95,17 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Wastes licences",
-          "description": "You pay for tools that deliver half the value.",
+          "heading": " Prompt Fragility",
+          "description": "A clever prompt dazzles on Monday, bombs on Friday after a model update. Knowledge lives and dies in personal chat histories",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -128,6 +138,7 @@
           "content": "Post-workshop office hours and template library to help your team turn experiments into roll-outs\n"
         }
       ],
+      "isMultipleOpen": true,
       "buttons": [
         {
           "buttonText": "Lorem Ipsum",
