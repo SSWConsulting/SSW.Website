@@ -166,13 +166,9 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Lorem Ipsum",
+      "heading": "What We Cover",
       "body": "A Practical Crash-Course Grounded in Research",
       "accordionItems": [
-        {
-          "label": "Prompt Patterns That Work",
-          "content": "Role prompts, chain-of-thought, retrieval tricks. Tested with hundreds of managers and devs.\n"
-        },
         {
           "label": "How LLMs Think",
           "content": "Tokens, context, randomness—explained in plain English so the next answer feels less like magic.\n"
@@ -180,6 +176,14 @@
         {
           "label": "Choosing the Right Model",
           "content": "When to pick ChatGPT, Claude, or Gemini, and why it matters.\n"
+        },
+        {
+          "label": "Prompt Patterns That Work",
+          "content": "Role prompts, chain-of-thought, retrieval tricks. Tested with hundreds of managers and devs.\n"
+        },
+        {
+          "label": "Real-World Projects",
+          "content": "Synthesise web research into a briefing note. \n\nAnalyse a messy spreadsheet in minutes. \n\nDraft clean code plus unit tests.\n"
         }
       ],
       "buttons": [
@@ -192,6 +196,11 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024
+      },
       "_template": "accordionBlock"
     }
   ]
