@@ -284,6 +284,44 @@
         }
       ],
       "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024
+      },
+      "_template": "imageTextBlock"
     }
   ]
 }
