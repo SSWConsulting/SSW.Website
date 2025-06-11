@@ -235,20 +235,10 @@
           }
         },
         {
-          "guid": null,
+          "guid": "4ob77n",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Workshop day at your office.",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
