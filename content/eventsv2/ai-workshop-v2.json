@@ -200,6 +200,10 @@
           }
         }
       ],
+      "background": {
+        "backgroundImage": "",
+        "bleed": true
+      },
       "_template": "cardCarousel"
     },
     {
