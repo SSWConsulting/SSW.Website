@@ -2,11 +2,11 @@
   "blocks": [
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": "On-Site AI Skills Workshop"
       },
-      "heading": "Turn AI Curiosity into Daily Practice",
+      "heading": "From Curiosity to Competence in **One Day**",
       "isH1": true,
-      "description": "On-site, hands-on training that moves your team from “I tried ChatGPT once” to shipping real work faster. Starting the very next day\n",
+      "description": "Large-language models can already shave hours off many knowledge-work tasks, yet most organisations never see those gains on the balance sheet.\\\n\\\nOur practical, on-site workshop shows your team how to turn ChatGPT, Claude, and Gemini into reliable sidekicks—so the efficiency shows up in KPIs, not just in hallway chatter.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -46,7 +46,7 @@
     },
     {
       "isStacked": true,
-      "heading": "The Gap Between Trying AI and Using It Well",
+      "heading": "AI can already cut a 90-minute task to 30. So why don’t company P&Ls reflect that?",
       "isH1": false,
       "body": "AI is already doubling individual output, yet companies report only ‘moderate’ gains. The gap isn’t the tech, it’s the playbook",
       "cards": [
