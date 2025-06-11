@@ -122,6 +122,10 @@
         {
           "label": "Module 4: Expert-Level Prompting",
           "content": "Learn to engage with \"Thinking Models\" and use features like Custom Instructions and Memory to create a personalized, powerful AI assistant.\n"
+        },
+        {
+          "label": "30-Day Lab Booster",
+          "content": "Post-workshop office hours and template library to help your team turn experiments into roll-outs\n"
         }
       ],
       "buttons": [
