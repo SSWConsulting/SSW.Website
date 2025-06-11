@@ -124,7 +124,7 @@
           "content": "Move beyond one-off hacks. Build reusable, custom AI workflows with advanced prompting, memory, and custom instructions.\n"
         },
         {
-          "label": "✨ 30-Day Booster",
+          "label": "✨ 30-Day Booster Support",
           "content": "Post-workshop office hours and template library to help your team turn experiments into roll-outs\n"
         }
       ],
@@ -158,8 +158,8 @@
           "guid": "4qkep6",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Quick call to map goals.",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Quick call to map goals",
+          "description": "We map your team’s goals, use cases, and current AI maturity. No fluff, just what we need to tailor the workshop.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -168,8 +168,8 @@
           "guid": "4ob77n",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Workshop day at your office.",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "On-Site Workshop Day",
+          "description": "One focused day at your office. Live demos, hands-on labs, real workflows. Your team leaves ready to apply what they learned.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -178,8 +178,8 @@
           "guid": "tydp",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Follow-up office hours to unblock questions.\t",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Post-Workshop Support",
+          "description": "30 days of office hours and templates to keep momentum, answer questions, and turn experiments into production.",
           "embeddedButton": {
             "buttonText": ""
           }
