@@ -55,7 +55,7 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "The Gap Between Trying AI and Using It Well",
       "isH1": false,
       "body": "Most employees open an LLM, type a question, then hope for the best. That approach:",
