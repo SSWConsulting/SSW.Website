@@ -83,21 +83,11 @@
         {
           "guid": "64hyte",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": " Prompt Fragility",
           "description": "A clever prompt dazzles on Monday, bombs on Friday after a model update. Knowledge lives and dies in personal chat histories",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
