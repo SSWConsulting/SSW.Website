@@ -54,8 +54,8 @@
           "guid": "4bcikc",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Post-Workshop Drift",
-          "description": "New skills fade when the inbox backlog reappears. Early adopters move on; late adopters never start. Progress stalls when discoveries aren’t captured and shared.",
+          "heading": "One-Off Wins, No Lasting Change",
+          "description": "Employees try prompt tips from YouTube. Some work. Most don’t stick. Teams never build repeatable processes.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -64,8 +64,8 @@
           "guid": "z57ea",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Fragmented Toolscape",
-          "description": "Legal likes Claude, engineering lives in GitHub Copilot, marketing experiments with Gemini. The org spends more time reconciling results than acting on them.",
+          "heading": "Siloed Tools, Siloed Results",
+          "description": "Legal’s on Claude. Devs on Copilot. Marketing on Gemini. Every team experiments in isolation. The company learns nothing.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -74,8 +74,8 @@
           "guid": "uxx42",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Shallow Integration",
-          "description": "Teams let AI handle fringe tasks—quick summaries, draft blurbs—while the heavy-lift steps stay manual. Edge-only use never compounds to firm-level gains",
+          "heading": "AI Stuck on the Easy Stuff",
+          "description": "It writes summaries and drafts. The real work still happens by hand. The payoff never compounds.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -84,8 +84,8 @@
           "guid": "64hyte",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": " Prompt Fragility",
-          "description": "A clever prompt dazzles on Monday, bombs on Friday after a model update. Knowledge lives and dies in personal chat histories",
+          "heading": "No Stable Prompt Playbook",
+          "description": "A single model tweak breaks your best prompt. Knowledge management becomes impossible.",
           "embeddedButton": {
             "buttonText": ""
           }
