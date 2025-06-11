@@ -223,7 +223,8 @@
           "buttonText": "Rules to Better AI Development"
         },
         {
-          "buttonText": "Lorem"
+          "buttonText": "Rules to Better AI Use",
+          "colour": 0
         }
       ],
       "cardStyle": 1,
