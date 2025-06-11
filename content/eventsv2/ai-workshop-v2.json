@@ -197,7 +197,7 @@
         }
       ],
       "mediaConfiguration": {
-        "verticalPlacement": "Centered",
+        "verticalPlacement": "Top",
         "imageSource": "/images/ssw-web/blog/what-we-cover.png",
         "imageHeight": 780,
         "imageWidth": 972
