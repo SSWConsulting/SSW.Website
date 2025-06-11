@@ -8,7 +8,7 @@ export const AgreementForm = ({ data }) => {
     sectionColors[data.backgroundColor] || sectionColors.default;
   return (
     <>
-      <div className={classnames("pagebreak my-10 p-8", sectionColorCss)}>
+      <div className={classnames("pagebreak my-10 p-4 md:p-8", sectionColorCss)}>
         {data.fields.map((field) => (
           <FormField
             key={field.id}
@@ -39,8 +39,8 @@ const FormField = ({ label, id, placeholder, resizeable }) => {
   const classes = "w-full rounded border-2 border-gray-300 p-2";
 
   return (
-    <div className="relative inline-block w-full pb-3 md:flex">
-      <div className="py-2.5 w-48 pr-2 text-left font-bold sm:grow-0 md:text-right">
+    <div className="relative inline-block w-full pb-4 md:flex">
+      <div className="py-2 w-48 pr-2 text-left font-bold sm:grow-0 md:text-right">
         <label className="mb-1" htmlFor={id}>
           {label}
         </label>
