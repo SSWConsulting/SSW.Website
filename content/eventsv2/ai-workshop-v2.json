@@ -31,6 +31,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Centered",
