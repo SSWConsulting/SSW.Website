@@ -120,8 +120,8 @@
           "content": "This is where the real productivity gains happen. Your team will learn to use AI for:\n\n* Internet Search & Deep Research: Turn your AI into a research assistant that synthesizes information from the web.\n* Document & Data Analysis: Upload PDFs, spreadsheets, and reports to have AI summarize, analyze, and extract key insights in seconds.\n* Code & Diagram Generation: Automate simple tasks and create diagrams to visualize complex processes.\n"
         },
         {
-          "label": "Real-World Projects",
-          "content": "Synthesise web research into a briefing note. \n\nAnalyse a messy spreadsheet in minutes. \n\nDraft clean code plus unit tests.\n"
+          "label": "Module 4: Expert-Level Prompting",
+          "content": "Learn to engage with \"Thinking Models\" and use features like Custom Instructions and Memory to create a personalized, powerful AI assistant.\n"
         }
       ],
       "buttons": [
