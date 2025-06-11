@@ -40,7 +40,7 @@ const FormField = ({ label, id, placeholder, resizeable }) => {
 
   return (
     <div className="relative inline-block w-full pb-3 md:flex">
-      <div className="py-2.5 pr-2 text-left font-bold sm:grow-0 md:text-right">
+      <div className="py-2.5 w-48 pr-2 text-left font-bold sm:grow-0 md:text-right">
         <label className="mb-1" htmlFor={id}>
           {label}
         </label>
