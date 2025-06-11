@@ -6,20 +6,10 @@
       },
       "heading": "Turn AI Curiosity into Daily Practice",
       "isH1": true,
-      "description": "A one-day, on-site workshop that takes your team from “I tried ChatGPT once” to “I rely on it every morning\"\n",
+      "description": "On-site, hands-on training that moves your team from “I tried ChatGPT once” to shipping real work faster. Starting the very next day\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
