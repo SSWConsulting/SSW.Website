@@ -56,25 +56,6 @@
           "icon": "info",
           "heading": "Hidden AI Use",
           "description": "Many staff experiment with chatbots after hours. Quick wins, but stray data, zero governance, and insights that never leave their desks.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Missed institutional learning",
-                "description": "",
-                "icon": "BiMessageSquareX"
-              },
-              {
-                "heading": "No shared playbooks",
-                "description": "",
-                "icon": "BiMessageSquareX"
-              },
-              {
-                "heading": "Compliance blind spots",
-                "description": "",
-                "icon": "BiMessageSquareX"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": ""
           }
