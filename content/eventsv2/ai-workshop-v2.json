@@ -69,8 +69,14 @@
           "featureList": {
             "features": [
               {
+                "heading": "Missed institutional learning",
+                "description": "",
+                "icon": "BiMessageSquareX"
+              },
+              {
                 "heading": "No shared playbooks",
-                "description": ""
+                "description": "",
+                "icon": "BiMessageSquareX"
               },
               {
                 "heading": "Compliance blind spots",
