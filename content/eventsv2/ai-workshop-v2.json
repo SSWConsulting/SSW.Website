@@ -105,19 +105,19 @@
     },
     {
       "heading": "A Workshop Designed for Business Impact",
-      "body": "This isn't a theoretical lecture. It's a practical, on-site workshop where your team will learn the foundations behind Large Language Models (LLMs) like ChatGPT, Claude, and Gemini. We equip them with the skills to use these tools for complex, real-world business tasks.",
+      "body": "This isn't a theoretical lecture. It's a practical, on-site workshop where your team will learn the foundations behind Large Language Models (LLMs) like ChatGPT, Claude, and Gemini. We equip them with the skills to use these tools for complex, real-world business tasks. Six tightly-scoped modules combine theory, live demos, and hands-on labs. Your team leaves with repeatable workflows, not just prompt tricks.",
       "accordionItems": [
         {
-          "label": "A Practical Playbook for AI-Powered Work",
-          "content": "Six tightly-scoped modules combine theory, live demos, and hands-on labs. Your team leaves with repeatable workflows, not just prompt tricks.\n"
+          "label": "Chapter 1: The Core Fundamentals",
+          "content": "Understand the \"why\" behind the \"what.\" Learn about tokens, context windows, and the \"probabilistic\" nature of AI to get more predictable, reliable results.\n"
         },
         {
-          "label": "Workflow Blueprints",
-          "content": "End-to-end examples: web research digests, spreadsheet audits, code + unit tests, and slide-deck drafting, all completed live.\n"
+          "label": "Module 2: The Full AI Ecosystem",
+          "content": "Go beyond a single tool. We cover the landscape of modern LLMs so your team can choose the right model for the right task.\n"
         },
         {
-          "label": "Prompt Patterns That Work",
-          "content": "Role prompts, chain-of-thought, retrieval tricks. Tested with hundreds of managers and devs.\n"
+          "label": "Module 3: Advanced Tool Use for Business",
+          "content": "This is where the real productivity gains happen. Your team will learn to use AI for:\n\n* Internet Search & Deep Research: Turn your AI into a research assistant that synthesizes information from the web.\n* Document & Data Analysis: Upload PDFs, spreadsheets, and reports to have AI summarize, analyze, and extract key insights in seconds.\n* Code & Diagram Generation: Automate simple tasks and create diagrams to visualize complex processes.\n"
         },
         {
           "label": "Real-World Projects",
