@@ -234,10 +234,11 @@
         }
       ],
       "mediaConfiguration": {
+        "mediaType": "youtube",
         "placement": "Left",
-        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
         "imageHeight": 768,
-        "imageWidth": 1024
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=zaQOlw0-jQ4"
       },
       "_template": "imageTextBlock"
     },
