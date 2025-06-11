@@ -69,6 +69,10 @@
           "featureList": {
             "features": [
               {
+                "heading": "No shared playbooks",
+                "description": ""
+              },
+              {
                 "heading": "Compliance blind spots",
                 "description": ""
               }
