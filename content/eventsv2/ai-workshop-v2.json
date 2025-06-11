@@ -53,16 +53,6 @@
         {
           "guid": "z57ea",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Hidden AI Use",
           "description": "Many staff experiment with chatbots after hours. Quick wins, but stray data, zero governance, and insights that never leave their desks.",
