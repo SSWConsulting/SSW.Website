@@ -73,16 +73,6 @@
         {
           "guid": "uxx42",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Shallow Integration",
           "description": "Teams let AI handle fringe tasks—quick summaries, draft blurbs—while the heavy-lift steps stay manual. Edge-only use never compounds to firm-level gains",
