@@ -15,10 +15,6 @@
         {
           "buttonText": "Schedule a Discovery Call",
           "colour": 0
-        },
-        {
-          "buttonText": "",
-          "colour": 1
         }
       ],
       "background": {
