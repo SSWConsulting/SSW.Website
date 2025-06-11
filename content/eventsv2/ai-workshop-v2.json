@@ -197,9 +197,10 @@
         }
       ],
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
-        "imageHeight": 768,
-        "imageWidth": 1024
+        "verticalPlacement": "Centered",
+        "imageSource": "/images/ssw-web/blog/what-we-cover.png",
+        "imageHeight": 780,
+        "imageWidth": 972
       },
       "_template": "accordionBlock"
     },
