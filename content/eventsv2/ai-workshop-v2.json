@@ -51,6 +51,16 @@
       "body": "Surveys say almost half of employees already dabble with AI, and lab studies show the right prompt can cut some tasks to a third of the time. So why isn’t the whole company moving faster? ",
       "cards": [
         {
+          "guid": "qnv92",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Wrong Tool, Wrong Job",
+          "description": "Teams apply general-purpose models to domain-specific problems. Results underwhelm.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "4bcikc",
           "altText": "Lorem Ipsum",
           "icon": "info",
