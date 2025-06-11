@@ -20,7 +20,7 @@ importers:
         version: 2.2.3(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@headlessui/tailwindcss':
         specifier: ^0.2.2
-        version: 0.2.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))
+        version: 0.2.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))
       '@marketsystems/nextjs13-appdir-breadcrumbs':
         specifier: ^1.0.4
         version: 1.0.4(next@15.3.3(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
@@ -40,8 +40,8 @@ importers:
         specifier: ^1.2.11
         version: 1.2.11(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-checkbox':
-        specifier: ^1.3.1
-        version: 1.3.1(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^1.3.2
+        version: 1.3.2(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.15
         version: 2.1.15(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -50,7 +50,7 @@ importers:
         version: 1.2.3(@types/react@19.1.6)(react@19.1.0)
       '@tailwindcss/typography':
         specifier: ^0.5.16
-        version: 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))
+        version: 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))
       '@tanstack/react-query':
         specifier: ^5.77.1
         version: 5.77.1(react@19.1.0)
@@ -167,7 +167,7 @@ importers:
         version: 3.3.0
       tailwindcss:
         specifier: ^3.4.17
-        version: 3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+        version: 3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       tinacms:
         specifier: 2.7.8
         version: 2.7.8(@types/react@19.1.6)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(scheduler@0.26.0)(sucrase@3.35.0)(typescript@5.8.3)
@@ -207,13 +207,13 @@ importers:
         version: 16.3.0(@testing-library/dom@10.4.0)(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tinacms/cli':
         specifier: 1.9.8
-        version: 1.9.8(@codemirror/language@6.0.0)(@types/node@20.17.47)(@types/react@19.1.6)(abstract-level@1.0.4)(graphql-sock@1.0.1(graphql@15.8.0))(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(rollup@3.29.5)(scheduler@0.26.0)(sucrase@3.35.0)(terser@5.39.1)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+        version: 1.9.8(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.6)(abstract-level@1.0.4)(graphql-sock@1.0.1(graphql@15.8.0))(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(rollup@3.29.5)(scheduler@0.26.0)(sucrase@3.35.0)(terser@5.39.1)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
       '@types/node':
-        specifier: ^20.17.47
-        version: 20.17.47
+        specifier: ^20.19.0
+        version: 20.19.0
       '@types/react':
         specifier: ^19.1.6
         version: 19.1.6
@@ -240,10 +240,10 @@ importers:
         version: 5.4.0(@types/eslint@9.6.1)(eslint-config-prettier@10.1.5(eslint@9.27.0(jiti@1.21.7)))(eslint@9.27.0(jiti@1.21.7))(prettier@3.5.3)
       eslint-plugin-tailwindcss:
         specifier: ^3.18.0
-        version: 3.18.0(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))
+        version: 3.18.0(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))
       jest:
         specifier: ^29.7.0
-        version: 29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+        version: 29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       jest-environment-jsdom:
         specifier: ^29.7.0
         version: 29.7.0
@@ -273,7 +273,7 @@ importers:
         version: 2.5.3
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@types/node@20.17.47)(typescript@5.8.3)
+        version: 10.9.2(@types/node@20.19.0)(typescript@5.8.3)
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1003,6 +1003,10 @@ packages:
     resolution: {integrity: sha512-t3yaEOuGu9NlIZ+hIeGbBjFtZT7j2cb2tg0fuaJKeGotchRjjLfrBA9Kwf8quhpP1EUuxModQg04q/mBwyg8uA==}
     engines: {node: '>=6.9.0'}
 
+  '@babel/runtime@7.27.6':
+    resolution: {integrity: sha512-vbavdySgbTTrmFE+EsiqUTzlOr5bzlnJtUv9PynGCAKvfQqjIXbvFdumPM/GxMDfyuGMJaJAU6TO4zc1Jf1i8Q==}
+    engines: {node: '>=6.9.0'}
+
   '@babel/template@7.27.2':
     resolution: {integrity: sha512-LPDZ85aEJyYSd18/DkjNh4/y1ntkE5KwUHWTiqgRxruuZL2F1yuHligVHLvcHY2vMHXttKFpJn6LwfI7cw7ODw==}
     engines: {node: '>=6.9.0'}
@@ -1473,8 +1477,8 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
 
-  '@graphql-codegen/plugin-helpers@5.1.0':
-    resolution: {integrity: sha512-Y7cwEAkprbTKzVIe436TIw4w03jorsMruvCvu0HJkavaKMQbWY+lQ1RIuROgszDbxAyM35twB5/sUvYG5oW+yg==}
+  '@graphql-codegen/plugin-helpers@5.1.1':
+    resolution: {integrity: sha512-28GHODK2HY1NhdyRcPP3sCz0Kqxyfiz7boIZ8qIxFYmpLYnlDgiYok5fhFLVSZihyOpCs4Fa37gVHf/Q4I2FEg==}
     engines: {node: '>=16'}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2515,8 +2519,8 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@radix-ui/react-checkbox@1.3.1':
-    resolution: {integrity: sha512-xTaLKAO+XXMPK/BpVTSaAAhlefmvMSACjIhK9mGsImvX2ljcTDm8VGR1CuS1uYcNdR5J+oiOhoJZc5un6bh3VQ==}
+  '@radix-ui/react-checkbox@1.3.2':
+    resolution: {integrity: sha512-yd+dI56KZqawxKZrJ31eENUwqc1QSqg4OZ15rybGjF2ZNwMO+wCyHzAVLRp9qoYJf7kYy0YpZ2b0JCzJ42HZpA==}
     peerDependencies:
       '@types/react': '*'
       '@types/react-dom': '*'
@@ -3417,8 +3421,8 @@ packages:
   '@types/mysql@2.15.26':
     resolution: {integrity: sha512-DSLCOXhkvfS5WNNPbfn2KdICAmk8lLc+/PNvnPnF7gOdMZCxopXduqv0OQ13y/yA/zXTSikZZqVgybUxOEg6YQ==}
 
-  '@types/node@20.17.47':
-    resolution: {integrity: sha512-3dLX0Upo1v7RvUimvxLeXqwrfyKxUINk0EAM83swP2mlSUcwV73sZy8XhNz8bcZ3VbsfQyC/y6jRdL5tgCNpDQ==}
+  '@types/node@20.19.0':
+    resolution: {integrity: sha512-hfrc+1tud1xcdVTABC2JiomZJEklMcXYNTVtZLAeqTVWD+qL5jkHKT+1lOtqDdGxt+mB53DTtiz673vfjU8D1Q==}
 
   '@types/pg-pool@2.0.6':
     resolution: {integrity: sha512-TaAUE5rq2VQYxab5Ts7WZhKNmuN78Q6PiFonTDdpbx8a1H0M1vhy3rhiMjl+e2iHmogyMw7jZF4FrE6eJUy5HQ==}
@@ -8831,8 +8835,8 @@ packages:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
 
-  tar-fs@2.1.2:
-    resolution: {integrity: sha512-EsaAXwxmx8UB7FRKqeozqEPop69DXcmYwTQwXvyAPF352HJsPdkVhvTaDPYqfNgruveJIJy3TA2l+2zj8LJIJA==}
+  tar-fs@2.1.3:
+    resolution: {integrity: sha512-090nwYJDmlhwFwEW3QQl+vaNnxsO2yVsd45eTKRBzSzu+hlb1w2K9inVq5b0ngXuLVqQ4ApvsUHHnu/zQNkWAg==}
 
   tar-stream@2.2.0:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
@@ -9083,8 +9087,8 @@ packages:
     resolution: {integrity: sha512-eXL4nmJT7oCpkZsHZUOJo8hcX3GbsiDOa0Qu9F646fi8dT3XuSVopVqAcEiVzSKKH7UoDti23wNX3qGFxcW5Qg==}
     engines: {node: '>=0.10.0'}
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
+  undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
 
   undici@5.29.0:
     resolution: {integrity: sha512-raqeBD6NQK4SkWhQzeYKd1KmIG6dllBOTt55Rmkt4HtI9mwdWtJljnrXjAFUBLTSN67HWrOIZ3EPF4kjUw80Bg==}
@@ -10544,6 +10548,8 @@ snapshots:
 
   '@babel/runtime@7.27.4': {}
 
+  '@babel/runtime@7.27.6': {}
+
   '@babel/template@7.27.2':
     dependencies:
       '@babel/code-frame': 7.27.1
@@ -10874,9 +10880,9 @@ snapshots:
     dependencies:
       '@fortawesome/fontawesome-common-types': 6.7.2
 
-  '@graphiql/react@0.18.0(@codemirror/language@6.0.0)(@types/node@20.17.47)(@types/react@19.1.6)(graphql@15.8.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@graphiql/react@0.18.0(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.6)(graphql@15.8.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@graphiql/toolkit': 0.8.4(@types/node@20.17.47)(graphql@15.8.0)
+      '@graphiql/toolkit': 0.8.4(@types/node@20.19.0)(graphql@15.8.0)
       '@headlessui/react': 1.7.19(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dialog': 1.1.13(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dropdown-menu': 2.1.15(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -10901,11 +10907,11 @@ snapshots:
       - '@types/react-dom'
       - graphql-ws
 
-  '@graphiql/toolkit@0.8.4(@types/node@20.17.47)(graphql@15.8.0)':
+  '@graphiql/toolkit@0.8.4(@types/node@20.19.0)(graphql@15.8.0)':
     dependencies:
       '@n1ru4l/push-pull-async-iterable-iterator': 3.2.0
       graphql: 15.8.0
-      meros: 1.3.0(@types/node@20.17.47)
+      meros: 1.3.0(@types/node@20.19.0)
     transitivePeerDependencies:
       - '@types/node'
 
@@ -10927,7 +10933,7 @@ snapshots:
       lodash: 4.17.21
       tslib: 2.4.1
 
-  '@graphql-codegen/plugin-helpers@5.1.0(graphql@15.8.0)':
+  '@graphql-codegen/plugin-helpers@5.1.1(graphql@15.8.0)':
     dependencies:
       '@graphql-tools/utils': 10.8.6(graphql@15.8.0)
       change-case-all: 1.0.15
@@ -10939,14 +10945,14 @@ snapshots:
 
   '@graphql-codegen/schema-ast@4.1.0(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.1(graphql@15.8.0)
       '@graphql-tools/utils': 10.8.6(graphql@15.8.0)
       graphql: 15.8.0
       tslib: 2.6.3
 
   '@graphql-codegen/typescript-operations@4.6.1(graphql-sock@1.0.1(graphql@15.8.0))(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.1(graphql@15.8.0)
       '@graphql-codegen/typescript': 4.1.6(graphql@15.8.0)
       '@graphql-codegen/visitor-plugin-common': 5.8.0(graphql@15.8.0)
       auto-bind: 4.0.0
@@ -10959,7 +10965,7 @@ snapshots:
 
   '@graphql-codegen/typescript@4.1.6(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.1(graphql@15.8.0)
       '@graphql-codegen/schema-ast': 4.1.0(graphql@15.8.0)
       '@graphql-codegen/visitor-plugin-common': 5.8.0(graphql@15.8.0)
       auto-bind: 4.0.0
@@ -10970,7 +10976,7 @@ snapshots:
 
   '@graphql-codegen/visitor-plugin-common@4.1.2(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.1(graphql@15.8.0)
       '@graphql-tools/optimize': 2.0.0(graphql@15.8.0)
       '@graphql-tools/relay-operation-optimizer': 7.0.19(graphql@15.8.0)
       '@graphql-tools/utils': 10.8.6(graphql@15.8.0)
@@ -10986,7 +10992,7 @@ snapshots:
 
   '@graphql-codegen/visitor-plugin-common@5.8.0(graphql@15.8.0)':
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.1(graphql@15.8.0)
       '@graphql-tools/optimize': 2.0.0(graphql@15.8.0)
       '@graphql-tools/relay-operation-optimizer': 7.0.19(graphql@15.8.0)
       '@graphql-tools/utils': 10.8.6(graphql@15.8.0)
@@ -11047,14 +11053,14 @@ snapshots:
   '@graphql-tools/optimize@2.0.0(graphql@15.8.0)':
     dependencies:
       graphql: 15.8.0
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   '@graphql-tools/relay-operation-optimizer@7.0.19(graphql@15.8.0)':
     dependencies:
       '@ardatan/relay-compiler': 12.0.3(graphql@15.8.0)
       '@graphql-tools/utils': 10.8.6(graphql@15.8.0)
       graphql: 15.8.0
-      tslib: 2.8.1
+      tslib: 2.6.3
     transitivePeerDependencies:
       - encoding
 
@@ -11073,7 +11079,7 @@ snapshots:
       cross-inspect: 1.0.1
       dset: 3.1.4
       graphql: 15.8.0
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   '@graphql-tools/utils@9.2.1(graphql@15.8.0)':
     dependencies:
@@ -11123,9 +11129,9 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
       use-sync-external-store: 1.5.0(react@19.1.0)
 
-  '@headlessui/tailwindcss@0.2.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))':
+  '@headlessui/tailwindcss@0.2.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))':
     dependencies:
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
 
   '@heroicons/react@1.0.6(react@19.1.0)':
     dependencies:
@@ -11332,27 +11338,27 @@ snapshots:
   '@jest/console@29.7.0':
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       chalk: 4.1.2
       jest-message-util: 29.7.0
       jest-util: 29.7.0
       slash: 3.0.0
 
-  '@jest/core@29.7.0(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))':
+  '@jest/core@29.7.0(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))':
     dependencies:
       '@jest/console': 29.7.0
       '@jest/reporters': 29.7.0
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       ci-info: 3.9.0
       exit: 0.1.2
       graceful-fs: 4.2.11
       jest-changed-files: 29.7.0
-      jest-config: 29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      jest-config: 29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       jest-haste-map: 29.7.0
       jest-message-util: 29.7.0
       jest-regex-util: 29.6.3
@@ -11377,7 +11383,7 @@ snapshots:
     dependencies:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       jest-mock: 29.7.0
 
   '@jest/expect-utils@29.7.0':
@@ -11395,7 +11401,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@sinonjs/fake-timers': 10.3.0
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       jest-message-util: 29.7.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
@@ -11417,7 +11423,7 @@ snapshots:
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
       '@jridgewell/trace-mapping': 0.3.25
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       chalk: 4.1.2
       collect-v8-coverage: 1.0.2
       exit: 0.1.2
@@ -11487,7 +11493,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -12172,13 +12178,13 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.1.6
 
-  '@radix-ui/react-checkbox@1.3.1(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@radix-ui/react-checkbox@1.3.2(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@radix-ui/primitive': 1.1.2
       '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.1.6)(react@19.1.0)
       '@radix-ui/react-context': 1.1.2(@types/react@19.1.6)(react@19.1.0)
       '@radix-ui/react-presence': 1.1.4(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@radix-ui/react-primitive': 2.1.2(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-primitive': 2.1.3(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-use-controllable-state': 1.2.2(@types/react@19.1.6)(react@19.1.0)
       '@radix-ui/react-use-previous': 1.1.1(@types/react@19.1.6)(react@19.1.0)
       '@radix-ui/react-use-size': 1.1.1(@types/react@19.1.6)(react@19.1.0)
@@ -12867,21 +12873,21 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))':
+  '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))':
     dependencies:
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
 
-  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))':
+  '@tailwindcss/container-queries@0.1.1(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))':
     dependencies:
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
 
-  '@tailwindcss/typography@0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))':
+  '@tailwindcss/typography@0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))':
     dependencies:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
 
   '@tanstack/query-core@5.77.1': {}
 
@@ -12909,7 +12915,7 @@ snapshots:
   '@testing-library/dom@10.4.0':
     dependencies:
       '@babel/code-frame': 7.27.1
-      '@babel/runtime': 7.27.4
+      '@babel/runtime': 7.27.6
       '@types/aria-query': 5.0.4
       aria-query: 5.3.0
       chalk: 4.1.2
@@ -12936,15 +12942,15 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.1.6
 
-  '@tinacms/app@2.2.8(@codemirror/language@6.0.0)(@types/node@20.17.47)(@types/react@19.1.6)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(scheduler@0.26.0)(sucrase@3.35.0)(yup@1.6.1)':
+  '@tinacms/app@2.2.8(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.6)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(scheduler@0.26.0)(sucrase@3.35.0)(yup@1.6.1)':
     dependencies:
-      '@graphiql/toolkit': 0.8.4(@types/node@20.17.47)(graphql@15.8.0)
+      '@graphiql/toolkit': 0.8.4(@types/node@20.19.0)(graphql@15.8.0)
       '@headlessui/react': 2.1.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@heroicons/react': 1.0.6(react@19.1.0)
       '@monaco-editor/react': 4.7.0-rc.0(monaco-editor@0.31.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tinacms/mdx': 1.6.3(react@19.1.0)(typescript@5.8.3)(yup@1.6.1)
       final-form: 4.20.1
-      graphiql: 3.0.0-alpha.1(@codemirror/language@6.0.0)(@types/node@20.17.47)(@types/react@19.1.6)(graphql@15.8.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      graphiql: 3.0.0-alpha.1(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.6)(graphql@15.8.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       graphql: 15.8.0
       monaco-editor: 0.31.0
       react: 19.1.0
@@ -12967,10 +12973,10 @@ snapshots:
       - supports-color
       - yup
 
-  '@tinacms/cli@1.9.8(@codemirror/language@6.0.0)(@types/node@20.17.47)(@types/react@19.1.6)(abstract-level@1.0.4)(graphql-sock@1.0.1(graphql@15.8.0))(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(rollup@3.29.5)(scheduler@0.26.0)(sucrase@3.35.0)(terser@5.39.1)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))':
+  '@tinacms/cli@1.9.8(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.6)(abstract-level@1.0.4)(graphql-sock@1.0.1(graphql@15.8.0))(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(rollup@3.29.5)(scheduler@0.26.0)(sucrase@3.35.0)(terser@5.39.1)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))':
     dependencies:
       '@graphql-codegen/core': 2.6.8(graphql@15.8.0)
-      '@graphql-codegen/plugin-helpers': 5.1.0(graphql@15.8.0)
+      '@graphql-codegen/plugin-helpers': 5.1.1(graphql@15.8.0)
       '@graphql-codegen/typescript': 4.1.6(graphql@15.8.0)
       '@graphql-codegen/typescript-operations': 4.6.1(graphql-sock@1.0.1(graphql@15.8.0))(graphql@15.8.0)
       '@graphql-codegen/visitor-plugin-common': 4.1.2(graphql@15.8.0)
@@ -12979,15 +12985,15 @@ snapshots:
       '@graphql-tools/load': 7.8.14(graphql@15.8.0)
       '@rollup/pluginutils': 5.1.4(rollup@3.29.5)
       '@svgr/core': 8.1.0(typescript@5.8.3)
-      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))
-      '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))
-      '@tailwindcss/typography': 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)))
-      '@tinacms/app': 2.2.8(@codemirror/language@6.0.0)(@types/node@20.17.47)(@types/react@19.1.6)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(scheduler@0.26.0)(sucrase@3.35.0)(yup@1.6.1)
+      '@tailwindcss/aspect-ratio': 0.4.2(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))
+      '@tailwindcss/container-queries': 0.1.1(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))
+      '@tailwindcss/typography': 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))
+      '@tinacms/app': 2.2.8(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.6)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(scheduler@0.26.0)(sucrase@3.35.0)(yup@1.6.1)
       '@tinacms/graphql': 1.5.18(react@19.1.0)(typescript@5.8.3)
       '@tinacms/metrics': 1.0.9(fs-extra@11.3.0)
       '@tinacms/schema-tools': 1.7.4(react@19.1.0)(yup@1.6.1)
       '@tinacms/search': 1.0.45(abstract-level@1.0.4)(react@19.1.0)(sucrase@3.35.0)(typescript@5.8.3)(yup@1.6.1)
-      '@vitejs/plugin-react': 3.1.0(vite@4.5.14(@types/node@20.17.47)(terser@5.39.1))
+      '@vitejs/plugin-react': 3.1.0(vite@4.5.14(@types/node@20.19.0)(terser@5.39.1))
       altair-express-middleware: 7.3.6
       async-lock: 1.4.1
       auto-bind: 4.0.0
@@ -13015,11 +13021,11 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       readable-stream: 4.7.0
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       tinacms: 2.7.8(@types/react@19.1.6)(abstract-level@1.0.4)(immer@10.1.1)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(scheduler@0.26.0)(sucrase@3.35.0)(typescript@5.8.3)
       typanion: 3.13.0
       typescript: 5.8.3
-      vite: 4.5.14(@types/node@20.17.47)(terser@5.39.1)
+      vite: 4.5.14(@types/node@20.19.0)(terser@5.39.1)
       yup: 1.6.1
       zod: 3.24.4
     transitivePeerDependencies:
@@ -13236,7 +13242,7 @@ snapshots:
 
   '@types/bunyan@1.8.11':
     dependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
 
   '@types/codemirror@0.0.90':
     dependencies:
@@ -13268,7 +13274,7 @@ snapshots:
 
   '@types/graceful-fs@4.1.9':
     dependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
 
   '@types/hast@2.3.10':
     dependencies:
@@ -13301,7 +13307,7 @@ snapshots:
 
   '@types/jsdom@20.0.1':
     dependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       '@types/tough-cookie': 4.0.5
       parse5: 7.3.0
 
@@ -13327,11 +13333,11 @@ snapshots:
 
   '@types/mysql@2.15.26':
     dependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
 
-  '@types/node@20.17.47':
+  '@types/node@20.19.0':
     dependencies:
-      undici-types: 6.19.8
+      undici-types: 6.21.0
 
   '@types/pg-pool@2.0.6':
     dependencies:
@@ -13339,7 +13345,7 @@ snapshots:
 
   '@types/pg@8.6.1':
     dependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       pg-protocol: 1.10.0
       pg-types: 2.2.0
 
@@ -14167,14 +14173,14 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.7.2':
     optional: true
 
-  '@vitejs/plugin-react@3.1.0(vite@4.5.14(@types/node@20.17.47)(terser@5.39.1))':
+  '@vitejs/plugin-react@3.1.0(vite@4.5.14(@types/node@20.19.0)(terser@5.39.1))':
     dependencies:
       '@babel/core': 7.27.1
       '@babel/plugin-transform-react-jsx-self': 7.27.1(@babel/core@7.27.1)
       '@babel/plugin-transform-react-jsx-source': 7.27.1(@babel/core@7.27.1)
       magic-string: 0.27.0
       react-refresh: 0.14.2
-      vite: 4.5.14(@types/node@20.17.47)(terser@5.39.1)
+      vite: 4.5.14(@types/node@20.19.0)(terser@5.39.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -14262,7 +14268,7 @@ snapshots:
 
   '@whatwg-node/promise-helpers@1.3.2':
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   '@xobotyi/scrollbar-width@1.9.5': {}
 
@@ -14769,7 +14775,7 @@ snapshots:
   camel-case@4.1.2:
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   camelcase-css@2.0.1: {}
 
@@ -14784,7 +14790,7 @@ snapshots:
   capital-case@1.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case-first: 2.0.2
 
   catering@2.1.1: {}
@@ -14833,7 +14839,7 @@ snapshots:
       path-case: 3.0.4
       sentence-case: 3.0.4
       snake-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   char-regex@1.0.2: {}
 
@@ -14988,7 +14994,7 @@ snapshots:
   constant-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case: 2.0.2
 
   content-disposition@0.5.4:
@@ -15031,13 +15037,13 @@ snapshots:
 
   crc-32@1.2.2: {}
 
-  create-jest@29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)):
+  create-jest@29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)):
     dependencies:
       '@jest/types': 29.6.3
       chalk: 4.1.2
       exit: 0.1.2
       graceful-fs: 4.2.11
-      jest-config: 29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      jest-config: 29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       jest-util: 29.7.0
       prompts: 2.4.2
     transitivePeerDependencies:
@@ -15058,7 +15064,7 @@ snapshots:
 
   cross-inspect@1.0.1:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   cross-spawn@7.0.6:
     dependencies:
@@ -15865,11 +15871,11 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-tailwindcss@3.18.0(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))):
+  eslint-plugin-tailwindcss@3.18.0(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))):
     dependencies:
       fast-glob: 3.3.3
       postcss: 8.5.4
-      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
 
   eslint-scope@5.1.1:
     dependencies:
@@ -16376,10 +16382,10 @@ snapshots:
 
   graphemer@1.4.0: {}
 
-  graphiql@3.0.0-alpha.1(@codemirror/language@6.0.0)(@types/node@20.17.47)(@types/react@19.1.6)(graphql@15.8.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  graphiql@3.0.0-alpha.1(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.6)(graphql@15.8.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      '@graphiql/react': 0.18.0(@codemirror/language@6.0.0)(@types/node@20.17.47)(@types/react@19.1.6)(graphql@15.8.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@graphiql/toolkit': 0.8.4(@types/node@20.17.47)(graphql@15.8.0)
+      '@graphiql/react': 0.18.0(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.6)(graphql@15.8.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@graphiql/toolkit': 0.8.4(@types/node@20.19.0)(graphql@15.8.0)
       graphql: 15.8.0
       graphql-language-service: 5.3.0(graphql@15.8.0)
       markdown-it: 12.3.2
@@ -16467,7 +16473,7 @@ snapshots:
   header-case@2.0.4:
     dependencies:
       capital-case: 1.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   hey-listen@1.0.8: {}
 
@@ -16714,7 +16720,7 @@ snapshots:
 
   is-lower-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   is-map@2.0.3: {}
 
@@ -16779,7 +16785,7 @@ snapshots:
 
   is-upper-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   is-weakmap@2.0.2: {}
 
@@ -16905,7 +16911,7 @@ snapshots:
       '@jest/expect': 29.7.0
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       chalk: 4.1.2
       co: 4.6.0
       dedent: 1.6.0
@@ -16925,16 +16931,16 @@ snapshots:
       - babel-plugin-macros
       - supports-color
 
-  jest-cli@29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)):
+  jest-cli@29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)):
     dependencies:
-      '@jest/core': 29.7.0(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      '@jest/core': 29.7.0(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
       chalk: 4.1.2
-      create-jest: 29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      create-jest: 29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       exit: 0.1.2
       import-local: 3.2.0
-      jest-config: 29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      jest-config: 29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       jest-util: 29.7.0
       jest-validate: 29.7.0
       yargs: 17.7.2
@@ -16944,7 +16950,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  jest-config@29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)):
+  jest-config@29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)):
     dependencies:
       '@babel/core': 7.27.1
       '@jest/test-sequencer': 29.7.0
@@ -16969,8 +16975,8 @@ snapshots:
       slash: 3.0.0
       strip-json-comments: 3.1.1
     optionalDependencies:
-      '@types/node': 20.17.47
-      ts-node: 10.9.2(@types/node@20.17.47)(typescript@5.8.3)
+      '@types/node': 20.19.0
+      ts-node: 10.9.2(@types/node@20.19.0)(typescript@5.8.3)
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -17000,7 +17006,7 @@ snapshots:
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
       '@types/jsdom': 20.0.1
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
       jsdom: 20.0.3
@@ -17014,7 +17020,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -17024,7 +17030,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@types/graceful-fs': 4.1.9
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -17063,7 +17069,7 @@ snapshots:
   jest-mock@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       jest-util: 29.7.0
 
   jest-pnp-resolver@1.2.3(jest-resolve@29.7.0):
@@ -17098,7 +17104,7 @@ snapshots:
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       chalk: 4.1.2
       emittery: 0.13.1
       graceful-fs: 4.2.11
@@ -17126,7 +17132,7 @@ snapshots:
       '@jest/test-result': 29.7.0
       '@jest/transform': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       chalk: 4.1.2
       cjs-module-lexer: 1.4.3
       collect-v8-coverage: 1.0.2
@@ -17172,7 +17178,7 @@ snapshots:
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -17191,7 +17197,7 @@ snapshots:
     dependencies:
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       ansi-escapes: 4.3.2
       chalk: 4.1.2
       emittery: 0.13.1
@@ -17200,23 +17206,23 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
-  jest@29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)):
+  jest@29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)):
     dependencies:
-      '@jest/core': 29.7.0(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      '@jest/core': 29.7.0(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       '@jest/types': 29.6.3
       import-local: 3.2.0
-      jest-cli: 29.7.0(@types/node@20.17.47)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      jest-cli: 29.7.0(@types/node@20.19.0)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
     transitivePeerDependencies:
       - '@types/node'
       - babel-plugin-macros
@@ -17509,11 +17515,11 @@ snapshots:
 
   lower-case-first@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   lru-cache@10.0.0: {}
 
@@ -17813,9 +17819,9 @@ snapshots:
       stylis: 4.3.6
       uuid: 9.0.1
 
-  meros@1.3.0(@types/node@20.17.47):
+  meros@1.3.0(@types/node@20.19.0):
     optionalDependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
 
   methods@1.1.2: {}
 
@@ -18464,7 +18470,7 @@ snapshots:
   param-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   parent-module@1.0.1:
     dependencies:
@@ -18512,14 +18518,14 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   path-browserify@1.0.1: {}
 
   path-case@3.0.4:
     dependencies:
       dot-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   path-exists@3.0.0: {}
 
@@ -18630,13 +18636,13 @@ snapshots:
       camelcase-css: 2.0.1
       postcss: 8.5.4
 
-  postcss-load-config@4.0.2(postcss@8.5.4)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)):
+  postcss-load-config@4.0.2(postcss@8.5.4)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)):
     dependencies:
       lilconfig: 3.1.3
       yaml: 2.7.1
     optionalDependencies:
       postcss: 8.5.4
-      ts-node: 10.9.2(@types/node@20.17.47)(typescript@5.8.3)
+      ts-node: 10.9.2(@types/node@20.19.0)(typescript@5.8.3)
 
   postcss-nested@6.2.0(postcss@8.5.4):
     dependencies:
@@ -18701,7 +18707,7 @@ snapshots:
       pump: 3.0.2
       rc: 1.2.8
       simple-get: 4.0.1
-      tar-fs: 2.1.2
+      tar-fs: 2.1.3
       tunnel-agent: 0.6.0
 
   prelude-ls@1.2.1: {}
@@ -18777,7 +18783,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       long: 5.3.2
 
   protocol-buffers-encodings@1.2.0:
@@ -19367,7 +19373,7 @@ snapshots:
   sentence-case@3.0.4:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.8.1
+      tslib: 2.6.3
       upper-case-first: 2.0.2
 
   serialize-javascript@6.0.2:
@@ -19632,7 +19638,7 @@ snapshots:
 
   sponge-case@1.0.1:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   sprintf-js@1.0.3: {}
 
@@ -19865,7 +19871,7 @@ snapshots:
 
   swap-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   symbol-tree@3.2.4: {}
 
@@ -19880,7 +19886,7 @@ snapshots:
 
   tailwind-merge@3.3.0: {}
 
-  tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3)):
+  tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)):
     dependencies:
       '@alloc/quick-lru': 5.2.0
       arg: 5.0.2
@@ -19899,7 +19905,7 @@ snapshots:
       postcss: 8.5.4
       postcss-import: 15.1.0(postcss@8.5.4)
       postcss-js: 4.0.1(postcss@8.5.4)
-      postcss-load-config: 4.0.2(postcss@8.5.4)(ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3))
+      postcss-load-config: 4.0.2(postcss@8.5.4)(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
       postcss-nested: 6.2.0(postcss@8.5.4)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.10
@@ -19909,7 +19915,7 @@ snapshots:
 
   tapable@2.2.1: {}
 
-  tar-fs@2.1.2:
+  tar-fs@2.1.3:
     dependencies:
       chownr: 1.1.4
       mkdirp-classic: 0.5.3
@@ -19974,7 +19980,7 @@ snapshots:
       '@headlessui/react': 2.1.8(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@heroicons/react': 1.0.6(react@19.1.0)
       '@monaco-editor/react': 4.7.0-rc.0(monaco-editor@0.31.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@radix-ui/react-checkbox': 1.3.1(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@radix-ui/react-checkbox': 1.3.2(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dialog': 1.1.13(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-dropdown-menu': 2.1.15(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-popover': 1.1.13(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -20069,7 +20075,7 @@ snapshots:
 
   title-case@3.0.3:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   tmpl@1.0.5: {}
 
@@ -20116,14 +20122,14 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@types/node@20.17.47)(typescript@5.8.3):
+  ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.11
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       acorn: 8.14.1
       acorn-walk: 8.3.4
       arg: 4.1.3
@@ -20235,7 +20241,7 @@ snapshots:
 
   unc-path-regex@0.1.2: {}
 
-  undici-types@6.19.8: {}
+  undici-types@6.21.0: {}
 
   undici@5.29.0:
     dependencies:
@@ -20375,11 +20381,11 @@ snapshots:
 
   upper-case-first@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   upper-case@2.0.2:
     dependencies:
-      tslib: 2.8.1
+      tslib: 2.6.3
 
   uri-js@4.4.1:
     dependencies:
@@ -20504,13 +20510,13 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@4.5.14(@types/node@20.17.47)(terser@5.39.1):
+  vite@4.5.14(@types/node@20.19.0)(terser@5.39.1):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.5.4
       rollup: 3.29.5
     optionalDependencies:
-      '@types/node': 20.17.47
+      '@types/node': 20.19.0
       fsevents: 2.3.3
       terser: 5.39.1
 
