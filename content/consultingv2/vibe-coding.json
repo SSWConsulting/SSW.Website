@@ -103,31 +103,30 @@
       "cards": [
         {
           "guid": "7mtu8j",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidError",
-          "heading": "Reduce Risk on Complex Projects",
-          "description": "Our proven Agile (Scrum) process means clear communication, quality code, and reliable project delivery. No nasty surprises.",
+          "altText": "Launch Ideas",
+          "icon": "BiSolidRocket",
+          "heading": "Launch Ideas Without the Dev Bottleneck",
+          "description": "We empower tech-savvy Product Owners to prototype and build early versions—fast, lean, and without waiting on developers.",
           "embeddedButton": {
-            "buttonText": "Rules to Better Scrum",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-scrum/"
+            "buttonText": ""
           }
         },
         {
           "guid": "lxpq3m",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidMedal",
-          "heading": "Solve Challenges Off-the-Shelf Software Can't",
-          "description": "We build the custom web apps and APIs you actually need when standard software just doesn't cut it.",
+          "altText": "Let You Vibe Code",
+          "icon": "BiCog",
+          "heading": "Tools That Let You Vibe Code",
+          "description": "From Notion and Figma to low-code platforms and modern dev tools, we set up everything you need to bring your vision to life.",
           "embeddedButton": {
             "buttonText": ""
           }
         },
         {
           "guid": "5q8kz",
-          "altText": "Lorem Ipsum",
-          "icon": "BiLogoMicrosoft",
-          "heading": "Elite Microsoft Stack Expertise",
-          "description": "Take advantage of our 30+ years of .NET & Azure experience, top-tier talent (MVPs, RDs), and direct Microsoft connections.",
+          "altText": "Real Engineers",
+          "icon": "BiCheckShield",
+          "heading": "Backed by Real Engineers",
+          "description": "You’re never alone. We support your vibe coding journey with expert coaching, technical reviews, and a path to production when you're ready.",
           "embeddedButton": {
             "buttonText": "SSW People",
             "buttonLink": "https://www.ssw.com.au/people/"
