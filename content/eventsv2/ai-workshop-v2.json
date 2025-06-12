@@ -4,9 +4,9 @@
       "topLabel": {
         "labelText": "On-Site AI Workshop"
       },
-      "heading": "Stop Dabbling. Start Delivering.",
+      "heading": "Stop Dabbling. **Start Delivering.**",
       "isH1": true,
-      "description": "Everyone’s testing prompts. Few are getting real gains. This hands-on workshop gives your team the skills and systems to turn AI into actual productivity, not just hallway hype.\n",
+      "description": "Everyone’s testing prompts. Few are getting real gains.\\\nThis hands-on workshop gives your team the skills and systems to turn AI into actual productivity, not just hallway hype.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -113,7 +113,7 @@
         },
         {
           "label": "Business-Grade AI Workflows",
-          "content": "We show your team how to apply AI where it matters:\n\n* Research & Synthesis: Smarter search that saves hours. \n* Document Analysis: Extract insights from reports, PDFs, and data. \n* Code & Diagram Generation: Automate small builds, visualize processes.\n"
+          "content": "We show your team how to apply AI where it matters:\n\n* Research & Synthesis: Smarter search that saves hours.\n* Document Analysis: Extract insights from reports, PDFs, and data.\n* Code & Diagram Generation: Automate small builds, visualize processes.\n"
         },
         {
           "label": "Advanced Prompting & Personalization",
