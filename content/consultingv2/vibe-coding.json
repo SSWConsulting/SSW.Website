@@ -1,1 +1,385 @@
-
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Vibe Coding",
+    "description": "Craft modern and collaborative solutions with our Vibe Coding service. Fast delivery, great UX, zero fluff."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for Vibe Coding",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "**Vibe Coding** - Empowering Product Owners to Build Without Limits",
+      "isH1": true,
+      "description": "We help tech-savvy visionaries bring their product ideas to life, giving them the tools and support to prototype and vibe code. No production coding needed.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk",
+        "altText": "Web Application development is hard - Why choose SSW"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195,
+          "altText": "Toll Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180,
+          "altText": "Microsoft Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160,
+          "altText": "Symantec Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175,
+          "altText": "Domain Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
+          "altText": "CBA Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175,
+          "altText": "Cisco Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Allianz Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "7mtu8j",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidError",
+          "heading": "Reduce Risk on Complex Projects",
+          "description": "Our proven Agile (Scrum) process means clear communication, quality code, and reliable project delivery. No nasty surprises.",
+          "embeddedButton": {
+            "buttonText": "Rules to Better Scrum",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-scrum/"
+          }
+        },
+        {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidMedal",
+          "heading": "Solve Challenges Off-the-Shelf Software Can't",
+          "description": "We build the custom web apps and APIs you actually need when standard software just doesn't cut it.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "5q8kz",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Elite Microsoft Stack Expertise",
+          "description": "Take advantage of our 30+ years of .NET & Azure experience, top-tier talent (MVPs, RDs), and direct Microsoft connections.",
+          "embeddedButton": {
+            "buttonText": "SSW People",
+            "buttonLink": "https://www.ssw.com.au/people/"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "Transforming Noise Impact Management with KNOWnoise",
+      "isH1": false,
+      "description": "Hutchison Weller needed a better way to manage noise planning. Their old Excel tool was slow and inflexible. We built KNOWnoise, a web app for fast, real-time noise impact assessment.\n",
+      "chips": [
+        {
+          "chipText": "Azure",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": ".NET",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Angular",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Instant, Interactive Noise Assessment",
+            "description": "Model noise levels with simple selections, get instant risk profiles, impact maps, and exceedance data."
+          },
+          {
+            "heading": "From Spreadsheet to Web App",
+            "description": "Replaced a complex Excel tool with a web-based platform: Angular, NgRx, .NET Core on Azure. Deployed in 3 months. Ready for field or office use."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Read the full story",
+          "leadCaptureFormOption": "",
+          "buttonLink": "https://www.ssw.com.au/company/clients/hutchison-weller",
+          "colour": 0
+        },
+        {
+          "buttonText": "Rules to Better .NET Projects",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net-projects/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageHeight": 700,
+        "imageWidth": 1400,
+        "youtubeUrl": "https://www.youtube.com/watch?v=wiFadV5SOPc",
+        "altText": "Hutchison Weller"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve nuilding enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "mxnzv",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
+          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "chips": [
+            {
+              "chipText": "Web Development",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "55 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "description": "This session introduces Next.js and shadcn/UI, modern web development tools that simplify creating sleek and responsive websites. Join SSW's Jack Pettit for a beginner-friendly demo covering practical tips to supercharge your projects.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "3twol9",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=PVRNOoO_iXA",
+          "altText": "Unlocking Domain-Driven Design: Exploring Contextive | Gert Marx & Chris Simon",
+          "chips": [
+            {
+              "chipText": "Web Development",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "50 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Building Cross-platform Blazor Desktop Apps with Photino",
+          "description": "Explore Photino, the lightweight way to build native-feeling desktop apps with Blazor. See how it compares to MAUI/Electron & watch a quickstart demo.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "6o99x4do",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/YqbdwNxA_sI?si=JYOgGVdzdk0CzRUi",
+          "altText": "Vercel - Development with Zero Config | Tylah Kapa",
+          "chips": [
+            {
+              "chipText": "Web Development",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "28 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Vercel - Development with Zero Config",
+          "description": "Vercel simplifies website deployment with GitHub integration, real-time editing, and scalable infrastructure. It's free to start and ideal for projects of any size. See Tylah's demo for a hands-on look.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "How does SSW ensure the quality and success of a software project?",
+          "content": "Quality and success are built into our process. We use:\n\n* [Clean Architecture](https://github.com/SSWConsulting/SSW.CleanArchitecture): Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
+        },
+        {
+          "label": "What types of web apps does SSW specialize in building?",
+          "content": "SSW specializes in building complex, custom web applications and APIs from the ground up. This includes CRM systems, ERP systems, line-of-business applications, customer portals, intranets, and mobile applications. We thrive on challenging projects that push the boundaries of technology\n"
+        },
+        {
+          "label": "What technologies does SSW primarily use for development?",
+          "content": "Our core expertise lies in Microsoft technologies, particularly .NET and Azure cloud services. We are also proficient leaders in popular front-end frameworks like Angular and React. However, we prioritize using the most effective technology for the job, ensuring solutions are scalable, testable, and extensible, often utilizing Clean Architecture principles.\n"
+        },
+        {
+          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+        },
+        {
+          "label": "What is SSW's development process like, and how involved will I need to be?",
+          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "isStacked": false,
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your **web app today**",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
