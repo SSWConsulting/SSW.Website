@@ -234,24 +234,24 @@
       "body": "",
       "accordionItems": [
         {
-          "label": "How does SSW ensure the quality and success of a software project?",
-          "content": "Quality and success are built into our process. We use:\n\n* [Clean Architecture](https://github.com/SSWConsulting/SSW.CleanArchitecture): Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
+          "label": "What is Vibe Coding?",
+          "content": "Vibe Coding is a service that helps tech-savvy Product Owners turn their ideas into working prototypes—without needing to write production code.\n"
         },
         {
-          "label": "What types of web apps does SSW specialize in building?",
-          "content": "SSW specializes in building complex, custom web applications and APIs from the ground up. This includes CRM systems, ERP systems, line-of-business applications, customer portals, intranets, and mobile applications. We thrive on challenging projects that push the boundaries of technology\n"
+          "label": "Do I need to be a developer?",
+          "content": "No. You just need to be comfortable with tech and have a clear product vision. We'll guide you through modern tools that let you build without deep coding knowledge.\n"
         },
         {
-          "label": "What technologies does SSW primarily use for development?",
-          "content": "Our core expertise lies in Microsoft technologies, particularly .NET and Azure cloud services. We are also proficient leaders in popular front-end frameworks like Angular and React. However, we prioritize using the most effective technology for the job, ensuring solutions are scalable, testable, and extensible, often utilizing Clean Architecture principles.\n"
+          "label": "What kind of tools will I use?",
+          "content": "We set you up with tools like Figma, Notion, Retool, Vercel, and GitHub—plus optional low-code platforms depending on your goals.\n"
         },
         {
-          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
-          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+          "label": "Can I build something real with this?",
+          "content": "Absolutely. While it’s not production-grade code, you can create real, working prototypes to test, pitch, or validate your idea before engaging full developers.\n"
         },
         {
-          "label": "What is SSW's development process like, and how involved will I need to be?",
-          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+          "label": "What happens when I’m ready to scale?",
+          "content": "We’ll help transition your prototype into a real product—bringing in our expert developers to build out secure, scalable, production-quality systems.\n"
         },
         {
           "label": "What happens in the free initial meeting?",
@@ -290,7 +290,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Talk to us about your **web app today**",
+      "heading": "Talk to us about your **product idea** today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
