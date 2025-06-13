@@ -83,7 +83,7 @@
         {
           "guid": "uxx42",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidBrain",
+          "icon": "BiAbacus",
           "heading": "Only using AI for the “easy stuff”",
           "description": "If AI only cleans up typos or meeting notes, you’re wasting horsepower. The real gains come when AI tackles chunky tasks like data analysis or preparing market research in minutes.",
           "embeddedButton": {
