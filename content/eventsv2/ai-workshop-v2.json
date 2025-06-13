@@ -203,12 +203,12 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "accordionItems": [
         {
-          "label": "Lorem",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "Do I need to know how to code?",
+          "content": "Basic tech literacy is enough; we focus on practical workflows that anyone from marketing to ops can use. If you write emails, crunch numbers, or manage projects, you’ll walk out with new AI superpowers.\n"
         },
         {
-          "label": "Ipsum",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "How many seats are available?",
+          "content": "We cap each workshop at \\~20 people. That’s the sweet spot where everyone gets hands-on time with the instructor, and no one’s stuck waiting to try the demos.\n"
         }
       ],
       "buttons": [
