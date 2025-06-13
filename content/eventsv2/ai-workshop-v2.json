@@ -32,7 +32,7 @@
     },
     {
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 2
       },
       "heading": "Trusted by",
       "isWhiteImages": true,
@@ -102,7 +102,7 @@
         }
       ],
       "background": {
-        "backgroundColour": 2
+        "backgroundColour": 5
       },
       "_template": "cardCarousel"
     },
