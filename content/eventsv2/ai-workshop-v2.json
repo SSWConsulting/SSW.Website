@@ -203,6 +203,10 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "accordionItems": [
         {
+          "label": "How long is the workshop?",
+          "content": "One intense day; four tightly scoped modules. Energy drinks optional but recommended.\n"
+        },
+        {
           "label": "Do I need to know how to code?",
           "content": "Basic tech literacy is enough; we focus on practical workflows that anyone from marketing to ops can use. If you write emails, crunch numbers, or manage projects, you’ll walk out with new AI superpowers.\n"
         },
