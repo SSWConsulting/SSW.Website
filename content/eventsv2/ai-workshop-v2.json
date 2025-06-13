@@ -108,7 +108,7 @@
     },
     {
       "heading": "A Workshop Built for **Real AI Adoption**",
-      "body": "This isn’t theory. It’s hands-on. We train your team to actually use AI in daily work — and build systems that stick.",
+      "body": "This isn’t theory. It’s hands-on. We train your team to actually use AI in daily work, and build systems that stick.",
       "accordionItems": [
         {
           "label": "Core AI Fundamentals",
@@ -142,6 +142,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 2
+      },
       "mediaConfiguration": {
         "verticalPlacement": "Centered",
         "imageSource": "/images/ssw-web/blog/what-we-cover.png",
