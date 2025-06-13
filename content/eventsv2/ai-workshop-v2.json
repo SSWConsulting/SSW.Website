@@ -328,6 +328,15 @@
         "backgroundColour": 5
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 5,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
     }
   ]
 }
