@@ -303,6 +303,9 @@
           }
         }
       ],
+      "background": {
+        "backgroundColour": 2
+      },
       "_template": "cardCarousel"
     },
     {
