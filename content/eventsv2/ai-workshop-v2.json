@@ -321,8 +321,8 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
+              "chipText": "6 min.",
+              "chipType": "clearChip"
             }
           ],
           "icon": "info",
