@@ -53,9 +53,9 @@
         {
           "guid": "qnv92",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidWrench",
-          "heading": "Wrong Tool, Wrong Job",
-          "description": "Teams apply general-purpose models to domain-specific problems. Results underwhelm.",
+          "icon": "BiSolidHide",
+          "heading": "Workers use AI in secret",
+          "description": "Employees fear being punished, laid off, or labeled “cheaters,” so they hide ChatGPT tabs. Tips and gains stay invisible, and the company can’t spread the wins",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -64,8 +64,8 @@
           "guid": "4bcikc",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidBong",
-          "heading": "One-Off Wins, No Lasting Change",
-          "description": "Employees try prompt tips from YouTube. Some work. Most don’t stick. Teams never build repeatable processes.",
+          "heading": "No system for repeatable workflows",
+          "description": "A clever prompt in someone’s notebook isn’t a process. Without a shared template or script, wins stay one-off and disappear when that employee is on leave. ",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -73,8 +73,8 @@
         {
           "guid": "z57ea",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidMessageRoundedX",
-          "heading": "Siloed Tools, Siloed Results",
+          "icon": "BiSolidNetworkChart",
+          "heading": "No system for repeatable workflows",
           "description": "Legal’s on Claude. Devs on Copilot. Marketing on Gemini. Every team experiments in isolation. The company learns nothing.",
           "embeddedButton": {
             "buttonText": ""
@@ -84,8 +84,8 @@
           "guid": "uxx42",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidBrain",
-          "heading": "AI Stuck on the Easy Stuff",
-          "description": "It writes summaries and drafts. The real work still happens by hand. The payoff never compounds.",
+          "heading": "Only using AI for the “easy stuff”",
+          "description": "If AI only cleans up typos or meeting notes, you’re wasting horsepower. The real gains come when AI tackles chunky tasks like data analysis or preparing market research in minutes.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -93,9 +93,9 @@
         {
           "guid": "64hyte",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidBook",
-          "heading": "No Stable Prompt Playbook",
-          "description": "A single model tweak breaks your best prompt. Knowledge management becomes impossible.",
+          "icon": "BiSolidHelpCircle",
+          "heading": "Leaders talk big, but stay fuzzy",
+          "description": "They announce “AI is our future,” yet never explain what jobs will change or how success will be rewarded. Without a clear picture, staff keep doing the old routine.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -116,7 +116,7 @@
         },
         {
           "label": "The Full AI Stack",
-          "content": "Not just ChatGPT. We cover Claude, Gemini, and some open-source gems, so your team can pick the right tool for the right job.\n"
+          "content": "Not just ChatGPT. We cover Claude, Gemini, and some open-source gems, so your team can pick the right tool for the right job. (we focus on your current use)\n"
         },
         {
           "label": "Business-Grade AI Workflows",
