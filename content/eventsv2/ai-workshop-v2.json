@@ -275,6 +275,10 @@
             {
               "chipText": "DevTools",
               "chipType": "filledChip"
+            },
+            {
+              "chipText": "18 min.",
+              "chipType": "clearChip"
             }
           ],
           "icon": "info",
