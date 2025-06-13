@@ -1,0 +1,372 @@
+{
+  "blocks": [
+    {
+      "topLabel": {
+        "labelText": "On-Site AI Workshop"
+      },
+      "heading": "Stop Dabbling. **Start Delivering.**",
+      "isH1": true,
+      "description": "Everyone’s testing prompts. Few are getting real gains.\\\nThis hands-on workshop gives your team the skills and systems to turn AI into actual productivity, not just hallway hype.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a Discovery Call",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/ssw-web/hero/ssw-ai-workshop.png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 2
+      },
+      "heading": "Trusted by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "Why Results Lag Behind the Hype?",
+      "isH1": false,
+      "body": "Almost half of employees already dabble with AI. Studies show the right prompt can cut some tasks to a third of the time.\n\nSo why isn’t the whole company moving faster? ",
+      "cards": [
+        {
+          "guid": "qnv92",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidHide",
+          "heading": "Workers use AI in secret",
+          "description": "Employees fear being punished, laid off, or labeled “cheaters,” so they hide ChatGPT tabs. Tips and gains stay invisible, and the company can’t spread the wins",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "4bcikc",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidBookBookmark",
+          "heading": "No prompt libraries",
+          "description": "A clever prompt in someone’s notebook isn’t a process. Without a shared template or script, wins stay one-off and disappear when that employee is on leave. ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "z57ea",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidBong",
+          "heading": "No “lab” team to test and share fast",
+          "description": "Nobody owns quick experiments, prototypes, and internal how-to docs, so every department reinvents the wheel or gives up.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "uxx42",
+          "altText": "Lorem Ipsum",
+          "icon": "BiAbacus",
+          "heading": "Only using AI for the “easy stuff”",
+          "description": "If AI only cleans up typos or meeting notes, you’re wasting horsepower. The real gains come when AI tackles chunky tasks like data analysis or preparing market research in minutes.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "64hyte",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidHelpCircle",
+          "heading": "Leaders talk big, but stay fuzzy",
+          "description": "They announce “AI is our future,” yet never explain what jobs will change or how success will be rewarded. Without a clear picture, staff keep doing the old routine.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "A Workshop Built for **Real AI Adoption**",
+      "body": "This isn’t theory. It’s hands-on. We train your team to actually use AI in daily work, and build systems that stick. One intense day; four tightly scoped modules.",
+      "accordionItems": [
+        {
+          "label": "Core AI Fundamentals",
+          "content": "Cut through the hype. Your team will learn how LLMs actually work: tokens, context, randomness, so they get predictable results.\\\n\\\nWe’ll break a prompt on purpose, then fix it, so everyone feels the knobs in action.\n"
+        },
+        {
+          "label": "The Full AI Stack",
+          "content": "Deep dive into ChatGPT. We’ll show you:\n\n* Which model tier (free, Plus, API) fits each task.\n* Plug-and-play helpers (retrieval, vision, code, canvas)\n* Side-by-side demos with Gemini or Claude if your stack differs, so every lesson transfers.\n"
+        },
+        {
+          "label": "Business-Grade AI Workflows",
+          "content": "We show your team how to apply AI where it matters:\n\n* Research & Synthesis: Smarter search that saves hours.\n* Document Analysis: Extract insights from reports, PDFs, and data.\n* Simple Code Generation: Automate tasks from a plain-English spec.\n"
+        },
+        {
+          "label": "Advanced Prompting",
+          "content": "Move beyond one-off hacks. Build reusable, custom AI workflows with advanced prompting, memory, and custom instructions.\n"
+        },
+        {
+          "label": "✨ 30-Day Booster Support",
+          "content": "Post-workshop office hours and template library to help your team turn experiments into roll-outs\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "buttons": [
+        {
+          "buttonText": "Get The Full Agenda",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 3
+      },
+      "mediaConfiguration": {
+        "verticalPlacement": "Centered",
+        "imageSource": "/images/ssw-web/blog/what-we-cover.png",
+        "imageHeight": 780,
+        "imageWidth": 972
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "How It Works",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "4qkep6",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Quick call to map goals",
+          "description": "We map your team’s goals, use cases, and current AI maturity. No fluff, just what we need to tailor the workshop.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "4ob77n",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "On-Site Workshop Day",
+          "description": "One focused day at your office. Live demos, hands-on labs, real workflows. Your team leaves ready to apply what they learned.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "tydp",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Post-Workshop Support",
+          "description": "30 days of office hours and templates to keep momentum, answer questions, and turn experiments into production.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Workshop FAQ",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "Do I need to know how to code?",
+          "content": "Basic tech literacy is enough; we focus on practical workflows that anyone from marketing to ops can use. If you write emails, crunch numbers, or manage projects, you’ll walk out with new AI superpowers.\n"
+        },
+        {
+          "label": "How long is the workshop?",
+          "content": "One intense day; four tightly scoped modules. Energy drinks optional but recommended.\n"
+        },
+        {
+          "label": "How many seats are available?",
+          "content": "We cap each workshop at \\~20 people. That’s the sweet spot where everyone gets hands-on time with the instructor, and no one’s stuck waiting to try the demos.\n"
+        },
+        {
+          "label": "What will my team take away?",
+          "content": "Repeatable AI playbooks, a toolkit of prompt patterns, and the confidence to automate the boring stuff on Monday.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Meet Your Instructor"
+      },
+      "heading": "Ulysses Maclaren",
+      "isH1": false,
+      "description": "Ulysses brings 20+ years of enterprise consulting experience, helping companies adopt emerging technology with confidence. He’s led AI enablement sessions for businesses looking to cut through the hype and build systems that drive measurable outcomes.\n",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Uly scared us. 10/10",
+            "description": "Sarah L., Director of Operations",
+            "icon": "BiSolidQuoteAltLeft"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=zaQOlw0-jQ4"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Built on Real-World AI Delivery",
+      "isH1": false,
+      "body": "SSW isn’t guessing. We’ve been building and fixing AI systems for years, across industries, tech stacks, and use cases. This workshop distills the lessons that save teams time, money, and frustration.",
+      "buttons": [
+        {
+          "buttonText": "Rules to Better AI Development"
+        }
+      ],
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "uh77mq",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "DevTools",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "18 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "SSW’s Gert Marx joins Chris Simon at NDC Melbourne to break down the latest on Contextive, the open-source tool helping devs write code that better aligns with business needs.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "itqfs7",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Insights",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "11 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "At NDC, Ulysses Maclaren talks with Richard Campbell about AI’s growing energy demands, Microsoft’s nuclear plans, and the massive infrastructure shifts behind our data-hungry future.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "2eb7hu",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Responsible AI",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "6 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "Ulysses shares best practices for responsible AI: transparency, critical thinking, privacy, and using AI to actually boost productivity and stay ahead in your career.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Ready to make AI part of the standard toolkit?",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Let’s Talk",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 5,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
