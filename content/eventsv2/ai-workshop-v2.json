@@ -293,6 +293,16 @@
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
           "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Insights",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            }
+          ],
           "icon": "info",
           "heading": "",
           "description": "At NDC, Ulysses Maclaren talks with Richard Campbell about AI’s growing energy demands, Microsoft’s nuclear plans, and the massive infrastructure shifts behind our data-hungry future.",
