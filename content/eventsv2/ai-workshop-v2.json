@@ -73,9 +73,9 @@
         {
           "guid": "z57ea",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidNetworkChart",
-          "heading": "No system for repeatable workflows",
-          "description": "Legal’s on Claude. Devs on Copilot. Marketing on Gemini. Every team experiments in isolation. The company learns nothing.",
+          "icon": "BiSolidBong",
+          "heading": "No “lab” team to test and share fast",
+          "description": "Nobody owns quick experiments, prototypes, and internal how-to docs, so every department reinvents the wheel or gives up.",
           "embeddedButton": {
             "buttonText": ""
           }
