@@ -123,7 +123,7 @@
           "content": "We show your team how to apply AI where it matters:\n\n* Research & Synthesis: Smarter search that saves hours.\n* Document Analysis: Extract insights from reports, PDFs, and data.\n* Simple Code Generation: Automate tasks from a plain-English spec.\n"
         },
         {
-          "label": "Advanced Prompting & Personalization",
+          "label": "Advanced Prompting",
           "content": "Move beyond one-off hacks. Build reusable, custom AI workflows with advanced prompting, memory, and custom instructions.\n"
         },
         {
