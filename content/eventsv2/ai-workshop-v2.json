@@ -315,6 +315,16 @@
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
           "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Responsible AI",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            }
+          ],
           "icon": "info",
           "heading": "",
           "description": "Ulysses shares best practices for responsible AI: transparency, critical thinking, privacy, and using AI to actually boost productivity and stay ahead in your career.",
