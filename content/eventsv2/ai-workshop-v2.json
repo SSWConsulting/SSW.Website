@@ -192,6 +192,7 @@
         }
       ],
       "background": {
+        "backgroundColour": 5,
         "backgroundImage": "",
         "bleed": true
       },
