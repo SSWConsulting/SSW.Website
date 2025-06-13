@@ -112,15 +112,15 @@
       "accordionItems": [
         {
           "label": "Core AI Fundamentals",
-          "content": "Cut through the hype. Your team will learn how LLMs actually work: tokens, context, randomness, so they get predictable results.\n"
+          "content": "Cut through the hype. Your team will learn how LLMs actually work: tokens, context, randomness, so they get predictable results.\\\n\\\nWe’ll break a prompt on purpose, then fix it, so everyone feels the knobs in action.\n"
         },
         {
           "label": "The Full AI Stack",
-          "content": "Not just ChatGPT. We cover Claude, Gemini, and some open-source gems, so your team can pick the right tool for the right job. (we focus on your current use)\n"
+          "content": "Deep dive into ChatGPT. We’ll show:\n\n* Which model tier (free, Plus, API) fits each task.\n* Plug-and-play helpers (retrieval, vision, code, canvas)\n* Side-by-side demos with Gemini or Claude if your stack differs, so every lesson transfers.\n"
         },
         {
           "label": "Business-Grade AI Workflows",
-          "content": "We show your team how to apply AI where it matters:\n\n* Research & Synthesis: Smarter search that saves hours.\n* Document Analysis: Extract insights from reports, PDFs, and data.\n* Code & Diagram Generation: Automate small builds, visualize processes.\n"
+          "content": "We show your team how to apply AI where it matters:\n\n* Research & Synthesis: Smarter search that saves hours.\n* Document Analysis: Extract insights from reports, PDFs, and data.\n* Simple Code Generation: Automate tasks from a plain-English spec.\n"
         },
         {
           "label": "Advanced Prompting & Personalization",
