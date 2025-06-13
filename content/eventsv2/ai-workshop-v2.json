@@ -242,6 +242,9 @@
           }
         ]
       },
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Left",
