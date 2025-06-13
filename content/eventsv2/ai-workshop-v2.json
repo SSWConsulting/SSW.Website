@@ -31,7 +31,11 @@
       "_template": "imageTextBlock"
     },
     {
-      "heading": "Lorem Ipsum",
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by",
+      "isWhiteImages": true,
       "logos": [
         {
           "logo": "",
@@ -44,7 +48,7 @@
       "isStacked": false,
       "heading": "Why Results Lag Behind the Hype?",
       "isH1": false,
-      "body": "Almost half of employees already dabble with AI, studies show the right prompt can cut some tasks to a third of the time.\n\nSo why isn’t the whole company moving faster? ",
+      "body": "Almost half of employees already dabble with AI. Studies show the right prompt can cut some tasks to a third of the time.\n\nSo why isn’t the whole company moving faster? ",
       "cards": [
         {
           "guid": "qnv92",
@@ -69,7 +73,7 @@
         {
           "guid": "z57ea",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidMessageRoundedX",
           "heading": "Siloed Tools, Siloed Results",
           "description": "Legal’s on Claude. Devs on Copilot. Marketing on Gemini. Every team experiments in isolation. The company learns nothing.",
           "embeddedButton": {
@@ -79,7 +83,7 @@
         {
           "guid": "uxx42",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidBrain",
           "heading": "AI Stuck on the Easy Stuff",
           "description": "It writes summaries and drafts. The real work still happens by hand. The payoff never compounds.",
           "embeddedButton": {
@@ -89,7 +93,7 @@
         {
           "guid": "64hyte",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidBook",
           "heading": "No Stable Prompt Playbook",
           "description": "A single model tweak breaks your best prompt. Knowledge management becomes impossible.",
           "embeddedButton": {
