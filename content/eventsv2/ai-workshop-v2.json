@@ -108,7 +108,7 @@
     },
     {
       "heading": "A Workshop Built for **Real AI Adoption**",
-      "body": "This isn’t theory. It’s hands-on. We train your team to actually use AI in daily work, and build systems that stick.",
+      "body": "This isn’t theory. It’s hands-on. We train your team to actually use AI in daily work, and build systems that stick. One intense day; four tightly scoped modules.",
       "accordionItems": [
         {
           "label": "Core AI Fundamentals",
@@ -209,18 +209,13 @@
         {
           "label": "How many seats are available?",
           "content": "We cap each workshop at \\~20 people. That’s the sweet spot where everyone gets hands-on time with the instructor, and no one’s stuck waiting to try the demos.\n"
-        }
-      ],
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
-          "colour": 1
+          "label": "What will my team take away?",
+          "content": "Repeatable AI playbooks, a toolkit of prompt patterns, and the confidence to automate the boring stuff on Monday.\n"
         }
       ],
+      "isMultipleOpen": true,
       "background": {
         "backgroundColour": 5
       },
