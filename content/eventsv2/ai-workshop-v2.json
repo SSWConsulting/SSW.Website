@@ -271,6 +271,12 @@
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
           "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "DevTools",
+              "chipType": "filledChip"
+            }
+          ],
           "icon": "info",
           "heading": "",
           "description": "SSW’s Gert Marx joins Chris Simon at NDC Melbourne to break down the latest on Contextive, the open-source tool helping devs write code that better aligns with business needs.",
