@@ -192,8 +192,8 @@
         }
       ],
       "background": {
-        "backgroundColour": 5,
-        "backgroundImage": "",
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
         "bleed": true
       },
       "_template": "cardCarousel"
@@ -221,7 +221,7 @@
       ],
       "isMultipleOpen": true,
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 6
       },
       "_template": "accordionBlock"
     },
