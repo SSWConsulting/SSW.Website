@@ -63,8 +63,8 @@
         {
           "guid": "4bcikc",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidNetworkChart",
-          "heading": "No system for repeatable workflows",
+          "icon": "BiSolidBookBookmark",
+          "heading": "No prompt libraries",
           "description": "A clever prompt in someone’s notebook isn’t a process. Without a shared template or script, wins stay one-off and disappear when that employee is on leave. ",
           "embeddedButton": {
             "buttonText": ""
