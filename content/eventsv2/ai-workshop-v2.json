@@ -127,7 +127,7 @@
           "content": "We show your team how to apply AI where it matters:\n\n* Research & Synthesis: Smarter search that saves hours.\n* Document Analysis: Extract insights from reports, PDFs, and data.\n* Simple Code Generation: Automate tasks from a plain-English spec.\n"
         },
         {
-          "label": "✨ 30-Day Booster Support",
+          "label": "✨ Post-Wokshop Support",
           "content": "Post-workshop check-ins and template library to help your team turn experiments into roll-outs\n"
         }
       ],
@@ -185,7 +185,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "Post-Workshop Support",
-          "description": "30 days of office hours and templates to keep momentum, answer questions, and turn experiments into production.",
+          "description": "Follow-up meetings and templates to keep momentum, answer questions, and turn experiments into production.",
           "embeddedButton": {
             "buttonText": ""
           }
