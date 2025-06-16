@@ -251,7 +251,8 @@
       "body": "SSW isn’t guessing. We’ve been building and fixing AI systems for years, across industries, tech stacks, and use cases. This workshop distills the lessons that save teams time, money, and frustration.",
       "buttons": [
         {
-          "buttonText": "Rules to Better AI Development"
+          "buttonText": "Rules to Better AI Development",
+          "colour": 1
         }
       ],
       "cardStyle": 1,
