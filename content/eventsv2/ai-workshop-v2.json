@@ -204,7 +204,7 @@
       "accordionItems": [
         {
           "label": "Do I need to know how to code?",
-          "content": "Basic tech literacy is enough; we focus on practical workflows that anyone from marketing to ops can use. If you write emails, crunch numbers, or manage projects, you’ll walk out with new AI superpowers.\n"
+          "content": "Absolutely not, we focus on practical workflows that anyone from marketing to ops can use. If you write emails, crunch numbers, or manage projects, you’ll walk out with new AI superpowers.\n"
         },
         {
           "label": "How long is the workshop?",
@@ -231,7 +231,7 @@
       },
       "heading": "Ulysses Maclaren",
       "isH1": false,
-      "description": "Ulysses brings 20+ years of enterprise consulting experience, helping companies adopt emerging technology with confidence. He’s led AI enablement sessions for businesses looking to cut through the hype and build systems that drive measurable outcomes.\n",
+      "description": "Uly brings 20+ years of enterprise consulting experience, helping companies adopt emerging technology with confidence. He’s led AI enablement sessions for businesses looking to cut through the hype and build systems that drive measurable outcomes.\n",
       "featureColumns": {
         "twoColumns": false,
         "features": [
