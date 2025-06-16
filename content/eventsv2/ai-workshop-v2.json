@@ -24,9 +24,9 @@
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/ssw-web/hero/ssw-ai-workshop.png",
-        "imageHeight": 700,
-        "imageWidth": 1400
+        "imageSource": "/images/ssw-web/hero/ssw-workshop-inhouse.jpg",
+        "imageHeight": 1721,
+        "imageWidth": 2891
       },
       "_template": "imageTextBlock"
     },
