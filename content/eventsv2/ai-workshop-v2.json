@@ -165,7 +165,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "Quick call to map goals",
-          "description": "We map your team’s goals, use cases, and current AI maturity. No fluff, just what we need to tailor the workshop.",
+          "description": "We map your team’s goals, use cases, and current AI maturity. Everything we need to tailor the workshop.",
           "embeddedButton": {
             "buttonText": ""
           }
