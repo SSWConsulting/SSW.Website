@@ -74,7 +74,7 @@
           "guid": "z57ea",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidBong",
-          "heading": "No “lab” team to test and share fast",
+          "heading": "No “lab” team to test and share wins",
           "description": "Nobody owns quick experiments, prototypes, and internal how-to docs, so every department reinvents the wheel or gives up.",
           "embeddedButton": {
             "buttonText": ""
@@ -116,7 +116,7 @@
         },
         {
           "label": "The Full AI Stack",
-          "content": "Deep dive into ChatGPT. We’ll show you:\n\n* Which model tier (free, Plus, API) fits each task.\n* Plug-and-play helpers (retrieval, vision, code, canvas)\n* Side-by-side demos with Gemini or Claude if your stack differs, so every lesson transfers.\n"
+          "content": "Deep dive into ChatGPT. We’ll show you:\n\n* Which model tier (free, Plus, API) fits each task.\n* Plug-and-play tools (vision, code, canvas, search and research)\n* Side-by-side demos with Gemini or Claude if your stack differs, so every lesson transfers.\n"
         },
         {
           "label": "Business-Grade AI Workflows",
