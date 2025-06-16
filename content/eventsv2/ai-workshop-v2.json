@@ -132,16 +132,6 @@
         }
       ],
       "isMultipleOpen": true,
-      "buttons": [
-        {
-          "buttonText": "Get The Full Agenda",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "background": {
         "backgroundColour": 3
       },
