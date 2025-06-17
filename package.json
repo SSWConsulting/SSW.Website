@@ -22,7 +22,7 @@
     "test-and-coverage": "jest --ci --json --coverage --testLocationInResults"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/eslintrc": "3.3.1",
     "@eslint/js": "^9.27.0",
     "@jest/globals": "^29.7.0",
     "@next/eslint-plugin-next": "15.3.2",
