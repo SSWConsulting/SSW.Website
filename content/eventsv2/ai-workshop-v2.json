@@ -221,6 +221,10 @@
       "body": "",
       "accordionItems": [
         {
+          "label": "How much does it cost?",
+          "content": "The full-day, on-site workshop is priced at $5,200 + GST. This covers up to 20 participants and includes all materials, hands-on labs, and post-workshop resources.\n"
+        },
+        {
           "label": "Do I need to know how to code?",
           "content": "Absolutely not, we focus on practical workflows that anyone from marketing to ops can use. If you write emails, crunch numbers, or manage projects, you’ll walk out with new AI superpowers.\n"
         },
