@@ -201,6 +201,12 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/ssw-web/hero/hero-3-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024
+      },
       "_template": "imageTextBlock"
     },
     {
