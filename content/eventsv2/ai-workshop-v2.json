@@ -151,8 +151,8 @@
           "content": "Understand the core concepts behind large language models and explore the popular AI tools like ChatGPT, Gemini, and Grok\n"
         },
         {
-          "label": "The Full AI Stack",
-          "content": "Deep dive into ChatGPT. We’ll show you:\n\n* Which model tier (free, Plus, API) fits each task.\n* Plug-and-play tools (search, vision, code, canvas, etc)\n* Side-by-side demos with Gemini or Claude if your stack differs, so every lesson transfers.\n"
+          "label": "Getting Smarter AI Responses",
+          "content": "Learn how to ask questions for the best answers, understand AI's \"memory\" and \"knowledge,\" and choose the right model for superior results\n"
         },
         {
           "label": "Advanced Prompting",
