@@ -37,7 +37,10 @@
       "heading": "Trusted by",
       "isWhiteImages": true,
       "logos": [
-        {},
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
+        },
         {
           "logo": "/images/ssw-web/logos/domain_logo.png",
           "altText": "Domain"
