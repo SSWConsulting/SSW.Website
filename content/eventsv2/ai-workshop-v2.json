@@ -43,6 +43,7 @@
         },
         {
           "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 120,
           "altText": "Symantec"
         },
         {
@@ -55,6 +56,7 @@
         },
         {
           "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 120,
           "altText": "Domain"
         },
         {
