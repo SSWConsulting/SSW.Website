@@ -183,7 +183,8 @@
         "features": [
           {
             "heading": "$5,200 + GST",
-            "description": "Flat rate for up to 20 participants"
+            "description": "Flat rate for up to 20 participants",
+            "icon": "BiMoneyWithdraw"
           },
           {
             "heading": "Hands-On Learning",
@@ -191,16 +192,6 @@
           }
         ]
       },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "background": {
         "backgroundColour": 6
       },
