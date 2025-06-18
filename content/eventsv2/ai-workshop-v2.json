@@ -237,7 +237,7 @@
           "guid": "4qkep6",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Quick call to map goals",
+          "heading": "1️⃣ Quick call to map goals",
           "description": "We map your team’s goals, use cases, and current AI maturity. Everything we need to tailor the workshop.",
           "embeddedButton": {
             "buttonText": ""
@@ -247,7 +247,7 @@
           "guid": "4ob77n",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "On-Site Workshop Day",
+          "heading": "2️⃣ On-Site Workshop Day",
           "description": "One focused day at your office. Live demos, hands-on labs, real workflows. Your team leaves ready to apply what they learned.",
           "embeddedButton": {
             "buttonText": ""
@@ -257,7 +257,7 @@
           "guid": "tydp",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Post-Workshop Support",
+          "heading": "3️⃣ Post-Workshop Support",
           "description": "Follow-up meetings and templates to keep momentum, answer questions, and turn experiments into production.",
           "embeddedButton": {
             "buttonText": ""
