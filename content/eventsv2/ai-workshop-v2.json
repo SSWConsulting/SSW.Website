@@ -39,6 +39,7 @@
       "logos": [
         {
           "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 120,
           "altText": "Toll"
         },
         {
