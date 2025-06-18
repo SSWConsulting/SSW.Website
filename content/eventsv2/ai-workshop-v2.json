@@ -182,6 +182,11 @@
         "twoColumns": true,
         "features": [
           {
+            "heading": "Customised for Your Stack",
+            "description": "hatGPT, Claude, Gemini & more",
+            "icon": "BiSolidCustomize"
+          },
+          {
             "heading": "$5,200 + GST",
             "description": "Flat rate for up to 20 participants",
             "icon": "BiMoneyWithdraw"
