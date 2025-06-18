@@ -182,6 +182,11 @@
         "twoColumns": true,
         "features": [
           {
+            "heading": "Post-Workshop Toolkit",
+            "description": "Includes slides, cheat sheets, and workflows",
+            "icon": "BiSolidWrench"
+          },
+          {
             "heading": "Customised for Your Stack",
             "description": "ChatGPT, Claude, Gemini & more",
             "icon": "BiSolidCustomize"
