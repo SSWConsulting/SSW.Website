@@ -190,16 +190,6 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Post-Workshop Toolkit",
-            "description": "Includes slides, cheat sheets, and workflows",
-            "icon": "BiSolidWrench"
-          },
-          {
-            "heading": "Customised for Your Stack",
-            "description": "ChatGPT, Claude, Gemini & more",
-            "icon": "BiSolidCustomize"
-          },
-          {
             "heading": "$5,200 + GST",
             "description": "Flat rate for up to 20 participants",
             "icon": "BiMoneyWithdraw"
@@ -208,6 +198,16 @@
             "heading": "Hands-On Learning",
             "description": "Just real tools and workflows",
             "icon": "BiSolidContact"
+          },
+          {
+            "heading": "Post-Workshop Toolkit",
+            "description": "Includes slides, cheat sheets, and workflows",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "Customised for Your Stack",
+            "description": "ChatGPT, Claude, Gemini & more",
+            "icon": "BiSolidCustomize"
           }
         ]
       },
