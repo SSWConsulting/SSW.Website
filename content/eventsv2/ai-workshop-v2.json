@@ -188,7 +188,8 @@
           },
           {
             "heading": "Hands-On Learning",
-            "description": "Just real tools and workflows"
+            "description": "Just real tools and workflows",
+            "icon": "BiSolidContact"
           }
         ]
       },
