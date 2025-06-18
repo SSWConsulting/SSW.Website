@@ -63,6 +63,7 @@
         },
         {
           "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 120,
           "altText": "Cisco"
         },
         {
