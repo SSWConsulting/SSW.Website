@@ -172,6 +172,38 @@
       "_template": "accordionBlock"
     },
     {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "At a Glance",
+      "isH1": false,
+      "description": "A one-day, on-site workshop to get your team up to speed with practical, business-ready AI skills\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "$5,200 + GST",
+            "description": "Flat rate for up to 20 participants"
+          },
+          {
+            "heading": "Hands-On Learning",
+            "description": "Just real tools and workflows"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
       "isStacked": true,
       "heading": "How It Works",
       "isH1": false,
