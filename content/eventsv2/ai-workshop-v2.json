@@ -37,6 +37,11 @@
       "heading": "Trusted by",
       "isWhiteImages": true,
       "logos": [
+        {},
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
         {
           "logo": "/images/ssw-web/logos/cisco_logo.png",
           "altText": "Cisco"
