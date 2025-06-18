@@ -1,6 +1,4 @@
 "use client";
-
-import { cn } from "@/lib/utils";
 import classNames from "classnames";
 import React, { MouseEvent, useEffect, useState } from "react";
 
@@ -67,9 +65,8 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     return (
       <button
         onClick={(e) => onClick(e)}
-        className={cn(
+        className={classNames(
           "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-md px-6 py-3 text-center",
-          "",
           variants[variant],
           className
         )}
@@ -110,7 +107,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
 const variants: Record<ColorVariant, string> = {
   primary: "bg-ssw-red hover:bg-sswDarkRed text-white",
   secondary:
-    "bg-transparent outline -outline-1.5 outline-white -outline-offset-1.5 hover:outline-gray-200 hover:text-gray-200 text-white",
+    "bg-transparent outline -outline-1.5  outline-white -outline-offset-1.5 hover:outline-gray-200 hover:text-gray-200 text-white",
 };
 
 RippleButton.displayName = "RippleButton";

@@ -1,0 +1,244 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Vibe Coding",
+    "description": "Craft modern and collaborative solutions with our Vibe Coding service. Fast delivery, great UX, zero fluff."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Enterprise Development and Consulting for Vibe Coding",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "**Vibe Coding** - Empowering Product Owners to Build Without Limits",
+      "isH1": true,
+      "description": "We help tech-savvy visionaries bring their product ideas to life, giving them the tools and support to prototype and vibe code. No production coding needed.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=5k2-NOh2tk0",
+        "altText": "What is Vibe Coding? Here's how I do it..."
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195,
+          "altText": "Toll Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180,
+          "altText": "Microsoft Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160,
+          "altText": "Symantec Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175,
+          "altText": "Domain Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
+          "altText": "CBA Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175,
+          "altText": "Cisco Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Allianz Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "7mtu8j",
+          "altText": "Launch Ideas",
+          "icon": "BiSolidRocket",
+          "heading": "Launch Ideas Without the Dev Bottleneck",
+          "description": "We empower tech-savvy Product Owners to prototype and build early versions—fast, lean, and without waiting on developers.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "lxpq3m",
+          "altText": "Let You Vibe Code",
+          "icon": "BiCog",
+          "heading": "Tools That Let You Vibe Code",
+          "description": "From Notion and Figma to low-code platforms and modern dev tools, we set up everything you need to bring your vision to life.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "5q8kz",
+          "altText": "Real Engineers",
+          "icon": "BiCheckShield",
+          "heading": "Backed by Real Engineers",
+          "description": "You’re never alone. We support your vibe coding journey with expert coaching, technical reviews, and a path to production when you're ready.",
+          "embeddedButton": {
+            "buttonText": "SSW People",
+            "buttonLink": "https://www.ssw.com.au/people/"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "What is Vibe Coding?",
+          "content": "Vibe Coding is a service that helps tech-savvy Product Owners turn their ideas into working prototypes—without needing to write production code.\n"
+        },
+        {
+          "label": "Do I need to be a developer?",
+          "content": "No. You just need to be comfortable with tech and have a clear product vision. We'll guide you through modern tools that let you build without deep coding knowledge.\n"
+        },
+        {
+          "label": "What kind of tools will I use?",
+          "content": "We set you up with tools like Figma, Notion, Retool, Vercel, and GitHub—plus optional low-code platforms depending on your goals.\n"
+        },
+        {
+          "label": "Can I build something real with this?",
+          "content": "Absolutely. While it’s not production-grade code, you can create real, working prototypes to test, pitch, or validate your idea before engaging full developers.\n"
+        },
+        {
+          "label": "What happens when I’m ready to scale?",
+          "content": "We’ll help transition your prototype into a real product—bringing in our expert developers to build out secure, scalable, production-quality systems.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "isStacked": false,
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
+        "bleed": true
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your **product idea** today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
