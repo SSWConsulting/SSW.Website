@@ -185,8 +185,8 @@
       },
       "mediaConfiguration": {
         "verticalPlacement": "Centered",
-        "imageSource": "/images/ssw-web/blog/what-we-cover.png",
-        "imageHeight": 780,
+        "imageSource": "/images/ssw-web/blog/What-we-cover-v5.png",
+        "imageHeight": 650,
         "imageWidth": 972
       },
       "_template": "accordionBlock"
