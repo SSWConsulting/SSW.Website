@@ -172,6 +172,14 @@
         }
       ],
       "isMultipleOpen": true,
+      "buttons": [
+        {
+          "buttonText": "Get the full Agenda",
+          "leadCaptureFormOption": "",
+          "buttonLink": "https://form.jotform.com/251681431643859",
+          "colour": 1
+        }
+      ],
       "background": {
         "backgroundColour": 3
       },
