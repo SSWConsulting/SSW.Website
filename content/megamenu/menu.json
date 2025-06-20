@@ -340,6 +340,10 @@
               "name": "1-Day Training",
               "menuItems": [
                 {
+                  "name": "AI Essentials WorkShop",
+                  "url": "/events/ai-workshop"
+                },
+                {
                   "name": "Angular Superpowers Tour",
                   "url": "/events/angular-superpowers-tour"
                 },
