@@ -348,6 +348,7 @@
       "buttons": [
         {
           "buttonText": "Rules to Better AI Development",
+          "buttonLink": "/rules/rules-to-better-ai/",
           "colour": 1
         }
       ],
