@@ -380,6 +380,11 @@ export const globalSchema: Collection = {
           name: "registrationOfInterestJotFormId",
           label: "Registration of Interest JotForm Id",
         },
+        {
+          type: "string",
+          name: "aiWorkshopJotFormId",
+          label: "AI Workshop JotForm Id",
+        },
       ],
     },
   ],

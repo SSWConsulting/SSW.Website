@@ -1,6 +1,8 @@
+import global from "../../content/global/index.json";
 import { buttonOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../blocksSubtemplates/tinaFormElements/iconSelector";
+
 export const bookingForms = [
   {
     label: "Booking Form",
@@ -9,6 +11,10 @@ export const bookingForms = [
   {
     label: "Registration of Interest Form",
     value: "registrationOfInterestJotFormId",
+  },
+  {
+    label: "AI Workshop Form",
+    value: "aiWorkshopJotFormId",
   },
 ];
 
