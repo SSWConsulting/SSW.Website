@@ -36,46 +36,47 @@
         "backgroundColour": 2
       },
       "heading": "Trusted by",
+      "paused": false,
       "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/ssw-web/logos/toll_logo.png",
-          "scale": 120,
+          "scale": 195,
           "altText": "Toll"
         },
         {
           "logo": "/images/ssw-web/logos/symantec_logo.png",
-          "scale": 120,
+          "scale": 160,
           "altText": "Symantec"
         },
         {
           "logo": "/images/ssw-web/logos/microsoft_logo.png",
-          "scale": 120,
+          "scale": 180,
           "altText": "Microsoft"
         },
         {
           "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
-          "scale": 120,
+          "scale": 200,
           "altText": "Event Cinemas"
         },
         {
           "logo": "/images/ssw-web/logos/domain_logo.png",
-          "scale": 120,
+          "scale": 175,
           "altText": "Domain"
         },
         {
           "logo": "/images/ssw-web/logos/cisco_logo.png",
-          "scale": 120,
+          "scale": 175,
           "altText": "Cisco"
         },
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
-          "scale": 135,
+          "scale": 170,
           "altText": "Commonwealth Bank"
         },
         {
           "logo": "/images/ssw-web/logos/allianz_logo.png",
-          "scale": 120,
+          "scale": 195,
           "altText": "Allianz"
         }
       ],
