@@ -341,7 +341,7 @@
               "menuItems": [
                 {
                   "name": "AI Essentials Workshop",
-                  "url": "/events/ai-workshop"
+                  "url": "/events/ai-workshop-essentials"
                 },
                 {
                   "name": "Angular Superpowers Tour",
