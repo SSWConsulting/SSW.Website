@@ -130,7 +130,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "qdzw8",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -143,8 +143,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Proven Track Record",
+          "description": "With over 1,000 clients across 15 countries and 100+ consultants, we're Australia's leading software consultancy with multiple Microsoft MVPs and certifications.",
           "featureList": {
             "features": [
               {
