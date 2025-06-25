@@ -19,6 +19,11 @@
           "colour": 0
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/hero-1-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024
+      },
       "_template": "imageTextBlock"
     },
     {
