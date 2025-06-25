@@ -32,7 +32,7 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Lorem Ipsum",
       "isH1": false,
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -60,41 +60,8 @@
           }
         }
       ],
+      "cardStyle": 0,
       "cards": [
-        {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
         {
           "guid": "3hc9s",
           "altText": "Lorem Ipsum",
@@ -179,40 +146,6 @@
           "icon": "info",
           "heading": "Modern Technology Stack",
           "description": "We leverage cutting-edge technologies including .NET MAUI, React Native, Flutter, and AI integration to deliver high-performance, future-ready mobile applications.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
               {
