@@ -96,7 +96,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "3hc9s",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -109,8 +109,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Cross-Platform Expertise",
+          "description": "We develop mobile applications that work seamlessly across both Android and iPhone platforms, ensuring your investment reaches the maximum audience with a single codebase.",
           "featureList": {
             "features": [
               {
