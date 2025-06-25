@@ -78,20 +78,6 @@
           "icon": "info",
           "heading": "Cross-Platform Expertise",
           "description": "We develop mobile applications that work seamlessly across both Android and iPhone platforms, ensuring your investment reaches the maximum audience with a single codebase.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -112,20 +98,6 @@
           "icon": "info",
           "heading": "Proven Track Record",
           "description": "With over 1,000 clients across 15 countries and 100+ consultants, we're Australia's leading software consultancy with multiple Microsoft MVPs and certifications.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -146,20 +118,6 @@
           "icon": "info",
           "heading": "Modern Technology Stack",
           "description": "We leverage cutting-edge technologies including .NET MAUI, React Native, Flutter, and AI integration to deliver high-performance, future-ready mobile applications.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
