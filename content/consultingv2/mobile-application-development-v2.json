@@ -164,7 +164,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "g4aa2e",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -177,8 +177,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Modern Technology Stack",
+          "description": "We leverage cutting-edge technologies including .NET MAUI, React Native, Flutter, and AI integration to deliver high-performance, future-ready mobile applications.",
           "featureList": {
             "features": [
               {
