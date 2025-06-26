@@ -139,7 +139,7 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
