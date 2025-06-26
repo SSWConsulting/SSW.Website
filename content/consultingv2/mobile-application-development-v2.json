@@ -212,7 +212,7 @@
           "heading": "Why We Love Vertical Slice Architecture",
           "description": "SSW engineer Sam Maher compares traditional Clean Architecture with Vertical Slice Architecture (VSA), showing how VSA eliminates messy layer hand-offs and keeps features self-contained",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
