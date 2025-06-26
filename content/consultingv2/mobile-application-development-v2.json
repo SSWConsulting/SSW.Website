@@ -238,21 +238,21 @@
           }
         },
         {
-          "guid": null,
+          "guid": "kv9uap",
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Leadership",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "10 min.",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
           "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "Gert Marx and Andrew Murphy show how “roguelike” failure-loops build better tech leaders. Mastering tough talks, people over code, and smart AI use.",
           "featureList": {
             "features": [
               {
