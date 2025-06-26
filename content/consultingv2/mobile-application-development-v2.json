@@ -28,6 +28,7 @@
     },
     {
       "heading": "Trusted by",
+      "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/ssw-web/logos/toll_logo.png"
