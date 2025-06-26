@@ -216,7 +216,9 @@
           }
         },
         {
-          "guid": null,
+          "guid": "9opla",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=GdA5_8Chk2g",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -229,7 +231,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Health Check Infrastructure",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
