@@ -130,11 +130,11 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
-      "heading": "Lorem Ipsum",
+      "heading": "The 3 Benefits of Mobile Apps",
       "isH1": false,
-      "description": "",
+      "description": "Almost everyone has a smartphone, but most businesses still don’t have an app—even as mobile now drives most web traffic. A simple app can\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -158,6 +158,10 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "youtubeUrl": "https://youtu.be/SebRctjvrVU?si=bxBbpRxnYrN1MfNL"
+      },
       "_template": "imageTextBlock"
     },
     {
