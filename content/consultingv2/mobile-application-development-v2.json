@@ -232,7 +232,7 @@
           ],
           "icon": "info",
           "heading": "Health Check Infrastructure",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "SSW’s Tony Churches shows how to add infrastructure health checks to ASP.NET Core so you catch failing APIs before users feel the pain.",
           "featureList": {
             "features": [
               {
