@@ -222,11 +222,11 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "ASPNETCore",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "3 min.",
               "chipType": "clearChip"
             }
           ],
