@@ -239,6 +239,8 @@
         },
         {
           "guid": "kv9uap",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=iEhla1S33o4",
           "altText": "Lorem Ipsum",
           "chips": [
             {
