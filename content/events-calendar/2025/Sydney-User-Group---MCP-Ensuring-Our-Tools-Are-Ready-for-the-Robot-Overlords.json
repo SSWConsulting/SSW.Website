@@ -3,6 +3,11 @@
   "url": "/netug/sydney",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/anton-polkanov.mdx"
+    }
+  ],
   "startDateTime": "2025-08-20T08:00:00.000Z",
   "endDateTime": "2025-08-20T12:00:00.000Z",
   "startShowBannerDateTime": "2025-08-19T14:00:00.000Z",
