@@ -213,6 +213,14 @@
         }
       ],
       "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "_template": "technologyCardCarousel"
     }
   ]
 }
