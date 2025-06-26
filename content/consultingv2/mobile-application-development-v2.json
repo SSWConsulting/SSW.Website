@@ -194,7 +194,9 @@
           }
         },
         {
-          "guid": null,
+          "guid": "5y04yg",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=t-97OCqA1bA",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -208,21 +210,7 @@
           ],
           "icon": "info",
           "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "description": "SSW engineer Sam Maher compares traditional Clean Architecture with Vertical Slice Architecture (VSA), showing how VSA eliminates messy layer hand-offs and keeps features self-contained",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
