@@ -1,0 +1,279 @@
+{
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Build Powerful Mobile Apps",
+      "isH1": false,
+      "description": "Australia's leading mobile developers deliver cross-platform solutions using .NET MAUI, React Native, Flutter, and more. Transform your business with apps that work seamlessly across iOS and Android.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        }
+      ],
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/ssw-ai-workshop.png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Trusted by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Why Choose SSW for **developing your Mobile App?**",
+      "isH1": false,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "3hc9s",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Cross-Platform Expertise",
+          "description": "We develop mobile applications that work seamlessly across both Android and iPhone platforms, ensuring your investment reaches the maximum audience with a single codebase.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "qdzw8",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Proven Track Record",
+          "description": "With over 1,000 clients across 15 countries and 100+ consultants, we're Australia's leading software consultancy with multiple Microsoft MVPs and certifications.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "g4aa2e",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Modern Technology Stack",
+          "description": "We leverage cutting-edge technologies including .NET MAUI, React Native, Flutter, and AI integration to deliver high-performance, future-ready mobile applications.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "The 3 Benefits of Mobile Apps",
+      "isH1": false,
+      "description": "Almost everyone has a smartphone, but most businesses still don’t have an app—even as mobile now drives most web traffic. A simple app can\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "youtubeUrl": "https://youtu.be/SebRctjvrVU?si=bxBbpRxnYrN1MfNL"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "5y04yg",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=t-97OCqA1bA",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Productivity",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "7 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Why We Love VSA",
+          "description": "SSW engineer Sam Maher compares traditional Clean Architecture with Vertical Slice Architecture (VSA), showing how VSA eliminates messy layer hand-offs and keeps features self-contained",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "9opla",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=GdA5_8Chk2g",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "ASPNETCore",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "3 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Health Check Infrastructure",
+          "description": "SSW’s Tony Churches shows how to add infrastructure health checks to ASP.NET Core so you catch failing APIs before users feel the pain.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "kv9uap",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=iEhla1S33o4",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Leadership",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "10 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Roguelike Leadership: Fail, Learn, Lead Better",
+          "description": "Gert Marx and Andrew Murphy show how “roguelike” failure-loops build better tech leaders. Mastering tough talks, people over code, and smart AI use.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+        }
+      ],
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your mobile project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId"
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
