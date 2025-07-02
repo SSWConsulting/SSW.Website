@@ -1,0 +1,120 @@
+---
+heading: Australian Payroll Association (APA)
+subHeading: Turning an Off-the-Shelf Chatbot into a Trustworthy Payroll Advisor
+content: >
+  #### A Chatbot Is Easy; a Correct Chatbot Is Not
+
+
+  Anyone can wire a large-language model to a website and have it spit out
+  answers. The real trick is **trust**—especially when the answers change
+  people’s pay packets and expose you to Fair Work fines.
+
+
+  APA asked us to build an AI assistant that could handle day-to-day payroll
+  questions *and* meet the same compliance bar as their human consultants. That
+  meant we had to solve two problems at once:
+
+
+  1. **Get the facts right every time.**
+
+  2. **Know when to stay silent or call in a human.**
+
+
+  ***
+
+
+  #### Where Generic AI Falls Short
+
+
+  Payroll law is a maze of awards, allowances, and edge cases. A vanilla model
+  will happily “fill in the gaps” when it’s unsure. In payroll that can lead to:
+
+
+  * Wrong penalty rates
+
+  * Mislabelled employee types
+
+  * Bad advice on leave loading or terminations
+
+
+  We treated each of those failure modes as a design requirement, not an
+  after-thought.
+
+
+  ***
+
+
+  #### The Four Layers We Added
+
+
+  | Layer                               | What It
+  Does                                                                            
+  | Nuance We
+  Learned                                                                                                          
+  |
+
+  | ----------------------------------- |
+  ----------------------------------------------------------------------------------------
+  |
+  ---------------------------------------------------------------------------------------------------------------------------
+  |
+
+  | **1. Private knowledge base (RAG)** | The bot pulls answers only from APA’s
+  vetted docs and live government pages.             | Even “official” sites
+  sometimes lag behind award changes. We built a daily crawler to spot updates
+  and trigger re-indexing. |
+
+  | **2. Question scrubber**            | Rewrites the user’s query to remove
+  hidden assumptions (e.g., “casual” vs “part-time”).  | We found 15 % of
+  queries mixed up employment types; cleaning them first cut error rates in
+  half.                            |
+
+  | **3. Response gatekeeper**          | A post-process check flags anything
+  that looks like legal advice or falls outside scope. | Instead of blocking the
+  answer outright, we direct the user to a human payroll specialist—no dead
+  ends.                     |
+
+  | **4. Continuous benchmark**         | Every week we sample answers and score
+  them against APA experts.                         | Tracking the *type* of
+  miss (rate, classification, threshold) guides what to fix next, not just an
+  accuracy percentage.     |
+
+
+  ***
+
+
+  #### Practical Ideas You Can Steal
+
+
+  1. **Limit the playground.** Lock your bot to the docs you’d hand a new
+  employee.
+
+  2. **Automate humility.** Build a rule that says, “If confidence \< X or topic
+  = Y, escalate.”
+
+  3. **Treat accuracy like uptime.** Put a metric on it, review it on a
+  schedule, and own the failures.
+
+  4. **Keep domain experts in the loop—forever.** Their feedback is not a
+  project phase; it’s the maintenance plan.
+
+
+  ***
+
+
+  #### Outcome
+
+
+  APA now offers instant answers for routine payroll questions while reserving
+  tricky cases for humans. Compliance risk is lower, support tickets are
+  shorter, and the knowledge base stays current without monthly PDF drops.
+
+
+  ***
+
+
+  Thinking about doing something similar? Start with a plain chatbot if you
+  like, but budget time for the guard-rails. That’s where the real work—and the
+  real value—lives.
+---
+
