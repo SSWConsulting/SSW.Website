@@ -1,6 +1,9 @@
 {
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "finalBreadcrumb": "Mobile App Development",
       "_template": "breadcrumbs"
     },
