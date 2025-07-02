@@ -247,7 +247,7 @@
         {
           "guid": "5y04yg",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=t-97OCqA1bA",
+          "youtubeUrl": "https://www.youtube.com/watch?v=WlqTSOSLFJA",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -261,7 +261,7 @@
           ],
           "icon": "info",
           "heading": "Why We Love VSA",
-          "description": "SSW engineer Sam Maher compares traditional Clean Architecture with Vertical Slice Architecture (VSA), showing how VSA eliminates messy layer hand-offs and keeps features self-contained",
+          "description": "Tired of building the same app over and over for iOS, Android, Windows, and Mac? In this video, expert Matt Goldman from SSW TV breaks down why building ONE app for ALL platforms is the best way to go.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -307,7 +307,7 @@
           "heading": "Roguelike Leadership: Fail, Learn, Lead Better",
           "description": "Gert Marx and Andrew Murphy show how “roguelike” failure-loops build better tech leaders. Mastering tough talks, people over code, and smart AI use.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
@@ -339,7 +339,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a Free Initial Meeting",
+          "buttonText": "Schedule a FREE Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId"
         }
       ],
