@@ -178,6 +178,10 @@
         {
           "label": "How do you ensure security and compliance for enterprise apps?",
           "content": "Security is built into every layer of our development process. We implement enterprise-grade authentication, data encryption, secure API design, and compliance frameworks like GDPR, HIPAA, or SOX as required. Our Azure integration provides additional security benefits including threat detection and compliance reporting.\n"
+        },
+        {
+          "label": "Do you provide ongoing support and maintenance?",
+          "content": "Yes, we offer comprehensive support packages including bug fixes, security updates, performance monitoring, and feature enhancements. Our support team includes the original developers who built your app, ensuring continuity and deep understanding of your solution.\n"
         }
       ],
       "_template": "accordionBlock"
