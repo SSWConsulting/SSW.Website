@@ -21,7 +21,7 @@
         }
       ],
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/ssw-ai-workshop.png",
+        "imageSource": "/images/ssw-web/hero/hero_1400_700px(MS2).png",
         "imageHeight": 700,
         "imageWidth": 1400
       },
@@ -166,6 +166,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "mediaType": "youtube",
         "youtubeUrl": "https://www.youtube.com/watch?v=xOvFK328C_Q"
@@ -181,6 +184,10 @@
       "description": "With over 70% of web traffic now coming from mobile, a dedicated app is essential for business growth. This video breaks down how a mobile app can directly increase sales, build powerful customer loyalty, and give you a critical edge in your market. Discover the key features that will turn your customer's phone into your most effective marketing tool.\n",
       "featureColumns": {
         "twoColumns": true
+      },
+      "background": {
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
+        "bleed": true
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
