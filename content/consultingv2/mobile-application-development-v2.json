@@ -273,7 +273,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "ASPNETCore",
+              "chipText": ".NET MAUI",
               "chipType": "filledChip"
             },
             {
@@ -282,7 +282,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Health Check Infrastructure",
+          "heading": "How to Get Started with .NET MAUI",
           "description": "SSW’s Tony Churches shows how to add infrastructure health checks to ASP.NET Core so you catch failing APIs before users feel the pain.",
           "embeddedButton": {
             "buttonText": ""
