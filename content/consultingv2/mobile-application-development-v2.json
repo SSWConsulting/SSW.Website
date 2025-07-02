@@ -1,6 +1,7 @@
 {
   "blocks": [
     {
+      "finalBreadcrumb": "Mobile App Development",
       "_template": "breadcrumbs"
     },
     {
@@ -203,6 +204,7 @@
       ],
       "mediaConfiguration": {
         "mediaType": "youtube",
+        "placement": "Left",
         "youtubeUrl": "https://www.youtube.com/watch?v=SebRctjvrVU"
       },
       "_template": "imageTextBlock"
