@@ -137,8 +137,8 @@
             }
           ],
           "icon": "BiGitPullRequest",
-          "heading": "Cross-Platform Excellence",
-          "description": "Build once, deploy everywhere. Our cross-platform expertise with .NET MAUI, React Native, and Flutter ensures your investment reaches maximum audience with a single, maintainable codebase.",
+          "heading": "Build once, deploy everywhere",
+          "description": "Our cross-platform expertise with .NET MAUI, React Native, and Flutter ensures your investment reaches maximum audience with a single, maintainable codebase.",
           "embeddedButton": {
             "buttonText": ""
           }
