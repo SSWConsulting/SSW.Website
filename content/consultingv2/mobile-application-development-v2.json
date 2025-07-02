@@ -317,6 +317,9 @@
           "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "technologyCardCarousel"
     },
     {
