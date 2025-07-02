@@ -251,7 +251,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Productivity",
+              "chipText": "Cross-platform",
               "chipType": "filledChip"
             },
             {
@@ -260,7 +260,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Why We Love VSA",
+          "heading": "Building Apps for Any Device",
           "description": "Tired of building the same app over and over for iOS, Android, Windows, and Mac? In this video, expert Matt Goldman from SSW TV breaks down why building ONE app for ALL platforms is the best way to go.",
           "embeddedButton": {
             "buttonText": ""
