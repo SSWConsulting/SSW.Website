@@ -136,15 +136,17 @@
       "isH1": false,
       "description": "Our proven Scrum methodology, refined through 1,000+ successful projects, ensures continuous collaboration, comprehensive testing across all devices and platforms, and seamless deployment with ongoing support.\n",
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Change Direction When Needed",
-            "description": "Business priorities shift, Scrum adapts with you. Whether it's new requirements or user feedback, we can pivot quickly without derailing your timeline or budget."
+            "description": "Business priorities shift, Scrum adapts with you. Whether it's new requirements or user feedback, we can pivot quickly without derailing your timeline or budget.",
+            "icon": "BiShuffle"
           },
           {
             "heading": "See Progress Every 2 Weeks",
-            "description": "No surprises or long waits. You'll see working software at the end of every sprint, with regular demos and feedback sessions to keep your project on track."
+            "description": "No surprises or long waits. You'll see working software at the end of every sprint, with regular demos and feedback sessions to keep your project on track.",
+            "icon": "BiCalendar"
           }
         ]
       },
