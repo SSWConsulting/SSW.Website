@@ -164,6 +164,17 @@
       "_template": "imageTextBlock"
     },
     {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "What makes SSW different from other mobile development companies?",
+          "content": "SSW combines deep Microsoft expertise with proven enterprise experience and industry-leading Scrum practices. As Microsoft MVPs and certified partners, we deliver solutions that integrate seamlessly with your existing Microsoft infrastructure. Our 30+ years in enterprise software development, combined with our open-source contributions and tech leadership in the community, means we understand the complexity and security requirements of large-scale mobile deployments.\n"
+        }
+      ],
+      "_template": "accordionBlock"
+    },
+    {
       "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
