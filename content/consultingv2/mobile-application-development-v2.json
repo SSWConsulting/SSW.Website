@@ -230,6 +230,7 @@
           "content": "Yes, we offer comprehensive support packages including bug fixes, security updates, performance monitoring, and feature enhancements. Our support team includes the original developers who built your app, ensuring continuity and deep understanding of your solution.\n"
         }
       ],
+      "isMultipleOpen": true,
       "_template": "accordionBlock"
     },
     {
