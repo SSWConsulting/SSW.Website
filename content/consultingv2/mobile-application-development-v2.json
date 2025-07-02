@@ -174,6 +174,10 @@
         {
           "label": "Which platform should we choose: .NET MAUI, React Native, or Flutter?",
           "content": "The choice depends on your existing technology stack, team expertise, and long-term strategy. For Microsoft-centric organizations, .NET MAUI offers the best integration with existing systems. React Native excels for rapid development with JavaScript teams. Flutter provides excellent performance for consumer-facing apps. We'll recommend the optimal platform during our consultation.\n"
+        },
+        {
+          "label": "How do you ensure security and compliance for enterprise apps?",
+          "content": "Security is built into every layer of our development process. We implement enterprise-grade authentication, data encryption, secure API design, and compliance frameworks like GDPR, HIPAA, or SOX as required. Our Azure integration provides additional security benefits including threat detection and compliance reporting.\n"
         }
       ],
       "_template": "accordionBlock"
