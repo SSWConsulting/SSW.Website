@@ -335,6 +335,9 @@
           "leadCaptureFormOption": "bookingJotFormId"
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "imageTextBlock"
     },
     {
