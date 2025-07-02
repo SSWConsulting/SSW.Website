@@ -174,34 +174,14 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Why Your Business Needs a Mobile App Now",
       "isH1": false,
-      "description": "",
+      "description": "With over 70% of web traffic now coming from mobile, a dedicated app is essential for business growth. This video breaks down how a mobile app can directly increase sales, build powerful customer loyalty, and give you a critical edge in your market. Discover the key features that will turn your customer's phone into your most effective marketing tool.\n",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
+        "twoColumns": true
       },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Left",
