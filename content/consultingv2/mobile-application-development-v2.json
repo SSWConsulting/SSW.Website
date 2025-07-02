@@ -7,9 +7,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Build Powerful Mobile Apps",
+      "heading": "Australia's Leading Mobile App Development Consultants",
       "isH1": false,
-      "description": "Australia's leading mobile developers deliver cross-platform solutions using .NET MAUI, React Native, Flutter, and more. Transform your business with apps that work seamlessly across iOS and Android.\n",
+      "description": "Transform your business with apps that work seamlessly across iOS and Android. With SSW, you get powerful mobile solutions backed by Microsoft expertise and cutting-edge technology\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -60,9 +60,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Why Choose SSW for **developing your Mobile App?**",
+      "heading": "For **enterprise-grade** mobile apps, think SSW",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "body": "We build mobile apps the right way, with clean code, solid architecture, and the Microsoft technologies your business already trusts. Your users get fast, reliable apps that actually work.",
       "cardStyle": 0,
       "cards": [
         {
@@ -78,9 +78,9 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
-          "heading": "Cross-Platform Expertise",
-          "description": "We develop mobile applications that work seamlessly across both Android and iPhone platforms, ensuring your investment reaches the maximum audience with a single codebase.",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Microsoft Expertise",
+          "description": "As Microsoft MVPs and certified partners, we leverage the full power of .NET MAUI and Azure to deliver enterprise-grade mobile solutions with unmatched security and scalability.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -98,9 +98,9 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
-          "heading": "Proven Track Record",
-          "description": "With over 1,000 clients across 15 countries and 100+ consultants, we're Australia's leading software consultancy with multiple Microsoft MVPs and certifications.",
+          "icon": "BiSolidMedal",
+          "heading": "Proven at Scale",
+          "description": "With over 1,000 clients across 15 countries and 100+ consultants, we're Australia's most trusted software consultancy for mission-critical mobile applications.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -118,9 +118,9 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
-          "heading": "Modern Technology Stack",
-          "description": "We leverage cutting-edge technologies including .NET MAUI, React Native, Flutter, and AI integration to deliver high-performance, future-ready mobile applications.",
+          "icon": "BiGitPullRequest",
+          "heading": "Cross-Platform Excellence",
+          "description": "Build once, deploy everywhere. Our cross-platform expertise with .NET MAUI, React Native, and Flutter ensures your investment reaches maximum audience with a single, maintainable codebase.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -132,19 +132,19 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "The 3 Benefits of Mobile Apps",
+      "heading": "Our Development Process",
       "isH1": false,
-      "description": "Almost everyone has a smartphone, but most businesses still don’t have an app—even as mobile now drives most web traffic. A simple app can\n",
+      "description": "Our proven Scrum methodology, refined through 1,000+ successful projects, ensures continuous collaboration, comprehensive testing across all devices and platforms, and seamless deployment with ongoing support.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Change Direction When Needed",
+            "description": "Business priorities shift, Scrum adapts with you. Whether it's new requirements or user feedback, we can pivot quickly without derailing your timeline or budget."
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "See Progress Every 2 Weeks",
+            "description": "No surprises or long waits. You'll see working software at the end of every sprint, with regular demos and feedback sessions to keep your project on track."
           }
         ]
       },
@@ -160,7 +160,7 @@
       ],
       "mediaConfiguration": {
         "mediaType": "youtube",
-        "youtubeUrl": "https://youtu.be/SebRctjvrVU?si=bxBbpRxnYrN1MfNL"
+        "youtubeUrl": "https://www.youtube.com/watch?v=xOvFK328C_Q"
       },
       "_template": "imageTextBlock"
     },
