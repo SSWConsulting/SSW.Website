@@ -134,7 +134,7 @@
       },
       "heading": "Our Development Process",
       "isH1": false,
-      "description": "Our proven Scrum methodology, refined through 1,000+ successful projects, ensures continuous collaboration, comprehensive testing across all devices and platforms, and seamless deployment with ongoing support.\n",
+      "description": "Proven Scrum methodology, refined through 1,000+ successful projects, ensures continuous collaboration, comprehensive testing across all devices and platforms, and seamless deployment with ongoing support.\n",
       "featureColumns": {
         "twoColumns": false,
         "features": [
@@ -154,10 +154,6 @@
         {
           "buttonText": "What happens at a Sprint Review meeting?",
           "buttonLink": "https://www.ssw.com.au/rules/what-happens-at-a-sprint-review-meeting/",
-          "colour": 1
-        },
-        {
-          "buttonText": "Dolor Sit",
           "colour": 1
         }
       ],
