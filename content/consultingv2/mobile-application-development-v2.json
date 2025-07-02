@@ -20,6 +20,9 @@
           "colour": 0
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "imageSource": "/images/ssw-web/hero/hero_1400_700px(MS2).png",
         "imageHeight": 700,
