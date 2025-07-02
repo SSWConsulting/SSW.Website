@@ -170,6 +170,10 @@
         {
           "label": "What makes SSW different from other mobile development companies?",
           "content": "SSW combines deep Microsoft expertise with proven enterprise experience and industry-leading Scrum practices. As Microsoft MVPs and certified partners, we deliver solutions that integrate seamlessly with your existing Microsoft infrastructure. Our 30+ years in enterprise software development, combined with our open-source contributions and tech leadership in the community, means we understand the complexity and security requirements of large-scale mobile deployments.\n"
+        },
+        {
+          "label": "Which platform should we choose: .NET MAUI, React Native, or Flutter?",
+          "content": "The choice depends on your existing technology stack, team expertise, and long-term strategy. For Microsoft-centric organizations, .NET MAUI offers the best integration with existing systems. React Native excels for rapid development with JavaScript teams. Flutter provides excellent performance for consumer-facing apps. We'll recommend the optimal platform during our consultation.\n"
         }
       ],
       "_template": "accordionBlock"
