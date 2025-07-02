@@ -5,7 +5,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
       "heading": "Australia's Leading Mobile App Development Consultants",
       "isH1": false,
@@ -15,7 +15,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Schedule a Free Initial Meeting",
           "colour": 0
         }
       ],
