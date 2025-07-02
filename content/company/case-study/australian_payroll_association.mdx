@@ -5,19 +5,34 @@ content: >
   #### A Chatbot Is Easy; a Correct Chatbot Is Not
 
 
-  Anyone can wire a large-language model to a website and have it spit out
-  answers. The real trick is **trust**—especially when the answers change
-  people’s pay packets and expose you to Fair Work fines.
+  Anyone can hook up a chatbot these days. But keeping it from giving
+  dangerously wrong payroll advice is the hard part, and that’s the part the
+  Australian Payroll Association (APA) asked SSW to solve.
 
 
-  APA asked us to build an AI assistant that could handle day-to-day payroll
-  questions *and* meet the same compliance bar as their human consultants. That
-  meant we had to solve two problems at once:
+  As Australia's leading payroll authority, APA wanted to create an AI-powered
+  Payroll Advisor. The goal was to provide instant, compliant information, but
+  the stakes were high. Payroll rules change often, are nested in thick award
+  tables, and carry heavy fines if you get them wrong. A normal “vanilla” AI
+  model (the out-of-the-box version of ChatGPT) hasn’t read those rules and will
+  happily guess. That guessing is called a hallucination, where the AI sounds
+  certain, but the facts are off. One bad answer could under-pay staff or break
+  Fair Work laws.
 
 
-  1. **Get the facts right every time.**
+  Our challenge was to engineer a solution that eliminated the guesswork,
+  ensuring every answer from the AI was accurate and reliable.\
 
-  2. **Know when to stay silent or call in a human.**
+  \
+
+  Our brief:
+
+
+  1. Serve day-to-day questions instantly. 
+
+  2. Never mislead the user. 
+
+  3. Escalate tricky cases to a human before damage is done.
 
 
   ***
@@ -69,10 +84,10 @@ content: >
   queries mixed up employment types; cleaning them first cut error rates in
   half.                            |
 
-  | **3. Response gatekeeper**          | A post-process check flags anything
+  | **3. Response gatekeeper**          | A post-process-check flags anything
   that looks like legal advice or falls outside scope. | Instead of blocking the
-  answer outright, we direct the user to a human payroll specialist—no dead
-  ends.                     |
+  answer outright, we direct the user to a human payroll specialist, no dead
+  ends.                    |
 
   | **4. Continuous benchmark**         | Every week we sample answers and score
   them against APA experts.                         | Tracking the *type* of
@@ -83,38 +98,38 @@ content: >
   ***
 
 
-  #### Practical Ideas You Can Steal
+  #### Outcomes
 
 
-  1. **Limit the playground.** Lock your bot to the docs you’d hand a new
-  employee.
+  * Faster answers: Routine questions are handled in seconds. 
 
-  2. **Automate humility.** Build a rule that says, “If confidence \< X or topic
-  = Y, escalate.”
+  * Lower risk: High-stakes issues auto-escalate to humans. 
 
-  3. **Treat accuracy like uptime.** Put a metric on it, review it on a
-  schedule, and own the failures.
-
-  4. **Keep domain experts in the loop—forever.** Their feedback is not a
-  project phase; it’s the maintenance plan.
+  * Current data: Award changes roll in overnight without PDF updates. 
 
 
-  ***
-
-
-  #### Outcome
-
-
-  APA now offers instant answers for routine payroll questions while reserving
-  tricky cases for humans. Compliance risk is lower, support tickets are
-  shorter, and the knowledge base stays current without monthly PDF drops.
+  APA now trusts the bot to handle everyday queries while their specialists
+  focus on the edge cases.
 
 
   ***
 
 
-  Thinking about doing something similar? Start with a plain chatbot if you
-  like, but budget time for the guard-rails. That’s where the real work—and the
-  real value—lives.
+  #### Lessons for Other Business Owners
+
+
+  1. Ground the AI in your own docs. Do not let it roam the open web. 
+
+  2. Build in humility. If confidence is low or the stakes are high, escalate. 
+
+  3. Measure accuracy like uptime. Review a sample of answers on a set
+  schedule. 
+
+  4. Keep experts in the loop forever. Their feedback is part of maintenance,
+  not a one-off step. 
+
+
+  Add these guard-rails early, and you can turn any “vanilla” AI into a reliable
+  assistant, without gambling on hallucinations.
 ---
 
