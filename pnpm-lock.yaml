@@ -157,8 +157,8 @@ importers:
         specifier: ^0.33.5
         version: 0.33.5
       ssw.megamenu:
-        specifier: 4.11.0
-        version: 4.11.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 4.12.0
+        version: 4.12.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -8902,8 +8902,8 @@ packages:
     peerDependencies:
       sucrase: ^3.35.0
 
-  ssw.megamenu@4.11.0:
-    resolution: {integrity: sha512-b3AW71Oi7YPrO2a9gsazwWj/CJGVmGtOeNPLwDRQMS+V88KpkZ8iYvtNNZ3ikR18iw+TeKhMyttl/NadLRXcxQ==}
+  ssw.megamenu@4.12.0:
+    resolution: {integrity: sha512-BZtaEdxcIyn8G0bzEf6aLGSiAXkbTk6jz3ZN1LmOkiEToaqoVcURiHx+mw2/E8p/tFq0iCzRf7AXPKKSoTlHsg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -20416,7 +20416,7 @@ snapshots:
       module-error: 1.0.2
       sucrase: 3.35.0
 
-  ssw.megamenu@4.11.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  ssw.megamenu@4.12.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@headlessui/react': 2.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@heroicons/react': 2.2.0(react@19.1.0)
