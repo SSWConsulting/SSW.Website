@@ -1,0 +1,362 @@
+{
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Mobile App Development",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Australia's Leading Mobile App Development Consultants",
+      "isH1": false,
+      "description": "Transform your business with apps that work seamlessly across iOS and Android. With SSW, you get powerful mobile solutions backed by Microsoft expertise and cutting-edge technology\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/ssw-hero-mobile-apps.png",
+        "imageHeight": 768,
+        "imageWidth": 1408
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 120,
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "For **enterprise-grade** mobile apps, think SSW",
+      "isH1": false,
+      "body": "We build mobile apps the right way, with clean code, solid architecture, and the Microsoft technologies your business already trusts. Your users get fast, reliable apps that actually work.",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "3hc9s",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiLogoMicrosoft",
+          "heading": "Microsoft Expertise",
+          "description": "As Microsoft MVPs and certified partners, we leverage the full power of .NET MAUI and Azure to deliver enterprise-grade mobile solutions with unmatched security and scalability.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "qdzw8",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiSolidMedal",
+          "heading": "Proven at Scale",
+          "description": "With over 1,000 clients across 15 countries and 100+ consultants, we're Australia's most trusted software consultancy for mission-critical mobile applications.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "g4aa2e",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiGitPullRequest",
+          "heading": "Build once, deploy everywhere",
+          "description": "Our cross-platform expertise with .NET MAUI, React Native, and Flutter ensures your investment reaches maximum audience with a single, maintainable codebase.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Our Development Process",
+      "isH1": false,
+      "description": "Proven Scrum methodology, refined through 1,000+ successful projects. We work closely with you, test your project everywhere, and help you launch it with our support.\n",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Change Direction When Needed",
+            "description": "Business priorities shift, Scrum adapts with you. We can quickly add new ideas or implement user feedback.",
+            "icon": "BiShuffle"
+          },
+          {
+            "heading": "See Progress Every Week",
+            "description": "No surprises or long waits. You'll see working software at the end of every Sprint, with regular demos and feedback sessions to keep your project on track.",
+            "icon": "BiCalendar"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "What happens at a Sprint Review meeting?",
+          "buttonLink": "https://www.ssw.com.au/rules/what-happens-at-a-sprint-review-meeting/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "youtubeUrl": "https://www.youtube.com/watch?v=xOvFK328C_Q"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Why Your Business Needs a Mobile App Now",
+      "isH1": false,
+      "description": "**With over 70% of web traffic now coming from mobile, a dedicated app is essential for business growth.**\\\n\\\nThis video breaks down how a mobile app can directly increase sales, build powerful customer loyalty, and give you a critical edge in your market. Discover the key features that will turn your customer's phone into your most effective business tool.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "youtubeUrl": "https://www.youtube.com/watch?v=SebRctjvrVU"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "What makes SSW different from other mobile development companies?",
+          "content": "SSW combines deep Microsoft expertise with proven enterprise experience and industry-leading Scrum practices. As Microsoft MVPs and certified partners, we deliver solutions that integrate seamlessly with your existing Microsoft infrastructure. Our 30+ years in enterprise software development, combined with our open-source contributions and tech leadership in the community, means we understand the complexity and security requirements of large-scale mobile deployments.\n"
+        },
+        {
+          "label": "Which platform should we choose: .NET MAUI, React Native, or Flutter?",
+          "content": "The choice depends on your existing technology stack, team expertise, and long-term strategy. For Microsoft-centric organizations, .NET MAUI offers the best integration with existing systems. React Native excels for rapid development with JavaScript teams. Flutter provides excellent performance for consumer-facing apps. We'll recommend the optimal platform during our consultation.\n"
+        },
+        {
+          "label": "How do you ensure security and compliance for enterprise apps?",
+          "content": "Security is built into every layer of our development process. We implement enterprise-grade authentication, data encryption, secure API design, and compliance frameworks like GDPR, HIPAA, or SOX as required. Our Azure integration provides additional security benefits including threat detection and compliance reporting.\n"
+        },
+        {
+          "label": "Do you provide ongoing support and maintenance?",
+          "content": "Yes, we offer comprehensive support packages including bug fixes, security updates, performance monitoring, and feature enhancements. Our support team includes the original developers who built your app, ensuring continuity and deep understanding of your solution.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "5y04yg",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=WlqTSOSLFJA",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Cross-platform",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "7 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Building Apps for Any Device",
+          "description": "Tired of building the same app over and over for iOS, Android, Windows, and Mac? In this video, expert Matt Goldman from SSW TV breaks down why building ONE app for ALL platforms is the best way to go.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "9opla",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=JiEQffv8HvQ",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": ".NET MAUI",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "42 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "How to Get Started with .NET MAUI",
+          "description": "In this beginner-friendly workshop from our .NET MAUI Hack Day, SSW's Jack Pettit breaks down everything you need to know to get started. No complex jargon, just a clear path from zero to your first app",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "kv9uap",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=iEhla1S33o4",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Leadership",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "10 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Roguelike Leadership: Fail, Learn, Lead Better",
+          "description": "Gert Marx and Andrew Murphy show how “roguelike” failure-loops build better tech leaders. Mastering tough talks, people over code, and smart AI use.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/mobile-development.mdx"
+        }
+      ],
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Ready to build a mobile app that drives real business results?",
+      "isH1": false,
+      "description": "Our Microsoft-certified team is ready to turn your vision into reality.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
