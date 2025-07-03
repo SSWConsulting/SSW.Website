@@ -283,7 +283,7 @@
           ],
           "icon": "info",
           "heading": "How to Get Started with .NET MAUI",
-          "description": "SSW’s Tony Churches shows how to add infrastructure health checks to ASP.NET Core so you catch failing APIs before users feel the pain.",
+          "description": "In this beginner-friendly workshop from our .NET MAUI Hack Day, SSW's Jack Pettit breaks down everything you need to know to get started. No complex jargon, just a clear path from zero to your first app",
           "embeddedButton": {
             "buttonText": ""
           }
