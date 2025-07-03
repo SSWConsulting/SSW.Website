@@ -322,6 +322,7 @@
           "technologyGroup": "content/v2Technologies/groups/mobile-development.mdx"
         }
       ],
+      "techCardStyle": 0,
       "background": {
         "backgroundColour": 6
       },
