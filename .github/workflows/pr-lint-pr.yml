@@ -30,9 +30,19 @@ jobs:
           $diff = git diff --name-only HEAD^ HEAD
           $diff = $diff -replace '["'']', ''  #Clean-up for the file paths of the newsletter's images.(i.e double & single quotes)
 
-          # TODO: Next time we need to modify which directories we ignore, break this out to a variable which is easy to configure
+          # Define patterns to ignore
+          $ignorePatterns = @(
+            '^content/',
+            '^public/',
+            '^.github/ISSUE_TEMPLATE/',
+            'package.json',
+            'pnpm-lock.yaml'
+          )
 
-          $SourceDiff = $diff | Where-Object { $_ -notmatch '^content/' -and $_ -notmatch '^public/' -and $_ -notmatch '^.github/ISSUE_TEMPLATE/' }
+          $SourceDiff = $diff | Where-Object {
+            $file = $_
+            -not ($ignorePatterns | Where-Object { $file -match $_ })
+          }
           $HasDiff = $SourceDiff.Length -gt 0
 
           echo "hasCodeChanges=$HasDiff" >> $env:GITHUB_OUTPUT
