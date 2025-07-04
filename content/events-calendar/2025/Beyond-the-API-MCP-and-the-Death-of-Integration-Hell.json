@@ -1,0 +1,23 @@
+{
+  "title": "Beyond the API: MCP and the Death of Integration Hell",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    }
+  ],
+  "startDateTime": "2025-07-16T08:00:00.000Z",
+  "endDateTime": "2025-07-16T10:00:00.000Z",
+  "startShowBannerDateTime": "2025-07-15T14:00:00.000Z",
+  "endShowBannerDateTime": "2025-07-16T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Artificial Intelligence",
+  "abstract": "NET User Group for June: Beyond the API: MCP and the Death of Integration Hell with Calum Simpson\n\nIntegration hell is real, and developers have battled it for years. But with Model Context Protocol (MCP) gaining momentum, we’re finally seeing the light at the end of the tunnel.\nIn this talk, we’ll take a step back to understand how we got here, where MCP fits into the modern dev toolkit, and why it’s more than just another protocol. You’ll pick up practical insights for both devs and non-devs (Scrum Masters, I see you 👀), plus five fresh tips for thriving in the age of AI.\nThen, buckle up for the main event: a proof of concept showing how MCP tools can power autonomous agents to tackle complex workflows - think Manus, but local; N8N, but agentic.\nWhether you're building, planning, or just trying to keep up with it all, this session will challenge how you think about integration, and show why MCP might just be the missing piece.\n\nAgenda:\n\n6:00pm - Pizza and networking at SSW Sydney\n6:30pm - The Tech news with Eve and Adam Cogan, followed by\nMCP and the Death of Integration Hell with Calum Simpson\n\nCan't make it? Join us on the live stream! 🔴\n➡️ https://www.ssw.com.au/live",
+  "description": "NET User Group for June: Beyond the API: MCP and the Death of Integration Hell with Calum Simpson\n\nIntegration hell is real, and developers have battled it for years. But with Model Context Protocol (MCP) gaining momentum, we’re finally seeing the light at the end of the tunnel.\nIn this talk, we’ll take a step back to understand how we got here, where MCP fits into the modern dev toolkit, and why it’s more than just another protocol. You’ll pick up practical insights for both devs and non-devs (Scrum Masters, I see you 👀), plus five fresh tips for thriving in the age of AI.\nThen, buckle up for the main event: a proof of concept showing how MCP tools can power autonomous agents to tackle complex workflows - think Manus, but local; N8N, but agentic.\nWhether you're building, planning, or just trying to keep up with it all, this session will challenge how you think about integration, and show why MCP might just be the missing piece.\n\nAgenda:\n\n6:00pm - Pizza and networking at SSW Sydney\n6:30pm - The Tech news with Eve and Adam Cogan, followed by\nMCP and the Death of Integration Hell with Calum Simpson\n\nCan't make it? Join us on the live stream! 🔴\n➡️ [https://www.ssw.com.au/live](https://www.ssw.com.au/live)\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
