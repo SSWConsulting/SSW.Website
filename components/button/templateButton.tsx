@@ -13,14 +13,14 @@ enum ButtonColors {
   Transparent = 1,
 }
 
-export interface TemplateButtonOptions extends ButtonTinaFields {
+type TemplateButtonOptions = {
   buttonText?: string;
   colour?: ButtonColors;
   iconFirst?: boolean;
   icon?: string;
   leadCaptureFormOption?: string;
   onClick?: () => void;
-}
+} & ButtonTinaFields;
 
 type ButtonProps = { className: string; data: TemplateButtonOptions };
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

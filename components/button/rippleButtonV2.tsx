@@ -4,9 +4,9 @@ import React, { MouseEvent, useEffect, useState } from "react";
 
 export type ColorVariant = "primary" | "secondary";
 
-export interface ButtonTinaFields {
+export type ButtonTinaFields = {
   textTinaField?: string;
-}
+};
 
 interface RippleButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
