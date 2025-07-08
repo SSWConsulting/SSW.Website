@@ -52,11 +52,11 @@ importers:
         specifier: ^0.5.16
         version: 0.5.16(tailwindcss@3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3)))
       '@tanstack/react-query':
-        specifier: ^5.77.1
-        version: 5.77.1(react@19.1.0)
+        specifier: ^5.81.5
+        version: 5.81.5(react@19.1.0)
       '@tanstack/react-query-devtools':
         specifier: ^5.77.1
-        version: 5.77.1(@tanstack/react-query@5.77.1(react@19.1.0))(react@19.1.0)
+        version: 5.77.1(@tanstack/react-query@5.81.5(react@19.1.0))(react@19.1.0)
       animate-css-grid:
         specifier: ^1.5.1
         version: 1.5.1
@@ -94,8 +94,8 @@ importers:
         specifier: ^2.4.6
         version: 2.4.6(react@19.1.0)
       framer-motion:
-        specifier: ^12.18.1
-        version: 12.18.1(@emotion/is-prop-valid@0.8.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^12.23.0
+        version: 12.23.0(@emotion/is-prop-valid@0.8.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -103,8 +103,8 @@ importers:
         specifier: ^11.1.0
         version: 11.1.0
       lucide-react:
-        specifier: ^0.522.0
-        version: 0.522.0(react@19.1.0)
+        specifier: ^0.525.0
+        version: 0.525.0(react@19.1.0)
       next:
         specifier: 15.3.3
         version: 15.3.3(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -185,8 +185,8 @@ importers:
         specifier: ^3.3.1
         version: 3.3.1
       '@eslint/js':
-        specifier: ^9.27.0
-        version: 9.27.0
+        specifier: ^9.30.1
+        version: 9.30.1
       '@jest/globals':
         specifier: ^29.7.0
         version: 29.7.0
@@ -1418,6 +1418,10 @@ packages:
 
   '@eslint/js@9.27.0':
     resolution: {integrity: sha512-G5JD9Tu5HJEu4z2Uo4aHY2sLV64B7CDMXxFzqzjl3NKd6RVzSXNoE80jk7Y0lJkTTkjiIhBAqmlYwjuBY3tvpA==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@eslint/js@9.30.1':
+    resolution: {integrity: sha512-zXhuECFlyep42KZUhWjfvsmXGX39W8K8LFb8AWXM9gSV9dQB+MrJGLKvW6Zw0Ggnbpw0VHTtrhFXYe3Gym18jg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@2.1.6':
@@ -3315,8 +3319,8 @@ packages:
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
 
-  '@tanstack/query-core@5.77.1':
-    resolution: {integrity: sha512-nfxVhy4UynChMFfN4NxwI8pktV9R3Zt/ROxOAe6pdOf8CigDLn26p+ex1YW5uien26BBICLmN0dTvIELHCs5vw==}
+  '@tanstack/query-core@5.81.5':
+    resolution: {integrity: sha512-ZJOgCy/z2qpZXWaj/oxvodDx07XcQa9BF92c0oINjHkoqUPsmm3uG08HpTaviviZ/N9eP1f9CM7mKSEkIo7O1Q==}
 
   '@tanstack/query-devtools@5.76.0':
     resolution: {integrity: sha512-1p92nqOBPYVqVDU0Ua5nzHenC6EGZNrLnB2OZphYw8CNA1exuvI97FVgIKON7Uug3uQqvH/QY8suUKpQo8qHNQ==}
@@ -3327,8 +3331,8 @@ packages:
       '@tanstack/react-query': ^5.77.1
       react: ^18 || ^19
 
-  '@tanstack/react-query@5.77.1':
-    resolution: {integrity: sha512-qBwpxFg0+MZF0fICQwgvzwrVbcs7TdQlLyEd1f1dN83oeIALofCIAJHV7sPWu+BCS5tcXkG5CvOuf7yla8GYqQ==}
+  '@tanstack/react-query@5.81.5':
+    resolution: {integrity: sha512-lOf2KqRRiYWpQT86eeeftAGnjuTR35myTP8MXyvHa81VlomoAWNEd8x5vkcAfQefu0qtYCvyqLropFZqgI2EQw==}
     peerDependencies:
       react: ^18 || ^19
 
@@ -6062,8 +6066,8 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
-  framer-motion@12.18.1:
-    resolution: {integrity: sha512-6o4EDuRPLk4LSZ1kRnnEOurbQ86MklVk+Y1rFBUKiF+d2pCdvMjWVu0ZkyMVCTwl5UyTH2n/zJEJx+jvTYuxow==}
+  framer-motion@12.23.0:
+    resolution: {integrity: sha512-xf6NxTGAyf7zR4r2KlnhFmsRfKIbjqeBupEDBAaEtVIBJX96sAon00kMlsKButSIRwPSHjbRrAPnYdJJ9kyhbA==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -7207,8 +7211,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
-  lucide-react@0.522.0:
-    resolution: {integrity: sha512-jnJbw974yZ7rQHHEFKJOlWAefG3ATSCZHANZxIdx8Rk/16siuwjgA4fBULpXEAWx/RlTs3FzmKW/udWUuO0aRw==}
+  lucide-react@0.525.0:
+    resolution: {integrity: sha512-Tm1txJ2OkymCGkvwoHt33Y2JpN5xucVq1slHcgE6Lk0WjDfjgKWor5CdVER8U6DvcfMwh4M8XxmpTiyzfmfDYQ==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
@@ -7577,11 +7581,11 @@ packages:
   monaco-editor@0.31.0:
     resolution: {integrity: sha512-H3QmysEwxxY8oxmFhIFcY9JkuwilUDa6txdAxb797cVr7XFZX27a3SDwcGJmTlV9iGPwdh132r3KKCS5aNL4Gg==}
 
-  motion-dom@12.18.1:
-    resolution: {integrity: sha512-dR/4EYT23Snd+eUSLrde63Ws3oXQtJNw/krgautvTfwrN/2cHfCZMdu6CeTxVfRRWREW3Fy1f5vobRDiBb/q+w==}
+  motion-dom@12.22.0:
+    resolution: {integrity: sha512-ooH7+/BPw9gOsL9VtPhEJHE2m4ltnhMlcGMhEqA0YGNhKof7jdaszvsyThXI6LVIKshJUZ9/CP6HNqQhJfV7kw==}
 
-  motion-utils@12.18.1:
-    resolution: {integrity: sha512-az26YDU4WoDP0ueAkUtABLk2BIxe28d8NH1qWT8jPGhPyf44XTdDUh8pDk9OPphaSrR9McgpcJlgwSOIw/sfkA==}
+  motion-utils@12.19.0:
+    resolution: {integrity: sha512-BuFTHINYmV07pdWs6lj6aI63vr2N4dg0vR+td0rtrdpWOhBzIkEklZyLcvKBoEtwSqx8Jg06vUB5RS0xDiUybw==}
 
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -11249,6 +11253,8 @@ snapshots:
 
   '@eslint/js@9.27.0': {}
 
+  '@eslint/js@9.30.1': {}
+
   '@eslint/object-schema@2.1.6': {}
 
   '@eslint/plugin-kit@0.3.1':
@@ -13431,19 +13437,19 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 3.4.17(ts-node@10.9.2(@types/node@20.19.0)(typescript@5.8.3))
 
-  '@tanstack/query-core@5.77.1': {}
+  '@tanstack/query-core@5.81.5': {}
 
   '@tanstack/query-devtools@5.76.0': {}
 
-  '@tanstack/react-query-devtools@5.77.1(@tanstack/react-query@5.77.1(react@19.1.0))(react@19.1.0)':
+  '@tanstack/react-query-devtools@5.77.1(@tanstack/react-query@5.81.5(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@tanstack/query-devtools': 5.76.0
-      '@tanstack/react-query': 5.77.1(react@19.1.0)
+      '@tanstack/react-query': 5.81.5(react@19.1.0)
       react: 19.1.0
 
-  '@tanstack/react-query@5.77.1(react@19.1.0)':
+  '@tanstack/react-query@5.81.5(react@19.1.0)':
     dependencies:
-      '@tanstack/query-core': 5.77.1
+      '@tanstack/query-core': 5.81.5
       react: 19.1.0
 
   '@tanstack/react-virtual@3.13.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
@@ -16861,10 +16867,10 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
-  framer-motion@12.18.1(@emotion/is-prop-valid@0.8.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  framer-motion@12.23.0(@emotion/is-prop-valid@0.8.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
-      motion-dom: 12.18.1
-      motion-utils: 12.18.1
+      motion-dom: 12.22.0
+      motion-utils: 12.19.0
       tslib: 2.8.1
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
@@ -18278,7 +18284,7 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  lucide-react@0.522.0(react@19.1.0):
+  lucide-react@0.525.0(react@19.1.0):
     dependencies:
       react: 19.1.0
 
@@ -18921,11 +18927,11 @@ snapshots:
 
   monaco-editor@0.31.0: {}
 
-  motion-dom@12.18.1:
+  motion-dom@12.22.0:
     dependencies:
-      motion-utils: 12.18.1
+      motion-utils: 12.19.0
 
-  motion-utils@12.18.1: {}
+  motion-utils@12.19.0: {}
 
   mri@1.2.0: {}
 
