@@ -27,7 +27,9 @@ export const HorizontalCard = (props: HorizontalCardProps) => {
   }
   return (
     <Container className="mt-2 flex max-w-9xl flex-col">
-      {cardList?.map((card, index) => <Card key={index} {...card} />)}
+      {cardList?.map((card, index) => (
+        <Card key={index} {...card} />
+      ))}
       {button?.link && (
         <div className="mt-2.5 flex justify-start">
           <CustomLink

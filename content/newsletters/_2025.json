@@ -2,6 +2,11 @@
   "newsletters_year": "2025",
   "newsletters": [
     {
+      "month": 6,
+      "file": "/images/newsletter-uploads/2025/_2025_06__Beyond%20Automation%20The%20Developer%E2%80%99s%20Guide%20to%20AI%20Agents_.html",
+      "description": "Beyond Automation: The Developer’s Guide to AI Agents"
+    },
+    {
       "month": 5,
       "file": "/images/newsletter-uploads/2025/_2025_05__YakShaver.ai%20%E2%80%93%20using%20AI%20to%20create%20the%20perfect%20task,%20PBI%20or%20work%20item%20in%2030%20seconds_.html",
       "description": "YakShaver.ai – using AI to create the perfect task, PBI or work item in 30 seconds"
