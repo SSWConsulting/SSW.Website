@@ -4,7 +4,9 @@
   "thumbnail": "/images/events/SuperPowers-Icon-CleanArchitecture.jpg",
   "thumbnailDescription": "Clean Architecture Workshop",
   "presenterList": [
-    {}
+    {
+      "presenter": "content/presenters/anton-polkanov.mdx"
+    }
   ],
   "startDateTime": "2025-10-15T23:00:00.000Z",
   "endDateTime": "2025-10-17T07:00:00.000Z",
