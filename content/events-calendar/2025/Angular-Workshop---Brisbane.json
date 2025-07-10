@@ -1,0 +1,21 @@
+{
+  "title": "Angular Workshop - Brisbane",
+  "url": "https://www.ssw.com.au/events/angular-workshop",
+  "thumbnail": "/images/events/Angular-2-0-logo.png",
+  "thumbnailDescription": "Angular Workshop",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/luke-cook.mdx"
+    }
+  ],
+  "startDateTime": "2025-11-12T23:00:00.000Z",
+  "endDateTime": "2025-11-14T07:00:00.000Z",
+  "calendarType": "SSW Courses",
+  "city": "Brisbane",
+  "category": "Angular and React",
+  "abstract": "​In this workshop, we will build a CRM application with Angular using components, services, dependency injection, forms, Angular modules, and lazy loaded routes. We will then cover unit tests and using the redux pattern with the ngrx library. By the end of this workshop, you will have built a working Angular application you can extend into an enterprise application. You will also walk away with the source code and the course material. So, join us to learn to build great enterprise applications with Angular.\n\nWhat’s included in this workshop?\n2 days tuition with an experienced Angular developer.\nFull course material\nFull source code for the three apps you will build for later reference and to be used as best practice ​​\n\nDay 1\nSetup and Tooling\nIntroduction to Angular\nGetting Started with the Angular CLI\nComponents and component communication\nDebugging an application\nServices and dependency injection\nIntroduction to RxJs\nAngular template and reactive forms\nDay 2\nUsing HTTP Requests to talk to the server\nState management\nArchitecture and Angular modules\nRouting\nLazy loading routes\nBundling and deployment\nUnit and e2e testing\nIntroduction to the Redux pattern\nImplementing Redux pattern with NgRx",
+  "description": "​In this workshop, we will build a CRM application with Angular using components, services, dependency injection, forms, Angular modules, and lazy loaded routes. We will then cover unit tests and using the redux pattern with the ngrx library. By the end of this workshop, you will have built a working Angular application you can extend into an enterprise application. You will also walk away with the source code and the course material. So, join us to learn to build great enterprise applications with Angular.\n\n**What’s included in this workshop?**\n\n* 2 days of tuition with an experienced Angular developer.\n* Full course material\n* Full source code for the three apps you will build for later reference and to be used as best practice ​​\n\n**Day 1**\n\nSetup and Tooling\n\nIntroduction to Angular\n\nGetting Started with the Angular CLI\n\nComponents and component communication\n\nDebugging an application\n\nServices and dependency injection\n\nIntroduction to RxJs\n\nAngular template and reactive forms\n\n**Day 2**\n\nUsing HTTP Requests to talk to the server\n\nState management\n\nArchitecture and Angular modules\n\nRouting\n\nLazy loading routes\n\nBundling and deployment\n\nUnit and e2e testing\n\nIntroduction to the Redux pattern\n\nImplementing Redux pattern with NgRx\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
