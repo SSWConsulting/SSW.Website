@@ -5,6 +5,9 @@
   "thumbnailDescription": "Clean Architecture Workshop",
   "presenterList": [
     {
+      "presenter": "content/presenters/daniel-mackay.mdx"
+    },
+    {
       "presenter": "content/presenters/anton-polkanov.mdx"
     }
   ],
