@@ -5,6 +5,9 @@
   "thumbnailDescription": "Angular Workshop",
   "presenterList": [
     {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    },
+    {
       "presenter": "content/presenters/jeoffrey-fischer.mdx"
     },
     {
