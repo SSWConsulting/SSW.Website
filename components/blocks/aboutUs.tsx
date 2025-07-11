@@ -362,7 +362,7 @@ const OpenStatus = ({ state }: OpenStatusProps) => {
   return (
     <span
       className={classNames(
-        { "bg-green-400": status === "Open", "bg-sswRed": status === "Closed" },
+        { "bg-green-800": status === "Open", "bg-sswRed": status === "Closed" },
         "text-xxxs ml-2 p-1 font-bold uppercase text-white"
       )}
     >
