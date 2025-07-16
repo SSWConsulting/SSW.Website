@@ -42,8 +42,8 @@ jobs:
 
           $maxFiles = 2
           $changedFiles = git diff --name-only origin/$baseBranch...HEAD
-          $contentFiles = $changedFiles | Where-Object { $_ -like "content/*" }
-          $nonContentFiles = $changedFiles | Where-Object { $_ -notlike "content/*" }
+          $contentFiles = $changedFiles | Where-Object { $_ -like "content/*" -or $_ -like "public/*" }
+          $nonContentFiles = $changedFiles | Where-Object { $_ -notlike "content/*" -and $_ -notlike "public/*" }
           $isContentOnly = $contentFiles.Count -gt 0 -and $nonContentFiles.Count -eq 0
           $isSmallChange = $isContentOnly -and $changedFiles.Count -le $maxFiles
 
@@ -66,7 +66,7 @@ jobs:
             
             This PR has been analyzed for auto-merge eligibility based on:
             - Content-only changes
-            - Maximum 2 files changed
+            - Maximum ${{ $maxFiles }} file changed
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
 
