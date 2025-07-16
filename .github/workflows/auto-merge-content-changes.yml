@@ -1,0 +1,122 @@
+name: Auto-Merge Small Changes
+
+on:
+  pull_request:
+    types: [ready_for_review]
+    paths:
+      - 'content/**'
+      - 'public/**'
+
+concurrency:
+  group: auto-merge-${{ github.event.number }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  detect-small-changes:
+    name: Detect Small Changes
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    outputs:
+      is-small-change: ${{ steps.analyse-changes.outputs.is-small-change }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Analyse changes
+        id: analyse-changes
+        shell: pwsh
+        run: |
+          # Get the base branch
+          $baseBranch = "${{ github.base_ref }}"
+          if ([string]::IsNullOrEmpty($baseBranch)) {
+            $baseBranch = "main"
+          }
+
+          $maxFiles = 2
+          $changedFiles = git diff --name-only origin/$baseBranch...HEAD
+          $contentFiles = $changedFiles | Where-Object { $_ -like "content/*" }
+          $nonContentFiles = $changedFiles | Where-Object { $_ -notlike "content/*" }
+          $isContentOnly = $contentFiles.Count -gt 0 -and $nonContentFiles.Count -eq 0
+          $isSmallChange = $isContentOnly -and $changedFiles.Count -le $maxFiles
+
+          # Debug output
+          Write-Host "Changed files: $($changedFiles -join ', ')"
+          Write-Host "Content files: $($contentFiles -join ', ')"
+          Write-Host "Non-content files: $($nonContentFiles -join ', ')"
+          Write-Host "Is content only: $isContentOnly"
+          Write-Host "Is small change: $isSmallChange"
+
+          echo "is-small-change=$($isSmallChange.ToString().ToLower())" >> $env:GITHUB_OUTPUT
+
+      - name: Comment analysis on PR
+        uses: mshick/add-pr-comment@v2
+        with:
+          message: |
+            🤖 **Small Change Analysis**
+            
+            **Result:** ${{ steps.analyse-changes.outputs.is-small-change == 'true' && '✅ Eligible for auto-merge' || '❌ Not eligible for auto-merge' }}
+            
+            This PR has been analyzed for auto-merge eligibility based on:
+            - Content-only changes
+            - Maximum ${{ $maxFiles }} file changed
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
+
+  auto-merge:
+    name: Auto-Merge Small Changes
+    needs: detect-small-changes
+    if: needs.detect-small-changes.outputs.is-small-change == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Auto-merge PR
+        id: auto-merge-pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              const pr = await github.rest.pulls.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number
+              });
+              
+              if (!pr.data.mergeable) {
+                throw new Error('PR is not mergeable. It may have conflicts or not be up to date.');
+              }
+              
+              const result = await github.rest.pulls.merge({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+                merge_method: 'squash',
+                commit_title: `Auto-merge: ${{ github.event.pull_request.title }}`,
+                commit_message: `🤖 Auto-merged small content change\n\n- PR: #${{ github.event.number }}`
+              });
+              
+              console.log('Auto-merge successful:', result.data.message);
+            } catch (error) {
+              console.error('Auto-merge failed:', error.message);
+              core.setFailed(`Auto-merge failed: ${error.message}`);
+            }
+
+      - name: Comment merge result
+        uses: mshick/add-pr-comment@v2
+        if: always()
+        with:
+          message: |
+            ${{ steps.auto-merge-pr.outcome == 'success' && '✅ **Auto-merge completed successfully!**' || '❌ **Auto-merge failed** - Please check the workflow logs for details.' }}
+            
+            This PR was automatically merged as a small content change.
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true 
