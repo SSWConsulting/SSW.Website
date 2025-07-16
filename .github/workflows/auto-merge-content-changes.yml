@@ -66,7 +66,7 @@ jobs:
             
             This PR has been analyzed for auto-merge eligibility based on:
             - Content-only changes
-            - Maximum ${{ $maxFiles }} file changed
+            - Maximum 2 files changed
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
 
