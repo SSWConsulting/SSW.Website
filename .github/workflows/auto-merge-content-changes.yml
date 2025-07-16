@@ -107,8 +107,8 @@ jobs:
                 pull_number: context.issue.number
               });
               
-              if (!pr.data.mergeable) {
-                throw new Error('PR is not mergeable. It may have conflicts or not be up to date.');
+              if (pr.data.mergeable === false || pr.data.mergeable === null) {
+                throw new Error('PR is not mergeable or its mergeability status is unknown. It may have conflicts or not be up to date.');
               }
               
               const result = await github.rest.pulls.merge({
