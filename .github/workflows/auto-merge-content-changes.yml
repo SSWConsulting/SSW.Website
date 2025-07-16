@@ -44,14 +44,17 @@ jobs:
           $maxLines = 10
 
           $changedFiles = @()
-          $lineChanges = ""
+          $lineChanges = @()
           $totalLinesChanged = 0
           
           $changedFiles = git diff --name-only origin/$baseBranch...HEAD
-          $lineChanges = git diff --stat origin/$baseBranch...HEAD
-          if ($lineChanges.Length -gt 1) {
-            $totalLinesChanged = $($lineChanges.Length) / 2
+          $lineChanges = git diff --numstat origin/$baseBranch...HEAD | ForEach-Object {
+            $parts = $_ -split "`t"
+            [int]$added = $parts[0]
+            [int]$deleted = $parts[1]
+            $added + $deleted
           }
+          $totalLinesChanged = ($lineChanges | Measure-Object -Sum).Sum
           $contentFiles = $changedFiles | Where-Object { $_ -like "content/*" }
           $nonContentFiles = $changedFiles | Where-Object { $_ -notlike "content/*" }
           $isContentOnly = $contentFiles.Count -gt 0 -and $nonContentFiles.Count -eq 0
