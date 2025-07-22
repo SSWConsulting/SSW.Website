@@ -37,16 +37,16 @@ export const BuiltOnAzure = ({ data }: BuiltOnAzureProps) => {
 
   return (
     <Section color={footerColor as SectionColor} className="py-2">
-      <Container className="grid grid-cols-1 text-base md:text-lg lg:grid-cols-2">
+      <Container className="grid grid-cols-1 text-base py-8 md:text-lg lg:grid-cols-2">
         <Link
           data={data}
-          href="/consulting/azure"
-          className="hover:border-azure hover:text-azure"
-          text="Built on Microsoft Azure"
+          href="https://tina.io"
+          className="hover:border-tina hover:text-tina py-2"
+          text="Powered by TinaCMS"
           image={
             <Image
-              src="/images/logos/azure.png"
-              alt="Microsoft Azure Logo"
+              src="/images/logos/tina-llama-orange.png"
+              alt="TinaCMS logo"
               height={30}
               width={30}
               loading="lazy"
@@ -56,13 +56,13 @@ export const BuiltOnAzure = ({ data }: BuiltOnAzureProps) => {
 
         <Link
           data={data}
-          href="https://tina.io"
-          className="hover:border-tina hover:text-tina"
-          text="Powered by TinaCMS"
+          href="/consulting/azure"
+          className="hover:border-azure hover:text-azure py-2"
+          text="Built on Microsoft Azure"
           image={
             <Image
-              src="/images/logos/tina-llama-orange.png"
-              alt="TinaCMS logo"
+              src="/images/logos/azure.png"
+              alt="Microsoft Azure Logo"
               height={30}
               width={30}
               loading="lazy"
