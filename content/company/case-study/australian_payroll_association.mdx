@@ -77,15 +77,15 @@ content: >
   ---------------------------------------------------------------------------------------------------------------------------
   |
 
-  | **1. Private knowledge base (RAG)** | The bot pulls answers only from APA’s
-  vetted docs and live government pages.             | Even “official” sites
+  | **1. Private knowledge base (RAG)** | The agent pulls answers only from
+  APA’s vetted docs and live government pages.           | Even “official” sites
   sometimes lag behind award changes. We built a daily crawler to spot updates
-  and trigger re-indexing. |
+  and trigger re‑indexing. |
 
   | **2. Question scrubber**            | Rewrites the user’s query to remove
-  hidden assumptions (e.g., “casual” vs “part-time”).  | We found 15 % of
-  queries mixed up employment types; cleaning them first cut error rates in
-  half.                            |
+  hidden assumptions (e.g., “casual” vs “part‑time”).  | We found 15 % of
+  queries mixed up employment types. Cleaning them first **cut error rates in
+  half.**                        |
 
   | **3. Response gatekeeper**          | A post-process-check flags anything
   that looks like legal advice or falls outside scope. | Instead of blocking the
@@ -94,8 +94,8 @@ content: >
 
   | **4. Continuous benchmark**         | Every week we sample answers and score
   them against APA experts.                         | Tracking the *type* of
-  miss (rate, classification, threshold) guides what to fix next, not just an
-  accuracy percentage.     |
+  miss (rate, classification, threshold) guides **what to fix
+  next.**                                  |
 
 
   ***
