@@ -1,0 +1,24 @@
+{
+  "title": "Clean Architecture Workshop - Sydney",
+  "url": "https://www.ssw.com.au/events/clean-architecture-workshop",
+  "thumbnail": "/images/events/SuperPowers-Icon-CleanArchitecture.jpg",
+  "thumbnailDescription": "Clean Architecture Workshop",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/daniel-mackay.mdx"
+    },
+    {
+      "presenter": "content/presenters/anton-polkanov.mdx"
+    }
+  ],
+  "startDateTime": "2025-10-22T23:00:00.000Z",
+  "endDateTime": "2025-10-24T07:00:00.000Z",
+  "calendarType": "SSW Courses",
+  "city": "Sydney",
+  "category": ".NET Core",
+  "abstract": "In this 2-day hands-on Workshop, we will cover the best approach to building enterprise applications using Clean Architecture & .NET Core. You will be building your own application from scratch.\n\n\nIntroduction\nThe explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.\n\nThis hands-on workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - now and well into the future.\n\nYou will leave this hands-on workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.",
+  "description": "**In this 2-day hands-on Workshop, we will cover the best approach to building enterprise applications using Clean Architecture & .NET Core. You will be building your own application from scratch.**\n\n**Introduction**\n\nThe explosive growth of web frameworks and the demands of users have changed the approach to building enterprise applications. Many challenges exist and just getting started can be a daunting prospect. Let's change that now.\n\nThis hands-on workshop will provide practical guidance and recommendations. We will cover architecture, technologies, tools and frameworks. We will examine strategies for organizing your projects, folders and files. We will design a system that is simple to build and maintain - now and well into the future.\n\nYou will leave this hands-on workshop having developed the foundation and structure for your next enterprise application, along with the knowledge to take your enterprise application development to the next level.\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
