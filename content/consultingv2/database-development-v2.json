@@ -220,7 +220,7 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "Decades of hands‑on work in mission‑critical SQL Server and .NET projects. Field‑proven practices you can apply today, no guesswork required.",
@@ -267,74 +267,6 @@
           "description": "SSW architect Bryden Oliver rips through live demos, table trim‑downs, smart indexes, loop killers, and more... so your queries hit warp speed today 🚀",
           "embeddedButton": {
             "buttonText": ""
-          }
-        },
-        {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
           }
         },
         {
