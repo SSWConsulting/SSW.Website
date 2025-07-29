@@ -88,11 +88,46 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "",
       "isH1": false,
       "body": "",
+      "cardStyle": 0,
       "cards": [
+        {
+          "guid": "d5hmcb",
+          "altText": "Bulletproof  Uptime",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Bulletproof  Uptime",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
         {
           "guid": "k4cc4c",
           "altText": "Lorem Ipsum",
@@ -107,8 +142,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Faster Queries",
-          "description": "We pinpoint bottlenecks to deliver faster query performance. Index tuning cuts report time by up to 80 %",
+          "heading": "Smart Index Audit",
+          "description": "We deep‑scan every table, drop junk indexes, and pinpoint bottlenecks to deliver faster query performance. Critical reports load up to 80 % faster. Staff make decisions in minutes, not hours.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -127,8 +162,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Fortify Your Data",
-          "description": "Implement robust security protocols to prevent unauthorized access.",
+          "heading": "Query Plan Rescue",
+          "description": "Our consultants rewrite or re‑hint costly queries, then coach devs to keep them lean. Peak‑hour slowdowns disappear, protecting user experience and revenue flow.",
           "embeddedButton": {
             "buttonText": ""
           }
