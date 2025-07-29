@@ -95,7 +95,7 @@
             }
           ],
           "icon": "info",
-          "heading": "Elastic Scaling Guardrails",
+          "heading": "Auto-Scaling Guardrails",
           "description": "Tune auto‑scale thresholds and alerts in Azure SQL. No more surprise cloud bills. Capacity flexes with demand, margins stay intact.\n",
           "embeddedButton": {
             "buttonText": ""
