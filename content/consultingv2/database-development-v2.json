@@ -248,15 +248,17 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "gf67cs",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=7ZTVCGDTj5g",
+          "altText": "Must-Know Database Performance Techniques",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "SQL",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "70 min.",
               "chipType": "clearChip"
             }
           ],
