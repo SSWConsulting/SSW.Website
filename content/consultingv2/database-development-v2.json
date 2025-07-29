@@ -296,12 +296,15 @@
       "body": "",
       "accordionItems": [
         {
+          "content": ""
+        },
+        {
           "label": "Can you work with our existing legacy database?",
           "content": "Yes. We specialize in modernizing and optimizing legacy database environments, focusing on minimal disruption to your current operations while unlocking new performance and security capabilities.\n"
         },
         {
-          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
-          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+          "label": "Why should I choose SSW for custom software development?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Deep Industry Expertise: We have decades of experience in Financial Services, Healthcare, Education, & Mining.\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
         },
         {
           "label": "What is SSW's development process like, and how involved will I need to be?",
