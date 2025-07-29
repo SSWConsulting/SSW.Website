@@ -127,8 +127,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Fortify Your Data",
+          "description": "Implement robust security protocols to prevent unauthorized access.",
           "embeddedButton": {
             "buttonText": ""
           }
