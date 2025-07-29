@@ -107,8 +107,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Faster Queries",
+          "description": "We pinpoint bottlenecks to deliver faster query performance. Index tuning cuts report time by up to 80 %",
           "embeddedButton": {
             "buttonText": ""
           }
