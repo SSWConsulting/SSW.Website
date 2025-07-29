@@ -147,8 +147,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": " Future-Proof Your Database",
+          "description": "We design scalable Azure architectures for long-term growth.",
           "embeddedButton": {
             "buttonText": ""
           }
