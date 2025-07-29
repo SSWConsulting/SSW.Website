@@ -108,8 +108,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsu",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Elastic Scaling Guardrails",
+          "description": "Tune auto‑scale thresholds and alerts in Azure SQL or on‑prem VMs. No more surprise cloud bills. Capacity flexes with demand, margins stay intact.\n",
           "embeddedButton": {
             "buttonText": ""
           }
