@@ -95,6 +95,26 @@
       "cardStyle": 0,
       "cards": [
         {
+          "guid": "iev6co",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsu",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "d5hmcb",
           "altText": "Bulletproof  Uptime",
           "chips": [
