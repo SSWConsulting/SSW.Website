@@ -226,35 +226,23 @@
       "body": "Decades of hands‑on work in mission‑critical SQL Server and .NET projects. Field‑proven practices you can apply today, no guesswork required.",
       "cards": [
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "3csg5",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=l2qCRsz69JI",
+          "altText": "Mastering Web-Based Data Entry",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "UX",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "7 min.",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Build Bulletproof Data‑Entry Forms",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
