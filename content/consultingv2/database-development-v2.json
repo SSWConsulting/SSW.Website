@@ -41,7 +41,13 @@
     },
     {
       "heading": "Trusted By",
+      "paused": true,
       "logos": [
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 120,
+          "altText": "cisco"
+        },
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
           "scale": 120,
