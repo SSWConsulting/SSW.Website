@@ -363,10 +363,12 @@
         },
         {
           "guid": "3eex88",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=l18ltcOVN4I",
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "SQL",
               "chipType": "filledChip"
             },
             {
@@ -376,7 +378,7 @@
           ],
           "icon": "info",
           "heading": "Turbo‑Charge SQL in One Session",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "SSW Solution Architect Bryden Oliver walks through live query tuning, index picks, and quick‑win monitoring so you can spot bottlenecks and ship speed today.",
           "embeddedButton": {
             "buttonText": ""
           }
