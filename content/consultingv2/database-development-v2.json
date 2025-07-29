@@ -19,12 +19,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Book a FREE Initial Meeting",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "_template": "imageTextBlock"
