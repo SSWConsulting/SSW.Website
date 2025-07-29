@@ -128,8 +128,28 @@
             }
           ],
           "icon": "info",
-          "heading": "Smart Index Audit",
+          "heading": "Faster Queries",
           "description": "We deep‑scan every table, drop junk indexes, and pinpoint bottlenecks to deliver faster query performance. Critical reports load up to 80 % faster. Staff make decisions in minutes, not hours.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "wzeka8",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Zero‑Downtime Releases",
+          "description": "Blue/green rollouts and phased data migrations handled by SSW. Ship new features without the “maintenance window” email",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -149,27 +169,7 @@
           ],
           "icon": "info",
           "heading": "Query Plan Rescue",
-          "description": "Our consultants rewrite or re‑hint costly queries, then coach devs to keep them lean. Peak‑hour slowdowns disappear, protecting user experience and revenue flow.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "wzeka8",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Zero‑Downtime Release Playbook",
-          "description": "Blue/green rollouts and phased data migrations handled by SSW. Ship new features without the “maintenance window” email",
+          "description": "Our consultants rewrite or re‑hint costly queries, then coach devs to keep them lean. Peak‑hour slowdowns disappear",
           "embeddedButton": {
             "buttonText": ""
           }
