@@ -9,23 +9,13 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
       "heading": "SQL Server, Tuned to Perform",
       "isH1": true,
       "description": "Our engineers build, optimize, and secure your mission-critical databases.\n",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
