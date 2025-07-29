@@ -182,8 +182,8 @@
             }
           ],
           "icon": "info",
-          "heading": " Future-Proof Your Database",
-          "description": "We design scalable Azure architectures for long-term growth.",
+          "heading": "Zero‑Downtime Release Playbook",
+          "description": "Blue/green rollouts and phased data migrations handled by SSW. Ship new features without the “maintenance window” email",
           "embeddedButton": {
             "buttonText": ""
           }
