@@ -189,11 +189,11 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": "Case Study"
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Sentinel: Unified Claims‑Recovery Platform",
       "isH1": false,
-      "description": "",
+      "description": "In two agile phases SSW built and scaled Sentinel on SQL Server, .NET 8, and Azure AD. The platform now houses 300–500 million records, unifies multiple departments, and recovers 3× more value than the old process—all without a disruptive multi‑year overhaul.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
