@@ -155,8 +155,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Query Plan Rescue",
-          "description": "Our consultants rewrite costly queries, then coach devs to keep them lean. Peak‑hour slowdowns disappear.",
+          "heading": "Data Security",
+          "description": "Implement ISO, SOC2 & GDPR best practices to ensure your data is kept secure and compliant.",
           "embeddedButton": {
             "buttonText": ""
           }
