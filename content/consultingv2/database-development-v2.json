@@ -141,26 +141,6 @@
           }
         },
         {
-          "guid": "wzeka8",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Zero‑Downtime Releases",
-          "description": "Blue/green rollouts and phased data migrations handled by SSW. Ship new features without the “maintenance window” email.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
           "guid": "7zpda5",
           "altText": "Lorem Ipsum",
           "chips": [
