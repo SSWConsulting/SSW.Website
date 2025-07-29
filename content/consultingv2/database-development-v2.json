@@ -12,7 +12,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "SQL and NoSQL, Tuned to Perform",
+      "heading": "SQL and NoSQL, tuned to perform",
       "isH1": true,
       "description": "Our engineers build, optimize, and secure your mission-critical databases.\n",
       "featureColumns": {
@@ -76,7 +76,7 @@
     },
     {
       "isStacked": false,
-      "heading": "Your Data, **Optimised**",
+      "heading": "Your data, **optimised**",
       "isH1": false,
       "body": "",
       "cardStyle": 0,
@@ -168,7 +168,7 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "Bupa: Unified Insurance Claims Recovery Platform",
+      "heading": "Bupa: Unified insurance claims recovery platform",
       "isH1": false,
       "description": "We replaced siloed tools with one SQL Server solution that scales to 500M records and allows much faster and more transparent claim reviews.\n",
       "featureColumns": {
@@ -199,7 +199,7 @@
     },
     {
       "isStacked": true,
-      "heading": "Tech Wisdom From The Trenches",
+      "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "Decades of hands‑on work in mission‑critical SQL Server and .NET projects. Field‑proven practices you can apply today, no guesswork required.",
       "cards": [
@@ -273,7 +273,7 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Frequently Asked Questions",
+      "heading": "Frequently asked questions",
       "body": "",
       "accordionItems": [
         {
