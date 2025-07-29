@@ -299,6 +299,10 @@
       "body": "",
       "accordionItems": [
         {
+          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+        },
+        {
           "label": "What is SSW's development process like, and how involved will I need to be?",
           "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
         },
