@@ -297,6 +297,12 @@
     {
       "heading": "Frequently Asked Questions",
       "body": "",
+      "accordionItems": [
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+        }
+      ],
       "_template": "accordionBlock"
     },
     {
