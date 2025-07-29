@@ -44,6 +44,11 @@
       "paused": true,
       "logos": [
         {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 120,
+          "altText": "symantec"
+        },
+        {
           "logo": "/images/ssw-web/logos/microsoft_logo.png",
           "scale": 120,
           "altText": "microsoft"
