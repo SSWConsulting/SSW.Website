@@ -263,24 +263,10 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "15 Quick Wins for Blazing‑Fast SQL",
+          "description": "SSW architect Bryden Oliver rips through live demos, table trim‑downs, smart indexes, loop killers, and more... so your queries hit warp speed today 🚀",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
