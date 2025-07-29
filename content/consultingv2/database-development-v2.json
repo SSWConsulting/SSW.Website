@@ -11,7 +11,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "SQL Server, Tuned to Perform",
+      "heading": "SQL and NoSQL, Tuned to Perform",
       "isH1": true,
       "description": "Our engineers build, optimize, and secure your mission-critical databases.\n",
       "featureColumns": {
@@ -114,8 +114,8 @@
             }
           ],
           "icon": "info",
-          "heading": "License & Edition Right‑Sizing",
-          "description": "Audit cores, editions, and DR nodes; cut what you don’t need. Reclaim six‑figure budgets you can reinvest in product innovation.",
+          "heading": "SpendOps",
+          "description": "Audit your database infrastructure; cut what you don’t need. Reclaim six‑figure budgets you can reinvest in product innovation.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -155,7 +155,7 @@
           ],
           "icon": "info",
           "heading": "Zero‑Downtime Releases",
-          "description": "Blue/green rollouts and phased data migrations handled by SSW. Ship new features without the “maintenance window” email",
+          "description": "Blue/green rollouts and phased data migrations handled by SSW. Ship new features without the “maintenance window” email.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -175,7 +175,7 @@
           ],
           "icon": "info",
           "heading": "Query Plan Rescue",
-          "description": "Our consultants rewrite or re‑hint costly queries, then coach devs to keep them lean. Peak‑hour slowdowns disappear",
+          "description": "Our consultants rewrite costly queries, then coach devs to keep them lean. Peak‑hour slowdowns disappear.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -187,19 +187,19 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "Sentinel: Unified Claims‑Recovery Platform",
+      "heading": "Bupa: Unified Insurance Claims Recovery Platform",
       "isH1": false,
-      "description": "Co‑built by Bupa & SSW, Sentinel replaces siloed tools with one SQL Server solution that scales to 500 M records and boosts claims recoveries.\n",
+      "description": "We replaced siloed tools with one SQL Server solution that scales to 500M records and allows much faster and more transparent claim reviews.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "3× More Value Recovered",
+            "heading": "3 x More Value Recovered",
             "description": "Streamlined workflows and tuned queries tripled over‑payment collections."
           },
           {
             "heading": "Enterprise‑Grade Scalability",
-            "description": "Sub‑second searches across 300–500 M records keep multiple teams working smoothly."
+            "description": "Sub‑second searches across 500M records keep multiple teams working smoothly."
           }
         ]
       },
