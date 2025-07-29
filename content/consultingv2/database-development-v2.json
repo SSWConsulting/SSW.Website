@@ -44,6 +44,7 @@
       "logos": [
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 120,
           "altText": "commonwealthbank"
         },
         {
