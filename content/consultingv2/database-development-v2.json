@@ -122,7 +122,7 @@
         },
         {
           "guid": "k4cc4c",
-          "altText": "Lorem Ipsum",
+          "altText": "Faster Queries",
           "chips": [
             {
               "chipText": "",
@@ -135,7 +135,7 @@
           ],
           "icon": "info",
           "heading": "Faster Queries",
-          "description": "We deep‑scan every table, drop junk indexes, and pinpoint bottlenecks to deliver faster query performance. Critical reports load up to 80 % faster. Staff make decisions in minutes, not hours.",
+          "description": "We deep‑scan every table, drop junk indexes, and pinpoint bottlenecks to deliver faster query performance. Critical reports load up to 80 % faster.",
           "embeddedButton": {
             "buttonText": ""
           }
