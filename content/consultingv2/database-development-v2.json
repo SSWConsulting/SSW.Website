@@ -40,11 +40,11 @@
       "_template": "imageTextBlock"
     },
     {
-      "heading": "Lorem Ipsum",
+      "heading": "Trusted By",
       "logos": [
         {
-          "logo": "",
-          "altText": "Logo"
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "allianz"
         }
       ],
       "_template": "logoCarousel"
