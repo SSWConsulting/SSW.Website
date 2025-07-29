@@ -43,6 +43,10 @@
       "heading": "Trusted By",
       "logos": [
         {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "commonwealthbank"
+        },
+        {
           "logo": "/images/ssw-web/logos/allianz_logo.png",
           "altText": "allianz"
         }
