@@ -218,6 +218,11 @@
       "background": {
         "backgroundColour": 6
       },
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024
+      },
       "_template": "imageTextBlock"
     },
     {
