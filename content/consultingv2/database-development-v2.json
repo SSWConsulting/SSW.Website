@@ -123,7 +123,7 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
+          "icon": "BiMoneyWithdraw",
           "heading": "SpendOps",
           "description": "Audit your database infrastructure; cut what you don’t need. Reclaim six‑figure budgets you can reinvest in product innovation.",
           "embeddedButton": {
