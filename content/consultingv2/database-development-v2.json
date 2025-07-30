@@ -206,6 +206,7 @@
       "buttons": [
         {
           "buttonText": "Read the full story",
+          "buttonLink": "https://www.ssw.com.au/company/clients/bupa",
           "colour": 0
         },
         {
