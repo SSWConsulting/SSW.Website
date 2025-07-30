@@ -299,7 +299,8 @@
         }
       ],
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 6,
+        "backgroundImage": ""
       },
       "_template": "cardCarousel"
     },
