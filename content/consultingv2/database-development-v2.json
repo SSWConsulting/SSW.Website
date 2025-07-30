@@ -5,6 +5,9 @@
   },
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 3
+      },
       "finalBreadcrumb": "Database Development",
       "_template": "breadcrumbs"
     },
