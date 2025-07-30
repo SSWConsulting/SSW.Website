@@ -300,6 +300,11 @@
       "_template": "accordionBlock"
     },
     {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
+        }
+      ],
       "_template": "technologyCardCarousel"
     },
     {
