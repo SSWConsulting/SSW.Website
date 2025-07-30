@@ -331,6 +331,9 @@
           "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "technologyCardCarousel"
     },
     {
