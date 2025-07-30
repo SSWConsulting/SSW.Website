@@ -277,9 +277,6 @@
       "body": "",
       "accordionItems": [
         {
-          "content": ""
-        },
-        {
           "label": "Can you work with our existing legacy database?",
           "content": "Yes. We specialize in modernizing and optimizing legacy database environments, focusing on minimal disruption to your current operations while unlocking new performance and security capabilities.\n"
         },
