@@ -163,7 +163,7 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
+          "icon": "BiSolidCheckShield",
           "heading": "Data Security",
           "description": "Implement ISO, SOC2 & GDPR best practices to ensure your data is kept secure and compliant.",
           "embeddedButton": {
