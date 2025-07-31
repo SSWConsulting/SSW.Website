@@ -210,6 +210,7 @@
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "Decades of hands‑on work in mission‑critical SQL Server and .NET projects. Field‑proven practices you can apply today, no guesswork required.",
+      "cardStyle": 1,
       "cards": [
         {
           "guid": "3csg5",
