@@ -33,9 +33,9 @@
       "mediaConfiguration": {
         "placement": "Right",
         "mobilePlacement": "Above",
-        "imageSource": "/images/ssw-web/hero/hero-1-ssw.png",
-        "imageHeight": 768,
-        "imageWidth": 1024
+        "imageSource": "/images/ssw-web/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
       },
       "_template": "imageTextBlock"
     },
