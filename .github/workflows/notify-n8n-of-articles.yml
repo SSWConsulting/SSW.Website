@@ -1,0 +1,48 @@
+name: Notify n8n of new articles
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/articles/**/*.mdx'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # ---------- 1. Detect added article files ----------
+      - name: List brand-new article files
+        id: diff
+        run: |
+          ADDED=$(git diff --diff-filter=A --name-only \
+                  "${{ github.event.before }}" "${{ github.sha }}" \
+                  | grep -E '^content/articles/.+\.mdx$' || true)
+
+          echo "Added article files (debug):"
+          echo "$ADDED"
+
+          printf "files<<EOF\n%s\nEOF\n" "$ADDED" >> "$GITHUB_OUTPUT"
+
+      # ---------- 2. Call n8n, echoing each file ----------
+      - name: Call n8n for each new article (includes file content)
+        if: steps.diff.outputs.files != ''
+        env:
+          WEBHOOK_URL: ${{ secrets.N8N_ARTICLE_WEBHOOK }}
+        run: |
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+
+            echo "Sending $f to n8n…"
+
+            CONTENT=$(jq -Rs '.' < "$f")
+
+            curl -s -X POST "$WEBHOOK_URL" \
+                 -H 'Content-Type: application/json' \
+                 -d "{\"path\":\"$f\",\"commit\":\"${GITHUB_SHA}\",\"content\":${CONTENT}}"
+          done <<< "${{ steps.diff.outputs.files }}"
