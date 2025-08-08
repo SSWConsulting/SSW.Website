@@ -189,6 +189,18 @@
       "phone": "+33 3 67 39 05 39",
       "hours": "9:00am - 6:00pm CET",
       "days": "Monday - Friday"
+    },
+    {
+      "url": "https://www.ssw.com.au/",
+      "name": "SSW USA",
+      "streetAddress": "Online Only",
+      "addressLocality": "North America",
+      "addressRegion": "DE",
+      "addressCountry": "USA",
+      "postalCode": 2111,
+      "phone": "+1 302 520 3805",
+      "hours": "9:00am - 6:00pm ET",
+      "days": "Monday - Friday"
     }
   ],
   "socials": [
