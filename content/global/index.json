@@ -191,13 +191,13 @@
       "days": "Monday - Friday"
     },
     {
-      "url": "",
+      "url": "N/A",
       "name": "SSW United States",
-      "streetAddress": "",
-      "addressLocality": "",
-      "addressRegion": "",
+      "streetAddress": "0000",
+      "addressLocality": "00000",
+      "addressRegion": "N/A",
       "addressCountry": "USA",
-      "postalCode": "",
+      "postalCode": 0,
       "phone": "+1 302 520 3805",
       "hours": "9:00am - 6:00pm ET",
       "days": "Monday - Friday"
