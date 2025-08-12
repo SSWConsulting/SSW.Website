@@ -114,7 +114,8 @@
     "yup": "^1.6.1"
   },
   "resolutions": {
-    "final-form": "4.20.1"
+    "final-form": "4.20.1",
+    "form-data": "4.0.4"
   },
   "packageManager": "pnpm@9.15.5"
 }
