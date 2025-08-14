@@ -2,6 +2,11 @@
   "newsletters_year": "2025",
   "newsletters": [
     {
+      "month": 7,
+      "file": "/images/newsletter-uploads/2025/_2025_07__How%20to%20Choose%20the%20Right%20Software%20Architecture_.html",
+      "description": "How to Choose the Right Software Architecture"
+    },
+    {
       "month": 6,
       "file": "/images/newsletter-uploads/2025/_2025_06__Beyond%20Automation%20The%20Developer%E2%80%99s%20Guide%20to%20AI%20Agents_.html",
       "description": "Beyond Automation: The Developer’s Guide to AI Agents"
