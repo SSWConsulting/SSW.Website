@@ -267,7 +267,8 @@
           "title": "Database Development and Performance",
           "description": "Whether it is good old SQL Server or the super scalable SQL Azure, our consultants know how to help you simplify your database and improve its performance.",
           "logo": "/images/thumbs/thumb-database-dev.jpg",
-          "page": "content/consulting/database-development.mdx",
+          "page": "content/consultingv2/database-development.json",
+          "externalUrl": "/consulting/database-development",
           "tags": [
             {
               "tag": "content/consulting/tag/database-development.json"
