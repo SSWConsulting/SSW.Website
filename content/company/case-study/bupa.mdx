@@ -1,28 +1,41 @@
 ---
 seo:
   title: Bupa Case Management System Case Study
-  description: Explore SSW's successful partnership with Bupa, showcasing their collaborative projects and the value added to Bupa's business operations.
+  description: >-
+    Explore SSW's successful partnership with Bupa, showcasing their
+    collaborative projects and the value added to Bupa's business operations.
   showBreadcrumb: true
-heading: Bupa Case Management System
+heading: 'Sentinel: Bupa’s Unified Claims-Recovery Platform'
 content: >
-  ## Challenge
+  ## Problem 
 
 
-  Bupa is one of the largest providers of health cover in Australia. Bupa's
-  agents handle hundreds of insurance claim cases every day. They used to use
-  Excel to connect to their database to track and update those claim cases,
-  which is slow, crashed easily, no security restriction and not user friendly.
+  By 2020 Bupa’s claims-recovery teams were looking to streamline processes that
+  used spreadsheets, email threads and several niche applications. The approach
+  made it hard to see the full lifecycle of an insurance case, introduced
+  governance risk around personally identifiable information and became
+  increasingly expensive to maintain as supporting infrastructure neared
+  end-of-life. Bupa wanted a secure, modern solution that could streamline these
+  activities, grow with future demand and be delivered without a disruptive
+  multi-year program.
 
 
-  ### We make complicated things simple
+  ## Solution
 
 
-  Bupa's case management was very complicated due to case types, status, payment
-  and financial attributes' variety.
+  ### Phase 1 – Initial Build  
 
-  SSW created a user friendly interface for agents to manage cases more
-  efficiently. We integrated with their existing membership database and built
-  the system with case status workflow logic at the backend.
+
+  SSW created Sentinel, a web application built on a distributed-services
+  architecture. Rather than developing a complex drag-and-drop workflow engine,
+  SSW and Bupa defined a concise set of process states that covered everyday
+  scenarios while keeping the codebase lean. 
+
+
+  The system was sized for roughly ten million records, providing ample headroom
+  beyond the original estimate of one hundred thousand. A full Azure Active
+  Directory integration supplied role-based access, detailed audit trails and a
+  secure mode for internal fraud investigations. 
 
 
   The below are some mock-ups for the case management system:
@@ -32,33 +45,28 @@ content: >
   height={400} alignment="items-start" altText="Bupa dashboard"
   customClass="Vertical margin (my-0)" caption="Figure: Case search page" />
 
+
   <CustomImage src="/images/case-studies/bupa-mockup-2.jpg" width={750}
   height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure:
-  Create a case with required fields filled, the other fields are filled in
-  nightly" />
+  customClass="Vertical margin (my-0)" caption="Figure: Create a case with
+  required fields filled, the other fields are filled in nightly" />
+
 
   <CustomImage src="/images/case-studies/bupa-mockup-3.jpg" width={750}
   height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure:
-  Update claims related to a case, which will automatically update case status" />
+  customClass="Vertical margin (my-0)" caption="Figure: Update claims related to
+  a case, which will automatically update case status" />
+
 
   <CustomImage src="/images/case-studies/bupa-mockup-4.jpg" width={750}
   height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure: Update financial
-  data, which will automatically update case status" />
+  customClass="Vertical margin (my-0)" caption="Figure: Update financial data,
+  which will automatically update case status" />
+
 
   <CustomImage src="/images/case-studies/bupa-mockup-5.jpg" width={750}
   height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure: Change
-  log of a case can be checked in the 'history' tab" />
-
-  ## Results
-
-
-  Bupa's agents are able to see all their cases' statuses on a dashboard, and
-  work out which cases need to be followed up. They can also easily create and
-  update the case in a few clicks. Something that needed much more manual effort
-  to do in the past.
+  customClass="Vertical margin (my-0)" caption="Figure: Change log of a case can
+  be checked in the 'history' tab" />
 ---
 
