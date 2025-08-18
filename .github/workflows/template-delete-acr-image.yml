@@ -51,7 +51,7 @@ jobs:
         IMAGE_TAG: ${{ fromJson(needs.setting-up-img-tags.outputs.matrix) }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
