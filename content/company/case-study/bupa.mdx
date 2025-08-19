@@ -1,64 +1,11 @@
 ---
 seo:
   title: Bupa Case Management System Case Study
-  description: Explore SSW's successful partnership with Bupa, showcasing their collaborative projects and the value added to Bupa's business operations.
+  description: >-
+    Explore SSW's successful partnership with Bupa, showcasing their
+    collaborative projects and the value added to Bupa's business operations.
   showBreadcrumb: true
-heading: Bupa Case Management System
-content: >
-  ## Challenge
-
-
-  Bupa is one of the largest providers of health cover in Australia. Bupa's
-  agents handle hundreds of insurance claim cases every day. They used to use
-  Excel to connect to their database to track and update those claim cases,
-  which is slow, crashed easily, no security restriction and not user friendly.
-
-
-  ### We make complicated things simple
-
-
-  Bupa's case management was very complicated due to case types, status, payment
-  and financial attributes' variety.
-
-  SSW created a user friendly interface for agents to manage cases more
-  efficiently. We integrated with their existing membership database and built
-  the system with case status workflow logic at the backend.
-
-
-  The below are some mock-ups for the case management system:
-
-
-  <CustomImage src="/images/case-studies/bupa-mockup-1.jpg" width={750}
-  height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure: Case search page" />
-
-  <CustomImage src="/images/case-studies/bupa-mockup-2.jpg" width={750}
-  height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure:
-  Create a case with required fields filled, the other fields are filled in
-  nightly" />
-
-  <CustomImage src="/images/case-studies/bupa-mockup-3.jpg" width={750}
-  height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure:
-  Update claims related to a case, which will automatically update case status" />
-
-  <CustomImage src="/images/case-studies/bupa-mockup-4.jpg" width={750}
-  height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure: Update financial
-  data, which will automatically update case status" />
-
-  <CustomImage src="/images/case-studies/bupa-mockup-5.jpg" width={750}
-  height={400} alignment="items-start" altText="Bupa dashboard"
-  customClass="Vertical margin (my-0)" caption="Figure: Change
-  log of a case can be checked in the 'history' tab" />
-
-  ## Results
-
-
-  Bupa's agents are able to see all their cases' statuses on a dashboard, and
-  work out which cases need to be followed up. They can also easily create and
-  update the case in a few clicks. Something that needed much more manual effort
-  to do in the past.
+heading: 'Sentinel: Bupa’s Unified Claims-Recovery Platform'
+content: "## Problem \n\nBy 2020 Bupa’s claims-recovery teams were looking to streamline processes that used spreadsheets, email threads and several niche applications. The approach made it hard to see the full lifecycle of an insurance case, introduced governance risk around personally identifiable information and became increasingly expensive to maintain as supporting infrastructure neared end-of-life. Bupa wanted a secure, modern solution that could streamline these activities, grow with future demand and be delivered without a disruptive multi-year program.\n\n## Solution\n\n### Phase 1 – Initial Build  \n\nSSW created Sentinel, a web application built on a distributed-services architecture. Rather than developing a complex drag-and-drop workflow engine, SSW and Bupa defined a concise set of process states that covered everyday scenarios while keeping the codebase lean. \n\nThe system was sized for roughly ten million records, providing ample headroom beyond the original estimate of one hundred thousand. A full Azure Active Directory integration supplied role-based access, detailed audit trails and a secure mode for internal fraud investigations. \n\n\n### Phase 2 – Modernisation and Consolidation  \n\nBupa asked SSW to industrialise Sentinel for long-term use. The team upgraded the back end to .NET 8, moved the front end to the latest version of Angular and migrated document storage to SharePoint. A dedicated SQL Server instance, query refactoring and index tuning allowed the platform to handle hundreds of millions of records with acceptable response times.\n\nRetiring an obsolete tool (“Can-do”) and onboarding additional teams turned Sentinel into a single point of truth for case management. Throughout the engagement SSW ran full Scrum.\n\n<CustomImage src=\"/images/ssw-web/blog/image002.png\" width={750} height={400} alignment=\"items-start\" altText=\"Welcome Screen\" customClass=\"Vertical margin (my-0)\" caption=\"Figure: Welcome Screen\" />\n\n<CustomImage src=\"/images/ssw-web/blog/image003.png\" width={750} height={400} alignment=\"items-start\" altText=\"Create a single case\" customClass=\"Vertical margin (my-0)\" caption=\"Figure: Create a single case. The Case Type determines the attributes attached in the lower part of the screen.\" />\n\n<CustomImage src=\"/images/ssw-web/blog/image004.png\" width={750} height={400} alignment=\"items-start\" altText=\"Advanced Search\" customClass=\"Vertical margin (my-0)\" caption=\"Figure: Advanced Search on any attribute of a case already created.\" />\n\n<CustomImage src=\"/images/ssw-web/blog/image005.png\" width={750} height={400} alignment=\"items-start\" altText=\"Multiple Cases\" customClass=\"Vertical margin (my-0)\" caption=\"Figure: Create Multiple Cases is for Hospital Case Types only, and allows us to create a handful of cases easily to the same provider:\" />\n\n<CustomImage src=\"/images/ssw-web/blog/image006.png\" width={750} height={400} alignment=\"items-start\" altText=\"Import Audit\" customClass=\"Vertical margin (my-0)\" caption=\"Figure: Import Audit allows us via a CSV import to upload many cases, to adjust allowable inputs for different teams, and to upload audit findings:\" />\n\n<CustomImage caption=\"Figure: Dashboard is for users to monitor timelines of cases.\" altText=\"Dashboard\" alignment=\"items-start\" height={400} width={750} customClass=\"Vertical margin (my-0)\" src=\"/images/ssw-web/blog/image007.png\" />\n\n## Results\n\n* Sentinel now recovers roughly three times more value than the previous process, representing additional savings for Bupa.\n* Multiple claims teams share one application, reducing maintenance overhead and improving cross-team visibility. \n* Robust security controls and audit history help Bupa meet governance obligations while protecting sensitive data. \n* The delivery model demonstrated the benefits of iterative development.\n\nSentinel began as a tactical solution but has grown into a business-critical platform that safeguards revenue, strengthens compliance and provides a solid foundation for future innovation in claims management.\_\n"
 ---
 
