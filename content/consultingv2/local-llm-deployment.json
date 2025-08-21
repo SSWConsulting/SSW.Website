@@ -10,7 +10,7 @@
       },
       "heading": "Self-host LLMs so your sensitive data never leaves your VPC",
       "isH1": false,
-      "description": "We help you deploy a private, on-prem LLM gateway. Get a secure, unified API for any model without the cost and compliance risk of public clouds.\n",
+      "description": "We help you deploy a private, on-prem LLM gateway. Get a secure, unified API for any local AI model without the cost and compliance risk of public clouds.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
