@@ -49,7 +49,6 @@
           "guid": "pzx5dv",
           "image": "/images/ssw-web/hero/local-llm.jpg",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidServer",
           "heading": "Run on Your Infrastructure",
           "description": "Deploy to any VPC, private cloud, or bare-metal server. Guarantees zero data ever leaves your network, satisfying the strictest compliance and security requirements.",
           "embeddedButton": {
