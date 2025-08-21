@@ -194,6 +194,9 @@
           "content": "Minimal. We expose an OpenAI-compatible endpoint, so existing clients usually point to a new base URL. Auth and rate limits are configured in the gateway.\n"
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "accordionBlock"
     },
     {
