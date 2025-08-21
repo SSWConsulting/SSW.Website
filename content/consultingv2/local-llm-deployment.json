@@ -1,6 +1,9 @@
 {
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "finalBreadcrumb": "Local LLM Deployment",
       "_template": "breadcrumbs"
     },
