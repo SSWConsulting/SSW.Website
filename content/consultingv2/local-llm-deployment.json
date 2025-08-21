@@ -10,7 +10,7 @@
       },
       "heading": "Run open-source LLMs on your own infra. Zero data egress.",
       "isH1": false,
-      "description": "On-prem or private cloud. We deploy, harden, and benchmark. You get SLOs and a clear TCO.\n",
+      "description": "Get a production-ready, OpenAI-compatible API for open-source models, running entirely inside your network. 100% private.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
