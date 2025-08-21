@@ -154,7 +154,7 @@
           "heading": "100% Air-Gap Ready",
           "description": "",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
@@ -164,7 +164,7 @@
           "heading": "SOC 2 / HIPAA Compliant",
           "description": "",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
@@ -174,7 +174,7 @@
           "heading": "Deploys in < 1 Hour",
           "description": "",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
