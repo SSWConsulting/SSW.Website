@@ -163,8 +163,8 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "accordionItems": [
         {
-          "label": "Lorem",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "How do you prove zero data egress?",
+          "content": "Default-deny firewall + Kubernetes NetworkPolicy, scripted egress probes (hourly), and signed logs. We include the egress test pack and data-flow diagram for audits.\n"
         },
         {
           "label": "Ipsum",
