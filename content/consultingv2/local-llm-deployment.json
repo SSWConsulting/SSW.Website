@@ -1,6 +1,7 @@
 {
   "blocks": [
     {
+      "finalBreadcrumb": "Local LLM Deployment",
       "_template": "breadcrumbs"
     },
     {
