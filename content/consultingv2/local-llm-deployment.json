@@ -175,6 +175,24 @@
         }
       ],
       "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Bring models to your data. Zero egress. Real numbers.",
+      "isH1": false,
+      "description": "Start with a focused PoC on your hardware (or private cloud). We deploy, harden, and benchmark open-source LLMs, then hand you SLOs and a clear TCO.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "👉 Book a 30-min PoC call",
+          "colour": 0
+        }
+      ],
+      "_template": "imageTextBlock"
     }
   ]
 }
