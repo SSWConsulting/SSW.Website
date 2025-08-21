@@ -48,16 +48,6 @@
           "guid": "pzx5dv",
           "image": "/images/ssw-web/hero/local-llm.jpg",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Run on Your Infrastructure",
           "description": "Deploy to any VPC, private cloud, or bare-metal server. Guarantees zero data ever leaves your network, satisfying the strictest compliance and security requirements.",
@@ -68,16 +58,6 @@
         {
           "guid": "07ihrh",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Get an OpenAI-Compatible API",
           "description": "Your developers can use their existing tools by simply changing the API endpoint. This means zero learning curve and faster application development.",
@@ -88,16 +68,6 @@
         {
           "guid": "xnidab",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Manage Models with One Click",
           "description": "Deploy, update, and scale optimized open-source models without MLOps expertise. Go from a model on Hugging Face to a production endpoint in minutes.",
@@ -138,6 +108,11 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/case_study_local-llm.jpg",
+        "imageHeight": 768,
+        "imageWidth": 1408
+      },
       "_template": "imageTextBlock"
     },
     {
