@@ -32,6 +32,9 @@
       "_template": "imageTextBlock"
     },
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "heading": "Trusted by",
       "isWhiteImages": true,
       "logos": [
