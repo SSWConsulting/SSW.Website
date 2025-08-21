@@ -122,7 +122,7 @@
       "heading": "",
       "isH1": false,
       "body": "",
-      "cardStyle": 1,
+      "cardStyle": 0,
       "cards": [
         {
           "guid": "e4a7x7",
@@ -156,6 +156,31 @@
         }
       ],
       "_template": "cardCarousel"
+    },
+    {
+      "heading": "Lorem Ipsum",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "accordionItems": [
+        {
+          "label": "Lorem",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "accordionBlock"
     }
   ]
 }
