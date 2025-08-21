@@ -31,6 +31,11 @@
           "colour": 0
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/local-llm.jpg",
+        "imageHeight": 896,
+        "imageWidth": 1280
+      },
       "_template": "imageTextBlock"
     },
     {
