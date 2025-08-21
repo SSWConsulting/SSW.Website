@@ -29,10 +29,6 @@
           "buttonText": "Book a PoC scoping call",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "_template": "imageTextBlock"
