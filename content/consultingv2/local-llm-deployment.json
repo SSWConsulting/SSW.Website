@@ -89,7 +89,7 @@
       "isH1": false,
       "description": "They needed to run LLMs on PII with zero data egress. A DIY build was soaking engineering time with no timeline. We installed an on-prem gateway, tuned open-source models, and proved lower latency and cost.\n",
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "The Challenge",
