@@ -4,7 +4,7 @@
       "background": {
         "backgroundColour": 3
       },
-      "finalBreadcrumb": "Mobile App Development2",
+      "finalBreadcrumb": "Mobile App Development",
       "_template": "breadcrumbs"
     },
     {
@@ -27,9 +27,9 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/ssw-hero-mobile-apps.png",
-        "imageHeight": 768,
-        "imageWidth": 1408
+        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
+        "imageHeight": 1758,
+        "imageWidth": 2638
       },
       "_template": "imageTextBlock"
     },
