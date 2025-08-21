@@ -91,7 +91,7 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png"
+        "backgroundImage": ""
       },
       "_template": "cardCarousel"
     },
@@ -126,7 +126,8 @@
         }
       ],
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png"
       },
       "mediaConfiguration": {
         "imageSource": "/images/ssw-web/hero/case_study_local-llm.jpg",
