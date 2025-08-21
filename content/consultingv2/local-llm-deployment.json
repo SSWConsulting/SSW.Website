@@ -169,6 +169,10 @@
         {
           "label": "Do we need GPUs?",
           "content": "Recommended for throughput and p95. Typical start: 4× L40S (or A100/H100 equivalents). CPU-only is fine for light loads or batch jobs; we share a sizing guide.\n"
+        },
+        {
+          "label": "Will our apps need changes?",
+          "content": "Minimal. We expose an OpenAI-compatible endpoint, so existing clients usually point to a new base URL. Auth and rate limits are configured in the gateway.\n"
         }
       ],
       "buttons": [
