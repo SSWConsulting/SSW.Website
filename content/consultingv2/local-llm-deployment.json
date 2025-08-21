@@ -66,7 +66,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "07ihrh",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -79,28 +79,14 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Get an OpenAI-Compatible API",
+          "description": "Your developers can use their existing tools by simply changing the API endpoint. This means zero learning curve and faster application development.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
         },
         {
-          "guid": null,
+          "guid": "xnidab",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -113,8 +99,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Manage Models with One Click",
+          "description": "Deploy, update, and scale optimized open-source models without MLOps expertise. Go from a model on Hugging Face to a production endpoint in minutes.",
           "featureList": {
             "features": [
               {
