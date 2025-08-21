@@ -6,7 +6,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
       "heading": "Run open-source LLMs on your own infra. Zero data egress.",
       "isH1": false,
