@@ -8,9 +8,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Self-host LLMs so your sensitive data never leaves your VPC",
       "isH1": false,
-      "description": "",
+      "description": "We deploy a private LLM gateway, benchmark it against your current API, and hand you a costed plan\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
