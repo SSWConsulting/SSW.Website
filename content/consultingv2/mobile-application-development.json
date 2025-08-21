@@ -29,7 +29,8 @@
       "mediaConfiguration": {
         "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
         "imageHeight": 1758,
-        "imageWidth": 2638
+        "imageWidth": 2638,
+        "altText": "3 People looking at a mobile phone and smiling "
       },
       "_template": "imageTextBlock"
     },
