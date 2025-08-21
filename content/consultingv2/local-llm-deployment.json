@@ -184,7 +184,7 @@
       },
       "heading": "Bring models to your data. Zero egress. Real numbers.",
       "isH1": false,
-      "description": "Start with a focused PoC on your hardware (or private cloud). We deploy, harden, and benchmark open-source LLMs, then hand you SLOs and a clear TCO.\n",
+      "description": "Start with a focused PoC on your hardware (or private cloud).\n\nWe deploy, harden, and benchmark open-source LLMs, then hand you SLOs and a clear TCO.\n",
       "featureColumns": {
         "twoColumns": true
       },
