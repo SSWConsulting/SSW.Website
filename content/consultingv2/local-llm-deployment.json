@@ -30,9 +30,10 @@
     },
     {
       "heading": "Trusted by",
+      "isWhiteImages": true,
       "logos": [
         {
-          "logo": "",
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
           "altText": "Logo"
         }
       ],
