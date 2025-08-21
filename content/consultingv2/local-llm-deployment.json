@@ -57,6 +57,7 @@
         },
         {
           "guid": "07ihrh",
+          "image": "/images/ssw-web/blog/openai-api.jpg",
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "Get an OpenAI-Compatible API",
@@ -67,6 +68,7 @@
         },
         {
           "guid": "xnidab",
+          "image": "/images/ssw-web/blog/one-click-deploy.jpg",
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "Manage Models with One Click",
