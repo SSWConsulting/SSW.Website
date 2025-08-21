@@ -110,7 +110,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": "Case Study"
       },
       "heading": "How FinSecure Capital Deployed a Private, Open-Source LLM for Document Analysis in 48 Hours",
       "isH1": false,
