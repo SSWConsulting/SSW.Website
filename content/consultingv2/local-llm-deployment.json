@@ -109,21 +109,28 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Lorem Ipsum",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "accordionItems": [
-        {
-          "label": "Lorem",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
-        },
-        {
-          "label": "Ipsum",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
-        }
-      ],
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "How FinSecure Capital Deployed a Private, Open-Source LLM for Document Analysis in 48 Hours",
+      "isH1": false,
+      "description": "They needed to run LLMs on PII with zero data egress. A DIY build was soaking engineering time with no timeline. We installed an on-prem gateway, tuned open-source models, and proved lower latency and cost.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "The Challenge",
+            "description": "Process KYC and contract docs in-house. No data may leave the perimeter. Public APIs were slow and expensive. The internal project drifted without clear SLOs."
+          },
+          {
+            "heading": "The Outcome",
+            "description": "Live in 48 hours. p95 latency 310 ms (↓~65%). Unit cost $0.11 / 1k tokens (↓~80%). Zero egress verified via firewall + Kubernetes NetworkPolicy tests."
+          }
+        ]
+      },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Read the Full Case Study",
           "colour": 0
         },
         {
@@ -131,7 +138,7 @@
           "colour": 1
         }
       ],
-      "_template": "accordionBlock"
+      "_template": "imageTextBlock"
     }
   ]
 }
