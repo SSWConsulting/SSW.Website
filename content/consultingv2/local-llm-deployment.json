@@ -24,6 +24,9 @@
           "colour": 0
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "imageSource": "/images/ssw-web/hero/local-llm-hero.jpg",
         "imageHeight": 752,
