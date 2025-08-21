@@ -145,12 +145,12 @@
       "heading": "",
       "isH1": false,
       "body": "",
-      "cardStyle": 0,
+      "cardStyle": 1,
       "cards": [
         {
           "guid": "e4a7x7",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiCrosshair",
           "heading": "100% Air-Gap Ready",
           "description": "",
           "embeddedButton": {
@@ -160,7 +160,7 @@
         {
           "guid": "2jlc1p",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidLock",
           "heading": "SOC 2 / HIPAA Compliant",
           "description": "",
           "embeddedButton": {
@@ -170,7 +170,7 @@
         {
           "guid": "pwvxts",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidTimer",
           "heading": "Deploys in < 1 Hour",
           "description": "",
           "embeddedButton": {
