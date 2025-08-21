@@ -139,6 +139,118 @@
         }
       ],
       "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
     }
   ]
 }
