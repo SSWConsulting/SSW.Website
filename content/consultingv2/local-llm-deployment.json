@@ -22,9 +22,9 @@
         }
       ],
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/local-llm.jpg",
-        "imageHeight": 896,
-        "imageWidth": 1280
+        "imageSource": "/images/ssw-web/hero/local-llm-hero.jpg",
+        "imageHeight": 752,
+        "imageWidth": 1392
       },
       "_template": "imageTextBlock"
     },
