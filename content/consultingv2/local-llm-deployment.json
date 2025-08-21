@@ -159,7 +159,7 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Lorem Ipsum",
+      "heading": "FAQ",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "accordionItems": [
         {
@@ -173,16 +173,6 @@
         {
           "label": "Will our apps need changes?",
           "content": "Minimal. We expose an OpenAI-compatible endpoint, so existing clients usually point to a new base URL. Auth and rate limits are configured in the gateway.\n"
-        }
-      ],
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "_template": "accordionBlock"
