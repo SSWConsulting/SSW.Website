@@ -167,8 +167,8 @@
           "content": "Default-deny firewall + Kubernetes NetworkPolicy, scripted egress probes (hourly), and signed logs. We include the egress test pack and data-flow diagram for audits.\n"
         },
         {
-          "label": "Ipsum",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "Do we need GPUs?",
+          "content": "Recommended for throughput and p95. Typical start: 4× L40S (or A100/H100 equivalents). CPU-only is fine for light loads or batch jobs; we share a sizing guide.\n"
         }
       ],
       "buttons": [
