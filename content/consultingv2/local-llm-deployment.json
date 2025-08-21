@@ -46,6 +46,7 @@
       "cards": [
         {
           "guid": "pzx5dv",
+          "image": "/images/ssw-web/hero/local-llm.jpg",
           "altText": "Lorem Ipsum",
           "chips": [
             {
