@@ -8,9 +8,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Self-host LLMs so your sensitive data never leaves your VPC",
+      "heading": "Run open-source LLMs on your own infra. Zero data egress.",
       "isH1": false,
-      "description": "We help you deploy a private, on-prem LLM gateway. Get a secure, unified API for any local AI model without the cost and compliance risk of public clouds.\n",
+      "description": "On-prem or private cloud. We deploy, harden, and benchmark. You get SLOs and a clear TCO.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
