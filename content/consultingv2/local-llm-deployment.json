@@ -34,6 +34,7 @@
       "logos": [
         {
           "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 120,
           "altText": "Logo"
         }
       ],
