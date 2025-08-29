@@ -1,0 +1,23 @@
+{
+  "title": "Local Intelligence: Running LLMs Natively, No Cloud Required",
+  "url": "https://www.ssw.com.au/netug",
+  "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ],
+  "startDateTime": "2025-09-17T08:00:00.000Z",
+  "endDateTime": "2025-09-17T10:00:00.000Z",
+  "startShowBannerDateTime": "2025-09-16T14:00:00.000Z",
+  "endShowBannerDateTime": "2025-09-17T11:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "category": "Artificial Intelligence",
+  "abstract": "Imagine an AI that runs entirely offline—fast, private, and directly connected to your application’s logic. In this session, we’ll explore how locally hosted large language models (LLMs) can interpret natural language prompts and invoke real-time functionality without ever touching the cloud.\n\nFrom smart environments to embedded devices, we’ll demonstrate how this approach unlocks new possibilities for responsiveness, autonomy, and data sovereignty. \n\nWe’ll wrap by showing how .NET 9’s new AI-native method invocation makes this not just possible—but practical",
+  "description": "Imagine an AI that runs entirely offline—fast, private, and directly connected to your application’s logic. In this session, we’ll explore how locally hosted large language models (LLMs) can interpret natural language prompts and invoke real-time functionality without ever touching the cloud.\n\nFrom smart environments to embedded devices, we’ll demonstrate how this approach unlocks new possibilities for responsiveness, autonomy, and data sovereignty. \n\nWe’ll wrap by showing how .NET 9’s new AI-native method invocation makes this not just possible—but practical\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
