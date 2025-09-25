@@ -203,7 +203,7 @@
           "guid": "2jlc1p",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidLock",
-          "heading": "SOC 2 / HIPAA Compliant",
+          "heading": "Satisfy the most rigorous security audits with ease",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
@@ -212,8 +212,8 @@
         {
           "guid": "pwvxts",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidTimer",
-          "heading": "Deploys in < 1 Hour",
+          "icon": "BiCurrentLocation",
+          "heading": "Process requests instantly without cloud latency",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
