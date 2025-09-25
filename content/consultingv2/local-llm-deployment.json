@@ -151,7 +151,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Case Study"
+        "labelText": "From Theory to Reality"
       },
       "heading": "Offline AI in Action: A Developer's Guide to Local LLMs",
       "isH1": false,
@@ -174,9 +174,11 @@
         "backgroundImage": "/images/ssw-web/background/ssw_background_3.png"
       },
       "mediaConfiguration": {
+        "mediaType": "youtube",
         "imageSource": "/images/ssw-web/hero/case_study_local-llm.jpg",
         "imageHeight": 768,
-        "imageWidth": 1408
+        "imageWidth": 1408,
+        "youtubeUrl": "https://www.youtube.com/watch?v=is4fO4NnjY0"
       },
       "_template": "imageTextBlock"
     },
