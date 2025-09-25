@@ -78,11 +78,13 @@
             "features": [
               {
                 "heading": "Zero data leaves",
-                "description": "Sensitive info never leaves; tick SOC 2/HIPAA boxes."
+                "description": "Sensitive info never leaves; tick SOC 2/HIPAA boxes.",
+                "icon": "BiSolidCheckShield"
               },
               {
                 "heading": "Performance local",
-                "description": "Cut network hops and jitter for more reliable responses."
+                "description": "Cut network hops and jitter for more reliable responses.",
+                "icon": "BiSolidBolt"
               }
             ]
           },
