@@ -13,7 +13,7 @@
       },
       "heading": "Run open-source LLMs on your own infrastructure",
       "isH1": false,
-      "description": "Get a production-ready API for open-source models, running entirely within your own network. This gives you the power of cutting-edge AI, with the absolute guarantee that your sensitive data stays private\n",
+      "description": "",
       "featureColumns": {
         "twoColumns": true,
         "features": [
