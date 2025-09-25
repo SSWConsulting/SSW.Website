@@ -72,8 +72,8 @@
           "guid": "pzx5dv",
           "image": "/images/ssw-web/hero/local-llm.jpg",
           "altText": "Lorem Ipsum",
-          "heading": "Run on Your Infrastructure",
-          "description": "Deploy to any VPC, private cloud, or bare-metal server. Guarantees zero data ever leaves your network, satisfying the strictest compliance and security requirements.",
+          "heading": "Your AI, Your Rules. Deploy Anywhere.",
+          "description": "Whether you use a Virtual Private Cloud (VPC), a private cloud, or your own on-premise servers, you have complete control. This flexibility means you can meet the strictest security and compliance standards, because your data never has to leave your secure perimeter.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -83,8 +83,8 @@
           "image": "/images/ssw-web/blog/openai-api.jpg",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Get an OpenAI-Compatible API",
-          "description": "Your developers can use their existing tools by simply changing the API endpoint. This means zero learning curve and faster application development.",
+          "heading": "Faster Development. No Learning Curve.",
+          "description": "Your developers can use the tools they already know and love. By simply changing a single API endpoint they can integrate powerful, open-source AI models into your applications.",
           "embeddedButton": {
             "buttonText": ""
           }
