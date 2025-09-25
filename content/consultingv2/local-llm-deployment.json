@@ -18,8 +18,9 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Absolute Data Control",
-            "description": "Deploy powerful AI models in your own environment, ensuring your sensitive data never leaves your network."
+            "heading": "Total Data Sovereignty\t",
+            "description": "Guarantee data privacy and compliance by keeping everything inside your network.\t",
+            "icon": "BiSolidCheckShield"
           },
           {
             "heading": "Seamless Integration",
