@@ -72,19 +72,18 @@
           "guid": "pzx5dv",
           "image": "/images/ssw-web/hero/local-llm.jpg",
           "altText": "Lorem Ipsum",
+          "icon": "BiCheckSquare",
           "heading": "Your AI, Your Rules. Deploy Anywhere.",
-          "description": "Whether you use a Virtual Private Cloud (VPC), a private cloud, or your own on-premise servers, you have complete control.",
+          "description": "",
           "featureList": {
             "features": [
               {
                 "heading": "Zero data leaves",
-                "description": "Pass audits and cut breach risk. Everything stays inside your perimeter.",
-                "icon": "BiCheckSquare"
+                "description": "Pass audits and cut breach risk. Everything stays inside your perimeter."
               },
               {
                 "heading": "Closer = faster",
-                "description": "Keep inference next to your systems for lower latency and steadier performance",
-                "icon": "BiCheckSquare"
+                "description": "Keep inference next to your systems for lower latency and steadier performance"
               }
             ]
           },
