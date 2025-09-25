@@ -23,8 +23,9 @@
             "icon": "BiSolidCheckShield"
           },
           {
-            "heading": "Seamless Integration",
-            "description": "Use your existing tools and workflows with an API that works with a wide range of open-source models, enabling faster development."
+            "heading": "Instant Integration",
+            "description": "Your developers can use their favorite tools by simply changing an API endpoint.",
+            "icon": "BiNetworkChart"
           }
         ]
       },
