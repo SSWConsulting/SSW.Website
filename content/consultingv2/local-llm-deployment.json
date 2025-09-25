@@ -13,9 +13,19 @@
       },
       "heading": "Run open-source LLMs on your own infrastructure",
       "isH1": false,
-      "description": "Get a production-ready, OpenAI-compatible API for open-source models, running entirely inside your network. 100% private.\n",
+      "description": "Get a production-ready API for open-source models, running entirely within your own network. This gives you the power of cutting-edge AI, with the absolute guarantee that your sensitive data stays private\n",
       "featureColumns": {
-        "twoColumns": true
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Absolute Data Control",
+            "description": "Deploy powerful AI models in your own environment, ensuring your sensitive data never leaves your network."
+          },
+          {
+            "heading": "Seamless Integration",
+            "description": "Use your existing tools and workflows with an API that works with a wide range of open-source models, enabling faster development."
+          }
+        ]
       },
       "buttons": [
         {
