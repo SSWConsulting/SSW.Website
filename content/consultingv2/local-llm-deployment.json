@@ -122,8 +122,21 @@
           "image": "/images/ssw-web/blog/one-click-deploy.jpg",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Manage Models with One Click",
-          "description": "Deploy, update, and scale optimized open-source models without MLOps expertise. Go from a model on Hugging Face to a production endpoint in minutes.",
+          "heading": "One-click model management",
+          "description": "Launch, scale, and roll back without MLOps drama.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Simple ops",
+                "description": "Autoscale for traffic spikes without pager chaos",
+                "icon": "BiArrowToTop"
+              },
+              {
+                "heading": "Lorem Ipsum",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
