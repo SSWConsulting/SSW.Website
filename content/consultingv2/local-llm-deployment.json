@@ -132,8 +132,9 @@
                 "icon": "BiArrowToTop"
               },
               {
-                "heading": "Lorem Ipsum",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                "heading": "Minutes, not months",
+                "description": "Go from “found a model” to “prod endpoint” quickly.",
+                "icon": "BiAlarm"
               }
             ]
           },
