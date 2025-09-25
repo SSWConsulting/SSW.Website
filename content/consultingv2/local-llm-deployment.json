@@ -97,8 +97,22 @@
           "image": "/images/ssw-web/blog/openai-api.jpg",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Faster Development. No Learning Curve.",
-          "description": "Your developers can use the tools they already know and love. By simply changing a single API endpoint they can integrate powerful, open-source AI models into your applications.",
+          "heading": "Drop-in integration",
+          "description": "Your developers can use the tools they already know and love. Simply swap a single API endpoint.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "No learning curve",
+                "description": "Teams ship features faster because nothing gets rewritten",
+                "icon": "BiCodeCurly"
+              },
+              {
+                "heading": "Model freedom",
+                "description": "Swap open-source models (OpenAI, Qwen, etc.) without changing your app.",
+                "icon": "BiSolidBrain"
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
