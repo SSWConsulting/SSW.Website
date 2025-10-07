@@ -244,6 +244,28 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "n7hexc",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=nD6XDMP1-CM&t=104s",
+          "altText": "Mastering Microsoft Copilot, Agents & Connectors",
+          "chips": [
+            {
+              "chipText": "MS Copilot",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "8 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Mastering Microsoft Copilot, Agents & Connectors",
+          "description": "Join Jean Thirion (SSW France) to explore the three Copilot types, when to use them, and how agents + connectors tap internal and external data (SQL, Jira). See Copilot Studio, M365 architecture, and next steps for ROI!",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "background": {
