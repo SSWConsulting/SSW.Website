@@ -69,6 +69,9 @@
         },
         {
           "logo": "/images/ssw-web/logos/symantec_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png"
         }
       ],
       "_template": "logoCarousel"
