@@ -288,6 +288,28 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "pv7uh",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=WwF69cj8490",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "background": {
