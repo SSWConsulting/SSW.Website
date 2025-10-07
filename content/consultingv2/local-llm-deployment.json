@@ -72,6 +72,9 @@
         },
         {
           "logo": "/images/ssw-web/logos/event_cinemas_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png"
         }
       ],
       "_template": "logoCarousel"
