@@ -57,6 +57,9 @@
           "logo": "/images/ssw-web/logos/cisco_logo.png",
           "scale": 120,
           "altText": "Logo"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png"
         }
       ],
       "_template": "logoCarousel"
