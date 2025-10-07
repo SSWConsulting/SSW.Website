@@ -60,6 +60,9 @@
         },
         {
           "logo": "/images/ssw-web/logos/cba_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png"
         }
       ],
       "_template": "logoCarousel"
