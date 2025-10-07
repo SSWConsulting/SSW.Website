@@ -159,16 +159,6 @@
       "featureColumns": {
         "twoColumns": false
       },
-      "buttons": [
-        {
-          "buttonText": "Read the Full Case Study",
-          "colour": 0
-        },
-        {
-          "buttonText": "Book a 30-min PoC",
-          "colour": 1
-        }
-      ],
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
