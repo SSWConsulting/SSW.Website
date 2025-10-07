@@ -267,6 +267,28 @@
           }
         },
         {
+          "guid": "y1uoh",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/BlqJ7bnivLE",
+          "altText": "The Year of the AI Agent: Automation to Intelligence",
+          "chips": [
+            {
+              "chipText": "AI Trends",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "90 min.",
+              "chipType": "filledChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "The Year of the AI Agent: Automation to Intelligence",
+          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "n7hexc",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=nD6XDMP1-CM&t=104s",
@@ -328,28 +350,6 @@
           "icon": "info",
           "heading": "How to supercharge a company with AI",
           "description": "Supercharge your company with AI! 🚀 See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features. Discover actionable tips to implement AI",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "y1uoh",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/BlqJ7bnivLE",
-          "altText": "The Year of the AI Agent: Automation to Intelligence",
-          "chips": [
-            {
-              "chipText": "AI Trends",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "90 min.",
-              "chipType": "filledChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "The Year of the AI Agent: Automation to Intelligence",
-          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
           "embeddedButton": {
             "buttonText": ""
           }
