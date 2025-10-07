@@ -274,7 +274,7 @@
           "altText": "Beyond the API: MCP for Plug-and-Play Integrations",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Model Context Protocol",
               "chipType": "filledChip"
             },
             {
