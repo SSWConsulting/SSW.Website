@@ -285,20 +285,6 @@
           "icon": "info",
           "heading": "Beyond the API: MCP for Plug-and-Play Integrations",
           "description": "Join Calum Simpson as he demystifies Model Context Protocol, evolving brittle APIs into AI-ready workflows! Explore Cloud Code, GitHub MCP, and TeloScript, with demos from dev automation to Scrum mastering.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": ""
           }
