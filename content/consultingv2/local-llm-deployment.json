@@ -296,17 +296,17 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Business",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "8 min.",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "How to supercharge a company with AI",
+          "description": "Supercharge your company with AI! 🚀 See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features. Discover actionable tips to implement AI",
           "embeddedButton": {
             "buttonText": ""
           }
