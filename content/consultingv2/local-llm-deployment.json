@@ -171,7 +171,8 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png"
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
+        "bleed": true
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
