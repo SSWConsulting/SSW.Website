@@ -27,9 +27,10 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/ssw-hero-mobile-apps.png",
-        "imageHeight": 768,
-        "imageWidth": 1408
+        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
+        "imageHeight": 1758,
+        "imageWidth": 2638,
+        "altText": "3 People looking at a mobile phone and smiling "
       },
       "_template": "imageTextBlock"
     },
