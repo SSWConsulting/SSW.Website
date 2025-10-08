@@ -31,7 +31,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book a PoC scoping call",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -370,7 +370,7 @@
         },
         {
           "label": "Do we need GPUs?",
-          "content": "Recommended for throughput and p95. Typical start: 4× L40S (or A100/H100 equivalents). CPU-only is fine for light loads or batch jobs; we share a sizing guide.\n"
+          "content": "Recommended for throughput and p95. Typical start: 4× L40S (or A100/H100 equivalents). CPU-only is fine for light loads or batch jobs; we share a sizing guide.\n\nPrivate cloud is also an option if you don't have any of your own hardware.\n"
         },
         {
           "label": "Will our apps need changes?",
@@ -394,7 +394,7 @@
       },
       "buttons": [
         {
-          "buttonText": "👉 Book a 30-min PoC call",
+          "buttonText": "👉 Book a free initial meeting",
           "colour": 0
         }
       ],
