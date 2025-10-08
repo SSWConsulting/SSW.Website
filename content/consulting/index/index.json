@@ -122,6 +122,7 @@
         {
           "title": "Local LLM Deployment",
           "description": "Run open-source LLMs inside your network. Private, fast, and under your control.",
+          "logo": "/images/thumbs/Brain%20in%20a%20house.png",
           "page": "content/consultingv2/local-llm-deployment.json"
         }
       ]
