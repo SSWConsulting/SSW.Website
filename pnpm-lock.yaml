@@ -143,8 +143,8 @@ importers:
         specifier: ^3.2.23
         version: 3.2.23
       react-responsive-modal:
-        specifier: ^6.4.2
-        version: 6.4.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: ^7.1.0
+        version: 7.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react-toastify:
         specifier: ^11.0.5
         version: 11.0.5(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -1065,13 +1065,13 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@bedrock-layout/use-forwarded-ref@1.6.1':
-    resolution: {integrity: sha512-GD9A9AFLzFNjr7k6fgerSqxfwDWl+wsPS11PErOKe1zkVz0y7RGC9gzlOiX/JrgpyB3NFHWIuGtoOQqifJQQpw==}
+  '@bedrock-layout/use-forwarded-ref@2.0.17':
+    resolution: {integrity: sha512-4meaaQjg2ZtP9eg0F2LsL0tENmxZ6CTNz4tLheOOyKjqTSjM11yKjSOsMwaEJ8uRyQf+XBDFBmb/IfpHAuCqug==}
     peerDependencies:
       react: ^16.8 || ^17 || ^18
 
-  '@bedrock-layout/use-stateful-ref@1.4.1':
-    resolution: {integrity: sha512-4eKO2KdQEXcR5LI4QcxqlJykJUDQJWDeWYAukIn6sRQYoabcfI5kDl61PUi6FR6o8VFgQ8IEP7HleKqWlSe8SQ==}
+  '@bedrock-layout/use-stateful-ref@2.0.17':
+    resolution: {integrity: sha512-pzVUYMTa32E9dGa2xadOFej96gYJEHg+Qh4Tg0fMj6zYT4y5LZpE+XkCiPcFafR3kTFhqSGfjRTIJbnSyeEAxQ==}
     peerDependencies:
       react: ^16.8 || ^17 || ^18
 
@@ -7915,11 +7915,11 @@ packages:
   react-responsive-carousel@3.2.23:
     resolution: {integrity: sha512-pqJLsBaKHWJhw/ItODgbVoziR2z4lpcJg+YwmRlSk4rKH32VE633mAtZZ9kDXjy4wFO+pgUZmDKPsPe1fPmHCg==}
 
-  react-responsive-modal@6.4.2:
-    resolution: {integrity: sha512-ARjGEKE5Gu5CSvyA8U9ARVbtK4SMAtdXsjtzwtxRlQIHC99RQTnOUctLpl7+/sp1Kg1OJZ6yqvp6ivd4TBueEw==}
+  react-responsive-modal@7.1.0:
+    resolution: {integrity: sha512-BKcvf+SYCmTqmgd22l0tkWT2/eZ9FzkirS0e/4SwDIAfry5QyqGRtsMUpq9z8XPQzIOQZ3EM+5Z2u46iTmVtvQ==}
     peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
-      react-dom: ^16.8.0 || ^17 || ^18
+      react: ^16.8.0 || ^17 || ^18 || ^19
+      react-dom: ^16.8.0 || ^17 || ^18 || ^19
 
   react-router-dom@6.3.0:
     resolution: {integrity: sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==}
@@ -10522,12 +10522,12 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@bedrock-layout/use-forwarded-ref@1.6.1(react@19.1.1)':
+  '@bedrock-layout/use-forwarded-ref@2.0.17(react@19.1.1)':
     dependencies:
-      '@bedrock-layout/use-stateful-ref': 1.4.1(react@19.1.1)
+      '@bedrock-layout/use-stateful-ref': 2.0.17(react@19.1.1)
       react: 19.1.1
 
-  '@bedrock-layout/use-stateful-ref@1.4.1(react@19.1.1)':
+  '@bedrock-layout/use-stateful-ref@2.0.17(react@19.1.1)':
     dependencies:
       react: 19.1.1
 
@@ -18769,9 +18769,9 @@ snapshots:
       prop-types: 15.8.1
       react-easy-swipe: 0.0.21
 
-  react-responsive-modal@6.4.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-responsive-modal@7.1.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
-      '@bedrock-layout/use-forwarded-ref': 1.6.1(react@19.1.1)
+      '@bedrock-layout/use-forwarded-ref': 2.0.17(react@19.1.1)
       body-scroll-lock: 3.1.5
       classnames: 2.5.1
       react: 19.1.1
