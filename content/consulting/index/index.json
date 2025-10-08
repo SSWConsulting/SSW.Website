@@ -118,6 +118,11 @@
               "tag": "content/consulting/tag/ai-development.json"
             }
           ]
+        },
+        {
+          "title": "Local LLM Deployment",
+          "description": "Run open-source LLMs inside your network. Private, fast, and under your control.",
+          "page": "content/consultingv2/local-llm-deployment.json"
         }
       ]
     },
