@@ -75,7 +75,7 @@
           "name": "Featured",
           "items": [
             {
-              "name": "ChatGPT & GPT5",
+              "name": "ChatGPT & OpenAI",
               "url": "/consulting/gpt",
               "description": "Unlock the power of language Al for your business",
               "widgetType": "featured"
