@@ -124,6 +124,12 @@
           "description": "Run open-source LLMs inside your network. Private, fast, and under your control.",
           "logo": "/images/thumbs/Brain%20in%20a%20house.png",
           "page": "content/consultingv2/local-llm-deployment.json"
+        },
+        {
+          "title": "Vibe Coding",
+          "description": "We help tech-savvy visionaries bring their product ideas to life, giving them the tools and support to prototype and vibe code. No production coding needed.",
+          "logo": "/images/thumbs/Vibe-codingv2.png",
+          "page": "content/consultingv2/vibe-coding.json"
         }
       ]
     },
