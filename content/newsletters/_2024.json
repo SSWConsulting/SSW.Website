@@ -50,6 +50,11 @@
       "month": 9,
       "file": "/images/newsletter-uploads/2024/_2024_09__7 Important Updates to TinaCMS 2.0__.html",
       "description": "7 Important Updates to 🦙TinaCMS 2.0"
+    },
+    {
+      "month": 10,
+      "file": "/images/newsletter-uploads/2024/_2024_10__From%20Chaos%20to%20Clarity%20The%20Essential%20Role%20of%20Architectural%20Decision%20Records__.html",
+      "description": "From Chaos to Clarity: The Essential Role of Architectural Decision Records (ADRs)"
     }
   ]
 }
