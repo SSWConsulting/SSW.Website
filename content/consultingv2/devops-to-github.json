@@ -137,14 +137,14 @@
       "isH1": false,
       "description": "We've developed a four-phase methodology that migrates enterprises from Azure DevOps to GitHub with high-fidelity data preservation, zero code loss, and minimal developer disruption. Choose the pathway that fits your timeline and risk tolerance.\n",
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
-            "heading": "Lorem",
+            "heading": "Azure Repos (Git) to GitHub",
             "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
           },
           {
-            "heading": "Ipsum",
+            "heading": "Azure Pipelines to GitHub Actions",
             "description": "Lorem dolor sit amet, consectetur adipiscing elit."
           }
         ]
