@@ -50,6 +50,46 @@
       "_template": "logoCarousel"
     },
     {
+      "isStacked": false,
+      "heading": "Azure DevOps Is No Longer Microsoft's Innovation Engine",
+      "isH1": false,
+      "body": "Since acquiring GitHub, Microsoft has shifted its entire developer platform strategy. GitHub receives priority for AI features, security innovations, and ecosystem integrations. Azure DevOps is maintained but no longer leading.",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "zhe5tv",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Widening Capability Gap",
+          "description": "Agentic AI workflows, Copilot Enterprise features, and advanced security scanning launch on GitHub first, often exclusively. Staying on ADO means falling behind",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
