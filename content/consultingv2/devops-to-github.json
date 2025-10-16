@@ -103,7 +103,7 @@
           "heading": "Fragmented Toolchains Cost You Twice",
           "description": "Teams using GitHub for repos but ADO for pipelines pay double licensing fees while managing duplicate governance, security policies, and user permissions.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
