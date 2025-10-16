@@ -61,6 +61,10 @@
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
           "scale": 125
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 120
         }
       ],
       "_template": "logoCarousel"
