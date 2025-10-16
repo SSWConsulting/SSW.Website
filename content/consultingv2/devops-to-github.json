@@ -146,6 +146,10 @@
           {
             "heading": "Azure Pipelines to GitHub Actions",
             "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Azure Boards to GitHub Issues & Projects",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
           }
         ]
       },
