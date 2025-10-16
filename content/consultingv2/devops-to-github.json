@@ -301,9 +301,9 @@
     },
     {
       "isStacked": false,
-      "heading": "Lorem Ipsum",
+      "heading": "Tech wisdom from the trenches",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
       "buttons": [
         {
           "buttonText": "Lorem",
