@@ -314,20 +314,7 @@
           "colour": 1
         }
       ],
-      "categoryGroup": [
-        {
-          "categoryName": "Lorem",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        },
-        {
-          "categoryName": "Dolor",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        }
-      ],
+      "cardStyle": 1,
       "cards": [
         {
           "guid": "868dpp",
