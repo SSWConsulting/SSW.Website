@@ -105,6 +105,26 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "vujm",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Immediate AI Access",
+          "description": "Developers gain Copilot capabilities and native security scanning on day one while teams adjust gradually.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "_template": "cardCarousel"
