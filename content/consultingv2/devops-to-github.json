@@ -51,9 +51,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Azure DevOps Is No Longer Microsoft's Innovation Engine",
+      "heading": "Microsoft's Investment Has Shifted to GitHub\t",
       "isH1": false,
-      "body": "Since acquiring GitHub, Microsoft has shifted its entire developer platform strategy. GitHub receives priority for AI features, security innovations, and ecosystem integrations. Azure DevOps is maintained but no longer leading.",
+      "body": "GitHub is no longer just a code hosting platform; it's Microsoft's primary vehicle for developer tooling innovation. Azure DevOps receives maintenance updates, but strategic feature development happens on GitHub.",
       "buttons": [
         {
           "buttonText": "See Your Migration Roadmap",
@@ -151,11 +151,11 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Start with a Free Assessment",
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
+          "buttonText": "Speak to a Migration Architect",
           "colour": 1
         }
       ],
