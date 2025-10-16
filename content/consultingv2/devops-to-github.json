@@ -69,7 +69,7 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
+          "icon": "BiCodeBlock",
           "heading": "Code-Only Migration",
           "description": "Move all source repositories to GitHub while keeping existing ADO pipelines and boards. Unlock GitHub Copilot and Advanced Security immediately with minimal workflow disruption.",
           "embeddedButton": {
@@ -89,7 +89,7 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
+          "icon": "BiLogoGithub",
           "heading": "Full Git History Preserved",
           "description": "Using GitHub Enterprise Importer for high-fidelity migration of commits, branches, tags, and pull request metadata.",
           "embeddedButton": {
@@ -109,7 +109,7 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "info",
+          "icon": "BiBrain",
           "heading": "Immediate AI Access",
           "description": "Developers gain Copilot capabilities and native security scanning on day one while teams adjust gradually.",
           "embeddedButton": {
