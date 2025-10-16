@@ -54,16 +54,6 @@
       "heading": "Microsoft's Investment Has Shifted to GitHub\t",
       "isH1": false,
       "body": "GitHub is no longer just a code hosting platform; it's Microsoft's primary vehicle for developer tooling innovation. Azure DevOps receives maintenance updates, but strategic feature development happens on GitHub.",
-      "buttons": [
-        {
-          "buttonText": "See Your Migration Roadmap",
-          "colour": 0
-        },
-        {
-          "buttonText": "Compare Platforms",
-          "colour": 1
-        }
-      ],
       "cardStyle": 0,
       "cards": [
         {
