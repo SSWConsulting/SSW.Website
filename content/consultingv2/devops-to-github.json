@@ -408,17 +408,17 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "AI Models",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "3 min.",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
+          "description": "Confused about selecting the perfect AI model? Join Isaac Lombard and Caleb Williams as they explore how GitHub Models simplifies the process! Discover the ease of finding and utilizing AI models for your projects in this quick guide.",
           "featureList": {
             "features": [
               {
