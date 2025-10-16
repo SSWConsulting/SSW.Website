@@ -81,6 +81,10 @@
         {
           "logo": "/images/ssw-web/logos/symantec_logo.png",
           "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 120
         }
       ],
       "_template": "logoCarousel"
