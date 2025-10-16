@@ -40,6 +40,9 @@
       "_template": "imageTextBlock"
     },
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "heading": "Trusted by Enterprise Teams",
       "logos": [
         {
