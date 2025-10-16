@@ -155,11 +155,11 @@
       },
       "buttons": [
         {
-          "buttonText": "Start with a Free Assessment",
+          "buttonText": "See Your Migration Roadmap",
           "colour": 0
         },
         {
-          "buttonText": "Speak to a Migration Architect",
+          "buttonText": "Compare Platforms",
           "colour": 1
         }
       ],
