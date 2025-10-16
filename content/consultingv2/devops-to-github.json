@@ -65,6 +65,10 @@
         {
           "logo": "/images/ssw-web/logos/cisco_logo.png",
           "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 120
         }
       ],
       "_template": "logoCarousel"
