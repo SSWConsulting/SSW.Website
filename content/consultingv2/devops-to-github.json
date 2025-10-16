@@ -18,29 +18,29 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Context-Aware AI Development",
+            "description": "GitHub Copilot Enterprise indexes your entire private codebase when natively integrated—a capability impossible with Azure Repos. Stop settling for generic suggestions."
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "40% Faster Developer Onboarding",
+            "description": "GitHub is the platform 100M developers already know. Eliminate training overhead and attract top talent who expect modern, AI-powered tooling."
           }
         ]
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Book Your Migration Assessment",
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
+          "buttonText": "Download Migration Guide",
           "colour": 1
         }
       ],
       "_template": "imageTextBlock"
     },
     {
-      "heading": "Lorem Ipsum",
+      "heading": "Trusted by Enterprise Teams",
       "logos": [
         {
           "logo": "",
