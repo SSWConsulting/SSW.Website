@@ -131,11 +131,11 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": "Our Proven Migration Services"
       },
       "heading": "Azure DevOps Is No Longer Microsoft's Innovation Engine",
       "isH1": false,
-      "description": "Since acquiring GitHub, Microsoft has shifted its entire developer platform strategy. GitHub receives priority for AI features, security innovations, and ecosystem integrations. Azure DevOps is maintained but no longer leading.\n",
+      "description": "We've developed a four-phase methodology that migrates enterprises from Azure DevOps to GitHub with high-fidelity data preservation, zero code loss, and minimal developer disruption. Choose the pathway that fits your timeline and risk tolerance.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
