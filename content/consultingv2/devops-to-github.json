@@ -80,8 +80,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Widening Capability Gap",
-          "description": "Agentic AI workflows, Copilot Enterprise features, and advanced security scanning launch on GitHub first, often exclusively. Staying on ADO means falling behind",
+          "heading": "Code-Only Migration",
+          "description": "Move all source repositories to GitHub while keeping existing ADO pipelines and boards. Unlock GitHub Copilot and Advanced Security immediately with minimal workflow disruption.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -100,8 +100,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Fragmented Toolchains Cost You Twice",
-          "description": "Teams using GitHub for repos but ADO for pipelines pay double licensing fees while managing duplicate governance, security policies, and user permissions.",
+          "heading": "Full Git History Preserved",
+          "description": "Using GitHub Enterprise Importer for high-fidelity migration of commits, branches, tags, and pull request metadata.",
           "embeddedButton": {
             "buttonText": ""
           }
