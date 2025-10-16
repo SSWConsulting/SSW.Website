@@ -307,16 +307,6 @@
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
       "cardStyle": 1,
       "cards": [
         {
@@ -386,6 +376,9 @@
           }
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "cardCarousel"
     },
     {
