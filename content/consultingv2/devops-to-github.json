@@ -161,26 +161,26 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "",
       "isH1": false,
       "body": "",
       "cards": [
         {
-          "guid": null,
+          "guid": "q2snk",
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "GitHub Copilot Enterprise: Context-Aware AI",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
@@ -201,20 +201,20 @@
           }
         },
         {
-          "guid": null,
+          "guid": "zrqtcv",
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "30% Lower DevOps Tooling Costs",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
@@ -235,20 +235,20 @@
           }
         },
         {
-          "guid": null,
+          "guid": "pa3g8d",
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "GitHub Advanced Security (GHAS)",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
