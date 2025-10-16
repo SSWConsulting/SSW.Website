@@ -183,7 +183,7 @@
           "heading": "GitHub Copilot Enterprise: Context-Aware AI",
           "description": "",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
@@ -203,7 +203,7 @@
           "heading": "30% Lower DevOps Tooling Costs",
           "description": "",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
@@ -223,7 +223,7 @@
           "heading": "GitHub Advanced Security (GHAS)",
           "description": "",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
