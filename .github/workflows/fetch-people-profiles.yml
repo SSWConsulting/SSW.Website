@@ -22,7 +22,7 @@ jobs:
           repository: "SSWConsulting/SSW.People.Profiles"
           path: ${{ env.TEMPORARY_FOLDER}}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
