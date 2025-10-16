@@ -56,11 +56,11 @@
       "body": "Since acquiring GitHub, Microsoft has shifted its entire developer platform strategy. GitHub receives priority for AI features, security innovations, and ecosystem integrations. Azure DevOps is maintained but no longer leading.",
       "buttons": [
         {
-          "buttonText": "Lorem",
+          "buttonText": "See Your Migration Roadmap",
           "colour": 0
         },
         {
-          "buttonText": "Ipsum",
+          "buttonText": "Compare Platforms",
           "colour": 1
         }
       ],
