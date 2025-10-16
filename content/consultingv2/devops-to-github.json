@@ -37,6 +37,11 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/case_study_local-llm.jpg",
+        "imageHeight": 768,
+        "imageWidth": 1408
+      },
       "_template": "imageTextBlock"
     },
     {
