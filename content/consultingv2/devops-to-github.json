@@ -1,6 +1,10 @@
 {
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Azure DevOps to GitHub Migration",
       "_template": "breadcrumbs"
     },
     {
