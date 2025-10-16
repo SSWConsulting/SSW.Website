@@ -419,22 +419,8 @@
           "icon": "info",
           "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
           "description": "Confused about selecting the perfect AI model? Join Isaac Lombard and Caleb Williams as they explore how GitHub Models simplifies the process! Discover the ease of finding and utilizing AI models for your projects in this quick guide.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
