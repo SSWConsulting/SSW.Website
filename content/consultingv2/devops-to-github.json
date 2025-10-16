@@ -389,6 +389,9 @@
       "_template": "cardCarousel"
     },
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "technologyCardCarousel"
     },
     {
