@@ -203,6 +203,9 @@
           }
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "cardCarousel"
     },
     {
@@ -327,7 +330,9 @@
       ],
       "cards": [
         {
-          "guid": null,
+          "guid": "868dpp",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=4SJ8lja5GJI&t=1062s",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -361,7 +366,9 @@
           }
         },
         {
-          "guid": null,
+          "guid": "il17x",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=xPFe3MlOJQ4",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -395,75 +402,9 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": null,
+          "guid": "goztfm",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=sVELvhGdSfs&t=9s",
           "altText": "Lorem Ipsum",
           "chips": [
             {
