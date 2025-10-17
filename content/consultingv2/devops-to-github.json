@@ -52,6 +52,7 @@
         "backgroundColour": 6
       },
       "heading": "Trusted by Enterprise Teams",
+      "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/ssw-web/logos/allianz_logo.png",
