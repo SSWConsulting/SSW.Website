@@ -1,0 +1,466 @@
+{
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Azure DevOps to GitHub Migration",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Stop Paying the AI Tax: Unlock GitHub Copilot's Full Power",
+      "isH1": false,
+      "description": "Your Azure DevOps environment is blocking AI capabilities that could save your developers 45 minutes every day. We migrate enterprises to GitHub in weeks, not months—with zero disruption to active sprints.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Context-Aware AI Development",
+            "description": "GitHub Copilot Enterprise indexes your entire private codebase when natively integrated—a capability impossible with Azure Repos. Stop settling for generic suggestions."
+          },
+          {
+            "heading": "40% Faster Developer Onboarding",
+            "description": "GitHub is the platform 100M developers already know. Eliminate training overhead and attract top talent who expect modern, AI-powered tooling."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book Your Migration Assessment",
+          "colour": 0
+        },
+        {
+          "buttonText": "Download Migration Guide",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/case_study_local-llm.jpg",
+        "imageHeight": 768,
+        "imageWidth": 1408
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by Enterprise Teams",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 120,
+          "altText": "Logo"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 125
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 120
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Microsoft's Investment Has Shifted to GitHub\t",
+      "isH1": false,
+      "body": "GitHub is no longer just a code hosting platform; it's Microsoft's primary vehicle for developer tooling innovation. Azure DevOps receives maintenance updates, but strategic feature development happens on GitHub.",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "zhe5tv",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiCodeBlock",
+          "heading": "Code-Only Migration",
+          "description": "Move all source repositories to GitHub while keeping existing ADO pipelines and boards. Unlock GitHub Copilot and Advanced Security immediately with minimal workflow disruption.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "pj2x5s",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiLogoGithub",
+          "heading": "Full Git History Preserved",
+          "description": "Using GitHub Enterprise Importer for high-fidelity migration of commits, branches, tags, and pull request metadata.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "vujm",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiBrain",
+          "heading": "Immediate AI Access",
+          "description": "Developers gain Copilot capabilities and native security scanning on day one while teams adjust gradually.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Our Proven Migration Services",
+      "isH1": false,
+      "description": "We've developed a four-phase methodology that migrates enterprises from Azure DevOps to GitHub with high-fidelity data preservation, zero code loss, and minimal developer disruption. Choose the pathway that fits your timeline and risk tolerance.\n",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Start with Repos: Instant Copilot Access",
+            "description": ""
+          },
+          {
+            "heading": "Modernize CI/CD with GitHub Actions\t",
+            "description": ""
+          },
+          {
+            "heading": "Full Consolidation: One Platform for Everything\t",
+            "description": ""
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "See Your Migration Roadmap",
+          "colour": 0
+        },
+        {
+          "buttonText": "Compare Platforms",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "q2snk",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "GitHub Copilot Enterprise: Context-Aware AI",
+          "description": "",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "zrqtcv",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "30% Lower DevOps Tooling Costs",
+          "description": "",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "pa3g8d",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "GitHub Advanced Security (GHAS)",
+          "description": "",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": false,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "868dpp",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=4SJ8lja5GJI&t=1062s",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "il17x",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=xPFe3MlOJQ4",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "goztfm",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=sVELvhGdSfs&t=9s",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Models",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "3 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
+          "description": "Confused about selecting the perfect AI model? Join Isaac Lombard and Caleb Williams as they explore how GitHub Models simplifies the process! Discover the ease of finding and utilizing AI models for your projects in this quick guide.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your project today",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Start with a Free Migration Assessment",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
