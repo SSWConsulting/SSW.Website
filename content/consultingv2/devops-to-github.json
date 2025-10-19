@@ -204,15 +204,15 @@
     },
     {
       "isStacked": true,
-      "heading": "",
+      "heading": "What you gain on GitHub",
       "isH1": false,
-      "body": "",
+      "body": "A modern developer platform tuned for speed, safety, and happier teams.",
       "cards": [
         {
           "guid": "q2snk",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "GitHub Copilot Enterprise: Context-Aware AI",
+          "heading": "Instant dev environments",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
@@ -222,7 +222,7 @@
           "guid": "zrqtcv",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "30% Lower DevOps Tooling Costs",
+          "heading": "Faster CI/CD, saner pricing",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
@@ -232,7 +232,7 @@
           "guid": "pa3g8d",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "GitHub Advanced Security (GHAS)",
+          "heading": "Security on by default",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
