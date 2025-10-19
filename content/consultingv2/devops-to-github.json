@@ -110,16 +110,6 @@
         {
           "guid": "vujm",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "BiBrain",
           "heading": "Security add-ons",
           "description": "Advanced secret/code/dependency scanning on ADO requires enabling GitHub Advanced Security for Azure DevOps (a separate, billable product).",
@@ -206,7 +196,7 @@
       "isStacked": true,
       "heading": "What you gain on GitHub",
       "isH1": false,
-      "body": "Faster dev loops, built-in security, and an AI pair programmer that understands your org, plus clear guardrails and pricing you can govern.",
+      "body": "Faster loops, built-in protection, and an AI pair programmer that understands your codebase, with clear governance.",
       "cards": [
         {
           "guid": "q2snk",
