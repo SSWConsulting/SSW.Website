@@ -318,7 +318,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "AI Models",
+              "chipText": "Quick Demo",
               "chipType": "filledChip"
             },
             {
@@ -327,8 +327,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
-          "description": "Confused about selecting the perfect AI model? Join Isaac Lombard and Caleb Williams as they explore how GitHub Models simplifies the process! Discover the ease of finding and utilizing AI models for your projects in this quick guide.",
+          "heading": "Test Any AI Model in One Place. No Setup Required",
+          "description": "Skip the hassle of multiple API setups. See how to test OpenAI, Meta, and other AI models instantly using GitHub Models. Live demo included.",
           "embeddedButton": {
             "buttonText": ""
           }
