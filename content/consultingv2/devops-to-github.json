@@ -11,21 +11,11 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Stop Paying the AI Tax: Unlock GitHub Copilot's Full Power",
+      "heading": "Stop stagnating. Ship faster on GitHub.",
       "isH1": false,
-      "description": "Your Azure DevOps environment is blocking AI capabilities that could save your developers 45 minutes every day. We migrate enterprises to GitHub in weeks, not months—with zero disruption to active sprints.\n",
+      "description": "Move from Azure DevOps to the premium engineering platform.\n\nFaster setup, built-in security, and CI/CD that scales without punishing your wallet.\n",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Context-Aware AI Development",
-            "description": "GitHub Copilot Enterprise indexes your entire private codebase when natively integrated—a capability impossible with Azure Repos. Stop settling for generic suggestions."
-          },
-          {
-            "heading": "40% Faster Developer Onboarding",
-            "description": "GitHub is the platform 100M developers already know. Eliminate training overhead and attract top talent who expect modern, AI-powered tooling."
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
