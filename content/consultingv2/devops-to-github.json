@@ -90,16 +90,6 @@
         {
           "guid": "zhe5tv",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "BiCodeBlock",
           "heading": "AI gap",
           "description": "Repo/PR-aware Copilot lives natively on GitHub; IDE-only Copilot isn’t the same as org-contextual features on GitHub.com.",
