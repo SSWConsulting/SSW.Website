@@ -283,8 +283,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "What's New in GitHub Projects & Copilot",
+          "description": "Learn the latest GitHub Projects updates and how Copilot transforms your coding workflow. Includes live demos and real-world tips.",
           "embeddedButton": {
             "buttonText": ""
           }
