@@ -203,7 +203,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "Copilot, but enterprise-grade",
-          "description": "",
+          "description": "PR-aware chat and summaries speed reviews; governed per-seat (Business/Enterprise)",
           "embeddedButton": {
             "buttonText": ""
           }
