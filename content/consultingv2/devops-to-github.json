@@ -102,7 +102,7 @@
           ],
           "icon": "BiCodeBlock",
           "heading": "AI gap",
-          "description": "Org-aware Copilot features (PR Q&A, repo/discussion context, evolving “Spaces”) live on GitHub Enterprise Cloud, not inside ADO. You can use IDE Copilot anywhere, but you don’t get the tight GitHub surface integration.",
+          "description": "Repo/PR-aware Copilot lives natively on GitHub; IDE-only Copilot isn’t the same as org-contextual features on GitHub.com.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -121,8 +121,8 @@
             }
           ],
           "icon": "BiLogoGithub",
-          "heading": "Security add-ons",
-          "description": "Advanced secret scanning/push protection on ADO requires the separate “GitHub Advanced Security for Azure DevOps” license and setup.",
+          "heading": "Parallelism tax",
+          "description": "Azure Pipelines licenses parallel jobs; new org free-grant is request-only and can take days.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -141,8 +141,8 @@
             }
           ],
           "icon": "BiBrain",
-          "heading": "Concurrency costs",
-          "description": "ADO pipelines license parallelism/minutes; scaling out generally means higher spend",
+          "heading": "Security add-ons",
+          "description": "Advanced secret/code/dependency scanning on ADO requires enabling GitHub Advanced Security for Azure DevOps (a separate, billable product).",
           "embeddedButton": {
             "buttonText": ""
           }
