@@ -157,17 +157,17 @@
         "features": [
           {
             "heading": "Pipeline translation you can trust",
-            "description": "We rewrite Azure Pipelines into lean GitHub Actions, map secrets and environments, and prove it on a pilot repo with green builds and faster runtimes.",
+            "description": "We rewrite Azure Pipelines into lean GitHub Actions, map secrets & environments, and prove it on a pilot repo with green builds and faster runtimes.",
             "icon": "BiCheckDouble"
           },
           {
             "heading": "Data moved, process intact",
-            "description": "We handle repos/PR history via the importer, and migrate planning/test data into a workable GitHub setup (Projects + custom reports) so your rituals keep working day one.",
+            "description": "The importer handles repos/PR history and some policies; we migrate what it doesn’t (pipelines, work items, test plans, artifacts) and stand up Projects + reporting so rituals work day one.",
             "icon": "BiCheckDouble"
           },
           {
-            "heading": "Safe cutover & enablement",
-            "description": "We run dry runs and parallel builds, set branch protections and security defaults, deliver a rollback plan, train your devs, and stay on-call through go-live week.",
+            "heading": "Copilot rollout & governance",
+            "description": "We handle SSO, seat plans, guardrails, and training, so you get value without surprises.",
             "icon": "BiCheckDouble"
           }
         ]
