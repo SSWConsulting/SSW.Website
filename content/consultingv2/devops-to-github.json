@@ -100,16 +100,6 @@
         {
           "guid": "pj2x5s",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "BiLogoGithub",
           "heading": "Parallelism tax",
           "description": "Azure Pipelines licenses parallel jobs; new org free-grant is request-only and can take days.",
