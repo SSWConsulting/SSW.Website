@@ -82,7 +82,7 @@
     },
     {
       "isStacked": true,
-      "heading": "Microsoft's Investment Has Shifted to GitHub\t",
+      "heading": "The cost of staying on ADO",
       "isH1": false,
       "body": "GitHub is no longer just a code hosting platform; it's Microsoft's primary vehicle for developer tooling innovation. Azure DevOps receives maintenance updates, but strategic feature development happens on GitHub.",
       "cardStyle": 0,
@@ -101,8 +101,8 @@
             }
           ],
           "icon": "BiCodeBlock",
-          "heading": "Code-Only Migration",
-          "description": "Move all source repositories to GitHub while keeping existing ADO pipelines and boards. Unlock GitHub Copilot and Advanced Security immediately with minimal workflow disruption.",
+          "heading": "ADO is stable, but slow",
+          "description": "Teams pay in roadmap lag, pipeline costs, and onboarding friction.",
           "embeddedButton": {
             "buttonText": ""
           }
