@@ -150,7 +150,7 @@
         {
           "guid": "trto6",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiAnalyse",
           "heading": "Fixed-size hosted agents",
           "description": "Microsoft-hosted agents can’t be scaled up; to get more CPU/RAM you must move to self-hosted/scale-set agents.",
           "embeddedButton": {
