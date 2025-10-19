@@ -159,19 +159,19 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Our Proven Migration Services",
+      "heading": "White-glove migration, end to end",
       "isH1": false,
-      "description": "We've developed a four-phase methodology that migrates enterprises from Azure DevOps to GitHub with high-fidelity data preservation, zero code loss, and minimal developer disruption. Choose the pathway that fits your timeline and risk tolerance.\n",
+      "description": "We plan it, run it, and stay until your team is confidently shipping on GitHub. No drama, no orphaned YAML.\n",
       "featureColumns": {
         "twoColumns": false,
         "features": [
           {
-            "heading": "Start with Repos: Instant Copilot Access",
-            "description": ""
+            "heading": "Pipeline translation you can trust",
+            "description": "We rewrite Azure Pipelines into lean GitHub Actions, map secrets and environments, and prove it on a pilot repo with green builds and faster runtimes."
           },
           {
-            "heading": "Modernize CI/CD with GitHub Actions\t",
-            "description": ""
+            "heading": "Data moved, process intact",
+            "description": "We handle repos/PR history via the importer, and migrate planning/test data into a workable GitHub setup (Projects + custom reports) so your rituals keep working day one."
           },
           {
             "heading": "Full Consolidation: One Platform for Everything\t",
