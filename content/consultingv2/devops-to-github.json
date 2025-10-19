@@ -156,6 +156,26 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "i54ig8",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Roadmap opacity vs. GitHub",
+          "description": "ADO publishes a features timeline; GitHub maintains a detailed public roadmap board, making forward planning easier.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "background": {
