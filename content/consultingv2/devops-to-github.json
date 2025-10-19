@@ -172,11 +172,13 @@
           },
           {
             "heading": "Data moved, process intact",
-            "description": "We handle repos/PR history via the importer, and migrate planning/test data into a workable GitHub setup (Projects + custom reports) so your rituals keep working day one."
+            "description": "We handle repos/PR history via the importer, and migrate planning/test data into a workable GitHub setup (Projects + custom reports) so your rituals keep working day one.",
+            "icon": "BiCheckDouble"
           },
           {
             "heading": "Safe cutover & enablement",
-            "description": "We run dry runs and parallel builds, set branch protections and security defaults, deliver a rollback plan, train your devs, and stay on-call through go-live week."
+            "description": "We run dry runs and parallel builds, set branch protections and security defaults, deliver a rollback plan, train your devs, and stay on-call through go-live week.",
+            "icon": "BiCheckDouble"
           }
         ]
       },
