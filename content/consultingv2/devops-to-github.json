@@ -101,8 +101,8 @@
             }
           ],
           "icon": "BiCodeBlock",
-          "heading": "ADO is stable, but slow",
-          "description": "Teams pay in roadmap lag, pipeline costs, and onboarding friction.",
+          "heading": "Stagnating roadmap",
+          "description": "ADO’s feature pace has slowed while GitHub keeps shipping.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -121,8 +121,8 @@
             }
           ],
           "icon": "BiLogoGithub",
-          "heading": "Stagnating roadmap",
-          "description": "ADO’s feature pace has slowed while GitHub keeps shipping.",
+          "heading": "Parallelism tax",
+          "description": "Scaling builds costs more, so teams avoid small, fast pipelines.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -141,8 +141,8 @@
             }
           ],
           "icon": "BiBrain",
-          "heading": "Immediate AI Access",
-          "description": "Developers gain Copilot capabilities and native security scanning on day one while teams adjust gradually.",
+          "heading": "Friction to start",
+          "description": "New orgs face forms and waits just to get basic build minutes.",
           "embeddedButton": {
             "buttonText": ""
           }
