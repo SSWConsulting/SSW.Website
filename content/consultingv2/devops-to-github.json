@@ -232,8 +232,8 @@
           "guid": "axyxue",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Governance that scales",
+          "description": "Org-level rulesets enforce reviews/checks across repos; you can even manage settings “as code” via the Probot Settings app.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -242,8 +242,8 @@
           "guid": "v46dou",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Automated dependency hygiene",
+          "description": "Dependabot raises fix PRs and scheduled version bumps; you can tune cadence and it pauses inactive repos automatically.",
           "embeddedButton": {
             "buttonText": ""
           }
