@@ -151,8 +151,8 @@
           "guid": "trto6",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Fixed-size hosted agents",
+          "description": "Microsoft-hosted agents can’t be scaled up; to get more CPU/RAM you must move to self-hosted/scale-set agents.",
           "embeddedButton": {
             "buttonText": ""
           }
