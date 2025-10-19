@@ -305,8 +305,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Switch from Azure DevOps to GitHub with Confidence",
+          "description": "Think GitHub can't replace Azure DevOps? Matt Wicks reveals the top 10 workarounds that make GitHub migrations smooth and successful.",
           "embeddedButton": {
             "buttonText": ""
           }
