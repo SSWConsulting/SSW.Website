@@ -81,7 +81,7 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "The cost of staying on Azure DevOps (ADO)",
       "isH1": false,
       "body": "ADO is stable, but slow. Teams pay in roadmap lag, pipeline costs, and onboarding friction.",
@@ -143,6 +143,16 @@
           "icon": "BiBrain",
           "heading": "Security add-ons",
           "description": "Advanced secret/code/dependency scanning on ADO requires enabling GitHub Advanced Security for Azure DevOps (a separate, billable product).",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "trto6",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "embeddedButton": {
             "buttonText": ""
           }
