@@ -101,8 +101,8 @@
             }
           ],
           "icon": "BiCodeBlock",
-          "heading": "Stagnating roadmap",
-          "description": "ADO’s feature pace has slowed while GitHub keeps shipping.",
+          "heading": "AI gap",
+          "description": "Org-aware Copilot features (PR Q&A, repo/discussion context, evolving “Spaces”) live on GitHub Enterprise Cloud, not inside ADO. You can use IDE Copilot anywhere, but you don’t get the tight GitHub surface integration.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -121,8 +121,8 @@
             }
           ],
           "icon": "BiLogoGithub",
-          "heading": "Parallelism tax",
-          "description": "Scaling builds costs more, so teams avoid small, fast pipelines.",
+          "heading": "Security add-ons",
+          "description": "Advanced secret scanning/push protection on ADO requires the separate “GitHub Advanced Security for Azure DevOps” license and setup.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -141,8 +141,8 @@
             }
           ],
           "icon": "BiBrain",
-          "heading": "Friction to start",
-          "description": "New orgs face forms and waits just to get basic build minutes.",
+          "heading": "Concurrency costs",
+          "description": "ADO pipelines license parallelism/minutes; scaling out generally means higher spend",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -206,7 +206,7 @@
       "isStacked": true,
       "heading": "What you gain on GitHub",
       "isH1": false,
-      "body": "A modern developer platform tuned for speed, safety, and happier teams.",
+      "body": "Faster dev loops, built-in security, and an AI pair programmer that understands your org, plus clear guardrails and pricing you can govern.",
       "cards": [
         {
           "guid": "q2snk",
