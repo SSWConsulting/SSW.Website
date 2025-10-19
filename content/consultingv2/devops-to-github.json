@@ -296,11 +296,11 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "Deep Dive",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
+              "chipText": "57 min.",
               "chipType": "clearChip"
             }
           ],
