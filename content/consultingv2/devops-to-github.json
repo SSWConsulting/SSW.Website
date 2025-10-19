@@ -167,7 +167,8 @@
         "features": [
           {
             "heading": "Pipeline translation you can trust",
-            "description": "We rewrite Azure Pipelines into lean GitHub Actions, map secrets and environments, and prove it on a pilot repo with green builds and faster runtimes."
+            "description": "We rewrite Azure Pipelines into lean GitHub Actions, map secrets and environments, and prove it on a pilot repo with green builds and faster runtimes.",
+            "icon": "BiCheckDouble"
           },
           {
             "heading": "Data moved, process intact",
