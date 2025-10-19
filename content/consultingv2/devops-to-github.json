@@ -84,7 +84,7 @@
       "isStacked": true,
       "heading": "The cost of staying on ADO",
       "isH1": false,
-      "body": "GitHub is no longer just a code hosting platform; it's Microsoft's primary vehicle for developer tooling innovation. Azure DevOps receives maintenance updates, but strategic feature development happens on GitHub.",
+      "body": "ADO is stable, but slow. Teams pay in roadmap lag, pipeline costs, and onboarding friction.",
       "cardStyle": 0,
       "cards": [
         {
@@ -121,8 +121,8 @@
             }
           ],
           "icon": "BiLogoGithub",
-          "heading": "Full Git History Preserved",
-          "description": "Using GitHub Enterprise Importer for high-fidelity migration of commits, branches, tags, and pull request metadata.",
+          "heading": "Stagnating roadmap",
+          "description": "ADO’s feature pace has slowed while GitHub keeps shipping.",
           "embeddedButton": {
             "buttonText": ""
           }
