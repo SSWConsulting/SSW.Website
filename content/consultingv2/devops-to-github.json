@@ -212,8 +212,8 @@
           "guid": "zrqtcv",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Faster CI/CD, saner pricing",
-          "description": "",
+          "heading": "Instant dev environments",
+          "description": "Codespaces + prebuilds cut setup from hours to minutes; budgets control compute/storage.",
           "embeddedButton": {
             "buttonText": ""
           }
