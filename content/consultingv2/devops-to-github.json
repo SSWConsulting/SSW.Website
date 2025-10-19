@@ -82,7 +82,7 @@
     },
     {
       "isStacked": true,
-      "heading": "The cost of staying on ADO",
+      "heading": "The cost of staying on Azure DevOps (ADO)",
       "isH1": false,
       "body": "ADO is stable, but slow. Teams pay in roadmap lag, pipeline costs, and onboarding friction.",
       "cardStyle": 0,
@@ -212,7 +212,7 @@
           "guid": "q2snk",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Instant dev environments",
+          "heading": "Copilot, but enterprise-grade",
           "description": "",
           "embeddedButton": {
             "buttonText": ""
