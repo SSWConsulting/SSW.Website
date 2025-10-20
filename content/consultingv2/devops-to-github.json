@@ -265,7 +265,7 @@
     },
     {
       "heading": "FAQ",
-      "body": "For teams on the fence",
+      "body": "",
       "accordionItems": [
         {
           "label": "Do we lose history (PRs, comments, blame) in the move?",
