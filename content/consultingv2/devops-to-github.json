@@ -100,7 +100,7 @@
         {
           "guid": "pj2x5s",
           "altText": "Lorem Ipsum",
-          "icon": "BiLogoGithub",
+          "icon": "BiSolidError",
           "heading": "Parallelism tax",
           "description": "Azure Pipelines licenses parallel jobs; new org free-grant is request-only and can take days.",
           "embeddedButton": {
