@@ -110,7 +110,7 @@
         {
           "guid": "vujm",
           "altText": "Lorem Ipsum",
-          "icon": "BiBrain",
+          "icon": "BiSolidError",
           "heading": "Security add-ons",
           "description": "Advanced secret/code/dependency scanning on ADO requires enabling GitHub Advanced Security for Azure DevOps (a separate, billable product).",
           "embeddedButton": {
