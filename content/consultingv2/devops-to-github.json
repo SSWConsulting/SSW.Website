@@ -278,6 +278,10 @@
         {
           "label": "Do we have to rewrite every pipeline?",
           "content": "Not every one. We prioritize business-critical pipelines, translate them to Actions, and prove gains (faster runtimes, clearer logs). The rest follow a repeatable template.\n"
+        },
+        {
+          "label": "What about approvals, gates, and variable libraries we rely on in ADO?",
+          "content": "We map them to GitHub Environments, required reviewers, and OIDC + Key Vault integration. Same safety net, cleaner implementation.\n"
         }
       ],
       "isMultipleOpen": true,
