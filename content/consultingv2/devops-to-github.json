@@ -264,8 +264,8 @@
       "_template": "spacer"
     },
     {
-      "heading": "FAQ — for teams on the fence",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "heading": "FAQ",
+      "body": "For teams on the fence",
       "accordionItems": [
         {
           "label": "Do we lose history (PRs, comments, blame) in the move?",
