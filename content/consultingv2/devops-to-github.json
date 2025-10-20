@@ -286,6 +286,10 @@
         {
           "label": "How long does a migration take?",
           "content": "Common range: 3–8 weeks for a mid-sized org. We start with a 1–2 week pilot to de-risk pipelines and security, then scale.\n"
+        },
+        {
+          "label": "Is Copilot safe for our IP?",
+          "content": "With Business/Enterprise, you get policy controls, auditability, and org-scoped behavior. We configure guardrails and training so Copilot helps without leaking context.\n"
         }
       ],
       "isMultipleOpen": true,
