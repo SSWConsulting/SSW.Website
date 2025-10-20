@@ -23,7 +23,7 @@
           "colour": 0
         },
         {
-          "buttonText": "Download Migration Guide",
+          "buttonText": "Compare Platforms",
           "colour": 1
         }
       ],
@@ -92,7 +92,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
           "heading": "AI gap",
-          "description": "Repo/PR-aware Copilot lives natively on GitHub; IDE-only Copilot isn’t the same as org-contextual features on GitHub.com.",
+          "description": "The main reason people are moving away from Azure DevOps is GitHub Copilot. It completely changes how developers write code!",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -102,7 +102,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
           "heading": "Parallelism tax",
-          "description": "Azure Pipelines licenses parallel jobs; new org free-grant is request-only and can take days.",
+          "description": "GitHub Actions are cheaper than Azure Pipelines. Plus you can run builds in parallel for no extra cost.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -112,7 +112,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
           "heading": "Security add-ons",
-          "description": "Advanced secret/code/dependency scanning on ADO requires enabling GitHub Advanced Security for Azure DevOps (a separate, billable product).",
+          "description": "Security patches always come to GitHub substantially earlier than they come to ADO.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -121,8 +121,8 @@
           "guid": "trto6",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
-          "heading": "Fixed-size hosted agents",
-          "description": "Microsoft-hosted agents can’t be scaled up; to get more CPU/RAM you must move to self-hosted/scale-set agents.",
+          "heading": "Big builds demand big servers",
+          "description": "To get more CPU/RAM you have to move to GitHub managed build agents. AzDO-hosted agents can’t be scaled up.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -162,24 +162,20 @@
           },
           {
             "heading": "Data moved, process intact",
-            "description": "The importer handles repos/PR history and some policies; we migrate what it doesn’t (pipelines, work items, test plans, artifacts) and stand up Projects + reporting so rituals work day one.",
+            "description": "The importer handles repos/PR history and some policies; we migrate what it doesn’t (pipelines, work items, test plans, artifacts) and stand up Projects + reporting.",
             "icon": "BiCheckDouble"
           },
           {
             "heading": "Copilot rollout & governance",
-            "description": "We handle SSO, seat plans, guardrails, and training, so you get value without surprises.",
+            "description": "We handle SSO, seat plans, guardrails, and training.",
             "icon": "BiCheckDouble"
           }
         ]
       },
       "buttons": [
         {
-          "buttonText": "See Your Migration Roadmap",
+          "buttonText": "Book Your Migration Assessment",
           "colour": 0
-        },
-        {
-          "buttonText": "Compare Platforms",
-          "colour": 1
         }
       ],
       "background": {
@@ -202,7 +198,7 @@
           "guid": "q2snk",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Copilot, but enterprise-grade",
+          "heading": "GitHub Copilot",
           "description": "PR-aware chat and summaries speed reviews; governed per-seat (Business/Enterprise)",
           "embeddedButton": {
             "buttonText": ""
@@ -223,7 +219,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "CI/CD at speed, security by default",
-          "description": "Actions bills on minutes, supports larger runners, and secret scanning + push protection blocks leaks (with partner actions/revocation).",
+          "description": "GitHub Actions is pay-what-you-use, supports larger runners, and secret scanning + push protection blocks leaks (with partner actions/revocation).",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -233,7 +229,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "Governance that scales",
-          "description": "Org-level rulesets enforce reviews/checks across repos; you can even manage settings “as code” via the Probot Settings app.",
+          "description": "Ensure that code is worked on following your SOPs. ",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -269,7 +265,7 @@
       "accordionItems": [
         {
           "label": "Do we lose history (PRs, comments, blame) in the move?",
-          "content": "No. Repos, PRs, comments, and much of the metadata come across. Pipelines, boards, test plans, and artifacts need bespoke handling - we do that.\n"
+          "content": "No - The repos, Actions, and much of the metadata come across. PRs, pipelines, boards, and artifacts need bespoke handling - we do that too.\n"
         },
         {
           "label": "How much downtime should we expect?",
@@ -285,11 +281,15 @@
         },
         {
           "label": "How long does a migration take?",
-          "content": "Common range: 3–8 weeks for a mid-sized org. We start with a 1–2 week pilot to de-risk pipelines and security, then scale.\n"
+          "content": "We start with a 2-week pilot to de-risk pipelines and security, then scale. Common range: 3–8 weeks for a mid-sized org. \n"
         },
         {
           "label": "Is Copilot safe for our IP?",
-          "content": "With Business/Enterprise, you get policy controls, auditability, and org-scoped behavior. We configure guardrails and training so Copilot helps without leaking context.\n"
+          "content": "Yes - With Business/Enterprise, you get policy controls, auditability, and org-scoped behavior. We configure guardrails and training so Copilot helps without leaking context.\n"
+        },
+        {
+          "label": "GitHub Models",
+          "content": "This wrapper for Azure AI Foundry allows you to swap out AI models at will. Your actions can use this for AI workloads.\n"
         }
       ],
       "isMultipleOpen": true,
