@@ -264,6 +264,20 @@
       "_template": "spacer"
     },
     {
+      "heading": "FAQ — for teams on the fence",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "accordionItems": [
+        {
+          "label": "Do we lose history (PRs, comments, blame) in the move?",
+          "content": "No. Repos, PRs, comments, and much of the metadata come across. Pipelines, boards, test plans, and artifacts need bespoke handling - we do that.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
       "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
