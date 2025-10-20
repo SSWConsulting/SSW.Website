@@ -274,6 +274,10 @@
         {
           "label": "How much downtime should we expect?",
           "content": "Usually close to zero. We run pilots, parallel builds, and a low-traffic cutover with rollback ready. If something’s spicy, we pause, fix, and re-cut.\n"
+        },
+        {
+          "label": "Do we have to rewrite every pipeline?",
+          "content": "Not every one. We prioritize business-critical pipelines, translate them to Actions, and prove gains (faster runtimes, clearer logs). The rest follow a repeatable template.\n"
         }
       ],
       "isMultipleOpen": true,
