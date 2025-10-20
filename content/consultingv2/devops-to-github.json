@@ -90,7 +90,7 @@
         {
           "guid": "zhe5tv",
           "altText": "Lorem Ipsum",
-          "icon": "BiCodeBlock",
+          "icon": "BiSolidError",
           "heading": "AI gap",
           "description": "Repo/PR-aware Copilot lives natively on GitHub; IDE-only Copilot isn’t the same as org-contextual features on GitHub.com.",
           "embeddedButton": {
@@ -120,7 +120,7 @@
         {
           "guid": "trto6",
           "altText": "Lorem Ipsum",
-          "icon": "BiAnalyse",
+          "icon": "BiSolidError",
           "heading": "Fixed-size hosted agents",
           "description": "Microsoft-hosted agents can’t be scaled up; to get more CPU/RAM you must move to self-hosted/scale-set agents.",
           "embeddedButton": {
@@ -130,7 +130,7 @@
         {
           "guid": "i54ig8",
           "altText": "Lorem Ipsum",
-          "icon": "BiBroadcast",
+          "icon": "BiSolidError",
           "heading": "Roadmap opacity vs. GitHub",
           "description": "ADO publishes a features timeline; GitHub maintains a detailed public roadmap board, making forward planning easier.",
           "embeddedButton": {
