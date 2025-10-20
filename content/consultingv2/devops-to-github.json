@@ -270,8 +270,13 @@
         {
           "label": "Do we lose history (PRs, comments, blame) in the move?",
           "content": "No. Repos, PRs, comments, and much of the metadata come across. Pipelines, boards, test plans, and artifacts need bespoke handling - we do that.\n"
+        },
+        {
+          "label": "How much downtime should we expect?",
+          "content": "Usually close to zero. We run pilots, parallel builds, and a low-traffic cutover with rollback ready. If something’s spicy, we pause, fix, and re-cut.\n"
         }
       ],
+      "isMultipleOpen": true,
       "background": {
         "backgroundColour": 6
       },
