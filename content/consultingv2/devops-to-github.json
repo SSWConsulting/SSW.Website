@@ -282,6 +282,10 @@
         {
           "label": "What about approvals, gates, and variable libraries we rely on in ADO?",
           "content": "We map them to GitHub Environments, required reviewers, and OIDC + Key Vault integration. Same safety net, cleaner implementation.\n"
+        },
+        {
+          "label": "How long does a migration take?",
+          "content": "Common range: 3–8 weeks for a mid-sized org. We start with a 1–2 week pilot to de-risk pipelines and security, then scale.\n"
         }
       ],
       "isMultipleOpen": true,
