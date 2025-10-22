@@ -1,0 +1,16 @@
+{
+  "title": "AgentCon Brisbane",
+  "url": "https://globalai.community/chapters/brisbane/events/agentcon-brisbane/",
+  "thumbnail": "/images/events/brisbane-transparent-cropped.png",
+  "thumbnailDescription": "AgentCon",
+  "startDateTime": "2025-10-31T15:03:00.000Z",
+  "endDateTime": "2025-11-01T04:30:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Brisbane",
+  "category": "Artificial Intelligence",
+  "abstract": "Join us for the AI Agents World Tour, a global series of one-day conferences designed exclusively for developers building the future with AI agents.\n\nFrom San Francisco to Singapore, we’re bringing together leading engineers, researchers, and creators to explore the cutting edge of AI agent design, deployment, and integration. Whether you’re building intelligent assistants, autonomous systems, or next-gen developer tools, this event is your fast track to practical knowledge, hands-on demos, and real-world insights.\n\nThis is the Australia Edition of the AGENTCON series\n\nWhat to Expect:\n\nDeep-Dive Talks from AI pioneers and industry leaders\nTechnical Workshops on building, deploying, and scaling agents\nLive Demos of powerful open-source frameworks and tools\nNetworking with a global community of builders and innovators\nThis isn't just another AI event — it’s where developers meet to talk about real code.\n\nReady to build the future?",
+  "description": "Join us for the AI Agents World Tour, a global series of one-day conferences designed exclusively for developers building the future with AI agents.\n\nFrom San Francisco to Singapore, we’re bringing together leading engineers, researchers, and creators to explore the cutting edge of AI agent design, deployment, and integration. Whether you’re building intelligent assistants, autonomous systems, or next-gen developer tools, this event is your fast track to practical knowledge, hands-on demos, and real-world insights.\n\nThis is the Australia Edition of the AGENTCON series\n\nWhat to Expect:\n\nDeep-Dive Talks from AI pioneers and industry leaders\n\nTechnical Workshops on building, deploying, and scaling agents\n\nLive Demos of powerful open-source frameworks and tools\n\nNetworking with a global community of builders and innovators\n\nThis isn't just another AI event — it’s where developers meet to talk about real code.\n\nReady to build the future?\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
