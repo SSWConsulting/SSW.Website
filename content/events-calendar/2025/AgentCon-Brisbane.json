@@ -6,6 +6,9 @@
   "presenterList": [
     {
       "presenter": "content/presenters/adam-cogan.mdx"
+    },
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
     }
   ],
   "startDateTime": "2025-10-31T15:03:00.000Z",
