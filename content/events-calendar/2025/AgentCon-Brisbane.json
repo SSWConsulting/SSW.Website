@@ -3,6 +3,11 @@
   "url": "https://globalai.community/chapters/brisbane/events/agentcon-brisbane/",
   "thumbnail": "/images/events/brisbane-transparent-cropped.png",
   "thumbnailDescription": "AgentCon",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
   "startDateTime": "2025-10-31T15:03:00.000Z",
   "endDateTime": "2025-11-01T04:30:00.000Z",
   "calendarType": "Conferences",
