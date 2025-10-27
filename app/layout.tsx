@@ -86,8 +86,6 @@ export default async function RootLayout({
                 <PhishingBanner
                   enabled={bannerData.data.phishingBanner.enabled}
                   message={bannerData.data.phishingBanner.message}
-                  linkText={bannerData.data.phishingBanner.linkText}
-                  linkUrl={bannerData.data.phishingBanner.linkUrl}
                 />
               ) : undefined
             }

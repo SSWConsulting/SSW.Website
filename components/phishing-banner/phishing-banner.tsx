@@ -1,18 +1,9 @@
-import { CustomLink } from "@/components/customLink";
-
 interface PhishingBannerProps {
   enabled: boolean;
   message: string;
-  linkText?: string;
-  linkUrl?: string;
 }
 
-export const PhishingBanner = ({
-  enabled,
-  message,
-  linkText,
-  linkUrl,
-}: PhishingBannerProps) => {
+export const PhishingBanner = ({ enabled, message }: PhishingBannerProps) => {
   if (!enabled) {
     return null;
   }
@@ -20,19 +11,8 @@ export const PhishingBanner = ({
   return (
     <div className="w-full bg-gray-100">
       <div className="container mx-auto px-4 py-2">
-        <p className="text-center text-sm text-sswBlack md:text-base">
+        <p className="text-center text-xs text-sswBlack md:text-sm">
           {message}
-          {linkText && linkUrl && (
-            <>
-              {" "}
-              <CustomLink
-                href={linkUrl}
-                className="underline decoration-1 underline-offset-2 hover:text-gray-700"
-              >
-                {linkText}
-              </CustomLink>
-            </>
-          )}
         </p>
       </div>
     </div>

@@ -20,7 +20,7 @@ export const phishingBannerSchema: Collection = {
       type: "boolean",
       name: "enabled",
       label: "Enable Banner",
-      description: "Toggle to show or hide the banner across the entire site",
+      description: "Toggle to show or hide the banner on the employment page",
       required: true,
     },
     {
@@ -32,18 +32,6 @@ export const phishingBannerSchema: Collection = {
       ui: {
         component: "textarea",
       },
-    },
-    {
-      type: "string",
-      name: "linkText",
-      label: "Link Text",
-      description: "Optional link text (e.g., 'Learn more')",
-    },
-    {
-      type: "string",
-      name: "linkUrl",
-      label: "Link URL",
-      description: "URL for the optional link",
     },
   ],
 };
