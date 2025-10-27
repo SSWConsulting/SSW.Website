@@ -1,3 +1,4 @@
+import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events";
@@ -20,6 +21,7 @@ import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
 import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu, MegaMenuProps } from "./utils/get-mega-menu";
+import { getPhishingBanner } from "./utils/get-phishing-banner";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -56,6 +58,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const menuData = await getMegamenu();
+  const bannerData = await getPhishingBanner();
   const nextUG = await client.queries.getFutureEventsQuery({
     fromDate: new Date().toISOString(),
     top: 1,
@@ -72,6 +75,16 @@ export default async function RootLayout({
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
           <PageLayout
+            phishingBanner={
+              bannerData?.data?.phishingBanner && (
+                <PhishingBanner
+                  enabled={bannerData.data.phishingBanner.enabled}
+                  message={bannerData.data.phishingBanner.message}
+                  linkText={bannerData.data.phishingBanner.linkText}
+                  linkUrl={bannerData.data.phishingBanner.linkUrl}
+                />
+              )
+            }
             megaMenu={MegaMenu({
               menuData: menuData,
               liveStreamData: liveStreamData,
