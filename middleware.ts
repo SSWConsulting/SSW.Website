@@ -2,15 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { addNoIndexHeaders } from "./middleware/noIndex";
 
 export function middleware(request: NextRequest) {
-  // Set the pathname in request headers for conditional rendering in layouts
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-pathname", request.nextUrl.pathname);
-
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
+  const response = NextResponse.next();
 
   // Add HSTS headers (180 days)
   response.headers.set("Strict-Transport-Security", "max-age=15552000");

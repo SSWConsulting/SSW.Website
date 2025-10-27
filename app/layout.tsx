@@ -12,7 +12,6 @@ import utc from "dayjs/plugin/utc";
 import { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
-import { headers } from "next/headers";
 import "styles.css";
 import client from "../tina/__generated__/client";
 import { MenuWrapper } from "./components/MenuWrapper";
@@ -58,13 +57,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") || "";
-  const isEmploymentPage =
-    pathname === "/employment" || pathname.startsWith("/employment/");
-
   const menuData = await getMegamenu();
-  const bannerData = isEmploymentPage ? await getPhishingBanner() : null;
+  const bannerData = await getPhishingBanner();
   const nextUG = await client.queries.getFutureEventsQuery({
     fromDate: new Date().toISOString(),
     top: 1,
@@ -82,12 +76,12 @@ export default async function RootLayout({
           {/* Ensures next/font CSS variable is accessible for all components */}
           <PageLayout
             phishingBanner={
-              isEmploymentPage && bannerData?.data?.phishingBanner ? (
+              bannerData?.data?.phishingBanner && (
                 <PhishingBanner
                   enabled={bannerData.data.phishingBanner.enabled}
                   message={bannerData.data.phishingBanner.message}
                 />
-              ) : undefined
+              )
             }
             megaMenu={MegaMenu({
               menuData: menuData,

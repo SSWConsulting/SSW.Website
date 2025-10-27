@@ -1,10 +1,18 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 interface PhishingBannerProps {
   enabled: boolean;
   message: string;
 }
 
 export const PhishingBanner = ({ enabled, message }: PhishingBannerProps) => {
-  if (!enabled) {
+  const pathname = usePathname();
+  const isEmploymentPage =
+    pathname === "/employment" || pathname.startsWith("/employment/");
+
+  if (!enabled || !isEmploymentPage) {
     return null;
   }
 
