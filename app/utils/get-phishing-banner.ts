@@ -7,7 +7,7 @@ export const getPhishingBanner = cache(async () => {
       relativePath: "banner.json",
     });
     return data;
-  } catch (error) {
+  } catch {
     return null;
   }
 });
