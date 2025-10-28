@@ -8,7 +8,6 @@ export const getPhishingBanner = cache(async () => {
     });
     return data;
   } catch (error) {
-    console.error("Error fetching phishing banner:", error);
     return null;
   }
 });
