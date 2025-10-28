@@ -195,7 +195,7 @@ importers:
         specifier: 15.5.6
         version: 15.5.6
       '@playwright/test':
-        specifier: ^1.55.1
+        specifier: ^1.56.1
         version: 1.56.1
       '@svgr/webpack':
         specifier: ^8.1.0
@@ -252,8 +252,8 @@ importers:
         specifier: ^4.2.3
         version: 4.2.3(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
       playwright:
-        specifier: ^1.55.1
-        version: 1.55.1
+        specifier: ^1.56.1
+        version: 1.56.1
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -7584,18 +7584,8 @@ packages:
     resolution: {integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==}
     engines: {node: '>=8'}
 
-  playwright-core@1.55.1:
-    resolution: {integrity: sha512-Z6Mh9mkwX+zxSlHqdr5AOcJnfp+xUWLCt9uKV18fhzA8eyxUd8NUWzAjxUh55RZKSYwDGX0cfaySdhZJGMoJ+w==}
-    engines: {node: '>=18'}
-    hasBin: true
-
   playwright-core@1.56.1:
     resolution: {integrity: sha512-hutraynyn31F+Bifme+Ps9Vq59hKuUCz7H1kDOcBs+2oGguKkWTU50bBWrtz34OUWmIwpBTWDxaRPXrIXkgvmQ==}
-    engines: {node: '>=18'}
-    hasBin: true
-
-  playwright@1.55.1:
-    resolution: {integrity: sha512-cJW4Xd/G3v5ovXtJJ52MAOclqeac9S/aGGgRzLabuF8TnIb6xHvMzKIa6JmrRzUkeXJgfL1MhukP0NK6l39h3A==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -18684,15 +18674,7 @@ snapshots:
     dependencies:
       find-up: 3.0.0
 
-  playwright-core@1.55.1: {}
-
   playwright-core@1.56.1: {}
-
-  playwright@1.55.1:
-    dependencies:
-      playwright-core: 1.55.1
-    optionalDependencies:
-      fsevents: 2.3.2
 
   playwright@1.56.1:
     dependencies:
