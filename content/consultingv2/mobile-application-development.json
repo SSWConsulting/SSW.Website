@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Build Mobile Enterprise Apps with SSW",
+    "description": "Build scalable cross-platform mobile apps with SSW. Enterprise solutions using .NET MAUI, React Native & Flutter for iOS & Android."
+  },
   "blocks": [
     {
       "background": {
@@ -20,6 +24,7 @@
       "buttons": [
         {
           "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],
