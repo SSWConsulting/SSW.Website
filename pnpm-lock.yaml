@@ -24,7 +24,7 @@ importers:
         version: 0.2.2(tailwindcss@3.4.18(yaml@2.7.1))
       '@marketsystems/nextjs13-appdir-breadcrumbs':
         specifier: ^1.0.4
-        version: 1.0.4(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
+        version: 1.0.4(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       '@microsoft/applicationinsights-react-js':
         specifier: ^19.3.6
         version: 19.3.6(history@5.3.0)(react@19.1.1)(tslib@2.8.1)
@@ -36,7 +36,7 @@ importers:
         version: 15.4.6
       '@next/third-parties':
         specifier: 15.5.6
-        version: 15.5.6(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
+        version: 15.5.6(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       '@radix-ui/react-accordion':
         specifier: ^1.2.11
         version: 1.2.11(@types/react@19.1.10)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -108,16 +108,16 @@ importers:
         version: 0.545.0(react@19.1.1)
       next:
         specifier: 15.4.7
-        version: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       next-plugin-preval:
         specifier: ^1.2.8
-        version: 1.2.8(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
+        version: 1.2.8(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
       next-seo:
         specifier: ^6.8.0
-        version: 6.8.0(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 6.8.0(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       nextjs-breadcrumbs2:
         specifier: ^2.0.4
-        version: 2.0.4(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
+        version: 2.0.4(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)
       node-cache:
         specifier: ^5.1.2
         version: 5.1.2
@@ -195,8 +195,8 @@ importers:
         specifier: 15.5.6
         version: 15.5.6
       '@playwright/test':
-        specifier: ^1.52.0
-        version: 1.52.0
+        specifier: ^1.56.1
+        version: 1.56.1
       '@svgr/webpack':
         specifier: ^8.1.0
         version: 8.1.0(typescript@5.8.3)
@@ -250,10 +250,10 @@ importers:
         version: 29.7.0
       next-sitemap:
         specifier: ^4.2.3
-        version: 4.2.3(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
+        version: 4.2.3(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))
       playwright:
-        specifier: ^1.55.1
-        version: 1.55.1
+        specifier: ^1.56.1
+        version: 1.56.1
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -2558,8 +2558,8 @@ packages:
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@playwright/test@1.52.0':
-    resolution: {integrity: sha512-uh6W7sb55hl7D6vsAeA+V2p5JnlAqzhqFyF0VcJkKZXkgnFcVG9PziERRHQfPLfNGx1C292a4JqbWzhR8L4R1g==}
+  '@playwright/test@1.56.1':
+    resolution: {integrity: sha512-vSMYtL/zOcFpvJCW71Q/OEGQb7KYBPAdKh35WNSkaZA75JlAO8ED8UN6GUNTm3drWomcbcqRPFqQbLae8yBTdg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -7584,23 +7584,13 @@ packages:
     resolution: {integrity: sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==}
     engines: {node: '>=8'}
 
-  playwright-core@1.52.0:
-    resolution: {integrity: sha512-l2osTgLXSMeuLZOML9qYODUQoPPnUsKsb5/P6LJ2e6uPKXUdPK5WYhN4z03G+YNbWmGDY4YENauNu4ZKczreHg==}
+  playwright-core@1.56.1:
+    resolution: {integrity: sha512-hutraynyn31F+Bifme+Ps9Vq59hKuUCz7H1kDOcBs+2oGguKkWTU50bBWrtz34OUWmIwpBTWDxaRPXrIXkgvmQ==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright-core@1.55.1:
-    resolution: {integrity: sha512-Z6Mh9mkwX+zxSlHqdr5AOcJnfp+xUWLCt9uKV18fhzA8eyxUd8NUWzAjxUh55RZKSYwDGX0cfaySdhZJGMoJ+w==}
-    engines: {node: '>=18'}
-    hasBin: true
-
-  playwright@1.52.0:
-    resolution: {integrity: sha512-JAwMNMBlxJ2oD1kce4KPtMkDeKGHQstdpFPcPH3maElAXon/QZeTvtsfXmTMRyO9TslfoYOXkSsvao2nE1ilTw==}
-    engines: {node: '>=18'}
-    hasBin: true
-
-  playwright@1.55.1:
-    resolution: {integrity: sha512-cJW4Xd/G3v5ovXtJJ52MAOclqeac9S/aGGgRzLabuF8TnIb6xHvMzKIa6JmrRzUkeXJgfL1MhukP0NK6l39h3A==}
+  playwright@1.56.1:
+    resolution: {integrity: sha512-aFi5B0WovBHTEvpM3DzXTUaeN6eN0qWnTkKx4NQaH4Wvcmc153PdaY2UBdSYKaGYw+UyWXSVyxDUg5DoPEttjw==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -11819,9 +11809,9 @@ snapshots:
 
   '@marijn/find-cluster-break@1.0.2': {}
 
-  '@marketsystems/nextjs13-appdir-breadcrumbs@1.0.4(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)':
+  '@marketsystems/nextjs13-appdir-breadcrumbs@1.0.4(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)':
     dependencies:
-      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react: 19.1.1
 
   '@microsoft/applicationinsights-analytics-js@3.3.8(tslib@2.8.1)':
@@ -12036,9 +12026,9 @@ snapshots:
   '@next/swc-win32-x64-msvc@15.4.7':
     optional: true
 
-  '@next/third-parties@15.5.6(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)':
+  '@next/third-parties@15.5.6(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)':
     dependencies:
-      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react: 19.1.1
       third-party-capital: 1.0.20
 
@@ -12430,9 +12420,9 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
-  '@playwright/test@1.52.0':
+  '@playwright/test@1.56.1':
     dependencies:
-      playwright: 1.52.0
+      playwright: 1.56.1
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -18330,14 +18320,14 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next-plugin-preval@1.2.8(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)):
+  next-plugin-preval@1.2.8(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)):
     dependencies:
       '@babel/core': 7.27.1
       '@babel/preset-env': 7.27.2(@babel/core@7.27.1)
       '@babel/register': 7.27.1(@babel/core@7.27.1)
       babel-plugin-module-resolver: 4.1.0
       loader-utils: 2.0.4
-      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       regenerator-runtime: 0.14.1
       require-from-string: 2.0.2
       tsconfig-paths: 3.15.0
@@ -18349,21 +18339,21 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  next-seo@6.8.0(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  next-seo@6.8.0(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
-      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
 
-  next-sitemap@4.2.3(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)):
+  next-sitemap@4.2.3(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)):
     dependencies:
       '@corex/deepmerge': 4.0.43
       '@next/env': 13.5.11
       fast-glob: 3.3.3
       minimist: 1.2.8
-      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
 
-  next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       '@next/env': 15.4.7
       '@swc/helpers': 0.5.15
@@ -18382,15 +18372,15 @@ snapshots:
       '@next/swc-win32-arm64-msvc': 15.4.7
       '@next/swc-win32-x64-msvc': 15.4.7
       '@opentelemetry/api': 1.9.0
-      '@playwright/test': 1.52.0
+      '@playwright/test': 1.56.1
       sharp: 0.34.3
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
 
-  nextjs-breadcrumbs2@2.0.4(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1):
+  nextjs-breadcrumbs2@2.0.4(next@15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1):
     dependencies:
-      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.52.0)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      next: 15.4.7(@babel/core@7.27.1)(@opentelemetry/api@1.9.0)(@playwright/test@1.56.1)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react: 19.1.1
 
   ngraminator@3.0.2: {}
@@ -18684,19 +18674,11 @@ snapshots:
     dependencies:
       find-up: 3.0.0
 
-  playwright-core@1.52.0: {}
+  playwright-core@1.56.1: {}
 
-  playwright-core@1.55.1: {}
-
-  playwright@1.52.0:
+  playwright@1.56.1:
     dependencies:
-      playwright-core: 1.52.0
-    optionalDependencies:
-      fsevents: 2.3.2
-
-  playwright@1.55.1:
-    dependencies:
-      playwright-core: 1.55.1
+      playwright-core: 1.56.1
     optionalDependencies:
       fsevents: 2.3.2
 
