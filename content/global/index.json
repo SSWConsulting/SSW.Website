@@ -260,39 +260,39 @@
     "clientsList": [
       {
         "clientName": "allianz",
-        "imageUrl": "/images/clientLogos/allianz.jpg"
+        "imageUrl": "/images/clientLogos/allianz.png"
       },
       {
         "clientName": "carnival",
-        "imageUrl": "/images/clientLogos/carnival.jpg"
+        "imageUrl": "/images/clientLogos/carnival.png"
       },
       {
         "clientName": "cisco",
-        "imageUrl": "/images/clientLogos/cisco.jpg"
+        "imageUrl": "/images/clientLogos/cisco.png"
       },
       {
         "clientName": "commonwealthbank",
-        "imageUrl": "/images/clientLogos/commbank.jpg"
+        "imageUrl": "/images/clientLogos/commbank.png"
       },
       {
         "clientName": "symantec",
-        "imageUrl": "/images/clientLogos/symatec.jpg"
+        "imageUrl": "/images/clientLogos/symantec.png"
       },
       {
         "clientName": "domain",
-        "imageUrl": "/images/clientLogos/domain.jpg"
+        "imageUrl": "/images/clientLogos/domain.png"
       },
       {
         "clientName": "eventcinemas",
-        "imageUrl": "/images/clientLogos/EventCinemas-White.jpg"
+        "imageUrl": "/images/clientLogos/event-white-bg.png"
       },
       {
         "clientName": "microsoft",
-        "imageUrl": "/images/clientLogos/microsoft.jpg"
+        "imageUrl": "/images/clientLogos/microsoft.png"
       },
       {
         "clientName": "toll",
-        "imageUrl": "/images/clientLogos/toll.jpg"
+        "imageUrl": "/images/clientLogos/toll.png"
       }
     ]
   },
