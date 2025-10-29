@@ -9,10 +9,8 @@ export const Category = ({ tinaData, category, selectedTag, index }) => {
     () => category.pages.filter((page) => page.tags.includes(selectedTag)),
     [category, selectedTag]
   );
-  const categoryVisible = useMemo(
-    () => pages.some((page) => page.isVisible),
-    [pages]
-  );
+
+  const categoryVisible = pages.length > 0;
 
   const tinaCategory = tinaData.categories[index];
 
