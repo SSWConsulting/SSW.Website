@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import clsx from "clsx";
 import React from "react";
 import { tinaField } from "tinacms/dist/react";
 import { PageCard } from "./pageCard";
@@ -10,7 +11,13 @@ export const Category = ({ tinaData, category, index }) => {
     <>
       <div className={classNames("lg:col-span-2")}>
         <div>
-          {index > 0 && <hr className="my-5 border-gray-100" />}
+          <hr
+            className={clsx(
+              "my-5 border-gray-100",
+              index == 0 && "block md:hidden"
+            )}
+          />
+
           <h2
             className="mt-0 text-sswRed"
             data-tina-field={tinaField(tinaCategory.category, "name")}
