@@ -10,25 +10,26 @@
               "menuItems": [
                 {
                   "name": "AI Development",
-                  "url": "/consulting?tag=AI-Development",
+                  "url": "/consulting/artificial-intelligence",
                   "description": "Creating intelligent, data-driven solutions for businesses",
                   "iconImg": "/images/megamenu-icons/AIDevelopment.svg"
                 },
                 {
                   "name": "Web Development",
-                  "url": "/consulting?tag=Website-Development",
+                  "url": "/consulting/web-applications",
                   "description": "Professional web development service that creates stylish, functional, user-friendly websites",
-                  "iconImg": "/images/megamenu-icons/WebsiteDevelopment.svg"
+                  "iconImg": "/images/megamenu-icons/WebsiteDevelopment.svg",
+                  "documentationLink": ""
                 },
                 {
                   "name": "Mobile Development",
-                  "url": "/consulting?tag=Mobile-Development",
+                  "url": "/consulting/mobile-application-development",
                   "description": "Building cutting-edge apps for diverse platforms",
                   "iconImg": "/images/megamenu-icons/MobileDevelopment.svg"
                 },
                 {
                   "name": "Database Development",
-                  "url": "/consulting?tag=Database-Development",
+                  "url": "/consulting/database-development",
                   "description": "Constructing robust, scalable, and efficient data management systems",
                   "iconImg": "/images/megamenu-icons/DatabaseDevelopment.svg"
                 },
@@ -55,7 +56,7 @@
                 },
                 {
                   "name": "Video Production",
-                  "url": "/consulting?tag=Video",
+                  "url": "/consulting/video-production",
                   "description": "Creating captivating, high-quality visual content for impactful storytelling",
                   "iconImg": "/images/megamenu-icons/VideoProduction.svg"
                 },
