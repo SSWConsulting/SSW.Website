@@ -3,9 +3,7 @@ import React, { useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { PageCard } from "./pageCard";
 
-export const Category = ({ tinaData, category, selectedTag, index }) => {
-  console.log("category", category);
-
+export const Category = ({ tinaData, category, index }) => {
   const tinaCategory = tinaData.categories[index];
 
   return (
@@ -17,7 +15,7 @@ export const Category = ({ tinaData, category, selectedTag, index }) => {
             className="mt-0 text-sswRed"
             data-tina-field={tinaField(tinaCategory.category, "name")}
           >
-            {category.name} ({index})
+            {category.name}
           </h2>
         </div>
       </div>
