@@ -5,6 +5,9 @@ fragment LayoutQueryFragment on Query {
   megamenu(relativePath: "menu.json") {
     ...MegamenuParts
   }
+  phishingBanner(relativePath: "banner.json") {
+    ...PhishingBannerParts
+  }
 }
 
 fragment UserGroupParts on EventsCalendarConnection {
