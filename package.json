@@ -92,7 +92,7 @@
     "next-seo": "^6.8.0",
     "nextjs-breadcrumbs2": "^2.0.4",
     "node-cache": "^5.1.2",
-    "react": "19.2.0",
+    "react": "19.1.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "19.1.1",
     "react-google-recaptcha": "^3.1.0",
