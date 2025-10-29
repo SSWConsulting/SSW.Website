@@ -80,9 +80,10 @@ export default function ConsultingIndex({ tinaProps }) {
         <div className="min-h-8 w-full max-w-9xl md:min-h-12">
           <Breadcrumbs path={"/consulting"} title={"Services"} />
         </div>
-        <h1 className="pt-0 text-3xl">Consulting Services</h1>
+
         <div className="flex flex-col md:flex-row">
           <div className="shrink-0 md:pr-20">
+            <h1 className="pt-0 text-3xl">Consulting Services</h1>
             <h3 className="mb-4 text-sswRed">
               <MdLiveHelp className="inline-block" /> I am looking for...
             </h3>
@@ -109,7 +110,7 @@ export default function ConsultingIndex({ tinaProps }) {
           <div>
             <div
               ref={gridRef}
-              className="grid grid-cols-1 gap-2 lg:grid-cols-2"
+              className="mt-4 grid grid-cols-1 gap-2 lg:grid-cols-2"
             >
               <FilterContextProvider filterDidChange={filterDidChange.current}>
                 {categories.map((category, index) => {
@@ -124,7 +125,6 @@ export default function ConsultingIndex({ tinaProps }) {
                       tinaData={node}
                       key={category.name}
                       category={category}
-                      selectedTag={selectedTag}
                       index={index}
                     />
                   );
