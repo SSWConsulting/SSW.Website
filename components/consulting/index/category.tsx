@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { useMemo } from "react";
+import Reactfrom "react";
 import { tinaField } from "tinacms/dist/react";
 import { PageCard } from "./pageCard";
 

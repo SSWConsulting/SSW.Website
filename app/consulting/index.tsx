@@ -114,12 +114,6 @@ export default function ConsultingIndex({ tinaProps }) {
             >
               <FilterContextProvider filterDidChange={filterDidChange.current}>
                 {categories.map((category, index) => {
-                  console.log(
-                    "Rendering category:",
-                    index,
-                    "with selectedTag:",
-                    category.name
-                  );
                   return (
                     <Category
                       tinaData={node}
