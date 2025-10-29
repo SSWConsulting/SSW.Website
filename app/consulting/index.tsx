@@ -5,7 +5,7 @@ import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MdLiveHelp } from "react-icons/md";
 import { tinaField } from "tinacms/dist/react";
@@ -20,7 +20,7 @@ export default function ConsultingIndex({ tinaProps }) {
   const filterDidChange = useRef<boolean>(false);
 
   const node = tinaProps.data.consultingIndex;
-
+  const searchParams = useSearchParams();
   const categories = useMemo(() => {
     return node.categories
       .filter((c) => c.pages && c.pages.length > 0)
@@ -58,15 +58,11 @@ export default function ConsultingIndex({ tinaProps }) {
   useEffect(() => {
     // We stopped using Next.js's useSearchParams function because it lead to complete client-side rendering, which impacts SEO and page load performance,
     // Therefore we are now using javascript's function
-    const params = new URLSearchParams(window.location.search);
-    const query = getSelectedTagFromQuery(params.get("tag"));
-    setSelectedTag(query || allServices);
-  }, []);
 
-  // useEffect(() => {
-  //   // grid animation seutp - will automatically clean itself up when dom node is removed
-  //   wrapGrid(gridRef.current);
-  // }, []);
+    const tagParam = searchParams.get("tag");
+    const query = getSelectedTagFromQuery(tagParam);
+    setSelectedTag(query || allServices);
+  }, [searchParams]);
 
   return (
     <>
@@ -166,6 +162,7 @@ const updateParams = (router, tags, selectedTag) => {
         : {
             tag: selectedTag?.replace(" ", "-"),
           };
+
     router.push(`/consulting${query.tag ? `?tag=${query.tag}` : ""}`);
   }
 };
