@@ -1,20 +1,14 @@
 import classNames from "classnames";
-import { useMemo } from "react";
+import { AnimatePresence } from "framer-motion";
+import React, { useContext, useMemo, useRef } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { PageCard } from "./pageCard";
 
 export const Category = ({ tinaData, category, selectedTag, index }) => {
   const pages = useMemo(
-    () =>
-      category.pages.map((page) => {
-        return {
-          ...page,
-          isVisible: page.tags.includes(selectedTag),
-        };
-      }),
+    () => category.pages.filter((page) => page.tags.includes(selectedTag)),
     [category, selectedTag]
   );
-
   const categoryVisible = useMemo(
     () => pages.some((page) => page.isVisible),
     [pages]
@@ -27,7 +21,6 @@ export const Category = ({ tinaData, category, selectedTag, index }) => {
       <div
         className={classNames("lg:col-span-2", !categoryVisible && "hidden")}
       >
-        {/* animate-css-grid requires a single element at this level */}
         <div>
           <hr className="my-5 border-gray-100" />
           <h2

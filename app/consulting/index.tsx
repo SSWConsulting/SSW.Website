@@ -4,10 +4,9 @@ import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
-import { wrapGrid } from "animate-css-grid";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MdLiveHelp } from "react-icons/md";
 import { tinaField } from "tinacms/dist/react";
 
@@ -17,6 +16,8 @@ export default function ConsultingIndex({ tinaProps }) {
   const gridRef = useRef(null);
   const router = useRouter();
   const [selectedTag, setSelectedTag] = useState(allServices);
+
+  const filterDidChange = useRef<boolean>(false);
 
   const node = tinaProps.data.consultingIndex;
 
@@ -59,14 +60,13 @@ export default function ConsultingIndex({ tinaProps }) {
     // Therefore we are now using javascript's function
     const params = new URLSearchParams(window.location.search);
     const query = getSelectedTagFromQuery(params.get("tag"));
-
     setSelectedTag(query || allServices);
   }, []);
 
-  useEffect(() => {
-    // grid animation seutp - will automatically clean itself up when dom node is removed
-    wrapGrid(gridRef.current);
-  }, []);
+  // useEffect(() => {
+  //   // grid animation seutp - will automatically clean itself up when dom node is removed
+  //   wrapGrid(gridRef.current);
+  // }, []);
 
   return (
     <>
@@ -91,6 +91,7 @@ export default function ConsultingIndex({ tinaProps }) {
                     tag={tag.name}
                     selectedTag={selectedTag}
                     setSelectedTag={(val) => {
+                      filterDidChange.current = true;
                       updateParams(router, tags, val);
                       setSelectedTag(val);
                     }}
@@ -104,15 +105,17 @@ export default function ConsultingIndex({ tinaProps }) {
               ref={gridRef}
               className="grid grid-cols-1 gap-2 lg:grid-cols-2"
             >
-              {categories.map((category, index) => (
-                <Category
-                  tinaData={node}
-                  key={category.name}
-                  category={category}
-                  selectedTag={selectedTag}
-                  index={index}
-                />
-              ))}
+              <FilterContextProvider filterDidChange={filterDidChange.current}>
+                {categories.map((category, index) => (
+                  <Category
+                    tinaData={node}
+                    key={category.name}
+                    category={category}
+                    selectedTag={selectedTag}
+                    index={index}
+                  />
+                ))}
+              </FilterContextProvider>
             </div>
           </div>
         </div>
@@ -137,6 +140,24 @@ const getSelectedTagFromQuery = (query: string): string => {
   return parsedTag;
 };
 
+const useFilterContext = () => React.useContext(FilterContext);
+
+const FilterContext = React.createContext({ filterDidChange: false });
+
+const FilterContextProvider = ({
+  children,
+  filterDidChange,
+}: {
+  children: React.ReactNode;
+  filterDidChange: boolean;
+}) => {
+  return (
+    <FilterContext.Provider value={{ filterDidChange }}>
+      {children}
+    </FilterContext.Provider>
+  );
+};
+
 const updateParams = (router, tags, selectedTag) => {
   if (tags.some((x) => x.name === selectedTag)) {
     const query =
@@ -148,3 +169,5 @@ const updateParams = (router, tags, selectedTag) => {
     router.push(`/consulting${query.tag ? `?tag=${query.tag}` : ""}`);
   }
 };
+
+export { useFilterContext };
