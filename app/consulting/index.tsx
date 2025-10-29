@@ -58,7 +58,6 @@ export default function ConsultingIndex({ tinaProps }) {
   useEffect(() => {
     // We stopped using Next.js's useSearchParams function because it lead to complete client-side rendering, which impacts SEO and page load performance,
     // Therefore we are now using javascript's function
-
     const tagParam = searchParams.get("tag");
     const query = getSelectedTagFromQuery(tagParam);
     setSelectedTag(query || allServices);
@@ -162,7 +161,6 @@ const updateParams = (router, tags, selectedTag) => {
         : {
             tag: selectedTag?.replace(" ", "-"),
           };
-
     router.push(`/consulting${query.tag ? `?tag=${query.tag}` : ""}`);
   }
 };
