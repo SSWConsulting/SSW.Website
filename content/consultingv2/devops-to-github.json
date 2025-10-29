@@ -21,19 +21,15 @@
         {
           "buttonText": "Book Your Migration Assessment",
           "colour": 0
-        },
-        {
-          "buttonText": "Compare Platforms",
-          "colour": 1
         }
       ],
       "background": {
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/case_study_local-llm.jpg",
-        "imageHeight": 768,
-        "imageWidth": 1408
+        "imageSource": "/images/ssw-web/hero/devops-to-github.png",
+        "imageHeight": 736,
+        "imageWidth": 981
       },
       "_template": "imageTextBlock"
     },
@@ -182,9 +178,9 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
-        "imageHeight": 768,
-        "imageWidth": 1024
+        "imageSource": "/images/ssw-web/hero/dev-presenting-2.png",
+        "imageHeight": 481,
+        "imageWidth": 642
       },
       "_template": "imageTextBlock"
     },
@@ -281,7 +277,7 @@
         },
         {
           "label": "How long does a migration take?",
-          "content": "We start with a 2-week pilot to de-risk pipelines and security, then scale. Common range: 3–8 weeks for a mid-sized org. \n"
+          "content": "We start with a 2-week pilot to de-risk pipelines and security, then scale. Common range: 3–8 weeks for a mid-sized org.\n"
         },
         {
           "label": "Is Copilot safe for our IP?",
