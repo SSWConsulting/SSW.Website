@@ -148,7 +148,7 @@ const getSelectedTagFromQuery = (query: string): string => {
   return parsedTag;
 };
 
-const useFilterContext = () => React.useContext(FilterContext);
+export const useFilterContext = () => React.useContext(FilterContext);
 
 const FilterContext = React.createContext({ filterDidChange: false });
 
@@ -177,5 +177,3 @@ const updateParams = (router, tags, selectedTag) => {
     router.push(`/consulting${query.tag ? `?tag=${query.tag}` : ""}`);
   }
 };
-
-export { useFilterContext };
