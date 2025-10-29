@@ -22,27 +22,37 @@ export default function ConsultingIndex({ tinaProps }) {
   const node = tinaProps.data.consultingIndex;
   const searchParams = useSearchParams();
   const categories = useMemo(() => {
-    return node.categories
-      .filter((c) => c.pages && c.pages.length > 0)
-      .map((c) => {
-        return {
-          name: c.category.name,
-          pages: c.pages.map((p) => {
-            return {
-              url:
-                p.externalUrl ||
-                p.page.id.replace("content", "").replace(".mdx", ""),
-              title: p.title,
-              description: p.description,
-              logo: p.logo,
-              tags: p.tags
-                ? [allServices, ...p.tags.map((t) => t.tag?.name)]
-                : [allServices],
-            };
-          }),
+    return node.categories.reduce((acc, curr) => {
+      const mappedPages = curr.pages.reduce((pageAcc, p) => {
+        const mappedPage = {
+          url:
+            p.externalUrl ||
+            p.page.id.replace("content", "").replace(".mdx", ""),
+          title: p.title,
+          description: p.description,
+          logo: p.logo,
+          tags: p.tags
+            ? [allServices, ...p.tags.map((t) => t.tag?.name)]
+            : [allServices],
         };
-      });
-  }, [node]);
+
+        if (mappedPage.tags.includes(selectedTag)) {
+          return [...pageAcc, mappedPage];
+        }
+        return pageAcc;
+      }, []);
+      if (mappedPages.length > 0) {
+        return [
+          ...acc,
+          {
+            name: curr.category.name,
+            pages: mappedPages,
+          },
+        ];
+      }
+      return acc;
+    }, []);
+  }, [node, selectedTag]);
 
   const tags = useMemo(
     () =>
@@ -58,6 +68,7 @@ export default function ConsultingIndex({ tinaProps }) {
   useEffect(() => {
     // We stopped using Next.js's useSearchParams function because it lead to complete client-side rendering, which impacts SEO and page load performance,
     // Therefore we are now using javascript's function
+
     const tagParam = searchParams.get("tag");
     const query = getSelectedTagFromQuery(tagParam);
     setSelectedTag(query || allServices);
@@ -101,15 +112,23 @@ export default function ConsultingIndex({ tinaProps }) {
               className="grid grid-cols-1 gap-2 lg:grid-cols-2"
             >
               <FilterContextProvider filterDidChange={filterDidChange.current}>
-                {categories.map((category, index) => (
-                  <Category
-                    tinaData={node}
-                    key={category.name}
-                    category={category}
-                    selectedTag={selectedTag}
-                    index={index}
-                  />
-                ))}
+                {categories.map((category, index) => {
+                  console.log(
+                    "Rendering category:",
+                    index,
+                    "with selectedTag:",
+                    category.name
+                  );
+                  return (
+                    <Category
+                      tinaData={node}
+                      key={category.name}
+                      category={category}
+                      selectedTag={selectedTag}
+                      index={index}
+                    />
+                  );
+                })}
               </FilterContextProvider>
             </div>
           </div>
