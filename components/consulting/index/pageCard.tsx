@@ -13,8 +13,8 @@ export const PageCard = ({ page, category, pageIndex }) => {
       key={pageIndex}
       transition={{
         type: "spring",
-        damping: 20,
-        stiffness: 300,
+        damping: 35,
+        stiffness: 500,
       }}
       layout
       initial={
