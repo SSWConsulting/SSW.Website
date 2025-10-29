@@ -76,7 +76,7 @@
           ]
         },
         {
-          "title": "ChatGPT & GPT-4o",
+          "title": "ChatGPT",
           "description": "GPT and ChatGPT are ground-breaking AI language models that can revolutionize the way businesses communicate, automate tasks, and streamline processes.",
           "logo": "/images/thumbs/thumb-gpt.jpg",
           "page": "content/consulting/gpt.mdx",
@@ -113,6 +113,30 @@
           "description": "Awesome bots give you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
           "logo": "/images/thumbs/thumb-azure-bot-icon.jpg",
           "page": "content/consulting/bots.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Local LLM Deployment",
+          "description": "Run open-source LLMs inside your network. Private, fast, and under your control.",
+          "logo": "/images/thumbs/Brain%20in%20a%20house.png",
+          "page": "content/consultingv2/local-llm-deployment.json",
+          "externalUrl": "/consulting/local-llm-deployment",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Vibe Coding",
+          "description": "We help tech-savvy visionaries bring their product ideas to life, giving them the tools and support to prototype and vibe code. No production coding needed.",
+          "logo": "/images/thumbs/Vibe-codingv2.png",
+          "page": "content/consultingv2/vibe-coding.json",
+          "externalUrl": "/consulting/vibe-coding",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -267,7 +291,8 @@
           "title": "Database Development and Performance",
           "description": "Whether it is good old SQL Server or the super scalable SQL Azure, our consultants know how to help you simplify your database and improve its performance.",
           "logo": "/images/thumbs/thumb-database-dev.jpg",
-          "page": "content/consulting/database-development.mdx",
+          "page": "content/consultingv2/database-development.json",
+          "externalUrl": "/consulting/database-development",
           "tags": [
             {
               "tag": "content/consulting/tag/database-development.json"
@@ -298,6 +323,12 @@
               "tag": "content/consulting/tag/database-development.json"
             }
           ]
+        },
+        {
+          "title": "Azure DevOps to GitHub Migration",
+          "description": "Move from Azure DevOps to the premium engineering platform. Faster setup, built-in security, and CI/CD that scales without punishing your wallet.",
+          "logo": "/images/thumbs/DevOps-GitHub.png",
+          "page": "content/consultingv2/devops-to-github.json"
         }
       ]
     },

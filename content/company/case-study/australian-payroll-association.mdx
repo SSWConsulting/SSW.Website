@@ -1,0 +1,142 @@
+---
+seo:
+  title: 'How APA Built a Compliant, AI-Powered Payroll Agent with SSW'
+  description: >-
+    See how APA and SSW built a reliable AI agent that answers payroll queries
+    accurately, without hallucinations or risking compliance.
+heading: Australian Payroll Association (APA)
+subHeading: Turning an Off-the-Shelf Chatbot into a Trustworthy Payroll Agent
+content: >
+  ## An Agent Is Easy; a Correct Agent Is Not
+
+
+  Anyone can spin up an [AI
+  agent](https://news.microsoft.com/source/features/ai/ai-agents-what-they-are-and-how-theyll-change-the-way-we-work/)
+  these days. But keeping it from giving dangerously wrong payroll advice is the
+  hard part, and that’s the part the [Australian Payroll Association
+  (APA)](https://www.austpayroll.com.au/) asked SSW to solve.
+
+
+  As Australia's leading payroll authority, APA wanted to create an **AI‑powered
+  Payroll Agent.** The goal was to provide instant, compliant information, but
+  the stakes were high. Payroll rules change often, are nested in thick award
+  tables, and carry heavy fines if you get them wrong. A normal “vanilla” AI
+  model (the out‑of‑the‑box version of ChatGPT) hasn’t read those rules and will
+  happily guess. That guessing is called a
+  [hallucination](https://www.ibm.com/think/topics/ai-hallucinations), where the
+  AI sounds certain, but the facts are off. One bad answer could under‑pay staff
+  or breach Fair Work laws.
+
+
+  Our challenge was to engineer an agentic architecture that eliminated the
+  guesswork, ensuring every answer the AI produced was accurate and reliable.\
+
+  \
+
+  Our brief:
+
+
+  1. Serve complex payroll questions instantly.
+
+  2. Never mislead the user.
+
+  3. Escalate tricky cases to a human before damage is done.
+
+
+  ***
+
+
+  ## Where Generic AI Falls Short
+
+
+  Payroll law is a maze of awards, allowances, and edge cases. A vanilla model
+  will happily “fill in the gaps” when it’s unsure. In payroll that can lead to:
+
+
+  * Incorrectly calculated superannuation
+
+  * Incorrect payments of leave
+
+  * Bad advice on award interpretation or terminations
+
+
+  We treated each of those failure modes as a design requirement, not an
+  after‑thought.
+
+
+  ***
+
+
+  ## The Four Layers We Added
+
+
+  | Layer                               | What It
+  Does                                                                            
+  | Nuance We
+  Learned                                                                                                          
+  |
+
+  | ----------------------------------- |
+  ----------------------------------------------------------------------------------------
+  |
+  ---------------------------------------------------------------------------------------------------------------------------
+  |
+
+  | **1. Private knowledge base (RAG)** | The agent pulls answers only from
+  APA’s vetted docs and live government pages.           | Even “official” sites
+  sometimes lag behind award changes. We built a daily crawler to spot updates
+  and trigger re‑indexing. |
+
+  | **2. Question scrubber**            | Rewrites the user’s query to remove
+  hidden assumptions (e.g., “casual” vs “part‑time”).  | We found 15 % of
+  queries mixed up employment types. Cleaning them first **cut error rates in
+  half.**                        |
+
+  | **3. Response gatekeeper**          | A post-process-check flags anything
+  that looks like legal advice or falls outside scope. | Instead of blocking the
+  answer outright, we direct the user to a human payroll
+  specialist.                                  |
+
+  | **4. Continuous benchmark**         | Every week we sample answers and score
+  them against APA experts.                         | Tracking the *type* of
+  miss (rate, classification, threshold) guides **what to fix
+  next.**                                  |
+
+
+  ***
+
+
+  ## Outcomes
+
+
+  * Faster answers: Routine questions are handled in seconds.
+
+  * Lower risk: High-stakes issues auto-escalate to humans.
+
+  * Current data: Award changes roll in overnight without PDF updates.
+
+
+  APA now trusts the agent to handle everyday queries while their specialists
+  focus on the edge cases.
+
+
+  ***
+
+
+  ## Lessons for Other Business Owners
+
+
+  1. Ground the AI in your own docs. Do not let it roam the open web.
+
+  2. Build in humility. If confidence is low or the stakes are high, escalate.
+
+  3. Measure accuracy like uptime. Review a sample of answers on a set schedule.
+
+  4. Keep experts in the loop forever. Their feedback is part of maintenance,
+  not a one-off step.
+
+
+  Add these guard-rails early, and you can turn any “vanilla” AI into a reliable
+  assistant, without gambling on hallucinations.
+---
+
