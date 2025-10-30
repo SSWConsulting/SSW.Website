@@ -20,6 +20,7 @@
       "buttons": [
         {
           "buttonText": "Book Your Migration Assessment",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],
@@ -171,6 +172,7 @@
       "buttons": [
         {
           "buttonText": "Book Your Migration Assessment",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],
@@ -397,6 +399,7 @@
       "buttons": [
         {
           "buttonText": "Start with a Free Migration Assessment",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],
