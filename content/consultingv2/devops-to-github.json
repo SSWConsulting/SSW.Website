@@ -399,6 +399,7 @@
       "buttons": [
         {
           "buttonText": "Start with a Free Migration Assessment",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],
