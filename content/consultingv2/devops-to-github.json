@@ -20,6 +20,7 @@
       "buttons": [
         {
           "buttonText": "Book Your Migration Assessment",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],
