@@ -1,35 +1,23 @@
 import classNames from "classnames";
-import { useMemo } from "react";
+import clsx from "clsx";
+import React from "react";
 import { tinaField } from "tinacms/dist/react";
 import { PageCard } from "./pageCard";
 
-export const Category = ({ tinaData, category, selectedTag, index }) => {
-  const pages = useMemo(
-    () =>
-      category.pages.map((page) => {
-        return {
-          ...page,
-          isVisible: page.tags.includes(selectedTag),
-        };
-      }),
-    [category, selectedTag]
-  );
-
-  const categoryVisible = useMemo(
-    () => pages.some((page) => page.isVisible),
-    [pages]
-  );
-
+export const Category = ({ tinaData, category, index }) => {
   const tinaCategory = tinaData.categories[index];
 
   return (
     <>
-      <div
-        className={classNames("lg:col-span-2", !categoryVisible && "hidden")}
-      >
-        {/* animate-css-grid requires a single element at this level */}
+      <div className={classNames("lg:col-span-2")}>
         <div>
-          <hr className="my-5 border-gray-100" />
+          <hr
+            className={clsx(
+              "my-5 border-gray-100",
+              index == 0 && "block md:hidden"
+            )}
+          />
+
           <h2
             className="mt-0 text-sswRed"
             data-tina-field={tinaField(tinaCategory.category, "name")}
@@ -38,7 +26,7 @@ export const Category = ({ tinaData, category, selectedTag, index }) => {
           </h2>
         </div>
       </div>
-      {pages.map((page, pageIndex) => (
+      {category.pages.map((page, pageIndex) => (
         <PageCard
           key={page.title}
           page={page}

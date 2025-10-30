@@ -30,7 +30,11 @@ export type InternalCarouselProps = {
 export const InternalCarousel = (props: InternalCarouselProps) => {
   const CarouselItems: InternalCarouselProps = props;
   return (
-    <Container size="custom" className="px-0 descendant-li:!list-none md:w-3/4">
+    <Container
+      padding="px-0"
+      size="custom"
+      className="descendant-li:!list-none"
+    >
       <CarouselImplementation
         autoPlay={true}
         infiniteLoop={true}

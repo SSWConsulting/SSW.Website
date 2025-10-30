@@ -1,18 +1,39 @@
+import { useFilterContext } from "@/app/consulting";
 import { BluredBase64Image } from "@/helpers/images";
-import classNames from "classnames";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../../customLink";
 
 export const PageCard = ({ page, category, pageIndex }) => {
+  const { filterDidChange } = useFilterContext();
+
   return (
-    <div
-      className={classNames(
-        "relative bg-white p-3 hover:bg-gray-50",
-        !page.isVisible && "hidden"
-      )}
+    <motion.div
+      key={pageIndex}
+      transition={{
+        type: "spring",
+        bounce: 0.1,
+        visualDuration: 0.2,
+      }}
+      layout
+      initial={
+        filterDidChange && {
+          opacity: 0,
+          filter: "blur(5px)",
+          translateY: "50px",
+        }
+      }
+      animate={
+        filterDidChange && {
+          opacity: 1,
+          filter: "blur(0px)",
+          translateY: "0px",
+        }
+      }
+      exit={{ opacity: 0, translateY: "50px", filter: "blur(5px)" }}
+      className="relative bg-white p-3 hover:bg-gray-50"
     >
-      {/* animate-css-grid requires a single element at this level */}
       <div className="flex">
         <div className="shrink-0">
           {page.logo && (
@@ -39,6 +60,6 @@ export const PageCard = ({ page, category, pageIndex }) => {
           </CustomLink>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
