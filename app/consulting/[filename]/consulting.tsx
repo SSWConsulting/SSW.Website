@@ -47,7 +47,7 @@ export default function Consulting({ tinaProps, props }) {
         <div className="w-full bg-benefits bg-cover bg-fixed bg-center bg-no-repeat py-12">
           <div
             data-tina-field={tinaField(data.consulting, "_body")}
-            className="mx-auto px-8 text-left md:max-w-3/4"
+            className="mx-auto px-8 md:max-w-3/4"
           >
             <TinaMarkdown
               components={componentRenderer}
