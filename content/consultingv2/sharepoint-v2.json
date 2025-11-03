@@ -7,9 +7,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Want to get your organization using SharePoint to collaborate?",
       "isH1": false,
-      "description": "",
+      "description": "SharePoint enables teamwork with productive team sites for every project team, department, and division. Share files, data, news, and resources.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -49,9 +49,9 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Lorem Ipsum",
+      "heading": "The benefits of Microsoft SharePoint",
       "isH1": false,
-      "description": "",
+      "description": "Organizations are extremely good at accumulating data. Mostly in the form of documents and records, this data is often haphazardly located across the organization, and poorly integrated into document processes. SharePoint aims to improve the situation by storing all documents & records in a centralized system. They can store every version of a document, allow you to enforce information management policies, and improve efficiency by automating common business processes.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
