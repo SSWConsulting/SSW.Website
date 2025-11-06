@@ -14,8 +14,8 @@
       "presenter": "content/presenters/luke-cook.mdx"
     }
   ],
-  "startDateTime": "2025-11-12T23:00:00.000Z",
-  "endDateTime": "2025-11-14T07:00:00.000Z",
+  "startDateTime": "2025-11-12T22:00:00.000Z",
+  "endDateTime": "2025-11-14T06:00:00.000Z",
   "calendarType": "SSW Courses",
   "city": "Brisbane",
   "category": "Angular and React",
