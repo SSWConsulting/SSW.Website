@@ -94,6 +94,10 @@
         {
           "logo": "/images/ssw-web/logos/toll_logo.png",
           "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
         }
       ],
       "_template": "logoCarousel"
