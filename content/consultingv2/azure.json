@@ -86,6 +86,10 @@
         {
           "logo": "/images/ssw-web/logos/microsoft_logo.png",
           "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/asf_audits_cover.png",
+          "altText": "ASF"
         }
       ],
       "_template": "logoCarousel"
