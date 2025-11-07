@@ -137,7 +137,9 @@
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
+          "buttonText": "Rules to better Azure ",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure/",
+          "icon": "BiSolidCloud",
           "colour": 1
         }
       ],
