@@ -59,7 +59,10 @@
           "logo": "/images/ssw-web/logos/allianz_logo.png",
           "altText": "Allianz"
         },
-        {}
+        {
+          "logo": "/images/ssw-web/logos/aus-payroll-logo.png",
+          "altText": "Australian Payroll"
+        }
       ],
       "_template": "logoCarousel"
     },
