@@ -49,6 +49,18 @@
         "backgroundColour": 6
       },
       "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Trusted by",
+      "tabletTextAlignment": "Center",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
     }
   ]
 }
