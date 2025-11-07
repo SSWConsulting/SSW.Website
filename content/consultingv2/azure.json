@@ -1,0 +1,16 @@
+{
+  "seo": {
+    "title": "Azure consultants — landing zones, migration & DevOps | SSW",
+    "description": "Azure experts for landing zones, migration, modern apps, DevOps, security, and FinOps. Fast wins, secure by default. ",
+    "canonical": "https://www.ssw.com.au/consulting/azure",
+    "showBreadcrumb": true,
+    "images": [
+      {
+        "url": "/images/ssw-default-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "SSW Consulting - Enterprise Software Development"
+      }
+    ]
+  }
+}
