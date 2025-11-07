@@ -90,6 +90,10 @@
         {
           "logo": "/images/ssw-web/logos/asf_audits_cover.png",
           "altText": "ASF"
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
         }
       ],
       "_template": "logoCarousel"
