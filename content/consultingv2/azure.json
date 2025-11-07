@@ -70,6 +70,10 @@
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
           "altText": "CommBank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
         }
       ],
       "_template": "logoCarousel"
