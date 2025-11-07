@@ -82,6 +82,10 @@
         {
           "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
           "altText": "Event"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
         }
       ],
       "_template": "logoCarousel"
