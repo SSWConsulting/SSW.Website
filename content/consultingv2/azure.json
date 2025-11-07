@@ -66,6 +66,10 @@
         {
           "logo": "/images/ssw-web/logos/aus-payroll-logo.png",
           "altText": "Australian Payroll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "CommBank"
         }
       ],
       "_template": "logoCarousel"
