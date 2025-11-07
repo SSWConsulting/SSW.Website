@@ -48,6 +48,13 @@
       "background": {
         "backgroundColour": 6
       },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "imageSource": "/images/ssw-web/hero/Generated%20Image%20November%2007,%202025%20-%202_22PM.png",
+        "imageHeight": 768,
+        "imageWidth": 1344,
+        "altText": "Meeting with an Azure Solution Architect"
+      },
       "_template": "imageTextBlock"
     },
     {
