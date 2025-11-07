@@ -78,6 +78,10 @@
         {
           "logo": "/images/ssw-web/logos/domain_logo.png",
           "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event"
         }
       ],
       "_template": "logoCarousel"
