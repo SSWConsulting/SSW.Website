@@ -113,9 +113,10 @@
       "topLabel": {
         "labelText": "Lorem Ipsum"
       },
-      "heading": "Trusted by **engineering-led** organizations",
+      "heading": "Planning a move to Azure? Start with a proven **migration roadmap.**",
       "isH1": false,
-      "description": "",
+      "description": "Azure can feel complex, but it doesn’t have to be. Our consultants review your environment, identify quick wins, and deliver secure, scalable cloud solutions that reduce cost and improve performance.\n\nWhether you’re migrating, modernising, or tightening security, we give you a clear path forward — and ship value every sprint.\n",
+      "tabletTextAlignment": "Center",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -131,7 +132,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Book a free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         },
         {
