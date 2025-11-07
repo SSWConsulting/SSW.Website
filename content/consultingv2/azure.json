@@ -12,5 +12,40 @@
         "alt": "SSW Consulting - Enterprise Software Development"
       }
     ]
-  }
+  },
+  "blocks": [
+    {
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "From quick assessments to secure, scalable platforms — we make Azure work for you.",
+      "isH1": false,
+      "description": "Azure can be complex. We keep it simple and outcome-driven. Our consultants analyse your environment and deliver practical improvements that boost reliability, security, and speed while keeping costs under control.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book an Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "_template": "imageTextBlock"
+    }
+  ]
 }
