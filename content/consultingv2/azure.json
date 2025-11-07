@@ -74,6 +74,10 @@
         {
           "logo": "/images/ssw-web/logos/cisco_logo.png",
           "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
         }
       ],
       "_template": "logoCarousel"
