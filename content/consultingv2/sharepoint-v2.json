@@ -40,7 +40,8 @@
           "altText": "CommBank"
         },
         {
-          "logo": "/images/ssw-web/logos/allianz_logo.png"
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
         },
         {
           "logo": "/images/ssw-web/logos/microsoft_logo.png"
