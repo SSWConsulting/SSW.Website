@@ -33,6 +33,7 @@
     },
     {
       "heading": "Trusted by",
+      "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
