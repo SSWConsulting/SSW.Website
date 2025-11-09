@@ -47,6 +47,9 @@
         },
         {
           "logo": "/images/ssw-web/logos/domain_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png"
         }
       ],
       "_template": "logoCarousel"
