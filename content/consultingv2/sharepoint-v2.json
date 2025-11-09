@@ -50,6 +50,9 @@
         },
         {
           "logo": "/images/ssw-web/logos/symantec_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png"
         }
       ],
       "_template": "logoCarousel"
