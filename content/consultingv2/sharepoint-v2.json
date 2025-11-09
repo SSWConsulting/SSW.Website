@@ -27,19 +27,15 @@
         {
           "buttonText": "Book a Free Initial Meeting",
           "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "_template": "imageTextBlock"
     },
     {
-      "heading": "Lorem Ipsum",
+      "heading": "Trusted by",
       "logos": [
         {
-          "logo": "",
+          "logo": "/images/ssw-web/logos/cba_logo.png",
           "altText": "Logo"
         }
       ],
