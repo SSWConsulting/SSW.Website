@@ -39,7 +39,8 @@
           "altText": "Allianz"
         },
         {
-          "logo": "/images/ssw-web/logos/microsoft_logo.png"
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
         },
         {
           "logo": "/images/ssw-web/logos/domain_logo.png"
