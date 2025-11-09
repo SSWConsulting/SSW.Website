@@ -44,6 +44,9 @@
         },
         {
           "logo": "/images/ssw-web/logos/microsoft_logo.png"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png"
         }
       ],
       "_template": "logoCarousel"
