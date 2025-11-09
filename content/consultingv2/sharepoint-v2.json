@@ -8,20 +8,10 @@
         "labelText": "Lorem Ipsum"
       },
       "heading": "Ship a SharePoint your people actually use",
-      "isH1": false,
+      "isH1": true,
       "description": "Your documents are scattered. Your teams are frustrated. Your SharePoint investment isn't delivering. SSW's SharePoint experts customize solutions that fit your business; not force your business to fit SharePoint.\n",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
@@ -29,6 +19,11 @@
           "colour": 0
         }
       ],
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
       "_template": "imageTextBlock"
     },
     {
