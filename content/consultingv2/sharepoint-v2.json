@@ -186,20 +186,18 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "ekgasj",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=fhnatho4nSg",
+          "altText": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
           "chips": [
             {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
+              "chipText": "10 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "featureList": {
             "features": [
