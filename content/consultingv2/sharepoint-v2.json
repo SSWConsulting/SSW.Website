@@ -162,8 +162,10 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "seq43",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=kDZCbRJma60&list=PLpiOR7CBNvlp47vr_wX4RO6Otq4zmY_JU",
+          "altText": "Why SharePoint Search is Awesome! How to use SharePoint Search | Jean Thirion",
           "chips": [
             {
               "chipText": "Lorem",
@@ -175,22 +177,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Why SharePoint Search is Awesome! How to use SharePoint Search | Jean Thirion",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "Lorem"
           }
