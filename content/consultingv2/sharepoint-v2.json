@@ -325,7 +325,7 @@
       "_template": "imageTextBlock"
     },
     {
-      "spacerHeight": "50px",
+      "spacerHeight": "150px",
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "",
