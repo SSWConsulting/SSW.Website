@@ -97,16 +97,6 @@
         {
           "guid": "dd2c2j",
           "altText": "Team Collaboration Sites",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Team Collaboration Sites",
           "description": "Create productive team sites for every project, department, and division. Share files, data, news, and resources with powerful collaboration tools that your teams will actually want to use.",
@@ -115,8 +105,8 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "vn8nxt",
+          "altText": "Intranet Portals",
           "chips": [
             {
               "chipText": "Lorem",
@@ -128,8 +118,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Intranet Portals",
+          "description": "Build cohesive intranet sites that inform and engage employees. Share resources, applications, and company news in one centralized hub that drives organizational efficiency.",
           "featureList": {
             "features": [
               {
