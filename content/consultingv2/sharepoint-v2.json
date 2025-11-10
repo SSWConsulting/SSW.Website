@@ -91,6 +91,11 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "youtubeUrl": "https://www.youtube.com/watch?v=57t_o0Bspdk"
+      },
       "_template": "imageTextBlock"
     },
     {
