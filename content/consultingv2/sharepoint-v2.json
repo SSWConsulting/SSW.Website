@@ -157,7 +157,7 @@
           "chips": [
             {
               "chipText": "5 min",
-              "chipType": "filledChip"
+              "chipType": "clearChip"
             }
           ],
           "icon": "info",
@@ -175,7 +175,7 @@
           "chips": [
             {
               "chipText": "4 min",
-              "chipType": "filledChip"
+              "chipType": "clearChip"
             }
           ],
           "icon": "info",
