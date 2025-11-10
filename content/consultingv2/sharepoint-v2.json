@@ -249,7 +249,7 @@
       "accordionItems": [
         {
           "label": "What's the difference between SharePoint configuration and customization?",
-          "content": "Most consultants simply turn features on and off within SharePoint's standard capabilities… that's configuration. \n\nAt SSW, we go further with customization: Our .NET developers build bespoke solutions, integrations, and workflows that extend SharePoint to match your exact business processes. For example, if you need to automatically sync 2,000 client records from your CRM into individual SharePoint portals, we build custom synchronization tools rather than force you into manual workarounds.\n"
+          "content": "Most consultants simply turn features on and off within SharePoint's standard capabilities… that's configuration.\n\nAt SSW, we go further with customization: Our .NET developers build bespoke solutions, integrations, and workflows that extend SharePoint to match your exact business processes. For example, if you need to automatically sync 2,000 client records from your CRM into individual SharePoint portals, we build custom synchronization tools rather than force you into manual workarounds.\n"
         },
         {
           "label": "How long does a typical SharePoint implementation take?",
@@ -269,7 +269,7 @@
     {
       "technologyGroups": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
+          "technologyGroup": "content/v2Technologies/groups/SharePoint-Related.mdx"
         }
       ],
       "isStacked": false,
