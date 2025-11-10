@@ -228,11 +228,7 @@
           "altText": "  AU  Skip navigation Search    Create   Avatar image SharePoint agents - What's new and what's next | Microsoft 365 Community Conference 2025",
           "chips": [
             {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
+              "chipText": "51 min",
               "chipType": "clearChip"
             }
           ],
