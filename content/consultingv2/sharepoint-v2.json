@@ -210,11 +210,7 @@
           "altText": "Why Choose Rich Text Editor Over Markdown For SharePoint pages | Jean Thirion",
           "chips": [
             {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
+              "chipText": "3 min",
               "chipType": "clearChip"
             }
           ],
