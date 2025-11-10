@@ -63,7 +63,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Lorem Ipsum"
+        "labelText": ""
       },
       "heading": "Why Most SharePoint Implementations Fail",
       "isH1": false,
@@ -77,20 +77,10 @@
           },
           {
             "heading": "Process automation",
-            "description": "Leave requests, expense claims, approvals—all the recurring processes implemented with lists, Power Automate, and Power Apps."
+            "description": "Leave requests, expense claims, approvals. All the recurring processes implemented with lists, Power Automate, and Power Apps."
           }
         ]
       },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Left",
