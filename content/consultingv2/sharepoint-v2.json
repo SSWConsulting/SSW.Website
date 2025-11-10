@@ -156,9 +156,9 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "SharePoint Sites for Admins - Tips for Managing SharePoint with Warwick Leahy",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "In the days of classic SharePoint, subsites were a popular way of organising your intranet. Modern SharePoint architecture leans toward a flatter hierarchy, where sub-sites are generally not recommended.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         },
         {
