@@ -244,6 +244,21 @@
       "_template": "cardCarousel"
     },
     {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "Lorem",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "_template": "accordionBlock"
+    },
+    {
       "_template": "technologyCardCarousel"
     },
     {
