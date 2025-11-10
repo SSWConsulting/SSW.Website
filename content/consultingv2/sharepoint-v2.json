@@ -28,9 +28,9 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/hero_1400_700px(MS2).png",
-        "imageHeight": 700,
-        "imageWidth": 1400
+        "imageSource": "/images/ssw-web/hero/Jean.JPG",
+        "imageHeight": 1926,
+        "imageWidth": 2889
       },
       "_template": "imageTextBlock"
     },
