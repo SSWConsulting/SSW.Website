@@ -107,33 +107,9 @@
         {
           "guid": "vn8nxt",
           "altText": "Intranet Portals",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Intranet Portals",
           "description": "Build cohesive intranet sites that inform and engage employees. Share resources, applications, and company news in one centralized hub that drives organizational efficiency.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": ""
           }
