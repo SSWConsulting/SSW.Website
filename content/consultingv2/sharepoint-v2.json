@@ -248,6 +248,10 @@
       "body": "",
       "accordionItems": [
         {
+          "label": "What's the difference between SharePoint configuration and customization?",
+          "content": "Most consultants simply turn features on and off within SharePoint's standard capabilities… that's configuration. \n\nAt SSW, we go further with customization: Our .NET developers build bespoke solutions, integrations, and workflows that extend SharePoint to match your exact business processes. For example, if you need to automatically sync 2,000 client records from your CRM into individual SharePoint portals, we build custom synchronization tools rather than force you into manual workarounds.\n"
+        },
+        {
           "label": "How long does a typical SharePoint implementation take?",
           "content": "It varies significantly based on scope. Simple implementations with out-of-the-box features (team sites, document libraries, basic workflows) can be deployed in weeks. Complex enterprise solutions requiring custom development, legacy system integration, and change management may take several months. During your initial meeting, we'll discuss your requirements and provide a realistic timeline. Our approach is transparent; we'll tell you exactly what's involved and how long each phase will take.\n"
         },
