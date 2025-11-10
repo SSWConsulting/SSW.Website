@@ -147,31 +147,7 @@
       "isStacked": false,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
-      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TVgna aliqua.",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
-      "categoryGroup": [
-        {
-          "categoryName": "Lorem",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        },
-        {
-          "categoryName": "Dolor",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        }
-      ],
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
       "cards": [
         {
           "guid": null,
