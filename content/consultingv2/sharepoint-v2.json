@@ -168,12 +168,12 @@
           "altText": "Why SharePoint Search is Awesome! How to use SharePoint Search | Jean Thirion",
           "chips": [
             {
-              "chipText": "Lorem",
+              "chipText": "4 mins",
               "chipType": "filledChip"
             },
             {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
+              "chipText": "Lorem",
+              "chipType": "filledChip"
             }
           ],
           "icon": "info",
