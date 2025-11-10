@@ -285,6 +285,9 @@
           "content": "For most organizations, SharePoint Online (part of Microsoft 365) is the better choice. You eliminate server hardware, maintenance costs, IT overhead, and manual upgrades while gaining automatic updates, enterprise security, and global availability. However, some organizations with specific compliance requirements or legacy system dependencies may still need on-premises deployment. During your free initial meeting, we'll assess your specific needs and recommend the best approach for your situation.\n"
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "accordionBlock"
     },
     {
