@@ -78,17 +78,17 @@
       },
       "heading": "Why Most SharePoint Implementations Fail",
       "isH1": false,
-      "description": "Many organizations struggle with data scattered across disparate systems. While SharePoint aims to solve this, a default setup rarely suffices. We centralize your documents, data, and processes, enforcing information management policies and automating critical business workflows to boost efficiency across your entire organization.\n",
+      "description": "Many organizations struggle with data scattered across multiple systems. While SharePoint aims to solve this, a default setup rarely suffices. We centralize your documents, data, and processes, enforcing information management policies and automating critical business workflows to boost efficiency across your entire organization.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
             "heading": "Modern intranets & team sites",
-            "description": "Consistent hub navigation, branded themes, clear IA, and ‘important places’ that help new starters and veterans find work fast."
+            "description": "Consistent hub navigation, branded themes, clear Information Architecture (IA), and ‘important places’ that help new starters and veterans find work fast."
           },
           {
             "heading": "Process automation",
-            "description": "Leave requests, expense claims, approvals. All the recurring processes implemented with lists, Power Automate, and Power Apps."
+            "description": "Leave requests, expense claims, approvals. All the recurring processes implemented with lists, Power Automate, and Power Apps. SharePoint ties them all together."
           }
         ]
       },
@@ -122,7 +122,7 @@
           "altText": "Team Collaboration Sites",
           "icon": "BiCollapse",
           "heading": "Team Collaboration Sites",
-          "description": "Create productive team sites for every project, department, and division. Share files, data, news, and resources with powerful collaboration tools that your teams will actually want to use.",
+          "description": "Create productive team sites for every project, department, and division. Share files, data, news, and resources with powerful collaboration tools that your teams will actually want to use, while insuring only the people you want have access.",
           "embeddedButton": {
             "buttonText": ""
           }
