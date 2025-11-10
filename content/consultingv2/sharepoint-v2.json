@@ -1,6 +1,7 @@
 {
   "blocks": [
     {
+      "finalBreadcrumb": "SharePoint",
       "_template": "breadcrumbs"
     },
     {
