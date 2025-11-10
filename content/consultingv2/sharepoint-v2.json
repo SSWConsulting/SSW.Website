@@ -81,6 +81,13 @@
           }
         ]
       },
+      "buttons": [
+        {
+          "buttonText": "Rules to Better SharePoint",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sharepoint/",
+          "colour": 1
+        }
+      ],
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Left",
@@ -97,7 +104,7 @@
         {
           "guid": "dd2c2j",
           "altText": "Team Collaboration Sites",
-          "icon": "info",
+          "icon": "BiCollapse",
           "heading": "Team Collaboration Sites",
           "description": "Create productive team sites for every project, department, and division. Share files, data, news, and resources with powerful collaboration tools that your teams will actually want to use.",
           "embeddedButton": {
@@ -107,7 +114,7 @@
         {
           "guid": "vn8nxt",
           "altText": "Intranet Portals",
-          "icon": "info",
+          "icon": "BiDoorOpen",
           "heading": "Intranet Portals",
           "description": "Build cohesive intranet sites that inform and engage employees. Share resources, applications, and company news in one centralized hub that drives organizational efficiency.",
           "embeddedButton": {
@@ -117,7 +124,7 @@
         {
           "guid": "e7yf1l",
           "altText": "",
-          "icon": "info",
+          "icon": "BiSearch",
           "heading": "Enterprise Search",
           "description": "Stop wasting hours searching for documents. Powerful search capabilities and intelligent discovery help your teams find information, expertise, and insights instantly.",
           "embeddedButton": {
@@ -137,92 +144,10 @@
       "_template": "spacer"
     },
     {
-      "topLabel": {
-        "labelText": "Lorem Ipsum"
-      },
-      "heading": "Lorem Ipsum",
-      "isH1": false,
-      "description": "",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
-      },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": "Lorem Ipsum"
-      },
-      "heading": "Lorem Ipsum",
-      "isH1": false,
-      "description": "",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
-      },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
       "isStacked": false,
-      "heading": "Lorem Ipsum",
+      "heading": "Tech wisdom from the trenches",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TVgna aliqua.",
       "buttons": [
         {
           "buttonText": "Lorem",
