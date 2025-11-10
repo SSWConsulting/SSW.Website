@@ -51,7 +51,8 @@
           "altText": "Symantec"
         },
         {
-          "logo": "/images/ssw-web/logos/allianz_logo.png"
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
         }
       ],
       "_template": "logoCarousel"
