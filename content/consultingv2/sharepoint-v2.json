@@ -154,6 +154,12 @@
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=Wf9o6jGhXJI",
           "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "5 min",
+              "chipType": "filledChip"
+            }
+          ],
           "icon": "info",
           "heading": "SharePoint Sites for Admins - Tips for Managing SharePoint with Warwick Leahy",
           "description": "In the days of classic SharePoint, subsites were a popular way of organising your intranet. Modern SharePoint architecture leans toward a flatter hierarchy, where sub-sites are generally not recommended.",
