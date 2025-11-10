@@ -53,6 +53,10 @@
         {
           "logo": "/images/ssw-web/logos/toll_logo.png",
           "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
         }
       ],
       "_template": "logoCarousel"
