@@ -220,6 +220,28 @@
           "embeddedButton": {
             "buttonText": "Lorem"
           }
+        },
+        {
+          "guid": "sm6rk",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=tVH6aL7R8nM",
+          "altText": "  AU  Skip navigation Search    Create   Avatar image SharePoint agents - What's new and what's next | Microsoft 365 Community Conference 2025",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "  AU  Skip navigation Search    Create   Avatar image SharePoint agents - What's new and what's next | Microsoft 365 Community Conference 2025",
+          "description": "In this session, we will recap key product best practices for getting the most out of SharePoint, OneDrive and custom agents with SharePoint Embedded. We'll also unveil our roadmap for the months ahead as we continue to innovate how agents support individual workers, teams, and organizations.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
         }
       ],
       "_template": "cardCarousel"
