@@ -95,8 +95,8 @@
       "body": "",
       "cards": [
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "dd2c2j",
+          "altText": "Team Collaboration Sites",
           "chips": [
             {
               "chipText": "Lorem",
@@ -108,22 +108,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Team Collaboration Sites",
+          "description": "Create productive team sites for every project, department, and division. Share files, data, news, and resources with powerful collaboration tools that your teams will actually want to use.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -197,7 +183,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "b5hf2a",
           "altText": "Lorem Ipsum",
           "chips": [
             {
