@@ -11,7 +11,7 @@
       "topLabel": {
         "labelText": "18+ years delivering SharePoint solutions"
       },
-      "heading": "Ship a SharePoint your people actually use",
+      "heading": "Ship a **SharePoint** your people actually use",
       "isH1": true,
       "description": "Your documents are scattered. Your teams are frustrated. Your SharePoint investment isn't delivering. SSW's SharePoint experts customize solutions that fit your business; not force your business to fit SharePoint.\n",
       "featureColumns": {
@@ -39,34 +39,42 @@
         "backgroundColour": 6
       },
       "heading": "Trusted by",
+      "paused": false,
       "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 170,
           "altText": "CommBank"
         },
         {
           "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 195,
           "altText": "Allianz"
         },
         {
           "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 180,
           "altText": "Microsoft"
         },
         {
           "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 175,
           "altText": "Domain"
         },
         {
           "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 160,
           "altText": "Symantec"
         },
         {
           "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 195,
           "altText": "Toll"
         },
         {
           "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 175,
           "altText": "Cisco"
         }
       ],
