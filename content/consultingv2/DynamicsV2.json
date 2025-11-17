@@ -84,9 +84,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Why Most SharePoint Implementations Fail",
+      "heading": "Why Dynamics 365 configuration is critical to organisational success",
       "isH1": false,
-      "description": "Many organizations struggle with data scattered across multiple systems. While SharePoint aims to solve this, a default setup rarely suffices. We centralize your documents, data, and processes, enforcing information management policies and automating critical business workflows to boost efficiency across your entire organization.\n",
+      "description": "Many businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their real processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly with data quality following suit.\n\nWe shape Dynamics 365 around your business as we understand each organisations is as unique as fingerprints! We tailor the environment to match your sales cycle, your service model and help map your specific customer journey. The end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -102,8 +102,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Rules to Better SharePoint",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sharepoint/",
+          "buttonText": "Our Rules around Dynamics",
+          "buttonLink": "https://www.ssw.com.au/rules/search/?keyword=dynamics",
           "colour": 1
         }
       ],
