@@ -229,42 +229,6 @@
           "embeddedButton": {
             "buttonText": ""
           }
-        },
-        {
-          "guid": "q5ilp",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=kDZCbRJma60&list=PLpiOR7CBNvlp47vr_wX4RO6Otq4zmY_JU",
-          "altText": "Why Choose Rich Text Editor Over Markdown For SharePoint pages | Jean Thirion",
-          "chips": [
-            {
-              "chipText": "3 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Why Choose Rich Text Editor Over Markdown For SharePoint pages | Jean Thirion",
-          "description": "Learn how to use the Rich Text Editor web part instead of the Markdown Editor web part and create a better SharePoint intranet page.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "sm6rk",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=tVH6aL7R8nM",
-          "altText": "  AU  Skip navigation Search    Create   Avatar image SharePoint agents - What's new and what's next | Microsoft 365 Community Conference 2025",
-          "chips": [
-            {
-              "chipText": "51 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "SharePoint agents - What's new and what's next",
-          "description": "In this session, we will recap key product best practices for getting the most out of SharePoint, OneDrive and custom agents with SharePoint Embedded. We'll also unveil our roadmap for the months ahead as we continue to innovate how agents support individual workers, teams, and organizations.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
         }
       ],
       "background": {
@@ -286,7 +250,7 @@
         },
         {
           "label": "What happens in the free initial meeting?",
-          "content": "Our sales manager and a Dynamics consultant will meet with you to understand your business requirements and current challenges. We'll discuss whats working and you want replicated in the solution vs what pain points need to be addressed and resolved. \n\nThen we'll assess whether Dynamics is the right fit and provide honest recommendations. Many common business needs (Sales Pipeline, Customer Account Information, Approval Workflows) can be handled with ease using Dynamics out-of-the-box features. For more complex scenarios, we'll explain how custom development can solve your specific  Dynamics challenges. \n"
+          "content": "Our sales manager and a Dynamics consultant will meet with you to understand your business requirements and current challenges. We'll discuss whats working and you want replicated in the solution vs what pain points need to be addressed and resolved.\n\nThen we'll assess whether Dynamics is the right fit and provide honest recommendations. Many common business needs (Sales Pipeline, Customer Account Information, Approval Workflows) can be handled with ease using Dynamics out-of-the-box features. For more complex scenarios, we'll explain how custom development can solve your specific  Dynamics challenges.\n"
         },
         {
           "label": "Should we choose Dynamics in the cloud or an on-premises solution?",
