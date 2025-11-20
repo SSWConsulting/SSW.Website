@@ -36,6 +36,11 @@
           "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
+        },
+        {
+          "buttonText": " AI Discovery Workshop",
+          "buttonLink": "/events/ai-discovery-workshop",
+          "colour": 1
         }
       ],
       "background": {
