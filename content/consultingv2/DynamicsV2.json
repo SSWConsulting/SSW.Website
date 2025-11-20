@@ -188,8 +188,8 @@
             }
           ],
           "icon": "info",
-          "heading": "SharePoint Sites for Admins - Tips for Managing SharePoint with Warwick Leahy",
-          "description": "In the days of classic SharePoint, subsites were a popular way of organising your intranet. Modern SharePoint architecture leans toward a flatter hierarchy, where sub-sites are generally not recommended.",
+          "heading": "Do you allow multiple options rather than forcing a best fit?",
+          "description": "In this video, Piers Sinclair shows us how to manage skills within the SSW Dynamics365 CRM",
           "embeddedButton": {
             "buttonText": ""
           }
