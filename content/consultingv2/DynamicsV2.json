@@ -289,7 +289,7 @@
           "content": "Our sales manager and a Dynamics consultant will meet with you to understand your business requirements and current challenges. We'll discuss whats working and you want replicated in the solution vs what pain points need to be addressed and resolved. \n\nThen we'll assess whether Dynamics is the right fit and provide honest recommendations. Many common business needs (Sales Pipeline, Customer Account Information, Approval Workflows) can be handled with ease using Dynamics out-of-the-box features. For more complex scenarios, we'll explain how custom development can solve your specific  Dynamics challenges. \n"
         },
         {
-          "label": "Should we choose SharePoint Online or on-premises?",
+          "label": "Should we choose Dynamics in the cloud or an on-premises solution?",
           "content": "Microsoft has clearly aligned their Dynamics platform to be a cloud based service. Whilst Microsoft does still support on-premise versions of the solution, its not their priority. All new features being rolled out to the Dynamics platform are cloud first, often not being available for the legacy on-premise version.\n"
         }
       ],
