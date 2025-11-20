@@ -197,8 +197,8 @@
         {
           "guid": "seq43",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Vh64ZEC0wcw",
-          "altText": "Why SharePoint Search is Awesome! How to use SharePoint Search | Jean Thirion",
+          "youtubeUrl": "https://www.youtube.com/watch?v=3nkO8BxG8Sc",
+          "altText": "Every client deserves a Team! Link Microsoft Teams with your CRM eg. Dynamics 365, SalesForce",
           "chips": [
             {
               "chipText": "4 min",
@@ -206,8 +206,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Why SharePoint Search is Awesome! How to use SharePoint Search | Jean Thirion",
-          "description": "See what makes SharePoint Search a powerful way to find anything throughout your organization.",
+          "heading": "Every client deserves a Team! Link Microsoft Teams with your CRM eg. Dynamics 365, SalesForce",
+          "description": "Do you link your customers in CRM to their respective Teams? ",
           "embeddedButton": {
             "buttonText": ""
           }
