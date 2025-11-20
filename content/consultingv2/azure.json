@@ -31,7 +31,8 @@
         "features": [
           {
             "heading": "Built for real-world cloud teams",
-            "description": "From strategy to hands-on delivery, we help you get Azure right the first time."
+            "description": "From strategy to hands-on delivery, we help you get Azure right the first time.",
+            "icon": "BiAnalyse"
           },
           {
             "heading": "Ipsum",
