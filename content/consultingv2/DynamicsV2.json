@@ -129,8 +129,8 @@
           "guid": "dd2c2j",
           "altText": "Team Collaboration Sites",
           "icon": "BiCollapse",
-          "heading": "Team Collaboration Sites",
-          "description": "Create productive team sites for every project, department, and division. Share files, data, news, and resources with powerful collaboration tools that your teams will actually want to use, while insuring only the people you want have access.",
+          "heading": "A Single Source of Truth",
+          "description": "Dynamics centralises all customer interactions, communications, sales activity, cases, and history in one place. This gives your team complete visibility and reduces duplication, confusion, and lost information.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -139,8 +139,8 @@
           "guid": "vn8nxt",
           "altText": "Intranet Portals",
           "icon": "BiDoorOpen",
-          "heading": "Intranet Portals",
-          "description": "Build cohesive intranet sites that inform and engage employees. Share resources, applications, and company news in one centralized hub that drives organizational efficiency.",
+          "heading": "Increased Team Accountability",
+          "description": "With assigned tasks, SLAs, workflows, and activity tracking, every team member knows their responsibilities, which improves collaboration and removes ambiguity.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -149,8 +149,8 @@
           "guid": "e7yf1l",
           "altText": "",
           "icon": "BiSearch",
-          "heading": "Enterprise Search",
-          "description": "Stop wasting hours searching for documents. Powerful search capabilities and intelligent discovery help your teams find information, expertise, and insights instantly.",
+          "heading": "Seamless Microsoft Integration",
+          "description": "Native integration with Outlook, Teams, SharePoint, Power BI, and Microsoft Fabric ensures a unified digital workplace and reduces double handling.",
           "embeddedButton": {
             "buttonText": ""
           }
