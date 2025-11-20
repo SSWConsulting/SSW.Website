@@ -124,8 +124,9 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Practical advice, proven results",
+            "description": "We analyse your environment and give you a clear plan with fast, low-risk wins.",
+            "icon": "BiAtom"
           },
           {
             "heading": "Ipsum",
