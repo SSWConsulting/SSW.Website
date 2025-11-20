@@ -277,8 +277,8 @@
       "body": "",
       "accordionItems": [
         {
-          "label": "What's the difference between SharePoint configuration and customization?",
-          "content": "Most consultants simply turn features on and off within SharePoint's standard capabilities… that's configuration.\n\nAt SSW, we go further with customization: Our .NET developers build bespoke solutions, integrations, and workflows that extend SharePoint to match your exact business processes. For example, if you need to automatically sync 2,000 client records from your CRM into individual SharePoint portals, we build custom synchronization tools rather than force you into manual workarounds.\n"
+          "label": "What's the difference between Dynamics configuration and customization?",
+          "content": "Different modules and components can be turned on/off within the Dynamics platform, that's configuration.\n\nAt SSW, we go further with customization: Our .NET developers can build bespoke solutions, integrations, and workflows that allows your Dynamics CRM to become the backbone of your business.\n\nFor example, perhaps you want new leads within Dynamics to be automatically routed to the right salesperson, but your internal routing rules depend on multiple factors such as industry, deal size, geo-location, lead score, product interest etc. Complex routing of this nature can be best achieved using custom plugins. Something our team excel at!\n"
         },
         {
           "label": "How long does a typical SharePoint implementation take?",
