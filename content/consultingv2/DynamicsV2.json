@@ -290,7 +290,7 @@
         },
         {
           "label": "Should we choose SharePoint Online or on-premises?",
-          "content": "For most organizations, SharePoint Online (part of Microsoft 365) is the better choice. You eliminate server hardware, maintenance costs, IT overhead, and manual upgrades while gaining automatic updates, enterprise security, and global availability. However, some organizations with specific compliance requirements or legacy system dependencies may still need on-premises deployment. During your free initial meeting, we'll assess your specific needs and recommend the best approach for your situation.\n"
+          "content": "Microsoft has clearly aligned their Dynamics platform to be a cloud based service. Whilst Microsoft does still support on-premise versions of the solution, its not their priority. All new features being rolled out to the Dynamics platform are cloud first, often not being available for the legacy on-premise version.\n"
         }
       ],
       "background": {
