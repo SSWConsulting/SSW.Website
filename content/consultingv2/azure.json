@@ -35,8 +35,9 @@
             "icon": "BiAnalyse"
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "Secure, scalable, and cost-efficient",
+            "description": "Get guidance that improves reliability, strengthens security, and cuts unnecessary spend.",
+            "icon": "BiShieldAlt2"
           }
         ]
       },
