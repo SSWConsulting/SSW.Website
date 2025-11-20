@@ -281,8 +281,8 @@
           "content": "Different modules and components can be turned on/off within the Dynamics platform, that's configuration.\n\nAt SSW, we go further with customization: Our .NET developers can build bespoke solutions, integrations, and workflows that allows your Dynamics CRM to become the backbone of your business.\n\nFor example, perhaps you want new leads within Dynamics to be automatically routed to the right salesperson, but your internal routing rules depend on multiple factors such as industry, deal size, geo-location, lead score, product interest etc. Complex routing of this nature can be best achieved using custom plugins. Something our team excel at!\n"
         },
         {
-          "label": "How long does a typical SharePoint implementation take?",
-          "content": "It varies significantly based on scope. Simple implementations with out-of-the-box features (team sites, document libraries, basic workflows) can be deployed in weeks. Complex enterprise solutions requiring custom development, legacy system integration, and change management may take several months. During your initial meeting, we'll discuss your requirements and provide a realistic timeline. Our approach is transparent; we'll tell you exactly what's involved and how long each phase will take.\n"
+          "label": "How long does a typical Dynamics implementation take?",
+          "content": "It varies significantly based on scope. Simple implementations with out-of-the-box features (team sites, document libraries, basic workflows) can be deployed in weeks. Complex Enterprise solutions requiring custom development, legacy system integration, data migration and other factors can result in a project taking several months. During your initial meeting, we'll discuss your requirements and provide a realistic timeline. Our approach is transparent; we'll tell you exactly what's involved and how long each phase will take.\n"
         },
         {
           "label": "What happens in the free initial meeting?",
