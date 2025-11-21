@@ -129,8 +129,9 @@
             "icon": "BiAtom"
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "Control your costs",
+            "description": "FinOps guidance that keeps your Azure bill predictable and transparent.",
+            "icon": "BiDollarCircle"
           }
         ]
       },
