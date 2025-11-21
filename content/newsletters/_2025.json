@@ -2,6 +2,11 @@
   "newsletters_year": "2025",
   "newsletters": [
     {
+      "month": 7,
+      "file": "/images/newsletter-uploads/2025/_2025_07__How%20to%20Choose%20the%20Right%20Software%20Architecture_.html",
+      "description": "How to Choose the Right Software Architecture"
+    },
+    {
       "month": 6,
       "file": "/images/newsletter-uploads/2025/_2025_06__Beyond%20Automation%20The%20Developer%E2%80%99s%20Guide%20to%20AI%20Agents_.html",
       "description": "Beyond Automation: The Developer’s Guide to AI Agents"
@@ -30,6 +35,21 @@
       "month": 1,
       "file": "/images/newsletter-uploads/2025/_2025_01__Adam's%25202024%2520Year%2520in%2520Review__.html",
       "description": "Adam’s 2024 Year in Review"
+    },
+    {
+      "month": 8,
+      "file": "/images/newsletter-uploads/2025/_2025_08__.NET%20Aspire%209.4%20-%20CLI%20Magic%20and%20Developer-Friendly%20Dashboards_.html",
+      "description": ".NET Aspire 9.4 – CLI Magic and Developer-Friendly Dashboards"
+    },
+    {
+      "month": 9,
+      "file": "/images/newsletter-uploads/2025/_2025_09__MCP%20as%20Your%20Integration%20Layer_.html",
+      "description": "MCP as Your Integration Layer"
+    },
+    {
+      "month": 10,
+      "file": "/images/newsletter-uploads/2025/_2025_10__OpenAI%20%E2%80%93%202%20Updates%20That%20Might%20Change%20How%20You%20Build%20Software_.html",
+      "description": "OpenAI – 2 Updates That Might Change How You Build Software"
     }
   ]
 }

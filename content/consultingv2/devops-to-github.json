@@ -1,0 +1,426 @@
+{
+  "seo": {
+    "title": "Enterprise Development & Consulting for GitHub",
+    "description": "Maximise your productivity as a team by leveraging our enterprise level experience using GitHub.",
+    "showBreadcrumb": false
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Azure DevOps to GitHub Migration",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Stop stagnating. **Ship faster on GitHub.**",
+      "isH1": false,
+      "description": "Move from Azure DevOps to the premium engineering platform.\n\nFaster setup, built-in security, and CI/CD that scales without punishing your wallet.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book Your Migration Assessment",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/devops-to-github.png",
+        "imageHeight": 736,
+        "imageWidth": 981
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by Enterprise Teams",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 120,
+          "altText": "Logo"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 125
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 120
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 120
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "The cost of staying on Azure DevOps (ADO)",
+      "isH1": false,
+      "body": "ADO is stable, but slow. Teams pay in roadmap lag, pipeline costs, and onboarding friction.",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "zhe5tv",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidError",
+          "heading": "AI gap",
+          "description": "The main reason people are moving away from Azure DevOps is GitHub Copilot. It completely changes how developers write code!",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "pj2x5s",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidError",
+          "heading": "Parallelism tax",
+          "description": "GitHub Actions are cheaper than Azure Pipelines. Plus you can run builds in parallel for no extra cost.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "vujm",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidError",
+          "heading": "Security add-ons",
+          "description": "Security patches always come to GitHub substantially earlier than they come to ADO.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "trto6",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidError",
+          "heading": "Big builds demand big servers",
+          "description": "To get more CPU/RAM you have to move to GitHub managed build agents. AzDO-hosted agents can’t be scaled up.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "i54ig8",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidError",
+          "heading": "Roadmap opacity vs. GitHub",
+          "description": "ADO publishes a features timeline; GitHub maintains a detailed public roadmap board, making forward planning easier.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "White-glove migration, end to end",
+      "isH1": false,
+      "description": "We plan it, run it, and stay until your team is confidently shipping on GitHub. No drama, no orphaned YAML.\n",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Pipeline translation you can trust",
+            "description": "We rewrite Azure Pipelines into lean GitHub Actions, map secrets & environments, and prove it on a pilot repo with green builds and faster runtimes.",
+            "icon": "BiCheckDouble"
+          },
+          {
+            "heading": "Data moved, process intact",
+            "description": "The importer handles repos/PR history and some policies; we migrate what it doesn’t (pipelines, work items, test plans, artifacts) and stand up Projects + reporting.",
+            "icon": "BiCheckDouble"
+          },
+          {
+            "heading": "Copilot rollout & governance",
+            "description": "We handle SSO, seat plans, guardrails, and training.",
+            "icon": "BiCheckDouble"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book Your Migration Assessment",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/dev-presenting-2.png",
+        "imageHeight": 481,
+        "imageWidth": 642
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "What you gain on GitHub",
+      "isH1": false,
+      "body": "Faster loops, built-in protection, and an AI pair programmer that understands your codebase, with clear governance.",
+      "cards": [
+        {
+          "guid": "q2snk",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "GitHub Copilot",
+          "description": "PR-aware chat and summaries speed reviews; governed per-seat (Business/Enterprise)",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "zrqtcv",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Instant dev environments",
+          "description": "Codespaces + prebuilds cut setup from hours to minutes; budgets control compute/storage.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "pa3g8d",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "CI/CD at speed, security by default",
+          "description": "GitHub Actions is pay-what-you-use, supports larger runners, and secret scanning + push protection blocks leaks (with partner actions/revocation).",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "axyxue",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Governance that scales",
+          "description": "Ensure that code is worked on following your SOPs. ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "v46dou",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Automated dependency hygiene",
+          "description": "Dependabot raises fix PRs and scheduled version bumps; you can tune cadence and it pauses inactive repos automatically.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "heading": "FAQ",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "Do we lose history (PRs, comments, blame) in the move?",
+          "content": "No - The repos, Actions, and much of the metadata come across. PRs, pipelines, boards, and artifacts need bespoke handling - we do that too.\n"
+        },
+        {
+          "label": "How much downtime should we expect?",
+          "content": "Usually close to zero. We run pilots, parallel builds, and a low-traffic cutover with rollback ready. If something’s spicy, we pause, fix, and re-cut.\n"
+        },
+        {
+          "label": "Do we have to rewrite every pipeline?",
+          "content": "Not every one. We prioritize business-critical pipelines, translate them to Actions, and prove gains (faster runtimes, clearer logs). The rest follow a repeatable template.\n"
+        },
+        {
+          "label": "What about approvals, gates, and variable libraries we rely on in ADO?",
+          "content": "We map them to GitHub Environments, required reviewers, and OIDC + Key Vault integration. Same safety net, cleaner implementation.\n"
+        },
+        {
+          "label": "How long does a migration take?",
+          "content": "We start with a 2-week pilot to de-risk pipelines and security, then scale. Common range: 3–8 weeks for a mid-sized org.\n"
+        },
+        {
+          "label": "Is Copilot safe for our IP?",
+          "content": "Yes - With Business/Enterprise, you get policy controls, auditability, and org-scoped behavior. We configure guardrails and training so Copilot helps without leaking context.\n"
+        },
+        {
+          "label": "GitHub Models",
+          "content": "This wrapper for Azure AI Foundry allows you to swap out AI models at will. Your actions can use this for AI workloads.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "868dpp",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=4SJ8lja5GJI&t=1062s",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Expert Demo",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "32 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "What's New in GitHub Projects & Copilot",
+          "description": "Learn the latest GitHub Projects updates and how Copilot transforms your coding workflow. Includes live demos and real-world tips.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "il17x",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=xPFe3MlOJQ4",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Deep Dive",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "57 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Switch from Azure DevOps to GitHub with Confidence",
+          "description": "Think GitHub can't replace Azure DevOps? Matt Wicks reveals the top 10 workarounds that make GitHub migrations smooth and successful.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "goztfm",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=sVELvhGdSfs&t=9s",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Quick Demo",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "3 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Test Any AI Model in One Place. No Setup Required",
+          "description": "Skip the hassle of multiple API setups. See how to test OpenAI, Meta, and other AI models instantly using GitHub Models. Live demo included.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/All-Github.mdx"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your project today",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Start with a Free Migration Assessment",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}

@@ -14,15 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout People Profiles
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: "SSWConsulting/SSW.People.Profiles"
           path: ${{ env.TEMPORARY_FOLDER}}
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
@@ -33,7 +33,7 @@ jobs:
           pnpm add gray-matter
 
       - name: Fetch SSW.People.Profiles
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           script: |
             const script = require(`${process.env.GITHUB_WORKSPACE}/.github/workflows/get-people-profiles.js`);
