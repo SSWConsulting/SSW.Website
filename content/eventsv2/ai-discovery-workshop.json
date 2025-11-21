@@ -1,16 +1,16 @@
 {
   "seo": {
-    "title": "1-Day Hands-On AI Training Workshop for Business | SSW",
-    "description": "Equip your team with essential AI skills in our hands-on, 1-day on-site workshop. Master the AI skills that deliver real productivity, not just hype."
+    "title": "3-Day AI Discovery Workshop - Identify Opportunities & Roadmap | SSW",
+    "description": "Kickstart your AI strategy in just 3 days. SSW's AI Discovery Workshop helps you identify high-impact AI opportunities, assess feasibility, and create a tailored implementation roadmap for success."
   },
   "blocks": [
     {
       "topLabel": {
         "labelText": "On-Site 3-Day AI Discovery Workshop"
       },
-      "heading": "Equip your team with **essential AI skills**",
+      "heading": "Uncover AI Opportunities in a **3-day Workshop**",
       "isH1": true,
-      "description": "Everyone’s testing prompts. Few are getting real gains.\\\nThis hands-on workshop gives your team the skills and systems to turn AI into actual productivity, not just hallway hype.\n",
+      "description": "In this intensive engagement, our AI strategists work with your team to identify where AI can drive real value... In just three days, you'll go from wondering about AI to having a clear, actionable implementation roadmap.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -29,7 +29,7 @@
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/ssw-web/hero/ssw-workshop-inhouse.jpg",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
         "imageHeight": 1721,
         "imageWidth": 2891
       },
@@ -87,115 +87,111 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": false,
-      "heading": "Why Results Lag Behind the Hype?",
+      "topLabel": {
+        "labelText": "",
+        "icon": "BiRecycle"
+      },
+      "heading": "A **Collaborative Discovery Process** That Works",
       "isH1": false,
-      "body": "Almost half of employees already dabble with AI. Studies show the right prompt can cut some tasks to a third of the time.\n\nSo why isn’t the whole company moving faster? ",
-      "cards": [
-        {
-          "guid": "qnv92",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidHide",
-          "heading": "Workers use AI in secret",
-          "description": "Employees fear being punished, laid off, or labeled “cheaters,” so they hide ChatGPT tabs. Tips and gains stay invisible, and the company can’t spread the wins",
-          "embeddedButton": {
-            "buttonText": ""
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Why Businesses Struggle with AI",
+            "description": "Every business leader knows AI is transformative, but we often hear: \"We dont know where to start” “We lack internal expertise” “We're worried about wasting money” “We need a strategy, not just tools”",
+            "icon": "BiCloudLightning"
+          },
+          {
+            "heading": "Improving your Workflows",
+            "description": "We don't just talk theory; we embed ourselves in your business… a hands-on process led by senior AI consultants and developers ",
+            "icon": "BiBulb"
           }
-        },
-        {
-          "guid": "4bcikc",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidBookBookmark",
-          "heading": "No prompt libraries",
-          "description": "A clever prompt in someone’s notebook isn’t a process. Without a shared template or script, wins stay one-off and disappear when that employee is on leave. ",
-          "embeddedButton": {
-            "buttonText": ""
+        ]
+      },
+      "background": {
+        "backgroundColour": 4,
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Process",
+        "icon": "BiDirections"
+      },
+      "heading": "What to Expect in **3-days**",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Day 1 - Explore & Ideate",
+            "description": "In-depth interviews with stakeholders; understand pain points and your environment",
+            "icon": "BiBookOpen"
+          },
+          {
+            "heading": "Day 2 - Analysis & Feasability ",
+            "description": "Map pain points to AI solutions; assess data readiness, integration complexity and feasability",
+            "icon": "BiMapPin"
+          },
+          {
+            "heading": "Day 3 - Roadmap & Next Steps",
+            "description": "Prioritize initiatives, build implementation roadmap and timeline; present recommendations to align team ",
+            "icon": "BiBulb"
           }
-        },
-        {
-          "guid": "z57ea",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidBong",
-          "heading": "No “lab” team to test and share wins",
-          "description": "Nobody owns quick experiments, prototypes, and internal how-to docs, so every department reinvents the wheel or gives up.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "uxx42",
-          "altText": "Lorem Ipsum",
-          "icon": "BiAbacus",
-          "heading": "Only using AI for the “easy stuff”",
-          "description": "If AI only cleans up typos or meeting notes, you’re wasting horsepower. The real gains come when AI tackles chunky tasks like data analysis or preparing market research in minutes.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "64hyte",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidHelpCircle",
-          "heading": "Leaders talk big, but stay fuzzy",
-          "description": "They announce “AI is our future,” yet never explain what jobs will change or how success will be rewarded. Without a clear picture, staff keep doing the old routine.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
+        ]
+      },
       "background": {
         "backgroundColour": 5
       },
-      "_template": "cardCarousel"
+      "_template": "imageTextBlock"
     },
     {
-      "heading": "A Workshop Built for **Real AI Adoption**",
-      "body": "This isn’t theory. It’s hands-on. We train your team to actually use AI in daily work, and build systems that stick. One intense day; five tightly scoped modules.",
-      "accordionItems": [
+      "isStacked": true,
+      "heading": "What you Walk Away With",
+      "isH1": false,
+      "body": "By the end, you'll have a prioritized list of AI projects, and a step-by-step plan to implement them",
+      "cardStyle": 0,
+      "cards": [
         {
-          "label": "Your AI Starting Point",
-          "content": "Understand the core concepts behind large language models and explore the popular AI tools like ChatGPT, Gemini, and Grok\n"
+          "guid": "4qkep6",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "1️⃣ Easy Wins",
+          "description": "We'll map out the low effort, high impact integrations for routine tasks. Expect immediate results where we see the opportunities.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         },
         {
-          "label": "Getting Smarter AI Responses",
-          "content": "Learn how to ask questions for the best answers, understand AI's \"memory\" and \"knowledge,\" and choose the right model for superior results\n"
+          "guid": "4ob77n",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "2️⃣ Medium Projects",
+          "description": "Projects that require some integration or light development work, typically connect AI into your existing systems, automate multi-step workflows, or enhance internal tools. Expect meaningful efficiency gains and measurable ROI within weeks.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         },
         {
-          "label": "AI That Thinks & Finds Info",
-          "content": "Leverage AI's advanced \"thinking\" abilities for complex problems like coding, and use its built-in internet search for the latest information\n"
-        },
-        {
-          "label": "AI for Deep Work & Creativity",
-          "content": "Conduct detailed research for custom reports, analyze documents, visualize data, and use AI as a powerful assistant for programming and custom app development\n"
-        },
-        {
-          "label": "Talk, See, & Personalize Your AI",
-          "content": "Interact naturally with AI using your voice, images, and video, then customize it to remember your preferences and perform specialized tasks. Get practical tips for choosing the right AI tools, optimizing your usage, and staying ahead in the rapidly evolving AI landscape\n"
-        },
-        {
-          "label": "✨ Post-Wokshop Support",
-          "content": "Post-workshop check-ins and template library to help your team turn experiments into roll-outs\n"
-        }
-      ],
-      "isMultipleOpen": true,
-      "buttons": [
-        {
-          "buttonText": "Get the full Agenda",
-          "leadCaptureFormOption": "aiWorkshopJotFormId",
-          "buttonLink": "",
-          "colour": 1
+          "guid": "tydp",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "3️⃣ Transformational Ideas",
+          "description": "High-impact initiatives that reshape how your business operates. These are end-to-end AI solutions, new product capabilities, or major process redesigns that unlock entirely new value. These projects require deeper data work and engineering — but deliver genuine competitive advantage.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "background": {
-        "backgroundColour": 3
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
       },
-      "mediaConfiguration": {
-        "verticalPlacement": "Centered",
-        "imageSource": "/images/ssw-web/blog/What-we-cover-v5.png",
-        "imageHeight": 650,
-        "imageWidth": 972
-      },
-      "_template": "accordionBlock"
+      "_template": "cardCarousel"
     },
     {
       "topLabel": {
@@ -203,28 +199,28 @@
       },
       "heading": "At a Glance",
       "isH1": false,
-      "description": "A one-day, on-site workshop to get your team up to speed with practical, business-ready AI skills\n",
+      "description": "A 3-day, on-site workshop to get to understand your businesses workflows, and identify where AI can drive value\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "$5,200 + GST",
-            "description": "Flat rate for up to 20 participants",
+            "heading": "$12,000 + GST",
+            "description": "Includes 2 Senior Developers + 1 Business Analyst on-site for 3 full days",
             "icon": "BiMoneyWithdraw"
           },
           {
-            "heading": "Hands-On Learning",
-            "description": "Just real tools and workflows",
+            "heading": "Deep Business Understanding",
+            "description": "We interview stakeholders, map processes, and analyse pain points across your teams",
             "icon": "BiSolidContact"
           },
           {
-            "heading": "Post-Workshop Toolkit",
-            "description": "Includes slides, cheat sheets, and workflows",
+            "heading": "Prioritised AI Roadmap",
+            "description": "A clear set of recommended initiatives ranked by value, feasibility, and ROI",
             "icon": "BiSolidWrench"
           },
           {
-            "heading": "Customised for Your Stack",
-            "description": "ChatGPT, Claude, Gemini & more",
+            "heading": "Tailored to Your Stack",
+            "description": "We identify solutions that fit your environment — Microsoft, AWS, OpenAI, Gemini & more",
             "icon": "BiSolidCustomize"
           }
         ]
@@ -241,73 +237,32 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": true,
-      "heading": "How It Works",
-      "isH1": false,
-      "body": "",
-      "cardStyle": 0,
-      "cards": [
-        {
-          "guid": "4qkep6",
-          "altText": "Lorem Ipsum",
-          "icon": "info",
-          "heading": "1️⃣ Quick call to map goals",
-          "description": "We map your team’s goals, use cases, and current AI maturity. Everything we need to tailor the workshop.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "4ob77n",
-          "altText": "Lorem Ipsum",
-          "icon": "info",
-          "heading": "2️⃣ On-Site Workshop Day",
-          "description": "One focused day at your office. Live demos, hands-on labs, real workflows. Your team leaves ready to apply what they learned.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "tydp",
-          "altText": "Lorem Ipsum",
-          "icon": "info",
-          "heading": "3️⃣ Post-Workshop Support",
-          "description": "Follow-up meetings and templates to keep momentum, answer questions, and turn experiments into production.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
-        "bleed": true
-      },
-      "_template": "cardCarousel"
-    },
-    {
       "heading": "Workshop FAQ",
       "body": "",
       "accordionItems": [
         {
-          "label": "How much does it cost?",
-          "content": "The full-day, on-site workshop is priced at $5,200 + GST. This covers up to 20 participants and includes all materials, hands-on labs, and post-workshop resources.\n"
+          "label": "How is this different from an AI training session?",
+          "content": "We focus directly on your business, tailor made solutions for you.\n"
         },
         {
-          "label": "Do I need to know how to code?",
-          "content": "Absolutely not, we focus on practical workflows that anyone from marketing to ops can use. If you write emails, crunch numbers, or manage projects, you’ll walk out with new AI superpowers.\n"
+          "label": "Is this an AI training workshop or a consulting engagement",
+          "content": "This is a strategic consulting engagement, not a training course. Instead of teaching generic AI tools, we work with your team to map your processes, identify specific AI opportunities, and design a practical implementation roadmap tailored to your business.\n"
         },
         {
-          "label": "How long is the workshop?",
-          "content": "One intense day; four tightly scoped modules. Energy drinks optional but recommended.\n"
+          "label": "Who should attend the 3-day workshop?",
+          "content": "We recommend a mix of business and technical stakeholders, for example:\n\n* An executive sponsor (e.g. CEO, COO, CTO)\n* Key business process owners (Operations, Sales, HR, Finance, etc.)\n* Someone who understands your current systems and data (IT/architect)\n* Individuals experiencing day-to-day pains with cumbersome processes\n\nIdeally 4–8 people who can commit for most of the 3 days.\n"
         },
         {
-          "label": "How many seats are available?",
-          "content": "We cap each workshop at \\~20 people. That’s the sweet spot where everyone gets hands-on time with the instructor, and no one’s stuck waiting to try the demos.\n"
+          "label": "Do we need any AI knowledge or preparation beforehand?",
+          "content": "No AI expertise is required. You bring knowledge of your business, processes, and pain points – we bring the AI experience. Before the workshop we’ll share a short checklist (key systems, current pain points, any existing AI tools), but there’s no heavy pre-work.\n"
         },
         {
-          "label": "What will my team take away?",
-          "content": "Repeatable AI playbooks, a toolkit of prompt patterns, and the confidence to automate the boring stuff on Monday.\n"
+          "label": "What do we actually get at the end of the 3 days?",
+          "content": "You’ll walk away with a concrete AI strategy pack, typically including:\n\n* A prioritized list of AI use cases for your business\n* Quick-win recommendations using out-of-the-box tools\n* High-level designs for any proposed custom solutions\n* A phased implementation roadmap with effort/complexity indicators\n* Clear next steps and options for implementation\n"
+        },
+        {
+          "label": "What happens after the workshop – do we have to use SSW for implementation?",
+          "content": "You have complete flexibility. You can:\n\n* Execute the roadmap with your internal team\n* Engage SSW to help design and build the AI solutions\n* Use a hybrid approach, where we tackle the complex pieces and your team handles simpler items\n* The deliverables are yours to use however you choose, with no lock-in.\n"
         }
       ],
       "isMultipleOpen": true,
@@ -318,7 +273,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Meet Your Instructor"
+        "labelText": "Some of the Team"
       },
       "heading": "Ulysses Maclaren",
       "isH1": false,
