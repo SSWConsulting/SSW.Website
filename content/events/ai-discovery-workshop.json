@@ -1,0 +1,422 @@
+{
+  "seo": {
+    "title": "3-Day AI Discovery Workshop - Identify Opportunities & Roadmap | SSW",
+    "description": "Kickstart your AI strategy in just 3 days. SSW's AI Discovery Workshop helps you identify high-impact AI opportunities, assess feasibility, and create a tailored implementation roadmap for success."
+  },
+  "blocks": [
+    {
+      "topLabel": {
+        "labelText": "On-Site 3-Day AI Discovery Workshop"
+      },
+      "heading": "Uncover AI Opportunities in a **3-day Workshop**",
+      "isH1": true,
+      "description": "In this intensive engagement, our AI strategists work with your team to identify where AI can drive real value... In just three days, you'll go from wondering about AI to having a clear, actionable implementation roadmap.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book Now",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 1721,
+        "imageWidth": 2891
+      },
+      "_template": "imageTextBlock"
+    },
+    
+    {
+      "background": {
+        "backgroundColour": 2
+      },
+      "heading": "Trusted by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 195,
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 160,
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 180,
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 175,
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 175,
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 170,
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 195,
+          "altText": "Allianz"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "",
+        "icon": "BiRecycle"
+      },
+      "heading": "A **Collaborative Discovery Process** That Works",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Why Businesses Struggle with AI",
+            "description": "Every business leader knows AI is transformative, but we often hear: \"We dont know where to start” “We lack internal expertise” “We're worried about wasting money” “We need a strategy, not just tools”",
+            "icon": "BiCloudLightning"
+          },
+          {
+            "heading": "Improving your Workflows",
+            "description": "We don't just talk theory; we embed ourselves in your business… a hands-on process led by senior AI consultants and developers ",
+            "icon": "BiBulb"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 4,
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Process",
+        "icon": "BiDirections"
+      },
+      "heading": "What to Expect in **3-days**",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Day 1 - Explore & Ideate",
+            "description": "In-depth interviews with stakeholders; understand pain points and your environment",
+            "icon": "BiBookOpen"
+          },
+          {
+            "heading": "Day 2 - Analysis & Feasability ",
+            "description": "Map pain points to AI solutions; assess data readiness, integration complexity and feasability",
+            "icon": "BiMapPin"
+          },
+          {
+            "heading": "Day 3 - Roadmap & Next Steps",
+            "description": "Prioritize initiatives, build implementation roadmap and timeline; present recommendations to align team ",
+            "icon": "BiBulb"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "What you Walk Away With",
+      "isH1": false,
+      "body": "By the end, you'll have a prioritized list of AI projects, and a step-by-step plan to implement them",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "4qkep6",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "1️⃣ Easy Wins",
+          "description": "We'll map out the low effort, high impact integrations for routine tasks. Expect immediate results where we see the opportunities.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "4ob77n",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "2️⃣ Medium Projects",
+          "description": "Projects that require some integration or light development work, typically connect AI into your existing systems, automate multi-step workflows, or enhance internal tools. Expect meaningful efficiency gains and measurable ROI within weeks.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "tydp",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "3️⃣ Transformational Ideas",
+          "description": "High-impact initiatives that reshape how your business operates. These are end-to-end AI solutions, new product capabilities, or major process redesigns that unlock entirely new value. These projects require deeper data work and engineering — but deliver genuine competitive advantage.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "At a Glance",
+      "isH1": false,
+      "description": "A 3-day, on-site workshop to get to understand your businesses workflows, and identify where AI can drive value\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "$12,000 + GST",
+            "description": "Includes 2 Senior Developers + 1 Business Analyst on-site for 3 full days",
+            "icon": "BiMoneyWithdraw"
+          },
+          {
+            "heading": "Deep Business Understanding",
+            "description": "We interview stakeholders, map processes, and analyse pain points across your teams",
+            "icon": "BiSolidContact"
+          },
+          {
+            "heading": "Prioritised AI Roadmap",
+            "description": "A clear set of recommended initiatives ranked by value, feasibility, and ROI",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "Tailored to Your Stack",
+            "description": "We identify solutions that fit your environment — Microsoft, AWS, OpenAI, Gemini & more",
+            "icon": "BiSolidCustomize"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Workshop FAQ",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "How is this different from an AI training session?",
+          "content": "We focus directly on your business, tailor made solutions for you.\n"
+        },
+        {
+          "label": "Is this an AI training workshop or a consulting engagement",
+          "content": "This is a strategic consulting engagement, not a training course. Instead of teaching generic AI tools, we work with your team to map your processes, identify specific AI opportunities, and design a practical implementation roadmap tailored to your business.\n"
+        },
+        {
+          "label": "Who should attend the 3-day workshop?",
+          "content": "We recommend a mix of business and technical stakeholders, for example:\n\n* An executive sponsor (e.g. CEO, COO, CTO)\n* Key business process owners (Operations, Sales, HR, Finance, etc.)\n* Someone who understands your current systems and data (IT/architect)\n* Individuals experiencing day-to-day pains with cumbersome processes\n\nIdeally 4–8 people who can commit for most of the 3 days.\n"
+        },
+        {
+          "label": "Do we need any AI knowledge or preparation beforehand?",
+          "content": "No AI expertise is required. You bring knowledge of your business, processes, and pain points – we bring the AI experience. Before the workshop we’ll share a short checklist (key systems, current pain points, any existing AI tools), but there’s no heavy pre-work.\n"
+        },
+        {
+          "label": "What do we actually get at the end of the 3 days?",
+          "content": "You’ll walk away with a concrete AI strategy pack, typically including:\n\n* A prioritized list of AI use cases for your business\n* Quick-win recommendations using out-of-the-box tools\n* High-level designs for any proposed custom solutions\n* A phased implementation roadmap with effort/complexity indicators\n* Clear next steps and options for implementation\n"
+        },
+        {
+          "label": "What happens after the workshop – do we have to use SSW for implementation?",
+          "content": "You have complete flexibility. You can:\n\n* Execute the roadmap with your internal team\n* Engage SSW to help design and build the AI solutions\n* Use a hybrid approach, where we tackle the complex pieces and your team handles simpler items\n* The deliverables are yours to use however you choose, with no lock-in.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Some of the Team"
+      },
+      "heading": "Ulysses Maclaren",
+      "isH1": false,
+      "description": "Uly brings 20+ years of enterprise consulting experience, helping companies adopt emerging technology with confidence. He’s led AI enablement sessions for businesses looking to cut through the hype and build systems that drive measurable outcomes.\n",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Uly's enthusiasm was contagious",
+            "description": "Tracy, Director of APA",
+            "icon": "BiSolidQuoteAltLeft"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=zaQOlw0-jQ4"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Built on Real-World AI Delivery",
+      "isH1": false,
+      "body": "SSW isn’t guessing. We’ve been building and fixing AI systems for years, across industries, tech stacks, and use cases. This workshop distills the lessons that save teams time, money, and frustration.",
+      "buttons": [
+        {
+          "buttonText": "Rules to Better AI Development",
+          "buttonLink": "/rules/rules-to-better-ai/",
+          "colour": 1
+        }
+      ],
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "uh77mq",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "DevTools",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "18 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "SSW’s Gert Marx joins Chris Simon at NDC Melbourne to break down the latest on Contextive, the open-source tool helping devs write code that better aligns with business needs.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "itqfs7",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Insights",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "11 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "At NDC, Ulysses Maclaren talks with Richard Campbell about AI’s growing energy demands, Microsoft’s nuclear plans, and the massive infrastructure shifts behind our data-hungry future.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "2eb7hu",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Responsible AI",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "6 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "Ulysses shares best practices for responsible AI: transparency, critical thinking, privacy, and using AI to actually boost productivity and stay ahead in your career.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Equip your team with **essential AI skills**",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book Now",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 5
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 5,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
