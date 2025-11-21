@@ -156,12 +156,14 @@
     },
     {
       "isStacked": false,
-      "heading": "Lorem Ipsum",
+      "heading": "Power your business with Azure done right.",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "body": "Get a clear roadmap to improve performance, tighten security, and reduce running costs — whether you’re migrating, modernizing, or scaling.",
+      "tabletTextAlignment": "Center",
       "buttons": [
         {
-          "buttonText": "Lorem",
+          "buttonText": "Book an Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         },
         {
