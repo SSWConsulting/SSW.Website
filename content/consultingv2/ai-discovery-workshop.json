@@ -17,7 +17,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book Now",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -35,7 +35,6 @@
       },
       "_template": "imageTextBlock"
     },
-    
     {
       "background": {
         "backgroundColour": 2
@@ -100,7 +99,7 @@
         "features": [
           {
             "heading": "Why Businesses Struggle with AI",
-            "description": "Every business leader knows AI is transformative, but we often hear: \"We dont know where to start” “We lack internal expertise” “We're worried about wasting money” “We need a strategy, not just tools”",
+            "description": "Every business leader knows AI is transformative, but we often hear: \"We don't know where to start”, “We lack internal expertise”, “We're worried about wasting money”, “We need a strategy, not just tools”",
             "icon": "BiCloudLightning"
           },
           {
@@ -134,12 +133,12 @@
           },
           {
             "heading": "Day 2 - Analysis & Feasability ",
-            "description": "Map pain points to AI solutions; assess data readiness, integration complexity and feasability",
+            "description": "Map pain points to AI solutions: assess data readiness, integration complexity and feasability",
             "icon": "BiMapPin"
           },
           {
             "heading": "Day 3 - Roadmap & Next Steps",
-            "description": "Prioritize initiatives, build implementation roadmap and timeline; present recommendations to align team ",
+            "description": "Prioritize initiatives, build implementation roadmap and timeline, present recommendations to align team ",
             "icon": "BiBulb"
           }
         ]
@@ -181,7 +180,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "3️⃣ Transformational Ideas",
-          "description": "High-impact initiatives that reshape how your business operates. These are end-to-end AI solutions, new product capabilities, or major process redesigns that unlock entirely new value. These projects require deeper data work and engineering — but deliver genuine competitive advantage.",
+          "description": "High-impact initiatives that reshape how your business operates. These are end-to-end AI solutions, new product capabilities, or major process redesigns that unlock entirely new value. These projects require deeper data work and engineering, but deliver genuine competitive advantage.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -221,7 +220,7 @@
           },
           {
             "heading": "Tailored to Your Stack",
-            "description": "We identify solutions that fit your environment — Microsoft, AWS, OpenAI, Gemini & more",
+            "description": "We identify solutions that fit your environment: Microsoft, AWS, OpenAI, Gemini & more",
             "icon": "BiSolidCustomize"
           }
         ]
@@ -241,10 +240,6 @@
       "heading": "Workshop FAQ",
       "body": "",
       "accordionItems": [
-        {
-          "label": "How is this different from an AI training session?",
-          "content": "We focus directly on your business, tailor made solutions for you.\n"
-        },
         {
           "label": "Is this an AI training workshop or a consulting engagement",
           "content": "This is a strategic consulting engagement, not a training course. Instead of teaching generic AI tools, we work with your team to map your processes, identify specific AI opportunities, and design a practical implementation roadmap tailored to your business.\n"
