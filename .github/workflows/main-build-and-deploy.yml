@@ -24,7 +24,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v4
         with:
           package_json_file: package.json
@@ -71,7 +71,7 @@ jobs:
     outputs:
       url: ${{ steps.deploy.outputs.url }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
@@ -107,7 +107,7 @@ jobs:
       app_service_prod_url: ${{ steps.swap.outputs.production_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
