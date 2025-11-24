@@ -142,6 +142,12 @@
               "tag": "content/consulting/tag/ai-development.json"
             }
           ]
+        },
+        {
+          "title": "AI Discovery Workshop",
+          "description": "Kickstart your AI strategy in just 3 days. SSW's AI Discovery Workshop helps you identify high-impact AI opportunities, assess feasibility, and create a tailored implementation roadmap for success.",
+          "logo": "/images/thumbs/consulting/ChatGPT Image Nov 24 2025.png",
+          "page": "content/consultingv2/ai-discovery-workshop.json"
         }
       ]
     },
