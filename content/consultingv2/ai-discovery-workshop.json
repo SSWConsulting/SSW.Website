@@ -26,12 +26,13 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
+        "mediaType": "youtube",
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
         "imageHeight": 1721,
-        "imageWidth": 2891
+        "imageWidth": 2891,
+        "youtubeUrl": "https://youtu.be/-qf8uyS4_Y8?si=fd_OUbXgdNsUKvAr"
       },
       "_template": "imageTextBlock"
     },
@@ -269,7 +270,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Some of the Team"
+        "labelText": "AI Experts"
       },
       "heading": "Ulysses Maclaren",
       "isH1": false,
