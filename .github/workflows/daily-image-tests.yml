@@ -57,7 +57,7 @@ jobs:
     if: ${{ needs.env-output.outputs.create_issue == 'true' && needs.check-broken-images.outputs.testPassed == 'false'}}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Create an Issue
         uses: JasonEtco/create-an-issue@v2
