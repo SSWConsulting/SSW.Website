@@ -1,0 +1,313 @@
+{
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Dynamics 365",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "18+ years delivering Dynamics solutions"
+      },
+      "heading": "Customise or Deploy  **Dynamics 365** To better service you and your customers!",
+      "isH1": true,
+      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW’s Dynamics experts tailor the platform to fit your unique business, not force your business to fit Dynamics. We can help drive Dynamics value, so your sales, service, and marketing teams can work as a team.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/Jean.JPG",
+        "imageHeight": 1926,
+        "imageWidth": 2889
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 170,
+          "altText": "CommBank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 195,
+          "altText": "Allianz"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 180,
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 175,
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 160,
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 195,
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 175,
+          "altText": "Cisco"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Why Dynamics 365 configuration is critical to organisational success",
+      "isH1": false,
+      "description": "Many businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their real processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly with data quality following suit.\n\nWe shape Dynamics 365 around your business as we understand each organisations is as unique as fingerprints! We tailor the environment to match your sales cycle, your service model and help map your specific customer journey. The end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Workflow Automation",
+            "description": "Automate repetitive workflows so your teams can focus on meaningful work. By automating tasks, approvals, and handovers, Dynamics reduces manual effort, removes bottlenecks and ensures every step of your process happens consistently. Automation means smoother operations across sales, service, and other key teams within your organisation."
+          },
+          {
+            "heading": "Capture Key User Information with a user friendly UI",
+            "description": "Capture all essential customer information through a clean, intuitive interface. Our Dynamics experts can help customise your overall Dynamics UI design.  Users can enter the right data quickly without feeling overwhelmed. This ensures teams record accurate, complete details while still enjoying a simple, user-friendly experience that drives adoption and better insights."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Our Rules around Dynamics",
+          "buttonLink": "https://www.ssw.com.au/rules/search/?keyword=dynamics",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "youtubeUrl": "https://youtu.be/g4_MnAZJpxg"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "dd2c2j",
+          "altText": "Team Collaboration Sites",
+          "icon": "BiCollapse",
+          "heading": "A Single Source of Truth",
+          "description": "Dynamics centralises all customer interactions, communications, sales activity, cases, and history in one place. This gives your team complete visibility and reduces duplication, confusion, and lost information.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "vn8nxt",
+          "altText": "Intranet Portals",
+          "icon": "BiDoorOpen",
+          "heading": "Increased Team Accountability",
+          "description": "With assigned tasks, SLAs, workflows, and activity tracking, every team member knows their responsibilities, which improves collaboration and removes ambiguity.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "e7yf1l",
+          "altText": "",
+          "icon": "BiSearch",
+          "heading": "Seamless Microsoft Integration",
+          "description": "Native integration with Outlook, Teams, SharePoint, Power BI, and Microsoft Fabric ensures a unified digital workplace and reduces double handling.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": false,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
+      "cards": [
+        {
+          "guid": "p2eb4u",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=5eXx67EY_y4",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "5 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Do you allow multiple options rather than forcing a best fit?",
+          "description": "In this video, Piers Sinclair shows us how to manage skills within the SSW Dynamics365 CRM",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "seq43",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=3nkO8BxG8Sc",
+          "altText": "Every client deserves a Team! Link Microsoft Teams with your CRM eg. Dynamics 365, SalesForce",
+          "chips": [
+            {
+              "chipText": "4 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Every client deserves a Team! Link Microsoft Teams with your CRM eg. Dynamics 365, SalesForce",
+          "description": "Do you link your customers in CRM to their respective Teams? ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "ekgasj",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=fhnatho4nSg",
+          "altText": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
+          "chips": [
+            {
+              "chipText": "10 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
+          "description": "Do you know how to make the most of your active directory? SSW Chief Architect Adam Cogan talks with SSW Solution Architect Jean Thirion about how to take advantage of extending AD with Microsoft SharePoint.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "What's the difference between Dynamics configuration and customization?",
+          "content": "Different modules and components can be turned on/off within the Dynamics platform, that's configuration.\n\nAt SSW, we go further with customization: Our .NET developers can build bespoke solutions, integrations, and workflows that allows your Dynamics CRM to become the backbone of your business.\n\nFor example, perhaps you want new leads within Dynamics to be automatically routed to the right salesperson, but your internal routing rules depend on multiple factors such as industry, deal size, geo-location, lead score, product interest etc. Complex routing of this nature can be best achieved using custom plugins. Something our team excel at!\n"
+        },
+        {
+          "label": "How long does a typical Dynamics implementation take?",
+          "content": "It varies significantly based on scope. Simple implementations with out-of-the-box features (team sites, document libraries, basic workflows) can be deployed in weeks. Complex Enterprise solutions requiring custom development, legacy system integration, data migration and other factors can result in a project taking several months. During your initial meeting, we'll discuss your requirements and provide a realistic timeline. Our approach is transparent; we'll tell you exactly what's involved and how long each phase will take.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "Our sales manager and a Dynamics consultant will meet with you to understand your business requirements and current challenges. We'll discuss whats working and you want replicated in the solution vs what pain points need to be addressed and resolved.\n\nThen we'll assess whether Dynamics is the right fit and provide honest recommendations. Many common business needs (Sales Pipeline, Customer Account Information, Approval Workflows) can be handled with ease using Dynamics out-of-the-box features. For more complex scenarios, we'll explain how custom development can solve your specific  Dynamics challenges.\n"
+        },
+        {
+          "label": "Should we choose Dynamics in the cloud or an on-premises solution?",
+          "content": "Microsoft has clearly aligned their Dynamics platform to be a cloud based service. Whilst Microsoft does still support on-premise versions of the solution, its not their priority. All new features being rolled out to the Dynamics platform are cloud first, often not being available for the legacy on-premise version.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/SharePoint-Related.mdx"
+        }
+      ],
+      "isStacked": false,
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
+        "bleed": true
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your Dynamics project",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
