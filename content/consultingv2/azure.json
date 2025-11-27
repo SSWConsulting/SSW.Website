@@ -173,8 +173,9 @@
       ],
       "categoryGroup": [
         {
-          "categoryName": "Lorem",
+          "categoryName": "Azure Benifits",
           "cardGuidList": {
+            "guid": "iqa2p",
             "cardGuidList": []
           }
         },
@@ -358,15 +359,6 @@
         }
       ],
       "_template": "cardCarousel"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
     },
     {
       "heading": "Lorem Ipsum",
