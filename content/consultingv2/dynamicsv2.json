@@ -400,16 +400,6 @@
         {
           "guid": "uubz3r",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Dynamics 365 Human Resources",
           "description": "Create a workplace where people and business thrive.",
@@ -428,7 +418,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
