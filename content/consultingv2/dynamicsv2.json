@@ -386,6 +386,26 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "17f1i",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Dynamics 365 Project Operations",
+          "description": "Connect your project-centric business in one application.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "_template": "cardCarousel"
