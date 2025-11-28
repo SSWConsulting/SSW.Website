@@ -13,7 +13,7 @@
       },
       "heading": "Implement  **Dynamics 365** to better service you and your customers",
       "isH1": true,
-      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW’s Dynamics experts tailor the platform to fit your unique business, not force your business to fit Dynamics. Allowing your sales, service, and marketing teams to work together.\n",
+      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW’s Dynamics experts tailor the platform to fit your unique business, not force your business to fit Dynamics, allowing your sales, service, and marketing teams to work together.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -84,18 +84,18 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Why Dynamics 365 configuration is critical to organisational success",
+      "heading": "Why Dynamics 365 configuration is critical to your success",
       "isH1": false,
-      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisations is as unique as fingerprints! Our Dynamics 365 experts understand this and tailor your environment to match how you work. Ensuring your sales processes and customer journeys reflect how you work.\n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
+      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisation is as unique as a fingerprint! Our Dynamics 365 experts understand this and tailor your environment to match how you work. This ensures your sales processes and customer journeys reflect how you work.\n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Workflow Automation",
+            "heading": "Workflow automation",
             "description": "Automate repetitive workflows so your teams can focus on meaningful work. By automating tasks, approvals, and handovers, Dynamics reduces manual effort, removes bottlenecks and ensures every step of your process happens consistently. "
           },
           {
-            "heading": "Capture Key User Information with a user friendly UI",
+            "heading": "Capture information with a user friendly UI",
             "description": "Capture all essential customer information through a clean, intuitive interface. Our experts can help customise your solution. Users can enter the right data quickly, ensuring teams record accurate and complete details."
           }
         ]
