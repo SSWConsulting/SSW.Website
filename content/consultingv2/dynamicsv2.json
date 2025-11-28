@@ -305,6 +305,9 @@
       "technologyGroups": [
         {
           "technologyGroup": "content/v2Technologies/groups/SharePoint-Related.mdx"
+        },
+        {
+          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
         }
       ],
       "isStacked": false,
