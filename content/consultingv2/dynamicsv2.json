@@ -356,6 +356,16 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "ucylqs",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Supply Chain Management",
+          "description": "Use the flexible, collaborative, connected platform powered by Copilot to better navigate disruption.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
         }
       ],
       "_template": "cardCarousel"
