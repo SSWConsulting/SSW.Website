@@ -366,6 +366,26 @@
           "embeddedButton": {
             "buttonText": "Lorem"
           }
+        },
+        {
+          "guid": "xzxyga",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Dynamics 365 Finance",
+          "description": "Maximize financial visibility and profitability.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "_template": "cardCarousel"
