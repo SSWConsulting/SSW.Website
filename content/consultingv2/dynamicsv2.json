@@ -135,25 +135,16 @@
       "heading": "Microsoft Dynamics 365 & Power Platform working together",
       "isH1": false,
       "description": "",
+      "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
             "heading": "Shepherd Centre",
             "description": "Software solution developed by SSW is helping deaf kids at the Shepherd Centre. Watch the Case Study Video:"
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
           }
         ]
       },
-      "buttons": [
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "_template": "imageTextBlock"
     },
     {
