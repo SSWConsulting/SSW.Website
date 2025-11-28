@@ -145,6 +145,10 @@
           }
         ]
       },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "youtubeUrl": "https://youtu.be/g4_MnAZJpxg"
+      },
       "_template": "imageTextBlock"
     },
     {
