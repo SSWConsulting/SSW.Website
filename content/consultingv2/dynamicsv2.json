@@ -11,9 +11,9 @@
       "topLabel": {
         "labelText": "18+ years delivering Dynamics solutions"
       },
-      "heading": "Customise or Deploy  **Dynamics 365** To better service you and your customers!",
+      "heading": "Implement  **Dynamics 365** to better service you and your customers!",
       "isH1": true,
-      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW’s Dynamics experts tailor the platform to fit your unique business, not force your business to fit Dynamics. We can help drive Dynamics value, so your sales, service, and marketing teams can work as a team.\n",
+      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW’s Dynamics experts tailor the platform to fit your unique business, not force your business to fit Dynamics. Allowing your sales, service, and marketing teams to work together.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -86,24 +86,24 @@
       },
       "heading": "Why Dynamics 365 configuration is critical to organisational success",
       "isH1": false,
-      "description": "Many businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their real processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly with data quality following suit.\n\nWe shape Dynamics 365 around your business as we understand each organisations is as unique as fingerprints! We tailor the environment to match your sales cycle, your service model and help map your specific customer journey. The end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
+      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisations is as unique as fingerprints! Our Dynamics 365 experts understand this and tailor your environment to match how you work. Ensuring your sales processes and customer journeys reflect how you work.\n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
             "heading": "Workflow Automation",
-            "description": "Automate repetitive workflows so your teams can focus on meaningful work. By automating tasks, approvals, and handovers, Dynamics reduces manual effort, removes bottlenecks and ensures every step of your process happens consistently. Automation means smoother operations across sales, service, and other key teams within your organisation."
+            "description": "Automate repetitive workflows so your teams can focus on meaningful work. By automating tasks, approvals, and handovers, Dynamics reduces manual effort, removes bottlenecks and ensures every step of your process happens consistently. "
           },
           {
             "heading": "Capture Key User Information with a user friendly UI",
-            "description": "Capture all essential customer information through a clean, intuitive interface. Our Dynamics experts can help customise your overall Dynamics UI design.  Users can enter the right data quickly without feeling overwhelmed. This ensures teams record accurate, complete details while still enjoying a simple, user-friendly experience that drives adoption and better insights."
+            "description": "Capture all essential customer information through a clean, intuitive interface. Our experts can help customise your solution. Users can enter the right data quickly, ensuring teams record accurate and complete details."
           }
         ]
       },
       "buttons": [
         {
-          "buttonText": "Our Rules around Dynamics",
-          "buttonLink": "https://www.ssw.com.au/rules/search/?keyword=dynamics",
+          "buttonText": "Check out our Rules to better Dynamics 365",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-crm/",
           "colour": 1
         }
       ],
@@ -115,6 +115,45 @@
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Left",
+        "youtubeUrl": "https://www.youtube.com/watch?v=PV9w_rFsL1E"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "Microsoft Dynamics 365 & Power Platform working together",
+      "isH1": false,
+      "description": "",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Shepherd Centre",
+            "description": "Software solution developed by SSW is helping deaf kids at the Shepherd Centre. Watch the Case Study Video:"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Read the full Case Study here",
+          "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre"
+        }
+      ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
         "youtubeUrl": "https://youtu.be/g4_MnAZJpxg"
       },
       "_template": "imageTextBlock"
