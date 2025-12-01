@@ -166,7 +166,7 @@
           "altText": "Team Collaboration Sites",
           "icon": "BiCollapse",
           "heading": "A Single Source of Truth",
-          "description": "Dynamics centralises all customer interactions, communications, sales activity, cases, and history in one place. This gives your team complete visibility and reduces duplication, confusion, and lost information.",
+          "description": "Dynamics centralizes all customer interactions, communications, sales activity, cases, and history in one place. This gives your team complete visibility and reduces duplication, confusion, and lost information.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -207,7 +207,7 @@
       "_template": "spacer"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
