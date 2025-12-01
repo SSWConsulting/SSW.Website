@@ -151,6 +151,9 @@
           "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre"
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Right",
