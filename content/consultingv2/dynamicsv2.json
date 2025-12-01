@@ -318,7 +318,7 @@
         },
         {
           "guid": "ty4yv",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Customer Insights",
           "description": "Create engaging experiences by uniting customer data with real-time journeys and Microsoft Copilot in Customer Insights.",
@@ -328,7 +328,7 @@
         },
         {
           "guid": "1qycmm",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Customer Service",
           "description": "Empower service representatives to resolve issues quickly using generative AI and automation.",
@@ -338,7 +338,7 @@
         },
         {
           "guid": "4ugt2e",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Contact Center",
           "description": "Transform customer engagement across digital and voice channels with an all-in-one solution.",
@@ -348,7 +348,7 @@
         },
         {
           "guid": "v4r59ym",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Field Service",
           "description": "Transform your service operations, deliver exceptional service, and improve customer experiences.",
@@ -358,7 +358,7 @@
         },
         {
           "guid": "ucylqs",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Supply Chain Management",
           "description": "Use the flexible, collaborative, connected platform powered by Copilot to better navigate disruption.",
@@ -368,7 +368,7 @@
         },
         {
           "guid": "xzxyga",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Finance",
           "description": "Maximize financial visibility and profitability.",
@@ -378,7 +378,7 @@
         },
         {
           "guid": "17f1i",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Project Operations",
           "description": "Connect your project-centric business in one application.",
@@ -388,7 +388,7 @@
         },
         {
           "guid": "uubz3r",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Human Resources",
           "description": "Create a workplace where people and business thrive.",
@@ -398,7 +398,7 @@
         },
         {
           "guid": "jbktlp",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Commerce",
           "description": "Deliver unified, personalized, and seamless buying experiences for customers and partners.",
