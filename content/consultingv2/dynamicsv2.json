@@ -9,11 +9,11 @@
     },
     {
       "topLabel": {
-        "labelText": "18+ years delivering Dynamics solutions"
+        "labelText": "20+ years delivering Dynamics solutions"
       },
-      "heading": "Implement  **Dynamics 365** to better service you and your customers",
+      "heading": "Get **Dynamics 365** working the way you need",
       "isH1": true,
-      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW’s Dynamics experts tailor the platform to fit your unique business, not force your business to fit Dynamics, allowing your sales, service, and marketing teams to work together.\n",
+      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW fixes that! We tailor and connect Dynamics 365 so it fits your business, not the other way around, bringing your sales, service, and marketing teams onto the same page.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -86,7 +86,7 @@
       },
       "heading": "Why Dynamics 365 configuration is critical to your success",
       "isH1": false,
-      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisation is as unique as a fingerprint! We understand this and tailor your environment to match how you work. This ensures your sales processes and customer journeys reflect how you work.\n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
+      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisation is as unique as a fingerprint! We understand this and tailor your environment to match how you work. \n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -96,7 +96,7 @@
           },
           {
             "heading": "Capture information with a user friendly UI",
-            "description": "Capture all essential customer information through a clean, intuitive interface. Our experts can help customise your solution. Users can enter the right data quickly, ensuring teams record accurate and complete details."
+            "description": "Capture all essential customer information through a clean, intuitive interface. We customize your solution so you can enter the right data quickly, ensuring teams record accurate and complete details."
           }
         ]
       },
@@ -130,20 +130,14 @@
     },
     {
       "topLabel": {
-        "labelText": "Case Study"
+        "labelText": "Case Study - The Shepherd Centre"
       },
       "heading": "Microsoft Dynamics 365 & Power Platform working together",
       "isH1": false,
-      "description": "",
+      "description": "SSW redesigned and rebuilt The Shepherd Centre’s hearing assessment tools into a single cloud platform, integrated with Dynamics and Power Platform, so clinicians can access real-time data across the world.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "The Shepherd Centre",
-            "description": "The Software solution developed by SSW is helping deaf kids at The Shepherd Centre."
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
@@ -151,6 +145,9 @@
           "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre"
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Right",
@@ -169,7 +166,7 @@
           "altText": "Team Collaboration Sites",
           "icon": "BiCollapse",
           "heading": "A Single Source of Truth",
-          "description": "Dynamics centralises all customer interactions, communications, sales activity, cases, and history in one place. This gives your team complete visibility and reduces duplication, confusion, and lost information.",
+          "description": "Dynamics centralizes all customer interactions, communications, sales activity, cases, and history in one place. This gives your team complete visibility and reduces duplication, confusion, and lost information.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -210,7 +207,7 @@
       "_template": "spacer"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
       "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
@@ -321,7 +318,7 @@
           "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Customer Insights",
-          "description": "Create engaging experiences by uniting customer data with real-time journeys and Microsoft Copilot in Customer Insights.",
+          "description": "Improve your marketing by uniting customer data with real-time journeys and Microsoft Copilot in Customer Insights.",
           "embeddedButton": {
             "buttonText": ""
           }
