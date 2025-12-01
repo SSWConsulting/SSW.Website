@@ -11,9 +11,9 @@
       "topLabel": {
         "labelText": "18+ years delivering Dynamics solutions"
       },
-      "heading": "Implement  **Dynamics 365** to better service you and your customers!",
+      "heading": "Implement  **Dynamics 365** to better service you and your customers",
       "isH1": true,
-      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW’s Dynamics experts tailor the platform to fit your unique business, not force your business to fit Dynamics. Allowing your sales, service, and marketing teams to work together.\n",
+      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW’s Dynamics experts tailor the platform to fit your unique business, not force your business to fit Dynamics, allowing your sales, service, and marketing teams to work together.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -84,18 +84,18 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Why Dynamics 365 configuration is critical to organisational success",
+      "heading": "Why Dynamics 365 configuration is critical to your success",
       "isH1": false,
-      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisations is as unique as fingerprints! Our Dynamics 365 experts understand this and tailor your environment to match how you work. Ensuring your sales processes and customer journeys reflect how you work.\n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
+      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisation is as unique as a fingerprint! We understand this and tailor your environment to match how you work. This ensures your sales processes and customer journeys reflect how you work.\n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Workflow Automation",
+            "heading": "Workflow automation",
             "description": "Automate repetitive workflows so your teams can focus on meaningful work. By automating tasks, approvals, and handovers, Dynamics reduces manual effort, removes bottlenecks and ensures every step of your process happens consistently. "
           },
           {
-            "heading": "Capture Key User Information with a user friendly UI",
+            "heading": "Capture information with a user friendly UI",
             "description": "Capture all essential customer information through a clean, intuitive interface. Our experts can help customise your solution. Users can enter the right data quickly, ensuring teams record accurate and complete details."
           }
         ]
@@ -140,8 +140,8 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Shepherd Centre",
-            "description": "Software solution developed by SSW is helping deaf kids at the Shepherd Centre. Watch the Case Study Video:"
+            "heading": "The Shepherd Centre",
+            "description": "The Software solution developed by SSW is helping deaf kids at The Shepherd Centre."
           }
         ]
       },
@@ -302,18 +302,112 @@
       "_template": "accordionBlock"
     },
     {
-      "technologyGroups": [
+      "isStacked": false,
+      "heading": "Dynamics 365 Modules",
+      "isH1": false,
+      "body": "",
+      "cards": [
         {
-          "technologyGroup": "content/v2Technologies/groups/SharePoint-Related.mdx"
+          "guid": "23d0qf",
+          "altText": "",
+          "heading": "Dynamics 365 Sales",
+          "description": "Close more deals and increase seller efficiency with an AI-powered CRM solution.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "ty4yv",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Customer Insights",
+          "description": "Create engaging experiences by uniting customer data with real-time journeys and Microsoft Copilot in Customer Insights.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "1qycmm",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Customer Service",
+          "description": "Empower service representatives to resolve issues quickly using generative AI and automation.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "4ugt2e",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Contact Center",
+          "description": "Transform customer engagement across digital and voice channels with an all-in-one solution.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "v4r59ym",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Field Service",
+          "description": "Transform your service operations, deliver exceptional service, and improve customer experiences.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "ucylqs",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Supply Chain Management",
+          "description": "Use the flexible, collaborative, connected platform powered by Copilot to better navigate disruption.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "xzxyga",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Finance",
+          "description": "Maximize financial visibility and profitability.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "17f1i",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Project Operations",
+          "description": "Connect your project-centric business in one application.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "uubz3r",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Human Resources",
+          "description": "Create a workplace where people and business thrive.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "jbktlp",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Dynamics 365 Commerce",
+          "description": "Deliver unified, personalized, and seamless buying experiences for customers and partners.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
-      "isStacked": false,
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
-        "bleed": true
-      },
-      "_template": "technologyCardCarousel"
+      "_template": "cardCarousel"
     },
     {
       "topLabel": {
