@@ -378,7 +378,7 @@
         },
         {
           "guid": "17f1i",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Project Operations",
           "description": "Connect your project-centric business in one application.",
