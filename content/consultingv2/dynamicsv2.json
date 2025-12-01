@@ -110,7 +110,7 @@
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
-        "bleed": false
+        "bleed": true
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
