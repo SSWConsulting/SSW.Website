@@ -392,20 +392,6 @@
           "icon": "info",
           "heading": "Dynamics 365 Human Resources",
           "description": "Create a workplace where people and business thrive.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": ""
           }
