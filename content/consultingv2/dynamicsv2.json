@@ -134,16 +134,10 @@
       },
       "heading": "Microsoft Dynamics 365 & Power Platform working together",
       "isH1": false,
-      "description": "The Software solution developed by SSW is helping deaf kids at The Shepherd Centre.\n",
+      "description": "SSW redesigned and rebuilt The Shepherd Centre’s hearing assessment tools into a single cloud platform, integrated with Dynamics and Power Platform, so clinicians can access real-time data across the world.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "",
-            "description": ""
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
