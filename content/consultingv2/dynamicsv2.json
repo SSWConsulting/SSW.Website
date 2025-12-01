@@ -328,7 +328,7 @@
         },
         {
           "guid": "1qycmm",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "info",
           "heading": "Dynamics 365 Customer Service",
           "description": "Empower service representatives to resolve issues quickly using generative AI and automation.",
