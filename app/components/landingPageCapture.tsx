@@ -5,7 +5,8 @@ import { useEffect } from "react";
 import { useLocalStorage } from "usehooks-ts";
 
 const LandingPageCapture = () => {
-  const [_, setValue] = useLocalStorage(LOCAL_STORAGE_KEYS.LANDING_PAGE, null);
+  const setValue = useLocalStorage(LOCAL_STORAGE_KEYS.LANDING_PAGE, null)[1];
+
   useEffect(() => {
     const entries = window.performance.getEntriesByType("navigation");
     const entry = entries[0] as PerformanceNavigationTiming | undefined;
