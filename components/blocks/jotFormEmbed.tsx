@@ -1,11 +1,13 @@
 "use client";
 
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import Jotform from "react-jotform";
 import { twMerge } from "tailwind-merge";
 import { Template } from "tinacms";
+import { useLocalStorage } from "usehooks-ts";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
+import { LOCAL_STORAGE_KEYS } from "../util/constants";
 
 export interface JotFormEmbedProps extends PropsWithChildren {
   jotFormId: string;
@@ -27,6 +29,11 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
 
   if (!jotFormId) return <></>;
 
+  const [landingPage] = useLocalStorage<string>(
+    LOCAL_STORAGE_KEYS.LANDING_PAGE,
+    null
+  );
+
   return (
     <>
       <div
@@ -45,7 +52,12 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
         showCloseIcon={true}
         onClose={() => setOpen(false)}
       >
-        <Jotform src={`https://www.jotform.com/${jotFormId}`}></Jotform>
+        <Jotform
+          defaults={{
+            landingPage,
+          }}
+          src={`https://www.jotform.com/${jotFormId}`}
+        ></Jotform>
       </Popup>
     </>
   );
