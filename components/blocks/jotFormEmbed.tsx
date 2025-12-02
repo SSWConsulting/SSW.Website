@@ -1,6 +1,6 @@
 "use client";
 
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import Jotform from "react-jotform";
 import { twMerge } from "tailwind-merge";
 import { Template } from "tinacms";
@@ -27,12 +27,12 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
 }) => {
   const [open, setOpen] = useState(false);
 
-  if (!jotFormId) return <></>;
-
   const [landingPage] = useLocalStorage<string>(
     LOCAL_STORAGE_KEYS.LANDING_PAGE,
     null
   );
+
+  if (!jotFormId) return <></>;
 
   return (
     <>
