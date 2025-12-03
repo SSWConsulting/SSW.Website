@@ -28,7 +28,7 @@ const LandingPageCapture = () => {
 
   useEffect(() => {
     setValue(
-      `${PROD_BASE_URL}${langingPage.current}${landingPageParams.current === "" ? landingPageParams.current : `?${landingPageParams.current}`}`
+      `${PROD_BASE_URL}${langingPage.current}${landingPageParams.current === "" ? "" : `?${landingPageParams.current}`}`
     );
   }, [setValue, langingPage, landingPageParams]);
 
