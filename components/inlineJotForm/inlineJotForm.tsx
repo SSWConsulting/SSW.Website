@@ -1,6 +1,6 @@
 import Jotform from "react-jotform";
 import { type Template } from "tinacms";
-import { useLocalStorage } from "usehooks-ts";
+import { useSessionStorage } from "usehooks-ts";
 import { LOCAL_STORAGE_KEYS } from "../util/constants";
 
 export type InlineJotFormProps = {
@@ -10,7 +10,7 @@ export type InlineJotFormProps = {
 };
 
 export const InlineJotForm = (props: InlineJotFormProps) => {
-  const [landingPage] = useLocalStorage<string | null>(
+  const [landingPage] = useSessionStorage<string | null>(
     LOCAL_STORAGE_KEYS.LANDING_PAGE,
     null
   );
