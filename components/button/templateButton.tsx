@@ -33,9 +33,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       globals.forms[leadCaptureFormOption] || globals.forms[0];
     let jotFormLink = "https://www.jotform.com/";
 
-    const [landingPage] = useSessionStorage<string | null>(
+    const [landingPage] = useSessionStorage<string>(
       SESSION_STORAGE_KEYS.LANDING_PAGE,
-      null
+      ""
     );
 
     if (selectedFormId) {

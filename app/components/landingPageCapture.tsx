@@ -6,7 +6,7 @@ import {
 } from "@/components/util/constants";
 import { usePathname, useSearchParams } from "next/navigation";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useSessionStorage } from "usehooks-ts";
 
 /**
@@ -18,24 +18,19 @@ import { useSessionStorage } from "usehooks-ts";
  * - Runs once on mount; does not update on client-side navigations.
  */
 const LandingPageCapture = () => {
-  const setValue = useSessionStorage<string | null>(
+  const setValue = useSessionStorage<string>(
     SESSION_STORAGE_KEYS.LANDING_PAGE,
-    null
+    ""
   )[1];
-
-  const params = useSearchParams();
   const pathname = usePathname();
-
-  const landingPageParams = useRef(params.toString());
-  const landingPage = useRef(pathname);
+  const search = useSearchParams();
 
   useEffect(() => {
-    setValue(
-      `${PROD_BASE_URL}${landingPage.current}${landingPageParams.current === "" ? "" : `?${landingPageParams.current}`}`
-    );
-  }, [setValue, landingPage, landingPageParams]);
+    const qs = search?.toString();
+    setValue(`${PROD_BASE_URL}${pathname}${qs ? `?${qs}` : ""}`);
+  }, [pathname, search, setValue]);
 
-  return <></>;
+  return null;
 };
 
 export default LandingPageCapture;

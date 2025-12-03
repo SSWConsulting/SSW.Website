@@ -26,11 +26,10 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
   children,
 }) => {
   const [open, setOpen] = useState(false);
-
   // The landing page is added in session storage from the layout
-  const [landingPage] = useSessionStorage<string | null>(
+  const [landingPage] = useSessionStorage<string>(
     SESSION_STORAGE_KEYS.LANDING_PAGE,
-    null
+    ""
   );
 
   if (!jotFormId) return <></>;

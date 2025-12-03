@@ -10,9 +10,9 @@ export type InlineJotFormProps = {
 };
 
 export const InlineJotForm = (props: InlineJotFormProps) => {
-  const [landingPage] = useSessionStorage<string | null>(
+  const [landingPage] = useSessionStorage<string>(
     SESSION_STORAGE_KEYS.LANDING_PAGE,
-    null
+    ""
   );
   return (
     <>
