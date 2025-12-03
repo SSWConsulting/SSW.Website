@@ -3,7 +3,7 @@
 //Page Types for BreadCrumbs data
 export const BASE_URL = "/";
 
-export enum LOCAL_STORAGE_KEYS {
+export enum SESSION_STORAGE_KEYS {
   LANDING_PAGE = "LANDING_PAGE",
 }
 
