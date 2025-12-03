@@ -6,7 +6,7 @@ import { tinaField } from "tinacms/dist/react";
 import { useSessionStorage } from "usehooks-ts";
 import globals from "../../content/global/index.json";
 import Popup from "../popup/popup";
-import { LOCAL_STORAGE_KEYS } from "../util/constants";
+import { SESSION_STORAGE_KEYS } from "../util/constants";
 import RippleButton, { ButtonTinaFields, ColorVariant } from "./rippleButtonV2";
 
 enum ButtonColors {
@@ -34,7 +34,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     let jotFormLink = "https://www.jotform.com/";
 
     const [landingPage] = useSessionStorage<string | null>(
-      LOCAL_STORAGE_KEYS.LANDING_PAGE,
+      SESSION_STORAGE_KEYS.LANDING_PAGE,
       null
     );
 

@@ -1,6 +1,9 @@
 "use client";
 
-import { LOCAL_STORAGE_KEYS, PROD_BASE_URL } from "@/components/util/constants";
+import {
+  PROD_BASE_URL,
+  SESSION_STORAGE_KEYS,
+} from "@/components/util/constants";
 import { usePathname, useSearchParams } from "next/navigation";
 
 import { useEffect, useRef } from "react";
@@ -16,7 +19,7 @@ import { useSessionStorage } from "usehooks-ts";
  */
 const LandingPageCapture = () => {
   const setValue = useSessionStorage<string | null>(
-    LOCAL_STORAGE_KEYS.LANDING_PAGE,
+    SESSION_STORAGE_KEYS.LANDING_PAGE,
     null
   )[1];
 

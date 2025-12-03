@@ -7,7 +7,7 @@ import { Template } from "tinacms";
 import { useSessionStorage } from "usehooks-ts";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
-import { LOCAL_STORAGE_KEYS as SESSION_STORAGE } from "../util/constants";
+import { SESSION_STORAGE_KEYS } from "../util/constants";
 
 export interface JotFormEmbedProps extends PropsWithChildren {
   jotFormId: string;
@@ -29,7 +29,7 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
 
   // The landing page is added in session storage from the layout
   const [landingPage] = useSessionStorage<string | null>(
-    SESSION_STORAGE.LANDING_PAGE,
+    SESSION_STORAGE_KEYS.LANDING_PAGE,
     null
   );
 
