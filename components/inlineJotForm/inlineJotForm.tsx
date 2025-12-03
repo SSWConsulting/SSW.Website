@@ -1,5 +1,7 @@
 import Jotform from "react-jotform";
-import type { Template } from "tinacms";
+import { type Template } from "tinacms";
+import { useLocalStorage } from "usehooks-ts";
+import { LOCAL_STORAGE_KEYS } from "../util/constants";
 
 export type InlineJotFormProps = {
   title?: string;
@@ -8,10 +10,17 @@ export type InlineJotFormProps = {
 };
 
 export const InlineJotForm = (props: InlineJotFormProps) => {
+  const [landingPage] = useLocalStorage<string | null>(
+    LOCAL_STORAGE_KEYS.LANDING_PAGE,
+    null
+  );
   return (
     <>
       {props.title && <h2 className="text-center">{props.title}</h2>}
       <Jotform
+        defaults={{
+          landingPage,
+        }}
         className={props.additionalClasses}
         src={`https://www.jotform.com/${props.jotFormId}`}
       />
