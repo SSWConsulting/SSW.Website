@@ -1,21 +1,33 @@
 "use client";
 
-import { LOCAL_STORAGE_KEYS } from "@/components/util/constants";
-import { useEffect } from "react";
-import { useLocalStorage } from "usehooks-ts";
+import { LOCAL_STORAGE_KEYS, PROD_BASE_URL } from "@/components/util/constants";
+import { usePathname } from "next/navigation";
 
+import { useEffect, useRef } from "react";
+import { useSessionStorage } from "usehooks-ts";
+
+/**
+ * LandingPageCapture
+ * Stores the initial landing page URL (origin + pathname) in sessionStorage.
+ *
+ * Notes:
+ * - Uses NEXT_PUBLIC_SITE_URL (PROD_BASE_URL) for origin (no window usage).
+ * - Runs once on mount; does not update on client-side navigations.
+ */
 const LandingPageCapture = () => {
-  const setValue = useLocalStorage(LOCAL_STORAGE_KEYS.LANDING_PAGE, null)[1];
+  const setValue = useSessionStorage<string | null>(
+    LOCAL_STORAGE_KEYS.LANDING_PAGE,
+    null
+  )[1];
+
+  const pathname = usePathname();
+
+  const langingPage = useRef(pathname);
 
   useEffect(() => {
-    const entries = window.performance.getEntriesByType("navigation");
-    const entry = entries[0] as PerformanceNavigationTiming | undefined;
+    setValue(`${PROD_BASE_URL}${langingPage.current}`);
+  }, [setValue, langingPage]);
 
-    // prevent local storage from being reset during a refresh
-    if (entry?.type !== "reload") {
-      setValue(window.location.href);
-    }
-  }, [setValue]);
   return <></>;
 };
 

@@ -3,9 +3,11 @@
 //Page Types for BreadCrumbs data
 export const BASE_URL = "/";
 
-export const LOCAL_STORAGE_KEYS = {
-  LANDING_PAGE: "LANDING_PAGE",
-};
+export enum LOCAL_STORAGE_KEYS {
+  LANDING_PAGE = "LANDING_PAGE",
+}
+
+export const PROD_BASE_URL = "https://www.ssw.com.au";
 
 export const AUSTRALIA = "Australia";
 //SSW Form Countries List
