@@ -24,13 +24,13 @@ const LandingPageCapture = () => {
   const pathname = usePathname();
 
   const landingPageParams = useRef(params.toString());
-  const langingPage = useRef(pathname);
+  const landingPage = useRef(pathname);
 
   useEffect(() => {
     setValue(
-      `${PROD_BASE_URL}${langingPage.current}${landingPageParams.current === "" ? landingPageParams.current : `?${landingPageParams.current}`}`
+      `${PROD_BASE_URL}${landingPage.current}${landingPageParams.current === "" ? landingPageParams.current : `?${landingPageParams.current}`}`
     );
-  }, [setValue, langingPage, landingPageParams]);
+  }, [setValue, landingPage, landingPageParams]);
 
   return <></>;
 };
