@@ -1,7 +1,7 @@
 "use client";
 
 import { LOCAL_STORAGE_KEYS, PROD_BASE_URL } from "@/components/util/constants";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import { useEffect, useRef } from "react";
 import { useSessionStorage } from "usehooks-ts";
@@ -20,13 +20,17 @@ const LandingPageCapture = () => {
     null
   )[1];
 
+  const params = useSearchParams();
   const pathname = usePathname();
 
+  const landingPageParams = useRef(params.toString());
   const langingPage = useRef(pathname);
 
   useEffect(() => {
-    setValue(`${PROD_BASE_URL}${langingPage.current}`);
-  }, [setValue, langingPage]);
+    setValue(
+      `${PROD_BASE_URL}${langingPage.current}${landingPageParams.current === "" ? landingPageParams.current : `?${landingPageParams.current}`}`
+    );
+  }, [setValue, langingPage, landingPageParams]);
 
   return <></>;
 };
