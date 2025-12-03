@@ -8,7 +8,7 @@ import { useSessionStorage } from "usehooks-ts";
 
 /**
  * LandingPageCapture
- * Stores the initial landing page URL (origin + pathname) in sessionStorage.
+ * Stores the initial page URL (origin + pathname) that the user lands on (i.e https://ssw.com.au/ )in sessionStorage.
  *
  * Notes:
  * - Uses NEXT_PUBLIC_SITE_URL (PROD_BASE_URL) for origin (no window usage).
