@@ -6,7 +6,7 @@ import {
 } from "@/components/util/constants";
 import { usePathname, useSearchParams } from "next/navigation";
 
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { useSessionStorage } from "usehooks-ts";
 
 /**
@@ -17,7 +17,7 @@ import { useSessionStorage } from "usehooks-ts";
  * - Uses NEXT_PUBLIC_SITE_URL (PROD_BASE_URL) for origin (no window usage).
  * - Runs once on mount; does not update on client-side navigations.
  */
-const LandingPageCapture = () => {
+const LandingPageCaptureContent = () => {
   const setValue = useSessionStorage<string>(
     SESSION_STORAGE_KEYS.LANDING_PAGE,
     ""
@@ -31,6 +31,14 @@ const LandingPageCapture = () => {
   }, [pathname, search, setValue]);
 
   return null;
+};
+
+const LandingPageCapture = () => {
+  return (
+    <Suspense fallback={null}>
+      <LandingPageCaptureContent />
+    </Suspense>
+  );
 };
 
 export default LandingPageCapture;

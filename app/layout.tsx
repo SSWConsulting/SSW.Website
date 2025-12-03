@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import "styles.css";
 import client from "../tina/__generated__/client";
-import LandingPageCaptureWrapper from "./components/landingPageCaptureWrapper";
+import LandingPageCapture from "./components/landing-page-capture";
 import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
 import { WebVitals } from "./components/web-vitals";
@@ -75,7 +75,7 @@ export default async function RootLayout({
         <QueryProvider>
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
-          <LandingPageCaptureWrapper />
+          <LandingPageCapture />
           <PageLayout
             phishingBanner={
               bannerData?.data?.phishingBanner && (
