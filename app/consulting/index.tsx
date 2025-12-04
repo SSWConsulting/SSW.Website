@@ -27,7 +27,11 @@ export default function ConsultingIndex({ tinaProps }) {
         const mappedPage = {
           url:
             p.externalUrl ||
-            p.page.id.replace("content", "").replace(".mdx", ""),
+            p.page.id
+              .replace("content/consultingv2", "/consulting")
+              .replace("content", "")
+              .replace(".mdx", "")
+              .replace(".json", ""),
           title: p.title,
           description: p.description,
           logo: p.logo,
