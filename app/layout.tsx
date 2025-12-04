@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import "styles.css";
 import client from "../tina/__generated__/client";
-import LandingPageCapture from "./components/landingPageCapture";
+import LandingPageCapture from "./components/landing-page-capture";
 import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
 import { WebVitals } from "./components/web-vitals";
@@ -96,6 +96,7 @@ export default async function RootLayout({
             </AppInsightsProvider>
             {/* </Theme> */}
           </PageLayout>
+
           <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
           <ChatBaseBot />
         </QueryProvider>

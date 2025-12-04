@@ -3,10 +3,11 @@ import classNames from "classnames";
 import React, { useState } from "react";
 import Jotform from "react-jotform";
 import { tinaField } from "tinacms/dist/react";
-import Popup from "../popup/popup";
-import RippleButton, { ButtonTinaFields, ColorVariant } from "./rippleButtonV2";
-
+import { useSessionStorage } from "usehooks-ts";
 import globals from "../../content/global/index.json";
+import Popup from "../popup/popup";
+import { SESSION_STORAGE_KEYS } from "../util/constants";
+import RippleButton, { ButtonTinaFields, ColorVariant } from "./rippleButtonV2";
 
 enum ButtonColors {
   Red = 0,
@@ -31,6 +32,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const selectedFormId =
       globals.forms[leadCaptureFormOption] || globals.forms[0];
     let jotFormLink = "https://www.jotform.com/";
+
+    const [landingPage] = useSessionStorage<string>(
+      SESSION_STORAGE_KEYS.LANDING_PAGE,
+      ""
+    );
 
     if (selectedFormId) {
       jotFormLink += selectedFormId;
@@ -67,7 +73,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             showCloseIcon={true}
             onClose={() => setOpen(false)}
           >
-            <Jotform src={jotFormLink}></Jotform>
+            <Jotform
+              defaults={{
+                landingPage,
+              }}
+              src={jotFormLink}
+            ></Jotform>
           </Popup>
         )}
       </>
