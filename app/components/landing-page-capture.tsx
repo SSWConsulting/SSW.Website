@@ -30,7 +30,9 @@ const LandingPageCaptureContent = () => {
 
   useEffect(() => {
     const qs = initialParams.current.toString();
-    setValue(`${PROD_BASE_URL}${pathname}${qs === "" ? "" : `?${qs}`}`);
+    setValue(
+      `${PROD_BASE_URL}${initialPath.current}${qs === "" ? "" : `?${qs}`}`
+    );
   }, [initialParams, initialPath, setValue]);
 
   return null;
