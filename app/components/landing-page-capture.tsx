@@ -6,7 +6,7 @@ import {
 } from "@/components/util/constants";
 import { usePathname, useSearchParams } from "next/navigation";
 
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { useSessionStorage } from "usehooks-ts";
 
 /**
@@ -25,10 +25,13 @@ const LandingPageCaptureContent = () => {
   const pathname = usePathname();
   const search = useSearchParams();
 
+  const initialPath = useRef(pathname);
+  const initialParams = useRef(search);
+
   useEffect(() => {
-    const qs = search?.toString();
-    setValue(`${PROD_BASE_URL}${pathname}${qs ? `?${qs}` : ""}`);
-  }, [pathname, search, setValue]);
+    const qs = initialParams.current.toString();
+    setValue(`${PROD_BASE_URL}${pathname}${qs === "" ? "" : `?${qs}`}`);
+  }, [initialParams, initialPath, setValue]);
 
   return null;
 };
