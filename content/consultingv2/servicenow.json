@@ -306,8 +306,8 @@
           "content": "Yes. We specialize in complex migrations. We don't just 'lift and shift'; we map your legacy processes to modern ServiceNow workflows (CSM, ITSM, HRSD). We use ETL tools and robust testing frameworks to ensure zero data loss during the transition.\n"
         },
         {
-          "label": "What technologies does SSW primarily use for development?",
-          "content": "Our core expertise lies in Microsoft technologies, particularly .NET and Azure cloud services. We are also proficient leaders in popular front-end frameworks like Angular and React. However, we prioritize using the most effective technology for the job, ensuring solutions are scalable, testable, and extensible, often utilizing Clean Architecture principles.\n"
+          "label": "What technologies does SSW use alongside ServiceNow?",
+          "content": "We integrate ServiceNow with Microsoft 365, Azure, and other enterprise systems. Our consultants prioritise the most effective tools to ensure scalable, testable, and maintainable solutions.\n"
         },
         {
           "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
