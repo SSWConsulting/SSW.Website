@@ -17,9 +17,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Complex .NET & Azure Challenges? **Solved**",
+      "heading": "ServiceNow Implementation Challenges? **Solved**",
       "isH1": true,
-      "description": "Get mission-critical custom web applications built by expert Australian engineers. Predictable results, quality code.\n",
+      "description": "Transform your enterprise workflows with expert ServiceNow implementation, integration, and migration services. Powered by 30 years of enterprise software expertise.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -107,7 +107,7 @@
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
-          "heading": "Reduce Risk on Complex Projects",
+          "heading": "Reduce Risk on Enterprise Projects ",
           "description": "Our proven Agile (Scrum) process means clear communication, quality code, and reliable project delivery. No nasty surprises.",
           "embeddedButton": {
             "buttonText": "Rules to Better Scrum",
@@ -118,8 +118,8 @@
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidMedal",
-          "heading": "Solve Challenges Off-the-Shelf Software Can't",
-          "description": "We build the custom web apps and APIs you actually need when standard software just doesn't cut it.",
+          "heading": "Fix Broken Workflows and Reduce Manual Work ",
+          "description": "We optimise and automate your ServiceNow platform so teams spend less time on admin and more time delivering value.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -298,12 +298,12 @@
       "body": "",
       "accordionItems": [
         {
-          "label": "How does SSW ensure the quality and success of a software project?",
-          "content": "Quality and success are built into our process. We use:\n\n* [Clean Architecture](https://github.com/SSWConsulting/SSW.CleanArchitecture): Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
+          "label": "What ServiceNow solutions does SSW implement?",
+          "content": "SSW provides implementation, integration, and migration services across the full ServiceNow platform, including:\n\n* IT Service Management (ITSM)\n* IT Operations Management (ITOM)\n* Customer Service Management (CSM)\n* HR Service Delivery (HRSD)\n* Security Operations\n* IT Asset Management\n\nWe focus on ensuring your ServiceNow instance integrates seamlessly with your existing Microsoft stack and business processes.\n"
         },
         {
-          "label": "What types of web apps does SSW specialize in building?",
-          "content": "SSW specializes in building complex, custom web applications and APIs from the ground up. This includes CRM systems, ERP systems, line-of-business applications, customer portals, intranets, and mobile applications. We thrive on challenging projects that push the boundaries of technology\n"
+          "label": "Can you migrate us from BMC Remedy/Jira/Legacy Systems?",
+          "content": "Yes. We specialize in complex migrations. We don't just 'lift and shift'; we map your legacy processes to modern ServiceNow workflows (CSM, ITSM, HRSD). We use ETL tools and robust testing frameworks to ensure zero data loss during the transition.\n"
         },
         {
           "label": "What technologies does SSW primarily use for development?",
