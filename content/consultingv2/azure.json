@@ -1,0 +1,636 @@
+{
+  "seo": {
+    "title": "Azure consultants — landing zones, migration & DevOps | SSW",
+    "description": "Azure experts for landing zones, migration, modern apps, DevOps, security, and FinOps. Fast wins, secure by default. ",
+    "canonical": "https://www.ssw.com.au/consulting/azure",
+    "showBreadcrumb": true,
+    "images": [
+      {
+        "url": "/images/ssw-default-og.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "SSW Consulting - Enterprise Software Development"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "Azure consultants — landing zones, migration & DevOps | SSW",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "From quick assessments to secure, scalable platforms — **we make Azure work for you.**",
+      "isH1": false,
+      "description": "Azure can be complex. We keep it simple and outcome-driven. Our consultants analyse your environment and deliver practical improvements that boost reliability, security, and speed while keeping costs under control.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Built for real-world cloud teams",
+            "description": "From strategy to hands-on delivery, we help you get Azure right the first time.",
+            "icon": "BiAnalyse"
+          },
+          {
+            "heading": "Secure, scalable, and cost-efficient",
+            "description": "Get guidance that improves reliability, strengthens security, and cuts unnecessary spend.",
+            "icon": "BiShieldAlt2"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book an Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "imageSource": "/images/ssw-web/hero/Generated%20Image%20November%2007,%202025%20-%202_22PM.png",
+        "imageHeight": 768,
+        "imageWidth": 1344,
+        "altText": "Meeting with an Azure Solution Architect"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png"
+      },
+      "heading": "Trusted by",
+      "tabletTextAlignment": "Center",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
+        },
+        {
+          "logo": "/images/ssw-web/logos/aus-payroll-logo.png",
+          "altText": "Australian Payroll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "CommBank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/ASF-Transparent.png",
+          "altText": "ASF"
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Planning a move to Azure? Start with a proven **migration roadmap.**",
+      "isH1": false,
+      "description": "Azure can feel complex, but it doesn’t have to be. Our consultants review your environment, identify quick wins, and deliver secure, scalable cloud solutions that reduce cost and improve performance.\n\nWhether you’re migrating, modernising, or tightening security, we give you a clear path forward — and ship value every sprint.\n",
+      "tabletTextAlignment": "Center",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Practical advice, proven results",
+            "description": "We analyse your environment and give you a clear plan with fast, low-risk wins.",
+            "icon": "BiAtom"
+          },
+          {
+            "heading": "Control your costs",
+            "description": "FinOps guidance that keeps your Azure bill predictable and transparent.",
+            "icon": "BiDollarCircle"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": "Rules to better Azure ",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure/",
+          "icon": "BiSolidCloud",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "youtubeUrl": "https://youtu.be/Ai2Xv1jq3_s"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Power your business with Azure done right.",
+      "isH1": false,
+      "body": "Get a clear roadmap to improve performance, tighten security, and reduce running costs — whether you’re migrating, modernizing, or scaling.",
+      "tabletTextAlignment": "Center",
+      "buttons": [
+        {
+          "buttonText": "Book an Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "Azure Benifits",
+          "cardGuidList": {
+            "guid": "iqa2p",
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Dolor",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Lorem Ipsum",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "accordionItems": [
+        {
+          "label": "Lorem",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "accordionBlock"
+    },
+    {
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "categoryGroup": [
+        {
+          "categoryName": "Lorem",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Dolor",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Lorem Ipsum"
+      },
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
