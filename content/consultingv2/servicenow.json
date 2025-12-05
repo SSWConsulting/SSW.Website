@@ -128,11 +128,11 @@
           "guid": "5q8kz",
           "altText": "Lorem Ipsum",
           "icon": "BiLogoMicrosoft",
-          "heading": "Elite Microsoft Stack Expertise",
+          "heading": "Deep Microsoft Stack Expertise",
           "description": "Connect ServiceNow with your Microsoft ecosystem: Azure, Microsoft 365, Teams, Power Platform, and more. We make your tools work together.",
           "embeddedButton": {
-            "buttonText": "SSW People",
-            "buttonLink": "https://www.ssw.com.au/people/"
+            "buttonText": "",
+            "buttonLink": ""
           }
         }
       ],
@@ -293,7 +293,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Talk to us about your **ServiceNow Project today**",
+      "heading": "Talk to us about your **ServiceNow** Project today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
