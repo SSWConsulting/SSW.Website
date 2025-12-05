@@ -677,6 +677,11 @@
               "tag": "content/consulting/tag/consulting.json"
             }
           ]
+        },
+        {
+          "title": "Tender Portals",
+          "description": "tenderportals",
+          "page": "content/consultingv2/TenderPortals.json"
         }
       ]
     },
