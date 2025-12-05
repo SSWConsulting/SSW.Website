@@ -144,68 +144,6 @@
       "_template": "cardCarousel"
     },
     {
-      "topLabel": {
-        "labelText": "Case Study"
-      },
-      "heading": "Transforming Noise Impact Management with KNOWnoise",
-      "isH1": false,
-      "description": "Hutchison Weller needed a better way to manage noise planning. Their old Excel tool was slow and inflexible. We built KNOWnoise, a web app for fast, real-time noise impact assessment.\n",
-      "chips": [
-        {
-          "chipText": "Azure",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": ".NET",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Angular",
-          "chipType": "filledChip"
-        }
-      ],
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Instant, Interactive Noise Assessment",
-            "description": "Model noise levels with simple selections, get instant risk profiles, impact maps, and exceedance data."
-          },
-          {
-            "heading": "From Spreadsheet to Web App",
-            "description": "Replaced a complex Excel tool with a web-based platform: Angular, NgRx, .NET Core on Azure. Deployed in 3 months. Ready for field or office use."
-          }
-        ]
-      },
-      "buttons": [
-        {
-          "buttonText": "Read the full story",
-          "leadCaptureFormOption": "",
-          "buttonLink": "https://www.ssw.com.au/company/clients/hutchison-weller",
-          "colour": 0
-        },
-        {
-          "buttonText": "Rules to Better .NET Projects",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net-projects/",
-          "colour": 1
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Left",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "imageHeight": 700,
-        "imageWidth": 1400,
-        "youtubeUrl": "https://www.youtube.com/watch?v=wiFadV5SOPc",
-        "altText": "Hutchison Weller"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
       "spacerHeight": "50px",
       "background": {
         "backgroundColour": 6,
@@ -330,10 +268,11 @@
     {
       "technologyGroups": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+          "technologyGroup": "content/v2Technologies/groups/All-Github.mdx"
         }
       ],
       "isStacked": false,
+      "techCardStyle": 1,
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
