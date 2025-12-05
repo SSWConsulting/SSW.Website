@@ -268,7 +268,7 @@
     {
       "technologyGroups": [
         {
-          "technologyGroup": "content/v2Technologies/groups/All-Github.mdx"
+          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
         }
       ],
       "isStacked": false,
