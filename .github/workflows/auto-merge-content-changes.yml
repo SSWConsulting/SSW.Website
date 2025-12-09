@@ -91,8 +91,8 @@ jobs:
                 pull_number: context.issue.number
               });
               
-              if (!pr.data.mergeable) {
-                throw new Error('PR is not mergeable. It may have conflicts or not be up to date.');
+              if (pr.data.mergeable !== true) {
+                throw new Error('PR is not mergeable or its mergeability status is indeterminate. It may have conflicts, not be up to date, or still be computing mergeability.');
               }
               
               const result = await github.rest.pulls.merge({
@@ -119,4 +119,4 @@ jobs:
             
             This PR was automatically merged as a small content change.
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-repeats: true 
+          allow-repeats: true
