@@ -308,44 +308,20 @@
         {
           "guid": "gylswt8",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiFingerprint",
           "heading": "Azure Entra ID",
-          "description": "Secure identity and access management that keeps your people and apps connected",
+          "description": "Secure identity and access management that keeps your people and apps connected.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id/"
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "guid": "e7umlf",
+          "altText": "",
+          "icon": "BiUserVoice",
+          "heading": "Service Desk",
+          "description": "Centralised support that resolves issues fast and keeps your operations running smoothly.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
