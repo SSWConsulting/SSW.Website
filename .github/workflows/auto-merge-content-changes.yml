@@ -110,9 +110,17 @@ jobs:
               core.setFailed(`Auto-merge failed: ${error.message}`);
             }
 
+  comment-result:
+    name: Comment Merge Result
+    needs: [detect-small-changes, auto-merge]
+    if: always() && needs.detect-small-changes.outputs.is-small-change == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
       - name: Comment merge success
         uses: mshick/add-pr-comment@v2
-        if: steps.auto-merge-pr.outcome == 'success'
+        if: needs.auto-merge.result == 'success'
         with:
           message: |
             ✅ **Auto-merge completed successfully!**
@@ -123,7 +131,7 @@ jobs:
 
       - name: Comment merge failure
         uses: mshick/add-pr-comment@v2
-        if: steps.auto-merge-pr.outcome == 'failure'
+        if: needs.auto-merge.result == 'failure'
         with:
           message: |
             ❌ **Auto-merge failed** - Please check the workflow logs for details.
