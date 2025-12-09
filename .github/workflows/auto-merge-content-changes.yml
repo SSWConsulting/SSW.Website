@@ -22,8 +22,11 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
+    env:
+      MAX_FILES: 2
     outputs:
       is-small-change: ${{ steps.analyse-changes.outputs.is-small-change }}
+      max-files: ${{ env.MAX_FILES }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,7 +43,7 @@ jobs:
             $baseBranch = "main"
           }
 
-          $maxFiles = 2
+          $maxFiles = [int]$env:MAX_FILES
           $changedFiles = git diff --name-only origin/$baseBranch...HEAD
           $contentFiles = $changedFiles | Where-Object { $_ -like "content/*" -or $_ -like "public/*" }
           $nonContentFiles = $changedFiles | Where-Object { $_ -notlike "content/*" -and $_ -notlike "public/*" }
@@ -66,7 +69,7 @@ jobs:
             
             This PR has been analyzed for auto-merge eligibility based on:
             - Content-only changes
-            - Maximum ${{ $maxFiles }} file${{ $maxFiles > 1 && 's' || '' }} changed
+            - Maximum ${{ env.MAX_FILES }} file${{ env.MAX_FILES > 1 && 's' || '' }} changed
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
 
