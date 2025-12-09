@@ -286,7 +286,7 @@
         {
           "guid": "v93zjp",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiCommentCheck",
           "heading": "Zendesk",
           "description": "Streamline support by centralising all communication channels into one hub.",
           "embeddedButton": {
@@ -295,18 +295,8 @@
           }
         },
         {
-          "guid": null,
+          "guid": "fm6ndo",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Lorem Ipsum",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
