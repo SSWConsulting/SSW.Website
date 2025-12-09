@@ -104,6 +104,16 @@
       "cardStyle": 0,
       "cards": [
         {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidMedal",
+          "heading": "Fix Broken Workflows and Reduce Manual Work ",
+          "description": "We optimise and automate your ServiceNow platform so teams spend less time on admin and more time delivering value.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
@@ -112,16 +122,6 @@
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
-          }
-        },
-        {
-          "guid": "lxpq3m",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidMedal",
-          "heading": "Fix Broken Workflows and Reduce Manual Work ",
-          "description": "We optimise and automate your ServiceNow platform so teams spend less time on admin and more time delivering value.",
-          "embeddedButton": {
-            "buttonText": ""
           }
         },
         {
@@ -211,7 +211,7 @@
           "description": "Streamline support by centralising all communication channels into one hub.",
           "embeddedButton": {
             "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/consulting/zendesk#more"
+            "buttonLink": "https://www.ssw.com.au/consulting/zendesk"
           }
         },
         {
