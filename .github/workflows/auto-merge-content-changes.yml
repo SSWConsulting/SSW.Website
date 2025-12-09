@@ -110,13 +110,22 @@ jobs:
               core.setFailed(`Auto-merge failed: ${error.message}`);
             }
 
-      - name: Comment merge result
+      - name: Comment merge success
         uses: mshick/add-pr-comment@v2
-        if: always()
+        if: steps.auto-merge-pr.outcome == 'success'
         with:
           message: |
-            ${{ steps.auto-merge-pr.outcome == 'success' && '✅ **Auto-merge completed successfully!**' || '❌ **Auto-merge failed** - Please check the workflow logs for details.' }}
+            ✅ **Auto-merge completed successfully!**
             
             This PR was automatically merged as a small content change.
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
+
+      - name: Comment merge failure
+        uses: mshick/add-pr-comment@v2
+        if: steps.auto-merge-pr.outcome == 'failure'
+        with:
+          message: |
+            ❌ **Auto-merge failed** - Please check the workflow logs for details.
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
