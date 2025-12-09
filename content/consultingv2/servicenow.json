@@ -323,7 +323,8 @@
           "heading": "Service Desk",
           "description": "Centralised support that resolves issues fast and keeps your operations running smoothly.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/service-desk"
           }
         }
       ],
