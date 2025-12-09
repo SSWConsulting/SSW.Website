@@ -388,7 +388,7 @@
           "title": "Microsoft Dynamics 365",
           "description": "Dynamics 365 combines existing Microsoft products such as Dynamics CRM, Dynamics NAV, and Dynamics AX into one seamless solution.",
           "logo": "/images/thumbs/thumb-dynamics-icon.jpg",
-          "page": "content/consulting/dynamics-365.mdx",
+          "page": "content/consultingv2/dynamics-365.json",
           "tags": [
             {
               "tag": "content/consulting/tag/platform-development.json"

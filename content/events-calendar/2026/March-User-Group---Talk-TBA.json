@@ -1,0 +1,18 @@
+{
+  "title": "March User Group - Talk TBA",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "startDateTime": "2026-03-18T16:00:00.000Z",
+  "endDateTime": "2026-03-18T21:00:00.000Z",
+  "startShowBannerDateTime": "2026-03-18T10:00:00.000Z",
+  "endShowBannerDateTime": "2026-03-18T16:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Artificial Intelligence",
+  "abstract": "Agenda TBA - watch this space!",
+  "description": "Agenda TBA - watch this space!\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
