@@ -297,11 +297,12 @@
         {
           "guid": "fm6ndo",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiCloudUpload",
           "heading": "Intune",
           "description": "A cloud-based unified management solution for mobile devices and operating systems. ",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/intune"
           }
         },
         {
