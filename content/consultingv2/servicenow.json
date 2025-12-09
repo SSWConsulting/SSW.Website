@@ -187,63 +187,6 @@
       "_template": "accordionBlock"
     },
     {
-      "technologyGroups": [
-        {
-          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
-        }
-      ],
-      "isStacked": false,
-      "techCardStyle": 1,
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/Louis%20Test%20Images/Incident-io-batch/backgrounds/bckg_1920_900px.png",
-        "bleed": true
-      },
-      "_template": "technologyCardCarousel"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "Talk to us about your **ServiceNow** Project today",
-      "isH1": false,
-      "description": "Connect with our Account Managers to discuss how we can help.\n",
-      "featureColumns": {
-        "twoColumns": true
-      },
-      "buttons": [
-        {
-          "buttonText": "Schedule a FREE Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "colour": 0
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": true
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "150px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
       "isStacked": false,
       "heading": "Related Technologies",
       "isH1": false,
@@ -305,7 +248,53 @@
           }
         }
       ],
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false
+      },
       "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your **ServiceNow** Project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
     }
   ]
 }
