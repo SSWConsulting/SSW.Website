@@ -244,17 +244,184 @@
       "_template": "spacer"
     },
     {
-      "technologyGroups": [
+      "isStacked": false,
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "buttons": [
         {
-          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
         }
       ],
-      "techCardStyle": 1,
-      "background": {
-        "backgroundColour": 3,
-        "bleed": false
-      },
-      "_template": "technologyCardCarousel"
+      "categoryGroup": [
+        {
+          "categoryName": "Lorem",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        },
+        {
+          "categoryName": "Dolor",
+          "cardGuidList": {
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": "v93zjp",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Zendesk",
+          "description": "Streamline support by centralising all communication channels into one hub.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/zendesk#more"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
     }
   ]
 }
