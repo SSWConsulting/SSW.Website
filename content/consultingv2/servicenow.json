@@ -245,33 +245,9 @@
     },
     {
       "isStacked": false,
-      "heading": "Lorem Ipsum",
+      "heading": "Related Technologies",
       "isH1": false,
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      "buttons": [
-        {
-          "buttonText": "Lorem",
-          "colour": 0
-        },
-        {
-          "buttonText": "Ipsum",
-          "colour": 1
-        }
-      ],
-      "categoryGroup": [
-        {
-          "categoryName": "Lorem",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        },
-        {
-          "categoryName": "Dolor",
-          "cardGuidList": {
-            "cardGuidList": []
-          }
-        }
-      ],
+      "body": "",
       "cards": [
         {
           "guid": null,
