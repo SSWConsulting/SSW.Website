@@ -244,6 +244,11 @@
       "_template": "spacer"
     },
     {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
+        }
+      ],
       "techCardStyle": 1,
       "background": {
         "backgroundColour": 3,
