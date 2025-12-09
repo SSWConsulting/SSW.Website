@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "SSW Dynamics 365 Consulting",
+    "description": "Australian leaders in custom Dynamics 365 solutions."
+  },
   "blocks": [
     {
       "background": {
@@ -86,7 +90,7 @@
       },
       "heading": "Why Dynamics 365 configuration is critical to your success",
       "isH1": false,
-      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisation is as unique as a fingerprint! We understand this and tailor your environment to match how you work. \n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
+      "description": "Often businesses jump into Dynamics 365 expecting instant clarity and ROI, only to find the default configuration doesn’t reflect their  unique business processes. When screens, fields, and workflows don’t align with how your teams operate, adoption drops quickly and the power of the platform is wasted.\n\nEach organisation is as unique as a fingerprint! We understand this and tailor your environment to match how you work.\n\nThe end result is a system that feels natural to your people. This drives better customer insights, consistent processes, and a CRM your teams actually trust.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
