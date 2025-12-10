@@ -1,0 +1,16 @@
+{
+  "title": "Data Saturday Brisbane 2026",
+  "url": "https://datasaturdays.com/Event/20260228-datasaturday0079#venue",
+  "thumbnail": "/images/events/Data%20Saturdays.png",
+  "thumbnailDescription": "Data Saturdays - Brisbane",
+  "startDateTime": "2026-02-28T00:00:00.000Z",
+  "endDateTime": "2026-02-28T11:00:00.000Z",
+  "calendarType": "Conferences",
+  "city": "Brisbane",
+  "category": "Data and LINQ",
+  "abstract": "SSW is sponsoring Data Saturday #79 - Brisbane 2026!!\n\nAbout the event: It is an event run by volunteers from the data community & SQL community for the community. \n\nOur event will strive to offer content across Microsoft Azure Technologies. This community event offers content across Data Management and Administration, Cloud and Hybrid Architecture, Analytics, Business Intelligence, Artificial Intelligence, DevOps, Application Development and more.\n\nSee more:\nhttps://datasaturdays.com/Event/20260228-datasaturday0079#venue",
+  "description": "SSW is sponsoring Data Saturday #79 - Brisbane 2026!!\n\nAbout the event: It is an event run by volunteers from the data and SQL communities for the benefit of the community. \n\nOur event will strive to offer content across Microsoft Azure Technologies. This community event offers content across Data Management and Administration, Cloud and Hybrid Architecture, Analytics, Business Intelligence, Artificial Intelligence, DevOps, Application Development and more.\n\nSee more:\n\n[https://datasaturdays.com/Event/20260228-datasaturday0079#venue](https://datasaturdays.com/Event/20260228-datasaturday0079#venue)\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
