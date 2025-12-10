@@ -3,8 +3,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { tinaField } from "tinacms/dist/react";
-
-import { isMobile } from "react-device-detect";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
 
@@ -15,21 +13,6 @@ import { carouselBlock } from "./carousel.schema";
 
 export const Carousel = ({ data }) => {
   const router = useRouter();
-
-  // Handle the mobile check after hydration
-  const [shouldRender, setShouldRender] = React.useState(true);
-
-  React.useEffect(() => {
-    if (!data.showOnMobileDevices && isMobile) {
-      setShouldRender(false);
-    } else {
-      setShouldRender(true);
-    }
-  }, [data.showOnMobileDevices]);
-
-  if (!shouldRender) {
-    return null;
-  }
 
   const openItem = ({ link, openIn }) => {
     if (openIn === "newWindow") {
