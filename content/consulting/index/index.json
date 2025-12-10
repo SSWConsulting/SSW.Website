@@ -677,6 +677,12 @@
               "tag": "content/consulting/tag/consulting.json"
             }
           ]
+        },
+        {
+          "title": "ServiceNow",
+          "description": "ServiceNow made simple with SSW. We sort your setup, tidy your workflows, and build automations that actually save you time.",
+          "logo": "/images/thumbs/ServiceNow-Emblem%20square.png",
+          "page": "content/consultingv2/servicenow.json"
         }
       ]
     },
