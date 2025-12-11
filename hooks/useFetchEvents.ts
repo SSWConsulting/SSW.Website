@@ -1,9 +1,5 @@
 import { getTrimmedEvent } from "@/helpers/getTrimmedEvents";
-import {
-  getEventsCategories,
-  getFutureEvents,
-  getPastEvents,
-} from "@/services/server/events";
+import { getFutureEvents, getPastEvents } from "@/services/server/events";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 export const FUTURE_EVENTS_QUERY_KEY = "futureEvents";
