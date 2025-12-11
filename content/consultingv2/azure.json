@@ -176,8 +176,9 @@
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
-          "colour": 1
+          "buttonText": "Cost Optimization in Azure Rule",
+          "buttonLink": "https://www.ssw.com.au/rules/reduce-azure-costs/",
+          "colour": 0
         }
       ],
       "_template": "accordionBlock"
