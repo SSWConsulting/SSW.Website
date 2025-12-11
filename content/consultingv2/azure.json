@@ -183,6 +183,7 @@
       ],
       "mediaConfiguration": {
         "mediaType": "youtube",
+        "placement": "Right",
         "youtubeUrl": "https://youtu.be/whXWijQCQTU?si=epp1wOYCkjuX2Gx7"
       },
       "_template": "accordionBlock"
