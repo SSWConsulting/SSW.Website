@@ -181,6 +181,10 @@
           "colour": 0
         }
       ],
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "youtubeUrl": "https://youtu.be/whXWijQCQTU?si=epp1wOYCkjuX2Gx7"
+      },
       "_template": "accordionBlock"
     },
     {
