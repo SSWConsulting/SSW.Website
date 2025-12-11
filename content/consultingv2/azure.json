@@ -155,6 +155,22 @@
       "_template": "imageTextBlock"
     },
     {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
+        },
+        {
+          "technologyGroup": "content/v2Technologies/groups/All-Github.mdx"
+        },
+        {
+          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
+        }
+      ],
+      "isStacked": false,
+      "techCardStyle": 0,
+      "_template": "technologyCardCarousel"
+    },
+    {
       "heading": "Azure Landing Zones",
       "body": "A clear, secure, repeatable foundation for any workload in Azure.",
       "tabletTextAlignment": "Center",
@@ -187,22 +203,6 @@
         "youtubeUrl": "https://youtu.be/whXWijQCQTU?si=epp1wOYCkjuX2Gx7"
       },
       "_template": "accordionBlock"
-    },
-    {
-      "technologyGroups": [
-        {
-          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
-        },
-        {
-          "technologyGroup": "content/v2Technologies/groups/All-Github.mdx"
-        },
-        {
-          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
-        }
-      ],
-      "isStacked": false,
-      "techCardStyle": 0,
-      "_template": "technologyCardCarousel"
     }
   ]
 }
