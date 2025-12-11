@@ -78,6 +78,24 @@ export const getFutureEvents = async (
 };
 
 /**
+ * Fetches future events from TinaCMS with a simple top limit
+ * @param top Number of events to fetch
+ * @param fromDate Optional date to fetch from (defaults to today)
+ * @returns The events query response
+ */
+export const getFutureEventsSimple = async (
+  top: number,
+  fromDate?: string
+) => {
+  const date = fromDate || TODAY.toISOString();
+  const res = await client.queries.getFutureEventsQuery({
+    fromDate: date,
+    top,
+  });
+  return res;
+};
+
+/**
  * Fetches past events from TinaCMS with pagination and filtering support
  */
 export const getPastEvents = async (
