@@ -5,7 +5,7 @@ import { CustomLink } from "@/components/customLink";
 import { InlineJotForm } from "@/components/inlineJotForm/inlineJotForm";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import layoutData, { default as globals } from "@/content/global/index.json";
-import { EventInfo } from "@/services/server/events";
+import { EventInfo } from "@/services/server/events-types";
 import classNames from "classnames";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";

@@ -5,7 +5,7 @@ import { CustomError } from "./customError";
 import {
   AddContactToNewslettersData,
   BookingFormSubmissionData,
-} from "./events";
+} from "./events-types";
 
 export const invokePowerAutomateFlow = async (
   data: BookingFormSubmissionData | AddContactToNewslettersData,
