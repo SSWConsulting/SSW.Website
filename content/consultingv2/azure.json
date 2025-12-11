@@ -170,7 +170,9 @@
       ],
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Security & Compliance Rule",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-cloud-security/",
           "colour": 0
         },
         {
