@@ -1,4 +1,4 @@
-import { TODAY } from "@/hooks/useFetchEvents";
+import { TODAY } from "@/services/server/events";
 import { notFound } from "next/navigation";
 
 export enum FileType {

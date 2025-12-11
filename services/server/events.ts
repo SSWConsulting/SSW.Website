@@ -8,7 +8,7 @@ import { EVENTS_MAX_SIZE_OVERRIDE } from "./getEvents";
 
 const PAGE_LENGTH = 10;
 
-const TODAY = new Date();
+export const TODAY = new Date();
 TODAY.setHours(0, 0, 0, 0);
 
 const getCategoriesForFilter = (category: string) => {

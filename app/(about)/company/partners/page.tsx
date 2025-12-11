@@ -3,7 +3,7 @@ import { TinaClient } from "app/tina-client";
 
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
-import { TODAY } from "hooks/useFetchEvents";
+import { TODAY } from "@/services/server/events";
 import { Metadata } from "next";
 import PartnerIndex from "./index";
 
