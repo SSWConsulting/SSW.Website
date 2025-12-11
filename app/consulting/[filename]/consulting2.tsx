@@ -1,4 +1,5 @@
 "use client";
+import { useBranch } from "@/app/providers/branch-provider";
 import { Blocks } from "@/components/blocks-renderer";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { Container } from "@/components/util/container";
@@ -19,6 +20,9 @@ type ConsultingV2PageProps<T> = {
 const Consulting2 = memo(
   function ConsultingV2({ tinaProps }: ConsultingV2PageProps<object>) {
     const { data } = tinaProps;
+
+    const b = useBranch();
+    console.log("Current Branch in Consulting V2:", b);
 
     return (
       <>

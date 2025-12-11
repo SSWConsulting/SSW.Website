@@ -1,3 +1,4 @@
+import { BranchProvider } from "@/app/providers/branch-provider";
 import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
@@ -12,6 +13,7 @@ import utc from "dayjs/plugin/utc";
 import { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
+import { cookies } from "next/headers";
 import "styles.css";
 import client from "../tina/__generated__/client";
 import LandingPageCapture from "./components/landing-page-capture";
@@ -58,6 +60,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const cookieStore = await cookies();
+  const branchCookie = cookieStore.get("x-branch");
   const menuData = await getMegamenu();
   const bannerData = await getPhishingBanner();
   const nextUG = await client.queries.getFutureEventsQuery({
@@ -76,29 +80,31 @@ export default async function RootLayout({
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
           <LandingPageCapture />
-          <PageLayout
-            phishingBanner={
-              bannerData?.data?.phishingBanner && (
-                <PhishingBanner
-                  enabled={bannerData.data.phishingBanner.enabled}
-                  message={bannerData.data.phishingBanner.message}
-                />
-              )
-            }
-            megaMenu={MegaMenu({
-              menuData: menuData,
-              liveStreamData: liveStreamData,
-            })}
-          >
-            <AppInsightsProvider>
-              <WebVitals />
-              {children}
-            </AppInsightsProvider>
-            {/* </Theme> */}
-          </PageLayout>
+          <BranchProvider branch={branchCookie?.value}>
+            <PageLayout
+              phishingBanner={
+                bannerData?.data?.phishingBanner && (
+                  <PhishingBanner
+                    enabled={bannerData.data.phishingBanner.enabled}
+                    message={bannerData.data.phishingBanner.message}
+                  />
+                )
+              }
+              megaMenu={MegaMenu({
+                menuData: menuData,
+                liveStreamData: liveStreamData,
+              })}
+            >
+              <AppInsightsProvider>
+                <WebVitals />
+                {children}
+              </AppInsightsProvider>
+              {/* </Theme> */}
+            </PageLayout>
 
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
-          <ChatBaseBot />
+            <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+            <ChatBaseBot />
+          </BranchProvider>
         </QueryProvider>
       </body>
     </html>
