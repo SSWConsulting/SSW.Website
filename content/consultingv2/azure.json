@@ -194,8 +194,12 @@
         },
         {
           "technologyGroup": "content/v2Technologies/groups/All-Github.mdx"
+        },
+        {
+          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
         }
       ],
+      "isStacked": false,
       "_template": "technologyCardCarousel"
     },
     {
