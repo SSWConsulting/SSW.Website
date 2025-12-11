@@ -164,8 +164,8 @@
           "content": "We assess your existing environment, plan the move, and migrate workloads safely into Azure. Whether it’s rehost, refactor, or modernise, we ensure reliability and cost efficiency.\n"
         },
         {
-          "label": "Ipsum",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "DevOps & CI/CD Automation",
+          "content": "We build automated CI/CD pipelines with Azure DevOps or GitHub Actions, improve deployment speed, reduce failures, and set you up with a clean development workflow.\n"
         }
       ],
       "buttons": [
