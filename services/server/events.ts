@@ -1,6 +1,5 @@
 import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { EventTrimmed } from "../../components/filter/events";
-import client from "../../tina/__generated__/client";
 
 /**
  * Querying TinaCMS event data for the next UG event
@@ -8,6 +7,8 @@ import client from "../../tina/__generated__/client";
  * @returns Awaitable EventInfo for the next "User Group" event. If there is no future UG event scheduled then a previous one is returned
  */
 export const getNextEventToBeLiveStreamed = async (): Promise<EventInfo> => {
+  "use server";
+  const { default: client } = await import("../../tina/__generated__/client");
   const currentDate = new Date().toISOString();
 
   let eventsData = await client.queries.getFutureEventsQuery({
