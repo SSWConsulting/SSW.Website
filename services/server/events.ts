@@ -35,7 +35,7 @@ const getCategoriesForFilter = (category: string) => {
  * @returns Awaitable EventInfo for the next "User Group" event. If there is no future UG event scheduled then a previous one is returned
  */
 export const getNextEventToBeLiveStreamed = async (): Promise<EventInfo> => {
-  const currentDate = ge;
+  const currentDate = getToday().toISOString();
 
   let eventsData = await client.queries.getFutureEventsQuery({
     fromDate: currentDate,
