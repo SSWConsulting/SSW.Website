@@ -211,7 +211,6 @@ export const officeSchema: Collection = {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       uploadDir: (args) => `/offices/${args.addressLocality}`,
-      templates: [...Schemas.pageBlocks],
     },
     {
       type: "string",
