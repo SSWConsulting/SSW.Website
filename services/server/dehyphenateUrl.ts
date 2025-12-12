@@ -1,3 +1,3 @@
 export const dehyphenateUrl = (name: string) => {
-  return name.replace("-", " ");
+  return name.replaceAll("-", " ");
 };
