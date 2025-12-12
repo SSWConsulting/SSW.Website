@@ -10,4 +10,3 @@ export const getNewsletters = async () => {
   const data = await client.queries.newslettersConnection();
   return data;
 };
-

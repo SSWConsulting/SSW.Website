@@ -20,4 +20,3 @@ export const getArticles = async ({
 
   return res.data;
 };
-

@@ -95,4 +95,3 @@ export interface EventInfoStatic
   startDateTime?: string;
   endDateTime?: string;
 }
-
