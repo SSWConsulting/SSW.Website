@@ -7,19 +7,25 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat python3 make g++ bash
 WORKDIR /website
 
+# Enable corepack for pnpm support
+RUN corepack enable
+
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm i --frozen-lockfile; \
+  elif [ -f pnpm-lock.yaml ]; then pnpm i --frozen-lockfile; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /website
+
+# Enable corepack for pnpm support
+RUN corepack enable
 
 COPY --from=deps /website/node_modules ./node_modules
 COPY . .
@@ -89,7 +95,7 @@ ENV NEXT_PUBLIC_SLOT_URL=$NEXT_PUBLIC_SLOT_URL
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run build; \
+  elif [ -f pnpm-lock.yaml ]; then pnpm run build; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
