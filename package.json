@@ -5,7 +5,10 @@
   "pnpm": {
     "overrides": {
       "@babel/parser": "7.21.9"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "better-sqlite3"
+    ]
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
