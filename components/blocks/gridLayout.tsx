@@ -164,14 +164,12 @@ export const gridLayoutSchema: Template = {
               type: "image",
               label: "Image",
               name: "image",
-              // @ts-expect-error tinacms types are wrong
               uploadDir: () => "company-logos",
             },
             {
               type: "image",
               label: "Related Image",
               name: "relatedImage",
-              // @ts-expect-error tinacms types are wrong
               uploadDir: () => "company-logos",
             },
             {
