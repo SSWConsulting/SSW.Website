@@ -3,7 +3,6 @@ import { TinaClient } from "app/tina-client";
 
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
-import { TODAY } from "@/services/server/events";
 import { Metadata } from "next";
 import PartnerIndex from "./index";
 
@@ -21,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const getData = async () => {
   const tinaProps = await fetchTinaData(
     client.queries.partnerIndexQuery,
-    TODAY.toISOString()
+    "index"
   );
 
   const seo = tinaProps.data.partnerIndex.seo;

@@ -8,8 +8,15 @@ import { EVENTS_MAX_SIZE_OVERRIDE } from "./getEvents";
 
 const PAGE_LENGTH = 10;
 
-export const TODAY = new Date();
-TODAY.setHours(0, 0, 0, 0);
+const getToday = (): Date => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return today;
+};
+
+export const getTodayISOString = async (): Promise<string> => {
+  return getToday().toISOString();
+};
 
 const getCategoriesForFilter = (category: string) => {
   if (!category) return undefined;
@@ -28,7 +35,7 @@ const getCategoriesForFilter = (category: string) => {
  * @returns Awaitable EventInfo for the next "User Group" event. If there is no future UG event scheduled then a previous one is returned
  */
 export const getNextEventToBeLiveStreamed = async (): Promise<EventInfo> => {
-  const currentDate = new Date().toISOString();
+  const currentDate = ge;
 
   let eventsData = await client.queries.getFutureEventsQuery({
     fromDate: currentDate,
@@ -68,7 +75,7 @@ export const getFutureEvents = async (
 ) => {
   const categories = getCategoriesForFilter(category);
   const res = await client.queries.getFutureEventsQuery({
-    fromDate: TODAY.toISOString(),
+    fromDate: getToday().toISOString(),
     top: PAGE_LENGTH,
     after: pageParam,
     categories,
@@ -83,11 +90,8 @@ export const getFutureEvents = async (
  * @param fromDate Optional date to fetch from (defaults to today)
  * @returns The events query response
  */
-export const getFutureEventsSimple = async (
-  top: number,
-  fromDate?: string
-) => {
-  const date = fromDate || TODAY.toISOString();
+export const getFutureEventsSimple = async (top: number, fromDate?: string) => {
+  const date = fromDate || getToday().toISOString();
   const res = await client.queries.getFutureEventsQuery({
     fromDate: date,
     top,
@@ -105,7 +109,7 @@ export const getPastEvents = async (
 ) => {
   const categories = getCategoriesForFilter(category);
   const res = await client.queries.getPastEventsQuery({
-    fromDate: TODAY.toISOString(),
+    fromDate: getToday().toISOString(),
     top: PAGE_LENGTH,
     before: pageParam,
     categories,
