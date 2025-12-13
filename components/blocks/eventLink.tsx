@@ -59,7 +59,6 @@ export const eventLinkSchema: Template = {
       type: "image",
       label: "Thumbnail",
       name: "eventThumbnail",
-      // @ts-expect-error tinacms types are wrong
       uploadDir: () => "events",
     },
     {

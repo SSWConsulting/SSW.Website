@@ -13,7 +13,7 @@ import {
   EventInfo,
   EventInfoStatic,
   formatDates,
-} from "@/services/server/events";
+} from "@/services/server/events-types";
 import { PropsWithChildren, useEffect, useState } from "react";
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);

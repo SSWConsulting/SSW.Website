@@ -6,11 +6,13 @@ import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
   FUTURE_EVENTS_QUERY_KEY,
+  PAST_EVENTS_QUERY_KEY,
+} from "hooks/useFetchEvents";
+import {
   getEventsCategories,
   getFutureEvents,
   getPastEvents,
-  PAST_EVENTS_QUERY_KEY,
-} from "hooks/useFetchEvents";
+} from "@/services/server/events";
 import { Metadata } from "next";
 import EventIndex from "./index";
 

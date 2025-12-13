@@ -8,7 +8,7 @@ import {
   EventInfo,
   EventInfoStatic,
   formatDates,
-} from "@/services/server/events";
+} from "@/services/server/events-types";
 import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";

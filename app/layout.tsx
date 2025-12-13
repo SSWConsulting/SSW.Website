@@ -1,7 +1,7 @@
 import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
-import { EventInfoStatic } from "@/services/server/events";
+import { EventInfoStatic } from "@/services/server/events-types";
 import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
