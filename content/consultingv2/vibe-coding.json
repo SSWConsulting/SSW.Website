@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "Enterprise Development and Consulting for Vibe Coding",
-    "description": "Craft modern and collaborative solutions with our Vibe Coding service. Fast delivery, great UX, zero fluff."
+    "title": "Enterprise Development and Consulting for Vibe Coding | SSW ",
+    "description": "Craft modern and collaborative solutions with our Vibe Coding service. Fast delivery, great UX, zero fluff.",
+    "canonical": "https://www.ssw.com.au/consulting/vibe-coding"
   },
   "blocks": [
     {
@@ -140,7 +141,6 @@
       },
       "_template": "cardCarousel"
     },
-    
     {
       "spacerHeight": "50px",
       "background": {
