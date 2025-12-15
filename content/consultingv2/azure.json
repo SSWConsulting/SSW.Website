@@ -126,7 +126,7 @@
           },
           {
             "heading": "Control your costs",
-            "description": "FinOps guidance that keeps your Azure bill predictable and transparent.",
+            "description": "SpendOps guidance that keeps your Azure bill predictable and transparent.",
             "icon": "BiDollarCircle"
           }
         ]
