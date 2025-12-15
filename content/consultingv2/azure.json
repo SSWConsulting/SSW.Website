@@ -156,7 +156,7 @@
       "tabletTextAlignment": "Center",
       "accordionItems": [
         {
-          "label": "Cloud Migrations",
+          "label": "Rules to better Cloud Migrations",
           "content": "We assess your existing environment, plan the move, and migrate workloads safely into Azure. Whether it’s rehost, refactor, or modernise, we ensure reliability and cost efficiency.\n"
         },
         {
