@@ -174,7 +174,7 @@
         {
           "buttonText": "Cost Optimization in Azure Rule",
           "buttonLink": "https://www.ssw.com.au/rules/reduce-azure-costs/",
-          "colour": 0
+          "colour": 1
         }
       ],
       "mediaConfiguration": {
