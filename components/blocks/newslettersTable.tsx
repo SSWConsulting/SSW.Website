@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 import type { Template } from "tinacms";
 import { transformIntToMonth } from "../../services/client/date.service";
-import client from "../../tina/__generated__/client"; // TODO: Use alias - https://github.com/tinacms/tinacms/issues/4488
+import { getNewsletters } from "../../services/server/newsletters";
 import { CustomLink } from "../customLink";
 
 type NewsletterYearsType = {
@@ -35,34 +35,33 @@ export const NewslettersTable: React.FC<{ data: { headerText: string } }> = ({
     }
   }, [hasLoaded]);
 
-  const loadNewsletters = () => {
-    client.queries.newslettersConnection().then((data) => {
-      const newsletters = data.data?.newslettersConnection?.edges?.map(
-        (edge) => ({
-          newsletters: edge?.node?.newsletters,
-          newsletters_year: edge?.node?.newsletters_year,
-        })
-      );
-      const sortedNewslettersYears: NewsletterYearsType[] =
-        newsletters?.map((item) => {
-          const sortedNewslettersMonths: NewsletterType[] =
-            item?.newsletters
-              ?.filter((newsletter) => !!newsletter && !!newsletter.month)
-              ?.map((newsletter) => ({
-                file: newsletter?.file || "",
-                month: newsletter?.month || 0,
-                description: newsletter?.description || "",
-              }))
-              ?.sort((a, b) => b.month - a.month) || [];
-          return {
-            newsletters: sortedNewslettersMonths,
-            year: item?.newsletters_year || undefined,
-          };
-        }) || [];
+  const loadNewsletters = async () => {
+    const data = await getNewsletters();
+    const newsletters = data.data?.newslettersConnection?.edges?.map(
+      (edge) => ({
+        newsletters: edge?.node?.newsletters,
+        newsletters_year: edge?.node?.newsletters_year,
+      })
+    );
+    const sortedNewslettersYears: NewsletterYearsType[] =
+      newsletters?.map((item) => {
+        const sortedNewslettersMonths: NewsletterType[] =
+          item?.newsletters
+            ?.filter((newsletter) => !!newsletter && !!newsletter.month)
+            ?.map((newsletter) => ({
+              file: newsletter?.file || "",
+              month: newsletter?.month || 0,
+              description: newsletter?.description || "",
+            }))
+            ?.sort((a, b) => b.month - a.month) || [];
+        return {
+          newsletters: sortedNewslettersMonths,
+          year: item?.newsletters_year || undefined,
+        };
+      }) || [];
 
-      setNewsletters(sortedNewslettersYears.reverse());
-      setHasLoaded(true);
-    });
+    setNewsletters(sortedNewslettersYears.reverse());
+    setHasLoaded(true);
   };
 
   const removeTinaFromUrl = (input: string) => {
