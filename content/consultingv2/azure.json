@@ -151,19 +151,6 @@
       "_template": "imageTextBlock"
     },
     {
-      "technologyGroups": [
-        {
-          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
-        },
-        {
-          "technologyGroup": "content/v2Technologies/groups/Back-End.mdx"
-        }
-      ],
-      "isStacked": false,
-      "techCardStyle": 0,
-      "_template": "technologyCardCarousel"
-    },
-    {
       "heading": "Azure Landing Zones",
       "body": "A clear, secure, repeatable foundation for any workload in Azure.",
       "tabletTextAlignment": "Center",
@@ -196,6 +183,25 @@
         "youtubeUrl": "https://youtu.be/whXWijQCQTU?si=epp1wOYCkjuX2Gx7"
       },
       "_template": "accordionBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
+        },
+        {
+          "technologyGroup": "content/v2Technologies/groups/Back-End.mdx"
+        }
+      ],
+      "isStacked": false,
+      "techCardStyle": 0,
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "buttonText": "Book a Free Initial Meeting",
+      "animated": true,
+      "buttonSubtitle": "or call +61 2 9953 3000",
+      "_template": "BookingButton"
     }
   ]
 }
