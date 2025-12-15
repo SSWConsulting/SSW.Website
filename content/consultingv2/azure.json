@@ -205,7 +205,7 @@
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
-        "twoColumns": true,
+        "twoColumns": false,
         "features": [
           {
             "heading": "Lorem",
