@@ -146,6 +146,7 @@
       ],
       "mediaConfiguration": {
         "mediaType": "youtube",
+        "placement": "Left",
         "youtubeUrl": "https://youtu.be/Ai2Xv1jq3_s"
       },
       "_template": "imageTextBlock"
