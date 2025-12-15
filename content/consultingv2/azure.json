@@ -169,7 +169,7 @@
           "buttonText": "Security & Compliance Rule",
           "leadCaptureFormOption": "bookingJotFormId",
           "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-cloud-security/",
-          "colour": 0
+          "colour": 1
         },
         {
           "buttonText": "Cost Optimization in Azure Rule",
