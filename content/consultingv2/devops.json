@@ -1,0 +1,369 @@
+{
+  "seo": {
+    "title": "Develop High-Performance SQL Server Databases | SSW ",
+    "description": "Improve SQL Server speed, security, and scalability with SSW. Book a free consult and optimize your database for real-world performance",
+    "canonical": "https://www.ssw.com.au/consulting/database-development"
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Database Development",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "SQL and NoSQL, tuned to perform",
+      "isH1": true,
+      "description": "Our engineers build, optimize, and secure your mission-critical databases.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Meeting",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/ssw-web/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted By",
+      "paused": true,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 120,
+          "altText": "toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 120,
+          "altText": "symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 120,
+          "altText": "microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "scale": 120,
+          "altText": "event-cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 120,
+          "altText": "domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 120,
+          "altText": "cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 120,
+          "altText": "commonwealth-bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 120,
+          "altText": "allianz"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Your data, **optimised**",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "d5hmcb",
+          "altText": "Bulletproof  Uptime",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiMoneyWithdraw",
+          "heading": "SpendOps",
+          "description": "Audit your database infrastructure; cut what you don’t need. Reclaim six‑figure budgets you can reinvest in product innovation.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "k4cc4c",
+          "altText": "Faster Queries",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiSolidBolt",
+          "heading": "Faster Queries",
+          "description": "We deep‑scan every table, drop junk indexes, and pinpoint bottlenecks to deliver faster query performance. Critical reports load up to 80 % faster.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "7zpda5",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiSolidCheckShield",
+          "heading": "Data Security",
+          "description": "Implement ISO, SOC2 & GDPR best practices to ensure your data is kept secure and compliant.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "Bupa: Unified insurance claims recovery platform",
+      "isH1": false,
+      "description": "We replaced siloed tools with one SQL Server solution that scales to 500M records and allows much faster and more transparent claim reviews.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "3 x More Value Recovered",
+            "description": "Streamlined workflows and tuned queries tripled over‑payment collections."
+          },
+          {
+            "heading": "Enterprise‑Grade Scalability",
+            "description": "Sub‑second searches across 500M records keep multiple teams working smoothly."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Read the full story",
+          "buttonLink": "https://www.ssw.com.au/company/clients/bupa",
+          "colour": 0
+        },
+        {
+          "buttonText": "Rules to Better SQL Databases",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-databases-developers/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageHeight": 768,
+        "imageWidth": 1024
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "Decades of hands‑on work in mission‑critical SQL Server and .NET projects. Field‑proven practices you can apply today, no guesswork required.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "3csg5",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=l2qCRsz69JI",
+          "altText": "Mastering Web-Based Data Entry",
+          "chips": [
+            {
+              "chipText": "UX",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "7 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Build Bulletproof Data‑Entry Forms",
+          "description": "SSW dev Toby Churches shows the fast path to forms that users trust. Smart states, rock‑solid validation, and mobile‑ready layouts that squash data‑entry errors before they start.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "gf67cs",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=7ZTVCGDTj5g",
+          "altText": "Must-Know Database Performance Techniques",
+          "chips": [
+            {
+              "chipText": "SQL",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "70 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "15 Quick Wins for Blazing‑Fast SQL",
+          "description": "SSW architect Bryden Oliver rips through live demos, table trim‑downs, smart indexes, loop killers, and more... so your queries hit warp speed today 🚀",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "3eex88",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=l18ltcOVN4I",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "SQL",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "80 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Turbo‑Charge SQL in One Session",
+          "description": "SSW Solution Architect Bryden Oliver walks through live query tuning, index picks, and quick‑win monitoring so you can spot bottlenecks and ship speed today.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": ""
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently asked questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "Can you work with our existing legacy database?",
+          "content": "Yes. We specialize in modernizing and optimizing legacy database environments, focusing on minimal disruption to your current operations while unlocking new performance and security capabilities.\n"
+        },
+        {
+          "label": "Why should I choose SSW for custom software development?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Deep Industry Expertise: We have decades of experience in Financial Services, Healthcare, Education, & Mining.\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+        },
+        {
+          "label": "What is SSW's development process like, and how involved will I need to be?",
+          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "technologyGroups": [
+        {
+          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your database today",
+      "isH1": false,
+      "description": "Connect with our SQL consulting team to uncover quick wins in speed, security, and cost efficiency.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Meeting",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
