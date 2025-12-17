@@ -228,7 +228,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "Bicep",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "Azure-native infrastructure as code language for deploying and managing cloud resources with clean, declarative syntax.\n",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
