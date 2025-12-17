@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Checkout People Profiles
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: "SSWConsulting/SSW.People.Profiles"
           path: ${{ env.TEMPORARY_FOLDER}}
@@ -57,7 +57,7 @@ jobs:
 
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ steps.get-app-token.outputs.token }}
           commit-message: "Fetch People Profiles"

@@ -1,0 +1,300 @@
+{
+  "seo": {
+    "title": "ServiceNow Consulting | SSW",
+    "description": "Custom ServiceNow development in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke ServiceNow solutions with tailored workflows and integrations for your business.",
+    "canonical": "https://www.ssw.com.au/consulting/servicenow",
+    "showBreadcrumb": true
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "ServiceNow Consulting and Enterprise Solutions",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Want to use **ServiceNow** to improve your client relationships?",
+      "isH1": true,
+      "description": "Get ServiceNow running the way it should. We handle the setup, integrations, and migrations, supported by three decades of software expertise.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA&t=3s",
+        "altText": "Web Application development is hard - Why choose SSW"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195,
+          "altText": "Toll Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180,
+          "altText": "Microsoft Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160,
+          "altText": "Symantec Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175,
+          "altText": "Domain Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
+          "altText": "CBA Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175,
+          "altText": "Cisco Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Allianz Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidMedal",
+          "heading": "Fix Broken Workflows and Reduce Manual Work ",
+          "description": "We optimise and automate your ServiceNow platform so teams spend less time on admin and more time delivering value.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "7mtu8j",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidError",
+          "heading": "Reduce Risk on Enterprise Projects ",
+          "description": "We strip the risk out of complex deployments. Our team use best practice to ensure your project lands safely and scales easily.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "5q8kz",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Deep Microsoft Stack Expertise",
+          "description": "Connect ServiceNow with your Microsoft ecosystem: Azure, Microsoft 365, Teams, Power Platform, and more. We make your tools work together.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "What ServiceNow solutions does SSW implement?",
+          "content": "SSW provides implementation, integration, and migration services across the full ServiceNow platform, including:\n\n* IT Service Management (ITSM)\n* IT Operations Management (ITOM)\n* Customer Service Management (CSM)\n* HR Service Delivery (HRSD)\n* Security Operations\n* IT Asset Management\n\nWe focus on ensuring your ServiceNow instance integrates seamlessly with your existing Microsoft stack and business processes.\n"
+        },
+        {
+          "label": "Can you migrate us from BMC Remedy/Jira/Legacy Systems?",
+          "content": "Yes. We specialize in complex migrations. We don't just 'lift and shift'; we map your legacy processes to modern ServiceNow workflows (CSM, ITSM, HRSD). We use ETL tools and robust testing frameworks to ensure zero data loss during the transition.\n"
+        },
+        {
+          "label": "What technologies does SSW use alongside ServiceNow?",
+          "content": "We integrate ServiceNow with Microsoft 365, Azure, and other enterprise systems. Our consultants prioritise the most effective tools to ensure scalable, testable, and maintainable solutions.\n"
+        },
+        {
+          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+        },
+        {
+          "label": "What is SSW's development process like, and how involved will I need to be?",
+          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Related Technologies",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "h3ueb",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Power Platform",
+          "description": "Build apps, automate workflows, and analyse data, all without heavy coding.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/power-platform"
+          }
+        },
+        {
+          "guid": "v93zjp",
+          "altText": "Lorem Ipsum",
+          "icon": "BiCommentCheck",
+          "heading": "Zendesk",
+          "description": "Streamline support by centralising all communication channels into one hub.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/zendesk"
+          }
+        },
+        {
+          "guid": "fm6ndo",
+          "altText": "Lorem Ipsum",
+          "icon": "BiCloudUpload",
+          "heading": "Intune",
+          "description": "A cloud-based unified management solution for mobile devices and operating systems. ",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/intune"
+          }
+        },
+        {
+          "guid": "gylswt8",
+          "altText": "Lorem Ipsum",
+          "icon": "BiFingerprint",
+          "heading": "Azure Entra ID",
+          "description": "Secure identity and access management that keeps your people and apps connected.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id/"
+          }
+        },
+        {
+          "guid": "e7umlf",
+          "altText": "",
+          "icon": "BiUserVoice",
+          "heading": "Service Desk",
+          "description": "Centralised support that resolves issues fast and keeps your operations running smoothly.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/service-desk"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your **ServiceNow** Project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Schedule a FREE Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}

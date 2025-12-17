@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "Enterprise Development and Consulting for Web APIs",
-    "description": "Ever since SSW developed the very first .NET website in Australia, we've been known as leaders in Website Development."
+    "title": "Web Application Development | SSW",
+    "description": "Custom web application development in Sydney, Brisbane, Melbourne & Newcastle. Expert .NET & Azure developers build bespoke web apps and APIs from scratch for your business.",
+    "canonical": "https://www.ssw.com.au/consulting/web-applications"
   },
   "blocks": [
     {
@@ -216,7 +217,7 @@
       "isStacked": true,
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
-      "body": "At SSW, we’ve nuilding enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV",
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV",
       "cardStyle": 1,
       "cards": [
         {

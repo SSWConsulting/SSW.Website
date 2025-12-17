@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "Enterprise Development and Consulting for AI/ML/GPT",
-    "description": "Maximize efficiency with AI and Machine Learning solutions. Improve your workflows, gain insights for decision making, and save costs."
+    "title": "AI Consulting & Development | SSW",
+    "description": "Custom AI & Machine Learning solutions in Sydney, Brisbane, Melbourne & Newcastle. We develop bespoke AI applications tailored to your business workflows and data requirements.",
+    "canonical": "https://www.ssw.com.au/consulting/artificial-intelligence"
   },
   "blocks": [
     {
@@ -36,6 +37,11 @@
           "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
+        },
+        {
+          "buttonText": " AI Discovery Workshop",
+          "buttonLink": "/consulting/ai-discovery-workshop",
+          "colour": 1
         }
       ],
       "background": {

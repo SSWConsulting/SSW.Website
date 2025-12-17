@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
-import { EventInfo } from "../services/server/events";
+import { EventInfo } from "../services/server/events-types";
 
 export type LiveStreamProps = {
   countdownMins?: number;

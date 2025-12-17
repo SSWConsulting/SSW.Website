@@ -142,6 +142,13 @@
               "tag": "content/consulting/tag/ai-development.json"
             }
           ]
+        },
+        {
+          "title": "AI Discovery Workshop",
+          "description": "Kickstart your AI strategy in just 3 days. SSW's AI Discovery Workshop helps you identify high-impact AI opportunities, assess feasibility, and create a tailored implementation roadmap for success.",
+          "logo": "/images/thumbs/consulting/ai-discovery-workshop.png",
+          "page": "content/consultingv2/ai-discovery-workshop.json",
+          "externalUrl": "/consulting/ai-discovery-workshop"
         }
       ]
     },
@@ -381,7 +388,7 @@
           "title": "Microsoft Dynamics 365",
           "description": "Dynamics 365 combines existing Microsoft products such as Dynamics CRM, Dynamics NAV, and Dynamics AX into one seamless solution.",
           "logo": "/images/thumbs/thumb-dynamics-icon.jpg",
-          "page": "content/consulting/dynamics-365.mdx",
+          "page": "content/consultingv2/dynamics-365.json",
           "tags": [
             {
               "tag": "content/consulting/tag/platform-development.json"
@@ -670,6 +677,12 @@
               "tag": "content/consulting/tag/consulting.json"
             }
           ]
+        },
+        {
+          "title": "ServiceNow",
+          "description": "ServiceNow made simple with SSW. We sort your setup, tidy your workflows, and build automations that actually save you time.",
+          "logo": "/images/thumbs/ServiceNow-Emblem%20square.png",
+          "page": "content/consultingv2/servicenow.json"
         }
       ]
     },

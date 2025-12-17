@@ -1,6 +1,6 @@
 "use client";
 
-import client from "@/tina/client";
+import { getTechnologiesByGroup } from "@/services/server/technologies";
 import { useEffect, useState } from "react";
 import { CardCarousel } from "../cardCarousel/cardCarousel";
 
@@ -16,21 +16,19 @@ export const TechnologyCardCarousel = ({
 
   useEffect(() => {
     async function fetchData() {
-      const response = await client.queries.technologiesv2Connection({
-        filter: {
-          associatedGroup: {
-            technologyGroupsv2: {
-              name: {
-                in: data.technologyGroups
-                  ?.map((group) => {
-                    return group.technologyGroup?.name;
-                  })
-                  .filter((name) => name),
-              },
-            },
-          },
-        },
-      });
+      const technologyGroupNames =
+        data.technologyGroups
+          ?.map((group) => {
+            return group.technologyGroup?.name;
+          })
+          .filter((name) => name) || [];
+
+      if (technologyGroupNames.length === 0) {
+        setCardList([]);
+        return;
+      }
+
+      const response = await getTechnologiesByGroup(technologyGroupNames);
       const cards = response.data.technologiesv2Connection.edges.map((card) => {
         return {
           guid: card.node.associatedGroup?.name,

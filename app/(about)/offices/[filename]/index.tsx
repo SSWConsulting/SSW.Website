@@ -24,8 +24,8 @@ export default function OfficePage({ props, tinaProps }) {
           <div className="size-auto">
             <Image
               data-tina-field={tinaField(data.offices, "coverImg")}
-              width={1320}
-              height={485}
+              width={1476}
+              height={542}
               src={data.offices.coverImg}
               alt="Cover image"
               priority={true}

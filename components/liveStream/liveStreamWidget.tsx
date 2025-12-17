@@ -2,7 +2,7 @@
 
 import "react-tooltip/dist/react-tooltip.css";
 
-import { EventInfo } from "@/services/server/events";
+import { EventInfo } from "@/services/server/events-types";
 import classNames from "classnames";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
