@@ -113,7 +113,7 @@
           ],
           "icon": "BiSolidRocket",
           "heading": "CI/CD Automation",
-          "description": "Stop manual deployments. We build reliable pipelines in Azure DevOps that deploy your code to production in minutes, not days.",
+          "description": "Stop manual deployments. We build reliable pipelines in GitHub or Azure DevOps that deploy your code to production in minutes, not days.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -226,7 +226,7 @@
         {
           "guid": "sslh7g",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiBrain",
           "heading": "Bicep",
           "description": "Azure-native infrastructure as code language for deploying and managing cloud resources with clean, declarative syntax.\n",
           "embeddedButton": {
