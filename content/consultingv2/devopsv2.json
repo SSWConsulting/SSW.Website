@@ -210,7 +210,8 @@
           "heading": "Azure DevOps",
           "description": "Enterprise CI/CD platform for automating builds, tests, and deployments across your entire software delivery lifecycle.\n",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-scrum-using-azure-devops/"
           }
         },
         {
