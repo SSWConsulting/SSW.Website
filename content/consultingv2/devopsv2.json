@@ -131,9 +131,9 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "BiSolidBolt",
-          "heading": "Faster Queries",
-          "description": "We deep‑scan every table, drop junk indexes, and pinpoint bottlenecks to deliver faster query performance. Critical reports load up to 80 % faster.",
+          "icon": "BiBuildings",
+          "heading": "Infrastructure as Code ",
+          "description": "Provision and manage your Azure infrastructure through code. Eliminate manual errors, version control your environments, and spin up identical setups in minutes.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -152,8 +152,8 @@
             }
           ],
           "icon": "BiSolidCheckShield",
-          "heading": "Data Security",
-          "description": "Implement ISO, SOC2 & GDPR best practices to ensure your data is kept secure and compliant.",
+          "heading": "Secure by Default",
+          "description": "We bake security into pipelines with secrets management, access controls, and policy checks your expectations.",
           "embeddedButton": {
             "buttonText": ""
           }
