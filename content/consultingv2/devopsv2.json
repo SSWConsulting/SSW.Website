@@ -236,7 +236,7 @@
         {
           "guid": "aqn25",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiLogoKubernetes",
           "heading": "Kubernetes",
           "description": "Container orchestration platform for deploying, scaling, and managing containerized applications in production environments.\n",
           "embeddedButton": {
