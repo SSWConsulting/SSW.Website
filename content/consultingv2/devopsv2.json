@@ -246,7 +246,7 @@
         {
           "guid": "f23qru",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiLogoDocker",
           "heading": "Docker",
           "description": "Containerization platform that packages applications with their dependencies, enabling consistent deployments across any environment.\n",
           "embeddedButton": {
