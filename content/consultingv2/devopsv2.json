@@ -218,7 +218,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "GitHub Actions",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "Modern workflow automation built into GitHub, enabling fast CI/CD pipelines with infrastructure as code and seamless integration.\n",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
