@@ -207,8 +207,8 @@
           "guid": "da7e9",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Example 1",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "heading": "Azure DevOps",
+          "description": "Enterprise CI/CD platform for automating builds, tests, and deployments across your entire software delivery lifecycle.\n",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
@@ -217,7 +217,7 @@
           "guid": "gua1q",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Example 2 ",
+          "heading": "GitHub Actions",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "embeddedButton": {
             "buttonText": "Lorem"
@@ -227,7 +227,7 @@
           "guid": "sslh7g",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Example 3",
+          "heading": "Bicep",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "embeddedButton": {
             "buttonText": "Lorem"
@@ -237,7 +237,7 @@
           "guid": "aqn25",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Example 4 ",
+          "heading": "Kubernetes",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "embeddedButton": {
             "buttonText": "Lorem"
@@ -247,7 +247,7 @@
           "guid": "f23qru",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Example 5",
+          "heading": "Docker",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "embeddedButton": {
             "buttonText": "Lorem"
