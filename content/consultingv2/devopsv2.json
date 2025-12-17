@@ -238,7 +238,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "Kubernetes",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description": "Container orchestration platform for deploying, scaling, and managing containerized applications in production environments.\n",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
