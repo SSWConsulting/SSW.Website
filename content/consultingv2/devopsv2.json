@@ -232,7 +232,8 @@
           "heading": "Bicep",
           "description": "Azure-native infrastructure as code language for deploying and managing cloud resources with clean, declarative syntax.\n",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=gv_SFEBZ1WU"
           }
         },
         {
