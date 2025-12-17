@@ -243,7 +243,8 @@
           "heading": "Kubernetes",
           "description": "Container orchestration platform for deploying, scaling, and managing containerized applications in production environments.\n",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=J-xyKoYW4Pc"
           }
         },
         {
