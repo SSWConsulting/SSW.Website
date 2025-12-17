@@ -207,7 +207,7 @@
           "guid": "da7e9",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Lorem Ipsum",
+          "heading": "Example 1",
           "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
           "embeddedButton": {
             "buttonText": "Lorem"
