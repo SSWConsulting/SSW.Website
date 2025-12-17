@@ -192,6 +192,9 @@
         },
         {
           "technologyGroup": "content/v2Technologies/groups/Back-End.mdx"
+        },
+        {
+          "technologyGroup": "content/v2Technologies/groups/Azure-cloud.mdx"
         }
       ],
       "isStacked": false,
