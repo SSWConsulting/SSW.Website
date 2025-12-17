@@ -206,7 +206,7 @@
         {
           "guid": "da7e9",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiHdd",
           "heading": "Azure DevOps",
           "description": "Enterprise CI/CD platform for automating builds, tests, and deployments across your entire software delivery lifecycle.\n",
           "embeddedButton": {
@@ -216,7 +216,7 @@
         {
           "guid": "gua1q",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiLogoGithub",
           "heading": "GitHub Actions",
           "description": "Modern workflow automation built into GitHub, enabling fast CI/CD pipelines with infrastructure as code and seamless integration.\n",
           "embeddedButton": {
