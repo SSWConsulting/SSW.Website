@@ -203,17 +203,7 @@
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
-        "twoColumns": false,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
+        "twoColumns": false
       },
       "buttons": [
         {
