@@ -221,7 +221,8 @@
           "heading": "GitHub Actions",
           "description": "Modern workflow automation built into GitHub, enabling fast CI/CD pipelines with infrastructure as code and seamless integration.\n",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-github/"
           }
         },
         {
