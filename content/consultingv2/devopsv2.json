@@ -254,7 +254,8 @@
           "heading": "Docker",
           "description": "Containerization platform that packages applications with their dependencies, enabling consistent deployments across any environment.\n",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=Yhp37fPn6dQ"
           }
         }
       ],
