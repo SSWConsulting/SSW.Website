@@ -189,6 +189,9 @@
       "technologyGroups": [
         {
           "technologyGroup": "content/v2Technologies/groups/Azure-cloud.mdx"
+        },
+        {
+          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
         }
       ],
       "isStacked": false,
