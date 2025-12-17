@@ -111,9 +111,9 @@
               "chipType": "clearChip"
             }
           ],
-          "icon": "BiMoneyWithdraw",
-          "heading": "SpendOps",
-          "description": "Audit your database infrastructure; cut what you don’t need. Reclaim six‑figure budgets you can reinvest in product innovation.",
+          "icon": "BiSolidRocket",
+          "heading": "CI/CD Automation",
+          "description": "Stop manual deployments. We build reliable pipelines in Azure DevOps that deploy your code to production in minutes, not days.",
           "embeddedButton": {
             "buttonText": ""
           }
