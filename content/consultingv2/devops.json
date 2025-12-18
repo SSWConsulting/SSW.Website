@@ -1,0 +1,308 @@
+{
+  "seo": {
+    "title": "DevOps Consulting | SSW",
+    "description": "Accelerate delivery with SSW's DevOps consulting. 30 years of Microsoft expertise. Book a free consultation today",
+    "canonical": ""
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "DevOps",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "DevOps, **ship faster** and break less ",
+      "isH1": true,
+      "description": "We help enterprise teams build reliable pipelines, stable platforms, and repeatable delivery.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Meeting",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/ssw-web/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted By",
+      "paused": true,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 120,
+          "altText": "toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 120,
+          "altText": "symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 120,
+          "altText": "microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "scale": 120,
+          "altText": "event-cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 120,
+          "altText": "domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 120,
+          "altText": "cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 120,
+          "altText": "commonwealth-bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 120,
+          "altText": "allianz"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Your delivery pipeline, **transformed**",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "d5hmcb",
+          "altText": "Bulletproof  Uptime",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiSolidRocket",
+          "heading": "CI/CD Automation",
+          "description": "Stop manual deployments. We build reliable pipelines in GitHub, Azure DevOps, or Octopus that deploy your code to production in minutes, not days.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "k4cc4c",
+          "altText": "Faster Queries",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiBuildings",
+          "heading": "Infrastructure as Code ",
+          "description": "Provision and manage your Azure infrastructure through code. Eliminate manual errors, version control your environments, and spin up identical setups in minutes.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "7zpda5",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiSolidCheckShield",
+          "heading": "Secure by Default",
+          "description": "We bake security into pipelines with secrets management, access controls, and policy checks.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently asked questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "Can you work with our existing DevOps setup?",
+          "content": "Yes. We work with what you already have and improve it incrementally. No forced rewrites or unnecessary tool changes. \n"
+        },
+        {
+          "label": "Can you help us migrate from our current tools to GitHub, Azure DevOps, or Octopus Deploy?",
+          "content": "Yes. We specialize in migrating teams from Jenkins, GitLab, CircleCI, and other CI/CD platforms to GitHub, Azure DevOps, or Octopus. We focus on minimal disruption to your current development workflow while unlocking new automation and integration capabilities.\n"
+        },
+        {
+          "label": "Why should I choose SSW for custom software development?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Deep Industry Expertise: We have decades of experience in Financial Services, Healthcare, Education, & Mining.\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+        },
+        {
+          "label": "What is SSW's development process like, and how involved will I need to be?",
+          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Related Technologies",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "da7e9",
+          "altText": "Lorem Ipsum",
+          "icon": "BiHdd",
+          "heading": "Azure DevOps",
+          "description": "Enterprise CI/CD platform for automating builds, tests, and deployments across your entire software delivery lifecycle.\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-scrum-using-azure-devops/"
+          }
+        },
+        {
+          "guid": "gua1q",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoGithub",
+          "heading": "GitHub Actions",
+          "description": "Modern workflow automation built into GitHub, enabling fast CI/CD pipelines with infrastructure as code and seamless integration.\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-github/"
+          }
+        },
+        {
+          "guid": "sslh7g",
+          "altText": "Lorem Ipsum",
+          "icon": "BiBrain",
+          "heading": "Bicep",
+          "description": "Azure-native infrastructure as code language for deploying and managing cloud resources with clean, declarative syntax.\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=gv_SFEBZ1WU"
+          }
+        },
+        {
+          "guid": "aqn25",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoKubernetes",
+          "heading": "Kubernetes",
+          "description": "Container orchestration platform for deploying, scaling, and managing containerized applications in production environments.\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=J-xyKoYW4Pc"
+          }
+        },
+        {
+          "guid": "f23qru",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoDocker",
+          "heading": "Docker",
+          "description": "Containerization platform that packages applications with their dependencies, enabling consistent deployments across any environment.\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=Yhp37fPn6dQ"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your **DevOps** transformation today",
+      "isH1": false,
+      "description": "Connect with our DevOps consulting team to uncover quick wins in delivery speed, reliability, and cost efficiency.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a FREE Initial Meeting",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
