@@ -175,7 +175,7 @@
           "content": "Yes. We work with what you already have and improve it incrementally. No forced rewrites or unnecessary tool changes. \n"
         },
         {
-          "label": "Can you help us migrate from our current tools to GitHub or  Azure DevOps",
+          "label": "Can you help us migrate from our current tools to GitHub, Azure DevOps, or Octopus Deploy?",
           "content": "Yes. We specialize in migrating teams from Jenkins, GitLab, CircleCI, and other CI/CD platforms to GitHub, Azure DevOps, or Octopus. We focus on minimal disruption to your current development workflow while unlocking new automation and integration capabilities.\n"
         },
         {
