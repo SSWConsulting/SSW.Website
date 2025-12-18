@@ -176,7 +176,7 @@
         },
         {
           "label": "Can you help us migrate from our current tools to GitHub or  Azure DevOps",
-          "content": "Yes. We specialize in migrating teams from Jenkins, GitLab, CircleCI, and other CI/CD platforms to GitHub or Azure DevOps. We focus on minimal disruption to your current development workflow while unlocking new automation and integration capabilities.\n"
+          "content": "Yes. We specialize in migrating teams from Jenkins, GitLab, CircleCI, and other CI/CD platforms to GitHub, Azure DevOps, or Octopus. We focus on minimal disruption to your current development workflow while unlocking new automation and integration capabilities.\n"
         },
         {
           "label": "Why should I choose SSW for custom software development?",
