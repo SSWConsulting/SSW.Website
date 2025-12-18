@@ -153,7 +153,7 @@
           ],
           "icon": "BiSolidCheckShield",
           "heading": "Secure by Default",
-          "description": "We bake security into pipelines with secrets management, access controls, and policy checks your expectations.",
+          "description": "We bake security into pipelines with secrets management, access controls, and policy checks.",
           "embeddedButton": {
             "buttonText": ""
           }
