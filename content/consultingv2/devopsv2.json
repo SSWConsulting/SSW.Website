@@ -113,7 +113,7 @@
           ],
           "icon": "BiSolidRocket",
           "heading": "CI/CD Automation",
-          "description": "Stop manual deployments. We build reliable pipelines in GitHub or Azure DevOps that deploy your code to production in minutes, not days.",
+          "description": "Stop manual deployments. We build reliable pipelines in GitHub, Azure DevOps, or Octopus that deploy your code to production in minutes, not days.",
           "embeddedButton": {
             "buttonText": ""
           }
