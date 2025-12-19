@@ -316,17 +316,6 @@
       "_template": "accordionBlock"
     },
     {
-      "technologyGroups": [
-        {
-          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "technologyCardCarousel"
-    },
-    {
       "spacerHeight": "50px",
       "background": {
         "backgroundColour": 6,
@@ -334,6 +323,73 @@
         "bleed": false
       },
       "_template": "spacer"
+    },
+    {
+      "isStacked": false,
+      "heading": "Related Technologies",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "xu60db",
+          "altText": "Lorem Ipsum",
+          "icon": "BiHdd",
+          "heading": "Azure Blob Storage",
+          "description": "Massively scalable and secure object storage for cloud-native workloads, archives, data lakes, HPC, and machine learning.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
+          "guid": "dg3ia5",
+          "altText": "Lorem Ipsum",
+          "icon": "BiCoinStack",
+          "heading": "Azure Cosmos DB",
+          "description": "Develop AI-powered apps and agents with a fully managed and serverless NoSQL vector database at any scale.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
+          "guid": "1npkfi",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidData",
+          "heading": "Azure SQL Database",
+          "description": "Build limitless, trusted, AI-ready apps on a fully managed SQL database",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
+          "guid": "tcguko",
+          "altText": "Lorem Ipsum",
+          "icon": "BiBuoy",
+          "heading": "EF Core",
+          "description": "A modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations\n\n",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "hevxn3",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidBarChartAlt2",
+          "heading": "Power BI ",
+          "description": "Transform complex SQL data into intuitive, actionable business insights.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/consulting/power-bi"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
     },
     {
       "topLabel": {
