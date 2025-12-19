@@ -344,7 +344,7 @@
         {
           "guid": "wfjccx",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiLogoMongodb",
           "heading": "MongoDB",
           "description": "Document database perfect for microservices architecture.",
           "embeddedButton": {
@@ -354,7 +354,7 @@
         {
           "guid": "8n0w1",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiLogoPostgresql",
           "heading": "PostgreSQL",
           "description": "Open-source SQL database with excellent performance and reliability",
           "embeddedButton": {
