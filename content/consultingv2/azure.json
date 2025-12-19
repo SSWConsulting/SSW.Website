@@ -220,37 +220,14 @@
           }
         },
         {
-          "guid": null,
+          "guid": "oed4sf",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "icon": "BiLogoKubernetes",
+          "heading": "Kubernetes",
+          "description": "Container orchestration platform for deploying, scaling, and managing containerized applications in production environments.\n\n",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=J-xyKoYW4Pc"
           }
         },
         {
