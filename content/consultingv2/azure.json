@@ -144,6 +144,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Left",
@@ -178,6 +181,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Right",
@@ -186,17 +192,114 @@
       "_template": "accordionBlock"
     },
     {
-      "technologyGroups": [
+      "isStacked": false,
+      "heading": "Related Technologies",
+      "isH1": false,
+      "body": "",
+      "cards": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Azure-cloud.mdx"
+          "guid": "ik9aho",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidBarChartAlt2",
+          "heading": "Azure Synapse",
+          "description": "An integrated enterprise analytics service that unifies data warehousing and big data systems.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/consulting/azure-synapse"
+          }
         },
         {
-          "technologyGroup": "content/v2Technologies/groups/database-development.mdx"
+          "guid": "jhhhl9",
+          "altText": "Lorem Ipsum",
+          "icon": "BiCloud",
+          "heading": "Azure App Service",
+          "description": "A fully managed platform-as-a-service (PaaS) for hosting web applications, REST APIs, and mobile backends.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
+          "guid": "jk7m5l",
+          "altText": "Lorem Ipsum",
+          "icon": "BiServer",
+          "heading": "Azure Blob Storage",
+          "description": "Massively scalable and secure object storage for cloud-native workloads, archives, data lakes, HPC, and machine learning.\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
+          "guid": "6bap5",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoPostgresql",
+          "heading": "Azure SQL Database",
+          "description": "Build limitless, trusted, AI-ready apps on a fully managed SQL database\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-server-schema-deployment"
+          }
+        },
+        {
+          "guid": "hh8nhk",
+          "altText": "Lorem Ipsum",
+          "icon": "BiCoinStack",
+          "heading": "Azure Cosmos DB",
+          "description": "Develop AI-powered apps and agents with a fully managed and serverless NoSQL vector database at any scale.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
+          "guid": "sv6mmo",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoDocker",
+          "heading": "Docker",
+          "description": "Containerization platform that packages applications with their dependencies, enabling consistent deployments across any environment.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=Yhp37fPn6dQ"
+          }
+        },
+        {
+          "guid": "oed4sf",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoKubernetes",
+          "heading": "Kubernetes",
+          "description": "Container orchestration platform for deploying, scaling, and managing containerized applications in production environments.\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=J-xyKoYW4Pc"
+          }
+        },
+        {
+          "guid": "qmd20r",
+          "altText": "Lorem Ipsum",
+          "icon": "BiBarChartAlt2",
+          "heading": "Power BI",
+          "description": "Transform complex SQL data into intuitive, actionable business insights.\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/consulting/power-bi"
+          }
+        },
+        {
+          "guid": "nanos",
+          "altText": "Lorem Ipsum",
+          "icon": "BiColor",
+          "heading": "EF Core",
+          "description": "A modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations\n\n",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
-      "isStacked": false,
-      "techCardStyle": 0,
-      "_template": "technologyCardCarousel"
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
     },
     {
       "topLabel": {
@@ -215,6 +318,9 @@
           "colour": 0
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "imageTextBlock"
     }
   ]
