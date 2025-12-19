@@ -334,9 +334,9 @@
         {
           "guid": "xu60db",
           "altText": "Lorem Ipsum",
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "icon": "BiHdd",
+          "heading": "Azure Blob Storage",
+          "description": "Massively scalable and secure object storage for cloud-native workloads, archives, data lakes, HPC, and machine learning.",
           "embeddedButton": {
             "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
