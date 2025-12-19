@@ -376,7 +376,7 @@
         {
           "guid": "q8nt5v",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidFileJs",
           "heading": "Next.js",
           "description": "A powerful React framework that enables server-side rendering and generating static websites for high-performance web applications.",
           "embeddedButton": {
@@ -385,37 +385,14 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
+          "guid": "44xfn",
+          "altText": "",
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Docker",
+          "description": "Containerization platform that packages applications with their dependencies, enabling consistent deployments across any environment.\n\n",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=Yhp37fPn6dQ"
           }
         }
       ],
