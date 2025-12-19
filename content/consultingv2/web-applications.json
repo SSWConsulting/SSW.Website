@@ -387,7 +387,7 @@
         {
           "guid": "44xfn",
           "altText": "",
-          "icon": "info",
+          "icon": "BiLogoDocker",
           "heading": "Docker",
           "description": "Containerization platform that packages applications with their dependencies, enabling consistent deployments across any environment.\n\n",
           "embeddedButton": {
