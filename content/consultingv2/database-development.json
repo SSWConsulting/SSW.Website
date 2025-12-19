@@ -356,7 +356,7 @@
         {
           "guid": "1npkfi",
           "altText": "Lorem Ipsum",
-          "icon": "info",
+          "icon": "BiSolidData",
           "heading": "Azure SQL Database",
           "description": "Build limitless, trusted, AI-ready apps on a fully managed SQL database",
           "embeddedButton": {
