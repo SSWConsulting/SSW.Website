@@ -251,6 +251,17 @@
             "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/power-bi"
           }
+        },
+        {
+          "guid": "jk7m5l",
+          "altText": "Lorem Ipsum",
+          "icon": "BiServer",
+          "heading": "Azure Blob Storage",
+          "description": "Massively scalable and secure object storage for cloud-native workloads, archives, data lakes, HPC, and machine learning.\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
         }
       ],
       "background": {
