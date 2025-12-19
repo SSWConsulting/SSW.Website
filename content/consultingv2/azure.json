@@ -231,6 +231,28 @@
           }
         },
         {
+          "guid": "6bap5",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoPostgresql",
+          "heading": "Azure SQL Database",
+          "description": "Build limitless, trusted, AI-ready apps on a fully managed SQL database\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-server-schema-deployment"
+          }
+        },
+        {
+          "guid": "hh8nhk",
+          "altText": "Lorem Ipsum",
+          "icon": "BiCoinStack",
+          "heading": "Azure Cosmos DB",
+          "description": "Develop AI-powered apps and agents with a fully managed and serverless NoSQL vector database at any scale.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
           "guid": "sv6mmo",
           "altText": "Lorem Ipsum",
           "icon": "BiLogoDocker",
@@ -264,25 +286,13 @@
           }
         },
         {
-          "guid": "hh8nhk",
+          "guid": "nanos",
           "altText": "Lorem Ipsum",
-          "icon": "BiCoinStack",
-          "heading": "Azure Cosmos DB",
-          "description": "Develop AI-powered apps and agents with a fully managed and serverless NoSQL vector database at any scale.",
+          "icon": "BiColor",
+          "heading": "EF Core",
+          "description": "A modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations\n\n",
           "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
-          }
-        },
-        {
-          "guid": "6bap5",
-          "altText": "Lorem Ipsum",
-          "icon": "BiLogoPostgresql",
-          "heading": "Azure SQL Database",
-          "description": "Build limitless, trusted, AI-ready apps on a fully managed SQL database\n\n",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-server-schema-deployment"
+            "buttonText": ""
           }
         }
       ],
