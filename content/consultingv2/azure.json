@@ -273,6 +273,27 @@
             "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
           }
+        },
+        {
+          "guid": "6bap5",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Azure SQL Database",
+          "description": "Build limitless, trusted, AI-ready apps on a fully managed SQL database\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-server-schema-deployment"
+          }
         }
       ],
       "background": {
