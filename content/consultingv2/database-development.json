@@ -349,7 +349,8 @@
           "heading": "Azure Cosmos DB",
           "description": "Develop AI-powered apps and agents with a fully managed and serverless NoSQL vector database at any scale.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
           }
         },
         {
