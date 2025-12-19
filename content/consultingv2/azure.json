@@ -209,6 +209,28 @@
           }
         },
         {
+          "guid": "jhhhl9",
+          "altText": "Lorem Ipsum",
+          "icon": "BiCloud",
+          "heading": "Azure App Service",
+          "description": "A fully managed platform-as-a-service (PaaS) for hosting web applications, REST APIs, and mobile backends.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
+          "guid": "jk7m5l",
+          "altText": "Lorem Ipsum",
+          "icon": "BiServer",
+          "heading": "Azure Blob Storage",
+          "description": "Massively scalable and secure object storage for cloud-native workloads, archives, data lakes, HPC, and machine learning.\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
+          }
+        },
+        {
           "guid": "sv6mmo",
           "altText": "Lorem Ipsum",
           "icon": "BiLogoDocker",
@@ -231,17 +253,6 @@
           }
         },
         {
-          "guid": "jhhhl9",
-          "altText": "Lorem Ipsum",
-          "icon": "BiCloud",
-          "heading": "Azure App Service",
-          "description": "A fully managed platform-as-a-service (PaaS) for hosting web applications, REST APIs, and mobile backends.",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
-          }
-        },
-        {
           "guid": "qmd20r",
           "altText": "Lorem Ipsum",
           "icon": "BiBarChartAlt2",
@@ -253,11 +264,11 @@
           }
         },
         {
-          "guid": "jk7m5l",
+          "guid": "hh8nhk",
           "altText": "Lorem Ipsum",
-          "icon": "BiServer",
-          "heading": "Azure Blob Storage",
-          "description": "Massively scalable and secure object storage for cloud-native workloads, archives, data lakes, HPC, and machine learning.\n\n",
+          "icon": "BiCoinStack",
+          "heading": "Azure Cosmos DB",
+          "description": "Develop AI-powered apps and agents with a fully managed and serverless NoSQL vector database at any scale.",
           "embeddedButton": {
             "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
