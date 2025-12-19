@@ -16,7 +16,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Custom **Web Application** Development.",
+      "heading": "Custom **Web Application** Development",
       "isH1": true,
       "description": "Get mission-critical custom web applications built by expert Australian engineers. Predictable results, quality code.\n",
       "featureColumns": {
@@ -329,7 +329,7 @@
     {
       "technologyGroups": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+          "technologyGroup": "content/v2Technologies/groups/Front-End.mdx"
         }
       ],
       "isStacked": false,
