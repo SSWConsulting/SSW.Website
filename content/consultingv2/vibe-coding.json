@@ -219,7 +219,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
