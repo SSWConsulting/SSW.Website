@@ -73,7 +73,7 @@
     "@radix-ui/react-slot": "^1.2.4",
     "@tailwindcss/typography": "^0.5.16",
     "@tanstack/react-query": "^5.81.5",
-    "@tanstack/react-query-devtools": "^5.81.5",
+    "@tanstack/react-query-devtools": "^5.91.2",
     "animate-css-grid": "^1.5.1",
     "aos": "^2.3.4",
     "applicationinsights": "^3.12.0",
