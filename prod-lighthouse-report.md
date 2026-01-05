@@ -2,16 +2,16 @@
 
 | 🌐 URL | ⚡ Performance | ♿ Accessibility | ✅ Best Practices | 🔍 SEO | 📦 Bundle Size | 🗑️ Unused Bundle |
 | --- | ----------- | ------------- | -------------- | --- | ---------------- | ---------------- |
-| ⭐ https://app-sswwebsite-9eb3.azurewebsites.net/ | 45 | 91 | 59 | 100 | 0.00 MB | 0.00 MB |
+| ⭐ https://app-sswwebsite-9eb3.azurewebsites.net/ | 43 | 91 | 59 | 100 | 0.00 MB | 0.00 MB |
 | https://app-sswwebsite-9eb3.azurewebsites.net/articles | 73 | 96 | 59 | 92 | 0.00 MB | 0.00 MB |
-| https://app-sswwebsite-9eb3.azurewebsites.net/company/about-us | 54 | 100 | 59 | 100 | 0.00 MB | 0.00 MB |
-| https://app-sswwebsite-9eb3.azurewebsites.net/company/clients | 74 | 94 | 59 | 100 | 0.00 MB | 0.00 MB |
-| https://app-sswwebsite-9eb3.azurewebsites.net/company/contact-us | 84 | 90 | 59 | 92 | 0.00 MB | 0.00 MB |
+| https://app-sswwebsite-9eb3.azurewebsites.net/company/about-us | 52 | 100 | 59 | 100 | 0.00 MB | 0.00 MB |
+| https://app-sswwebsite-9eb3.azurewebsites.net/company/clients | 68 | 94 | 59 | 100 | 0.00 MB | 0.00 MB |
+| https://app-sswwebsite-9eb3.azurewebsites.net/company/contact-us | 70 | 90 | 59 | 92 | 0.00 MB | 0.00 MB |
 | https://app-sswwebsite-9eb3.azurewebsites.net/consulting | 56 | 90 | 56 | 100 | 0.00 MB | 0.00 MB |
-| ⭐ https://app-sswwebsite-9eb3.azurewebsites.net/consulting/net-upgrade | 50 | 89 | 56 | 85 | 0.00 MB | 0.00 MB |
-| ⭐ https://app-sswwebsite-9eb3.azurewebsites.net/consulting/web-applications | 60 | 93 | 59 | 85 | 0.00 MB | 0.00 MB |
-| https://app-sswwebsite-9eb3.azurewebsites.net/employment | 78 | 94 | 59 | 100 | 0.00 MB | 0.00 MB |
+| ⭐ https://app-sswwebsite-9eb3.azurewebsites.net/consulting/net-upgrade | 45 | 89 | 56 | 85 | 0.00 MB | 0.00 MB |
+| ⭐ https://app-sswwebsite-9eb3.azurewebsites.net/consulting/web-applications | 56 | 93 | 59 | 85 | 0.00 MB | 0.00 MB |
+| https://app-sswwebsite-9eb3.azurewebsites.net/employment | 52 | 94 | 59 | 100 | 0.00 MB | 0.00 MB |
 | https://app-sswwebsite-9eb3.azurewebsites.net/events/angular-superpowers-tour | 66 | 96 | 56 | 100 | 0.00 MB | 0.00 MB |
-| https://app-sswwebsite-9eb3.azurewebsites.net/events/ai-workshop | 67 | 90 | 56 | 92 | 0.00 MB | 0.00 MB |
-| https://app-sswwebsite-9eb3.azurewebsites.net/netug/sydney | 64 | 92 | 59 | 92 | 0.00 MB | 0.00 MB |
-| https://app-sswwebsite-9eb3.azurewebsites.net/training/internship-fullstack | 63 | 87 | 56 | 100 | 0.00 MB | 0.00 MB |
+| https://app-sswwebsite-9eb3.azurewebsites.net/events/ai-workshop | 68 | 90 | 56 | 92 | 0.00 MB | 0.00 MB |
+| https://app-sswwebsite-9eb3.azurewebsites.net/netug/sydney | 66 | 92 | 59 | 92 | 0.00 MB | 0.00 MB |
+| https://app-sswwebsite-9eb3.azurewebsites.net/training/internship-fullstack | 68 | 87 | 56 | 100 | 0.00 MB | 0.00 MB |
