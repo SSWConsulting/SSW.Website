@@ -46,5 +46,8 @@
       },
       "_template": "imageTextBlock"
     }
-  ]
+  ],
+  "azureBanner": {
+    "azureFooterColor": "darkgray"
+  }
 }
