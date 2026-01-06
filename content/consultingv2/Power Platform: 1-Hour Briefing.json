@@ -12,7 +12,8 @@
       },
       "heading": "Intelligent Automation",
       "isH1": false,
-      "description": "UNLOCK YOUR\n\nORGANIZATION’S\n\nPOTENTIAL WITH POWER\n\nPLATFORM\n",
+      "description": "\\### Harness the Power of Low-Code Development for Your Business\n\nBefore starting your low-code development, it's important to grasp what Microsoft Power Platform can offer. SSW's Power Platform Assessment gives you a clear analysis and strategic roadmap, helping you make informed decisions on how to use these tools.   \n\nOur assessment service, also known as a Specification Review, focuses on understanding your business needs and exploring Power Platform solutions, with Azure integration for improved performance.    \n\n\\### Our deliverables include:\n\\- \\*\\*Business Process Analysis\\*\\*: We examine your existing processes and workflows to identify opportunities for automation and optimization using Power Platform.   \n\\- \\*\\*Blueprint Creation\\*\\*: We create a comprehensive blueprint for your Power Platform solution, detailing the architecture, required components, and Azure integration points.   \n\\- \\*\\*Licensing and Governance Recommendations\\*\\*: We offer guidance on the most cost-effective licensing options and best practices for governing your Power Platform environment.    \n\\- \\*\\*Product Backlog Items with Effort/Time Estimates\\*\\*: We provide a feature list with effort estimates, allowing for accurate planning and budgeting, while accounting for potential timeframe changes based on project scope.    \n\\- \\*\\*Implementation Roadmap\\*\\*: We design an in-depth plan that outlines the steps necessary for successful Power Platform adoption, considering your business objectives and timelines.    \n\n\\*Pricing varies based on the scope of the engagement. Licensing costs are additional to the engagement fees.\n",
+      "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -28,7 +29,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Lorem Ipsum",
+          "buttonText": "Find out more",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         },
         {
