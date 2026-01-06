@@ -38,6 +38,12 @@
           "colour": 1
         }
       ],
+      "mediaConfiguration": {
+        "placement": "Right",
+        "imageSource": "/images/micro_consulting/PowerPlatform01.jpg",
+        "imageHeight": 800,
+        "imageWidth": 1200
+      },
       "_template": "imageTextBlock"
     }
   ]
