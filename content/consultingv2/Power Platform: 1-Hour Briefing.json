@@ -3,5 +3,40 @@
     "title": "Power Platform: 1-Hour Briefing",
     "description": "Discuss your business challenges with SSW and discover how using Power Platform tools can streamline your processes and drive efficiency",
     "canonical": "power-platform-1-hour-briefing"
-  }
+  },
+  "blocks": [
+    {
+      "topLabel": {
+        "labelText": "UNLOCK YOUR ORGANIZATION’S POTENTIAL WITH POWER PLATFORM",
+        "icon": "BiFingerprint"
+      },
+      "heading": "Intelligent Automation",
+      "isH1": false,
+      "description": "UNLOCK YOUR\n\nORGANIZATION’S\n\nPOTENTIAL WITH POWER\n\nPLATFORM\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "_template": "imageTextBlock"
+    }
+  ]
 }
