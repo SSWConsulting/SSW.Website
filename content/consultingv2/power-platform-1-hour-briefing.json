@@ -20,6 +20,10 @@
         {
           "label": "Blueprint Creation ",
           "content": "We create a comprehensive blueprint for your Power Platform solution, detailing the architecture, required components, and Azure integration points.  \n"
+        },
+        {
+          "label": "Licensing and Governance Recommendations",
+          "content": "We offer guidance on the most cost-effective licensing options and best practices for governing your Power Platform environment.    \n"
         }
       ],
       "buttons": [
