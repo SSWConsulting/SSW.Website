@@ -64,6 +64,9 @@
         },
         {
           "logo": "/images/clientLogos/cisco.png"
+        },
+        {
+          "logo": "/images/Clients/bupa-logo.jpg"
         }
       ],
       "_template": "logoCarousel"
