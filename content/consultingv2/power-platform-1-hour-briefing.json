@@ -85,6 +85,10 @@
         {
           "logo": "/images/Clients/medibank-logo.png",
           "altText": "Medibank"
+        },
+        {
+          "logo": "/images/Clients/event-cinemas-logo.jpg",
+          "altText": "Event"
         }
       ],
       "_template": "logoCarousel"
