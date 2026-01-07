@@ -67,7 +67,8 @@
           "altText": "Cisco"
         },
         {
-          "logo": "/images/Clients/bupa-logo.jpg"
+          "logo": "/images/Clients/bupa-logo.jpg",
+          "altText": "Bupa"
         }
       ],
       "_template": "logoCarousel"
