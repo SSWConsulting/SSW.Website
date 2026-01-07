@@ -6,41 +6,39 @@
   },
   "blocks": [
     {
-      "topLabel": {
-        "labelText": "UNLOCK YOUR ORGANIZATION’S POTENTIAL WITH POWER PLATFORM",
-        "icon": "BiFingerprint"
-      },
-      "heading": "Intelligent Automation",
-      "isH1": false,
-      "description": "Harness the Power of Low-Code Development for Your Business\n\nBefore starting your low-code development, it's important to grasp what Microsoft Power Platform can offer. SSW's Power Platform Assessment gives you a clear analysis and strategic roadmap, helping you make informed decisions on how to use these tools.\n\nOur assessment service, also known as a Specification Review, focuses on understanding your business needs and exploring Power Platform solutions, with Azure integration for improved performance.\n\nOur deliverables include:\nBusiness Process Analysis: We examine your existing processes and workflows to identify opportunities for automation and optimization using Power Platform.\\\nBlueprint Creation\\*\\*: We create a comprehensive blueprint for your Power Platform solution, detailing the architecture, required components, and Azure integration points.\\\nLicensing and Governance Recommendations\\*\\*: We offer guidance on the most cost-effective licensing options and best practices for governing your Power Platform environment.\\\nProduct Backlog Items with Effort/Time Estimates\\*\\*: We provide a feature list with effort estimates, allowing for accurate planning and budgeting, while accounting for potential timeframe changes based on project scope.\\\nImplementation Roadmap\\*\\*: We design an in-depth plan that outlines the steps necessary for successful Power Platform adoption, considering your business objectives and timelines.\n\n\\*Pricing varies based on the scope of the engagement. Licensing costs are additional to the engagement fees.\n",
+      "_template": "breadcrumbs"
+    },
+    {
+      "heading": "Power Platform: 2-day Assessment",
+      "body": "Receive a 2-day assessment on using Microsoft Power Platform to enhance your business. Our experts will analyze, design solutions, and integrate with Azure to enhance your workflows. Before starting your low-code development, it's important to grasp what Microsoft Power Platform can offer. SSW's Power Platform Assessment gives you a clear analysis and strategic roadmap, helping you make informed decisions on how to use these tools.     Our assessment service, also known as a Specification Review, focuses on understanding your business needs and exploring Power Platform solutions, with Azure integration for improved performance.   ",
       "tabletTextAlignment": "Left",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
-          },
-          {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
-          }
-        ]
-      },
+      "accordionItems": [
+        {
+          "label": "Business Process Analysis ",
+          "content": "We examine your existing processes and workflows to identify opportunities for automation and optimization using Power Platform. \n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
       "buttons": [
         {
-          "buttonText": "Find out more",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonText": "Lorem Ipsum",
           "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
         }
       ],
       "mediaConfiguration": {
         "placement": "Right",
-        "imageSource": "/images/micro_consulting/PowerPlatform01.jpg",
+        "imageSource": "/images/AAA-Mikes/PowerPlatform01.jpg",
         "imageHeight": 800,
         "imageWidth": 1200
       },
-      "_template": "imageTextBlock"
+      "_template": "accordionBlock"
     }
   ],
   "azureBanner": {
