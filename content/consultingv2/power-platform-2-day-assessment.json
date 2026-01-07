@@ -69,21 +69,7 @@
           "altText": "The Specification Review",
           "icon": "info",
           "heading": "The Specification Review",
-          "description": "Understanding a complex system takes more than one meeting. We spend days gathering stakeholder requirements to create a detailed project roadmap, ensuring we understand the destination before we start the journey.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "description": "Understanding a complex system takes more than one meeting. We spend time gathering stakeholder requirements to create a detailed project roadmap, ensuring we understand the destination before we start the journey.",
           "embeddedButton": {
             "buttonText": "Rules to Better Spec Reviews",
             "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-specification-reviews"
