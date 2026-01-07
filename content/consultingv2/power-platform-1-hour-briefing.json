@@ -91,6 +91,10 @@
         {
           "logo": "/images/Clients/event-cinemas-logo.jpg",
           "altText": "Event"
+        },
+        {
+          "logo": "/images/Clients/syduni-logo.jpg",
+          "altText": "Sydney University"
         }
       ],
       "_template": "logoCarousel"
