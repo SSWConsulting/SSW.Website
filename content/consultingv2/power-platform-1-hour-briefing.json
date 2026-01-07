@@ -99,6 +99,10 @@
         {
           "logo": "/images/Clients/lend-lease-logo.jpg",
           "altText": "Lend Lease"
+        },
+        {
+          "logo": "/images/Clients/pfizer-logo.jpg",
+          "altText": "Pfizer"
         }
       ],
       "_template": "logoCarousel"
