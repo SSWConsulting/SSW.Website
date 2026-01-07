@@ -1,8 +1,9 @@
 {
   "seo": {
-    "title": "Power Platform: 1-Hour Briefing",
+    "title": "Power Platform: 2-Day Assessment",
     "description": "Discuss your business challenges with SSW and discover how using Power Platform tools can streamline your processes and drive efficiency",
-    "canonical": "power-platform-1-hour-briefing"
+    "canonical": "power-platform-2-day-assessment",
+    "showBreadcrumb": true
   },
   "blocks": [
     {
