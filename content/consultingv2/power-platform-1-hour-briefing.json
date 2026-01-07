@@ -95,6 +95,10 @@
         {
           "logo": "/images/Clients/syduni-logo.jpg",
           "altText": "Sydney University"
+        },
+        {
+          "logo": "/images/Clients/lend-lease-logo.jpg",
+          "altText": "Lend Lease"
         }
       ],
       "_template": "logoCarousel"
