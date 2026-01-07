@@ -77,6 +77,10 @@
         {
           "logo": "/images/Clients/Untitled-4.png",
           "altText": "Westpac"
+        },
+        {
+          "logo": "/images/Clients/toll-logo.jpg",
+          "altText": "Toll"
         }
       ],
       "_template": "logoCarousel"
