@@ -89,17 +89,8 @@
         },
         {
           "guid": "qno9cp",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.27.47%E2%80%AFAM.png",
           "altText": "Product Backlog",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
           "icon": "info",
           "heading": "Product Backlog",
           "description": "We translate your requirements into a tangible list of Product Backlog Items (PBIs). This includes setting priorities, mapping dependencies, and estimating the effort required to build the solution step-by-step.",
