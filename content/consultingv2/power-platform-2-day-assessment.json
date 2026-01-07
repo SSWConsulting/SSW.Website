@@ -95,7 +95,7 @@
           "heading": "Product Backlog",
           "description": "We translate your requirements into a tangible list of Product Backlog Items (PBIs). This includes setting priorities, mapping dependencies, and estimating the effort required to build the solution step-by-step.",
           "embeddedButton": {
-            "buttonText": "Rule, Build a Backlog",
+            "buttonText": "Rule: Build a Backlog",
             "buttonLink": "https://www.ssw.com.au/rules/break-pbis"
           }
         },
