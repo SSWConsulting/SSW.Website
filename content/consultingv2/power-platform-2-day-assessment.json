@@ -100,71 +100,15 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
+          "guid": "n1u82s",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.27.57%E2%80%AFAM.png",
+          "altText": "Ballpark Estimates",
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Ballpark Estimates",
+          "description": "Budget clarity is essential. We provide realistic projections on the number of sprints, the size of the development team, and the estimated total cost, giving you the data you need to secure approval.",
           "embeddedButton": {
-            "buttonText": "Lorem"
-          }
-        },
-        {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Rule: Providing Estimates",
+            "buttonLink": "https://www.ssw.com.au/rules/spec-give-customers-a-ballpark"
           }
         }
       ],
