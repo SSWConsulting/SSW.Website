@@ -76,37 +76,15 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
+          "guid": "2demk",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.27.38%E2%80%AFAM.png",
+          "altText": "Requirements Analysis",
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Requirements Analysis",
+          "description": "We break down the technical landscape to define your architectural roadmap, integration plans, and deployment strategy. By identifying the MVP and potential risks early, we prevent costly bottlenecks later.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Rules gathering Accurate Information",
+            "buttonLink": "https://www.ssw.com.au/rules/get-accurate-information"
           }
         },
         {
