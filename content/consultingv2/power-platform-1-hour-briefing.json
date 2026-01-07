@@ -56,7 +56,7 @@
     },
     {
       "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
-      "isWhiteImages": true,
+      "isWhiteImages": false,
       "logos": [
         {
           "logo": "/images/clientLogos/allianz.png",
@@ -73,6 +73,10 @@
         {
           "logo": "/images/Clients/commbank-logo.png",
           "altText": "Commbank"
+        },
+        {
+          "logo": "/images/Clients/Untitled-4.png",
+          "altText": "Westpac"
         }
       ],
       "_template": "logoCarousel"
