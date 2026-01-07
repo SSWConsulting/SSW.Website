@@ -24,6 +24,10 @@
         {
           "label": "Licensing and Governance Recommendations",
           "content": "We offer guidance on the most cost-effective licensing options and best practices for governing your Power Platform environment.    \n"
+        },
+        {
+          "label": "Product Backlog Items with Effort/Time Estimates",
+          "content": "We provide a feature list with effort estimates, allowing for accurate planning and budgeting, while accounting for potential timeframe changes based on project scope.\n"
         }
       ],
       "buttons": [
