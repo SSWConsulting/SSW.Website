@@ -10,7 +10,7 @@
     },
     {
       "heading": "Power Platform: 2-day Assessment",
-      "body": "Receive a 2-day assessment on using Microsoft Power Platform to enhance your business. Our experts will analyze, design solutions, and integrate with Azure to enhance your workflows. Before starting your low-code development, it's important to grasp what Microsoft Power Platform can offer. SSW's Power Platform Assessment gives you a clear analysis and strategic roadmap, helping you make informed decisions on how to use these tools.     Our assessment service, also known as a Specification Review, focuses on understanding your business needs and exploring Power Platform solutions, with Azure integration for improved performance.   ",
+      "body": "Get a 2-day Power Platform assessment to speed up delivery and reduce rework. We’ll review your processes, design the right approach, and produce a practical roadmap — including governance/licensing guidance, backlog items with estimates, and Azure integration if required.",
       "tabletTextAlignment": "Left",
       "accordionItems": [
         {
@@ -48,11 +48,22 @@
       ],
       "mediaConfiguration": {
         "placement": "Right",
-        "imageSource": "/images/AAA-Mikes/PowerPlatform01.jpg",
-        "imageHeight": 800,
+        "imageSource": "/images/AAA-Mike/Power-Platorm-Meeting.jpg",
+        "imageHeight": 766,
         "imageWidth": 1200
       },
       "_template": "accordionBlock"
+    },
+    {
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/clientLogos/allianz.png",
+          "altText": "Logo"
+        }
+      ],
+      "_template": "logoCarousel"
     }
   ],
   "azureBanner": {
