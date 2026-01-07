@@ -28,7 +28,8 @@
         {
           "label": "Product Backlog Items with Effort/Time Estimates",
           "content": "We provide a feature list with effort estimates, allowing for accurate planning and budgeting, while accounting for potential timeframe changes based on project scope.\n"
-        }
+        },
+        {}
       ],
       "buttons": [
         {
@@ -36,7 +37,8 @@
           "colour": 0
         },
         {
-          "buttonText": "Dolor Sit",
+          "buttonText": "Best practices for the Power Platform",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-power-apps",
           "colour": 1
         }
       ],
