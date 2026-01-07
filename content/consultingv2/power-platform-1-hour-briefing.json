@@ -81,6 +81,10 @@
         {
           "logo": "/images/Clients/toll-logo.jpg",
           "altText": "Toll"
+        },
+        {
+          "logo": "/images/Clients/medibank-logo.png",
+          "altText": "Medibank"
         }
       ],
       "_template": "logoCarousel"
