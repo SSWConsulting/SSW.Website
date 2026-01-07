@@ -63,7 +63,8 @@
           "altText": "Allianz"
         },
         {
-          "logo": "/images/clientLogos/cisco.png"
+          "logo": "/images/clientLogos/cisco.png",
+          "altText": "Cisco"
         },
         {
           "logo": "/images/Clients/bupa-logo.jpg"
