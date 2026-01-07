@@ -29,7 +29,10 @@
           "label": "Product Backlog Items with Effort/Time Estimates",
           "content": "We provide a feature list with effort estimates, allowing for accurate planning and budgeting, while accounting for potential timeframe changes based on project scope.\n"
         },
-        {}
+        {
+          "label": "Implementation Roadmap",
+          "content": "We design an in-depth plan that outlines the steps necessary for successful Power Platform adoption, considering your business objectives and timelines.  \n"
+        }
       ],
       "buttons": [
         {
