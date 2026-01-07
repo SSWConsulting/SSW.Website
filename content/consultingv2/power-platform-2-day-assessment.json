@@ -88,8 +88,8 @@
           }
         },
         {
-          "guid": null,
-          "altText": "Lorem Ipsum",
+          "guid": "qno9cp",
+          "altText": "Product Backlog",
           "chips": [
             {
               "chipText": "Lorem",
@@ -101,24 +101,11 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Product Backlog",
+          "description": "We translate your requirements into a tangible list of Product Backlog Items (PBIs). This includes setting priorities, mapping dependencies, and estimating the effort required to build the solution step-by-step.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": "Rule, Build a Backlog",
+            "buttonLink": "https://www.ssw.com.au/rules/break-pbis"
           }
         },
         {
