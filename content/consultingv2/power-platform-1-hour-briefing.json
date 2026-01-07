@@ -69,6 +69,10 @@
         {
           "logo": "/images/Clients/bupa-logo.jpg",
           "altText": "Bupa"
+        },
+        {
+          "logo": "/images/Clients/commbank-logo.png",
+          "altText": "Commbank"
         }
       ],
       "_template": "logoCarousel"
