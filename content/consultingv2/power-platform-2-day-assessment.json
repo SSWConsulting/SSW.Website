@@ -110,6 +110,28 @@
             "buttonText": "Rule: Providing Estimates",
             "buttonLink": "https://www.ssw.com.au/rules/spec-give-customers-a-ballpark"
           }
+        },
+        {
+          "guid": "1s72o",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.28.06%E2%80%AFAM.png",
+          "altText": "From Wireframes to Product",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "From Wireframes to Product",
+          "description": "Deep engagement ensures we solve the right problem. We move from rough wireframes to detailed UX designs and final development, keeping you in the loop until the \"Definition of Done\" is met.",
+          "embeddedButton": {
+            "buttonText": "Rule: Definition of Done",
+            "buttonLink": "https://www.ssw.com.au/rules/definition-of-done"
+          }
         }
       ],
       "_template": "cardCarousel"
