@@ -57,6 +57,59 @@
       "_template": "accordionBlock"
     },
     {
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "tabletTextAlignment": "Center",
+      "paused": false,
+      "isWhiteImages": false,
+      "logos": [
+        {
+          "logo": "/images/clientLogos/allianz.png",
+          "altText": "Allianz"
+        },
+        {
+          "logo": "/images/clientLogos/cisco.png",
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/Clients/bupa-logo.jpg",
+          "altText": "Bupa"
+        },
+        {
+          "logo": "/images/Clients/commbank-logo.png",
+          "altText": "Commbank"
+        },
+        {
+          "logo": "/images/Clients/Untitled-4.png",
+          "altText": "Westpac"
+        },
+        {
+          "logo": "/images/Clients/toll-logo.jpg",
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/Clients/medibank-logo.png",
+          "altText": "Medibank"
+        },
+        {
+          "logo": "/images/Clients/event-cinemas-logo.jpg",
+          "altText": "Event"
+        },
+        {
+          "logo": "/images/Clients/syduni-logo.jpg",
+          "altText": "Sydney University"
+        },
+        {
+          "logo": "/images/Clients/lend-lease-logo.jpg",
+          "altText": "Lend Lease"
+        },
+        {
+          "logo": "/images/Clients/pfizer-logo.jpg",
+          "altText": "Pfizer"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
       "isStacked": false,
       "heading": "The SSW Specification Review: Your Blueprint for Software Success",
       "isH1": false,
@@ -125,59 +178,6 @@
         }
       ],
       "_template": "cardCarousel"
-    },
-    {
-      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
-      "tabletTextAlignment": "Center",
-      "paused": false,
-      "isWhiteImages": false,
-      "logos": [
-        {
-          "logo": "/images/clientLogos/allianz.png",
-          "altText": "Allianz"
-        },
-        {
-          "logo": "/images/clientLogos/cisco.png",
-          "altText": "Cisco"
-        },
-        {
-          "logo": "/images/Clients/bupa-logo.jpg",
-          "altText": "Bupa"
-        },
-        {
-          "logo": "/images/Clients/commbank-logo.png",
-          "altText": "Commbank"
-        },
-        {
-          "logo": "/images/Clients/Untitled-4.png",
-          "altText": "Westpac"
-        },
-        {
-          "logo": "/images/Clients/toll-logo.jpg",
-          "altText": "Toll"
-        },
-        {
-          "logo": "/images/Clients/medibank-logo.png",
-          "altText": "Medibank"
-        },
-        {
-          "logo": "/images/Clients/event-cinemas-logo.jpg",
-          "altText": "Event"
-        },
-        {
-          "logo": "/images/Clients/syduni-logo.jpg",
-          "altText": "Sydney University"
-        },
-        {
-          "logo": "/images/Clients/lend-lease-logo.jpg",
-          "altText": "Lend Lease"
-        },
-        {
-          "logo": "/images/Clients/pfizer-logo.jpg",
-          "altText": "Pfizer"
-        }
-      ],
-      "_template": "logoCarousel"
     },
     {
       "buttonText": "Book a Free Initial Meeting",
