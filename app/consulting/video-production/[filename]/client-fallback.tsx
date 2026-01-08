@@ -1,30 +1,36 @@
 "use client";
 
-import { TinaClient } from "@/app/tina-client";
+import { TinaClient, UseTinaProps } from "@/app/tina-client";
+import client from "@/tina/client";
 import { useQuery } from "@tanstack/react-query";
-import VideoProduction from "./video-production";
 
-interface ClientVideoProductionFallbackProps {
-  filename: string;
+interface ClientFallbackProps<T = {}> {
+  queryName: keyof typeof client.queries;
+  variables?: any;
+  Component: React.FC<{ tinaProps: UseTinaProps; props: T }>;
+  getSeoUrl?: (data: any, variables?: any) => string;
 }
 
-const QueryFn = async (filename: string) => {
+const QueryFn = async (
+  queryName: string,
+  variables?: any,
+  getSeoUrl?: (data: any, variables?: any) => string
+) => {
   const res = await fetch("/api/tina/query", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      queryName: "videoProductionContentQuery",
-      args: [{ relativePath: `${filename}.mdx` }],
+      queryName,
+      args: variables ? [variables] : [],
     }),
   });
   if (!res.ok) {
-    throw new Error("Failed to fetch video production data");
+    throw new Error("Failed to fetch data");
   }
   const data = await res.json();
-  // Compose props as in getData
-  const seo = data.data?.videoProduction?.seo || {};
-  if (seo && !seo.canonical && data.data?.global?.header?.url) {
-    seo.canonical = `${data.data.global.header.url}consulting/video-production/${filename}`;
+  let seo = data.data?.seo || data.data?.videoProduction?.seo || {};
+  if (seo && !seo.canonical && getSeoUrl && data.data?.global?.header?.url) {
+    seo.canonical = getSeoUrl(data, variables);
   }
   return {
     data: data.data,
@@ -38,30 +44,32 @@ const QueryFn = async (filename: string) => {
   };
 };
 
-const ClientVideoProductionFallback: React.FC<
-  ClientVideoProductionFallbackProps
-> = ({ filename }) => {
+const ClientFallback: React.FC<ClientFallbackProps> = ({
+  queryName,
+  variables,
+  Component,
+  getSeoUrl,
+}) => {
   const { isLoading, data, error } = useQuery({
-    queryKey: ["videoProduction", filename],
-    queryFn: () => QueryFn(filename),
+    queryKey: [queryName, variables],
+    queryFn: () => QueryFn(queryName, variables, getSeoUrl),
   });
 
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
   if (error) {
-    return <h1>Error loading video production data</h1>;
+    return <h1>Error loading data</h1>;
   }
   if (!data || !data.data) {
     return (
       <h1>
-        Video production page not found. Please check the filename or try again
-        later.
+        Page not found. Please check the query or variables and try again.
       </h1>
     );
   }
 
-  return <TinaClient props={data} Component={VideoProduction} />;
+  return <TinaClient props={data} Component={Component} />;
 };
 
-export default ClientVideoProductionFallback;
+export default ClientFallback;

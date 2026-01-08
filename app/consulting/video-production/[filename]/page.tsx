@@ -39,7 +39,10 @@ const getData = async (filename: string) => {
     client.queries.videoProductionContentQuery,
     filename
   );
-  return null;
+
+  if (!tinaProps) {
+    return null;
+  }
 
   const seo = tinaProps.data.videoProduction.seo;
 
@@ -80,12 +83,18 @@ export default async function Consulting(prop: {
   params: Promise<{ filename: string }>;
 }) {
   const params = await prop.params;
-  const { filename } = params;
+  const filename = `${params.filename}.mdx`;
 
-  const dataResult = await getData("bogus");
+  const dataResult = await getData(filename);
   if (!dataResult || !dataResult.props || !dataResult.props.data) {
     // Fallback to client-side fetch if SSR data is missing
-    return <ClientVideoProductionFallback filename={filename} />;
+    return (
+      <ClientVideoProductionFallback
+        queryName="videoProductionContentQuery"
+        variables={{ relativePath: filename }}
+        Component={VideoProduction}
+      />
+    );
   }
 
   return <TinaClient props={dataResult.props} Component={VideoProduction} />;
