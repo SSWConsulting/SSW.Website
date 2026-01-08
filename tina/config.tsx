@@ -120,10 +120,7 @@ const schemas = [
 ];
 const config = defineStaticConfig({
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
-  branch:
-    process.env.NEXT_PUBLIC_TINA_BRANCH! || // custom branch env override
-    process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF! || // Vercel branch env
-    process.env.HEAD!, // Netlify branch env
+  branch: "page-previews-tina",
   token: process.env.TINA_TOKEN!,
   media: {
     // If you wanted cloudinary do this

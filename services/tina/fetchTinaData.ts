@@ -24,9 +24,11 @@ export async function fetchTinaData<T, V>(
     } as V;
 
     const response = await queryFunction(variables);
-
+    console.log("response", response);
     return response;
   } catch {
-    notFound();
+    console.log("Tina data not found for filename:", filename);
+    return null;
+    // notFound();
   }
 }

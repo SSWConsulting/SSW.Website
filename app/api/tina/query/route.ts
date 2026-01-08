@@ -1,3 +1,6 @@
+import client from "@/tina/client";
+import { cookies } from "next/headers";
+
 export async function POST(request: Request) {
   const vals = await cookies();
   const branch = vals.get("x-branch")?.value;
@@ -24,9 +27,15 @@ export async function POST(request: Request) {
 
   try {
     // Always pass branch header if available
-    const result = await tinaQuery(...args, {
-      fetchOptions: { headers: { "x-branch": branch || "main" } },
-    });
+    //@ts-ignore
+    const arg2 = [
+      ...args,
+      { fetchOptions: { headers: { "x-branch": branch || "main" } } },
+    ];
+
+    console.log("arg2", arg2);
+    //@ts-ignore
+    const result = await tinaQuery(...arg2);
     return new Response(JSON.stringify(result), {
       status: 200,
       headers: { "Content-Type": "application/json" },
@@ -40,33 +49,4 @@ export async function POST(request: Request) {
       }
     );
   }
-}
-import client from "@/tina/client";
-import { cookies } from "next/headers";
-
-export async function GET(request: Request) {
-  const vals = await cookies();
-  const branch = vals.get("x-branch")?.value;
-  console.log("Branch in API Route:", branch);
-  const url = new URL(request.url);
-  const filename = url.searchParams.get("filename");
-  if (!filename) {
-    return new Response(JSON.stringify({ error: "Missing filename param" }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-
-  // Fetch article data using articlesContentQuery
-  const tinaRes = await client.queries.articlesContentQuery(
-    {
-      relativePath: `${filename}.mdx`,
-    },
-    { fetchOptions: { headers: { "x-branch": branch || "main" } } }
-  );
-
-  return new Response(JSON.stringify(tinaRes), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
 }

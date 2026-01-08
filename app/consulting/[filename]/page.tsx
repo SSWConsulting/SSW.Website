@@ -8,7 +8,7 @@ import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { cache } from "react";
-import ClientWrapper from "./client-wrapper";
+// import ClientWrapper from "./client-wrapper";
 import OldConsultingPage from "./consulting";
 import ConsultingPage2 from "./consulting2";
 const openSans = Open_Sans({
@@ -215,14 +215,7 @@ export default async function Consulting(prop: {
   const {
     props: { query, variables },
   } = pageData;
-
-  return (
-    <ClientWrapper
-      component={ConsultingPage2}
-      query={query}
-      variables={variables}
-    />
-  );
+  return <h1>Consulting</h1>;
 
   // return isNewConsultingPage ? (
   //   <TinaClient props={props} Component={ConsultingPage2} />

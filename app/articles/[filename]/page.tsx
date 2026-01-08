@@ -4,6 +4,9 @@ import client from "@/tina/client";
 import { TinaClient, UseTinaProps } from "app/tina-client";
 import { Metadata } from "next";
 import ArticlePage, { ArticleData, ArticlePageProps } from ".";
+import ClientArticleFallback from "./client-fallback";
+
+export const dynamic = "force-static";
 
 type Articles = Awaited<ReturnType<typeof client.queries.articlesConnection>>;
 
@@ -13,6 +16,10 @@ const getData = async (
   props: UseTinaProps & ArticlePageProps["props"];
 }> => {
   const tinaProps = await getArticle(filename);
+  console.log("tinaProps", tinaProps);
+  if (tinaProps === null) {
+    return null;
+  }
   return {
     props: {
       data: tinaProps.data,
@@ -35,6 +42,9 @@ export async function generateMetadata(props: {
 }): Promise<Metadata> {
   const params = await props.params;
   const tinaProps = await getArticle(params.filename);
+  if (!tinaProps) {
+    return {};
+  }
   const seo = tinaProps.data.articles.seo;
   if (seo && !seo.canonical) {
     seo.canonical = `${tinaProps.data.global.header.url}articles/${params.filename}`;
@@ -47,15 +57,20 @@ const getArticle = async (filename: string): Promise<ArticleData> => {
     client.queries.articlesContentQuery,
     filename
   );
-
   return tinaProps;
 };
 
 const Article = async (prop: { params: Promise<{ filename: string }> }) => {
   const params = await prop.params;
-  const { props } = await getData(params.filename);
-
-  return <TinaClient Component={ArticlePage} props={props}></TinaClient>;
+  const filename = params.filename;
+  const res = await getData(filename);
+  console.log("props", res);
+  if (res)
+    return <TinaClient Component={ArticlePage} props={res.props}></TinaClient>;
+  else
+    return (
+      <ClientArticleFallback filename={filename} component={ArticlePage} />
+    );
 };
 
 export default Article;
