@@ -60,7 +60,7 @@
       "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "tabletTextAlignment": "Center",
       "paused": false,
-      "isWhiteImages": false,
+      "isWhiteImages": true,
       "logos": [
         {
           "logo": "/images/clientLogos/allianz1.png",
