@@ -68,9 +68,3 @@ export function TinaClient<T>({ props, Component }: TinaClientProps<T>) {
 
   return <Component tinaProps={{ data }} props={{ ...props }} />;
 }
-
-
-
-const TinaEditorComponent = ()=>{ {
-
-}

@@ -8,6 +8,7 @@ import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { cache } from "react";
+import ClientWrapper from "./client-wrapper";
 import OldConsultingPage from "./consulting";
 import ConsultingPage2 from "./consulting2";
 const openSans = Open_Sans({
@@ -196,27 +197,40 @@ export default async function Consulting(prop: {
   params: Promise<ConsultingPageParams>;
 }) {
   const params = await prop.params;
-  const isNewConsultingPage: boolean = Boolean(
-    await findConsultingPageType(params.filename)
-  );
-  let pageData:
-    | Awaited<ReturnType<typeof consultingPageData>>
-    | Awaited<ReturnType<typeof newConsultingPageData>>;
+  // const isNewConsultingPage: boolean = Boolean(
+  //   await findConsultingPageType(params.filename)
+  // );
+  // let pageData:
+  //   | Awaited<ReturnType<typeof consultingPageData>>
+  //   | Awaited<ReturnType<typeof newConsultingPageData>>;
 
-  if (isNewConsultingPage) {
-    pageData = await newConsultingPageData(params.filename);
-  } else {
-    pageData = await consultingPageData(params.filename);
-  }
-  const { props } = pageData;
+  // if (isNewConsultingPage) {
+  //   pageData = await newConsultingPageData(params.filename);
+  // } else {
+  //   pageData = await consultingPageData(params.filename);
+  // }
 
-  return isNewConsultingPage ? (
-    <TinaClient props={props} Component={ConsultingPage2} />
-  ) : (
-    <div className={openSans.className}>
-      <TinaClient props={props} Component={OldConsultingPage} />
-    </div>
+  const pageData = await newConsultingPageData(params.filename);
+
+  const {
+    props: { query, variables },
+  } = pageData;
+
+  return (
+    <ClientWrapper
+      component={ConsultingPage2}
+      query={query}
+      variables={variables}
+    />
   );
+
+  // return isNewConsultingPage ? (
+  //   <TinaClient props={props} Component={ConsultingPage2} />
+  // ) : (
+  //   <div className={openSans.className}>
+  //     <TinaClient props={props} Component={OldConsultingPage} />
+  //   </div>
+  // );
 }
 
 const findConsultingPageType = async (
