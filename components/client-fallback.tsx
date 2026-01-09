@@ -4,17 +4,17 @@ import { TinaClient, UseTinaProps } from "@/app/tina-client";
 import client from "@/tina/client";
 import { useQuery } from "@tanstack/react-query";
 
-export interface ClientFallbackProps<T = {}> {
+export interface ClientFallbackProps<T> {
   queryName: keyof typeof client.queries;
   variables?: any;
-  Component: React.FC<{ tinaProps: UseTinaProps; props: T }>;
-  getSeoUrl?: (data: any, variables?: any) => string;
+  Component: React.FC<{ tinaProps: { data: object }; props: T }>;
+  // getSeoUrl?: (data: any, variables?: any) => string;
 }
 
 const QueryFn = async (
   queryName: string,
-  variables?: any,
-  getSeoUrl?: (data: any, variables?: any) => string
+  variables?: any
+  // getSeoUrl?: (data: any, variables?: any) => string
 ) => {
   const res = await fetch("/api/tina/query", {
     method: "POST",
@@ -28,10 +28,10 @@ const QueryFn = async (
     throw new Error("Failed to fetch data");
   }
   const data = await res.json();
-  let seo = data.data?.seo || data.data?.videoProduction?.seo || {};
-  if (seo && !seo.canonical && getSeoUrl && data.data?.global?.header?.url) {
-    seo.canonical = getSeoUrl(data, variables);
-  }
+  // let seo = data.data?.seo || data.data?.videoProduction?.seo || {};
+  // if (seo && !seo.canonical && getSeoUrl && data.data?.global?.header?.url) {
+  //   seo.canonical = getSeoUrl(data, variables);
+  // }
   return {
     data: data.data,
     query: data.query,
@@ -39,21 +39,16 @@ const QueryFn = async (
     header: {
       url: data.data?.global?.header?.url,
     },
-    seo,
+    // seo,
     ...data,
   };
 };
 
-const ClientFallback: React.FC<ClientFallbackProps> = ({
-  queryName,
-  variables,
-  Component,
-  getSeoUrl,
-}) => {
+const ClientFallback = ({ queryName, variables, Component }) => {
   console.log("fallback hit");
   const { isLoading, data, error } = useQuery({
     queryKey: [queryName, variables],
-    queryFn: () => QueryFn(queryName, variables, getSeoUrl),
+    queryFn: () => QueryFn(queryName, variables),
   });
   return (
     <>

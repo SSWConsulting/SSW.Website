@@ -1,10 +1,11 @@
+import ClientFallback from "@/components/client-fallback";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { TinaClient, UseTinaProps } from "app/tina-client";
 import { Metadata } from "next";
+import { Client } from "tinacms";
 import ArticlePage, { ArticleData, ArticlePageProps } from ".";
-import ClientArticleFallback from "./client-fallback";
 
 export const dynamic = "force-static";
 
@@ -16,7 +17,6 @@ const getData = async (
   props: UseTinaProps & ArticlePageProps["props"];
 }> => {
   const tinaProps = await getArticle(filename);
-  console.log("tinaProps", tinaProps);
   if (tinaProps === null) {
     return null;
   }
@@ -63,14 +63,18 @@ const getArticle = async (filename: string): Promise<ArticleData> => {
 const Article = async (prop: { params: Promise<{ filename: string }> }) => {
   const params = await prop.params;
   const filename = params.filename;
-  const res = await getData(filename);
-  console.log("props", res);
-  if (res)
-    return <TinaClient Component={ArticlePage} props={res.props}></TinaClient>;
-  else
+  const data = await getData(filename);
+  if (!data) {
     return (
-      <ClientArticleFallback filename={filename} component={ArticlePage} />
+      <ClientFallback
+        queryName="articlesContentQuery"
+        variables={{ relativePath: `${filename}.mdx` }}
+        Component={ArticlePage}
+      />
     );
+  } else {
+    return <TinaClient Component={ArticlePage} props={data.props}></TinaClient>;
+  }
 };
 
 export default Article;
