@@ -1,6 +1,7 @@
 import client from "@/tina/client";
 
 import { TinaClient } from "@/app/tina-client";
+import ClientFallback from "@/components/client-fallback";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { Metadata } from "next";
@@ -38,8 +39,12 @@ export async function generateMetadata(
   prop: GenerateMetaDataProps
 ): Promise<Metadata> {
   const params = await prop.params;
-  const { props } = await getData(params.filename);
+  const data = await getData(params.filename);
+  if (!data) {
+    return {};
+  }
 
+  const { props } = data;
   const seo = props.data.page.seo;
   if (seo && !seo.canonical) {
     seo.canonical = `${props.data.global.header.url}${params.filename ?? ""}`;
@@ -54,6 +59,10 @@ const getData = async (filename: string) => {
   }
 
   const tinaProps = await fetchTinaData(client.queries.contentQuery, filename);
+
+  if (!tinaProps) {
+    return null;
+  }
 
   const sideBars = tinaProps.data.page?.sideBar || [];
   const preFetchedUpcomingEvents = await Promise.all(
@@ -103,6 +112,19 @@ export default async function HomePage(prop: {
 }) {
   const params = await prop.params;
   const { filename } = params;
-  const { props } = await getData(filename);
-  return <TinaClient props={props} Component={Page} />;
+  const data = await getData(filename);
+
+  if (!data) {
+    // Fallback to client-side fetch if SSR data is missing
+    const fileNameForQuery = filename || "home";
+    return (
+      <ClientFallback
+        queryName="contentQuery"
+        variables={{ relativePath: `${fileNameForQuery}.mdx` }}
+        Component={Page}
+      />
+    );
+  }
+
+  return <TinaClient props={data.props} Component={Page} />;
 }
