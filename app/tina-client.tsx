@@ -1,12 +1,8 @@
 "use client";
 
-import { useQueries, useQuery } from "@tanstack/react-query";
 import AOS from "aos";
-import axios from "axios";
 import { useEffect } from "react";
-import { useEditState, useTina } from "tinacms/dist/react";
-import { useBranch } from "./providers/branch-provider";
-
+import { useTina } from "tinacms/dist/react";
 export type UseTinaProps = {
   query: string;
   variables: object & { relativePath?: string };
@@ -19,15 +15,11 @@ export type TinaClientProps<T> = {
 };
 
 export function TinaClient<T>({ props, Component }: TinaClientProps<T>) {
-  const { edit } = useEditState();
-
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
     data: props.data,
   });
-
-  console.log("props", props);
 
   useEffect(() => {
     if (typeof window !== "undefined") {

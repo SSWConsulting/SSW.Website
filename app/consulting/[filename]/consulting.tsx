@@ -16,13 +16,21 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
+import { type default as client } from "@/tina/client";
 import { Breadcrumbs } from "app/components/breadcrumb";
+import { Open_Sans } from "next/font/google";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+export type OldConsultingPage = Awaited<
+  ReturnType<typeof client.queries.consultingContentQuery>
+>;
+
 export default function Consulting({ tinaProps, props }) {
+  console.log("props", props);
+  console.log("tinaProps", tinaProps);
   const { techCards, marketingData, categories, mediaCardProps } = props;
   const { data } = tinaProps;
   return (
@@ -69,11 +77,11 @@ export default function Consulting({ tinaProps, props }) {
           ) : (
             <></>
           )}
-          <TestimonialRow
+          {/* <TestimonialRow
             testimonialsResult={props.testimonialsResult}
             categories={categories}
             tagline={data.consulting.testimonials?.tagline}
-          />
+          /> */}
           <BookingButton
             data={{
               containerClass: "mt-20",
@@ -81,7 +89,7 @@ export default function Consulting({ tinaProps, props }) {
           />
         </Container>
       </Section>
-      <Marketing content={marketingData} />
+      {/* <Marketing content={marketingData} /> */}
       <Section className="!bg-gray-75 pb-40">
         <Container size="custom">
           <h1 className="text-center">Companies we have worked with</h1>
@@ -95,7 +103,7 @@ export default function Consulting({ tinaProps, props }) {
           </Container>
         </Section>
       )}
-      {!!mediaCardProps.length && (
+      {/* {!!mediaCardProps.length && (
         <Section className="pb-40 pt-8 text-center">
           <Container size="custom">
             <MediaCards
@@ -104,7 +112,7 @@ export default function Consulting({ tinaProps, props }) {
             />
           </Container>
         </Section>
-      )}
+      )} */}
       {data?.consulting?.callToAction?.showCallToAction && (
         <CallToAction
           buttonSubtitle={data?.consulting?.callToAction?.buttonSubtitle}

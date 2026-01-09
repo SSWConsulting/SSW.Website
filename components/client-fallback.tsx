@@ -28,10 +28,6 @@ const QueryFn = async (
     throw new Error("Failed to fetch data");
   }
   const data = await res.json();
-  // let seo = data.data?.seo || data.data?.videoProduction?.seo || {};
-  // if (seo && !seo.canonical && getSeoUrl && data.data?.global?.header?.url) {
-  //   seo.canonical = getSeoUrl(data, variables);
-  // }
   return {
     data: data.data,
     query: data.query,
@@ -39,7 +35,6 @@ const QueryFn = async (
     header: {
       url: data.data?.global?.header?.url,
     },
-    // seo,
     ...data,
   };
 };
@@ -58,8 +53,6 @@ const ClientFallback = ({ queryName, variables, Component }) => {
       {data && <TinaClient props={data} Component={Component} />}
     </>
   );
-
-  // return <TinaClient props={data} Component={Component} />;
 };
 
 export default ClientFallback;
