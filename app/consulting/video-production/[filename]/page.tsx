@@ -1,10 +1,10 @@
 import { TinaClient } from "@/app/tina-client";
+import ClientFallback from "@/components/client-fallback";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
-import ClientVideoProductionFallback from "./client-fallback";
 import VideoProduction from "./video-production";
 
 export const dynamic = "force-dynamic";
@@ -39,8 +39,10 @@ const getData = async (filename: string) => {
     client.queries.videoProductionContentQuery,
     filename
   );
+  console.log("tinaProps", tinaProps);
 
   if (!tinaProps) {
+    console.log("no tinaProps");
     return null;
   }
 
@@ -65,37 +67,42 @@ type GenerateMetaDataProps = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-// export async function generateMetadata(
-//   prop: GenerateMetaDataProps
-// ): Promise<Metadata> {
-//   const params = await prop.params;
-//   const { props } = await getData(params.filename);
+export async function generateMetadata(
+  prop: GenerateMetaDataProps
+): Promise<Metadata> {
+  const params = await prop.params;
+  const data = await getData(params.filename);
+  if (!data) {
+    return {};
+  }
 
-//   const { seo } = props;
-//   if (seo && !seo.canonical) {
-//     seo.canonical = `${props.header.url}consulting/video-production/${params.filename}`;
-//   }
+  const { props } = data;
 
-//   return getSEOProps(seo);
-// }
+  const { seo } = props;
+  if (seo && !seo.canonical) {
+    seo.canonical = `${props.header.url}consulting/video-production/${params.filename}`;
+  }
+
+  return getSEOProps(seo);
+}
 
 export default async function Consulting(prop: {
   params: Promise<{ filename: string }>;
 }) {
   const params = await prop.params;
-  const filename = `${params.filename}.mdx`;
 
-  const dataResult = await getData(filename);
-  if (!dataResult || !dataResult.props || !dataResult.props.data) {
+  const data = await getData(params.filename);
+
+  if (!data) {
     // Fallback to client-side fetch if SSR data is missing
     return (
-      <ClientVideoProductionFallback
+      <ClientFallback
         queryName="videoProductionContentQuery"
-        variables={{ relativePath: filename }}
+        variables={{ relativePath: `${params.filename}.mdx` }}
         Component={VideoProduction}
       />
     );
   }
 
-  return <TinaClient props={dataResult.props} Component={VideoProduction} />;
+  return <TinaClient props={data.props} Component={VideoProduction} />;
 }

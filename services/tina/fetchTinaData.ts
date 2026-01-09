@@ -16,19 +16,17 @@ export async function fetchTinaData<T, V>(
   }>,
   filename?: string,
   type: FileType = FileType.MDX
-): Promise<{ data: T; variables: V; query: string }> {
+): Promise<{ data: T; variables: V; query: string } | null> {
   try {
     const variables: V = {
       relativePath: filename ? `${filename}.${type}` : "",
       date: TODAY.toISOString(),
     } as V;
-
     const response = await queryFunction(variables);
-    console.log("response", response);
+    console.log("response");
     return response;
   } catch {
-    console.log("Tina data not found for filename:", filename);
+    console.log("response not returned");
     return null;
-    // notFound();
   }
 }

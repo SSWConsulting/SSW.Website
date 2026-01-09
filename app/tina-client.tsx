@@ -21,26 +21,6 @@ export type TinaClientProps<T> = {
 export function TinaClient<T>({ props, Component }: TinaClientProps<T>) {
   const { edit } = useEditState();
 
-  console.log("edit mode:", edit);
-  const branch = useBranch();
-  console.log("props:", props);
-  const collection = Object.keys(props.data)[0];
-  const path = props.variables.relativePath;
-  const fetchPath = `/api/tina/branch/main/collection/${collection}/path/${path}`;
-
-  const res = useQuery({
-    queryKey: [fetchPath],
-    queryFn: async () => {
-      console.log("Fetching from", fetchPath);
-      const response = await axios.get(fetchPath);
-      return response.data;
-    },
-  });
-  console.log("res", res.data);
-  console.log("DATA", res.data);
-
-  if (edit) {
-  }
   const { data } = useTina({
     query: props.query,
     variables: props.variables,

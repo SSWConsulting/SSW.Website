@@ -4,7 +4,7 @@ import { TinaClient, UseTinaProps } from "@/app/tina-client";
 import client from "@/tina/client";
 import { useQuery } from "@tanstack/react-query";
 
-interface ClientFallbackProps<T = {}> {
+export interface ClientFallbackProps<T = {}> {
   queryName: keyof typeof client.queries;
   variables?: any;
   Component: React.FC<{ tinaProps: UseTinaProps; props: T }>;
@@ -50,26 +50,21 @@ const ClientFallback: React.FC<ClientFallbackProps> = ({
   Component,
   getSeoUrl,
 }) => {
+  console.log("fallback hit");
   const { isLoading, data, error } = useQuery({
     queryKey: [queryName, variables],
     queryFn: () => QueryFn(queryName, variables, getSeoUrl),
   });
+  return (
+    <>
+      <h1>Client Fallback</h1>
+      {isLoading && <h1>Loading...</h1>}
+      {error && <h1>Error loading data</h1>}
+      {data && <TinaClient props={data} Component={Component} />}
+    </>
+  );
 
-  if (isLoading) {
-    return <h1>Loading...</h1>;
-  }
-  if (error) {
-    return <h1>Error loading data</h1>;
-  }
-  if (!data || !data.data) {
-    return (
-      <h1>
-        Page not found. Please check the query or variables and try again.
-      </h1>
-    );
-  }
-
-  return <TinaClient props={data} Component={Component} />;
+  // return <TinaClient props={data} Component={Component} />;
 };
 
 export default ClientFallback;
