@@ -102,7 +102,6 @@ const newConsultingPageData = cache(async (filename: string) => {
 });
 
 const consultingPageData = cache(async (filename: string) => {
-  return null;
   const tinaProps = await fetchTinaData(
     client.queries.consultingContentQuery,
     filename
