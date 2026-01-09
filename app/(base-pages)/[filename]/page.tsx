@@ -7,6 +7,8 @@ import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { Metadata } from "next";
 import Page from ".";
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   let PageListData = await client.queries.pageConnection();
   const allPagesListData = PageListData;
