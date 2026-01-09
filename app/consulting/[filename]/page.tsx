@@ -106,6 +106,9 @@ const consultingPageData = cache(async (filename: string) => {
     client.queries.consultingContentQuery,
     filename
   );
+  if (!tinaProps) {
+    return null;
+  }
 
   const seo = tinaProps.data.consulting.seo;
 

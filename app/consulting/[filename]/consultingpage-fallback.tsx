@@ -6,9 +6,15 @@ import { json } from "stream/consumers";
 
 import Consulting, { OldConsultingPage } from "./consulting";
 
-const ConsultingPageFallback = (props: { tinaProps: OldConsultingPage }) => {
+const ConsultingPageFallback = ({
+  tinaProps,
+  props,
+}: {
+  tinaProps: OldConsultingPage;
+  props: object;
+}) => {
   console.log("all props", props);
-  const tinaProps = props.tinaProps;
+
   console.log("tinaProps", tinaProps);
   const { data, error } = useQuery({
     queryKey: ["consulting-page-fallback"],
@@ -31,11 +37,7 @@ const ConsultingPageFallback = (props: { tinaProps: OldConsultingPage }) => {
     return (
       <>
         <h1>Consulting page fallback :D</h1>
-        <Consulting
-          tinaProps={tinaProps}
-          props={{ variables: props.props.variables, ...props, ...data }}
-        />
-        ;
+        <Consulting tinaProps={tinaProps} props={{ ...props, ...data }} />;
       </>
     );
   }
