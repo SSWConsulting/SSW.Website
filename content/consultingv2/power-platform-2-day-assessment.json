@@ -183,13 +183,13 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Speak to SSW about your next Power platform project",
+      "heading": "Speak to SSW about your next **Power platform** project",
       "isH1": false,
       "description": "",
       "tabletTextAlignment": "Center",
       "chips": [
         {
-          "chipText": "Microsoft Power BI",
+          "chipText": "",
           "chipType": "filledChip"
         },
         {
@@ -206,6 +206,10 @@
         },
         {
           "chipText": "Microsoft Copilot Studio",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Lorem",
           "chipType": "filledChip"
         }
       ],
