@@ -222,8 +222,9 @@
             "icon": "BiLineChart"
           },
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Microsoft Power Apps",
+            "description": "Build and launch professional-grade apps and automate workflows without additional coding.",
+            "icon": "BiChip"
           },
           {
             "heading": "Lorem",
