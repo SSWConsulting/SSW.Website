@@ -180,8 +180,17 @@
       "_template": "cardCarousel"
     },
     {
-      "headerText": "Speak to us to build your next Power Platform Project",
-      "_template": "SectionHeader"
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Speak to SSW about your next Power platform project",
+      "isH1": false,
+      "description": "Microsoft\n\nPower BI | Power Apps | Power Automate | Power Pages | Copilot Studio\n",
+      "tabletTextAlignment": "Center",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "_template": "imageTextBlock"
     },
     {
       "buttonText": "Book a Free Initial Meeting",
