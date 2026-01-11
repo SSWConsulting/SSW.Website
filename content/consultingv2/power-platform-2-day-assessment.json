@@ -185,11 +185,27 @@
       },
       "heading": "Speak to SSW about your next Power platform project",
       "isH1": false,
-      "description": "Microsoft\n\nPower BI | Power Apps | Power Automate | Power Pages | Copilot Studio\n",
+      "description": "",
       "tabletTextAlignment": "Center",
       "chips": [
         {
           "chipText": "Microsoft Power BI",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Microsoft Power Apps",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Lorem",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Lorem",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Lorem",
           "chipType": "filledChip"
         }
       ],
