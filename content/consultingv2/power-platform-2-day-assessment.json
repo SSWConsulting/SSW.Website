@@ -180,15 +180,14 @@
       "_template": "cardCarousel"
     },
     {
+      "headerText": "Speak to us to build your next Power Platform Project",
+      "_template": "SectionHeader"
+    },
+    {
       "buttonText": "Book a Free Initial Meeting",
       "animated": true,
       "buttonSubtitle": "or call +61 2 9953 3000",
       "_template": "BookingButton"
-    },
-    {
-      "author": "bob",
-      "article": "ted",
-      "_template": "Citation"
     }
   ],
   "azureBanner": {
