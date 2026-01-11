@@ -2,6 +2,9 @@ import { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { EventTrimmed } from "../../components/filter/events";
 import client from "../../tina/__generated__/client";
 
+import { VideoCardType } from "@/components/util/videoCards";
+import { Events } from "@/tina/types";
+
 /**
  * Querying TinaCMS event data for the next UG event
  *
@@ -102,6 +105,29 @@ type EventDates = {
   endShowBannerDateTime: Date;
   startDateTime: Date;
   endDateTime: Date;
+};
+
+type EventsRespose = Awaited<
+  ReturnType<typeof client.queries.eventsContentQuery>
+>;
+
+type EventsData = EventsRespose["data"]["events"];
+
+export const getTestimonialCategories = (events: EventsData): string[] => {
+  return (
+    events.testimonialCategories?.map(
+      (category) => category.testimonialCategory.name
+    ) || []
+  );
+};
+
+export const getVideoCardProps = (events: EventsData): VideoCardType[] => {
+  return (
+    events.videos?.videoCards?.map<VideoCardType>((m) => ({
+      title: m.title,
+      link: m.link,
+    })) || []
+  );
 };
 
 export const formatDates = (eventInfo: EventInfoStatic): EventDates => {

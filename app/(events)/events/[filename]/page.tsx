@@ -1,12 +1,16 @@
 import { TinaClient } from "@/app/tina-client";
+import ClientFallbackWithOption from "@/components/client-fallback-with-option";
 import { VideoCardType } from "@/components/util/videoCards";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
 import { getSEOProps } from "@/lib/seo";
+import { getVideoCardProps } from "@/services/server/events";
 import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
+import { cache } from "react";
 import EventsPage from "./events";
+import EventsPageFallback from "./events-page-fallback";
 import EventsV2Page from "./eventsv2";
 
 export async function generateStaticParams() {
@@ -19,12 +23,17 @@ export async function generateStaticParams() {
   return pages;
 }
 
-const newEventsPageData = async (filename: string) => {
+const newEventsPageData = cache(async (filename: string) => {
+  return null;
   const tinaProps = await fetchTinaData(
     client.queries.eventsv2,
     filename,
     FileType.JSON
   );
+  if (!tinaProps) {
+    return null;
+  }
+
   const global = await client.queries.global({ relativePath: "index.json" });
   const seo = tinaProps.data.eventsv2.seo;
   return {
@@ -38,14 +47,18 @@ const newEventsPageData = async (filename: string) => {
       seo,
     },
   };
-};
+});
 
-const getData = async (filename: string) => {
+const getData = cache(async (filename: string) => {
+  return null;
   const tinaProps = await fetchTinaData(
     client.queries.eventsContentQuery,
     filename
   );
-
+  if (!tinaProps) {
+    return null;
+  }
+  ``;
   const seo = tinaProps.data.events.seo;
 
   const categories =
@@ -53,11 +66,11 @@ const getData = async (filename: string) => {
       (category) => category.testimonialCategory.name
     ) || [];
 
-  const videoCardProps =
-    tinaProps.data?.events.videos?.videoCards?.map<VideoCardType>((m) => ({
-      title: m.title,
-      link: m.link,
-    })) || [];
+  const videoCardProps = getVideoCardProps(tinaProps.data.events);
+  tinaProps.data?.events.videos?.videoCards?.map<VideoCardType>((m) => ({
+    title: m.title,
+    link: m.link,
+  })) || [];
 
   const testimonialsResult = await getTestimonialsByCategories(categories);
   return {
@@ -75,7 +88,7 @@ const getData = async (filename: string) => {
       ...tinaProps,
     },
   };
-};
+});
 
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;
@@ -86,45 +99,61 @@ export async function generateMetadata(
   prop: GenerateMetaDataProps
 ): Promise<Metadata> {
   const params = await prop.params;
-  let tinaProps;
-  if (await isNewEventsPage(params.filename)) {
-    tinaProps = await newEventsPageData(params.filename);
-  } else {
-    tinaProps = await getData(params.filename);
+
+  const { filename } = params;
+
+  const [newPage, oldPage] = await Promise.all([
+    newEventsPageData(filename),
+    getData(filename),
+  ]);
+
+  if (!newPage && !oldPage) {
+    return {};
   }
 
-  const seo = tinaProps.props.seo;
+  const seo =
+    newPage?.props?.data?.eventsv2?.seo || oldPage?.props?.data?.events?.seo;
+
+  const headerUrl = newPage?.props?.header?.url || oldPage?.props?.header?.url;
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.props.header.url}events/${params.filename}`;
+    seo.canonical = `${headerUrl}events/${filename}`;
   }
 
   return getSEOProps(seo);
 }
 
-const isNewEventsPage = async (filename: string): Promise<boolean> => {
-  try {
-    const v2Pages = await client.queries.eventsv2({
-      relativePath: `${filename}.json`,
-    });
-    if (v2Pages) {
-      return true;
-    }
-    return false;
-  } catch {
-    return false;
-  }
-};
-
 export default async function Events(prop: {
   params: Promise<{ filename: string }>;
 }) {
   const params = await prop.params;
-  const { filename } = params;
-  if (await isNewEventsPage(filename)) {
-    const { props } = await newEventsPageData(filename);
-    return <TinaClient props={props} Component={EventsV2Page} />;
-  }
-  const { props } = await getData(filename);
 
-  return <TinaClient props={props} Component={EventsPage} />;
+  const filename = params.filename;
+
+  const [newPage, oldPage] = await Promise.all([
+    newEventsPageData(filename),
+    getData(filename),
+  ]);
+
+  if (newPage) {
+    return <TinaClient props={newPage.props} Component={EventsV2Page} />;
+  }
+  if (oldPage) {
+    return <TinaClient props={oldPage.props} Component={EventsPage} />;
+  }
+  return (
+    <ClientFallbackWithOption
+      templates={[
+        {
+          component: EventsV2Page,
+          query: "eventsv2",
+          variables: { relativePath: `${params.filename}.json` },
+        },
+        {
+          component: EventsPageFallback,
+          query: "events",
+          variables: { relativePath: `${params.filename}.mdx` },
+        },
+      ]}
+    />
+  );
 }
