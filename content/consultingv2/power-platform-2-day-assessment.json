@@ -187,32 +187,6 @@
       "isH1": false,
       "description": "",
       "tabletTextAlignment": "Center",
-      "chips": [
-        {
-          "chipText": "",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Microsoft Power Apps",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Microsoft Power Automate",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Microsoft Power Pages",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Microsoft Copilot Studio",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Microsoft Power BI",
-          "chipType": "filledChip"
-        }
-      ],
       "featureColumns": {
         "twoColumns": true,
         "features": [
