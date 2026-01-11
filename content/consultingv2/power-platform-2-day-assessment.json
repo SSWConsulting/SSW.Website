@@ -214,7 +214,26 @@
         }
       ],
       "featureColumns": {
-        "twoColumns": true
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Microsoft Power BI",
+            "description": "Guide decision making with stunning reports and real-time insights from across your organization.",
+            "icon": "BiLineChart"
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
       },
       "_template": "imageTextBlock"
     },
