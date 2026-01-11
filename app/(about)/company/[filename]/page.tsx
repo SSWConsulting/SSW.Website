@@ -1,10 +1,14 @@
 import { TinaClient } from "@/app/tina-client";
+import ClientFallback from "@/components/client-fallback";
 import { HistoryTimelineCardProps } from "@/components/company/historyTimelineCard";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
+import { cache } from "react";
 import CompanyPage from "./index";
+
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   let pageListData = await client.queries.companyConnection();
@@ -28,11 +32,15 @@ export async function generateStaticParams() {
   return pages;
 }
 
-const getData = async (filename: string) => {
+const getData = cache(async (filename: string) => {
+  return;
   const tinaProps = await fetchTinaData(
     client.queries.companyContentQuery,
     filename
   );
+  if (!tinaProps) {
+    return null;
+  }
 
   const seo = tinaProps.data.company.seo;
 
@@ -59,7 +67,7 @@ const getData = async (filename: string) => {
       ...tinaProps,
     },
   };
-};
+});
 
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;
@@ -71,6 +79,9 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const tinaProps = await getData(params.filename);
+  if (!tinaProps) {
+    return {};
+  }
 
   const seo = tinaProps.props.seo;
   if (seo && !seo.canonical) {
@@ -86,7 +97,16 @@ export default async function Consulting(prop: {
   const params = await prop.params;
   const { filename } = params;
 
-  const { props } = await getData(filename);
+  const data = await getData(filename);
+  if (!data) {
+    return (
+      <ClientFallback
+        queryName="companyContentQuery"
+        variables={{ relativePath: `${filename}.mdx` }}
+        Component={CompanyPage}
+      />
+    );
+  }
 
-  return <TinaClient props={props} Component={CompanyPage} />;
+  return <TinaClient props={data.props} Component={CompanyPage} />;
 }
