@@ -1,10 +1,14 @@
 import { TinaClient } from "@/app/tina-client";
+import ClientFallback from "@/components/client-fallback";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
+import { cache } from "react";
 import TrainingPage from ".";
+
+export const dynamic = "force-static";
 
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;
@@ -16,6 +20,9 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await prop.params;
   const tinaProps = await getData(params.filename);
+  if (!tinaProps) {
+    return {};
+  }
   const seo = tinaProps.props.seo;
 
   if (seo && !seo.canonical) {
@@ -33,11 +40,14 @@ export async function generateStaticParams() {
   }));
 }
 
-const getData = async (filename: string) => {
+const getData = cache(async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.trainingContentQuery,
     filename
   );
+  if (!tinaProps) {
+    return null;
+  }
 
   const testimonialsResult = await getTestimonialsByCategories(["Internship"]);
 
@@ -53,14 +63,23 @@ const getData = async (filename: string) => {
       },
     },
   };
-};
+});
 
 export default async function Training(prop: {
   params: Promise<{ filename: string }>;
 }) {
   const params = await prop.params;
   const { filename } = params;
-  const { props } = await getData(filename);
+  const data = await getData(filename);
+  if (!data) {
+    return (
+      <ClientFallback
+        queryName="trainingContentQuery"
+        variables={{ relativePath: `${filename}.mdx` }}
+        Component={TrainingPage}
+      />
+    );
+  }
 
-  return <TinaClient props={props} Component={TrainingPage} />;
+  return <TinaClient props={data.props} Component={TrainingPage} />;
 }
