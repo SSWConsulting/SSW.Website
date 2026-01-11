@@ -235,6 +235,11 @@
             "heading": "Microsoft Power Pages",
             "description": "Create websites and customer solutions fast while securely storing and managing data. ",
             "icon": "BiAddToQueue"
+          },
+          {
+            "heading": "Microsoft Copilot Studio",
+            "description": "Transform customer and employee experiences when you build custom copilots.",
+            "icon": "BiPaperPlane"
           }
         ]
       },
