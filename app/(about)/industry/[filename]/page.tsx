@@ -1,4 +1,5 @@
 import { TinaClient } from "@/app/tina-client";
+import ClientFallback from "@/components/client-fallback";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
@@ -15,6 +16,9 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await prop.params;
   const tinaProps = await getData(params.filename);
+  if (!tinaProps) {
+    return {};
+  }
   const seo = tinaProps.props.data.industry.seo;
 
   if (seo && !seo.canonical) {
@@ -29,6 +33,9 @@ const getData = async (filename: string) => {
     client.queries.industryContentQuery,
     filename
   );
+  if (!tinaProps) {
+    return null;
+  }
 
   return {
     props: {
@@ -52,6 +59,15 @@ export default async function Industry(prop: {
 }) {
   const params = await prop.params;
   const { filename } = params;
-  const { props } = await getData(filename);
-  return <TinaClient props={props} Component={IndustryPage} />;
+  const data = await getData(filename);
+  if (!data) {
+    return (
+      <ClientFallback
+        queryName="industryContentQuery"
+        variables={{ relativePath: `${filename}.mdx` }}
+        Component={IndustryPage}
+      />
+    );
+  }
+  return <TinaClient props={data.props} Component={IndustryPage} />;
 }
