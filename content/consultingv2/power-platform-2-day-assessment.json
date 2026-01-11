@@ -227,8 +227,9 @@
             "icon": "BiChip"
           },
           {
-            "heading": "Lorem",
-            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+            "heading": "Microsoft Power Automate",
+            "description": "Boost productivity by automating repetitive tasks and workflows with process automation.",
+            "icon": "BiArrowFromLeft"
           },
           {
             "heading": "Lorem",
