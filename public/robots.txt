@@ -1,22 +1,4 @@
-# *
 User-agent: *
-Allow: /
 Disallow: /404
-Disallow: /500
-Disallow: /*Browse.aspx*
-Disallow: /*browse.aspx*
-Disallow: /*browsexml.aspx*
-Disallow: /*BrowseXML.aspx*
-Disallow: /ssw/Redirect
-Disallow: /ssw/CodeAuditor
-Disallow: /ssw/Version.aspx
-Disallow: /ssw/LinkAuditor
-
-# Host
-Host: ssw.com.au
-
-# Sitemaps
-Sitemap: ssw.com.au/sitemap.xml
-Sitemap: https://www.ssw.com.au/people/sitemap-index.xml
-Sitemap: https://www.ssw.com.au/rules/sitemap-index.xml
-Sitemap: https://www.ssw.com.au/archive/sitemap-index.xml
+Disallow: /*/[filename]
+Disallow /*/*/[filename]
