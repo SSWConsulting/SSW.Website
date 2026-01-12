@@ -2,6 +2,9 @@
 
 import { TinaClient } from "@/app/tina-client";
 import { useQuery } from "@tanstack/react-query";
+import { notFound } from "next/navigation";
+import { useEffect } from "react";
+import { useIsAdminPage } from "./hooks/useIsAdmin";
 
 export interface ClientFallbackWithOptionProps {
   templates: Fallback[];
@@ -36,7 +39,14 @@ const ClientFallbackWithOption = ({
   const queryNames = templates.map((opt) => opt.query);
   const variables = templates.map((opt) => opt.variables);
 
-  console.log("fallback with option hit");
+  const { isAdmin, isLoading: isAdminLoading } = useIsAdminPage();
+
+  useEffect(() => {
+    if (!isAdmin && !isAdminLoading) {
+      notFound();
+    }
+  }, [isAdmin, isAdminLoading]);
+
   const { isLoading, data, error } = useQuery({
     queryKey: ["with-fallbacks", queryNames, variables],
     queryFn: () => QueryFn({ queries: queryNames, args: variables }),
