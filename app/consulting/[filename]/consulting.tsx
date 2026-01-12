@@ -29,8 +29,6 @@ export type OldConsultingPage = Awaited<
 >;
 
 export default function Consulting({ tinaProps, props }) {
-  console.log("props", props);
-  console.log("tinaProps", tinaProps);
   const { techCards, marketingData, categories, mediaCardProps } = props;
   const { data } = tinaProps;
   return (

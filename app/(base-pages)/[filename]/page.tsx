@@ -117,7 +117,6 @@ export default async function HomePage(prop: {
   const data = await getData(filename);
 
   if (!data) {
-    // Fallback to client-side fetch if SSR data is missing
     const fileNameForQuery = filename || "home";
     return (
       <ClientFallback

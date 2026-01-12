@@ -21,7 +21,6 @@ const EventsPageFallback = ({
 
   return (
     <>
-      <h1>Events page fallback</h1>
       <EventsPage
         tinaProps={tinaProps}
         props={{ videoCardProps, testimonialsResult }}

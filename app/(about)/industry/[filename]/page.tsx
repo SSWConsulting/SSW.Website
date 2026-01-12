@@ -6,6 +6,8 @@ import client from "@/tina/client";
 import { Metadata } from "next";
 import IndustryPage from ".";
 
+export const dynamic = "force-static";
+
 type GenerateMetadataProps = {
   params: Promise<{ filename: string }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;

@@ -26,14 +26,12 @@ export async function POST(request: Request) {
   }
 
   try {
-    // Always pass branch header if available
     //@ts-ignore
     const arg2 = [
       ...args,
       { fetchOptions: { headers: { "x-branch": branch || "main" } } },
     ];
 
-    console.log("arg2", arg2);
     //@ts-ignore
     const result = await tinaQuery(...arg2);
     return new Response(JSON.stringify(result), {

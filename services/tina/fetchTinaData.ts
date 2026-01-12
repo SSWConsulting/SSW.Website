@@ -1,5 +1,4 @@
 import { TODAY } from "@/hooks/useFetchEvents";
-import { notFound } from "next/navigation";
 
 export enum FileType {
   MDX = "mdx",
@@ -23,10 +22,8 @@ export async function fetchTinaData<T, V>(
       date: TODAY.toISOString(),
     } as V;
     const response = await queryFunction(variables);
-    console.log("response");
     return response;
   } catch {
-    console.log("response not returned");
     return null;
   }
 }

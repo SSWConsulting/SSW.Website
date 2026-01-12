@@ -32,8 +32,7 @@ export async function generateStaticParams() {
   return pages;
 }
 
-const getData = cache(async (filename: string) => {
-  return;
+const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.companyContentQuery,
     filename
@@ -67,7 +66,7 @@ const getData = cache(async (filename: string) => {
       ...tinaProps,
     },
   };
-});
+};
 
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;

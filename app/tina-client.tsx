@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useTina } from "tinacms/dist/react";
 export type UseTinaProps = {
   query: string;
-  variables: object & { relativePath?: string };
+  variables: object;
   data: object;
 };
 

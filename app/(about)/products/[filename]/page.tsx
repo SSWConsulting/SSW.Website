@@ -6,6 +6,8 @@ import { Metadata } from "next";
 import { cache } from "react";
 import ProductsPreview from "./products-preview";
 
+export const dynamic = "force-static";
+
 // Equavalent to getStaticPaths in Page Routing
 export async function generateStaticParams() {
   let PageListData = await client.queries.productsConnection();
@@ -29,7 +31,7 @@ export async function generateStaticParams() {
   return pages;
 }
 
-const getData = cache(async (filename: string) => {
+const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.productContentQuery,
     filename
@@ -39,7 +41,7 @@ const getData = cache(async (filename: string) => {
   }
 
   return { ...tinaProps };
-});
+};
 
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;

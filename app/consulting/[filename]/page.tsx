@@ -4,16 +4,8 @@ import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
 import { cache } from "react";
 
-const openSans = Open_Sans({
-  variable: "--open-sans-font",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "600"],
-});
-// import ClientWrapper from "./client-wrapper";
 import ClientFallbackWithOption from "@/components/client-fallback-with-option";
 import getConsultingPageMetadata from "@/helpers/consulting";
 import OldConsultingPage from "./consulting";
@@ -34,6 +26,8 @@ type ConsultingPages = Awaited<
 type ConsultingPageParams = {
   filename: string;
 };
+
+export const dynamic = "force-static";
 
 async function extractAllPages(query: Function, field: string) {
   let consultingFetch = await query();

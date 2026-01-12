@@ -39,10 +39,8 @@ const getData = async (filename: string) => {
     client.queries.videoProductionContentQuery,
     filename
   );
-  console.log("tinaProps", tinaProps);
 
   if (!tinaProps) {
-    console.log("no tinaProps");
     return null;
   }
 
@@ -94,7 +92,6 @@ export default async function Consulting(prop: {
   const data = await getData(params.filename);
 
   if (!data) {
-    // Fallback to client-side fetch if SSR data is missing
     return (
       <ClientFallback
         queryName="videoProductionContentQuery"

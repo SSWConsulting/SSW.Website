@@ -5,7 +5,6 @@ import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
-import { cache } from "react";
 import TrainingPage from ".";
 
 export const dynamic = "force-static";
@@ -40,7 +39,7 @@ export async function generateStaticParams() {
   }));
 }
 
-const getData = cache(async (filename: string) => {
+const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.trainingContentQuery,
     filename
@@ -63,7 +62,7 @@ const getData = cache(async (filename: string) => {
       },
     },
   };
-});
+};
 
 export default async function Training(prop: {
   params: Promise<{ filename: string }>;

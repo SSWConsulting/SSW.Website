@@ -7,6 +7,8 @@ import { Metadata } from "next";
 import { cache } from "react";
 import CaseStudies from "./index";
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   let pageListData = await client.queries.caseStudyConnection();
   const allPagesListData = pageListData;
@@ -29,7 +31,7 @@ export async function generateStaticParams() {
   return pages;
 }
 
-const getData = cache(async (filename: string) => {
+const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.caseStudyContentQuery,
     filename
@@ -52,7 +54,7 @@ const getData = cache(async (filename: string) => {
       ...tinaProps,
     },
   };
-});
+};
 
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;

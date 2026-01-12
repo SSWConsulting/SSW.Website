@@ -13,6 +13,8 @@ import EventsPage from "./events";
 import EventsPageFallback from "./events-page-fallback";
 import EventsV2Page from "./eventsv2";
 
+export const dynamic = "force-static";
+
 export async function generateStaticParams() {
   const pagesListData = await client.queries.eventsConnection();
 
@@ -23,8 +25,7 @@ export async function generateStaticParams() {
   return pages;
 }
 
-const newEventsPageData = cache(async (filename: string) => {
-  return null;
+const newEventsPageData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.eventsv2,
     filename,
@@ -47,18 +48,18 @@ const newEventsPageData = cache(async (filename: string) => {
       seo,
     },
   };
-});
+};
 
-const getData = cache(async (filename: string) => {
-  return null;
+const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.eventsContentQuery,
     filename
   );
+
   if (!tinaProps) {
     return null;
   }
-  ``;
+
   const seo = tinaProps.data.events.seo;
 
   const categories =
@@ -88,7 +89,7 @@ const getData = cache(async (filename: string) => {
       ...tinaProps,
     },
   };
-});
+};
 
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string }>;

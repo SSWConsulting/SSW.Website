@@ -6,6 +6,8 @@ import client from "@/tina/client";
 import { Metadata } from "next";
 import LogoPage from ".";
 
+export const dynamic = "force-static";
+
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string[] }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -15,15 +17,15 @@ export async function generateMetadata(
   prop: GenerateMetaDataProps
 ): Promise<Metadata> {
   const params = await prop.params;
-  const data = await getData(params.filename);
-  if (!data) {
+  const tinaData = await getData(params.filename);
+  if (!tinaData) {
     return null;
   }
 
-  const seo = data.props.seo;
+  const seo = tinaData.props.seo;
 
   if (seo && !seo.canonical) {
-    seo.canonical = `${data.props.header.url}logo${params.filename ? `/${params.filename.join("/")}` : ""}`;
+    seo.canonical = `${tinaData.props.header.url}logo${params.filename ? `/${params.filename.join("/")}` : ""}`;
   }
 
   return getSEOProps(seo);
@@ -78,7 +80,6 @@ export default async function Logos(prop: {
   const data = await getData(filename);
 
   if (!data) {
-    // Fallback to client-side fetch if SSR data is missing
     const fileNameUpdated = filename ? filename.join("/") : "index";
     return (
       <ClientFallback

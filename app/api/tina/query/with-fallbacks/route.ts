@@ -2,7 +2,6 @@ import client from "@/tina/client";
 import { cookies } from "next/headers";
 
 export async function POST(request: Request) {
-  console.log("with-fallbacks route hit");
   const vals = await cookies();
   const branch = vals.get("x-branch")?.value;
   const body = await request.json();
