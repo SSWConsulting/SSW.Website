@@ -22,7 +22,6 @@ const getData = async () => {
     seo.canonical = new URL(
       "/consulting",
       tinaProps.data.global.header.url
-
     ).toString();
   }
 

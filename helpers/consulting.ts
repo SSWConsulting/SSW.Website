@@ -1,7 +1,5 @@
 import { MediaCardProps } from "@/components/consulting/mediaCard/mediaCard";
 import client from "@/tina/client";
-import { ConsultingContentQueryQuery } from "@/tina/types";
-import { json } from "stream/consumers";
 import { getRandomTestimonialsByCategory } from "./getTestimonials";
 
 const getConsultingPageMetadata = async ({

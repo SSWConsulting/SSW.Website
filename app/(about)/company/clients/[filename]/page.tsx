@@ -4,7 +4,6 @@ import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
-import { cache } from "react";
 import CaseStudies from "./index";
 
 export const dynamic = "force-static";

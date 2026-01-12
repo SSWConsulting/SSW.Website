@@ -3,7 +3,6 @@ import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
-import { cache } from "react";
 import ProductsPreview from "./products-preview";
 
 export const dynamic = "force-static";

@@ -18,7 +18,6 @@ import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
 import { type default as client } from "@/tina/client";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { Open_Sans } from "next/font/google";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";

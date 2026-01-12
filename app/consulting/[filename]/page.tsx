@@ -29,7 +29,7 @@ type ConsultingPageParams = {
 
 export const dynamic = "force-static";
 
-async function extractAllPages(query: Function, field: string) {
+async function extractAllPages(query, field: string) {
   let consultingFetch = await query();
   const accmulatedPages = consultingFetch;
 

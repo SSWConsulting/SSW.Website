@@ -1,6 +1,5 @@
 import { TinaClient } from "@/app/tina-client";
 import ClientFallbackWithOption from "@/components/client-fallback-with-option";
-import { VideoCardType } from "@/components/util/videoCards";
 import { getVideoCardProps } from "@/helpers/events";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
 import { getSEOProps } from "@/lib/seo";
@@ -8,7 +7,6 @@ import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
-import { cache } from "react";
 import EventsPage from "./events";
 import EventsPageFallback from "./events-page-fallback";
 import EventsV2Page from "./eventsv2";
@@ -68,10 +66,6 @@ const getData = async (filename: string) => {
     ) || [];
 
   const videoCardProps = getVideoCardProps(tinaProps.data.events);
-  tinaProps.data?.events.videos?.videoCards?.map<VideoCardType>((m) => ({
-    title: m.title,
-    link: m.link,
-  })) || [];
 
   const testimonialsResult = await getTestimonialsByCategories(categories);
   return {

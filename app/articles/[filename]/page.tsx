@@ -4,7 +4,6 @@ import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { TinaClient, UseTinaProps } from "app/tina-client";
 import { Metadata } from "next";
-import { Client } from "tinacms";
 import ArticlePage, { ArticleData, ArticlePageProps } from ".";
 
 export const dynamic = "force-static";

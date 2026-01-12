@@ -1,7 +1,5 @@
 "use server";
-import { EventTrimmed } from "@/components/filter/events";
 import { EventFilterAllCategories } from "@/components/filter/FilterBlock";
-import { VideoCardType } from "@/components/util/videoCards";
 import { formatCategory } from "@/helpers/getTrimmedEvents";
 import client from "@/tina/client";
 import { GetPastEventsQueryQuery } from "@/tina/types";

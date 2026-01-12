@@ -12,7 +12,6 @@ import utc from "dayjs/plugin/utc";
 import { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
-import { cookies } from "next/headers";
 import "styles.css";
 import client from "../tina/__generated__/client";
 import LandingPageCapture from "./components/landing-page-capture";
@@ -59,8 +58,6 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
-  const branchCookie = cookieStore.get("x-branch");
   const menuData = await getMegamenu();
   const bannerData = await getPhishingBanner();
   const nextUG = await client.queries.getFutureEventsQuery({

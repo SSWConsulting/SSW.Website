@@ -1,9 +1,6 @@
 "use client";
 
-import { ConsultingContentQueryQuery } from "@/tina/types";
-import { useQueries, useQuery } from "@tanstack/react-query";
-import { json } from "stream/consumers";
-
+import { useQuery } from "@tanstack/react-query";
 import Consulting, { OldConsultingPage } from "./consulting";
 
 const ConsultingPageFallback = ({
