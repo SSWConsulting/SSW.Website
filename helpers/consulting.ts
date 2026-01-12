@@ -15,7 +15,7 @@ const getConsultingPageMetadata = async ({
       ?.filter((item) => !!item) || [];
 
   const testimonialsResult = await getRandomTestimonialsByCategory(categories);
-  console.log("data", data);
+
   const technologyCardNames =
     data.consulting.technologies?.technologyCards?.reduce<string[]>(
       (pre, cur) => {
@@ -24,11 +24,10 @@ const getConsultingPageMetadata = async ({
       },
       []
     ) || [];
-  console.log("technologyCardNames", technologyCardNames);
+
   const technologyCardsProps = await client.queries.technologyCardContentQuery({
     cardNames: technologyCardNames,
   });
-  console.log("technologyCardsProps returned");
 
   const technologyCardDocs =
     technologyCardsProps?.data.technologiesConnection.edges.map((n) => n.node);
