@@ -1,8 +1,10 @@
 "use client";
 
+import Loading from "@/app/loading";
 import { TinaClient, UseTinaProps } from "@/app/tina-client";
 import client from "@/tina/client";
 import { useQuery } from "@tanstack/react-query";
+import { Container } from "./util/container";
 
 export interface ClientFallbackProps<T> {
   queryName: keyof typeof client.queries;
@@ -47,10 +49,13 @@ const ClientFallback = ({ queryName, variables, Component }) => {
   });
   return (
     <>
-      <h1>Client Fallback</h1>
-      {isLoading && <h1>Loading...</h1>}
-      {error && <h1>Error loading data</h1>}
+      {isLoading && <Loading />}
       {data && <TinaClient props={data} Component={Component} />}
+      {error && (
+        <Container className="flex justify-center" width="large" size="custom">
+          <h1>Failed to load data</h1>
+        </Container>
+      )}
     </>
   );
 };
