@@ -39,12 +39,10 @@ export async function POST(request: Request) {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
-    return new Response(
-      JSON.stringify({ error: error?.message || "Query failed" }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    console.log(error);
+    return new Response(JSON.stringify({ error: "Document Not Found" }), {
+      status: 404,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }

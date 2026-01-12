@@ -2,6 +2,7 @@
 
 import Loading from "@/app/loading";
 import { TinaClient, UseTinaProps } from "@/app/tina-client";
+import NotFoundError from "@/errors/not-found";
 import client from "@/tina/client";
 import { useQuery } from "@tanstack/react-query";
 import { notFound } from "next/navigation";
@@ -25,9 +26,14 @@ const QueryFn = async (queryName: string, variables?: any) => {
       args: variables ? [variables] : [],
     }),
   });
+
+  if (res.status === 404) {
+    throw new NotFoundError("Document Not Found");
+  }
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
+
   const data = await res.json();
   return {
     data: data.data,
@@ -44,6 +50,7 @@ const ClientFallback = ({ queryName, variables, Component }) => {
   const { isLoading, data, error } = useQuery({
     queryKey: [queryName, variables],
     queryFn: () => QueryFn(queryName, variables),
+    retry: false,
   });
 
   const { isAdmin, isLoading: isAdminLoading } = useIsAdminPage();
@@ -55,6 +62,7 @@ const ClientFallback = ({ queryName, variables, Component }) => {
   }, [isAdmin, isAdminLoading]);
   return (
     <>
+      {error instanceof NotFoundError && notFound()}
       {isLoading && <Loading />}
       {data && <TinaClient props={data} Component={Component} />}
       {error && (

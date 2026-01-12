@@ -1,6 +1,7 @@
 "use client";
 
 import { TinaClient } from "@/app/tina-client";
+import NotFoundError from "@/errors/not-found";
 import { useQuery } from "@tanstack/react-query";
 import { notFound } from "next/navigation";
 import { useEffect } from "react";
@@ -25,6 +26,10 @@ const QueryFn = async ({
       args,
     }),
   });
+
+  if (res.status === 404) {
+    throw new NotFoundError("Document Not Found");
+  }
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -50,6 +55,7 @@ const ClientFallbackWithOption = ({
   const { isLoading, data, error } = useQuery({
     queryKey: ["with-fallbacks", queryNames, variables],
     queryFn: () => QueryFn({ queries: queryNames, args: variables }),
+    retry: false,
   });
 
   const componentIndex = data?.queryIndex ?? 0;
@@ -59,6 +65,7 @@ const ClientFallbackWithOption = ({
     <>
       <h1>Client Fallback With Option</h1>
       {isLoading && <h1>Loading...</h1>}
+      {error instanceof NotFoundError && notFound()}
       {error && <h1>Error loading data</h1>}
       {data && Component && <TinaClient props={data} Component={Component} />}
     </>

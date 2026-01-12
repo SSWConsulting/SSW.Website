@@ -25,7 +25,6 @@ export async function POST(request: Request) {
     }
 
     try {
-      console.log("attempting query");
       const arg2 = [
         args[i],
         { fetchOptions: { headers: { "x-branch": branch || "main" } } },
@@ -45,12 +44,11 @@ export async function POST(request: Request) {
         }
       );
     } catch (error) {
-      console.log("error", error);
-      console.log("catch was thrown");
+      continue;
     }
   }
   return new Response(JSON.stringify("Tina data not found"), {
-    status: 400,
+    status: 404,
     headers: { "Content-Type": "application/json" },
   });
 }
