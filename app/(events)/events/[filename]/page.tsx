@@ -1,9 +1,9 @@
 import { TinaClient } from "@/app/tina-client";
 import ClientFallbackWithOption from "@/components/client-fallback-with-option";
 import { VideoCardType } from "@/components/util/videoCards";
+import { getVideoCardProps } from "@/helpers/events";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
 import { getSEOProps } from "@/lib/seo";
-import { getVideoCardProps } from "@/services/server/events";
 import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation

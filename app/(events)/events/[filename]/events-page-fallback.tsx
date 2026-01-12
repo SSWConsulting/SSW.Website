@@ -1,10 +1,8 @@
 "use client";
 
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
-import {
-  getTestimonialCategories,
-  getVideoCardProps,
-} from "@/services/server/events";
+
+import { getTestimonialCategories, getVideoCardProps } from "@/helpers/events";
 import client from "@/tina/client";
 import EventsPage from "./events";
 
