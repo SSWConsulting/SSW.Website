@@ -7,7 +7,7 @@ import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
 import VideoProduction from "./video-production";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   let pageListData = await client.queries.videoProductionConnection();
