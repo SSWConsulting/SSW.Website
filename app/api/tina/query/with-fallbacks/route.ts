@@ -7,12 +7,11 @@ export async function POST(request: Request) {
   const body = await request.json();
   const { queryNames = [], args = [] } = body as {
     queryNames: string[];
-    args: Array<Record<string, unknown>>;
+    args: Array<{ relativePath: string }>;
   };
 
   for (let i = 0; i < queryNames.length; i++) {
-    const tinaQuery =
-      client.queries[queryNames[i] as keyof typeof client.queries];
+    const tinaQuery = client.queries[queryNames[i]];
     if (!tinaQuery) {
       continue;
     }
@@ -25,13 +24,9 @@ export async function POST(request: Request) {
     }
 
     try {
-      const arg2 = [
-        args[i],
-        { fetchOptions: { headers: { "x-branch": branch || "main" } } },
-      ];
-
-      //@ts-ignore
-      const result = await tinaQuery(...arg2);
+      const result = await tinaQuery(args[i], {
+        fetchOptions: { headers: { "x-branch": branch || "main" } },
+      });
 
       return new Response(
         JSON.stringify({

@@ -16,7 +16,7 @@ const QueryFn = async ({
   args,
 }: {
   queries: string[];
-  args: object[];
+  args: { relativePath: string }[];
 }) => {
   const res = await fetch("/api/tina/query/with-fallbacks", {
     method: "POST",
@@ -74,7 +74,7 @@ const ClientFallbackWithOption = ({
 
 type Fallback = {
   query: string;
-  variables: object;
+  variables: { relativePath: string };
   component: React.FC<unknown>;
   props?: object;
 };

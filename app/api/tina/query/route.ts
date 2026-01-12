@@ -5,7 +5,10 @@ export async function POST(request: Request) {
   const vals = await cookies();
   const branch = vals.get("x-branch")?.value;
   const body = await request.json();
-  const { queryName, args = [] } = body;
+  const { queryName, relativePath } = body as {
+    relativePath?: string;
+    queryName?: string;
+  };
 
   if (!queryName || typeof queryName !== "string") {
     return new Response(
@@ -17,23 +20,19 @@ export async function POST(request: Request) {
     );
   }
 
-  const tinaQuery = client.queries[queryName as keyof typeof client.queries];
+  const tinaQuery = client.queries[queryName];
   if (typeof tinaQuery !== "function") {
     return new Response(JSON.stringify({ error: "Query not found" }), {
       status: 404,
       headers: { "Content-Type": "application/json" },
     });
   }
-
   try {
-    //@ts-ignore
-    const arg2 = [
-      ...args,
-      { fetchOptions: { headers: { "x-branch": branch || "main" } } },
-    ];
+    const result = await tinaQuery(
+      { relativePath },
+      { fetchOptions: { headers: { "x-branch": branch || "main" } } }
+    );
 
-    //@ts-ignore
-    const result = await tinaQuery(...arg2);
     return new Response(JSON.stringify(result), {
       status: 200,
       headers: { "Content-Type": "application/json" },

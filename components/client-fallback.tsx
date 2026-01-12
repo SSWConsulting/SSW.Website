@@ -6,15 +6,15 @@ import NotFoundError from "@/errors/not-found";
 import client from "@/tina/client";
 import { useQuery } from "@tanstack/react-query";
 import { notFound } from "next/navigation";
+import { relative } from "path";
 import { useEffect } from "react";
 import { useIsAdminPage } from "./hooks/useIsAdmin";
 import { Container } from "./util/container";
 
 export interface ClientFallbackProps<T> {
   queryName: keyof typeof client.queries;
-  variables?: any;
+  variables: { relativePath: string };
   Component: React.FC<{ tinaProps: { data: object }; props: T }>;
-  // getSeoUrl?: (data: any, variables?: any) => string;
 }
 
 const QueryFn = async (queryName: string, variables?: any) => {
@@ -23,7 +23,7 @@ const QueryFn = async (queryName: string, variables?: any) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       queryName,
-      args: variables ? [variables] : [],
+      relativePath: variables?.relativePath,
     }),
   });
 
@@ -46,7 +46,11 @@ const QueryFn = async (queryName: string, variables?: any) => {
   };
 };
 
-const ClientFallback = ({ queryName, variables, Component }) => {
+const ClientFallback = <T,>({
+  queryName,
+  variables,
+  Component,
+}: ClientFallbackProps<T>) => {
   const { isLoading, data, error } = useQuery({
     queryKey: [queryName, variables],
     queryFn: () => QueryFn(queryName, variables),
