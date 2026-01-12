@@ -185,11 +185,11 @@ const formatCategories = (edges) => {
   }
 };
 
-type EventsRespose = Awaited<
+type EventsResponse = Awaited<
   ReturnType<typeof client.queries.eventsContentQuery>
 >;
 
-type EventsData = EventsRespose["data"]["events"];
+type EventsData = EventsResponse["data"]["events"];
 
 export const getTestimonialCategories = (events: EventsData): string[] => {
   return (
