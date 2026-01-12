@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "Enterprise Development and Consulting for Vibe Coding",
-    "description": "Craft modern and collaborative solutions with our Vibe Coding service. Fast delivery, great UX, zero fluff."
+    "title": "Vibe Coding Consulting | SSW",
+    "description": "Vibe Coding: Custom prototyping and rapid development in Australia. Build bespoke prototypes and MVPs fast with expert coaching. No production coding required.",
+    "canonical": "https://www.ssw.com.au/consulting/vibe-coding"
   },
   "blocks": [
     {
@@ -47,7 +48,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "heading": "Trusted by",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
@@ -140,7 +141,6 @@
       },
       "_template": "cardCarousel"
     },
-    
     {
       "spacerHeight": "50px",
       "background": {
@@ -219,7 +219,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

@@ -93,7 +93,6 @@ export const expertBlockSchema: Template = {
           type: "image",
           label: "Profile Image",
           name: "profileImage",
-          // @ts-expect-error tinacms types are wrong
           uploadDir: () => "people",
         },
         {

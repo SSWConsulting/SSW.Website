@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "SSW Dynamics 365 Consulting",
-    "description": "Australian leaders in custom Dynamics 365 solutions."
+    "title": "Dynamics 365 Consulting | SSW",
+    "description": "Custom Dynamics 365 development in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke CRM solutions with tailored workflows and integrations for your business.",
+    "canonical": "https://www.ssw.com.au/consulting/dynamics-365"
   },
   "blocks": [
     {
@@ -42,7 +43,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "heading": "Trusted by",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "paused": false,
       "isWhiteImages": true,
       "logos": [

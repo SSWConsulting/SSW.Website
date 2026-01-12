@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "3-Day AI Discovery Workshop - Identify Opportunities & Roadmap | SSW",
-    "description": "Kickstart your AI strategy in just 3 days. SSW's AI Discovery Workshop helps you identify high-impact AI opportunities, assess feasibility, and create a tailored implementation roadmap for success."
+    "title": "AI Discovery Workshop | SSW",
+    "description": "3-day AI Discovery Workshop in Sydney, Brisbane, Melbourne & Newcastle. Identify custom AI opportunities for your business. Discover bespoke solutions tailored to you. Book now.",
+    "canonical": "https://www.ssw.com.au/consulting/ai-discovery-workshop"
   },
   "blocks": [
     {
@@ -40,7 +41,7 @@
       "background": {
         "backgroundColour": 2
       },
-      "heading": "Trusted by",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
