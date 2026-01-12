@@ -6,7 +6,7 @@ import NotFoundError from "@/errors/not-found";
 import { useQuery } from "@tanstack/react-query";
 import { notFound } from "next/navigation";
 import { useEffect } from "react";
-import { useIsAdminPage } from "./hooks/useIsAdmin";
+import { useIsAdminPage } from "../hooks/useIsAdmin";
 import { Container } from "./util/container";
 
 export interface ClientFallbackWithOptionProps {
