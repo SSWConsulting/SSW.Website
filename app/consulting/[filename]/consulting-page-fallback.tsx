@@ -11,7 +11,7 @@ const ConsultingPageFallback = ({
   props: object;
 }) => {
   const { data } = useQuery({
-    queryKey: ["consulting-page-fallback"],
+    queryKey: ["consulting-page-fallback", tinaProps],
     queryFn: () =>
       fetch("/api/consulting-metadata", {
         method: "POST",
