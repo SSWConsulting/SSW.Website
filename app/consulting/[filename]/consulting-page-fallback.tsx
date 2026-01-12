@@ -13,9 +13,6 @@ const ConsultingPageFallback = ({
   tinaProps: OldConsultingPage;
   props: object;
 }) => {
-  console.log("all props", props);
-
-  console.log("tinaProps", tinaProps);
   const { data, error } = useQuery({
     queryKey: ["consulting-page-fallback"],
     queryFn: () =>
