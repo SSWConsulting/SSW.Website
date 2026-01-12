@@ -12,7 +12,7 @@
     },
     {
       "heading": "Power Platform: 2-day Assessment",
-      "body": "Get a 2-day Power Platform assessment to speed up delivery and reduce rework. We’ll review your processes, design the right approach, and produce a practical roadmap - including governance/licensing guidance, backlog items with estimates, and Azure integration if required.",
+      "body": "Get a 2-day Power Platform assessment to speed up delivery and reduce rework. We’ll review your processes, design the right approach, and produce a practical roadmap - including licensing guidance, backlog items with estimates, and Azure integration if required.",
       "tabletTextAlignment": "Left",
       "accordionItems": [
         {
@@ -24,7 +24,7 @@
           "content": "We create a comprehensive blueprint for your Power Platform solution, detailing the architecture, required components, and Azure integration points.\n"
         },
         {
-          "label": "Licensing and Governance Recommendations",
+          "label": "Licensing and product Recommendations",
           "content": "We offer guidance on the most cost-effective licensing options and best practices for governing your Power Platform environment.\n"
         },
         {
