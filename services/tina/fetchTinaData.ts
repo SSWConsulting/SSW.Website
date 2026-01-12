@@ -1,5 +1,4 @@
 import { getTodayISOString } from "@/services/server/events";
-import { notFound } from "next/navigation";
 
 export enum FileType {
   MDX = "mdx",
