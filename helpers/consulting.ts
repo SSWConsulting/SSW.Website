@@ -8,7 +8,6 @@ const getConsultingPageMetadata = async ({
   data,
   variables,
 }: Awaited<ReturnType<typeof client.queries.consultingContentQuery>>) => {
-  console.log("variables", variables);
   const categories =
     data.consulting?.testimonialCategories
       ?.map((category) => category?.testimonialCategory?.name)
