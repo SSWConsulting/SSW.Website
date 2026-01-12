@@ -28,15 +28,7 @@ const ConsultingPageFallback = ({
   });
 
   if (data) {
-    return (
-      <>
-        <h1>Consulting page fallback :D</h1>
-        <Consulting tinaProps={tinaProps} props={{ ...props, ...data }} />;
-      </>
-    );
-  }
-  if (error) {
-    return <h1>Error loading consulting metadata</h1>;
+    return <Consulting tinaProps={tinaProps} props={{ ...props, ...data }} />;
   }
 };
 

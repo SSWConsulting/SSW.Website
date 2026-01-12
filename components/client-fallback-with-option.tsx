@@ -1,11 +1,13 @@
 "use client";
 
+import Loading from "@/app/loading";
 import { TinaClient } from "@/app/tina-client";
 import NotFoundError from "@/errors/not-found";
 import { useQuery } from "@tanstack/react-query";
 import { notFound } from "next/navigation";
 import { useEffect } from "react";
 import { useIsAdminPage } from "./hooks/useIsAdmin";
+import { Container } from "./util/container";
 
 export interface ClientFallbackWithOptionProps {
   templates: Fallback[];
@@ -63,10 +65,13 @@ const ClientFallbackWithOption = ({
 
   return (
     <>
-      <h1>Client Fallback With Option</h1>
-      {isLoading && <h1>Loading...</h1>}
+      {isLoading && <Loading />}
       {error instanceof NotFoundError && notFound()}
-      {error && <h1>Error loading data</h1>}
+      {error && (
+        <Container className="flex justify-center" width="large" size="custom">
+          <h1>Failed to load data</h1>
+        </Container>
+      )}
       {data && Component && <TinaClient props={data} Component={Component} />}
     </>
   );
