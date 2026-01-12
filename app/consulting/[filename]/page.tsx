@@ -9,8 +9,8 @@ import { cache } from "react";
 import ClientFallbackWithOption from "@/components/client-fallback-with-option";
 import getConsultingPageMetadata from "@/helpers/consulting";
 import OldConsultingPage from "./consulting";
+import ConsultingPageFallback from "./consulting-page-fallback";
 import ConsultingPage2 from "./consulting2";
-import ConsultingPageFallback from "./consultingpage-fallback";
 
 type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
