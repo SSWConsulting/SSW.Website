@@ -2,5 +2,11 @@
   "seo": {
     "title": "This is a title",
     "description": "this is a description"
-  }
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "This is a test page",
+      "_template": "breadcrumbs"
+    }
+  ]
 }
