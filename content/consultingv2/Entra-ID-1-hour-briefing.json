@@ -11,8 +11,8 @@
       "_template": "breadcrumbs"
     },
     {
-      "heading": "Power Platform: 2-day Assessment",
-      "body": "Get a 2-day Power Platform assessment to speed up delivery and reduce rework. We’ll review your processes, design the right approach, and produce a practical roadmap - including licensing guidance, backlog items with estimates, and Azure integration if required.",
+      "heading": "Entra ID: 1-Hour Briefing",
+      "body": "Address identity and access management challenges and receive expert advice on how to enhance security, streamline access, and improve compliance using Entra ID.",
       "tabletTextAlignment": "Left",
       "accordionItems": [
         {
@@ -50,9 +50,9 @@
       ],
       "mediaConfiguration": {
         "placement": "Right",
-        "imageSource": "/images/AAA-Mike/Power-Platorm-Meeting.jpg",
-        "imageHeight": 766,
-        "imageWidth": 1200
+        "imageSource": "/images/AAA-Mike/EntreID.png",
+        "imageHeight": 888,
+        "imageWidth": 1332
       },
       "_template": "accordionBlock"
     },
