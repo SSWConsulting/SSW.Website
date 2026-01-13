@@ -1,10 +1,13 @@
 import { TinaClient } from "@/app/tina-client";
+import ClientFallback from "@/components/client-fallback";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
 import VideoProduction from "./video-production";
+
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   let pageListData = await client.queries.videoProductionConnection();
@@ -37,6 +40,10 @@ const getData = async (filename: string) => {
     filename
   );
 
+  if (!tinaProps) {
+    return null;
+  }
+
   const seo = tinaProps.data.videoProduction.seo;
 
   return {
@@ -62,7 +69,12 @@ export async function generateMetadata(
   prop: GenerateMetaDataProps
 ): Promise<Metadata> {
   const params = await prop.params;
-  const { props } = await getData(params.filename);
+  const data = await getData(params.filename);
+  if (!data) {
+    return {};
+  }
+
+  const { props } = data;
 
   const { seo } = props;
   if (seo && !seo.canonical) {
@@ -76,9 +88,18 @@ export default async function Consulting(prop: {
   params: Promise<{ filename: string }>;
 }) {
   const params = await prop.params;
-  const { filename } = params;
 
-  const { props } = await getData(filename);
+  const data = await getData(params.filename);
 
-  return <TinaClient props={props} Component={VideoProduction} />;
+  if (!data) {
+    return (
+      <ClientFallback
+        queryName="videoProductionContentQuery"
+        variables={{ relativePath: `${params.filename}.mdx` }}
+        Component={VideoProduction}
+      />
+    );
+  }
+
+  return <TinaClient props={data.props} Component={VideoProduction} />;
 }

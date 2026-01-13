@@ -1,8 +1,8 @@
 "use server";
 import { EventFilterAllCategories } from "@/components/filter/FilterBlock";
 import { formatCategory } from "@/helpers/getTrimmedEvents";
+import client from "@/tina/client";
 import { GetPastEventsQueryQuery } from "@/tina/types";
-import client from "../../tina/__generated__/client";
 import { EventInfo } from "./events-types";
 import { EVENTS_MAX_SIZE_OVERRIDE } from "./getEvents";
 
