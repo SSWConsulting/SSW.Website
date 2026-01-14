@@ -29,7 +29,7 @@
         },
         {
           "label": "Product Backlog Items with Effort/Time Estimates",
-          "content": "We provide a feature list with effort estimates, allowing for accurate planning and budgeting, while accounting for potential timeframe changes based on project scope.\n"
+          "content": "We discuss building a prioritized backlog of actionable security improvements. We break these down into clear tasks—such as \"Enforce MFA for all users\" or \"Configure Privileged Identity Management (PIM)\"—complete with effort and time estimates.\n"
         },
         {
           "label": "Implementation Roadmap",
