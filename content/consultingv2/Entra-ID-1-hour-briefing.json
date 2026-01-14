@@ -12,12 +12,12 @@
     },
     {
       "heading": "Entra ID: 1-Hour Briefing",
-      "body": "Address identity and access management challenges and receive expert advice on how to enhance security, streamline access, and improve compliance using Entra ID.",
+      "body": "Address identity and access management challenges and receive expert advice on how to enhance security, streamline access, and improve compliance using Microsoft Entra ID (formerly Azure AD).",
       "tabletTextAlignment": "Left",
       "accordionItems": [
         {
           "label": "Business Process Analysis ",
-          "content": "We examine your existing processes and workflows to identify opportunities for automation and optimization using Power Platform.\n"
+          "content": "We analyze your organization’s current Identity and Access Management (IAM) posture. Our consultants will review your existing authentication methods, user lifecycle management, and security policies to identify vulnerabilities and areas for optimization.\n"
         },
         {
           "label": "Blueprint Creation ",
