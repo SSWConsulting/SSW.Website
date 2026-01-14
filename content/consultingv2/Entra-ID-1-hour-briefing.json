@@ -183,39 +183,12 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Speak to SSW about your next **Power platform** project",
+      "heading": "Speak to SSW about your next **Entra ID** Rollout",
       "isH1": false,
       "description": "",
       "tabletTextAlignment": "Center",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Microsoft Power BI",
-            "description": "Guide decision making with stunning reports and real-time insights from across your organization.",
-            "icon": "BiLineChart"
-          },
-          {
-            "heading": "Microsoft Power Apps",
-            "description": "Build and launch professional-grade apps and automate workflows without additional coding.",
-            "icon": "BiChip"
-          },
-          {
-            "heading": "Microsoft Power Automate",
-            "description": "Boost productivity by automating repetitive tasks and workflows with process automation.",
-            "icon": "BiArrowFromLeft"
-          },
-          {
-            "heading": "Microsoft Power Pages",
-            "description": "Create websites and customer solutions fast while securely storing and managing data. ",
-            "icon": "BiAddToQueue"
-          },
-          {
-            "heading": "Microsoft Copilot Studio",
-            "description": "Transform customer and employee experiences when you build custom copilots.",
-            "icon": "BiPaperPlane"
-          }
-        ]
+        "twoColumns": true
       },
       "_template": "imageTextBlock"
     },
