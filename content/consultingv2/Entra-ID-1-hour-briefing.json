@@ -193,7 +193,7 @@
       "_template": "imageTextBlock"
     },
     {
-      "buttonText": "Book a Free Initial Meeting",
+      "buttonText": "Book your Free 1 Hour Briefing",
       "animated": true,
       "buttonSubtitle": "or call +61 2 9953 3000",
       "_template": "BookingButton"
