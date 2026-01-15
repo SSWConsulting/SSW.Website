@@ -324,9 +324,21 @@
       "_template": "cardCarousel"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/mobile-development.mdx"
+          "technology": "content/v2Technologies/technologies/Electronjs.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Ionic.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/NET-MAU.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/flutter.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/react-native.mdx"
         }
       ],
       "techCardStyle": 0,

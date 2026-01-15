@@ -438,9 +438,21 @@
       "_template": "cardCarousel"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
+          "technology": "content/v2Technologies/technologies/GitHub-Copilot-v2.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Google-Vertex-AI-v2.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Microsoft-AutoGen.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Python.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Semantic-Kernel-v2.mdx"
         }
       ],
       "isStacked": false,

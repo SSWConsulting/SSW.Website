@@ -185,9 +185,12 @@
       "_template": "accordionBlock"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+          "technology": "content/v2Technologies/technologies/MongoDBv2.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/PostgreSQLv2.mdx"
         }
       ],
       "isStacked": false,
