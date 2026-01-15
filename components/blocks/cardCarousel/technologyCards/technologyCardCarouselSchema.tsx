@@ -10,27 +10,54 @@ export const TechnologyCardCarouselSchema: Template = {
     previewSrc: "/images/thumbs/tina/card-carousel.jpg",
   },
   fields: [
+    // {
+    //   type: "object",
+    //   label: "Technology Groups",
+    //   name: "technologyGroups",
+    //   list: true,
+    //   ui: {
+    //     itemProps: (item) => {
+    //       const name = item.technologyGroup?.split("/");
+    //       return {
+    //         label: name
+    //           ? name[name.length - 1].split(".")[0]
+    //           : "Technology Group",
+    //       };
+    //     },
+    //   },
+    //   fields: [
+    //     {
+    //       type: "reference",
+    //       label: "Technology Group",
+    //       name: "technologyGroup",
+    //       collections: ["technologyGroupsv2"],
+    //       ui: {
+    //         optionComponent: (props: { name: string }, _internalSys) => {
+    //           return props.name ?? _internalSys.path;
+    //         },
+    //       },
+    //     },
+    //   ],
+    // },
     {
       type: "object",
-      label: "Technology Groups",
-      name: "technologyGroups",
+      label: "Individual Technologies",
+      name: "technologies",
       list: true,
       ui: {
         itemProps: (item) => {
-          const name = item.technologyGroup?.split("/");
+          const name = item.technology?.split("/");
           return {
-            label: name
-              ? name[name.length - 1].split(".")[0]
-              : "Technology Group",
+            label: name ? name[name.length - 1].split(".")[0] : "Technology",
           };
         },
       },
       fields: [
         {
           type: "reference",
-          label: "Technology Group",
-          name: "technologyGroup",
-          collections: ["technologyGroupsv2"],
+          label: "Technology",
+          name: "technology",
+          collections: ["technologiesv2"],
           ui: {
             optionComponent: (props: { name: string }, _internalSys) => {
               return props.name ?? _internalSys.path;
