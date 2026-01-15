@@ -8,9 +8,9 @@ export type TestimonialType = {
 };
 const SSWInternalTestimonialCategories = ["internship", "brainstorming"];
 
-export const getTestimonialsByCategories = async (
+export const getTestimonialsByCategories = (
   categories: string[] = []
-): Promise<TestimonialType[] | []> => {
+): TestimonialType[] | [] => {
   const testimonialsResult = testimonialList.testimonials
     .filter(
       (testimonial) =>

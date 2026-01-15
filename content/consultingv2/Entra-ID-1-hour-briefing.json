@@ -1,0 +1,205 @@
+{
+  "seo": {
+    "title": "Entra ID: 1-Hour Briefing",
+    "description": "Tackle IAM challenges with expert advice to boost security, streamline access, and improve compliance with Entra ID.",
+    "canonical": "entra-id-1-hour-briefing",
+    "showBreadcrumb": true
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "Entra-ID-1-Hour-Briefing",
+      "_template": "breadcrumbs"
+    },
+    {
+      "heading": "Entra ID: 1-Hour Briefing",
+      "body": "Address identity and access management challenges and receive expert advice on how to enhance security, streamline access, and improve compliance using Microsoft Entra ID (formerly Azure AD).",
+      "tabletTextAlignment": "Left",
+      "accordionItems": [
+        {
+          "label": "Business Process Analysis ",
+          "content": "We analyze your organization’s current Identity and Access Management (IAM) posture. Our consultants will review your existing authentication methods, user lifecycle management, and security policies to identify vulnerabilities and areas for optimization.\n"
+        },
+        {
+          "label": "Blueprint Creation ",
+          "content": "We discuss the creation of a comprehensive blueprint for your Entra ID architecture. This details the required security configurations, Conditional Access policies, Single Sign-On (SSO) integrations, and hybrid identity synchronization strategy.\n"
+        },
+        {
+          "label": "Licensing and Product Recommendations",
+          "content": "We review your current subscriptions and recommend the most cost-effective licensing tiers (e.g., Entra ID P1 vs. P2) to ensure you have the necessary features for your security goals without overspending.\n"
+        },
+        {
+          "label": "Product Backlog Items with Effort/Time Estimates",
+          "content": "We discuss building a prioritized backlog of actionable security improvements. We break these down into clear tasks—such as \"Enforce MFA for all users\" or \"Configure Privileged Identity Management (PIM)\"—complete with effort and time estimates.\n"
+        },
+        {
+          "label": "Implementation Roadmap",
+          "content": "We discuss how we can build a phased roadmap for rolling out these changes. This ensures a smooth transition that minimizes user disruption while rapidly increasing your security score, moving from quick wins to long-term governance strategies.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Book a Free 1 Hour Briefing",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": "Rules to Best Practices for Entre ID",
+          "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id",
+          "colour": 1
+        }
+      ],
+      "mediaConfiguration": {
+        "placement": "Right",
+        "imageSource": "/images/AAA-Mike/EntreID.png",
+        "imageHeight": 888,
+        "imageWidth": 1332
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "tabletTextAlignment": "Center",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/clientLogos/allianz1.png",
+          "altText": "Allianz"
+        },
+        {
+          "logo": "/images/clientLogos/Cisco1.png",
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/clientLogos/Bupa1.png",
+          "altText": "Bupa"
+        },
+        {
+          "logo": "/images/clientLogos/CBA-Primary.png",
+          "altText": "Commbank"
+        },
+        {
+          "logo": "/images/Clients/Untitled-4.png",
+          "altText": "Westpac"
+        },
+        {
+          "logo": "/images/clientLogos/Toll_Group_logo.svg.png",
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/clientLogos/medibank.webp",
+          "altText": "Medibank"
+        },
+        {
+          "logo": "/images/clientLogos/event-logo-white.webp",
+          "altText": "Event"
+        },
+        {
+          "logo": "/images/clientLogos/SydneyUni.png",
+          "altText": "Sydney University"
+        },
+        {
+          "logo": "/images/clientLogos/LL_logo_0.png",
+          "altText": "Lend Lease"
+        },
+        {
+          "logo": "/images/clientLogos/Pfizer_logo.svg.png",
+          "altText": "Pfizer"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": false,
+      "heading": "The next step is a SSW Specification Review: Your Blueprint for Software Success",
+      "isH1": false,
+      "body": "You wouldn't build a house without an architect's plan, so don't build software without a specification. We define the roadmap, mitigate risks, and provide accurate estimates before a single line of code is written.",
+      "tabletTextAlignment": "Center",
+      "cards": [
+        {
+          "guid": "38c99c",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.26.14%E2%80%AFAM.png",
+          "altText": "The Specification Review",
+          "icon": "info",
+          "heading": "The Specification Review",
+          "description": "Understanding a complex system takes more than one meeting. We spend time gathering stakeholder requirements to create a detailed project roadmap, ensuring we understand the destination before we start the journey.",
+          "embeddedButton": {
+            "buttonText": "Rules to Better Spec Reviews",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-specification-reviews"
+          }
+        },
+        {
+          "guid": "2demk",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.27.38%E2%80%AFAM.png",
+          "altText": "Requirements Analysis",
+          "icon": "info",
+          "heading": "Requirements Analysis",
+          "description": "We break down the technical landscape to define your architectural roadmap, integration plans, and deployment strategy. By identifying the MVP and potential risks early, we prevent costly bottlenecks later.",
+          "embeddedButton": {
+            "buttonText": "Rules: Gathering Accurate Information",
+            "buttonLink": "https://www.ssw.com.au/rules/get-accurate-information"
+          }
+        },
+        {
+          "guid": "qno9cp",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.27.47%E2%80%AFAM.png",
+          "altText": "Product Backlog",
+          "icon": "info",
+          "heading": "Product Backlog",
+          "description": "We translate your requirements into a tangible list of Product Backlog Items (PBIs). This includes setting priorities, mapping dependencies, and estimating the effort required to build the solution step-by-step.",
+          "embeddedButton": {
+            "buttonText": "Rule: Build a Backlog",
+            "buttonLink": "https://www.ssw.com.au/rules/break-pbis"
+          }
+        },
+        {
+          "guid": "n1u82s",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.27.57%E2%80%AFAM.png",
+          "altText": "Ballpark Estimates",
+          "icon": "info",
+          "heading": "Ballpark Estimates",
+          "description": "Budget clarity is essential. We provide realistic projections on the number of sprints, the size of the development team, and the estimated total cost, giving you the data you need to secure approval.",
+          "embeddedButton": {
+            "buttonText": "Rule: Providing Estimates",
+            "buttonLink": "https://www.ssw.com.au/rules/spec-give-customers-a-ballpark"
+          }
+        },
+        {
+          "guid": "1s72o",
+          "image": "/images/AAA-Mike/Screenshot%202026-01-08%20at%209.28.06%E2%80%AFAM.png",
+          "altText": "From Wireframes to Product",
+          "icon": "info",
+          "heading": "From Wireframes to Product",
+          "description": "Deep engagement ensures we solve the right problem. We move from rough wireframes to detailed UX designs and final development, keeping you in the loop until the \"Definition of Done\" is met.",
+          "embeddedButton": {
+            "buttonText": "Rule: Definition of Done",
+            "buttonLink": "https://www.ssw.com.au/rules/definition-of-done"
+          }
+        }
+      ],
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Speak to SSW about your next **Entra ID** Rollout",
+      "isH1": false,
+      "description": "",
+      "tabletTextAlignment": "Center",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "buttonText": "Book your Free 1 Hour Briefing",
+      "animated": true,
+      "buttonSubtitle": "or call +61 2 9953 3000",
+      "_template": "BookingButton"
+    }
+  ],
+  "azureBanner": {
+    "azureFooterColor": "darkgray"
+  }
+}
