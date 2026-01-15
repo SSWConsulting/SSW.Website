@@ -1,6 +1,5 @@
 "use client";
 
-import {} from "@/services/server/technologies";
 import { useEffect, useState } from "react";
 import { CardCarousel } from "../cardCarousel/cardCarousel";
 
@@ -15,23 +14,24 @@ export const TechnologyCardCarousel = ({
   const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      const cards = data.technologies.map((tech) => {
-        return {
-          guid: tech.technology.associatedGroup?.name,
-          image: tech.technology.thumbnail,
-          heading: tech.technology.name,
-          altText: tech.technology.name,
-          description: tech.technology.body,
-          embeddedButton: {
-            buttonText: "Read More",
-            buttonLink: tech.technology.readMoreSlug,
-            icon: "BiChevronRight",
-          },
-          icon: tech.technology.icon,
-          contain: true,
-        };
-      });
+    function fetchData() {
+      const cards =
+        data.technologies?.map((tech) => {
+          return {
+            guid: tech.technology.associatedGroup?.name,
+            image: tech.technology.thumbnail,
+            heading: tech.technology.name,
+            altText: tech.technology.name,
+            description: tech.technology.body,
+            embeddedButton: {
+              buttonText: "Read More",
+              buttonLink: tech.technology.readMoreSlug,
+              icon: "BiChevronRight",
+            },
+            icon: tech.technology.icon,
+            contain: true,
+          };
+        }) ?? [];
 
       setCardList(cards);
     }
