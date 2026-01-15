@@ -20,8 +20,8 @@ export const TechnologyCardCarousel = ({
           return {
             guid: tech.technology.associatedGroup?.name,
             image: tech.technology.thumbnail,
-            heading: tech.technology.name,
-            altText: tech.technology.name,
+            heading: tech.technology?.name,
+            altText: tech.technology?.name,
             description: tech.technology.body,
             embeddedButton: {
               buttonText: "Read More",
