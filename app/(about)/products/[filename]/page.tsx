@@ -1,8 +1,11 @@
+import ClientFallback from "@/components/client-fallback";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import ProductsPreview from "./products-preview";
+
+export const dynamic = "force-static";
 
 // Equavalent to getStaticPaths in Page Routing
 export async function generateStaticParams() {
@@ -32,6 +35,9 @@ const getData = async (filename: string) => {
     client.queries.productContentQuery,
     filename
   );
+  if (!tinaProps) {
+    return null;
+  }
 
   return { ...tinaProps };
 };
@@ -46,6 +52,9 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const tinaProps = await getData(params.filename);
+  if (!tinaProps) {
+    return {};
+  }
 
   const seo = tinaProps.data.products.seo;
   if (seo && !seo.canonical) {
@@ -62,6 +71,15 @@ export default async function Products(prop: {
   const { filename } = params;
 
   const tinaProps = await getData(filename);
+  if (!tinaProps) {
+    return (
+      <ClientFallback
+        queryName="productContentQuery"
+        variables={{ relativePath: `${filename}.mdx` }}
+        Component={ProductsPreview}
+      />
+    );
+  }
 
   return <ProductsPreview props={{ ...tinaProps }} />;
 }
