@@ -326,9 +326,6 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/Ionic.mdx"
-        },
-        {
           "technology": "content/v2Technologies/technologies/NET-MAU.mdx"
         },
         {
@@ -336,6 +333,9 @@
         },
         {
           "technology": "content/v2Technologies/technologies/react-native.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Ionic.mdx"
         }
       ],
       "isStacked": false,
