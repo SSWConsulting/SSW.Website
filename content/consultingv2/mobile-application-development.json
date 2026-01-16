@@ -326,7 +326,7 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/NET-MAU.mdx"
+          "technology": "content/v2Technologies/technologies/NET-MAUI.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/flutter.mdx"
