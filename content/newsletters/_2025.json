@@ -50,6 +50,16 @@
       "month": 10,
       "file": "/images/newsletter-uploads/2025/_2025_10__OpenAI%20%E2%80%93%202%20Updates%20That%20Might%20Change%20How%20You%20Build%20Software_.html",
       "description": "OpenAI – 2 Updates That Might Change How You Build Software"
+    },
+    {
+      "month": 11,
+      "file": "/images/newsletter-uploads/2025/_2025_11__My%20Top%203%20AI%20image%20Generators%20(and%20why%20designers%20should%20use%20them)_.html",
+      "description": "My Top 3 AI Image Generators (and why designers should use them)"
+    },
+    {
+      "month": 12,
+      "file": "/images/newsletter-uploads/2025/_2025_12__How%20to%20Handle%20Duplicate%20GitHub%20Issues%20Without%20Annoying%20Your%20Users_.html",
+      "description": "How to Handle Duplicate GitHub Issues Without Annoying Your Users"
     }
   ]
 }
