@@ -326,12 +326,6 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/Electronjs.mdx"
-        },
-        {
-          "technology": "content/v2Technologies/technologies/Ionic.mdx"
-        },
-        {
           "technology": "content/v2Technologies/technologies/NET-MAUI.mdx"
         },
         {
@@ -339,8 +333,12 @@
         },
         {
           "technology": "content/v2Technologies/technologies/react-native.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Ionic.mdx"
         }
       ],
+      "isStacked": false,
       "techCardStyle": 0,
       "background": {
         "backgroundColour": 6
