@@ -326,9 +326,6 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/Electronjs.mdx"
-        },
-        {
           "technology": "content/v2Technologies/technologies/Ionic.mdx"
         },
         {
