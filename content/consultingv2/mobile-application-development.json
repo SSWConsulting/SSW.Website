@@ -338,6 +338,7 @@
           "technology": "content/v2Technologies/technologies/react-native.mdx"
         }
       ],
+      "isStacked": false,
       "techCardStyle": 0,
       "background": {
         "backgroundColour": 6
