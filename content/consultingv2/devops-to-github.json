@@ -382,9 +382,21 @@
       "_template": "cardCarousel"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/All-Github.mdx"
+          "technology": "content/v2Technologies/technologies/dependabot.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/gitHub-advanced-security.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/gitHub-copilot-enterprise.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/github-actions.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/github-codespaces.mdx"
         }
       ],
       "background": {

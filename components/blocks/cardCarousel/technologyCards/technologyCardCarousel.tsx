@@ -1,6 +1,5 @@
 "use client";
 
-import { getTechnologiesByGroup } from "@/services/server/technologies";
 import { useEffect, useState } from "react";
 import { CardCarousel } from "../cardCarousel/cardCarousel";
 
@@ -15,36 +14,25 @@ export const TechnologyCardCarousel = ({
   const [cardList, setCardList] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      const technologyGroupNames =
-        data.technologyGroups
-          ?.map((group) => {
-            return group.technologyGroup?.name;
-          })
-          .filter((name) => name) || [];
+    function fetchData() {
+      const cards =
+        data.technologies?.map((tech) => {
+          return {
+            guid: tech.technology.associatedGroup?.name,
+            image: tech.technology.thumbnail,
+            heading: tech.technology?.name,
+            altText: tech.technology?.name,
+            description: tech.technology.body,
+            embeddedButton: {
+              buttonText: "Read More",
+              buttonLink: tech.technology.readMoreSlug,
+              icon: "BiChevronRight",
+            },
+            icon: tech.technology.icon,
+            contain: true,
+          };
+        }) ?? [];
 
-      if (technologyGroupNames.length === 0) {
-        setCardList([]);
-        return;
-      }
-
-      const response = await getTechnologiesByGroup(technologyGroupNames);
-      const cards = response.data.technologiesv2Connection.edges.map((card) => {
-        return {
-          guid: card.node.associatedGroup?.name,
-          image: card.node.thumbnail,
-          heading: card.node.name,
-          altText: card.node.name,
-          description: card.node.body,
-          embeddedButton: {
-            buttonText: "Read More",
-            buttonLink: card.node.readMoreSlug,
-            icon: "BiChevronRight",
-          },
-          icon: card.node.icon,
-          contain: true,
-        };
-      });
       setCardList(cards);
     }
     fetchData();
@@ -53,18 +41,6 @@ export const TechnologyCardCarousel = ({
   //This data is a limited version of the data that is passed to the CardCarousel component via its schema
   const cardCarouselData = {
     isStacked: data.isStacked,
-    categoryGroup:
-      data.technologyGroups?.length > 1
-        ? data.technologyGroups?.map((group) => {
-            return {
-              categoryName: group.technologyGroup?.name,
-              cardGuidList: {
-                guid: group.technologyGroup?.name,
-                cardGuidList: [group.technologyGroup?.name],
-              },
-            };
-          })
-        : [],
     cardStyle: data.techCardStyle,
     cards: cardList,
     isH1: false,

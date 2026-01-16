@@ -304,9 +304,9 @@
       "_template": "accordionBlock"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/SharePoint-Related.mdx"
+          "technology": "content/v2Technologies/technologies/Microsoft-Teams.mdx"
         }
       ],
       "isStacked": false,
