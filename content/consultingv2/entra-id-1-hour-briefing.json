@@ -7,6 +7,9 @@
   },
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "finalBreadcrumb": "Entra-ID-1-Hour-Briefing",
       "_template": "breadcrumbs"
     },
@@ -29,7 +32,7 @@
         },
         {
           "label": "Product Backlog Items with Effort/Time Estimates",
-          "content": "We discuss building a prioritized backlog of actionable security improvements. We break these down into clear tasks—such as \"Enforce MFA for all users\" or \"Configure Privileged Identity Management (PIM)\"—complete with effort and time estimates.\n"
+          "content": "We discuss building a prioritized backlog of actionable security improvements. We break these down into clear tasks, such as \"Enforce MFA for all users\" or \"Configure Privileged Identity Management (PIM)\", complete with effort and time estimates.\n"
         },
         {
           "label": "Implementation Roadmap",
@@ -43,11 +46,14 @@
           "colour": 0
         },
         {
-          "buttonText": "Rules to Best Practices for Entre ID",
+          "buttonText": "Rules to Better Entra ID",
           "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id",
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "placement": "Right",
         "imageSource": "/images/AAA-Mike/EntreID.png",
@@ -57,6 +63,9 @@
       "_template": "accordionBlock"
     },
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "tabletTextAlignment": "Center",
       "paused": false,
@@ -111,7 +120,7 @@
     },
     {
       "isStacked": false,
-      "heading": "The next step is a SSW Specification Review: Your Blueprint for Software Success",
+      "heading": "The next step is a  **Specification Review**: Your Blueprint for Software Success",
       "isH1": false,
       "body": "You wouldn't build a house without an architect's plan, so don't build software without a specification. We define the roadmap, mitigate risks, and provide accurate estimates before a single line of code is written.",
       "tabletTextAlignment": "Center",
@@ -177,29 +186,37 @@
           }
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "cardCarousel"
     },
     {
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Speak to SSW about your next **Entra ID** Rollout",
+      "heading": "Talk to us about your **Entra ID** Rollout",
       "isH1": false,
-      "description": "",
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
       "tabletTextAlignment": "Center",
       "featureColumns": {
         "twoColumns": true
       },
+      "buttons": [
+        {
+          "buttonText": "Book your Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "iconFirst": false
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false
+      },
       "_template": "imageTextBlock"
-    },
-    {
-      "buttonText": "Book your Free 1 Hour Briefing",
-      "animated": true,
-      "buttonSubtitle": "or call +61 2 9953 3000",
-      "_template": "BookingButton"
     }
   ],
   "azureBanner": {
-    "azureFooterColor": "darkgray"
+    "azureFooterColor": "white"
   }
 }
