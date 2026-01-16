@@ -48,6 +48,9 @@
           "colour": 1
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
         "placement": "Right",
         "imageSource": "/images/AAA-Mike/EntreID.png",
