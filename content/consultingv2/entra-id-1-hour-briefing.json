@@ -7,6 +7,9 @@
   },
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 6
+      },
       "finalBreadcrumb": "Entra-ID-1-Hour-Briefing",
       "_template": "breadcrumbs"
     },
