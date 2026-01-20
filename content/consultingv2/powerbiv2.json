@@ -217,7 +217,7 @@
         {
           "guid": "fm6ndo",
           "altText": "Lorem Ipsum",
-          "icon": "BiCloudUpload",
+          "icon": "BiData",
           "heading": "Microsoft Fabric",
           "description": "A unified, AI-powered analytics platform that connects your entire data estate in a single, governed environment.",
           "embeddedButton": {
