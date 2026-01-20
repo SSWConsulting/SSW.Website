@@ -157,16 +157,16 @@
       "body": "",
       "accordionItems": [
         {
-          "label": "What ServiceNow solutions does SSW implement?",
-          "content": "SSW provides implementation, integration, and migration services across the full ServiceNow platform, including:\n\n* IT Service Management (ITSM)\n* IT Operations Management (ITOM)\n* Customer Service Management (CSM)\n* HR Service Delivery (HRSD)\n* Security Operations\n* IT Asset Management\n\nWe focus on ensuring your ServiceNow instance integrates seamlessly with your existing Microsoft stack and business processes.\n"
+          "label": "What data sources can Power BI connect to?",
+          "content": "Power BI can connect to hundreds of data sources, including SQL databases, Excel, SharePoint, Dynamics 365, Salesforce, Xero, MYOB, cloud platforms, APIs, and many other business systems. Our team can also build custom connectors when required.\n"
         },
         {
-          "label": "Can you migrate us from BMC Remedy/Jira/Legacy Systems?",
-          "content": "Yes. We specialize in complex migrations. We don't just 'lift and shift'; we map your legacy processes to modern ServiceNow workflows (CSM, ITSM, HRSD). We use ETL tools and robust testing frameworks to ensure zero data loss during the transition.\n"
+          "label": "Do I need Power BI licenses before starting a project?",
+          "content": "Not necessarily. We can help assess your current Microsoft 365 environment and recommend the most cost-effective licensing model for your needs. Many organisations already have partial access through existing Microsoft subscriptions.\n"
         },
         {
-          "label": "What technologies does SSW use alongside ServiceNow?",
-          "content": "We integrate ServiceNow with Microsoft 365, Azure, and other enterprise systems. Our consultants prioritise the most effective tools to ensure scalable, testable, and maintainable solutions.\n"
+          "label": "Can you customise dashboards for our specific business needs?",
+          "content": "Yes. All dashboards we build are fully customised to your business goals, KPIs, and workflows. We work closely with stakeholders to ensure reports are intuitive, relevant, and designed for real-world decision making. \n"
         },
         {
           "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
