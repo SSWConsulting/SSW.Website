@@ -19,7 +19,7 @@
       },
       "heading": "Want to use **ServiceNow** to improve your client relationships?",
       "isH1": true,
-      "description": "Get ServiceNow running the way it should. We handle the setup, integrations, and migrations, supported by three decades of software expertise.\n",
+      "description": "Visualize and analyse data with greater speed, efficiency and understanding.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -106,9 +106,9 @@
         {
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidMedal",
-          "heading": "Fix Broken Workflows and Reduce Manual Work ",
-          "description": "We optimise and automate your ServiceNow platform so teams spend less time on admin and more time delivering value.",
+          "icon": "BiDollar",
+          "heading": "Low Cost and Quick Deployment",
+          "description": "Since Power Bi Desktop is a part of Microsoft 365, you likely already have access. Deploy in under a day with zero upfront cost.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -116,9 +116,9 @@
         {
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidError",
-          "heading": "Reduce Risk on Enterprise Projects ",
-          "description": "We strip the risk out of complex deployments. Our team use best practice to ensure your project lands safely and scales easily.",
+          "icon": "BiBrain",
+          "heading": "Self Service Business Intelligence",
+          "description": "Empower users to create, modify, and explore reports on the fly, reducing reliance on IT and enabling faster, data-driven decisions.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -128,8 +128,8 @@
           "guid": "5q8kz",
           "altText": "Lorem Ipsum",
           "icon": "BiLogoMicrosoft",
-          "heading": "Deep Microsoft Stack Expertise",
-          "description": "Connect ServiceNow with your Microsoft ecosystem: Azure, Microsoft 365, Teams, Power Platform, and more. We make your tools work together.",
+          "heading": "Ready-Made Dashboards",
+          "description": "Easily connect to popular systems with built-in content packs and pre-configured dashboards, making data visualisation simple right out of the box.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
