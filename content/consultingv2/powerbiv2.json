@@ -206,7 +206,7 @@
         {
           "guid": "v93zjp",
           "altText": "Lorem Ipsum",
-          "icon": "BiCommentCheck",
+          "icon": "BiGitBranch",
           "heading": "Azure Synapse",
           "description": "Accelerate time-to-insight by bridging the gap between big data stores and enterprise-grade data warehousing.",
           "embeddedButton": {
