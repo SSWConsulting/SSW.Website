@@ -207,11 +207,11 @@
           "guid": "v93zjp",
           "altText": "Lorem Ipsum",
           "icon": "BiCommentCheck",
-          "heading": "Zendesk",
-          "description": "Streamline support by centralising all communication channels into one hub.",
+          "heading": "Azure Synapse",
+          "description": "Accelerate time-to-insight by bridging the gap between big data stores and enterprise-grade data warehousing.",
           "embeddedButton": {
             "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/consulting/zendesk"
+            "buttonLink": "https://www.ssw.com.au/consulting/azure-synapse"
           }
         },
         {
@@ -267,7 +267,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Talk to us about your **ServiceNow** Project today",
+      "heading": "Talk to us about your **Power BI** Project today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
