@@ -240,11 +240,11 @@
           "guid": "e7umlf",
           "altText": "",
           "icon": "BiUserVoice",
-          "heading": "Service Desk",
-          "description": "Centralised support that resolves issues fast and keeps your operations running smoothly.",
+          "heading": "Microsoft Co-Pilot",
+          "description": "Empower your workforce with generative AI that automates complex analysis and delivers instant, natural-language insights from your enterprise data.",
           "embeddedButton": {
             "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/consulting/service-desk"
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-ai-development"
           }
         }
       ],
