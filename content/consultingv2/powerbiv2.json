@@ -218,11 +218,11 @@
           "guid": "fm6ndo",
           "altText": "Lorem Ipsum",
           "icon": "BiCloudUpload",
-          "heading": "Intune",
-          "description": "A cloud-based unified management solution for mobile devices and operating systems. ",
+          "heading": "Microsoft Fabric",
+          "description": "A unified, AI-powered analytics platform that connects your entire data estate in a single, governed environment.",
           "embeddedButton": {
             "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/consulting/intune"
+            "buttonLink": "https://www.ssw.com.au/consulting/fabric"
           }
         },
         {
