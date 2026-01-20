@@ -228,7 +228,7 @@
         {
           "guid": "gylswt8",
           "altText": "Lorem Ipsum",
-          "icon": "BiFingerprint",
+          "icon": "BiAnalyse",
           "heading": "Azure Machine Learning",
           "description": "Move from hindsight to foresight by integrating predictive models and advanced AI directly into your reporting.",
           "embeddedButton": {
