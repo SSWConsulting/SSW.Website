@@ -229,11 +229,11 @@
           "guid": "gylswt8",
           "altText": "Lorem Ipsum",
           "icon": "BiFingerprint",
-          "heading": "Azure Entra ID",
-          "description": "Secure identity and access management that keeps your people and apps connected.",
+          "heading": "Azure Machine Learning",
+          "description": "Move from hindsight to foresight by integrating predictive models and advanced AI directly into your reporting.",
           "embeddedButton": {
             "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id/"
+            "buttonLink": "https://www.ssw.com.au/consulting/azure"
           }
         },
         {
