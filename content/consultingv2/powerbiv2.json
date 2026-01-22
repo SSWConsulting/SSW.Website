@@ -108,7 +108,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiDollar",
           "heading": "Low Cost and Quick Deployment",
-          "description": "Since Power Bi Desktop is a part of Microsoft 365, you likely already have access. Deploy in under a day with zero upfront cost.",
+          "description": "Since Power BI Desktop is a part of Microsoft 365, you likely already have access. Deploy in under a day and scale when needed.",
           "embeddedButton": {
             "buttonText": ""
           }
