@@ -165,8 +165,8 @@
           "content": "Not necessarily. We can help assess your current Microsoft 365 environment and recommend the most cost-effective licensing model for your needs. Many organisations already have partial access through existing Microsoft subscriptions.\n"
         },
         {
-          "label": "Can you customise dashboards for our specific business needs?",
-          "content": "Yes. All dashboards we build are fully customised to your business goals, KPIs, and workflows. We work closely with stakeholders to ensure reports are intuitive, relevant, and designed for real-world decision making.\n"
+          "label": "How do you ensure our Power BI dashboards actually get used?",
+          "content": "We design dashboards around real users and real decisions, then measure adoption using usage telemetry. This lets us see what’s being used (and what isn’t), gather feedback, and iterate.\n"
         },
         {
           "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
