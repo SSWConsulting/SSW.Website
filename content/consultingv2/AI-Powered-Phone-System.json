@@ -113,7 +113,7 @@
         {
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidMedal",
+          "icon": "BiMoneyWithdraw",
           "heading": "Automate Calls Without Losing the Human Touch",
           "description": "We design AI phone systems that handle routine conversations naturally, while seamlessly handing off to your team when it matters most.",
           "embeddedButton": {
@@ -123,7 +123,7 @@
         {
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidError",
+          "icon": "BiUserVoice",
           "heading": "Reduce Call Load and Operational Costs",
           "description": "Our AI voice solutions answer, route, and resolve calls automatically - cutting wait times and freeing your team for higher-value work.",
           "embeddedButton": {
