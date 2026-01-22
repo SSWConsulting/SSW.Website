@@ -10,20 +10,27 @@
       "background": {
         "backgroundColour": 3
       },
-      "finalBreadcrumb": "ServiceNow Consulting and Enterprise Solutions",
+      "finalBreadcrumb": "AI-Powered Phone System",
       "_template": "breadcrumbs"
     },
     {
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Want to use **ServiceNow** to improve your client relationships?",
+      "heading": "Want to turn your phone system into a 24/7 AI assistant?",
       "isH1": true,
-      "description": "Get ServiceNow running the way it should. We handle the setup, integrations, and migrations, supported by three decades of software expertise.\n",
+      "description": "Turn your phone system into an Intelligent 24/7 conversational Assistant that automates inbound and outbound calls, improves customer experience, reduce wait times\n\nAt SSW, AI phone systems help us respond faster, freeing our team for higher-value work - Call us to try it now\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
+        {
+          "buttonText": "Call +61 2 9953 3000",
+          "buttonLink": "https://www.ssw.com.au/company/contact-us",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        },
         {
           "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
@@ -107,8 +114,8 @@
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidMedal",
-          "heading": "Fix Broken Workflows and Reduce Manual Work ",
-          "description": "We optimise and automate your ServiceNow platform so teams spend less time on admin and more time delivering value.",
+          "heading": "Automate Calls Without Losing the Human Touch",
+          "description": "We design AI phone systems that handle routine conversations naturally, while seamlessly handing off to your team when it matters most.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -117,8 +124,8 @@
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
-          "heading": "Reduce Risk on Enterprise Projects ",
-          "description": "We strip the risk out of complex deployments. Our team use best practice to ensure your project lands safely and scales easily.",
+          "heading": "Reduce Call Load and Operational Costs",
+          "description": "Our AI voice solutions answer, route, and resolve calls automatically - cutting wait times and freeing your team for higher-value work.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
