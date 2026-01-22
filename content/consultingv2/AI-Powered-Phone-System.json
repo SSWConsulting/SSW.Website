@@ -47,8 +47,8 @@
         "mobilePlacement": "Above",
         "imageHeight": 768,
         "imageWidth": 1024,
-        "youtubeUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA&t=3s",
-        "altText": "Web Application development is hard - Why choose SSW"
+        "youtubeUrl": "https://www.youtube.com/watch?v=-q9lLqtkC00&t=5s",
+        "altText": "The Future of Business with AI - Why choose SSW"
       },
       "_template": "imageTextBlock"
     },
@@ -177,7 +177,7 @@
         },
         {
           "label": "Does this replace our existing phone system?",
-          "content": "No. We integrate with your existing telephony provider and systems, extending what you already have rather than forcing a full replacement.\n\nThat being said, we often reduce costs, depending on the complexity of your system. \n"
+          "content": "No. We integrate with your existing telephony provider and systems, extending what you already have rather than forcing a full replacement.\n\nThat being said, we often reduce costs, depending on the complexity of your system.\n"
         },
         {
           "label": "How accurate is the voice recognition?",
