@@ -197,7 +197,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiLogoMicrosoft",
           "heading": "Power Platform",
-          "description": "Build apps, automate workflows, and analyse data, all without heavy coding.",
+          "description": "Build apps, automate workflows, and analyze data, all without heavy coding.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/consulting/power-platform"
