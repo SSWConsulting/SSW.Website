@@ -104,16 +104,6 @@
       "cardStyle": 0,
       "cards": [
         {
-          "guid": "lxpq3m",
-          "altText": "Lorem Ipsum",
-          "icon": "BiDollar",
-          "heading": "Low Cost and Quick Deployment",
-          "description": "Since Power BI Desktop is a part of Microsoft 365, you likely already have access. Deploy in under a day and scale when needed.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
           "icon": "BiBrain",
@@ -122,6 +112,16 @@
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
+          }
+        },
+        {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "icon": "BiDollar",
+          "heading": "Low Cost and Quick Deployment",
+          "description": "Since Power BI Desktop is a part of Microsoft 365, you likely already have access. Deploy in under a day and scale when needed.",
+          "embeddedButton": {
+            "buttonText": ""
           }
         },
         {
