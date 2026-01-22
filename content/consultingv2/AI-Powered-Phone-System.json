@@ -113,7 +113,7 @@
         {
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
-          "icon": "BiMoneyWithdraw",
+          "icon": "BiBrain",
           "heading": "Automate Calls Without Losing the Human Touch",
           "description": "We design AI phone systems that handle routine conversations naturally, while seamlessly handing off to your team when it matters most.",
           "embeddedButton": {
@@ -123,7 +123,7 @@
         {
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
-          "icon": "BiUserVoice",
+          "icon": "BiMoneyWithdraw",
           "heading": "Reduce Call Load and Operational Costs",
           "description": "Our AI voice solutions answer, route, and resolve calls automatically - cutting wait times and freeing your team for higher-value work.",
           "embeddedButton": {
@@ -134,7 +134,7 @@
         {
           "guid": "5q8kz",
           "altText": "Lorem Ipsum",
-          "icon": "BiLogoMicrosoft",
+          "icon": "BiUserVoice",
           "heading": "Integrate Voice AI Into Your Existing Systems",
           "description": "Connect your AI phone system with CRMs, booking systems, and internal tools so every call becomes structured, actionable data",
           "embeddedButton": {
@@ -164,24 +164,24 @@
       "body": "",
       "accordionItems": [
         {
-          "label": "What ServiceNow solutions does SSW implement?",
-          "content": "SSW provides implementation, integration, and migration services across the full ServiceNow platform, including:\n\n* IT Service Management (ITSM)\n* IT Operations Management (ITOM)\n* Customer Service Management (CSM)\n* HR Service Delivery (HRSD)\n* Security Operations\n* IT Asset Management\n\nWe focus on ensuring your ServiceNow instance integrates seamlessly with your existing Microsoft stack and business processes.\n"
+          "label": "What is an AI-powered phone system?",
+          "content": "An AI-powered phone system uses speech recognition and natural language understanding to answer calls, understand intent, respond conversationally, and route or escalate calls when needed.\n"
         },
         {
-          "label": "Can you migrate us from BMC Remedy/Jira/Legacy Systems?",
-          "content": "Yes. We specialize in complex migrations. We don't just 'lift and shift'; we map your legacy processes to modern ServiceNow workflows (CSM, ITSM, HRSD). We use ETL tools and robust testing frameworks to ensure zero data loss during the transition.\n"
+          "label": "What types of calls can the AI handle?",
+          "content": "The AI can handle common enquiries such as FAQs, appointment bookings, order or case lookups, lead qualification, call routing, and after-hours support - while escalating complex calls to a human.\n"
         },
         {
-          "label": "What technologies does SSW use alongside ServiceNow?",
-          "content": "We integrate ServiceNow with Microsoft 365, Azure, and other enterprise systems. Our consultants prioritise the most effective tools to ensure scalable, testable, and maintainable solutions.\n"
+          "label": "Can the AI transfer calls to a real person?",
+          "content": "Yes. Calls can be transferred at any point based on intent, confidence level, keywords, or customer request, ensuring a smooth handover without repeating information.\n"
         },
         {
-          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
-          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+          "label": "Does this replace our existing phone system?",
+          "content": "No. We integrate with your existing telephony provider and systems, extending what you already have rather than forcing a full replacement.\n\nThat being said, we often reduce costs, depending on the complexity of your system. \n"
         },
         {
-          "label": "What is SSW's development process like, and how involved will I need to be?",
-          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+          "label": "How accurate is the voice recognition?",
+          "content": "Accuracy is high and improves over time. We train the system using your terminology, common phrases, and call data, and continuously refine it after launch.\n"
         },
         {
           "label": "What happens in the free initial meeting?",
@@ -274,7 +274,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Talk to us about your **ServiceNow** Project today",
+      "heading": "Talk to us about implementing **AI** into your business today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
