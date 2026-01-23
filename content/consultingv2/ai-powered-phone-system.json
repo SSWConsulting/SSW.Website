@@ -26,7 +26,7 @@
       "buttons": [
         {
           "buttonText": "Call +61 2 9953 3000",
-          "buttonLink": "https://www.ssw.com.au/company/contact-us",
+          "buttonLink": "<a href=\"tel:+61212345678\">Call us</a>",
           "icon": "BiPhone",
           "iconFirst": true,
           "colour": 1
