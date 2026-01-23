@@ -125,7 +125,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiMoneyWithdraw",
           "heading": "Reduce Call Load and Operational Costs",
-          "description": "Our AI voice solutions answer, route, and resolve calls automatically - cutting wait times and freeing your team for higher-value work.",
+          "description": "Our AI voice solutions answer, route, and resolve calls automatically - cutting client wait times and freeing up your team.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -177,7 +177,7 @@
         },
         {
           "label": "Does this replace our existing phone system?",
-          "content": "No. We integrate with your existing telephony provider and systems, extending what you already have rather than forcing a full replacement.\n\nThat being said, we often reduce costs, depending on the complexity of your system.\n"
+          "content": "We integrate with your existing telephone provider and systems, extending what you already have rather than forcing a full replacement.\n\nThat being said, we often reduce costs, depending on the complexity of your system.\n"
         },
         {
           "label": "How accurate is the voice recognition?",
