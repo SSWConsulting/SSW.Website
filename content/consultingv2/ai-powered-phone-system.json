@@ -19,14 +19,14 @@
       },
       "heading": "Want to turn your phone system into a 24/7 AI assistant?",
       "isH1": true,
-      "description": "Turn your phone system into an Intelligent 24/7 conversational Assistant that automates inbound and outbound calls, improves customer experience, reduce wait times\n\nAt SSW, our AI phone system helps us respond faster, freeing our team for higher-value work - Call us to try it now\n",
+      "description": "Turn your phone system into an Intelligent 24/7 conversational assistant that automates inbound and outbound calls, improves customer experience, reduce wait times\n\nAt SSW, our AI phone system saves us a huge amount of time, freeing our team for higher-value work.\n\nCall us to try it now.\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
           "buttonText": "Call +61 2 9953 3000",
-          "buttonLink": "https://www.ssw.com.au/company/contact-us",
+          "buttonLink": "<a href=\"tel:+61212345678\">Call us</a>",
           "icon": "BiPhone",
           "iconFirst": true,
           "colour": 1
@@ -125,7 +125,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiMoneyWithdraw",
           "heading": "Reduce Call Load and Operational Costs",
-          "description": "Our AI voice solutions answer, route, and resolve calls automatically - cutting wait times and freeing your team for higher-value work.",
+          "description": "Our AI voice solutions answer, route, and resolve calls automatically - cutting client wait times and freeing up your team.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -177,7 +177,7 @@
         },
         {
           "label": "Does this replace our existing phone system?",
-          "content": "No. We integrate with your existing telephony provider and systems, extending what you already have rather than forcing a full replacement.\n\nThat being said, we often reduce costs, depending on the complexity of your system.\n"
+          "content": "It depends on your starting point. We can integrate with your existing telephone provider and systems, extending what you already have rather than forcing a full replacement. In some cases, it’s best to start fresh — particularly when migrating from a complex setup — and costs vary based on whether you’re starting new or transitioning from another system, with many customers seeing reduced overall costs.\n"
         },
         {
           "label": "How accurate is the voice recognition?",
