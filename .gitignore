@@ -43,3 +43,4 @@ npm-debug.log*
 
 # TypeScript
 next-env.d.ts
+*.tsbuildinfo
