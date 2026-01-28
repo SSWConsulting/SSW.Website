@@ -139,13 +139,13 @@
       "isMultipleOpen": true,
       "buttons": [
         {
-          "buttonText": "Explore our Migration Guide",
-          "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy/",
+          "buttonText": "Rules to Better .NET Migrations",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net10-migrations",
           "colour": 1
         },
         {
-          "buttonText": "Rules to Better .NET Migrations",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
+          "buttonText": "Explore a Migration Journey",
+          "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy",
           "colour": 1
         }
       ],
