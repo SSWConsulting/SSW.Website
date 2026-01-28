@@ -112,7 +112,7 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Strategic .NET 8 or 9 migration",
+      "heading": "Strategic .NET 10 migration",
       "body": "Your .NET applications need care and planning to upgrade to the latest version. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
       "accordionItems": [
         {
@@ -432,15 +432,15 @@
       "accordionItems": [
         {
           "label": "Which .NET versions do you support for upgrades?",
-          "content": "We support upgrades to the latest .NET versions, including .NET 8 (LTS) and .NET 9 (STS). .NET major versions are released annually in November. STS releases (like .NET 9) occur every even-numbered year and receive free support and patches for 18 months. LTS releases (like .NET 8) occur every odd-numbered year and receive free support and patches for 3 years.\n"
+          "content": "We support upgrades to the latest .NET versions. .NET major versions are released annually in November. STS releases (like .NET 10) occur every even-numbered year and receive free support and patches for 18 months. LTS releases (like .NET 8) occur every odd-numbered year and receive free support and patches for 3 years.\n"
         },
         {
           "label": "What's the difference between STS and LTS?",
           "content": "New major .NET versions are released annually in November. Each release is designated as either Standard Term Support (STS) or Long Term Support (LTS). STS releases occur in even-numbered years and get support for 18 months, while LTS releases are in odd-numbered years and receive free support and patches for 3 years. Both types of releases are identical in quality, the only difference is their support lifecycle.\n"
         },
         {
-          "label": "Is migrating to .NET 9 worthwhile?",
-          "content": "Yes, especially if you are using older .NET versions like .NET Framework, .NET Core 3.1, .NET 6, .NET 7, or even .NET 8. A strategic move to .NET 9 provides several key advantages:\n\n* Current Platform & Support: Stay on a currently supported .NET release, receiving the latest updates and fixes from Microsoft. While .NET 9 is a Current release (not Long-Term Support), migrating ensures you benefit from ongoing development and community support during its lifecycle.\n* Improved Performance: Experience gains in application speed, startup times, and memory efficiency due to ongoing optimizations in .NET 9.\n* Advanced Cloud Capabilities: Utilize the newest cloud-native features and better integration with Azure and other cloud platforms offered by .NET 9.\n* Latest Security Updates: Improve application security with the most recent security features and patches incorporated in .NET 9.\n* Access to New C# Features: Equip your developers with the latest language features and productivity gains in the newest C# version supported by .NET 9.\n"
+          "label": "Is migrating to .NET 10 worthwhile?",
+          "content": "Yes, especially if you are using older .NET versions like .NET Framework, .NET Core 3.1, .NET 6/7/8, or even .NET 9. A strategic move to .NET 10 provides several key advantages:\n\n* Current Platform & Support: Stay on a currently supported .NET release, receiving the latest updates and fixes from Microsoft. While .NET 10 is a Current release (not Long-Term Support), migrating ensures you benefit from ongoing development and community support during its lifecycle.\n* Improved Performance: Experience gains in application speed, startup times, and memory efficiency due to ongoing optimizations in .NET.\n* Advanced Cloud Capabilities: Utilize the newest cloud-native features and better integration with Azure and other cloud platforms offered by .NET 10.\n* Latest Security Updates: Improve application security with the most recent security features and patches incorporated in .NET 10.\n* Access to New C# Features: Equip your developers with the latest language features and productivity gains in the newest C# version supported by .NET 10.\n"
         },
         {
           "label": "What about our existing dependencies?",
