@@ -14,14 +14,16 @@ if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
         ? samplingPercentageRaw 
         : 20;
     
-    const consoleErrorsOnly =
-      process.env.APPINSIGHTS_CONSOLE_ERRORS_ONLY !== "false"; // Default: true
+    const enableConsoleCollection =
+      process.env.APPINSIGHTS_ENABLE_CONSOLE_COLLECTION === "true"; // Default: false
+    const collectNativeConsoleMethods =
+      process.env.APPINSIGHTS_COLLECT_NATIVE_CONSOLE === "true"; // Default: false
     const enableLiveMetrics =
       process.env.APPINSIGHTS_ENABLE_LIVE_METRICS === "true"; // Default: false
 
     appInsights
       .setup(process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING)
-      .setAutoCollectConsole(consoleErrorsOnly, consoleErrorsOnly) // Only errors if true
+      .setAutoCollectConsole(enableConsoleCollection, collectNativeConsoleMethods) // First param: enable collection, Second param: include native console.log etc.
       .setAutoCollectExceptions(true) // Always track exceptions
       .setAutoCollectRequests(true)
       .setDistributedTracingMode(appInsights.DistributedTracingModes.AI_AND_W3C)
@@ -46,7 +48,8 @@ if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
 
       console.log("✅ App Insights - Server Side logging is turned on!");
       console.log(`   📊 Sampling: ${samplingPercentage}%`);
-      console.log(`   🔍 Console: ${consoleErrorsOnly ? "Errors only" : "All logs"}`);
+      console.log(`   🔍 Console Collection: ${enableConsoleCollection ? "Enabled" : "Disabled"}`);
+      console.log(`   📝 Native Console Methods: ${collectNativeConsoleMethods ? "Tracked" : "Not tracked"}`);
       console.log(`   📡 Live Metrics: ${enableLiveMetrics ? "Enabled" : "Disabled"}`);
     } else {
       console.error("❌ App Insights - Failed to initialize!");

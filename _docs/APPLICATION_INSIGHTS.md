@@ -24,7 +24,8 @@ All Application Insights features can be controlled via environment variables wi
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `APPINSIGHTS_SAMPLING_PERCENTAGE` | `20` | Percentage of requests/dependencies to track (1-100). Lower = less cost. |
-| `APPINSIGHTS_CONSOLE_ERRORS_ONLY` | `true` | When `true`, only console errors are tracked. When `false`, all console logs are captured. |
+| `APPINSIGHTS_ENABLE_CONSOLE_COLLECTION` | `false` | When `true`, collects console output from third-party loggers (Winston, Bunyan). When `false`, disables all console collection. |
+| `APPINSIGHTS_COLLECT_NATIVE_CONSOLE` | `false` | When `true`, also collects native console methods (console.log, console.error, etc.). When `false`, only third-party logger output is collected. Requires `APPINSIGHTS_ENABLE_CONSOLE_COLLECTION=true` to work. |
 | `APPINSIGHTS_ENABLE_LIVE_METRICS` | `false` | Enable real-time metrics streaming. **Expensive feature** - only enable when actively debugging. |
 
 ### Client-Side Configuration
@@ -67,7 +68,8 @@ All Application Insights features can be controlled via environment variables wi
 ### Production (Cost-Optimized)
 ```bash
 APPINSIGHTS_SAMPLING_PERCENTAGE=20
-APPINSIGHTS_CONSOLE_ERRORS_ONLY=true
+APPINSIGHTS_ENABLE_CONSOLE_COLLECTION=false
+APPINSIGHTS_COLLECT_NATIVE_CONSOLE=false
 APPINSIGHTS_ENABLE_LIVE_METRICS=false
 NEXT_PUBLIC_APPINSIGHTS_CLIENT_SAMPLING_PERCENTAGE=20
 NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS=true
@@ -76,7 +78,8 @@ NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS=true
 ### Development (Full Visibility)
 ```bash
 APPINSIGHTS_SAMPLING_PERCENTAGE=100
-APPINSIGHTS_CONSOLE_ERRORS_ONLY=false
+APPINSIGHTS_ENABLE_CONSOLE_COLLECTION=true
+APPINSIGHTS_COLLECT_NATIVE_CONSOLE=true
 APPINSIGHTS_ENABLE_LIVE_METRICS=true
 NEXT_PUBLIC_APPINSIGHTS_CLIENT_SAMPLING_PERCENTAGE=100
 NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS=true
@@ -85,7 +88,8 @@ NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS=true
 ### Debugging Issues (Temporary High Visibility)
 ```bash
 APPINSIGHTS_SAMPLING_PERCENTAGE=100
-APPINSIGHTS_CONSOLE_ERRORS_ONLY=false
+APPINSIGHTS_ENABLE_CONSOLE_COLLECTION=true
+APPINSIGHTS_COLLECT_NATIVE_CONSOLE=true
 APPINSIGHTS_ENABLE_LIVE_METRICS=true
 NEXT_PUBLIC_APPINSIGHTS_CLIENT_SAMPLING_PERCENTAGE=100
 NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS=true
@@ -95,7 +99,8 @@ NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS=true
 ### Minimal Monitoring (Maximum Cost Savings)
 ```bash
 APPINSIGHTS_SAMPLING_PERCENTAGE=10
-APPINSIGHTS_CONSOLE_ERRORS_ONLY=true
+APPINSIGHTS_ENABLE_CONSOLE_COLLECTION=false
+APPINSIGHTS_COLLECT_NATIVE_CONSOLE=false
 APPINSIGHTS_ENABLE_LIVE_METRICS=false
 NEXT_PUBLIC_APPINSIGHTS_CLIENT_SAMPLING_PERCENTAGE=10
 NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS=false
@@ -130,7 +135,8 @@ az webapp config appsettings set \
   --resource-group <resource-group> \
   --settings \
     APPINSIGHTS_SAMPLING_PERCENTAGE=20 \
-    APPINSIGHTS_CONSOLE_ERRORS_ONLY=true \
+    APPINSIGHTS_ENABLE_CONSOLE_COLLECTION=false \
+    APPINSIGHTS_COLLECT_NATIVE_CONSOLE=false \
     APPINSIGHTS_ENABLE_LIVE_METRICS=false \
     NEXT_PUBLIC_APPINSIGHTS_CLIENT_SAMPLING_PERCENTAGE=20 \
     NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS=true
