@@ -15,11 +15,11 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
       process.env.NEXT_PUBLIC_APPINSIGHTS_CLIENT_SAMPLING_PERCENTAGE || "20"
     );
     // Validate sampling percentage is between 1 and 100, default to 20 if invalid
-    const clientSamplingPercentage = 
-      !isNaN(clientSamplingPercentageRaw) && 
-      clientSamplingPercentageRaw >= 1 && 
-      clientSamplingPercentageRaw <= 100 
-        ? clientSamplingPercentageRaw 
+    const clientSamplingPercentage =
+      !isNaN(clientSamplingPercentageRaw) &&
+      clientSamplingPercentageRaw >= 1 &&
+      clientSamplingPercentageRaw <= 100
+        ? clientSamplingPercentageRaw
         : 20;
 
     const appInsights = new ApplicationInsights({
