@@ -25,7 +25,7 @@ All Application Insights features can be controlled via environment variables wi
 |----------|---------|-------------|
 | `APPINSIGHTS_SAMPLING_PERCENTAGE` | `20` | Percentage of requests/dependencies to track (1-100). Lower = less cost. |
 | `APPINSIGHTS_ENABLE_CONSOLE_COLLECTION` | `false` | When `true`, collects console output from third-party loggers (Winston, Bunyan). When `false`, disables all console collection. |
-| `APPINSIGHTS_COLLECT_NATIVE_CONSOLE` | `false` | When `true`, also collects native console methods (console.log, console.error, etc.). When `false`, only third-party logger output is collected. Requires `APPINSIGHTS_ENABLE_CONSOLE_COLLECTION=true` to work. |
+| `APPINSIGHTS_COLLECT_NATIVE_CONSOLE` | `false` | Controls whether native console methods (console.log, console.error, etc.) are included when console collection is enabled via `APPINSIGHTS_ENABLE_CONSOLE_COLLECTION`. When `true`, native console methods are also collected; when `false`, native console methods are not collected. |
 | `APPINSIGHTS_ENABLE_LIVE_METRICS` | `false` | Enable real-time metrics streaming. **Expensive feature** - only enable when actively debugging. |
 
 ### Client-Side Configuration
@@ -49,7 +49,7 @@ All Application Insights features can be controlled via environment variables wi
 - **Tracks**:
   - HTTP requests (with sampling)
   - Dependencies (with sampling)
-  - Exceptions (always tracked, no sampling)
+  - Exceptions (tracked with sampling)
   - Console errors/logs (configurable)
   - User-agent information
 
@@ -59,7 +59,7 @@ All Application Insights features can be controlled via environment variables wi
 - **Tracks**:
   - Page views (with sampling)
   - AJAX calls (with sampling)
-  - Browser exceptions (always tracked)
+  - Browser exceptions (tracked with sampling)
   - Page visit time
   - Web Vitals metrics (configurable)
 
@@ -144,10 +144,10 @@ az webapp config appsettings set \
 
 ## Monitoring Best Practices
 
-### What Gets Tracked (Always)
-- ✅ **Exceptions**: Tracked with exception auto-collection enabled
-- ✅ **Failed Requests**: Captured to identify issues
-- ✅ **Console Errors**: Tracked to identify client and server-side issues
+### What Gets Tracked
+- ✅ **Exceptions**: Tracked with exception auto-collection enabled (subject to sampling)
+- ✅ **Failed Requests**: Captured to identify issues (subject to sampling)
+- ✅ **Console Output**: Only tracked when console collection is enabled via `APPINSIGHTS_ENABLE_CONSOLE_COLLECTION=true`
 
 **Note**: While exception tracking is enabled, the configured sampling percentage applies to most telemetry types including exceptions. The sampling is designed to give a representative view of application behavior while reducing costs.
 

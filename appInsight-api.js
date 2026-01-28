@@ -29,13 +29,15 @@ if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
       .setDistributedTracingMode(appInsights.DistributedTracingModes.AI_AND_W3C)
       .setSendLiveMetrics(enableLiveMetrics);
 
-    appInsights.start();
-
-    // Apply sampling to requests and dependencies for cost reduction
+    // Apply sampling configuration before starting
     if (appInsights.defaultClient) {
       appInsights.defaultClient.config.samplingPercentage = samplingPercentage;
+    }
 
-      // Add telemetry processor to capture user-agent on requests
+    appInsights.start();
+
+    // Add telemetry processor to capture user-agent on requests
+    if (appInsights.defaultClient) {
       appInsights.defaultClient.addTelemetryProcessor((envelope, context) => {
         if (envelope.data.baseType === "RequestData") {
           envelope.data.baseData.properties ??= {};
