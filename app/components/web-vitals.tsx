@@ -8,7 +8,14 @@ export const WebVitals = () => {
   const appInsights = useAppInsightsContext();
   const pathname = usePathname();
 
+  // Check if Web Vitals tracking is enabled (default: true)
+  const trackWebVitals =
+    process.env.NEXT_PUBLIC_APPINSIGHTS_TRACK_WEB_VITALS !== "false";
+
   useReportWebVitals((metric) => {
+    // Only track if enabled via environment variable
+    if (!trackWebVitals) return;
+
     switch (metric.name) {
       case "TTFB":
       case "FCP":
