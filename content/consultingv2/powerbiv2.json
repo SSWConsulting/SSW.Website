@@ -1,0 +1,300 @@
+{
+  "seo": {
+    "title": "Power BI Consulting | SSW",
+    "description": "Custom Power BI development in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke Power BI solutions with tailored workflows and integrations for your business.",
+    "canonical": "https://www.ssw.com.au/consulting/powerbi",
+    "showBreadcrumb": true
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "Power BI Consulting",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "**Power BI** That Turns Data into Decisions  ",
+      "isH1": true,
+      "description": "Visualize and analyze data with greater speed, efficiency, and understanding. Enabling you to make smarter decisions using real-time business intelligence.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA&t=3s",
+        "altText": "Web Application development is hard - Why choose SSW"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195,
+          "altText": "Toll Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180,
+          "altText": "Microsoft Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160,
+          "altText": "Symantec Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175,
+          "altText": "Domain Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
+          "altText": "CBA Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175,
+          "altText": "Cisco Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Allianz Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "7mtu8j",
+          "altText": "Lorem Ipsum",
+          "icon": "BiBrain",
+          "heading": "Self Service Business Intelligence",
+          "description": "Empower users to create, modify, and explore reports on the fly, reducing reliance on IT and enabling faster, data-driven decisions.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "icon": "BiDollar",
+          "heading": "Low Cost and Quick Deployment",
+          "description": "Since Power BI Desktop is a part of Microsoft 365, you likely already have access. Deploy in under a day and scale when needed.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "5q8kz",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Custom Dashboards, Designed for your Business",
+          "description": "We design and build Power BI dashboards around your processes, metrics, and decision-makers, not generic templates.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "What data sources can Power BI connect to?",
+          "content": "Power BI can connect to hundreds of data sources, including SQL databases, Excel, SharePoint, Dynamics 365, Salesforce, Xero, MYOB, cloud platforms, APIs, and many other business systems. Our team can also build custom connectors when required.\n"
+        },
+        {
+          "label": "Do I need Power BI licenses before starting a project?",
+          "content": "Not necessarily. We can help assess your current Microsoft 365 environment and recommend the most cost-effective licensing model for your needs. Many organisations already have partial access through existing Microsoft subscriptions.\n"
+        },
+        {
+          "label": "How do you ensure our Power BI dashboards actually get used?",
+          "content": "We design dashboards around real users and real decisions, then measure adoption using usage telemetry. This lets us see what’s being used (and what isn’t), gather feedback, and iterate.\n"
+        },
+        {
+          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+        },
+        {
+          "label": "What is SSW's development process like, and how involved will I need to be?",
+          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Related Technologies",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "h3ueb",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoMicrosoft",
+          "heading": "Power Platform",
+          "description": "Build apps, automate workflows, and analyze data, all without heavy coding.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/power-platform"
+          }
+        },
+        {
+          "guid": "v93zjp",
+          "altText": "Lorem Ipsum",
+          "icon": "BiGitBranch",
+          "heading": "Azure Synapse",
+          "description": "Accelerate time-to-insight by bridging the gap between big data stores and enterprise-grade data warehousing.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/azure-synapse"
+          }
+        },
+        {
+          "guid": "fm6ndo",
+          "altText": "Lorem Ipsum",
+          "icon": "BiData",
+          "heading": "Microsoft Fabric",
+          "description": "A unified, AI-powered analytics platform that connects your entire data estate in a single, governed environment.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/fabric"
+          }
+        },
+        {
+          "guid": "gylswt8",
+          "altText": "Lorem Ipsum",
+          "icon": "BiAnalyse",
+          "heading": "Azure Machine Learning",
+          "description": "Move from hindsight to foresight by integrating predictive models and advanced AI directly into your reporting.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/consulting/azure"
+          }
+        },
+        {
+          "guid": "e7umlf",
+          "altText": "",
+          "icon": "BiUserVoice",
+          "heading": "Microsoft Copilot",
+          "description": "Empower your workforce with generative AI that automates complex analysis and delivers instant, natural-language insights from your enterprise data.",
+          "embeddedButton": {
+            "buttonText": "Read More",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-ai-development"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about your **Power BI** Project today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
