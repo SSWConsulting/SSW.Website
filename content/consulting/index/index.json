@@ -154,6 +154,12 @@
               "tag": "content/consulting/tag/ai-development.json"
             }
           ]
+        },
+        {
+          "title": "AI-Powered Phone System",
+          "description": "Turn your phone system into an Intelligent 24/7 conversational assistant that automates inbound and outbound calls, improves customer experience, reduce wait times",
+          "logo": "/images/thumbs/Generated%20image%20final.png",
+          "page": "content/consultingv2/ai-powered-phone-system.json"
         }
       ]
     },
