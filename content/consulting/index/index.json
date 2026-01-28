@@ -148,7 +148,18 @@
           "description": "Kickstart your AI strategy in just 3 days. SSW's AI Discovery Workshop helps you identify high-impact AI opportunities, assess feasibility, and create a tailored implementation roadmap for success.",
           "logo": "/images/thumbs/consulting/ai-discovery-workshop.png",
           "page": "content/consultingv2/ai-discovery-workshop.json",
-          "externalUrl": "/consulting/ai-discovery-workshop"
+          "externalUrl": "/consulting/ai-discovery-workshop",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "AI-Powered Phone System",
+          "description": "Turn your phone system into an Intelligent 24/7 conversational assistant that automates inbound and outbound calls, improves customer experience, reduce wait times",
+          "logo": "/images/thumbs/Generated%20image%20final.png",
+          "page": "content/consultingv2/ai-powered-phone-system.json"
         }
       ]
     },
