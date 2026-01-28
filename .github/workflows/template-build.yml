@@ -79,12 +79,19 @@ jobs:
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
+      - name: Get Node version from .nvmrc
+        id: node-version
+        run: |
+          $nodeVersion = (Get-Content .nvmrc).Trim() -replace '^v', ''
+          echo "version=$nodeVersion" >> $env:GITHUB_OUTPUT
+
       - name: Docker - Build and push
         uses: docker/build-push-action@v6
         with:
           context: .
           push: true
           build-args: |
+            NODE_VERSION=${{ steps.node-version.outputs.version }}
             NODE_OPTIONS=--max_old_space_size=8192
             NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
             NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
