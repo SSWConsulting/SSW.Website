@@ -11,9 +11,16 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
   const reactPlugin = useMemo(() => new ReactPlugin(), []);
   useEffect(() => {
     // Configuration options with defaults for cost optimization
-    const clientSamplingPercentage = parseFloat(
+    const clientSamplingPercentageRaw = parseFloat(
       process.env.NEXT_PUBLIC_APPINSIGHTS_CLIENT_SAMPLING_PERCENTAGE || "20"
     );
+    // Validate sampling percentage is between 1 and 100, default to 20 if invalid
+    const clientSamplingPercentage = 
+      !isNaN(clientSamplingPercentageRaw) && 
+      clientSamplingPercentageRaw >= 1 && 
+      clientSamplingPercentageRaw <= 100 
+        ? clientSamplingPercentageRaw 
+        : 20;
 
     const appInsights = new ApplicationInsights({
       config: {
@@ -39,6 +46,7 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
       appInsights.loadAppInsights();
       // eslint-disable-next-line no-console
       console.log("✅ App Insights - Client Side logging is turned on!");
+      // eslint-disable-next-line no-console
       console.log(`   📊 Client Sampling: ${clientSamplingPercentage}%`);
     } else {
       // eslint-disable-next-line no-console

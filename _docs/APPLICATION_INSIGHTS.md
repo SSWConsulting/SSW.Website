@@ -139,9 +139,11 @@ az webapp config appsettings set \
 ## Monitoring Best Practices
 
 ### What Gets Tracked (Always)
-- ✅ **Exceptions**: Always tracked without sampling to ensure all errors are visible
-- ✅ **Failed Requests**: Captured even with sampling to identify issues
+- ✅ **Exceptions**: Tracked with exception auto-collection enabled
+- ✅ **Failed Requests**: Captured to identify issues
 - ✅ **Console Errors**: Tracked to identify client and server-side issues
+
+**Note**: While exception tracking is enabled, the configured sampling percentage applies to most telemetry types including exceptions. The sampling is designed to give a representative view of application behavior while reducing costs.
 
 ### What Gets Sampled
 - 📊 **Successful Requests**: Only a percentage is tracked (default 20%)
@@ -152,8 +154,8 @@ az webapp config appsettings set \
 ### Sampling Strategy
 - **Sampling is random but consistent** - all telemetry for a given request is either included or excluded together
 - **20% sampling** means you still get a representative view of traffic patterns and performance
-- **Exceptions are always tracked** regardless of sampling percentage
-- For a mostly static site, 20% sampling provides sufficient visibility
+- **Exception tracking is enabled** and will be sampled along with other telemetry
+- For a mostly static site, 20% sampling provides sufficient visibility while significantly reducing costs
 
 ## Troubleshooting
 
@@ -161,8 +163,15 @@ az webapp config appsettings set \
 **Solution**: Verify environment variables are set correctly in Azure App Service. Check that sampling is enabled (default 20%).
 
 ### Issue: Missing Error Data
-**Problem**: Sampling might exclude some requests, but exceptions should always be tracked.
-**Verification**: Check that exception tracking is enabled in the code (it is by default).
+**Problem**: With sampling enabled, some errors might not be captured.
+**Solution**: If you need to capture all errors temporarily, increase sampling to 100%:
+```bash
+az webapp config appsettings set \
+  --name <app-name> \
+  --resource-group <resource-group> \
+  --settings APPINSIGHTS_SAMPLING_PERCENTAGE=100
+```
+⚠️ Remember to reset to 20% after investigating the issue.
 
 ### Issue: No Telemetry Data
 **Problem**: Connection string might be missing or invalid.

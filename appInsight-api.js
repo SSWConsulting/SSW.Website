@@ -3,9 +3,17 @@ import * as appInsights from "applicationinsights";
 if (process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING) {
   try {
     // Configuration options with defaults for cost optimization
-    const samplingPercentage = parseFloat(
+    const samplingPercentageRaw = parseFloat(
       process.env.APPINSIGHTS_SAMPLING_PERCENTAGE || "20"
     );
+    // Validate sampling percentage is between 1 and 100, default to 20 if invalid
+    const samplingPercentage = 
+      !isNaN(samplingPercentageRaw) && 
+      samplingPercentageRaw >= 1 && 
+      samplingPercentageRaw <= 100 
+        ? samplingPercentageRaw 
+        : 20;
+    
     const consoleErrorsOnly =
       process.env.APPINSIGHTS_CONSOLE_ERRORS_ONLY !== "false"; // Default: true
     const enableLiveMetrics =
