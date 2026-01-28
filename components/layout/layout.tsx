@@ -9,11 +9,9 @@ import {
   EventInfoStatic,
   formatDates,
 } from "@/services/server/events-types";
-import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
-import { useReportWebVitals } from "next/web-vitals";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
 import { ErrorBoundary } from "../util/error/error-boundary";
@@ -88,23 +86,6 @@ export const Layout = ({
       "[)"
     );
 
-  const appInsights = useAppInsightsContext();
-
-  useReportWebVitals((metric) => {
-    switch (metric.name) {
-      case "TTFB":
-      case "FCP":
-      case "LCP":
-      case "FID":
-      case "CLS":
-      case "INP":
-        appInsights.trackMetric(
-          { name: metric.name, average: metric.value },
-          { page: router.asPath }
-        );
-        break;
-    }
-  });
   return (
     <>
       <Theme>

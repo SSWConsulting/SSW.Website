@@ -1,4 +1,5 @@
-FROM node:lts-alpine AS base
+ARG NODE_VERSION=24
+FROM node:${NODE_VERSION}-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
