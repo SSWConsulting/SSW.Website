@@ -10,15 +10,21 @@ type ArticleAuthorProps = {
   publishedDate?: string;
 };
 
-const ArticleAuthor = ({ name, position, image, url, publishedDate }: ArticleAuthorProps) => {
+const ArticleAuthor = ({
+  name,
+  position,
+  image,
+  url,
+  publishedDate,
+}: ArticleAuthorProps) => {
   // Format date to human-readable format like "12 March 2024"
   const formatDate = (dateString?: string) => {
     if (!dateString) return null;
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-GB', { 
-      day: 'numeric', 
-      month: 'long', 
-      year: 'numeric' 
+    return date.toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
     });
   };
 
