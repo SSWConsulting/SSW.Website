@@ -1,5 +1,6 @@
 import { CustomLink } from "../customLink";
 import ArticleAuthor from "./articleAuthor";
+import ArticleDate from "./articleDate";
 
 export type ArticleProps = {
   title: string;
@@ -8,6 +9,7 @@ export type ArticleProps = {
   authorName: string | null;
   authorPosition: string | null;
   authorImage: string | null;
+  publishedDate?: string;
 };
 
 export type ArticleCardProps = {
@@ -22,6 +24,7 @@ const ArticleCard = ({ data }: ArticleCardProps) => {
     authorName,
     authorPosition,
     url,
+    publishedDate,
   }: ArticleProps = data;
   return (
     <CustomLink href={url ?? ""} className="unstyled no-underline">
@@ -31,6 +34,7 @@ const ArticleCard = ({ data }: ArticleCardProps) => {
         userImage={authorImage}
         userName={authorName}
         userPosition={authorPosition}
+        publishedDate={publishedDate}
       />
     </CustomLink>
   );
@@ -42,16 +46,20 @@ const ArticleCardContent = ({
   userName,
   userImage,
   userPosition,
+  publishedDate,
 }) => {
   return (
     <div className="size-full bg-white">
       <div>
         <h2 className="my-1">{title}</h2>
-        <ArticleAuthor
-          name={userName}
-          position={userPosition}
-          image={userImage}
-        />
+        <div className="flex flex-row items-center gap-2 py-1">
+          <ArticleAuthor
+            name={userName}
+            position={userPosition}
+            image={userImage}
+          />
+          <ArticleDate publishedDate={publishedDate} />
+        </div>
         <div className="font-normal prose-p:mt-0">{body}</div>
       </div>
     </div>
