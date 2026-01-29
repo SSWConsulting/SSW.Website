@@ -117,7 +117,7 @@
       "accordionItems": [
         {
           "label": "Phase 1: Understanding Your .NET Landscape",
-          "content": "We start with a comprehensive evaluation of your current system through our **Specification Review.** This critical first step helps us:\n\n* Map out your application's architecture and dependencies: Gain a clear understanding of your current .NET Framework or previous .NET Core versions, identifying all components and their inter-relationships for a smoother upgrade process.\n* Identify potential migration challenges and compatibility issues: Proactively pinpoint roadblocks and latest version compatibility concerns early on, minimizing risks during the migration execution. This is where our expertise with tools like the .NET Upgrade Assistant proves invaluable.\n* Document critical business functionality that must be preserved: Ensure no essential features are overlooked during the .NET upgrade, safeguarding core business operations throughout the migration to the latest .NET framework.\n* Assess your team's readiness and training needs: Evaluate your team's current skill set and identify any training requirements to effectively manage and maintain your applications post .NET upgrade.\n"
+          "content": "We start with a comprehensive evaluation of your current system through our **Specification Review.** This critical first step helps us:\n\n* Map out your application's architecture and dependencies: Gain a clear understanding of your current .NET Framework or previous .NET version, identifying all components and their inter-relationships for a smoother upgrade process.\n* Identify potential migration challenges and compatibility issues: Proactively pinpoint roadblocks and latest version compatibility concerns early on, minimizing risks during the migration execution. This is where our expertise with tools like the .NET Upgrade Assistant and Microsoft's GitHub Copilot Modernization Agent proves invaluable.\n* Document critical business functionality that must be preserved: Ensure no essential features are overlooked during the .NET upgrade, safeguarding core business operations throughout the migration to the latest .NET framework.\n* Assess your team's readiness and training needs: Evaluate your team's current skill set and identify any training requirements to effectively manage and maintain your applications post .NET upgrade.\n"
         },
         {
           "label": "Phase 2: Tailoring the Right Migration Path",
@@ -459,6 +459,15 @@
     },
     {
       "technologies": [
+        {
+          "technology": "content/v2Technologies/technologies/dotnet.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Blazor.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/azure-sql-database.mdx"
+        },
         {
           "technology": "content/v2Technologies/technologies/MongoDBv2.mdx"
         },
