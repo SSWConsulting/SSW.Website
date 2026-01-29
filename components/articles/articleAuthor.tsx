@@ -64,7 +64,7 @@ const ArticleAuthor = ({
         <>
           <div className="font-semibold">|</div>
           <time
-            dateTime={publishedDate}
+            dateTime={new Date(publishedDate!).toISOString()}
             className="text-sm text-gray-500"
           >
             {formattedDate}
