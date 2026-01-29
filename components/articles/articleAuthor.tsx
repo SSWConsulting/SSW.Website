@@ -7,9 +7,23 @@ type ArticleAuthorProps = {
   position: string;
   image?: string;
   url?: string;
+  publishedDate?: string;
 };
 
-const ArticleAuthor = ({ name, position, image, url }: ArticleAuthorProps) => {
+const ArticleAuthor = ({ name, position, image, url, publishedDate }: ArticleAuthorProps) => {
+  // Format date to human-readable format like "12 March 2024"
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return null;
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-GB', { 
+      day: 'numeric', 
+      month: 'long', 
+      year: 'numeric' 
+    });
+  };
+
+  const formattedDate = formatDate(publishedDate);
+
   return (
     <div className="flex flex-row items-center gap-2 py-1">
       {image && (
@@ -35,6 +49,13 @@ const ArticleAuthor = ({ name, position, image, url }: ArticleAuthorProps) => {
         <>
           <div className="font-semibold">|</div>
           <div className="text-sm uppercase text-gray-500">{position}</div>
+        </>
+      )}
+
+      {formattedDate && (
+        <>
+          <div className="font-semibold">|</div>
+          <div className="text-sm uppercase text-gray-500">{formattedDate}</div>
         </>
       )}
     </div>

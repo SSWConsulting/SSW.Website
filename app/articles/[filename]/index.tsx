@@ -73,6 +73,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
             position={author?.position}
             image={author?.profileImg}
             url={author?.presenter?.peopleProfileURL}
+            publishedDate={data.articles.publishedDate}
           />
         </Section>
       )}
