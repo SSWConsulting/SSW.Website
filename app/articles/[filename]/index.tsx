@@ -1,5 +1,6 @@
 "use client";
 import ArticleAuthor from "@/components/articles/articleAuthor";
+import ArticleDate from "@/components/articles/articleDate";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
 import { PreFooter } from "@/components/layout/footer/pre-footer";
@@ -68,13 +69,15 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
       )}
       {!!data.articles.author && (
         <Section className="mx-auto w-full max-w-9xl px-8">
-          <ArticleAuthor
-            name={author?.presenter?.name}
-            position={author?.position}
-            image={author?.profileImg}
-            url={author?.presenter?.peopleProfileURL}
-            publishedDate={data.articles.publishedDate}
-          />
+          <div className="flex flex-row items-center gap-2 py-1">
+            <ArticleAuthor
+              name={author?.presenter?.name}
+              position={author?.position}
+              image={author?.profileImg}
+              url={author?.presenter?.peopleProfileURL}
+            />
+            <ArticleDate publishedDate={data.articles.publishedDate} />
+          </div>
         </Section>
       )}
       {data.articles.subTitle && (
