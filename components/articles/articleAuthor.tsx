@@ -21,6 +21,8 @@ const ArticleAuthor = ({
   const formatDate = (dateString?: string) => {
     if (!dateString) return null;
     const date = new Date(dateString);
+    // Validate that the date is valid
+    if (isNaN(date.getTime())) return null;
     return date.toLocaleDateString("en-GB", {
       day: "numeric",
       month: "long",
@@ -61,7 +63,12 @@ const ArticleAuthor = ({
       {formattedDate && (
         <>
           <div className="font-semibold">|</div>
-          <div className="text-sm uppercase text-gray-500">{formattedDate}</div>
+          <time
+            dateTime={publishedDate}
+            className="text-sm text-gray-500"
+          >
+            {formattedDate}
+          </time>
         </>
       )}
     </div>
