@@ -9,12 +9,7 @@ type ArticleAuthorProps = {
   url?: string;
 };
 
-const ArticleAuthor = ({
-  name,
-  position,
-  image,
-  url,
-}: ArticleAuthorProps) => {
+const ArticleAuthor = ({ name, position, image, url }: ArticleAuthorProps) => {
   return (
     <>
       {image && (
