@@ -40,6 +40,15 @@ const ArticleCard = ({ data }: ArticleCardProps) => {
   );
 };
 
+type ArticleCardContentProps = {
+  title: string;
+  body: string;
+  userName: string | null;
+  userImage: string | null;
+  userPosition: string | null;
+  publishedDate?: string;
+};
+
 const ArticleCardContent = ({
   title,
   body,
@@ -47,7 +56,7 @@ const ArticleCardContent = ({
   userImage,
   userPosition,
   publishedDate,
-}) => {
+}: ArticleCardContentProps) => {
   return (
     <div className="size-full bg-white">
       <div>
