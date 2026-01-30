@@ -1,8 +1,16 @@
 {
   "seo": {
-    "title": "SSW's Tender Portals",
+    "title": "SSW's Tender Portals | SSW",
     "description": "SSW actively pursues tenders and is listed across multiple tender portals. Discover our presence and track record in government and enterprise procurement opportunities.",
-    "canonical": "https://www.ssw.com.au/consulting/tender-portals"
+    "canonical": "https://www.ssw.com.au/consulting/tender-portals",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/web-apps.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "SSW's Tender Portals"
+      }
+    ]
   },
   "blocks": [
     {

@@ -2,7 +2,15 @@
   "seo": {
     "title": "Web Application Development | SSW",
     "description": "Custom web application development in Sydney, Brisbane, Melbourne, and Newcastle. Expert .NET & Azure developers build bespoke web apps and APIs from scratch for your business.",
-    "canonical": "https://www.ssw.com.au/consulting/web-applications"
+    "canonical": "https://www.ssw.com.au/consulting/web-applications",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/web-apps.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Web Application Development"
+      }
+    ]
   },
   "blocks": [
     {

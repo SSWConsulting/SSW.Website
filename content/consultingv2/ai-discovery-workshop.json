@@ -2,7 +2,15 @@
   "seo": {
     "title": "AI Discovery Workshop | SSW",
     "description": "3-day AI Discovery Workshop in Sydney, Brisbane, Melbourne & Newcastle. Identify custom AI opportunities for your business. Discover bespoke solutions tailored to you. Book now.",
-    "canonical": "https://www.ssw.com.au/consulting/ai-discovery-workshop"
+    "canonical": "https://www.ssw.com.au/consulting/ai-discovery-workshop",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/ai.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "AI Discovery Workshop"
+      }
+    ]
   },
   "blocks": [
     {

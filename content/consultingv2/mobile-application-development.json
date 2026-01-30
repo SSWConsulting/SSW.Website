@@ -2,7 +2,15 @@
   "seo": {
     "title": "Mobile App Development | SSW",
     "description": "Custom mobile app development in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke iOS & Android apps with .NET MAUI, React Native, and Flutter, tailored to your business.",
-    "canonical": "https://www.ssw.com.au/consulting/mobile-application-development"
+    "canonical": "https://www.ssw.com.au/consulting/mobile-application-development",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/mobile.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Mobile App Development"
+      }
+    ]
   },
   "blocks": [
     {

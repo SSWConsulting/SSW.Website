@@ -3,6 +3,14 @@
     "title": "ServiceNow Consulting | SSW",
     "description": "Custom ServiceNow development in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke ServiceNow solutions with tailored workflows and integrations for your business.",
     "canonical": "https://www.ssw.com.au/consulting/servicenow",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/service-desk.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "ServiceNow Consulting"
+      }
+    ],
     "showBreadcrumb": true
   },
   "blocks": [
