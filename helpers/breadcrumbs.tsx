@@ -51,3 +51,24 @@ export function renderBreadcrumbItem(
     );
   }
 }
+
+/**
+ * Renders a list of breadcrumb items, automatically determining which should be clickable.
+ * Maps through the breadcrumb list and renders each element.
+ * The last item in the list is rendered as non-clickable (BreadcrumbPage),
+ * while all other items are rendered as clickable links (BreadcrumbLink).
+ *
+ * @param breadcrumbs - Array of breadcrumb configurations (without isLast property)
+ * @returns An array of React nodes representing the breadcrumb items
+ */
+export function renderBreadcrumbItems(
+  breadcrumbs: Omit<BreadcrumbItemConfig, 'isLast'>[]
+): React.ReactNode[] {
+  return breadcrumbs.map((breadcrumb, index) => {
+    const isLast = index === breadcrumbs.length - 1;
+    return renderBreadcrumbItem({
+      ...breadcrumb,
+      isLast,
+    });
+  });
+}

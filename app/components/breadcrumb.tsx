@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { renderBreadcrumbItem } from "@/helpers/breadcrumbs";
+import { renderBreadcrumbItem, renderBreadcrumbItems } from "@/helpers/breadcrumbs";
 import { usePathname } from "next/navigation";
 import React, { FC, useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
