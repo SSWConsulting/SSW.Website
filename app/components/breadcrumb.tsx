@@ -55,7 +55,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     const allReplacements = [
       ...defaultReplacements,
       ...additionalReplacements,
-      { from: path, to: title },
+      ...(path && title ? [{ from: path, to: title }] : []),
     ];
 
     const getDisplayName = (segment: string): string => {
