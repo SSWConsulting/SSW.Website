@@ -67,12 +67,12 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     // Add Home link
     items.push(
       <BreadcrumbItem key="home">
-        {renderBreadcrumbItem(
-          false,
-          "Home",
-          "/",
-          "text-xs text-gray-700 no-underline"
-        )}
+        {renderBreadcrumbItem({
+          isLast: false,
+          displayName: "Home",
+          href: "/",
+          className: "text-xs text-gray-700 no-underline",
+        })}
       </BreadcrumbItem>
     );
 
@@ -90,15 +90,15 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
 
       items.push(
         <BreadcrumbItem key={`item-${index}`}>
-          {renderBreadcrumbItem(
+          {renderBreadcrumbItem({
             isLast,
             displayName,
             href,
-            "text-xs text-gray-700 no-underline",
-            seoSchema && isLast
-              ? { "data-tina-field": tinaField(seoSchema, "title") }
-              : undefined
-          )}
+            className: "text-xs text-gray-700 no-underline",
+            ...(seoSchema && isLast
+              ? { additionalProps: { "data-tina-field": tinaField(seoSchema, "title") } }
+              : {}),
+          })}
         </BreadcrumbItem>
       );
     });

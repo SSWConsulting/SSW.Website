@@ -5,26 +5,36 @@ import {
 import React from "react";
 
 /**
+ * Configuration object for rendering a breadcrumb item.
+ */
+export interface BreadcrumbItemConfig {
+  /** Whether this is the last item in the breadcrumb trail */
+  isLast: boolean;
+  /** The text to display for this breadcrumb item */
+  displayName: string;
+  /** The URL for this breadcrumb item (used only if not last) */
+  href: string;
+  /** CSS classes to apply to the breadcrumb item */
+  className?: string;
+  /** Additional props to spread onto the component */
+  additionalProps?: Record<string, unknown>;
+  /** React key for this element */
+  key?: string;
+}
+
+/**
  * Renders a breadcrumb item, determining if it should be clickable or not.
  * The last item in the breadcrumb trail is rendered as non-clickable (BreadcrumbPage),
  * while all ancestor items are rendered as clickable links (BreadcrumbLink).
  *
- * @param isLast - Whether this is the last item in the breadcrumb trail
- * @param displayName - The text to display for this breadcrumb item
- * @param href - The URL for this breadcrumb item (used only if not last)
- * @param className - CSS classes to apply to the breadcrumb item
- * @param additionalProps - Additional props to spread onto the component
- * @param key - React key for this element
+ * @param config - Configuration object for the breadcrumb item
  * @returns A React node representing the breadcrumb item
  */
 export function renderBreadcrumbItem(
-  isLast: boolean,
-  displayName: string,
-  href: string,
-  className?: string,
-  additionalProps?: Record<string, unknown>,
-  key?: string
+  config: BreadcrumbItemConfig
 ): React.ReactNode {
+  const { isLast, displayName, href, className, additionalProps, key } = config;
+
   if (isLast) {
     // Last item - not clickable
     return (

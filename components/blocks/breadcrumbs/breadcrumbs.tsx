@@ -42,43 +42,49 @@ function getLinks(
       return [];
     case 1:
       return [
-        renderBreadcrumbItem(
-          true,
-          finalNode || initialTitle || placeholder,
-          "/",
-          undefined,
-          { "data-tina-field": tinaField(data, "finalBreadcrumb") },
-          "breadcrumb-item-1"
-        ),
+        renderBreadcrumbItem({
+          isLast: true,
+          displayName: finalNode || initialTitle || placeholder,
+          href: "/",
+          additionalProps: { "data-tina-field": tinaField(data, "finalBreadcrumb") },
+          key: "breadcrumb-item-1",
+        }),
       ];
     //may need to seperate out case 2 later
     case 2:
     case 3:
     case 4:
       return [
-        renderBreadcrumbItem(false, initialTitle, "/", undefined, undefined, "breadcrumb-item-1"),
+        renderBreadcrumbItem({
+          isLast: false,
+          displayName: initialTitle,
+          href: "/",
+          key: "breadcrumb-item-1",
+        }),
         ...paths.slice(1, -1).map((path, index) =>
-          renderBreadcrumbItem(
-            false,
-            displayNames[index + 1],
-            `/${path}`,
-            undefined,
-            undefined,
-            `breadcrumb-item-${index + 1}`
-          )
+          renderBreadcrumbItem({
+            isLast: false,
+            displayName: displayNames[index + 1],
+            href: `/${path}`,
+            key: `breadcrumb-item-${index + 1}`,
+          })
         ),
-        renderBreadcrumbItem(
-          true,
-          finalNode || placeholder,
-          "/",
-          undefined,
-          { "data-tina-field": tinaField(data, "finalBreadcrumb") },
-          "breadcrumb-last-item"
-        ),
+        renderBreadcrumbItem({
+          isLast: true,
+          displayName: finalNode || placeholder,
+          href: "/",
+          additionalProps: { "data-tina-field": tinaField(data, "finalBreadcrumb") },
+          key: "breadcrumb-last-item",
+        }),
       ];
     default:
       return [
-        renderBreadcrumbItem(false, initialTitle, "/", undefined, undefined, "breadcrumb-item-1"),
+        renderBreadcrumbItem({
+          isLast: false,
+          displayName: initialTitle,
+          href: "/",
+          key: "breadcrumb-item-1",
+        }),
         <DropdownMenu key={"breadcrumb-dropdown"}>
           <DropdownMenuTrigger className="flex items-center gap-1">
             <BreadcrumbEllipsis className="size-4" />
@@ -92,14 +98,12 @@ function getLinks(
             ))}
           </DropdownMenuContent>
         </DropdownMenu>,
-        renderBreadcrumbItem(
-          true,
-          finalNode || placeholder,
-          "/",
-          undefined,
-          undefined,
-          "breadcrumb-last-item"
-        ),
+        renderBreadcrumbItem({
+          isLast: true,
+          displayName: finalNode || placeholder,
+          href: "/",
+          key: "breadcrumb-last-item",
+        }),
       ];
   }
 }
