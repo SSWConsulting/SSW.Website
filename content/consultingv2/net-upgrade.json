@@ -459,31 +459,31 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/dotnet.mdx"
+          "technology": "content/technologies/dotnet.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/dotnet-framework.mdx"
+          "technology": "content/technologies/dotnet-framework.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/ef-core-db.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/angular.mdx"
+          "technology": "content/technologies/angular.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/Blazor.mdx"
+          "technology": "content/technologies/Blazor.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/react.mdx"
+          "technology": "content/technologies/react.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/ms-azure.mdx"
+          "technology": "content/technologies/ms-azure.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/dotnet-maui.mdx"
+          "technology": "content/technologies/dotnet-maui.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/wpf.mdx"
+          "technology": "content/technologies/wpf.mdx"
         }
       ],
       "techCardStyle": 0,
