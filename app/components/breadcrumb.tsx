@@ -2,11 +2,10 @@
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { renderBreadcrumbItem } from "@/helpers/breadcrumbs";
 import { usePathname } from "next/navigation";
 import React, { FC, useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -68,9 +67,12 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     // Add Home link
     items.push(
       <BreadcrumbItem key="home">
-        <BreadcrumbLink href="/" className="text-xs text-gray-700 no-underline">
-          Home
-        </BreadcrumbLink>
+        {renderBreadcrumbItem(
+          false,
+          "Home",
+          "/",
+          "text-xs text-gray-700 no-underline"
+        )}
       </BreadcrumbItem>
     );
 
@@ -86,33 +88,19 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         </BreadcrumbSeparator>
       );
 
-      if (isLast) {
-        // Last item - not clickable
-        items.push(
-          <BreadcrumbItem key={`item-${index}`}>
-            <BreadcrumbPage
-              className="text-xs text-gray-700"
-              {...(seoSchema
-                ? { "data-tina-field": tinaField(seoSchema, "title") }
-                : {})}
-            >
-              {displayName}
-            </BreadcrumbPage>
-          </BreadcrumbItem>
-        );
-      } else {
-        // Intermediate items - clickable
-        items.push(
-          <BreadcrumbItem key={`item-${index}`}>
-            <BreadcrumbLink
-              href={href}
-              className="text-xs text-gray-700 no-underline"
-            >
-              {displayName}
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-        );
-      }
+      items.push(
+        <BreadcrumbItem key={`item-${index}`}>
+          {renderBreadcrumbItem(
+            isLast,
+            displayName,
+            href,
+            "text-xs text-gray-700 no-underline",
+            seoSchema && isLast
+              ? { "data-tina-field": tinaField(seoSchema, "title") }
+              : undefined
+          )}
+        </BreadcrumbItem>
+      );
     });
 
     return items;

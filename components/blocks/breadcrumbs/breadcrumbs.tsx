@@ -5,9 +5,7 @@ import {
   Breadcrumb,
   BreadcrumbEllipsis,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import {
@@ -18,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Container } from "@/components/util/container";
 import global from "@/content/global/index.json";
+import { renderBreadcrumbItem } from "@/helpers/breadcrumbs";
 import { cn } from "@/lib/utils";
 import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
 import { usePathname } from "next/navigation";
@@ -43,41 +42,43 @@ function getLinks(
       return [];
     case 1:
       return [
-        <BreadcrumbPage
-          key={"breadcrumb-item-1"}
-          data-tina-field={tinaField(data, "finalBreadcrumb")}
-        >
-          {finalNode || initialTitle || placeholder}
-        </BreadcrumbPage>,
+        renderBreadcrumbItem(
+          true,
+          finalNode || initialTitle || placeholder,
+          "/",
+          undefined,
+          { "data-tina-field": tinaField(data, "finalBreadcrumb") },
+          "breadcrumb-item-1"
+        ),
       ];
     //may need to seperate out case 2 later
     case 2:
     case 3:
     case 4:
       return [
-        <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
-          {initialTitle}
-        </BreadcrumbLink>,
-        ...paths.slice(1, -1).map((path, index) => (
-          <BreadcrumbLink
-            key={`breadcrumb-item-${index + 1}`}
-            href={`/${path}`}
-          >
-            {displayNames[index + 1]}
-          </BreadcrumbLink>
-        )),
-        <BreadcrumbPage
-          key={"breadcrumb-last-item"}
-          data-tina-field={tinaField(data, "finalBreadcrumb")}
-        >
-          {finalNode || placeholder}
-        </BreadcrumbPage>,
+        renderBreadcrumbItem(false, initialTitle, "/", undefined, undefined, "breadcrumb-item-1"),
+        ...paths.slice(1, -1).map((path, index) =>
+          renderBreadcrumbItem(
+            false,
+            displayNames[index + 1],
+            `/${path}`,
+            undefined,
+            undefined,
+            `breadcrumb-item-${index + 1}`
+          )
+        ),
+        renderBreadcrumbItem(
+          true,
+          finalNode || placeholder,
+          "/",
+          undefined,
+          { "data-tina-field": tinaField(data, "finalBreadcrumb") },
+          "breadcrumb-last-item"
+        ),
       ];
     default:
       return [
-        <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
-          {initialTitle}
-        </BreadcrumbLink>,
+        renderBreadcrumbItem(false, initialTitle, "/", undefined, undefined, "breadcrumb-item-1"),
         <DropdownMenu key={"breadcrumb-dropdown"}>
           <DropdownMenuTrigger className="flex items-center gap-1">
             <BreadcrumbEllipsis className="size-4" />
@@ -91,9 +92,14 @@ function getLinks(
             ))}
           </DropdownMenuContent>
         </DropdownMenu>,
-        <BreadcrumbPage key={"breadcrumb-last-item"}>
-          {finalNode || placeholder}
-        </BreadcrumbPage>,
+        renderBreadcrumbItem(
+          true,
+          finalNode || placeholder,
+          "/",
+          undefined,
+          undefined,
+          "breadcrumb-last-item"
+        ),
       ];
   }
 }
