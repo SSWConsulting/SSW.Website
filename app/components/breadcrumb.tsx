@@ -8,7 +8,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { usePathname } from "next/navigation";
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
 
 interface BreadcrumbsProps {
@@ -46,20 +46,23 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
   seoSchema,
 }) => {
   const pathname = usePathname();
-  const pathSegments = pathname.split("/").filter((segment) => segment !== "");
 
-  const allReplacements = [
-    ...defaultReplacements,
-    ...additionalReplacements,
-    { from: path, to: title },
-  ];
+  const breadcrumbItems = useMemo(() => {
+    const pathSegments = pathname
+      .split("/")
+      .filter((segment) => segment !== "");
 
-  const getDisplayName = (segment: string): string => {
-    const replacement = allReplacements.find((r) => r.from === segment);
-    return replacement ? replacement.to : segment;
-  };
+    const allReplacements = [
+      ...defaultReplacements,
+      ...additionalReplacements,
+      { from: path, to: title },
+    ];
 
-  const getBreadcrumbItems = () => {
+    const getDisplayName = (segment: string): string => {
+      const replacement = allReplacements.find((r) => r.from === segment);
+      return replacement ? replacement.to : segment;
+    };
+
     const items: React.ReactNode[] = [];
 
     // Add Home link
@@ -86,7 +89,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       if (isLast) {
         // Last item - not clickable
         items.push(
-          <BreadcrumbItem key={segment}>
+          <BreadcrumbItem key={`item-${index}`}>
             <BreadcrumbPage
               className="text-xs text-gray-700"
               {...(seoSchema
@@ -100,7 +103,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       } else {
         // Intermediate items - clickable
         items.push(
-          <BreadcrumbItem key={segment}>
+          <BreadcrumbItem key={`item-${index}`}>
             <BreadcrumbLink
               href={href}
               className="text-xs text-gray-700 no-underline"
@@ -113,11 +116,11 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     });
 
     return items;
-  };
+  }, [pathname, path, title, seoSchema, additionalReplacements]);
 
   return (
     <Breadcrumb>
-      <BreadcrumbList className="pl-0">{getBreadcrumbItems()}</BreadcrumbList>
+      <BreadcrumbList className="pl-0">{breadcrumbItems}</BreadcrumbList>
     </Breadcrumb>
   );
 };
