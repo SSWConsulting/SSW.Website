@@ -465,9 +465,6 @@
           "technology": "content/technologies/dotnet-framework.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/ef-core-db.mdx"
-        },
-        {
           "technology": "content/technologies/angular.mdx"
         },
         {
