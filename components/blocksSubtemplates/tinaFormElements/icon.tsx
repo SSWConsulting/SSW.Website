@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import * as BoxIcons from "react-icons/bi";
+import * as SimpleIcons from "react-icons/si";
 
 export const IconOptions = {
   Tina: (props) => (
@@ -22,6 +23,7 @@ export const IconOptions = {
     </svg>
   ),
   ...BoxIcons,
+  ...SimpleIcons,
 };
 
 export const Icon = ({ data, className = "", tinaField = "" }) => {
