@@ -2,15 +2,7 @@
   "seo": {
     "title": "Azure DevOps to GitHub Migration | SSW",
     "description": "Azure DevOps to GitHub migration in Sydney, Brisbane, Melbourne & Newcastle. We tailor migration strategies to move your team's workflows, pipelines and repositories seamlessly.",
-    "canonical": "https://www.ssw.com.au/consulting/devops-to-github",
-    "images": [
-      {
-        "url": "/images/consulting/open-graph/devops.jpg",
-        "width": 1200,
-        "height": 630,
-        "alt": "Azure DevOps to GitHub Migration"
-      }
-    ],
+    "canonical": "https://www.ssw.com.au/consulting/devops-to-github"
     "showBreadcrumb": false
   },
   "blocks": [

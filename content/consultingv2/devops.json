@@ -2,15 +2,7 @@
   "seo": {
     "title": "DevOps Consulting | SSW",
     "description": "Accelerate delivery with SSW's DevOps consulting. 30 years of Microsoft expertise. Book a free consultation today",
-    "canonical": "",
-    "images": [
-      {
-        "url": "/images/consulting/open-graph/devops.jpg",
-        "width": 1200,
-        "height": 630,
-        "alt": "DevOps Consulting"
-      }
-    ]
+    "canonical": ""
   },
   "blocks": [
     {

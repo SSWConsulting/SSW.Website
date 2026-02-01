@@ -2,15 +2,7 @@
   "seo": {
     "title": ".NET Upgrade Services | SSW",
     "description": ".NET framework upgrade services in Australia. We tailor strategic migrations to your codebase for minimal downtime, better performance and long-term support.",
-    "canonical": "https://www.ssw.com.au/consulting/net-upgrade",
-    "images": [
-      {
-        "url": "/images/consulting/open-graph/web-apps.jpg",
-        "width": 1200,
-        "height": 630,
-        "alt": ".NET Upgrade Services"
-      }
-    ]
+    "canonical": "https://www.ssw.com.au/consulting/net-upgrade"
   },
   "blocks": [
     {
