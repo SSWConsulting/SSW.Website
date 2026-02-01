@@ -465,7 +465,7 @@
           "technology": "content/v2Technologies/technologies/dotnet-framework-mini.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/ef-core-db.mdx"
+          "technology": "content/v2Technologies/technologies/ef-core-db-mini.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/angular-mini.mdx"
