@@ -2,10 +2,11 @@
 import {
   Breadcrumb,
   BreadcrumbItem,
+  BreadcrumbLink,
   BreadcrumbList,
+  BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { renderBreadcrumbItem, renderBreadcrumbItems } from "@/helpers/breadcrumbs";
 import { usePathname } from "next/navigation";
 import React, { FC, useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -70,12 +71,12 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     // Add Home link
     items.push(
       <BreadcrumbItem key="home">
-        {renderBreadcrumbItem({
-          isLast: false,
-          displayName: "Home",
-          href: "/",
-          className: linkClassName || "text-xs text-gray-700 no-underline",
-        })}
+        <BreadcrumbLink
+          href="/"
+          className={linkClassName || "text-xs text-gray-700 no-underline"}
+        >
+          Home
+        </BreadcrumbLink>
       </BreadcrumbItem>
     );
 
@@ -93,15 +94,23 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
 
       items.push(
         <BreadcrumbItem key={`item-${index}`}>
-          {renderBreadcrumbItem({
-            isLast,
-            displayName,
-            href,
-            className: linkClassName || "text-xs text-gray-700 no-underline",
-            ...(seoSchema && isLast
-              ? { additionalProps: { "data-tina-field": tinaField(seoSchema, "title") } }
-              : {}),
-          })}
+          {isLast ? (
+            <BreadcrumbPage
+              className={linkClassName || "text-xs text-gray-700 no-underline"}
+              {...(seoSchema
+                ? { "data-tina-field": tinaField(seoSchema, "title") }
+                : {})}
+            >
+              {displayName}
+            </BreadcrumbPage>
+          ) : (
+            <BreadcrumbLink
+              href={href}
+              className={linkClassName || "text-xs text-gray-700 no-underline"}
+            >
+              {displayName}
+            </BreadcrumbLink>
+          )}
         </BreadcrumbItem>
       );
     });
