@@ -2,6 +2,7 @@
 import React from "react";
 import * as BoxIcons from "react-icons/bi";
 import * as SimpleIcons from "react-icons/si";
+import * as CodeIcons from "react-icons/vsc";
 
 export const IconOptions = {
   Tina: (props) => (
@@ -24,6 +25,7 @@ export const IconOptions = {
   ),
   ...BoxIcons,
   ...SimpleIcons,
+  ...CodeIcons,
 };
 
 export const Icon = ({ data, className = "", tinaField = "" }) => {
