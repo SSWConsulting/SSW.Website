@@ -65,7 +65,6 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
 
     const items: React.ReactNode[] = [];
 
-    // Add Home link
     items.push(
       <BreadcrumbItem key="home">
         <BreadcrumbLink
