@@ -11,7 +11,7 @@ type ArticleAuthorProps = {
 
 const ArticleAuthor = ({ name, position, image, url }: ArticleAuthorProps) => {
   return (
-    <div className="flex flex-row items-center gap-2 py-1">
+    <>
       {image && (
         <Image
           src={image}
@@ -37,7 +37,7 @@ const ArticleAuthor = ({ name, position, image, url }: ArticleAuthorProps) => {
           <div className="text-sm uppercase text-gray-500">{position}</div>
         </>
       )}
-    </div>
+    </>
   );
 };
 

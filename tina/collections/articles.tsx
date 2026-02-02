@@ -96,6 +96,12 @@ export const articlesSchema: Collection = {
         "if you cannot see the Author here add them to 'Events - Presenters' in the list",
       collections: ["presenter"],
     },
+    {
+      type: "datetime",
+      name: "publishedDate",
+      label: "Published Date",
+      description: "The date this article was published",
+    },
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
