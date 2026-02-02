@@ -18,8 +18,6 @@ interface BreadcrumbsProps {
   seoSchema?: {
     title?: string;
   };
-  /** Custom className for breadcrumb links (for hover effects, etc.) */
-  linkClassName?: string;
 }
 
 const defaultReplacements = [
@@ -46,7 +44,6 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
   path,
   title,
   seoSchema,
-  linkClassName,
 }) => {
   const pathname = usePathname();
 
@@ -101,7 +98,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbItem key={`item-${index}`}>
           {isLast ? (
             <BreadcrumbPage
-              className={linkClassName || "text-xs text-gray-700 no-underline"}
+              className={"text-xs text-gray-700 no-underline"}
               {...(seoSchema
                 ? { "data-tina-field": tinaField(seoSchema, "title") }
                 : {})}
@@ -123,7 +120,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     });
 
     return items;
-  }, [pathname, path, title, seoSchema, additionalReplacements, linkClassName]);
+  }, [pathname, path, title, seoSchema, additionalReplacements]);
 
   return (
     <Breadcrumb>
