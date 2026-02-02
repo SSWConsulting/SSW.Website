@@ -1,8 +1,7 @@
-import { P } from "framer-motion/dist/types.d-BJcRxCew";
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const caseStudySchema: Collection = {
   name: "caseStudy",
@@ -16,7 +15,6 @@ export const caseStudySchema: Collection = {
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

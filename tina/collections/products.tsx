@@ -86,7 +86,6 @@ export const productsSchema: Collection = {
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

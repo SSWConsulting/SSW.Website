@@ -6,7 +6,7 @@ import {
 } from "../../components/callToAction/callToAction";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { seoSchema } from "../../components/util/seo";
-import { benefitsFields, kebabCaseFilename, tipField } from "./shared-fields";
+import { benefitsFields, kebabCaseFilename } from "./shared-fields";
 
 export const consultingIndexSchema: Collection = {
   label: "Consulting - Index",
@@ -186,7 +186,6 @@ export const consultingSchema: Collection = {
     ...kebabCaseFilename,
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

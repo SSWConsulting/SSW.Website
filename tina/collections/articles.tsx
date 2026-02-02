@@ -20,7 +20,7 @@ import {
 } from "../../components/callToAction/callToAction";
 import { seoSchema } from "../../components/util/seo";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const articlesSchema: Collection = {
   label: "Articles - Pages",
@@ -50,7 +50,6 @@ export const articlesSchema: Collection = {
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

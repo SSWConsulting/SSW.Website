@@ -10,7 +10,7 @@ import { verticalImageLayoutBlockSchema } from "../../components/blocks/vertical
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 import { companyIndexSchemaConstants } from "@/components/company/companyHeader";
 import type { Collection } from "tinacms";
@@ -37,7 +37,6 @@ export const companySchema: Collection = {
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

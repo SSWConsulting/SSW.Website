@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const consultingv2Schema: Collection = {
   label: "Consultingv2 - Pages",
@@ -16,7 +16,6 @@ export const consultingv2Schema: Collection = {
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

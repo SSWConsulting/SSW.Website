@@ -3,7 +3,7 @@ import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const officeIndexSchema: Collection = {
   label: "Offices - Index",

@@ -2,7 +2,7 @@ import type { Collection } from "tinacms";
 
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const pagesSchema: Collection = {
   label: "Base - Pages",
@@ -19,7 +19,6 @@ export const pagesSchema: Collection = {
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

@@ -4,7 +4,7 @@ import { testimonialRowSchema } from "../../components/testimonials/TestimonialR
 import { trainingHeaderSchema } from "../../components/training/trainingHeader";
 import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards.schema";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const trainingSchema: Collection = {
   label: "Training - Pages",
@@ -18,7 +18,6 @@ export const trainingSchema: Collection = {
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

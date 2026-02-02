@@ -8,7 +8,7 @@ import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist.s
 import { joinAsPresenterSchema } from "../../components/usergroup/joinAsPresenter";
 import { latestTechSchema } from "../../components/usergroup/latestTech";
 import azureBannerSchema from "../../components/util/showAzureBanner";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const userGroupPageSchema: Collection = {
   label: "User Groups - Pages",
@@ -34,7 +34,6 @@ export const userGroupPageSchema: Collection = {
       name: "locationPage",
       label: "Location User Group Page",
       fields: [
-        tipField,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         seoSchema,
@@ -166,7 +165,6 @@ export const userGroupPageSchema: Collection = {
       name: "contentPage",
       label: "Content User Group Page",
       fields: [
-        tipField,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         seoSchema,

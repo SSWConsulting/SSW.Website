@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { sides } from "../../components/marketing/Marketing";
-import { kebabCaseFilename, tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const marketingSchema: Collection = {
   label: "Marketing - Pages",
