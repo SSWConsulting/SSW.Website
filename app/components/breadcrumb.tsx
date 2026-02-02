@@ -73,7 +73,9 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       <BreadcrumbItem key="home">
         <BreadcrumbLink
           href="/"
-          className={linkClassName || "text-xs text-gray-700 no-underline"}
+          className={
+            "text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+          }
         >
           Home
         </BreadcrumbLink>
@@ -87,7 +89,10 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       const displayName = getDisplayName(segment);
 
       items.push(
-        <BreadcrumbSeparator key={`separator-${index}`} className="px-2">
+        <BreadcrumbSeparator
+          key={`separator-${index}`}
+          className="text-xs text-gray-700"
+        >
           {">"}
         </BreadcrumbSeparator>
       );
@@ -106,7 +111,9 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
           ) : (
             <BreadcrumbLink
               href={href}
-              className={linkClassName || "text-xs text-gray-700 no-underline"}
+              className={
+                "text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+              }
             >
               {displayName}
             </BreadcrumbLink>
@@ -120,7 +127,9 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
 
   return (
     <Breadcrumb>
-      <BreadcrumbList className="pl-0">{breadcrumbItems}</BreadcrumbList>
+      <BreadcrumbList className="gap-2 font-normal">
+        {breadcrumbItems}
+      </BreadcrumbList>
     </Breadcrumb>
   );
 };

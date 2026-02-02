@@ -47,7 +47,6 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
               path={props.filename}
               title={data.articles.seo?.title}
               seoSchema={data.articles.seo}
-              linkClassName="text-xs text-gray-700 no-underline hover:text-sswRed"
               additionalReplacements={[
                 {
                   from: "articles",
