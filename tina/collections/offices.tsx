@@ -11,7 +11,6 @@ export const officeIndexSchema: Collection = {
   path: "content/office/index",
   format: "json",
   ui: {
-    ...kebabCaseFilename,
     allowedActions: {
       create: false,
       delete: false,
@@ -71,7 +70,6 @@ export const officeSchema: Collection = {
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
