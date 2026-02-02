@@ -1,6 +1,7 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const logosSchema: Collection = {
   label: "Logos",
@@ -8,6 +9,7 @@ export const logosSchema: Collection = {
   path: "content/logo",
   format: "mdx",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       if (document._sys.filename === "index") {
         return "/logo";

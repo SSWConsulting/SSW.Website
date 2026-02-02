@@ -4,7 +4,7 @@ import { eventsHeaderSchema } from "../../components/events/eventsHeader";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards.schema";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const eventsSchema: Collection = {
   label: "Events - Pages",
@@ -15,6 +15,7 @@ export const eventsSchema: Collection = {
     exclude: "index/**/**",
   },
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/events/${document._sys.filename}`;
     },

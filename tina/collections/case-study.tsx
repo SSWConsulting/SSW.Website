@@ -1,7 +1,8 @@
+import { P } from "framer-motion/dist/types.d-BJcRxCew";
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const caseStudySchema: Collection = {
   name: "caseStudy",
@@ -9,6 +10,7 @@ export const caseStudySchema: Collection = {
   format: "mdx",
   path: "content/company/case-study",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/company/clients/${document._sys.filename}`;
     },

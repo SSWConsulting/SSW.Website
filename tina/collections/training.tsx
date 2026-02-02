@@ -4,7 +4,7 @@ import { testimonialRowSchema } from "../../components/testimonials/TestimonialR
 import { trainingHeaderSchema } from "../../components/training/trainingHeader";
 import { seoSchema } from "../../components/util/seo";
 import { videoCardSchema } from "../../components/util/videoCards.schema";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const trainingSchema: Collection = {
   label: "Training - Pages",
@@ -12,6 +12,7 @@ export const trainingSchema: Collection = {
   format: "mdx",
   path: "content/training",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/training/${document._sys.filename}`;
     },

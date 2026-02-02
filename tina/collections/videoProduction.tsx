@@ -2,7 +2,7 @@ import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 
 import type { Collection } from "tinacms";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const videoProductionSchema: Collection = {
   label: "Consulting - Video Production - Pages",
@@ -10,6 +10,7 @@ export const videoProductionSchema: Collection = {
   format: "mdx",
   path: "content/video-production",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/consulting/video-production/${document._sys.filename}`;
     },

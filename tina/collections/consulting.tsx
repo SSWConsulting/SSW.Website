@@ -6,7 +6,7 @@ import {
 } from "../../components/callToAction/callToAction";
 import { testimonialRowSchema } from "../../components/testimonials/TestimonialRow";
 import { seoSchema } from "../../components/util/seo";
-import { benefitsFields, tipField } from "./shared-fields";
+import { benefitsFields, kebabCaseFilename, tipField } from "./shared-fields";
 
 export const consultingIndexSchema: Collection = {
   label: "Consulting - Index",
@@ -183,6 +183,7 @@ export const consultingSchema: Collection = {
     router: ({ document }) => {
       return `/consulting/${document._sys.filename}`;
     },
+    ...kebabCaseFilename,
   },
   fields: [
     tipField,

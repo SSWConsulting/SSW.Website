@@ -10,7 +10,7 @@ import { verticalImageLayoutBlockSchema } from "../../components/blocks/vertical
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { microsoftPanelSchema } from "../../components/offices/microsoftPanel";
 import { seoSchema } from "../../components/util/seo";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 import { companyIndexSchemaConstants } from "@/components/company/companyHeader";
 import type { Collection } from "tinacms";
@@ -31,6 +31,7 @@ export const companySchema: Collection = {
     exclude: "@(case-study|index|clientCategories)/*",
   },
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/company/${document._sys.filename}`;
     },

@@ -1,15 +1,17 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { sides } from "../../components/marketing/Marketing";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const marketingSchema: Collection = {
   label: "Marketing - Pages",
   name: "marketing",
   path: "content/marketing",
   format: "mdx",
+  ui: {
+    ...kebabCaseFilename,
+  },
   fields: [
-    tipField,
     {
       type: "string",
       label: "Title",

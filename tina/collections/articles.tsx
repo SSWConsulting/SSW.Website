@@ -20,7 +20,7 @@ import {
 } from "../../components/callToAction/callToAction";
 import { seoSchema } from "../../components/util/seo";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const articlesSchema: Collection = {
   label: "Articles - Pages",
@@ -44,6 +44,7 @@ export const articlesSchema: Collection = {
     exclude: "@(case-study|index|clientCategories)/*",
   },
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/articles/${document._sys.filename}`;
     },

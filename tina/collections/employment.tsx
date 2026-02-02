@@ -1,7 +1,7 @@
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { benefitsFields, tipField } from "./shared-fields";
+import { benefitsFields, kebabCaseFilename, tipField } from "./shared-fields";
 
 export const employmentSchema: Collection = {
   label: "Employment - Index",
@@ -9,6 +9,7 @@ export const employmentSchema: Collection = {
   format: "mdx",
   path: "content/employment",
   ui: {
+    ...kebabCaseFilename,
     router: () => {
       return "/employment";
     },

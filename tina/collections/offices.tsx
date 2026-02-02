@@ -3,7 +3,7 @@ import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const officeIndexSchema: Collection = {
   label: "Offices - Index",
@@ -11,6 +11,7 @@ export const officeIndexSchema: Collection = {
   path: "content/office/index",
   format: "json",
   ui: {
+    ...kebabCaseFilename,
     allowedActions: {
       create: false,
       delete: false,
@@ -64,6 +65,7 @@ export const officeSchema: Collection = {
   format: "mdx",
   path: "content/offices",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/offices/${document._sys.filename}`;
     },
