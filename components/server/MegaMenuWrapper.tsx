@@ -12,7 +12,6 @@ export function MegaMenuWrapper(props) {
     <MegaMenuLayout
       hidePhone={pathName === "/company/contact-us"}
       menuBarItems={props.menu}
-      isFlagVisible={true}
       tagline="Enterprise Software Development"
       linkComponent={(props) => (
         <CustomLink
