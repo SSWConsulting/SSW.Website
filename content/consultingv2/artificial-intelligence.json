@@ -2,7 +2,15 @@
   "seo": {
     "title": "AI Consulting & Development | SSW",
     "description": "Custom AI & Machine Learning solutions in Sydney, Brisbane, Melbourne & Newcastle. We develop bespoke AI applications tailored to your business workflows and data requirements.",
-    "canonical": "https://www.ssw.com.au/consulting/artificial-intelligence"
+    "canonical": "https://www.ssw.com.au/consulting/artificial-intelligence",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/ai.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "AI Consulting & Development"
+      }
+    ]
   },
   "blocks": [
     {
