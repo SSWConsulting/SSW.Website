@@ -2,7 +2,15 @@
   "seo": {
     "title": "SharePoint Consulting | SSW",
     "description": "Custom SharePoint implementations in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke SharePoint solutions tailored to your business processes. 30+ years experience.",
-    "canonical": "https://www.ssw.com.au/consulting/sharepoint"
+    "canonical": "https://www.ssw.com.au/consulting/sharepoint",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/sharepoint.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "SharePoint Consulting"
+      }
+    ]
   },
   "blocks": [
     {

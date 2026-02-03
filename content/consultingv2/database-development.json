@@ -2,7 +2,15 @@
   "seo": {
     "title": "Database Development & Optimization | SSW",
     "description": "Custom database development in Sydney, Brisbane, Melbourne & Newcastle. SQL experts build and optimize SQL Server & NoSQL databases tailored to your performance needs.",
-    "canonical": "https://www.ssw.com.au/consulting/database-development"
+    "canonical": "https://www.ssw.com.au/consulting/database-development",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/database.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Database Development & Optimization"
+      }
+    ]
   },
   "blocks": [
     {
