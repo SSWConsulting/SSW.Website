@@ -204,8 +204,8 @@ importers:
         specifier: ^16.3.1
         version: 16.3.1(@testing-library/dom@10.4.0)(@types/react@19.1.10)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@tinacms/cli':
-        specifier: 2.1.4
-        version: 2.1.4(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.10)(abstract-level@1.0.4)(graphql-sock@1.0.1(graphql@15.8.0))(immer@10.2.0)(react-dnd-html5-backend@16.0.1)(react-dnd@16.0.1(@types/hoist-non-react-statics@3.3.6)(@types/node@20.19.0)(@types/react@19.1.10)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(rollup@3.29.5)(scheduler@0.27.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(sucrase@3.35.0)(terser@5.39.1)(use-sync-external-store@1.6.0(react@19.2.3))(yaml@2.8.2)
+        specifier: 2.1.5
+        version: 2.1.5(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.10)(abstract-level@1.0.4)(graphql-sock@1.0.1(graphql@15.8.0))(immer@10.2.0)(react-dnd-html5-backend@16.0.1)(react-dnd@16.0.1(@types/hoist-non-react-statics@3.3.6)(@types/node@20.19.0)(@types/react@19.1.10)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(rollup@3.29.5)(scheduler@0.27.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(sucrase@3.35.0)(terser@5.39.1)(use-sync-external-store@1.6.0(react@19.2.3))(yaml@2.8.2)
       '@types/js-cookie':
         specifier: ^3.0.6
         version: 3.0.6
@@ -3365,8 +3365,8 @@ packages:
       react: '>=18.3.1 <20.0.0'
       react-dom: '>=18.3.1 <20.0.0'
 
-  '@tinacms/cli@2.1.4':
-    resolution: {integrity: sha512-HOj53AwSliONYugFFCsdFYlq/6+UNwxZqAxaM4G5o1rVJ0iv/J8poQ33ARck+hQi5Z4Xzh1P96xA40pCyGkZaQ==}
+  '@tinacms/cli@2.1.5':
+    resolution: {integrity: sha512-f3QOi3rPV9PTHxQuJgpIOlSYUrIpxK9ErdubqdhFVdUgd1WZJxGFUxE8Q3ju9FZtb/0gPkaX/CnmMBJG+OImuQ==}
     hasBin: true
     peerDependencies:
       react: '>=18.3.1 <20.0.0'
@@ -13046,7 +13046,7 @@ snapshots:
       - use-sync-external-store
       - yup
 
-  '@tinacms/cli@2.1.4(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.10)(abstract-level@1.0.4)(graphql-sock@1.0.1(graphql@15.8.0))(immer@10.2.0)(react-dnd-html5-backend@16.0.1)(react-dnd@16.0.1(@types/hoist-non-react-statics@3.3.6)(@types/node@20.19.0)(@types/react@19.1.10)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(rollup@3.29.5)(scheduler@0.27.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(sucrase@3.35.0)(terser@5.39.1)(use-sync-external-store@1.6.0(react@19.2.3))(yaml@2.8.2)':
+  '@tinacms/cli@2.1.5(@codemirror/language@6.0.0)(@types/node@20.19.0)(@types/react@19.1.10)(abstract-level@1.0.4)(graphql-sock@1.0.1(graphql@15.8.0))(immer@10.2.0)(react-dnd-html5-backend@16.0.1)(react-dnd@16.0.1(@types/hoist-non-react-statics@3.3.6)(@types/node@20.19.0)(@types/react@19.1.10)(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(rollup@3.29.5)(scheduler@0.27.0)(slate-dom@0.114.0(slate@0.114.0))(slate@0.114.0)(sucrase@3.35.0)(terser@5.39.1)(use-sync-external-store@1.6.0(react@19.2.3))(yaml@2.8.2)':
     dependencies:
       '@graphql-codegen/core': 2.6.8(graphql@15.8.0)
       '@graphql-codegen/plugin-helpers': 6.1.0(graphql@15.8.0)
