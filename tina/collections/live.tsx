@@ -2,6 +2,7 @@ import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist.schema";
 import { seoSchema } from "../../components/util/seo";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const liveSchema: Collection = {
   label: "Live - Pages",
@@ -9,6 +10,7 @@ export const liveSchema: Collection = {
   path: "content/live",
   format: "mdx",
   ui: {
+    ...kebabCaseFilename,
     router: () => {
       return "/live";
     },

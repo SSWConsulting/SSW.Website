@@ -1,7 +1,7 @@
 import { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const caseStudySchema: Collection = {
   name: "caseStudy",
@@ -9,12 +9,12 @@ export const caseStudySchema: Collection = {
   format: "mdx",
   path: "content/company/case-study",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/company/clients/${document._sys.filename}`;
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

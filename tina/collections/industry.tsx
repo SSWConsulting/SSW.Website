@@ -2,7 +2,7 @@ import React from "react";
 import { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const industryIndexSchema: Collection = {
   label: "Industry - Index",
@@ -207,12 +207,12 @@ export const industrySchema: Collection = {
   format: "mdx",
   path: "content/industry",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/industry/${document._sys.filename}`;
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
