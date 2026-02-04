@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
-    "@headlessui/react": "^2.2.4",
+    "@headlessui/react": "^2.2.9",
     "@headlessui/tailwindcss": "^0.2.2",
     "@microsoft/applicationinsights-react-js": "^19.3.6",
     "@microsoft/applicationinsights-web": "^3.3.8",
