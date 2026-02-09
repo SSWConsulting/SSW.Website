@@ -15,18 +15,19 @@ export const getTestimonialsByCategories = (
     .filter(
       (testimonial) =>
         testimonial.categories &&
-        testimonial.categories.some((testimonialCategory) =>
-          categories.length > 0
+        testimonial.categories.some((testimonialCategory) => {
+          console.log("testimonialCategory", testimonialCategory);
+          return categories.length > 0
             ? categories.some(
                 (category) =>
                   category === extractFileName(testimonialCategory.category)
               )
-            : extractFileName(testimonialCategory.category) === "General"
-        )
+            : extractFileName(testimonialCategory.category) === "General";
+        })
     )
     .map((testimonial) => testimonial as TestimonialType)
     .slice(0, 3);
-
+  console.log("testimonialsResult", testimonialsResult);
   return testimonialsResult;
 };
 
@@ -49,7 +50,6 @@ export const getRandomTestimonialsByCategory = async (
     .map((testimonial) => testimonial as TestimonialType)
     ?.sort(() => 0.5 - Math.random())
     ?.slice(0, 3);
-
   return testimonialsResult;
 };
 
