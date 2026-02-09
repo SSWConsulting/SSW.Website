@@ -652,17 +652,6 @@
           ]
         },
         {
-          "title": "Security",
-          "description": "We help you avoid high cost and high profile breaches. Include secure code auditing, network and infrastructure consulting, and identity. We specialise in Auth0, B2C, Azure AD and IdentityServer.",
-          "logo": "/images/thumbs/thumb-security.jpg",
-          "page": "content/consulting/security.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/consulting.json"
-            }
-          ]
-        },
-        {
           "title": "Xero & MYOB",
           "description": "We help organizations to remain more organized while carrying out standard accounting functions with Xero and MYOB.",
           "logo": "/images/thumbs/thumb-xeromyob.jpg",
@@ -921,6 +910,17 @@
           "description": "In such a fast paced moving industry, it's important to have a well designed and maintained Network Infrastructure.",
           "logo": "/images/thumbs/consulting/thumb-networkarchitecture.svg",
           "page": "content/consulting/network-architecture.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            }
+          ]
+        },
+        {
+          "title": "Security",
+          "description": "We help you avoid high cost and high profile breaches. Include secure code auditing, network and infrastructure consulting, and identity. We specialise in Auth0, B2C, Azure AD and IdentityServer.",
+          "logo": "/images/thumbs/thumb-security.jpg",
+          "page": "content/consulting/security.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"
