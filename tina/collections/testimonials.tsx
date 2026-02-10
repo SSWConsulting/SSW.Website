@@ -79,6 +79,23 @@ export const testimonialSchema: Collection = {
         },
         {
           type: "object",
+          label: "Link",
+          name: "link",
+          fields: [
+            {
+              type: "string",
+              label: "URL",
+              name: "url",
+            },
+            {
+              type: "string",
+              label: "Title",
+              name: "title",
+            },
+          ],
+        },
+        {
+          type: "object",
           label: "Categories",
           name: "categories",
           list: true,
