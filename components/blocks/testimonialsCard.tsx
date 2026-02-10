@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import { TestimonialType } from "../../helpers/getTestimonials";
+import { CustomLink } from "../customLink";
 
 const Image = dynamic(() => import("next/image"));
 
@@ -43,7 +44,18 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           </>
         )}
       </p>
-      <div className="mt-2 text-sm text-ssw-black">{testimonial?.body}</div>
+      <div className="mt-2 flex-grow text-sm text-ssw-black">
+        {testimonial?.body}
+      </div>
+      {testimonial?.link?.url && testimonial?.link?.title && (
+        <CustomLink
+          target="_blank"
+          className="mt-4 text-sm"
+          href={testimonial.link.url}
+        >
+          {testimonial.link.title}
+        </CustomLink>
+      )}
     </div>
   );
 };

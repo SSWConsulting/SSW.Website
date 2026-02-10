@@ -5,6 +5,10 @@ export type TestimonialType = {
   avatar?: string;
   company?: string;
   body?: string;
+  link?: {
+    url: string;
+    title: string;
+  };
 };
 const SSWInternalTestimonialCategories = ["internship", "brainstorming"];
 

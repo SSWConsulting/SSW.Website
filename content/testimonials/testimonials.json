@@ -504,8 +504,13 @@
     },
     {
       "name": "Thomas Bidou",
+      "avatar": "/images/testimonialAvatars/thomas-bideau.png",
       "company": "French Payroll Expert",
       "body": "You've got soccer players and then you have the professional soccer players. They are the professional soccer players.\n",
+      "link": {
+        "url": "https://www.youtube.com/watch?v=YlsbPEvVyq4&t=4s",
+        "title": "Watch Video"
+      },
       "categories": [
         {
           "category": "content/testimonialCategories/GPT.mdx"
