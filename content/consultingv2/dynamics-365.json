@@ -26,7 +26,7 @@
       },
       "heading": "Get **Dynamics 365** working the way you need",
       "isH1": true,
-      "description": "Your customer data isn't structured.\n\nYour teams lack visibility.\n\nEverything feels very manual.\n\nYour Dynamics 365 investment isn’t delivering.\n\nSSW fixes that! We tailor and connect Dynamics 365 so it fits your business, not the other way around, bringing your sales, service, and marketing teams onto the same page.\n",
+      "description": "Stop wrestling with disconnected systems and start getting value your team recognises.\n\nDynamics 365 can cover several areas of your business, including:\n\n* Sales\n* Customer Service\n* Finance\n* Supply Chain Management\n\nEach area has its own challenges and requires a different approach. Without the right setup, data can get messy and work slows down.\n\nSSW helps you implement each part of Dynamics 365 properly, then connects them where it makes sense.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -133,189 +133,11 @@
       "_template": "imageTextBlock"
     },
     {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": "Case Study - The Shepherd Centre"
-      },
-      "heading": "Microsoft Dynamics 365 & Power Platform working together",
-      "isH1": false,
-      "description": "SSW redesigned and rebuilt The Shepherd Centre’s hearing assessment tools into a single cloud platform, integrated with Dynamics and Power Platform, so clinicians can access real-time data across the world.\n",
-      "tabletTextAlignment": "Left",
-      "featureColumns": {
-        "twoColumns": true
-      },
-      "buttons": [
-        {
-          "buttonText": "Read the full Case Study here",
-          "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre"
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Right",
-        "youtubeUrl": "https://youtu.be/g4_MnAZJpxg"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "isStacked": true,
-      "heading": "",
-      "isH1": false,
-      "body": "",
-      "cards": [
-        {
-          "guid": "dd2c2j",
-          "altText": "Team Collaboration Sites",
-          "icon": "BiCollapse",
-          "heading": "A Single Source of Truth",
-          "description": "Dynamics centralizes all customer interactions, communications, sales activity, cases, and history in one place. This gives your team complete visibility and reduces duplication, confusion, and lost information.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "vn8nxt",
-          "altText": "Intranet Portals",
-          "icon": "BiDoorOpen",
-          "heading": "Increased Team Accountability",
-          "description": "With assigned tasks, SLAs, workflows, and activity tracking, every team member knows their responsibilities, which improves collaboration and removes ambiguity.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "e7yf1l",
-          "altText": "",
-          "icon": "BiSearch",
-          "heading": "Seamless Microsoft Integration",
-          "description": "Native integration with Outlook, Teams, SharePoint, Power BI, and Microsoft Fabric ensures a unified digital workplace and reduces double handling.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "cardCarousel"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "isStacked": true,
-      "heading": "Tech wisdom from the trenches",
-      "isH1": false,
-      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
-      "cards": [
-        {
-          "guid": "p2eb4u",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=5eXx67EY_y4",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "5 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Do you allow multiple options rather than forcing a best fit?",
-          "description": "In this video, Piers Sinclair shows us how to manage skills within the SSW Dynamics365 CRM",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "seq43",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=3nkO8BxG8Sc",
-          "altText": "Every client deserves a Team! Link Microsoft Teams with your CRM eg. Dynamics 365, SalesForce",
-          "chips": [
-            {
-              "chipText": "4 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Every client deserves a Team! Link Microsoft Teams with your CRM eg. Dynamics 365, SalesForce",
-          "description": "Do you link your customers in CRM to their respective Teams? ",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "ekgasj",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=fhnatho4nSg",
-          "altText": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
-          "chips": [
-            {
-              "chipText": "10 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
-          "description": "Do you know how to make the most of your active directory? SSW Chief Architect Adam Cogan talks with SSW Solution Architect Jean Thirion about how to take advantage of extending AD with Microsoft SharePoint.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "cardCarousel"
-    },
-    {
-      "heading": "Frequently Asked Questions",
-      "body": "",
-      "accordionItems": [
-        {
-          "label": "What's the difference between Dynamics configuration and customization?",
-          "content": "Different modules and components can be turned on/off within the Dynamics platform, that's configuration.\n\nAt SSW, we go further with customization: Our .NET developers can build bespoke solutions, integrations, and workflows that allows your Dynamics CRM to become the backbone of your business.\n\nFor example, perhaps you want new leads within Dynamics to be automatically routed to the right salesperson, but your internal routing rules depend on multiple factors such as industry, deal size, geo-location, lead score, product interest etc. Complex routing of this nature can be best achieved using custom plugins. Something our team excel at!\n"
-        },
-        {
-          "label": "How long does a typical Dynamics implementation take?",
-          "content": "It varies significantly based on scope. Simple implementations with out-of-the-box features (team sites, document libraries, basic workflows) can be deployed in weeks. Complex Enterprise solutions requiring custom development, legacy system integration, data migration and other factors can result in a project taking several months. During your initial meeting, we'll discuss your requirements and provide a realistic timeline. Our approach is transparent; we'll tell you exactly what's involved and how long each phase will take.\n"
-        },
-        {
-          "label": "What happens in the free initial meeting?",
-          "content": "Our sales manager and a Dynamics consultant will meet with you to understand your business requirements and current challenges. We'll discuss whats working and you want replicated in the solution vs what pain points need to be addressed and resolved.\n\nThen we'll assess whether Dynamics is the right fit and provide honest recommendations. Many common business needs (Sales Pipeline, Customer Account Information, Approval Workflows) can be handled with ease using Dynamics out-of-the-box features. For more complex scenarios, we'll explain how custom development can solve your specific  Dynamics challenges.\n"
-        },
-        {
-          "label": "Should we choose Dynamics in the cloud or an on-premises solution?",
-          "content": "Microsoft has clearly aligned their Dynamics platform to be a cloud based service. Whilst Microsoft does still support on-premise versions of the solution, its not their priority. All new features being rolled out to the Dynamics platform are cloud first, often not being available for the legacy on-premise version.\n"
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "accordionBlock"
-    },
-    {
       "isStacked": false,
       "heading": "Dynamics 365 Modules",
       "isH1": false,
       "body": "",
+      "cardStyle": 0,
       "cards": [
         {
           "guid": "23d0qf",
@@ -417,7 +239,201 @@
           }
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Migrating a custom legacy app to Dynamics 365",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "",
+            "description": "Move your mission-critical legacy applications into the modern era with Dynamics 365. We specialize in migrating complex, customized logic into high-performance cloud environments using Dataverse, Azure, and Model-Driven Apps—eliminating manual reporting and de-risking your digital transformation."
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "youtubeUrl": "https://www.youtube.com/watch?v=6pdvDVr3rJA"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study - The Shepherd Centre"
+      },
+      "heading": "Microsoft Dynamics 365 & Power Platform working together",
+      "isH1": false,
+      "description": "SSW redesigned and rebuilt The Shepherd Centre’s hearing assessment tools into a single cloud platform, integrated with Dynamics and Power Platform, so clinicians can access real-time data across the world.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Read the full Case Study here",
+          "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "youtubeUrl": "https://youtu.be/g4_MnAZJpxg"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "dd2c2j",
+          "altText": "Team Collaboration Sites",
+          "icon": "BiCollapse",
+          "heading": "A Single Source of Truth",
+          "description": "Dynamics centralizes all customer interactions, communications, sales activity, cases, and history in one place. This gives your team complete visibility and reduces duplication, confusion, and lost information.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "vn8nxt",
+          "altText": "Intranet Portals",
+          "icon": "BiDoorOpen",
+          "heading": "Increased Team Accountability",
+          "description": "With assigned tasks, SLAs, workflows, and activity tracking, every team member knows their responsibilities, which improves collaboration and removes ambiguity.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "e7yf1l",
+          "altText": "",
+          "icon": "BiSearch",
+          "heading": "Seamless Microsoft Integration",
+          "description": "Native integration with Outlook, Teams, SharePoint, Power BI, and Microsoft Fabric ensures a unified digital workplace and reduces double handling.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
+      "cards": [
+        {
+          "guid": "p2eb4u",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=5eXx67EY_y4",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "5 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Do you allow multiple options rather than forcing a best fit?",
+          "description": "In this video, Piers Sinclair shows us how to manage skills within the SSW Dynamics365 CRM",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "seq43",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=3nkO8BxG8Sc",
+          "altText": "Every client deserves a Team! Link Microsoft Teams with your CRM eg. Dynamics 365, SalesForce",
+          "chips": [
+            {
+              "chipText": "4 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Every client deserves a Team! Link Microsoft Teams with your CRM eg. Dynamics 365, SalesForce",
+          "description": "Do you link your customers in CRM to their respective Teams? ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "ekgasj",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=fhnatho4nSg",
+          "altText": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
+          "chips": [
+            {
+              "chipText": "10 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
+          "description": "Do you know how to make the most of your active directory? SSW Chief Architect Adam Cogan talks with SSW Solution Architect Jean Thirion about how to take advantage of extending AD with Microsoft SharePoint.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "What's the difference between Dynamics configuration and customization?",
+          "content": "Different modules and components can be turned on/off within the Dynamics platform, that's configuration.\n\nAt SSW, we go further with customization: Our .NET developers can build bespoke solutions, integrations, and workflows that allows your Dynamics CRM to become the backbone of your business.\n\nFor example, perhaps you want new leads within Dynamics to be automatically routed to the right salesperson, but your internal routing rules depend on multiple factors such as industry, deal size, geo-location, lead score, product interest etc. Complex routing of this nature can be best achieved using custom plugins. Something our team excel at!\n"
+        },
+        {
+          "label": "How long does a typical Dynamics implementation take?",
+          "content": "It varies significantly based on scope. Simple implementations with out-of-the-box features (team sites, document libraries, basic workflows) can be deployed in weeks. Complex Enterprise solutions requiring custom development, legacy system integration, data migration and other factors can result in a project taking several months. During your initial meeting, we'll discuss your requirements and provide a realistic timeline. Our approach is transparent; we'll tell you exactly what's involved and how long each phase will take.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "Our sales manager and a Dynamics consultant will meet with you to understand your business requirements and current challenges. We'll discuss whats working and you want replicated in the solution vs what pain points need to be addressed and resolved.\n\nThen we'll assess whether Dynamics is the right fit and provide honest recommendations. Many common business needs (Sales Pipeline, Customer Account Information, Approval Workflows) can be handled with ease using Dynamics out-of-the-box features. For more complex scenarios, we'll explain how custom development can solve your specific  Dynamics challenges.\n"
+        },
+        {
+          "label": "Should we choose Dynamics in the cloud or an on-premises solution?",
+          "content": "Microsoft has clearly aligned their Dynamics platform to be a cloud based service. Whilst Microsoft does still support on-premise versions of the solution, its not their priority. All new features being rolled out to the Dynamics platform are cloud first, often not being available for the legacy on-premise version.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
     },
     {
       "topLabel": {
