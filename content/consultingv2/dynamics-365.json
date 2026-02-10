@@ -248,19 +248,19 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Lorem Ipsum",
+      "heading": "Migrating a custom legacy app to Dynamics 365",
       "isH1": false,
       "description": "",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Lorem",
+            "heading": "",
             "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "",
+            "description": ""
           }
         ]
       },
