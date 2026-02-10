@@ -20,7 +20,6 @@ export const getTestimonialsByCategories = (
       (testimonial) =>
         testimonial.categories &&
         testimonial.categories.some((testimonialCategory) => {
-          console.log("testimonialCategory", testimonialCategory);
           return categories.length > 0
             ? categories.some(
                 (category) =>
@@ -31,7 +30,6 @@ export const getTestimonialsByCategories = (
     )
     .map((testimonial) => testimonial as TestimonialType)
     .slice(0, 3);
-  console.log("testimonialsResult", testimonialsResult);
   return testimonialsResult;
 };
 
