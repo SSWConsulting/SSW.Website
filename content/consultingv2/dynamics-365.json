@@ -26,7 +26,7 @@
       },
       "heading": "Get **Dynamics 365** working the way you need",
       "isH1": true,
-      "description": "Stop wrestling with disconnected systems and start getting value your team recognises.\n\nDynamics 365 can cover several areas of your business, including:\n\n* Sales\n* Customer Service\n* Finance\n* Supply Chain Management\n\nEach area has its own challenges and requires a different approach. Without the right setup, data can get messy and work slows down. \n\nSSW helps you implement each part of Dynamics 365 properly, then connects them where it makes sense.\n",
+      "description": "Stop wrestling with disconnected systems and start getting value your team recognises.\n\nDynamics 365 can cover several areas of your business, including:\n\n* Sales\n* Customer Service\n* Finance\n* Supply Chain Management\n\nEach area has its own challenges and requires a different approach. Without the right setup, data can get messy and work slows down.\n\nSSW helps you implement each part of Dynamics 365 properly, then connects them where it makes sense.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -243,6 +243,41 @@
         "backgroundColour": 6
       },
       "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Lorem Ipsum",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
     },
     {
       "topLabel": {
