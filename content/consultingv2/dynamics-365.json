@@ -264,18 +264,13 @@
           }
         ]
       },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "background": {
         "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "youtubeUrl": "https://www.youtube.com/watch?v=6pdvDVr3rJA"
       },
       "_template": "imageTextBlock"
     },
