@@ -44,7 +44,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
           </>
         )}
       </p>
-      <div className="mt-2 flex-grow text-sm text-ssw-black">
+      <div className="mt-2 grow text-sm text-ssw-black">
         {testimonial?.body}
       </div>
       {testimonial?.link?.url && testimonial?.link?.title && (
