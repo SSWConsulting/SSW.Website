@@ -19,14 +19,14 @@ export const getTestimonialsByCategories = (
     .filter(
       (testimonial) =>
         testimonial.categories &&
-        testimonial.categories.some((testimonialCategory) => {
-          return categories.length > 0
+        testimonial.categories.some((testimonialCategory) =>
+          categories.length > 0
             ? categories.some(
                 (category) =>
                   category === extractFileName(testimonialCategory.category)
               )
-            : extractFileName(testimonialCategory.category) === "General";
-        })
+            : extractFileName(testimonialCategory.category) === "General"
+        )
     )
     .map((testimonial) => testimonial as TestimonialType)
     .slice(0, 3);
