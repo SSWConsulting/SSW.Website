@@ -137,6 +137,7 @@
       "heading": "Dynamics 365 Modules",
       "isH1": false,
       "body": "",
+      "cardStyle": 0,
       "cards": [
         {
           "guid": "23d0qf",
@@ -238,6 +239,9 @@
           }
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "_template": "cardCarousel"
     },
     {
