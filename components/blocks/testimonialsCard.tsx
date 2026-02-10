@@ -48,11 +48,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
         {testimonial?.body}
       </div>
       {testimonial?.link?.url && testimonial?.link?.title && (
-        <CustomLink
-          target="_blank"
-          className="mt-4 text-sm"
-          href={testimonial.link.url}
-        >
+        <CustomLink className="mt-4 text-sm" href={testimonial.link.url}>
           {testimonial.link.title}
         </CustomLink>
       )}
