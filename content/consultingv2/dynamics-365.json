@@ -276,7 +276,11 @@
       "mediaConfiguration": {
         "mediaType": "image",
         "placement": "Left",
-        "youtubeUrl": "https://www.youtube.com/watch?v=6pdvDVr3rJA"
+        "imageSource": "/images/0111%20Gemini%20created%202.png",
+        "imageHeight": 565,
+        "imageWidth": 1019,
+        "youtubeUrl": "",
+        "altText": ""
       },
       "_template": "imageTextBlock"
     },
