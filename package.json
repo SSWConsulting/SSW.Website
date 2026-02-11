@@ -84,7 +84,7 @@
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
-    "formik": "^2.4.6",
+    "formik": "^2.4.9",
     "framer-motion": "^12.23.24",
     "lodash": "^4.17.21",
     "lru-cache": "^11.1.0",
