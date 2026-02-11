@@ -250,13 +250,13 @@
       },
       "heading": "Migrating a custom legacy app to Dynamics 365",
       "isH1": false,
-      "description": "",
+      "description": "Replacing a 20-year-old core application doesn't have to be terrifying. SSW has deep roots in .NET and Azure which helps to bridge the gap between legacy systems and the Power Platform.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
             "heading": "",
-            "description": "Move your mission-critical legacy applications into the modern era with Dynamics 365. We specialize in migrating complex, customized logic into high-performance cloud environments using Dataverse, Azure, and Model-Driven Apps—eliminating manual reporting and de-risking your digital transformation."
+            "description": ""
           },
           {
             "heading": "",
@@ -264,12 +264,17 @@
           }
         ]
       },
+      "buttons": [
+        {
+          "buttonText": "Read the full Article here"
+        }
+      ],
       "background": {
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Right",
+        "mediaType": "image",
+        "placement": "Left",
         "youtubeUrl": "https://www.youtube.com/watch?v=6pdvDVr3rJA"
       },
       "_template": "imageTextBlock"
