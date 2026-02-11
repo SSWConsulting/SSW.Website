@@ -5,7 +5,7 @@ seo:
 bannerImg: /images/articles/Gemini_Generated_Image_a7byd1a7byd1a7by.png
 title: Modernising a Legacy VB App Before It Became a Business Risk
 subTitle: |
-  Sometimes legacy systems don’t fail with a bang, they fail quietly, slowly, and dangerously. I want to tell a story of one such situation with a company running a very old VB-based application. There wasn’t a single catastrophic outage that forced change. Instead, the real trigger was something more worrying: the only person who understood the system was retiring. With no replacement, no test coverage, and years of accumulated complexity, the business was facing a serious key-person risk. That’s when we stepped in to help modernise the platform and make it safe, maintainable, and future-ready.
+  Sometimes legacy systems don’t fail with a bang, they fail quietly, slowly, and dangerously. I want to tell a story of one such situation with a company running a very old VB-based application. There wasn’t a single catastrophic outage that forced change. Instead, the real trigger was something more worrying: **the only person who understood the system was retiring**. With no replacement, no test coverage, and years of accumulated complexity, the business was facing a serious key-person risk. That’s when we stepped in to help modernise the platform and make it safe, maintainable, and future-ready.
 
   ## The Real Problem: Key-Person Risk and Unknown Logic
 
@@ -19,17 +19,17 @@ subTitle: |
 
   ## Spaghetti Code and a 10,000-Line Calculation File
 
-  One of the biggest technical challenges was the calculation engine.There were frequent calculation issues, and very little automated testing. When we  started digging into the codebase, they discovered large amounts of logic that no one fully understood, including logic the business didn’t even realise existed.At the heart of it all was a single file over 10,000 lines long, containing “everything you can possibly imagine”.
+  One of the biggest technical challenges was the calculation engine.There were frequent calculation issues, and very little automated testing. When we  started digging into the codebase, they discovered large amounts of logic that no one fully understood, including logic the business didn’t even realise existed. At the heart of it all was a single file over 10,000 lines long, containing “everything you can possibly imagine”.
 
   To untangle years of legacy logic, we needed to take a systematic approach: we reverse-engineered the core calculations and rebuilt them as a series of reusable, modular components. By documenting every step of this transition, we created a roadmap that allows any developer to step in and understand the system’s inner workings at a glance
 
-  ## Phased Approach using Azure Functions and Service Bus
+  ## Phased Migration Approach using Azure and Power Platform
 
-  One of the system’s heaviest workloads was policy renewals.The old architecture processed 2,000–3,000 policies in a single run, using a traditional API-based approach. These jobs could run for hours, increasing the risk of failures, timeouts, and data issues. To modernise the system’s heaviest workloads, we implemented an event-driven architecture utilizing Azure Service Bus to queue renewal jobs. This allowed Azure Functions to process policies individually, picking up a task, executing the renewal, and moving seamlessly to the next. By decoupling these tasks, the team eliminated the instability of long-running processes that had previously plagued the system.
+  One of the system’s heaviest workloads was policy renewals.The old architecture processed 2,000–3,000 policies in a single run, using a traditional API-based approach. These jobs could run for hours, increasing the risk of failures, timeouts, and data issues. To modernise the system’s heaviest workloads, we implemented an event-driven architecture utilising Azure Service Bus to queue renewal jobs. This allowed Azure Functions to process policies individually, picking up a task, executing the renewal, and moving seamlessly to the next. By decoupling these tasks, the team eliminated the instability of long-running processes that had previously plagued the system.
 
   Instead of a high-risk "big bang" migration, the transition to Dataverse was handled in strategic phases, starting with the calculation engine. We established a series of rigorous safeguards: automated tests compared legacy data against the new environment, validation checks were performed throughout the migration, and the client provided ongoing confirmation of accuracy. This "safety net" approach allowed the project to move forward with total confidence rather than leaving data verification until the final delivery.
 
-  ## From Multi-Day Reporting to a Couple of Hours
+  ## The Takeaway
 
   The business impact was most immediate in monthly reporting, a process that previously tethered the team to their desks for three to four days of manual reconciliation. Under the old system, a single minor discrepancy could trigger hours of manual data trawling. Today, that workload has been condensed into just a few hours. By implementing automated validation rules that surface issues immediately with clear guidance, the system has shifted the team's focus from finding problems to simply fixing them.
 
