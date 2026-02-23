@@ -162,6 +162,10 @@
         {
           "chipText": "Information Architecture",
           "chipType": "filledChip"
+        },
+        {
+          "chipText": "CRM",
+          "chipType": "filledChip"
         }
       ],
       "featureColumns": {
