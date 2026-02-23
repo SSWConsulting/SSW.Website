@@ -114,11 +114,11 @@
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidError",
-          "heading": "Reduce Risk on Complex Projects",
-          "description": "Our proven Agile (Scrum) process means clear communication, quality code, and reliable project delivery. No nasty surprises.",
+          "heading": "Complex Desktop Applications",
+          "description": "SSW's strategies for managing deep information architecture and multi-step workflows within professional-grade software. ",
           "embeddedButton": {
-            "buttonText": "Rules to Better Scrum",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-scrum/"
+            "buttonText": "",
+            "buttonLink": ""
           }
         },
         {
