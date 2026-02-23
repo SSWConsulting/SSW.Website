@@ -453,6 +453,8 @@ export default {
           "linear-gradient(#ffffff, transparent 75%), url(/images/404/broken-chain.png)",
         glass:
           "linear-gradient(152.97deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%)",
+        "social-instagram":
+          "radial-gradient(93.01% 100.01% at 26% 100%, #FF9F4B 3.72%, #FF543E 55.93%, #E44674 100%)",
       },
     },
     linearGradientColors: {
