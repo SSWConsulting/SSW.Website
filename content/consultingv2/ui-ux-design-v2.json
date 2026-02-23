@@ -138,8 +138,8 @@
           "heading": "Engineering-led design",
           "description": "At SSW, designers and developers work as one team, applying a clear process and deep technical expertise to deliver robust, production-ready digital products.\n\n",
           "embeddedButton": {
-            "buttonText": "SSW People",
-            "buttonLink": "https://www.ssw.com.au/people/"
+            "buttonText": "",
+            "buttonLink": ""
           }
         }
       ],
