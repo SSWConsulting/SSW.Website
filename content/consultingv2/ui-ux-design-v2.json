@@ -248,6 +248,24 @@
       "_template": "imageTextBlock"
     },
     {
+      "topLabel": {
+        "labelText": "Custom Joinery Visualisation and Quoting Platform"
+      },
+      "heading": "Timpelle Consultancy App",
+      "isH1": false,
+      "description": "",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study",
+          "colour": 0
+        }
+      ],
+      "_template": "imageTextBlock"
+    },
+    {
       "spacerHeight": "50px",
       "background": {
         "backgroundColour": 6,
