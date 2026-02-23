@@ -1,1 +1,8 @@
-{}
+{
+  "blocks": [
+    {
+      "finalBreadcrumb": "UI/UX Design",
+      "_template": "breadcrumbs"
+    }
+  ]
+}
