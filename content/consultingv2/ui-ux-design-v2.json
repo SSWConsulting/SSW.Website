@@ -145,8 +145,8 @@
       ],
       "background": {
         "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
-        "bleed": true
+        "backgroundImage": "",
+        "bleed": false
       },
       "_template": "cardCarousel"
     },
@@ -156,7 +156,7 @@
       },
       "heading": "ASF Audits / HubX",
       "isH1": false,
-      "description": "SSW re-architected the legacy system end-to-end to support scalable workflows, flexible question configuration, and low-friction audit management. The engagement included UI/UX redesign across complex admin interfaces and workflows, supported by user testing with auditors, reviewers, and international teams to ensure clarity, efficiency, and long-term adaptability.\n",
+      "description": "ASF Audits / HubX is a modernised audit management and internal CRM platform built for administrators and compliance teams.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
@@ -201,8 +201,8 @@
       "mediaConfiguration": {
         "mediaType": "image",
         "placement": "Left",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below",
         "imageSource": "/images/UX%20Case%20Studies/Fund%20Audit%20-%20WIP%201.png",
         "imageHeight": 930,
         "imageWidth": 1440,
@@ -217,7 +217,7 @@
       },
       "heading": "Rapiscan / ScanOS",
       "isH1": false,
-      "description": "SSW partnered to enhance the interface for speed, clarity, and accuracy in time-critical contexts, focusing on rapid visual recognition, clear system states, and reduced cognitive load during repetitive tasks. The UI/UX design was grounded in direct research within live operational environments to ensure performance under real-world pressure.\n",
+      "description": "Rapiscan ScanOS is security screening and imaging software used by operators in airports and high-throughput security environments.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
@@ -246,6 +246,14 @@
           "colour": 0
         }
       ],
+      "background": {
+        "backgroundColour": 4
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below"
+      },
       "_template": "imageTextBlock"
     },
     {
@@ -254,7 +262,7 @@
       },
       "heading": "Timpelle Consultancy App",
       "isH1": false,
-      "description": "SSW delivered end-to-end UI/UX design to translate complex, interdependent configuration logic into an intuitive digital experience, balancing flexibility with precision. The platform streamlines design exploration and formal quoting through progressive disclosure, clear 3D visual feedback, and integrated pricing, reducing manual effort and turnaround time while maintaining a premium client experience.\n",
+      "description": "A custom joinery visualisation and quoting platform designed for homeowners, interior designers, and consultants configuring bespoke kitchens and interiors.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
@@ -287,6 +295,87 @@
           "colour": 0
         }
       ],
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false
+      },
+      "mediaConfiguration": {
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Enterprise data security and compliance website for Hive AI"
+      },
+      "heading": "HIVE Data Security",
+      "isH1": false,
+      "description": "Hive AI’s enterprise data security and compliance website was designed to translate complex technical capability into a clear, credible proof-of-capability for enterprise audiences.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "User Interface",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "UX Research",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Information Architecture",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Enterprise UX",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study"
+        }
+      ],
+      "background": {
+        "backgroundColour": 4
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Enterprise insurance workflow platform"
+      },
+      "heading": "Berkley Insurance Australia / Broker Portal",
+      "isH1": false,
+      "description": "Berkley Insurance Australia’s Broker Portal is an enterprise insurance workflow platform designed for brokers and underwriting teams managing high-volume, compliance-driven transactions.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below",
+        "youtubeUrl": "https://www.youtube.com/watch?v=YJXoL_RseEA"
+      },
       "_template": "imageTextBlock"
     },
     {
