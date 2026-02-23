@@ -213,11 +213,29 @@
     },
     {
       "topLabel": {
-        "labelText": "Security screening and imaging software"
+        "labelText": "Security Screening and Imaging Software"
       },
       "heading": "Rapiscan / ScanOS",
       "isH1": false,
       "description": "SSW partnered to enhance the interface for speed, clarity, and accuracy in time-critical contexts, focusing on rapid visual recognition, clear system states, and reduced cognitive load during repetitive tasks. The UI/UX design was grounded in direct research within live operational environments to ensure performance under real-world pressure.\n",
+      "chips": [
+        {
+          "chipText": "Security Software",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "User Interface",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "UX Research",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Enterprise UX",
+          "chipType": "filledChip"
+        }
+      ],
       "featureColumns": {
         "twoColumns": false
       },
