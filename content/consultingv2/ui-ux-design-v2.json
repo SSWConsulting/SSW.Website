@@ -254,6 +254,28 @@
       "heading": "Timpelle Consultancy App",
       "isH1": false,
       "description": "",
+      "chips": [
+        {
+          "chipText": "User Interface",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "UX Research",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Information Architecture",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Product Design",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Workflow Design",
+          "chipType": "filledChip"
+        }
+      ],
       "featureColumns": {
         "twoColumns": false
       },
