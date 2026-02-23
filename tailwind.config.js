@@ -457,15 +457,6 @@ export default {
           "radial-gradient(93.01% 100.01% at 26% 100%, #FF9F4B 3.72%, #FF543E 55.93%, #E44674 100%)",
       },
     },
-    linearGradientColors: {
-      "social-instagram": [
-        "#f09433",
-        "#e6683c 25%",
-        "#dc2743 50%",
-        "#cc2366 75%",
-        "#bc1888",
-      ],
-    },
   },
   variants: {
     // extend: { typography: ["tint", "dark", "primary"] },
