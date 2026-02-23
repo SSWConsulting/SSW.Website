@@ -125,8 +125,8 @@
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
           "icon": "BiPalette",
-          "heading": "Delivering Creative Solutions",
-          "description": "We create engaging digital experiences through product design and development, accessible and usable interfaces, online advertising, email newsletters, and interactive presentations.\n\n",
+          "heading": "Data Visualization & Dashboards",
+          "description": "Examples of how SSW transform raw, complex data into actionable insights through intuitive, high-density visual design.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -135,8 +135,8 @@
           "guid": "5q8kz",
           "altText": "Lorem Ipsum",
           "icon": "BiCodeAlt",
-          "heading": "Engineering-led design",
-          "description": "At SSW, designers and developers work as one team, applying a clear process and deep technical expertise to deliver robust, production-ready digital products.\n\n",
+          "heading": "Unified Design Systems",
+          "description": "Demonstration of how SSW maintain brand integrity and functional consistency across diverse platforms. SSW ensure a unified \"all-round\" experience that feels seamless, whether the user is on a mobile device or a complex desktop suite.\n",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
