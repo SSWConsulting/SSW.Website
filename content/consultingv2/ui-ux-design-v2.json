@@ -124,9 +124,9 @@
         {
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidMedal",
-          "heading": "Solve Challenges Off-the-Shelf Software Can't",
-          "description": "We build the custom web apps and APIs you actually need when standard software just doesn't cut it.",
+          "icon": "BiPalette",
+          "heading": "Delivering Creative Solutions",
+          "description": "We create engaging digital experiences through product design and development, accessible and usable interfaces, online advertising, email newsletters, and interactive presentations.\n\n",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -134,9 +134,9 @@
         {
           "guid": "5q8kz",
           "altText": "Lorem Ipsum",
-          "icon": "BiLogoMicrosoft",
-          "heading": "Elite Microsoft Stack Expertise",
-          "description": "Take advantage of our 30+ years of .NET & Azure experience, top-tier talent (MVPs, RDs), and direct Microsoft connections.",
+          "icon": "BiCodeAlt",
+          "heading": "Engineering-led design",
+          "description": "At SSW, designers and developers work as one team, applying a clear process and deep technical expertise to deliver robust, production-ready digital products.\n\n",
           "embeddedButton": {
             "buttonText": "SSW People",
             "buttonLink": "https://www.ssw.com.au/people/"
