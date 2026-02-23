@@ -191,14 +191,15 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "mediaType": "youtube",
+        "mediaType": "image",
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageHeight": 700,
-        "imageWidth": 1400,
-        "youtubeUrl": "https://www.youtube.com/watch?v=wiFadV5SOPc",
-        "altText": "Hutchison Weller"
+        "imageSource": "/images/UX%20Case%20Studies/Fund%20Audit%20-%20WIP%201.png",
+        "imageHeight": 930,
+        "imageWidth": 1440,
+        "youtubeUrl": "",
+        "altText": ""
       },
       "_template": "imageTextBlock"
     },
