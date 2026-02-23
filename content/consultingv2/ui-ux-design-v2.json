@@ -152,11 +152,11 @@
     },
     {
       "topLabel": {
-        "labelText": "Case Study"
+        "labelText": "Audit Management & Internal CRM Platform (Modernisation)"
       },
       "heading": "ASF Audits / HubX",
       "isH1": false,
-      "description": "UI/UX redesign across complex admin interfaces and workflows, conducting user testing with auditors, reviewers, and international teams to ensure clarity, efficiency, and long-term adaptability.\n",
+      "description": "SSW re-architected the legacy system end-to-end to support scalable workflows, flexible question configuration, and low-friction audit management. The engagement included UI/UX redesign across complex admin interfaces and workflows, supported by user testing with auditors, reviewers, and international teams to ensure clarity, efficiency, and long-term adaptability.\n",
       "tabletTextAlignment": "",
       "chips": [
         {
@@ -173,6 +173,14 @@
         },
         {
           "chipText": "Usability Testing",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Dashboard",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Enterprise UX",
           "chipType": "filledChip"
         }
       ],
@@ -201,6 +209,24 @@
         "youtubeUrl": "",
         "altText": ""
       },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Security screening and imaging software"
+      },
+      "heading": "Rapiscan / ScanOS",
+      "isH1": false,
+      "description": "SSW partnered to enhance the interface for speed, clarity, and accuracy in time-critical contexts, focusing on rapid visual recognition, clear system states, and reduced cognitive load during repetitive tasks. The UI/UX design was grounded in direct research within live operational environments to ensure performance under real-world pressure.\n",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study",
+          "colour": 0
+        }
+      ],
       "_template": "imageTextBlock"
     },
     {
