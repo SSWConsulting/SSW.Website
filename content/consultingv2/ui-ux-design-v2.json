@@ -154,35 +154,18 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "Transforming Noise Impact Management with KNOWnoise",
+      "heading": "ASF Audits / HubX",
       "isH1": false,
-      "description": "Hutchison Weller needed a better way to manage noise planning. Their old Excel tool was slow and inflexible. We built KNOWnoise, a web app for fast, real-time noise impact assessment.\n",
+      "description": "Audit Management & Internal CRM Platform (Modernisation)\n",
+      "tabletTextAlignment": "",
       "chips": [
         {
-          "chipText": "Azure",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": ".NET",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Angular",
+          "chipText": "Information Architecture",
           "chipType": "filledChip"
         }
       ],
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Instant, Interactive Noise Assessment",
-            "description": "Model noise levels with simple selections, get instant risk profiles, impact maps, and exceedance data."
-          },
-          {
-            "heading": "From Spreadsheet to Web App",
-            "description": "Replaced a complex Excel tool with a web-based platform: Angular, NgRx, .NET Core on Azure. Deployed in 3 months. Ready for field or office use."
-          }
-        ]
+        "twoColumns": false
       },
       "buttons": [
         {
