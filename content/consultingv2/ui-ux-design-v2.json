@@ -113,7 +113,7 @@
         {
           "guid": "7mtu8j",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidError",
+          "icon": "BiDesktop",
           "heading": "Complex Desktop Applications",
           "description": "SSW's strategies for managing deep information architecture and multi-step workflows within professional-grade software. ",
           "embeddedButton": {
@@ -124,7 +124,7 @@
         {
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
-          "icon": "BiPalette",
+          "icon": "BiBarChart",
           "heading": "Data Visualization & Dashboards",
           "description": "Examples of how SSW transform raw, complex data into actionable insights through intuitive, high-density visual design.",
           "embeddedButton": {
@@ -134,7 +134,7 @@
         {
           "guid": "5q8kz",
           "altText": "Lorem Ipsum",
-          "icon": "BiCodeAlt",
+          "icon": "BiPalette",
           "heading": "Unified Design Systems",
           "description": "Demonstration of how SSW maintain brand integrity and functional consistency across diverse platforms. SSW ensure a unified \"all-round\" experience that feels seamless, whether the user is on a mobile device or a complex desktop suite.\n",
           "embeddedButton": {
