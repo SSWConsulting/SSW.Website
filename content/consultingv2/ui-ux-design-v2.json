@@ -203,11 +203,11 @@
         "placement": "Left",
         "verticalPlacement": "Top",
         "mobilePlacement": "Below",
-        "imageSource": "/images/UX%20Case%20Studies/Fund%20Audit%20-%20WIP%201.png",
+        "imageSource": "/images/case-studies/ux-ui/asf-fund.jpg",
         "imageHeight": 930,
         "imageWidth": 1440,
         "youtubeUrl": "",
-        "altText": ""
+        "altText": "ASF Fund Audit"
       },
       "_template": "imageTextBlock"
     },
@@ -250,9 +250,14 @@
         "backgroundColour": 4
       },
       "mediaConfiguration": {
-        "placement": "Right",
+        "mediaType": "image",
+        "placement": "Left",
         "verticalPlacement": "Top",
-        "mobilePlacement": "Below"
+        "mobilePlacement": "Below",
+        "imageSource": "/images/case-studies/ux-ui/rapiscan-dashboard.jpg",
+        "imageHeight": 930,
+        "imageWidth": 1440,
+        "altText": "Rapiscan Dashboard"
       },
       "_template": "imageTextBlock"
     },
@@ -300,8 +305,14 @@
         "bleed": false
       },
       "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Left",
         "verticalPlacement": "Top",
-        "mobilePlacement": "Below"
+        "mobilePlacement": "Below",
+        "imageSource": "/images/case-studies/ux-ui/timpelle-visualiser.jpg",
+        "imageHeight": 930,
+        "imageWidth": 1440,
+        "altText": "Timpelle Consultancy App"
       },
       "_template": "imageTextBlock"
     },
@@ -343,9 +354,14 @@
         "backgroundColour": 4
       },
       "mediaConfiguration": {
-        "placement": "Right",
+        "mediaType": "image",
+        "placement": "Left",
         "verticalPlacement": "Top",
-        "mobilePlacement": "Below"
+        "mobilePlacement": "Below",
+        "imageSource": "/images/case-studies/ux-ui/hive-product.jpg",
+        "imageHeight": 930,
+        "imageWidth": 1440,
+        "altText": "Hive Product UI"
       },
       "_template": "imageTextBlock"
     },
