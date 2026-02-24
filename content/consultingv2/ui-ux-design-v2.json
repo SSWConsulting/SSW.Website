@@ -251,11 +251,11 @@
       },
       "mediaConfiguration": {
         "mediaType": "image",
-        "placement": "Left",
+        "placement": "Right",
         "verticalPlacement": "Top",
         "mobilePlacement": "Below",
         "imageSource": "/images/case-studies/ux-ui/rapiscan-dashboard.jpg",
-        "imageHeight": 930,
+        "imageHeight": 932,
         "imageWidth": 1440,
         "altText": "Rapiscan Dashboard"
       },
@@ -355,11 +355,11 @@
       },
       "mediaConfiguration": {
         "mediaType": "image",
-        "placement": "Left",
+        "placement": "Right",
         "verticalPlacement": "Top",
         "mobilePlacement": "Below",
         "imageSource": "/images/case-studies/ux-ui/hive-product.jpg",
-        "imageHeight": 930,
+        "imageHeight": 832,
         "imageWidth": 1440,
         "altText": "Hive Product UI"
       },
