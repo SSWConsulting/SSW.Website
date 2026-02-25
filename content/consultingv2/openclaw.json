@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "OpenClaw Consulting & Setup | SSW",
-    "description": "Expert OpenClaw setup and consulting in Australia. Don't go it alone - SSW helps you deploy OpenClaw securely, configure channels, and mitigate risks.",
+    "description": "Expert OpenClaw setup and consulting in Australia. Don't go at it alone - SSW helps you deploy OpenClaw securely, configure channels, and mitigate risks.",
     "canonical": "https://www.ssw.com.au/consulting/openclaw",
     "images": [
       {
@@ -24,22 +24,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "OpenClaw setup done right, **so you don't go it alone**",
+      "heading": "OpenClaw setup done right, **so you don't go at it alone**",
       "isH1": true,
       "description": "OpenClaw is a powerful open-source AI assistant, but deploying it securely across your channels, devices, and workflows takes real expertise. SSW helps you get it right the first time, mitigating risks, hardening security, and configuring everything to fit your business.\n",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "",
-            "description": ""
-          },
-          {
-            "heading": "",
-            "description": ""
-          }
-        ]
-      },
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
@@ -69,7 +56,7 @@
           "guid": "oc1abc",
           "altText": "Expert Setup",
           "icon": "BiSolidGroup",
-          "heading": "Don't Go It Alone",
+          "heading": "Don't Go At It Alone",
           "description": "OpenClaw connects to 50+ services across WhatsApp, Telegram, Slack, Discord, and more. Getting channels, permissions, and models configured correctly is complex. SSW handles the full setup so you can focus on using it, not debugging it.",
           "embeddedButton": {
             "buttonText": ""
