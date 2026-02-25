@@ -135,7 +135,6 @@
         "mediaType": "youtube",
         "placement": "Left",
         "mobilePlacement": "Above",
-        "imageSource": "/images/consulting/openclaw-what-is.png",
         "imageHeight": 700,
         "imageWidth": 1400,
         "youtubeUrl": "https://www.youtube.com/watch?v=ssYt09bCgUY",
@@ -186,7 +185,7 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/consulting/openclaw-risks.png",
+        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/ssw_here_fx41_v2.png",
         "imageHeight": 700,
         "imageWidth": 1400
       },
