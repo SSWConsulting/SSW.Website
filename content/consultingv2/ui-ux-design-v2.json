@@ -187,14 +187,6 @@
       "featureColumns": {
         "twoColumns": false
       },
-      "buttons": [
-        {
-          "buttonText": "See Case Study",
-          "leadCaptureFormOption": "",
-          "buttonLink": "",
-          "colour": 0
-        }
-      ],
       "background": {
         "backgroundColour": 6
       },
@@ -240,12 +232,6 @@
       "featureColumns": {
         "twoColumns": false
       },
-      "buttons": [
-        {
-          "buttonText": "See Case Study",
-          "colour": 0
-        }
-      ],
       "background": {
         "backgroundColour": 4
       },
@@ -294,12 +280,6 @@
       "featureColumns": {
         "twoColumns": false
       },
-      "buttons": [
-        {
-          "buttonText": "See Case Study",
-          "colour": 0
-        }
-      ],
       "background": {
         "backgroundColour": 6,
         "bleed": false
@@ -345,11 +325,6 @@
       "featureColumns": {
         "twoColumns": false
       },
-      "buttons": [
-        {
-          "buttonText": "See Case Study"
-        }
-      ],
       "background": {
         "backgroundColour": 4
       },
@@ -376,12 +351,6 @@
       "featureColumns": {
         "twoColumns": false
       },
-      "buttons": [
-        {
-          "buttonText": "See Case Study",
-          "colour": 0
-        }
-      ],
       "background": {
         "backgroundColour": 6
       },
