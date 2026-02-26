@@ -203,7 +203,7 @@
         "placement": "Left",
         "verticalPlacement": "Top",
         "mobilePlacement": "Below",
-        "imageSource": "/images/case-studies/ux-ui/asf-fund.jpg",
+        "imageSource": "/images/case-studies/ui-ux/asf-fund.jpg",
         "imageHeight": 930,
         "imageWidth": 1440,
         "youtubeUrl": "",
@@ -254,7 +254,7 @@
         "placement": "Right",
         "verticalPlacement": "Top",
         "mobilePlacement": "Below",
-        "imageSource": "/images/case-studies/ux-ui/rapiscan-dashboard.jpg",
+        "imageSource": "/images/case-studies/ui-ux/rapiscan-dashboard.jpg",
         "imageHeight": 932,
         "imageWidth": 1440,
         "altText": "Rapiscan Dashboard"
@@ -309,7 +309,7 @@
         "placement": "Left",
         "verticalPlacement": "Top",
         "mobilePlacement": "Below",
-        "imageSource": "/images/case-studies/ux-ui/timpelle-visualiser.jpg",
+        "imageSource": "/images/case-studies/ui-ux/timpelle-visualiser.jpg",
         "imageHeight": 930,
         "imageWidth": 1440,
         "altText": "Timpelle Consultancy App"
@@ -358,7 +358,7 @@
         "placement": "Right",
         "verticalPlacement": "Top",
         "mobilePlacement": "Below",
-        "imageSource": "/images/case-studies/ux-ui/hive-product.jpg",
+        "imageSource": "/images/case-studies/ui-ux/hive-product.jpg",
         "imageHeight": 832,
         "imageWidth": 1440,
         "altText": "Hive Product UI"
