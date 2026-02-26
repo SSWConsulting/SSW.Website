@@ -1,4 +1,4 @@
-ARG NODE_VERSION=22
+ARG NODE_VERSION=24.13.1
 FROM node:${NODE_VERSION}-alpine AS base
 
 # Install dependencies only when needed
