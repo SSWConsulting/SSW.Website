@@ -1,1 +1,628 @@
-{}
+{
+  "seo": {
+    "title": "UI/UX Design | SSW",
+    "description": "Unlock your brand's potential with awesome interfaces. Check our User Interface & User Experience Design showcase.",
+    "canonical": "https://www.ssw.com.au/consulting/ui-ux-design",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/ui-ux-design.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "UI/UX Design"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "UI/UX Design",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Longing for remarkable **design** impact?",
+      "isH1": true,
+      "description": "Unlock your brand's potential with awesome interfaces. Check our User Interface & User Experience Design showcase\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk",
+        "altText": "UI/UX Design is hard - Why choose SSW"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195,
+          "altText": "Toll Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180,
+          "altText": "Microsoft Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160,
+          "altText": "Symantec Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175,
+          "altText": "Domain Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
+          "altText": "CBA Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175,
+          "altText": "Cisco Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Allianz Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "7mtu8j",
+          "altText": "Lorem Ipsum",
+          "icon": "BiDesktop",
+          "heading": "Complex Desktop Applications",
+          "description": "SSW's strategies for managing deep information architecture and multi-step workflows within professional-grade software. ",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "icon": "BiBarChart",
+          "heading": "Data Visualization & Dashboards",
+          "description": "Examples of how SSW transform raw, complex data into actionable insights through intuitive, high-density visual design.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "5q8kz",
+          "altText": "Lorem Ipsum",
+          "icon": "BiPalette",
+          "heading": "Unified Design Systems",
+          "description": "Demonstration of how SSW maintain brand integrity and functional consistency across diverse platforms. SSW ensure a unified \"all-round\" experience that feels seamless, whether the user is on a mobile device or a complex desktop suite.\n",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Audit Management & Internal CRM Platform (Modernisation)"
+      },
+      "heading": "ASF Audits / HubX",
+      "isH1": false,
+      "description": "ASF Audits / HubX is a modernised audit management and internal CRM platform built for administrators and compliance teams.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "Information Architecture",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "CRM",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "User Interface",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Usability Testing",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Dashboard",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Enterprise UX",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study",
+          "leadCaptureFormOption": "",
+          "buttonLink": "",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Left",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below",
+        "imageSource": "/images/case-studies/ux-ui/asf-fund.jpg",
+        "imageHeight": 930,
+        "imageWidth": 1440,
+        "youtubeUrl": "",
+        "altText": "ASF Fund Audit"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Security Screening and Imaging Software"
+      },
+      "heading": "Rapiscan / ScanOS",
+      "isH1": false,
+      "description": "Rapiscan ScanOS is security screening and imaging software used by operators in airports and high-throughput security environments.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "Security Software",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "User Interface",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "UX Research",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Enterprise UX",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 4
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below",
+        "imageSource": "/images/case-studies/ux-ui/rapiscan-dashboard.jpg",
+        "imageHeight": 932,
+        "imageWidth": 1440,
+        "altText": "Rapiscan Dashboard"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Custom Joinery Visualisation and Quoting Platform"
+      },
+      "heading": "Timpelle Consultancy App",
+      "isH1": false,
+      "description": "A custom joinery visualisation and quoting platform designed for homeowners, interior designers, and consultants configuring bespoke kitchens and interiors.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "User Interface",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "UX Research",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Information Architecture",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Product Design",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Workflow Design",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Left",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below",
+        "imageSource": "/images/case-studies/ux-ui/timpelle-visualiser.jpg",
+        "imageHeight": 930,
+        "imageWidth": 1440,
+        "altText": "Timpelle Consultancy App"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Enterprise data security and compliance website for Hive AI"
+      },
+      "heading": "HIVE Data Security",
+      "isH1": false,
+      "description": "Hive AI’s enterprise data security and compliance website was designed to translate complex technical capability into a clear, credible proof-of-capability for enterprise audiences.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "User Interface",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "UX Research",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Information Architecture",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Enterprise UX",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study"
+        }
+      ],
+      "background": {
+        "backgroundColour": 4
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below",
+        "imageSource": "/images/case-studies/ux-ui/hive-product.jpg",
+        "imageHeight": 832,
+        "imageWidth": 1440,
+        "altText": "Hive Product UI"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Enterprise insurance workflow platform"
+      },
+      "heading": "Berkley Insurance Australia / Broker Portal",
+      "isH1": false,
+      "description": "Berkley Insurance Australia’s Broker Portal is an enterprise insurance workflow platform designed for brokers and underwriting teams managing high-volume, compliance-driven transactions.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "See Case Study",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Below",
+        "youtubeUrl": "https://www.youtube.com/watch?v=YJXoL_RseEA"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "mxnzv",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
+          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "chips": [
+            {
+              "chipText": "Web Development",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "55 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "description": "This session introduces Next.js and shadcn/UI, modern web development tools that simplify creating sleek and responsive websites. Join SSW's Jack Pettit for a beginner-friendly demo covering practical tips to supercharge your projects.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "3twol9",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=PVRNOoO_iXA",
+          "altText": "Unlocking Domain-Driven Design: Exploring Contextive | Gert Marx & Chris Simon",
+          "chips": [
+            {
+              "chipText": "Web Development",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "50 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Building Cross-platform Blazor Desktop Apps with Photino",
+          "description": "Explore Photino, the lightweight way to build native-feeling desktop apps with Blazor. See how it compares to MAUI/Electron & watch a quickstart demo.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "6o99x4do",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/YqbdwNxA_sI?si=JYOgGVdzdk0CzRUi",
+          "altText": "Vercel - Development with Zero Config | Tylah Kapa",
+          "chips": [
+            {
+              "chipText": "Web Development",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "28 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Vercel - Development with Zero Config",
+          "description": "Vercel simplifies website deployment with GitHub integration, real-time editing, and scalable infrastructure. It's free to start and ideal for projects of any size. See Tylah's demo for a hands-on look.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": false,
+      "heading": "Related Technologies",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "wfjccx",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoMongodb",
+          "heading": "MongoDB",
+          "description": "Document database perfect for microservices architecture.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "8n0w1",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoPostgresql",
+          "heading": "PostgreSQL",
+          "description": "Open-source SQL database with excellent performance and reliability",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-databases-developers"
+          }
+        },
+        {
+          "guid": "jtjd57",
+          "altText": "Lorem Ipsum",
+          "icon": "BiLogoReact",
+          "heading": "React",
+          "description": "Industry-leading library for building high-performance, interactive user interfaces with a component-based architecture.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/consulting/react"
+          }
+        },
+        {
+          "guid": "q8nt5v",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidFileJs",
+          "heading": "Next.js",
+          "description": "A powerful React framework that enables server-side rendering and generating static websites for high-performance web applications.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/consulting/nextjs"
+          }
+        },
+        {
+          "guid": "44xfn",
+          "altText": "",
+          "icon": "BiLogoDocker",
+          "heading": "Docker",
+          "description": "Containerization platform that packages applications with their dependencies, enabling consistent deployments across any environment.\n\n",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.youtube.com/watch?v=Yhp37fPn6dQ"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "How does SSW ensure the quality and success of a software project?",
+          "content": "Quality and success are built into our process. We use:\n\n* [Clean Architecture](https://github.com/SSWConsulting/SSW.CleanArchitecture): Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
+        },
+        {
+          "label": "What types of web apps does SSW specialize in building?",
+          "content": "SSW specializes in building complex, custom web applications and APIs from the ground up. This includes CRM systems, ERP systems, line-of-business applications, customer portals, intranets, and mobile applications. We thrive on challenging projects that push the boundaries of technology\n"
+        },
+        {
+          "label": "What technologies does SSW primarily use for development?",
+          "content": "Our core expertise lies in Microsoft technologies, particularly .NET and Azure cloud services. We are also proficient leaders in popular front-end frameworks like Angular and React. However, we prioritize using the most effective technology for the job, ensuring solutions are scalable, testable, and extensible, often utilizing Clean Architecture principles.\n"
+        },
+        {
+          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
+          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+        },
+        {
+          "label": "What is SSW's development process like, and how involved will I need to be?",
+          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+        },
+        {
+          "label": "What happens in the free initial meeting?",
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Need help bringing your ideas to life?",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
