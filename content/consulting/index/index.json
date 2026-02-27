@@ -166,6 +166,18 @@
               "tag": "content/consulting/tag/ai-development.json"
             }
           ]
+        },
+        {
+          "title": "OpenClaw",
+          "description": "Don't go at it alone. SSW helps you set up OpenClaw securely - mitigating risks, configuring channels, and getting it right the first time.",
+          "logo": "/images/thumbs/thumb-openclaw.png",
+          "page": "content/consultingv2/openclaw.json",
+          "externalUrl": "/consulting/openclaw",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
         }
       ]
     },
