@@ -1,0 +1,235 @@
+{
+  "seo": {
+    "title": "OpenClaw Consulting & Setup | SSW",
+    "description": "Expert OpenClaw setup and consulting in Australia. Don't go at it alone - SSW helps you deploy OpenClaw securely, configure channels, and mitigate risks.",
+    "canonical": "https://www.ssw.com.au/consulting/openclaw",
+    "images": [
+      {
+        "url": "/images/consulting/openclaw-hero.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "OpenClaw Consulting & Setup"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "OpenClaw",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "OpenClaw setup done right, **so you don't go at it alone**",
+      "isH1": true,
+      "description": "OpenClaw is a powerful open-source AI assistant, but deploying it securely across your channels, devices, and workflows takes real expertise. SSW helps you get it right the first time, mitigating risks, hardening security, and configuring everything to fit your business.\n",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mobilePlacement": "Above",
+        "imageSource": "/images/consulting/openclaw-hero.jpg",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "oc1abc",
+          "altText": "Expert Setup",
+          "icon": "BiSolidGroup",
+          "heading": "Don't Go At It Alone",
+          "description": "OpenClaw connects to 50+ services across WhatsApp, Telegram, Slack, Discord, and more. Getting channels, permissions, and models configured correctly is complex. SSW handles the full setup so you can focus on using it, not debugging it.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "oc2def",
+          "altText": "Security",
+          "icon": "BiSolidLockAlt",
+          "heading": "Security Done Right",
+          "description": "OpenClaw grants deep system access: shell commands, file operations, and browser control. Without proper guardrails, that's a risk. SSW configures DM pairing policies, sandbox modes, and permission models to keep your data protected and your deployment compliant.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "oc3ghi",
+          "altText": "Custom Configuration",
+          "icon": "BiSolidWrench",
+          "heading": "Tailored to Your Workflow",
+          "description": "From custom skills and channel routing to voice capabilities and model selection, SSW configures OpenClaw around the way you work. We tailor everything from integrations, automations, and AI model choice to your needs, so it delivers real value from day one.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "What is OpenClaw?"
+      },
+      "heading": "A local-first AI assistant that **lives where you already work**",
+      "isH1": false,
+      "description": "OpenClaw is an open-source personal AI assistant that runs on your own hardware and communicates through the chat apps you already use - WhatsApp, Telegram, Slack, Discord, Signal, and more.\n\nUnlike cloud-only AI tools, OpenClaw keeps your data local, learns your preferences with persistent memory, and can automate tasks across your entire system - from managing calendars and clearing inboxes to browsing websites and executing scripts.\n\nIt's extensible with community-built skills, supports voice interaction, and works with leading AI models like Claude and GPT. The result is an AI teammate that's always on, always private, and always adapting to you.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "50+ Integrations",
+            "description": "Connect to messaging apps, productivity tools, smart home devices, and more - all from a single assistant."
+          },
+          {
+            "heading": "Full Privacy Control",
+            "description": "Runs entirely on your hardware. Your data never leaves your network unless you want it to."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Learn more",
+          "buttonLink": "https://openclaw.ai/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "mobilePlacement": "Above",
+        "imageHeight": 700,
+        "imageWidth": 1400,
+        "youtubeUrl": "https://www.youtube.com/watch?v=ssYt09bCgUY",
+        "altText": "\"The wild rise of OpenClaw...\" by Fireship"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Why SSW?"
+      },
+      "heading": "OpenClaw is powerful, but **the risks are real**",
+      "isH1": false,
+      "description": "Self-hosting an AI assistant with shell access, browser control, and messaging integrations is not something to take lightly. SSW helps you navigate the challenges so you get the benefits without the headaches.\n\nWe handle the hard parts - permission model complexity on macOS, channel-specific authentication quirks, AI model selection for your use case, security hardening, and ongoing maintenance. Whether you're deploying for yourself or rolling it out across a team, SSW ensures your OpenClaw instance is secure, stable, and purpose-built.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Risk Mitigation",
+            "description": "From DM pairing policies to sandbox modes, we configure the security guardrails that protect your data and your users."
+          },
+          {
+            "heading": "Ongoing Support",
+            "description": "OpenClaw evolves fast. SSW keeps your deployment up to date, tuned, and running smoothly as the platform grows."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/ssw_here_fx41_v2.png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to Us About Your OpenClaw Project Today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "100px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
