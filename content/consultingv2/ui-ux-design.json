@@ -24,9 +24,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Longing for remarkable **design** impact?",
+      "heading": "We build **beautiful** digital products for startups and enterprise",
       "isH1": true,
-      "description": "Unlock your brand's potential with awesome interfaces. Check our User Interface & User Experience Design showcase\n",
+      "description": "We design mission-critical digital products that are intuitive, scalable, and aligned to enterprise architecture – backed by 30+ years of enterprise software delivery experience.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -105,7 +105,7 @@
     },
     {
       "isStacked": true,
-      "heading": "",
+      "heading": "What we do",
       "isH1": false,
       "body": "",
       "cardStyle": 0,
@@ -115,7 +115,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiDesktop",
           "heading": "Complex Desktop Applications",
-          "description": "SSW's strategies for managing deep information architecture and multi-step workflows within professional-grade software. ",
+          "description": "Convert deep information architecture and multi-step workflows into easy to use software. We build systems to support operational efficiency, and scale with enterprise architecture.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -126,7 +126,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiBarChart",
           "heading": "Data Visualization & Dashboards",
-          "description": "Examples of how SSW transform raw, complex data into actionable insights through intuitive, high-density visual design.",
+          "description": "Transform raw, complex data into actionable insights through intuitive, high-density visual design. Built for operational scanning and speed.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -136,7 +136,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiPalette",
           "heading": "Unified Design Systems",
-          "description": "Demonstration of how SSW maintain brand integrity and functional consistency across diverse platforms. SSW ensure a unified \"all-round\" experience that feels seamless, whether the user is on a mobile device or a complex desktop suite.\n",
+          "description": "Maintain brand integrity and functional consistency across diverse platforms. We ensure a seamless experience across all mediums.\n",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -152,7 +152,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Audit Management & Internal CRM Platform (Modernisation)"
+        "labelText": "Audit Management & Internal CRM Platform Modernisation"
       },
       "heading": "ASF Audits / HubX",
       "isH1": false,
