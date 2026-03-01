@@ -348,6 +348,28 @@
       "isH1": false,
       "description": "An enterprise insurance workflow platform designed for brokers and underwriting teams managing high-volume, compliance-driven transactions. The platform was designed to support complex, multi-step quoting, policy binding, approval, and post-bind processes while maintaining clarity, speed, and daily operational usability. The UX emphasised transaction-first navigation, clear lifecycle states, and strong status visibility to enable efficient operational scanning. Delivered through iterative prototyping and close collaboration with engineering, the design aligned frontend interaction patterns with backend insurance logic to ensure accuracy, compliance, and performance at scale.\n",
       "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "Enterprise UX",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Dashboard",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Information Architecture",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Complex Workflows",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Compliance-Driven",
+          "chipType": "filledChip"
+        }
+      ],
       "featureColumns": {
         "twoColumns": false
       },
