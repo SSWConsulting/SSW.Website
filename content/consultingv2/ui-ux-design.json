@@ -209,7 +209,7 @@
       },
       "heading": "Rapiscan / ScanOS",
       "isH1": false,
-      "description": "Rapiscan ScanOS is security screening and imaging software used by operators in airports and high-throughput security environments.\n",
+      "description": "The end-to-end design of security screening and imaging software used by operators in high-throughput airport environments, where speed and accuracy are critical. The project focused on improving visual recognition, system state clarity, and overall scan-ability while minimising cognitive load during repetitive, time-sensitive tasks. Informed by direct user research conducted in real operational settings, the design prioritised clear status visibility and legibility, accounting for conditions where operators often view screens from a distance rather than directly in front of them.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
