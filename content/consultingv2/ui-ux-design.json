@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "UI/UX Design | SSW",
-    "description": "Unlock your brand's potential with awesome interfaces. Check our User Interface & User Experience Design showcase.",
+    "title": "UI/UX Design Services | SSW",
+    "description": "Transform your product with SSW’s enterprise UI/UX consulting. Boost usability, strategy, and design performance – book a consultation today.",
     "canonical": "https://www.ssw.com.au/consulting/ui-ux-design",
     "images": [
       {
@@ -24,9 +24,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "We build **beautiful** digital products for startups and enterprise",
+      "heading": "UI/UX Design Consulting for **Startups and Enterprise Teams**",
       "isH1": true,
-      "description": "We design mission-critical digital products that are intuitive, scalable, and aligned to enterprise architecture – backed by 30+ years of enterprise software delivery experience.\n",
+      "description": "Transform your product with SSW’s enterprise UI/UX consulting services. Boost usability, strategy, and design performance – book a consultation today.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -34,6 +34,7 @@
         {
           "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
+          "iconFirst": false,
           "colour": 0
         }
       ],
