@@ -35,14 +35,14 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "mediaType": "youtube",
+        "mediaType": "image",
         "placement": "Right",
-        "verticalPlacement": "Centered",
+        "verticalPlacement": "Top",
         "mobilePlacement": "Above",
         "imageHeight": 768,
         "imageWidth": 1024,
-        "youtubeUrl": "https://www.youtube.com/watch?v=zorbI0iDFQk",
-        "altText": "UI/UX Design is hard - Why choose SSW"
+        "youtubeUrl": "",
+        "altText": ""
       },
       "_template": "imageTextBlock"
     },
