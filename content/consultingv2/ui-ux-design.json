@@ -39,10 +39,11 @@
         "placement": "Right",
         "verticalPlacement": "Top",
         "mobilePlacement": "Above",
+        "imageSource": "/images/case-studies/ui-ux/ssw_here_fx41_v2.png",
         "imageHeight": 768,
         "imageWidth": 1024,
         "youtubeUrl": "",
-        "altText": ""
+        "altText": "SSW team collaborating in a UI/UX design workshop"
       },
       "_template": "imageTextBlock"
     },
