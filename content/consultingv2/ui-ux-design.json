@@ -403,32 +403,10 @@
       "cardStyle": 1,
       "cards": [
         {
-          "guid": "mxnzv",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
-          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
-          "chips": [
-            {
-              "chipText": "Web Development",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "55 min.",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
-          "description": "This session introduces Next.js and shadcn/UI, modern web development tools that simplify creating sleek and responsive websites. Join SSW's Jack Pettit for a beginner-friendly demo covering practical tips to supercharge your projects.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
           "guid": "3twol9",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=jIAFVNz2jdc",
-          "altText": "Unlocking Domain-Driven Design: Exploring Contextive | Gert Marx & Chris Simon",
+          "altText": "User Journey Mapping with Bryden Oliver and Jayden Alchin",
           "chips": [
             {
               "chipText": "Product Design & UX",
@@ -449,21 +427,43 @@
         {
           "guid": "6o99x4do",
           "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/YqbdwNxA_sI?si=JYOgGVdzdk0CzRUi",
-          "altText": "Vercel - Development with Zero Config | Tylah Kapa",
+          "youtubeUrl": "https://www.youtube.com/watch?v=l2qCRsz69JI",
+          "altText": "Mastering Web-Based Data Entry: A UX Handbook | Toby Churches | SSW Rules",
+          "chips": [
+            {
+              "chipText": "Data Design",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "7 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Designing Consistent and Streamlined Data Entry Forms",
+          "description": "SSW Software Developer Toby Churches shares practical tips for building consistent, streamlined data entry forms. He covers form states, field formatting, validation, and common pitfalls – showing how thoughtful form design improves user experience and reduces developer frustration.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "mxnzv",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=U8LyScigrcA",
+          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
           "chips": [
             {
               "chipText": "Web Development",
               "chipType": "filledChip"
             },
             {
-              "chipText": "28 min.",
+              "chipText": "55 min.",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Vercel - Development with Zero Config",
-          "description": "Vercel simplifies website deployment with GitHub integration, real-time editing, and scalable infrastructure. It's free to start and ideal for projects of any size. See Tylah's demo for a hands-on look.",
+          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "description": "This session introduces Next.js and shadcn/UI, modern web development tools that simplify creating sleek and responsive websites. Join SSW's Jack Pettit for a beginner-friendly demo covering practical tips to supercharge your projects.",
           "embeddedButton": {
             "buttonText": ""
           }
