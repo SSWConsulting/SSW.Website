@@ -40,8 +40,8 @@
         "verticalPlacement": "Top",
         "mobilePlacement": "Above",
         "imageSource": "/images/case-studies/ui-ux/ssw_here_fx41_v2.png",
-        "imageHeight": 768,
-        "imageWidth": 1024,
+        "imageHeight": 900,
+        "imageWidth": 1200,
         "youtubeUrl": "",
         "altText": "SSW team collaborating in a UI/UX design workshop"
       },
@@ -190,10 +190,10 @@
         "mediaType": "image",
         "placement": "Left",
         "verticalPlacement": "Top",
-        "mobilePlacement": "Below",
+        "mobilePlacement": "Above",
         "imageSource": "/images/case-studies/ui-ux/asf-fund.jpg",
-        "imageHeight": 930,
-        "imageWidth": 1440,
+        "imageHeight": 900,
+        "imageWidth": 1200,
         "youtubeUrl": "",
         "altText": "ASF Fund Audit"
       },
@@ -235,10 +235,10 @@
         "mediaType": "image",
         "placement": "Right",
         "verticalPlacement": "Top",
-        "mobilePlacement": "Below",
+        "mobilePlacement": "Above",
         "imageSource": "/images/case-studies/ui-ux/rapiscan-dashboard.jpg",
-        "imageHeight": 932,
-        "imageWidth": 1440,
+        "imageHeight": 900,
+        "imageWidth": 1200,
         "altText": "Rapiscan Dashboard"
       },
       "_template": "imageTextBlock"
@@ -284,10 +284,10 @@
         "mediaType": "image",
         "placement": "Left",
         "verticalPlacement": "Top",
-        "mobilePlacement": "Below",
+        "mobilePlacement": "Above",
         "imageSource": "/images/case-studies/ui-ux/timpelle-visualiser.jpg",
-        "imageHeight": 930,
-        "imageWidth": 1440,
+        "imageHeight": 900,
+        "imageWidth": 1200,
         "altText": "Timpelle Consultancy App"
       },
       "_template": "imageTextBlock"
@@ -328,10 +328,10 @@
         "mediaType": "image",
         "placement": "Right",
         "verticalPlacement": "Top",
-        "mobilePlacement": "Below",
+        "mobilePlacement": "Above",
         "imageSource": "/images/case-studies/ui-ux/hive-product.jpg",
-        "imageHeight": 832,
-        "imageWidth": 1440,
+        "imageHeight": 900,
+        "imageWidth": 1200,
         "altText": "Hive Product UI"
       },
       "_template": "imageTextBlock"
@@ -376,7 +376,7 @@
         "mediaType": "youtube",
         "placement": "Left",
         "verticalPlacement": "Top",
-        "mobilePlacement": "Below",
+        "mobilePlacement": "Above",
         "youtubeUrl": "https://www.youtube.com/watch?v=YJXoL_RseEA"
       },
       "_template": "imageTextBlock"
