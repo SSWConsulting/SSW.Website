@@ -3,14 +3,7 @@
     "title": "UI/UX Design Services | SSW",
     "description": "Transform your product with SSW’s enterprise UI/UX consulting. Boost usability, strategy, and design performance – book a consultation today.",
     "canonical": "https://www.ssw.com.au/consulting/ui-ux-design",
-    "images": [
-      {
-        "url": "/images/consulting/open-graph/ui-ux-design.jpg",
-        "width": 1200,
-        "height": 630,
-        "alt": "UI/UX Design"
-      }
-    ]
+    "showBreadcrumb": false
   },
   "blocks": [
     {
