@@ -192,9 +192,8 @@
         "verticalPlacement": "Top",
         "mobilePlacement": "Above",
         "imageSource": "/images/case-studies/ui-ux/asf-fund.jpg",
-        "imageHeight": 1172,
-        "imageWidth": 1681,
-        "youtubeUrl": "",
+        "imageHeight": 900,
+        "imageWidth": 1200,
         "altText": "ASF Fund Audit"
       },
       "_template": "imageTextBlock"
