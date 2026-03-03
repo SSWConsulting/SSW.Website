@@ -17,7 +17,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "UI/UX Design Consulting for **Startups and Enterprise Teams**",
+      "heading": "UI/UX Design Consulting for **Startups and Enterprise Solutions**",
       "isH1": true,
       "description": "Transform your product with SSW’s enterprise UI/UX consulting services. Boost usability, strategy, and design performance – book a consultation today.\n",
       "featureColumns": {
@@ -192,8 +192,8 @@
         "verticalPlacement": "Top",
         "mobilePlacement": "Above",
         "imageSource": "/images/case-studies/ui-ux/asf-fund.jpg",
-        "imageHeight": 900,
-        "imageWidth": 1200,
+        "imageHeight": 1172,
+        "imageWidth": 1681,
         "youtubeUrl": "",
         "altText": "ASF Fund Audit"
       },
