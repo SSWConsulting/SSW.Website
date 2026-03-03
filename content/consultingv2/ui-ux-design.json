@@ -459,30 +459,31 @@
     {
       "heading": "Frequently Asked Questions",
       "body": "",
+      "tabletTextAlignment": "",
       "accordionItems": [
         {
-          "label": "How does SSW ensure the quality and success of a software project?",
-          "content": "Quality and success are built into our process. We use:\n\n* [Clean Architecture](https://github.com/SSWConsulting/SSW.CleanArchitecture): Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n"
+          "label": "How does SSW ensure the quality and success of a UI/UX project??",
+          "content": "Quality and success are built into our design process. We focus on:\n\n* Clear Problem Definition: Aligning on users, business goals, constraints, and measurable outcomes before designing.\n* User-Centred Research: Validating assumptions through stakeholder interviews, research, and usability testing.\n* Structured Information Architecture: Designing logical navigation, task flows, and content hierarchy to reduce cognitive load.\n* Prototyping and Iteration: Testing ideas early with wireframes and interactive prototypes to refine usability before development.\n* Developer-Ready Design: Delivering clear specifications, states, and components that align with engineering constraints.\n* Accessibility and Usability Standards: Applying best practices to ensure inclusive, consistent, and scalable design.\n* Collaborative Delivery: Working closely with stakeholders and engineers through regular reviews and feedback loops.\n"
         },
         {
-          "label": "What types of web apps does SSW specialize in building?",
-          "content": "SSW specializes in building complex, custom web applications and APIs from the ground up. This includes CRM systems, ERP systems, line-of-business applications, customer portals, intranets, and mobile applications. We thrive on challenging projects that push the boundaries of technology\n"
+          "label": "What types of products does SSW specialise in designing?",
+          "content": "SSW specialises in designing complex, custom digital products with demanding workflows and high user expectations. This includes enterprise platforms, CRM and ERP systems, line-of-business applications, customer portals, intranets, dashboards, and data-heavy tools.\n\nWe are particularly experienced in designing compliance-driven systems, operational platforms, and multi-step transactional workflows where clarity, efficiency, and accuracy are critical.\n"
         },
         {
-          "label": "What technologies does SSW primarily use for development?",
-          "content": "Our core expertise lies in Microsoft technologies, particularly .NET and Azure cloud services. We are also proficient leaders in popular front-end frameworks like Angular and React. However, we prioritize using the most effective technology for the job, ensuring solutions are scalable, testable, and extensible, often utilizing Clean Architecture principles.\n"
+          "label": "What tools and platforms does SSW use for UI/UX design?",
+          "content": "We primarily use industry-standard design tools such as Figma for wireframing, prototyping, high-fidelity UI design, and design systems.\n\nOur UI/UX consultants work closely with engineering teams using modern front-end frameworks such as React and Angular, ensuring designs are practical, scalable, and aligned with technical constraints.\n\nWe focus on creating developer-ready designs that are consistent, testable, and extensible, supporting long-term maintainability and product growth.\n"
         },
         {
-          "label": "Why should I choose SSW for custom software development instead of hiring developers directly or going offshore?",
-          "content": "Choosing a consultancy like SSW provides certainty and quality. Unlike hiring individuals or offshoring, SSW offers:\n\n* Proven Expertise: Access to highly vetted, experienced developers (including MVPs and Microsoft Regional Directors) skilled in the latest technologies.\n* Repeatable Process: We use established methodologies like Scrum and DevOps to manage risk, ensure transparency, and deliver results predictably.\n* Quality Assurance: Our focus on architecture, best practices (documented in SSW Rules), and rigorous processes ensures a high-quality, maintainable final product.\n* Reduced Risk: We actively manage the inherent risks of software development through clear communication and iterative feedback loops.\n"
+          "label": "Why choose SSW for UI/UX consulting instead of hiring a designer directly or going offshore?",
+          "content": "Choosing SSW provides experience, structure, and alignment with engineering delivery.\n\n* Proven Expertise: You gain access to senior UI/UX specialists experienced in complex enterprise systems, compliance-driven workflows, and high-stakes applications.\n* Engineering Alignment: We design with real technical constraints in mind, working closely with developers to ensure solutions are practical and buildable.\n* Structured Process: Our engagements follow a clear discovery, validation, and iteration approach to reduce ambiguity and ensure measurable progress.\n* Scalable Systems Thinking: We design information architecture and design systems that support long-term maintainability, not just visual polish.\n* Reduced Risk: Through early prototyping, testing, and stakeholder alignment, we surface usability issues early and prevent costly rework later.\n"
         },
         {
-          "label": "What is SSW's development process like, and how involved will I need to be?",
-          "content": "We use the Scrum framework, which is an Agile methodology. This means development happens in iterative cycles (Sprints) with frequent opportunities for feedback.\n\nClient involvement is crucial – you (or a designated Product Owner) are considered an integral part of the team. You'll participate in regular meetings (like Sprint Reviews) to see progress, provide feedback, and help prioritize work, ensuring the final product aligns perfectly with your vision and needs.\n"
+          "label": "What is SSW’s UI/UX design process like, and how involved will I need to be?",
+          "content": "We follow a structured, iterative design process. Engagements typically move through discovery, research, information architecture, wireframing, prototyping, validation, and developer handoff.\n\nClient involvement is important. We work closely with key stakeholders to clarify goals, review concepts, validate priorities, and refine solutions through regular feedback sessions.\n\nYou will participate in workshops and review checkpoints, ensuring the final design aligns with business objectives, user needs, and technical constraints.\n"
         },
         {
-          "label": "What happens in the free initial meeting?",
-          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+          "label": "What happens in the free initial UI/UX consultation?",
+          "content": "In this session, you will speak with a senior UI/UX consultant and a delivery lead. We will review your product, users, business goals, and technical constraints.\n\nWe will ask targeted questions, identify key usability risks and opportunities, and provide initial recommendations on possible next steps, such as a UX audit, discovery workshop, or design sprint.\n\nThe session is obligation-free and designed to help you determine whether SSW is the right partner for your product.\n"
         }
       ],
       "background": {
