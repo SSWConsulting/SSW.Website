@@ -10,16 +10,16 @@
       "background": {
         "backgroundColour": 3
       },
-      "finalBreadcrumb": "UI/UX Design Services | SSW",
+      "finalBreadcrumb": "UI/UX Design Services",
       "_template": "breadcrumbs"
     },
     {
       "topLabel": {
         "labelText": ""
       },
-      "heading": "UI/UX Design Consulting for **Startups and Enterprise Solutions**",
+      "heading": "UI/UX Design Consulting for **Startups and Enterprise**",
       "isH1": true,
-      "description": "Transform your product with SSW’s enterprise UI/UX consulting services. Boost usability, strategy, and design performance – book a consultation today.\n",
+      "description": "From research to developer-ready UI, we design usable, scalable experiences aligned with engineering constraints and business outcomes.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -108,10 +108,20 @@
       "cards": [
         {
           "guid": "7mtu8j",
-          "altText": "Lorem Ipsum",
+          "altText": "",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
           "icon": "BiDesktop",
-          "heading": "Complex Desktop Applications",
-          "description": "Convert deep information architecture and multi-step workflows into easy to use software. We build systems to support operational efficiency, and scale with enterprise architecture.",
+          "heading": "Complex Enterprise Applications",
+          "description": "Enterprise software is often dense and workflow-heavy. We simplify information architecture, navigation, and task flows so users can move faster with confidence.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -120,9 +130,19 @@
         {
           "guid": "lxpq3m",
           "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
           "icon": "BiBarChart",
           "heading": "Data Visualization & Dashboards",
-          "description": "Transform raw, complex data into actionable insights through intuitive, high-density visual design. Built for operational scanning and speed.",
+          "description": "Turn complex datasets into fast, scannable dashboards. We design high-density interfaces that support operational monitoring, decision-making, and performance at scale.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -130,9 +150,19 @@
         {
           "guid": "5q8kz",
           "altText": "Lorem Ipsum",
-          "icon": "BiPalette",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiRecycle",
           "heading": "Modernisation & UX Refactoring",
-          "description": "Modernise legacy interfaces without disrupting core systems. We simplify complex workflows, improve usability, and align user experience with current architecture and performance standards to reduce risk and increase enterprise adoption.",
+          "description": "Modernise legacy software without disrupting core systems. We redesign interfaces incrementally, reduce friction, and improve adoption while aligning with existing architecture.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -147,36 +177,54 @@
       "_template": "cardCarousel"
     },
     {
+      "spacerHeight": "4rem",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
         "labelText": "Audit Management & Internal CRM Platform Modernisation"
       },
       "heading": "ASF Audits / HubX",
       "isH1": false,
-      "description": "A full modernisation of a legacy audit management system and internal CRM used by administrators and compliance teams to manage complex financial audit workflows. The redesign consolidated fragmented legacy screens into a unified dashboard, restructured the end-to-end audit process into one continuous, low-friction workflow, and introduced a flexible, role-based question administration interface to support scalable configuration and governance. The result was a clearer, more efficient platform aligned to real ASF workflows, enabling auditors and administrators across local and overseas teams to operate with greater speed, visibility, and control.\n",
+      "description": "A full modernisation of a legacy audit management system and internal CRM used by administrators and compliance teams to manage complex financial audit workflows. The redesign consolidated fragmented legacy screens into a unified dashboard, restructured the end-to-end audit process into one continuous, low-friction workflow, and introduced a flexible, role-based question administration interface to support scalable configuration and governance. \n\nThe result was a clearer, more efficient platform aligned to real ASF workflows, enabling auditors and administrators across local and overseas teams to operate with greater speed, visibility, and control.\n",
       "tabletTextAlignment": "Left",
       "chips": [
+        {
+          "chipText": "Enterprise UX",
+          "chipType": "filledChip"
+        },
         {
           "chipText": "Information Architecture",
           "chipType": "filledChip"
         },
         {
-          "chipText": "CRM",
+          "chipText": "CRM Design",
           "chipType": "filledChip"
         },
         {
-          "chipText": "User Interface",
+          "chipText": "Workflow Optimisation",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Dashboard Design",
           "chipType": "filledChip"
         },
         {
           "chipText": "Usability Testing",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Dashboard",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Enterprise UX",
           "chipType": "filledChip"
         }
       ],
@@ -184,7 +232,7 @@
         "twoColumns": false
       },
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 4
       },
       "mediaConfiguration": {
         "mediaType": "image",
@@ -199,28 +247,54 @@
       "_template": "imageTextBlock"
     },
     {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 5,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
         "labelText": "Security Screening and Imaging Software"
       },
       "heading": "Rapiscan / ScanOS",
       "isH1": false,
-      "description": "The end-to-end design of security screening and imaging software used by operators in high-throughput airport environments, where speed and accuracy are critical. The project focused on improving visual recognition, system state clarity, and overall scan-ability while minimising cognitive load during repetitive, time-sensitive tasks. Informed by direct user research conducted in real operational settings, the design prioritised clear status visibility and legibility, accounting for conditions where operators often view screens from a distance rather than directly in front of them.\n",
+      "description": "End-to-end UI/UX design of enterprise security screening and imaging software used in high-throughput airport environments. We improved visual recognition, system state clarity, and operational scan-ability to support fast, accurate decision-making under time pressure.\n\nInformed by on-site user research, the interface was optimised for legibility at distance, reduced cognitive load during repetitive tasks, and clearer real-time system feedback. The result was a safer, faster, and more intuitive screening experience built for mission-critical performance.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
-          "chipText": "Security Software",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "User Interface",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "UX Research",
-          "chipType": "filledChip"
-        },
-        {
           "chipText": "Enterprise UX",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Operational Software",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Data Visualisation",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Usability Research",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Workflow Design",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Interface Optimisation",
           "chipType": "filledChip"
         }
       ],
@@ -228,7 +302,7 @@
         "twoColumns": false
       },
       "background": {
-        "backgroundColour": 4
+        "backgroundColour": 5
       },
       "mediaConfiguration": {
         "mediaType": "image",
@@ -243,16 +317,34 @@
       "_template": "imageTextBlock"
     },
     {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 5,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
         "labelText": "Custom Joinery Visualisation and Quoting Platform"
       },
       "heading": "Timpelle Consultancy App",
       "isH1": false,
-      "description": "A custom joinery visualisation and quoting platform designed for homeowners, interior designers, and consultants configuring bespoke kitchens and interiors. The challenge was translating highly interdependent variables – dimensions, materials, finishes, and pricing logic – into an intuitive interface that balanced flexibility with precision while remaining accessible to non-technical users. The solution focused on progressive disclosure of complex options, seamless transitions between 3D visualisation and real-time pricing feedback, and reducing friction between exploration and formal quoting. Delivered end-to-end, the UX transformed manual, error-prone processes into a refined, production-ready digital experience aligned with Timpelle’s premium brand and consultative workflow.\n",
+      "description": "End-to-end UI/UX design of a custom joinery visualisation and quoting platform for homeowners, interior designers, and consultants configuring bespoke kitchens and interiors. We translated complex pricing logic, materials, dimensions, and finish selections into an intuitive product configuration experience.\n\nThrough structured information architecture and progressive disclosure, we connected 3D visualisation with real-time pricing to reduce errors and streamline quoting. The result was a refined, production-ready digital platform that replaced manual processes with a scalable, user-friendly solution.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
-          "chipText": "User Interface",
+          "chipText": "Product Design",
           "chipType": "filledChip"
         },
         {
@@ -264,11 +356,15 @@
           "chipType": "filledChip"
         },
         {
-          "chipText": "Product Design",
+          "chipText": "Workflow Design",
           "chipType": "filledChip"
         },
         {
-          "chipText": "Workflow Design",
+          "chipText": "UI Design",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Quoting Platform",
           "chipType": "filledChip"
         }
       ],
@@ -276,7 +372,7 @@
         "twoColumns": false
       },
       "background": {
-        "backgroundColour": 6,
+        "backgroundColour": 4,
         "bleed": false
       },
       "mediaConfiguration": {
@@ -292,20 +388,112 @@
       "_template": "imageTextBlock"
     },
     {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "4rem",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Why Partner with **SSW**",
+      "isH1": false,
+      "body": "We design clear, scalable, developer-ready experiences that align user needs, engineering constraints, and measurable business outcomes.",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": "Explore our Rules to Better Designers",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-designers",
+          "iconFirst": false,
+          "colour": 1
+        }
+      ],
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "cj3tlm",
+          "altText": "",
+          "icon": "info",
+          "heading": "Design for Real-World Constraints",
+          "description": "Great UX must work within technical and operational realities. We design solutions that respect system architecture, compliance requirements, and engineering constraints.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "f4mq7s",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Turn Complexity into Clarity",
+          "description": "Enterprise software is often dense and workflow-heavy. We simplify information architecture, navigation, and task flows so users can move faster with confidence.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "dz4i1",
+          "altText": "",
+          "icon": "info",
+          "heading": "Reduce Risk Early",
+          "description": "Through structured discovery, prototyping, and validation, we identify issues before development begins. This prevents costly rework and accelerates confident delivery.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "4rem",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
         "labelText": "Enterprise Data Security And Compliance Website For Hive AI"
       },
       "heading": "HIVE Data Security",
       "isH1": false,
-      "description": "End-to-end design of an enterprise website and proof-of-concept dashboard for Hive AI, aimed at security leaders and compliance stakeholders evaluating the platform. The challenge was translating highly technical data security capabilities into a clear, credible proof-of-capability that would support enterprise procurement and sales conversations. The solution established a clean, modern visual language grounded in trust and clarity, with structured information architecture and confident content hierarchy to communicate complex concepts effectively. A complementary dashboard concept was developed to reinforce investor confidence and position Hive as a high-quality, enterprise-ready product from day one.\n",
+      "description": "End-to-end UI/UX design of an enterprise data security and compliance website for Hive AI, built to support procurement conversations with security leaders and compliance stakeholders. We translated complex cybersecurity capabilities into a clear, credible digital experience aligned with enterprise expectations.\n\nThrough structured information architecture, confident visual hierarchy, and a proof-of-concept dashboard, we positioned Hive as a secure, enterprise-ready platform from day one. The result was a high-trust website that supports sales, investor confidence, and technical evaluation.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
-          "chipText": "User Interface",
+          "chipText": "Enterprise UX",
           "chipType": "filledChip"
         },
         {
-          "chipText": "UX Research",
+          "chipText": "Data Security",
           "chipType": "filledChip"
         },
         {
@@ -313,7 +501,15 @@
           "chipType": "filledChip"
         },
         {
-          "chipText": "Enterprise UX",
+          "chipText": "UI Design",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Compliance-Driven",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "B2B Website Design",
           "chipType": "filledChip"
         }
       ],
@@ -336,12 +532,30 @@
       "_template": "imageTextBlock"
     },
     {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 5,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
         "labelText": "Enterprise Insurance Workflow Platform"
       },
       "heading": "Berkley Insurance Australia / Broker Portal",
       "isH1": false,
-      "description": "An enterprise insurance workflow platform designed for brokers and underwriting teams managing high-volume, compliance-driven transactions. The platform was designed to support complex, multi-step quoting, policy binding, approval, and post-bind processes while maintaining clarity, speed, and daily operational usability. The UX emphasised transaction-first navigation, clear lifecycle states, and strong status visibility to enable efficient operational scanning. Delivered through iterative prototyping and close collaboration with engineering, the design aligned frontend interaction patterns with backend insurance logic to ensure accuracy, compliance, and performance at scale.\n",
+      "description": "Enterprise UI/UX design of a compliance-driven insurance workflow platform for brokers and underwriting teams managing high-volume transactions. We streamlined complex quoting, policy binding, approvals, and post-bind processes into a clear, transaction-first experience built for operational speed.\n\nThrough structured information architecture, strong lifecycle visibility, and iterative prototyping alongside engineering, the portal aligned frontend interaction patterns with backend insurance logic. The result was a scalable, high-performance enterprise platform designed for accuracy, compliance, and daily usability.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
@@ -349,7 +563,11 @@
           "chipType": "filledChip"
         },
         {
-          "chipText": "Dashboard",
+          "chipText": "Insurance Platform",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Workflow Design",
           "chipType": "filledChip"
         },
         {
@@ -357,7 +575,7 @@
           "chipType": "filledChip"
         },
         {
-          "chipText": "Complex Workflows",
+          "chipText": "Dashboard Design",
           "chipType": "filledChip"
         },
         {
@@ -369,7 +587,7 @@
         "twoColumns": false
       },
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 5
       },
       "mediaConfiguration": {
         "mediaType": "youtube",
@@ -381,7 +599,16 @@
       "_template": "imageTextBlock"
     },
     {
-      "spacerHeight": "50px",
+      "spacerHeight": "2rem",
+      "background": {
+        "backgroundColour": 5,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "4rem",
       "background": {
         "backgroundColour": 6,
         "backgroundImage": "",
@@ -447,21 +674,12 @@
       "_template": "cardCarousel"
     },
     {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
       "heading": "Frequently Asked Questions",
       "body": "",
       "tabletTextAlignment": "",
       "accordionItems": [
         {
-          "label": "How does SSW ensure the quality and success of a UI/UX project??",
+          "label": "How does SSW ensure the quality and success of a UI/UX project?",
           "content": "Quality and success are built into our design process. We focus on:\n\n* Clear Problem Definition: Aligning on users, business goals, constraints, and measurable outcomes before designing.\n* User-Centred Research: Validating assumptions through stakeholder interviews, research, and usability testing.\n* Structured Information Architecture: Designing logical navigation, task flows, and content hierarchy to reduce cognitive load.\n* Prototyping and Iteration: Testing ideas early with wireframes and interactive prototypes to refine usability before development.\n* Developer-Ready Design: Delivering clear specifications, states, and components that align with engineering constraints.\n* Accessibility and Usability Standards: Applying best practices to ensure inclusive, consistent, and scalable design.\n* Collaborative Delivery: Working closely with stakeholders and engineers through regular reviews and feedback loops.\n"
         },
         {
