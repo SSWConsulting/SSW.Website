@@ -3,6 +3,11 @@
   "url": "/netug/sydney",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
   "startDateTime": "2026-03-18T16:00:00.000Z",
   "endDateTime": "2026-03-18T21:00:00.000Z",
   "startShowBannerDateTime": "2026-03-18T10:00:00.000Z",
