@@ -10,16 +10,16 @@
       "background": {
         "backgroundColour": 3
       },
-      "finalBreadcrumb": "UI/UX Design Services",
+      "finalBreadcrumb": "UI/UX Design",
       "_template": "breadcrumbs"
     },
     {
       "topLabel": {
         "labelText": ""
       },
-      "heading": "UI/UX Design Consulting for **Startups and Enterprise**",
+      "heading": "UI/UX Design Consulting for **Enterprises** and **Startups**",
       "isH1": true,
-      "description": "From research to developer-ready UI, we design usable, scalable experiences aligned with engineering constraints and business outcomes.\n",
+      "description": "Client-friendly, intuitive design that makes complex software feel refreshingly straightforward. We work closely with your team to create digital experiences that support your users and help your business scale with confidence.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -120,8 +120,8 @@
             }
           ],
           "icon": "BiDesktop",
-          "heading": "Complex Enterprise Applications",
-          "description": "Enterprise software is often dense and workflow-heavy. We simplify information architecture, navigation, and task flows so users can move faster with confidence.",
+          "heading": "Enterprise Applications",
+          "description": "We turn complicated workflows into simple experiences. Empower your team to work faster, smarter, and with confidence.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -142,7 +142,7 @@
           ],
           "icon": "BiBarChart",
           "heading": "Data Visualization & Dashboards",
-          "description": "Turn complex datasets into fast, scannable dashboards. We design high-density interfaces that support operational monitoring, decision-making, and performance at scale.",
+          "description": "Transform a sea of numbers into clear, engaging visuals. We create beautiful custom dashboards that make spotting trends and making business decisions a breeze.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -161,8 +161,8 @@
             }
           ],
           "icon": "BiRecycle",
-          "heading": "Modernisation & UX Refactoring",
-          "description": "Modernise legacy software without disrupting core systems. We redesign interfaces incrementally, reduce friction, and improve adoption while aligning with existing architecture.",
+          "heading": "Modernisation & Facelifts",
+          "description": "Breathe new life into your current systems. We update your software’s look and feel to delight your users, all without missing a beat in your daily operations.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -196,35 +196,23 @@
     },
     {
       "topLabel": {
-        "labelText": "Audit Management & Internal CRM Platform Modernisation"
+        "labelText": "Case Study"
       },
-      "heading": "ASF Audits / HubX",
+      "heading": "Rapiscan – **Smarter Security Software**",
       "isH1": false,
-      "description": "A full modernisation of a legacy audit management system and internal CRM used by administrators and compliance teams to manage complex financial audit workflows. The redesign consolidated fragmented legacy screens into a unified dashboard, restructured the end-to-end audit process into one continuous, low-friction workflow, and introduced a flexible, role-based question administration interface to support scalable configuration and governance. \n\nThe result was a clearer, more efficient platform aligned to real ASF workflows, enabling auditors and administrators across local and overseas teams to operate with greater speed, visibility, and control.\n",
+      "description": "We reimagined the screening experience to make high-pressure airport environments feel calm and controlled. By making information easy to see at a glance, we ensured operators can make fast, confident decisions that keep travelers moving safely and on time. The result is a reliable system that supports staff and improves the journey for everyone.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
-          "chipText": "Enterprise UX",
+          "chipText": "Airport & Border Security",
           "chipType": "filledChip"
         },
         {
-          "chipText": "Information Architecture",
+          "chipText": "Enterprise Software",
           "chipType": "filledChip"
         },
         {
-          "chipText": "CRM Design",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Workflow Optimisation",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Dashboard Design",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Usability Testing",
+          "chipText": "Data Visualisation",
           "chipType": "filledChip"
         }
       ],
@@ -233,76 +221,6 @@
       },
       "background": {
         "backgroundColour": 4
-      },
-      "mediaConfiguration": {
-        "mediaType": "image",
-        "placement": "Left",
-        "verticalPlacement": "Top",
-        "mobilePlacement": "Above",
-        "imageSource": "/images/case-studies/ui-ux/asf-fund.jpg",
-        "imageHeight": 900,
-        "imageWidth": 1200,
-        "altText": "ASF Fund Audit"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "2rem",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "spacerHeight": "2rem",
-      "background": {
-        "backgroundColour": 5,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": "Security Screening and Imaging Software"
-      },
-      "heading": "Rapiscan / ScanOS",
-      "isH1": false,
-      "description": "End-to-end UI/UX design of enterprise security screening and imaging software used in high-throughput airport environments. We improved visual recognition, system state clarity, and operational scan-ability to support fast, accurate decision-making under time pressure.\n\nInformed by on-site user research, the interface was optimised for legibility at distance, reduced cognitive load during repetitive tasks, and clearer real-time system feedback. The result was a safer, faster, and more intuitive screening experience built for mission-critical performance.\n",
-      "tabletTextAlignment": "Left",
-      "chips": [
-        {
-          "chipText": "Enterprise UX",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Operational Software",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Data Visualisation",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Usability Research",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Workflow Design",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Interface Optimisation",
-          "chipType": "filledChip"
-        }
-      ],
-      "featureColumns": {
-        "twoColumns": false
-      },
-      "background": {
-        "backgroundColour": 5
       },
       "mediaConfiguration": {
         "mediaType": "image",
@@ -319,11 +237,47 @@
     {
       "spacerHeight": "2rem",
       "background": {
-        "backgroundColour": 5,
+        "backgroundColour": 4,
         "backgroundImage": "",
         "bleed": false
       },
       "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "HIVE – **Website that Builds Trust**",
+      "isH1": false,
+      "description": "We designed a clear and trustworthy website for Hive AI to showcase their data security and compliance platform. The site helps security leaders and decision-makers quickly understand Hive’s capabilities, building confidence and supporting early conversations with enterprise customers and investors.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "Data Security",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Marketing Website",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "background": {
+        "backgroundColour": 4
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Left",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/case-studies/ui-ux/hive-product.jpg",
+        "imageHeight": 900,
+        "imageWidth": 1200,
+        "altText": "Hive Product UI"
+      },
+      "_template": "imageTextBlock"
     },
     {
       "spacerHeight": "2rem",
@@ -336,35 +290,19 @@
     },
     {
       "topLabel": {
-        "labelText": "Custom Joinery Visualisation and Quoting Platform"
+        "labelText": "Case Study"
       },
-      "heading": "Timpelle Consultancy App",
+      "heading": "Berkley – **Insurance Workflow Platform**",
       "isH1": false,
-      "description": "End-to-end UI/UX design of a custom joinery visualisation and quoting platform for homeowners, interior designers, and consultants configuring bespoke kitchens and interiors. We translated complex pricing logic, materials, dimensions, and finish selections into an intuitive product configuration experience.\n\nThrough structured information architecture and progressive disclosure, we connected 3D visualisation with real-time pricing to reduce errors and streamline quoting. The result was a refined, production-ready digital platform that replaced manual processes with a scalable, user-friendly solution.\n",
+      "description": "We partnered with Berkley Insurance Australia to design a clear and reliable platform for brokers and underwriting teams. The experience makes it easier to manage quotes, approvals, and policies, helping teams work efficiently while supporting accurate and compliant insurance operations.\n",
       "tabletTextAlignment": "Left",
       "chips": [
         {
-          "chipText": "Product Design",
+          "chipText": "Insurance",
           "chipType": "filledChip"
         },
         {
-          "chipText": "UX Research",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Information Architecture",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Workflow Design",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "UI Design",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Quoting Platform",
+          "chipText": "Enterprise Software",
           "chipType": "filledChip"
         }
       ],
@@ -372,18 +310,14 @@
         "twoColumns": false
       },
       "background": {
-        "backgroundColour": 4,
-        "bleed": false
+        "backgroundColour": 4
       },
       "mediaConfiguration": {
-        "mediaType": "image",
-        "placement": "Left",
+        "mediaType": "youtube",
+        "placement": "Right",
         "verticalPlacement": "Top",
         "mobilePlacement": "Above",
-        "imageSource": "/images/case-studies/ui-ux/timpelle-visualiser.jpg",
-        "imageHeight": 900,
-        "imageWidth": 1200,
-        "altText": "Timpelle Consultancy App"
+        "youtubeUrl": "https://www.youtube.com/watch?v=YJXoL_RseEA"
       },
       "_template": "imageTextBlock"
     },
@@ -407,9 +341,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Why Partner with **SSW**",
+      "heading": "Why Partner with SSW",
       "isH1": false,
-      "body": "We design clear, scalable, developer-ready experiences that align user needs, engineering constraints, and measurable business outcomes.",
+      "body": "We help organisations create clear, easy-to-use digital experiences that customers enjoy and teams are proud to deliver. Our approach focuses on practical outcomes, trusted collaboration, and products that support real business growth.",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
@@ -429,8 +363,8 @@
           "guid": "cj3tlm",
           "altText": "",
           "icon": "info",
-          "heading": "Design for Real-World Constraints",
-          "description": "Great UX must work within technical and operational realities. We design solutions that respect system architecture, compliance requirements, and engineering constraints.",
+          "heading": "Design That Works in the Real World",
+          "description": "We start by understanding how your organisation works – your goals, your customers, and your team. From there, we help shape a practical, reliable experience that supports your business every day.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -439,8 +373,8 @@
           "guid": "f4mq7s",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Turn Complexity into Clarity",
-          "description": "Enterprise software is often dense and workflow-heavy. We simplify information architecture, navigation, and task flows so users can move faster with confidence.",
+          "heading": "Turning Complexity into Clarity",
+          "description": "If your product or service feels complex, we help make it intuitive. Together, we organise information and flows so your audience can quickly understand what you offer and engage with confidence.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -449,8 +383,8 @@
           "guid": "dz4i1",
           "altText": "",
           "icon": "info",
-          "heading": "Reduce Risk Early",
-          "description": "Through structured discovery, prototyping, and validation, we identify issues before development begins. This prevents costly rework and accelerates confident delivery.",
+          "heading": "Confidence from Day One",
+          "description": "We start by working closely with you to explore ideas, uncover opportunities, and make informed decisions early. With a clear direction in place, your team can move forward with confidence from concept to launch.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -460,161 +394,6 @@
         "backgroundColour": 6
       },
       "_template": "cardCarousel"
-    },
-    {
-      "spacerHeight": "4rem",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "spacerHeight": "2rem",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": "Enterprise Data Security And Compliance Website For Hive AI"
-      },
-      "heading": "HIVE Data Security",
-      "isH1": false,
-      "description": "End-to-end UI/UX design of an enterprise data security and compliance website for Hive AI, built to support procurement conversations with security leaders and compliance stakeholders. We translated complex cybersecurity capabilities into a clear, credible digital experience aligned with enterprise expectations.\n\nThrough structured information architecture, confident visual hierarchy, and a proof-of-concept dashboard, we positioned Hive as a secure, enterprise-ready platform from day one. The result was a high-trust website that supports sales, investor confidence, and technical evaluation.\n",
-      "tabletTextAlignment": "Left",
-      "chips": [
-        {
-          "chipText": "Enterprise UX",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Data Security",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Information Architecture",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "UI Design",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Compliance-Driven",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "B2B Website Design",
-          "chipType": "filledChip"
-        }
-      ],
-      "featureColumns": {
-        "twoColumns": false
-      },
-      "background": {
-        "backgroundColour": 4
-      },
-      "mediaConfiguration": {
-        "mediaType": "image",
-        "placement": "Right",
-        "verticalPlacement": "Top",
-        "mobilePlacement": "Above",
-        "imageSource": "/images/case-studies/ui-ux/hive-product.jpg",
-        "imageHeight": 900,
-        "imageWidth": 1200,
-        "altText": "Hive Product UI"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "2rem",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "spacerHeight": "2rem",
-      "background": {
-        "backgroundColour": 5,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": "Enterprise Insurance Workflow Platform"
-      },
-      "heading": "Berkley Insurance Australia / Broker Portal",
-      "isH1": false,
-      "description": "Enterprise UI/UX design of a compliance-driven insurance workflow platform for brokers and underwriting teams managing high-volume transactions. We streamlined complex quoting, policy binding, approvals, and post-bind processes into a clear, transaction-first experience built for operational speed.\n\nThrough structured information architecture, strong lifecycle visibility, and iterative prototyping alongside engineering, the portal aligned frontend interaction patterns with backend insurance logic. The result was a scalable, high-performance enterprise platform designed for accuracy, compliance, and daily usability.\n",
-      "tabletTextAlignment": "Left",
-      "chips": [
-        {
-          "chipText": "Enterprise UX",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Insurance Platform",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Workflow Design",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Information Architecture",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Dashboard Design",
-          "chipType": "filledChip"
-        },
-        {
-          "chipText": "Compliance-Driven",
-          "chipType": "filledChip"
-        }
-      ],
-      "featureColumns": {
-        "twoColumns": false
-      },
-      "background": {
-        "backgroundColour": 5
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Left",
-        "verticalPlacement": "Top",
-        "mobilePlacement": "Above",
-        "youtubeUrl": "https://www.youtube.com/watch?v=YJXoL_RseEA"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "2rem",
-      "background": {
-        "backgroundColour": 5,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "spacerHeight": "4rem",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
     },
     {
       "isStacked": true,
@@ -707,30 +486,6 @@
         "backgroundColour": 6
       },
       "_template": "accordionBlock"
-    },
-    {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "Need help bringing your ideas to life?",
-      "isH1": false,
-      "description": "Connect with our Account Managers to discuss how we can help.\n",
-      "featureColumns": {
-        "twoColumns": true
-      },
-      "buttons": [
-        {
-          "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "colour": 0
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": true
-      },
-      "_template": "imageTextBlock"
     },
     {
       "spacerHeight": "150px",
