@@ -407,15 +407,6 @@ export const consultingSchema: Collection = {
               name: "content",
             },
           ],
-          ui: {
-            validate: (value) => {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              if (value?.some((item) => !item || !item.type || !item.content)) {
-                return "Please fill out all fields in each item";
-              }
-            },
-          },
         },
       ],
     },

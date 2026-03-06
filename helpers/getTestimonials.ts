@@ -5,6 +5,10 @@ export type TestimonialType = {
   avatar?: string;
   company?: string;
   body?: string;
+  link?: {
+    url?: string;
+    title?: string;
+  };
 };
 const SSWInternalTestimonialCategories = ["internship", "brainstorming"];
 
@@ -26,7 +30,6 @@ export const getTestimonialsByCategories = (
     )
     .map((testimonial) => testimonial as TestimonialType)
     .slice(0, 3);
-
   return testimonialsResult;
 };
 
@@ -49,7 +52,6 @@ export const getRandomTestimonialsByCategory = async (
     .map((testimonial) => testimonial as TestimonialType)
     ?.sort(() => 0.5 - Math.random())
     ?.slice(0, 3);
-
   return testimonialsResult;
 };
 
