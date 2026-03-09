@@ -204,7 +204,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiLogoMicrosoft",
           "heading": "Azure OpenAI Service",
-          "description": "Build intelligent voice and chat experiences powered by GPT-4 — the engine behind SSW's AI phone system.",
+          "description": "Build intelligent voice and chat experiences powered by GPT-4 - the engine behind SSW's AI phone system.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/consulting/power-platform"
@@ -215,7 +215,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiCommentCheck",
           "heading": "Azure AI Speech",
-          "description": "Real-time speech-to-text and text-to-speech at enterprise scale — the voice layer of every AI phone interaction.",
+          "description": "Real-time speech-to-text and text-to-speech at enterprise scale - the voice layer of every AI phone interaction.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/consulting/zendesk"
@@ -237,7 +237,7 @@
           "altText": "Lorem Ipsum",
           "icon": "BiFingerprint",
           "heading": "Power Automate",
-          "description": "Automate the actions triggered by AI phone calls — from CRM updates to ticket creation and follow-up emails.",
+          "description": "Automate the actions triggered by AI phone calls - from CRM updates to ticket creation and follow-up emails.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id/"
