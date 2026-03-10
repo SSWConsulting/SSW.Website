@@ -1,0 +1,446 @@
+{
+  "seo": {
+    "title": "UI/UX Design Services | SSW",
+    "description": "Transform your product with SSW’s enterprise UI/UX consulting. Boost usability, strategy, and design performance – book a consultation today.",
+    "canonical": "https://www.ssw.com.au/consulting/ui-ux-design",
+    "showBreadcrumb": false
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 3
+      },
+      "finalBreadcrumb": "UI/UX Design",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "UI/UX Design Consulting for **Enterprises** and **Startups**",
+      "isH1": true,
+      "description": "Client-friendly, intuitive design that makes complex software feel refreshingly straightforward. We work closely with your team to create digital experiences that support your users and help your business scale with confidence.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "iconFirst": false,
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/case-studies/ui-ux/ssw_here_fx41_v2.png",
+        "imageHeight": 900,
+        "imageWidth": 1200,
+        "youtubeUrl": "",
+        "altText": "SSW team collaborating in a UI/UX design workshop"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195,
+          "altText": "Toll Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180,
+          "altText": "Microsoft Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160,
+          "altText": "Symantec Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175,
+          "altText": "Domain Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170,
+          "altText": "CBA Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175,
+          "altText": "Cisco Logo"
+        },
+        {
+          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Allianz Logo"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Explore our UI/UX design capabilities",
+      "isH1": false,
+      "body": "",
+      "tabletTextAlignment": "Center",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "7mtu8j",
+          "altText": "",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiDesktop",
+          "heading": "Enterprise Applications",
+          "description": "We turn complicated workflows into simple experiences. Empower your team to work faster, smarter, and with confidence.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "lxpq3m",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiBarChart",
+          "heading": "Data Visualization & Dashboards",
+          "description": "Transform a sea of numbers into clear, engaging visuals. We create beautiful custom dashboards that make spotting trends and making business decisions a breeze.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "5q8kz",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            },
+            {
+              "chipText": "",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "BiRecycle",
+          "heading": "Modernisation & Facelifts",
+          "description": "Breathe new life into your current systems. We update your software’s look and feel to delight your users, all without missing a beat in your daily operations.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "Rapiscan – **Smarter Security Software**",
+      "isH1": false,
+      "description": "We reimagined the screening experience to make high-pressure airport environments feel calm and controlled. By making information easy to see at a glance, we ensured operators can make fast, confident decisions that keep travelers moving safely and on time. The result is a reliable system that supports staff and improves the journey for everyone.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "Airport & Border Security",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Enterprise Software",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Data Visualisation",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "background": {
+        "backgroundColour": 5
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/case-studies/ui-ux/rapiscan-dashboard.jpg",
+        "imageHeight": 900,
+        "imageWidth": 1200,
+        "altText": "Rapiscan Dashboard"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "HIVE – **Website that Builds Trust**",
+      "isH1": false,
+      "description": "We designed a clear and trustworthy website for Hive AI to showcase their data security and compliance platform. The site helps security leaders and decision-makers quickly understand Hive’s capabilities, building confidence and supporting early conversations with enterprise customers and investors.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "Data Security",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Marketing Website",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "background": {
+        "backgroundColour": 5
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Left",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/case-studies/ui-ux/hive-product.jpg",
+        "imageHeight": 900,
+        "imageWidth": 1200,
+        "altText": "Hive Product UI"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "Berkley – **Insurance Workflow Platform**",
+      "isH1": false,
+      "description": "We partnered with Berkley Insurance Australia to design a clear and reliable platform for brokers and underwriting teams. The experience makes it easier to manage quotes, approvals, and policies, helping teams work efficiently while supporting accurate and compliant insurance operations.\n",
+      "tabletTextAlignment": "Left",
+      "chips": [
+        {
+          "chipText": "Insurance",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "Enterprise Software",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "background": {
+        "backgroundColour": 5
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Top",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://www.youtube.com/watch?v=YJXoL_RseEA"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Why Partner with SSW",
+      "isH1": false,
+      "body": "We help organisations create clear, easy-to-use digital experiences that customers enjoy and teams are proud to deliver. Our approach focuses on practical outcomes, trusted collaboration, and products that support real business growth.",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": "Explore our Rules to Better Designers",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-designers",
+          "iconFirst": false,
+          "colour": 1
+        }
+      ],
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "cj3tlm",
+          "altText": "",
+          "icon": "info",
+          "heading": "Design That Works in the Real World",
+          "description": "We start by understanding how your organisation works – your goals, your customers, and your team. From there, we help shape a practical, reliable experience that supports your business every day.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "f4mq7s",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Turning Complexity into Clarity",
+          "description": "If your product or service feels complex, we help make it intuitive. Together, we organise information and flows so your audience can quickly understand what you offer and engage with confidence.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "dz4i1",
+          "altText": "",
+          "icon": "info",
+          "heading": "Confidence from Day One",
+          "description": "We start by working closely with you to explore ideas, uncover opportunities, and make informed decisions early. With a clear direction in place, your team can move forward with confidence from concept to launch.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 3
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "3twol9",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=jIAFVNz2jdc",
+          "altText": "User Journey Mapping with Bryden Oliver and Jayden Alchin",
+          "chips": [
+            {
+              "chipText": "Product Design & UX",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "7 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Create Better User Experiences With Journey Mapping",
+          "description": "Mapping a specific user journey enables product teams to make more informed, strategic decisions. SSW’s Senior UI/UX Designer, Jayden Alchin, demonstrates how to create an effective journey map and translate it into actionable insights.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "6o99x4do",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=l2qCRsz69JI",
+          "altText": "Mastering Web-Based Data Entry: A UX Handbook | Toby Churches | SSW Rules",
+          "chips": [
+            {
+              "chipText": "Data Design",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "7 min.",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Designing Consistent and Streamlined Data Entry Forms",
+          "description": "SSW Software Developer Toby Churches shares practical tips for building consistent, streamlined data entry forms. He covers form states, field formatting, validation, and common pitfalls – showing how thoughtful form design improves user experience and reduces developer frustration.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "tabletTextAlignment": "",
+      "accordionItems": [
+        {
+          "label": "How does SSW ensure the quality and success of a UI/UX project?",
+          "content": "Quality and success are built into our design process. We focus on:\n\n* Clear Problem Definition: Aligning on users, business goals, constraints, and measurable outcomes before designing.\n* User-Centred Research: Validating assumptions through stakeholder interviews, research, and usability testing.\n* Structured Information Architecture: Designing logical navigation, task flows, and content hierarchy to reduce cognitive load.\n* Prototyping and Iteration: Testing ideas early with wireframes and interactive prototypes to refine usability before development.\n* Developer-Ready Design: Delivering clear specifications, states, and components that align with engineering constraints.\n* Accessibility and Usability Standards: Applying best practices to ensure inclusive, consistent, and scalable design.\n* Collaborative Delivery: Working closely with stakeholders and engineers through regular reviews and feedback loops.\n"
+        },
+        {
+          "label": "What types of products does SSW specialise in designing?",
+          "content": "SSW specialises in designing complex, custom digital products with demanding workflows and high user expectations. This includes enterprise platforms, CRM and ERP systems, line-of-business applications, customer portals, intranets, dashboards, and data-heavy tools.\n\nWe are particularly experienced in designing compliance-driven systems, operational platforms, and multi-step transactional workflows where clarity, efficiency, and accuracy are critical.\n"
+        },
+        {
+          "label": "What tools and platforms does SSW use for UI/UX design?",
+          "content": "We primarily use industry-standard design tools such as Figma for wireframing, prototyping, high-fidelity UI design, and design systems.\n\nOur UI/UX consultants work closely with engineering teams using modern front-end frameworks such as React and Angular, ensuring designs are practical, scalable, and aligned with technical constraints.\n\nWe focus on creating developer-ready designs that are consistent, testable, and extensible, supporting long-term maintainability and product growth.\n"
+        },
+        {
+          "label": "Why choose SSW for UI/UX consulting instead of hiring a designer directly or going offshore?",
+          "content": "Choosing SSW provides experience, structure, and alignment with engineering delivery.\n\n* Proven Expertise: You gain access to senior UI/UX specialists experienced in complex enterprise systems, compliance-driven workflows, and high-stakes applications.\n* Engineering Alignment: We design with real technical constraints in mind, working closely with developers to ensure solutions are practical and buildable.\n* Structured Process: Our engagements follow a clear discovery, validation, and iteration approach to reduce ambiguity and ensure measurable progress.\n* Scalable Systems Thinking: We design information architecture and design systems that support long-term maintainability, not just visual polish.\n* Reduced Risk: Through early prototyping, testing, and stakeholder alignment, we surface usability issues early and prevent costly rework later.\n"
+        },
+        {
+          "label": "What is SSW’s UI/UX design process like, and how involved will I need to be?",
+          "content": "We follow a structured, iterative design process. Engagements typically move through discovery, research, information architecture, wireframing, prototyping, validation, and developer handoff.\n\nClient involvement is important. We work closely with key stakeholders to clarify goals, review concepts, validate priorities, and refine solutions through regular feedback sessions.\n\nYou will participate in workshops and review checkpoints, ensuring the final design aligns with business objectives, user needs, and technical constraints.\n"
+        },
+        {
+          "label": "What happens in the free initial UI/UX consultation?",
+          "content": "In this session, you will speak with a senior UI/UX consultant and a delivery lead. We will review your product, users, business goals, and technical constraints.\n\nWe will ask targeted questions, identify key usability risks and opportunities, and provide initial recommendations on possible next steps, such as a UX audit, discovery workshop, or design sprint.\n\nThe session is obligation-free and designed to help you determine whether SSW is the right partner for your product.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
