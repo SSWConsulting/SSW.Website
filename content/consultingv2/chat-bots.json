@@ -26,7 +26,7 @@
       },
       "heading": "Want a AI powered **chatbot** on your website?",
       "isH1": true,
-      "description": "Our AI-powered chatbots are redefining customer service. Delivering instant, intelligent, and personalized support 24/7. \n",
+      "description": "Our AI-powered chatbots are redefining customer service. Delivering instant, intelligent, and personalized support 24/7.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -160,9 +160,9 @@
         {
           "guid": "hukqtq",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidLockAlt",
-          "heading": "Secure, Compliant Implementation",
-          "description": "AI models offer incredible capabilities but require proper security and compliance guardrails. We implement safeguards that protect your customer data, ensuring your solutions stay both powerful and compliant.",
+          "icon": "BiSolidCustomize",
+          "heading": "Customization",
+          "description": "You choose what information to train your bot with – webpages, documents, and/or direct text. The chatbot is trained on all your sources of knowledge and can be configured to stay updated by automatically re-training itself every 24 hours.",
           "embeddedButton": {
             "buttonText": ""
           }
