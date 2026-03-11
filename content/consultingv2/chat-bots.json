@@ -176,26 +176,6 @@
           "embeddedButton": {
             "buttonText": ""
           }
-        },
-        {
-          "guid": "mxn3aa",
-          "altText": "Lorem Ipsum",
-          "icon": "SiLightning",
-          "heading": "Efficiency Saving",
-          "description": "Chatbots can handle customer queries simultaneously, eliminating the need for a large customer service team. Our efficient setup makes it cost-effective and quick to implement a chatbot. With SSW, you get a high-quality chatbot within a day.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "tfr5xr",
-          "altText": "Lorem Ipsum",
-          "icon": "SiGoogleclassroom",
-          "heading": "SSW Training",
-          "description": "SSW specializes in fine-tuning AI algorithms to match customer needs. We design your chatbot for high reliability, so your customers always have an answer. Plus, our expert training ensures you know how to manage and monitor the chatbot effectively.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
         }
       ],
       "background": {
