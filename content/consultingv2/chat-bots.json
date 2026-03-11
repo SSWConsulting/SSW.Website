@@ -176,6 +176,16 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "mxn3aa",
+          "altText": "Lorem Ipsum",
+          "icon": "SiLightning",
+          "heading": "Efficiency Saving",
+          "description": "Chatbots can handle customer queries simultaneously, eliminating the need for a large customer service team. Our efficient setup makes it cost-effective and quick to implement a chatbot. With SSW, you get a high-quality chatbot within a day.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
       "background": {
