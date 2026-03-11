@@ -158,21 +158,21 @@
           }
         },
         {
-          "guid": "hukqtq",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidCustomize",
-          "heading": "Customization",
-          "description": "You choose what information to train your bot with – webpages, documents, and/or direct text. The chatbot is trained on all your sources of knowledge and can be configured to stay updated by automatically re-training itself every 24 hours.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
           "guid": "65qp3c",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidStar",
           "heading": "Customer Experience",
           "description": "Our chatbots talk like real people and have expert emotional intelligence. Whether you run a small shop or a big company, our tailored bots make customer service easy and personal.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "hukqtq",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidCustomize",
+          "heading": "Customization",
+          "description": "You choose what information to train your bot with – webpages, documents, and/or direct text. The chatbot is trained on all your sources of knowledge and can be configured to stay updated by automatically re-training itself every 24 hours.",
           "embeddedButton": {
             "buttonText": ""
           }
