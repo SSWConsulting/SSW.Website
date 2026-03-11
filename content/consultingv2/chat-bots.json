@@ -150,9 +150,9 @@
         {
           "guid": "ib0xbk",
           "altText": "Lorem Ipsum",
-          "icon": "BiLogoMicrosoft",
-          "heading": "Intelligent Automation, Precisely Applied",
-          "description": "We build automation that cuts through complexity and adapts to your specific business needs. No generic solutions, just practical AI that solves real problems.",
+          "icon": "BiSupport",
+          "heading": "CUSTOMER SUPPORT",
+          "description": "Get customer support that never sleeps. An AI-powered chatbot gives your customers immediate assistance, day or night – and costs less!just practical AI that solves real problems.",
           "embeddedButton": {
             "buttonText": ""
           }
