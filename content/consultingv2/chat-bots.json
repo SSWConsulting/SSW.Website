@@ -373,6 +373,28 @@
           }
         },
         {
+          "guid": "akn4ur",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/LrnMP8T4HDE?si=uorL-73cVGtHxMTh",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Strategy",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "18 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": " Create a Killer Chatbot with OpenAI",
+          "description": "Discover the power of the OpenAI API, its ability to generate intelligent responses, and the step-by-step process of building effective chatbots. Enhance user experience and save time by harnessing the natural language processing capabilities of ChatGPT.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "20ehn",
           "mediaType": "youtube",
           "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
@@ -413,28 +435,6 @@
           "icon": "info",
           "heading": "How to supercharge a company with AI",
           "description": "Supercharge your company with AI!  🚀  See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features.  Discover actionable tips to implement AI",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "akn4ur",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/LrnMP8T4HDE?si=uorL-73cVGtHxMTh",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "AI Strategy",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "1 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": " Create a Killer Chatbot with OpenAI",
-          "description": "Discover the power of the OpenAI API, its ability to generate intelligent responses, and the step-by-step process of building effective chatbots. Enhance user experience and save time by harnessing the natural language processing capabilities of ChatGPT.",
           "embeddedButton": {
             "buttonText": ""
           }
