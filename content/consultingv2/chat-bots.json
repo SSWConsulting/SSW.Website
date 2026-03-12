@@ -352,7 +352,7 @@
         {
           "guid": "hhszy",
           "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/sVELvhGdSfs?si=YgXhKVW1AOiyx-CQ",
+          "youtubeUrl": "https://youtu.be/F06MV1qm51Y?si=u1mOLqpFCaty4NrL",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -360,13 +360,13 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "3 min",
+              "chipText": "12 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
-          "description": "Confused about selecting the perfect AI model? Join Isaac Lombard and Caleb Williams as they explore how GitHub Models simplifies the process! Discover the ease of finding and utilizing AI models for your projects in this quick guide.",
+          "heading": " 3 Creative Uses for OpenAI API ",
+          "description": "From smart home automation to content generation, he unveils three groundbreaking ideas that leverage the power of AI. Discover how chat GPT can output commands and instructions for other systems, making your home smarter and more efficient. Witness the potential of automated content generation and its impact on your productivity. Get inspired and join the future of innovation!",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
