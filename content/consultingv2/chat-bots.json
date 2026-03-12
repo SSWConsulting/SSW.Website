@@ -420,7 +420,7 @@
         {
           "guid": "akn4ur",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=_Lx1DmMMJbg",
+          "youtubeUrl": "https://youtu.be/LrnMP8T4HDE?si=uorL-73cVGtHxMTh",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -433,8 +433,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Do you provide an llms.txt file to make your website LLM-friendly?",
-          "description": "Ever wondered how to make your website visible to AI models like ChatGPT, Claude, and Cursor? 🤖 Traditional SEO is all about optimizing for search engines, but in the AI era, we need to rethink our approach!",
+          "heading": " Create a Killer Chatbot with OpenAI",
+          "description": "Discover the power of the OpenAI API, its ability to generate intelligent responses, and the step-by-step process of building effective chatbots. Enhance user experience and save time by harnessing the natural language processing capabilities of ChatGPT.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -451,10 +451,10 @@
           "technology": "content/v2Technologies/technologies/chatgpt.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/Google-Vertex-AI-v2.mdx"
+          "technology": "content/v2Technologies/technologies/gpt-4.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/Semantic-Kernel-v2.mdx"
+          "technology": "content/v2Technologies/technologies/azure-cognitive-services.mdx"
         }
       ],
       "isStacked": true,
