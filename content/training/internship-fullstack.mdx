@@ -73,6 +73,11 @@ _body:
       - body: |
           ### We're interested in top graduates with exceptional development and communication skills - you code for fun, learn for breakfast, and refuse to ship anything less than excellent. You have personal projects in GitHub that show off your talent, and are hungry for even bigger challenges! We will teach you best practices, not basics. 
     _template: Agenda
+  - buttonText: Apply Now
+    animated: true
+    buttonSubtitle: or call +61 2 9953 3000
+    _template: BookingButton
+  - _template: Content
   - header: <span class="text-sswRed">What</span> will you learn?
     listItems:
       - title: .NET
@@ -95,57 +100,7 @@ _body:
         content: ''
         icon: /images/logos/soft-skills.png
     _template: TrainingLearningOutcome
-  - header: 'Here''s a quick checklist of the skills you should have before applying:'
-    textColor: red
-    agendaItemList:
-      - body: |
-          <VerticalListItem
-            content={<>
-              ###### C# and JavaScript, in production
-            </>}
-            afterBody={<>
-              * You have shipped something in our tech stack. An app, an open-source contribution, anything that proves you love to build.
-            </>}
-            index={1}
-          />
-
-          <VerticalListItem
-            content={<>
-              Relational database design
-            </>}
-            afterBody={<>
-              * You can design a normalized relational database, and write raw SQL queries in your sleep. [Read More](https://www.ssw.com.au/rules/relational-database-design)
-            </>}
-            index={3}
-          />
-      - body: |
-          <VerticalListItem
-            content={<>
-              ###### SOLID and OOP principles
-            </>}
-            afterBody={<>
-              * You can talk the talk with other developers, and know the core foundations of good code.
-            </>}
-            index={2}
-          />
-
-          <VerticalListItem
-            content={<>
-              AI Tools in development
-            </>}
-            afterBody={<>
-              * You know how to leverage the best AI assistants as a tool, not a crutch.
-            </>}
-            index={4}
-          />
-    _template: Agenda
-  - prose: false
-    centerAlignedText: false
-    content: |
-      ###
-
-      <VideoEmbed url="https://www.youtube.com/embed/P1M1EfECpLU?si=LG09exLldh63gz_C" videoWidth="w-3/4" removeMargin={false} uncentre={false} overflow={false} caption="SSW FireBootCamp Journey to become a .NET developer (Story 1) | Ella Smith & Josh Berman" duration="2 min" />
-    _template: ContentCard
+  - _template: Content
   - trainingInformationItems:
       - header: <span class="text-sswRed">Who</span> should apply?
         body: |
@@ -219,6 +174,57 @@ _body:
 
           <RecurringEvent day="monday" applyLinkRedirect="mailto:pennywalker@ssw.com.au?subject=SSW Internship Application&cc=bradystroud@ssw.com.au" />
     _template: TrainingInformation
+  - header: 'Here''s a quick checklist of the skills you should have before applying:'
+    textColor: red
+    agendaItemList:
+      - body: |
+          <VerticalListItem
+            content={<>
+              ###### C# and JavaScript, in production
+            </>}
+            afterBody={<>
+              * You have shipped something in our tech stack. An app, an open-source contribution, anything that proves you love to build.
+            </>}
+            index={1}
+          />
+
+          <VerticalListItem
+            content={<>
+              Relational database design
+            </>}
+            afterBody={<>
+              * You can design a normalized relational database, and write raw SQL queries in your sleep. [Read More](https://www.ssw.com.au/rules/relational-database-design)
+            </>}
+            index={3}
+          />
+      - body: |
+          <VerticalListItem
+            content={<>
+              ###### SOLID and OOP principles
+            </>}
+            afterBody={<>
+              * You can talk the talk with other developers, and know the core foundations of good code.
+            </>}
+            index={2}
+          />
+
+          <VerticalListItem
+            content={<>
+              AI Tools in development
+            </>}
+            afterBody={<>
+              * You know how to leverage the best AI assistants as a tool, not a crutch.
+            </>}
+            index={4}
+          />
+    _template: Agenda
+  - prose: false
+    centerAlignedText: false
+    content: |
+      ###
+
+      <VideoEmbed url="https://www.youtube.com/embed/P1M1EfECpLU?si=LG09exLldh63gz_C" videoWidth="w-3/4" removeMargin={false} uncentre={false} overflow={false} caption="SSW FireBootCamp Journey to become a .NET developer (Story 1) | Ella Smith & Josh Berman" duration="2 min" />
+    _template: ContentCard
 footer: ''
 videos:
   channelLink: ''
