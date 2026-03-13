@@ -74,12 +74,39 @@ _body:
     align: left
     backgroundColor: ''
     _template: Content
+  - header: <span class="text-sswRed">What</span> will you learn?
+    listItems:
+      - title: .NET
+        content: ''
+        icon: /images/logos/Net-logo.png
+      - title: Angular
+        content: ''
+        icon: /images/logos/Angular-logo.png
+      - title: Scrum
+        content: ''
+        icon: /images/logos/Scrum-logo.png
+      - title: Dev Tools
+        content: |
+          GitHub and more
+        icon: /images/logos/github-mark.png
+      - title: EF Core + SQL Server
+        content: ''
+        icon: /images/logos/EFcore-logo.png
+      - title: Soft Skills
+        content: ''
+        icon: /images/logos/soft-skills.png
+    _template: TrainingLearningOutcome
   - header: 'Here''s a quick checklist of the skills you should have before applying:'
     textColor: red
     agendaItemList:
-      - body: "•\t**C# and JavaScript, in production** - You have shipped something in our tech stack. An app, an open-source contribution, anything that proves you love to build.\n\n•\t**SOLID and OOP principles** - You can talk the talk with other developers, and know the core foundations of good code.\n"
-      - placeholder: ''
-        body: "•\t**[Relational database design](https://www.ssw.com.au/rules/relational-database-design/)** - You can design a normalized relational database, and write raw SQL queries in your sleep.\n\n• **AI Tools in development** - You know how to leverage the best AI assistants as a tool, not a crutch.\n"
+      - body: |
+          <VerticalListItem />
+
+          <VerticalListItem />
+      - body: |
+          <VerticalListItem />
+
+          <VerticalListItem />
     _template: Agenda
   - trainingInformationItems:
       - header: <span class="text-sswRed">Who</span> should apply?
@@ -154,38 +181,11 @@ _body:
 
           <RecurringEvent day="monday" applyLinkRedirect="mailto:pennywalker@ssw.com.au?subject=SSW Internship Application&cc=bradystroud@ssw.com.au" />
     _template: TrainingInformation
-  - header: <span class="text-sswRed">What</span> will you learn?
-    listItems:
-      - title: .NET
-        content: ''
-        icon: /images/logos/Net-logo.png
-      - title: Angular
-        content: ''
-        icon: /images/logos/Angular-logo.png
-      - title: Scrum
-        content: ''
-        icon: /images/logos/Scrum-logo.png
-      - title: Dev Tools
-        content: |
-          GitHub and more
-        icon: /images/logos/github-mark.png
-      - title: EF Core + SQL Server
-        content: ''
-        icon: /images/logos/EFcore-logo.png
-      - title: Soft Skills
-        content: ''
-        icon: /images/logos/soft-skills.png
-    _template: TrainingLearningOutcome
-footer: |
-  <InlineJotForm jotFormId="240991361342051" title="Get notified about SSW training programs" />
+footer: ''
 videos:
-  channelLink: 'https://www.youtube.com/@SSWTV'
-  videoCards:
-    - title: Launch Your Development Career Into Space
-      link: 'https://www.youtube.com/watch?v=QYTa5aHdhh0'
-    - title: 8 Steps To Scrum - Scrum explained
-      link: 'https://www.youtube.com/watch?v=xOvFK328C_Q'
-    - title: Do you use meaningful PBI titles?
-      link: 'https://www.youtube.com/watch?v=Wob4UgGmqdU'
+  channelLink: ''
+azureBanner:
+  showAzureFooter: true
+  azureFooterColor: lightgray
 ---
 
