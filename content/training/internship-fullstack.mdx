@@ -100,13 +100,45 @@ _body:
     textColor: red
     agendaItemList:
       - body: |
-          <VerticalListItem />
+          <VerticalListItem
+            content={<>
+              ###### C# and JavaScript, in production
+            </>}
+            afterBody={<>
+              * You have shipped something in our tech stack. An app, an open-source contribution, anything that proves you love to build.
+            </>}
+            index={1}
+          />
 
-          <VerticalListItem />
+          <VerticalListItem
+            content={<>
+              Relational database design
+            </>}
+            afterBody={<>
+              * You can design a normalized relational database, and write raw SQL queries in your sleep. [Read More](https://www.ssw.com.au/rules/relational-database-design)
+            </>}
+            index={3}
+          />
       - body: |
-          <VerticalListItem />
+          <VerticalListItem
+            content={<>
+              ###### SOLID and OOP principles
+            </>}
+            afterBody={<>
+              * You can talk the talk with other developers, and know the core foundations of good code.
+            </>}
+            index={2}
+          />
 
-          <VerticalListItem />
+          <VerticalListItem
+            content={<>
+              AI Tools in development
+            </>}
+            afterBody={<>
+              * You know how to leverage the best AI assistants as a tool, not a crutch.
+            </>}
+            index={4}
+          />
     _template: Agenda
   - trainingInformationItems:
       - header: <span class="text-sswRed">Who</span> should apply?
