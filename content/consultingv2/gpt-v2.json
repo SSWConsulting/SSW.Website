@@ -366,7 +366,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Multi-Language AI Apps",
+              "chipText": "Prompt Engineering",
               "chipType": "filledChip"
             },
             {
