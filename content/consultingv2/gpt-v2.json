@@ -298,7 +298,7 @@
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "AI Trends",
+              "chipText": "AI Strategy",
               "chipType": "filledChip"
             },
             {
@@ -307,8 +307,8 @@
             }
           ],
           "icon": "info",
-          "heading": "The Year of the AI Agent: Automation to Intelligence",
-          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
+          "heading": "ChatGPT & OpenAI solutions",
+          "description": "Discover how AI is revolutionizing businesses with ChatGPT and the OpenAI API. Join SSW Chief Architect Adam Cogan as he reveals practical tips to enhance software development and streamline internal processes using AI. Learn how Custom GPTs and Semantic Kernel empower rapid problem-solving and scalable enterprise solutions.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
