@@ -163,14 +163,6 @@
           "icon": "BiSolidStar",
           "heading": "Optimize Your Workflows",
           "description": "With GPT your business can automate repetitive tasks, freeing up valuable time for your team to focus on more strategic and creative endeavors. The AI models can be customized to suit your unique business needs, helping you achieve optimal efficiency and productivity.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "",
-                "description": "For an example of this see:"
-              }
-            ]
-          },
           "embeddedButton": {
             "buttonText": "For an example of this see: YakShaver",
             "buttonLink": "https://yakshaver.ai/"
