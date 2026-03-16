@@ -41,7 +41,8 @@
         "mobilePlacement": "Above",
         "imageSource": "/images/consulting/openclaw-hero.jpg",
         "imageHeight": 700,
-        "imageWidth": 1400
+        "imageWidth": 1400,
+        "altText": "Banner image of the OpenClaw Logo"
       },
       "_template": "imageTextBlock"
     },
@@ -185,9 +186,10 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/ssw_here_fx41_v2.png",
+        "imageSource": "/images/consulting/openclaw-consulting.png",
         "imageHeight": 700,
-        "imageWidth": 1400
+        "imageWidth": 1400,
+        "altText": "Adam and a client discussing the specific details of their OpenClaw implementation"
       },
       "_template": "imageTextBlock"
     },
