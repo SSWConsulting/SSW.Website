@@ -362,7 +362,7 @@
         {
           "guid": "20ehn",
           "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
+          "youtubeUrl": "https://youtu.be/1Rb8dl6lGus?si=qG50v0jAmUIUK3RA",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -370,13 +370,13 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "60 min",
+              "chipText": "6 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
-          "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
+          "heading": "The Only ChatGPT Cheat Sheet You'll Ever Need",
+          "description": "As ChatGPT becomes increasingly popular, users are discovering the most effective ways to prompt the AI for different scenarios. One way to compile this information is by putting it in easy to read graphics called cheat sheets. Cheat sheets can spark ideas that you would not have otherwise thought of!",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
