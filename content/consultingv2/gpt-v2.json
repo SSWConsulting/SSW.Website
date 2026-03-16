@@ -140,7 +140,7 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "",
       "isH1": false,
       "body": "",
