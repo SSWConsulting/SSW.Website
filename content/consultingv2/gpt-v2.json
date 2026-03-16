@@ -149,10 +149,10 @@
       "cards": [
         {
           "guid": "ib0xbk",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSupport",
-          "heading": "Customer Support",
-          "description": "Get customer support that never sleeps. An AI-powered chatbot gives your customers immediate assistance, day or night – and costs less!just practical AI that solves real problems.",
+          "altText": "TRANSFORM YOUR BUSINESS COMMUNICATION",
+          "icon": "VscCommentDiscussion",
+          "heading": "Transform Your Business Communication",
+          "description": "Use GPT to automate customer support, streamline internal communication, and enhance collaboration within your team. These AI models can understand and generate human-like responses, allowing you to provide a seamless and efficient experience for your customers and employees.",
           "embeddedButton": {
             "buttonText": ""
           }
