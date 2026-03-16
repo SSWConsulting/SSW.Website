@@ -87,7 +87,7 @@ jobs:
           AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
 
       - name: Comment on PR
-        uses: mshick/add-pr-comment@v2
+        uses: mshick/add-pr-comment@v3
         with:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>
