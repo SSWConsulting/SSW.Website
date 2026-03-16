@@ -63,7 +63,7 @@ jobs:
           python scripts/generate-lighthouse-report.py
 
       - name: Comment on PR with Lighthouse insights
-        uses: mshick/add-pr-comment@v2
+        uses: mshick/add-pr-comment@v3
         if: github.event_name == 'pull_request'
         with:
           message: |
