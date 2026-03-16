@@ -172,7 +172,8 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": ""
+            "buttonText": "For an example of this see: YakShaver",
+            "buttonLink": "https://yakshaver.ai/"
           }
         },
         {
