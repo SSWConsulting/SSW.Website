@@ -57,7 +57,7 @@
           "title": "Artificial Intelligence",
           "description": "Develop custom AI solutions tailored for your business.",
           "logo": "/images/thumbs/thumb-machinelearning.jpg",
-          "page": "content/consulting/artificial-intelligence.mdx",
+          "page": "content/consultingv2/artificial-intelligence.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -68,7 +68,7 @@
           "title": "Chatbots",
           "description": "Improve customer support with a ChatGPT-powered bot. Cost-effective, customizable, setup in 1 day. Ideal for businesses embracing advanced AI tech.",
           "logo": "/images/thumbs/awesome-chatbot-logo.png",
-          "page": "content/consulting/chatbots.mdx",
+          "page": "content/consultingv2/chat-bots.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
