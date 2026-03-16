@@ -120,9 +120,8 @@
           "iconFirst": true
         },
         {
-          "buttonText": "Rules to Better ChatGPT",
+          "buttonText": "Rules to Better Prompt Engineering",
           "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-chatgpt-prompt-engineering",
-          "icon": "BiSolidWrench",
           "colour": 1
         }
       ],
