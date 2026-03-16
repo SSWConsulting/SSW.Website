@@ -161,8 +161,16 @@
           "guid": "65qp3c",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidStar",
-          "heading": "Customer Experience",
-          "description": "Our chatbots talk like real people and have expert emotional intelligence. Whether you run a small shop or a big company, our tailored bots make customer service easy and personal.",
+          "heading": "Optimize Your Workflows",
+          "description": "With GPT your business can automate repetitive tasks, freeing up valuable time for your team to focus on more strategic and creative endeavors. The AI models can be customized to suit your unique business needs, helping you achieve optimal efficiency and productivity.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "",
+                "description": "For an example of this see:"
+              }
+            ]
+          },
           "embeddedButton": {
             "buttonText": ""
           }
