@@ -294,7 +294,7 @@
         {
           "guid": "ui7a6e",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
+          "youtubeUrl": "https://youtu.be/voZx9AD38QE?si=1TlDyebFDNNrK9t_",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -302,7 +302,7 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "90 min",
+              "chipText": "110 min",
               "chipType": "clearChip"
             }
           ],
