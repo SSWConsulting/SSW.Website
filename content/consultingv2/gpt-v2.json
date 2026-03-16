@@ -107,9 +107,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Why invest in **Chatbots** now?",
+      "heading": "Experience the advantages of implementing **GPT** and **ChatGPT**",
       "isH1": false,
-      "description": "Previously, chatbots posed financial and technical risks due to their high costs and frequent bugs. But times have changed. Advanced AI language models, such as ChatGPT, offer reliable and effective chatbots at a fraction of the former cost - just $3,990 + GST.\n\nNeglecting to include a robust chatbot on your website is now a missed opportunity for optimizing customer engagement.\n",
+      "description": "Previously, chatbots posed financial and technical risks due to their high costs and frequent bugs. But times have changed. Advanced AI language models, such as ChatGPT, offer reliable and effective chatbots at a fraction of the former cost - just $3,990 + GST.\n\nWant an example? Try the chatbot in the bottom right corner of your screen!\n",
       "featureColumns": {
         "twoColumns": false
       },
@@ -135,8 +135,8 @@
         "mediaType": "youtube",
         "placement": "Left",
         "mobilePlacement": "Above",
-        "youtubeUrl": "https://youtu.be/sZY1BqHBbR0?si=-YZTZghyMiiAfshW",
-        "altText": "Website Chatbot in 1 day | Ulysses Maclaren"
+        "youtubeUrl": "https://youtu.be/-q9lLqtkC00?si=cYrKKEBJTKIRzIGY",
+        "altText": "The Future of Business with AI: Automation, Intelligence, and Customer Relations | Ulysses Maclaren (10 mins)"
       },
       "_template": "imageTextBlock"
     },
