@@ -14,6 +14,12 @@
       "logo": "/images/products/tina-small-orange.png"
     },
     {
+      "name": "YakShaver",
+      "url": "https://yakshaver.ai/",
+      "description": "Save hours writing PBIs and bug reports. YakShaver AI automatically turns your meetings into actionable backlog items.",
+      "logo": "/images/products/YakShaver-LogoIcon-Red-WithSpace.png"
+    },
+    {
       "name": "SugarLearning",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
