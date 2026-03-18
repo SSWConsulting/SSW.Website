@@ -66,6 +66,12 @@
       "url": "https://www.sswdory.com/",
       "description": "Identify checked-out SharePoint pages or stale GitHub pull requests.",
       "logo": "/images/products/SSW-Dory-v2.png"
+    },
+    {
+      "name": "YakShaver",
+      "url": "https://yakshaver.ai/",
+      "description": "Save hours writing PBIs and bug reports. YakShaver AI automatically turns your meetings into actionable backlog items.",
+      "logo": "/images/products/YakShaver-LogoIcon-Red-WithSpace.png"
     }
   ]
 }
