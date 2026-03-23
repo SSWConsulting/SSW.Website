@@ -215,12 +215,20 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "Instant Answers, Any Language",
-            "description": "Clients get fast, 24/7 payroll answers in their own language. The AI uses verified French legislation, breaking down barriers."
+            "heading": "Customer service bots",
+            "description": "If you are either selling a service or a product, you can provide 24/7 customer service without worrying about unexpected problems with your team, as AI bots are always ready to help."
           },
           {
             "heading": "AI Becomes a Selling Point",
             "description": "The chatbot isn't just support, it's a competitive edge that helped FPE attract new clients and win more business."
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
+          },
+          {
+            "heading": "Lorem",
+            "description": "Ipsum dolor sit amet, consectetur adipiscing elit."
           }
         ]
       },
