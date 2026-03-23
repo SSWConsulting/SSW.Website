@@ -198,9 +198,9 @@
       "topLabel": {
         "labelText": "Case Study"
       },
-      "heading": "Boosting Payroll Expertise with a **Custom AI Chatbot**",
+      "heading": "What kind of bots do you need?",
       "isH1": false,
-      "description": "French Payroll Expert (FPE) spent too much time answering the same questions about French labor law. We built them a custom AI chatbot that delivers accurate, multilingual answers 24/7, directly from official sources.\n",
+      "description": "Many industries can benefit from having their own bots in many different ways. Here are some ideas of how a bot can improve your business: \n",
       "chips": [
         {
           "chipText": "Semantic Kernel",
@@ -234,8 +234,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Read the full story",
-          "buttonLink": "https://www.ssw.com.au/company/clients/fpe",
+          "buttonText": "See SSW Sophie AI",
+          "buttonLink": "https://sswsophie.com/",
           "colour": 0
         }
       ],
