@@ -149,9 +149,9 @@
       "cards": [
         {
           "guid": "ib0xbk",
-          "altText": "Lorem Ipsum",
+          "altText": "FAST ANSWERS – SAVE TIME",
           "icon": "BiBrain",
-          "heading": "FAST ANSWERS – SAVE TIME",
+          "heading": "Fast Answers – Save Time",
           "description": "With Natural Language Processing, bots can understand both written and verbal requests across different locations such as Slack, Skype, Google Assistant, or even on your website. They can be used to answer questions from your team or your client. You can seek help from bots wherever and whenever you want.",
           "embeddedButton": {
             "buttonText": ""
