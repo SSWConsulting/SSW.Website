@@ -11,18 +11,19 @@
       "name": "Finance",
       "url": "/industry/finance",
       "description": "We leverage our deep expertise in .NET, Dynamics 365, and Azure to develop customized software solutions that enhance financial management, risk mitigation, and regulatory compliance for the finance sector. Our partnership with Microsoft empowers us to align cutting-edge technology with your strategic business needs effectively.",
-      "logo": "/images/thumbs/ssw-finance-thumbnail.jpg"
+      "logo": "/images/products/Thumbnail-Industry-Finance.jpg"
     },
     {
       "name": "Non-Profit",
       "url": "/industry/non-profit",
-      "description": "Leveraging more than 30 years of technological expertise, we provide non-profit organizations with customized software solutions that cater specifically to their unique needs. Our experience enables us to enhance data management, donor relations, and fundraising efforts through tailored donor management systems, volunteer portals, fundraising platforms, regulatory compliance software, and CRM solutions. These tools are designed to be flexible, secure, and effective, helping non-profits navigate complex regulatory environments and maximize their impact."
+      "description": "Leveraging more than 30 years of technological expertise, we provide non-profit organizations with customized software solutions that cater specifically to their unique needs. Our experience enables us to enhance data management, donor relations, and fundraising efforts through tailored donor management systems, volunteer portals, fundraising platforms, regulatory compliance software, and CRM solutions. These tools are designed to be flexible, secure, and effective, helping non-profits navigate complex regulatory environments and maximize their impact.",
+      "logo": "/images/products/Thumbnail-Industry-Non-Profit.jpg"
     },
     {
       "name": "Education",
       "url": "/industry/educational",
       "description": " We have extensive experience creating custom solutions that significantly enhance student safety and wellbeing in educational institutions. Whether for behavioral management, student protection, or efficient onboarding processes, we tailor each solution to meet the specific needs of K-12 schools and universities. Leveraging our partnership with Microsoft, we offer exclusive educational programs and tools like Microsoft 365 for Education and Minecraft for Education to foster an inclusive and engaging learning environment.",
-      "logo": "/images/products/ssw-educational-thumbnail.jpg"
+      "logo": "/images/products/Thumbnail-Industry-Education.jpg"
     }
   ]
 }

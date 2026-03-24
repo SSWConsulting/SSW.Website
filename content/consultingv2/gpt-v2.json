@@ -1,8 +1,8 @@
 {
   "seo": {
     "title": "AI Consulting & Development | SSW",
-    "description": "Custom AI & Machine Learning solutions in Sydney, Brisbane, Melbourne & Newcastle. We develop bespoke AI applications tailored to your business workflows and data requirements.",
-    "canonical": "https://www.ssw.com.au/consulting/artificial-intelligence",
+    "description": "Custom AI solutions in Sydney, Brisbane, Melbourne & Newcastle. We develop bespoke AI apps tailored to your business workflows and data requirements",
+    "canonical": "https://www.ssw.com.au/consulting/gpt",
     "images": [
       {
         "url": "/images/consulting/open-graph/ai.jpg",
@@ -17,16 +17,16 @@
       "background": {
         "backgroundColour": 6
       },
-      "finalBreadcrumb": "AI Chatbot Development",
+      "finalBreadcrumb": "GPT Integration Services",
       "_template": "breadcrumbs"
     },
     {
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Want an AI-powered **chatbot** on your website?",
+      "heading": "Want to revolutionize your business with **GPT** and **ChatGPT** integration?",
       "isH1": true,
-      "description": "Our AI-powered chatbots are redefining customer service. Delivering instant, intelligent, and personalized support 24/7.\n",
+      "description": "Unlock the power of language AI for your business\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -107,9 +107,9 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Why invest in **Chatbots** now?",
+      "heading": "Experience the advantages of implementing **GPT** and **ChatGPT**",
       "isH1": false,
-      "description": "Previously, chatbots posed financial and technical risks due to their high costs and frequent bugs. But times have changed. Advanced AI language models, such as ChatGPT, offer reliable and effective chatbots at a fraction of the former cost - just $3,990 + GST.\n\nNeglecting to include a robust chatbot on your website is now a missed opportunity for optimizing customer engagement.\n",
+      "description": "Integrating GPT and ChatGPT enables intelligent, human-like automation for customer service, content, and data tasks, boosting efficiency and user experience.\n\nWant an example? Try the chatbot in the bottom right corner of your screen!\n",
       "featureColumns": {
         "twoColumns": false
       },
@@ -120,9 +120,8 @@
           "iconFirst": true
         },
         {
-          "buttonText": "Rules to Better AI",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-ai/",
-          "icon": "BiSolidWrench",
+          "buttonText": "Rules to Better Prompt Engineering",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-chatgpt-prompt-engineering",
           "colour": 1
         }
       ],
@@ -135,13 +134,13 @@
         "mediaType": "youtube",
         "placement": "Left",
         "mobilePlacement": "Above",
-        "youtubeUrl": "https://youtu.be/sZY1BqHBbR0?si=-YZTZghyMiiAfshW",
-        "altText": "Website Chatbot in 1 day | Ulysses Maclaren"
+        "youtubeUrl": "https://youtu.be/-q9lLqtkC00?si=cYrKKEBJTKIRzIGY",
+        "altText": "The Future of Business with AI: Automation, Intelligence, and Customer Relations | Ulysses Maclaren (10 mins)"
       },
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "",
       "isH1": false,
       "body": "",
@@ -149,30 +148,41 @@
       "cards": [
         {
           "guid": "ib0xbk",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSupport",
-          "heading": "Customer Support",
-          "description": "Get customer support that never sleeps. An AI-powered chatbot gives your customers immediate assistance, day or night – and costs less!just practical AI that solves real problems.",
+          "altText": "TRANSFORM YOUR BUSINESS COMMUNICATION",
+          "icon": "VscCommentDiscussion",
+          "heading": "Transform Your Business Communication",
+          "description": "Use GPT to automate customer support, streamline internal communication, and enhance collaboration within your team. These AI models can understand and generate human-like responses, allowing you to provide a seamless and efficient experience for your customers and employees.",
           "embeddedButton": {
             "buttonText": ""
           }
         },
         {
           "guid": "65qp3c",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidStar",
-          "heading": "Customer Experience",
-          "description": "Our chatbots talk like real people and have expert emotional intelligence. Whether you run a small shop or a big company, our tailored bots make customer service easy and personal.",
+          "altText": "Optimize Your Workflows",
+          "icon": "BiGitBranch",
+          "heading": "Optimize Your Workflows",
+          "description": "With GPT your business can automate repetitive tasks, freeing up valuable time for your team to focus on more strategic and creative endeavors. The AI models can be customized to suit your unique business needs, helping you achieve optimal efficiency and productivity.",
           "embeddedButton": {
-            "buttonText": ""
+            "buttonText": "For an example of this see: YakShaver",
+            "buttonLink": "https://yakshaver.ai/"
           }
         },
         {
           "guid": "hukqtq",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidCustomize",
-          "heading": "Customization",
-          "description": "You choose what information to train your bot with – webpages, documents, and/or direct text. The chatbot is trained on all your sources of knowledge and can be configured to stay updated by automatically re-training itself every 24 hours.",
+          "icon": "BiGlobe",
+          "heading": "Expand Your Product Offerings",
+          "description": "Integrating GPT into your existing products or creating new AI-driven solutions can help your business stay ahead of the competition. Our team of experts will work closely with you to develop innovative applications that harness the power of language AI for the benefit of your customers and stakeholders.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "lfxdb5",
+          "altText": "Customized Training and Support",
+          "icon": "BiDiamond",
+          "heading": "Customized Training and Support",
+          "description": "We provide tailored training sessions and ongoing support to help you maximize the benefits of GPT integration. Our experienced team will guide you through the process, ensuring that you can fully utilize these cutting-edge AI technologies to drive your business success.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -284,21 +294,21 @@
         {
           "guid": "ui7a6e",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
+          "youtubeUrl": "https://youtu.be/voZx9AD38QE?si=1TlDyebFDNNrK9t_",
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "AI Trends",
+              "chipText": "AI Strategy",
               "chipType": "filledChip"
             },
             {
-              "chipText": "90 min",
+              "chipText": "110 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "The Year of the AI Agent: Automation to Intelligence",
-          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
+          "heading": "ChatGPT & OpenAI solutions",
+          "description": "Discover how AI is revolutionizing businesses with ChatGPT and the OpenAI API. Join SSW Chief Architect Adam Cogan as he reveals practical tips to enhance software development and streamline internal processes using AI. Learn how Custom GPTs and Semantic Kernel empower rapid problem-solving and scalable enterprise solutions.",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -352,21 +362,21 @@
         {
           "guid": "20ehn",
           "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
+          "youtubeUrl": "https://youtu.be/1Rb8dl6lGus?si=qG50v0jAmUIUK3RA",
           "altText": "Lorem Ipsum",
           "chips": [
             {
-              "chipText": "Multi-Language AI Apps",
+              "chipText": "Prompt Engineering",
               "chipType": "filledChip"
             },
             {
-              "chipText": "60 min",
+              "chipText": "6 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
-          "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
+          "heading": "The Only ChatGPT Cheat Sheet You'll Ever Need",
+          "description": "As ChatGPT becomes increasingly popular, users are discovering the most effective ways to prompt the AI for different scenarios. One way to compile this information is by putting it in easy to read graphics called cheat sheets. Cheat sheets can spark ideas that you would not have otherwise thought of!",
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
@@ -409,7 +419,7 @@
           "technology": "content/v2Technologies/technologies/gpt-4.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/azure-cognitive-services.mdx"
+          "technology": "content/v2Technologies/technologies/Semantic-Kernel-v2.mdx"
         }
       ],
       "isStacked": true,

@@ -18,6 +18,10 @@ const AboutUs = dynamic(() =>
 
 import { Agenda } from "./blocks/agenda";
 
+const UtilityButton = dynamic(() =>
+  import("./button/utilityButton").then((mod) => mod.UtilityButton)
+);
+
 const BuiltOnAzure = dynamic(() =>
   import("./blocks/builtOnAzure").then((mod) => mod.BuiltOnAzure)
 );
@@ -191,6 +195,7 @@ const componentMap = {
   CardCarousel,
   TechnologyCardCarousel,
   Spacer,
+  UtilityButton,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
