@@ -141,7 +141,7 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": true,
+      "isStacked": false,
       "heading": "The Benefits of using **Bots**",
       "isH1": false,
       "body": "",
