@@ -1,0 +1,23 @@
+{
+  "title": "Newcastle Coders Group: From Copilot to the Garden of Eden",
+  "url": "https://www.meetup.com/newcastle-coders-group/events/313689032",
+  "thumbnail": "/images/events/1936286a-ad92-4d23-87d6-a1329a1d39d9.png",
+  "thumbnailDescription": "Newcastle Coders Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "startDateTime": "2026-05-06T07:00:57.800Z",
+  "endDateTime": "2026-05-06T09:00:10.423Z",
+  "startShowBannerDateTime": "2026-05-05T14:00:33.165Z",
+  "endShowBannerDateTime": "2026-05-06T12:00:46.541Z",
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "category": "Artificial Intelligence",
+  "abstract": "In May we're back with one of our favourite speakers Adam Cogan. Adam has spoken every year since the Newcastle Coders Group started and always brings a great presentation.\n\nThis event will be hosted at the SSW Newcastle Office.\nWe'd like to thank our sponsors:\n* SSW\n* Saphi Engineering.\n\nAbout Adam's Talk - From Copilot to the Garden of Eden\nMove beyond the underwhelming 2023 \"Copilot hype\" to the tools actually delivering value for developers. Adam Cogan cuts through the noise, exploring how AI is fundamentally reshaping the enterprise stack, from Copilot and Cowork to agentic workflows and CLI-based coding.\nLearn how roles are shifting, which AI assistants are winning, and what an AI-integrated \"Garden of Eden\" looks like. Leave with a practical roadmap to build, analyze, and automate with confidence.",
+  "description": "In May we're back with one of our favourite speakers Adam Cogan. Adam has spoken every year since the Newcastle Coders Group started and always brings a great presentation.\n\nThis event will be hosted at the SSW Newcastle Office.\n\nWe'd like to thank our sponsors:\n\n\\* SSW\n\n\\* Saphi Engineering.\n\nAbout Adam's Talk - From Copilot to the Garden of Eden\n\nMove beyond the underwhelming 2023 \"Copilot hype\" to the tools actually delivering value for developers. Adam Cogan cuts through the noise, exploring how AI is fundamentally reshaping the enterprise stack, from Copilot and Cowork to agentic workflows and CLI-based coding.\n\nLearn how roles are shifting, which AI assistants are winning, and what an AI-integrated \"Garden of Eden\" looks like. Leave with a practical roadmap to build, analyze, and automate with confidence.\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
