@@ -180,21 +180,11 @@
         {
           "guid": "awborr",
           "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Lorem",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "Ipsum",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
+          "icon": "SiAudiobookshelf",
           "heading": "Assistance Available 24/7 For Your Clients",
           "description": "Many businesses have 24-hour customer support, but if you have certain peak hours, a customer will still have to wait to get in touch with an agent that can help them. Bots don't have unexpected meetings, they don't get tired or sick and will continue providing assistance to your clients or your team.",
           "embeddedButton": {
-            "buttonText": "Lorem"
+            "buttonText": ""
           }
         }
       ],
