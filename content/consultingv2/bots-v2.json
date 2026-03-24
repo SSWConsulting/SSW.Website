@@ -392,9 +392,6 @@
           "technology": "content/v2Technologies/technologies/gpt-4.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/Microsoft-AutoGen.mdx"
-        },
-        {
           "technology": "content/v2Technologies/technologies/azure-bot.mdx"
         },
         {
@@ -412,7 +409,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Talk to Us About Your AI Project Today",
+      "heading": "Talk to Us About Your **Bot** Project Today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
