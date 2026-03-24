@@ -287,28 +287,6 @@
       "cardStyle": 1,
       "cards": [
         {
-          "guid": "arf4s",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=C7RKx3mJyxI&t",
-          "altText": "AI",
-          "chips": [
-            {
-              "chipText": "AI Use",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "7 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Introduction to LUIS natural language understanding for bots",
-          "description": "Join Software Architect Jim Zheng as he gives us a look into the SSW SophieBot, an AI chatbot that leverages the power of the Microsoft bot framework and Language Understanding (LUIS) to search for data with natural language search terms.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
           "guid": "ui7a6e",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
@@ -355,6 +333,28 @@
           }
         },
         {
+          "guid": "arf4s",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=C7RKx3mJyxI&t",
+          "altText": "AI",
+          "chips": [
+            {
+              "chipText": "AI Use",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "7 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Introduction to LUIS natural language understanding for bots",
+          "description": "Join Software Architect Jim Zheng as he gives us a look into the SSW SophieBot, an AI chatbot that leverages the power of the Microsoft bot framework and Language Understanding (LUIS) to search for data with natural language search terms.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
           "guid": "20ehn",
           "mediaType": "youtube",
           "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
@@ -375,50 +375,6 @@
           "embeddedButton": {
             "buttonText": "",
             "buttonLink": ""
-          }
-        },
-        {
-          "guid": "hupqdh",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=WwF69cj8490",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "AI Strategy",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "8 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "How to supercharge a company with AI",
-          "description": "Supercharge your company with AI!  🚀  See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features.  Discover actionable tips to implement AI",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "akn4ur",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=_Lx1DmMMJbg",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "AI Strategy",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "1 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Do you provide an llms.txt file to make your website LLM-friendly?",
-          "description": "Ever wondered how to make your website visible to AI models like ChatGPT, Claude, and Cursor? 🤖 Traditional SEO is all about optimizing for search engines, but in the AI era, we need to rethink our approach!",
-          "embeddedButton": {
-            "buttonText": ""
           }
         }
       ],
