@@ -386,10 +386,10 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/GitHub-Copilot-v2.mdx"
+          "technology": "content/v2Technologies/technologies/google-dialogflow-assistant.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/Google-Vertex-AI-v2.mdx"
+          "technology": "content/v2Technologies/technologies/gpt-4.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/Microsoft-AutoGen.mdx"
