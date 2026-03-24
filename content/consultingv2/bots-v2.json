@@ -159,10 +159,10 @@
         },
         {
           "guid": "hukqtq",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidLockAlt",
-          "heading": "Secure, Compliant Implementation",
-          "description": "AI models offer incredible capabilities but require proper security and compliance guardrails. We implement safeguards that protect your customer data, ensuring your solutions stay both powerful and compliant.",
+          "altText": "Increase Sales",
+          "icon": "BiLineChart",
+          "heading": "Increase Sales",
+          "description": "If you have an ecommerce site, your bot can also suggest or remember products that your client has already searched for. It can also offer a special code as a strategy to reduce your abandonment rate and increase sales.",
           "embeddedButton": {
             "buttonText": ""
           }
