@@ -289,7 +289,7 @@
         {
           "guid": "arf4s",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
+          "youtubeUrl": "https://www.youtube.com/watch?v=C7RKx3mJyxI&t",
           "altText": "AI",
           "chips": [
             {
@@ -297,13 +297,13 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "6 min",
+              "chipText": "7 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "If you think AI is cheating, you're doing it wrong!",
-          "description": "AI is the tool of this generation, but are we using it responsibly? Ulysses Maclaren dives into the best practices for AI use - covering transparency, critical thinking, data privacy, and how to leverage AI to boost productivity. Learn why using AI intelligently is the key to staying ahead in your career.",
+          "heading": "Introduction to LUIS natural language understanding for bots",
+          "description": "Join Software Architect Jim Zheng as he gives us a look into the SSW SophieBot, an AI chatbot that leverages the power of the Microsoft bot framework and Language Understanding (LUIS) to search for data with natural language search terms.",
           "embeddedButton": {
             "buttonText": ""
           }
