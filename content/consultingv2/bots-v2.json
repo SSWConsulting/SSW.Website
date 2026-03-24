@@ -170,9 +170,9 @@
         {
           "guid": "65qp3c",
           "altText": "Lorem Ipsum",
-          "icon": "BiSolidStar",
-          "heading": "Trusted Expertise at Scale",
-          "description": "From operational efficiency to customer experience, we scale AI solutions that deliver measurable results. Our team brings enterprise-level expertise to organizations of all size.",
+          "icon": "BiGrid",
+          "heading": "Easy Integration With Common Apps or Enterprise Serices",
+          "description": "More and more people are using instant messaging over browsing websites and social media profiles. In addition, people tend to keep using the main apps they already have (such as Facebook, Messenger, WhatsApp, Skype, etc) to get customer service. If you want a chatbot for your website, you could simply integrate your system into common and existing apps.",
           "embeddedButton": {
             "buttonText": ""
           }
