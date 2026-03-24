@@ -150,9 +150,9 @@
         {
           "guid": "ib0xbk",
           "altText": "Lorem Ipsum",
-          "icon": "BiLogoMicrosoft",
-          "heading": "Intelligent Automation, Precisely Applied",
-          "description": "We build automation that cuts through complexity and adapts to your specific business needs. No generic solutions, just practical AI that solves real problems.",
+          "icon": "BiBrain",
+          "heading": "FAST ANSWERS – SAVE TIME",
+          "description": "With Natural Language Processing, bots can understand both written and verbal requests across different locations such as Slack, Skype, Google Assistant, or even on your website. They can be used to answer questions from your team or your client. You can seek help from bots wherever and whenever you want.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -175,6 +175,40 @@
           "description": "From operational efficiency to customer experience, we scale AI solutions that deliver measurable results. Our team brings enterprise-level expertise to organizations of all size.",
           "embeddedButton": {
             "buttonText": ""
+          }
+        },
+        {
+          "guid": null,
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Lorem",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "Ipsum",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Lorem Ipsum",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Feature 1",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "icon": "Tina"
+              },
+              {
+                "heading": "Feature 2",
+                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                "icon": "Tina"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Lorem"
           }
         }
       ],
