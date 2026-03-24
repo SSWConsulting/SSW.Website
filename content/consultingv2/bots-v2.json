@@ -178,7 +178,7 @@
           }
         },
         {
-          "guid": null,
+          "guid": "awborr",
           "altText": "Lorem Ipsum",
           "chips": [
             {
@@ -191,22 +191,8 @@
             }
           ],
           "icon": "info",
-          "heading": "Lorem Ipsum",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Feature 1",
-                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "icon": "Tina"
-              },
-              {
-                "heading": "Feature 2",
-                "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "icon": "Tina"
-              }
-            ]
-          },
+          "heading": "Assistance Available 24/7 For Your Clients",
+          "description": "Many businesses have 24-hour customer support, but if you have certain peak hours, a customer will still have to wait to get in touch with an agent that can help them. Bots don't have unexpected meetings, they don't get tired or sick and will continue providing assistance to your clients or your team.",
           "embeddedButton": {
             "buttonText": "Lorem"
           }
