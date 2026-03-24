@@ -186,6 +186,16 @@
           "embeddedButton": {
             "buttonText": ""
           }
+        },
+        {
+          "guid": "3xdq7r",
+          "altText": "Lorem Ipsum",
+          "icon": "VscDashboard",
+          "heading": "Efficiency, Automated",
+          "description": "Automation is one of the most significant key factors in enhancing work efficiency. With the help of bots, you can automate mundane tasks and have them enter data for you.",
+          "embeddedButton": {
+            "buttonText": "Lorem"
+          }
         }
       ],
       "background": {
