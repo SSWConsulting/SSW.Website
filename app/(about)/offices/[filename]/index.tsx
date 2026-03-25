@@ -6,7 +6,6 @@ import ContactPanel from "@/components/offices/contactPanel";
 import MicrosoftPanel from "@/components/offices/microsoftPanel";
 import TestimonialPanel from "@/components/offices/testimonialPanel";
 import { Container } from "@/components/util/container";
-import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import Image from "next/image";
