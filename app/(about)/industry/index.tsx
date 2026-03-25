@@ -1,6 +1,5 @@
 "use client";
 
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { PageCard } from "@/components/blocks/pageCards";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "../../components/breadcrumb";
@@ -25,7 +24,6 @@ export default function IndustriesPage({ tinaProps }) {
           </div>
         </div>
       </Container>
-      <BuiltOnAzure data={data.industryIndex.azureBanner} />
     </>
   );
 }

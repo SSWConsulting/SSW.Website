@@ -1,6 +1,5 @@
 "use client";
 
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { GoogleMapsWrapper } from "@/components/blocks/googleMapsWrapper";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TestimonialRow } from "@/components/testimonials/TestimonialRow";
@@ -275,9 +274,6 @@ export default function NETUGPage({ props, tinaProps }) {
           <TechnologyLogos logos={data.userGroupGlobal.technologies} />
         </Container>
 
-        <Section>
-          <BuiltOnAzure data={data.userGroupPage.azureBanner} />
-        </Section>
       </>
     );
   } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
@@ -298,7 +294,6 @@ export default function NETUGPage({ props, tinaProps }) {
             data-tina-field={tinaField(data.userGroupPage, "_body")}
           />
         </Container>
-        <BuiltOnAzure data={data.userGroupPage.azureBanner} />
       </>
     );
   }

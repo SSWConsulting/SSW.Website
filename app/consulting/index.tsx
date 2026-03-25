@@ -1,6 +1,5 @@
 "use client";
 
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
@@ -132,7 +131,6 @@ export default function ConsultingIndex({ tinaProps }) {
           </div>
         </div>
       </Container>
-      <BuiltOnAzure data={tinaProps.azureBanner} />
     </>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 import { Blocks } from "@/components/blocks-renderer";
-import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import _ from "lodash";
@@ -35,7 +34,6 @@ const EventsV2Page = memo(
             </div>
           </Container>
         </Section>
-        <PreFooter data={azureBanner} />
       </div>
     );
   },

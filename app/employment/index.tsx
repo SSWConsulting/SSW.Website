@@ -4,7 +4,6 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Booking } from "../../components/blocks/booking";
 
-import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import {
   Opportunities,
@@ -158,17 +157,6 @@ export default function EmploymentPage({ tinaProps, props }) {
             />
           </div>
         </Container>
-      </Section>
-      <Section>
-        <BuiltOnAzure
-          data={
-            data.azureBanner?.azureFooterColor
-              ? data.azureBanner
-              : {
-                  azureFooterColor: "white",
-                }
-          }
-        />
       </Section>
     </>
   );
