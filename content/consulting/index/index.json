@@ -79,7 +79,7 @@
           "title": "ChatGPT",
           "description": "GPT and ChatGPT are ground-breaking AI language models that can revolutionize the way businesses communicate, automate tasks, and streamline processes.",
           "logo": "/images/thumbs/thumb-gpt.jpg",
-          "page": "content/consultingv2/gpt-v2.json",
+          "page": "content/consultingv2/gpt.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
