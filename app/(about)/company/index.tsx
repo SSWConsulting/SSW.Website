@@ -61,7 +61,6 @@ export default function CompanyIndexPage({ props, tinaProps }) {
       ) : (
         <></>
       )}
-
     </>
   );
 }

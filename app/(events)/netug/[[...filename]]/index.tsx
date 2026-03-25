@@ -273,7 +273,6 @@ export default function NETUGPage({ props, tinaProps }) {
         >
           <TechnologyLogos logos={data.userGroupGlobal.technologies} />
         </Container>
-
       </>
     );
   } else if (data?.userGroupPage.__typename === "UserGroupPageContentPage") {
