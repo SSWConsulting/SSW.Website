@@ -112,7 +112,7 @@
           "title": "Bots",
           "description": "Awesome bots give you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
           "logo": "/images/thumbs/thumb-azure-bot-icon.jpg",
-          "page": "content/consulting/bots.mdx",
+          "page": "content/consultingv2/bots.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"

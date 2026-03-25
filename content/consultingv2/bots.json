@@ -1,0 +1,440 @@
+{
+  "seo": {
+    "title": "AI Consulting & Development | SSW",
+    "description": "Transform your business with AI bots. Our expert team builds custom solutions that automate processes and enhance customer experiences.",
+    "canonical": "https://www.ssw.com.au/consulting/bots",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/ai.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "AI Consulting & Development"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Expert AI Consultants",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Want to have a business grade bot powered by **serious AI**？",
+      "isH1": true,
+      "description": "SSW knows how to build awesome bots that empower office workers and improve your results\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": " AI Discovery Workshop",
+          "buttonLink": "/consulting/ai-discovery-workshop",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Microsoft’s Semantic Machines Showcases **New Conversational AI Technology**.",
+      "isH1": false,
+      "description": "SSW's AI consultants have experience building awesome bots using advanced business grade artificial intelligence for enterprises. Your bots promote an effective and productive workplace - many companies are already using bots more than doing searches on their intranet.\n\nAI technology can give you advantages in finding and automatically entering data to help your team benefit from the AI efficiency boost!\n",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "iconFirst": true
+        },
+        {
+          "buttonText": "Rules to Better Bots",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-bots",
+          "icon": "BiSolidWrench",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://youtu.be/G_v5B_gYceM?si=vJOSIOjinfnBWg9t",
+        "altText": "Microsoft’s Semantic Machines Showcases New Conversational AI Technology"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "The Benefits of using **Bots**",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ib0xbk",
+          "altText": "FAST ANSWERS – SAVE TIME",
+          "icon": "BiBrain",
+          "heading": "Fast Answers – Save Time",
+          "description": "With Natural Language Processing, bots can understand both written and verbal requests across different locations such as Slack, Skype, Google Assistant, or even on your website. They can be used to answer questions from your team or your client. You can seek help from bots wherever and whenever you want.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "hukqtq",
+          "altText": "Increase Sales",
+          "icon": "BiLineChart",
+          "heading": "Increase Sales",
+          "description": "If you have an ecommerce site, your bot can also suggest or remember products that your client has already searched for. It can also offer a special code as a strategy to reduce your abandonment rate and increase sales.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "65qp3c",
+          "altText": "Lorem Ipsum",
+          "icon": "BiGrid",
+          "heading": "Easy Integration With Common Apps or Enterprise Serices",
+          "description": "More and more people are using instant messaging over browsing websites and social media profiles. In addition, people tend to keep using the main apps they already have (such as Facebook, Messenger, WhatsApp, Skype, etc) to get customer service. If you want a chatbot for your website, you could simply integrate your system into common and existing apps.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "awborr",
+          "altText": "Lorem Ipsum",
+          "icon": "SiAudiobookshelf",
+          "heading": "Assistance Available 24/7 For Your Clients",
+          "description": "Many businesses have 24-hour customer support, but if you have certain peak hours, a customer will still have to wait to get in touch with an agent that can help them. Bots don't have unexpected meetings, they don't get tired or sick and will continue providing assistance to your clients or your team.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "3xdq7r",
+          "altText": "Lorem Ipsum",
+          "icon": "VscDashboard",
+          "heading": "Efficiency, Automated",
+          "description": "Automation is one of the most significant key factors in enhancing work efficiency. With the help of bots, you can automate mundane tasks and have them enter data for you.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Bots in action"
+      },
+      "heading": "What kind of bots do you need?",
+      "isH1": false,
+      "description": "Many industries can benefit from having their own bots in many different ways. Here are some ideas of how a bot can improve your business:\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Customer Service bots",
+            "description": "Provide 24/7 customer support with AI bots, eliminating concerns about team availability or unexpected issues."
+          },
+          {
+            "heading": "Human Resources bots",
+            "description": "You can use bots at every stage, all the way from onboarding to ongoing training and support."
+          },
+          {
+            "heading": "Marketing & Branding bots",
+            "description": "Use bots to provide your marketing team with data insights for better strategies, and deploy them on social media to engage clients and raise brand awareness."
+          },
+          {
+            "heading": "Sales & Finance bots",
+            "description": "To boost online sales, deploy bots to remind clients of abandoned carts or offer special coupons. For financial management, they can handle tasks from general accounting to financial planning and external reporting."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "See SSW Sophie AI",
+          "buttonLink": "https://sswsophie.com/",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://youtu.be/1k3JKcf35vI?si=QnB6HcF_fMEIbYHg"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": false,
+      "heading": "Tech Wisdom from the Trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "ui7a6e",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Trends",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "90 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "The Year of the AI Agent: Automation to Intelligence",
+          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "hhszy",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/sVELvhGdSfs?si=YgXhKVW1AOiyx-CQ",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Model Guides",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "3 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
+          "description": "Confused about selecting the perfect AI model? Join Isaac Lombard and Caleb Williams as they explore how GitHub Models simplifies the process! Discover the ease of finding and utilizing AI models for your projects in this quick guide.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "arf4s",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=C7RKx3mJyxI&t",
+          "altText": "AI",
+          "chips": [
+            {
+              "chipText": "AI Use",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "7 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Introduction to LUIS natural language understanding for bots",
+          "description": "Join Software Architect Jim Zheng as he gives us a look into the SSW SophieBot, an AI chatbot that leverages the power of the Microsoft bot framework and Language Understanding (LUIS) to search for data with natural language search terms.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "20ehn",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Multi-Language AI Apps",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "60 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
+          "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologies": [
+        {
+          "technology": "content/v2Technologies/technologies/google-dialogflow-assistant.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/gpt-4.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/azure-bot.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Semantic-Kernel-v2.mdx"
+        }
+      ],
+      "isStacked": false,
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 3
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to Us About Your **Bot** Project Today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "100px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
