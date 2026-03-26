@@ -1,7 +1,6 @@
 "use client";
 
 import { Blocks } from "@/components/blocks-renderer";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/components/blocks/techUpgrade";
 import { Section } from "@/components/util/section";
@@ -51,17 +50,6 @@ export default function CompanyPage({ tinaProps, props }) {
       </Section>
       <Section className="mx-auto w-full !bg-gray-75 px-8 py-5">
         <TechUpgrade />
-      </Section>
-      <Section>
-        <BuiltOnAzure
-          data={
-            data.caseStudy?.azureBanner?.azureFooterColor
-              ? data.caseStudy.azureBanner
-              : {
-                  azureFooterColor: "white",
-                }
-          }
-        />
       </Section>
     </>
   );
