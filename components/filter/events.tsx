@@ -403,10 +403,10 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         <div className="mb-1 mt-6 p-0 text-end">
           <CustomLink
             href={event.url}
-            title={event.title}
-            className="unstyled rounded bg-ssw-gray px-3 py-2 text-xs font-normal text-white hover:bg-ssw-gray-dark"
+            className="unstyled rounded bg-ssw-gray-dark px-3 py-2 text-sm font-normal text-white hover:bg-sswBlack"
           >
-            <span className="mt-8 text-sm">Find out more...</span>
+            Find out more
+            <span className="sr-only"> about {event.title}</span>
           </CustomLink>
         </div>
       </Transition>
