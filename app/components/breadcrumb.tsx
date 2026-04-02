@@ -1,5 +1,14 @@
-import NextBreadcrumbs from "@marketsystems/nextjs13-appdir-breadcrumbs";
-import React, { FC } from "react";
+"use client";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { usePathname } from "next/navigation";
+import React, { FC, useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
 
 interface BreadcrumbsProps {
@@ -10,49 +19,113 @@ interface BreadcrumbsProps {
     title?: string;
   };
 }
+
+const defaultReplacements = [
+  { from: "consulting", to: "Services" },
+  { from: "products", to: "Products" },
+  { from: "offices", to: "Offices" },
+  { from: "training", to: "Training" },
+  { from: "employment", to: "Employment" },
+  { from: "video-production", to: "Video Production" },
+  { from: "Training-videos", to: "Training Videos" },
+  { from: "industry", to: "Industry" },
+  { from: "company", to: "Company" },
+  { from: "events", to: "Events" },
+  { from: "partners", to: "Partners" },
+  { from: "netug", to: ".NET User Group" },
+  { from: "clients", to: "Clients" },
+  { from: "live", to: "Live" },
+  { from: "logo", to: "Logo" },
+  { from: "articles", to: "Articles" },
+];
+
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({
   additionalReplacements = [],
   path,
   title,
   seoSchema,
 }) => {
-  const listItemStyling =
-    "breadcrumb_item inline text-xs text-gray-700 no-underline not-first:before:content-bread not-first:before:px-2 before:list-none";
-  if (path && title) {
-    additionalReplacements.push({ from: path, to: `${title}` });
-  }
+  const pathname = usePathname();
+
+  const breadcrumbItems = useMemo(() => {
+    const pathSegments = pathname
+      .split("/")
+      .filter((segment) => segment !== "");
+
+    const allReplacements = [
+      ...defaultReplacements,
+      ...additionalReplacements,
+      ...(path && title ? [{ from: path, to: title }] : []),
+    ];
+
+    const getDisplayName = (segment: string): string => {
+      const replacement = allReplacements.find((r) => r.from === segment);
+      return replacement ? replacement.to : segment;
+    };
+
+    const items: React.ReactNode[] = [];
+
+    items.push(
+      <BreadcrumbItem key="home">
+        <BreadcrumbLink
+          href="/"
+          className={
+            "text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+          }
+        >
+          Home
+        </BreadcrumbLink>
+      </BreadcrumbItem>
+    );
+
+    // Add intermediate segments as links
+    pathSegments.forEach((segment, index) => {
+      const isLast = index === pathSegments.length - 1;
+      const href = "/" + pathSegments.slice(0, index + 1).join("/");
+      const displayName = getDisplayName(segment);
+
+      items.push(
+        <BreadcrumbSeparator
+          key={`separator-${index}`}
+          className="text-xs text-gray-700"
+        >
+          {">"}
+        </BreadcrumbSeparator>
+      );
+
+      items.push(
+        <BreadcrumbItem key={`item-${index}`}>
+          {isLast ? (
+            <BreadcrumbPage
+              className={"text-xs text-gray-700 no-underline"}
+              {...(seoSchema
+                ? { "data-tina-field": tinaField(seoSchema, "title") }
+                : {})}
+            >
+              {displayName}
+            </BreadcrumbPage>
+          ) : (
+            <BreadcrumbLink
+              href={href}
+              className={
+                "text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+              }
+            >
+              {displayName}
+            </BreadcrumbLink>
+          )}
+        </BreadcrumbItem>
+      );
+    });
+
+    return items;
+  }, [pathname, path, title, seoSchema, additionalReplacements]);
+
   return (
-    <div
-      {...(seoSchema
-        ? { "data-tina-field": tinaField(seoSchema, "title") }
-        : {})}
-    >
-      <NextBreadcrumbs
-        replaceCharacterList={[
-          { from: "consulting", to: "Services" },
-          { from: "products", to: "Products" },
-          { from: "offices", to: "Offices" },
-          { from: "training", to: "Training" },
-          { from: "employment", to: "Employment" },
-          { from: "video-production", to: "Video Production" },
-          { from: "Training-videos", to: "Training Videos" },
-          { from: "industry", to: "Industry" },
-          { from: "company", to: "Company" },
-          { from: "events", to: "Events" },
-          { from: "partners", to: "Partners" },
-          { from: "netug", to: ".NET User Group" },
-          { from: "clients", to: "Clients" },
-          { from: "live", to: "Live" },
-          { from: "logo", to: "Logo" },
-          { from: "articles", to: "Articles" },
-          ...additionalReplacements,
-        ]}
-        useDefaultStyle={true}
-        activeItemClassName={listItemStyling}
-        inactiveItemClassName={listItemStyling}
-        listClassName="pl-0"
-        rootLabel={"Home"}
-      />
-    </div>
+    <Breadcrumb>
+      <BreadcrumbList className="gap-2 font-normal">
+        {breadcrumbItems}
+      </BreadcrumbList>
+    </Breadcrumb>
   );
 };

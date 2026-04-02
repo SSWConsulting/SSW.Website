@@ -1,18 +1,22 @@
 import client from "@/tina/client";
 
 import { getSEOProps } from "@/lib/seo";
+import {
+  getEventsCategories,
+  getFutureEvents,
+  getPastEvents,
+} from "@/services/server/events";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
 import { TinaClient } from "app/tina-client";
 import {
   FUTURE_EVENTS_QUERY_KEY,
-  getEventsCategories,
-  getFutureEvents,
-  getPastEvents,
   PAST_EVENTS_QUERY_KEY,
 } from "hooks/useFetchEvents";
 import { Metadata } from "next";
 import EventIndex from "./index";
+
+export const dynamic = "force-static";
 
 const DEFAULT_FILTERS = "undefinedundefined";
 

@@ -57,7 +57,7 @@
           "title": "Artificial Intelligence",
           "description": "Develop custom AI solutions tailored for your business.",
           "logo": "/images/thumbs/thumb-machinelearning.jpg",
-          "page": "content/consulting/artificial-intelligence.mdx",
+          "page": "content/consultingv2/artificial-intelligence.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -68,7 +68,7 @@
           "title": "Chatbots",
           "description": "Improve customer support with a ChatGPT-powered bot. Cost-effective, customizable, setup in 1 day. Ideal for businesses embracing advanced AI tech.",
           "logo": "/images/thumbs/awesome-chatbot-logo.png",
-          "page": "content/consulting/chatbots.mdx",
+          "page": "content/consultingv2/chat-bots.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -76,10 +76,10 @@
           ]
         },
         {
-          "title": "ChatGPT & GPT-4o",
+          "title": "ChatGPT",
           "description": "GPT and ChatGPT are ground-breaking AI language models that can revolutionize the way businesses communicate, automate tasks, and streamline processes.",
           "logo": "/images/thumbs/thumb-gpt.jpg",
-          "page": "content/consulting/gpt.mdx",
+          "page": "content/consultingv2/gpt.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -112,7 +112,67 @@
           "title": "Bots",
           "description": "Awesome bots give you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
           "logo": "/images/thumbs/thumb-azure-bot-icon.jpg",
-          "page": "content/consulting/bots.mdx",
+          "page": "content/consultingv2/bots.json",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Local LLM Deployment",
+          "description": "Run open-source LLMs inside your network. Private, fast, and under your control.",
+          "logo": "/images/thumbs/Brain%20in%20a%20house.png",
+          "page": "content/consultingv2/local-llm-deployment.json",
+          "externalUrl": "/consulting/local-llm-deployment",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "Vibe Coding",
+          "description": "We help tech-savvy visionaries bring their product ideas to life, giving them the tools and support to prototype and vibe code. No production coding needed.",
+          "logo": "/images/thumbs/Vibe-codingv2.png",
+          "page": "content/consultingv2/vibe-coding.json",
+          "externalUrl": "/consulting/vibe-coding",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "AI Discovery Workshop",
+          "description": "Kickstart your AI strategy in just 3 days. SSW's AI Discovery Workshop helps you identify high-impact AI opportunities, assess feasibility, and create a tailored implementation roadmap for success.",
+          "logo": "/images/thumbs/consulting/ai-discovery-workshop.png",
+          "page": "content/consultingv2/ai-discovery-workshop.json",
+          "externalUrl": "/consulting/ai-discovery-workshop",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "AI-Powered Phone System",
+          "description": "Turn your phone system into an Intelligent 24/7 conversational assistant that automates inbound and outbound calls, improves customer experience, reduce wait times",
+          "logo": "/images/thumbs/Generated%20image%20final.png",
+          "page": "content/consultingv2/ai-powered-phone-system.json",
+          "externalUrl": "/consulting/ai-powered-phone-system",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "OpenClaw",
+          "description": "Don't go at it alone. SSW helps you set up OpenClaw securely - mitigating risks, configuring channels, and getting it right the first time.",
+          "logo": "/images/thumbs/thumb-openclaw.png",
+          "page": "content/consultingv2/openclaw.json",
+          "externalUrl": "/consulting/openclaw",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -267,7 +327,8 @@
           "title": "Database Development and Performance",
           "description": "Whether it is good old SQL Server or the super scalable SQL Azure, our consultants know how to help you simplify your database and improve its performance.",
           "logo": "/images/thumbs/thumb-database-dev.jpg",
-          "page": "content/consulting/database-development.mdx",
+          "page": "content/consultingv2/database-development.json",
+          "externalUrl": "/consulting/database-development",
           "tags": [
             {
               "tag": "content/consulting/tag/database-development.json"
@@ -298,6 +359,12 @@
               "tag": "content/consulting/tag/database-development.json"
             }
           ]
+        },
+        {
+          "title": "Azure DevOps to GitHub Migration",
+          "description": "Move from Azure DevOps to the premium engineering platform. Faster setup, built-in security, and CI/CD that scales without punishing your wallet.",
+          "logo": "/images/thumbs/DevOps-GitHub.png",
+          "page": "content/consultingv2/devops-to-github.json"
         }
       ]
     },
@@ -350,7 +417,7 @@
           "title": "Microsoft Dynamics 365",
           "description": "Dynamics 365 combines existing Microsoft products such as Dynamics CRM, Dynamics NAV, and Dynamics AX into one seamless solution.",
           "logo": "/images/thumbs/thumb-dynamics-icon.jpg",
-          "page": "content/consulting/dynamics-365.mdx",
+          "page": "content/consultingv2/dynamics-365.json",
           "tags": [
             {
               "tag": "content/consulting/tag/platform-development.json"
@@ -597,17 +664,6 @@
           ]
         },
         {
-          "title": "Security",
-          "description": "We help you avoid high cost and high profile breaches. Include secure code auditing, network and infrastructure consulting, and identity. We specialise in Auth0, B2C, Azure AD and IdentityServer.",
-          "logo": "/images/thumbs/thumb-security.jpg",
-          "page": "content/consulting/security.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/consulting.json"
-            }
-          ]
-        },
-        {
           "title": "Xero & MYOB",
           "description": "We help organizations to remain more organized while carrying out standard accounting functions with Xero and MYOB.",
           "logo": "/images/thumbs/thumb-xeromyob.jpg",
@@ -639,6 +695,12 @@
               "tag": "content/consulting/tag/consulting.json"
             }
           ]
+        },
+        {
+          "title": "ServiceNow",
+          "description": "ServiceNow made simple with SSW. We sort your setup, tidy your workflows, and build automations that actually save you time.",
+          "logo": "/images/thumbs/ServiceNow-Emblem%20square.png",
+          "page": "content/consultingv2/servicenow.json"
         }
       ]
     },
@@ -860,6 +922,17 @@
           "description": "In such a fast paced moving industry, it's important to have a well designed and maintained Network Infrastructure.",
           "logo": "/images/thumbs/consulting/thumb-networkarchitecture.svg",
           "page": "content/consulting/network-architecture.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            }
+          ]
+        },
+        {
+          "title": "Security",
+          "description": "We help you avoid high cost and high profile breaches. Include secure code auditing, network and infrastructure consulting, and identity. We specialise in Auth0, B2C, Azure AD and IdentityServer.",
+          "logo": "/images/thumbs/thumb-security.jpg",
+          "page": "content/consulting/security.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"

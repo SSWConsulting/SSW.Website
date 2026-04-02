@@ -20,7 +20,7 @@ import {
 } from "../../components/callToAction/callToAction";
 import { seoSchema } from "../../components/util/seo";
 import { sidebarPanelSchema } from "../../components/util/sidebarPanel";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const articlesSchema: Collection = {
   label: "Articles - Pages",
@@ -44,12 +44,12 @@ export const articlesSchema: Collection = {
     exclude: "@(case-study|index|clientCategories)/*",
   },
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/articles/${document._sys.filename}`;
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,
@@ -94,6 +94,12 @@ export const articlesSchema: Collection = {
       description:
         "if you cannot see the Author here add them to 'Events - Presenters' in the list",
       collections: ["presenter"],
+    },
+    {
+      type: "datetime",
+      name: "publishedDate",
+      label: "Published Date",
+      description: "The date this article was published",
     },
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

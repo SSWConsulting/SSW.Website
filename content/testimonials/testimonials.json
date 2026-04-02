@@ -15,7 +15,7 @@
       "name": "Niru Verma",
       "avatar": "/images/testimonialAvatars/niru-verma.jpeg",
       "company": "Mercury Information Security Services",
-      "body": "Uly, your team is such a bunch of angels! Could not be happier that we chose to go with you. The whole crew have been so nice and so wonderful to us – they all deserve big props. I had the chance to go check out SSW's Melbourne office this Sprint, and everyone there was so nice – what a great vibe you have!",
+      "body": "Uly, your team is such a bunch of angels! Could not be happier that we chose to go with you. The whole crew have been so nice and so wonderful to us – they all deserve big props. I had the chance to go check out SSW's Melbourne office this Sprint, and everyone there was so nice – what a great vibe you have!\n",
       "categories": [
         {
           "category": "content/testimonialCategories/Web-Development.mdx"
@@ -355,6 +355,9 @@
         },
         {
           "category": "content/testimonialCategories/Blazor.mdx"
+        },
+        {
+          "category": "content/testimonialCategories/GPT.mdx"
         }
       ]
     },
@@ -376,7 +379,7 @@
       "body": "We have dealt with several people at SSW from a network tech helping us with a domain issue, to a couple of graphic designers and several programmers and they have ALL been first rate.\n",
       "categories": [
         {
-          "category": "content/testimonialCategories/Miscellaneous.mdx"
+          "category": "content/testimonialCategories/GPT.mdx"
         }
       ]
     },
@@ -496,6 +499,21 @@
       "categories": [
         {
           "category": "content/testimonialCategories/Brainstorming.mdx"
+        }
+      ]
+    },
+    {
+      "name": "Thomas Bidou",
+      "avatar": "/images/testimonialAvatars/thomas-bideau.png",
+      "company": "French Payroll Expert",
+      "body": "You've got soccer players and then you have the professional soccer players. They are the professional soccer players.\n",
+      "link": {
+        "url": "https://www.youtube.com/watch?v=YlsbPEvVyq4&t=4s",
+        "title": "Watch Video"
+      },
+      "categories": [
+        {
+          "category": "content/testimonialCategories/GPT.mdx"
         }
       ]
     }

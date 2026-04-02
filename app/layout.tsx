@@ -1,6 +1,7 @@
+import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
-import { EventInfoStatic } from "@/services/server/events";
+import { EventInfoStatic } from "@/services/server/events-types";
 import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
@@ -13,6 +14,7 @@ import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import "styles.css";
 import client from "../tina/__generated__/client";
+import LandingPageCapture from "./components/landing-page-capture";
 import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
 import { WebVitals } from "./components/web-vitals";
@@ -20,6 +22,7 @@ import { LiveStream } from "./live-steam-banner/live-stream";
 import { DEFAULT } from "./meta-data/default";
 import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu, MegaMenuProps } from "./utils/get-mega-menu";
+import { getPhishingBanner } from "./utils/get-phishing-banner";
 
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -56,6 +59,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const menuData = await getMegamenu();
+  const bannerData = await getPhishingBanner();
   const nextUG = await client.queries.getFutureEventsQuery({
     fromDate: new Date().toISOString(),
     top: 1,
@@ -71,7 +75,16 @@ export default async function RootLayout({
         <QueryProvider>
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
+          <LandingPageCapture />
           <PageLayout
+            phishingBanner={
+              bannerData?.data?.phishingBanner && (
+                <PhishingBanner
+                  enabled={bannerData.data.phishingBanner.enabled}
+                  message={bannerData.data.phishingBanner.message}
+                />
+              )
+            }
             megaMenu={MegaMenu({
               menuData: menuData,
               liveStreamData: liveStreamData,
@@ -83,6 +96,7 @@ export default async function RootLayout({
             </AppInsightsProvider>
             {/* </Theme> */}
           </PageLayout>
+
           <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
           <ChatBaseBot />
         </QueryProvider>

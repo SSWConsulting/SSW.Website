@@ -12,28 +12,29 @@ export const TechnologyCardCarouselSchema: Template = {
   fields: [
     {
       type: "object",
-      label: "Technology Groups",
-      name: "technologyGroups",
+      label: "Technologies",
+      name: "technologies",
       list: true,
       ui: {
         itemProps: (item) => {
-          const name = item.technologyGroup?.split("/");
+          const name = item.technology?.split("/");
           return {
-            label: name
-              ? name[name.length - 1].split(".")[0]
-              : "Technology Group",
+            label: name ? name[name.length - 1].split(".")[0] : "Technology",
           };
         },
       },
       fields: [
         {
           type: "reference",
-          label: "Technology Group",
-          name: "technologyGroup",
-          collections: ["technologyGroupsv2"],
+          label: "Technology",
+          name: "technology",
+          collections: ["technologiesv2"],
           ui: {
-            optionComponent: (props: { name: string }, _internalSys) => {
-              return props.name ?? _internalSys.path;
+            optionComponent: (props, _internalSys: { path: string }) => {
+              const filename = _internalSys.path.split("/");
+              return (
+                filename[filename.length - 1].split(".")[0] ?? _internalSys.path
+              );
             },
           },
         },

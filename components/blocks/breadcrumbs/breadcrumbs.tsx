@@ -44,7 +44,7 @@ function getLinks(
     case 1:
       return [
         <BreadcrumbPage
-          key={"breadcrumb-item-1"}
+          key="breadcrumb-item-1"
           data-tina-field={tinaField(data, "finalBreadcrumb")}
         >
           {finalNode || initialTitle || placeholder}
@@ -55,7 +55,7 @@ function getLinks(
     case 3:
     case 4:
       return [
-        <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
+        <BreadcrumbLink key="breadcrumb-item-1" href="/">
           {initialTitle}
         </BreadcrumbLink>,
         ...paths.slice(1, -1).map((path, index) => (
@@ -67,7 +67,7 @@ function getLinks(
           </BreadcrumbLink>
         )),
         <BreadcrumbPage
-          key={"breadcrumb-last-item"}
+          key="breadcrumb-last-item"
           data-tina-field={tinaField(data, "finalBreadcrumb")}
         >
           {finalNode || placeholder}
@@ -75,7 +75,7 @@ function getLinks(
       ];
     default:
       return [
-        <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
+        <BreadcrumbLink key="breadcrumb-item-1" href="/">
           {initialTitle}
         </BreadcrumbLink>,
         <DropdownMenu key={"breadcrumb-dropdown"}>
@@ -91,7 +91,7 @@ function getLinks(
             ))}
           </DropdownMenuContent>
         </DropdownMenu>,
-        <BreadcrumbPage key={"breadcrumb-last-item"}>
+        <BreadcrumbPage key="breadcrumb-last-item">
           {finalNode || placeholder}
         </BreadcrumbPage>,
       ];

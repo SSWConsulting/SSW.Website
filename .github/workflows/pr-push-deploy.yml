@@ -22,8 +22,8 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
       - uses: pnpm/action-setup@v4
@@ -65,7 +65,7 @@ jobs:
     outputs:
       url: ${{ steps.deploy.outputs.url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
@@ -87,7 +87,7 @@ jobs:
           AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
 
       - name: Comment on PR
-        uses: mshick/add-pr-comment@v2
+        uses: mshick/add-pr-comment@v3
         with:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>

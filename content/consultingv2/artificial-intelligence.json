@@ -1,7 +1,16 @@
 {
   "seo": {
-    "title": "Enterprise Development and Consulting for AI/ML/GPT",
-    "description": "Maximize efficiency with AI and Machine Learning solutions. Improve your workflows, gain insights for decision making, and save costs."
+    "title": "AI Consulting & Development | SSW",
+    "description": "Custom AI & Machine Learning solutions in Sydney, Brisbane, Melbourne & Newcastle. We develop bespoke AI applications tailored to your business workflows and data requirements.",
+    "canonical": "https://www.ssw.com.au/consulting/artificial-intelligence",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/ai.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "AI Consulting & Development"
+      }
+    ]
   },
   "blocks": [
     {
@@ -15,7 +24,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Custom AI solutions, **expertly implemented.**",
+      "heading": "Custom AI solutions, **expertly implemented**",
       "isH1": true,
       "description": "Our solutions go beyond basic automation to create real business value, turning AI into a genuine intellectual partner for your specific business challenges.\n",
       "featureColumns": {
@@ -36,6 +45,11 @@
           "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
+        },
+        {
+          "buttonText": " AI Discovery Workshop",
+          "buttonLink": "/consulting/ai-discovery-workshop",
+          "colour": 1
         }
       ],
       "background": {
@@ -53,7 +67,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "heading": "Trusted by",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
@@ -101,7 +115,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book an Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "iconFirst": true
         },
@@ -137,7 +151,7 @@
           "guid": "ib0xbk",
           "altText": "Lorem Ipsum",
           "icon": "BiLogoMicrosoft",
-          "heading": "Intelligent automation, precisely applied",
+          "heading": "Intelligent Automation, Precisely Applied",
           "description": "We build automation that cuts through complexity and adapts to your specific business needs. No generic solutions, just practical AI that solves real problems.",
           "embeddedButton": {
             "buttonText": ""
@@ -147,7 +161,7 @@
           "guid": "hukqtq",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidLockAlt",
-          "heading": "Secure, compliant implementation",
+          "heading": "Secure, Compliant Implementation",
           "description": "AI models offer incredible capabilities but require proper security and compliance guardrails. We implement safeguards that protect your customer data, ensuring your solutions stay both powerful and compliant.",
           "embeddedButton": {
             "buttonText": ""
@@ -157,7 +171,7 @@
           "guid": "65qp3c",
           "altText": "Lorem Ipsum",
           "icon": "BiSolidStar",
-          "heading": "Trusted expertise at scale",
+          "heading": "Trusted Expertise at Scale",
           "description": "From operational efficiency to customer experience, we scale AI solutions that deliver measurable results. Our team brings enterprise-level expertise to organizations of all size.",
           "embeddedButton": {
             "buttonText": ""
@@ -212,7 +226,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Read the full Story",
+          "buttonText": "Read the full story",
           "buttonLink": "https://www.ssw.com.au/company/clients/fpe",
           "colour": 0
         }
@@ -254,7 +268,7 @@
           "buttonLink": "https://chromewebstore.google.com/detail/yakshaver/glcoihkbmomiblcbpnlkafcipcfnikjc?pli=1"
         },
         {
-          "buttonText": "Learn More",
+          "buttonText": "Learn more",
           "buttonLink": "https://www.ssw.com.au/articles/yakshaver-article",
           "colour": 1
         }
@@ -285,7 +299,7 @@
     },
     {
       "isStacked": false,
-      "heading": "Tech wisdom from the trenches",
+      "heading": "Tech Wisdom from the Trenches",
       "isH1": false,
       "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
       "cardStyle": 1,
@@ -301,7 +315,7 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "6 min.",
+              "chipText": "6 min",
               "chipType": "clearChip"
             }
           ],
@@ -323,7 +337,7 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "90 min.",
+              "chipText": "90 min",
               "chipType": "clearChip"
             }
           ],
@@ -346,7 +360,7 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "3 min.",
+              "chipText": "3 min",
               "chipType": "clearChip"
             }
           ],
@@ -369,7 +383,7 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "60 min.",
+              "chipText": "60 min",
               "chipType": "clearChip"
             }
           ],
@@ -392,7 +406,7 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "8 min.",
+              "chipText": "8 min",
               "chipType": "clearChip"
             }
           ],
@@ -414,7 +428,7 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "1 min.",
+              "chipText": "1 min",
               "chipType": "clearChip"
             }
           ],
@@ -432,9 +446,21 @@
       "_template": "cardCarousel"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Artificial-Intelligence.mdx"
+          "technology": "content/v2Technologies/technologies/GitHub-Copilot-v2.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Google-Vertex-AI-v2.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Microsoft-AutoGen.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Python.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Semantic-Kernel-v2.mdx"
         }
       ],
       "isStacked": false,
@@ -448,7 +474,7 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Talk to us about your AI project today",
+      "heading": "Talk to Us About Your AI Project Today",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
@@ -456,7 +482,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a free initial meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

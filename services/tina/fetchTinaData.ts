@@ -1,5 +1,4 @@
-import { TODAY } from "@/hooks/useFetchEvents";
-import { notFound } from "next/navigation";
+import { getTodayISOString } from "@/services/server/events";
 
 export enum FileType {
   MDX = "mdx",
@@ -16,17 +15,16 @@ export async function fetchTinaData<T, V>(
   }>,
   filename?: string,
   type: FileType = FileType.MDX
-): Promise<{ data: T; variables: V; query: string }> {
+): Promise<{ data: T; variables: V; query: string } | null> {
   try {
+    const date = await getTodayISOString();
     const variables: V = {
       relativePath: filename ? `${filename}.${type}` : "",
-      date: TODAY.toISOString(),
+      date,
     } as V;
-
     const response = await queryFunction(variables);
-
     return response;
   } catch {
-    notFound();
+    return null;
   }
 }

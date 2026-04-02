@@ -115,3 +115,11 @@ export const optimizedImageSchema = (description: string) => [
     name: "imageWidth",
   },
 ];
+
+export const kebabCaseFilename = {
+  filename: {
+    description: "A unique filename in kebab case. Example: my-document",
+    showFirst: true,
+    parse: (filename: string) => filename.toLowerCase().replaceAll(" ", "-"),
+  },
+};

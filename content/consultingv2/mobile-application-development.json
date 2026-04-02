@@ -1,4 +1,17 @@
 {
+  "seo": {
+    "title": "Mobile App Development | SSW",
+    "description": "Custom mobile app development in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke iOS & Android apps with .NET MAUI, React Native, and Flutter, tailored to your business.",
+    "canonical": "https://www.ssw.com.au/consulting/mobile-application-development",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/mobile.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Mobile App Development"
+      }
+    ]
+  },
   "blocks": [
     {
       "background": {
@@ -19,7 +32,8 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],
@@ -27,9 +41,10 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/ssw-hero-mobile-apps.png",
-        "imageHeight": 768,
-        "imageWidth": 1408
+        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
+        "imageHeight": 1758,
+        "imageWidth": 2638,
+        "altText": "3 People looking at a mobile phone and smiling "
       },
       "_template": "imageTextBlock"
     },
@@ -37,7 +52,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "heading": "Trusted by",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "isWhiteImages": true,
       "logos": [
         {
@@ -317,11 +332,21 @@
       "_template": "cardCarousel"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/mobile-development.mdx"
+          "technology": "content/v2Technologies/technologies/NET-MAUI.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/flutter.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/react-native.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Ionic.mdx"
         }
       ],
+      "isStacked": false,
       "techCardStyle": 0,
       "background": {
         "backgroundColour": 6
@@ -340,7 +365,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId"
         }
       ],

@@ -1,9 +1,7 @@
 import { TinaClient } from "@/app/tina-client";
 import { getSEOProps } from "@/lib/seo";
-import {
-  convertEventDatesToStrings,
-  getNextEventToBeLiveStreamed,
-} from "@/services/server/events";
+import { convertEventDatesToStrings } from "@/services/server/events-types";
+import { getNextEventToBeLiveStreamed } from "@/services/server/events";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";

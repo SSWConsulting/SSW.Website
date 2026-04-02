@@ -32,6 +32,7 @@ import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
 import { partnerIndexSchema } from "./collections/partner";
 import { paymentDetailsSchema } from "./collections/payment-details";
+import { phishingBannerSchema } from "./collections/phishing-banner";
 import { presenterSchema } from "./collections/presenter";
 import { productsIndexSchema, productsSchema } from "./collections/products";
 import {
@@ -114,6 +115,7 @@ const schemas = [
   opportunitiesSchema,
   globalSchema,
   megaMenuSchema,
+  phishingBannerSchema,
   userGroupGlobalSchema,
 ];
 const config = defineStaticConfig({

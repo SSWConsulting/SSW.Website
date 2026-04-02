@@ -4,8 +4,10 @@ import React, { PropsWithChildren, useState } from "react";
 import Jotform from "react-jotform";
 import { twMerge } from "tailwind-merge";
 import { Template } from "tinacms";
+import { useSessionStorage } from "usehooks-ts";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";
+import { SESSION_STORAGE_KEYS } from "../util/constants";
 
 export interface JotFormEmbedProps extends PropsWithChildren {
   jotFormId: string;
@@ -24,6 +26,11 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
   children,
 }) => {
   const [open, setOpen] = useState(false);
+  // The landing page is added in session storage from the layout
+  const [landingPage] = useSessionStorage<string>(
+    SESSION_STORAGE_KEYS.LANDING_PAGE,
+    ""
+  );
 
   if (!jotFormId) return <></>;
 
@@ -45,7 +52,13 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
         showCloseIcon={true}
         onClose={() => setOpen(false)}
       >
-        <Jotform src={`https://www.jotform.com/${jotFormId}`}></Jotform>
+        <Jotform
+          // Pass the landing page when submitting the form
+          defaults={{
+            landingPage,
+          }}
+          src={`https://www.jotform.com/${jotFormId}`}
+        ></Jotform>
       </Popup>
     </>
   );

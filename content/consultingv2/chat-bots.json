@@ -1,0 +1,454 @@
+{
+  "seo": {
+    "title": "AI Consulting & Development | SSW",
+    "description": "Custom AI & Machine Learning solutions in Sydney, Brisbane, Melbourne & Newcastle. We develop bespoke AI applications tailored to your business workflows and data requirements.",
+    "canonical": "https://www.ssw.com.au/consulting/artificial-intelligence",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/ai.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "AI Consulting & Development"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "AI Chatbot Development",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Want an AI-powered **chatbot** on your website?",
+      "isH1": true,
+      "description": "Our AI-powered chatbots are redefining customer service. Delivering instant, intelligent, and personalized support 24/7.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": " AI Discovery Workshop",
+          "buttonLink": "/consulting/ai-discovery-workshop",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mobilePlacement": "Above",
+        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
+          "scale": 195
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
+          "scale": 160
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
+          "scale": 180
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
+          "scale": 175
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
+          "scale": 170
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
+          "scale": 195,
+          "altText": "Logo"
+        },
+        {
+          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
+          "scale": 175
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Why invest in **Chatbots** now?",
+      "isH1": false,
+      "description": "Previously, chatbots posed financial and technical risks due to their high costs and frequent bugs. But times have changed. Advanced AI language models, such as ChatGPT, offer reliable and effective chatbots at a fraction of the former cost - just $3,990 + GST.\n\nNeglecting to include a robust chatbot on your website is now a missed opportunity for optimizing customer engagement.\n",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "iconFirst": true
+        },
+        {
+          "buttonText": "Rules to Better AI",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-ai/",
+          "icon": "BiSolidWrench",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://youtu.be/sZY1BqHBbR0?si=-YZTZghyMiiAfshW",
+        "altText": "Website Chatbot in 1 day | Ulysses Maclaren"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ib0xbk",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSupport",
+          "heading": "Customer Support",
+          "description": "Get customer support that never sleeps. An AI-powered chatbot gives your customers immediate assistance, day or night – and costs less!just practical AI that solves real problems.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "65qp3c",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidStar",
+          "heading": "Customer Experience",
+          "description": "Our chatbots talk like real people and have expert emotional intelligence. Whether you run a small shop or a big company, our tailored bots make customer service easy and personal.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "hukqtq",
+          "altText": "Lorem Ipsum",
+          "icon": "BiSolidCustomize",
+          "heading": "Customization",
+          "description": "You choose what information to train your bot with – webpages, documents, and/or direct text. The chatbot is trained on all your sources of knowledge and can be configured to stay updated by automatically re-training itself every 24 hours.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study"
+      },
+      "heading": "Boosting Payroll Expertise with a **Custom AI Chatbot**",
+      "isH1": false,
+      "description": "French Payroll Expert (FPE) spent too much time answering the same questions about French labor law. We built them a custom AI chatbot that delivers accurate, multilingual answers 24/7, directly from official sources.\n",
+      "chips": [
+        {
+          "chipText": "Semantic Kernel",
+          "chipType": "filledChip"
+        },
+        {
+          "chipText": "OpenAI",
+          "chipType": "filledChip"
+        }
+      ],
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Instant Answers, Any Language",
+            "description": "Clients get fast, 24/7 payroll answers in their own language. The AI uses verified French legislation, breaking down barriers."
+          },
+          {
+            "heading": "AI Becomes a Selling Point",
+            "description": "The chatbot isn't just support, it's a competitive edge that helped FPE attract new clients and win more business."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Read the full story",
+          "buttonLink": "https://www.ssw.com.au/company/clients/fpe",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "youtubeUrl": "https://www.youtube.com/watch?v=YlsbPEvVyq4"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": false,
+      "heading": "Tech Wisdom from the Trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "arf4s",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
+          "altText": "AI",
+          "chips": [
+            {
+              "chipText": "AI Use",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "6 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "If you think AI is cheating, you're doing it wrong!",
+          "description": "AI is the tool of this generation, but are we using it responsibly? Ulysses Maclaren dives into the best practices for AI use - covering transparency, critical thinking, data privacy, and how to leverage AI to boost productivity. Learn why using AI intelligently is the key to staying ahead in your career.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "ui7a6e",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Trends",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "90 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "The Year of the AI Agent: Automation to Intelligence",
+          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "hhszy",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/F06MV1qm51Y?si=u1mOLqpFCaty4NrL",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Model Guides",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "12 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": " 3 Creative Uses for OpenAI API ",
+          "description": "From smart home automation to content generation, he unveils three groundbreaking ideas that leverage the power of AI. Discover how chat GPT can output commands and instructions for other systems, making your home smarter and more efficient. Witness the potential of automated content generation and its impact on your productivity. Get inspired and join the future of innovation!",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "akn4ur",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/LrnMP8T4HDE?si=uorL-73cVGtHxMTh",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Strategy",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "18 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": " Create a Killer Chatbot with OpenAI",
+          "description": "Discover the power of the OpenAI API, its ability to generate intelligent responses, and the step-by-step process of building effective chatbots. Enhance user experience and save time by harnessing the natural language processing capabilities of ChatGPT.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "20ehn",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "Multi-Language AI Apps",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "60 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
+          "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
+          "embeddedButton": {
+            "buttonText": "",
+            "buttonLink": ""
+          }
+        },
+        {
+          "guid": "hupqdh",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=WwF69cj8490",
+          "altText": "Lorem Ipsum",
+          "chips": [
+            {
+              "chipText": "AI Strategy",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "8 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "How to supercharge a company with AI",
+          "description": "Supercharge your company with AI!  🚀  See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features.  Discover actionable tips to implement AI",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologies": [
+        {
+          "technology": "content/v2Technologies/technologies/chatgpt.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/gpt-4.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/azure-cognitive-services.mdx"
+        }
+      ],
+      "isStacked": true,
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 3
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to Us About Your AI Project Today",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "100px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
