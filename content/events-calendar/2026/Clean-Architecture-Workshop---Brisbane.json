@@ -6,6 +6,9 @@
   "presenterList": [
     {
       "presenter": "content/presenters/daniel-mackay.mdx"
+    },
+    {
+      "presenter": "content/presenters/anton-polkanov.mdx"
     }
   ],
   "startDateTime": "2026-11-22T23:00:56.048Z",
