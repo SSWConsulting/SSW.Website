@@ -20,7 +20,6 @@ import { customDownloadButtonSchema } from "./CustomDownloadButton";
 import { aboutUsBlockSchema } from "./aboutUs.schema";
 import { agendaSchema } from "./agenda";
 import { BreadcrumbSchema } from "./breadcrumbs/breadcrumbs.schema";
-import { builtOnAzureBlockSchema } from "./builtOnAzure";
 import { CardCarouselSchema } from "./cardCarousel/cardCarousel/cardCarouselSchema";
 import { TechnologyCardCarouselSchema } from "./cardCarousel/technologyCards/technologyCardCarouselSchema";
 import { carouselBlockSchema } from "./carousel.schema";
@@ -73,7 +72,6 @@ export const pageBlocks: Template[] = [
   agreementFormBlockSchema,
   interestFormSchema,
   bookingButtonSchema,
-  builtOnAzureBlockSchema,
   carouselBlockSchema,
   citationBlockSchema,
   clientListSchema,

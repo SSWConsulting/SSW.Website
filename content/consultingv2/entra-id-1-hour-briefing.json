@@ -215,8 +215,5 @@
       },
       "_template": "imageTextBlock"
     }
-  ],
-  "azureBanner": {
-    "azureFooterColor": "white"
-  }
+  ]
 }

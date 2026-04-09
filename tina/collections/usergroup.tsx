@@ -7,7 +7,6 @@ import type { Collection } from "tinacms";
 import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist.schema";
 import { joinAsPresenterSchema } from "../../components/usergroup/joinAsPresenter";
 import { latestTechSchema } from "../../components/usergroup/latestTech";
-import azureBannerSchema from "../../components/util/showAzureBanner";
 import { kebabCaseFilename } from "./shared-fields";
 
 export const userGroupPageSchema: Collection = {
@@ -158,7 +157,6 @@ export const userGroupPageSchema: Collection = {
           name: "testimonialCategories",
           collections: ["testimonialCategories"],
         },
-        azureBannerSchema,
       ],
     },
     {
@@ -175,7 +173,6 @@ export const userGroupPageSchema: Collection = {
           isBody: true,
           templates: [...Schemas.pageBlocks],
         },
-        azureBannerSchema,
       ],
     },
   ],
