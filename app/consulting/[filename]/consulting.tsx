@@ -2,7 +2,6 @@
 
 import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { BookingButton } from "@/components/bookingButton/bookingButton";
@@ -145,17 +144,6 @@ export default function Consulting({ tinaProps, props }) {
           ></h2>
         </CallToAction>
       )}
-      <Section>
-        <BuiltOnAzure
-          data={
-            data.consulting?.azureBanner?.azureFooterColor
-              ? data.consulting
-              : {
-                  azureFooterColor: "white",
-                }
-          }
-        />
-      </Section>
     </div>
   );
 }

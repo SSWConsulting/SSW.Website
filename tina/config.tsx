@@ -1,5 +1,4 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
-import azureBannerSchema from "../components/util/showAzureBanner";
 import { articlesIndexSchema, articlesSchema } from "./collections/articles";
 import { caseStudySchema } from "./collections/case-study";
 import {
@@ -49,24 +48,10 @@ import {
 } from "./collections/usergroup";
 import { videoProductionSchema } from "./collections/videoProduction";
 
-const appendSharedSchemas = (
-  schemas,
-  leadingFields = [],
-  trailingFields = []
-) => {
-  for (const schema of schemas) {
-    if (!schema.fields) {
-      continue;
-    }
-    schema.fields = [...leadingFields, ...schema.fields, ...trailingFields];
-  }
-  return schemas;
-};
 const formattedSchemas = () => {
-  return [
-    ...schemas,
-    ...appendSharedSchemas(pageSchemas, [], [azureBannerSchema]),
-  ].sort((a, b) => a.name.localeCompare(b.name));
+  return [...schemas, ...pageSchemas].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 };
 
 const pageSchemas = [

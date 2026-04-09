@@ -1,6 +1,5 @@
 "use client";
 
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import {
   DownloadWhitepaperLink,
   industryRenderer,
@@ -61,7 +60,6 @@ export default function IndustryPage({ props, tinaProps }) {
           />
         </div>
       </Container>
-      <BuiltOnAzure data={industry.azureBanner} />
     </>
   );
 }

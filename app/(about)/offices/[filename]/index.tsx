@@ -1,13 +1,11 @@
 "use client";
 
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CustomLink } from "@/components/customLink";
 import ContactPanel from "@/components/offices/contactPanel";
 import MicrosoftPanel from "@/components/offices/microsoftPanel";
 import TestimonialPanel from "@/components/offices/testimonialPanel";
 import { Container } from "@/components/util/container";
-import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import Image from "next/image";
@@ -52,9 +50,6 @@ export default function OfficePage({ props, tinaProps }) {
           </div>
         </div>
       </Container>
-      <Section>
-        <BuiltOnAzure data={data.offices.azureBanner} />
-      </Section>
     </>
   );
 }

@@ -3,7 +3,6 @@ import ArticleAuthor from "@/components/articles/articleAuthor";
 import ArticleDate from "@/components/articles/articleDate";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CallToAction } from "@/components/callToAction/callToAction";
-import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { SidebarPanel } from "@/components/sidebar/sidebarPanel";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
@@ -136,15 +135,6 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
           )}
         </CallToAction>
       )}
-      <PreFooter
-        data={
-          data.articles?.azureBanner?.azureFooterColor
-            ? data.articles.azureBanner
-            : {
-                azureFooterColor: "white",
-              }
-        }
-      />
     </>
   );
 };
