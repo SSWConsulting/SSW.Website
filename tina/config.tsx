@@ -49,10 +49,9 @@ import {
 import { videoProductionSchema } from "./collections/videoProduction";
 
 const formattedSchemas = () => {
-  return [
-    ...schemas,
-    ...pageSchemas,
-  ].sort((a, b) => a.name.localeCompare(b.name));
+  return [...schemas, ...pageSchemas].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 };
 
 const pageSchemas = [
