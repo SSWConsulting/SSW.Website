@@ -49,7 +49,7 @@ Approve the PR only if ALL of the following are true:
 Use `submit-pull-request-review` to approve the PR with `event: APPROVE`. In the review body, briefly summarise what you reviewed (list the files) and confirm there were no structural issues found.
 
 **If the content has issues:**
-Use `add-comment` to post a comment on the PR. Explain specifically which files have issues and what the problems are. Be concise and actionable. Do not formally block the PR — your comment is advisory and a human can still merge.
+Use `add-comment` to post a comment on the PR. Explain specifically which files have issues and what the problems are. Be concise and actionable. Do not formally block the PR — your comment is advisory and a human can still merge. Mention that you can re-review the PR after the issues are addressed when the reviewer marks it as ready for review again.
 
 **If you are unable to complete the review** (e.g. you cannot read the diff or access the files):
 Use `add-comment` to note that the automated review could not be completed and request that a human reviewer check the PR.
