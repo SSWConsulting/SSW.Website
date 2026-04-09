@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { CustomLink } from "../../customLink";
 
-export const TechnologyLinks = () => {
-  return (
-    <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 py-1">
+export const TechnologyLinks = () => (
+  <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 py-1">
       <CustomLink
         href="https://tina.io"
         className="unstyled flex min-h-6 items-center gap-1 p-1 text-gray-300 underline-offset-2 hover:text-orange-300 hover:underline"
@@ -25,6 +24,5 @@ export const TechnologyLinks = () => {
           Built on Microsoft Azure
         </span>
       </CustomLink>
-    </div>
-  );
-};
+  </div>
+);
