@@ -40,6 +40,7 @@ Approve the PR only if ALL of the following are true:
 - **Frontmatter validity** (for `.mdx` files): The YAML frontmatter block (between `---` delimiters) is syntactically valid. Flag unclosed delimiters, broken indentation, or garbled values.
 - **Markdown structure** (for `.mdx`/`.md` files): The body is well-formed. Flag broken link syntax (e.g. `[text](` with no closing parenthesis), unclosed code fences (triple backtick blocks left open), or obvious encoding artifacts.
 - **Content legitimacy**: The content appears to be ready for publication. Flag any content that seems like placeholder text, test content, or non-serious contributions. For example if the text appears to be a duplicate of another page, or contains obvious gibberish, it may not be ready for approval.
+- **Json structure** (for `.json` files): The JSON is syntactically valid. Flag unclosed braces, missing commas, or garbled values.
 
 Do NOT block PRs for subjective writing quality, tone, style, or factual accuracy. Only flag clear structural defects or legitimacy concerns.
 
