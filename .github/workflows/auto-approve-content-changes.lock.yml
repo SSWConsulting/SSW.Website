@@ -22,7 +22,7 @@
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
 #
-# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"dd63d3139aae7570ba25d3a729c41a2a5507480e12b975c667c70ac88d20e80a","compiler_version":"v0.59.0","strict":true}
+# gh-aw-metadata: {"schema_version":"v2","frontmatter_hash":"11a015e971fc58d5ed902b0f6c307c454feb66ea05a05e8c91f68708ca14f308","compiler_version":"v0.59.0","strict":true}
 
 name: "AI Content Reviewer"
 "on":
@@ -67,7 +67,7 @@ jobs:
         env:
           GH_AW_INFO_ENGINE_ID: "copilot"
           GH_AW_INFO_ENGINE_NAME: "GitHub Copilot CLI"
-          GH_AW_INFO_MODEL: "gpt-5-mini"
+          GH_AW_INFO_MODEL: "gpt-5-codex"
           GH_AW_INFO_VERSION: ""
           GH_AW_INFO_AGENT_VERSION: "latest"
           GH_AW_INFO_CLI_VERSION: "v0.59.0"
@@ -711,7 +711,7 @@ jobs:
         env:
           COPILOT_AGENT_RUNNER_TYPE: STANDALONE
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
-          COPILOT_MODEL: gpt-5-mini
+          COPILOT_MODEL: gpt-5-codex
           GH_AW_MCP_CONFIG: /home/runner/.copilot/mcp-config.json
           GH_AW_PHASE: agent
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
@@ -934,7 +934,7 @@ jobs:
         env:
           COPILOT_AGENT_RUNNER_TYPE: STANDALONE
           COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_GITHUB_TOKEN }}
-          COPILOT_MODEL: gpt-5-mini
+          COPILOT_MODEL: gpt-5-codex
           GH_AW_PHASE: detection
           GH_AW_PROMPT: /tmp/gh-aw/aw-prompts/prompt.txt
           GH_AW_VERSION: v0.59.0
@@ -1129,7 +1129,7 @@ jobs:
     env:
       GH_AW_CALLER_WORKFLOW_ID: "${{ github.repository }}/auto-approve-content-changes"
       GH_AW_ENGINE_ID: "copilot"
-      GH_AW_ENGINE_MODEL: "gpt-5-mini"
+      GH_AW_ENGINE_MODEL: "gpt-5-codex"
       GH_AW_WORKFLOW_ID: "auto-approve-content-changes"
       GH_AW_WORKFLOW_NAME: "AI Content Reviewer"
     outputs:
