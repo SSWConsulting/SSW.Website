@@ -46,7 +46,7 @@ export const socialStyles: Record<
   },
   instagram: {
     icon: FaInstagram,
-    bgClassName: "bg-gradient-tr-social-instagram",
+    bgClassName: "bg-social-instagram",
   },
   xtwitter: {
     icon: FaXTwitter,

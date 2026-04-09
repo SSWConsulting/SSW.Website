@@ -18,8 +18,8 @@ const AboutUs = dynamic(() =>
 
 import { Agenda } from "./blocks/agenda";
 
-const BuiltOnAzure = dynamic(() =>
-  import("./blocks/builtOnAzure").then((mod) => mod.BuiltOnAzure)
+const UtilityButton = dynamic(() =>
+  import("./button/utilityButton").then((mod) => mod.UtilityButton)
 );
 
 import { Carousel } from "./blocks/carousel";
@@ -160,7 +160,6 @@ const componentMap = {
   Breadcrumbs,
   ServiceCards,
   UpcomingEvents,
-  BuiltOnAzure,
   CustomImage,
   ClientLogos,
   VerticalImageLayout,
@@ -191,6 +190,7 @@ const componentMap = {
   CardCarousel,
   TechnologyCardCarousel,
   Spacer,
+  UtilityButton,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

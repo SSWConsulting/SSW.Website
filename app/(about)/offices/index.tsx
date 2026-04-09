@@ -1,5 +1,4 @@
 "use client";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Flag } from "@/components/blocks/flag";
 import { CustomLink } from "@/components/customLink";
 import MicrosoftPanel from "@/components/offices/microsoftPanel";
@@ -110,8 +109,6 @@ export default function OfficesPage({ tinaProps }) {
               </div>
             </div>
           </Container>
-          <BuiltOnAzure data={tinaProps.azureBanner} />
-          {/* <PreFooter /> */}
         </>
       )}
     </>

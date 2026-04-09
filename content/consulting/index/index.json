@@ -57,7 +57,7 @@
           "title": "Artificial Intelligence",
           "description": "Develop custom AI solutions tailored for your business.",
           "logo": "/images/thumbs/thumb-machinelearning.jpg",
-          "page": "content/consulting/artificial-intelligence.mdx",
+          "page": "content/consultingv2/artificial-intelligence.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -68,7 +68,7 @@
           "title": "Chatbots",
           "description": "Improve customer support with a ChatGPT-powered bot. Cost-effective, customizable, setup in 1 day. Ideal for businesses embracing advanced AI tech.",
           "logo": "/images/thumbs/awesome-chatbot-logo.png",
-          "page": "content/consulting/chatbots.mdx",
+          "page": "content/consultingv2/chat-bots.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -79,7 +79,7 @@
           "title": "ChatGPT",
           "description": "GPT and ChatGPT are ground-breaking AI language models that can revolutionize the way businesses communicate, automate tasks, and streamline processes.",
           "logo": "/images/thumbs/thumb-gpt.jpg",
-          "page": "content/consulting/gpt.mdx",
+          "page": "content/consultingv2/gpt.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -112,7 +112,7 @@
           "title": "Bots",
           "description": "Awesome bots give you an advantage in finding and automatically entering data for your business with advanced artificial intelligence.",
           "logo": "/images/thumbs/thumb-azure-bot-icon.jpg",
-          "page": "content/consulting/bots.mdx",
+          "page": "content/consultingv2/bots.json",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -161,6 +161,18 @@
           "logo": "/images/thumbs/Generated%20image%20final.png",
           "page": "content/consultingv2/ai-powered-phone-system.json",
           "externalUrl": "/consulting/ai-powered-phone-system",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/ai-development.json"
+            }
+          ]
+        },
+        {
+          "title": "OpenClaw",
+          "description": "Don't go at it alone. SSW helps you set up OpenClaw securely - mitigating risks, configuring channels, and getting it right the first time.",
+          "logo": "/images/thumbs/thumb-openclaw.png",
+          "page": "content/consultingv2/openclaw.json",
+          "externalUrl": "/consulting/openclaw",
           "tags": [
             {
               "tag": "content/consulting/tag/ai-development.json"
@@ -652,17 +664,6 @@
           ]
         },
         {
-          "title": "Security",
-          "description": "We help you avoid high cost and high profile breaches. Include secure code auditing, network and infrastructure consulting, and identity. We specialise in Auth0, B2C, Azure AD and IdentityServer.",
-          "logo": "/images/thumbs/thumb-security.jpg",
-          "page": "content/consulting/security.mdx",
-          "tags": [
-            {
-              "tag": "content/consulting/tag/consulting.json"
-            }
-          ]
-        },
-        {
           "title": "Xero & MYOB",
           "description": "We help organizations to remain more organized while carrying out standard accounting functions with Xero and MYOB.",
           "logo": "/images/thumbs/thumb-xeromyob.jpg",
@@ -921,6 +922,17 @@
           "description": "In such a fast paced moving industry, it's important to have a well designed and maintained Network Infrastructure.",
           "logo": "/images/thumbs/consulting/thumb-networkarchitecture.svg",
           "page": "content/consulting/network-architecture.mdx",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            }
+          ]
+        },
+        {
+          "title": "Security",
+          "description": "We help you avoid high cost and high profile breaches. Include secure code auditing, network and infrastructure consulting, and identity. We specialise in Auth0, B2C, Azure AD and IdentityServer.",
+          "logo": "/images/thumbs/thumb-security.jpg",
+          "page": "content/consulting/security.mdx",
           "tags": [
             {
               "tag": "content/consulting/tag/cloud-and-infrastructure.json"

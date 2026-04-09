@@ -1,7 +1,6 @@
 "use client";
 
 import { Blocks } from "@/components/blocks-renderer";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/components/blocks/techUpgrade";
 import HistoryTimeline from "@/components/company/historyTimeline";
@@ -94,9 +93,6 @@ export default function CompanyPage({ tinaProps, props }) {
             <TechUpgrade />
           </Section>
         )}
-        <Section>
-          <BuiltOnAzure data={data.company.azureBanner} />
-        </Section>
       </div>
     </>
   );

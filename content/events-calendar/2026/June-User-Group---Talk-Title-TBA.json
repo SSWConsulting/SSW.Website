@@ -1,0 +1,26 @@
+{
+  "title": "June User Group - Your First Steps with Azure IaC",
+  "url": "/netug/sydney",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/ben-neoh.mdx"
+    },
+    {
+      "presenter": "content/presenters/rick-su.mdx"
+    }
+  ],
+  "startDateTime": "2026-06-17T08:00:18.554Z",
+  "endDateTime": "2026-06-17T11:00:27.447Z",
+  "startShowBannerDateTime": "2026-06-16T14:00:08.971Z",
+  "endShowBannerDateTime": "2026-06-17T12:00:20.961Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Artificial Intelligence",
+  "abstract": "Agenda TBA - watch this space!",
+  "description": "Agenda TBA - watch this space!\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}

@@ -3,7 +3,7 @@ import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { sswCountries } from "../../components/util/constants/country";
 import { seoSchema } from "../../components/util/seo";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const officeIndexSchema: Collection = {
   label: "Offices - Index",
@@ -64,12 +64,12 @@ export const officeSchema: Collection = {
   format: "mdx",
   path: "content/offices",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/offices/${document._sys.filename}`;
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

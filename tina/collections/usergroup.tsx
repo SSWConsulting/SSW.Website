@@ -7,8 +7,7 @@ import type { Collection } from "tinacms";
 import { youtubePlaylistSchema } from "../../components/blocks/youtubePlaylist.schema";
 import { joinAsPresenterSchema } from "../../components/usergroup/joinAsPresenter";
 import { latestTechSchema } from "../../components/usergroup/latestTech";
-import azureBannerSchema from "../../components/util/showAzureBanner";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const userGroupPageSchema: Collection = {
   label: "User Groups - Pages",
@@ -19,6 +18,7 @@ export const userGroupPageSchema: Collection = {
     exclude: "global/**/**",
   },
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       if (document._sys.filename === "index") {
         return "/netug";
@@ -33,7 +33,6 @@ export const userGroupPageSchema: Collection = {
       name: "locationPage",
       label: "Location User Group Page",
       fields: [
-        tipField,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         seoSchema,
@@ -158,14 +157,12 @@ export const userGroupPageSchema: Collection = {
           name: "testimonialCategories",
           collections: ["testimonialCategories"],
         },
-        azureBannerSchema,
       ],
     },
     {
       name: "contentPage",
       label: "Content User Group Page",
       fields: [
-        tipField,
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         seoSchema,
@@ -176,7 +173,6 @@ export const userGroupPageSchema: Collection = {
           isBody: true,
           templates: [...Schemas.pageBlocks],
         },
-        azureBannerSchema,
       ],
     },
   ],

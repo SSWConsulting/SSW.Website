@@ -1,6 +1,5 @@
 "use client";
 
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { YoutubePlaylistBlock } from "@/components/blocks/youtubePlaylist";
 import { UtilityButton } from "@/components/button/utilityButton";
 import { CustomLink } from "@/components/customLink";
@@ -98,7 +97,6 @@ export default function LivePage({ props, tinaProps }) {
       <Container size="xsmall">
         <YoutubePlaylistBlock {...data.live.youtubePlaylist} />
       </Container>
-      <BuiltOnAzure data={data.live.azureBanner} />
     </>
   );
 }

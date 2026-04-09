@@ -4,7 +4,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { BookingButton } from "@/components/bookingButton/bookingButton";
 import { Container } from "@/components/util/container";
@@ -87,18 +86,6 @@ export default function VideoProductionPage({ props, tinaProps }) {
       ) : (
         <></>
       )}
-
-      <Section>
-        <BuiltOnAzure
-          data={
-            data.videoProduction?.azureBanner?.azureFooterColor
-              ? data.videoProduction.azureBanner
-              : {
-                  azureFooterColors: "white",
-                }
-          }
-        />
-      </Section>
     </>
   );
 }
