@@ -51,12 +51,11 @@ export default function PageContent({ props }) {
       {data.page?.subTitle && (
         <Section
           className="mx-auto w-full max-w-9xl px-4 sm:px-8"
-          data-tina-field={tinaField(data.page, "title")}
+          data-tina-field={tinaField(data.page, "subTitle")}
         >
           <span>
             <TinaMarkdown
               content={data.page?.subTitle}
-              data-tina-field={tinaField(data.page, "subTitle")}
               components={componentRenderer}
             />
           </span>
