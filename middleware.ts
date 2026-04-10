@@ -20,19 +20,22 @@ export function middleware(request: NextRequest) {
         "/" +
         firstSegment.toLowerCase() +
         (firstSlash === -1 ? "" : pathname.slice(firstSlash));
-      return NextResponse.redirect(url, 308);
+      return applySharedHeaders(request, NextResponse.redirect(url, 308));
     }
   }
 
-  const response = NextResponse.next();
+  return applySharedHeaders(request, NextResponse.next());
+}
 
+function applySharedHeaders(
+  request: NextRequest,
+  response: NextResponse
+): NextResponse {
   // Add HSTS headers (180 days)
   response.headers.set("Strict-Transport-Security", "max-age=15552000");
   // Allow AI to index the llms.txt file - just like a robots.txt file for bots - https://thedaviddias.medium.com/getting-started-with-llms-txt-226df8012257
   response.headers.set("X-Robots-Tag", "llms-txt");
-
   addNoIndexHeaders(request, response);
-
   return response;
 }
 
