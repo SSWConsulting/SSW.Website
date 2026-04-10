@@ -15,7 +15,7 @@ export default function EventsIndexPage({ props, tinaProps }) {
   const { data } = tinaProps;
   return (
     <HydrationBoundary state={props.dehydratedState}>
-      <Section className="mx-auto min-h-24 w-full max-w-9xl px-8 py-5 md:min-h-16">
+      <Section className="mx-auto min-h-24 w-full max-w-9xl px-4 sm:px-8 py-5 md:min-h-16">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
           title={data.eventsIndex.seo?.title}
