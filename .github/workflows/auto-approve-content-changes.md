@@ -12,6 +12,7 @@ permissions:
 engine:
   id: copilot
   model: gpt-5-codex
+  version: v1.0.20
 safe-outputs:
   add-comment:
   submit-pull-request-review:
@@ -45,13 +46,11 @@ Approve the PR only if ALL of the following are true (apply each criterion only 
 
 ## Actions
 
-**Important:** You MUST use the safe-output tools (`add_comment`, `submit_pull_request_review`) — not the GitHub MCP tools. These tools auto-target the triggering PR. Do NOT pass `repo`, `owner`, or `pr_number` parameters — only pass the parameters defined in the tool schema (e.g. `body`, `event`).
-
 **If the content is ready for approval:**
-Use the `submit_pull_request_review` safe-output tool to approve the PR with `event: APPROVE`. In the review body, prefix the summary with `**✅ Auto-approve completed successfully!**` and briefly summarise what you reviewed (list the files) and confirm there were no structural issues found. Leave a bullet point list of the criteria you checked and confirm that all passed.
+Use `submit_pull_request_review` to approve the PR with `event: APPROVE`. In the review body, prefix the summary with `**✅ Auto-approve completed successfuly!**` and briefly summarise what you reviewed (list the files) and confirm there were no structural issues found. Leave a bullet point list of the criteria you checked and confirm that all passed.
 
 **If the content has issues:**
-Use the `add_comment` safe-output tool to post a comment on the PR. Prefix the comment with `**❌ Auto-approve failed**` and explain specifically which files have issues and what the problems are. Be concise and actionable. Do not formally block the PR — your comment is advisory and a human can still merge. Mention that you can re-review the PR after the issues are addressed when the reviewer marks it as ready for review again.
+Use `add-comment` to post a comment on the PR. Prefix the comment with `**❌ Auto-approve failed**` and explain specifically which files have issues and what the problems are actionable. Be concise and actionable. Do not formally block the PR — your comment is advisory and a human can still merge. Mention that you can re-review the PR after the issues are addressed when the reviewer marks it as ready for review again.
 
 **If you are unable to complete the review** (e.g. you cannot read the diff or access the files):
-Use the `add_comment` safe-output tool to note that the automated review could not be completed and request that a human reviewer check the PR.
+Use `add-comment` to note that the automated review could not be completed and request that a human reviewer check the PR.
