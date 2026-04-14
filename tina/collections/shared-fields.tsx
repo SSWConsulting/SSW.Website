@@ -120,6 +120,8 @@ export const kebabCaseFilename = {
   filename: {
     description: "A unique filename in kebab case. Example: my-document",
     showFirst: true,
+    slugify: (values: Record<string, string>) =>
+      (values?.title || values?.name || "").toLowerCase().replace(/ /g, "-"),
     parse: (filename: string) => filename.toLowerCase().replaceAll(" ", "-"),
   },
 };
