@@ -41,7 +41,7 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
         )}
         {data.articlesIndex.seo?.showBreadcrumb === null ||
           (data.articlesIndex.seo?.showBreadcrumb && (
-            <Section className="mx-auto w-full max-w-9xl px-4 sm:px-8 py-5">
+            <Section className="mx-auto w-full max-w-9xl px-4 py-5 sm:px-8">
               <></>
               <Breadcrumbs
                 path={"articles"}
@@ -50,7 +50,7 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
               />
             </Section>
           ))}
-        <Section className="mx-auto w-full max-w-9xl px-4 sm:px-8 pb-4 pt-2">
+        <Section className="mx-auto w-full max-w-9xl px-4 pb-4 pt-2 sm:px-8">
           <h1
             className="mt-0 py-2"
             data-tina-field={tinaField(data.articlesIndex, "title")}
@@ -60,7 +60,7 @@ function ArticlesIndexPage({ props, tinaProps }: ArticlesIndexPageProps) {
         </Section>
         <section
           className={classNames(
-            "prose mx-auto w-full max-w-9xl flex-row px-4 sm:px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 md:flex"
+            "prose mx-auto w-full max-w-9xl flex-row px-4 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 sm:px-8 md:flex"
           )}
         >
           {data.articlesIndex._body.children.length > 0 && (

@@ -16,7 +16,7 @@ export default function CompanyPage({ tinaProps, props }) {
     <>
       {data.caseStudy.seo?.showBreadcrumb === null ||
         (data.caseStudy.seo?.showBreadcrumb && (
-          <Section className="mx-auto min-h-24 w-full max-w-9xl px-4 sm:px-8 py-5 md:min-h-16">
+          <Section className="mx-auto min-h-24 w-full max-w-9xl px-4 py-5 sm:px-8 md:min-h-16">
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
               title={data.caseStudy.seo?.title}
@@ -41,14 +41,14 @@ export default function CompanyPage({ tinaProps, props }) {
         </div>
       </Section>
       <Blocks prefix="CaseStudy_body" blocks={data.caseStudy._body} />
-      <Section className="prose mx-auto !block w-full max-w-9xl px-4 sm:px-8 pb-16 pt-0">
+      <Section className="prose mx-auto !block w-full max-w-9xl px-4 pb-16 pt-0 sm:px-8">
         <TinaMarkdown
           data-tina-field={tinaField(data.caseStudy, "content")}
           components={componentRenderer}
           content={data.caseStudy.content}
         />
       </Section>
-      <Section className="mx-auto w-full !bg-gray-75 px-4 sm:px-8 py-5">
+      <Section className="mx-auto w-full !bg-gray-75 px-4 py-5 sm:px-8">
         <TechUpgrade />
       </Section>
     </>
