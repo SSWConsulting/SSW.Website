@@ -23,7 +23,7 @@ export default function VideoProductionPage({ props, tinaProps }) {
 
   return (
     <>
-      <Section className="mx-auto w-full max-w-9xl px-4 sm:px-8 py-5">
+      <Section className="mx-auto w-full max-w-9xl px-4 py-5 sm:px-8">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
           title={data.videoProduction.seo?.title}
@@ -74,7 +74,7 @@ export default function VideoProductionPage({ props, tinaProps }) {
 
       {data.videoProduction.afterBody ? (
         <Section className="mb-16">
-          <Container padding="px-4" className="flex w-full flex-wrap">
+          <Container className="flex w-full flex-wrap">
             <div>
               <Blocks
                 prefix={"VideoProductionAfterBody"}
