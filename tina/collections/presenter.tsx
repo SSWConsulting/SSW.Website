@@ -1,5 +1,5 @@
 import type { Collection } from "tinacms";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const presenterSchemaConstants = {
   value: "presenter",
@@ -20,6 +20,9 @@ export const presenterSchema: Collection = {
   name: "presenter",
   format: "mdx",
   path: "content/presenters",
+  ui: {
+    ...kebabCaseFilename,
+  },
   fields: [
     tipField,
     {

@@ -1,12 +1,15 @@
 import type { Collection } from "tinacms";
 import { transformIntToMonth } from "../../services/client/date.service";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const newsletterSchema: Collection = {
   label: "Newsletters",
   name: "newsletters",
   path: "content/newsletters",
   format: "json",
+  ui: {
+    ...kebabCaseFilename,
+  },
   fields: [
     tipField,
     {

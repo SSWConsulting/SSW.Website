@@ -195,10 +195,10 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/MongoDBv2.mdx"
+          "technology": "content/v2Technologies/technologies/mongodbv2.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/PostgreSQLv2.mdx"
+          "technology": "content/v2Technologies/technologies/postgresqlv2.mdx"
         }
       ],
       "isStacked": false,

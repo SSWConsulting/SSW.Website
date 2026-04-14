@@ -1,12 +1,15 @@
 import type { Collection } from "tinacms";
 import { IconPickerInput } from "../../components/blocksSubtemplates/tinaFormElements/iconSelector";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const technologiesSchema: Collection = {
   label: "Consulting - Technology Cards",
   name: "technologies",
   format: "mdx",
   path: "content/technologies",
+  ui: {
+    ...kebabCaseFilename,
+  },
   fields: [
     tipField,
     {
@@ -43,6 +46,9 @@ export const v2TechnologySchema: Collection = {
   name: "technologiesv2",
   format: "mdx",
   path: "content/v2Technologies/technologies",
+  ui: {
+    ...kebabCaseFilename,
+  },
   fields: [
     tipField,
     {
@@ -103,6 +109,9 @@ export const v2TechnologyGroupsSchema: Collection = {
   name: "technologyGroupsv2",
   format: "mdx",
   path: "content/v2Technologies/groups",
+  ui: {
+    ...kebabCaseFilename,
+  },
   fields: [
     {
       type: "string",

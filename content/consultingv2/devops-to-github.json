@@ -387,10 +387,10 @@
           "technology": "content/v2Technologies/technologies/dependabot.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/gitHub-advanced-security.mdx"
+          "technology": "content/v2Technologies/technologies/github-advanced-security.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/gitHub-copilot-enterprise.mdx"
+          "technology": "content/v2Technologies/technologies/github-copilot-enterprise.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/github-actions.mdx"

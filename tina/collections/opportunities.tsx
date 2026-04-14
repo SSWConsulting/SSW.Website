@@ -4,13 +4,16 @@ import {
   employmentType,
   locations,
 } from "../../components/util/constants/opportunity";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const opportunitiesSchema: Collection = {
   label: "Employment - Opportunities",
   name: "opportunities",
   format: "mdx",
   path: "content/opportunities",
+  ui: {
+    ...kebabCaseFilename,
+  },
   fields: [
     tipField,
     {

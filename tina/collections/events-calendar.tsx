@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Collection, TextField } from "tinacms";
+import { kebabCaseFilename } from "./shared-fields";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
@@ -26,6 +27,7 @@ export const eventsCalendarSchema: Collection = {
   path: "content/events-calendar",
   format: "json",
   ui: {
+    ...kebabCaseFilename,
     beforeSubmit: async ({ values }) => {
       return removeEmptyObjects(values, "presenterList") as Record<
         string,

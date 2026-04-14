@@ -471,7 +471,7 @@
           "technology": "content/v2Technologies/technologies/angular-mini.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/Blazor-mini.mdx"
+          "technology": "content/v2Technologies/technologies/blazor-mini.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/react-mini.mdx"
@@ -480,7 +480,7 @@
           "technology": "content/v2Technologies/technologies/ms-azure-mini.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/NET-MAUI.mdx"
+          "technology": "content/v2Technologies/technologies/net-maui.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/wpf-mini.mdx"

@@ -419,7 +419,7 @@
           "technology": "content/v2Technologies/technologies/gpt-4.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/Semantic-Kernel-v2.mdx"
+          "technology": "content/v2Technologies/technologies/semantic-kernel-v2.mdx"
         }
       ],
       "isStacked": true,

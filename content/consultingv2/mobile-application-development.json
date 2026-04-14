@@ -334,7 +334,7 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/NET-MAUI.mdx"
+          "technology": "content/v2Technologies/technologies/net-maui.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/flutter.mdx"
@@ -343,7 +343,7 @@
           "technology": "content/v2Technologies/technologies/react-native.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/Ionic.mdx"
+          "technology": "content/v2Technologies/technologies/ionic.mdx"
         }
       ],
       "isStacked": false,

@@ -1,11 +1,14 @@
 import type { Collection } from "tinacms";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename, tipField } from "./shared-fields";
 
 export const testimonialCategoriesSchema: Collection = {
   label: "Testimonials - Categories",
   name: "testimonialCategories",
   format: "mdx",
   path: "content/testimonialCategories",
+  ui: {
+    ...kebabCaseFilename,
+  },
   fields: [
     tipField,
     {
