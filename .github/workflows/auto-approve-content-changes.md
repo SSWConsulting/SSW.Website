@@ -43,14 +43,14 @@ Approve the PR only if ALL of the following are true (apply each criterion only 
 - **Frontmatter validity** (for `.mdx` files): The YAML frontmatter block (between `---` delimiters) is syntactically valid. Flag unclosed delimiters, broken indentation, or garbled values.
 - **Markdown structure** (for `.mdx`/`.md` files): The body is well-formed. Flag broken link syntax (e.g. `[text](` with no closing parenthesis), unclosed code fences (triple backtick blocks left open), or obvious encoding artifacts.
 - **Content legitimacy**: The content appears to be ready for publication. Flag any content that seems like placeholder text, test content, or non-serious contributions. For example if the text appears to be a duplicate of another page, or contains obvious gibberish, it may not be ready for approval.
-- **Json structure** (for `.json` files): The JSON is syntactically valid. Flag unclosed braces, missing commas, or garbled values.
+- **JSON structure** (for `.json` files): The JSON is syntactically valid. Flag unclosed braces, missing commas, or garbled values.
 - **File name**: The file name should not be a placeholder name like `test.md` or `temp.json`. It should be descriptive of the content. Keep an eye out for file names that appear to have been copied from another file, such as `page-1.mdx`.
-- **Binary files**: If a binary files is added, make sure that it is referenced in the content and that the reference is valid. For example, if an image is added, check that it is used in an `.mdx` file and that the path is correct.
+- **Binary files**: If a binary file is added, make sure that it is referenced in the content and that the reference is valid. For example, if an image is added, check that it is used in an `.mdx` file and that the path is correct.
 
 ## Actions
 
 **If the content is ready for approval:**
-Use `submit_pull_request_review` to approve the PR with `event: APPROVE`. In the review body, prefix the summary with `**✅ Auto-approve completed successfuly!**` and briefly summarise what you reviewed (list the files) and confirm there were no structural issues found. Leave a bullet point list of the criteria you checked and confirm that all passed.
+Use `submit-pull-request-review` to approve the PR with `event: APPROVE`. In the review body, prefix the summary with `**✅ Auto-approve completed successfully!**` and briefly summarize what you reviewed (list the files) and confirm there were no structural issues found. Leave a bullet point list of the criteria you checked and confirm that all passed.
 
 **If the content has issues:**
 Use `add-comment` to post a comment on the PR. Prefix the comment with `**❌ Auto-approve failed**` and explain specifically which files have issues and what the problems are actionable. Be concise and actionable. Do not formally block the PR — your comment is advisory and a human can still merge. Mention that you can re-review the PR after the issues are addressed when the reviewer marks it as ready for review again.
