@@ -14,6 +14,8 @@ engine:
   model: gpt-5-codex
   version: v1.0.20
 safe-outputs:
+  noop:
+    report-as-issue: false
   add-comment:
   submit-pull-request-review:
     max: 1
@@ -28,10 +30,11 @@ Your job is to assess whether the content changes are structurally sound and rea
 ## Steps
 
 1. List all files changed in this pull request.
-2. For each text-based file (`.mdx`, `.md`, `.json`), read only its diff. Evaluate only the added or modified lines against the criteria below — do not review unchanged content.
-3. For binary files (images, fonts), note them as present but skip text analysis — binary-only changes are acceptable.
-4. Before making a decision, produce a checklist that explicitly assesses each approval criterion below. For every criterion, state whether it passes or fails and give a brief reason. Do not skip any criterion.
-5. Only after completing the full checklist, take one of the actions described at the bottom.
+2. **Guard check**: If any changed file is outside the `content/` or `public/` directories, stop immediately with `no-op`. Do not leave a comment or take any action.
+3. For each text-based file (`.mdx`, `.md`, `.json`), read only its diff. Evaluate only the added or modified lines against the criteria below — do not review unchanged content.
+4. For binary files (images, fonts), note them as present but skip text analysis — binary-only changes are acceptable.
+5. Before making a decision, produce a checklist that explicitly assesses each approval criterion below. For every criterion, state whether it passes or fails and give a brief reason. Do not skip any criterion.
+6. Only after completing the full checklist, take one of the actions described at the bottom.
 
 ## Approval Criteria
 
