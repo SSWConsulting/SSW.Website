@@ -12,6 +12,7 @@ export type CustomImageProps = {
   src: string;
   altText: string;
   alignment?: alignment;
+  inline?: boolean;
   height?: number;
   width?: number;
   link?: string;
@@ -28,7 +29,10 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
       <div
         className={classNames(
           "flex flex-col",
-          data.alignment ?? "items-center"
+          data.alignment ?? "items-center",
+          data.inline
+            ? "inline-flex w-1/4 min-w-[320px] max-w-[720px] px-4 align-top"
+            : ""
         )}
       >
         <div className="relative">
@@ -42,6 +46,7 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
             blurDataURL={BluredBase64Image}
             className={classNames(
               "inline-block",
+              data.inline ? "h-auto w-[360px]" : "",
               (customClasses[data.customClass] || data.customClass) ?? ""
             )}
             sizes={data.sizes}
@@ -52,7 +57,9 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
                 "mt-1 text-start font-bold",
                 data.captionColor ?? ""
               )}
-              style={{ maxWidth: `${data.width || 400}px` }}
+              style={{
+                maxWidth: data.inline ? "100%" : `${data.width || 400}px`,
+              }}
             >
               {data.caption}
             </p>
@@ -101,6 +108,12 @@ export const customImageBlockSchema: Template = {
           value: "items-end",
         },
       ],
+    },
+    {
+      type: "boolean",
+      label: "Inline (optional)",
+      name: "inline",
+      required: false,
     },
     {
       type: "number",
