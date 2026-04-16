@@ -110,7 +110,7 @@ export const Layout = ({
                 isLive={!!isLive}
               />
             )}
-            <div className="mx-auto max-w-9xl px-8">
+            <div className="mx-auto max-w-9xl px-4 sm:px-8">
               {event && (isLive || router?.query?.liveStream) && (
                 <LiveStreamWidget
                   event={event}
