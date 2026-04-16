@@ -46,7 +46,7 @@ export const CustomImage = ({ data }: { data: CustomImageProps }) => {
             blurDataURL={BluredBase64Image}
             className={classNames(
               "inline-block",
-              data.inline ? "h-auto w-[360px]" : "",
+              data.inline ? "h-auto max-w-full" : "",
               (customClasses[data.customClass] || data.customClass) ?? ""
             )}
             sizes={data.sizes}
