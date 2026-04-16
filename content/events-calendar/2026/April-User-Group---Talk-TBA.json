@@ -8,10 +8,10 @@
       "presenter": "content/presenters/eddie-kranz.mdx"
     }
   ],
-  "startDateTime": "2026-04-15T08:00:00.000Z",
-  "endDateTime": "2026-04-15T10:00:00.000Z",
-  "startShowBannerDateTime": "2026-04-14T14:00:00.000Z",
-  "endShowBannerDateTime": "2026-04-15T12:00:00.000Z",
+  "startDateTime": "2026-05-15T08:00:00.000Z",
+  "endDateTime": "2026-05-15T10:00:00.000Z",
+  "startShowBannerDateTime": "2026-05-14T14:00:00.000Z",
+  "endShowBannerDateTime": "2026-05-15T12:00:00.000Z",
   "calendarType": "User Groups",
   "city": "Sydney",
   "category": "Artificial Intelligence",
