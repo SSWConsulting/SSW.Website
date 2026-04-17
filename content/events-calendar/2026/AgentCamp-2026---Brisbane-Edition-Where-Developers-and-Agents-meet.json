@@ -3,6 +3,11 @@
   "url": "https://www.meetup.com/ai-builders-brisbane-ai-experts-engineers-ai-agents/events/314197231/",
   "thumbnail": "/images/events/Brisbane-AgentCamp.png",
   "thumbnailDescription": "AgentCamp 2026 ",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
   "startDateTime": "2026-05-08T23:00:14.956Z",
   "endDateTime": "2026-05-09T07:00:27.370Z",
   "calendarType": "Conferences",
