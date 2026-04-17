@@ -18,7 +18,7 @@ export default function IndustryPage({ props, tinaProps }) {
   return (
     <>
       {industry.bannerImg ? (
-        <div className="mx-auto max-w-9xl px-6 sm:px-8">
+        <div className="mx-auto max-w-9xl px-4 sm:px-8">
           <div className="size-auto">
             {industry.whitepaperFile ? (
               <DownloadWhitepaperLink whitepaperFile={industry.whitepaperFile}>
