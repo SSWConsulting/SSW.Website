@@ -6,7 +6,35 @@ on:
     paths:
       - "content/**"
       - "public/**"
-if: github.event.pull_request.user.login == 'tina-cloud-app[bot]'
+  steps:
+    - name: Check org membership
+      id: org_check
+      uses: actions/github-script@v8
+      with:
+        script: |
+          const username = context.payload.pull_request.user.login;
+          console.log(`Checking org membership for: ${username}`);
+          try {
+            const response = await github.rest.orgs.checkMembershipForUser({
+              org: 'SSWConsulting',
+              username,
+            });
+            console.log(`API Response Status: ${response.status}`);
+            core.setOutput('is_member', 'true');
+          } catch (error) {
+            if (error.status !== 404) {
+              throw error;
+            }
+            console.log(`User ${username} is not an org member (404)`);
+            core.setOutput('is_member', 'false');
+          }
+jobs:
+  pre-activation:
+    outputs:
+      is_member: ${{ steps.org_check.outputs.is_member }}
+if: >
+  github.event.pull_request.user.login == 'tina-cloud-app[bot]' ||
+  needs.pre_activation.outputs.is_member == 'true'
 permissions:
   contents: read
   pull-requests: read
