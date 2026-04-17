@@ -159,7 +159,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           <div className="col-span-3 block sm:hidden">
             <CustomLink
               href={youtubeUrls.liveStreamUrl}
-              className="flex h-12 items-center justify-center bg-sswRed text-white"
+              className="unstyled flex h-12 items-center justify-center bg-sswRed text-white"
             >
               Chat with us on Youtube
             </CustomLink>
