@@ -1,4 +1,5 @@
 # Wicksy to own the .github folder
 /.github @wicksipedia
+/.github @@18-th
 
 /pages/terms-and-conditions.mdx @ulyssesmaclaren
