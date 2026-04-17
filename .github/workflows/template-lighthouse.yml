@@ -30,7 +30,7 @@ jobs:
           node-version-file: ".nvmrc"
 
       - name: Wait for slot to be available
-        uses: jtalk/url-health-check-action@v4
+        uses: jtalk/url-health-check-action@v5
         with:
           url: ${{ inputs.url }}
           max-attempts: 5
