@@ -203,8 +203,8 @@
           "guid": "h3ueb",
           "altText": "Lorem Ipsum",
           "icon": "BiLogoMicrosoft",
-          "heading": "Power Platform",
-          "description": "Build apps, automate workflows, and analyse data, all without heavy coding.",
+          "heading": "Azure OpenAI Service",
+          "description": "Build intelligent voice and chat experiences powered by GPT-4 - the engine behind SSW's AI phone system.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/consulting/power-platform"
@@ -214,8 +214,8 @@
           "guid": "v93zjp",
           "altText": "Lorem Ipsum",
           "icon": "BiCommentCheck",
-          "heading": "Zendesk",
-          "description": "Streamline support by centralising all communication channels into one hub.",
+          "heading": "Azure AI Speech",
+          "description": "Real-time speech-to-text and text-to-speech at enterprise scale - the voice layer of every AI phone interaction.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/consulting/zendesk"
@@ -225,8 +225,8 @@
           "guid": "fm6ndo",
           "altText": "Lorem Ipsum",
           "icon": "BiCloudUpload",
-          "heading": "Intune",
-          "description": "A cloud-based unified management solution for mobile devices and operating systems. ",
+          "heading": "Microsoft Copilot",
+          "description": "Bring AI-assisted intelligence into your workflows, so every call outcome feeds directly into your team's tools.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/consulting/intune"
@@ -236,8 +236,8 @@
           "guid": "gylswt8",
           "altText": "Lorem Ipsum",
           "icon": "BiFingerprint",
-          "heading": "Azure Entra ID",
-          "description": "Secure identity and access management that keeps your people and apps connected.",
+          "heading": "Power Automate",
+          "description": "Automate the actions triggered by AI phone calls - from CRM updates to ticket creation and follow-up emails.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id/"
@@ -247,8 +247,8 @@
           "guid": "e7umlf",
           "altText": "",
           "icon": "BiUserVoice",
-          "heading": "Service Desk",
-          "description": "Centralised support that resolves issues fast and keeps your operations running smoothly.",
+          "heading": "Azure Communication Services",
+          "description": "The cloud telephony backbone for routing, recording, and managing AI-powered calls at scale.",
           "embeddedButton": {
             "buttonText": "Read More",
             "buttonLink": "https://www.ssw.com.au/consulting/service-desk"
