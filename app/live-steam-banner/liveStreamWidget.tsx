@@ -166,71 +166,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
               </div>
             </div>
 
-            <div className="mb-4 grid grid-cols-1 gap-x-8 md:grid-cols-2">
-              <div className="text-center md:text-start">
-                <p>Download the SSW Rewards app</p>
-                <CustomLink
-                  className="mr-2 inline-block"
-                  href={layoutData.apps.sswRewards.link.appStore}
-                >
-                  <Image
-                    id="appStoreBadge"
-                    src="/images/badges/App_Store_Badge_US.svg"
-                    alt="Download on the App Store"
-                    width="120"
-                    height="40"
-                  />
-                  <Tooltip
-                    anchorSelect="#appStoreBadge"
-                    place="bottom"
-                    className="p-1 z-tooltip"
-                  >
-                    <Image
-                      src="/images/badges/QRcode_App_Store.svg"
-                      width="100"
-                      height="100"
-                      alt="SSW Reward App QR Code"
-                    />
-                  </Tooltip>
-                </CustomLink>
-                <CustomLink
-                  className="inline-block"
-                  href={layoutData.apps.sswRewards.link.googlePlay}
-                >
-                  <Image
-                    id="googlePlayBadge"
-                    src="/images/badges/Google_Play_Store_badge_EN.svg"
-                    alt="Get it on Google Play"
-                    width="135"
-                    height="40"
-                  />
-                  <Tooltip
-                    anchorSelect="#googlePlayBadge"
-                    place="bottom"
-                    className="p-1 z-tooltip"
-                  >
-                    <Image
-                      src="/images/badges/QRcode_Google_Play.svg"
-                      width="100"
-                      height="100"
-                      alt="SSW Reward App QR Code"
-                    />
-                  </Tooltip>
-                </CustomLink>
-              </div>
-              <div className="text-center md:text-start">
-                <p>How did we do?</p>
-                <div className="flex">
-                  {/* TODO: Update link after the page is implemented */}
-                  <CustomLink
-                    href="https://www.ssw.com.au/ssw/NETUG/EvaluationSurvey.aspx"
-                    className="mr-2 flex h-11 w-full items-center justify-center rounded-md bg-sswRed text-white !no-underline hover:!text-gray-125 md:w-72"
-                  >
-                    Take the Survey
-                  </CustomLink>
-                </div>
-              </div>
-            </div>
+
 
             <div
               className={classNames(
