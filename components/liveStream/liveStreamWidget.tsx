@@ -41,12 +41,6 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
   const param = useSearchParams();
 
-  const collapsableWidgetRefCallback = (e: HTMLDivElement) => {
-    !!e &&
-      !!e.clientHeight &&
-      (e.style.maxHeight = `${document.body.offsetHeight}px`);
-  };
-
   const collapsableEventDescriptionRefCallback = (e: HTMLDivElement) => {
     if (e) {
       const collapsable = e.scrollHeight > e.clientHeight;
@@ -116,7 +110,6 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
       <div
         id="collapsableWidget"
-        ref={collapsableWidgetRefCallback}
         className={classNames(
           {
             "!max-h-0": collapseMap["collapsableWidget"],
