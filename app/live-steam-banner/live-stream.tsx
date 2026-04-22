@@ -123,22 +123,23 @@ export function LiveStream({ event, children }: LiveStreamProps) {
         </LiveStreamClient>
       )}
 
-      <MenuWrapper>
-        {isLive ? (
+      {isLive ? (
+        <LiveStreamWidget
+          {...{ eventDynamic, liveStreamDelayMinutes }}
+          event={eventDynamic}
+          isLive={!!isLive}
+        />
+      ) : (
+        <LiveStreamClient param={"liveStream"}>
           <LiveStreamWidget
             {...{ eventDynamic, liveStreamDelayMinutes }}
             event={eventDynamic}
             isLive={!!isLive}
           />
-        ) : (
-          <LiveStreamClient param={"liveStream"}>
-            <LiveStreamWidget
-              {...{ eventDynamic, liveStreamDelayMinutes }}
-              event={eventDynamic}
-              isLive={!!isLive}
-            />
-          </LiveStreamClient>
-        )}
+        </LiveStreamClient>
+      )}
+
+      <MenuWrapper>
         {children}
       </MenuWrapper>
     </>
