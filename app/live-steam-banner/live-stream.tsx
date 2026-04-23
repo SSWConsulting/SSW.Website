@@ -139,9 +139,7 @@ export function LiveStream({ event, children }: LiveStreamProps) {
         </LiveStreamClient>
       )}
 
-      <MenuWrapper>
-        {children}
-      </MenuWrapper>
+      <MenuWrapper>{children}</MenuWrapper>
     </>
   );
 }
