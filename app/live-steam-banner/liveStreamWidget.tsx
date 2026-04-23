@@ -72,7 +72,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
     <>
       <Script src="https://apis.google.com/js/platform.js" />
       <div className="bg-gray-75">
-        <Container>
+        <Container className="pb-12 pt-4">
           <div className="grid grid-cols-4">
             <div className="col-span-2 sm:col-span-1">
               <Image
@@ -105,7 +105,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             <hr className="my-6 w-full" />
             <div className="absolute w-min bg-inherit px-1">
               <div className="flex items-center gap-2 text-nowrap text-sm font-semibold">
-                Watch live stream
+                {isOpen ? "Hide" : "Watch"} live stream
                 <TfiAngleDown
                   className={cn(
                     "size-3 stroke-1 transition-transform",
@@ -163,7 +163,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
               )}
             >
               <div>
-                <div className="bg-white px-4 py-2 max-md:mb-8">
+                <div className="rounded-md bg-white px-4 py-2 max-md:mb-8">
                   <div>
                     <h3 className="text-xl font-bold">About the Talk</h3>
                     <div
