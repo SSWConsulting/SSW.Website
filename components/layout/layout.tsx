@@ -21,6 +21,18 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const LiveStreamWidget = dynamic(
+  () => {
+    return import("../liveStream/liveStreamWidget").then(
+      (mod) => mod.LiveStreamWidget
+    );
+  },
+  {
+    loading: () => <></>,
+    ssr: true,
+  }
+);
+
 const LiveStreamBanner = dynamic(
   () => import("../liveStream/liveStreamBanner"),
   {
