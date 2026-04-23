@@ -274,7 +274,7 @@ export const RecIndicator = () => {
   return (
     <div className="mt-2 inline-flex animate-pulse items-center gap-2 rounded-full border-2 border-ssw-red bg-ssw-black px-2 py-1">
       <span className="h-2 w-2 rounded-full bg-ssw-red" />
-      <span className="text-xs font-semibold tracking-widest text-sswRed">
+      <span className="select-none text-xs font-semibold tracking-widest text-sswRed">
         REC
       </span>
     </div>
