@@ -183,9 +183,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
               )}
             >
               <div>
-                <div className="mb-8 bg-white px-4 py-2">
+                <div className="bg-white px-4 py-2 max-md:mb-8">
                   <div>
-                    <h3 className="mb-3 text-xl font-bold">About the Talk</h3>
+                    <h3 className="text-xl font-bold">About the Talk</h3>
                     <div
                       id={eventDescriptionCollapseId}
                       ref={collapsableEventDescriptionRefCallback}
