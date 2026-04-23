@@ -163,7 +163,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
               )}
             >
               <div>
-                <div className="rounded-md bg-white px-8 py-4 max-md:mb-8">
+                <div className="rounded-md bg-white px-8 py-4 max-lg:px-4 max-lg:py-2 max-md:mb-8">
                   <div>
                     <h3 className="mb-3 text-xl font-bold text-sswRed">
                       About the Talk
@@ -210,8 +210,8 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       </div>
                     )}
                   </div>
-                  <div className="mb-4 mt-8">
-                    <h4 className="font-bold">Follow us on:</h4>
+                  <div className="mb-4 mt-8 pb-4">
+                    <h4 className="mb-3">Follow us on:</h4>
                     <SocialIcons />
                   </div>
                 </div>
@@ -226,7 +226,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   return (
                     <div
                       key={index}
-                      className="rounded-md bg-white px-8 py-4 max-md:mb-8"
+                      className="rounded-md bg-white px-8 py-4 max-lg:px-4 max-lg:py-2 max-md:mb-8"
                     >
                       <h3 className="mb-3 text-xl font-bold text-sswRed">
                         About the Speaker
