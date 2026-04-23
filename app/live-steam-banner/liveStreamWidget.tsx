@@ -2,10 +2,8 @@
 
 import { VideoEmbed } from "@/components/blocks/videoEmbed";
 import { CustomLink } from "@/components/customLink";
-import { InlineJotForm } from "@/components/inlineJotForm/inlineJotForm";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import { Container } from "@/components/util/container";
-import layoutData, { default as globals } from "@/content/global/index.json";
 import { cn } from "@/lib/utils";
 import { EventInfo } from "@/services/server/events-types";
 import classNames from "classnames";
@@ -13,8 +11,7 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { TfiAngleDown, TfiAngleUp } from "react-icons/tfi";
-import { Tooltip } from "react-tooltip";
+import { TfiAngleDown } from "react-icons/tfi";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 
