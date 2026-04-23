@@ -6,6 +6,7 @@ import { InlineJotForm } from "@/components/inlineJotForm/inlineJotForm";
 import { SocialIcons } from "@/components/socialIcons/socialIcons";
 import { Container } from "@/components/util/container";
 import layoutData, { default as globals } from "@/content/global/index.json";
+import { cn } from "@/lib/utils";
 import { EventInfo } from "@/services/server/events-types";
 import classNames from "classnames";
 import Image from "next/image";
@@ -68,6 +69,8 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
     return <></>;
   }
 
+  const isOpen = !collapseMap["collapsableWidget"];
+
   return (
     <>
       <Script src="https://apis.google.com/js/platform.js" />
@@ -95,7 +98,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           </div>
 
           <a
-            className="relative flex cursor-pointer items-center justify-center bg-gray-75"
+            className="relative flex cursor-pointer items-center justify-center bg-gray-75 text-ssw-black"
             onClick={() =>
               setCollapseMap({
                 collapsableWidget: !collapseMap["collapsableWidget"],
@@ -104,11 +107,15 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
           >
             <hr className="my-6 w-full" />
             <div className="absolute w-min bg-inherit px-1">
-              {collapseMap["collapsableWidget"] ? (
-                <TfiAngleUp />
-              ) : (
-                <TfiAngleDown />
-              )}
+              <div className="flex items-center gap-2 text-nowrap text-sm font-semibold">
+                Watch live stream
+                <TfiAngleDown
+                  className={cn(
+                    "size-3 stroke-1 transition-transform",
+                    isOpen && "rotate-180"
+                  )}
+                />
+              </div>
             </div>
           </a>
 
@@ -165,8 +172,6 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                 </CustomLink>
               </div>
             </div>
-
-
 
             <div
               className={classNames(
@@ -227,7 +232,6 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                     <SocialIcons />
                   </div>
                 </div>
-                <InlineJotForm jotFormId={globals.forms.newsletterJotFormId} />
               </div>
 
               {!!event?.presenterList?.length &&
