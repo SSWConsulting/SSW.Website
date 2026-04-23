@@ -74,7 +74,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
       <div className="bg-gray-75">
         <Container className="pb-12 pt-4">
           <div className="grid grid-cols-4">
-            <div className="col-span-2 sm:col-span-1">
+            <div className="col-span-2 flex items-center gap-5 sm:col-span-1">
               <Image
                 src="/images/logos/SSW_NUG_Live.png"
                 width="239"
@@ -82,7 +82,9 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                 alt="NETUG LIVE"
                 className="object-contain"
               />
+              <RecIndicator />
             </div>
+
             <div className="col-span-2 flex items-center justify-end sm:col-span-3">
               <span className="hidden pr-2 sm:inline">Subscribe to SSW TV</span>
               <div
@@ -265,5 +267,16 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
         </Container>
       </div>
     </>
+  );
+};
+
+export const RecIndicator = () => {
+  return (
+    <div className="mt-2 inline-flex animate-pulse items-center gap-2 rounded-full border-2 border-ssw-red bg-ssw-black px-2 py-1">
+      <span className="h-2 w-2 rounded-full bg-ssw-red" />
+      <span className="text-xs font-semibold tracking-widest text-sswRed">
+        REC
+      </span>
+    </div>
   );
 };
