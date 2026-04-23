@@ -143,23 +143,6 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   </div>
                 </div>
               </div>
-              {/* custom fixed width and height to have best looking and fixed size for different screens */}
-              <div
-                className="fixed right-0 top-2 z-videoThumbnail aspect-video h-56"
-                data-aos="slide-left"
-                data-aos-duration={500}
-                data-aos-anchor="#thumbnailAnchor"
-                data-aos-anchor-placement="bottom-top"
-              >
-                <VideoEmbed
-                  data={{
-                    url: youtubeUrls?.videoUrl,
-                    videoWidth: "w-full",
-                    removeMargin: true,
-                    roundedEdges: false,
-                  }}
-                />
-              </div>
               <div className="hidden h-full sm:col-span-3 sm:block md:col-span-1">
                 <iframe width="100%" height="100%" src={youtubeUrls.chatUrl} />
               </div>
