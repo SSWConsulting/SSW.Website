@@ -163,13 +163,16 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
               )}
             >
               <div>
-                <div className="rounded-md bg-white px-4 py-2 max-md:mb-8">
+                <div className="rounded-md bg-white px-8 py-4 max-md:mb-8">
                   <div>
-                    <h3 className="text-xl font-bold">About the Talk</h3>
+                    <h3 className="mb-3 text-xl font-bold text-sswRed">
+                      About the Talk
+                    </h3>
                     <div
                       id={eventDescriptionCollapseId}
                       ref={collapsableEventDescriptionRefCallback}
                       className={classNames(
+                        "prose leading-6",
                         { "max-h-70": collapseMap[eventDescriptionCollapseId] },
                         {
                           "max-h-none":
@@ -207,7 +210,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       </div>
                     )}
                   </div>
-                  <div className="mt-17">
+                  <div className="mb-4 mt-8">
                     <h4 className="font-bold">Follow us on:</h4>
                     <SocialIcons />
                   </div>
@@ -217,12 +220,18 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
               {!!event?.presenterList?.length &&
                 event.presenterList.map((presenter, index) => {
                   const presenterDetails = presenter.presenter;
+
+                  const presenterFirstName =
+                    presenterDetails.presenter.name.split(" ")[0];
                   return (
-                    <div key={index} className="bg-white px-4 py-2">
-                      <h3 className="mb-3 text-xl font-bold">
+                    <div
+                      key={index}
+                      className="rounded-md bg-white px-8 py-4 max-md:mb-8"
+                    >
+                      <h3 className="mb-3 text-xl font-bold text-sswRed">
                         About the Speaker
                       </h3>
-                      <div className="mb-8 grid grid-cols-6 gap-x-8">
+                      <div className="mb-8 grid grid-cols-6 gap-x-8 max-xl:gap-x-4">
                         <div className="col-span-1">
                           {!!presenterDetails.profileImg && (
                             <Image
@@ -233,17 +242,17 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                             />
                           )}
                         </div>
-                        <div className="col-span-5">
+                        <div className="prose col-span-5 leading-6">
                           <p className="mb-3 font-bold">
                             {presenterDetails.presenter.name}
                           </p>
                           <TinaMarkdown content={presenterDetails.about} />
                           {!!presenterDetails.presenter.peopleProfileURL && (
                             <CustomLink
-                              className="float-right border-b-1 border-dotted border-gray-450 !no-underline"
+                              className="float-right !decoration-black underline-offset-2 hover:!decoration-ssw-red"
                               href={presenterDetails.presenter.peopleProfileURL}
                             >
-                              {`${presenterDetails.presenter.name}'s profile >`}
+                              See {`${presenterFirstName}'s profile`}
                             </CustomLink>
                           )}
                         </div>
