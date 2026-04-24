@@ -136,14 +136,16 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                   >
                     <div className="relative h-0 pt-9/16">
                       <div className="absolute top-0 size-full">
-                        <VideoEmbed
-                          data={{
-                            url: youtubeUrls?.videoUrl,
-                            videoWidth: "w-full",
-                            removeMargin: true,
-                            roundedEdges: false,
-                          }}
-                        />
+                        {youtubeUrls.videoUrl && (
+                          <VideoEmbed
+                            data={{
+                              url: youtubeUrls.videoUrl,
+                              videoWidth: "w-full",
+                              removeMargin: true,
+                              roundedEdges: false,
+                            }}
+                          />
+                        )}
                       </div>
                     </div>
                   </div>
