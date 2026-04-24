@@ -167,9 +167,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
               <div>
                 <div className="rounded-md bg-white px-8 py-4 max-lg:px-4 max-lg:py-2 max-md:mb-8">
                   <div>
-                    <h3 className="mb-3 text-xl font-bold text-sswRed">
-                      About the Talk
-                    </h3>
+                    <h3 className="mb-3 text-xl text-sswRed">About the Talk</h3>
                     <div
                       id={eventDescriptionCollapseId}
                       ref={collapsableEventDescriptionRefCallback}
@@ -230,13 +228,14 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       key={index}
                       className="rounded-md bg-white px-8 py-4 max-lg:px-4 max-lg:py-2 max-md:mb-8"
                     >
-                      <h3 className="mb-3 text-xl font-bold text-sswRed">
+                      <h3 className="mb-3 text-xl text-sswRed">
                         About the Speaker
                       </h3>
                       <div className="mb-8 grid grid-cols-6 gap-x-8 max-xl:gap-x-4">
                         <div className="col-span-1">
                           {!!presenterDetails.profileImg && (
                             <Image
+                              className="rounded-md"
                               src={presenterDetails.profileImg}
                               alt={presenterDetails.presenter.name}
                               width={200}
@@ -272,7 +271,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
 export const RecIndicator = () => {
   return (
-    <div className="mt-2 inline-flex animate-pulse items-center gap-2 rounded-full border-2 border-ssw-red bg-ssw-black px-2 py-1">
+    <div className="animate-slight-pulse mt-2 inline-flex items-center gap-2 rounded-full border-2 border-ssw-red bg-ssw-black px-2 py-1">
       <span className="h-2 w-2 rounded-full bg-ssw-red" />
       <span className="select-none text-xs font-semibold tracking-widest text-sswRed">
         REC
