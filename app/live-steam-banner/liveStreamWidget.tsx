@@ -7,6 +7,7 @@ import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import { EventInfo } from "@/services/server/events-types";
 import classNames from "classnames";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import Script from "next/script";
@@ -118,151 +119,169 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             </div>
           </a>
 
-          <div
-            id="collapsableWidget"
-            className={classNames(
-              {
-                "!max-h-0": collapseMap["collapsableWidget"],
-              },
-              "overflow-hidden transition-all"
-            )}
-          >
-            <div className="mb-4 grid grid-cols-3 gap-8">
-              <div id="thumbnailAnchor" className="col-span-3 md:col-span-2">
-                <div className="relative h-0 pt-9/16">
-                  <div className="absolute top-0 size-full">
-                    <VideoEmbed
-                      data={{
-                        url: youtubeUrls?.videoUrl,
-                        videoWidth: "w-full",
-                        removeMargin: true,
-                        roundedEdges: false,
-                      }}
+          <AnimatePresence initial={false}>
+            {isOpen && (
+              <motion.div
+                id="collapsableWidget"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="mb-4 grid grid-cols-3 gap-8">
+                  <div
+                    id="thumbnailAnchor"
+                    className="col-span-3 md:col-span-2"
+                  >
+                    <div className="relative h-0 pt-9/16">
+                      <div className="absolute top-0 size-full">
+                        <VideoEmbed
+                          data={{
+                            url: youtubeUrls?.videoUrl,
+                            videoWidth: "w-full",
+                            removeMargin: true,
+                            roundedEdges: false,
+                          }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="hidden h-full sm:col-span-3 sm:block md:col-span-1">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src={youtubeUrls.chatUrl}
                     />
                   </div>
+                  <div className="col-span-3 block sm:hidden">
+                    <CustomLink
+                      href={youtubeUrls.liveStreamUrl}
+                      className="unstyled flex h-12 items-center justify-center rounded-md bg-sswRed text-white"
+                    >
+                      Chat with us on Youtube
+                    </CustomLink>
+                  </div>
                 </div>
-              </div>
-              <div className="hidden h-full sm:col-span-3 sm:block md:col-span-1">
-                <iframe width="100%" height="100%" src={youtubeUrls.chatUrl} />
-              </div>
-              <div className="col-span-3 block sm:hidden">
-                <CustomLink
-                  href={youtubeUrls.liveStreamUrl}
-                  className="unstyled flex h-12 items-center justify-center rounded-md bg-sswRed text-white"
+
+                <div
+                  className={classNames(
+                    "mb-4",
+                    "grid",
+                    "grid-cols-1",
+                    "gap-x-8",
+                    event.presenterList?.length && "md:grid-cols-2"
+                  )}
                 >
-                  Chat with us on Youtube
-                </CustomLink>
-              </div>
-            </div>
-
-            <div
-              className={classNames(
-                "mb-4",
-                "grid",
-                "grid-cols-1",
-                "gap-x-8",
-                event.presenterList?.length && "md:grid-cols-2"
-              )}
-            >
-              <div>
-                <div className="rounded-md bg-white px-8 py-4 max-lg:px-4 max-lg:py-2 max-md:mb-8">
                   <div>
-                    <h3 className="mb-3 text-xl text-sswRed">About the Talk</h3>
-                    <div
-                      id={eventDescriptionCollapseId}
-                      ref={collapsableEventDescriptionRefCallback}
-                      className={classNames(
-                        "prose leading-6",
-                        { "max-h-70": collapseMap[eventDescriptionCollapseId] },
-                        {
-                          "max-h-none":
-                            !collapseMap[eventDescriptionCollapseId] ||
-                            !eventDescriptionCollapsable,
-                        },
-                        {
-                          "overflow-hidden":
-                            collapseMap[eventDescriptionCollapseId],
-                        }
-                      )}
-                    >
-                      <TinaMarkdown content={event.description} />
-                    </div>
-                    {eventDescriptionCollapsable && (
-                      <div
-                        className={classNames({
-                          "relative -mt-15 w-full bg-gradient-to-b from-transparent to-white pt-15":
-                            collapseMap[eventDescriptionCollapseId],
-                        })}
-                      >
-                        <a
-                          className="float-right mt-4 cursor-pointer border-b-1 border-dotted border-gray-450 !no-underline"
-                          onClick={() =>
-                            setCollapseMap({
-                              [eventDescriptionCollapseId]:
-                                !collapseMap[eventDescriptionCollapseId],
-                            })
-                          }
+                    <div className="rounded-md bg-white px-8 py-4 max-lg:px-4 max-lg:py-2 max-md:mb-8">
+                      <div>
+                        <h3 className="mb-3 text-xl text-sswRed">
+                          About the Talk
+                        </h3>
+                        <div
+                          id={eventDescriptionCollapseId}
+                          ref={collapsableEventDescriptionRefCallback}
+                          className={classNames(
+                            "prose leading-6",
+                            {
+                              "max-h-70":
+                                collapseMap[eventDescriptionCollapseId],
+                            },
+                            {
+                              "max-h-none":
+                                !collapseMap[eventDescriptionCollapseId] ||
+                                !eventDescriptionCollapsable,
+                            },
+                            {
+                              "overflow-hidden":
+                                collapseMap[eventDescriptionCollapseId],
+                            }
+                          )}
                         >
-                          {collapseMap[eventDescriptionCollapseId]
-                            ? "More >"
-                            : "< Less"}
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                  <div className="mb-4 mt-8 pb-4">
-                    <h4 className="mb-3">Follow us on:</h4>
-                    <SocialIcons />
-                  </div>
-                </div>
-              </div>
-
-              {!!event?.presenterList?.length &&
-                event.presenterList.map((presenter, index) => {
-                  const presenterDetails = presenter.presenter;
-
-                  const presenterFirstName =
-                    presenterDetails.presenter.name.split(" ")[0];
-                  return (
-                    <div
-                      key={index}
-                      className="rounded-md bg-white px-8 py-4 max-lg:px-4 max-lg:py-2 max-md:mb-8"
-                    >
-                      <h3 className="mb-3 text-xl text-sswRed">
-                        About the Speaker
-                      </h3>
-                      <div className="mb-8 grid grid-cols-6 gap-x-8 max-xl:gap-x-4">
-                        <div className="col-span-1">
-                          {!!presenterDetails.profileImg && (
-                            <Image
-                              className="rounded-md"
-                              src={presenterDetails.profileImg}
-                              alt={presenterDetails.presenter.name}
-                              width={200}
-                              height={200}
-                            />
-                          )}
+                          <TinaMarkdown content={event.description} />
                         </div>
-                        <div className="prose col-span-5 leading-6">
-                          <p className="mb-3 font-bold">
-                            {presenterDetails.presenter.name}
-                          </p>
-                          <TinaMarkdown content={presenterDetails.about} />
-                          {!!presenterDetails.presenter.peopleProfileURL && (
-                            <CustomLink
-                              className="float-right !decoration-black underline-offset-2 hover:!decoration-ssw-red"
-                              href={presenterDetails.presenter.peopleProfileURL}
+                        {eventDescriptionCollapsable && (
+                          <div
+                            className={classNames({
+                              "relative -mt-15 w-full bg-gradient-to-b from-transparent to-white pt-15":
+                                collapseMap[eventDescriptionCollapseId],
+                            })}
+                          >
+                            <a
+                              className="float-right mt-4 cursor-pointer border-b-1 border-dotted border-gray-450 !no-underline"
+                              onClick={() =>
+                                setCollapseMap({
+                                  [eventDescriptionCollapseId]:
+                                    !collapseMap[eventDescriptionCollapseId],
+                                })
+                              }
                             >
-                              See {`${presenterFirstName}'s profile`}
-                            </CustomLink>
-                          )}
-                        </div>
+                              {collapseMap[eventDescriptionCollapseId]
+                                ? "More >"
+                                : "< Less"}
+                            </a>
+                          </div>
+                        )}
+                      </div>
+                      <div className="mb-4 mt-8 pb-4">
+                        <h4 className="mb-3">Follow us on:</h4>
+                        <SocialIcons />
                       </div>
                     </div>
-                  );
-                })}
-            </div>
-          </div>
+                  </div>
+
+                  {!!event?.presenterList?.length &&
+                    event.presenterList.map((presenter, index) => {
+                      const presenterDetails = presenter.presenter;
+
+                      const presenterFirstName =
+                        presenterDetails.presenter.name.split(" ")[0];
+                      return (
+                        <div
+                          key={index}
+                          className="rounded-md bg-white px-8 py-4 max-lg:px-4 max-lg:py-2 max-md:mb-8"
+                        >
+                          <h3 className="mb-3 text-xl text-sswRed">
+                            About the Speaker
+                          </h3>
+                          <div className="mb-8 grid grid-cols-6 gap-x-8 max-xl:gap-x-4">
+                            <div className="col-span-1">
+                              {!!presenterDetails.profileImg && (
+                                <Image
+                                  className="aspect-square rounded-full object-cover"
+                                  src={presenterDetails.profileImg}
+                                  alt={presenterDetails.presenter.name}
+                                  width={200}
+                                  height={200}
+                                />
+                              )}
+                            </div>
+                            <div className="prose col-span-5 leading-6">
+                              <p className="mb-3 font-bold">
+                                {presenterDetails.presenter.name}
+                              </p>
+                              <TinaMarkdown content={presenterDetails.about} />
+                              {!!presenterDetails.presenter
+                                .peopleProfileURL && (
+                                <CustomLink
+                                  className="float-right !decoration-black underline-offset-2 hover:!decoration-ssw-red"
+                                  href={
+                                    presenterDetails.presenter.peopleProfileURL
+                                  }
+                                >
+                                  See {`${presenterFirstName}'s profile`}
+                                </CustomLink>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </Container>
       </div>
     </>
@@ -271,8 +290,8 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
 
 export const RecIndicator = () => {
   return (
-    <div className="animate-slight-pulse mt-2 inline-flex items-center gap-2 rounded-full border-2 border-ssw-red bg-ssw-black px-2 py-1">
-      <span className="h-2 w-2 rounded-full bg-ssw-red" />
+    <div className="mt-2 inline-flex animate-slight-pulse items-center gap-2 rounded-full border-2 border-ssw-red bg-ssw-black px-2 py-1">
+      <span className="size-2 rounded-full bg-ssw-red" />
       <span className="select-none text-xs font-semibold tracking-widest text-sswRed">
         REC
       </span>
