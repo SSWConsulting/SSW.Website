@@ -243,8 +243,13 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         marquee: "marquee 20s linear infinite",
         "marquee-vertical": "marquee-vertical 20s linear infinite",
+        "slight-pulse": "slight-pulse 2s ease-in-out infinite",
       },
       keyframes: {
+        "slight-pulse": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.85" },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
