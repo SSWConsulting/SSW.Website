@@ -111,7 +111,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
       {(event.description || event.abstract) && (
         <Section>
           <Container width="medium" size="medium">
-            <div className="gap- flex flex-col md:flex-row md:items-start">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start">
               <div className="w-full shrink-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:order-last md:w-64">
                 {formattedDate && (
                   <div className="mb-4 flex items-start gap-3">
