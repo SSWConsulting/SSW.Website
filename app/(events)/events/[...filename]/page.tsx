@@ -32,7 +32,8 @@ export async function generateStaticParams() {
   const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
     .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
     .map((edge) => {
-      const year = (edge.node.startDateTime as string)?.slice(0, 4) ?? "unknown";
+      const year =
+        (edge.node.startDateTime as string)?.slice(0, 4) ?? "unknown";
       return { filename: [year, edge.node._sys.filename] };
     });
 
@@ -41,15 +42,13 @@ export async function generateStaticParams() {
 
 const getPreviewEventData = async (filename: string) => {
   try {
-    const allEvents = await client.queries.eventsCalendarConnection({
-      first: EVENTS_MAX_SIZE_OVERRIDE,
-      sort: "startDateTime",
-    });
-    const edge = allEvents.data.eventsCalendarConnection.edges?.findLast(
-      (e) => e?.node?._sys.filename === filename
+    const tinaProps = await fetchTinaData(
+      client.queries.eventsCalendar,
+      filename,
+      FileType.JSON
     );
-    return edge?.node ?? null;
-  } catch {
+    return tinaProps?.data?.eventsCalendar ?? null;
+  } catch (error) {
     return null;
   }
 };
@@ -127,12 +126,11 @@ export async function generateMetadata(
   const params = await prop.params;
 
   const slug = params.filename;
-  const filename = slug[slug.length - 1];
 
   const [newPage, calendarEvent, oldPage] = await Promise.all([
-    newEventsPageData(filename),
-    getPreviewEventData(filename),
-    getData(filename),
+    newEventsPageData(slug.join("/")),
+    getPreviewEventData(slug.join("/")),
+    getData(slug.join("/")),
   ]);
 
   if (!newPage && !calendarEvent && !oldPage) {
@@ -169,9 +167,9 @@ export default async function Events(prop: {
   const filename = slug[slug.length - 1];
 
   const [newPage, calendarEvent, oldPage] = await Promise.all([
-    newEventsPageData(filename),
-    getPreviewEventData(filename),
-    getData(filename),
+    newEventsPageData(slug.join("/")),
+    getPreviewEventData(slug.join("/")),
+    getData(slug.join("/")),
   ]);
 
   if (newPage) {
