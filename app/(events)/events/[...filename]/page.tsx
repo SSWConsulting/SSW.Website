@@ -32,9 +32,7 @@ export async function generateStaticParams() {
   const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
     .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
     .map((edge) => {
-      const year =
-        (edge.node.startDateTime as string)?.slice(0, 4) ?? "unknown";
-      return { filename: [year, edge.node._sys.filename] };
+      return { filename: edge.node._sys.breadcrumbs.slice(-2) };
     });
 
   return [...mdxPages, ...calendarPages];
