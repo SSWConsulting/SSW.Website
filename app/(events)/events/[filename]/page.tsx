@@ -40,8 +40,9 @@ const getPreviewEventData = async (filename: string) => {
   try {
     const allEvents = await client.queries.eventsCalendarConnection({
       first: EVENTS_MAX_SIZE_OVERRIDE,
+      sort: "startDateTime",
     });
-    const edge = allEvents.data.eventsCalendarConnection.edges?.find(
+    const edge = allEvents.data.eventsCalendarConnection.edges?.findLast(
       (e) => e?.node?._sys.filename === filename
     );
     return edge?.node ?? null;
