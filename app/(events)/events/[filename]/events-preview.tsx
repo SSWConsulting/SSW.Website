@@ -41,10 +41,10 @@ export default function EventsPreview({ event }: { event: EventData }) {
       <Section>
         <Image
           quality={100}
+          className="object-cover"
           src="/images/background/polygonBackground-light.jpg"
           alt="Event Background"
           layout="fill"
-          objectFit="cover"
         />
         <Container className="z-10 w-full py-0" width="medium" size="large">
           <div className="grid items-end lg:grid-cols-4">
@@ -86,7 +86,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                   alt={presenterName ?? "Presenter"}
                   height={900}
                   width={900}
-                  className="max-lg:mx- object-contain object-bottom"
+                  className="object-contain object-bottom"
                 />
               </div>
             )}
