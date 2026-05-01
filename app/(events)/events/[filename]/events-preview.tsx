@@ -1,0 +1,140 @@
+"use client";
+
+import { CustomLink } from "@/components/customLink";
+import { EventsRelativeBox } from "@/components/events/eventsRelativeBox";
+import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import { Container } from "@/components/util/container";
+import { Section } from "@/components/util/section";
+import { useFormatDates } from "@/hooks/useFormatDates";
+import type { EventsCalendarQuery } from "@/tina/types";
+import Image from "next/image";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+
+type EventData = EventsCalendarQuery["eventsCalendar"];
+
+export default function EventsPreview({ event }: { event: EventData }) {
+  const { relativeDate, formattedDate } = useFormatDates(
+    {
+      title: event.title,
+      url: event.url,
+      startDateTime: event.startDateTime
+        ? new Date(event.startDateTime)
+        : undefined,
+      endDateTime: event.endDateTime ? new Date(event.endDateTime) : undefined,
+    },
+    true
+  );
+
+  const firstPresenter = event.presenterList?.[0]?.presenter;
+  const presenterName = firstPresenter?.presenter?.name;
+  const presenterUrl = firstPresenter?.presenter?.peopleProfileURL;
+  const presenterPhoto = firstPresenter?.torsoImg || firstPresenter?.profileImg;
+  const presenterAbout = firstPresenter?.about;
+  const presenterPosition = firstPresenter?.position;
+
+  const city = event.cityOther || event.city;
+
+  return (
+    <>
+      {/* Hero */}
+      <Section color="lightgray">
+        <Container width="medium" size="large">
+          {event.calendarType && (
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-sswRed">
+              {event.calendarType}
+            </p>
+          )}
+          <h1 className="mb-6">{event.title}</h1>
+          <div className="mb-2">
+            <EventsRelativeBox
+              relativeDate={relativeDate}
+              formattedDate={formattedDate}
+              dateFontSize="text-base"
+            />
+          </div>
+          {city && <p className="mb-6 text-gray-600">{city}</p>}
+          <CustomLink
+            href={event.url}
+            className="inline-block rounded bg-sswRed px-6 py-3 font-semibold text-white hover:opacity-90"
+          >
+            Register Now
+          </CustomLink>
+        </Container>
+      </Section>
+
+      {/* Abstract / Description */}
+      {(event.description || event.abstract) && (
+        <Section>
+          <Container width="medium" size="medium">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-sswRed">
+              About the Event
+            </p>
+            {event.description ? (
+              <TinaMarkdown
+                content={event.description}
+                components={componentRenderer}
+              />
+            ) : (
+              <p className="whitespace-pre-line">{event.abstract}</p>
+            )}
+          </Container>
+        </Section>
+      )}
+
+      {/* Speaker */}
+      {presenterName && (
+        <Section color="lightgray">
+          <Container width="medium" size="medium">
+            <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-sswRed">
+              About the Speaker
+            </p>
+            <div className="flex flex-col gap-8 md:flex-row">
+              {presenterPhoto && (
+                <div className="shrink-0">
+                  <Image
+                    src={presenterPhoto}
+                    alt={presenterName}
+                    width={220}
+                    height={220}
+                    className="rounded object-cover"
+                  />
+                </div>
+              )}
+              <div>
+                {presenterUrl ? (
+                  <CustomLink href={presenterUrl}>
+                    <h2 className="mb-1 text-2xl font-bold">{presenterName}</h2>
+                  </CustomLink>
+                ) : (
+                  <h2 className="mb-1 text-2xl font-bold">{presenterName}</h2>
+                )}
+                {presenterPosition && (
+                  <p className="mb-4 text-gray-500">{presenterPosition}</p>
+                )}
+                {presenterAbout && (
+                  <TinaMarkdown
+                    content={presenterAbout}
+                    components={componentRenderer}
+                  />
+                )}
+              </div>
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* CTA */}
+      <Section color="red">
+        <Container width="medium" size="medium" className="text-center">
+          <h2 className="mb-6 text-white">Ready to Register?</h2>
+          <CustomLink
+            href={event.url}
+            className="inline-block rounded bg-white px-6 py-3 font-semibold text-sswRed hover:opacity-90"
+          >
+            Register Now
+          </CustomLink>
+        </Container>
+      </Section>
+    </>
+  );
+}

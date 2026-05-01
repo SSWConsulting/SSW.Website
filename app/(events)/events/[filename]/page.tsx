@@ -3,25 +3,50 @@ import ClientFallbackWithOption from "@/components/client-fallback-with-option";
 import { getVideoCardProps } from "@/helpers/events";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
 import { getSEOProps } from "@/lib/seo";
+import { EVENTS_MAX_SIZE_OVERRIDE } from "@/services/server/getEvents";
 import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
 import EventsPage from "./events";
 import EventsPageFallback from "./events-page-fallback";
+import EventsPreview from "./events-preview";
 import EventsV2Page from "./eventsv2";
 
 export const dynamic = "force-static";
 
 export async function generateStaticParams() {
-  const pagesListData = await client.queries.eventsConnection();
+  const [eventsData, calendarData] = await Promise.all([
+    client.queries.eventsConnection(),
+    client.queries.eventsCalendarConnection({ first: EVENTS_MAX_SIZE_OVERRIDE }),
+  ]);
 
-  const pages = pagesListData.data.eventsConnection.edges.map((page) => ({
+  const mdxPages = eventsData.data.eventsConnection.edges.map((page) => ({
     filename: page.node._sys.filename,
   }));
 
-  return pages;
+  const mdxFilenames = new Set(mdxPages.map((p) => p.filename));
+
+  const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
+    .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
+    .map((edge) => ({ filename: edge.node._sys.filename }));
+
+  return [...mdxPages, ...calendarPages];
 }
+
+const getPreviewEventData = async (filename: string) => {
+  try {
+    const allEvents = await client.queries.eventsCalendarConnection({
+      first: EVENTS_MAX_SIZE_OVERRIDE,
+    });
+    const edge = allEvents.data.eventsCalendarConnection.edges?.find(
+      (e) => e?.node?._sys.filename === filename
+    );
+    return edge?.node ?? null;
+  } catch {
+    return null;
+  }
+};
 
 const newEventsPageData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
@@ -97,24 +122,35 @@ export async function generateMetadata(
 
   const { filename } = params;
 
-  const [newPage, oldPage] = await Promise.all([
+  const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(filename),
+    getPreviewEventData(filename),
     getData(filename),
   ]);
 
-  if (!newPage && !oldPage) {
+  if (!newPage && !calendarEvent && !oldPage) {
     return {};
   }
 
-  const seo =
-    newPage?.props?.data?.eventsv2?.seo || oldPage?.props?.data?.events?.seo;
-
-  const headerUrl = newPage?.props?.header?.url || oldPage?.props?.header?.url;
-  if (seo && !seo.canonical) {
-    seo.canonical = `${headerUrl}events/${filename}`;
+  if (newPage || oldPage) {
+    const seo =
+      newPage?.props?.data?.eventsv2?.seo || oldPage?.props?.data?.events?.seo;
+    const headerUrl =
+      newPage?.props?.header?.url || oldPage?.props?.header?.url;
+    if (seo && !seo.canonical) {
+      seo.canonical = `${headerUrl}events/${filename}`;
+    }
+    return getSEOProps(seo);
   }
 
-  return getSEOProps(seo);
+  if (calendarEvent) {
+    return {
+      title: calendarEvent.title,
+      description: calendarEvent.abstract ?? undefined,
+    };
+  }
+
+  return {};
 }
 
 export default async function Events(prop: {
@@ -124,13 +160,17 @@ export default async function Events(prop: {
 
   const filename = params.filename;
 
-  const [newPage, oldPage] = await Promise.all([
+  const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(filename),
+    getPreviewEventData(filename),
     getData(filename),
   ]);
 
   if (newPage) {
     return <TinaClient props={newPage.props} Component={EventsV2Page} />;
+  }
+  if (calendarEvent) {
+    return <EventsPreview event={calendarEvent} />;
   }
   if (oldPage) {
     return <TinaClient props={oldPage.props} Component={EventsPage} />;
