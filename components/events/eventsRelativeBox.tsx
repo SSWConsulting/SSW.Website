@@ -1,27 +1,31 @@
+import { cn } from "@/lib/utils";
 import classNames from "classnames";
 import { EventStatus } from "../../helpers/dates";
 
 type EventsRelativeBoxProps = {
   relativeDate: string;
   formattedDate: string;
+  className?: string;
   dateFontSize: string;
 };
 
 export const EventsRelativeBox = ({
   relativeDate,
   formattedDate,
+  className,
   dateFontSize,
 }: EventsRelativeBoxProps) => {
   return (
     <time className="my-3 flex min-h-6 w-full items-center md:my-1.5">
       {relativeDate && (
         <span
-          className={classNames(
+          className={cn(
             "inline-flex items-center rounded-sm px-1.5 py-0.5 text-xs uppercase",
             relativeDate == EventStatus.NOW_RUNNING ||
               relativeDate == EventStatus.TODAY // Now running for the two days events and today is for the single day
               ? "bg-sswRed text-white"
-              : "bg-gray-25 text-black"
+              : "bg-gray-25 text-black",
+            className
           )}
         >
           {relativeDate}
