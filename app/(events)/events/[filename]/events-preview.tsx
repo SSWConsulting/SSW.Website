@@ -8,7 +8,7 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
 import type { EventsCalendarQuery } from "@/tina/types";
-import { MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -49,7 +49,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
         />
         <Container className="z-10" width="medium" size="large">
           {event.calendarType && (
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-sswRed">
+            <p className="mb-3 text-sm font-bold font-semibold uppercase text-sswRed">
               {event.calendarType}
             </p>
           )}
@@ -78,20 +78,43 @@ export default function EventsPreview({ event }: { event: EventData }) {
       {(event.description || event.abstract) && (
         <Section>
           <Container width="medium" size="medium">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-sswRed">
-              About the Event
-            </p>
+            <div className="flex flex-col gap-8 md:flex-row md:items-start">
+              <div className="flex-1">
+                <p className="mb-4 text-sm font-semibold text-sswRed">
+                  About the Event
+                </p>
+                <section className="prose max-w-none">
+                  {event.description ? (
+                    <TinaMarkdown
+                      content={event.description}
+                      components={componentRenderer}
+                    />
+                  ) : (
+                    <p className="whitespace-pre-line">{event.abstract}</p>
+                  )}
+                </section>
+              </div>
 
-            <section className="prose max-w-none">
-              {event.description ? (
-                <TinaMarkdown
-                  content={event.description}
-                  components={componentRenderer}
-                />
-              ) : (
-                <p className="whitespace-pre-line">{event.abstract}</p>
-              )}
-            </section>
+              <div className="w-full shrink-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:w-64">
+                {formattedDate && (
+                  <div className="mb-4 flex items-start gap-3">
+                    <Calendar
+                      size={18}
+                      className="mt-0.5 shrink-0 text-sswRed"
+                    />
+                    <span className="text-sm text-gray-700">
+                      {formattedDate}
+                    </span>
+                  </div>
+                )}
+                {city && (
+                  <div className="flex items-start gap-3">
+                    <MapPin size={18} className="mt-0.5 shrink-0 text-sswRed" />
+                    <span className="text-sm text-gray-700">{city}</span>
+                  </div>
+                )}
+              </div>
+            </div>
           </Container>
         </Section>
       )}
