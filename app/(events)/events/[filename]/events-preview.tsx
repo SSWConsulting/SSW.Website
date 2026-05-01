@@ -7,6 +7,7 @@ import { EventsRelativeBox } from "@/components/events/eventsRelativeBox";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
+import { cn } from "@/lib/utils";
 import type { EventsCalendarQuery } from "@/tina/types";
 import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
@@ -47,58 +48,70 @@ export default function EventsPreview({ event }: { event: EventData }) {
           layout="fill"
           objectFit="cover"
         />
-        <Container className="z-10 w-full" width="medium" size="large">
-          <div className="mb-7 flex items-center gap-3">
-            {event.calendarType && (
-              <p className="text-nowrap rounded-md bg-ssw-black p-2 py-0.5 text-xs uppercase tracking-wider text-white">
-                {event.calendarType}
-              </p>
-            )}
-            <hr
-              className="h-px w-10 bg-ssw-gray opacity-100"
-              aria-hidden="true"
-            />
-            <span className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack">
-              {relativeDate}
-            </span>
-          </div>
-          <div className="mb-10 flex items-center gap-6">
-            {event.thumbnail && (
-              <div className="relative size-24 shrink-0 self-start overflow-hidden rounded-md bg-white">
+        <Container className="z-10 w-full py-0" width="medium" size="large">
+          <div className="grid items-end lg:grid-cols-4">
+            <div
+              className={cn(
+                "py-20 max-md:pb-2",
+                presenterTorso ? "lg:col-span-3" : "lg:col-span-4"
+              )}
+            >
+              <div className="mb-7 flex items-center gap-3">
+                {event.calendarType && (
+                  <p className="text-nowrap rounded-md bg-ssw-black p-2 py-0.5 text-xs uppercase tracking-wider text-white">
+                    {event.calendarType}
+                  </p>
+                )}
+                <hr
+                  className="h-px w-10 bg-ssw-gray opacity-100"
+                  aria-hidden="true"
+                />
+                <span className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack">
+                  {relativeDate}
+                </span>
+              </div>
+              <div className="mb-10 flex items-center gap-6">
+                {event.thumbnail && (
+                  <div className="relative size-24 shrink-0 self-start overflow-hidden rounded-md bg-white">
+                    <Image
+                      fill
+                      src={event.thumbnail}
+                      alt={event.title}
+                      objectFit="contain"
+                    />
+                  </div>
+                )}
+                <h1 className="mt-0 self-start pt-0 max-md:text-2xl">
+                  {event.title}
+                </h1>
+              </div>
+              <a href={event.url} target="_blank" rel="noopener noreferrer">
+                <RippleButton
+                  className="px-2 py-1.5 text-base"
+                  variant="primary"
+                >
+                  Learn More
+                </RippleButton>
+              </a>
+            </div>
+            {presenterTorso && (
+              <div className="justify-end lg:col-span-1">
                 <Image
-                  fill
-                  src={event.thumbnail}
-                  alt={event.title}
-                  objectFit="contain"
+                  src={presenterTorso}
+                  alt={presenterName ?? "Presenter"}
+                  height={288}
+                  width={200}
+                  className="w-auto object-contain object-bottom"
                 />
               </div>
             )}
-            <h1 className="mt-0 self-start pt-0 max-md:text-2xl">
-              {event.title}
-            </h1>
           </div>
-          <a href={event.url} target="_blank" rel="noopener noreferrer">
-            <RippleButton className="px-2 py-1.5 text-base" variant="primary">
-              Learn More
-            </RippleButton>
-          </a>
         </Container>
-        {presenterTorso && (
-          <div className="pointer-events-none absolute bottom-0 right-8 hidden h-full max-h-72 lg:block">
-            <Image
-              src={presenterTorso}
-              alt={presenterName ?? "Presenter"}
-              height={288}
-              width={200}
-              className="h-full w-auto object-contain object-bottom"
-            />
-          </div>
-        )}
       </Section>
       {(event.description || event.abstract) && (
         <Section>
           <Container width="medium" size="medium">
-            <div className="flex flex-col gap-8 md:flex-row md:items-start">
+            <div className="gap- flex flex-col md:flex-row md:items-start">
               <div className="w-full shrink-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:order-last md:w-64">
                 {formattedDate && (
                   <div className="mb-4 flex items-start gap-3">
