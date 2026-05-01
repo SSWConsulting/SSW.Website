@@ -18,7 +18,9 @@ export const dynamic = "force-static";
 export async function generateStaticParams() {
   const [eventsData, calendarData] = await Promise.all([
     client.queries.eventsConnection(),
-    client.queries.eventsCalendarConnection({ first: EVENTS_MAX_SIZE_OVERRIDE }),
+    client.queries.eventsCalendarConnection({
+      first: EVENTS_MAX_SIZE_OVERRIDE,
+    }),
   ]);
 
   const mdxPages = eventsData.data.eventsConnection.edges.map((page) => ({

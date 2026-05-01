@@ -69,7 +69,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 </span>
               </div>
               <div className="mb-1 flex items-center gap-6">
-                <h1 className="mt-0 self-start pb-0 pt-0 max-md:text-2xl">
+                <h1 className="mt-0 self-start py-0 max-md:text-2xl">
                   {event.title}
                 </h1>
               </div>
