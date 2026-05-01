@@ -101,7 +101,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                   alt={presenterName ?? "Presenter"}
                   height={288}
                   width={200}
-                  className="w-auto object-contain object-bottom"
+                  className="w-auto object-contain object-bottom max-lg:mx-auto"
                 />
               </div>
             )}
