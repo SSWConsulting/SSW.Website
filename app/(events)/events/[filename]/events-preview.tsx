@@ -131,16 +131,6 @@ export default function EventsPreview({ event }: { event: EventData }) {
           </Container>
         </Section>
       )}
-
-      {/* CTA */}
-      <Section>
-        <Container width="medium" size="medium" className="text-center">
-          <h2 className="mb-6 text-white">Ready to Register?</h2>
-          <a href={event.url} target="_blank" rel="noopener noreferrer">
-            <RippleButton variant="primary">Register Now</RippleButton>
-          </a>
-        </Container>
-      </Section>
     </>
   );
 }
