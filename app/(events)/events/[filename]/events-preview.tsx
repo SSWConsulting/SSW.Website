@@ -62,12 +62,9 @@ export default function EventsPreview({ event }: { event: EventData }) {
             />
           </div>
           {city && <p className="mb-6 text-gray-600">{city}</p>}
-          <RippleButton
-            variant="primary"
-            onClick={() => window.open(event.url, "_blank")}
-          >
-            Register Now
-          </RippleButton>
+          <a href={event.url} target="_blank" rel="noopener noreferrer">
+            <RippleButton variant="primary">Register Now</RippleButton>
+          </a>
         </Container>
       </Section>
 
@@ -133,15 +130,12 @@ export default function EventsPreview({ event }: { event: EventData }) {
       )}
 
       {/* CTA */}
-      <Section color="red">
+      <Section>
         <Container width="medium" size="medium" className="text-center">
           <h2 className="mb-6 text-white">Ready to Register?</h2>
-          <RippleButton
-            variant="secondary"
-            onClick={() => window.open(event.url, "_blank")}
-          >
-            Register Now
-          </RippleButton>
+          <a href={event.url} target="_blank" rel="noopener noreferrer">
+            <RippleButton>Register Now</RippleButton>
+          </a>
         </Container>
       </Section>
     </>
