@@ -48,7 +48,7 @@ const getPreviewEventData = async (filename: string) => {
       FileType.JSON
     );
     return tinaProps?.data?.eventsCalendar ?? null;
-  } catch (error) {
+  } catch {
     return null;
   }
 };

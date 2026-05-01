@@ -39,7 +39,6 @@ interface EventsFilterProps {
 export type EventTrimmed = {
   hostedAtSsw?: boolean;
   id?: string;
-  _sys?: { filename?: string };
   title: string;
   thumbnail?: string;
   thumbnailDescription?: string;
