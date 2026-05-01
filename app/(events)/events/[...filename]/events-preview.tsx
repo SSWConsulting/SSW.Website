@@ -61,7 +61,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                   </p>
                 )}
                 <hr
-                  className="h-px w-10 bg-ssw-gray opacity-100"
+                  className="h-px w-10 border-ssw-gray-dark"
                   aria-hidden="true"
                 />
                 <span className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack">
@@ -97,7 +97,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
         <Section>
           <Container className="w-full" width="medium" size="medium">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="w-full shrink-0 rounded-xl bg-gray-75 p-5 shadow-sm md:order-last md:w-64">
+              <div className="w-full shrink-0 rounded-xl bg-gray-75 p-5 md:order-last md:w-64">
                 {event.thumbnail && (
                   <div className="mb-4 flex justify-center">
                     <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-arcBackground bg-contain bg-bottom bg-no-repeat">
