@@ -1,9 +1,7 @@
 "use client";
-
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
-import { EventsRelativeBox } from "@/components/events/eventsRelativeBox";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
@@ -71,16 +69,6 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 </span>
               </div>
               <div className="mb-1 flex items-center gap-6">
-                {/* {event.thumbnail && (
-                  <div className="relative size-24 shrink-0 self-start overflow-hidden rounded-md bg-white">
-                    <Image
-                      fill
-                      src={event.thumbnail}
-                      alt={event.title}
-                      objectFit="contain"
-                    />
-                  </div>
-                )} */}
                 <h1 className="mt-0 self-start pb-0 pt-0 max-md:text-2xl">
                   {event.title}
                 </h1>
@@ -162,7 +150,6 @@ export default function EventsPreview({ event }: { event: EventData }) {
           </Container>
         </Section>
       )}
-      {/* Speaker */}
       {presenterName && (
         <Section color="lightgray">
           <Container width="medium" size="medium">
