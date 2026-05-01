@@ -286,6 +286,7 @@ interface EventProps {
 }
 
 const Event = ({ visible, event, jsonLd }: EventProps) => {
+  const eventPageUrl = event.url;
   /* TODO: remove this when Tina cloud sync issue is fixed https://github.com/tinacms/tina-cloud/issues/2073
 
   We need this because there's an issue preventing us from syncing the files in the repo
@@ -346,7 +347,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
           </div>
           <div>
             <h2 className="my-0 font-semibold">
-              <CustomLink className="!no-underline" href={event.url}>
+              <CustomLink className="!no-underline" href={eventPageUrl}>
                 {event.title}
               </CustomLink>
             </h2>
@@ -402,7 +403,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         </div>
         <div className="mb-1 mt-6 p-0 text-end">
           <CustomLink
-            href={event.url}
+            href={eventPageUrl}
             className="unstyled rounded bg-ssw-gray-dark px-3 py-2 text-sm font-normal text-white hover:bg-sswBlack"
           >
             Find out more

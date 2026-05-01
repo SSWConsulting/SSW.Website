@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import classNames from "classnames";
 import React, { MouseEvent, useEffect, useState } from "react";
 
@@ -65,7 +66,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     return (
       <button
         onClick={(e) => onClick(e)}
-        className={classNames(
+        className={cn(
           "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-md px-6 py-3 text-center",
           variants[variant],
           className
