@@ -42,8 +42,8 @@ export default function EventsPreview({ event }: { event: EventData }) {
     <>
       <Section>
         <Image
-          src="/images/events-processor-bg.png"
-          className="opacity-10 saturate-50 filter"
+          quality={100}
+          src="/images/background/polygonBackground-light.jpg"
           alt="Event Background"
           layout="fill"
           objectFit="cover"
@@ -58,7 +58,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
             >
               <div className="mb-7 flex items-center gap-3">
                 {event.calendarType && (
-                  <p className="text-nowrap rounded-md bg-ssw-black p-2 py-0.5 text-xs uppercase tracking-wider text-white">
+                  <p className="text-nowrap rounded-md bg-ssw-black p-2 py-0.5 text-xs uppercase tracking-widest text-white">
                     {event.calendarType}
                   </p>
                 )}
@@ -70,8 +70,8 @@ export default function EventsPreview({ event }: { event: EventData }) {
                   {relativeDate}
                 </span>
               </div>
-              <div className="mb-10 flex items-center gap-6">
-                {event.thumbnail && (
+              <div className="mb-1 flex items-center gap-6">
+                {/* {event.thumbnail && (
                   <div className="relative size-24 shrink-0 self-start overflow-hidden rounded-md bg-white">
                     <Image
                       fill
@@ -80,16 +80,13 @@ export default function EventsPreview({ event }: { event: EventData }) {
                       objectFit="contain"
                     />
                   </div>
-                )}
-                <h1 className="mt-0 self-start pt-0 max-md:text-2xl">
+                )} */}
+                <h1 className="mt-0 self-start pb-0 pt-0 max-md:text-2xl">
                   {event.title}
                 </h1>
               </div>
               <a href={event.url} target="_blank" rel="noopener noreferrer">
-                <RippleButton
-                  className="px-2 py-1.5 text-base"
-                  variant="primary"
-                >
+                <RippleButton className="text-base" variant="primary">
                   Learn More
                 </RippleButton>
               </a>
@@ -112,7 +109,22 @@ export default function EventsPreview({ event }: { event: EventData }) {
         <Section>
           <Container width="medium" size="medium">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="w-full shrink-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:order-last md:w-64">
+              <div className="bg- w-full shrink-0 rounded-xl bg-gray-75 p-5 shadow-sm md:order-last md:w-64">
+                {event.thumbnail && (
+                  <div className="mb-4 flex justify-center">
+                    <div className="bordr-gray-200 bg-ss relative aspect-video w-full overflow-hidden rounded-lg bg-arcBackground bg-contain bg-bottom bg-no-repeat">
+                      <div className="absolute left-1/2 top-1/2 mx-auto size-20 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-white">
+                        <Image
+                          fill
+                          src={event.thumbnail}
+                          alt={event.title}
+                          objectFit="contain"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {formattedDate && (
                   <div className="mb-4 flex items-start gap-3">
                     <Calendar
@@ -132,7 +144,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 )}
               </div>
               <div className="flex-1">
-                <h2 className="mb-4 mt-0 text-lg font-semibold text-sswRed">
+                <h2 className="mb-4 mt-0 text-base font-semibold text-sswRed">
                   About the Event
                 </h2>
                 <section className="prose max-w-none">
