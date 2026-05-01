@@ -99,9 +99,9 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 <Image
                   src={presenterTorso}
                   alt={presenterName ?? "Presenter"}
-                  height={288}
-                  width={200}
-                  className="w-auto object-contain object-bottom max-lg:mx-auto"
+                  height={900}
+                  width={900}
+                  className="max-lg:mx- object-contain object-bottom"
                 />
               </div>
             )}
