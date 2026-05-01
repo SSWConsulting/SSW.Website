@@ -8,6 +8,7 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
 import type { EventsCalendarQuery } from "@/tina/types";
+import { MapPin } from "lucide-react";
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -29,7 +30,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
   const firstPresenter = event.presenterList?.[0]?.presenter;
   const presenterName = firstPresenter?.presenter?.name;
   const presenterUrl = firstPresenter?.presenter?.peopleProfileURL;
-  const presenterPhoto = firstPresenter?.torsoImg || firstPresenter?.profileImg;
+  const presenterPhoto = firstPresenter?.profileImg;
   const presenterAbout = firstPresenter?.about;
   const presenterPosition = firstPresenter?.position;
 
@@ -61,7 +62,12 @@ export default function EventsPreview({ event }: { event: EventData }) {
               dateFontSize="text-base"
             />
           </div>
-          {city && <p className="mb-6 text-gray-600">{city}</p>}
+          {city && (
+            <p className="mb-6 flex items-center gap-1 text-gray-600">
+              <MapPin size={16} className="shrink-0" />
+              {city}
+            </p>
+          )}
           <a href={event.url} target="_blank" rel="noopener noreferrer">
             <RippleButton variant="primary">Register Now</RippleButton>
           </a>
@@ -97,36 +103,38 @@ export default function EventsPreview({ event }: { event: EventData }) {
             <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-sswRed">
               About the Speaker
             </p>
-            <div className="flex flex-col gap-8 md:flex-row">
-              {presenterPhoto && (
-                <div className="shrink-0">
+            <div className="flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                {presenterPhoto && (
                   <Image
                     src={presenterPhoto}
                     alt={presenterName}
                     width={220}
                     height={220}
-                    className="rounded object-cover"
+                    className="size-16 shrink-0 rounded-full object-cover"
                   />
-                </div>
-              )}
-              <div>
-                {presenterUrl ? (
-                  <CustomLink href={presenterUrl}>
+                )}
+                <div>
+                  {presenterUrl ? (
+                    <CustomLink href={presenterUrl}>
+                      <h2 className="mb-1 text-2xl font-bold">
+                        {presenterName}
+                      </h2>
+                    </CustomLink>
+                  ) : (
                     <h2 className="mb-1 text-2xl font-bold">{presenterName}</h2>
-                  </CustomLink>
-                ) : (
-                  <h2 className="mb-1 text-2xl font-bold">{presenterName}</h2>
-                )}
-                {presenterPosition && (
-                  <p className="mb-4 text-gray-500">{presenterPosition}</p>
-                )}
-                {presenterAbout && (
-                  <TinaMarkdown
-                    content={presenterAbout}
-                    components={componentRenderer}
-                  />
-                )}
+                  )}
+                  {presenterPosition && (
+                    <p className="text-gray-500">{presenterPosition}</p>
+                  )}
+                </div>
               </div>
+              {presenterAbout && (
+                <TinaMarkdown
+                  content={presenterAbout}
+                  components={componentRenderer}
+                />
+              )}
             </div>
           </Container>
         </Section>
