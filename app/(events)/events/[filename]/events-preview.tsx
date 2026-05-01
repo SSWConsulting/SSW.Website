@@ -31,6 +31,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
   const presenterName = firstPresenter?.presenter?.name;
   const presenterUrl = firstPresenter?.presenter?.peopleProfileURL;
   const presenterPhoto = firstPresenter?.profileImg;
+  const presenterTorso = firstPresenter?.torsoImg;
   const presenterAbout = firstPresenter?.about;
   const presenterPosition = firstPresenter?.position;
 
@@ -46,7 +47,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
           layout="fill"
           objectFit="cover"
         />
-        <Container className="z-10" width="medium" size="large">
+        <Container className="z-10 w-full" width="medium" size="large">
           <div className="mb-7 flex items-center gap-3">
             {event.calendarType && (
               <p className="text-nowrap rounded-md bg-ssw-black p-2 py-0.5 text-xs uppercase tracking-wider text-white">
@@ -82,6 +83,17 @@ export default function EventsPreview({ event }: { event: EventData }) {
             </RippleButton>
           </a>
         </Container>
+        {presenterTorso && (
+          <div className="pointer-events-none absolute bottom-0 right-8 hidden h-full max-h-72 lg:block">
+            <Image
+              src={presenterTorso}
+              alt={presenterName ?? "Presenter"}
+              height={288}
+              width={200}
+              className="h-full w-auto object-contain object-bottom"
+            />
+          </div>
+        )}
       </Section>
       {(event.description || event.abstract) && (
         <Section>
