@@ -52,8 +52,9 @@ export default function EventsPreview({ event }: { event: EventData }) {
             </p>
           )}
           <h1 className="mb-6">{event.title}</h1>
-          <div className="mb-2">
+          <div className="">
             <EventsRelativeBox
+              className="bg-ssw-black text-white"
               relativeDate={relativeDate}
               formattedDate={formattedDate}
               dateFontSize="text-base"
