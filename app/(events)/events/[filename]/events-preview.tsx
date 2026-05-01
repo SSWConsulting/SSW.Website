@@ -97,10 +97,10 @@ export default function EventsPreview({ event }: { event: EventData }) {
         <Section>
           <Container className="w-full" width="medium" size="medium">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="bg- w-full shrink-0 rounded-xl bg-gray-75 p-5 shadow-sm md:order-last md:w-64">
+              <div className="w-full shrink-0 rounded-xl bg-gray-75 p-5 shadow-sm md:order-last md:w-64">
                 {event.thumbnail && (
                   <div className="mb-4 flex justify-center">
-                    <div className="bordr-gray-200 bg-ss relative aspect-video w-full overflow-hidden rounded-lg bg-arcBackground bg-contain bg-bottom bg-no-repeat">
+                    <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-arcBackground bg-contain bg-bottom bg-no-repeat">
                       <div className="absolute left-1/2 top-1/2 mx-auto size-20 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-white">
                         <Image
                           fill
@@ -177,7 +177,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                     </CustomLink>
                   ) : (
                     <span className="font-semibold uppercase">
-                      presenterName
+                      {presenterName}
                     </span>
                   )}
                   {presenterPosition && (
