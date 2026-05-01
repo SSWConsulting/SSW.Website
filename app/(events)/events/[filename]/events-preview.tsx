@@ -49,11 +49,25 @@ export default function EventsPreview({ event }: { event: EventData }) {
         />
         <Container className="z-10" width="medium" size="large">
           {event.calendarType && (
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-sswRed">
+            <p className="mb-7 text-sm font-semibold uppercase tracking-wider text-sswRed">
               {event.calendarType}
             </p>
           )}
-          <h1 className="py-2">{event.title}</h1>
+          <div className="flex items-center gap-6">
+            {event.thumbnail && (
+              <div className="relative size-24 shrink-0 self-start overflow-hidden rounded-md bg-white">
+                <Image
+                  fill
+                  src={event.thumbnail}
+                  alt={event.title}
+                  objectFit="contain"
+                />
+              </div>
+            )}
+            <h1 className="mt-0 self-start pt-0 max-md:text-2xl">
+              {event.title}
+            </h1>
+          </div>
           <div className="">
             <EventsRelativeBox
               className="bg-ssw-black text-white"
@@ -94,15 +108,17 @@ export default function EventsPreview({ event }: { event: EventData }) {
 
               <div className="w-full shrink-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:w-64">
                 {formattedDate && (
-                  <div className="mb-4 flex items-start gap-3">
-                    <Calendar
-                      size={18}
-                      className="mt-0.5 shrink-0 text-sswRed"
-                    />
-                    <span className="text-sm text-gray-700">
-                      {formattedDate}
-                    </span>
-                  </div>
+                  <>
+                    <div className="mb-4 flex items-start gap-3">
+                      <Calendar
+                        size={18}
+                        className="mt-0.5 shrink-0 text-sswRed"
+                      />
+                      <span className="text-sm text-gray-700">
+                        {formattedDate}
+                      </span>
+                    </div>
+                  </>
                 )}
                 {city && (
                   <div className="flex items-start gap-3">
