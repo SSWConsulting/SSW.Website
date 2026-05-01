@@ -116,13 +116,16 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 )}
                 <div>
                   {presenterUrl ? (
-                    <CustomLink href={presenterUrl}>
-                      <h2 className="mb-1 text-2xl font-bold">
-                        {presenterName}
-                      </h2>
+                    <CustomLink
+                      className="font-semibold uppercase underline"
+                      href={presenterUrl}
+                    >
+                      {presenterName}
                     </CustomLink>
                   ) : (
-                    <h2 className="mb-1 text-2xl font-bold">{presenterName}</h2>
+                    <span className="font-semibold uppercase">
+                      presenterName
+                    </span>
                   )}
                   {presenterPosition && (
                     <p className="text-gray-500">{presenterPosition}</p>
