@@ -49,11 +49,11 @@ export default function EventsPreview({ event }: { event: EventData }) {
         />
         <Container className="z-10" width="medium" size="large">
           {event.calendarType && (
-            <p className="mb-3 text-sm font-bold font-semibold uppercase text-sswRed">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-sswRed">
               {event.calendarType}
             </p>
           )}
-          <h1 className="mb-6">{event.title}</h1>
+          <h1 className="py-2">{event.title}</h1>
           <div className="">
             <EventsRelativeBox
               className="bg-ssw-black text-white"
@@ -63,10 +63,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
             />
           </div>
           {city && (
-            <p className="mb-6 flex items-center gap-1 text-gray-600">
-              <MapPin size={16} className="shrink-0" />
-              {city}
-            </p>
+            <p className="mb-6 flex items-center gap-1 text-gray-600">{city}</p>
           )}
           <a href={event.url} target="_blank" rel="noopener noreferrer">
             <RippleButton variant="primary">Register Now</RippleButton>
@@ -80,9 +77,9 @@ export default function EventsPreview({ event }: { event: EventData }) {
           <Container width="medium" size="medium">
             <div className="flex flex-col gap-8 md:flex-row md:items-start">
               <div className="flex-1">
-                <p className="mb-4 text-sm font-semibold text-sswRed">
+                <h2 className="mb-4 mt-0 text-lg font-semibold text-sswRed">
                   About the Event
-                </p>
+                </h2>
                 <section className="prose max-w-none">
                   {event.description ? (
                     <TinaMarkdown
@@ -123,9 +120,9 @@ export default function EventsPreview({ event }: { event: EventData }) {
       {presenterName && (
         <Section color="lightgray">
           <Container width="medium" size="medium">
-            <p className="mb-6 text-sm font-semibold uppercase tracking-widest text-sswRed">
+            <h2 className="mb-6 mt-0 text-lg font-semibold text-sswRed">
               About the Speaker
-            </p>
+            </h2>
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-4">
                 {presenterPhoto && (
@@ -155,12 +152,14 @@ export default function EventsPreview({ event }: { event: EventData }) {
                   )}
                 </div>
               </div>
-              {presenterAbout && (
-                <TinaMarkdown
-                  content={presenterAbout}
-                  components={componentRenderer}
-                />
-              )}
+              <div className="prose max-w-none">
+                {presenterAbout && (
+                  <TinaMarkdown
+                    content={presenterAbout}
+                    components={componentRenderer}
+                  />
+                )}
+              </div>
             </div>
           </Container>
         </Section>
