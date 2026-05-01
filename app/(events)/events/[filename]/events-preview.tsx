@@ -38,7 +38,6 @@ export default function EventsPreview({ event }: { event: EventData }) {
 
   return (
     <>
-      {/* Hero */}
       <Section>
         <Image
           src="/images/events-processor-bg.png"
@@ -48,12 +47,21 @@ export default function EventsPreview({ event }: { event: EventData }) {
           objectFit="cover"
         />
         <Container className="z-10" width="medium" size="large">
-          {event.calendarType && (
-            <p className="mb-7 text-sm font-semibold uppercase tracking-wider text-sswRed">
-              {event.calendarType}
-            </p>
-          )}
-          <div className="flex items-center gap-6">
+          <div className="mb-7 flex items-center gap-3">
+            {event.calendarType && (
+              <p className="text-nowrap rounded-md bg-ssw-black p-2 py-0.5 text-xs uppercase tracking-wider text-white">
+                {event.calendarType}
+              </p>
+            )}
+            <hr
+              className="h-px w-10 bg-ssw-gray opacity-100"
+              aria-hidden="true"
+            />
+            <span className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack">
+              {relativeDate}
+            </span>
+          </div>
+          <div className="mb-10 flex items-center gap-6">
             {event.thumbnail && (
               <div className="relative size-24 shrink-0 self-start overflow-hidden rounded-md bg-white">
                 <Image
@@ -68,28 +76,36 @@ export default function EventsPreview({ event }: { event: EventData }) {
               {event.title}
             </h1>
           </div>
-          <div className="">
-            <EventsRelativeBox
-              className="bg-ssw-black text-white"
-              relativeDate={relativeDate}
-              formattedDate={formattedDate}
-              dateFontSize="text-base"
-            />
-          </div>
-          {city && (
-            <p className="mb-6 flex items-center gap-1 text-gray-600">{city}</p>
-          )}
           <a href={event.url} target="_blank" rel="noopener noreferrer">
-            <RippleButton variant="primary">Register Now</RippleButton>
+            <RippleButton className="px-2 py-1.5 text-base" variant="primary">
+              Learn More
+            </RippleButton>
           </a>
         </Container>
       </Section>
-
-      {/* Abstract / Description */}
       {(event.description || event.abstract) && (
         <Section>
           <Container width="medium" size="medium">
             <div className="flex flex-col gap-8 md:flex-row md:items-start">
+              <div className="w-full shrink-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:order-last md:w-64">
+                {formattedDate && (
+                  <div className="mb-4 flex items-start gap-3">
+                    <Calendar
+                      size={18}
+                      className="mt-0.5 shrink-0 text-sswRed"
+                    />
+                    <span className="text-sm text-gray-700">
+                      {formattedDate}
+                    </span>
+                  </div>
+                )}
+                {city && (
+                  <div className="flex items-start gap-3">
+                    <MapPin size={18} className="mt-0.5 shrink-0 text-sswRed" />
+                    <span className="text-sm text-gray-700">{city}</span>
+                  </div>
+                )}
+              </div>
               <div className="flex-1">
                 <h2 className="mb-4 mt-0 text-lg font-semibold text-sswRed">
                   About the Event
@@ -105,33 +121,10 @@ export default function EventsPreview({ event }: { event: EventData }) {
                   )}
                 </section>
               </div>
-
-              <div className="w-full shrink-0 rounded-xl border border-gray-200 bg-white p-5 shadow-sm md:w-64">
-                {formattedDate && (
-                  <>
-                    <div className="mb-4 flex items-start gap-3">
-                      <Calendar
-                        size={18}
-                        className="mt-0.5 shrink-0 text-sswRed"
-                      />
-                      <span className="text-sm text-gray-700">
-                        {formattedDate}
-                      </span>
-                    </div>
-                  </>
-                )}
-                {city && (
-                  <div className="flex items-start gap-3">
-                    <MapPin size={18} className="mt-0.5 shrink-0 text-sswRed" />
-                    <span className="text-sm text-gray-700">{city}</span>
-                  </div>
-                )}
-              </div>
             </div>
           </Container>
         </Section>
       )}
-
       {/* Speaker */}
       {presenterName && (
         <Section color="lightgray">
