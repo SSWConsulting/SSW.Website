@@ -37,7 +37,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
   return (
     <>
       {/* Hero */}
-      <Section color="bg-cover bg-center">
+      <Section>
         <Image
           src="/images/events-processor-bg.png"
           className="opacity-10 saturate-50 filter"
