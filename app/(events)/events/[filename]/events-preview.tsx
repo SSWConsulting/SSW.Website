@@ -72,17 +72,20 @@ export default function EventsPreview({ event }: { event: EventData }) {
       {(event.description || event.abstract) && (
         <Section>
           <Container width="medium" size="medium">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-sswRed">
+            <p className="prose mb-4 text-sm font-semibold uppercase tracking-widest text-sswRed">
               About the Event
             </p>
-            {event.description ? (
-              <TinaMarkdown
-                content={event.description}
-                components={componentRenderer}
-              />
-            ) : (
-              <p className="whitespace-pre-line">{event.abstract}</p>
-            )}
+
+            <section className="prose">
+              {event.description ? (
+                <TinaMarkdown
+                  content={event.description}
+                  components={componentRenderer}
+                />
+              ) : (
+                <p className="whitespace-pre-line">{event.abstract}</p>
+              )}
+            </section>
           </Container>
         </Section>
       )}
@@ -134,7 +137,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
         <Container width="medium" size="medium" className="text-center">
           <h2 className="mb-6 text-white">Ready to Register?</h2>
           <a href={event.url} target="_blank" rel="noopener noreferrer">
-            <RippleButton>Register Now</RippleButton>
+            <RippleButton variant="primary">Register Now</RippleButton>
           </a>
         </Container>
       </Section>
