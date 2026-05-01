@@ -24,14 +24,17 @@ export async function generateStaticParams() {
   ]);
 
   const mdxPages = eventsData.data.eventsConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+    filename: [page.node._sys.filename],
   }));
 
-  const mdxFilenames = new Set(mdxPages.map((p) => p.filename));
+  const mdxFilenames = new Set(mdxPages.map((p) => p.filename[0]));
 
   const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
     .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
-    .map((edge) => ({ filename: edge.node._sys.filename }));
+    .map((edge) => {
+      const year = (edge.node.startDateTime as string)?.slice(0, 4) ?? "unknown";
+      return { filename: [year, edge.node._sys.filename] };
+    });
 
   return [...mdxPages, ...calendarPages];
 }
@@ -114,7 +117,7 @@ const getData = async (filename: string) => {
 };
 
 type GenerateMetaDataProps = {
-  params: Promise<{ filename: string }>;
+  params: Promise<{ filename: string[] }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
@@ -123,7 +126,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await prop.params;
 
-  const { filename } = params;
+  const slug = params.filename;
+  const filename = slug[slug.length - 1];
 
   const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(filename),
@@ -141,7 +145,7 @@ export async function generateMetadata(
     const headerUrl =
       newPage?.props?.header?.url || oldPage?.props?.header?.url;
     if (seo && !seo.canonical) {
-      seo.canonical = `${headerUrl}events/${filename}`;
+      seo.canonical = `${headerUrl}events/${slug.join("/")}`;
     }
     return getSEOProps(seo);
   }
@@ -157,11 +161,12 @@ export async function generateMetadata(
 }
 
 export default async function Events(prop: {
-  params: Promise<{ filename: string }>;
+  params: Promise<{ filename: string[] }>;
 }) {
   const params = await prop.params;
 
-  const filename = params.filename;
+  const slug = params.filename;
+  const filename = slug[slug.length - 1];
 
   const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(filename),
@@ -184,12 +189,12 @@ export default async function Events(prop: {
         {
           component: EventsV2Page,
           query: "eventsv2",
-          variables: { relativePath: `${params.filename}.json` },
+          variables: { relativePath: `${filename}.json` },
         },
         {
           component: EventsPageFallback,
           query: "events",
-          variables: { relativePath: `${params.filename}.mdx` },
+          variables: { relativePath: `${filename}.mdx` },
         },
       ]}
     />

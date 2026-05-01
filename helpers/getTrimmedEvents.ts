@@ -5,6 +5,7 @@ export const getTrimmedEvent = (events) =>
       startDateTime: new Date(edge.node.startDateTime),
       endDateTime: new Date(edge.node.endDateTime),
       category: formatCategory(edge.node.category),
+      year: (edge.node.startDateTime as string)?.slice(0, 4),
     }))
   ) || [];
 
