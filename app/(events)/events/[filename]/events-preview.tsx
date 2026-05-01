@@ -1,6 +1,7 @@
 "use client";
 
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
 import { EventsRelativeBox } from "@/components/events/eventsRelativeBox";
 import { Container } from "@/components/util/container";
@@ -61,12 +62,12 @@ export default function EventsPreview({ event }: { event: EventData }) {
             />
           </div>
           {city && <p className="mb-6 text-gray-600">{city}</p>}
-          <CustomLink
-            href={event.url}
-            className="inline-block rounded bg-sswRed px-6 py-3 font-semibold text-white hover:opacity-90"
+          <RippleButton
+            variant="primary"
+            onClick={() => window.open(event.url, "_blank")}
           >
             Register Now
-          </CustomLink>
+          </RippleButton>
         </Container>
       </Section>
 
@@ -135,12 +136,12 @@ export default function EventsPreview({ event }: { event: EventData }) {
       <Section color="red">
         <Container width="medium" size="medium" className="text-center">
           <h2 className="mb-6 text-white">Ready to Register?</h2>
-          <CustomLink
-            href={event.url}
-            className="inline-block rounded bg-white px-6 py-3 font-semibold text-sswRed hover:opacity-90"
+          <RippleButton
+            variant="secondary"
+            onClick={() => window.open(event.url, "_blank")}
           >
             Register Now
-          </CustomLink>
+          </RippleButton>
         </Container>
       </Section>
     </>
