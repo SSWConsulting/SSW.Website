@@ -52,7 +52,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
           <div className="grid items-end lg:grid-cols-4">
             <div
               className={cn(
-                "py-20 max-md:pb-2",
+                "py-20 max-md:pb-8",
                 presenterTorso ? "lg:col-span-3" : "lg:col-span-4"
               )}
             >
@@ -87,7 +87,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
               </div>
               <a href={event.url} target="_blank" rel="noopener noreferrer">
                 <RippleButton className="text-base" variant="primary">
-                  Learn More
+                  Find out more
                 </RippleButton>
               </a>
             </div>
@@ -107,7 +107,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
       </Section>
       {(event.description || event.abstract) && (
         <Section>
-          <Container width="medium" size="medium">
+          <Container className="w-full" width="medium" size="medium">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
               <div className="bg- w-full shrink-0 rounded-xl bg-gray-75 p-5 shadow-sm md:order-last md:w-64">
                 {event.thumbnail && (
