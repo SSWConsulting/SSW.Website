@@ -1,8 +1,8 @@
 "use client";
 
+import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { CustomLink } from "@/components/customLink";
 import { EventsRelativeBox } from "@/components/events/eventsRelativeBox";
-import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
@@ -37,8 +37,15 @@ export default function EventsPreview({ event }: { event: EventData }) {
   return (
     <>
       {/* Hero */}
-      <Section color="lightgray">
-        <Container width="medium" size="large">
+      <Section color="bg-cover bg-center">
+        <Image
+          src="/images/events-processor-bg.png"
+          className="opacity-10 saturate-50 filter"
+          alt="Event Background"
+          layout="fill"
+          objectFit="cover"
+        />
+        <Container className="z-10" width="medium" size="large">
           {event.calendarType && (
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-sswRed">
               {event.calendarType}
