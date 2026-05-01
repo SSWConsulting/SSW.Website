@@ -56,7 +56,6 @@ export type EventTrimmed = {
   calendarType?: string;
   category?: string;
   description?: TinaMarkdownContent;
-  year?: string;
 };
 
 export const EventsFilter = ({
@@ -288,11 +287,7 @@ interface EventProps {
 }
 
 const Event = ({ visible, event, jsonLd }: EventProps) => {
-  const eventPageUrl = event._sys?.filename
-    ? event.year
-      ? `/events/${event.year}/${event._sys.filename}`
-      : `/events/${event._sys.filename}`
-    : event.url;
+  const eventPageUrl = event.url;
   /* TODO: remove this when Tina cloud sync issue is fixed https://github.com/tinacms/tina-cloud/issues/2073
 
   We need this because there's an issue preventing us from syncing the files in the repo
