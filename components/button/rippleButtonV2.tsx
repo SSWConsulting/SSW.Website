@@ -1,6 +1,5 @@
 "use client";
 import { cn } from "@/lib/utils";
-import classNames from "classnames";
 import React, { MouseEvent, useEffect, useState } from "react";
 
 export type ColorVariant = "primary" | "secondary";
@@ -77,7 +76,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
       >
         <div
           data-tina-field={textTinaField}
-          className={classNames(
+          className={cn(
             "relative z-10 flex items-center justify-center gap-2",
             fontClassName
           )}
