@@ -1,3 +1,4 @@
+import { toKebabCase } from "@/helpers/kebab-case";
 import React, { useState } from "react";
 import { Collection, TextField } from "tinacms";
 
@@ -28,7 +29,9 @@ export const eventsCalendarSchema: Collection = {
   ui: {
     filename: {
       slugify: (values) => {
-        return values.title?.toLowerCase().replaceAll(" ", "-");
+        if (values.title) {
+          return toKebabCase(values.title);
+        }
       },
     },
     beforeSubmit: async ({ values }) => {
