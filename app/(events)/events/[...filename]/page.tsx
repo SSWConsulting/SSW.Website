@@ -8,6 +8,7 @@ import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
+import { cache } from "react";
 import EventsPage from "./events";
 import EventsPageFallback from "./events-page-fallback";
 import EventsPreview from "./events-preview";
@@ -15,9 +16,25 @@ import EventsV2Page from "./eventsv2";
 
 export const dynamic = "force-static";
 
+const getCalendarPathMap = cache(async () => {
+  const data = await client.queries.eventsCalendarConnection({
+    first: EVENTS_MAX_SIZE_OVERRIDE,
+  });
+  const map = new Map<string, string>();
+  for (const edge of data.data.eventsCalendarConnection.edges ?? []) {
+    const node = edge?.node;
+    if (!node) continue;
+    const year = node._sys.breadcrumbs.at(-2);
+    if (!year) continue;
+    const segment = (node.slug || node._sys.filename).toLowerCase();
+    map.set(`${year}/${segment}`, node._sys.breadcrumbs.join("/"));
+  }
+  return map;
+});
+
 export async function generateStaticParams() {
   const [eventsData, calendarData] = await Promise.all([
-    client.queries.eventsConnection(),
+    client.queries.eventsConnection({ first: EVENTS_MAX_SIZE_OVERRIDE }),
     client.queries.eventsCalendarConnection({
       first: EVENTS_MAX_SIZE_OVERRIDE,
     }),
@@ -32,16 +49,23 @@ export async function generateStaticParams() {
   const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
     .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
     .map((edge) => {
-      return { filename: edge.node._sys.breadcrumbs.slice(-2) };
+      const year = edge.node._sys.breadcrumbs.at(-2);
+      const segment = (
+        edge.node.slug || edge.node._sys.filename
+      ).toLowerCase();
+      return year ? { filename: [year, segment] } : { filename: [segment] };
     });
 
   return [...mdxPages, ...calendarPages];
 }
 
-const getPreviewEventData = async (filename: string) => {
+const getPreviewEventData = async (urlKey: string) => {
+  const map = await getCalendarPathMap();
+  const onDiskPath = map.get(urlKey.toLowerCase());
+  if (!onDiskPath) return null;
   const tinaProps = await fetchTinaData(
     client.queries.eventsCalendar,
-    filename,
+    onDiskPath,
     FileType.JSON
   );
   return tinaProps?.data?.eventsCalendar ?? null;

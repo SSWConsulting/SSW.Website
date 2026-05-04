@@ -2,6 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { addNoIndexHeaders } from "./middleware/noIndex";
 
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  if (pathname.startsWith("/events/") && pathname !== pathname.toLowerCase()) {
+    const url = request.nextUrl.clone();
+    url.pathname = pathname.toLowerCase();
+    return NextResponse.redirect(url, 308);
+  }
+
   const response = NextResponse.next();
 
   // Add HSTS headers (180 days)
