@@ -116,7 +116,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                           fill
                           src={event.thumbnail}
                           alt={event.title}
-                          objectFit="contain"
+                          className="object-contain"
                         />
                       </div>
                     </div>

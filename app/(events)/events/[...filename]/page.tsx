@@ -39,16 +39,12 @@ export async function generateStaticParams() {
 }
 
 const getPreviewEventData = async (filename: string) => {
-  try {
-    const tinaProps = await fetchTinaData(
-      client.queries.eventsCalendar,
-      filename,
-      FileType.JSON
-    );
-    return tinaProps?.data?.eventsCalendar ?? null;
-  } catch {
-    return null;
-  }
+  const tinaProps = await fetchTinaData(
+    client.queries.eventsCalendar,
+    filename,
+    FileType.JSON
+  );
+  return tinaProps?.data?.eventsCalendar ?? null;
 };
 
 const newEventsPageData = async (filename: string) => {
