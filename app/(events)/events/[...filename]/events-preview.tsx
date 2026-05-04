@@ -57,11 +57,13 @@ export default function EventsPreview({ event }: { event: EventData }) {
           fill
         />
         <Container className="z-10 w-full py-0" width="default" size="large">
-          <div className="grid lg:grid-cols-4 lg:items-end">
+          <div className="grid md:grid-cols-2 md:items-end lg:grid-cols-4">
             <div
               className={cn(
-                "py-20 max-md:pb-8 lg:flex lg:flex-col lg:justify-center lg:self-stretch",
-                presenterTorso ? "lg:col-span-3" : "lg:col-span-4"
+                "py-20 max-md:pb-8 md:flex md:flex-col md:justify-center md:self-stretch",
+                presenterTorso
+                  ? "md:col-span-1 lg:col-span-3"
+                  : "md:col-span-2 lg:col-span-4"
               )}
             >
               <div className="mb-7 flex items-center gap-3">
@@ -90,13 +92,13 @@ export default function EventsPreview({ event }: { event: EventData }) {
               </a>
             </div>
             {presenterTorso && (
-              <div className="lg:col-span-1 lg:justify-end">
+              <div className="md:col-span-1 md:justify-end">
                 <Image
                   src={presenterTorso}
                   alt={presenterName ?? "Presenter"}
                   height={900}
                   width={900}
-                  className="mx-auto max-h-72 w-auto object-contain object-bottom lg:max-h-none lg:w-full"
+                  className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
                 />
               </div>
             )}

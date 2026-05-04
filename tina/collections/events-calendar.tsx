@@ -61,7 +61,7 @@ export const eventsCalendarSchema: Collection = {
       label: "Event page on this site",
       name: "slug",
       description:
-        "The shareable link to this event's page here. We'll send people here when promoting it. Lowercase, kebab-case, e.g. ai-hack-day-sydney.",
+        "The shareable link to this event's page here. We'll send people here when promoting it. Example: enter ai-hackday-sydney → page lives at ssw.com.au/events/2026/ai-hackday-sydney. Lowercase, kebab-case.",
       ui: {
         validate: (value?: string) => {
           if (!value) return;
