@@ -52,9 +52,8 @@ export const UpcomingEventsClient = ({ data }) => {
       );
 
       if (!events.data) return;
-      const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-        mapEventEdge
-      );
+      const mappedEvents =
+        events.data.eventsCalendarConnection.edges.map(mapEventEdge);
       setEvents(mappedEvents);
     };
 

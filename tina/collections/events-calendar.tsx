@@ -25,65 +25,8 @@ const normalizeSlug = (raw: string): string =>
   raw
     .trim()
     .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/[^a-z0-9-]+/g, "-")
     .replace(/^-+|-+$/g, "");
-
-const filenameFromForm = (
-  tinaForm: { relativePath?: string } | undefined
-): string | null => {
-  const path = tinaForm?.relativePath;
-  if (!path) return null;
-  const last = path.split("/").pop() ?? "";
-  const stem = last.replace(/\.[^.]+$/, "");
-  return stem || null;
-};
-
-const SlugInputField = (props: {
-  input: { value: string; onChange: (v: string) => void };
-  tinaForm?: { relativePath?: string; values?: { title?: string } };
-  field: { label: string; description?: string };
-}) => {
-  const filename = filenameFromForm(props.tinaForm);
-  const title = props.tinaForm?.values?.title ?? "";
-  const filenameSuggestion = filename ? normalizeSlug(filename) : null;
-  const titleSuggestion = title ? normalizeSlug(title) : null;
-  const apply = (value: string) => () => props.input.onChange(value);
-
-  return (
-    <div className="mb-5">
-      <label className="text-meta mb-1 block text-xs font-semibold uppercase">
-        {props.field.label}
-      </label>
-      {props.field.description && (
-        <p className="mb-2 text-xs text-gray-500">{props.field.description}</p>
-      )}
-      {/* Re-use Tina's TextField via the existing pattern so the input matches the editor's look */}
-      {TextField(props as Parameters<typeof TextField>[0])}
-      <div className="mt-2 flex flex-wrap gap-2">
-        {filenameSuggestion && filenameSuggestion !== props.input.value && (
-          <button
-            type="button"
-            onClick={apply(filenameSuggestion)}
-            className="rounded border border-gray-300 px-2 py-1 text-xs hover:bg-gray-50"
-          >
-            Use filename → {filenameSuggestion}
-          </button>
-        )}
-        {titleSuggestion &&
-          titleSuggestion !== filenameSuggestion &&
-          titleSuggestion !== props.input.value && (
-            <button
-              type="button"
-              onClick={apply(titleSuggestion)}
-              className="rounded border border-gray-300 px-2 py-1 text-xs hover:bg-gray-50"
-            >
-              Use title → {titleSuggestion}
-            </button>
-          )}
-      </div>
-    </div>
-  );
-};
 export const eventsCalendarSchema: Collection = {
   label: "Events - Calendar",
   name: "eventsCalendar",
@@ -120,11 +63,10 @@ export const eventsCalendarSchema: Collection = {
       description:
         "URL segment for this event on ssw.com.au. Lowercase, kebab-case, unique within this year (e.g. ai-hack-day-sydney). If empty, the lowercased filename is used. Click a suggestion below to autofill.",
       ui: {
-        component: SlugInputField,
         validate: (value?: string) => {
           if (!value) return;
-          if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(value)) {
-            return "Use lowercase letters, numbers, and single hyphens only.";
+          if (!/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(value)) {
+            return "Use lowercase letters, numbers, and hyphens. Cannot start or end with a hyphen.";
           }
         },
       },

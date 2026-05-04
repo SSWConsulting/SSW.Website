@@ -4,9 +4,7 @@ export const buildEventUrl = (node: {
 }): string => {
   const folderYear = node._sys.breadcrumbs.at(-2);
   const segment = (node.slug || node._sys.filename).toLowerCase();
-  return folderYear
-    ? `/events/${folderYear}/${segment}`
-    : `/events/${segment}`;
+  return folderYear ? `/events/${folderYear}/${segment}` : `/events/${segment}`;
 };
 
 export const mapEventEdge = (edge) => ({

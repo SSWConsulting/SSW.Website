@@ -50,9 +50,7 @@ export async function generateStaticParams() {
     .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
     .map((edge) => {
       const year = edge.node._sys.breadcrumbs.at(-2);
-      const segment = (
-        edge.node.slug || edge.node._sys.filename
-      ).toLowerCase();
+      const segment = (edge.node.slug || edge.node._sys.filename).toLowerCase();
       return year ? { filename: [year, segment] } : { filename: [segment] };
     });
 
