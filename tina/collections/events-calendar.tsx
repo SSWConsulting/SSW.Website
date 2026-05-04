@@ -27,7 +27,11 @@ export const eventsCalendarSchema: Collection = {
   path: "content/events-calendar",
   format: "json",
   ui: {
-    ...kebabCaseFilename,
+    filename: {
+      slugify: (values) => {
+        return values.title?.toLowerCase().replaceAll(" ", "-");
+      },
+    },
     beforeSubmit: async ({ values }) => {
       return removeEmptyObjects(values, "presenterList") as Record<
         string,
