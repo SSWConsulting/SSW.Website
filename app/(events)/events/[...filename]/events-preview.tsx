@@ -56,11 +56,11 @@ export default function EventsPreview({ event }: { event: EventData }) {
           alt="Event Background"
           fill
         />
-        <Container className="z-10 w-full py-0" width="medium" size="large">
-          <div className="grid items-end lg:grid-cols-4">
+        <Container className="z-10 w-full py-0" width="default" size="large">
+          <div className="grid lg:grid-cols-4 lg:items-end">
             <div
               className={cn(
-                "py-20 max-md:pb-8",
+                "py-20 max-md:pb-8 lg:flex lg:flex-col lg:justify-center lg:self-stretch",
                 presenterTorso ? "lg:col-span-3" : "lg:col-span-4"
               )}
             >
@@ -90,13 +90,13 @@ export default function EventsPreview({ event }: { event: EventData }) {
               </a>
             </div>
             {presenterTorso && (
-              <div className="justify-end lg:col-span-1">
+              <div className="lg:col-span-1 lg:justify-end">
                 <Image
                   src={presenterTorso}
                   alt={presenterName ?? "Presenter"}
                   height={900}
                   width={900}
-                  className="object-contain object-bottom"
+                  className="mx-auto max-h-72 w-auto object-contain object-bottom lg:max-h-none lg:w-full"
                 />
               </div>
             )}
@@ -105,7 +105,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
       </Section>
       {(event.description || event.abstract) && (
         <Section>
-          <Container className="w-full" width="medium" size="medium">
+          <Container className="w-full" width="default" size="medium">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
               <div className="w-full shrink-0 rounded-xl bg-gray-75 p-5 md:order-last md:w-64">
                 {event.thumbnail && (
@@ -189,7 +189,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
       )}
       {presenterName && (
         <Section color="lightgray">
-          <Container width="medium" size="medium">
+          <Container width="default" size="medium">
             <h2 className="mb-6 mt-0 text-lg font-semibold text-sswRed">
               About the Speaker
             </h2>

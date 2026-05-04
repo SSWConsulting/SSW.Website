@@ -58,10 +58,10 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
-      label: "URL Slug",
+      label: "Event page on this site",
       name: "slug",
       description:
-        "URL segment for this event on ssw.com.au. Lowercase, kebab-case, unique within this year (e.g. ai-hack-day-sydney). If empty, the lowercased filename is used. Click a suggestion below to autofill.",
+        "The shareable link to this event's page here. We'll send people here when promoting it. Lowercase, kebab-case, e.g. ai-hack-day-sydney.",
       ui: {
         validate: (value?: string) => {
           if (!value) return;
@@ -73,11 +73,11 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
-      label: "URL",
+      label: "Registration link",
       name: "url",
       required: true,
       description:
-        "External URL for this event (e.g. Eventbrite registration link).",
+        "Where people go to actually sign up. Usually an Eventbrite, Humanitix, or Meetup URL.",
     },
     {
       type: "image",
