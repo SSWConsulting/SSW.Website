@@ -2,6 +2,14 @@
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
@@ -132,6 +140,31 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 )}
               </div>
               <div className="flex-1">
+                <Breadcrumb className="pt-8">
+                  <BreadcrumbList className="gap-2 text-xs font-normal text-gray-700">
+                    <BreadcrumbItem className="font-normal">
+                      <BreadcrumbLink
+                        href="/"
+                        className="und text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+                      >
+                        Home
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
+                    <BreadcrumbItem className="font-normal">
+                      <BreadcrumbLink
+                        href="/events"
+                        className="text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+                      >
+                        Events
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
+                    <BreadcrumbItem className="font-normal">
+                      <BreadcrumbPage>{event.title}</BreadcrumbPage>
+                    </BreadcrumbItem>
+                  </BreadcrumbList>
+                </Breadcrumb>
                 <h2 className="mb-4 mt-0 text-base font-semibold text-sswRed">
                   About the Event
                 </h2>
