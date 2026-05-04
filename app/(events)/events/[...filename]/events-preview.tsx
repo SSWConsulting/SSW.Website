@@ -144,7 +144,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 )}
               </div>
               <div className="flex-1">
-                <Breadcrumb className="pt-8">
+                <Breadcrumb>
                   <BreadcrumbList className="gap-2 text-xs font-normal text-gray-700">
                     <BreadcrumbItem className="font-normal">
                       <BreadcrumbLink
@@ -169,7 +169,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                     </BreadcrumbItem>
                   </BreadcrumbList>
                 </Breadcrumb>
-                <h2 className="mb-4 mt-0 text-base font-semibold text-sswRed">
+                <h2 className="mb-4 mt-8 text-base font-semibold text-sswRed">
                   About the Event
                 </h2>
                 <section className="prose max-w-none">
