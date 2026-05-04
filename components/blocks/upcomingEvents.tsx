@@ -2,6 +2,7 @@
 import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 
+import { mapEventEdge } from "@/helpers/getTrimmedEvents";
 import dynamic from "next/dynamic";
 import { useFormatDates } from "../../hooks/useFormatDates";
 import { CustomLink } from "../customLink";
@@ -32,14 +33,7 @@ const mapEventData = (data) => {
     return [];
   }
 
-  const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-    (event) => ({
-      ...event.node,
-      startDateTime: new Date(event.node.startDateTime),
-      endDateTime: new Date(event.node.endDateTime),
-    })
-  );
-  return mappedEvents;
+  return events.data.eventsCalendarConnection.edges.map(mapEventEdge);
 };
 
 export const UpcomingEvents = ({ data }) => {

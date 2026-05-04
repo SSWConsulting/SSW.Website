@@ -20,6 +20,13 @@ const removeEmptyObjects = (formValues: object, fieldKey: string) => {
   delete formValues[fieldKey];
   return formValues;
 };
+
+const normalizeSlug = (raw: string): string =>
+  raw
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 export const eventsCalendarSchema: Collection = {
   label: "Events - Calendar",
   name: "eventsCalendar",
@@ -27,10 +34,14 @@ export const eventsCalendarSchema: Collection = {
   format: "json",
   ui: {
     beforeSubmit: async ({ values }) => {
-      return removeEmptyObjects(values, "presenterList") as Record<
+      const cleaned = removeEmptyObjects(values, "presenterList") as Record<
         string,
         unknown
       >;
+      if (typeof cleaned.slug === "string" && cleaned.slug.length > 0) {
+        cleaned.slug = normalizeSlug(cleaned.slug);
+      }
+      return cleaned;
     },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - upload dir not included in Tina type but works anyway
@@ -47,11 +58,26 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
+      label: "URL Slug",
+      name: "slug",
+      description:
+        "URL segment for this event page on ssw.com.au. Lowercase, kebab-case, unique within this year (e.g. ai-hack-day-sydney). Auto-normalized on save.",
+      ui: {
+        validate: (value?: string) => {
+          if (!value) return;
+          if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(value)) {
+            return "Use lowercase letters, numbers, and single hyphens only.";
+          }
+        },
+      },
+    },
+    {
+      type: "string",
       label: "URL",
       name: "url",
       required: true,
       description:
-        "URL of the event page (e.g. https://www.ssw.com.au/events/angular-workshop)",
+        "External URL for this event (e.g. Eventbrite registration link).",
     },
     {
       type: "image",
