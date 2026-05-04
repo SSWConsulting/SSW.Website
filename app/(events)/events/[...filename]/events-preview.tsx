@@ -54,7 +54,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
           className="object-cover"
           src="/images/background/polygonBackground-light.jpg"
           alt="Event Background"
-          layout="fill"
+          fill
         />
         <Container className="z-10 w-full py-0" width="medium" size="large">
           <div className="grid items-end lg:grid-cols-4">
