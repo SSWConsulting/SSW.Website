@@ -10,6 +10,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { CITY_MAP } from "@/components/util/constants/country";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
@@ -34,6 +35,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
     true
   );
 
+  const locationOverride = CITY_MAP[event.city]?.name || event.city;
   const firstPresenter = event.presenterList?.[0]?.presenter;
   const presenterName = firstPresenter?.presenter?.name;
   const presenterUrl = firstPresenter?.presenter?.peopleProfileURL;
@@ -135,7 +137,9 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 {city && (
                   <div className="flex items-start gap-3">
                     <MapPin size={18} className="mt-0.5 shrink-0 text-sswRed" />
-                    <span className="text-sm text-gray-700">{city}</span>
+                    <span className="text-sm text-gray-700">
+                      {locationOverride}
+                    </span>
                   </div>
                 )}
               </div>
