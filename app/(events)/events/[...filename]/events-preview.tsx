@@ -149,7 +149,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                     <BreadcrumbItem className="font-normal">
                       <BreadcrumbLink
                         href="/"
-                        className="und text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+                        className="text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
                       >
                         Home
                       </BreadcrumbLink>
