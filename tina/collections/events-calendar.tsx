@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Collection, TextField } from "tinacms";
-import { kebabCaseFilename } from "./shared-fields";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
