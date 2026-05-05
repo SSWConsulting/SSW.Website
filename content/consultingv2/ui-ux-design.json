@@ -436,34 +436,28 @@
     {
       "technologies": [
         {
+          "technology": "content/v2Technologies/technologies/figma.mdx"
+        },
+        {
           "technology": "content/v2Technologies/technologies/ai-development.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/ai-design.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/figma.mdx"
-        },
-        {
           "technology": "content/v2Technologies/technologies/nanobanana.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/framer.mdx"
-        },
-        {
-          "technology": "content/v2Technologies/technologies/webflow.mdx"
+          "technology": "content/v2Technologies/technologies/TinaCMS.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/wordpress.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/jitter.mdx"
+          "technology": "content/v2Technologies/technologies/storybook-chromatic.mdx"
         },
         {
           "technology": "content/v2Technologies/technologies/adobe-suite.mdx"
-        },
-        {
-          "technology": "content/v2Technologies/technologies/storybook-chromatic.mdx"
         }
       ],
       "isStacked": false,
