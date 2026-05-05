@@ -120,7 +120,7 @@
             }
           ],
           "icon": "BiDesktop",
-          "heading": "Enterprise Applications",
+          "heading": "Enterprise applications",
           "description": "We turn complicated workflows into simple experiences. Empower your team to work faster, smarter, and with confidence.",
           "embeddedButton": {
             "buttonText": "",
@@ -141,7 +141,7 @@
             }
           ],
           "icon": "BiBarChart",
-          "heading": "Data Visualization & Dashboards",
+          "heading": "Data visualization and dashboards",
           "description": "Transform a sea of numbers into clear, engaging visuals. We create beautiful custom dashboards that make spotting trends and making business decisions a breeze.",
           "embeddedButton": {
             "buttonText": ""
@@ -161,7 +161,7 @@
             }
           ],
           "icon": "BiRecycle",
-          "heading": "Modernisation & Facelifts",
+          "heading": "Modernization and redesigns",
           "description": "Breathe new life into your current systems. We update your software’s look and feel to delight your users, all without missing a beat in your daily operations.",
           "embeddedButton": {
             "buttonText": "",
@@ -287,7 +287,7 @@
     },
     {
       "isStacked": true,
-      "heading": "Why Partner with SSW",
+      "heading": "Why partner with SSW",
       "isH1": false,
       "body": "We help organisations create clear, easy-to-use digital experiences that customers enjoy and teams are proud to deliver. Our approach focuses on practical outcomes, trusted collaboration, and products that support real business growth.",
       "buttons": [
@@ -309,7 +309,7 @@
           "guid": "cj3tlm",
           "altText": "",
           "icon": "info",
-          "heading": "Design That Works in the Real World",
+          "heading": "Design that works in the real world",
           "description": "We start by understanding how your organisation works – your goals, your customers, and your team. From there, we help shape a practical, reliable experience that supports your business every day.",
           "embeddedButton": {
             "buttonText": ""
@@ -319,7 +319,7 @@
           "guid": "f4mq7s",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "Turning Complexity into Clarity",
+          "heading": "Turning complexity into clarity",
           "description": "If your product or service feels complex, we help make it intuitive. Together, we organise information and flows so your audience can quickly understand what you offer and engage with confidence.",
           "embeddedButton": {
             "buttonText": ""
@@ -329,7 +329,7 @@
           "guid": "dz4i1",
           "altText": "",
           "icon": "info",
-          "heading": "Confidence from Day One",
+          "heading": "Confidence from day one",
           "description": "We start by working closely with you to explore ideas, uncover opportunities, and make informed decisions early. With a clear direction in place, your team can move forward with confidence from concept to launch.",
           "embeddedButton": {
             "buttonText": ""
@@ -399,7 +399,7 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Frequently Asked Questions",
+      "heading": "Frequently asked questions",
       "body": "",
       "tabletTextAlignment": "",
       "accordionItems": [
@@ -408,7 +408,7 @@
           "content": "Quality and success are built into our design process. We focus on:\n\n* Clear Problem Definition: Aligning on users, business goals, constraints, and measurable outcomes before designing.\n* User-Centred Research: Validating assumptions through stakeholder interviews, research, and usability testing.\n* Structured Information Architecture: Designing logical navigation, task flows, and content hierarchy to reduce cognitive load.\n* Prototyping and Iteration: Testing ideas early with wireframes and interactive prototypes to refine usability before development.\n* Developer-Ready Design: Delivering clear specifications, states, and components that align with engineering constraints.\n* Accessibility and Usability Standards: Applying best practices to ensure inclusive, consistent, and scalable design.\n* Collaborative Delivery: Working closely with stakeholders and engineers through regular reviews and feedback loops.\n"
         },
         {
-          "label": "What types of products does SSW specialise in designing?",
+          "label": "What types of products does SSW specialize in designing?",
           "content": "SSW specialises in designing complex, custom digital products with demanding workflows and high user expectations. This includes enterprise platforms, CRM and ERP systems, line-of-business applications, customer portals, intranets, dashboards, and data-heavy tools.\n\nWe are particularly experienced in designing compliance-driven systems, operational platforms, and multi-step transactional workflows where clarity, efficiency, and accuracy are critical.\n"
         },
         {
