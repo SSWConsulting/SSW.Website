@@ -434,6 +434,46 @@
       "_template": "accordionBlock"
     },
     {
+      "technologies": [
+        {
+          "technology": "content/v2Technologies/technologies/figma.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/ai-development.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/ai-design.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/nanobanana.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/framer.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/webflow.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/wordpress.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/jitter.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/storybook-chromatic.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/adobe-suite.mdx"
+        }
+      ],
+      "isStacked": false,
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
       "spacerHeight": "150px",
       "background": {
         "backgroundColour": 6,
