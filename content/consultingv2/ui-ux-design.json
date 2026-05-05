@@ -436,9 +436,6 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/storybook-chromatic.mdx"
-        },
-        {
           "technology": "content/v2Technologies/technologies/ai-development.mdx"
         },
         {
@@ -464,6 +461,9 @@
         },
         {
           "technology": "content/v2Technologies/technologies/adobe-suite.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/storybook-chromatic.mdx"
         }
       ],
       "isStacked": false,
