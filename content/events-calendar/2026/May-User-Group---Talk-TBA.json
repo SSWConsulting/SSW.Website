@@ -7,7 +7,9 @@
     {
       "presenter": "content/presenters/ben-neoh.mdx"
     },
-    {}
+    {
+      "presenter": "content/presenters/rick-su.mdx"
+    }
   ],
   "startDateTime": "2026-05-20T08:00:00.000Z",
   "endDateTime": "2026-05-20T11:00:00.000Z",
