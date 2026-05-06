@@ -189,10 +189,12 @@ export default function EventsPreview({ event }: { event: EventData }) {
         <Section color="lightgray">
           <Container width="default" size="medium">
             <h2 className="mb-6 mt-0 text-lg font-semibold text-sswRed">
-              {presenters.length > 1 ? "About the Speakers" : "About the Speaker"}
+              {presenters.length > 1
+                ? "About the Speakers"
+                : "About the Speaker"}
             </h2>
             <div className="flex flex-col gap-10">
-              {presenters.map((item, index) => {
+              {presenters.map((item) => {
                 const presenter = item.presenter;
                 const name = presenter?.presenter?.name;
                 const url = presenter?.presenter?.peopleProfileURL;
