@@ -15,14 +15,26 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
 import { cn } from "@/lib/utils";
+import {
+  DEFAULT_HEADER_LAYOUT,
+  type HeaderLayout,
+} from "@/tina-collections/events-calendar.constants";
 import type { EventsCalendarQuery } from "@/tina/types";
 import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 type EventData = EventsCalendarQuery["eventsCalendar"];
 
-export default function EventsPreview({ event }: { event: EventData }) {
+type EventsPreviewProps = {
+  tinaProps: { data: object };
+};
+
+export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
+  const event = (tinaProps.data as { eventsCalendar: EventData })
+    .eventsCalendar;
+
   const { relativeDate, formattedDate } = useFormatDates(
     {
       title: event.title,
@@ -38,7 +50,27 @@ export default function EventsPreview({ event }: { event: EventData }) {
   const locationOverride = CITY_MAP[event.city]?.name || event.city;
   const presenters = event.presenterList ?? [];
   const firstPresenter = presenters[0]?.presenter;
-  const presenterTorso = firstPresenter?.torsoImg;
+
+  const torsoPresenters = presenters.filter((p) => p?.presenter?.torsoImg);
+  const avatarPresenters = presenters.filter((p) => p?.presenter?.profileImg);
+
+  const headerLayout: HeaderLayout =
+    (event.headerLayout as HeaderLayout) ?? DEFAULT_HEADER_LAYOUT;
+  const resolvedLayout: HeaderLayout | "none" = (() => {
+    if (presenters.length === 0) return "none";
+    if (headerLayout === "avatars") {
+      return avatarPresenters.length > 0 ? "avatars" : "none";
+    }
+    if (headerLayout === "single") {
+      return firstPresenter?.torsoImg ? "single" : "none";
+    }
+    if (torsoPresenters.length > 1) return "multi-torso";
+    if (torsoPresenters.length === 1) return "single";
+    if (avatarPresenters.length > 0) return "avatars";
+    return "none";
+  })();
+
+  const showHeaderMedia = resolvedLayout !== "none";
 
   const city = event.cityOther || event.city;
 
@@ -57,8 +89,10 @@ export default function EventsPreview({ event }: { event: EventData }) {
             <div
               className={cn(
                 "py-20 max-md:pb-8 md:flex md:flex-col md:justify-center md:self-stretch",
-                presenterTorso
-                  ? "md:col-span-1 lg:col-span-3"
+                showHeaderMedia
+                  ? resolvedLayout === "avatars"
+                    ? "md:col-span-1 lg:col-span-3"
+                    : "md:col-span-1 lg:col-span-2"
                   : "md:col-span-2 lg:col-span-4"
               )}
             >
@@ -72,12 +106,18 @@ export default function EventsPreview({ event }: { event: EventData }) {
                   className="h-px w-10 border-ssw-gray-dark"
                   aria-hidden="true"
                 />
-                <span className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack">
+                <span
+                  data-tina-field={tinaField(event, "startDateTime")}
+                  className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack"
+                >
                   {relativeDate}
                 </span>
               </div>
               <div className="mb-1 flex items-center gap-6">
-                <h1 className="mt-0 self-start py-0 max-md:text-2xl">
+                <h1
+                  data-tina-field={tinaField(event, "title")}
+                  className="mt-0 self-start py-0 max-md:text-2xl"
+                >
                   {event.title}
                 </h1>
               </div>
@@ -87,15 +127,76 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 </RippleButton>
               </a>
             </div>
-            {presenterTorso && (
-              <div className="md:col-span-1 md:justify-end">
+            {resolvedLayout === "single" && firstPresenter?.torsoImg && (
+              <div
+                data-tina-field={tinaField(event, "presenterList")}
+                className="md:col-span-1 md:justify-end lg:col-span-2"
+              >
                 <Image
-                  src={presenterTorso}
+                  src={firstPresenter.torsoImg}
                   alt={firstPresenter?.presenter?.name ?? "Presenter"}
                   height={900}
                   width={900}
                   className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
                 />
+              </div>
+            )}
+            {resolvedLayout === "multi-torso" && torsoPresenters.length > 0 && (
+              <div
+                data-tina-field={tinaField(event, "presenterList")}
+                className="flex items-end justify-end md:col-span-1 lg:col-span-2"
+              >
+                {torsoPresenters.map((item, index) => {
+                  const photo = item.presenter?.torsoImg;
+                  const name = item.presenter?.presenter?.name ?? "Presenter";
+                  if (!photo) return null;
+                  return (
+                    <div
+                      key={`torso-${index}-${name}`}
+                      className={cn(
+                        "flex-1",
+                        index > 0 && "-ml-6 md:-ml-10 lg:-ml-12"
+                      )}
+                    >
+                      <Image
+                        src={photo}
+                        alt={name}
+                        height={900}
+                        width={900}
+                        className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+            {resolvedLayout === "avatars" && avatarPresenters.length > 0 && (
+              <div
+                data-tina-field={tinaField(event, "presenterList")}
+                className="flex items-center justify-center py-8 md:col-span-1 md:justify-end md:py-20 md:pl-8"
+              >
+                <div className="flex">
+                  {avatarPresenters.map((item, index) => {
+                    const photo = item.presenter?.profileImg;
+                    const name = item.presenter?.presenter?.name ?? "";
+                    return (
+                      <div
+                        key={`avatar-${index}-${name}`}
+                        className={cn(
+                          "relative size-32 overflow-hidden rounded-full border-4 border-white shadow-md md:size-40",
+                          index > 0 && "-ml-8 md:-ml-10"
+                        )}
+                      >
+                        <Image
+                          src={photo}
+                          alt={name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>
@@ -170,7 +271,10 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 <h2 className="mb-4 mt-8 text-base font-semibold text-sswRed">
                   About the Event
                 </h2>
-                <section className="prose max-w-none">
+                <section
+                  data-tina-field={tinaField(event, "description")}
+                  className="prose max-w-none"
+                >
                   {event.description ? (
                     <TinaMarkdown
                       content={event.description}
@@ -193,31 +297,6 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 ? "About the Speakers"
                 : "About the Speaker"}
             </h2>
-            {presenters.length > 1 && (
-              <div className="mb-8 flex">
-                {presenters.map((item, index) => {
-                  const photo = item.presenter?.profileImg;
-                  const name = item.presenter?.presenter?.name ?? "";
-                  if (!photo) return null;
-                  return (
-                    <div
-                      key={`avatar-${index}-${name}`}
-                      className={cn(
-                        "relative size-20 overflow-hidden rounded-full border-4 border-gray-75",
-                        index > 0 && "-ml-4"
-                      )}
-                    >
-                      <Image
-                        src={photo}
-                        alt={name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            )}
             <div className="flex flex-col gap-10">
               {presenters.map((item) => {
                 const presenter = item.presenter;
@@ -232,7 +311,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 return (
                   <div key={name} className="flex flex-col gap-6">
                     <div className="flex items-center gap-4">
-                      {presenters.length === 1 && photo && (
+                      {photo && (
                         <Image
                           src={photo}
                           alt={name}

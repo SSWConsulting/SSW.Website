@@ -66,7 +66,14 @@ const getPreviewEventData = async (urlKey: string) => {
     onDiskPath,
     FileType.JSON
   );
-  return tinaProps?.data?.eventsCalendar ?? null;
+  if (!tinaProps?.data?.eventsCalendar) return null;
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+    },
+  };
 };
 
 const newEventsPageData = async (filename: string) => {
@@ -164,9 +171,10 @@ export async function generateMetadata(
   }
 
   if (calendarEvent) {
+    const event = calendarEvent.props.data.eventsCalendar;
     return {
-      title: calendarEvent.title,
-      description: calendarEvent.abstract ?? undefined,
+      title: event.title,
+      description: event.abstract ?? undefined,
     };
   }
 
@@ -191,7 +199,7 @@ export default async function Events(prop: {
     return <TinaClient props={newPage.props} Component={EventsV2Page} />;
   }
   if (calendarEvent) {
-    return <EventsPreview event={calendarEvent} />;
+    return <TinaClient props={calendarEvent.props} Component={EventsPreview} />;
   }
   if (oldPage) {
     return <TinaClient props={oldPage.props} Component={EventsPage} />;
