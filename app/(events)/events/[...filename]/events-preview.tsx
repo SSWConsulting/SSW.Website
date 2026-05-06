@@ -193,6 +193,31 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 ? "About the Speakers"
                 : "About the Speaker"}
             </h2>
+            {presenters.length > 1 && (
+              <div className="mb-8 flex">
+                {presenters.map((item, index) => {
+                  const photo = item.presenter?.profileImg;
+                  const name = item.presenter?.presenter?.name ?? "";
+                  if (!photo) return null;
+                  return (
+                    <div
+                      key={`avatar-${index}-${name}`}
+                      className={cn(
+                        "relative size-20 overflow-hidden rounded-full border-4 border-gray-75",
+                        index > 0 && "-ml-4"
+                      )}
+                    >
+                      <Image
+                        src={photo}
+                        alt={name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
             <div className="flex flex-col gap-10">
               {presenters.map((item) => {
                 const presenter = item.presenter;
@@ -207,7 +232,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 return (
                   <div key={name} className="flex flex-col gap-6">
                     <div className="flex items-center gap-4">
-                      {photo && (
+                      {presenters.length === 1 && photo && (
                         <Image
                           src={photo}
                           alt={name}
