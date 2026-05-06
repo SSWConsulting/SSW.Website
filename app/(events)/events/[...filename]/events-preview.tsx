@@ -36,13 +36,9 @@ export default function EventsPreview({ event }: { event: EventData }) {
   );
 
   const locationOverride = CITY_MAP[event.city]?.name || event.city;
-  const firstPresenter = event.presenterList?.[0]?.presenter;
-  const presenterName = firstPresenter?.presenter?.name;
-  const presenterUrl = firstPresenter?.presenter?.peopleProfileURL;
-  const presenterPhoto = firstPresenter?.profileImg;
+  const presenters = event.presenterList ?? [];
+  const firstPresenter = presenters[0]?.presenter;
   const presenterTorso = firstPresenter?.torsoImg;
-  const presenterAbout = firstPresenter?.about;
-  const presenterPosition = firstPresenter?.position;
 
   const city = event.cityOther || event.city;
 
@@ -95,7 +91,7 @@ export default function EventsPreview({ event }: { event: EventData }) {
               <div className="md:col-span-1 md:justify-end">
                 <Image
                   src={presenterTorso}
-                  alt={presenterName ?? "Presenter"}
+                  alt={firstPresenter?.presenter?.name ?? "Presenter"}
                   height={900}
                   width={900}
                   className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
@@ -189,49 +185,64 @@ export default function EventsPreview({ event }: { event: EventData }) {
           </Container>
         </Section>
       )}
-      {presenterName && (
+      {presenters.length > 0 && (
         <Section color="lightgray">
           <Container width="default" size="medium">
             <h2 className="mb-6 mt-0 text-lg font-semibold text-sswRed">
-              About the Speaker
+              {presenters.length > 1 ? "About the Speakers" : "About the Speaker"}
             </h2>
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-4">
-                {presenterPhoto && (
-                  <Image
-                    src={presenterPhoto}
-                    alt={presenterName}
-                    width={220}
-                    height={220}
-                    className="size-16 shrink-0 rounded-full object-cover"
-                  />
-                )}
-                <div>
-                  {presenterUrl ? (
-                    <CustomLink
-                      className="font-semibold uppercase underline"
-                      href={presenterUrl}
-                    >
-                      {presenterName}
-                    </CustomLink>
-                  ) : (
-                    <span className="font-semibold uppercase">
-                      {presenterName}
-                    </span>
-                  )}
-                  {presenterPosition && (
-                    <p className="text-gray-500">{presenterPosition}</p>
-                  )}
-                </div>
-              </div>
-              <div className="prose max-w-none">
-                {presenterAbout && (
-                  <TinaMarkdown
-                    content={presenterAbout}
-                    components={componentRenderer}
-                  />
-                )}
-              </div>
+            <div className="flex flex-col gap-10">
+              {presenters.map((item, index) => {
+                const presenter = item.presenter;
+                const name = presenter?.presenter?.name;
+                const url = presenter?.presenter?.peopleProfileURL;
+                const photo = presenter?.profileImg;
+                const about = presenter?.about;
+                const position = presenter?.position;
+
+                if (!name) return null;
+
+                return (
+                  <div key={name} className="flex flex-col gap-6">
+                    <div className="flex items-center gap-4">
+                      {photo && (
+                        <Image
+                          src={photo}
+                          alt={name}
+                          width={220}
+                          height={220}
+                          className="size-16 shrink-0 rounded-full object-cover"
+                        />
+                      )}
+                      <div>
+                        {url ? (
+                          <CustomLink
+                            className="font-semibold uppercase underline"
+                            href={url}
+                          >
+                            {name}
+                          </CustomLink>
+                        ) : (
+                          <span className="font-semibold uppercase">
+                            {name}
+                          </span>
+                        )}
+                        {position && (
+                          <p className="text-gray-500">{position}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="prose max-w-none">
+                      {about && (
+                        <TinaMarkdown
+                          content={about}
+                          components={componentRenderer}
+                        />
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </Container>
         </Section>
