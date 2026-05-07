@@ -26,6 +26,7 @@ public/admin/.gitignore
 .env
 .env.local
 .idea
+.worktrees/
 
 # debug
 npm-debug.log*
