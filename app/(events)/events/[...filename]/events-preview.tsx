@@ -50,6 +50,9 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const locationOverride = CITY_MAP[event.city]?.name || event.city;
   const presenters = event.presenterList ?? [];
 
+  const validPresenters = presenters.filter(
+    (p) => p?.presenter?.presenter?.name
+  );
   const torsoPresenters = presenters.filter((p) => p?.presenter?.torsoImg);
   const avatarPresenters = presenters.filter((p) => p?.presenter?.profileImg);
   const singlePresenter = torsoPresenters[0]?.presenter;
@@ -179,7 +182,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 <div className="flex flex-wrap justify-center gap-y-2 md:justify-end">
                   {avatarPresenters.map((item, index) => {
                     const photo = item.presenter?.profileImg;
-                    const name = item.presenter?.presenter?.name ?? "";
+                    const name = item.presenter?.presenter?.name ?? "Presenter";
                     const sizeClass =
                       avatarPresenters.length > 4
                         ? "size-20 md:size-24"
@@ -299,27 +302,28 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
           </Container>
         </Section>
       )}
-      {presenters.length > 0 && (
+      {validPresenters.length > 0 && (
         <Section color="lightgray">
           <Container width="default" size="medium">
             <h2 className="mb-6 mt-0 text-lg font-semibold text-sswRed">
-              {presenters.length > 1
+              {validPresenters.length > 1
                 ? "About the Speakers"
                 : "About the Speaker"}
             </h2>
             <div className="flex flex-col gap-10">
-              {presenters.map((item) => {
+              {validPresenters.map((item, index) => {
                 const presenter = item.presenter;
-                const name = presenter?.presenter?.name;
+                const name = presenter?.presenter?.name as string;
                 const url = presenter?.presenter?.peopleProfileURL;
                 const photo = presenter?.profileImg;
                 const about = presenter?.about;
                 const position = presenter?.position;
 
-                if (!name) return null;
-
                 return (
-                  <div key={name} className="flex flex-col gap-6">
+                  <div
+                    key={`presenter-${index}-${name}`}
+                    className="flex flex-col gap-6"
+                  >
                     <div className="flex items-center gap-4">
                       {photo && (
                         <Image

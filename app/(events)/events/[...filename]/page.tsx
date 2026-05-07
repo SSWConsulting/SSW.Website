@@ -53,17 +53,18 @@ export async function generateStaticParams() {
   const oneMonthAgo = new Date();
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
 
-  const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
-    .flatMap((edge) => {
-      const node = edge?.node;
-      if (!node || mdxFilenames.has(node._sys.filename)) return [];
-      const start = node.startDateTime ? new Date(node.startDateTime) : null;
-      if (!start || start < oneMonthAgo) return [];
-      const year = node._sys.breadcrumbs.at(-2);
-      if (!year) return [];
-      const segment = (node.slug || node._sys.filename).toLowerCase();
-      return [{ filename: [year, segment] }];
-    });
+  const calendarPages = (
+    calendarData.data.eventsCalendarConnection.edges ?? []
+  ).flatMap((edge) => {
+    const node = edge?.node;
+    if (!node || mdxFilenames.has(node._sys.filename)) return [];
+    const start = node.startDateTime ? new Date(node.startDateTime) : null;
+    if (!start || start < oneMonthAgo) return [];
+    const year = node._sys.breadcrumbs.at(-2);
+    if (!year) return [];
+    const segment = (node.slug || node._sys.filename).toLowerCase();
+    return [{ filename: [year, segment] }];
+  });
 
   return [...mdxPages, ...calendarPages];
 }
