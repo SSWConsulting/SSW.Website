@@ -26,8 +26,12 @@ const getCalendarPathMap = cache(async () => {
     if (!node) continue;
     const year = node._sys.breadcrumbs.at(-2);
     if (!year) continue;
-    const segment = (node.slug || node._sys.filename).toLowerCase();
-    map.set(`${year}/${segment}`, node._sys.breadcrumbs.join("/"));
+    const onDiskPath = node._sys.breadcrumbs.join("/");
+    const filename = node._sys.filename.toLowerCase();
+    map.set(`${year}/${filename}`, onDiskPath);
+    if (node.slug) {
+      map.set(`${year}/${node.slug.toLowerCase()}`, onDiskPath);
+    }
   }
   return map;
 });
@@ -48,10 +52,15 @@ export async function generateStaticParams() {
 
   const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
     .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
-    .map((edge) => {
+    .flatMap((edge) => {
       const year = edge.node._sys.breadcrumbs.at(-2);
-      const segment = (edge.node.slug || edge.node._sys.filename).toLowerCase();
-      return year ? { filename: [year, segment] } : { filename: [segment] };
+      if (!year) return [];
+      const filename = edge.node._sys.filename.toLowerCase();
+      const segments = new Set<string>([filename]);
+      if (edge.node.slug) segments.add(edge.node.slug.toLowerCase());
+      return Array.from(segments).map((segment) => ({
+        filename: [year, segment],
+      }));
     });
 
   return [...mdxPages, ...calendarPages];

@@ -49,20 +49,21 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
 
   const locationOverride = CITY_MAP[event.city]?.name || event.city;
   const presenters = event.presenterList ?? [];
-  const firstPresenter = presenters[0]?.presenter;
 
   const torsoPresenters = presenters.filter((p) => p?.presenter?.torsoImg);
   const avatarPresenters = presenters.filter((p) => p?.presenter?.profileImg);
+  const singlePresenter = torsoPresenters[0]?.presenter;
 
   const headerLayout: HeaderLayout =
     (event.headerLayout as HeaderLayout) ?? DEFAULT_HEADER_LAYOUT;
-  const resolvedLayout: HeaderLayout | "none" = (() => {
+  const resolvedLayout: HeaderLayout = (() => {
+    if (headerLayout === "none") return "none";
     if (presenters.length === 0) return "none";
     if (headerLayout === "avatars") {
       return avatarPresenters.length > 0 ? "avatars" : "none";
     }
     if (headerLayout === "single") {
-      return firstPresenter?.torsoImg ? "single" : "none";
+      return singlePresenter?.torsoImg ? "single" : "none";
     }
     if (torsoPresenters.length > 1) return "multi-torso";
     if (torsoPresenters.length === 1) return "single";
@@ -127,14 +128,14 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 </RippleButton>
               </a>
             </div>
-            {resolvedLayout === "single" && firstPresenter?.torsoImg && (
+            {resolvedLayout === "single" && singlePresenter?.torsoImg && (
               <div
                 data-tina-field={tinaField(event, "presenterList")}
                 className="md:col-span-1 md:justify-end lg:col-span-2"
               >
                 <Image
-                  src={firstPresenter.torsoImg}
-                  alt={firstPresenter?.presenter?.name ?? "Presenter"}
+                  src={singlePresenter.torsoImg}
+                  alt={singlePresenter?.presenter?.name ?? "Presenter"}
                   height={900}
                   width={900}
                   className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
@@ -175,16 +176,25 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 data-tina-field={tinaField(event, "presenterList")}
                 className="flex items-center justify-center py-8 md:col-span-1 md:justify-end md:py-20 md:pl-8"
               >
-                <div className="flex">
+                <div className="flex flex-wrap justify-center gap-y-2 md:justify-end">
                   {avatarPresenters.map((item, index) => {
                     const photo = item.presenter?.profileImg;
                     const name = item.presenter?.presenter?.name ?? "";
+                    const sizeClass =
+                      avatarPresenters.length > 4
+                        ? "size-20 md:size-24"
+                        : "size-32 md:size-40";
+                    const overlapClass =
+                      avatarPresenters.length > 4
+                        ? "-ml-5 md:-ml-6"
+                        : "-ml-8 md:-ml-10";
                     return (
                       <div
                         key={`avatar-${index}-${name}`}
                         className={cn(
-                          "relative size-32 overflow-hidden rounded-full border-4 border-white shadow-md md:size-40",
-                          index > 0 && "-ml-8 md:-ml-10"
+                          "relative overflow-hidden rounded-full border-4 border-white shadow-md",
+                          sizeClass,
+                          index > 0 && overlapClass
                         )}
                       >
                         <Image
