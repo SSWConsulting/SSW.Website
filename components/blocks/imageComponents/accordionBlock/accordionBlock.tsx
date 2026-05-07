@@ -80,7 +80,7 @@ export const AccordionBlock = ({ data }) => {
             return (
               <AccordionItem
                 key={`accord-${index}`}
-                className="w-full border-b-0 border-t-1 border-gray-300 last:border-b-1"
+                className="w-full border-t-1 border-gray-300 last:border-b-1"
                 value={`accord-${index}`}
               >
                 <AccordionTrigger className="text-white">
