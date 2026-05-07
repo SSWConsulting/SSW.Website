@@ -50,17 +50,19 @@ export async function generateStaticParams() {
 
   const mdxFilenames = new Set(mdxPages.map((p) => p.filename[0]));
 
+  const oneMonthAgo = new Date();
+  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
   const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
-    .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
     .flatMap((edge) => {
-      const year = edge.node._sys.breadcrumbs.at(-2);
+      const node = edge?.node;
+      if (!node || mdxFilenames.has(node._sys.filename)) return [];
+      const start = node.startDateTime ? new Date(node.startDateTime) : null;
+      if (!start || start < oneMonthAgo) return [];
+      const year = node._sys.breadcrumbs.at(-2);
       if (!year) return [];
-      const filename = edge.node._sys.filename.toLowerCase();
-      const segments = new Set<string>([filename]);
-      if (edge.node.slug) segments.add(edge.node.slug.toLowerCase());
-      return Array.from(segments).map((segment) => ({
-        filename: [year, segment],
-      }));
+      const segment = (node.slug || node._sys.filename).toLowerCase();
+      return [{ filename: [year, segment] }];
     });
 
   return [...mdxPages, ...calendarPages];
