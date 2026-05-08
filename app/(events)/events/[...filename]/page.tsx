@@ -1,0 +1,238 @@
+import { TinaClient } from "@/app/tina-client";
+import ClientFallbackWithOption from "@/components/client-fallback-with-option";
+import { getVideoCardProps } from "@/helpers/events";
+import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
+import { getSEOProps } from "@/lib/seo";
+import { EVENTS_MAX_SIZE_OVERRIDE } from "@/services/server/getEvents";
+import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
+import client from "@/tina/client";
+import "aos/dist/aos.css"; // This is important to keep the animation
+import { Metadata } from "next";
+import { cache } from "react";
+import EventsPage from "./events";
+import EventsPageFallback from "./events-page-fallback";
+import EventsPreview from "./events-preview";
+import EventsV2Page from "./eventsv2";
+
+export const dynamic = "force-static";
+
+const getCalendarPathMap = cache(async () => {
+  const data = await client.queries.eventsCalendarConnection({
+    first: EVENTS_MAX_SIZE_OVERRIDE,
+  });
+  const map = new Map<string, string>();
+  for (const edge of data.data.eventsCalendarConnection.edges ?? []) {
+    const node = edge?.node;
+    if (!node) continue;
+    const year = node._sys.breadcrumbs.at(-2);
+    if (!year) continue;
+    const onDiskPath = node._sys.breadcrumbs.join("/");
+    const filename = node._sys.filename.toLowerCase();
+    map.set(`${year}/${filename}`, onDiskPath);
+    if (node.slug) {
+      map.set(`${year}/${node.slug.toLowerCase()}`, onDiskPath);
+    }
+  }
+  return map;
+});
+
+export async function generateStaticParams() {
+  const [eventsData, calendarData] = await Promise.all([
+    client.queries.eventsConnection({ first: EVENTS_MAX_SIZE_OVERRIDE }),
+    client.queries.eventsCalendarConnection({
+      first: EVENTS_MAX_SIZE_OVERRIDE,
+    }),
+  ]);
+
+  const mdxPages = eventsData.data.eventsConnection.edges.map((page) => ({
+    filename: [page.node._sys.filename],
+  }));
+
+  const mdxFilenames = new Set(mdxPages.map((p) => p.filename[0]));
+
+  // Only pre-render events from the last month onward to keep build times reasonable.
+  // Older events still resolve at request time via dynamicParams (Next.js default) and
+  // are listed in full at /events.
+  const oneMonthAgo = new Date();
+  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+  const calendarPages = (
+    calendarData.data.eventsCalendarConnection.edges ?? []
+  ).flatMap((edge) => {
+    const node = edge?.node;
+    if (!node || mdxFilenames.has(node._sys.filename)) return [];
+    const start = node.startDateTime ? new Date(node.startDateTime) : null;
+    if (!start || start < oneMonthAgo) return [];
+    const year = node._sys.breadcrumbs.at(-2);
+    if (!year) return [];
+    const segment = (node.slug || node._sys.filename).toLowerCase();
+    return [{ filename: [year, segment] }];
+  });
+
+  return [...mdxPages, ...calendarPages];
+}
+
+const getPreviewEventData = async (urlKey: string) => {
+  const map = await getCalendarPathMap();
+  const onDiskPath = map.get(urlKey.toLowerCase());
+  if (!onDiskPath) return null;
+  const tinaProps = await fetchTinaData(
+    client.queries.eventsCalendar,
+    onDiskPath,
+    FileType.JSON
+  );
+  if (!tinaProps?.data?.eventsCalendar) return null;
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+    },
+  };
+};
+
+const newEventsPageData = async (filename: string) => {
+  const tinaProps = await fetchTinaData(
+    client.queries.eventsv2,
+    filename,
+    FileType.JSON
+  );
+  if (!tinaProps) {
+    return null;
+  }
+
+  const global = await client.queries.global({ relativePath: "index.json" });
+  const seo = tinaProps.data.eventsv2.seo;
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+      header: {
+        url: global.data.global.header.url,
+      },
+      seo,
+    },
+  };
+};
+
+const getData = async (filename: string) => {
+  const tinaProps = await fetchTinaData(
+    client.queries.eventsContentQuery,
+    filename
+  );
+
+  if (!tinaProps) {
+    return null;
+  }
+
+  const seo = tinaProps.data.events.seo;
+
+  const categories =
+    tinaProps.data.events?.testimonialCategories?.map(
+      (category) => category.testimonialCategory.name
+    ) || [];
+
+  const videoCardProps = getVideoCardProps(tinaProps.data.events);
+
+  const testimonialsResult = await getTestimonialsByCategories(categories);
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+      testimonialsResult,
+      categories,
+      videoCardProps,
+      header: {
+        url: tinaProps.data.global.header.url,
+      },
+      seo,
+    },
+  };
+};
+
+type GenerateMetaDataProps = {
+  params: Promise<{ filename: string[] }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata(
+  prop: GenerateMetaDataProps
+): Promise<Metadata> {
+  const params = await prop.params;
+
+  const slug = params.filename;
+
+  const [newPage, calendarEvent, oldPage] = await Promise.all([
+    newEventsPageData(slug.join("/")),
+    getPreviewEventData(slug.join("/")),
+    getData(slug.join("/")),
+  ]);
+
+  if (!newPage && !calendarEvent && !oldPage) {
+    return {};
+  }
+
+  if (newPage || oldPage) {
+    const seo =
+      newPage?.props?.data?.eventsv2?.seo || oldPage?.props?.data?.events?.seo;
+    const headerUrl =
+      newPage?.props?.header?.url || oldPage?.props?.header?.url;
+    if (seo && !seo.canonical) {
+      seo.canonical = `${headerUrl}events/${slug.join("/")}`;
+    }
+    return getSEOProps(seo);
+  }
+
+  if (calendarEvent) {
+    const event = calendarEvent.props.data.eventsCalendar;
+    return {
+      title: event.title,
+      description: event.abstract ?? undefined,
+    };
+  }
+
+  return {};
+}
+
+export default async function Events(prop: {
+  params: Promise<{ filename: string[] }>;
+}) {
+  const params = await prop.params;
+
+  const slug = params.filename;
+  const filename = slug[slug.length - 1];
+
+  const [newPage, calendarEvent, oldPage] = await Promise.all([
+    newEventsPageData(slug.join("/")),
+    getPreviewEventData(slug.join("/")),
+    getData(slug.join("/")),
+  ]);
+
+  if (newPage) {
+    return <TinaClient props={newPage.props} Component={EventsV2Page} />;
+  }
+  if (calendarEvent) {
+    return <TinaClient props={calendarEvent.props} Component={EventsPreview} />;
+  }
+  if (oldPage) {
+    return <TinaClient props={oldPage.props} Component={EventsPage} />;
+  }
+  return (
+    <ClientFallbackWithOption
+      templates={[
+        {
+          component: EventsV2Page,
+          query: "eventsv2",
+          variables: { relativePath: `${filename}.json` },
+        },
+        {
+          component: EventsPageFallback,
+          query: "events",
+          variables: { relativePath: `${filename}.mdx` },
+        },
+      ]}
+    />
+  );
+}

@@ -1,5 +1,4 @@
 import { Blocks } from "@/components/blocks-renderer";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
@@ -43,7 +42,7 @@ export default function PageContent({ props }) {
     <>
       {data.page?.title && (
         <Section
-          className="mx-auto w-full max-w-9xl px-8"
+          className="mx-auto w-full max-w-9xl px-4 sm:px-8"
           data-tina-field={tinaField(data.page, "title")}
         >
           <h1 className="mt-4 py-2">{data.page.title}</h1>
@@ -51,13 +50,12 @@ export default function PageContent({ props }) {
       )}
       {data.page?.subTitle && (
         <Section
-          className="mx-auto w-full max-w-9xl px-8"
-          data-tina-field={tinaField(data.page, "title")}
+          className="mx-auto w-full max-w-9xl px-4 sm:px-8"
+          data-tina-field={tinaField(data.page, "subTitle")}
         >
           <span>
             <TinaMarkdown
               content={data.page?.subTitle}
-              data-tina-field={tinaField(data.page, "subTitle")}
               components={componentRenderer}
             />
           </span>
@@ -92,7 +90,6 @@ export default function PageContent({ props }) {
       <div className="no-print">
         <Blocks prefix="PageAfterBody" blocks={data.page.afterBody} />
       </div>
-      <BuiltOnAzure data={data.page.azureBanner} />
     </>
   );
 }

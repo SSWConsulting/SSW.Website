@@ -46,7 +46,7 @@ const BigCardContent = memo(
             )}
             <div className="relative flex grow flex-col p-8">
               <h3
-                className="flex pb-3 text-2xl font-thin lg:pt-8"
+                className="flex pb-3 text-2xl font-light lg:pt-8"
                 data-tina-field={tinaField(
                   schema.bigCards[index],
                   serviceCards.bigCards.title

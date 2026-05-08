@@ -225,8 +225,5 @@
       "buttonSubtitle": "or call +61 2 9953 3000",
       "_template": "BookingButton"
     }
-  ],
-  "azureBanner": {
-    "azureFooterColor": "darkgray"
-  }
+  ]
 }

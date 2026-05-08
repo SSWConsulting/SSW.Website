@@ -1,7 +1,6 @@
 "use client";
 
 import { Blocks } from "@/components/blocks-renderer";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import EventsHeader from "@/components/events/eventsHeader";
 import { Container } from "@/components/util/container";
@@ -115,7 +114,6 @@ export default function EventsPage({ props, tinaProps }) {
           components={componentRenderer}
         />
       </div>
-      <BuiltOnAzure data={data.events.azureBanner} />
     </>
   );
 }

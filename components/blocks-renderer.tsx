@@ -22,10 +22,6 @@ const UtilityButton = dynamic(() =>
   import("./button/utilityButton").then((mod) => mod.UtilityButton)
 );
 
-const BuiltOnAzure = dynamic(() =>
-  import("./blocks/builtOnAzure").then((mod) => mod.BuiltOnAzure)
-);
-
 import { Carousel } from "./blocks/carousel";
 const ClientLogos = dynamic(() =>
   import("./blocks/clientLogos").then((mod) => mod.ClientLogos)
@@ -164,7 +160,6 @@ const componentMap = {
   Breadcrumbs,
   ServiceCards,
   UpcomingEvents,
-  BuiltOnAzure,
   CustomImage,
   ClientLogos,
   VerticalImageLayout,
