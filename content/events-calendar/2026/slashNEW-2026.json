@@ -5,7 +5,9 @@
   "thumbnail": "/images/events/slashnew_logo.jpg",
   "thumbnailDescription": "slashNEW",
   "presenterList": [
-    {}
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
   ],
   "startDateTime": "2026-05-26T23:00:46.829Z",
   "endDateTime": "2026-05-28T07:00:06.611Z",
@@ -13,7 +15,7 @@
   "city": "Newcastle",
   "category": "Artificial Intelligence",
   "abstract": "SlashNEW is a celebration of all things technology, uniting the most innovative thinkers and passionate techies that are building a brighter future for the Hunter.\n\nSlashNEW is Newcastle’s biggest technology conference. Running in 2026 for its fourth year, the two-day conference aims to celebrate the vibrant Newcastle technology scene and give technology professionals in the area access to upskilling and networking locally.\n\nSlashNEW showcases fantastic keynotes, a line-up of speakers from Newcastle and beyond, panel discussions, workshops, and ample networking opportunities. All supported by a group of fantastic local and international sponsors. ",
-  "description": "SlashNEW is a celebration of all things technology, uniting the most innovative thinkers and passionate techies that are building a brighter future for the Hunter.\n\nSlashNEW is Newcastle’s biggest technology conference. Running in 2026 for its fourth year, the two-day conference aims to celebrate the vibrant Newcastle technology scene and give technology professionals in the area access to upskilling and networking locally.\n\nSlashNEW showcases fantastic keynotes, a line-up of speakers from Newcastle and beyond, panel discussions, workshops, and ample networking opportunities. All supported by a group of fantastic local and international sponsors. \n",
+  "description": "SlashNEW is a celebration of all things technology, uniting the most innovative thinkers and passionate techies that are building a brighter future for the Hunter.\n\nSlashNEW is Newcastle’s biggest technology conference. Running in 2026 for its fourth year, the two-day conference aims to celebrate the vibrant Newcastle technology scene and give technology professionals in the area access to upskilling and networking locally.\n\nSlashNEW showcases fantastic keynotes, a line-up of speakers from Newcastle and beyond, panel discussions, workshops, and ample networking opportunities. All supported by a group of fantastic local and international sponsors.\n",
   "liveStreamDelayMinutes": 30,
   "enabled": true
 }
