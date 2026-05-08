@@ -1,6 +1,7 @@
 "use client";
 
 import { EventTrimmed } from "@/components/filter/events";
+import { mapEventEdge } from "@/helpers/getTrimmedEvents";
 import { getFutureEventsSimple } from "@/services/server/events";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -51,13 +52,8 @@ export const UpcomingEventsClient = ({ data }) => {
       );
 
       if (!events.data) return;
-      const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-        (event) => ({
-          ...event.node,
-          startDateTime: new Date(event.node.startDateTime),
-          endDateTime: new Date(event.node.endDateTime),
-        })
-      );
+      const mappedEvents =
+        events.data.eventsCalendarConnection.edges.map(mapEventEdge);
       setEvents(mappedEvents);
     };
 

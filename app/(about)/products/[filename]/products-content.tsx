@@ -1,4 +1,3 @@
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
@@ -9,7 +8,7 @@ export default function ProductsContent({ props }) {
   const { data, variables } = props;
   return (
     <>
-      <Section className="mx-auto w-full max-w-9xl px-8 pt-5">
+      <Section className="mx-auto w-full max-w-9xl px-4 pt-5 sm:px-8">
         <Breadcrumbs
           path={removeExtension(variables.relativePath)}
           title={data.products?.seo?.title}
@@ -25,7 +24,6 @@ export default function ProductsContent({ props }) {
           components={componentRenderer}
         />
       </Container>
-      <BuiltOnAzure data={data.products} />
     </>
   );
 }

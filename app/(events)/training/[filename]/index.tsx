@@ -2,7 +2,6 @@
 
 import { Breadcrumbs } from "@/app/components/breadcrumb";
 import { Blocks } from "@/components/blocks-renderer";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TestimonialRow } from "@/components/testimonials/TestimonialRow";
@@ -33,7 +32,7 @@ export default function TrainingPage({ props, tinaProps }) {
           data.training.seo?.showBreadcrumb) && (
           <div
             data-tina-field={tinaField(data.training.seo, "title")}
-            className="px-8 md:px-8"
+            className="px-4 sm:px-8 md:px-8"
           >
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}
@@ -101,7 +100,6 @@ export default function TrainingPage({ props, tinaProps }) {
           components={componentRenderer}
         />
       </div>
-      <BuiltOnAzure data={data.training.azureBanner} />
     </>
   );
 }

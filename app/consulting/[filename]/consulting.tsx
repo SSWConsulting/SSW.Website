@@ -2,7 +2,6 @@
 
 import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { BookingButton } from "@/components/bookingButton/bookingButton";
@@ -40,7 +39,7 @@ export default function Consulting({ tinaProps, props }) {
   const { data } = tinaProps;
   return (
     <div className={openSans.className}>
-      <Section className="mx-auto min-h-24 w-full max-w-9xl px-8 py-5 md:min-h-16">
+      <Section className="mx-auto min-h-24 w-full max-w-9xl px-4 py-5 sm:px-8 md:min-h-16">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
           title={data.consulting.seo?.title}
@@ -145,17 +144,6 @@ export default function Consulting({ tinaProps, props }) {
           ></h2>
         </CallToAction>
       )}
-      <Section>
-        <BuiltOnAzure
-          data={
-            data.consulting?.azureBanner?.azureFooterColor
-              ? data.consulting
-              : {
-                  azureFooterColor: "white",
-                }
-          }
-        />
-      </Section>
     </div>
   );
 }

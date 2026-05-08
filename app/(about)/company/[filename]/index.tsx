@@ -1,7 +1,6 @@
 "use client";
 
 import { Blocks } from "@/components/blocks-renderer";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/components/blocks/techUpgrade";
 import HistoryTimeline from "@/components/company/historyTimeline";
@@ -25,7 +24,7 @@ export default function CompanyPage({ tinaProps, props }) {
         <Blocks prefix="CompanyBeforeBody" blocks={data.company.beforeBody} />
         {data.company.seo?.showBreadcrumb === null ||
           (data.company.seo?.showBreadcrumb && (
-            <Section className="mx-auto min-h-24 w-full max-w-9xl px-8 py-5 md:min-h-16">
+            <Section className="mx-auto min-h-24 w-full max-w-9xl px-4 py-5 sm:px-8 md:min-h-16">
               <Breadcrumbs
                 path={removeExtension(props.variables.relativePath)}
                 title={data.company.seo?.title}
@@ -35,7 +34,7 @@ export default function CompanyPage({ tinaProps, props }) {
           ))}
         {data.company.title && (
           <Section
-            className="mx-auto w-full max-w-9xl px-8"
+            className="mx-auto w-full max-w-9xl px-4 sm:px-8"
             data-tina-field={tinaField(data.company, "title")}
           >
             <h1 className="mt-4 py-2">{data.company.title}</h1>
@@ -44,7 +43,7 @@ export default function CompanyPage({ tinaProps, props }) {
         {data.company.subTitle && (
           <section
             className={classNames(
-              "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0",
+              "prose mx-auto w-full max-w-9xl flex-row px-4 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 sm:px-8",
               data.company.fullWidthBody ? "" : "md:flex"
             )}
           >
@@ -85,18 +84,15 @@ export default function CompanyPage({ tinaProps, props }) {
 
         <Blocks prefix="Company_body" blocks={data.company._body} />
         {data.company.historyCards?.length > 0 && (
-          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+          <Section className="mx-auto w-full max-w-9xl px-4 py-5 sm:px-8">
             <HistoryTimeline cardProps={historyCardProps} />
           </Section>
         )}
         {data.company.showTechUpgradeBlock && (
-          <Section className="mx-auto w-full !bg-gray-75 px-8 py-5">
+          <Section className="mx-auto w-full !bg-gray-75 px-4 py-5 sm:px-8">
             <TechUpgrade />
           </Section>
         )}
-        <Section>
-          <BuiltOnAzure data={data.company.azureBanner} />
-        </Section>
       </div>
     </>
   );

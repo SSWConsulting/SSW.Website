@@ -131,13 +131,13 @@ export const SocialIcon = ({ social }: SocialIconProps) => {
     <CustomLink
       href={url}
       className={classNames(
-        "unstyled flex h-12 w-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
+        "unstyled flex size-9 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
         styling.bgClassName
       )}
       title={social.title}
       aria-label={"Link to " + social.title}
     >
-      <Icon className="text-2xl" color={styling.fill ?? "white"} />
+      <Icon className="text-lg" color={styling.fill ?? "white"} />
     </CustomLink>
   );
 };

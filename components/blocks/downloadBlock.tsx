@@ -84,7 +84,6 @@ const Download = (data: Downloads) => {
             />
           )}
         </div>
-        <div className={"bg-gray-300 p-2 font-bold"}>Download</div>
         <div
           className={classNames(
             "flex gap-x-0.25 border-t-2 border-white text-black"

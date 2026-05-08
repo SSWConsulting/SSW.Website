@@ -1,17 +1,26 @@
 {
-  "title": "May User Group - Talk TBA",
-  "url": "/netug/sydney",
+  "title": "May User Group - From Portal Panic to Pipeline Power: Introduction to Azure IaC",
+  "slug": "from-portal-panic-to-pipeline-power-introduction-to-azure-iac",
+  "url": "https://www.ssw.com.au/netug/sydney",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
-  "startDateTime": "2026-05-20T00:00:00.000Z",
-  "endDateTime": "2026-05-20T12:00:00.000Z",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/ben-neoh.mdx"
+    },
+    {
+      "presenter": "content/presenters/rick-su.mdx"
+    }
+  ],
+  "startDateTime": "2026-05-20T08:00:00.000Z",
+  "endDateTime": "2026-05-20T11:00:00.000Z",
   "startShowBannerDateTime": "2026-05-20T02:00:00.000Z",
-  "endShowBannerDateTime": "2026-05-21T07:00:00.000Z",
+  "endShowBannerDateTime": "2026-05-20T12:00:00.000Z",
   "calendarType": "User Groups",
   "city": "Sydney",
   "category": "Artificial Intelligence",
-  "abstract": "Agenda TBA - watch this space!",
-  "description": "Agenda TBA - watch this space!\n",
+  "abstract": ".NET User Group May: From Portal Panic to Pipeline Power: Introduction to Azure IaC with Ben Neoh & Rick Su\n\nProduction applications need infrastructure that is secure, repeatable, and maintainable. In this beginner-friendly session, Rick and Ben N. will introduce Azure Infrastructure as Code and explain how it helps teams build enterprise-grade cloud infrastructure with better consistency, maintainability, and scalability. You’ll learn why IaC matters and how it helps teams move from ad-hoc setup to reliable, code-based deployments.\n\nAgenda (Sydney time)\n\n6 pm – Pizza and networking! 🍕\n6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n6:45 pm – From Portal Panic to Pipeline Power: Introduction to Azure IaC with Ben Neoh & Rick Su\n\nCan't make it? Jump on the live stream:\nhttps://www.ssw.com.au/live",
+  "description": "**.NET User Group May: From Portal Panic to Pipeline Power: Introduction to Azure IaC with Ben Neoh & Rick Su**\n\nProduction applications need infrastructure that is secure, repeatable, and maintainable. In this beginner-friendly session, Rick and Ben N. will introduce Azure Infrastructure as Code and explain how it helps teams build enterprise-grade cloud infrastructure with better consistency, maintainability, and scalability. You’ll learn why IaC matters and how it helps teams move from ad-hoc setup to reliable, code-based deployments.\n\n**Agenda (Sydney time)**\n\n6 pm – Pizza and networking! 🍕\n\n6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n\n6:45 pm – From Portal Panic to Pipeline Power: Introduction to Azure IaC with Ben Neoh & Rick Su\n\nCan't make it? Jump on the live stream:\n\n[https://www.ssw.com.au/live](https://www.ssw.com.au/live)\n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true

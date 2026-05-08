@@ -24,7 +24,7 @@ export const TechnologyCardCarousel = ({
             altText: tech.technology?.name,
             description: tech.technology.body,
             embeddedButton: {
-              buttonText: "Read More",
+              buttonText: "Read more",
               buttonLink: tech.technology.readMoreSlug,
               icon: "BiChevronRight",
             },
@@ -44,7 +44,7 @@ export const TechnologyCardCarousel = ({
     cardStyle: data.techCardStyle,
     cards: cardList,
     isH1: false,
-    heading: "Related Technologies",
+    heading: "Related technologies",
     body: "",
     background: data.background,
   };

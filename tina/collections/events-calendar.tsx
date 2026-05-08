@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Collection, TextField } from "tinacms";
+import {
+  DEFAULT_HEADER_LAYOUT,
+  HEADER_LAYOUT_OPTIONS,
+} from "./events-calendar.constants";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
@@ -20,21 +24,44 @@ const removeEmptyObjects = (formValues: object, fieldKey: string) => {
   delete formValues[fieldKey];
   return formValues;
 };
+
+const normalizeSlug = (raw: string): string =>
+  raw
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 export const eventsCalendarSchema: Collection = {
   label: "Events - Calendar",
   name: "eventsCalendar",
   path: "content/events-calendar",
   format: "json",
   ui: {
+    router: ({ document }) => {
+      const breadcrumbs = document._sys.breadcrumbs;
+      const year = breadcrumbs.at(-2);
+      const slug = (
+        (document as { slug?: string })?.slug || document._sys.filename
+      ).toLowerCase();
+      return year ? `/events/${year}/${slug}` : `/events/${slug}`;
+    },
     beforeSubmit: async ({ values }) => {
-      return removeEmptyObjects(values, "presenterList") as Record<
+      const cleaned = removeEmptyObjects(values, "presenterList") as Record<
         string,
         unknown
       >;
+      if (typeof cleaned.slug === "string" && cleaned.slug.length > 0) {
+        cleaned.slug = normalizeSlug(cleaned.slug);
+      }
+      return cleaned;
     },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - upload dir not included in Tina type but works anyway
-    defaultItem: () => ({ enabled: true, liveStreamDelayMinutes: 30 }),
+    defaultItem: () => ({
+      enabled: true,
+      liveStreamDelayMinutes: 30,
+      headerLayout: DEFAULT_HEADER_LAYOUT,
+    }),
   },
   fields: [
     {
@@ -47,11 +74,26 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
-      label: "URL",
+      label: "Event page on this site",
+      name: "slug",
+      description:
+        "The shareable link to this event's page here. We'll send people here when promoting it. Example: enter ai-hackday-sydney → page lives at ssw.com.au/events/2026/ai-hackday-sydney. Lowercase, kebab-case.",
+      ui: {
+        validate: (value?: string) => {
+          if (!value) return;
+          if (!/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(value)) {
+            return "Use lowercase letters, numbers, and hyphens. Cannot start or end with a hyphen.";
+          }
+        },
+      },
+    },
+    {
+      type: "string",
+      label: "Registration link",
       name: "url",
       required: true,
       description:
-        "URL of the event page (e.g. https://www.ssw.com.au/events/angular-workshop)",
+        "Where people go to actually sign up. Usually an Eventbrite, Humanitix, or Meetup URL.",
     },
     {
       type: "image",
@@ -163,6 +205,17 @@ export const eventsCalendarSchema: Collection = {
       name: "presenterProfileUrl",
       description:
         "Use this for external presenters - This link will appear the on the presenter's name when the field above is filled out \"",
+    },
+    {
+      type: "string",
+      label: "Header Layout",
+      name: "headerLayout",
+      description:
+        "How presenter images appear in the page header. Single = one tall photo (first presenter). Multi-torso = multiple tall photos side by side with slight overlap (default for multi-presenter). Avatars = overlapping circular avatar stack.",
+      ui: {
+        component: "select",
+      },
+      options: [...HEADER_LAYOUT_OPTIONS],
     },
 
     {

@@ -1,6 +1,5 @@
 "use client";
 import { Blocks } from "@/components/blocks-renderer";
-import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import _ from "lodash";
@@ -16,7 +15,7 @@ type EventsV2PageProps<T> = {
 
 const EventsV2Page = memo(
   function EventsV2Page({ tinaProps }: EventsV2PageProps<object>) {
-    const { blocks, azureBanner } = tinaProps.data.eventsv2;
+    const { blocks } = tinaProps.data.eventsv2;
     return (
       <div className="dark flex h-full flex-col">
         <Section color={"toggleLightMode"}>
@@ -35,7 +34,6 @@ const EventsV2Page = memo(
             </div>
           </Container>
         </Section>
-        <PreFooter data={azureBanner} />
       </div>
     );
   },
