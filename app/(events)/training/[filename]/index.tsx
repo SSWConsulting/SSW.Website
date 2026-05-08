@@ -32,7 +32,7 @@ export default function TrainingPage({ props, tinaProps }) {
           data.training.seo?.showBreadcrumb) && (
           <div
             data-tina-field={tinaField(data.training.seo, "title")}
-            className="px-8 md:px-8"
+            className="px-4 sm:px-8 md:px-8"
           >
             <Breadcrumbs
               path={removeExtension(props.variables.relativePath)}

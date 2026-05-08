@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { cn } from "@/lib/utils";
 
 const verticalPadding = {
   custom: "",
@@ -28,13 +28,13 @@ export const Container = ({
   children,
   size = "default",
   width = "default",
-  padding = "px-8",
+  padding = "px-4 sm:px-8",
   className = "",
   ...props
 }: ContainerProps) => {
   return (
     <div
-      className={classNames(
+      className={cn(
         "mx-auto",
         padding,
         widthClass[width],
