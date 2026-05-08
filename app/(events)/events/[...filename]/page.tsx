@@ -50,6 +50,9 @@ export async function generateStaticParams() {
 
   const mdxFilenames = new Set(mdxPages.map((p) => p.filename[0]));
 
+  // Only pre-render events from the last month onward to keep build times reasonable.
+  // Older events still resolve at request time via dynamicParams (Next.js default) and
+  // are listed in full at /events.
   const oneMonthAgo = new Date();
   oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
 

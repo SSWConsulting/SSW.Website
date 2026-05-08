@@ -94,10 +94,13 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
               className={cn(
                 "py-20 max-md:pb-8 md:flex md:flex-col md:justify-center md:self-stretch",
                 showHeaderMedia
-                  ? resolvedLayout === "avatars"
-                    ? "md:col-span-1 lg:col-span-3"
-                    : "md:col-span-1 lg:col-span-2"
-                  : "md:col-span-2 lg:col-span-4"
+                  ? resolvedLayout === "multi-torso"
+                    ? // multiple torsos side-by-side need ~half the row
+                      "md:col-span-1 lg:col-span-2"
+                    : // single torso or avatar stack: leave them a narrow column on the right
+                      "md:col-span-1 lg:col-span-3"
+                  : // no header media, title takes the full width
+                    "md:col-span-2 lg:col-span-4"
               )}
             >
               <div className="mb-7 flex items-center gap-3">
@@ -133,8 +136,8 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
             </div>
             {resolvedLayout === "single" && singlePresenter?.torsoImg && (
               <div
-                data-tina-field={tinaField(event, "presenterList")}
-                className="md:col-span-1 md:justify-end lg:col-span-2"
+                data-tina-field={tinaField(event, "headerLayout")}
+                className="md:col-span-1 md:justify-end"
               >
                 <Image
                   src={singlePresenter.torsoImg}
@@ -147,7 +150,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
             )}
             {resolvedLayout === "multi-torso" && torsoPresenters.length > 0 && (
               <div
-                data-tina-field={tinaField(event, "presenterList")}
+                data-tina-field={tinaField(event, "headerLayout")}
                 className="flex items-end justify-end md:col-span-1 lg:col-span-2"
               >
                 {torsoPresenters.map((item, index) => {
@@ -176,7 +179,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
             )}
             {resolvedLayout === "avatars" && avatarPresenters.length > 0 && (
               <div
-                data-tina-field={tinaField(event, "presenterList")}
+                data-tina-field={tinaField(event, "headerLayout")}
                 className="flex items-center justify-center py-8 md:col-span-1 md:justify-end md:py-20 md:pl-8"
               >
                 <div className="flex flex-wrap justify-center gap-y-2 md:justify-end">
