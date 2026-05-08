@@ -41,7 +41,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
       )}
       {data.articles.seo?.showBreadcrumb === null ||
         (data.articles.seo?.showBreadcrumb && (
-          <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+          <Section className="mx-auto w-full max-w-9xl px-4 py-5 sm:px-8">
             <Breadcrumbs
               path={props.filename}
               title={data.articles.seo?.title}
@@ -57,7 +57,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
         ))}
 
       {data.articles.title && (
-        <Section className="mx-auto w-full max-w-9xl px-8">
+        <Section className="mx-auto w-full max-w-9xl px-4 sm:px-8">
           <h1
             data-tina-field={tinaField(data.articles, "title")}
             className="mt-4 py-2"
@@ -67,7 +67,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
         </Section>
       )}
       {!!data.articles.author && (
-        <Section className="mx-auto w-full max-w-9xl px-8">
+        <Section className="mx-auto w-full max-w-9xl px-4 sm:px-8">
           <div className="flex flex-row items-center gap-2 py-1">
             <ArticleAuthor
               name={author?.presenter?.name}
@@ -82,7 +82,7 @@ const ArticlePage = ({ props, tinaProps }: ArticlePageProps) => {
       {data.articles.subTitle && (
         <section
           className={classNames(
-            "prose mx-auto w-full max-w-9xl flex-row px-8 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 lg:flex"
+            "prose mx-auto w-full max-w-9xl flex-row px-4 pb-8 prose-h1:my-0 prose-h1:pt-8 prose-h2:mt-8 prose-img:my-0 sm:px-8 lg:flex"
           )}
         >
           <div data-tina-field={tinaField(data.articles, "subTitle")}>

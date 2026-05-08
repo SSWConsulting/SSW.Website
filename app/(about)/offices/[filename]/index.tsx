@@ -18,7 +18,7 @@ export default function OfficePage({ props, tinaProps }) {
   return (
     <>
       {data.offices.coverImg ? (
-        <div className="mx-auto max-w-9xl px-6 sm:px-8">
+        <div className="mx-auto max-w-9xl px-4 sm:px-8">
           <div className="size-auto">
             <Image
               data-tina-field={tinaField(data.offices, "coverImg")}
