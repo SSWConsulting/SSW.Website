@@ -26,8 +26,12 @@ const getCalendarPathMap = cache(async () => {
     if (!node) continue;
     const year = node._sys.breadcrumbs.at(-2);
     if (!year) continue;
-    const segment = (node.slug || node._sys.filename).toLowerCase();
-    map.set(`${year}/${segment}`, node._sys.breadcrumbs.join("/"));
+    const onDiskPath = node._sys.breadcrumbs.join("/");
+    const filename = node._sys.filename.toLowerCase();
+    map.set(`${year}/${filename}`, onDiskPath);
+    if (node.slug) {
+      map.set(`${year}/${node.slug.toLowerCase()}`, onDiskPath);
+    }
   }
   return map;
 });
@@ -46,13 +50,24 @@ export async function generateStaticParams() {
 
   const mdxFilenames = new Set(mdxPages.map((p) => p.filename[0]));
 
-  const calendarPages = (calendarData.data.eventsCalendarConnection.edges ?? [])
-    .filter((edge) => edge?.node && !mdxFilenames.has(edge.node._sys.filename))
-    .map((edge) => {
-      const year = edge.node._sys.breadcrumbs.at(-2);
-      const segment = (edge.node.slug || edge.node._sys.filename).toLowerCase();
-      return year ? { filename: [year, segment] } : { filename: [segment] };
-    });
+  // Only pre-render events from the last month onward to keep build times reasonable.
+  // Older events still resolve at request time via dynamicParams (Next.js default) and
+  // are listed in full at /events.
+  const oneMonthAgo = new Date();
+  oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+  const calendarPages = (
+    calendarData.data.eventsCalendarConnection.edges ?? []
+  ).flatMap((edge) => {
+    const node = edge?.node;
+    if (!node || mdxFilenames.has(node._sys.filename)) return [];
+    const start = node.startDateTime ? new Date(node.startDateTime) : null;
+    if (!start || start < oneMonthAgo) return [];
+    const year = node._sys.breadcrumbs.at(-2);
+    if (!year) return [];
+    const segment = (node.slug || node._sys.filename).toLowerCase();
+    return [{ filename: [year, segment] }];
+  });
 
   return [...mdxPages, ...calendarPages];
 }
@@ -66,7 +81,14 @@ const getPreviewEventData = async (urlKey: string) => {
     onDiskPath,
     FileType.JSON
   );
-  return tinaProps?.data?.eventsCalendar ?? null;
+  if (!tinaProps?.data?.eventsCalendar) return null;
+  return {
+    props: {
+      data: tinaProps.data,
+      query: tinaProps.query,
+      variables: tinaProps.variables,
+    },
+  };
 };
 
 const newEventsPageData = async (filename: string) => {
@@ -164,9 +186,10 @@ export async function generateMetadata(
   }
 
   if (calendarEvent) {
+    const event = calendarEvent.props.data.eventsCalendar;
     return {
-      title: calendarEvent.title,
-      description: calendarEvent.abstract ?? undefined,
+      title: event.title,
+      description: event.abstract ?? undefined,
     };
   }
 
@@ -191,7 +214,7 @@ export default async function Events(prop: {
     return <TinaClient props={newPage.props} Component={EventsV2Page} />;
   }
   if (calendarEvent) {
-    return <EventsPreview event={calendarEvent} />;
+    return <TinaClient props={calendarEvent.props} Component={EventsPreview} />;
   }
   if (oldPage) {
     return <TinaClient props={oldPage.props} Component={EventsPage} />;

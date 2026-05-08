@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Collection, TextField } from "tinacms";
+import {
+  DEFAULT_HEADER_LAYOUT,
+  HEADER_LAYOUT_OPTIONS,
+} from "./events-calendar.constants";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
@@ -33,6 +37,14 @@ export const eventsCalendarSchema: Collection = {
   path: "content/events-calendar",
   format: "json",
   ui: {
+    router: ({ document }) => {
+      const breadcrumbs = document._sys.breadcrumbs;
+      const year = breadcrumbs.at(-2);
+      const slug = (
+        (document as { slug?: string })?.slug || document._sys.filename
+      ).toLowerCase();
+      return year ? `/events/${year}/${slug}` : `/events/${slug}`;
+    },
     beforeSubmit: async ({ values }) => {
       const cleaned = removeEmptyObjects(values, "presenterList") as Record<
         string,
@@ -45,7 +57,11 @@ export const eventsCalendarSchema: Collection = {
     },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - upload dir not included in Tina type but works anyway
-    defaultItem: () => ({ enabled: true, liveStreamDelayMinutes: 30 }),
+    defaultItem: () => ({
+      enabled: true,
+      liveStreamDelayMinutes: 30,
+      headerLayout: DEFAULT_HEADER_LAYOUT,
+    }),
   },
   fields: [
     {
@@ -189,6 +205,17 @@ export const eventsCalendarSchema: Collection = {
       name: "presenterProfileUrl",
       description:
         "Use this for external presenters - This link will appear the on the presenter's name when the field above is filled out \"",
+    },
+    {
+      type: "string",
+      label: "Header Layout",
+      name: "headerLayout",
+      description:
+        "How presenter images appear in the page header. Single = one tall photo (first presenter). Multi-torso = multiple tall photos side by side with slight overlap (default for multi-presenter). Avatars = overlapping circular avatar stack.",
+      ui: {
+        component: "select",
+      },
+      options: [...HEADER_LAYOUT_OPTIONS],
     },
 
     {
