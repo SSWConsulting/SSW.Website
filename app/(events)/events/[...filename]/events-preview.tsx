@@ -15,14 +15,26 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
 import { cn } from "@/lib/utils";
+import {
+  DEFAULT_HEADER_LAYOUT,
+  type HeaderLayout,
+} from "@/tina-collections/events-calendar.constants";
 import type { EventsCalendarQuery } from "@/tina/types";
 import { Calendar, MapPin } from "lucide-react";
 import Image from "next/image";
+import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 type EventData = EventsCalendarQuery["eventsCalendar"];
 
-export default function EventsPreview({ event }: { event: EventData }) {
+type EventsPreviewProps = {
+  tinaProps: { data: object };
+};
+
+export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
+  const event = (tinaProps.data as { eventsCalendar: EventData })
+    .eventsCalendar;
+
   const { relativeDate, formattedDate } = useFormatDates(
     {
       title: event.title,
@@ -36,13 +48,33 @@ export default function EventsPreview({ event }: { event: EventData }) {
   );
 
   const locationOverride = CITY_MAP[event.city]?.name || event.city;
-  const firstPresenter = event.presenterList?.[0]?.presenter;
-  const presenterName = firstPresenter?.presenter?.name;
-  const presenterUrl = firstPresenter?.presenter?.peopleProfileURL;
-  const presenterPhoto = firstPresenter?.profileImg;
-  const presenterTorso = firstPresenter?.torsoImg;
-  const presenterAbout = firstPresenter?.about;
-  const presenterPosition = firstPresenter?.position;
+  const presenters = event.presenterList ?? [];
+
+  const validPresenters = presenters.filter(
+    (p) => p?.presenter?.presenter?.name
+  );
+  const torsoPresenters = presenters.filter((p) => p?.presenter?.torsoImg);
+  const avatarPresenters = presenters.filter((p) => p?.presenter?.profileImg);
+  const singlePresenter = torsoPresenters[0]?.presenter;
+
+  const headerLayout: HeaderLayout =
+    (event.headerLayout as HeaderLayout) ?? DEFAULT_HEADER_LAYOUT;
+  const resolvedLayout: HeaderLayout = (() => {
+    if (headerLayout === "none") return "none";
+    if (presenters.length === 0) return "none";
+    if (headerLayout === "avatars") {
+      return avatarPresenters.length > 0 ? "avatars" : "none";
+    }
+    if (headerLayout === "single") {
+      return singlePresenter?.torsoImg ? "single" : "none";
+    }
+    if (torsoPresenters.length > 1) return "multi-torso";
+    if (torsoPresenters.length === 1) return "single";
+    if (avatarPresenters.length > 0) return "avatars";
+    return "none";
+  })();
+
+  const showHeaderMedia = resolvedLayout !== "none";
 
   const city = event.cityOther || event.city;
 
@@ -61,9 +93,14 @@ export default function EventsPreview({ event }: { event: EventData }) {
             <div
               className={cn(
                 "py-20 max-md:pb-8 md:flex md:flex-col md:justify-center md:self-stretch",
-                presenterTorso
-                  ? "md:col-span-1 lg:col-span-3"
-                  : "md:col-span-2 lg:col-span-4"
+                showHeaderMedia
+                  ? resolvedLayout === "multi-torso"
+                    ? // multiple torsos side-by-side need ~half the row
+                      "md:col-span-1 lg:col-span-2"
+                    : // single torso or avatar stack: leave them a narrow column on the right
+                      "md:col-span-1 lg:col-span-3"
+                  : // no header media, title takes the full width
+                    "md:col-span-2 lg:col-span-4"
               )}
             >
               <div className="mb-7 flex items-center gap-3">
@@ -76,12 +113,18 @@ export default function EventsPreview({ event }: { event: EventData }) {
                   className="h-px w-10 border-ssw-gray-dark"
                   aria-hidden="true"
                 />
-                <span className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack">
+                <span
+                  data-tina-field={tinaField(event, "startDateTime")}
+                  className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack"
+                >
                   {relativeDate}
                 </span>
               </div>
               <div className="mb-1 flex items-center gap-6">
-                <h1 className="mt-0 self-start py-0 max-md:text-2xl">
+                <h1
+                  data-tina-field={tinaField(event, "title")}
+                  className="mt-0 self-start py-0 max-md:text-2xl"
+                >
                   {event.title}
                 </h1>
               </div>
@@ -91,15 +134,85 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 </RippleButton>
               </a>
             </div>
-            {presenterTorso && (
-              <div className="md:col-span-1 md:justify-end">
+            {resolvedLayout === "single" && singlePresenter?.torsoImg && (
+              <div
+                data-tina-field={tinaField(event, "headerLayout")}
+                className="md:col-span-1 md:justify-end"
+              >
                 <Image
-                  src={presenterTorso}
-                  alt={presenterName ?? "Presenter"}
+                  src={singlePresenter.torsoImg}
+                  alt={singlePresenter?.presenter?.name ?? "Presenter"}
                   height={900}
                   width={900}
                   className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
                 />
+              </div>
+            )}
+            {resolvedLayout === "multi-torso" && torsoPresenters.length > 0 && (
+              <div
+                data-tina-field={tinaField(event, "headerLayout")}
+                className="flex items-end justify-end md:col-span-1 lg:col-span-2"
+              >
+                {torsoPresenters.map((item, index) => {
+                  const photo = item.presenter?.torsoImg;
+                  const name = item.presenter?.presenter?.name ?? "Presenter";
+                  if (!photo) return null;
+                  return (
+                    <div
+                      key={`torso-${index}-${name}`}
+                      className={cn(
+                        "flex-1",
+                        index > 0 && "-ml-6 md:-ml-10 lg:-ml-12"
+                      )}
+                    >
+                      <Image
+                        src={photo}
+                        alt={name}
+                        height={900}
+                        width={900}
+                        className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+            {resolvedLayout === "avatars" && avatarPresenters.length > 0 && (
+              <div
+                data-tina-field={tinaField(event, "headerLayout")}
+                className="flex items-center justify-center py-8 md:col-span-1 md:justify-end md:py-20 md:pl-8"
+              >
+                <div className="flex flex-wrap justify-center gap-y-2 md:justify-end">
+                  {avatarPresenters.map((item, index) => {
+                    const photo = item.presenter?.profileImg;
+                    const name = item.presenter?.presenter?.name ?? "Presenter";
+                    const sizeClass =
+                      avatarPresenters.length > 4
+                        ? "size-20 md:size-24"
+                        : "size-32 md:size-40";
+                    const overlapClass =
+                      avatarPresenters.length > 4
+                        ? "-ml-5 md:-ml-6"
+                        : "-ml-8 md:-ml-10";
+                    return (
+                      <div
+                        key={`avatar-${index}-${name}`}
+                        className={cn(
+                          "relative overflow-hidden rounded-full border-4 border-white shadow-md",
+                          sizeClass,
+                          index > 0 && overlapClass
+                        )}
+                      >
+                        <Image
+                          src={photo}
+                          alt={name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>
@@ -174,7 +287,10 @@ export default function EventsPreview({ event }: { event: EventData }) {
                 <h2 className="mb-4 mt-8 text-base font-semibold text-sswRed">
                   About the Event
                 </h2>
-                <section className="prose max-w-none">
+                <section
+                  data-tina-field={tinaField(event, "description")}
+                  className="prose max-w-none"
+                >
                   {event.description ? (
                     <TinaMarkdown
                       content={event.description}
@@ -189,49 +305,67 @@ export default function EventsPreview({ event }: { event: EventData }) {
           </Container>
         </Section>
       )}
-      {presenterName && (
+      {validPresenters.length > 0 && (
         <Section color="lightgray">
           <Container width="default" size="medium">
             <h2 className="mb-6 mt-0 text-lg font-semibold text-sswRed">
-              About the Speaker
+              {validPresenters.length > 1
+                ? "About the Speakers"
+                : "About the Speaker"}
             </h2>
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-4">
-                {presenterPhoto && (
-                  <Image
-                    src={presenterPhoto}
-                    alt={presenterName}
-                    width={220}
-                    height={220}
-                    className="size-16 shrink-0 rounded-full object-cover"
-                  />
-                )}
-                <div>
-                  {presenterUrl ? (
-                    <CustomLink
-                      className="font-semibold uppercase underline"
-                      href={presenterUrl}
-                    >
-                      {presenterName}
-                    </CustomLink>
-                  ) : (
-                    <span className="font-semibold uppercase">
-                      {presenterName}
-                    </span>
-                  )}
-                  {presenterPosition && (
-                    <p className="text-gray-500">{presenterPosition}</p>
-                  )}
-                </div>
-              </div>
-              <div className="prose max-w-none">
-                {presenterAbout && (
-                  <TinaMarkdown
-                    content={presenterAbout}
-                    components={componentRenderer}
-                  />
-                )}
-              </div>
+            <div className="flex flex-col gap-10">
+              {validPresenters.map((item, index) => {
+                const presenter = item.presenter;
+                const name = presenter?.presenter?.name as string;
+                const url = presenter?.presenter?.peopleProfileURL;
+                const photo = presenter?.profileImg;
+                const about = presenter?.about;
+                const position = presenter?.position;
+
+                return (
+                  <div
+                    key={`presenter-${index}-${name}`}
+                    className="flex flex-col gap-6"
+                  >
+                    <div className="flex items-center gap-4">
+                      {photo && (
+                        <Image
+                          src={photo}
+                          alt={name}
+                          width={220}
+                          height={220}
+                          className="size-16 shrink-0 rounded-full object-cover"
+                        />
+                      )}
+                      <div>
+                        {url ? (
+                          <CustomLink
+                            className="font-semibold uppercase underline"
+                            href={url}
+                          >
+                            {name}
+                          </CustomLink>
+                        ) : (
+                          <span className="font-semibold uppercase">
+                            {name}
+                          </span>
+                        )}
+                        {position && (
+                          <p className="text-gray-500">{position}</p>
+                        )}
+                      </div>
+                    </div>
+                    <div className="prose max-w-none">
+                      {about && (
+                        <TinaMarkdown
+                          content={about}
+                          components={componentRenderer}
+                        />
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </Container>
         </Section>
