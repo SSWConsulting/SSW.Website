@@ -26,14 +26,14 @@ jobs:
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
 
       - name: Install dependencies
         run: |
           pnpm add gray-matter
 
       - name: Fetch SSW.People.Profiles
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const script = require(`${process.env.GITHUB_WORKSPACE}/.github/workflows/get-people-profiles.js`);
