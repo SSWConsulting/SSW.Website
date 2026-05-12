@@ -35,7 +35,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
-          cache: "pnpm"
 
       - uses: pnpm/action-setup@v6
         with:
