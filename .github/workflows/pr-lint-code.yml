@@ -31,15 +31,15 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: pnpm/action-setup@v6
-        with:
-          package_json_file: package.json
-
-      - name: Setup node
+      - name: Setup Node
         uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
           cache: "pnpm"
+
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: package.json
 
       - run: pnpm install
 
