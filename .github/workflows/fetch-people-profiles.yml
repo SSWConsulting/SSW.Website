@@ -22,11 +22,15 @@ jobs:
           repository: "SSWConsulting/SSW.People.Profiles"
           path: ${{ env.TEMPORARY_FOLDER}}
 
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: package.json
+          standalone: true
+
       - uses: actions/setup-node@v6
         with:
           node-version-file: ${{ env.GITHUB_WORKSPACE }}/.nvmrc
-
-      - uses: pnpm/action-setup@v6
+          cache: "pnpm"
 
       - name: Install dependencies
         run: |

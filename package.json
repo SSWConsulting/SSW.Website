@@ -4,7 +4,8 @@
   "private": true,
   "pnpm": {
     "overrides": {
-      "@babel/parser": "7.21.9"
+      "@babel/parser": "7.21.9",
+      "better-sqlite3": "^12.1.0"
     },
     "onlyBuiltDependencies": [
       "better-sqlite3"

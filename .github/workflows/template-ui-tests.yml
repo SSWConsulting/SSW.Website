@@ -35,6 +35,7 @@ jobs:
       - uses: pnpm/action-setup@v6
         with:
           package_json_file: package.json
+          standalone: true
 
       - name: Setup Node
         uses: actions/setup-node@v6
