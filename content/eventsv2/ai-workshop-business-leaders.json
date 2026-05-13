@@ -1,25 +1,30 @@
 {
   "seo": {
-    "title": "AI Workshop for Business Leaders | SSW",
-    "description": "A 1-day workshop for CEOs and decision makers. Discover the custom software, modernised systems, and SaaS savings AI now makes affordable — done the right way."
+    "title": "AI Workshop for Business Leaders: Map What AI Unlocks | SSW",
+    "description": "A focused on-site workshop for CEOs. Map the custom software, legacy upgrades, and SaaS savings AI now makes affordable."
   },
   "blocks": [
     {
       "topLabel": {
         "labelText": "1-Day AI Workshop for Business Leaders"
       },
-      "heading": "Build the things you've **always wanted** — now affordable",
+      "heading": "Build the things you've **always wanted**. Now affordable.",
       "isH1": true,
-      "description": "All the things you've always wanted in your business but couldn't justify building — custom software, modernised legacy systems, fewer SaaS bills — are now affordable.\\\nA hands-on day for CEOs and decision makers to map what AI can unlock for your business, done the right way.\n",
+      "description": "The custom software, modernised systems, and SaaS replacements you've parked for years. AI just changed the maths.\n\nA focused day for CEOs and decision makers at mid-market businesses to map what's now affordable to build. Done the right way: engineered, tested, owned. Not vibe-coded.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Book Now",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonText": "Book a Discovery Call",
+          "leadCaptureFormOption": "registrationOfInterestJotFormId",
           "colour": 0
+        },
+        {
+          "buttonText": "Register for Workshop",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 1
         }
       ],
       "background": {
@@ -28,10 +33,232 @@
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "imageSource": "/images/ssw-web/hero/ssw-workshop-inhouse.jpg",
-        "imageHeight": 1721,
-        "imageWidth": 2891
+        "mobilePlacement": "Below",
+        "imageSource": "/images/ssw-web/landing-ai-workshop/hero-boardroom-opportunities.png",
+        "imageHeight": 1024,
+        "imageWidth": 1536
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Why now"
+      },
+      "heading": "AI changed the **maths**",
+      "isH1": false,
+      "description": "For a decade, the answer to good internal ideas was \"too expensive to build.\" That maths just flipped.\n\nThe list you've parked is back on the table: affordable to build, fast to ship, engineered so it doesn't break the systems that already run your business. See more on [SSW's AI services](/consulting/artificial-intelligence).\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Internal tools",
+            "description": "The whiteboard ideas that never beat off-the-shelf on price.",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "Legacy upgrades",
+            "description": "The CRM, the inventory system, the bespoke quote builder.",
+            "icon": "BiSolidRocket"
+          },
+          {
+            "heading": "AI-powered features",
+            "description": "Layered safely onto what already runs your business.",
+            "icon": "BiSolidBrain"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 2
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Below",
+        "imageSource": "/images/ssw-web/landing-ai-workshop/reframe-cost-curve.png",
+        "imageHeight": 1024,
+        "imageWidth": 1536
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Case Study: Draft, sourcing real numbers"
+      },
+      "heading": "The CRM stuck for **three years**",
+      "isH1": false,
+      "description": "A mid-market services business. The sales team had been stuck on a CRM nobody could replace. Every quote to rebuild came back too expensive to justify.\n\nWith [AI-accelerated delivery](/consulting/ai-discovery-workshop), SSW rebuilt it in **[weeks, not months]** for **[a fraction of the original quote]**. The team now uses a tool shaped around how they actually sell, not the one they inherited.\n\n*Specifics being confirmed for publish. Stef/Adam/Uly to source.*\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Before",
+            "description": "3 years stuck on a CRM the team hated. Replacement quoted at a number that never made the budget.",
+            "icon": "BiSolidHide"
+          },
+          {
+            "heading": "After",
+            "description": "Tailored, AI-built replacement. Sales pipeline visible. Salespeople using it on day one.",
+            "icon": "BiSolidWrench"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 5
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Below",
+        "imageSource": "/images/ssw-web/landing-ai-workshop/case-study-crm-before-after.png",
+        "imageHeight": 1024,
+        "imageWidth": 1536
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Why Your Software Roadmap Stalls",
+      "isH1": false,
+      "body": "The list of things you'd love to build keeps growing. Custom tools, smarter systems, an upgrade for that ancient CRM. They never quite make the budget.\n\nAI changes the maths. Here's where most mid-market businesses get stuck.",
+      "cards": [
+        {
+          "guid": "qnv92",
+          "altText": "Too expensive to build",
+          "icon": "BiMoneyWithdraw",
+          "heading": "Custom software was too expensive",
+          "description": "The internal tool you've sketched on a whiteboard for years never beat the off-the-shelf option on price. AI changes the build cost.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "4bcikc",
+          "altText": "Data not in shape",
+          "icon": "BiSolidBookBookmark",
+          "heading": "Your data isn't ready",
+          "description": "Customer, product, and operational data lives in five places. Without the foundations, the AI bets don't pay off.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "z57ea",
+          "altText": "SaaS sprawl",
+          "icon": "BiAbacus",
+          "heading": "SaaS bills keep climbing",
+          "description": "Per seat, per month, per add-on, for tools that almost fit. A tailored AI-built alternative is now cheaper to own than to rent.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "uxx42",
+          "altText": "Adding AI risks breaking things",
+          "icon": "BiSolidHelpCircle",
+          "heading": "Adding AI risks breaking what works",
+          "description": "Your software runs the business. Bolt AI on the wrong way and outages follow. Done right (engineered, tested, owned), AI ships safely beside what's already running.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "64hyte",
+          "altText": "Legacy systems",
+          "icon": "BiSolidHide",
+          "heading": "Legacy systems your team has outgrown",
+          "description": "Three years on a CRM your salesperson hates because replacing it never made the numbers work. AI just made the upgrade affordable.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "A Workshop Built for **Business Outcomes**",
+      "body": "Not an AI 101. A working session built around the things you've always wanted in your business but couldn't justify building. Five modules, one focused day, mapped to decisions you can make on Monday.",
+      "accordionItems": [
+        {
+          "label": "Production-grade vs. vibe-coded: what's safe to bet on",
+          "content": "AI can generate a slick demo in an afternoon. Production is different: tests, code review, ownership, a system you'd put in front of customers. Where AI-built software is reliable enough to bet the business on, and where it isn't.\n"
+        },
+        {
+          "label": "Getting your data ready so AI investments pay off",
+          "content": "The minimum viable data foundation. What to consolidate, what to ignore, and how to stop AI projects from stalling on messy inputs.\n"
+        },
+        {
+          "label": "Replacing SaaS sprawl with tailored, AI-built tools",
+          "content": "How to identify which SaaS subscriptions are good candidates to replace with software tailored to your business, and what the new cost structure actually looks like.\n"
+        },
+        {
+          "label": "Adding AI to existing software without breaking it",
+          "content": "Patterns for layering AI features onto the systems that already run your business, safely. What to pilot, what to roll out, and how to avoid the failure modes everyone else hits.\n"
+        },
+        {
+          "label": "Modernising legacy systems affordably",
+          "content": "The CRM-stuck-for-three-years problem, and others like it. How AI changes the economics of replacing legacy systems your team has outgrown, with a framework you'll apply to your own systems.\n"
+        },
+        {
+          "label": "✨ Post-Workshop Support",
+          "content": "Follow-up sessions and a prioritised opportunity list to turn the day's decisions into a costed plan your team can execute.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "buttons": [
+        {
+          "buttonText": "Get the full agenda",
+          "leadCaptureFormOption": "aiWorkshopJotFormId",
+          "buttonLink": "",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 3
+      },
+      "mediaConfiguration": {
+        "verticalPlacement": "Centered",
+        "imageSource": "/images/ssw-web/landing-ai-workshop/modules-working-session.png",
+        "imageHeight": 1024,
+        "imageWidth": 1536
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Meet Your Instructor"
+      },
+      "heading": "Ulysses Maclaren",
+      "isH1": false,
+      "description": "Uly brings 20+ years of enterprise consulting experience, leading AI sessions for executives who want to cut through the hype.\n\nHe sees more mid-market software rollouts in a year than most CEOs see in a decade, and brings the engineering rigour SSW is known for to every workshop. Tested, reviewed, owned: production-grade by default, never vibe-coded.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Uly's enthusiasm was contagious",
+            "description": "Tracy, Director of APA",
+            "icon": "BiSolidQuoteAltLeft"
+          },
+          {
+            "heading": "[Result-oriented testimonial]",
+            "description": "Stef/Uly to source. Example: \"walked out with X concrete decisions / saved $Y / shipped Z in 60 days\"",
+            "icon": "BiSolidQuoteAltLeft"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=zaQOlw0-jQ4"
       },
       "_template": "imageTextBlock"
     },
@@ -87,269 +314,10 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": false,
-      "heading": "Why Your Software Roadmap Stalls",
-      "isH1": false,
-      "body": "The list of things you'd love to build keeps growing. Custom tools, smarter systems, an upgrade for that ancient CRM. They never quite make the budget.\n\nAI changes the maths. Here's where most mid-market businesses get stuck.",
-      "cards": [
-        {
-          "guid": "qnv92",
-          "altText": "Too expensive to build",
-          "icon": "BiMoneyWithdraw",
-          "heading": "Custom software was too expensive to justify",
-          "description": "The internal tool you've sketched on the whiteboard for years never beats the off-the-shelf option on price — until AI changes the build cost.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "4bcikc",
-          "altText": "Data not in shape",
-          "icon": "BiSolidBookBookmark",
-          "heading": "Your data isn't in shape",
-          "description": "AI experiments stall because customer, product, and operational data live in five places. Without the foundations, the AI bets don't pay off.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "z57ea",
-          "altText": "SaaS sprawl",
-          "icon": "BiAbacus",
-          "heading": "SaaS bills keep climbing",
-          "description": "You're paying per seat, per month, per add-on for tools that almost fit. A tailored AI-built alternative is now cheaper to own than to rent.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "uxx42",
-          "altText": "Adding AI risks breaking things",
-          "icon": "BiSolidHelpCircle",
-          "heading": "Adding AI risks breaking what works",
-          "description": "Your existing software runs the business. Bolting AI on without a plan is how outages happen. Done right, AI features ship safely alongside what already works.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "64hyte",
-          "altText": "Legacy systems",
-          "icon": "BiSolidHide",
-          "heading": "Legacy systems your team has outgrown",
-          "description": "Your salesperson has been stuck on the same CRM for three years. Replacing it has always been too expensive — until now. AI makes the upgrade affordable.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 5
-      },
-      "_template": "cardCarousel"
-    },
-    {
-      "heading": "A Workshop Built for **Business Outcomes**",
-      "body": "Not an AI 101. A working session built around the things you've always wanted in your business but couldn't justify building. Five modules, one focused day, mapped to decisions you can make on Monday.",
-      "accordionItems": [
-        {
-          "label": "Production-grade vs. vibe-coded — what's safe to build",
-          "content": "Where AI-generated software is reliable enough to bet on, and where it isn't. Understand the difference between a slick demo and a system you'd put in front of customers.\n"
-        },
-        {
-          "label": "Getting your data ready so AI investments pay off",
-          "content": "The minimum viable data foundation. What to consolidate, what to ignore, and how to stop AI projects from stalling on messy inputs.\n"
-        },
-        {
-          "label": "Replacing SaaS sprawl with tailored, AI-built tools",
-          "content": "How to identify which SaaS subscriptions are good candidates to replace with software tailored to your business — and what the new cost structure actually looks like.\n"
-        },
-        {
-          "label": "Adding AI to existing software without breaking it",
-          "content": "Patterns for layering AI features onto the systems that already run your business, safely. What to pilot, what to roll out, and how to avoid the failure modes everyone else hits.\n"
-        },
-        {
-          "label": "Modernising legacy systems affordably",
-          "content": "The CRM-stuck-for-three-years problem, and others like it. How AI changes the economics of replacing legacy systems your team has outgrown — with a working framework you'll apply to your own.\n"
-        },
-        {
-          "label": "✨ Post-Workshop Support",
-          "content": "Follow-up sessions and a prioritised opportunity list to turn the day's decisions into a costed plan your team can execute.\n"
-        }
-      ],
-      "isMultipleOpen": true,
-      "buttons": [
-        {
-          "buttonText": "Get the full Agenda",
-          "leadCaptureFormOption": "aiWorkshopJotFormId",
-          "buttonLink": "",
-          "colour": 1
-        }
-      ],
-      "background": {
-        "backgroundColour": 3
-      },
-      "mediaConfiguration": {
-        "verticalPlacement": "Centered",
-        "imageSource": "/images/ssw-web/blog/What-we-cover-v5.png",
-        "imageHeight": 650,
-        "imageWidth": 972
-      },
-      "_template": "accordionBlock"
-    },
-    {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "At a Glance",
-      "isH1": false,
-      "description": "A one-day, on-site workshop for the people who own the budget. Built around your business, not generic AI theory.\n",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "$5,200 + GST",
-            "description": "Flat rate for up to 20 participants",
-            "icon": "BiMoneyWithdraw"
-          },
-          {
-            "heading": "Worked through your real systems",
-            "description": "We use your data, tools, and CRM — not slides",
-            "icon": "BiSolidContact"
-          },
-          {
-            "heading": "A roadmap you can act on Monday",
-            "description": "Prioritised, costed list of opportunities",
-            "icon": "BiSolidWrench"
-          },
-          {
-            "heading": "Tailored to your business",
-            "description": "Mapped to your stack, your data, your goals",
-            "icon": "BiSolidCustomize"
-          }
-        ]
-      },
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "placement": "Left",
-        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
-        "imageHeight": 768,
-        "imageWidth": 1024
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "isStacked": true,
-      "heading": "How It Works",
-      "isH1": false,
-      "body": "",
-      "cardStyle": 0,
-      "cards": [
-        {
-          "guid": "4qkep6",
-          "altText": "Discovery call",
-          "icon": "info",
-          "heading": "1️⃣ Discovery call",
-          "description": "A short call to understand your business, the systems holding you back, and the ideas you've parked for years. We tailor the day around them.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "4ob77n",
-          "altText": "On-site workshop day",
-          "icon": "info",
-          "heading": "2️⃣ On-Site Workshop Day",
-          "description": "One focused day at your office with your decision makers. We work through your real systems and data, and leave you with a prioritised opportunity list.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "tydp",
-          "altText": "Scope what's next",
-          "icon": "info",
-          "heading": "3️⃣ Scope What's Next",
-          "description": "Follow-up to turn the opportunity list into a costed engagement plan — whether that's a tailored build, a legacy replacement, or AI features for what you already run.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
-        "bleed": true
-      },
-      "_template": "cardCarousel"
-    },
-    {
-      "heading": "Workshop FAQ",
-      "body": "",
-      "accordionItems": [
-        {
-          "label": "Is this for me if I'm not technical?",
-          "content": "Yes — this workshop is built for CEOs, founders, and budget holders. You don't need to write code or understand AI under the hood. We work in business terms: outcomes, costs, and where AI changes the maths.\n"
-        },
-        {
-          "label": "What's the ROI? How do we measure it?",
-          "content": "You leave with a prioritised, costed opportunity list — the SaaS bills you could replace, the systems you could upgrade, the custom tools that are now affordable. Each opportunity has an estimated build cost and the saving or revenue it unlocks.\n"
-        },
-        {
-          "label": "How long is the workshop?",
-          "content": "One focused day on-site at your office. Built for executives who don't have a week to spare.\n"
-        },
-        {
-          "label": "Who should attend?",
-          "content": "Best with your decision makers in the room — CEO, COO, head of operations or sales — plus one or two senior operators who know where the bodies are buried in your current systems. Cap of around 10 keeps the conversation sharp.\n"
-        },
-        {
-          "label": "What do we walk away with?",
-          "content": "A prioritised list of opportunities, a costed view of what's worth building first, and a clear next step. No homework, no jargon, no \"we'll send a deck.\"\n"
-        }
-      ],
-      "isMultipleOpen": true,
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "accordionBlock"
-    },
-    {
-      "topLabel": {
-        "labelText": "Meet Your Instructor"
-      },
-      "heading": "Ulysses Maclaren",
-      "isH1": false,
-      "description": "Uly brings 20+ years of enterprise consulting experience, helping companies adopt emerging technology with confidence. He's led AI sessions for executives looking to cut through the hype and turn AI into measurable business outcomes.\n",
-      "featureColumns": {
-        "twoColumns": false,
-        "features": [
-          {
-            "heading": "Uly's enthusiasm was contagious",
-            "description": "Tracy, Director of APA",
-            "icon": "BiSolidQuoteAltLeft"
-          }
-        ]
-      },
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Left",
-        "imageHeight": 768,
-        "imageWidth": 1024,
-        "youtubeUrl": "https://www.youtube.com/watch?v=zaQOlw0-jQ4"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
       "isStacked": true,
       "heading": "Built on Real-World AI Delivery",
       "isH1": false,
-      "body": "SSW has been building, fixing, and shipping AI-accelerated software for businesses across industries. The opportunities you'll explore in the workshop are grounded in what we've already delivered — not what's possible in theory.",
+      "body": "SSW has been building, fixing, and shipping AI-accelerated software for mid-market businesses across industries. The opportunities you'll explore in the workshop are grounded in what we've already delivered, not what's possible in theory.",
       "buttons": [
         {
           "buttonText": "Rules to Better AI Development",
@@ -370,13 +338,13 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "18 min.",
+              "chipText": "18 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
           "heading": "",
-          "description": "SSW's Gert Marx joins Chris Simon at NDC Melbourne to break down Contextive — the open-source tool helping teams build software that aligns with business needs.",
+          "description": "Gert Marx and Chris Simon at NDC Melbourne on Contextive, the open-source tool helping teams build software aligned with the business.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -392,13 +360,13 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "11 min.",
+              "chipText": "11 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
           "heading": "",
-          "description": "Ulysses Maclaren and Richard Campbell on the economics behind AI — why the cost curve is bending, and what that means for the software you can now afford to build.",
+          "description": "Ulysses Maclaren and Richard Campbell on the economics behind AI: why the cost curve is bending, and what it means for what you can now afford to build.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -414,13 +382,13 @@
               "chipType": "filledChip"
             },
             {
-              "chipText": "6 min.",
+              "chipText": "6 min",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
           "heading": "",
-          "description": "Ulysses on responsible AI for business: transparency, privacy, and the practical guardrails that keep AI bets safe to roll out.",
+          "description": "Uly on responsible AI for business: transparency, privacy, and the practical guardrails that keep AI bets safe to roll out.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -435,17 +403,149 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Build the things you've **always wanted** — now affordable",
+      "heading": "At a Glance",
       "isH1": false,
-      "description": "",
+      "description": "A one-day, on-site workshop for the people who own the budget. Built around your business, not generic AI theory.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Flat-rate pricing",
+            "description": "Contact us for a quote; priced per workshop, not per seat.",
+            "icon": "BiMoneyWithdraw"
+          },
+          {
+            "heading": "Worked through your real systems",
+            "description": "We use your data, tools, and CRM. Not slides.",
+            "icon": "BiSolidContact"
+          },
+          {
+            "heading": "A roadmap you can act on Monday",
+            "description": "Prioritised, costed list of opportunities.",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "Up to 10 decision makers",
+            "description": "Small group keeps the conversation sharp and the decisions real.",
+            "icon": "BiSolidCustomize"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/ssw-web/landing-ai-workshop/at-a-glance-small-group.png",
+        "imageHeight": 1024,
+        "imageWidth": 1536
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "How It Works",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "4qkep6",
+          "altText": "Discovery call",
+          "icon": "info",
+          "heading": "1️⃣ Book a Discovery Call",
+          "description": "A short call (about 20 minutes) to understand your business, the systems holding you back, and the ideas you've parked for years. We tailor the day around them.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "4ob77n",
+          "altText": "On-site workshop day",
+          "icon": "info",
+          "heading": "2️⃣ On-Site Workshop Day",
+          "description": "One focused day at your office with your decision makers. We work through your real systems and data, and leave you with a prioritised opportunity list.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "tydp",
+          "altText": "Scope what's next",
+          "icon": "info",
+          "heading": "3️⃣ Scope What's Next",
+          "description": "Follow-up to turn the opportunity list into a costed plan: a tailored build, a legacy replacement, or AI features for what you already run.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "heading": "Workshop FAQ",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "Is this for me if I'm not technical?",
+          "content": "Yes. This workshop is built for CEOs, founders, and budget holders. You don't need to write code or understand AI under the hood. We work in business terms: outcomes, costs, and where AI changes the maths.\n"
+        },
+        {
+          "label": "Is this just vibe-coded AI?",
+          "content": "No. SSW's edge is engineering rigour: tested, code-reviewed, owned. We use AI to accelerate delivery, not to skip the practices that make software safe to run a business on. See our [Rules to Better AI Development](/rules/rules-to-better-ai/). We'll spend time in the workshop on exactly where AI-built code is production-grade, and where it isn't.\n"
+        },
+        {
+          "label": "What's the ROI? How do we measure it?",
+          "content": "You leave with a prioritised, costed opportunity list: the SaaS bills you could replace, the systems you could upgrade, the custom tools that are now affordable. Each opportunity has an estimated build cost and the saving or revenue it unlocks.\n"
+        },
+        {
+          "label": "How long is the workshop?",
+          "content": "One focused day on-site at your office. Built for executives who don't have a week to spare.\n"
+        },
+        {
+          "label": "Who should attend?",
+          "content": "Your decision makers (CEO, COO, head of operations or sales), plus one or two senior operators who know where the bodies are buried in your current systems. Cap of 10 keeps the conversation sharp.\n"
+        },
+        {
+          "label": "Do you do remote or virtual workshops?",
+          "content": "We default to on-site because the best decisions come from a room with your data, your systems, and your decision makers in it. Remote available on request. Talk to us on the discovery call.\n"
+        },
+        {
+          "label": "What do we walk away with?",
+          "content": "A prioritised list of opportunities, a costed view of what's worth building first, and a clear next step. No homework, no jargon, no \"we'll send a deck.\"\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Build the things you've **always wanted**. Now affordable.",
+      "isH1": false,
+      "description": "A focused day, your real systems, a roadmap your team can act on Monday. Start with a 20-minute discovery call.\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Book Now",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonText": "Book a Discovery Call",
+          "leadCaptureFormOption": "registrationOfInterestJotFormId",
           "colour": 0
+        },
+        {
+          "buttonText": "Register for Workshop",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 1
         }
       ],
       "background": {
