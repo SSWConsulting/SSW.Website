@@ -41,6 +41,57 @@
       "_template": "imageTextBlock"
     },
     {
+      "background": {
+        "backgroundColour": 2
+      },
+      "heading": "Trusted by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 195,
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 160,
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 180,
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 175,
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 175,
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 170,
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 195,
+          "altText": "Allianz"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
       "topLabel": {
         "labelText": "Why now"
       },
@@ -69,49 +120,13 @@
         ]
       },
       "background": {
-        "backgroundColour": 2
-      },
-      "mediaConfiguration": {
-        "placement": "Right",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Below",
-        "imageSource": "/images/ssw-web/landing-ai-workshop/reframe-cost-curve.png",
-        "imageHeight": 1024,
-        "imageWidth": 1536
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "topLabel": {
-        "labelText": "Case Study: Draft, sourcing real numbers"
-      },
-      "heading": "The CRM stuck for **three years**",
-      "isH1": false,
-      "description": "A mid-market services business. The sales team had been stuck on a CRM nobody could replace. Every quote to rebuild came back too expensive to justify.\n\nWith [AI-accelerated delivery](/consulting/ai-discovery-workshop), SSW rebuilt it in **[weeks, not months]** for **[a fraction of the original quote]**. The team now uses a tool shaped around how they actually sell, not the one they inherited.\n\n*Specifics being confirmed for publish. Stef/Adam/Uly to source.*\n",
-      "tabletTextAlignment": "Left",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Before",
-            "description": "3 years stuck on a CRM the team hated. Replacement quoted at a number that never made the budget.",
-            "icon": "BiSolidHide"
-          },
-          {
-            "heading": "After",
-            "description": "Tailored, AI-built replacement. Sales pipeline visible. Salespeople using it on day one.",
-            "icon": "BiSolidWrench"
-          }
-        ]
-      },
-      "background": {
         "backgroundColour": 5
       },
       "mediaConfiguration": {
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Below",
-        "imageSource": "/images/ssw-web/landing-ai-workshop/case-study-crm-before-after.png",
+        "imageSource": "/images/ssw-web/landing-ai-workshop/reframe-cost-curve.png",
         "imageHeight": 1024,
         "imageWidth": 1536
       },
@@ -175,7 +190,7 @@
         }
       ],
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 3
       },
       "_template": "cardCarousel"
     },
@@ -218,7 +233,7 @@
         }
       ],
       "background": {
-        "backgroundColour": 3
+        "backgroundColour": 6
       },
       "mediaConfiguration": {
         "verticalPlacement": "Centered",
@@ -227,177 +242,6 @@
         "imageWidth": 1536
       },
       "_template": "accordionBlock"
-    },
-    {
-      "topLabel": {
-        "labelText": "Meet Your Instructor"
-      },
-      "heading": "Ulysses Maclaren",
-      "isH1": false,
-      "description": "Uly brings 20+ years of enterprise consulting experience, leading AI sessions for executives who want to cut through the hype.\n\nHe sees more mid-market software rollouts in a year than most CEOs see in a decade, and brings the engineering rigour SSW is known for to every workshop. Tested, reviewed, owned: production-grade by default, never vibe-coded.\n",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Uly's enthusiasm was contagious",
-            "description": "Tracy, Director of APA",
-            "icon": "BiSolidQuoteAltLeft"
-          },
-          {
-            "heading": "[Result-oriented testimonial]",
-            "description": "Stef/Uly to source. Example: \"walked out with X concrete decisions / saved $Y / shipped Z in 60 days\"",
-            "icon": "BiSolidQuoteAltLeft"
-          }
-        ]
-      },
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Left",
-        "imageHeight": 768,
-        "imageWidth": 1024,
-        "youtubeUrl": "https://www.youtube.com/watch?v=zaQOlw0-jQ4"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "background": {
-        "backgroundColour": 2
-      },
-      "heading": "Trusted by",
-      "paused": false,
-      "isWhiteImages": true,
-      "logos": [
-        {
-          "logo": "/images/ssw-web/logos/toll_logo.png",
-          "scale": 195,
-          "altText": "Toll"
-        },
-        {
-          "logo": "/images/ssw-web/logos/symantec_logo.png",
-          "scale": 160,
-          "altText": "Symantec"
-        },
-        {
-          "logo": "/images/ssw-web/logos/microsoft_logo.png",
-          "scale": 180,
-          "altText": "Microsoft"
-        },
-        {
-          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
-          "scale": 200,
-          "altText": "Event Cinemas"
-        },
-        {
-          "logo": "/images/ssw-web/logos/domain_logo.png",
-          "scale": 175,
-          "altText": "Domain"
-        },
-        {
-          "logo": "/images/ssw-web/logos/cisco_logo.png",
-          "scale": 175,
-          "altText": "Cisco"
-        },
-        {
-          "logo": "/images/ssw-web/logos/cba_logo.png",
-          "scale": 170,
-          "altText": "Commonwealth Bank"
-        },
-        {
-          "logo": "/images/ssw-web/logos/allianz_logo.png",
-          "scale": 195,
-          "altText": "Allianz"
-        }
-      ],
-      "_template": "logoCarousel"
-    },
-    {
-      "isStacked": true,
-      "heading": "Built on Real-World AI Delivery",
-      "isH1": false,
-      "body": "SSW has been building, fixing, and shipping AI-accelerated software for mid-market businesses across industries. The opportunities you'll explore in the workshop are grounded in what we've already delivered, not what's possible in theory.",
-      "buttons": [
-        {
-          "buttonText": "Rules to Better AI Development",
-          "buttonLink": "/rules/rules-to-better-ai/",
-          "colour": 1
-        }
-      ],
-      "cardStyle": 1,
-      "cards": [
-        {
-          "guid": "uh77mq",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
-          "altText": "Contextive case study",
-          "chips": [
-            {
-              "chipText": "DevTools",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "18 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "",
-          "description": "Gert Marx and Chris Simon at NDC Melbourne on Contextive, the open-source tool helping teams build software aligned with the business.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "itqfs7",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
-          "altText": "AI infrastructure economics",
-          "chips": [
-            {
-              "chipText": "Insights",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "11 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "",
-          "description": "Ulysses Maclaren and Richard Campbell on the economics behind AI: why the cost curve is bending, and what it means for what you can now afford to build.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "2eb7hu",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
-          "altText": "Responsible AI in business",
-          "chips": [
-            {
-              "chipText": "Responsible AI",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "6 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "",
-          "description": "Uly on responsible AI for business: transparency, privacy, and the practical guardrails that keep AI bets safe to roll out.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 2
-      },
-      "_template": "cardCarousel"
     },
     {
       "topLabel": {
@@ -525,6 +369,127 @@
         "backgroundColour": 6
       },
       "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Meet Your Instructor"
+      },
+      "heading": "Ulysses Maclaren",
+      "isH1": false,
+      "description": "Uly brings 20+ years of enterprise consulting experience, leading AI sessions for executives who want to cut through the hype.\n\nHe sees more mid-market software rollouts in a year than most CEOs see in a decade, and brings the engineering rigour SSW is known for to every workshop. Tested, reviewed, owned: production-grade by default, never vibe-coded.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Uly's enthusiasm was contagious",
+            "description": "Tracy, Director of APA",
+            "icon": "BiSolidQuoteAltLeft"
+          },
+          {
+            "heading": "[Result-oriented testimonial]",
+            "description": "Stef/Uly to source. Example: \"walked out with X concrete decisions / saved $Y / shipped Z in 60 days\"",
+            "icon": "BiSolidQuoteAltLeft"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "https://www.youtube.com/watch?v=zaQOlw0-jQ4"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "Built on Real-World AI Delivery",
+      "isH1": false,
+      "body": "SSW has been building, fixing, and shipping AI-accelerated software for mid-market businesses across industries. The opportunities you'll explore in the workshop are grounded in what we've already delivered, not what's possible in theory.",
+      "buttons": [
+        {
+          "buttonText": "Rules to Better AI Development",
+          "buttonLink": "/rules/rules-to-better-ai/",
+          "iconFirst": false,
+          "colour": 1
+        }
+      ],
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "uh77mq",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
+          "altText": "Contextive case study",
+          "chips": [
+            {
+              "chipText": "DevTools",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "18 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "Gert Marx and Chris Simon at NDC Melbourne on Contextive, the open-source tool helping teams build software aligned with the business.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "itqfs7",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
+          "altText": "AI infrastructure economics",
+          "chips": [
+            {
+              "chipText": "Insights",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "11 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "Ulysses Maclaren and Richard Campbell on the economics behind AI: why the cost curve is bending, and what it means for what you can now afford to build.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "2eb7hu",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
+          "altText": "Responsible AI in business",
+          "chips": [
+            {
+              "chipText": "Responsible AI",
+              "chipType": "filledChip"
+            },
+            {
+              "chipText": "6 min",
+              "chipType": "clearChip"
+            }
+          ],
+          "icon": "info",
+          "heading": "",
+          "description": "Uly on responsible AI for business: transparency, privacy, and the practical guardrails that keep AI bets safe to roll out.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 2
+      },
+      "_template": "cardCarousel"
     },
     {
       "topLabel": {
