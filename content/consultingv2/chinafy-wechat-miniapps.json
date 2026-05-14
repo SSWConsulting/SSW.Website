@@ -132,10 +132,10 @@
       "cards": [
         {
           "guid": "dd2c2j",
-          "altText": "Team Collaboration Sites",
-          "icon": "BiCollapse",
-          "heading": "Team Collaboration Sites",
-          "description": "Create productive team sites for every project, department, and division. Share files, data, news, and resources with powerful collaboration tools that your teams will actually want to use, while insuring only the people you want have access.",
+          "altText": "",
+          "icon": "BiExpand",
+          "heading": "WeChat Mini Program Strategy",
+          "description": "We help you determine whether a Mini Program fits your business, what it needs to do, and how to get it in front of the right users inside WeChat's ecosystem.",
           "embeddedButton": {
             "buttonText": ""
           }
