@@ -14,11 +14,11 @@
     },
     {
       "topLabel": {
-        "labelText": "18+ years delivering SharePoint solutions"
+        "labelText": "10+ years delivering Western solutions to Eastern markets"
       },
-      "heading": "Ship a **SharePoint solution** your people actually use",
+      "heading": "Enter the Chinese market, **the right way**",
       "isH1": true,
-      "description": "Your documents are scattered. Your teams are frustrated. Your SharePoint investment isn't delivering. SSW's SharePoint experts customize solutions that fit your business, not force your business to fit SharePoint.\n",
+      "description": "Your website won't load. Your payment gateway won't work. Your app isn't on WeChat. Western digital infrastructure fails at the Chinese border and most businesses don't find out until it's too late. SSW's China experts help you build a digital presence that works for 1.4 billion users.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -89,19 +89,19 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Why Most SharePoint Implementations Fail",
+      "heading": "Why Most Western Businesses Fail in China's Digital Market",
       "isH1": false,
-      "description": "Many organizations struggle with data scattered across multiple systems. While SharePoint aims to solve this, a default setup rarely suffices. We centralize your documents, data, and processes, enforcing information management policies and automating critical business workflows to boost efficiency across your entire organization.\n",
+      "description": "China has its own digital infrastructure, it's own platforms, and its own consumer expectations. WeChat has 1.4 billion monthly active users, 945 million using Mini Programs, and a payments ecosystem processing transactions 2.7 times per day per user. Alipay, Douyin, and Taobao are the infrastructure. A digital strategy built for Google, Facebook, and Stripe was built for the wrong market. \n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Modern intranets & team sites",
-            "description": "Consistent hub navigation, branded themes, clear Information Architecture (IA), and ‘important places’ that help new starters and veterans find work fast."
+            "heading": "WeChat Mini Programs ",
+            "description": "945 million people use Mini Programs inside WeChat every month. Fully functional apps, no download required. For consumer-facing businesses a Mini Program is often the primary way Chinese customers will interact with your brand."
           },
           {
-            "heading": "Process automation",
-            "description": "Leave requests, expense claims, approvals. All the recurring processes implemented with lists, Power Automate, and Power Apps. SharePoint ties them all together."
+            "heading": "Payments infrastructure",
+            "description": "Cash is rare. Cards are rare. WeChat Pay and Alipay are how China transacts. Getting this right is a prerequisite for doing business, not an afterthought"
           }
         ]
       },
