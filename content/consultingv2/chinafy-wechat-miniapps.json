@@ -181,7 +181,7 @@
       "accordionItems": [
         {
           "label": "Do I need a Chinese business entity to operate on WeChat?",
-          "content": "xxx\n"
+          "content": "Not necessarily. While a Chinese entity (WFOE) offers full access to all features, overseas businesses can register a WeChat Service Account using their local business license. This allows you to engage users and launch Mini Programs, though some specific categories and \"Subscription\" accounts remain reserved for domestic entities.\n"
         },
         {
           "label": "What's the difference between a WeChat Mini Program and a native app?",
@@ -202,24 +202,10 @@
       "_template": "accordionBlock"
     },
     {
-      "technologies": [
-        {
-          "technology": "content/v2Technologies/technologies/Microsoft-Teams.mdx"
-        }
-      ],
-      "isStacked": false,
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
-        "bleed": true
-      },
-      "_template": "technologyCardCarousel"
-    },
-    {
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Talk to us about your SharePoint project",
+      "heading": "Talk to us about moving your project to China",
       "isH1": false,
       "description": "Connect with our Account Managers to discuss how we can help.\n",
       "featureColumns": {
