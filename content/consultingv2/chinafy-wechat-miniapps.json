@@ -176,114 +176,12 @@
       "_template": "spacer"
     },
     {
-      "isStacked": false,
-      "heading": "Tech wisdom from the trenches",
-      "isH1": false,
-      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
-      "cards": [
-        {
-          "guid": "p2eb4u",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Wf9o6jGhXJI",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "5 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "SharePoint Sites for Admins - Tips for Managing SharePoint with Warwick Leahy",
-          "description": "In the days of classic SharePoint, subsites were a popular way of organising your intranet. Modern SharePoint architecture leans toward a flatter hierarchy, where sub-sites are generally not recommended.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "seq43",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Vh64ZEC0wcw",
-          "altText": "Why SharePoint Search is Awesome! How to use SharePoint Search | Jean Thirion",
-          "chips": [
-            {
-              "chipText": "4 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Why SharePoint Search is Awesome! How to use SharePoint Search | Jean Thirion",
-          "description": "See what makes SharePoint Search a powerful way to find anything throughout your organization.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "ekgasj",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=fhnatho4nSg",
-          "altText": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
-          "chips": [
-            {
-              "chipText": "10 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": " Searching employee skills - Frenchman exposes all 🤫 (AD vs SharePoint vs Dynamics 365 CRM)",
-          "description": "Do you know how to make the most of your active directory? SSW Chief Architect Adam Cogan talks with SSW Solution Architect Jean Thirion about how to take advantage of extending AD with Microsoft SharePoint.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "q5ilp",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=kDZCbRJma60&list=PLpiOR7CBNvlp47vr_wX4RO6Otq4zmY_JU",
-          "altText": "Why Choose Rich Text Editor Over Markdown For SharePoint pages | Jean Thirion",
-          "chips": [
-            {
-              "chipText": "3 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Why Choose Rich Text Editor Over Markdown For SharePoint pages | Jean Thirion",
-          "description": "Learn how to use the Rich Text Editor web part instead of the Markdown Editor web part and create a better SharePoint intranet page.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "sm6rk",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=tVH6aL7R8nM",
-          "altText": "  AU  Skip navigation Search    Create   Avatar image SharePoint agents - What's new and what's next | Microsoft 365 Community Conference 2025",
-          "chips": [
-            {
-              "chipText": "51 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "SharePoint agents - What's new and what's next",
-          "description": "In this session, we will recap key product best practices for getting the most out of SharePoint, OneDrive and custom agents with SharePoint Embedded. We'll also unveil our roadmap for the months ahead as we continue to innovate how agents support individual workers, teams, and organizations.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "cardCarousel"
-    },
-    {
       "heading": "Frequently Asked Questions",
       "body": "",
       "accordionItems": [
         {
-          "label": "What's the difference between SharePoint configuration and customization?",
-          "content": "Most consultants simply turn features on and off within SharePoint's standard capabilities… that's configuration.\n\nAt SSW, we go further with customization: Our .NET developers build bespoke solutions, integrations, and workflows that extend SharePoint to match your exact business processes. For example, if you need to automatically sync 2,000 client records from your CRM into individual SharePoint portals, we build custom synchronization tools rather than force you into manual workarounds.\n"
+          "label": "Do I need a Chinese business entity to operate on WeChat?",
+          "content": "xxx\n"
         },
         {
           "label": "How long does a typical SharePoint implementation take?",
