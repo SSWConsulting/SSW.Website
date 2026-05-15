@@ -185,7 +185,7 @@
         },
         {
           "label": "What's the difference between a WeChat Mini Program and a native app?",
-          "content": "xxx\n"
+          "content": "A Mini Program is a \"sub-application\" that runs instantly within WeChat without requiring a separate download or installation. Unlike native apps that need separate builds for iOS and Android, a single Mini Program works across all devices and leverages WeChat’s social sharing and payment ecosystem directly.\n"
         },
         {
           "label": "How long does it take to launch a Mini Program?",
