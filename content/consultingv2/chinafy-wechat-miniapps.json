@@ -193,7 +193,7 @@
         },
         {
           "label": "Is WeChat Pay available to foreign businesses?",
-          "content": "xxx\n"
+          "content": "Yes, through Cross-Border WeChat Pay, foreign businesses can accept payments in CNY which are then settled in their local currency (supporting 36 currencies as of 2026). You do not need a Chinese bank account; funds are settled directly into your overseas corporate bank account after reaching a minimum settlement threshold.\n"
         }
       ],
       "background": {
