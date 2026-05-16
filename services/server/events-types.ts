@@ -82,14 +82,13 @@ export const formatDates = (eventInfo: EventInfoStatic): EventDates => {
   };
 };
 
-export interface EventInfoStatic
-  extends Omit<
-    EventInfo,
-    | "startShowBannerDateTime"
-    | "endShowBannerDateTime"
-    | "startDateTime"
-    | "endDateTime"
-  > {
+export interface EventInfoStatic extends Omit<
+  EventInfo,
+  | "startShowBannerDateTime"
+  | "endShowBannerDateTime"
+  | "startDateTime"
+  | "endDateTime"
+> {
   startShowBannerDateTime?: string;
   endShowBannerDateTime?: string;
   startDateTime?: string;

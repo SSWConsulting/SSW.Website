@@ -28,7 +28,7 @@ export const invokePowerAutomateFlow = async (
           : HttpStatusCode.NotFound,
         JSON.stringify(data),
         axiosError.response &&
-        axiosError.response.status === HttpStatusCode.Conflict
+          axiosError.response.status === HttpStatusCode.Conflict
           ? appInsight.KnownSeverityLevel.Information
           : appInsight.KnownSeverityLevel.Error,
         STAGE.PA_FLOW_AXIOS
