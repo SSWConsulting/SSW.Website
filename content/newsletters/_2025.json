@@ -60,6 +60,14 @@
       "month": 12,
       "file": "/images/newsletter-uploads/2025/_2025_12__How%20to%20Handle%20Duplicate%20GitHub%20Issues%20Without%20Annoying%20Your%20Users_.html",
       "description": "How to Handle Duplicate GitHub Issues Without Annoying Your Users"
+    },
+    {
+      "month": 1,
+      "file": "/images/newsletter-uploads/2026/_2026_02__Migrating%20SSW%20Rules%20to%20TinaCMS%20and%20Next.js%20(and%20why%20it%20was%20worth%20it)_.html",
+      "images": [
+        "/images/.NET5-SuperPowers-newletter.jpg"
+      ],
+      "description": "test-newsletter"
     }
   ]
 }
