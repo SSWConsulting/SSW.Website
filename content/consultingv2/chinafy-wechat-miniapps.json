@@ -91,7 +91,7 @@
       },
       "heading": "Why Most Western Businesses Fail in China's Digital Market",
       "isH1": false,
-      "description": "China has its own digital infrastructure, it's own platforms, and its own consumer expectations. WeChat has 1.4 billion monthly active users, 945 million using Mini Programs, and a payments ecosystem processing transactions 2.7 times per day per user. Alipay, Douyin, and Taobao are the infrastructure. A digital strategy built for Google, Facebook, and Stripe was built for the wrong market. \n",
+      "description": "China has its own digital infrastructure, it's own platforms, and its own consumer expectations. WeChat has 1.4 billion monthly active users, 945 million using Mini Programs, and a payments ecosystem processing transactions 2.7 times per day per user. Alipay, Douyin, and Taobao are the infrastructure. A digital strategy built for Google, Facebook, and Stripe was built for the wrong market.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -181,19 +181,19 @@
       "accordionItems": [
         {
           "label": "Do I need a Chinese business entity to operate on WeChat?",
-          "content": "Not necessarily. While a Chinese entity (WFOE) offers full access to all features, overseas businesses can register a WeChat Service Account using their local business license. This allows you to engage users and launch Mini Programs, though some specific categories and \"Subscription\" accounts remain reserved for domestic entities.\n"
+          "content": "No. Overseas entities can directly register and authenticate. However, a domestic Chinese entity is required if your Mini Program's server is hosted in mainland China (due to ICP filing regulations). Additionally, overseas entities face more restrictions regarding the types of services they can offer.\n"
         },
         {
           "label": "What's the difference between a WeChat Mini Program and a native app?",
-          "content": "A Mini Program is a \"sub-application\" that runs instantly within WeChat without requiring a separate download or installation. Unlike native apps that need separate builds for iOS and Android, a single Mini Program works across all devices and leverages WeChat’s social sharing and payment ecosystem directly.\n"
+          "content": "A WeChat Mini Program runs directly inside WeChat with no download required, offering lower development costs. However, it is strictly limited by WeChat’s platform rules, review processes, and capabilities. On the otherhand a Native App must be downloaded from an app store. It requires higher development costs but provides full access to device capabilities and greater operational freedom.\n"
         },
         {
           "label": "How long does it take to launch a Mini Program?",
-          "content": "The technical development can take anywhere from a few weeks to a few months, but the official verification process for overseas businesses typically takes 5–10 business days. If you use pre-built templates, you can often go from registration to launch in under a month.\n"
+          "content": "The total timeline runs from 4 to 8 weeks, though this can compress to roughly one week if development is already complete and ICP filing isn't required. The total timeline runs from 4 to 8 weeks, though this can compress to roughly one week if development is already complete and ICP filing isn't required.\n"
         },
         {
           "label": "Is WeChat Pay available to foreign businesses?",
-          "content": "Yes, through Cross-Border WeChat Pay, foreign businesses can accept payments in CNY which are then settled in their local currency (supporting 36 currencies as of 2026). You do not need a Chinese bank account; funds are settled directly into your overseas corporate bank account after reaching a minimum settlement threshold.\n"
+          "content": "Yes. WeChat Pay offers a cross-border mode specifically for overseas entities, allowing activation using local business qualifications without a domestic Chinese entity. However, the application process and requirements can be more complex than for domestic Chinese companies.\n"
         }
       ],
       "background": {
