@@ -14,7 +14,7 @@
     },
     {
       "topLabel": {
-        "labelText": "10+ years delivering Western solutions to Eastern markets"
+        "labelText": "20+ years delivering Western solutions to Eastern markets"
       },
       "heading": "Enter the Chinese market, **the right way**",
       "isH1": true,
@@ -33,9 +33,9 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/ssw-web/hero/Jean.JPG",
-        "imageHeight": 1926,
-        "imageWidth": 2889
+        "imageSource": "/images/012.jpg",
+        "imageHeight": 4480,
+        "imageWidth": 6720
       },
       "_template": "imageTextBlock"
     },
@@ -120,7 +120,7 @@
       "mediaConfiguration": {
         "mediaType": "youtube",
         "placement": "Left",
-        "youtubeUrl": "https://www.youtube.com/watch?v=UguRPG6iVlg"
+        "youtubeUrl": "https://www.youtube.com/watch?v=K_fpd-YCGOc"
       },
       "_template": "imageTextBlock"
     },
