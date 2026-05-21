@@ -7,7 +7,7 @@ on:
       - "content/**"
       - "public/**"
   permissions:
-      pull-requests: read
+    pull-requests: read
   steps:
     - name: Check org membership
       id: org_check
@@ -98,7 +98,7 @@ Your job is to assess whether the content changes are structurally sound and rea
 3. For each text-based file (`.mdx`, `.md`, `.json`), read only its diff. Evaluate only the added or modified lines against the criteria below — do not review unchanged content.
 4. For binary files (images, fonts), note them as present but skip text analysis — binary-only changes are acceptable.
 5. Before making a decision, produce a checklist that explicitly assesses each approval criterion below. For every criterion, state whether it passes or fails and give a brief reason. Do not skip any criterion.
-6. Only after completing the full checklist, take one of the actions described at the bottom. The workflow must not finish without applying exactly one of the three allowed labels (`🤖 skipped too large`, `🤖skipped bad content`, `🤖 approved`) to the PR.
+6. Only after completing the full checklist, take one of the actions described at the bottom. The workflow must not finish without applying exactly one of the three allowed labels (`🤖 skipped too large`, `🤖 skipped bad content`, `🤖 approved`) to the PR.
 
 ## Approval Criteria
 
@@ -129,7 +129,7 @@ https://github.com/SSWConsulting/SSW.AI/issues/68
 Use `submit_pull_request_review` to approve the PR with `event: APPROVE`. In the review body, prefix the summary with `**✅ Auto-approve completed successfuly!**` and briefly summarise what you reviewed (list the files) and confirm there were no structural issues found. Leave a bullet point list of the criteria you checked and confirm that all passed. -->
 
 **If the content has issues:**
-Use `add-comment` to post a comment on the PR. Prefix the comment with `**❌ Auto-approve failed**` and explain specifically which files have issues and what the problems are actionable. Be concise and actionable. Do not formally block the PR — your comment is advisory and a human can still merge. Mention that you can re-review the PR after the issues are addressed when the reviewer marks it as ready for review again. Then apply the `🤖skipped bad content` label using `add-labels`.
+Use `add-comment` to post a comment on the PR. Prefix the comment with `**❌ Auto-approve failed**` and explain specifically which files have issues and what the problems are actionable. Be concise and actionable. Do not formally block the PR — your comment is advisory and a human can still merge. Mention that you can re-review the PR after the issues are addressed when the reviewer marks it as ready for review again. Then apply the `🤖 skipped bad content` label using `add-labels`.
 
 **If you are unable to complete the review** (e.g. you cannot read the diff or access the files):
-Use `add-comment` to note that the automated review could not be completed and request that a human reviewer check the PR. Then apply the `🤖skipped bad content` label using `add-labels` so the PR is still marked as having been processed.
+Use `add-comment` to note that the automated review could not be completed and request that a human reviewer check the PR. Then apply the `🤖 skipped bad content` label using `add-labels` so the PR is still marked as having been processed.
