@@ -60,7 +60,7 @@ jobs:
       is_member: ${{ steps.org_check.outputs.is_member }}
       all_in_allowed_dirs: ${{ steps.files_check.outputs.all_in_allowed_dirs }}
 if: >
-  (github.event.pull_request.user.login == 'tina-cloud-app[bot]' ||
+  (github.event.pull_request.user.login == 'tinacloud-app[bot]' ||
   needs.pre_activation.outputs.is_member == 'true') &&
   needs.pre_activation.outputs.all_in_allowed_dirs == 'true'
 permissions:
