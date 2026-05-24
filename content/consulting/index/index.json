@@ -701,6 +701,12 @@
           "description": "ServiceNow made simple with SSW. We sort your setup, tidy your workflows, and build automations that actually save you time.",
           "logo": "/images/thumbs/ServiceNow-Emblem%20square.png",
           "page": "content/consultingv2/servicenow.json"
+        },
+        {
+          "title": "Chinafy - Mini Apps",
+          "description": "SSW helps Western businesses build a digital presence that works in China, where WeChat, Alipay, and Mini Programs are the infrastructure.\n",
+          "logo": "/images/thumbs/WeChat-Emblem.png",
+          "page": "content/consultingv2/chinafy-wechat-miniapps.json"
         }
       ]
     },

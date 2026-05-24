@@ -9,7 +9,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "finalBreadcrumb": "SharePoint",
+      "finalBreadcrumb": "Mini Apps",
       "_template": "breadcrumbs"
     },
     {
@@ -18,7 +18,7 @@
       },
       "heading": "Enter the Chinese market, **the right way**",
       "isH1": true,
-      "description": "Your website won't load. Your payment gateway won't work. Your app isn't on WeChat. Western digital infrastructure fails at the Chinese border and most businesses don't find out until it's too late. SSW's China experts help you build a digital presence that works for 1.4 billion users.\n",
+      "description": "China's 1.3 billion WeChat users live inside a single app. WeChat Mini Programs are lightweight, native experiences built directly into WeChat, with no app store approvals, no downloads, and no VPN workarounds. SSW's China experts help you build one, so your brand reaches Chinese consumers exactly where they already are, with payments, loyalty, and commerce that actually works.\n",
       "featureColumns": {
         "twoColumns": true
       },
@@ -91,7 +91,7 @@
       },
       "heading": "Why Most Western Businesses Fail in China's Digital Market",
       "isH1": false,
-      "description": "China has its own digital infrastructure, it's own platforms, and its own consumer expectations. WeChat has 1.4 billion monthly active users, 945 million using Mini Programs, and a payments ecosystem processing transactions 2.7 times per day per user. Alipay, Douyin, and Taobao are the infrastructure. \n",
+      "description": "China has its own digital infrastructure, its own platforms, and its own consumer expectations. WeChat has 1.4 billion monthly active users, 945 million using Mini Programs, and a payments ecosystem processing transactions 2.7 times per day per user. Alipay, Douyin, and Taobao are the infrastructure.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
