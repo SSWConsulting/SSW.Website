@@ -46,12 +46,12 @@ export const TechnologyCardCarouselSchema: Template = {
       name: "isStacked",
       description: "Remove the carousel effect and stack card entries.",
     },
+    // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
     {
       type: "number",
       label: "Card Style",
       name: "techCardStyle",
       ui: {
-        // @ts-expect-error – component is not being recognized
         component: ColorPickerInput(cardOptions),
       },
     },

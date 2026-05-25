@@ -279,12 +279,12 @@ export const CardCarouselSchema: Template = {
         },
       ],
     },
+    // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
     {
       type: "number",
       label: "Card Style",
       name: "cardStyle",
       ui: {
-        // @ts-expect-error – component is not being recognized
         component: ColorPickerInput(cardOptions),
       },
     },
@@ -344,12 +344,12 @@ export const CardCarouselSchema: Template = {
           //@ts-expect-error – fields are not being recognized
           fields: pillGroupSchema,
         },
+        // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
         {
           type: "string",
           label: "Icon",
           name: "icon",
           ui: {
-            // @ts-expect-error – component is not being recognized
             component: IconPickerInput,
           },
         },
@@ -409,12 +409,12 @@ export const CardCarouselSchema: Template = {
               name: "buttonLink",
               description: "Link to the page the button will navigate to.",
             },
+            // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
             {
               type: "string",
               label: "Icon",
               name: "icon",
               ui: {
-                // @ts-expect-error – component is not being recognized
                 component: IconPickerInput,
               },
             },
