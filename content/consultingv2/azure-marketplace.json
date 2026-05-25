@@ -1,0 +1,257 @@
+{
+  "seo": {
+    "title": "Azure Marketplace consulting - Publish & sell your app | SSW",
+    "description": "Sell your software on Azure Marketplace and win enterprise deals. SSW builds transactable offers, deploys to customer tenants, bills via Microsoft.",
+    "canonical": "https://www.ssw.com.au/consulting/azure-marketplace",
+    "showBreadcrumb": true,
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/azure.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Azure Marketplace consulting - Publish and sell your app"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "finalBreadcrumb": "Azure Marketplace consulting | SSW",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "Azure Marketplace"
+      },
+      "heading": "Win enterprise deals with **your app on the Azure Marketplace.**",
+      "isH1": false,
+      "description": "Enterprise buyers in healthcare, finance, and government care about trust, compliance, and data control, not just features. We help you publish a transactable Azure Marketplace offer that deploys straight into your customer's Azure tenant, so their data and infrastructure stay theirs.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Sell where enterprises buy",
+            "description": "List a transactable offer on Microsoft's marketplace and tap committed Azure spend.",
+            "icon": "BiStore"
+          },
+          {
+            "heading": "Compliance by design",
+            "description": "Deploy into the customer's tenant so data residency, security, and ownership stay with them.",
+            "icon": "BiShieldAlt2"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "youtubeUrl": "https://youtu.be/bgoviwhWNPE"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png"
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "tabletTextAlignment": "Center",
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "CommBank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/ASF-Transparent.png",
+          "altText": "ASF"
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": "Why Azure Marketplace"
+      },
+      "heading": "Stop losing deals to **data residency and compliance.**",
+      "isH1": false,
+      "description": "Traditional SaaS asks enterprise customers to hand their data to your environment. Many regulated buyers can't. With Azure Marketplace, your whole application deploys into the customer's Azure tenant, they keep full ownership of data and infrastructure, and Microsoft handles billing and monetization through Partner Center.\n",
+      "tabletTextAlignment": "Center",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Deploy into the customer's tenant",
+            "description": "Your app runs in their Azure subscription, no data leaves their environment.",
+            "icon": "BiCloud"
+          },
+          {
+            "heading": "Microsoft handles billing",
+            "description": "Monetize through Partner Center while you focus on building great software.",
+            "icon": "BiDollarCircle"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        },
+        {
+          "buttonText": "Create an Azure Marketplace Offer",
+          "buttonLink": "https://www.ssw.com.au/rules/create-azure-marketplace-offer",
+          "icon": "BiStore",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "What we deliver",
+      "body": "From first offer to co-sell, we get you transacting on Azure Marketplace.",
+      "tabletTextAlignment": "Center",
+      "accordionItems": [
+        {
+          "label": "Offer creation & Partner Center setup",
+          "content": "We set up your Microsoft Partner Center, build your listing, and configure a transactable SaaS or Azure Application offer ready for enterprise buyers.\n"
+        },
+        {
+          "label": "Deploy into the customer's tenant",
+          "content": "We package your application so it deploys directly into the customer's Azure tenant, keeping their data, security, and compliance fully in their control.\n"
+        },
+        {
+          "label": "Billing & monetization",
+          "content": "We wire up metered or flat-rate billing through Microsoft, so you get paid automatically while Microsoft handles invoicing and collection.\n"
+        },
+        {
+          "label": "Co-sell with Microsoft",
+          "content": "We help you reach co-sell ready status so Microsoft sellers can put your solution in front of their enterprise customers.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Create an Azure Marketplace Offer",
+          "buttonLink": "https://www.ssw.com.au/rules/create-azure-marketplace-offer",
+          "colour": 1
+        },
+        {
+          "buttonText": "Rules to Better Azure",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure/",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "isStacked": false,
+      "heading": "Related services",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "azmpazure",
+          "altText": "Microsoft Azure",
+          "icon": "BiCloud",
+          "heading": "Azure Consulting",
+          "description": "Landing zones, migration, modern apps, DevOps, security, and FinOps for your Azure estate.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/consulting/azure"
+          }
+        },
+        {
+          "guid": "azmpai",
+          "altText": "Artificial Intelligence",
+          "icon": "BiBot",
+          "heading": "Artificial Intelligence",
+          "description": "Build AI-powered products, like SSW's Eagle Eye, ready to ship to enterprise customers.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/consulting/artificial-intelligence"
+          }
+        },
+        {
+          "guid": "azmpdevops",
+          "altText": "DevOps",
+          "icon": "BiGitBranch",
+          "heading": "DevOps",
+          "description": "CI/CD pipelines and automation to package and ship your marketplace offer reliably.",
+          "embeddedButton": {
+            "buttonText": "Read more",
+            "buttonLink": "https://www.ssw.com.au/consulting/devops"
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about getting on the Azure Marketplace",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    }
+  ]
+}
