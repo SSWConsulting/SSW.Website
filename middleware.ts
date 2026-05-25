@@ -8,6 +8,8 @@ export function middleware(request: NextRequest) {
   response.headers.set("Strict-Transport-Security", "max-age=15552000");
   // Stop other sites from framing us (clickjacking) — but allow ourselves (TinaCMS preview)
   response.headers.set("X-Frame-Options", "SAMEORIGIN");
+  // Stop the browser guessing file types (MIME sniffing)
+  response.headers.set("X-Content-Type-Options", "nosniff");
   // Allow AI to index the llms.txt file - just like a robots.txt file for bots - https://thedaviddias.medium.com/getting-started-with-llms-txt-226df8012257
   response.headers.set("X-Robots-Tag", "llms-txt");
 
