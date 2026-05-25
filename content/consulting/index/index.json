@@ -386,6 +386,20 @@
           ]
         },
         {
+          "title": "Azure Marketplace",
+          "description": "Publish and sell your software on the Azure Marketplace to win enterprise deals. We build transactable offers, deploy into the customer's tenant, and handle billing through Microsoft.",
+          "logo": "/images/thumbs/consulting/thumb-azure.svg",
+          "page": "content/consultingv2/azure-marketplace.json",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/cloud-and-infrastructure.json"
+            },
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            }
+          ]
+        },
+        {
           "title": "Power Platform",
           "description": "Microsoft's Power Platform is a set of low-code applications that can be used individually to create easy to use business solutions. ",
           "logo": "/images/thumbs/thumb-power-platform.jpg",
