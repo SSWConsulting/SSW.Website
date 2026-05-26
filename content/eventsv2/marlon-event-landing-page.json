@@ -29,7 +29,7 @@
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/ssw-web/hero/ssw-workshop-inhouse.jpg",
+        "imageSource": "",
         "imageHeight": 1721,
         "imageWidth": 2891
       },
@@ -112,7 +112,7 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageSource": "",
         "imageHeight": 768,
         "imageWidth": 1024
       },
@@ -326,7 +326,7 @@
       },
       "mediaConfiguration": {
         "verticalPlacement": "Centered",
-        "imageSource": "/images/ssw-web/blog/What-we-cover-v5.png",
+        "imageSource": "",
         "imageHeight": 650,
         "imageWidth": 972
       },
@@ -376,7 +376,7 @@
       },
       "mediaConfiguration": {
         "placement": "Left",
-        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageSource": "",
         "imageHeight": 768,
         "imageWidth": 1024
       },
