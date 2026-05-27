@@ -38,10 +38,10 @@
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "",
-        "imageHeight": 1721,
-        "imageWidth": 2891,
-        "youtubeUrl": "a"
+        "imageSource": "/images/eventsv2/marlon-placeholder-4x3.png",
+        "imageHeight": 900,
+        "imageWidth": 1200,
+        "youtubeUrl": ""
       },
       "_template": "imageTextBlock"
     },
@@ -74,7 +74,10 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now"
+            "buttonText": "Register Now",
+            "leadCaptureFormOption": "reserveYourSeatJotFormId",
+            "buttonLink": "",
+            "colour": 0
           }
         },
         {
@@ -91,7 +94,9 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now"
+            "buttonText": "Register Now",
+            "leadCaptureFormOption": "reserveYourSeatJotFormId",
+            "colour": 0
           }
         },
         {
@@ -108,7 +113,9 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now"
+            "buttonText": "Register Now",
+            "leadCaptureFormOption": "reserveYourSeatJotFormId",
+            "colour": 0
           }
         }
       ],
@@ -132,7 +139,7 @@
       },
       "heading": "Should you spend four hours on this?",
       "isH1": false,
-      "description": "If you're a CEO, CTO, CFO or CIO at an Australian business, you're being pitched on AI every week. Most of it is theory, AI 101, or a vendor selling their product. Almost none of it shows you the actual economics of an AI build in a business like yours, with real numbers.\n**\n**\n\n**That's what this is. Four hours in a room with the engineers who design and ship AI into Australian banks, accountancies, insurers and government departments. No theory. No vendor pitch. No AI 101.**\n",
+      "description": "If you're a CEO, CTO, CFO or CIO at an Australian business, you're being pitched on AI every week. Most of it is theory, AI 101, or a vendor selling their product. Almost none of it shows you the actual economics of an AI build in a business like yours, with real numbers.\n\n**That's what this is. Four hours in a room with the engineers who design and ship AI into Australian banks, accountancies, insurers and government departments. No theory. No vendor pitch. No AI 101.**\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true,
@@ -209,10 +216,10 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "",
-        "imageHeight": 768,
-        "imageWidth": 1024,
-        "youtubeUrl": "a"
+        "imageSource": "/images/eventsv2/marlon-placeholder-4x3.png",
+        "imageHeight": 900,
+        "imageWidth": 1200,
+        "youtubeUrl": ""
       },
       "_template": "imageTextBlock"
     },
@@ -291,15 +298,6 @@
       "heading": "Designed for **senior decision-makers** at Australian enterprises.",
       "isH1": false,
       "body": "",
-      "categoryGroup": [
-        {
-          "categoryName": "",
-          "cardGuidList": {
-            "guid": "679ptl",
-            "cardGuidList": []
-          }
-        }
-      ],
       "cardStyle": 1,
       "cards": [
         {
@@ -422,7 +420,7 @@
       },
       "heading": "Mike Smedley",
       "isH1": false,
-      "description": "SSW · AI Engagement Lead · Melbourne\n\nMike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today — including the work that took one client's per-transaction cost from $120 to $5.\n\n***He's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. ***On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
+      "description": "SSW · AI Engagement Lead · Melbourne\n\nMike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today — including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
       "featureColumns": {
         "twoColumns": false
       },
@@ -433,9 +431,10 @@
         "mediaType": "image",
         "placement": "Left",
         "mobilePlacement": "Above",
-        "imageHeight": 768,
-        "imageWidth": 1024,
-        "youtubeUrl": "a"
+        "imageSource": "/images/eventsv2/marlon-placeholder-4x3.png",
+        "imageHeight": 900,
+        "imageWidth": 1200,
+        "youtubeUrl": ""
       },
       "_template": "imageTextBlock"
     },
@@ -471,7 +470,7 @@
           {
             "heading": "Welcome & the four expensive problems (9:00 – 9:20)",
             "description": "We frame the four business problems AI has just made affordable to solve, and how to recognise them in your own company.",
-            "icon": "BiSolidRightArrow"
+            "icon": "BiCircle"
           },
           {
             "heading": "",
@@ -498,7 +497,7 @@
           {
             "heading": "Break & informal Q&A with the SSW team (10:40 – 11:00)",
             "description": "Coffee, conversation, and the chance to corner us with the questions you didn't want to ask in the room.",
-            "icon": "VscCircleLarge"
+            "icon": "BiCircle"
           },
           {
             "heading": "",
@@ -567,7 +566,7 @@
       },
       "heading": "Real cases. Real numbers. **Real engineers in the room.**",
       "isH1": false,
-      "description": "This isn't a vendor pitch and it isn't an AI explainer. You're spending half a day with the team that actually builds AI into Australian enterprises — with the case studies, the dollar figures, and the freedom to ask anything you want about your own business.\n\n*Limited seats per room. Sessions don't run twice.*\n",
+      "description": "This isn't a vendor pitch and it isn't an AI explainer. You're spending half a day with the team that actually builds AI into Australian enterprises — with the case studies, the dollar figures, and the freedom to ask anything you want about your own business.\n\n***Limited seats per room. Sessions don't run twice.***\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -667,6 +666,76 @@
         "bleed": false
       },
       "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Pick your city.",
+      "isH1": false,
+      "body": "Complete the form and you'll be taken to a secure payment page to confirm your $99 seat.\n\n\n",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "na8owi",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 2 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Register Now",
+            "leadCaptureFormOption": "reserveYourSeatJotFormId",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "a5ne6z",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Melbourne",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 9 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Register Now",
+            "leadCaptureFormOption": "reserveYourSeatJotFormId",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "m94ybh",
+          "altText": "Lorem Ipsum",
+          "icon": "info",
+          "heading": "Sydney",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 16 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Register Now",
+            "leadCaptureFormOption": "reserveYourSeatJotFormId",
+            "colour": 0
+          }
+        }
+      ],
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "180px",

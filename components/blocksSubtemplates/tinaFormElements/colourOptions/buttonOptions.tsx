@@ -13,4 +13,10 @@ export const buttonOptions: ColorPickerOptions[] = [
     classes: "bg-transparent text-gray-950",
     reference: 1,
   },
+  {
+    name: "Link",
+    classes: "bg-transparent text-white underline decoration-1",
+    editorClasses: "bg-transparent text-gray-950 underline",
+    reference: 2,
+  },
 ];

@@ -5,9 +5,17 @@ import { cn } from "@/lib/utils";
 import { VideoModal } from "@/components/videoModal";
 import Image from "next/image";
 import { useState } from "react";
+import Jotform from "react-jotform";
 import { tinaField } from "tinacms/dist/react";
+import { useSessionStorage } from "usehooks-ts";
+import globals from "../../../../content/global/index.json";
+import Popup from "../../../popup/popup";
+import RippleButton, { ColorVariant } from "../../../button/rippleButtonV2";
+import { SESSION_STORAGE_KEYS } from "../../../util/constants";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
+
+const buttonVariants: ColorVariant[] = ["primary", "secondary", "ghost"];
 
 type CardProps = {
   data;
@@ -20,6 +28,18 @@ const Card = ({ data, placeholder, className }: CardProps) => {
   const youtubeUrl = data.youtubeUrl;
   const [usePlaceholder, setUsePlaceholder] = useState(false);
   const placeholderImage = "/images/videoPlaceholder.png";
+
+  const [formOpen, setFormOpen] = useState(false);
+  const leadCaptureFormOption = data.embeddedButton?.leadCaptureFormOption;
+  const selectedFormId =
+    leadCaptureFormOption && globals.forms[leadCaptureFormOption];
+  const jotFormLink = selectedFormId
+    ? `https://www.jotform.com/${selectedFormId}`
+    : "";
+  const [landingPage] = useSessionStorage<string>(
+    SESSION_STORAGE_KEYS.LANDING_PAGE,
+    ""
+  );
 
   return (
     <div
@@ -79,17 +99,54 @@ const Card = ({ data, placeholder, className }: CardProps) => {
       })}
       {data.embeddedButton && (
         <div className="flex h-full flex-col-reverse justify-between">
-          <a
-            href={data.embeddedButton.buttonLink}
-            className="pt-2 font-semibold text-white !decoration-gray-400 !decoration-1 hover:!decoration-sswRed"
-          >
-            {data.embeddedButton.buttonText}
-            <Icon
-              data={{ name: data.embeddedButton.icon }}
-              className="inline size-4"
-            />
-          </a>
+          {(() => {
+            const variant =
+              buttonVariants[data.embeddedButton.colour ?? 2] ?? "ghost";
+            const buttonInner = (
+              <>
+                {data.embeddedButton.buttonText}
+                <Icon
+                  data={{ name: data.embeddedButton.icon }}
+                  className="inline size-4"
+                />
+              </>
+            );
+            if (leadCaptureFormOption) {
+              return (
+                <RippleButton
+                  variant={variant}
+                  className={cn("mt-2 self-start")}
+                  onClick={() => setFormOpen(true)}
+                  textTinaField={tinaField(data.embeddedButton, "buttonText")}
+                >
+                  {buttonInner}
+                </RippleButton>
+              );
+            }
+            return (
+              <a
+                href={data.embeddedButton.buttonLink}
+                className={cn("mt-2 self-start")}
+              >
+                <RippleButton
+                  variant={variant}
+                  textTinaField={tinaField(data.embeddedButton, "buttonText")}
+                >
+                  {buttonInner}
+                </RippleButton>
+              </a>
+            );
+          })()}
         </div>
+      )}
+      {leadCaptureFormOption && formOpen && (
+        <Popup
+          isVisible={formOpen}
+          showCloseIcon={true}
+          onClose={() => setFormOpen(false)}
+        >
+          <Jotform defaults={{ landingPage }} src={jotFormLink} />
+        </Popup>
       )}
     </div>
   );

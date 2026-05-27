@@ -3,10 +3,11 @@ import { Template, TinaField, wrapFieldsWithMeta } from "tinacms";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";
+import { buttonOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
-import { buttonSchema } from "../../../button/templateButton.schema";
+import { bookingForms, buttonSchema } from "../../../button/templateButton.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { mediaTypeField } from "../../mediaType.schema";
 import { youtubeEmbedField } from "../../youtubeEmbed.schema";
@@ -405,9 +406,18 @@ export const CardCarouselSchema: Template = {
             },
             {
               type: "string",
+              label: "Select lead capture form",
+              name: "leadCaptureFormOption",
+              description:
+                "The button link must be blank if you want to use this option",
+              options: bookingForms,
+            },
+            {
+              type: "string",
               label: "Button Link",
               name: "buttonLink",
-              description: "Link to the page the button will navigate to.",
+              description:
+                "Leave this blank if you want to use lead capture form option",
             },
             // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
             {
@@ -416,6 +426,15 @@ export const CardCarouselSchema: Template = {
               name: "icon",
               ui: {
                 component: IconPickerInput,
+              },
+            },
+            // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
+            {
+              type: "number",
+              label: "Colour",
+              name: "colour",
+              ui: {
+                component: ColorPickerInput(buttonOptions),
               },
             },
           ],
