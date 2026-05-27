@@ -15,6 +15,10 @@ export const bookingForms = [
     label: "AI Workshop Form",
     value: "aiWorkshopJotFormId",
   },
+  {
+    label: "Reserve Your Seat Form",
+    value: "reserveYourSeatJotFormId",
+  },
 ];
 
 export const buttonSchema = [

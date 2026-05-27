@@ -5,12 +5,21 @@
   },
   "blocks": [
     {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
-        "labelText": "Live Half-Day Workshop · Brisbane · Melbourne · Sydney"
+        "labelText": "Live Half-Day Workshop for C-Suite Executives"
       },
       "heading": "Solving the **Hardest Enterprise Business Problems** with AI",
       "isH1": true,
-      "description": "A half-day live workshop for Australian CEOs, CTOs, CFOs and CIOs.\\\nSpend four hours with the team building AI into Australian enterprises right now — walking through the four expensive business problems AI has just made affordable to solve, with real case studies, real dollar figures, and an open Q&A.\n",
+      "description": "A half-day live workshop for Australian CEOs, CTOs, CFOs and CIOs. Spend four hours with the team building AI into Australian enterprises right now — walking through the four expensive business problems AI has just made affordable to solve, with real case studies, real dollar figures, and an open Q\\&A.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -18,12 +27,12 @@
       "buttons": [
         {
           "buttonText": "Reserve My Seat — $99",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
       ],
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 0
       },
       "mediaConfiguration": {
         "placement": "Left",
@@ -31,61 +40,149 @@
         "mobilePlacement": "Above",
         "imageSource": "",
         "imageHeight": 1721,
-        "imageWidth": 2891
+        "imageWidth": 2891,
+        "youtubeUrl": "a"
       },
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": false,
-      "heading": "Why attend",
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
       "isH1": false,
-      "body": "Should you spend four hours on this?\n\nIf you're a CEO, CTO, CFO or CIO at an Australian business, you're being pitched on AI every week. Most of it is theory, AI 101, or a vendor selling their product. Almost none of it shows you the actual economics of an AI build in a business like yours, with real numbers. That's what this is. Four hours in a room with the engineers who design and ship AI into Australian banks, accountancies, insurers and government departments. No theory. No vendor pitch. No AI 101.",
+      "body": "",
       "cards": [
-        {
-          "guid": "wa01",
-          "altText": "Four affordable AI problems",
-          "icon": "BiSolidBulb",
-          "heading": "The four business problems AI just made affordable",
-          "description": "What they look like in your business, and how to tell which one to start with.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
         {
           "guid": "wa02",
           "altText": "Real case studies",
-          "icon": "BiMoneyWithdraw",
-          "heading": "Real case studies. Real dollar figures",
-          "description": "Including the engineering work that took one Australian client's per-transaction cost from $120 to $5.",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 2 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
           "embeddedButton": {
-            "buttonText": ""
+            "buttonText": "Register Now"
           }
         },
         {
           "guid": "wa03",
           "altText": "Straight answers from engineers",
-          "icon": "BiSolidContact",
-          "heading": "Straight answers from the people doing the work",
-          "description": "Not vendor slides. Not theory. The engineers who are inside Australian enterprises this week.",
+          "heading": "Melbourne",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 9 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
+              }
+            ]
+          },
           "embeddedButton": {
-            "buttonText": ""
+            "buttonText": "Register Now"
           }
         },
         {
           "guid": "wa04",
           "altText": "One-page action list",
-          "icon": "BiSolidBookBookmark",
-          "heading": "A one-page action list before you leave",
-          "description": "Three things to put in front of your team on Monday morning. Specific. Costed. Yours.",
+          "heading": "Sydney",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 16 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
+              }
+            ]
+          },
           "embeddedButton": {
-            "buttonText": ""
+            "buttonText": "Register Now"
           }
         }
       ],
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 0
       },
       "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Why attend"
+      },
+      "heading": "Should you spend four hours on this?",
+      "isH1": false,
+      "description": "If you're a CEO, CTO, CFO or CIO at an Australian business, you're being pitched on AI every week. Most of it is theory, AI 101, or a vendor selling their product. Almost none of it shows you the actual economics of an AI build in a business like yours, with real numbers.\n**\n**\n\n**That's what this is. Four hours in a room with the engineers who design and ship AI into Australian banks, accountancies, insurers and government departments. No theory. No vendor pitch. No AI 101.**\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "The four business problems AI just made affordable.",
+            "description": "What they look like in your business, and how to tell which one to start with.",
+            "icon": "BiSolidCheckCircle"
+          },
+          {
+            "heading": "Real case studies. Real dollar figures.",
+            "description": "Including the engineering work that took one Australian client's per-transaction cost from $120 to $5.",
+            "icon": "BiSolidCheckCircle"
+          },
+          {
+            "heading": "Straight answers from the people doing the work.",
+            "description": "Not vendor slides. Not theory. The engineers who are inside Australian enterprises this week. ",
+            "icon": "BiSolidCheckCircle"
+          },
+          {
+            "heading": "A one-page action list before you leave",
+            "description": "Three things to put in front of your team on Monday morning. Specific. Costed. Yours.",
+            "icon": "BiSolidCheckCircle"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Reserve My Seat — $99",
+          "leadCaptureFormOption": "reserveYourSeatJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 0
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "youtubeUrl": ""
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
     },
     {
       "topLabel": {
@@ -101,12 +198,12 @@
       "buttons": [
         {
           "buttonText": "Reserve My Seat — $99",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
       ],
       "background": {
-        "backgroundColour": 3
+        "backgroundColour": 0
       },
       "mediaConfiguration": {
         "placement": "Right",
@@ -114,22 +211,32 @@
         "mobilePlacement": "Above",
         "imageSource": "",
         "imageHeight": 768,
-        "imageWidth": 1024
+        "imageWidth": 1024,
+        "youtubeUrl": "a"
       },
       "_template": "imageTextBlock"
     },
     {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "isStacked": true,
-      "heading": "What you'll walk out with",
+      "heading": "In 4 hours, you'll learn:",
       "isH1": false,
-      "body": "In 4 hours, you'll learn:",
+      "body": "Three things every CEO, CTO, CFO and CIO needs to know about AI in their business this year.",
       "cardStyle": 0,
       "cards": [
         {
           "guid": "wo01",
           "altText": "Affordable AI problems",
-          "icon": "info",
-          "heading": "01 · Which expensive problems AI just made affordable",
+          "icon": "BiSolidCheckCircle",
+          "heading": "Which expensive problems AI just made affordable",
           "description": "The four business problems that were too costly to solve 12 months ago and are realistic now — the custom build you parked, the data your executives can't see, retrofitting AI into existing software, and replacing the legacy system that's blocking new features.",
           "embeddedButton": {
             "buttonText": ""
@@ -138,8 +245,8 @@
         {
           "guid": "wo02",
           "altText": "Real case studies",
-          "icon": "info",
-          "heading": "02 · Real case studies with real dollar figures",
+          "icon": "BiSolidCheckCircle",
+          "heading": "Real case studies with real dollar figures",
           "description": "The Australian accountancy firm that took an audit from $120 to $5. The dashboard built in days instead of six months. The Dynamics 365 / Salesforce / SAP retrofit pattern with numbers from three live engagements. No theory, no slides about us.",
           "embeddedButton": {
             "buttonText": ""
@@ -148,8 +255,8 @@
         {
           "guid": "wo03",
           "altText": "One-page action list",
-          "icon": "info",
-          "heading": "03 · A one-page action list for your business",
+          "icon": "BiSolidCheckCircle",
+          "heading": "A one-page action list for your business",
           "description": "You leave with three things to do on Monday morning — written during the session, specific to your company. Plus an open Q&A where you bring your business's actual problem and we answer it in the room.",
           "embeddedButton": {
             "buttonText": ""
@@ -157,15 +264,43 @@
         }
       ],
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 0
       },
       "_template": "cardCarousel"
     },
     {
-      "isStacked": false,
-      "heading": "Who this is for",
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Designed for **senior decision-makers** at Australian enterprises.",
       "isH1": false,
-      "body": "Designed for senior decision-makers at Australian enterprises.",
+      "body": "",
+      "categoryGroup": [
+        {
+          "categoryName": "",
+          "cardGuidList": {
+            "guid": "679ptl",
+            "cardGuidList": []
+          }
+        }
+      ],
+      "cardStyle": 1,
       "cards": [
         {
           "guid": "wf01",
@@ -199,13 +334,22 @@
         }
       ],
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 6
       },
       "_template": "cardCarousel"
     },
     {
+      "spacerHeight": "90px",
       "background": {
-        "backgroundColour": 2
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
       },
       "heading": "The Australian businesses we've engineered for",
       "paused": false,
@@ -255,82 +399,167 @@
       "_template": "logoCarousel"
     },
     {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
       "topLabel": {
         "labelText": "Your host"
       },
       "heading": "Mike Smedley",
       "isH1": false,
-      "description": "SSW · AI Engagement Lead · Melbourne\n\nMike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today — including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
+      "description": "SSW · AI Engagement Lead · Melbourne\n\nMike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today — including the work that took one client's per-transaction cost from $120 to $5.\n\n***He's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. ***On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
       "featureColumns": {
         "twoColumns": false
       },
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 4
       },
       "mediaConfiguration": {
-        "mediaType": "youtube",
+        "mediaType": "image",
         "placement": "Left",
+        "mobilePlacement": "Above",
         "imageHeight": 768,
         "imageWidth": 1024,
-        "youtubeUrl": "https://www.youtube.com/watch?v=zaQOlw0-jQ4"
+        "youtubeUrl": "a"
       },
       "_template": "imageTextBlock"
     },
     {
-      "heading": "The agenda",
-      "body": "Here's exactly what we'll cover",
-      "accordionItems": [
-        {
-          "label": "9:00 – 9:20 · Welcome & the four expensive problems",
-          "content": "We frame the four business problems AI has just made affordable to solve, and how to recognise them in your own company.\n"
-        },
-        {
-          "label": "9:20 – 10:00 · Problem 1 — The custom build you parked",
-          "content": "The Australian accountancy firm paying $120 per audit, now paying $5 — including the engineering work, architecture choices, and real cost.\n"
-        },
-        {
-          "label": "10:00 – 10:40 · Problem 2 — The data your executives can't see",
-          "content": "How we put a real-time dashboard in front of a non-technical executive team in days, when the previous quote was six months.\n"
-        },
-        {
-          "label": "10:40 – 11:00 · Break & informal Q&A with the SSW team",
-          "content": "Coffee, conversation, and the chance to corner us with the questions you didn't want to ask in the room.\n"
-        },
-        {
-          "label": "11:00 – 11:40 · Problem 3 — Adding AI to the software you already own",
-          "content": "The Dynamics 365 / Salesforce / SAP retrofit pattern, with real numbers from three live engagements.\n"
-        },
-        {
-          "label": "11:40 – 12:20 · Problem 4 — Replacing the legacy system",
-          "content": "The 15-year-old system you couldn't afford to replace, and the new economics of doing it now.\n"
-        },
-        {
-          "label": "12:20 – 12:50 · Open Q&A",
-          "content": "Bring your specific business problem. We answer it in the room, because the other attendees usually have the same one.\n"
-        },
-        {
-          "label": "12:50 – 1:00 · Your one-page action list",
-          "content": "You leave with the three things to do on Monday morning.\n"
-        }
-      ],
-      "isMultipleOpen": true,
-      "buttons": [
-        {
-          "buttonText": "Reserve My Seat — $99",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "colour": 0
-        }
-      ],
+      "spacerHeight": "90px",
       "background": {
-        "backgroundColour": 3
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
       },
-      "mediaConfiguration": {
-        "verticalPlacement": "Centered",
-        "imageSource": "",
-        "imageHeight": 650,
-        "imageWidth": 972
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
       },
-      "_template": "accordionBlock"
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "The agenda"
+      },
+      "heading": "Here's exactly what we'll cover",
+      "isH1": false,
+      "description": "",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "Welcome & the four expensive problems (9:00 – 9:20)",
+            "description": "We frame the four business problems AI has just made affordable to solve, and how to recognise them in your own company.",
+            "icon": "BiSolidRightArrow"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Problem 1 — The custom build you parked (9:20 – 10:00)",
+            "description": "The Australian accountancy firm paying $120 per audit, now paying $5 — including the engineering work, architecture choices, and real cost.",
+            "icon": "BiSolidRightArrow"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Problem 2 — The data your executives can't see (10:00 – 10:40)",
+            "description": "How we put a real-time dashboard in front of a non-technical executive team in days, when the previous quote was six months.",
+            "icon": "BiSolidRightArrow"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Break & informal Q&A with the SSW team (10:40 – 11:00)",
+            "description": "Coffee, conversation, and the chance to corner us with the questions you didn't want to ask in the room.",
+            "icon": "VscCircleLarge"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Problem 3 — Adding AI to the software you already own (11:00 – 11:40)",
+            "description": "The Dynamics 365 / Salesforce / SAP retrofit pattern, with real numbers from three live engagements.",
+            "icon": "BiSolidRightArrow"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Problem 4 — Replacing the legacy system (11:40 – 12:20)",
+            "description": "The 15-year-old system you couldn't afford to replace, and the new economics of doing it now.",
+            "icon": "BiSolidRightArrow"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Open Q&A (12:20 – 12:50)",
+            "description": "Bring your specific business problem. We answer it in the room, because the other attendees usually have the same one.",
+            "icon": "BiCircle"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Your one-page action list (12:50 – 1:00)",
+            "description": "You leave with the three things to do on Monday morning.",
+            "icon": "BiSolidStar"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
     },
     {
       "topLabel": {
@@ -338,53 +567,53 @@
       },
       "heading": "Real cases. Real numbers. **Real engineers in the room.**",
       "isH1": false,
-      "description": "This isn't a vendor pitch and it isn't an AI explainer. You're spending half a day with the team that actually builds AI into Australian enterprises — with the case studies, the dollar figures, and the freedom to ask anything you want about your own business.\n\n_Limited seats per room. Sessions don't run twice._\n",
+      "description": "This isn't a vendor pitch and it isn't an AI explainer. You're spending half a day with the team that actually builds AI into Australian enterprises — with the case studies, the dollar figures, and the freedom to ask anything you want about your own business.\n\n*Limited seats per room. Sessions don't run twice.*\n",
+      "tabletTextAlignment": "Left",
       "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "A$99 per seat",
-            "description": "Half-day workshop · refreshments included",
-            "icon": "BiMoneyWithdraw"
-          },
-          {
-            "heading": "9:00 am – 1:00 pm",
-            "description": "Brisbane · Melbourne · Sydney",
-            "icon": "BiTime"
-          },
-          {
-            "heading": "C-Suite only",
-            "description": "CEOs, CTOs, CFOs, CIOs",
-            "icon": "BiSolidUserCheck"
-          },
-          {
-            "heading": "Limited seats",
-            "description": "Sessions don't run twice",
-            "icon": "BiSolidLock"
-          }
-        ]
+        "twoColumns": true
       },
       "buttons": [
         {
           "buttonText": "Reserve My Seat — $99",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
       ],
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 4
       },
       "mediaConfiguration": {
-        "placement": "Left",
+        "placement": "Right",
         "imageSource": "",
         "imageHeight": 768,
-        "imageWidth": 1024
+        "imageWidth": 1024,
+        "youtubeUrl": "",
+        "altText": ""
       },
       "_template": "imageTextBlock"
     },
     {
-      "heading": "FAQ",
-      "body": "Frequently asked questions",
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "heading": "Frequently asked questions",
+      "body": "",
+      "tabletTextAlignment": "Left",
       "accordionItems": [
         {
           "label": "Is this technical? I'm not a developer.",
@@ -400,11 +629,11 @@
         },
         {
           "label": "Is this a sales pitch for SSW?",
-          "content": "We're upfront: SSW runs this event and you'll meet our team. But the four hours are case studies, frameworks and Q&A — not slides about us. If we've done our job, you'll want to talk to us afterwards. If we haven't, you'll have walked out with a one-page action list either way.\n"
+          "content": "We're upfront: SSW runs this event and you'll meet our team. But the four hours are case studies, frameworks and Q\\&A — not slides about us. If we've done our job, you'll want to talk to us afterwards. If we haven't, you'll have walked out with a one-page action list either way.\n"
         },
         {
           "label": "Will it be recorded?",
-          "content": "No. This is in-room only. We do this so the Q&A is candid — attendees ask real questions about their real businesses, which doesn't happen on camera.\n"
+          "content": "No. This is in-room only. We do this so the Q\\&A is candid — attendees ask real questions about their real businesses, which doesn't happen on camera.\n"
         },
         {
           "label": "What size businesses is this designed for?",
@@ -422,31 +651,27 @@
       "_template": "accordionBlock"
     },
     {
-      "topLabel": {
-        "labelText": "Reserve your seat"
-      },
-      "heading": "Pick your city.",
-      "isH1": false,
-      "description": "**Brisbane** — Thursday 2 July 2026, 9:00am – 1:00pm\\\nLevel 1, 471 Adelaide Street, Brisbane QLD 4000\n\n**Melbourne** — Thursday 9 July 2026, 9:00am – 1:00pm\\\nLevel 1, 370 Little Bourke Street, Melbourne VIC 3000\n\n**Sydney** — Thursday 16 July 2026, 9:00am – 1:00pm\\\nLevel 1, 81-91 Military Road, Neutral Bay NSW 2089\n\nA$99 per seat · Secure payment on the next page\n",
-      "featureColumns": {
-        "twoColumns": true
-      },
-      "buttons": [
-        {
-          "buttonText": "Continue to Payment — $99",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "colour": 0
-        }
-      ],
+      "spacerHeight": "90px",
       "background": {
-        "backgroundColour": 5
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
       },
-      "_template": "imageTextBlock"
+      "_template": "spacer"
     },
     {
-      "spacerHeight": "150px",
+      "spacerHeight": "90px",
       "background": {
-        "backgroundColour": 5,
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "180px",
+      "background": {
+        "backgroundColour": 4,
         "backgroundImage": "",
         "bleed": false
       },
