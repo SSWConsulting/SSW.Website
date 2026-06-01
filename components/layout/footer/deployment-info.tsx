@@ -2,9 +2,6 @@ import { CustomLink } from "@/components/customLink";
 import { RelativeTime } from "./relative-time";
 
 const buildDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE;
-const buildTimestamp = buildDate
-  ? new Date(buildDate).getTime()
-  : Date.now() - 1000 * 60 * 30;
 const commitHash = process.env.NEXT_PUBLIC_GITHUB_SHA;
 const repo = process.env.NEXT_PUBLIC_GITHUB_REPOSITORY;
 
@@ -19,7 +16,7 @@ export const DeploymentInfo = () => {
         continuous deployment
       </CustomLink>
       . Last updated{" "}
-      <RelativeTime buildTimestamp={buildTimestamp} buildDate={buildDate} />
+      <RelativeTime buildDate={buildDate} />
       {commitHash && repo && (
         <>
           . Last commit{" "}
