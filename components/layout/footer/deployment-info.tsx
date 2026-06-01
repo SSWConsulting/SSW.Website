@@ -17,14 +17,14 @@ export const DeploymentInfo = () => {
       This website is under{" "}
       <CustomLink
         href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment"
-        className="transition-colors hover:text-ssw-red"
+        className="text-white transition-colors hover:text-ssw-red"
         style={{ textDecoration: "none" }}
       >
         continuous deployment
       </CustomLink>
       . Last updated{" "}
       <span
-        className="group relative inline-block cursor-help transition-colors hover:text-ssw-red"
+        className="group relative inline-block cursor-help text-white transition-colors hover:text-ssw-red"
         title={tooltip}
       >
         {relative}
@@ -43,7 +43,7 @@ export const DeploymentInfo = () => {
           <CustomLink
             href={`https://github.com/${repo}/commit/${commitHash}`}
             target="_blank"
-            className="transition-colors hover:text-ssw-red"
+            className="text-white transition-colors hover:text-ssw-red"
             style={{ textDecoration: "none" }}
           >
             {commitHash.slice(0, 7)}
