@@ -18,6 +18,7 @@ export const DeploymentInfo = () => {
       <CustomLink
         href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment"
         className="transition-colors hover:text-ssw-red"
+        style={{ textDecoration: "none" }}
       >
         continuous deployment
       </CustomLink>
@@ -43,6 +44,7 @@ export const DeploymentInfo = () => {
             href={`https://github.com/${repo}/commit/${commitHash}`}
             target="_blank"
             className="transition-colors hover:text-ssw-red"
+            style={{ textDecoration: "none" }}
           >
             {commitHash.slice(0, 7)}
           </CustomLink>
