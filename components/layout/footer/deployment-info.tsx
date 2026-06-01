@@ -5,7 +5,7 @@ const buildDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE;
 const buildTimestamp = buildDate
   ? new Date(buildDate).getTime()
   : Date.now() - 1000 * 60 * 30;
-const commitHash = process.env.NEXT_PUBLIC_GITHUB_SHA?.slice(0, 7);
+const commitHash = process.env.NEXT_PUBLIC_GITHUB_SHA;
 const repo = process.env.NEXT_PUBLIC_GITHUB_REPOSITORY;
 
 export const DeploymentInfo = () => {
@@ -28,7 +28,7 @@ export const DeploymentInfo = () => {
             target="_blank"
             className="text-white hover:text-ssw-red transition-all duration-300 ease-in-out"
           >
-            {commitHash}
+            {commitHash.slice(0, 7)}
           </CustomLink>
         </>
       )}
