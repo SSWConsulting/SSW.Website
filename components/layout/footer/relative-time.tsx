@@ -3,6 +3,7 @@
 import { useEffect, useId, useState } from "react";
 
 interface Props {
+  buildTimestamp: number;
   buildDate?: string;
 }
 
@@ -51,14 +52,10 @@ function formatUtcDate(iso: string): string | undefined {
  * client immediately recomputes on mount to avoid hydration mismatch.
  *
  * Accessibility: the wrapper is focusable when a tooltip is present so
- * keyboard users can reveal it, the tooltip is linked via
- * `aria-describedby` for screen readers, and a native `title` provides a
- * fallback for older AT / non-AT browsers.
+ * keyboard users can reveal it, and the tooltip is linked via
+ * `aria-describedby` so screen readers announce it after the visible time.
  */
-export function RelativeTime({ buildDate }: Props) {
-  const buildTimestamp = buildDate ? new Date(buildDate).getTime() : Number.NaN;
-  const validTimestamp = !Number.isNaN(buildTimestamp);
-
+export function RelativeTime({ buildTimestamp, buildDate }: Props) {
   const [now, setNow] = useState<number>(buildTimestamp);
   const tooltipId = useId();
 
@@ -68,14 +65,12 @@ export function RelativeTime({ buildDate }: Props) {
     return () => clearInterval(id);
   }, []);
 
-  if (!validTimestamp) return <>XXX</>;
-
-  const formatted = formatUtcDate(buildDate!);
+  const formatted = buildDate ? formatUtcDate(buildDate) : undefined;
   const tooltip = formatted ? `Last updated ${formatted}` : undefined;
 
   return (
     <span
-      className={`relative inline-block group text-white hover:text-ssw-red focus-visible:text-ssw-red transition-colors duration-300 ease-in-out${tooltip ? " cursor-help" : ""}`}
+      className={`relative inline-block group text-white hover:text-ssw-red focus-visible:text-ssw-red transition-all duration-300 ease-in-out${tooltip ? " cursor-help" : ""}`}
       tabIndex={tooltip ? 0 : undefined}
       aria-describedby={tooltip ? tooltipId : undefined}
       title={tooltip}
