@@ -13,6 +13,7 @@ import EventsPage from "./events";
 import EventsPageFallback from "./events-page-fallback";
 import EventsPreview from "./events-preview";
 import EventsV2Page from "./eventsv2";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-static";
 
@@ -204,11 +205,15 @@ export default async function Events(prop: {
   const slug = params.filename;
   const filename = slug[slug.length - 1];
 
+  console.log('kock')
+
   const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(slug.join("/")),
     getPreviewEventData(slug.join("/")),
     getData(slug.join("/")),
   ]);
+
+  if(!filename || filename === 'null') { notFound() }
 
   if (newPage) {
     return <TinaClient props={newPage.props} Component={EventsV2Page} />;
@@ -219,6 +224,7 @@ export default async function Events(prop: {
   if (oldPage) {
     return <TinaClient props={oldPage.props} Component={EventsPage} />;
   }
+
   return (
     <ClientFallbackWithOption
       templates={[
