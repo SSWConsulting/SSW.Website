@@ -97,7 +97,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbItem key={`item-${index}`}>
           {isLast ? (
             <BreadcrumbPage
-              className={"text-xs text-gray-700 no-underline"}
+              className={"text-xs text-white no-underline"}
               {...(seoSchema
                 ? { "data-tina-field": tinaField(seoSchema, "title") }
                 : {})}
