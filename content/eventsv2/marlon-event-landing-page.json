@@ -19,14 +19,14 @@
       },
       "heading": "Solving the **Hardest Enterprise Business Problems** with AI",
       "isH1": true,
-      "description": "A half-day live workshop for Australian CEOs, CTOs, CFOs and CIOs. Spend four hours with the team building AI into Australian enterprises right now — walking through the four expensive business problems AI has just made affordable to solve, with real case studies, real dollar figures, and an open Q\\&A.\n",
+      "description": "A half-day live workshop for Australian CEOs, CTOs, CFOs and CIOs. Spend four hours with the team building AI into Australian enterprises right now, walking through the four expensive business problems AI has just made affordable to solve, with real case studies, real dollar figures, and an open Q\\&A.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Reserve My Seat — $99",
+          "buttonText": "Reserve My Seat - $99",
           "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
