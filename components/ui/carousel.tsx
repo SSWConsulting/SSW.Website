@@ -229,6 +229,7 @@ const CarouselPickItem = React.forwardRef<
   return (
     <button
       ref={ref}
+      type="button"
       aria-label={`Go to slide ${index + 1}`}
       aria-current={selectedIndex === index ? "true" : "false"}
       className={cn(className)}
