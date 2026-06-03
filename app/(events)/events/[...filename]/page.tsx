@@ -205,15 +205,15 @@ export default async function Events(prop: {
   const slug = params.filename;
   const filename = slug[slug.length - 1];
 
-  console.log('kock')
-
   const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(slug.join("/")),
     getPreviewEventData(slug.join("/")),
     getData(slug.join("/")),
   ]);
 
-  if(!filename || filename === 'null') { notFound() }
+  if (!filename || filename === "null") {
+    notFound();
+  }
 
   if (newPage) {
     return <TinaClient props={newPage.props} Component={EventsV2Page} />;

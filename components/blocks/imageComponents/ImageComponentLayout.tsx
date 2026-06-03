@@ -93,7 +93,6 @@ export const ImageComponentLayout = ({ data, children }) => {
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}
-
                 />
               )
             )}
