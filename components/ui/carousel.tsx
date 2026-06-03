@@ -224,10 +224,13 @@ const CarouselPickItem = React.forwardRef<
   HTMLButtonElement,
   { className?: string; index: number; onClick?; children?: React.ReactNode }
 >(({ className, index, onClick, children }, ref) => {
-  const { api } = useCarousel();
+  const { api, selectedIndex } = useCarousel();
+
   return (
     <button
       ref={ref}
+      aria-label={`Go to slide ${index + 1}`}
+      aria-current={selectedIndex === index ? "true" : "false"}
       className={cn(className)}
       onClick={() => {
         api?.scrollTo(index);
