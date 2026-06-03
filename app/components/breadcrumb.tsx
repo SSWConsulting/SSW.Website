@@ -47,7 +47,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
 }) => {
   const pathname = usePathname();
 
-  const breadcrumbItems = useMemo(() => {
+  const { breadcrumbItems, mobileParent } = useMemo(() => {
     const pathSegments = pathname
       .split("/")
       .filter((segment) => segment !== "");
@@ -118,14 +118,50 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       );
     });
 
-    return items;
+    let mobileParent: { label: string; href: string };
+    if (pathSegments.length >= 2) {
+      const parentIndex = pathSegments.length - 2;
+      mobileParent = {
+        label: getDisplayName(pathSegments[parentIndex]),
+        href: "/" + pathSegments.slice(0, parentIndex + 1).join("/"),
+      };
+    } else {
+      mobileParent = { label: "Home", href: "/" };
+    }
+
+    return { breadcrumbItems: items, mobileParent };
   }, [pathname, path, title, seoSchema, additionalReplacements]);
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList className="gap-2 font-normal">
-        {breadcrumbItems}
-      </BreadcrumbList>
-    </Breadcrumb>
+    <>
+      <Breadcrumb className="hidden sm:block">
+        <BreadcrumbList className="gap-2 font-normal">
+          {breadcrumbItems}
+        </BreadcrumbList>
+      </Breadcrumb>
+      <nav className="sm:hidden" aria-label={`Back to ${mobileParent.label}`}>
+        <a
+          href={mobileParent.href}
+          className="inline-flex items-center gap-1 text-xs text-gray-700 hover:text-sswRed"
+          aria-label={`Back to ${mobileParent.label}`}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+          {mobileParent.label}
+        </a>
+      </nav>
+    </>
   );
 };
