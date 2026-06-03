@@ -89,7 +89,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
           key={`separator-${index}`}
           className="text-xs text-gray-700"
         >
-          {">"}
+          {"/"}
         </BreadcrumbSeparator>
       );
 
@@ -97,7 +97,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbItem key={`item-${index}`}>
           {isLast ? (
             <BreadcrumbPage
-              className={"text-xs text-white no-underline"}
+              className={"text-xs text-gray-700 no-underline"}
               {...(seoSchema
                 ? { "data-tina-field": tinaField(seoSchema, "title") }
                 : {})}
@@ -142,7 +142,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       <nav className="sm:hidden" aria-label={`Back to ${mobileParent.label}`}>
         <a
           href={mobileParent.href}
-          className="inline-flex items-center gap-1 text-xs text-gray-700 hover:text-sswRed"
+          className="unstyled inline-flex items-center gap-1 text-xs text-gray-700 no-underline hover:text-sswRed"
           aria-label={`Back to ${mobileParent.label}`}
         >
           <svg
