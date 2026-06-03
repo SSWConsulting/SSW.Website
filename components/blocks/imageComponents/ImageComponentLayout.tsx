@@ -3,7 +3,7 @@ import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
 import "aos/dist/aos.css";
 import Image from "next/image";
-import { classNames } from "tinacms";
+import { cn } from "@/lib/utils";
 import { tinaField } from "tinacms/dist/react";
 import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 
@@ -47,7 +47,7 @@ export const ImageComponentLayout = ({ data, children }) => {
       <Container
         size="custom"
         padding="px-4 sm:px-8"
-        className={classNames(
+        className={cn(
           "mx-auto flex flex-col gap-8 py-8 align-middle sm:py-12 md:gap-16 xl:grid",
           data.mediaConfiguration?.imageSource || youtubeUrl
             ? "md:grid-cols-2"
@@ -58,7 +58,7 @@ export const ImageComponentLayout = ({ data, children }) => {
         )}
       >
         <div
-          className={classNames(
+          className={cn(
             "flex w-full flex-col",
             hasMedia && "xl:items-start xl:text-start",
             getVerticalTextPlacement(),
@@ -70,7 +70,7 @@ export const ImageComponentLayout = ({ data, children }) => {
 
         {(data.mediaConfiguration?.imageSource || youtubeUrl) && (
           <div
-            className={classNames(
+            className={cn(
               "relative flex w-full",
               getVerticalMediaPlacement(),
               imageIsLeftAligined && "xl:order-1"
@@ -88,7 +88,7 @@ export const ImageComponentLayout = ({ data, children }) => {
                   width={data.mediaConfiguration?.imageWidth}
                   loading="eager"
                   height={data.mediaConfiguration?.imageHeight}
-                  className={classNames("w-full rounded-md")}
+                  className={cn("w-full rounded-md")}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}
