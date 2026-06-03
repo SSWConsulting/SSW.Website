@@ -86,12 +86,14 @@ export const ImageComponentLayout = ({ data, children }) => {
               isImage && (
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
-                  loading="eager"
+                  priority
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   height={data.mediaConfiguration?.imageHeight}
                   className={cn("w-full rounded-md")}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}
+
                 />
               )
             )}
