@@ -236,7 +236,7 @@
       "isStacked": true,
       "heading": "In 4 hours, you'll learn:",
       "isH1": false,
-      "body": "Three things every CEO, CTO, CFO and CIO needs to know about AI in their business this year.",
+      "body": "Three things everyone in C-Suite needs to know about AI in their business this year.",
       "cardStyle": 0,
       "cards": [
         {
@@ -244,7 +244,7 @@
           "altText": "Affordable AI problems",
           "icon": "BiSolidCheckCircle",
           "heading": "Which expensive problems AI just made affordable",
-          "description": "The four business problems that were too costly to solve 12 months ago and are realistic now — the custom build you parked, the data your executives can't see, retrofitting AI into existing software, and replacing the legacy system that's blocking new features.",
+          "description": "The four business problems that were too costly to solve 12 months ago and are realistic now, the custom build you parked, the data your executives can't see, retrofitting AI into existing software, and replacing the legacy system that's blocking new features.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -254,7 +254,7 @@
           "altText": "Real case studies",
           "icon": "BiSolidCheckCircle",
           "heading": "Real case studies with real dollar figures",
-          "description": "The Australian accountancy firm that took an audit from $120 to $5. The dashboard built in days instead of six months. The Dynamics 365 / Salesforce / SAP retrofit pattern with numbers from three live engagements. No theory, no slides about us.",
+          "description": "The Australian accountancy firm that reduced their per-transaction cost by 90%, using AI in a business application.\n\nThe dashboard built in days instead of six months. The Dynamics 365 / Salesforce / SAP retrofit pattern with numbers from three live engagements. No theory, no slides about us.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -264,7 +264,7 @@
           "altText": "One-page action list",
           "icon": "BiSolidCheckCircle",
           "heading": "A one-page action list for your business",
-          "description": "You leave with three things to do on Monday morning — written during the session, specific to your company. Plus an open Q&A where you bring your business's actual problem and we answer it in the room.",
+          "description": "You leave with three things to do on Monday morning, written during the session, specific to your company. Plus an open Q&A where you bring your business's actual problem and we answer it in the room.",
           "embeddedButton": {
             "buttonText": ""
           }
