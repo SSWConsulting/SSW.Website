@@ -616,7 +616,7 @@
       "accordionItems": [
         {
           "label": "Is this technical? I'm not a developer.",
-          "content": "No. The whole event is designed for non-technical decision-makers. Every case study is framed in dollars, hours saved, and headcount impact — not code.\n"
+          "content": "Not at all. We break down technical concepts into clear, digestible ideas - built for non-developers.\n"
         },
         {
           "label": "What happens after I click \"Reserve My Seat\"?",
@@ -624,23 +624,23 @@
         },
         {
           "label": "Can I send a colleague in my place if something comes up?",
-          "content": "Yes. Tickets are non-refundable but fully transferable — just email us with the new attendee's name and details before the event.\n"
+          "content": "Yes. Tickets are non-refundable but fully transferable, just email us with the new attendee's name and details before the event.\n"
         },
         {
           "label": "Is this a sales pitch for SSW?",
-          "content": "We're upfront: SSW runs this event and you'll meet our team. But the four hours are case studies, frameworks and Q\\&A — not slides about us. If we've done our job, you'll want to talk to us afterwards. If we haven't, you'll have walked out with a one-page action list either way.\n"
+          "content": "We're upfront: SSW runs this event and you'll meet our team. But the four hours are case studies, frameworks and Q\\&A, not slides about us. If we've done our job, you'll want to talk to us afterwards. If we haven't, you'll have walked out with a one-page action list either way.\n"
         },
         {
           "label": "Will it be recorded?",
-          "content": "No. This is in-room only. We do this so the Q\\&A is candid — attendees ask real questions about their real businesses, which doesn't happen on camera.\n"
+          "content": "No. This is in-room only. We do this so the Q\\&A is candid, attendees ask real questions about their real businesses, which doesn't happen on camera.\n"
         },
         {
           "label": "What size businesses is this designed for?",
-          "content": "Australian companies roughly between $10M and $500M in revenue. The case studies and economics are pitched at that range. If you're significantly smaller or larger, email us first and we'll tell you honestly whether it's a fit.\n"
+          "content": "Australian companies roughly between $5M and $100M in revenue. The case studies and economics are pitched at that range. If you're significantly smaller or larger, email us first and we'll tell you honestly whether it's a fit.\n"
         },
         {
           "label": "Parking and public transport?",
-          "content": "Full venue details — parking, nearest station, building access — are sent in the confirmation email immediately after you book.\n"
+          "content": "Full venue details including parking, nearest station, building access, are sent in the confirmation email immediately after you book.\n"
         }
       ],
       "isMultipleOpen": true,
