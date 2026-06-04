@@ -12,7 +12,8 @@ import {
   getYouTubeId,
 } from "../helpers/embeds";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+import Image from "next/image";
+
 const YouTubeEmbed = dynamic(
   () => import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed),
   { ssr: false }
@@ -118,6 +119,8 @@ export const VideoModal = ({
                   className={classNames("!my-0", frameClassName)}
                   src={videoState.imageSrc}
                   fill
+                  priority
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   alt="Video player"
                   onError={() => {
                     setVideoState({
