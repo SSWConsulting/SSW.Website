@@ -11,6 +11,7 @@ import getConsultingPageMetadata from "@/helpers/consulting";
 import OldConsultingPage from "./consulting";
 import ConsultingPageFallback from "./consulting-page-fallback";
 import ConsultingPage2 from "./consulting2";
+import { notFound } from "next/navigation";
 
 type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
@@ -177,6 +178,8 @@ export default async function Consulting(props: {
     newConsultingPageData(filename),
     consultingPageData(filename),
   ]);
+
+  if (!filename || filename === "null") notFound();
 
   if (newPage) {
     return <TinaClient props={newPage.props} Component={ConsultingPage2} />;
