@@ -5,6 +5,11 @@
       "month": 1,
       "file": "/images/newsletter-uploads/2026/_2026_01__Adam's%202025%20Year%20in%20Review_.html",
       "description": "Adam's 2025 Year in Review"
+    },
+    {
+      "month": 2,
+      "file": "/images/newsletter-uploads/2026/_2026_02__Migrating%20SSW%20Rules%20to%20TinaCMS%20and%20Next.js%20(and%20why%20it%20was%20worth%20it)_.html",
+      "description": "Migrating SSW Rules to TinaCMS and Next.js (and why it was worth it)"
     }
   ]
 }
