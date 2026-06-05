@@ -9,6 +9,7 @@
       "presenter": "content/presenters/calum-simpson.mdx"
     }
   ],
+  "headerLayout": "avatars",
   "startDateTime": "2026-06-17T08:00:18.554Z",
   "endDateTime": "2026-06-17T11:00:27.447Z",
   "startShowBannerDateTime": "2026-06-16T14:00:08.971Z",
