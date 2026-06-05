@@ -14,7 +14,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
-export const AccordionBlock = ({ data }) => {
+export const AccordionBlock = ({ data, priority = false }) => {
   const headingClasses = "my-0 py-2 dark:text-gray-200";
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
   const isImage =
@@ -24,7 +24,7 @@ export const AccordionBlock = ({ data }) => {
     data.mediaConfiguration?.imageHeight;
   const hasMedia = isYouTube || isImage;
   return (
-    <ImageComponentLayout data={data}>
+    <ImageComponentLayout data={data} priority={priority}>
       <section
         className={cn(
           hasMedia && "thisHasMediaSomehow",

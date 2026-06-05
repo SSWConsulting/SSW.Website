@@ -174,12 +174,12 @@ export default async function Consulting(props: {
 
   const filename = params.filename;
 
+  if (!filename || filename === "null") notFound();
+
   const [newPage, oldPage] = await Promise.all([
     newConsultingPageData(filename),
     consultingPageData(filename),
   ]);
-
-  if (!filename || filename === "null") notFound();
 
   if (newPage) {
     return <TinaClient props={newPage.props} Component={ConsultingPage2} />;

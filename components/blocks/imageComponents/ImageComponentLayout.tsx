@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { tinaField } from "tinacms/dist/react";
 import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 
-export const ImageComponentLayout = ({ data, children }) => {
+export const ImageComponentLayout = ({ data, children, priority = false }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
 
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
@@ -81,12 +81,13 @@ export const ImageComponentLayout = ({ data, children }) => {
                 frameClassName="rounded"
                 className="w-full"
                 url={youtubeUrl}
+                priority={priority}
               />
             ) : (
               isImage && (
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
-                  priority
+                  priority={priority}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   height={data.mediaConfiguration?.imageHeight}
                   className={cn("w-full rounded-md")}

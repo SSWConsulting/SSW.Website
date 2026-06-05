@@ -30,6 +30,7 @@ type VideoModalProps = {
   roundedEdges?: boolean;
   url?: string;
   overflow?: boolean;
+  priority?: boolean;
 };
 
 type VideoType = "youtube" | "vimeo";
@@ -60,12 +61,14 @@ export const VideoModal = ({
   overflow,
   roundedEdges,
   className,
+  priority = false,
 }: VideoModalProps) => {
   const [clicked, setClicked] = useState<boolean>(false);
 
   // YouTube IDs resolve synchronously, so the thumbnail is derived during render —
-  // this puts the <Image priority> in the server HTML, letting its LCP preload fire
-  // immediately. Vimeo needs an async fetch, so it resolves later via the effect.
+  // this puts the <Image> in the server HTML so the LCP preload can fire immediately
+  // when the consumer opts in via `priority`. Vimeo needs an async fetch, so it
+  // resolves later via the effect.
   const { isYouTube, isVimeo, videoId } = useMemo(
     () => extractVideoId(url),
     [url]
@@ -114,7 +117,7 @@ export const VideoModal = ({
                   className={classNames("!my-0", frameClassName)}
                   src={imageSrc}
                   fill
-                  priority
+                  priority={priority}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   alt="Video player"
                   onError={() => setYouTubeFailed(true)}
