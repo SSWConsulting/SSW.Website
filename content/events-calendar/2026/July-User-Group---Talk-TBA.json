@@ -1,17 +1,23 @@
 {
-  "title": "July User Group - Talk TBA",
-  "url": "/netug/sydney",
-  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
-  "thumbnailDescription": "Sydney .NET User Group",
+  "title": "July User Group - torage Wars: Choosing the right House for your data",
+  "url": "/netug/brisbane",
+  "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/vlad-kireyev.mdx"
+    }
+  ],
+  "headerLayout": "avatars",
   "startDateTime": "2026-07-15T08:00:28.796Z",
   "endDateTime": "2026-07-15T10:00:41.492Z",
   "startShowBannerDateTime": "2026-07-14T14:00:50.272Z",
   "endShowBannerDateTime": "2026-07-15T12:30:01.935Z",
   "calendarType": "User Groups",
-  "city": "Sydney",
-  "category": "Artificial Intelligence",
-  "abstract": "Agenda TBA - watch this space!",
-  "description": "Agenda TBA - watch this space!\n",
+  "city": "Brisbane",
+  "category": "Data and LINQ",
+  "abstract": "Data expert Vlad Kireyev will be talking about Microsoft Fabric Lakehouse vs Warehouse. \nMore to come! \n",
+  "description": "Data expert Vlad Kireyev will be talking about Microsoft Fabric Lakehouse vs Warehouse. \n\nMore to come! \n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true
