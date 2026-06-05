@@ -18,7 +18,6 @@ export const DeploymentInfo = () => {
       <CustomLink
         href="https://www.ssw.com.au/rules/rules-to-better-websites-deployment"
         className="text-white transition-colors hover:text-ssw-red"
-        style={{ textDecoration: "none" }}
       >
         continuous deployment
       </CustomLink>

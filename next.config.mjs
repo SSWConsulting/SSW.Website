@@ -83,6 +83,7 @@ const config = {
   },
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
+    inlineCss: true,
     staticGenerationRetryCount: 2,
     staticGenerationMaxConcurrency: 20,
     staticGenerationMinPagesPerWorker: 30,
