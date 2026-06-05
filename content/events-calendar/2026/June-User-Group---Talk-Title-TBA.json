@@ -1,9 +1,14 @@
 {
-  "title": "June User Group - TBA!",
+  "title": "June User Group - AI: It's a Skill Issue",
   "slug": "june-user-group-2026",
   "url": "https://www.meetup.com/sydney-net-user-group/",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    }
+  ],
   "startDateTime": "2026-06-17T08:00:18.554Z",
   "endDateTime": "2026-06-17T11:00:27.447Z",
   "startShowBannerDateTime": "2026-06-16T14:00:08.971Z",
