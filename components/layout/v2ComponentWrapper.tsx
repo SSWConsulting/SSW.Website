@@ -1,11 +1,37 @@
 "use client";
 import classNames from "classnames";
-import { useInView } from "framer-motion";
 import Image from "next/image";
 
-import { UseInViewOptions } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
+
+// Lightweight replacement for framer-motion's useInView so the animation
+// engine isn't pulled into the critical bundle for every v2 block.
+function useInViewOnce(
+  ref: React.RefObject<Element>,
+  { margin = "0px" }: { margin?: string } = {}
+) {
+  const [isInView, setIsInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setIsInView(true); // SSR/old browsers: render visible, no fade
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: margin }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref, margin]);
+  return isInView;
+}
 
 type BackgroundData = {
   background?: {
@@ -23,7 +49,7 @@ const V2ComponentWrapper = ({
 }: {
   data: BackgroundData;
   children: React.ReactNode;
-  fadeInMargin?: UseInViewOptions["margin"];
+  fadeInMargin?: string;
   className?: string;
 }) => {
   //Bleed effect setup
@@ -46,7 +72,7 @@ const V2ComponentWrapper = ({
 
   //Fade-in effect setup
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: fadeInMargin });
+  const isInView = useInViewOnce(ref, { margin: fadeInMargin });
   useEffect(() => {
     setIsInInitialViewport(isInView);
   }, [isInView]);

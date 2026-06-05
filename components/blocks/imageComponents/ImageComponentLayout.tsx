@@ -88,7 +88,7 @@ export const ImageComponentLayout = ({ data, children, priority = false }) => {
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
                   priority={priority}
-                  sizes="(min-width: 768px) 50vw, 100vw"
+                  sizes="(min-width: 768px) min(50vw, 640px), 100vw"
                   height={data.mediaConfiguration?.imageHeight}
                   className={cn("w-full rounded-md")}
                   src={data.mediaConfiguration?.imageSource}

@@ -3,7 +3,13 @@ export const buildEventUrl = (node: {
   _sys: { filename: string; breadcrumbs: string[] };
 }): string => {
   const folderYear = node._sys.breadcrumbs.at(-2);
-  const segment = (node.slug || node._sys.filename).toLowerCase();
+  const rawSegment = node.slug || node._sys.filename;
+  const segment = rawSegment ? String(rawSegment).toLowerCase() : "";
+  // Guard against a null/empty slug producing a broken, prefetchable
+  // "/events/null" link — fall back to the events listing instead.
+  if (!segment || segment === "null" || segment === "undefined") {
+    return "/events";
+  }
   return folderYear ? `/events/${folderYear}/${segment}` : `/events/${segment}`;
 };
 

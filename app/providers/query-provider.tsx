@@ -1,8 +1,18 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import dynamic from "next/dynamic";
 import { ReactNode, useMemo } from "react";
+
+// Dev-only: loaded lazily so it never ships in the production bundle.
+const ReactQueryDevtools =
+  process.env.NODE_ENV === "development"
+    ? dynamic(() =>
+        import("@tanstack/react-query-devtools").then(
+          (mod) => mod.ReactQueryDevtools
+        )
+      )
+    : () => null;
 
 const FIVE_MINS = 1000 * 60 * 5;
 

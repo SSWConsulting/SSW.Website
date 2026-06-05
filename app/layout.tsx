@@ -2,7 +2,7 @@ import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events-types";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { DeferredGoogleTagManager } from "./components/deferred-gtm";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -97,7 +97,9 @@ export default async function RootLayout({
             {/* </Theme> */}
           </PageLayout>
 
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+          <DeferredGoogleTagManager
+            gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID}
+          />
           <ChatBaseBot />
         </QueryProvider>
       </body>
