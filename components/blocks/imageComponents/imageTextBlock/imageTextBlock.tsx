@@ -13,7 +13,7 @@ import { PillGroup } from "../../../blocksSubtemplates/pillGroup";
 
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
-export const ImageTextBlock = ({ data }) => {
+export const ImageTextBlock = ({ data, priority = false }) => {
   const hasMedia =
     data.mediaConfiguration?.imageSource || data.mediaConfiguration?.youtubeUrl;
   const noImageCenter = hasMedia ? "xl:justify-start" : "xl:justify-center";
@@ -26,7 +26,7 @@ export const ImageTextBlock = ({ data }) => {
     }
   };
   return (
-    <ImageComponentLayout data={data}>
+    <ImageComponentLayout data={data} priority={priority}>
       {data.topLabel && (data.toplabel?.icon || data.topLabel?.labelText) && (
         <IconLabel data={data.topLabel} />
       )}

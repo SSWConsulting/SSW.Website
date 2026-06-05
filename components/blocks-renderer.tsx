@@ -220,7 +220,14 @@ const Block = ({ prefix, blockData, i }) => {
   }
 
   const field = `blocks.${i}`;
-  const blockProps = { ...blockData, data: blockData, parentField: field };
+  // Only the first block is treated as the above-the-fold LCP candidate, so image
+  // blocks below it don't all emit competing <link rel="preload"> hints.
+  const blockProps = {
+    ...blockData,
+    data: blockData,
+    parentField: field,
+    priority: i === 0,
+  };
 
   return (
     <div className="contents" data-tinafield={field}>

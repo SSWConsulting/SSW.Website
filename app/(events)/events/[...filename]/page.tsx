@@ -13,6 +13,7 @@ import EventsPage from "./events";
 import EventsPageFallback from "./events-page-fallback";
 import EventsPreview from "./events-preview";
 import EventsV2Page from "./eventsv2";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-static";
 
@@ -163,6 +164,11 @@ export async function generateMetadata(
   const params = await prop.params;
 
   const slug = params.filename;
+  const filename = slug[slug.length - 1];
+
+  if (!filename || filename === "null") {
+    return {};
+  }
 
   const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(slug.join("/")),
@@ -204,6 +210,10 @@ export default async function Events(prop: {
   const slug = params.filename;
   const filename = slug[slug.length - 1];
 
+  if (!filename || filename === "null") {
+    notFound();
+  }
+
   const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(slug.join("/")),
     getPreviewEventData(slug.join("/")),
@@ -219,6 +229,7 @@ export default async function Events(prop: {
   if (oldPage) {
     return <TinaClient props={oldPage.props} Component={EventsPage} />;
   }
+
   return (
     <ClientFallbackWithOption
       templates={[
