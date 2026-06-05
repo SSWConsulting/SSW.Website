@@ -17,16 +17,16 @@
       "topLabel": {
         "labelText": "Live Half-Day Workshop for C-Suite Executives"
       },
-      "heading": "Solving the **Hardest Enterprise Business Problems** with AI",
+      "heading": "Solving the **Hardest Enterprise Problems** with AI",
       "isH1": true,
-      "description": "A half-day live workshop for Australian CEOs, CTOs, CFOs and CIOs. Spend four hours with the team building AI into Australian enterprises right now — walking through the four expensive business problems AI has just made affordable to solve, with real case studies, real dollar figures, and an open Q\\&A.\n",
+      "description": "A half-day live workshop for Australian C-Suite executives. Spend four hours with the team building AI into Australian enterprises right now, walking through the four expensive business problems AI has just made affordable to solve, with real case studies, real dollar figures, and an open Q\\&A.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Reserve My Seat — $99",
+          "buttonText": "Reserve My Seat - $99",
           "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
@@ -137,9 +137,9 @@
       "topLabel": {
         "labelText": "Why attend"
       },
-      "heading": "Should you spend four hours on this?",
+      "heading": "Why you should spend four hours on this",
       "isH1": false,
-      "description": "If you're a CEO, CTO, CFO or CIO at an Australian business, you're being pitched on AI every week. Most of it is theory, AI 101, or a vendor selling their product. Almost none of it shows you the actual economics of an AI build in a business like yours, with real numbers.\n\n**That's what this is. Four hours in a room with the engineers who design and ship AI into Australian banks, accountancies, insurers and government departments. No theory. No vendor pitch. No AI 101.**\n",
+      "description": "If you're part of the C-Suite at an Australian business, you're being pitched on AI every week. Most of it is theory, AI 101, or a vendor selling their product. Almost none of it shows you the actual economics of an AI build in a business like yours, with real numbers.\n\n**That's what this is. Four hours in a room with the engineers who design and ship AI into Australian banks, accountancies, insurers and government departments. No theory. No vendor pitch. No AI 101.**\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true,
@@ -151,7 +151,7 @@
           },
           {
             "heading": "Real case studies. Real dollar figures.",
-            "description": "Including the engineering work that took one Australian client's per-transaction cost from $120 to $5.",
+            "description": "Including the engineering work that reduced one Australian client's per-transaction cost by 90%, using AI in a business application.",
             "icon": "BiSolidCheckCircle"
           },
           {
@@ -197,7 +197,7 @@
       },
       "heading": "Your business problems didn't change. **The cost of solving them just did.**",
       "isH1": false,
-      "description": "For years, the upgrade was too expensive. The custom build was too expensive. The data project was too expensive. The legacy replacement was too expensive. So you parked them.\n\nAI has just rewritten the maths on every one of those decisions. The roadmap your business shelved three years ago is now realistic. The dashboard your executive team has been asking for can be built in days, not quarters. The legacy system breaking every Monday morning can finally be replaced.\n",
+      "description": "For years, the upgrade was too expensive. The custom build was too expensive. The data project was too expensive. The legacy replacement was too expensive. So you parked them.\n\nAI has just rewritten the maths on every one of those decisions. The roadmap your business shelved three years ago is now realistic. The system your executive team has been asking for can be built in weeks, not quarters. The legacy system breaking every Monday morning can finally be replaced.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -236,7 +236,7 @@
       "isStacked": true,
       "heading": "In 4 hours, you'll learn:",
       "isH1": false,
-      "body": "Three things every CEO, CTO, CFO and CIO needs to know about AI in their business this year.",
+      "body": "Three things everyone in C-Suite needs to know about AI in their business this year.",
       "cardStyle": 0,
       "cards": [
         {
@@ -244,7 +244,7 @@
           "altText": "Affordable AI problems",
           "icon": "BiSolidCheckCircle",
           "heading": "Which expensive problems AI just made affordable",
-          "description": "The four business problems that were too costly to solve 12 months ago and are realistic now — the custom build you parked, the data your executives can't see, retrofitting AI into existing software, and replacing the legacy system that's blocking new features.",
+          "description": "The four business problems that were too costly to solve 12 months ago and are realistic now, the custom build you parked, the data your executives can't see, retrofitting AI into existing software, and replacing the legacy system that's blocking new features.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -254,7 +254,7 @@
           "altText": "Real case studies",
           "icon": "BiSolidCheckCircle",
           "heading": "Real case studies with real dollar figures",
-          "description": "The Australian accountancy firm that took an audit from $120 to $5. The dashboard built in days instead of six months. The Dynamics 365 / Salesforce / SAP retrofit pattern with numbers from three live engagements. No theory, no slides about us.",
+          "description": "The Australian fintech firm that reduced their per-transaction cost by 90%, using AI in a business application.\n\nThe dashboards built in days instead of months. The Dynamics 365 / Salesforce / SAP customisation with numbers from three live engagements. No theory, no sales pitch.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -264,7 +264,7 @@
           "altText": "One-page action list",
           "icon": "BiSolidCheckCircle",
           "heading": "A one-page action list for your business",
-          "description": "You leave with three things to do on Monday morning — written during the session, specific to your company. Plus an open Q&A where you bring your business's actual problem and we answer it in the room.",
+          "description": "You leave with a checklist of things to do on Monday morning, written during the session, specific to your company. Plus an open Q&A where you bring your business's actual problem and we answer it in the room.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -305,7 +305,7 @@
           "altText": "CEOs and Managing Directors",
           "icon": "BiSolidUserCheck",
           "heading": "CEOs & Managing Directors",
-          "description": "Looking for a clear, non-technical view of where AI can save money and improve efficiency across the business.",
+          "description": "Looking for a clear applicable view of where AI can save money and improve efficiency across the business.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -478,7 +478,7 @@
           },
           {
             "heading": "Problem 1 — The custom build you parked (9:20 – 10:00)",
-            "description": "The Australian accountancy firm paying $120 per audit, now paying $5 — including the engineering work, architecture choices, and real cost.",
+            "description": "The system, the dashboard, the automation - the business case never stacked up. AI changed that. Projects that were too expensive to justify are now economically viable.",
             "icon": "BiSolidRightArrow"
           },
           {
@@ -487,7 +487,7 @@
           },
           {
             "heading": "Problem 2 — The data your executives can't see (10:00 – 10:40)",
-            "description": "How we put a real-time dashboard in front of a non-technical executive team in days, when the previous quote was six months.",
+            "description": "AI can help you make better decisions - but it's only as good as the data you feed it. Most businesses are sitting on messy, scattered data. We'll walk through the new tools that get your data AI-ready.",
             "icon": "BiSolidRightArrow"
           },
           {
@@ -505,7 +505,7 @@
           },
           {
             "heading": "Problem 3 — Adding AI to the software you already own (11:00 – 11:40)",
-            "description": "The Dynamics 365 / Salesforce / SAP retrofit pattern, with real numbers from three live engagements.",
+            "description": "Your existing software has more in it than you think. Integrate AI and it gets smarter, more intuitive, more powerful - the legacy system you were ready to retire becomes the engine of growth for your business.",
             "icon": "BiSolidRightArrow"
           },
           {
@@ -514,7 +514,7 @@
           },
           {
             "heading": "Problem 4 — Replacing the legacy system (11:40 – 12:20)",
-            "description": "The 15-year-old system you couldn't afford to replace, and the new economics of doing it now.",
+            "description": "That 15-year-old system you couldn't afford to replace? The maths has changed. The reason rebuilds cost a fortune was the code itself - old, undocumented, understood by no one. AI can now read that code, untangle it, and rebuild it. The replacement you've put off for years is finally affordable.",
             "icon": "BiSolidRightArrow"
           },
           {
@@ -532,7 +532,7 @@
           },
           {
             "heading": "Your one-page action list (12:50 – 1:00)",
-            "description": "You leave with the three things to do on Monday morning.",
+            "description": "You leave with a checklist of things to do on Monday morning.",
             "icon": "BiSolidStar"
           }
         ]
@@ -566,7 +566,7 @@
       },
       "heading": "Real cases. Real numbers. **Real engineers in the room.**",
       "isH1": false,
-      "description": "This isn't a vendor pitch and it isn't an AI explainer. You're spending half a day with the team that actually builds AI into Australian enterprises — with the case studies, the dollar figures, and the freedom to ask anything you want about your own business.\n\n***Limited seats per room. Sessions don't run twice.***\n",
+      "description": "You're spending half a day with the team that actually builds AI into Australian enterprises; with the case studies, the dollar figures, and the freedom to ask anything you want about your own business.\n\nOur presenters consult to real companies, building systems that solve these problems in Australian businesses today. Come talk to the people who have the technical know-how to make it happen.\n\n***Limited seats per room. Sessions don't run twice.***\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -616,7 +616,7 @@
       "accordionItems": [
         {
           "label": "Is this technical? I'm not a developer.",
-          "content": "No. The whole event is designed for non-technical decision-makers. Every case study is framed in dollars, hours saved, and headcount impact — not code.\n"
+          "content": "Not at all. We break down technical concepts into clear, digestible ideas - built for non-developers.\n"
         },
         {
           "label": "What happens after I click \"Reserve My Seat\"?",
@@ -624,23 +624,23 @@
         },
         {
           "label": "Can I send a colleague in my place if something comes up?",
-          "content": "Yes. Tickets are non-refundable but fully transferable — just email us with the new attendee's name and details before the event.\n"
+          "content": "Yes. Tickets are non-refundable but fully transferable, just email us with the new attendee's name and details before the event.\n"
         },
         {
           "label": "Is this a sales pitch for SSW?",
-          "content": "We're upfront: SSW runs this event and you'll meet our team. But the four hours are case studies, frameworks and Q\\&A — not slides about us. If we've done our job, you'll want to talk to us afterwards. If we haven't, you'll have walked out with a one-page action list either way.\n"
+          "content": "We're upfront: SSW runs this event and you'll meet our team. But the four hours are case studies, frameworks and Q\\&A, not slides about us. If we've done our job, you'll want to talk to us afterwards. If we haven't, you'll have walked out with a one-page action list either way.\n"
         },
         {
           "label": "Will it be recorded?",
-          "content": "No. This is in-room only. We do this so the Q\\&A is candid — attendees ask real questions about their real businesses, which doesn't happen on camera.\n"
+          "content": "No. This is in-room only. We do this so the Q\\&A is candid, attendees ask real questions about their real businesses, which doesn't happen on camera.\n"
         },
         {
           "label": "What size businesses is this designed for?",
-          "content": "Australian companies roughly between $10M and $500M in revenue. The case studies and economics are pitched at that range. If you're significantly smaller or larger, email us first and we'll tell you honestly whether it's a fit.\n"
+          "content": "Australian companies roughly between $5M and $100M in revenue. The case studies and economics are pitched at that range. If you're significantly smaller or larger, email us first and we'll tell you honestly whether it's a fit.\n"
         },
         {
           "label": "Parking and public transport?",
-          "content": "Full venue details — parking, nearest station, building access — are sent in the confirmation email immediately after you book.\n"
+          "content": "Full venue details including parking, nearest station, building access, are sent in the confirmation email immediately after you book.\n"
         }
       ],
       "isMultipleOpen": true,
