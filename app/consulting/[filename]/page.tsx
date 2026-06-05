@@ -146,6 +146,10 @@ export async function generateMetadata(
 
   const { filename } = params;
 
+  if (!filename || filename === "null") {
+    return {};
+  }
+
   const [newPage, oldPage] = await Promise.all([
     newConsultingPageData(filename),
     consultingPageData(filename),

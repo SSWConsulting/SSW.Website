@@ -164,6 +164,11 @@ export async function generateMetadata(
   const params = await prop.params;
 
   const slug = params.filename;
+  const filename = slug[slug.length - 1];
+
+  if (!filename || filename === "null") {
+    return {};
+  }
 
   const [newPage, calendarEvent, oldPage] = await Promise.all([
     newEventsPageData(slug.join("/")),
