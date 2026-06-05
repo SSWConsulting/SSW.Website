@@ -20,6 +20,7 @@ import { Container } from "@/components/util/container";
 import global from "@/content/global/index.json";
 import { cn } from "@/lib/utils";
 import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
+import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -105,15 +106,13 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
 
   // Parent one level above the current page, for the collapsed mobile view
   const segments = paths.filter((segment) => segment !== "");
+  const replacementMap = new Map(
+    global.breadcrumbReplacements.map((r) => [r.from, r.to])
+  );
+  const parent = segments[segments.length - 2];
   const mobileParent =
     segments.length >= 2
-      ? {
-          label:
-            global.breadcrumbReplacements.find(
-              (value) => value.from === segments[segments.length - 2]
-            )?.to || segments[segments.length - 2],
-          href: `/${segments[segments.length - 2]}`,
-        }
+      ? { label: replacementMap.get(parent) ?? parent, href: `/${parent}` }
       : { label: global.breadcrumbHomeRoute, href: "/" };
 
   return (
@@ -140,23 +139,10 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
         >
           <a
             href={mobileParent.href}
-            className="unstyled inline-flex items-center gap-1 text-sm no-underline transition-colors hover:text-white"
+            className="unstyled inline-flex items-center gap-1 text-sm no-underline transition-colors hover:text-white hover:no-underline"
             aria-label={`Back to ${mobileParent.label}`}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M15 18l-6-6 6-6" />
-            </svg>
+            <ArrowLeft className="h-[1em] w-[1em]" aria-hidden="true" />
             {mobileParent.label}
           </a>
         </nav>

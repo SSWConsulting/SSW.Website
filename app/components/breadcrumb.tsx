@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React, { FC, useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -70,7 +71,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbLink
           href="/"
           className={
-            "text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+            "text-sm text-gray-700 underline-offset-1 hover:text-sswRed"
           }
         >
           Home
@@ -87,7 +88,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       items.push(
         <BreadcrumbSeparator
           key={`separator-${index}`}
-          className="text-xs text-gray-700"
+          className="text-sm text-gray-700"
         >
           {"/"}
         </BreadcrumbSeparator>
@@ -97,7 +98,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbItem key={`item-${index}`}>
           {isLast ? (
             <BreadcrumbPage
-              className={"text-xs text-gray-700 no-underline"}
+              className={"text-sm text-gray-700 no-underline"}
               {...(seoSchema
                 ? { "data-tina-field": tinaField(seoSchema, "title") }
                 : {})}
@@ -108,7 +109,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
             <BreadcrumbLink
               href={href}
               className={
-                "text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+                "text-sm text-gray-700 underline-offset-1 hover:text-sswRed"
               }
             >
               {displayName}
@@ -142,23 +143,10 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       <nav className="sm:hidden" aria-label={`Back to ${mobileParent.label}`}>
         <a
           href={mobileParent.href}
-          className="unstyled inline-flex items-center gap-1 text-xs text-gray-700 no-underline hover:text-sswRed"
+          className="unstyled inline-flex items-center gap-1 text-sm text-gray-700 no-underline hover:text-sswRed hover:no-underline"
           aria-label={`Back to ${mobileParent.label}`}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
+          <ArrowLeft className="h-[1em] w-[1em]" aria-hidden="true" />
           {mobileParent.label}
         </a>
       </nav>
