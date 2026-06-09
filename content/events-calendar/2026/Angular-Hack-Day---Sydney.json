@@ -7,9 +7,12 @@
   "presenterList": [
     {
       "presenter": "content/presenters/adam-cogan.mdx"
+    },
+    {
+      "presenter": "content/presenters/luke-cook.mdx"
     }
   ],
-  "headerLayout": "multi-torso",
+  "headerLayout": "avatars",
   "startDateTime": "2026-11-06T23:00:36.207Z",
   "endDateTime": "2026-11-07T07:00:03.666Z",
   "calendarType": "Hack Days",
