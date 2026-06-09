@@ -3,7 +3,7 @@ import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { ErrorPage } from "@/components/util/error-page";
 import { ReactPlugin } from "@microsoft/applicationinsights-react-js";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
-import { Inter } from "next/font/google";
+import { inter } from "@/lib/fonts";
 import { useEffect } from "react";
 import "styles.css";
 import menu from "../content/megamenu/menu.json";
@@ -11,13 +11,6 @@ import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
 
 // Error boundaries must be Client Components
-
-const inter = Inter({
-  variable: "--inter-font",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "600", "700"],
-});
 
 export default function GlobalError({ error }: { error: Error }) {
   useEffect(() => {
