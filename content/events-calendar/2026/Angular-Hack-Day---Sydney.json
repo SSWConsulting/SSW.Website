@@ -4,6 +4,11 @@
   "url": "https://www.eventbrite.com/e/angular-hack-day-sydney-tickets-1991344896190",
   "thumbnail": "/images/events/AHD-thumb.jpg",
   "thumbnailDescription": "Angular Hack Day",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
   "headerLayout": "multi-torso",
   "startDateTime": "2026-11-06T23:00:36.207Z",
   "endDateTime": "2026-11-07T07:00:03.666Z",
