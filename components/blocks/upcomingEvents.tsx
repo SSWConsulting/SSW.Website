@@ -106,6 +106,7 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
           </span>
         )}
       </div>
+     {event.url ? (
       <CustomLink
         href={event.url}
         className="unstyled block no-underline"
@@ -117,6 +118,7 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
           thumbnailDescription={event.thumbnailDescription}
         />
       </CustomLink>
+      ) : null }
     </article>
   );
 };

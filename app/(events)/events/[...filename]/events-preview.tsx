@@ -128,7 +128,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                   {event.title}
                 </h1>
               </div>
-              {event.url ? (
+            {event.url ? (
                 <a href={event.url} target="_blank" rel="noopener noreferrer">
                   <RippleButton className="text-base" variant="primary">
                     Find out more
