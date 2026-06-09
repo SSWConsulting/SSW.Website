@@ -11,6 +11,7 @@ import getConsultingPageMetadata from "@/helpers/consulting";
 import OldConsultingPage from "./consulting";
 import ConsultingPageFallback from "./consulting-page-fallback";
 import ConsultingPage2 from "./consulting2";
+import { notFound } from "next/navigation";
 
 type OldConsultingPage = Awaited<
   ReturnType<typeof client.queries.consultingContentQuery>
@@ -145,6 +146,10 @@ export async function generateMetadata(
 
   const { filename } = params;
 
+  if (!filename || filename === "null") {
+    return {};
+  }
+
   const [newPage, oldPage] = await Promise.all([
     newConsultingPageData(filename),
     consultingPageData(filename),
@@ -172,6 +177,8 @@ export default async function Consulting(props: {
   const params = await props.params;
 
   const filename = params.filename;
+
+  if (!filename || filename === "null") notFound();
 
   const [newPage, oldPage] = await Promise.all([
     newConsultingPageData(filename),
