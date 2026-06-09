@@ -56,9 +56,11 @@
     },
     {
       "isStacked": true,
-      "heading": "",
+      "heading": "Pick your city.",
       "isH1": false,
-      "body": "",
+      "body": "Complete the form and you'll be taken to a secure payment page to confirm your $99 seat.",
+      "tabletTextAlignment": "Center",
+      "cardStyle": 0,
       "cards": [
         {
           "guid": "wa02",
