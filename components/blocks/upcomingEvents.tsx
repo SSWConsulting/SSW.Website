@@ -106,19 +106,19 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
           </span>
         )}
       </div>
-     {event.url ? (
-      <CustomLink
-        href={event.url}
-        className="unstyled block no-underline"
-        aria-label={event.title}
-      >
-        <EventImageClient
-          thumbnail={event.thumbnail}
-          title={event.title}
-          thumbnailDescription={event.thumbnailDescription}
-        />
-      </CustomLink>
-      ) : null }
+      {event.url ? (
+        <CustomLink
+          href={event.url}
+          className="unstyled block no-underline"
+          aria-label={event.title}
+        >
+          <EventImageClient
+            thumbnail={event.thumbnail}
+            title={event.title}
+            thumbnailDescription={event.thumbnailDescription}
+          />
+        </CustomLink>
+      ) : null}
     </article>
   );
 };
