@@ -77,8 +77,7 @@
           },
           "embeddedButton": {
             "buttonText": "Register Now",
-            "leadCaptureFormOption": "",
-            "buttonLink": "",
+            "leadCaptureFormOption": "reserveYourSeatJotFormId",
             "colour": 0
           }
         },
