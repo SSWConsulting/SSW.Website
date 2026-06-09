@@ -69,7 +69,7 @@ export async function generateMetadata(
   const seo = page.props.data.thankYou.seo;
   const headerUrl = page.props.header.url;
   if (seo && !seo.canonical) {
-    seo.canonical = `${headerUrl}thank-you/${filename}`;
+    seo.canonical = `${headerUrl}thankyou/${filename}`;
   }
 
   return getSEOProps(seo);

@@ -7,12 +7,12 @@ export const thankYouSchema: Collection = {
   label: "Thank You - Pages",
   name: "thankYou",
   format: "json",
-  path: "content/thank-you",
+  path: "content/thankyou",
   description: "Add components to build your thank you page",
   ui: {
     ...kebabCaseFilename,
     router: (args) => {
-      return `/thank-you/${args.document._sys.filename}`;
+      return `/thankyou/${args.document._sys.filename}`;
     },
     filename: {
       showFirst: true,
