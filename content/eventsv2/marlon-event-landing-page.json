@@ -26,7 +26,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Reserve My Seat - $99",
+          "buttonText": "Register Now",
           "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
@@ -75,7 +75,7 @@
           },
           "embeddedButton": {
             "buttonText": "Register Now",
-            "leadCaptureFormOption": "reserveYourSeatJotFormId",
+            "leadCaptureFormOption": "",
             "buttonLink": "",
             "colour": 0
           }
@@ -168,7 +168,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Reserve My Seat — $99",
+          "buttonText": "Register Now",
           "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
@@ -204,7 +204,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Reserve My Seat — $99",
+          "buttonText": "Register Now",
           "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
@@ -573,7 +573,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Reserve My Seat — $99",
+          "buttonText": "Register Now",
           "leadCaptureFormOption": "reserveYourSeatJotFormId",
           "colour": 0
         }
