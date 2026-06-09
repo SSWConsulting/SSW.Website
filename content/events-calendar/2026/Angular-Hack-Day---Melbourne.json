@@ -7,6 +7,9 @@
   "presenterList": [
     {
       "presenter": "content/presenters/gert-marx.mdx"
+    },
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
     }
   ],
   "headerLayout": "multi-torso",
