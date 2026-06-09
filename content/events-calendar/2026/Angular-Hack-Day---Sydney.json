@@ -10,6 +10,9 @@
     },
     {
       "presenter": "content/presenters/luke-cook.mdx"
+    },
+    {
+      "presenter": "content/presenters/matt-wicks.mdx"
     }
   ],
   "headerLayout": "avatars",
