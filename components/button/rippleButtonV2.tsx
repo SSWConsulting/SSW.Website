@@ -109,7 +109,7 @@ const variants: Record<ColorVariant, string> = {
   secondary:
     "bg-transparent outline -outline-1.5  outline-white -outline-offset-1.5 hover:outline-gray-200 hover:text-gray-200 text-white",
   ghost:
-    "bg-transparent px-0 py-0 text-white underline decoration-gray-400 decoration-1 hover:decoration-sswRed",
+    "bg-transparent px-0 py-0 font-semibold text-white underline decoration-gray-400 decoration-1 hover:decoration-sswRed",
 };
 
 RippleButton.displayName = "RippleButton";

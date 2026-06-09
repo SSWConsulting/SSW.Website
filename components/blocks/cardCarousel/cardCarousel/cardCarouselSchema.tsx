@@ -435,6 +435,7 @@ export const CardCarouselSchema: Template = {
               name: "colour",
               ui: {
                 component: ColorPickerInput(buttonOptions),
+                defaultValue: 2,
               },
             },
           ],
