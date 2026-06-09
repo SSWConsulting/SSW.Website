@@ -1,5 +1,5 @@
 {
-  "title": "July User Group - torage Wars: Choosing the right House for your data",
+  "title": "July User Group - Storage Wars: Choosing the right House for your data",
   "url": "/netug/brisbane",
   "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
   "thumbnailDescription": "Brisbane Full Stack User Group",
@@ -17,7 +17,7 @@
   "city": "Brisbane",
   "category": "Data and LINQ",
   "abstract": "Data expert Vlad Kireyev will be talking about Microsoft Fabric Lakehouse vs Warehouse. \nMore to come! \n",
-  "description": "Data expert Vlad Kireyev will be talking about Microsoft Fabric Lakehouse vs Warehouse. \n\nMore to come! \n",
+  "description": "Data expert Vlad Kireyev will be talking about Microsoft Fabric Lakehouse vs Warehouse.\n\nMore to come!\n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true
