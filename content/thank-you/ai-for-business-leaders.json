@@ -15,30 +15,61 @@
     },
     {
       "topLabel": {
-        "labelText": "Thank You"
+        "labelText": "Registration Confirmed"
       },
-      "heading": "**Thank you!** [Placeholder thank-you headline]",
+      "heading": "You're on the list.",
       "isH1": true,
-      "description": "[Placeholder thank-you description — confirm the registration of interest and tease the ticket-purchase next step.]\n",
+      "description": "Thanks for registering! Your spot is held – here's how to lock it in.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
-        "twoColumns": true
+        "twoColumns": false,
+        "features": [
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Confirm your seat",
+            "description": "Pick the city that suits you and complete your free booking on Eventbrite. Takes about a minute.",
+            "icon": "BiRightArrowAlt"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Save the date",
+            "description": "Add the four-hour session to your calendar so it doesn't slip.",
+            "icon": "BiRightArrowAlt"
+          },
+          {
+            "heading": "",
+            "description": ""
+          },
+          {
+            "heading": "Watch your inbox",
+            "description": "Joining details and a short pre-read arrive a few days before.",
+            "icon": "BiRightArrowAlt"
+          },
+          {
+            "heading": "",
+            "description": ""
+          }
+        ]
       },
       "buttons": [
         {
-          "buttonText": "[Placeholder CTA]",
-          "buttonLink": "",
-          "colour": 0
+          "buttonText": "Reserve My Seat — $99"
         }
       ],
       "background": {
         "backgroundColour": 0
       },
       "mediaConfiguration": {
+        "mediaType": "youtube",
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/eventsv2/marlon-placeholder-4x3.png",
         "imageHeight": 900,
         "imageWidth": 1200,
         "youtubeUrl": ""
@@ -46,82 +77,13 @@
       "_template": "imageTextBlock"
     },
     {
-      "spacerHeight": "90px",
+      "spacerHeight": "120px",
       "background": {
         "backgroundColour": 0,
         "backgroundImage": "",
         "bleed": false
       },
       "_template": "spacer"
-    },
-    {
-      "isStacked": true,
-      "heading": "",
-      "isH1": false,
-      "body": "",
-      "cards": [
-        {
-          "guid": "wa02",
-          "altText": "Brisbane",
-          "heading": "Brisbane",
-          "description": "",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Thursday 2 July 2026 · 9:00am – 1:00pm",
-                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Register Now",
-            "buttonLink": "",
-            "colour": 0
-          }
-        },
-        {
-          "guid": "wa03",
-          "altText": "Melbourne",
-          "heading": "Melbourne",
-          "description": "",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Thursday 9 July 2026 · 9:00am – 1:00pm",
-                "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Register Now",
-            "buttonLink": "",
-            "colour": 0
-          }
-        },
-        {
-          "guid": "wa04",
-          "altText": "Sydney",
-          "heading": "Sydney",
-          "description": "",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Thursday 16 July 2026 · 9:00am – 1:00pm",
-                "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Register Now",
-            "buttonLink": "",
-            "colour": 0
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 0
-      },
-      "_template": "cardCarousel"
     }
   ]
 }
