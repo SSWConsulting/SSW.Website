@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { type Template } from "tinacms";
+import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 
 export type ExpertBlockProps = {

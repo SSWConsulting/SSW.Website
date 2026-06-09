@@ -75,6 +75,13 @@ export const ImageComponentLayoutSchema = [
         name: "altText",
         description: "Add alt text for the image.",
       },
+      {
+        type: "boolean",
+        label: "Load with priority",
+        name: "loadWithPriority",
+        description:
+          "Tick this if the media is visible at the top of the page before scrolling (e.g. a hero image). It preloads the image to improve loading performance (LCP). Use on at most one block per page — the first block on a page already gets this automatically.",
+      },
     ],
   },
 ];

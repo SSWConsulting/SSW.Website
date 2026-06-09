@@ -11,15 +11,10 @@ import {
 } from "@/services/server/events-types";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
+import { inter } from "@/lib/fonts";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
 import { ErrorBoundary } from "../util/error/error-boundary";
-
-const inter = Inter({
-  variable: "--inter-font",
-  subsets: ["latin"],
-});
 
 const LiveStreamWidget = dynamic(
   () => {

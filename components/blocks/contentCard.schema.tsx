@@ -1,4 +1,4 @@
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { colorBlockSchema } from "./colorBlock";
 import { customImageBlockSchema } from "./customImage";
 import { verticalListItemSchema } from "./verticalListItem";

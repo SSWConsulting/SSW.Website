@@ -1,4 +1,4 @@
-import { Template, TinaField } from "tinacms";
+import type { Template, TinaField } from "tinacms";
 
 export const youtubePlaylistSchema: TinaField = {
   type: "object",

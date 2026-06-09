@@ -3,7 +3,7 @@ import { Blocks } from "@/components/blocks-renderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { Consultingv2Query } from "@/tina/types";
-import _ from "lodash";
+import isEqual from "lodash/isEqual";
 import React, { memo } from "react";
 
 type ConsultingV2PageProps<T> = {
@@ -45,7 +45,7 @@ const Consulting2 = memo(
       </>
     );
   },
-  (prevProps, nextProps) => _.isEqual(prevProps, nextProps)
+  (prevProps, nextProps) => isEqual(prevProps, nextProps)
 );
 
 export default Consulting2;

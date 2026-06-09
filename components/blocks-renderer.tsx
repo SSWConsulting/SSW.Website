@@ -16,13 +16,18 @@ const AboutUs = dynamic(() =>
   import("./blocks/aboutUs").then((mod) => mod.AboutUs)
 );
 
-import { Agenda } from "./blocks/agenda";
+const Agenda = dynamic(() =>
+  import("./blocks/agenda").then((mod) => mod.Agenda)
+);
 
 const UtilityButton = dynamic(() =>
   import("./button/utilityButton").then((mod) => mod.UtilityButton)
 );
 
-import { Carousel } from "./blocks/carousel";
+const Carousel = dynamic(() =>
+  import("./blocks/carousel").then((mod) => mod.Carousel)
+);
+
 const ClientLogos = dynamic(() =>
   import("./blocks/clientLogos").then((mod) => mod.ClientLogos)
 );
@@ -54,7 +59,9 @@ const JotFormEmbed = dynamic(
   }
 );
 
-import { ServiceCards } from "./blocks/serviceCards";
+const ServiceCards = dynamic(() =>
+  import("./blocks/serviceCards").then((mod) => mod.ServiceCards)
+);
 
 const TableLayout = dynamic(() =>
   import("./blocks/tableLayout").then((mod) => mod.TableLayout)

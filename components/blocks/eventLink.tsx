@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 import { flagSchema } from "./flag";

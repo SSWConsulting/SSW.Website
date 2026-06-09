@@ -2,7 +2,8 @@
 
 /* eslint-disable react/no-unescaped-entities */
 import React, { useEffect } from "react";
-import { ImageField, TinaField } from "tinacms";
+import { ImageField } from "tinacms";
+import type { TinaField } from "tinacms";
 import { TinaInfo } from "../../components/tina/tina-info";
 // TODO: Remove Warning message once fixed by Tina
 // Link: https://github.com/SSWConsulting/SSW.Website/issues/1404
