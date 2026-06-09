@@ -1,4 +1,4 @@
-import { Collection } from "tinacms";
+import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 import { benefitsFields, kebabCaseFilename } from "./shared-fields";

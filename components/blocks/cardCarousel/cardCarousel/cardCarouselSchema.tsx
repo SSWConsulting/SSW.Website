@@ -1,5 +1,6 @@
 import { default as React, useEffect, useState } from "react";
-import { Template, TinaField, wrapFieldsWithMeta } from "tinacms";
+import { wrapFieldsWithMeta } from "tinacms";
+import type { Template, TinaField } from "tinacms";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";

@@ -1,4 +1,4 @@
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 
 export type SectionHeaderProps = {
   headerText: string;

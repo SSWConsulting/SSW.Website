@@ -1,4 +1,4 @@
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 
 import { utcDateToHoursMinutes } from "@/services/client/date.service";
 import React, { useState } from "react";
