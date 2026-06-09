@@ -118,7 +118,13 @@ const UpcomingEvent = ({ event }: UpcomingEventProps) => {
             thumbnailDescription={event.thumbnailDescription}
           />
         </CustomLink>
-      ) : null}
+      ) : (
+        <EventImageClient
+          thumbnail={event.thumbnail}
+          title={event.title}
+          thumbnailDescription={event.thumbnailDescription}
+        />
+      )}
     </article>
   );
 };

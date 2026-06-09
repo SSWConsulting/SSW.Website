@@ -2,7 +2,7 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
-import groupBy from "lodash";
+import isEqual from "lodash/isEqual";
 import React, { memo } from "react";
 import client from "../../../../tina/__generated__/client";
 
@@ -37,7 +37,7 @@ const EventsV2Page = memo(
       </div>
     );
   },
-  (prevProps, newProps) => groupBy.isEqual(prevProps, newProps)
+  (prevProps, newProps) => isEqual(prevProps, newProps)
 );
 
 export default EventsV2Page;
