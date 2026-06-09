@@ -11,7 +11,8 @@ export const ImageComponentLayout = ({ data, children, priority = false }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
   // Editors can force priority loading via the CMS tick-box; otherwise fall back
   // to the renderer's automatic first-block rule.
-  const loadWithPriority = data.mediaConfiguration?.loadWithPriority || priority;
+  const loadWithPriority =
+    data.mediaConfiguration?.loadWithPriority || priority;
 
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
   const isImage =
