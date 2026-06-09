@@ -9,6 +9,9 @@ import V2ComponentWrapper from "../../layout/v2ComponentWrapper";
 
 export const ImageComponentLayout = ({ data, children, priority = false }) => {
   const imageIsLeftAligined = data.mediaConfiguration?.placement === "Left";
+  // Editors can force priority loading via the CMS tick-box; otherwise fall back
+  // to the renderer's automatic first-block rule.
+  const loadWithPriority = data.mediaConfiguration?.loadWithPriority || priority;
 
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
   const isImage =
@@ -81,13 +84,13 @@ export const ImageComponentLayout = ({ data, children, priority = false }) => {
                 frameClassName="rounded"
                 className="w-full"
                 url={youtubeUrl}
-                priority={priority}
+                priority={loadWithPriority}
               />
             ) : (
               isImage && (
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
-                  priority={priority}
+                  priority={loadWithPriority}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   height={data.mediaConfiguration?.imageHeight}
                   className={cn("w-full rounded-md")}
