@@ -396,7 +396,8 @@ export const CardCarouselSchema: Template = {
           type: "object",
           label: "Embedded Button",
           name: "embeddedButton",
-          description: "The link appearing at the bottom of each card.",
+          description:
+            "Optional link or CTA at the bottom of each card. Leave Button Text blank to omit the button entirely.",
           fields: [
             {
               type: "string",

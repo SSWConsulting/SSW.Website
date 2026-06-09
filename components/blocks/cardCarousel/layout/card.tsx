@@ -97,7 +97,7 @@ const Card = ({ data, placeholder, className }: CardProps) => {
       {data.featureList?.features?.map((item, index) => {
         return <ListItem key={index} data={item} />;
       })}
-      {data.embeddedButton && (
+      {data.embeddedButton?.buttonText && (
         <div className="flex h-full flex-col-reverse justify-between">
           {(() => {
             const variant =
