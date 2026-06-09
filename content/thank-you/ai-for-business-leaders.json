@@ -1,0 +1,127 @@
+{
+  "seo": {
+    "title": "Thank you — AI for Business Leaders | SSW",
+    "description": "[Placeholder] Thanks for registering your interest in AI for Business Leaders. Secure your seat below."
+  },
+  "blocks": [
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Thank You"
+      },
+      "heading": "**Thank you!** [Placeholder thank-you headline]",
+      "isH1": true,
+      "description": "[Placeholder thank-you description — confirm the registration of interest and tease the ticket-purchase next step.]\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "[Placeholder CTA]",
+          "buttonLink": "",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 0
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/eventsv2/marlon-placeholder-4x3.png",
+        "imageHeight": 900,
+        "imageWidth": 1200,
+        "youtubeUrl": ""
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "wa02",
+          "altText": "Brisbane",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 2 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Register Now",
+            "buttonLink": "",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "wa03",
+          "altText": "Melbourne",
+          "heading": "Melbourne",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 9 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Register Now",
+            "buttonLink": "",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "wa04",
+          "altText": "Sydney",
+          "heading": "Sydney",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 16 July 2026 · 9:00am – 1:00pm",
+                "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Register Now",
+            "buttonLink": "",
+            "colour": 0
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 0
+      },
+      "_template": "cardCarousel"
+    }
+  ]
+}

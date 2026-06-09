@@ -41,6 +41,7 @@ import {
 } from "./collections/technologies";
 import { testimonialCategoriesSchema } from "./collections/testimonialCategories";
 import { testimonialSchema } from "./collections/testimonials";
+import { thankYouSchema } from "./collections/thankYou";
 import { trainingSchema } from "./collections/training";
 import {
   userGroupGlobalSchema,
@@ -81,6 +82,7 @@ const pageSchemas = [
   userGroupPageSchema,
   logosSchema,
   trainingSchema,
+  thankYouSchema,
 ];
 
 const schemas = [
