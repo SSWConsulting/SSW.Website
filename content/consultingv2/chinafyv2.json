@@ -167,6 +167,11 @@
       "_template": "cardCarousel"
     },
     {
+      "technologies": [
+        {
+          "technology": "content/v2Technologies/technologies/Azure-China.mdx"
+        }
+      ],
       "isStacked": false,
       "techCardStyle": 0,
       "background": {
