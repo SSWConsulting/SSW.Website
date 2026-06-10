@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { memo, useEffect, useState } from "react";
-import { BiChevronRightCircle } from "react-icons/bi";
+import { BiChevronRightCircle } from "@react-icons/all-files/bi/BiChevronRightCircle";
 
 import { tinaField } from "tinacms/dist/react";
 import layoutData from "../../content/global/index.json";
