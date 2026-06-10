@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BiRightArrowAlt } from "./localIcons";
+import { BiRightArrowAlt } from "react-icons/bi";
 import { cn } from "@/lib/utils";
 import { CustomLink } from "../customLink";
 // import { useTheme } from "../layout";
