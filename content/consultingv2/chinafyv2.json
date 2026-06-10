@@ -135,7 +135,7 @@
           "altText": "",
           "icon": "BiExpand",
           "heading": "Application Localisation ",
-          "description": "etting into China goes far beyond translation. SSW guides you through the full localisation and optimisation process, aligning your UX with Chinese user expectations, improving adoption rates, and making sure your application actually competes in the market.",
+          "description": "Getting into China goes far beyond translation. SSW guides you through the full localisation and optimisation process, aligning your UX with Chinese user expectations, improving adoption rates, and making sure your application actually competes in the market.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -165,6 +165,15 @@
         "backgroundColour": 6
       },
       "_template": "cardCarousel"
+    },
+    {
+      "isStacked": false,
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false
+      },
+      "_template": "technologyCardCarousel"
     },
     {
       "spacerHeight": "50px",
