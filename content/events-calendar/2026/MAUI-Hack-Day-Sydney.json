@@ -1,0 +1,18 @@
+{
+  "title": "MAUI Hack Day Sydney",
+  "slug": "mauihackdaysyd27",
+  "url": "https://www.eventbrite.com/e/maui-hack-day-sydney-tickets-1991444960485",
+  "thumbnail": "/images/events/mauihackday-thumb.png",
+  "thumbnailDescription": "MAUI Hack Day",
+  "headerLayout": "avatars",
+  "startDateTime": "2027-02-12T23:00:14.392Z",
+  "endDateTime": "2027-02-13T07:00:31.670Z",
+  "calendarType": "Hack Days",
+  "city": "Sydney",
+  "category": "Mobile",
+  "abstract": "What is MAUI Hack Day?\n\nMAUI Hack Days (previously Xamarin Hack Days) are community-run events for mobile developers or people who want to learn .NET MAUI for free.\n\nWe use AI, vibe coding and enterprise software techniques.\n\nThere will be something for everyone. Experienced .NET MAUI developers can share ideas with other experienced developers. If you're a beginner then there's plenty to learn on the day.\n\nIt’s recommended that attendees bring their own laptop on the day with .NET MAUI, Visual Studio 2026, VS Code, or Rider already setup and installed. If you’ve never played with .NET MAUI before it would be good to do a little bit of learning before the day but it’s not a requirement as all are welcome.",
+  "description": "#### What is MAUI Hack Day?\n\nMAUI Hack Days (previously Xamarin Hack Days) are community-run events for mobile developers or people who want to learn .NET MAUI for free.\n\nWe use [AI](https://www.ssw.com.au/rules/rules-to-better-ai-development), [vibe coding](https://www.ssw.com.au/rules/start-vibe-coding-best-practices) and [enterprise software techniques](https://www.ssw.com.au/rules/rules-to-better-websites-development).\n\nThere will be something for everyone. Experienced .NET MAUI developers can share ideas with other experienced developers. If you're a beginner, then there's plenty to learn on the day.\n\nIt’s recommended that attendees bring their own laptop on the day with .NET MAUI, Visual Studio 2026, VS Code, or Rider already set up and installed. If you’ve never played with .NET MAUI before, it would be good to do a little bit of learning before the day, but it’s not a requirement, as all are welcome.\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
