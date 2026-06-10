@@ -92,6 +92,11 @@ export const ImageComponentLayout = ({ data, children, priority = false }) => {
                 <Image
                   width={data.mediaConfiguration?.imageWidth}
                   priority={loadWithPriority}
+                  // next/image's `priority` alone no longer emits the
+                  // fetchpriority="high" hint (Next 15.5 only forwards an
+                  // explicit fetchPriority prop), and Lighthouse flags the
+                  // LCP image without it
+                  fetchPriority={loadWithPriority ? "high" : undefined}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   height={data.mediaConfiguration?.imageHeight}
                   className={cn("w-full rounded-md")}
