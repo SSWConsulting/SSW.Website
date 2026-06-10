@@ -9,7 +9,7 @@ import { customImageBlockSchema } from "../../components/blocks/customImage";
 import { dynamicCardGridBlockSchema } from "../../components/blocks/dynamicCardGridBlock";
 import { fixedColumnsSchema } from "../../components/blocks/fixedColumns";
 import { sectionHeaderSchema } from "../../components/blocks/sectionHeader";
-import { tableBlockSchema } from "../../components/blocks/tableLayout";
+import { tableBlockSchema } from "../../components/blocks/tableLayout.schema";
 import { testimonialsListSchema } from "../../components/blocks/testimonialsList";
 import { verticalImageLayoutBlockSchema } from "../../components/blocks/verticalImageLayout";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";

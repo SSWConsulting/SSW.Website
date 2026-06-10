@@ -51,7 +51,7 @@ import { recurringEventSchema } from "./recurringEvent";
 import { sectionHeaderSchema } from "./sectionHeader";
 import { serviceCardsBlockSchema } from "./serviceCards.schema";
 import { SpacerSchema } from "./spacer/spacer.schema";
-import { tableBlockSchema } from "./tableLayout";
+import { tableBlockSchema } from "./tableLayout.schema";
 import { testimonialsListSchema } from "./testimonialsList";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";

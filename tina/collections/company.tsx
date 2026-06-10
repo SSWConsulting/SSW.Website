@@ -3,7 +3,7 @@ import * as Schemas from "../../components/blocks";
 import { carouselBlockSchema } from "../../components/blocks/carousel.schema";
 import { fixedColumnsSchema } from "../../components/blocks/fixedColumns";
 import { sectionHeaderSchema } from "../../components/blocks/sectionHeader";
-import { tableBlockSchema } from "../../components/blocks/tableLayout";
+import { tableBlockSchema } from "../../components/blocks/tableLayout.schema";
 import { testimonialsListSchema } from "../../components/blocks/testimonialsList";
 import { verticalImageLayoutBlockSchema } from "../../components/blocks/verticalImageLayout";
 

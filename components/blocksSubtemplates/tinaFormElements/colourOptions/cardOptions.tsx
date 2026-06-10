@@ -1,4 +1,4 @@
-import { ColorPickerOptions } from "../colourSelector";
+import type { ColorPickerOptions } from "../colourSelector";
 
 export const cardOptions: ColorPickerOptions[] = [
   {

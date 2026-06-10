@@ -1,6 +1,5 @@
 import { tinaField } from "tinacms/dist/react";
 import { Icon } from "./tinaFormElements/icon";
-import { IconPickerInput } from "./tinaFormElements/iconSelector";
 
 export const IconLabel = ({ data }) => {
   return (
@@ -23,21 +22,3 @@ export const IconLabel = ({ data }) => {
     </div>
   );
 };
-
-export const IconLabelSchema = [
-  {
-    type: "string",
-    label: "Label Text",
-    name: "labelText",
-    description: "Text for the label.",
-  },
-  {
-    type: "string",
-    label: "Icon",
-    name: "icon",
-    description: "Icon to proceed the label.",
-    ui: {
-      component: IconPickerInput,
-    },
-  },
-];

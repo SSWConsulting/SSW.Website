@@ -16,22 +16,24 @@ export const TechnologyCardCarousel = ({
   useEffect(() => {
     function fetchData() {
       const cards =
-        data.technologies?.map((tech) => {
-          return {
-            guid: tech.technology.associatedGroup?.name,
-            image: tech.technology.thumbnail,
-            heading: tech.technology?.name,
-            altText: tech.technology?.name,
-            description: tech.technology.body,
-            embeddedButton: {
-              buttonText: "Read more",
-              buttonLink: tech.technology.readMoreSlug,
-              icon: "BiChevronRight",
-            },
-            icon: tech.technology.icon,
-            contain: true,
-          };
-        }) ?? [];
+        data.technologies
+          ?.filter((tech) => tech?.technology)
+          .map((tech) => {
+            return {
+              guid: tech.technology.associatedGroup?.name,
+              image: tech.technology.thumbnail,
+              heading: tech.technology?.name,
+              altText: tech.technology?.name,
+              description: tech.technology.body,
+              embeddedButton: {
+                buttonText: "Read more",
+                buttonLink: tech.technology.readMoreSlug,
+                icon: "BiChevronRight",
+              },
+              icon: tech.technology.icon,
+              contain: true,
+            };
+          }) ?? [];
 
       setCardList(cards);
     }
