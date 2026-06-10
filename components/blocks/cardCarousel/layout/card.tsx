@@ -6,8 +6,12 @@ import { VideoModal } from "@/components/videoModal";
 import Image from "next/image";
 import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
+import RippleButton, { ColorVariant } from "../../../button/rippleButtonV2";
+import { EventbriteModalButton } from "../../eventbrite/eventbriteModalButton";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
+
+const buttonVariants: ColorVariant[] = ["primary", "secondary", "ghost"];
 
 type CardProps = {
   data;
@@ -77,18 +81,54 @@ const Card = ({ data, placeholder, className }: CardProps) => {
       {data.featureList?.features?.map((item, index) => {
         return <ListItem key={index} data={item} />;
       })}
-      {data.embeddedButton && (
+      {data.embeddedButton?.buttonText && (
         <div className="flex h-full flex-col-reverse justify-between">
-          <a
-            href={data.embeddedButton.buttonLink}
-            className="pt-2 font-semibold text-white !decoration-gray-400 !decoration-1 hover:!decoration-sswRed"
-          >
-            {data.embeddedButton.buttonText}
-            <Icon
-              data={{ name: data.embeddedButton.icon }}
-              className="inline size-4"
-            />
-          </a>
+          {(() => {
+            const variant =
+              buttonVariants[data.embeddedButton.colour ?? 2] ?? "ghost";
+            const buttonInner = (
+              <>
+                {data.embeddedButton.buttonText}
+                <Icon
+                  data={{ name: data.embeddedButton.icon }}
+                  className="inline size-4"
+                />
+              </>
+            );
+            if (data.embeddedButton.eventbriteEventId) {
+              return (
+                <EventbriteModalButton
+                  eventId={data.embeddedButton.eventbriteEventId}
+                  variant={variant}
+                  className={cn("mt-2 self-start")}
+                  textTinaField={tinaField(data.embeddedButton, "buttonText")}
+                >
+                  {buttonInner}
+                </EventbriteModalButton>
+              );
+            }
+            return data.embeddedButton.buttonLink ? (
+              <a
+                href={data.embeddedButton.buttonLink}
+                className={cn("mt-2 self-start")}
+              >
+                <RippleButton
+                  variant={variant}
+                  textTinaField={tinaField(data.embeddedButton, "buttonText")}
+                >
+                  {buttonInner}
+                </RippleButton>
+              </a>
+            ) : (
+              <RippleButton
+                variant={variant}
+                className={cn("mt-2 self-start")}
+                textTinaField={tinaField(data.embeddedButton, "buttonText")}
+              >
+                {buttonInner}
+              </RippleButton>
+            );
+          })()}
         </div>
       )}
     </div>

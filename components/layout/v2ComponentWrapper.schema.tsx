@@ -39,5 +39,12 @@ export const backgroundSchema = {
       name: "bleed",
       description: "If true, the background will bleed into lower blocks.",
     },
+    {
+      type: "string",
+      label: "Anchor ID",
+      name: "anchorId",
+      description:
+        "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to smooth-scroll here (offset for the sticky header is handled automatically).",
+    },
   ],
 };

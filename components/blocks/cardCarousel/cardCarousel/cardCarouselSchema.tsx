@@ -1,9 +1,9 @@
 import { default as React, useEffect, useState } from "react";
-import { wrapFieldsWithMeta } from "tinacms";
-import type { Template, TinaField } from "tinacms";
+import { Template, TinaField, wrapFieldsWithMeta } from "tinacms";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";
+import { buttonOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
@@ -396,7 +396,8 @@ export const CardCarouselSchema: Template = {
           type: "object",
           label: "Embedded Button",
           name: "embeddedButton",
-          description: "The link appearing at the bottom of each card.",
+          description:
+            "Optional link or CTA at the bottom of each card. Leave Button Text blank to omit the button entirely.",
           fields: [
             {
               type: "string",
@@ -406,9 +407,17 @@ export const CardCarouselSchema: Template = {
             },
             {
               type: "string",
+              label: "Eventbrite Event ID",
+              name: "eventbriteEventId",
+              description:
+                "Numeric event ID from the Eventbrite event URL (e.g. eventbrite.com/e/<name>-<EVENT_ID>). When set, the button opens that event's checkout in a modal — the embed only loads on click. Leave the Button Link blank when using this.",
+            },
+            {
+              type: "string",
               label: "Button Link",
               name: "buttonLink",
-              description: "Link to the page the button will navigate to.",
+              description:
+                "Link the button navigates to (supports in-page anchors like #pick-your-city). Leave blank when using an Eventbrite Event ID.",
             },
             // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
             {
@@ -417,6 +426,16 @@ export const CardCarouselSchema: Template = {
               name: "icon",
               ui: {
                 component: IconPickerInput,
+              },
+            },
+            {
+              type: "number",
+              label: "Colour",
+              name: "colour",
+              // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
+              ui: {
+                component: ColorPickerInput(buttonOptions),
+                defaultValue: 2,
               },
             },
           ],

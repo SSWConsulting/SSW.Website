@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import React, { MouseEvent, useEffect, useState } from "react";
 
-export type ColorVariant = "primary" | "secondary";
+export type ColorVariant = "primary" | "secondary" | "ghost";
 
 export type ButtonTinaFields = {
   textTinaField?: string;
@@ -108,6 +108,8 @@ const variants: Record<ColorVariant, string> = {
   primary: "bg-ssw-red hover:bg-sswDarkRed text-white",
   secondary:
     "bg-transparent outline -outline-1.5  outline-white -outline-offset-1.5 hover:outline-gray-200 hover:text-gray-200 text-white",
+  ghost:
+    "bg-transparent px-0 py-0 font-semibold text-white underline decoration-gray-400 decoration-1 hover:decoration-sswRed",
 };
 
 RippleButton.displayName = "RippleButton";

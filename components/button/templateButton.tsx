@@ -27,7 +27,7 @@ type ButtonProps = { className: string; data: TemplateButtonOptions };
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, data }: ButtonProps, ref) => {
     const [open, setOpen] = useState(false);
-    const variants: ColorVariant[] = ["primary", "secondary"];
+    const variants: ColorVariant[] = ["primary", "secondary", "ghost"];
     const { iconFirst, buttonText, colour, leadCaptureFormOption } = data;
     const selectedFormId =
       globals.forms[leadCaptureFormOption] || globals.forms[0];
