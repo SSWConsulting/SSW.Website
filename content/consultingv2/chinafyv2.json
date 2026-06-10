@@ -1,0 +1,238 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Chinese Markets | SSW",
+    "description": "Unlock the Chinese market. SSW’s Chinafy experts optimize your web apps for speed, reliability, and local compliance behind the Great Firewall.",
+    "canonical": ""
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Mini Apps",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "20+ years delivering Western solutions to Eastern markets"
+      },
+      "heading": "Enter the Chinese market, **the right way**",
+      "isH1": true,
+      "description": "China's 1.3 billion WeChat users live inside a single app. WeChat Mini Programs are lightweight, native experiences built directly into WeChat, with no app store approvals, no downloads, and no VPN workarounds. SSW's China experts help you build one, so your brand reaches Chinese consumers exactly where they already are, with payments, loyalty, and commerce that actually works.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/012.jpg",
+        "imageHeight": 4480,
+        "imageWidth": 6720
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 170,
+          "altText": "CommBank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 195,
+          "altText": "Allianz"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 180,
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 175,
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 160,
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 195,
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 175,
+          "altText": "Cisco"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Why Most Western Businesses Fail in China's Digital Market",
+      "isH1": false,
+      "description": "China has its own digital infrastructure, its own platforms, and its own consumer expectations. WeChat has 1.4 billion monthly active users, 945 million using Mini Programs, and a payments ecosystem processing transactions 2.7 times per day per user. Alipay, Douyin, and Taobao are the infrastructure.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "WeChat Mini Programs ",
+            "description": "945 million people use Mini Programs inside WeChat every month. Fully functional apps, no download required. For consumer-facing businesses a Mini Program is often the primary way Chinese customers will interact with your brand."
+          },
+          {
+            "heading": "Payments Infrastructure",
+            "description": "Cash is rare. Cards are rare. WeChat Pay and Alipay are how China transacts. Getting this right is a prerequisite for doing business, not an afterthought"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "🔨 Do You Know Why You Should Chinafy Your App? ",
+          "buttonLink": "https://www.ssw.com.au/rules/do-you-know-why-you-should-chinafy-your-app",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "youtubeUrl": "https://www.youtube.com/watch?v=K_fpd-YCGOc"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "dd2c2j",
+          "altText": "",
+          "icon": "BiExpand",
+          "heading": "WeChat Mini Program Strategy",
+          "description": "We help you determine whether a Mini Program fits your business, what it needs to do, and how to get it in front of the right users inside WeChat's ecosystem.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "vn8nxt",
+          "altText": "Intranet Portals",
+          "icon": "BiDoorOpen",
+          "heading": "Digital Payments Integration",
+          "description": "WeChat Pay and Alipay are expected by Chinese consumers. We advise on what integration looks like for your business model and what compliance and setup steps apply to foreign entities.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "e7yf1l",
+          "altText": "",
+          "icon": "BiSearch",
+          "heading": "China Market Entry Advisory",
+          "description": "From mapping the competitive landscape to identifying which platforms matter for your industry, we help you build a digital go-to-market strategy grounded in how China actually works.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "Do I need a Chinese business entity to operate on WeChat?",
+          "content": "No. Overseas entities can directly register and authenticate. However, a domestic Chinese entity is required if your Mini Program's server is hosted in mainland China (due to ICP filing regulations). Additionally, overseas entities face more restrictions regarding the types of services they can offer.\n"
+        },
+        {
+          "label": "What's the difference between a WeChat Mini Program and a native app?",
+          "content": "A WeChat Mini Program runs directly inside WeChat with no download required, offering lower development costs. However, it is strictly limited by WeChat’s platform rules, review processes, and capabilities. On the otherhand a Native App must be downloaded from an app store. It requires higher development costs but provides full access to device capabilities and greater operational freedom.\n"
+        },
+        {
+          "label": "How long does it take to launch a Mini Program?",
+          "content": "The total timeline runs from 4 to 8 weeks, though this can compress to roughly one week if development is already complete and ICP filing isn't required. The total timeline runs from 4 to 8 weeks, though this can compress to roughly one week if development is already complete and ICP filing isn't required.\n"
+        },
+        {
+          "label": "Is WeChat Pay available to foreign businesses?",
+          "content": "Yes. WeChat Pay offers a cross-border mode specifically for overseas entities, allowing activation using local business qualifications without a domestic Chinese entity. However, the application process and requirements can be more complex than for domestic Chinese companies.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about moving your project to China",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
