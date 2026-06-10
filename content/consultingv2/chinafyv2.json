@@ -126,7 +126,7 @@
     },
     {
       "isStacked": true,
-      "heading": "",
+      "heading": "How SSW Chinafies your application",
       "isH1": false,
       "body": "",
       "cards": [
@@ -134,8 +134,8 @@
           "guid": "dd2c2j",
           "altText": "",
           "icon": "BiExpand",
-          "heading": "WeChat Mini Program Strategy",
-          "description": "We help you determine whether a Mini Program fits your business, what it needs to do, and how to get it in front of the right users inside WeChat's ecosystem.",
+          "heading": "Application Localisation ",
+          "description": "etting into China goes far beyond translation. SSW guides you through the full localisation and optimisation process, aligning your UX with Chinese user expectations, improving adoption rates, and making sure your application actually competes in the market.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -144,8 +144,8 @@
           "guid": "vn8nxt",
           "altText": "Intranet Portals",
           "icon": "BiDoorOpen",
-          "heading": "Digital Payments Integration",
-          "description": "WeChat Pay and Alipay are expected by Chinese consumers. We advise on what integration looks like for your business model and what compliance and setup steps apply to foreign entities.",
+          "heading": "China Social Media & Mini Programs",
+          "description": "Facebook, Instagram, YouTube, and Twitter are inaccessible in China. WeChat is the platform, and WeChat Mini Programs are how 945 million people access apps without a download. SSW helps you identify the right platforms for your industry and build a presence where your Chinese customers actually are.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -154,8 +154,8 @@
           "guid": "e7yf1l",
           "altText": "",
           "icon": "BiSearch",
-          "heading": "China Market Entry Advisory",
-          "description": "From mapping the competitive landscape to identifying which platforms matter for your industry, we help you build a digital go-to-market strategy grounded in how China actually works.",
+          "heading": "Integration with Local Services",
+          "description": "Blocked CDNs, missing payment rails, inaccessible APIs. SSW replaces your Western dependencies with proven local equivalents, Azure China (operated by 21Vianet), Alibaba Cloud, WeChat Pay, and Alipay, so your application performs reliably for Chinese users.",
           "embeddedButton": {
             "buttonText": ""
           }
