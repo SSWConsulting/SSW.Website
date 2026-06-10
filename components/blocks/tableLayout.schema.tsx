@@ -8,12 +8,12 @@ import { tableStyles } from "./tableLayout";
 
 const getTableFieldFromForm = (field, allValues, index: number) => {
   const pathArr = field?.name?.split(".");
-  // Remove the last 3 elements in the array to get the path to the table
+  // Remove the last `index` elements in the array to get the path to the table
   pathArr?.splice(pathArr?.length - index, index);
   let currentObj = allValues;
 
   for (const currPath of pathArr) {
-    if (currentObj && currentObj[currPath]) {
+    if (currentObj != null && currPath in Object(currentObj)) {
       currentObj = currentObj[currPath];
     } else {
       // eslint-disable-next-line no-console
@@ -76,10 +76,10 @@ export const tableBlockSchema: Template = {
                 );
 
                 const pathArr = field?.name?.split(".");
-                const headerIndex = parseInt(pathArr[7]);
+                const headerIndex = Number.parseInt(pathArr?.[7], 10);
                 let headerText = undefined;
-                if (!isNaN(headerIndex)) {
-                  headerText = tableObj.headers[headerIndex];
+                if (!Number.isNaN(headerIndex)) {
+                  headerText = tableObj?.headers?.[headerIndex];
                 }
 
                 return (

@@ -14,7 +14,7 @@ export const IconLabelSchema = [
     type: "string",
     label: "Icon",
     name: "icon",
-    description: "Icon to proceed the label.",
+    description: "Icon to precede the label.",
     ui: {
       component: IconPickerInput,
     },
