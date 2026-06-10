@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import * as React from "react";
-import { SiFacebook, SiGithub, SiLinkedin, SiMeetup } from "react-icons/si";
+import { SiFacebook, SiGithub, SiLinkedin, SiMeetup } from "../util/localIcons";
 import { CustomLink } from "../customLink";
 
 export const platformList = [

@@ -4,7 +4,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import Image from "next/image";
 import { useMemo } from "react";
-import { BiVideo } from "react-icons/bi";
+import { BiVideo } from "@/components/util/localIcons";
 import { UtilityButton } from "../../button/utilityButton";
 import { CustomLink } from "../../customLink";
 import { CITY_TIMEZONES } from "../../util/constants/country";

@@ -1,6 +1,6 @@
 "use client";
 import { tinaField } from "tinacms/dist/react";
-import { Icon } from "./tinaFormElements/icon";
+import { Icon } from "./tinaFormElements/dynamicIcon";
 
 export const ListItem = ({ data }) => {
   return (

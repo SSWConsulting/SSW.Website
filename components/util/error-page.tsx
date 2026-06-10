@@ -8,7 +8,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import React from "react";
-import { BiChevronRight } from "react-icons/bi";
+import { BiChevronRight } from "./localIcons";
 import { FaXmark } from "react-icons/fa6";
 import { LiveStreamData } from "../layout/layout";
 
