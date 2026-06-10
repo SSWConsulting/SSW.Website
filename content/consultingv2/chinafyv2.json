@@ -100,8 +100,8 @@
             "description": "Data residency rules and ICP filing requirements affect architectural decisions most teams have already locked in. We identify the implications early, before they become expensive to undo."
           },
           {
-            "heading": "Payments Infrastructure",
-            "description": "Cash is rare. Cards are rare. WeChat Pay and Alipay are how China transacts. Getting this right is a prerequisite for doing business, not an afterthought"
+            "heading": "Dependency audit",
+            "description": "Most modern apps quietly rely on services that are blocked in China. We map every external dependency, auth, payments, analytics, AI providers, and identify what needs replacing and with what."
           }
         ]
       },
