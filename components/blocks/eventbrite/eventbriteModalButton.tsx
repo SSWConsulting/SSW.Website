@@ -5,7 +5,7 @@ import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import RippleButton, { ColorVariant } from "../../button/rippleButtonV2";
 
 const EVENTBRITE_WIDGET_SRC =
-  "https://www.eventbrite.com/static/widgets/eb_widgets.js";
+  "https://www.eventbrite.com.au/static/widgets/eb_widgets.js";
 
 // SSW dark theme so Eventbrite's checkout matches the event pages.
 const THEME_SETTINGS = {
@@ -61,11 +61,18 @@ export const EventbriteModalButton = ({
   const triggerId = `eventbrite-modal-trigger-${eventId}-${reactId}`;
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const boundRef = useRef(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const bindWidget = useCallback(() => {
     if (boundRef.current) return;
     if (typeof window === "undefined" || !window.EBWidgets) return;
-    if (!document.getElementById(triggerId)) return;
+    const button = buttonRef.current;
+    if (!button) return;
+    // React can leave the server-rendered id on the node after a hydration
+    // mismatch, so the useId in this closure may not match the id actually in
+    // the DOM. Pin the id to the node we hold a ref to, then bind Eventbrite to
+    // that exact id — otherwise createWidget finds no trigger and silently no-ops.
+    button.id = triggerId;
     window.EBWidgets.createWidget({
       widgetType: "checkout",
       eventId,
@@ -99,6 +106,7 @@ export const EventbriteModalButton = ({
         onLoad={() => setScriptLoaded(true)}
       />
       <RippleButton
+        ref={buttonRef}
         id={triggerId}
         type="button"
         variant={variant}
