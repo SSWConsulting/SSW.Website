@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
-import { Icon } from "../../../blocksSubtemplates/tinaFormElements/dynamicIcon";
+import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
 
 type CardProps = {
   data;

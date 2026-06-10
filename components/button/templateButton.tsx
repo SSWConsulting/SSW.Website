@@ -1,4 +1,4 @@
-import { Icon } from "@/components/blocksSubtemplates/tinaFormElements/dynamicIcon";
+import { Icon } from "@/components/blocksSubtemplates/tinaFormElements/icon";
 import classNames from "classnames";
 import React, { useState } from "react";
 import Jotform from "react-jotform";

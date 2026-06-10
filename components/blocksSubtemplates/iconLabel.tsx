@@ -1,5 +1,5 @@
 import { tinaField } from "tinacms/dist/react";
-import { Icon } from "./tinaFormElements/dynamicIcon";
+import { Icon } from "./tinaFormElements/icon";
 
 export const IconLabel = ({ data }) => {
   return (
