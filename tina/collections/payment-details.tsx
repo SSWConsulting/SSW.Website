@@ -1,16 +1,9 @@
 import type { Collection } from "tinacms";
 import { tipField } from "./shared-fields";
 
-export const paymentDetailsBlockConstant = {
-  value: "paymentDetails",
-  bankName: "bankName",
-  accountName: "accountName",
-  bsbNumber: "bsbNumber",
-  accountNumber: "accountNumber",
-  swiftNumber: "swiftNumber",
-  abn: "abn",
-  acn: "acn",
-};
+import { paymentDetailsBlockConstant } from "./payment-details.constant";
+
+export { paymentDetailsBlockConstant };
 
 export const paymentDetailsSchema: Collection = {
   label: "Company - Payment Details",
