@@ -44,7 +44,7 @@ export const backgroundSchema = {
       label: "Anchor ID",
       name: "anchorId",
       description:
-        "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to smooth-scroll here (offset for the sticky header is handled automatically).",
+        "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to jump here (the offset for the sticky header is handled automatically).",
     },
   ],
 };

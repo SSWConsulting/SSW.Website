@@ -1,9 +1,12 @@
 "use client";
 
+import { sendGTMEvent } from "@next/third-parties/google";
 import Script from "next/script";
 import React, { useCallback, useEffect, useId, useRef, useState } from "react";
 import RippleButton, { ColorVariant } from "../../button/rippleButtonV2";
 
+// Region-specific (.com.au): matches the AU events this component is used for.
+// Change the TLD if it is ever reused for events on another Eventbrite domain.
 const EVENTBRITE_WIDGET_SRC =
   "https://www.eventbrite.com.au/static/widgets/eb_widgets.js";
 
@@ -30,7 +33,6 @@ declare global {
         };
       }) => void;
     };
-    dataLayer?: Record<string, unknown>[];
   }
 }
 
@@ -56,7 +58,7 @@ export const EventbriteModalButton = ({
   textTinaField,
   children,
 }: EventbriteModalButtonProps) => {
-  // Unique per mounted instance — the same event can appear on multiple cards.
+  // Unique per mounted instance — the same event can appear on many cards.
   const reactId = useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const triggerId = `eventbrite-modal-trigger-${eventId}-${reactId}`;
   const [scriptLoaded, setScriptLoaded] = useState(false);
@@ -69,9 +71,9 @@ export const EventbriteModalButton = ({
     const button = buttonRef.current;
     if (!button) return;
     // React can leave the server-rendered id on the node after a hydration
-    // mismatch, so the useId in this closure may not match the id actually in
-    // the DOM. Pin the id to the node we hold a ref to, then bind Eventbrite to
-    // that exact id — otherwise createWidget finds no trigger and silently no-ops.
+    // mismatch, so the useId in this closure may not match the id actually
+    // in the DOM. Pin the id to the node we hold a ref to, then bind to that
+    // exact id — otherwise createWidget finds no trigger and silently no-ops.
     button.id = triggerId;
     window.EBWidgets.createWidget({
       widgetType: "checkout",
@@ -80,9 +82,9 @@ export const EventbriteModalButton = ({
       modalTriggerElementId: triggerId,
       themeSettings: THEME_SETTINGS,
       onOrderComplete: () => {
-        // Conversion hook: push to the GTM dataLayer so Facebook Pixel "Lead"
-        // and CRM tagging can fire downstream. No-op if no dataLayer exists.
-        window.dataLayer?.push({ event: "eventbrite_order_complete", eventId });
+        // Conversion hook via the app's GTM container (@next/third-parties),
+        // so Facebook Pixel "Lead" and CRM tagging can fire downstream.
+        sendGTMEvent({ event: "eventbrite_order_complete", eventId });
       },
     });
     boundRef.current = true;
@@ -103,7 +105,10 @@ export const EventbriteModalButton = ({
       <Script
         src={EVENTBRITE_WIDGET_SRC}
         strategy="afterInteractive"
-        onLoad={() => setScriptLoaded(true)}
+        // next/script dedupes by src, so with many buttons only one instance
+        // actually loads it. onReady (unlike onLoad) fires for every instance
+        // once the shared script is ready, so no card is left unbound.
+        onReady={() => setScriptLoaded(true)}
       />
       <RippleButton
         ref={buttonRef}
