@@ -1,0 +1,45 @@
+{
+  "seo": {
+    "title": "Book Your Seat | AI for Business Leaders Workshop | SSW",
+    "description": "Secure your ticket to SSW's half-day live AI workshop for Australian C-Suite executives. Choose your city and complete your booking below."
+  },
+  "blocks": [
+    {
+      "spacerHeight": "90px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Reserve Your Seat"
+      },
+      "heading": "Secure Your **$99 Seat**",
+      "isH1": true,
+      "description": "You're one step away. Choose your city and complete your booking below — payment is handled securely through Eventbrite.\n",
+      "tabletTextAlignment": "Center",
+      "background": {
+        "backgroundColour": 0
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "eventId": "",
+      "iframeHeight": 650,
+      "fallbackUrl": "",
+      "_template": "EventbriteEmbed"
+    },
+    {
+      "spacerHeight": "120px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}

@@ -32,6 +32,7 @@ import { customImageBlockSchema } from "./customImage";
 import { domainFromQuerySchema } from "./domainFromQuery.schema";
 import { downloadBlockSchema } from "./downloadBlock";
 import { dynamicColumnsSchema } from "./dynamicColumns";
+import { eventbriteEmbedSchema } from "./eventbriteEmbed";
 import { eventLinkSchema } from "./eventLink";
 import { fixedColumnsSchema } from "./fixedColumns";
 import { fixedTabsLayoutSchema } from "./fixedTabsLayout";
@@ -86,6 +87,7 @@ export const pageBlocks: Template[] = [
   downloadBlockSchema,
   dynamicColumnsSchema,
   eventBookingSchema,
+  eventbriteEmbedSchema,
   eventLinkSchema,
   flagSchema,
   fixedColumnsSchema,

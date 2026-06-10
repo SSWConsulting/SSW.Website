@@ -54,6 +54,13 @@ const JotFormEmbed = dynamic(
   }
 );
 
+const EventbriteEmbed = dynamic(
+  () => import("./blocks/eventbriteEmbed").then((mod) => mod.EventbriteEmbed),
+  {
+    ssr: false,
+  }
+);
+
 import { ServiceCards } from "./blocks/serviceCards";
 
 const TableLayout = dynamic(() =>
@@ -179,6 +186,7 @@ const componentMap = {
   LatestTech,
   VideoEmbed,
   JotFormEmbed,
+  EventbriteEmbed,
   ColorBlock,
   DownloadBlock,
   GridLayout,
