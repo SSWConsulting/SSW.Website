@@ -704,8 +704,8 @@
         },
         {
           "title": "Chinafy - Mini Apps",
-          "description": "SSW helps Western businesses build a digital presence that works in China, where WeChat, Alipay, and Mini Programs are the infrastructure.\n",
-          "logo": "/images/thumbs/WeChat-Emblem.png",
+          "description": "SSW helps Western businesses build a digital presence that works in China, where WeChat, Alipay, and Mini Programs are the infrastructure.",
+          "logo": "/images/thumbs/wechat-icon.png",
           "page": "content/consultingv2/chinafy-wechat-miniapps.json"
         }
       ]
