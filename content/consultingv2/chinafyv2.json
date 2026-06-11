@@ -232,8 +232,8 @@
           "content": "The total timeline runs from 4 to 8 weeks, though this can compress to roughly one week if development is already complete and ICP filing isn't required. The total timeline runs from 4 to 8 weeks, though this can compress to roughly one week if development is already complete and ICP filing isn't required.\n"
         },
         {
-          "label": "Is WeChat Pay available to foreign businesses?",
-          "content": "Yes. WeChat Pay offers a cross-border mode specifically for overseas entities, allowing activation using local business qualifications without a domestic Chinese entity. However, the application process and requirements can be more complex than for domestic Chinese companies.\n"
+          "label": "What Western services and tools are blocked in China?",
+          "content": "More than most teams expect. Google OAuth, Firebase, Google Analytics, Stripe, OpenAI, Facebook login, and many Western CDNs are all unavailable or unreliable. Replacements exist for almost all of them but identifying what needs replacing and implementing it correctly takes experience.\n"
         }
       ],
       "background": {
