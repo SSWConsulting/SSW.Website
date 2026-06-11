@@ -224,8 +224,8 @@
           "content": "No. Overseas entities can directly register and authenticate. However, a domestic Chinese entity is required if your Mini Program's server is hosted in mainland China (due to ICP filing regulations). Additionally, overseas entities face more restrictions regarding the types of services they can offer.\n"
         },
         {
-          "label": "What's the difference between a WeChat Mini Program and a native app?",
-          "content": "A WeChat Mini Program runs directly inside WeChat with no download required, offering lower development costs. However, it is strictly limited by WeChat’s platform rules, review processes, and capabilities. On the otherhand a Native App must be downloaded from an app store. It requires higher development costs but provides full access to device capabilities and greater operational freedom.\n"
+          "label": "Which Chinese platforms actually matter for my industry?",
+          "content": "WeChat is the baseline, communication, payments, and app distribution in one. Beyond that it depends on your model. SSW helps you identify which platforms actually move the needle for your specific business rather than trying to be everywhere at once.\n"
         },
         {
           "label": "How long does it take to launch a Mini Program?",
