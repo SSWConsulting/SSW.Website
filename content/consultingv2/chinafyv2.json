@@ -170,6 +170,9 @@
       "technologies": [
         {
           "technology": "content/v2Technologies/technologies/Azure-China.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Alibaba-Cloud.mdx"
         }
       ],
       "isStacked": false,
