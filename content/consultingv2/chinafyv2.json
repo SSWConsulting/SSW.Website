@@ -173,6 +173,9 @@
         },
         {
           "technology": "content/v2Technologies/technologies/Alibaba-Cloud.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/wechat.mdx"
         }
       ],
       "isStacked": false,
