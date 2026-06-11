@@ -203,11 +203,15 @@
           "colour": 0
         }
       ],
+      "background": {
+        "backgroundColour": 6
+      },
       "mediaConfiguration": {
+        "mediaType": "youtube",
         "placement": "Right",
-        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
         "imageHeight": 700,
-        "imageWidth": 1400
+        "imageWidth": 1400,
+        "youtubeUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA"
       },
       "_template": "imageTextBlock"
     },
