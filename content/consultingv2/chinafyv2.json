@@ -182,7 +182,7 @@
       "techCardStyle": 0,
       "background": {
         "backgroundColour": 6,
-        "bleed": false
+        "bleed": true
       },
       "_template": "technologyCardCarousel"
     },
