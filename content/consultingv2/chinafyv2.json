@@ -187,13 +187,29 @@
       "_template": "technologyCardCarousel"
     },
     {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
+      "topLabel": {
+        "labelText": ""
       },
-      "_template": "spacer"
+      "heading": "Why SSW? ",
+      "isH1": true,
+      "description": "SSW has delivered enterprise Microsoft solutions for more than 1,000 clients across 15 countries. With 100 consultants across 4 countries, including a team based in Hangzhou, SSW's developers are some of the best in the business. Many Microsoft Certifications, several MVPs, and a Microsoft Regional Director.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Contact Us",
+          "leadCaptureFormOption": "registrationOfInterestJotFormId",
+          "colour": 0
+        }
+      ],
+      "mediaConfiguration": {
+        "placement": "Right",
+        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400
+      },
+      "_template": "imageTextBlock"
     },
     {
       "heading": "Frequently Asked Questions",
