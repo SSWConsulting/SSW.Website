@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "Azure Marketplace consulting - Publish & sell your app | SSW",
-    "description": "Sell your software on Azure Marketplace and win enterprise deals. SSW builds transactable offers, deploys to customer tenants, bills via Microsoft.",
+    "title": "Azure Marketplace consulting - Publish, sell, co-sell | SSW",
+    "description": "Turn your software into an Azure Marketplace business. SSW publishes transactable offers, gets you co-sell ready, and unlocks committed Azure spend.",
     "canonical": "https://www.ssw.com.au/consulting/azure-marketplace",
     "showBreadcrumb": true,
     "images": [
@@ -22,22 +22,22 @@
       "topLabel": {
         "labelText": "Azure Marketplace"
       },
-      "heading": "Win enterprise deals with **your app on the Azure Marketplace.**",
-      "isH1": false,
-      "description": "Enterprise buyers in healthcare, finance, and government care about trust, compliance, and data control, not just features. We help you publish a transactable Azure Marketplace offer that deploys straight into your customer's Azure tenant, so their data and infrastructure stay theirs.\n",
+      "heading": "Turn your software into an **Azure Marketplace business.**",
+      "isH1": true,
+      "description": "Reach Azure's customer base, transact through Microsoft, and co-sell at scale. We design, publish, and optimise your Marketplace offer end to end.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Sell where enterprises buy",
-            "description": "List a transactable offer on Microsoft's marketplace and tap committed Azure spend.",
+            "heading": "Reach Azure's customer base",
+            "description": "Get in front of organisations already running on Azure, who can pay with their committed Azure spend (MACC).",
             "icon": "BiStore"
           },
           {
-            "heading": "Compliance by design",
-            "description": "Deploy into the customer's tenant so data residency, security, and ownership stay with them.",
-            "icon": "BiShieldAlt2"
+            "heading": "Microsoft sells and bills",
+            "description": "Transactable offers route invoicing through Microsoft, and Co-Sell Ready status puts Microsoft sellers behind your product.",
+            "icon": "BiDollarCircle"
           }
         ]
       },
@@ -52,9 +52,11 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "mediaType": "youtube",
         "placement": "Right",
-        "youtubeUrl": "https://youtu.be/bgoviwhWNPE"
+        "imageSource": "/images/ssw-web/hero/Generated%20Image%20November%2007,%202025%20-%202_22PM.png",
+        "imageHeight": 768,
+        "imageWidth": 1344,
+        "altText": "SSW Solution Architect helping a software vendor publish an Azure Marketplace offer"
       },
       "_template": "imageTextBlock"
     },
@@ -112,7 +114,7 @@
       },
       "heading": "Stop losing deals to **data residency and compliance.**",
       "isH1": false,
-      "description": "Traditional SaaS asks enterprise customers to hand their data to your environment. Many regulated buyers can't. With Azure Marketplace, your whole application deploys into the customer's Azure tenant, they keep full ownership of data and infrastructure, and Microsoft handles billing and monetization through Partner Center.\n",
+      "description": "Traditional SaaS asks enterprise customers to hand their data to your environment. Many regulated buyers can't. With an Azure Application offer on the Azure Marketplace, your whole app deploys into the customer's Azure tenant — they keep full ownership of data and infrastructure, and Microsoft handles billing through Partner Center.\n",
       "tabletTextAlignment": "Center",
       "featureColumns": {
         "twoColumns": true,
@@ -145,46 +147,12 @@
       "background": {
         "backgroundColour": 6
       },
-      "_template": "imageTextBlock"
-    },
-    {
-      "heading": "What we deliver",
-      "body": "From first offer to co-sell, we get you transacting on Azure Marketplace.",
-      "tabletTextAlignment": "Center",
-      "accordionItems": [
-        {
-          "label": "Offer creation & Partner Center setup",
-          "content": "We set up your Microsoft Partner Center, build your listing, and configure a transactable SaaS or Azure Application offer ready for enterprise buyers.\n"
-        },
-        {
-          "label": "Deploy into the customer's tenant",
-          "content": "We package your application so it deploys directly into the customer's Azure tenant, keeping their data, security, and compliance fully in their control.\n"
-        },
-        {
-          "label": "Billing & monetization",
-          "content": "We wire up metered or flat-rate billing through Microsoft, so you get paid automatically while Microsoft handles invoicing and collection.\n"
-        },
-        {
-          "label": "Co-sell with Microsoft",
-          "content": "We help you reach co-sell ready status so Microsoft sellers can put your solution in front of their enterprise customers.\n"
-        }
-      ],
-      "buttons": [
-        {
-          "buttonText": "Create an Azure Marketplace Offer",
-          "buttonLink": "https://www.ssw.com.au/rules/create-azure-marketplace-offer",
-          "colour": 1
-        },
-        {
-          "buttonText": "Rules to Better Azure",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure/",
-          "colour": 1
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "youtubeUrl": "https://youtu.be/bgoviwhWNPE"
       },
-      "_template": "accordionBlock"
+      "_template": "imageTextBlock"
     },
     {
       "isStacked": false,

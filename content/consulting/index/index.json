@@ -387,7 +387,7 @@
         },
         {
           "title": "Azure Marketplace",
-          "description": "Publish and sell your software on the Azure Marketplace to win enterprise deals. We build transactable offers, deploy into the customer's tenant, and handle billing through Microsoft.",
+          "description": "Turn your software into an Azure Marketplace business. We publish your transactable offer, get you co-sell ready with Microsoft, and unlock committed Azure spend (MACC).",
           "logo": "/images/thumbs/consulting/thumb-azure.svg",
           "page": "content/consultingv2/azure-marketplace.json",
           "tags": [
