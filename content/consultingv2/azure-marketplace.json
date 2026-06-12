@@ -155,32 +155,6 @@
       "_template": "imageTextBlock"
     },
     {
-      "heading": "What we deliver",
-      "body": "From first offer to co-sell, we get you transacting on the Azure Marketplace.",
-      "tabletTextAlignment": "Center",
-      "accordionItems": [
-        {
-          "label": "Offer creation & Partner Center setup",
-          "content": "We set up your Microsoft Partner Center, build your listing, and configure a transactable SaaS or Azure Application offer ready for enterprise buyers.\n"
-        },
-        {
-          "label": "Co-sell with Microsoft",
-          "content": "We help you reach Co-Sell Ready and IP Co-Sell Eligible status so Microsoft sellers can put your solution in front of their enterprise customers.\n"
-        }
-      ],
-      "buttons": [
-        {
-          "buttonText": "Rules to Better Azure",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure/",
-          "colour": 1
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "accordionBlock"
-    },
-    {
       "isStacked": false,
       "heading": "Related services",
       "isH1": false,
