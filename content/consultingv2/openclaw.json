@@ -68,7 +68,7 @@
           "altText": "Security",
           "icon": "BiSolidLockAlt",
           "heading": "Security Done Right",
-          "description": "OpenClaw grants deep system access: shell commands, file operations, and browser control. Without proper guardrails, that's a risk. SSW configures DM pairing policies, sandbox modes, and permission models to keep your data protected and your deployment compliant.",
+          "description": "OpenClaw grants deep system access: Shell commands, file operations, and browser control. Without proper guardrails, that's a risk. SSW configures DM pairing policies, sandbox modes, and permission models to keep your data protected and your deployment compliant.",
           "embeddedButton": {
             "buttonText": ""
           }
