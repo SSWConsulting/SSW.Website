@@ -1,16 +1,8 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React, { MouseEvent, useEffect, useState } from "react";
-import { buttonOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 
 export type ColorVariant = "primary" | "secondary" | "ghost";
-
-// Tina colour pickers store an index; each picker entry declares the variant
-// it maps to, so buttonOptions is the single source of the index → variant
-// contract and this lookup is derived from it.
-export const buttonColorVariants: ColorVariant[] = buttonOptions.map(
-  (option) => option.variant
-);
 
 const variants: Record<ColorVariant, string> = {
   primary: "bg-ssw-red hover:bg-sswDarkRed text-white",
@@ -34,10 +26,15 @@ interface RippleButtonProps
   variant: ColorVariant;
   /** When set, renders an <a> instead of a <button> for link-style CTAs. */
   href?: string;
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  // Rendered element is polymorphic (<a> | <button>), so ref and onClick are
+  // typed to the common HTMLElement rather than lying about HTMLButtonElement.
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
+const RippleButton = React.forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  RippleButtonProps
+>(
   (
     {
       variant = "primary",

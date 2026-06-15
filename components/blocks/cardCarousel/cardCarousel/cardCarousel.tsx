@@ -25,19 +25,18 @@ export const CardCarousel = ({ data }) => {
   // choice takes precedence; when unset, fall back to the original
   // card-count behaviour. Tailwind classes are kept as full static strings
   // so the JIT compiler picks them up.
-  const cardsPerRow = data.cardsPerRow
-    ? Number(data.cardsPerRow)
-    : data.cards?.length === 3
-      ? 3
-      : data.cards?.length === 2
-        ? 2
-        : 1;
-  const stackedGridColsClass =
-    cardsPerRow === 3
-      ? "sm:grid-cols-2 md:grid-cols-3 lg:gap-8"
-      : cardsPerRow === 2
-        ? "sm:grid-cols-2"
-        : "";
+  const STACKED_GRID_COLS: Record<number, string> = {
+    2: "sm:grid-cols-2",
+    3: "sm:grid-cols-2 md:grid-cols-3 lg:gap-8",
+  };
+  const resolveCardsPerRow = () => {
+    if (data.cardsPerRow) return Number(data.cardsPerRow);
+    if (data.cards?.length === 3) return 3;
+    if (data.cards?.length === 2) return 2;
+    return 1;
+  };
+  const cardsPerRow = resolveCardsPerRow();
+  const stackedGridColsClass = STACKED_GRID_COLS[cardsPerRow] ?? "";
 
   useEffect(() => {
     if (activeCategory && data.cards) {
@@ -67,7 +66,7 @@ export const CardCarousel = ({ data }) => {
             )}
           >
             {data.topLabel &&
-              (data.topLabel?.icon || data.topLabel?.labelText) && (
+              (data.topLabel.icon || data.topLabel.labelText) && (
                 <div
                   className={cn(
                     "flex",
@@ -113,9 +112,6 @@ export const CardCarousel = ({ data }) => {
               <div
                 className={cn(
                   data.cardStyle === 1 ? "gap-8" : "gap-4",
-                  // "Cards per row" control wins when set; otherwise fall back
-                  // to the original card-count behaviour so existing carousels
-                  // render exactly as before.
                   stackedGridColsClass,
                   "grid items-stretch justify-center"
                 )}

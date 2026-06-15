@@ -13,10 +13,7 @@ import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colour
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
 import { buttonSchema } from "../../../button/templateButton.schema";
-import {
-  anchorIdSchema,
-  backgroundSchema,
-} from "../../../layout/v2ComponentWrapper.schema";
+import { wrapperBaseFields } from "../../../layout/v2ComponentWrapper.schema";
 import { mediaTypeField } from "../../mediaType.schema";
 import { youtubeEmbedField } from "../../youtubeEmbed.schema";
 
@@ -387,7 +384,7 @@ export const CardCarouselSchema: Template = {
           label: "Eyebrow",
           name: "eyebrow",
           description:
-            "Optional small label above the card heading (e.g. a timestamp like \"9:00 – 9:20\").",
+            "Optional small label above the card heading (e.g. a timestamp like '9:00 – 9:20').",
         },
         {
           type: "string",
@@ -470,8 +467,6 @@ export const CardCarouselSchema: Template = {
         },
       ],
     },
-    //@ts-expect-error – fields are not being recognized
-    backgroundSchema,
-    anchorIdSchema,
+    ...wrapperBaseFields,
   ],
 };
