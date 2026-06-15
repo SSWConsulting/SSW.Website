@@ -38,9 +38,9 @@
         "placement": "Left",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/eventsv2/marlon-placeholder-4x3.png",
-        "imageHeight": 900,
-        "imageWidth": 1200,
+        "imageSource": "/images/eventsv2/ai-for-business-leaders-hero.webp",
+        "imageHeight": 968,
+        "imageWidth": 1625,
         "youtubeUrl": ""
       },
       "_template": "imageTextBlock"
@@ -245,9 +245,9 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/eventsv2/marlon-placeholder-4x3.png",
-        "imageHeight": 900,
-        "imageWidth": 1200,
+        "imageSource": "/images/eventsv2/ai-for-business-leaders-opportunity.webp",
+        "imageHeight": 1024,
+        "imageWidth": 1536,
         "youtubeUrl": ""
       },
       "_template": "imageTextBlock"
@@ -594,9 +594,9 @@
         "mediaType": "image",
         "placement": "Left",
         "mobilePlacement": "Above",
-        "imageSource": "/images/eventsv2/marlon-placeholder-4x3.png",
-        "imageHeight": 900,
-        "imageWidth": 1200,
+        "imageSource": "/images/eventsv2/mike-smedley-host.webp",
+        "imageHeight": 768,
+        "imageWidth": 1024,
         "youtubeUrl": ""
       },
       "_template": "imageTextBlock",
