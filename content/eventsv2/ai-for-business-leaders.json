@@ -67,7 +67,7 @@
       "isStacked": true,
       "heading": "Pick your city.",
       "isH1": false,
-      "body": "Pick your city below and secure checkout opens right here on the page — confirm your $99 seat in a few clicks.",
+      "body": "Pick your city below and secure checkout opens right here on the page - confirm your $99 seat in a few clicks.",
       "tabletTextAlignment": "Center",
       "cardStyle": 0,
       "cards": [
@@ -291,13 +291,13 @@
         {
           "guid": "agenda-card-2",
           "eyebrow": "9:20 – 10:00",
-          "heading": "Problem 1 — The custom build you parked",
+          "heading": "Problem 1 -> The custom build you parked",
           "description": "The system, the dashboard, the automation - the business case never stacked up. AI changed that. Projects that were too expensive to justify are now economically viable."
         },
         {
           "guid": "agenda-card-3",
           "eyebrow": "10:00 – 10:40",
-          "heading": "Problem 2 — The data your executives can't see",
+          "heading": "Problem 2 -> The data your executives can't see",
           "description": "AI can help you make better decisions - but it's only as good as the data you feed it. Most businesses are sitting on messy, scattered data. We'll walk through the new tools that get your data AI-ready."
         },
         {
@@ -309,13 +309,13 @@
         {
           "guid": "agenda-card-5",
           "eyebrow": "11:00 – 11:40",
-          "heading": "Problem 3 — Adding AI to the software you already own",
+          "heading": "Problem 3 -> Adding AI to the software you already own",
           "description": "Your existing software has more in it than you think. Integrate AI and it gets smarter, more intuitive, more powerful - the legacy system you were ready to retire becomes the engine of growth for your business."
         },
         {
           "guid": "agenda-card-6",
           "eyebrow": "11:40 – 12:20",
-          "heading": "Problem 4 — Replacing the legacy system",
+          "heading": "Problem 4 -> Replacing the legacy system",
           "description": "That 15-year-old system you couldn't afford to replace? The maths has changed. The reason rebuilds cost a fortune was the code itself - old, undocumented, understood by no one. AI can now read that code, untangle it, and rebuild it. The replacement you've put off for years is finally affordable."
         },
         {
@@ -601,7 +601,7 @@
       },
       "heading": "Mike Smedley",
       "isH1": false,
-      "description": "SSW · AI Engagement Lead · Melbourne\n\nMike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today — including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
+      "description": "SSW · AI Engagement Lead · Melbourne\n\nMike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today - including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
       "featureColumns": {
         "twoColumns": false
       },
@@ -699,7 +699,7 @@
       "isStacked": true,
       "heading": "Pick your city.",
       "isH1": false,
-      "body": "Pick your city below and secure checkout opens right here on the page — confirm your $99 seat in a few clicks.\n\n\n",
+      "body": "Pick your city below and secure checkout opens right here on the page - confirm your $99 seat in a few clicks.\n\n\n",
       "cardStyle": 0,
       "cards": [
         {
