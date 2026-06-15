@@ -1,3 +1,4 @@
+import type { TinaField } from "tinacms";
 import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
@@ -39,12 +40,25 @@ export const backgroundSchema = {
       name: "bleed",
       description: "If true, the background will bleed into lower blocks.",
     },
-    {
-      type: "string",
-      label: "Anchor ID",
-      name: "anchorId",
-      description:
-        "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to jump here (the offset for the sticky header is handled automatically).",
-    },
   ],
+};
+
+// A section anchor is not a background property, so this lives beside
+// backgroundSchema rather than inside it — spread both into a block's fields.
+export const anchorIdSchema: TinaField = {
+  type: "string",
+  label: "Anchor ID",
+  name: "anchorId",
+  ui: {
+    validate: (value: string) => {
+      if (!value) {
+        return;
+      }
+      if (!/^[A-Za-z][A-Za-z0-9_-]*$/.test(value)) {
+        return "Anchor IDs must start with a letter and contain only letters, numbers, hyphens or underscores (no spaces)";
+      }
+    },
+  },
+  description:
+    "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to jump here (the offset for the sticky header is handled automatically).",
 };

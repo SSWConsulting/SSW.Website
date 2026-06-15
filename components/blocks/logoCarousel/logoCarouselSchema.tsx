@@ -3,7 +3,10 @@ import { Button, wrapFieldsWithMeta } from "tinacms";
 import type { Template, TinaField } from "tinacms";
 import alternatingHeadingSchema from "../../../components/blocksSubtemplates/alternatingHeading.schema";
 import tabletTextAlignmentField from "../../../components/blocksSubtemplates/tabletTextAlignment.schema";
-import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper.schema";
+import {
+  anchorIdSchema,
+  backgroundSchema,
+} from "../../../components/layout/v2ComponentWrapper.schema";
 const RangeInput = wrapFieldsWithMeta((props) => {
   return (
     <div className="flex flex-col">
@@ -52,6 +55,7 @@ export const LogoCarouselSchema: Template = {
   fields: [
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
+    anchorIdSchema,
     alternatingHeadingSchema,
     tabletTextAlignmentField as TinaField,
     {

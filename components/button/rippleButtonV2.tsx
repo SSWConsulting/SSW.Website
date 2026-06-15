@@ -1,16 +1,16 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React, { MouseEvent, useEffect, useState } from "react";
+import { buttonOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 
 export type ColorVariant = "primary" | "secondary" | "ghost";
 
-// Tina colour pickers store an index (see buttonOptions); this maps it to a
-// variant. Exported so the index → variant contract lives in one place.
-export const buttonColorVariants: ColorVariant[] = [
-  "primary",
-  "secondary",
-  "ghost",
-];
+// Tina colour pickers store an index; each picker entry declares the variant
+// it maps to, so buttonOptions is the single source of the index → variant
+// contract and this lookup is derived from it.
+export const buttonColorVariants: ColorVariant[] = buttonOptions.map(
+  (option) => option.variant
+);
 
 const variants: Record<ColorVariant, string> = {
   primary: "bg-ssw-red hover:bg-sswDarkRed text-white",
@@ -118,29 +118,21 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     );
 
     // Render a real <a> for link-style CTAs so we never nest a <button> inside
-    // an <a> (invalid HTML and a11y-hostile).
-    if (href) {
-      return (
-        <a
-          href={href}
-          className={sharedClassName}
-          onMouseEnter={isPrimary ? createRipple : undefined}
-        >
-          {inner}
-        </a>
-      );
-    }
-
+    // an <a> (invalid HTML and a11y-hostile). A single polymorphic element
+    // keeps ref and rest props (aria-*, id, target, ...) forwarded in both
+    // modes.
+    const Comp = (href ? "a" : "button") as React.ElementType;
     return (
-      <button
-        onClick={(e) => onClick(e)}
+      <Comp
+        href={href}
+        onClick={onClick}
         className={sharedClassName}
         onMouseEnter={isPrimary ? createRipple : undefined}
         ref={ref}
         {...props}
       >
         {inner}
-      </button>
+      </Comp>
     );
   }
 );

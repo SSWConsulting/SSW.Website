@@ -1,4 +1,7 @@
-import { backgroundSchema } from "@/components/layout/v2ComponentWrapper.schema";
+import {
+  anchorIdSchema,
+  backgroundSchema,
+} from "@/components/layout/v2ComponentWrapper.schema";
 import type { Template } from "tinacms";
 
 export const SpacerSchema: Template = {
@@ -24,5 +27,6 @@ export const SpacerSchema: Template = {
     },
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
+    anchorIdSchema,
   ],
 };

@@ -15,6 +15,7 @@ import RippleButton, {
 enum ButtonColors {
   Red = 0,
   Transparent = 1,
+  Link = 2,
 }
 
 type TemplateButtonOptions = {

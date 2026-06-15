@@ -1,8 +1,12 @@
-import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper.schema";
+import {
+  anchorIdSchema,
+  backgroundSchema,
+} from "../../../components/layout/v2ComponentWrapper.schema";
 import { optimizedImageSchema } from "../../../tina/collections/shared-fields";
 import { mediaTypeField } from "../mediaType.schema";
 export const ImageComponentLayoutSchema = [
   backgroundSchema,
+  anchorIdSchema,
   {
     type: "object",
     label: "Media",

@@ -8,11 +8,11 @@ import React, { useEffect, useRef } from "react";
 import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 
 type BackgroundData = {
+  anchorId?: string;
   background?: {
     backgroundColour?: number;
     backgroundImage?: string;
     bleed?: boolean;
-    anchorId?: string;
   };
 };
 
@@ -55,14 +55,14 @@ const V2ComponentWrapper = ({
 
   return (
     <section
-      id={data.background?.anchorId || undefined}
+      id={data.anchorId || undefined}
       className={classNames(
         backgroundOptions.find((value) => {
           return value.reference === data.background?.backgroundColour;
         })?.classes,
         "relative w-full overflow-visible",
         // Offset in-page anchor scrolling so the target clears the sticky header
-        data.background?.anchorId && "scroll-mt-24",
+        data.anchorId && "scroll-mt-24",
         className
       )}
     >

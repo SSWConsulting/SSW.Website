@@ -1,9 +1,10 @@
 import { tinaField } from "tinacms/dist/react";
+import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
+import { DEFAULT_BUTTON_COLOUR } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import RippleButton, {
   buttonColorVariants,
 } from "../../../button/rippleButtonV2";
-import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
-import { EventbriteModalButton } from "../../eventbrite/eventbriteModalButton";
+import { EventbriteModalButton } from "../../../eventbrite/eventbriteModalButton";
 
 type EmbeddedButtonData = {
   buttonText?: string;
@@ -16,10 +17,15 @@ type EmbeddedButtonData = {
 /**
  * Renders the call-to-action on a card. The action is one of three, in order of
  * precedence: an Eventbrite checkout modal, an external/anchor link, or a plain
- * button. Keeping the branch selection here keeps the generic Card render tidy.
+ * button. The component owns its whole contract — branch selection and the
+ * "no text, no button" gate — so Card can render it unconditionally.
  */
-export const EmbeddedCardButton = ({ data }: { data: EmbeddedButtonData }) => {
-  const variant = buttonColorVariants[data.colour ?? 2] ?? "ghost";
+export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
+  if (!data?.buttonText) return null;
+
+  const variant =
+    buttonColorVariants[data.colour ?? DEFAULT_BUTTON_COLOUR] ??
+    buttonColorVariants[DEFAULT_BUTTON_COLOUR];
   const textTinaField = tinaField(data, "buttonText");
   const inner = (
     <>
@@ -28,20 +34,16 @@ export const EmbeddedCardButton = ({ data }: { data: EmbeddedButtonData }) => {
     </>
   );
 
-  if (data.eventbriteEventId) {
-    return (
-      <EventbriteModalButton
-        eventId={data.eventbriteEventId}
-        variant={variant}
-        className="mt-2 self-start"
-        textTinaField={textTinaField}
-      >
-        {inner}
-      </EventbriteModalButton>
-    );
-  }
-
-  return (
+  const button = data.eventbriteEventId ? (
+    <EventbriteModalButton
+      eventId={data.eventbriteEventId}
+      variant={variant}
+      className="mt-2 self-start"
+      textTinaField={textTinaField}
+    >
+      {inner}
+    </EventbriteModalButton>
+  ) : (
     <RippleButton
       href={data.buttonLink || undefined}
       variant={variant}
@@ -50,5 +52,9 @@ export const EmbeddedCardButton = ({ data }: { data: EmbeddedButtonData }) => {
     >
       {inner}
     </RippleButton>
+  );
+
+  return (
+    <div className="flex h-full flex-col-reverse justify-between">{button}</div>
   );
 };
