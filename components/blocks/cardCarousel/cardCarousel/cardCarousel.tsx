@@ -6,6 +6,7 @@ import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
+import { IconLabel } from "../../../blocksSubtemplates/iconLabel";
 import V2ComponentWrapper from "../../../layout/v2ComponentWrapper";
 import { Card } from "../layout/card";
 import { CardList } from "../layout/cardCarouseSlideshow";
@@ -19,6 +20,24 @@ export const CardCarousel = ({ data }) => {
     categoryGroup: data.categoryGroup,
   });
   const [cardSet, setCardSet] = useState(data.cards);
+
+  // Columns for stacked (non-carousel) mode. The editor's "Cards per row"
+  // choice takes precedence; when unset, fall back to the original
+  // card-count behaviour. Tailwind classes are kept as full static strings
+  // so the JIT compiler picks them up.
+  const cardsPerRow = data.cardsPerRow
+    ? Number(data.cardsPerRow)
+    : data.cards?.length === 3
+      ? 3
+      : data.cards?.length === 2
+        ? 2
+        : 1;
+  const stackedGridColsClass =
+    cardsPerRow === 3
+      ? "sm:grid-cols-2 md:grid-cols-3 lg:gap-8"
+      : cardsPerRow === 2
+        ? "sm:grid-cols-2"
+        : "";
 
   useEffect(() => {
     if (activeCategory && data.cards) {
@@ -47,6 +66,17 @@ export const CardCarousel = ({ data }) => {
               tabletTextLeft ? "text-left md:text-center" : "text-center"
             )}
           >
+            {data.topLabel &&
+              (data.topLabel?.icon || data.topLabel?.labelText) && (
+                <div
+                  className={cn(
+                    "flex",
+                    tabletTextLeft ? "md:justify-center" : "justify-center"
+                  )}
+                >
+                  <IconLabel data={data.topLabel} />
+                </div>
+              )}
             {data.isH1 ? (
               <h1
                 data-tina-field={tinaField(data, "heading")}
@@ -83,9 +113,10 @@ export const CardCarousel = ({ data }) => {
               <div
                 className={cn(
                   data.cardStyle === 1 ? "gap-8" : "gap-4",
-                  data.cards?.length === 2 && "sm:grid-cols-2",
-                  data.cards?.length === 3 &&
-                    "sm:grid-cols-2 md:grid-cols-3 lg:gap-8",
+                  // "Cards per row" control wins when set; otherwise fall back
+                  // to the original card-count behaviour so existing carousels
+                  // render exactly as before.
+                  stackedGridColsClass,
                   "grid items-stretch justify-center"
                 )}
               >

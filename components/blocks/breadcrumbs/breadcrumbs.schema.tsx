@@ -2,7 +2,10 @@ import Link from "next/link";
 import React from "react";
 import { Button, Input, wrapFieldsWithMeta } from "tinacms";
 import type { Template } from "tinacms";
-import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper.schema";
+import {
+  anchorIdSchema,
+  backgroundSchema,
+} from "../../../components/layout/v2ComponentWrapper.schema";
 import { TinaInfo } from "../../tina/tina-info";
 
 export const BreadcrumbSchema: Template = {
@@ -14,6 +17,7 @@ export const BreadcrumbSchema: Template = {
   fields: [
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
+    anchorIdSchema,
     {
       type: "string",
       label: "Final Breadcrumb",

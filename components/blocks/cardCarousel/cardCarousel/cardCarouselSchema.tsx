@@ -1,14 +1,22 @@
 import { default as React, useEffect, useState } from "react";
 import { wrapFieldsWithMeta } from "tinacms";
 import type { Template, TinaField } from "tinacms";
+import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel.schema";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";
+import {
+  buttonOptions,
+  DEFAULT_BUTTON_COLOUR,
+} from "../../../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
 import { buttonSchema } from "../../../button/templateButton.schema";
-import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
+import {
+  anchorIdSchema,
+  backgroundSchema,
+} from "../../../layout/v2ComponentWrapper.schema";
 import { mediaTypeField } from "../../mediaType.schema";
 import { youtubeEmbedField } from "../../youtubeEmbed.schema";
 
@@ -120,6 +128,14 @@ export const CardCarouselSchema: Template = {
       label: "Stacked Mode",
       name: "isStacked",
       description: "Remove the carousel effect and stack card entries.",
+    },
+    {
+      type: "object",
+      label: "Top Label",
+      name: "topLabel",
+      description: "Add an eyebrow label above the heading.",
+      //@ts-expect-error – fields are not being recognized
+      fields: IconLabelSchema,
     },
     alternatingHeadingSchema,
     {
@@ -290,6 +306,18 @@ export const CardCarouselSchema: Template = {
       },
     },
     {
+      type: "string",
+      label: "Cards per row",
+      name: "cardsPerRow",
+      description:
+        "Cards per row when the carousel effect is off (Stacked Mode). Has no effect in carousel mode.",
+      options: [
+        { label: "1", value: "1" },
+        { label: "2", value: "2" },
+        { label: "3", value: "3" },
+      ],
+    },
+    {
       type: "object",
       label: "Cards",
       name: "cards",
@@ -356,6 +384,13 @@ export const CardCarouselSchema: Template = {
         },
         {
           type: "string",
+          label: "Eyebrow",
+          name: "eyebrow",
+          description:
+            "Optional small label above the card heading (e.g. a timestamp like \"9:00 – 9:20\").",
+        },
+        {
+          type: "string",
           label: "Heading",
           name: "heading",
         },
@@ -396,7 +431,8 @@ export const CardCarouselSchema: Template = {
           type: "object",
           label: "Embedded Button",
           name: "embeddedButton",
-          description: "The link appearing at the bottom of each card.",
+          description:
+            "Optional link or CTA at the bottom of each card. Leave Button Text blank to omit the button entirely.",
           fields: [
             {
               type: "string",
@@ -408,7 +444,8 @@ export const CardCarouselSchema: Template = {
               type: "string",
               label: "Button Link",
               name: "buttonLink",
-              description: "Link to the page the button will navigate to.",
+              description:
+                "Link the button navigates to (supports in-page anchors like #pick-your-city).",
             },
             // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
             {
@@ -419,11 +456,22 @@ export const CardCarouselSchema: Template = {
                 component: IconPickerInput,
               },
             },
+            {
+              type: "number",
+              label: "Colour",
+              name: "colour",
+              // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
+              ui: {
+                component: ColorPickerInput(buttonOptions),
+                defaultValue: DEFAULT_BUTTON_COLOUR,
+              },
+            },
           ],
         },
       ],
     },
     //@ts-expect-error – fields are not being recognized
     backgroundSchema,
+    anchorIdSchema,
   ],
 };
