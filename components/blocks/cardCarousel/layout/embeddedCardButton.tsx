@@ -38,7 +38,7 @@ export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
     <EventbriteModalButton
       eventId={data.eventbriteEventId}
       variant={variant}
-      className="mt-2 self-start"
+      className="mt-2 w-full sm:w-auto sm:self-start"
       textTinaField={textTinaField}
     >
       {inner}
@@ -47,7 +47,7 @@ export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
     <RippleButton
       href={data.buttonLink || undefined}
       variant={variant}
-      className="mt-2 self-start"
+      className="mt-2 w-full sm:w-auto sm:self-start"
       textTinaField={textTinaField}
     >
       {inner}
