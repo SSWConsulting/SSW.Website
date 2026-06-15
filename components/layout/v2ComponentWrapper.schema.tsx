@@ -62,3 +62,13 @@ export const anchorIdSchema: TinaField = {
   description:
     "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to jump here (the offset for the sticky header is handled automatically).",
 };
+
+// The background + anchor fields always travel together as "the V2 wrapper
+// fields". Spread this once per block (`...wrapperBaseFields`) so the pair never
+// drifts apart and the @ts-expect-error for backgroundSchema's custom component
+// typing lives in exactly one place.
+export const wrapperBaseFields: TinaField[] = [
+  //@ts-expect-error – custom component typing won't be pinned down
+  backgroundSchema,
+  anchorIdSchema,
+];

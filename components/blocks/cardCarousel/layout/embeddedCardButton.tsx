@@ -1,9 +1,10 @@
 import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
-import { DEFAULT_BUTTON_COLOUR } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
-import RippleButton, {
+import {
   buttonColorVariants,
-} from "../../../button/rippleButtonV2";
+  DEFAULT_BUTTON_COLOUR,
+} from "../../../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
+import RippleButton from "../../../button/rippleButtonV2";
 import { EventbriteModalButton } from "../../../eventbrite/eventbriteModalButton";
 
 type EmbeddedButtonData = {

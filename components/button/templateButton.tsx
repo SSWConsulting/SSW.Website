@@ -7,20 +7,13 @@ import { useSessionStorage } from "usehooks-ts";
 import globals from "../../content/global/index.json";
 import Popup from "../popup/popup";
 import { SESSION_STORAGE_KEYS } from "../util/constants";
-import RippleButton, {
-  ButtonTinaFields,
-  buttonColorVariants,
-} from "./rippleButtonV2";
-
-enum ButtonColors {
-  Red = 0,
-  Transparent = 1,
-  Link = 2,
-}
+import { buttonColorVariants } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
+import RippleButton, { ButtonTinaFields } from "./rippleButtonV2";
 
 type TemplateButtonOptions = {
   buttonText?: string;
-  colour?: ButtonColors;
+  // Index into buttonOptions / buttonColorVariants (Red=0, Transparent=1, Link=2).
+  colour?: number;
   iconFirst?: boolean;
   icon?: string;
   leadCaptureFormOption?: string;
