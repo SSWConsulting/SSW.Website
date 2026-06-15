@@ -459,62 +459,71 @@
       "_template": "spacer"
     },
     {
+      "isStacked": true,
       "topLabel": {
-        "labelText": "The agenda"
+        "labelText": "Here's exactly what we'll cover"
       },
-      "heading": "Here's exactly what we'll cover",
+      "heading": "The agenda",
       "isH1": false,
-      "description": "",
+      "body": "",
       "tabletTextAlignment": "Left",
-      "featureColumns": {
-        "twoColumns": false,
-        "features": [
-          {
-            "heading": "Welcome & the four expensive problems (9:00 – 9:20)",
-            "description": "We frame the four business problems AI has just made affordable to solve, and how to recognise them in your own company.",
-            "icon": "BiCircle"
-          },
-          {
-            "heading": "Problem 1 — The custom build you parked (9:20 – 10:00)",
-            "description": "The system, the dashboard, the automation - the business case never stacked up. AI changed that. Projects that were too expensive to justify are now economically viable.",
-            "icon": "BiSolidRightArrow"
-          },
-          {
-            "heading": "Problem 2 — The data your executives can't see (10:00 – 10:40)",
-            "description": "AI can help you make better decisions - but it's only as good as the data you feed it. Most businesses are sitting on messy, scattered data. We'll walk through the new tools that get your data AI-ready.",
-            "icon": "BiSolidRightArrow"
-          },
-          {
-            "heading": "Break & informal Q&A with the SSW team (10:40 – 11:00)",
-            "description": "Coffee, conversation, and the chance to corner us with the questions you didn't want to ask in the room.",
-            "icon": "BiCircle"
-          },
-          {
-            "heading": "Problem 3 — Adding AI to the software you already own (11:00 – 11:40)",
-            "description": "Your existing software has more in it than you think. Integrate AI and it gets smarter, more intuitive, more powerful - the legacy system you were ready to retire becomes the engine of growth for your business.",
-            "icon": "BiSolidRightArrow"
-          },
-          {
-            "heading": "Problem 4 — Replacing the legacy system (11:40 – 12:20)",
-            "description": "That 15-year-old system you couldn't afford to replace? The maths has changed. The reason rebuilds cost a fortune was the code itself - old, undocumented, understood by no one. AI can now read that code, untangle it, and rebuild it. The replacement you've put off for years is finally affordable.",
-            "icon": "BiSolidRightArrow"
-          },
-          {
-            "heading": "Open Q&A (12:20 – 12:50)",
-            "description": "Bring your specific business problem. We answer it in the room, because the other attendees usually have the same one.",
-            "icon": "BiCircle"
-          },
-          {
-            "heading": "Your one-page action list (12:50 – 1:00)",
-            "description": "You leave with a checklist of things to do on Monday morning.",
-            "icon": "BiSolidStar"
-          }
-        ]
-      },
+      "cardStyle": 0,
+      "cardsPerRow": "2",
+      "cards": [
+        {
+          "guid": "agenda-card-1",
+          "eyebrow": "9:00 – 9:20",
+          "heading": "Welcome & the four expensive problems",
+          "description": "We frame the four business problems AI has just made affordable to solve, and how to recognise them in your own company."
+        },
+        {
+          "guid": "agenda-card-2",
+          "eyebrow": "9:20 – 10:00",
+          "heading": "Problem 1 — The custom build you parked",
+          "description": "The system, the dashboard, the automation - the business case never stacked up. AI changed that. Projects that were too expensive to justify are now economically viable."
+        },
+        {
+          "guid": "agenda-card-3",
+          "eyebrow": "10:00 – 10:40",
+          "heading": "Problem 2 — The data your executives can't see",
+          "description": "AI can help you make better decisions - but it's only as good as the data you feed it. Most businesses are sitting on messy, scattered data. We'll walk through the new tools that get your data AI-ready."
+        },
+        {
+          "guid": "agenda-card-4",
+          "eyebrow": "10:40 – 11:00",
+          "heading": "Break & informal Q&A with the SSW team",
+          "description": "Coffee, conversation, and the chance to corner us with the questions you didn't want to ask in the room."
+        },
+        {
+          "guid": "agenda-card-5",
+          "eyebrow": "11:00 – 11:40",
+          "heading": "Problem 3 — Adding AI to the software you already own",
+          "description": "Your existing software has more in it than you think. Integrate AI and it gets smarter, more intuitive, more powerful - the legacy system you were ready to retire becomes the engine of growth for your business."
+        },
+        {
+          "guid": "agenda-card-6",
+          "eyebrow": "11:40 – 12:20",
+          "heading": "Problem 4 — Replacing the legacy system",
+          "description": "That 15-year-old system you couldn't afford to replace? The maths has changed. The reason rebuilds cost a fortune was the code itself - old, undocumented, understood by no one. AI can now read that code, untangle it, and rebuild it. The replacement you've put off for years is finally affordable."
+        },
+        {
+          "guid": "agenda-card-7",
+          "eyebrow": "12:20 – 12:50",
+          "heading": "Open Q&A",
+          "description": "Bring your specific business problem. We answer it in the room, because the other attendees usually have the same one."
+        },
+        {
+          "guid": "agenda-card-8",
+          "eyebrow": "12:50 – 1:00",
+          "heading": "Your one-page action list",
+          "description": "You leave with a checklist of things to do on Monday morning."
+        }
+      ],
       "background": {
         "backgroundColour": 6
       },
-      "_template": "imageTextBlock"
+      "_template": "cardCarousel",
+      "anchorId": "agenda-cards"
     },
     {
       "spacerHeight": "90px",

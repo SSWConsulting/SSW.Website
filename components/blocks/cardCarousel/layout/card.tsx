@@ -61,6 +61,14 @@ const Card = ({ data, placeholder, className }: CardProps) => {
       )}
       <Icon data={{ name: data.icon }} className="size-6 text-sswRed" />
       {data.chips && <PillGroup data={data.chips} />}
+      {data.eyebrow && (
+        <p
+          className="pb-1 text-sm font-bold text-sswRed dark:text-gray-300"
+          data-tina-field={tinaField(data, "eyebrow")}
+        >
+          {data.eyebrow}
+        </p>
+      )}
       <h3
         className="pb-2 text-xl font-semibold leading-6 dark:text-gray-200"
         data-tina-field={tinaField(data, "heading")}
@@ -78,11 +86,7 @@ const Card = ({ data, placeholder, className }: CardProps) => {
       {data.featureList?.features?.map((item, index) => {
         return <ListItem key={index} data={item} />;
       })}
-      {data.embeddedButton?.buttonText && (
-        <div className="flex h-full flex-col-reverse justify-between">
-          <EmbeddedCardButton data={data.embeddedButton} />
-        </div>
-      )}
+      <EmbeddedCardButton data={data.embeddedButton} />
     </div>
   );
 };
