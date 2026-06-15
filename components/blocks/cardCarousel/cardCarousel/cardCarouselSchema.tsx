@@ -442,10 +442,17 @@ export const CardCarouselSchema: Template = {
             },
             {
               type: "string",
+              label: "Eventbrite Event ID",
+              name: "eventbriteEventId",
+              description:
+                "Numeric event ID from the Eventbrite event URL (e.g. eventbrite.com/e/<name>-<EVENT_ID>). When set, the button opens that event's checkout in a modal — the embed only loads on click. Leave the Button Link blank when using this.",
+            },
+            {
+              type: "string",
               label: "Button Link",
               name: "buttonLink",
               description:
-                "Link the button navigates to (supports in-page anchors like #pick-your-city).",
+                "Link the button navigates to (supports in-page anchors like #pick-your-city). Leave blank when using an Eventbrite Event ID.",
             },
             // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
             {
