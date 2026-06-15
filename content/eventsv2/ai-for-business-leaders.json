@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "Solving the Hardest Enterprise Business Problems with AI | SSW Live Workshop",
-    "description": "A half-day live workshop for Australian CEOs, CTOs, CFOs and CIOs. Real case studies, real dollar figures, and open Q&A with the engineers shipping AI into Australian enterprises today."
+    "title": "AI for Business Leaders | SSW Live Workshop",
+    "description": "A half-day live workshop for Australian C-suite leaders. Real case studies, real dollar figures, and open Q&A with engineers shipping AI today."
   },
   "blocks": [
     {
@@ -58,7 +58,7 @@
       "isStacked": true,
       "heading": "Pick your city.",
       "isH1": false,
-      "body": "Complete the form and you'll be taken to a secure payment page to confirm your $99 seat.",
+      "body": "Pick your city below and secure checkout opens right here on the page — confirm your $99 seat in a few clicks.",
       "tabletTextAlignment": "Center",
       "cardStyle": 0,
       "cards": [
@@ -76,7 +76,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now",
+            "buttonText": "Reserve My Seat - $99",
             "eventbriteEventId": "1991174545667",
             "colour": 0
           }
@@ -95,7 +95,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now",
+            "buttonText": "Reserve My Seat - $99",
             "eventbriteEventId": "1991174545667",
             "colour": 0
           }
@@ -114,17 +114,17 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now",
+            "buttonText": "Reserve My Seat - $99",
             "eventbriteEventId": "1991174545667",
             "colour": 0
           }
         }
       ],
       "background": {
-        "backgroundColour": 0,
-        "anchorId": "pick-your-city"
+        "backgroundColour": 0
       },
-      "_template": "cardCarousel"
+      "_template": "cardCarousel",
+      "anchorId": "pick-your-city"
     },
     {
       "spacerHeight": "90px",
@@ -594,7 +594,7 @@
         },
         {
           "label": "What happens after I click \"Reserve My Seat\"?",
-          "content": "You'll fill in a short form (name, email, phone, business name) and then go to a secure payment page. Your seat is confirmed once payment is complete. You'll receive a calendar invite and venue details by email immediately after.\n"
+          "content": "Secure checkout opens right here on the page. Enter your details, pay, and your $99 seat is confirmed. You'll receive a calendar invite and venue details by email immediately after.\n"
         },
         {
           "label": "Can I send a colleague in my place if something comes up?",
@@ -645,7 +645,7 @@
       "isStacked": true,
       "heading": "Pick your city.",
       "isH1": false,
-      "body": "Complete the form and you'll be taken to a secure payment page to confirm your $99 seat.\n\n\n",
+      "body": "Pick your city below and secure checkout opens right here on the page — confirm your $99 seat in a few clicks.\n\n\n",
       "cardStyle": 0,
       "cards": [
         {
@@ -663,7 +663,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now",
+            "buttonText": "Reserve My Seat - $99",
             "eventbriteEventId": "1991174545667",
             "colour": 0
           }
@@ -683,7 +683,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now",
+            "buttonText": "Reserve My Seat - $99",
             "eventbriteEventId": "1991174545667",
             "colour": 0
           }
@@ -703,7 +703,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Register Now",
+            "buttonText": "Reserve My Seat - $99",
             "eventbriteEventId": "1991174545667",
             "colour": 0
           }
