@@ -16,6 +16,8 @@ const EVENTBRITE_WIDGET_SRC = `${EVENTBRITE_DOMAIN}/static/widgets/eb_widgets.js
 // its viewport-sized iframe (hiding the page), and its backdrop is an
 // unstylable plum scrim. Eventbrite offers no font control either way.
 const THEME_SETTINGS = {
+  // Raw hex required by Eventbrite's widget; keep in sync with the sswRed
+  // Tailwind token (#cc4141), which Eventbrite cannot read.
   brandColor: "#cc4141",
   fontColor: "#333333",
   background: "#ffffff",
@@ -85,12 +87,9 @@ export const EventbriteModalButton = ({
       setScriptLoaded(true);
   }, []);
 
-  // next/script dedupes the shared eb_widgets.js, so this instance's onReady
-  // may never fire even though the script is loaded — that left scriptLoaded
-  // false and tripped the fallback on a perfectly good script (e.g. only one
-  // card binding while the others showed "could not be loaded"). Poll the
-  // global instead: window.EBWidgets is the reliable readiness signal for
-  // every instance. Only fall back if it never appears within the timeout.
+  // Poll window.EBWidgets as the readiness signal rather than relying on this
+  // instance's onReady (see the <Script> onReady note below for why dedupe can
+  // leave onReady unfired). Only fall back if it never appears within the timeout.
   useEffect(() => {
     if (!open || scriptLoaded) return;
     if (window.EBWidgets) {
@@ -133,15 +132,19 @@ export const EventbriteModalButton = ({
 
   return (
     <>
-      <Script
-        src={EVENTBRITE_WIDGET_SRC}
-        strategy="afterInteractive"
-        // next/script dedupes by src, so with many buttons only one instance
-        // actually loads it. onReady (unlike onLoad) fires for every instance
-        // once the shared script is ready, so no card is left unbound.
-        onReady={() => setScriptLoaded(true)}
-        onError={() => setScriptFailed(true)}
-      />
+      {/* Rendered only once a popup has been opened, so the page never pays the
+          third-party script (or its cookies) cost until the visitor interacts.
+          next/script dedupes by src, so with many buttons only one instance
+          actually loads it. onReady (unlike onLoad) fires for every instance
+          once the shared script is ready, so no card is left unbound. */}
+      {open && (
+        <Script
+          src={EVENTBRITE_WIDGET_SRC}
+          strategy="afterInteractive"
+          onReady={() => setScriptLoaded(true)}
+          onError={() => setScriptFailed(true)}
+        />
+      )}
       <RippleButton
         type="button"
         variant={variant}

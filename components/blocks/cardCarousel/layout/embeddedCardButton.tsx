@@ -27,6 +27,9 @@ export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
     buttonColorVariants[data.colour ?? DEFAULT_BUTTON_COLOUR] ??
     buttonColorVariants[DEFAULT_BUTTON_COLOUR];
   const textTinaField = tinaField(data, "buttonText");
+  // Shared so the two CTA variants cannot drift in width/spacing: full width on
+  // mobile, shrink to content from sm up.
+  const buttonClassName = "mt-2 w-full sm:w-auto sm:self-start";
   const inner = (
     <>
       {data.buttonText}
@@ -38,7 +41,7 @@ export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
     <EventbriteModalButton
       eventId={data.eventbriteEventId}
       variant={variant}
-      className="mt-2 w-full sm:w-auto sm:self-start"
+      className={buttonClassName}
       textTinaField={textTinaField}
     >
       {inner}
@@ -47,7 +50,7 @@ export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
     <RippleButton
       href={data.buttonLink || undefined}
       variant={variant}
-      className="mt-2 w-full sm:w-auto sm:self-start"
+      className={buttonClassName}
       textTinaField={textTinaField}
     >
       {inner}

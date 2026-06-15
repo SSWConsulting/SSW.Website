@@ -446,6 +446,26 @@ export const CardCarouselSchema: Template = {
               name: "eventbriteEventId",
               description:
                 "Numeric event ID from the Eventbrite event URL (e.g. eventbrite.com/e/<name>-<EVENT_ID>). When set, the button opens that event's checkout in a modal — the embed only loads on click. Leave the Button Link blank when using this.",
+              ui: {
+                // The two are mutually exclusive: the Event ID takes precedence
+                // in embeddedCardButton, so a Button Link set alongside it is
+                // silently ignored. Warn rather than letting it fail quietly.
+                // field.name is the dotted path to this card's field; swap the
+                // leaf for buttonLink to read the sibling on the same card.
+                validate: (value, allValues, _meta, field) => {
+                  if (!value) return undefined;
+                  const siblingPath = field?.name?.replace(
+                    /eventbriteEventId$/,
+                    "buttonLink"
+                  );
+                  const buttonLink = siblingPath
+                    ?.split(".")
+                    .reduce((obj, key) => obj?.[key], allValues);
+                  if (buttonLink) {
+                    return "Set either an Eventbrite Event ID or a Button Link, not both — the Event ID wins and the link is ignored.";
+                  }
+                },
+              },
             },
             {
               type: "string",
