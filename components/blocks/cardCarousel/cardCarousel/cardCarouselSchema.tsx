@@ -387,7 +387,7 @@ export const CardCarouselSchema: Template = {
           label: "Eyebrow",
           name: "eyebrow",
           description:
-            "Optional small label above the card heading (e.g. a timestamp like \"9:00 – 9:20\").",
+            'Optional small label above the card heading (e.g. a timestamp like "9:00 – 9:20").',
         },
         {
           type: "string",
