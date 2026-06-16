@@ -1,4 +1,4 @@
-import { wrapperBaseFields } from "@/components/layout/v2ComponentWrapper.schema";
+import { backgroundSchema } from "@/components/layout/v2ComponentWrapper.schema";
 import type { Template } from "tinacms";
 
 export const SpacerSchema: Template = {
@@ -22,6 +22,7 @@ export const SpacerSchema: Template = {
       type: "string",
       description: "Enter the height (e.g., 50px, 2rem, 10vh)",
     },
-    ...wrapperBaseFields,
+    //@ts-expect-error – custom component typing won't be pinned down
+    backgroundSchema,
   ],
 };

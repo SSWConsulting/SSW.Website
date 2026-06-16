@@ -1,8 +1,8 @@
-import { wrapperBaseFields } from "../../../components/layout/v2ComponentWrapper.schema";
+import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper.schema";
 import { optimizedImageSchema } from "../../../tina/collections/shared-fields";
 import { mediaTypeField } from "../mediaType.schema";
 export const ImageComponentLayoutSchema = [
-  ...wrapperBaseFields,
+  backgroundSchema,
   {
     type: "object",
     label: "Media",

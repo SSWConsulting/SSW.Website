@@ -12,7 +12,7 @@ import RippleButton, { ButtonTinaFields } from "./rippleButtonV2";
 
 type TemplateButtonOptions = {
   buttonText?: string;
-  // Index into buttonOptions / buttonColorVariants (Red=0, Transparent=1, Link=2).
+  // Index into buttonOptions / buttonColorVariants (Red=0, Transparent=1).
   colour?: number;
   iconFirst?: boolean;
   icon?: string;

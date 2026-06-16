@@ -1,8 +1,8 @@
 import type { ColorVariant } from "../../../button/rippleButtonV2";
 import type { ColorPickerOptions } from "../colourSelector";
 
-/** Default picker index for embedded card buttons (the "Link" style). */
-export const DEFAULT_BUTTON_COLOUR = 2;
+/** Default picker index for embedded card buttons (the "Red" style). */
+export const DEFAULT_BUTTON_COLOUR = 0;
 
 type ButtonColorOption = ColorPickerOptions & {
   /**
@@ -27,13 +27,6 @@ export const buttonOptions: ButtonColorOption[] = [
     classes: "bg-transparent text-gray-950",
     reference: 1,
     variant: "secondary",
-  },
-  {
-    name: "Link",
-    classes: "bg-transparent text-white underline decoration-1",
-    editorClasses: "bg-transparent text-gray-950 underline",
-    reference: 2,
-    variant: "ghost",
   },
 ];
 

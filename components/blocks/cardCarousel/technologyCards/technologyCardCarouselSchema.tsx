@@ -1,5 +1,5 @@
 import type { Template } from "tinacms";
-import { wrapperBaseFields } from "../../../../components/layout/v2ComponentWrapper.schema";
+import { backgroundSchema } from "../../../../components/layout/v2ComponentWrapper.schema";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 
@@ -55,6 +55,7 @@ export const TechnologyCardCarouselSchema: Template = {
         component: ColorPickerInput(cardOptions),
       },
     },
-    ...wrapperBaseFields,
+    //@ts-expect-error – fields are not being recognized
+    backgroundSchema,
   ],
 };
