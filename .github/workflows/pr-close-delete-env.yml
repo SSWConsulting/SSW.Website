@@ -117,9 +117,9 @@ jobs:
             --output tsv
 
           if ($acrId) {
-            $acrRole = az role assignment list --assignee $principalId --scope $acrId --role acrpull --query "[].id" --output tsv
+            $acrRole = az role assignment list --assignee-object-id $principalId --scope $acrId --role acrpull --fill-principal-name false --fill-role-definition-name false --query "[].id" --output tsv
             if ($acrRole) {
-              az role assignment delete --assignee $principalId --scope $acrId --role acrpull --output none
+              az role assignment delete --assignee-object-id $principalId --scope $acrId --role acrpull --output none
               Write-Host "✅ acrpull role assignment removed"
             } else {
               Write-Host "ℹ️ acrpull role assignment not found"
@@ -135,9 +135,9 @@ jobs:
             --output tsv
 
           if ($kvId) {
-            $kvRole = az role assignment list --assignee $principalId --scope $kvId --role "Key Vault Secrets User" --query "[].id" --output tsv
+            $kvRole = az role assignment list --assignee-object-id $principalId --scope $kvId --role "Key Vault Secrets User" --fill-principal-name false --fill-role-definition-name false --query "[].id" --output tsv
             if ($kvRole) {
-              az role assignment delete --assignee $principalId --scope $kvId --role "Key Vault Secrets User" --output none
+              az role assignment delete --assignee-object-id $principalId --scope $kvId --role "Key Vault Secrets User" --output none
               Write-Host "✅ Key Vault Secrets User role assignment removed"
             } else {
               Write-Host "ℹ️ Key Vault role assignment not found"
