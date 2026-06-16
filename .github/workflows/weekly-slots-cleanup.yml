@@ -94,7 +94,8 @@ jobs:
             }
           }
 
-          $json = ConvertTo-Json -AsArray -Compress @($toDelete)
+          # @(...) already yields a JSON array for 0/1/many elements; -AsArray would double-wrap
+          $json = ConvertTo-Json -Compress @($toDelete)
           if ($dryRun) {
             Write-Host "🔎 DRY RUN - would delete: $json"
             $json = "[]"

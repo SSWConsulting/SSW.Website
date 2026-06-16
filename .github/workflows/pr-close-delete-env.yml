@@ -49,6 +49,11 @@ jobs:
   delete-slot-and-acr-cleanup:
     runs-on: ubuntu-latest
     needs: setting-up-slot-ids
+    # Serialize deletes of the SAME slot across triggers (PR-close vs weekly sweep vs dispatch)
+    # so they can't race; different slots still run in parallel.
+    concurrency:
+      group: slot-delete-${{ matrix.SLOT_NAME }}
+      cancel-in-progress: false
     # Don't let one slot's failure cancel cleanup of the others (matters for the weekly batch).
     strategy:
       fail-fast: false
@@ -193,7 +198,9 @@ jobs:
       - name: ACR - Delete untagged manifests
         continue-on-error: true
         run: |
-          # NOTE: repo-wide, not PR-scoped (tracked as a follow-up).
+          # NOTE: best-effort. Repo-wide (not PR-scoped), and `az acr manifest list-metadata`
+          # currently does not return untagged manifests (Azure/azure-cli#29994), so this is
+          # largely a no-op today. Tracked as a follow-up in the linked issue.
           az acr manifest list-metadata `
             -r ${{ env.ACR_NAME }} `
             -n ${{ env.IMAGE_NAME }} `
