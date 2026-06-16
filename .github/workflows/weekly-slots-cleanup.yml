@@ -8,6 +8,8 @@ on:
 
 env:
   GH_TOKEN: ${{ github.token }}
+  # PR slots are deleted if their PR is closed (orphan) or inactive for this many days.
+  STALE_DAYS: 7
 
 defaults:
   run:
@@ -16,12 +18,13 @@ defaults:
 permissions:
   id-token: write
   contents: read
+  pull-requests: write
 
 jobs:
   check-pr-slots:
     runs-on: ubuntu-latest
     outputs:
-      slotList: ${{ steps.comparision.outputs.slotList }}
+      slotList: ${{ steps.compute.outputs.slotList }}
 
     steps:
       - name: Checking out
@@ -39,51 +42,52 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Get list of deployed Slots
-        id: slotList
+      - name: Determine slots to delete (orphaned or stale) and comment
+        id: compute
         run: |
-          $slots = $(az webapp deployment slot list `
+          $staleDays = [int]"${{ env.STALE_DAYS }}"
+          $cutoff = (Get-Date).ToUniversalTime().AddDays(-$staleDays)
+
+          # All PR slot numbers (strip 'pr-' prefix); the permanent 'staging' slot is left alone
+          $slotNames = az webapp deployment slot list `
             --name ${{ env.APP_SERVICE_NAME }} `
-            --resource-group ${{env.AZURE_RESOURCE_GROUP }} `
-            --query '[].name' `
-            --output tsv | `
-            grep -v 'staging' | `
-            sed 's/pr-//g')
-          echo "slots=$slots" >> $env:GITHUB_OUTPUT
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+            --query "[?starts_with(name, 'pr-')].name" `
+            --output tsv
+          $slots = @($slotNames -split "`n" | Where-Object { $_ -ne '' } | ForEach-Object { $_ -replace '^pr-', '' })
 
-      - name: Get list of active PRs
-        id: prList
-        run: |
-          $active_prs=$(gh pr list --state open --json number | jq -r '.[].number')
-          echo "active_prs=$active_prs" >> $env:GITHUB_OUTPUT
+          # Open PRs mapped to their last-updated timestamp
+          $openPrs = gh pr list --state open --json number,updatedAt | ConvertFrom-Json
+          $openMap = @{}
+          foreach ($pr in $openPrs) { $openMap["$($pr.number)"] = $pr.updatedAt }
 
-      - name: Compare PRs with Slots
-        id: comparision
-        run: |
-          # Comparing the number of Slots and PRs
-          $prList =  "${{ steps.PRList.outputs.active_prs }}" -split ' '
-          $slotList = "${{ steps.slotList.outputs.slots }}" -split ' '
+          $toDelete = @()
+          foreach ($slot in $slots) {
+            if (-not $openMap.ContainsKey($slot)) {
+              Write-Host "🗑️  pr-$slot - no open PR (orphan) -> delete"
+              $toDelete += $slot
+              continue
+            }
 
-          $slotsExistThatRequireDeletion = $slotList | Where-Object { $_ -notin $prList }
-          $slotsNeedDeletion = $slotsExistThatRequireDeletion.Length -gt 0
-
-          if ( ! $slotsNeedDeletion ) {
-            echo "✅ - Number of slots are equal to number of active PRs - 🏃 Skipping next step"
+            $updated = ([datetime]$openMap[$slot]).ToUniversalTime()
+            if ($updated -lt $cutoff) {
+              Write-Host "🧹 pr-$slot - PR #$slot inactive since $updated -> delete + comment"
+              gh pr comment $slot --body "🧹 Your **staging deployment was removed** during weekly cleanup because this PR has been inactive for over $staleDays days. Push a new commit (or re-run the **PR - build and deploy to slot** workflow) to spin up a fresh staging environment."
+              $toDelete += $slot
+            }
+            else {
+              Write-Host "✅ pr-$slot - active (updated $updated) - keeping"
+            }
           }
-          else {
-            echo "❌ - Number of slots are not equal to number of active PRs"
-            Write-Host "⚡- These slots need to be deleted : $slotsExistThatRequireDeletion"
-          }
-          # Convert string into Array
-          $slots = $slotsExistThatRequireDeletion -split ' '
-          $slotList = ConvertTo-Json -Compress @($slots)
 
-          echo "slotList=$slotList" >> $env:GITHUB_OUTPUT
+          $json = ConvertTo-Json -AsArray -Compress @($toDelete)
+          Write-Host "Slots queued for deletion: $json"
+          echo "slotList=$json" >> $env:GITHUB_OUTPUT
 
   invokeDeleteSlot:
     name: Invoking PR Close/Delete
     needs:
-      - check-pr-slots #Adding second check to avoid running this flow
+      - check-pr-slots # Adding second check to avoid running this flow
     if: needs.check-pr-slots.outputs.slotList != '[]'
     uses: ./.github/workflows/pr-close-delete-env.yml
     with:
