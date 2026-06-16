@@ -42,8 +42,10 @@ jobs:
         env:
           PR_SLOT: pr-${{ github.event.number }}
         run: |
-          $max = [int]"${{ env.MAX_PR_SLOTS }}"
-          if ($max -le 0) { $max = 10 }
+          # Default to 10; only override if MAX_PR_SLOTS is a valid positive int
+          $max = 10
+          $parsed = 0
+          if ([int]::TryParse("${{ env.MAX_PR_SLOTS }}", [ref]$parsed) -and $parsed -gt 0) { $max = $parsed }
 
           # Count only PR slots (the permanent 'staging' slot and 'production' are not PR slots)
           $slots = az webapp deployment slot list `

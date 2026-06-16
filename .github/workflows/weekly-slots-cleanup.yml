@@ -45,7 +45,10 @@ jobs:
       - name: Determine slots to delete (orphaned or stale) and comment
         id: compute
         run: |
-          $staleDays = [int]"${{ env.STALE_DAYS }}"
+          # Default to 7; only override if STALE_DAYS is a valid positive int
+          $staleDays = 7
+          $parsedDays = 0
+          if ([int]::TryParse("${{ env.STALE_DAYS }}", [ref]$parsedDays) -and $parsedDays -gt 0) { $staleDays = $parsedDays }
           $cutoff = (Get-Date).ToUniversalTime().AddDays(-$staleDays)
 
           # All PR slot numbers (strip 'pr-' prefix); the permanent 'staging' slot is left alone
