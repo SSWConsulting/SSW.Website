@@ -49,7 +49,14 @@ jobs:
   delete-slot-and-acr-cleanup:
     runs-on: ubuntu-latest
     needs: setting-up-slot-ids
+    # Serialize deletes of the SAME slot across triggers (PR-close vs weekly sweep vs dispatch)
+    # so they can't race; different slots still run in parallel.
+    concurrency:
+      group: slot-delete-${{ matrix.SLOT_NAME }}
+      cancel-in-progress: false
+    # Don't let one slot's failure cancel cleanup of the others (matters for the weekly batch).
     strategy:
+      fail-fast: false
       matrix:
         SLOT_NAME: ${{ fromJson(needs.setting-up-slot-ids.outputs.matrix) }}
 
@@ -68,42 +75,62 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID  }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Cleanup ACR and Key Vault Permissions
+      # Capture the slot's identity BEFORE the slot is deleted, so its role
+      # assignments can still be resolved and removed. Best-effort.
+      - name: Get slot identity
+        id: identity
+        continue-on-error: true
         run: |
-          $acrId = az acr show `
-            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
-            --name ${{ env.ACR_LOGIN_SERVER }} `
-            --query id `
-            --output tsv
-          Write-Host '✅ acr found'
+          $slot = '${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME }}'
 
-          # get slot identity
-          $identityId = az webapp identity show `
+          $exists = az webapp deployment slot list `
+            --name ${{ env.APP_SERVICE_NAME }} `
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+            --query "[?name=='$slot'].name" `
+            --output tsv
+
+          if (-not $exists) {
+            Write-Host "ℹ️ Slot $slot does not exist (already cleaned up) - skipping."
+            echo "principalId=" >> $env:GITHUB_OUTPUT
+            exit 0
+          }
+
+          $principalId = az webapp identity show `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
             --name ${{ env.APP_SERVICE_NAME }} `
-            --slot ${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME }} `
+            --slot $slot `
             --query principalId `
             --output tsv
-          Write-Host '✅ slot identity found'
 
-          # Check if the role assignment exists before deleting it
-          $acrRoleAssignment = az role assignment list `
-            --assignee $identityId `
-            --scope $acrId `
-            --role acrpull `
-            --query "[].roleDefinitionName" `
+          echo "principalId=$principalId" >> $env:GITHUB_OUTPUT
+          Write-Host "Slot identity principalId: $principalId"
+
+      # Best-effort: a role-cleanup failure must never block slot deletion.
+      - name: Remove ACR & Key Vault role assignments
+        continue-on-error: true
+        run: |
+          $principalId = '${{ steps.identity.outputs.principalId }}'
+          if (-not $principalId) {
+            Write-Host "ℹ️ No slot identity - skipping role assignment cleanup."
+            exit 0
+          }
+
+          $acrId = az acr show `
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+            --name ${{ env.ACR_NAME }} `
+            --query id `
             --output tsv
 
-          if ($acrRoleAssignment) {
-            # Delete the role assignment if it exists
-            az role assignment delete `
-              --assignee $identityId `
-              --scope $acrId `
-              --role acrpull `
-              --output none
-            Write-Host '✅ acrpull role deleted'
+          if ($acrId) {
+            $acrRole = az role assignment list --assignee-object-id $principalId --scope $acrId --role acrpull --fill-principal-name false --fill-role-definition-name false --query "[].id" --output tsv
+            if ($acrRole) {
+              az role assignment delete --assignee-object-id $principalId --scope $acrId --role acrpull --output none
+              Write-Host "✅ acrpull role assignment removed"
+            } else {
+              Write-Host "ℹ️ acrpull role assignment not found"
+            }
           } else {
-            Write-Host '❌ acrpull role assignment not found'
+            Write-Host "⚠️ ACR ${{ env.ACR_NAME }} not found"
           }
 
           $kvId = az keyvault show `
@@ -112,72 +139,75 @@ jobs:
             --query id `
             --output tsv
 
-          if($kvId){
-          Write-Host '✅ KeyVault found'
-
-          # Check if the Key Vault role assignment exists
-          $kvRoleAssignment = az role assignment list `
-          --assignee $identityId `
-          --scope $kvId `
-          --role "Key Vault Secrets User" `
-          --query "[].roleDefinitionName" `
-          --output tsv
-
-            if ($kvRoleAssignment) {
-            # Delete the Key Vault role assignment if it exists
-            az role assignment delete `
-              --assignee $identityId `
-              --scope $kvId `
-              --role "Key Vault Secrets User" `
-              --output none
-            Write-Host '✅ Key Vault Secrets User role deleted'
+          if ($kvId) {
+            $kvRole = az role assignment list --assignee-object-id $principalId --scope $kvId --role "Key Vault Secrets User" --fill-principal-name false --fill-role-definition-name false --query "[].id" --output tsv
+            if ($kvRole) {
+              az role assignment delete --assignee-object-id $principalId --scope $kvId --role "Key Vault Secrets User" --output none
+              Write-Host "✅ Key Vault Secrets User role assignment removed"
             } else {
-              Write-Host '❌ Key Vault Secrets User role assignment not found'
+              Write-Host "ℹ️ Key Vault role assignment not found"
             }
           } else {
-            Write-Host '❌ Key Vault not found'
+            Write-Host "⚠️ Key Vault ${{ env.KEY_VAULT }} not found"
           }
 
-      - name: Delete all untagged images
-        run: |
-          az acr manifest list-metadata `
-          -r ${{ env.ACR_NAME }} `
-          -n ${{ env.IMAGE_NAME }} `
-          --query "[?tags==null].digest" `
-          -o tsv | `
-          %{ `
-            az acr repository delete `
-            -n ${{ env.ACR_NAME }} `
-            -t ${{ env.IMAGE_NAME }}@$_ `
-            --yes `
-          }
-          Write-Host "✅ All untagged images have been deleted"
-
-      - name: ACR - Delete image
-        run: |
-          $imageTagWithPrefix = '${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME}}'
-          $imageName = "${{ env.IMAGE_NAME }}:$imageTagWithPrefix"
-
-          # Check if the image exists in the ACR
-          $imageExists = az acr repository show-manifests `
-            --name ${{ env.ACR_NAME }} `
-            --repository ${{ env.IMAGE_NAME }} `
-            --query "[?tags[?contains(@, '$imageTagWithPrefix')]].tags[]" `
-            --output tsv
-
-          if ($imageExists) {
-            # If the image exists, delete it
-            az acr repository delete --name ${{ env.ACR_NAME }} `
-            --image $imageName --yes
-            Write-Output "✅ ACR - $imageName image deleted successfully."
-          } else {
-            Write-Output "❌ ACR - $imageName image not found, skipping deletion."
-          }
-
+      # The critical action - frees App Service Plan compute. Idempotent, and the
+      # only step allowed to fail the job (so a real failure stays visible).
       - name: Delete slot
         run: |
+          $slot = '${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME }}'
+
+          $exists = az webapp deployment slot list `
+            --name ${{ env.APP_SERVICE_NAME }} `
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+            --query "[?name=='$slot'].name" `
+            --output tsv
+
+          if (-not $exists) {
+            Write-Host "✅ Slot $slot already deleted - nothing to do."
+            exit 0
+          }
+
           az webapp deployment slot delete `
             --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
             --name ${{ env.APP_SERVICE_NAME }} `
-            --slot ${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME }} `
+            --slot $slot `
             --output none
+
+          Write-Host "✅ Slot $slot deleted."
+
+      # Best-effort image cleanup, after the slot is gone.
+      - name: ACR - Delete PR image tag
+        continue-on-error: true
+        run: |
+          $tag = '${{ env.SLOT_PREFIX }}${{ matrix.SLOT_NAME }}'
+
+          $tagExists = az acr repository show-tags `
+            --name ${{ env.ACR_NAME }} `
+            --repository ${{ env.IMAGE_NAME }} `
+            --query "[?@=='$tag']" `
+            --output tsv
+
+          if ($tagExists) {
+            az acr repository delete --name ${{ env.ACR_NAME }} --image "${{ env.IMAGE_NAME }}:$tag" --yes
+            Write-Host "✅ ACR image ${{ env.IMAGE_NAME }}:$tag deleted"
+          } else {
+            Write-Host "ℹ️ ACR image ${{ env.IMAGE_NAME }}:$tag not found"
+          }
+
+      - name: ACR - Delete untagged manifests
+        continue-on-error: true
+        run: |
+          # NOTE: best-effort. Repo-wide (not PR-scoped), and `az acr manifest list-metadata`
+          # currently does not return untagged manifests (Azure/azure-cli#29994), so this is
+          # largely a no-op today. Tracked as a follow-up in the linked issue.
+          az acr manifest list-metadata `
+            -r ${{ env.ACR_NAME }} `
+            -n ${{ env.IMAGE_NAME }} `
+            --query "[?tags==null].digest" `
+            -o tsv | ForEach-Object {
+              if ($_) {
+                az acr repository delete -n ${{ env.ACR_NAME }} -t "${{ env.IMAGE_NAME }}@$_" --yes
+              }
+            }
+          Write-Host "✅ Untagged manifests cleaned up"
