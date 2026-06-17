@@ -5,11 +5,7 @@ import type { ColorPickerOptions } from "../colourSelector";
 export const DEFAULT_BUTTON_COLOUR = 0;
 
 type ButtonColorOption = ColorPickerOptions & {
-  /**
-   * The RippleButton variant this picker index maps to. The picker entry is
-   * the single source of truth for the index → variant contract;
-   * buttonColorVariants in rippleButtonV2 is derived from this list.
-   */
+  /** RippleButton variant this picker index maps to (source of truth). */
   variant: ColorVariant;
 };
 
@@ -30,10 +26,8 @@ export const buttonOptions: ButtonColorOption[] = [
   },
 ];
 
-// Tina colour pickers store an index; each picker entry declares the variant
-// it maps to, so this list is the single source of the index → variant
-// contract. It lives here (with the data it is derived from) rather than in the
-// presentational button so the dependency flows CMS-config → button, never back.
+// Index → variant lookup derived from the picker, so the dependency flows
+// CMS-config → button, not the other way.
 export const buttonColorVariants: ColorVariant[] = buttonOptions.map(
   (option) => option.variant
 );

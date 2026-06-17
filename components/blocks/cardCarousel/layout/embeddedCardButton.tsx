@@ -18,17 +18,14 @@ type EmbeddedButtonData = {
   icon?: string;
 };
 
-// Legacy text-link CTA — the long-standing look for card "Read more" links.
-// Kept as the default so existing cards are unchanged; the button styles are
-// opt-in (an Eventbrite event or displayStyle === "button").
+// Legacy text-link CTA, kept as the default so existing cards are unchanged.
 const LINK_CLASSNAME =
   "pt-2 font-semibold text-white !decoration-gray-400 !decoration-1 hover:!decoration-sswRed";
 
 /**
- * Renders the call-to-action on a card. The action is one of three: an
- * Eventbrite checkout modal, a filled button, or — the default — a plain
- * text-link. The component owns its whole contract — branch selection and the
- * "no text, no button" gate — so Card can render it unconditionally.
+ * Card CTA: an Eventbrite checkout modal, a filled button, or — the default — a
+ * plain text-link. Owns the "no text, no button" gate so Card renders it
+ * unconditionally.
  */
 export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
   if (!data?.buttonText) return null;
@@ -37,8 +34,6 @@ export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
     buttonColorVariants[data.colour ?? DEFAULT_BUTTON_COLOUR] ??
     buttonColorVariants[DEFAULT_BUTTON_COLOUR];
   const textTinaField = tinaField(data, "buttonText");
-  // Shared so the button CTA variants cannot drift in width/spacing: full width
-  // on mobile, shrink to content from sm up.
   const buttonClassName = "mt-2 w-full sm:w-auto sm:self-start";
   const inner = (
     <>

@@ -9,11 +9,7 @@ export interface PopupProps extends React.HTMLAttributes<HTMLDivElement> {
   isVisible: boolean;
   showCloseIcon?: boolean;
   onClose: () => void;
-  /**
-   * Inline styles for the modal box. Inline because the library's own
-   * stylesheet (padding, background) can win over Tailwind classes depending
-   * on import order.
-   */
+  /** Inline styles for the modal box (the library's stylesheet can beat Tailwind classes). */
   modalStyle?: React.CSSProperties;
 }
 

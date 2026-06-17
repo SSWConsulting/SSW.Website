@@ -24,8 +24,7 @@ interface RippleButtonProps
   variant: ColorVariant;
   /** When set, renders an <a> instead of a <button> for link-style CTAs. */
   href?: string;
-  // Rendered element is polymorphic (<a> | <button>), so ref and onClick are
-  // typed to the common HTMLElement rather than lying about HTMLButtonElement.
+  // Polymorphic <a>|<button>, so onClick is typed to the common HTMLElement.
   onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
@@ -112,13 +111,9 @@ const RippleButton = React.forwardRef<
       </>
     );
 
-    // Render a real <a> for link-style CTAs so we never nest a <button> inside
-    // an <a> (invalid HTML and a11y-hostile). A single polymorphic element
-    // keeps ref and rest props (aria-*, id, target, ...) forwarded in both
-    // modes.
+    // A real <a> for link CTAs, so we never nest a <button> inside an <a>.
     const Comp = (href ? "a" : "button") as React.ElementType;
-    // Harden new-tab links against tabnabbing. Default only; an explicit rel in
-    // props still wins because it spreads after this.
+    // Default rel on new-tab links (tabnabbing); an explicit rel in props wins.
     const newTabRel =
       href && (props as { target?: string }).target === "_blank"
         ? { rel: "noopener noreferrer" }
