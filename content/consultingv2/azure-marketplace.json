@@ -53,7 +53,7 @@
       },
       "mediaConfiguration": {
         "placement": "Right",
-        "imageSource": "/images/ssw-web/hero/Generated%20Image%20November%2007,%202025%20-%202_22PM.png",
+        "imageSource": "/images/consulting/hero/azure-marketplace.jpg",
         "imageHeight": 768,
         "imageWidth": 1344,
         "altText": "SSW Solution Architect helping a software vendor publish an Azure Marketplace offer"
@@ -62,8 +62,7 @@
     },
     {
       "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png"
+        "backgroundColour": 6
       },
       "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "tabletTextAlignment": "Center",
