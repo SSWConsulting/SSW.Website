@@ -187,6 +187,14 @@
       "_template": "technologyCardCarousel"
     },
     {
+      "excludedCategories": [
+        {
+          "categoryName": "content/testimonialCategories/Chinafy.mdx"
+        }
+      ],
+      "_template": "TestimonialsList"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
