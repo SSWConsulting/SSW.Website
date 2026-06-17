@@ -439,6 +439,17 @@ export const CardCarouselSchema: Template = {
             },
             {
               type: "string",
+              label: "Style",
+              name: "displayStyle",
+              description:
+                "Link = plain text link (default). Button = filled button (uses Colour below). Eventbrite checkouts always render as a button.",
+              options: [
+                { label: "Link", value: "link" },
+                { label: "Button", value: "button" },
+              ],
+            },
+            {
+              type: "string",
               label: "Eventbrite Event ID",
               name: "eventbriteEventId",
               description:
@@ -484,6 +495,8 @@ export const CardCarouselSchema: Template = {
               type: "number",
               label: "Colour",
               name: "colour",
+              description:
+                "Button colour. Applies when Style is Button or an Eventbrite Event ID is set; ignored for plain links.",
               // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
               ui: {
                 component: ColorPickerInput(buttonOptions),

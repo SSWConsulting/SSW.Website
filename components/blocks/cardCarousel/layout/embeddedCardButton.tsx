@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
 import {
@@ -11,14 +12,22 @@ type EmbeddedButtonData = {
   buttonText?: string;
   buttonLink?: string;
   eventbriteEventId?: string;
+  /** "link" (default) keeps the legacy text-link CTA; "button" renders a filled RippleButton. */
+  displayStyle?: "link" | "button";
   colour?: number;
   icon?: string;
 };
 
+// Legacy text-link CTA — the long-standing look for card "Read more" links.
+// Kept as the default so existing cards are unchanged; the button styles are
+// opt-in (an Eventbrite event or displayStyle === "button").
+const LINK_CLASSNAME =
+  "pt-2 font-semibold text-white !decoration-gray-400 !decoration-1 hover:!decoration-sswRed";
+
 /**
- * Renders the call-to-action on a card. The action is one of three, in order of
- * precedence: an Eventbrite checkout modal, an external/anchor link, or a plain
- * button. The component owns its whole contract — branch selection and the
+ * Renders the call-to-action on a card. The action is one of three: an
+ * Eventbrite checkout modal, a filled button, or — the default — a plain
+ * text-link. The component owns its whole contract — branch selection and the
  * "no text, no button" gate — so Card can render it unconditionally.
  */
 export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
@@ -28,8 +37,8 @@ export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
     buttonColorVariants[data.colour ?? DEFAULT_BUTTON_COLOUR] ??
     buttonColorVariants[DEFAULT_BUTTON_COLOUR];
   const textTinaField = tinaField(data, "buttonText");
-  // Shared so the two CTA variants cannot drift in width/spacing: full width on
-  // mobile, shrink to content from sm up.
+  // Shared so the button CTA variants cannot drift in width/spacing: full width
+  // on mobile, shrink to content from sm up.
   const buttonClassName = "mt-2 w-full sm:w-auto sm:self-start";
   const inner = (
     <>
@@ -38,25 +47,40 @@ export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
     </>
   );
 
-  const button = data.eventbriteEventId ? (
-    <EventbriteModalButton
-      eventId={data.eventbriteEventId}
-      variant={variant}
-      className={buttonClassName}
-      textTinaField={textTinaField}
-    >
-      {inner}
-    </EventbriteModalButton>
-  ) : (
-    <RippleButton
-      href={data.buttonLink || undefined}
-      variant={variant}
-      className={buttonClassName}
-      textTinaField={textTinaField}
-    >
-      {inner}
-    </RippleButton>
-  );
+  let button: ReactNode;
+  if (data.eventbriteEventId) {
+    button = (
+      <EventbriteModalButton
+        eventId={data.eventbriteEventId}
+        variant={variant}
+        className={buttonClassName}
+        textTinaField={textTinaField}
+      >
+        {inner}
+      </EventbriteModalButton>
+    );
+  } else if (data.displayStyle === "button") {
+    button = (
+      <RippleButton
+        href={data.buttonLink || undefined}
+        variant={variant}
+        className={buttonClassName}
+        textTinaField={textTinaField}
+      >
+        {inner}
+      </RippleButton>
+    );
+  } else {
+    button = (
+      <a
+        href={data.buttonLink}
+        data-tina-field={textTinaField}
+        className={LINK_CLASSNAME}
+      >
+        {inner}
+      </a>
+    );
+  }
 
   return (
     <div className="flex h-full flex-col-reverse justify-between">{button}</div>

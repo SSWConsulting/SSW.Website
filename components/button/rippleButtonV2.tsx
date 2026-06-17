@@ -117,6 +117,12 @@ const RippleButton = React.forwardRef<
     // keeps ref and rest props (aria-*, id, target, ...) forwarded in both
     // modes.
     const Comp = (href ? "a" : "button") as React.ElementType;
+    // Harden new-tab links against tabnabbing. Default only; an explicit rel in
+    // props still wins because it spreads after this.
+    const newTabRel =
+      href && (props as { target?: string }).target === "_blank"
+        ? { rel: "noopener noreferrer" }
+        : {};
     return (
       <Comp
         href={href}
@@ -124,6 +130,7 @@ const RippleButton = React.forwardRef<
         className={sharedClassName}
         onMouseEnter={isPrimary ? createRipple : undefined}
         ref={ref}
+        {...newTabRel}
         {...props}
       >
         {inner}
