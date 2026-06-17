@@ -187,12 +187,44 @@
       "_template": "technologyCardCarousel"
     },
     {
-      "excludedCategories": [
+      "isStacked": false,
+      "heading": "What do people say? ",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
         {
-          "categoryName": "content/testimonialCategories/Chinafy.mdx"
+          "guid": "9oo6go",
+          "image": "",
+          "altText": "",
+          "heading": "Dr. Xingjun Ma, Fudan University ",
+          "description": "\"I fully endorse SSW's exceptional work on my computer science project at Fudan University. They demonstrated transparency, efficiency, and professionalism. Their communication skills are top-notch, fostering direct communication with everyone involved.\"",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "3bcfl",
+          "altText": "",
+          "icon": "info",
+          "heading": "Yun Lu, LUQI Tech",
+          "description": "\"SSW's expertise and professionalism in software development left a deep impression on me. They brought exceptional value to our dev team, inspiring them with their punctuality and diligence. I'm grateful for their unwavering commitment to excellence and delighted to have them in our office. Thank you, SSW!\"",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "9szqzq",
+          "altText": "",
+          "icon": "info",
+          "heading": "Neil Roodyn, nsquared solutions ",
+          "description": "\n\"Working with SSW on our Blazor projects has been a positive and rewarding experience. Their expertise and commitment to quality are evident.\" ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
         }
       ],
-      "_template": "TestimonialsList"
+      "_template": "cardCarousel"
     },
     {
       "topLabel": {
