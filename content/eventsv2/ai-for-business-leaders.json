@@ -682,13 +682,12 @@
       "isStacked": true,
       "heading": "Pick your city.",
       "isH1": false,
-      "body": "Pick your city below and secure checkout opens right here on the page - confirm your $99 seat in a few clicks.\n\n\n",
+      "body": "Pick your city below and secure checkout opens right here on the page - confirm your $99 seat in a few clicks.",
       "cardStyle": 0,
       "cards": [
         {
           "guid": "na8owi",
-          "altText": "Lorem Ipsum",
-          "icon": "info",
+          "altText": "Real case studies",
           "heading": "Brisbane",
           "description": "",
           "featureList": {
@@ -707,8 +706,7 @@
         },
         {
           "guid": "a5ne6z",
-          "altText": "Lorem Ipsum",
-          "icon": "info",
+          "altText": "Straight answers from engineers",
           "heading": "Melbourne",
           "description": "",
           "featureList": {
@@ -727,8 +725,7 @@
         },
         {
           "guid": "m94ybh",
-          "altText": "Lorem Ipsum",
-          "icon": "info",
+          "altText": "One-page action list",
           "heading": "Sydney",
           "description": "",
           "featureList": {
