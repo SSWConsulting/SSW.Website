@@ -73,7 +73,7 @@
       "cards": [
         {
           "guid": "wa02",
-          "altText": "Real case studies",
+          "altText": "Reserve your seat for the Brisbane event on Thursday 2 July 2026, 9:00am – 1:00pm",
           "heading": "Brisbane",
           "description": "",
           "featureList": {
@@ -92,7 +92,7 @@
         },
         {
           "guid": "wa03",
-          "altText": "Straight answers from engineers",
+          "altText": "Reserve your seat for the Melbourne event on Thursday 9 July 2026, 9:00am – 1:00pm",
           "heading": "Melbourne",
           "description": "",
           "featureList": {
@@ -111,7 +111,7 @@
         },
         {
           "guid": "wa04",
-          "altText": "One-page action list",
+          "altText": "Reserve your seat for the Sydney event on Thursday 16 July 2026, 9:00am – 1:00pm",
           "heading": "Sydney",
           "description": "",
           "featureList": {
@@ -687,7 +687,7 @@
       "cards": [
         {
           "guid": "na8owi",
-          "altText": "Real case studies",
+          "altText": "Reserve your seat for the Brisbane event on Thursday 2 July 2026, 9:00am – 1:00pm",
           "heading": "Brisbane",
           "description": "",
           "featureList": {
@@ -706,7 +706,7 @@
         },
         {
           "guid": "a5ne6z",
-          "altText": "Straight answers from engineers",
+          "altText": "Reserve your seat for the Melbourne event on Thursday 9 July 2026, 9:00am – 1:00pm",
           "heading": "Melbourne",
           "description": "",
           "featureList": {
@@ -725,7 +725,7 @@
         },
         {
           "guid": "m94ybh",
-          "altText": "One-page action list",
+          "altText": "Reserve your seat for the Sydney event on Thursday 16 July 2026, 9:00am – 1:00pm",
           "heading": "Sydney",
           "description": "",
           "featureList": {
