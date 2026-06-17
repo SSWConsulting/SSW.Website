@@ -1,0 +1,278 @@
+{
+  "seo": {
+    "title": "Enterprise Development and Consulting for Chinese Markets | SSW",
+    "description": "Unlock the Chinese market. SSW’s Chinafy experts optimize your web apps for speed, reliability, and local compliance behind the Great Firewall.",
+    "canonical": ""
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "finalBreadcrumb": "Mini Apps",
+      "_template": "breadcrumbs"
+    },
+    {
+      "topLabel": {
+        "labelText": "20+ years delivering Western solutions to Eastern markets"
+      },
+      "heading": "China's digital market is massive. Most Western businesses approach it **completely wrong.**",
+      "isH1": true,
+      "description": "China has 1.4 billion WeChat users, 945 million Mini Program users, and a payments ecosystem that processes transactions nearly 3 times per day per person. It's not catching up to the West, in many ways it's already ahead. SSW has a team in Hangzhou and two decades of experience helping Western businesses enter this market the right way.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/012.jpg",
+        "imageHeight": 4480,
+        "imageWidth": 6720
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 170,
+          "altText": "CommBank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 195,
+          "altText": "Allianz"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 180,
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 175,
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 160,
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 195,
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 175,
+          "altText": "Cisco"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Why most teams get this wrong.",
+      "isH1": false,
+      "description": "Most Western teams jump straight to VPNs, CDNs, and network routing. But the first blocker is legal data residency requirements, ICP filings, and cross-border transfer rules that reshape architecture decisions you thought were already made. The second is your dependencies, Google OAuth, Stripe, OpenAI, Facebook login. All broken the moment someone in Shanghai opens your app. SSW helps audit both before anything else.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Compliance before code",
+            "description": "Data residency rules and ICP filing requirements affect architectural decisions most teams have already locked in. We identify the implications early, before they become expensive to undo."
+          },
+          {
+            "heading": "Dependency audit",
+            "description": "Most modern apps quietly rely on services that are blocked in China. We map every external dependency, auth, payments, analytics, AI providers, and identify what needs replacing and with what."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "🔨 Do You Know Why You Should Chinafy Your App? ",
+          "buttonLink": "https://www.ssw.com.au/rules/do-you-know-why-you-should-chinafy-your-app",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
+        "bleed": true
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Left",
+        "youtubeUrl": "https://www.youtube.com/watch?v=K_fpd-YCGOc"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "isStacked": true,
+      "heading": "How SSW Chinafies your application",
+      "isH1": false,
+      "body": "",
+      "cards": [
+        {
+          "guid": "dd2c2j",
+          "altText": "",
+          "icon": "BiExpand",
+          "heading": "Application Localisation ",
+          "description": "Getting into China goes far beyond translation. SSW guides you through the full localisation and optimisation process, aligning your UX with Chinese user expectations, improving adoption rates, and making sure your application actually competes in the market.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "vn8nxt",
+          "altText": "Intranet Portals",
+          "icon": "BiDoorOpen",
+          "heading": "China Social Media & Mini Programs",
+          "description": "Facebook, Instagram, YouTube, and Twitter are inaccessible in China. WeChat is the platform, and WeChat Mini Programs are how 945 million people access apps without a download. SSW helps you identify the right platforms for your industry and build a presence where your Chinese customers actually are.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "e7yf1l",
+          "altText": "",
+          "icon": "BiSearch",
+          "heading": "Integration with Local Services",
+          "description": "Blocked CDNs, missing payment rails, inaccessible APIs. SSW replaces your Western dependencies with proven local equivalents, Azure China (operated by 21Vianet), Alibaba Cloud, WeChat Pay, and Alipay, so your application performs reliably for Chinese users.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "technologies": [
+        {
+          "technology": "content/v2Technologies/technologies/Azure-China.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Alibaba-Cloud.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/wechat.mdx"
+        }
+      ],
+      "isStacked": false,
+      "techCardStyle": 0,
+      "background": {
+        "backgroundColour": 6,
+        "bleed": true
+      },
+      "_template": "technologyCardCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Why SSW? ",
+      "isH1": true,
+      "description": "SSW has delivered enterprise Microsoft solutions for more than 1,000 clients across 15 countries. With 100 consultants across 4 countries, including a team based in Hangzhou, SSW's developers are some of the best in the business. Many Microsoft Certifications, several MVPs, and a Microsoft Regional Director.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Contact Us",
+          "leadCaptureFormOption": "registrationOfInterestJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "youtube",
+        "placement": "Right",
+        "imageHeight": 700,
+        "imageWidth": 1400,
+        "youtubeUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "heading": "Frequently Asked Questions",
+      "body": "",
+      "accordionItems": [
+        {
+          "label": "Do I need a Chinese business entity to operate on WeChat?",
+          "content": "No. Overseas entities can directly register and authenticate. However, a domestic Chinese entity is required if your Mini Program's server is hosted in mainland China (due to ICP filing regulations). Additionally, overseas entities face more restrictions regarding the types of services they can offer.\n"
+        },
+        {
+          "label": "Which Chinese platforms actually matter for my industry?",
+          "content": "WeChat is the baseline, communication, payments, and app distribution in one. Beyond that it depends on your model. SSW helps you identify which platforms actually move the needle for your specific business rather than trying to be everywhere at once.\n"
+        },
+        {
+          "label": "How long does it take to launch a Mini Program?",
+          "content": "The total timeline runs from 4 to 8 weeks, though this can compress to roughly one week if development is already complete and ICP filing isn't required. The total timeline runs from 4 to 8 weeks, though this can compress to roughly one week if development is already complete and ICP filing isn't required.\n"
+        },
+        {
+          "label": "What Western services and tools are blocked in China?",
+          "content": "More than most teams expect. Google OAuth, Firebase, Google Analytics, Stripe, OpenAI, Facebook login, and many Western CDNs are all unavailable or unreliable. Replacements exist for almost all of them but identifying what needs replacing and implementing it correctly takes experience.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "Talk to us about moving your project to China",
+      "isH1": false,
+      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "150px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}
