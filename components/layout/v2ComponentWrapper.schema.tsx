@@ -61,8 +61,7 @@ export const anchorIdSchema: TinaField = {
     "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to jump here (the offset for the sticky header is handled automatically).",
 };
 
-// The background + anchor fields that every V2 block shares — spread once via
-// `...wrapperBaseFields`.
+// Background + anchor fields every V2 block shares — spread once via `...wrapperBaseFields`.
 export const wrapperBaseFields: TinaField[] = [
   //@ts-expect-error – custom component typing won't be pinned down
   backgroundSchema,

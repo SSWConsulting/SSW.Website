@@ -12,8 +12,7 @@ import { Card } from "../layout/card";
 import { CardList } from "../layout/cardCarouseSlideshow";
 import { Tabs, useTabCarousel } from "../layout/cardCarouselTabs";
 
-// Stacked (non-carousel) columns by cards-per-row. Full static strings so the
-// Tailwind JIT picks them up.
+// Stacked-mode columns by cards-per-row. Full static strings so the Tailwind JIT picks them up.
 const STACKED_GRID_COLS: Record<number, string> = {
   2: "sm:grid-cols-2",
   3: "sm:grid-cols-2 md:grid-cols-3 lg:gap-8",
@@ -28,7 +27,6 @@ export const CardCarousel = ({ data }) => {
   });
   const [cardSet, setCardSet] = useState(data.cards);
 
-  // "Cards per row" wins when set; otherwise fall back to the card count.
   const resolveCardsPerRow = () => {
     if (data.cardsPerRow) return Number(data.cardsPerRow);
     if (data.cards?.length === 3) return 3;

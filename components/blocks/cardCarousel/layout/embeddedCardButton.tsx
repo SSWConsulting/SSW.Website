@@ -12,7 +12,6 @@ type EmbeddedButtonData = {
   buttonText?: string;
   buttonLink?: string;
   eventbriteEventId?: string;
-  /** "link" (default) keeps the legacy text-link CTA; "button" renders a filled RippleButton. */
   displayStyle?: "link" | "button";
   colour?: number;
   icon?: string;
@@ -22,11 +21,7 @@ type EmbeddedButtonData = {
 const LINK_CLASSNAME =
   "pt-2 font-semibold text-white !decoration-gray-400 !decoration-1 hover:!decoration-sswRed";
 
-/**
- * Card CTA: an Eventbrite checkout modal, a filled button, or — the default — a
- * plain text-link. Owns the "no text, no button" gate so Card renders it
- * unconditionally.
- */
+// Card CTA: Eventbrite checkout modal, a filled button, or — the default — a plain text-link.
 export const EmbeddedCardButton = ({ data }: { data?: EmbeddedButtonData }) => {
   if (!data?.buttonText) return null;
 

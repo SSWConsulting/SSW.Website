@@ -24,7 +24,6 @@ interface RippleButtonProps
   variant: ColorVariant;
   /** When set, renders an <a> instead of a <button> for link-style CTAs. */
   href?: string;
-  // Polymorphic <a>|<button>, so onClick is typed to the common HTMLElement.
   onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 

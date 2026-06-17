@@ -1,8 +1,7 @@
 import type { ColorVariant } from "../../../button/rippleButtonV2";
 import type { ColorPickerOptions } from "../colourSelector";
 
-/** Default picker index for embedded card buttons (the "Red" style). */
-export const DEFAULT_BUTTON_COLOUR = 0;
+export const DEFAULT_BUTTON_COLOUR = 0; // "Red"
 
 type ButtonColorOption = ColorPickerOptions & {
   /** RippleButton variant this picker index maps to (source of truth). */
@@ -26,8 +25,7 @@ export const buttonOptions: ButtonColorOption[] = [
   },
 ];
 
-// Index → variant lookup derived from the picker, so the dependency flows
-// CMS-config → button, not the other way.
+// Index → variant lookup derived from the picker (dependency flows CMS-config → button).
 export const buttonColorVariants: ColorVariant[] = buttonOptions.map(
   (option) => option.variant
 );

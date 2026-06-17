@@ -6,12 +6,10 @@ import React, { useEffect, useId, useState } from "react";
 import RippleButton, { ColorVariant } from "../button/rippleButtonV2";
 import Popup from "../popup/popup";
 
-// AU domain — change the TLD if reused for events on another Eventbrite domain.
 const EVENTBRITE_DOMAIN = "https://www.eventbrite.com.au";
 const EVENTBRITE_WIDGET_SRC = `${EVENTBRITE_DOMAIN}/static/widgets/eb_widgets.js`;
 
-// Inline widget in our own Popup: Eventbrite's native modal paints an opaque
-// layer over the page and its backdrop is unstylable.
+// Inline widget in our own Popup: Eventbrite's native modal paints an opaque, unstylable layer over the page.
 const THEME_SETTINGS = {
   brandColor: "#cc4141", // raw hex; keep in sync with the sswRed token
   fontColor: "#333333",
@@ -20,7 +18,6 @@ const THEME_SETTINGS = {
 
 const CHECKOUT_WIDTH_PX = 960;
 const CHECKOUT_HEIGHT_PX = 720;
-// Fallback to a direct link if eb_widgets.js hasn't loaded by now (blockers).
 const SCRIPT_TIMEOUT_MS = 4000;
 
 declare global {
@@ -43,7 +40,6 @@ declare global {
 }
 
 type EventbriteModalButtonProps = {
-  /** Numeric Eventbrite event ID, e.g. eventbrite.com/e/<name>-<EVENT_ID>. */
   eventId: string;
   variant: ColorVariant;
   className?: string;
@@ -51,11 +47,7 @@ type EventbriteModalButtonProps = {
   children: React.ReactNode;
 };
 
-/**
- * Button that opens an Eventbrite checkout in a site Popup. The inline embed is
- * mounted on open (so the page never pays the embed cost on load) and destroyed
- * on close, so each open gets a fresh widget.
- */
+/** Opens an Eventbrite checkout in a Popup; the embed mounts on open and resets on close. */
 export const EventbriteModalButton = ({
   eventId,
   variant,
@@ -63,24 +55,20 @@ export const EventbriteModalButton = ({
   textTinaField,
   children,
 }: EventbriteModalButtonProps) => {
-  // Unique per mounted instance — the same event can appear on many cards.
   const reactId = useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const containerId = `eventbrite-checkout-${eventId}-${reactId}`;
   const [open, setOpen] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [scriptFailed, setScriptFailed] = useState(false);
-  // The popup portals its content, so bind once the node itself mounts (via the
-  // callback ref), not when `open` flips.
+  // The popup portals its content, so bind via the callback ref once the node mounts, not when `open` flips.
   const [containerEl, setContainerEl] = useState<HTMLDivElement | null>(null);
 
-  // Script may already be present after a client-side navigation back.
   useEffect(() => {
     if (typeof window !== "undefined" && window.EBWidgets)
       setScriptLoaded(true);
   }, []);
 
-  // Poll window.EBWidgets for readiness; next/script's per-instance onReady can
-  // stay unfired once the src is deduped. Fall back only after the timeout.
+  // Poll for readiness: next/script's per-instance onReady can stay unfired once the src is deduped.
   useEffect(() => {
     if (!open || scriptLoaded) return;
     if (window.EBWidgets) {
@@ -111,7 +99,6 @@ export const EventbriteModalButton = ({
       iframeContainerHeight: CHECKOUT_HEIGHT_PX,
       themeSettings: THEME_SETTINGS,
       onOrderComplete: () => {
-        // Conversion hook for downstream GTM tags (Facebook Pixel, CRM).
         sendGTMEvent({ event: "eventbrite_order_complete", eventId });
       },
     });
@@ -119,8 +106,7 @@ export const EventbriteModalButton = ({
 
   return (
     <>
-      {/* Loaded only after the first open, so the page never pays the script
-          cost on load. next/script dedupes by src; onReady fires per instance. */}
+      {/* Loaded only after the first open, so the page never pays the script cost on load. */}
       {open && (
         <Script
           src={EVENTBRITE_WIDGET_SRC}
@@ -138,8 +124,7 @@ export const EventbriteModalButton = ({
       >
         {children}
       </RippleButton>
-      {/* Always mounted (for the close animation); the library unmounts the
-          contents while closed, which resets the widget between opens. */}
+      {/* Always mounted (for the close animation); the library unmounts contents while closed, resetting the widget. */}
       <Popup
         isVisible={open}
         showCloseIcon
@@ -169,8 +154,7 @@ export const EventbriteModalButton = ({
             ref={setContainerEl}
             id={containerId}
             className="w-full"
-            // Capped height with scroll: Eventbrite sizes the iframe to full
-            // height, which would clip the pay button in short viewports.
+            // Capped height with scroll: Eventbrite sizes the iframe to full height, clipping the pay button in short viewports.
             style={{
               height: `min(${CHECKOUT_HEIGHT_PX}px, 85vh)`,
               overflowY: "auto",
