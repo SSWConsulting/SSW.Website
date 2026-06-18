@@ -96,7 +96,7 @@ const V2ComponentWrapper = ({
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-[10] bg-[radial-gradient(circle_at_78%_100%,rgba(204,65,65,0.15),transparent_45%)]"
+            className="pointer-events-none absolute inset-0 z-[10] bg-[radial-gradient(circle_at_78%_50%,rgba(204,65,65,0.15),transparent_25%)]"
           />
         </>
       )}
