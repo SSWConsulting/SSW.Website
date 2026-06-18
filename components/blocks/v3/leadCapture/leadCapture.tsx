@@ -5,9 +5,10 @@ import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import { useMemo, useState } from "react";
-import { FiArrowLeft } from "react-icons/fi";
-import { HiSparkles } from "react-icons/hi2";
+
+import { TiArrowRight, TiArrowLeft } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 const OPTION_LETTERS = ["A", "B", "C", "D"];
 
@@ -47,13 +48,21 @@ export function V3LeadCapture({ data }) {
     if (!canSubmit || status === "submitting") return;
     setStatus("submitting");
 
-    // Map each answer to its configured JotForm field id.
-    const fields: Record<string, string> = {};
+    // Collapse all answers into a single Q&A text dump, and pull any
+    // free-text (textarea) answers out into the Notes field.
+    const qaLines: string[] = [];
+    const noteLines: string[] = [];
     steps.forEach((step, index) => {
-      const value = answers[index];
-      if (step?.jotFormFieldId && value) fields[step.jotFormFieldId] = value;
+      const value = (answers[index] ?? "").trim();
+      if (!value) return;
+      if (step?.heading) qaLines.push(`Q: ${step.heading}\nA: ${value}`);
+      if (step?.showTextArea) noteLines.push(value);
     });
+
+    const fields: Record<string, string> = {};
     if (data?.emailFieldId) fields[data.emailFieldId] = email.trim();
+    if (data?.notesFieldId) fields[data.notesFieldId] = noteLines.join("\n\n");
+    if (data?.answersFieldId) fields[data.answersFieldId] = qaLines.join("\n\n");
 
     try {
       const res = await fetch("/api/lead-capture", {
@@ -70,6 +79,47 @@ export function V3LeadCapture({ data }) {
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" padding="px-4 sm:px-8" className="py-16 md:py-24">
+        {/* Intro: brow, heading, description */}
+        {(data?.brow || data?.heading || data?.description) && (
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            {data?.brow && (
+              <span
+                data-tina-field={tinaField(data, "brow")}
+                className=" block text-sm uppercase font-mono tracking-wider text-sswRed"
+              >
+                {data.brow}
+              </span>
+            )}
+            {data?.heading && (
+              <h2
+                data-tina-field={tinaField(data, "heading")}
+                id="lead-capture-heading"
+                className="scroll-mt-28 text-3xl my-4 text-white lg:text-4xl"
+              >
+                <AlternatingText text={data.heading} />
+              </h2>
+            )}
+            {data?.description && (
+              <div
+                data-tina-field={tinaField(data, "description")}
+                className="mt-4 max-w-prose mx-auto "
+              >
+                <TinaMarkdown
+                  content={data.description}
+                  components={{
+                    p: (props) => (
+                      <p
+                        {...props}
+                        className="py-2 text-base font-light text-gray-300"
+                      />
+                    ),
+                  }}
+                />
+              </div>
+            )}
+          </div>
+        )}
+
         <div className="mx-auto max-w-3xl rounded-2xl border-[0.5px] border-white/10 bg-white/5 p-6 sm:p-10">
           {/* Progress bar */}
           <div className="flex items-center gap-4">
@@ -85,19 +135,21 @@ export function V3LeadCapture({ data }) {
           </div>
 
           {status === "success" ? (
-            <div className="py-16 text-center">
-              <h3 className="text-2xl font-bold text-white">Thanks — you're booked in.</h3>
-              <p className="mt-3 text-base font-light text-gray-300">
+            <div className="flex flex-1 flex-col items-center justify-center text-center">
+              <h3 className="text-lg text-white lg:text-xl">
+                Thanks — you're booked in.
+              </h3>
+              <p className="mt-3 text-sm font-light text-gray-300">
                 A senior React engineer will be in touch within one business day.
               </p>
             </div>
           ) : isContactStep ? (
             /* Final contact step */
-            <form onSubmit={handleSubmit} className="mt-10">
+            <form onSubmit={handleSubmit}>
               {submitStep?.header && (
                 <h4
                   data-tina-field={tinaField(submitStep, "header")}
-                  className="mt-6 text-xl font-bold text-white lg:text-xl"
+                  className="text-lg my-4 text-white lg:text-xl"
                 >
                   {submitStep.header}
                 </h4>
@@ -105,7 +157,7 @@ export function V3LeadCapture({ data }) {
               {submitStep?.subheader && (
                 <p
                   data-tina-field={tinaField(submitStep, "subheader")}
-                  className="mt-4 max-w-2xl text-base font-light text-gray-300"
+                  className="mt-3 max-w-2xl text-sm font-light text-gray-300"
                 >
                   {submitStep.subheader}
                 </p>
@@ -118,12 +170,12 @@ export function V3LeadCapture({ data }) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder={submitStep?.emailPlaceholder ?? "you@company.com"}
-                  className="flex-1 rounded-lg border-[0.5px] border-white/15 bg-transparent px-4 py-3 text-base text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
+                  className="flex-1 rounded-lg border-[0.5px] border-white/15 bg-transparent px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
                 />
                 <button
                   type="submit"
                   disabled={!canSubmit || status === "submitting"}
-                  className="rounded-lg bg-sswRed px-6 py-3 text-base font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+                  className="rounded-lg bg-sswRed px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   {status === "submitting"
                     ? "Sending…"
@@ -139,7 +191,7 @@ export function V3LeadCapture({ data }) {
               {submitStep?.footnote && status !== "error" && (
                 <p
                   data-tina-field={tinaField(submitStep, "footnote")}
-                  className="mt-3 text-sm font-light text-gray-500"
+                  className="mt-3 text-xs font-light text-gray-500"
                 >
                   {submitStep.footnote}
                 </p>
@@ -148,19 +200,19 @@ export function V3LeadCapture({ data }) {
               <button
                 type="button"
                 onClick={goBack}
-                className="mt-8 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
+                className="mt-8 inline-flex items-center gap-2 text-xs text-gray-400 transition-colors hover:text-white"
               >
-                <FiArrowLeft aria-hidden className="size-4" />
+                <TiArrowLeft aria-hidden className="size-4" />
                 Change my answers
               </button>
             </form>
           ) : (
             /* Quiz question step */
-            <div className="mt-10">
+            <div>
               {steps[current]?.heading && (
                 <h2
                   data-tina-field={tinaField(steps[current], "heading")}
-                  className="text-xl font-bold text-white lg:text-2xl"
+                  className="text-lg my-4 text-white lg:text-xl"
                 >
                   <AlternatingText text={steps[current].heading} />
                 </h2>
@@ -176,24 +228,24 @@ export function V3LeadCapture({ data }) {
                     }
                     placeholder={`What are you building, and what would a great outcome look like? 
 A sentence or two is enough`}
-                    className="w-full rounded-lg border-[0.5px] border-white/15 bg-transparent px-4 py-3 text-base text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
+                    className="w-full rounded-lg border-[0.5px] border-white/15 bg-transparent px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
                   />
                   <div className="mt-6 flex items-center justify-between">
                     <button
                       type="button"
                       onClick={goBack}
                       className={cn(
-                        "inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white",
+                        "inline-flex items-center gap-2 text-xs text-gray-400 transition-colors hover:text-white",
                         current === 0 && "invisible"
                       )}
                     >
-                      <FiArrowLeft aria-hidden className="size-4" />
+                      <TiArrowLeft aria-hidden className="size-4" />
                       Back
                     </button>
                     <button
                       type="button"
                       onClick={goNext}
-                      className="rounded-lg bg-sswRed px-6 py-3 text-base font-semibold text-white transition-opacity hover:opacity-90"
+                      className="rounded-lg bg-sswRed px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                     >
                       Continue
                     </button>
@@ -210,7 +262,7 @@ A sentence or two is enough`}
                           type="button"
                           onClick={() => selectOption(current, option)}
                           className={cn(
-                            "group flex items-center gap-4 rounded-xl border-[0.5px] px-4 py-4 text-left transition-colors",
+                            "group flex items-center gap-3 rounded-xl border-[0.5px] px-4 py-3 text-left transition-colors",
                             isSelected
                               ? "border-sswRed bg-sswRed/10"
                               : "border-white/10 hover:border-white/30 hover:bg-white/[0.03]"
@@ -218,15 +270,18 @@ A sentence or two is enough`}
                         >
                           <span
                             className={cn(
-                              "flex size-8 shrink-0 items-center justify-center rounded-md border-[0.5px] font-mono text-sm",
+                              "flex size-7 shrink-0 items-center justify-center rounded-md border-[0.5px] font-mono text-xs transition-colors",
                               isSelected
                                 ? "border-sswRed text-sswRed"
-                                : "border-white/20 text-gray-400"
+                                : "border-white/20 text-gray-400 group-hover:border-sswRed  group-hover:text-sswRed"
                             )}
                           >
                             {OPTION_LETTERS[i]}
                           </span>
-                          <span className="text-base text-gray-200">{option}</span>
+                          <span className="text-sm text-gray-200">{option}</span>
+                          <div className='ml-auto opacity-0 group-hover:opacity-100 transition-opacity '>
+                            <TiArrowRight className='size-6 text-white'/>
+                          </div>
                         </button>
                       );
                     })}
@@ -236,9 +291,9 @@ A sentence or two is enough`}
                     <button
                       type="button"
                       onClick={goBack}
-                      className="mt-8 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
+                      className="mt-8 inline-flex items-center gap-2 text-xs text-gray-400 transition-colors hover:text-white"
                     >
-                      <FiArrowLeft aria-hidden className="size-4" />
+                      <TiArrowLeft aria-hidden className="size-4" />
                       Back
                     </button>
                   )}

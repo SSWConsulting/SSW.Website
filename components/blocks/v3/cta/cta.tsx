@@ -16,7 +16,7 @@ export function V3Cta({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="max-w-3xl text-4xl font-bold text-white sm:text-5xl lg:text-6xl"
+            className="max-w-3xl text-4xl text-white lg:text-6xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -24,7 +24,7 @@ export function V3Cta({ data }) {
         {data?.description && (
           <div
             data-tina-field={tinaField(data, "description")}
-            className="mt-6 max-w-2xl"
+            className="mt-6 max-w-sm lg:max-w-2xl"
           >
             <TinaMarkdown
               content={data.description}

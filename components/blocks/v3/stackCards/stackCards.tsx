@@ -14,7 +14,7 @@ export function V3StackCards({ data }) {
         {data?.brow && (
           <span
             data-tina-field={tinaField(data, "brow")}
-            className="mb-3 flex items-center gap-2 font-mono text-sm uppercase tracking-wider text-sswRed"
+            className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-sswRed"
           >
             {data.brow}
           </span>
@@ -22,7 +22,7 @@ export function V3StackCards({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="text-4xl font-bold text-white lg:text-5xl"
+            className="text-3xl my-4 text-white lg:text-4xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -30,7 +30,7 @@ export function V3StackCards({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className="mt-4 max-w-2xl text-base font-light text-gray-400"
+            className="max-w-2xl text-base font-light text-gray-400"
           >
             {data.subtitle}
           </p>
@@ -40,7 +40,7 @@ export function V3StackCards({ data }) {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {cards.map((card, index) => {
               const inner = (
-                <div className="group flex h-full flex-col rounded-2xl border border-[#212121] bg-[#0d0d0d] p-6 transition group">
+                <div className="group flex h-full flex-col rounded-2xl border-[0.75px] border-[#212121] bg-[#0d0d0d] p-6 transition group">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="text-2xl font-semibold text-white">
                       {card?.title}

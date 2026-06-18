@@ -60,7 +60,21 @@ export const V3LeadCaptureSchema: Template = {
       label: "Email Field ID",
       name: "emailFieldId",
       description:
-        "The JotForm question ID (qid) of the email field, e.g. \"3\".",
+        "The JotForm question ID (qid) of the Email field, e.g. \"3\".",
+    },
+    {
+      type: "string",
+      label: "Notes Field ID",
+      name: "notesFieldId",
+      description:
+        "The JotForm qid of the Notes field (receives the free-text/textarea answer).",
+    },
+    {
+      type: "string",
+      label: "Questions & Answers Field ID",
+      name: "answersFieldId",
+      description:
+        "The JotForm qid of the Questions & Answers field (receives a text dump of every question and the answer given).",
     },
     {
       type: "object",
@@ -94,14 +108,7 @@ export const V3LeadCaptureSchema: Template = {
           label: "Use a text area instead of options?",
           name: "showTextArea",
           description:
-            "If true, this step shows a free-text area instead of multiple-choice options.",
-        },
-        {
-          type: "string",
-          label: "JotForm Field ID",
-          name: "jotFormFieldId",
-          description:
-            "The JotForm question ID (qid) this answer maps to, e.g. \"4\".",
+            "If true, this step shows a free-text area instead of multiple-choice options. Its answer goes into the Notes field.",
         },
       ],
     },

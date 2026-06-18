@@ -12,11 +12,14 @@
       "buttons": [
         {
           "buttonText": "Book your initial meeting",
+          "leadCaptureFormOption": "",
+          "buttonLink": "#lead-capture-heading",
           "iconFirst": false,
           "colour": 0
         },
         {
           "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
           "icon": "BiPhone",
           "iconFirst": true,
           "colour": 1
@@ -123,10 +126,12 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "Let's find the **right** starting point",
-      "description": " \n",
-      "leadJotFormId": "",
-      "emailFieldId": "",
+      "heading": "Tell us about **your** project",
+      "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
+      "leadJotFormId": "261680507930054",
+      "emailFieldId": "4",
+      "notesFieldId": "5",
+      "answersFieldId": "6",
       "steps": [
         {
           "heading": "What stage is your project at?",
@@ -173,7 +178,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "Why teams choose **SSW** for React Consulting",
+      "heading": "Why teams choose SSW for React Consulting",
       "statistics": [
         {
           "figure": 1000,
@@ -214,7 +219,7 @@
           "quote": "Their engineers embedded with our team and shipped a **scalable React platform** that handles millions of requests without breaking a sweat.",
           "authorName": "Priya Nair",
           "authorTitle": "Head of Engineering, Domain",
-          "authorImage": "/images/testimonialAvatars/MicrosoftTeams-image.png",
+          "authorImage": "/images/Joe-Albahari-profile.jpg",
           "companyLogo": "/images/ssw-web/logos/domain_logo.png"
         }
       ],
@@ -253,7 +258,7 @@
     },
     {
       "background": {
-        "backgroundColour": 4
+        "backgroundColour": 8
       },
       "heading": "Frequently asked questions",
       "faqs": [
@@ -278,15 +283,17 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "heading": "Let's build something **you're proud of.**",
+      "heading": "Let's build something you're proud of",
       "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
       "buttons": [
         {
           "buttonText": "Book your initial meeting",
+          "buttonLink": "#lead-capture-heading",
           "colour": 0
         },
         {
           "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
           "icon": "BiPhone",
           "iconFirst": true,
           "colour": 1

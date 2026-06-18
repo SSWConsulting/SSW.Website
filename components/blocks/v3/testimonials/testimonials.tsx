@@ -80,7 +80,7 @@ function ClipTextReveal({ text }: { text: string }) {
               initial={{ y: "110%" }}
               animate={lineIndices ? { y: 0 } : { y: "110%" }}
               transition={{
-                duration: 0.5,
+                duration: 1,
                 delay: lineIndices ? lineIndices[i] * 0.12 : 0,
                 ease: [0.22, 1, 0.36, 1],
               }}
@@ -110,24 +110,24 @@ export function V3Testimonials({ data }) {
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" className="py-16 sm:px-8 md:py-32">
-        <div className="flex flex-row items-center justify-center gap-20">
+        <div className="mx-auto flex max-w-3xl flex-col items-start justify-center gap-10 xl:max-w-none xl:flex-row xl:items-center xl:gap-20">
           {/* Quote + author */}
           <div className="flex max-w-3xl flex-col">
             {current?.quote && (
               <blockquote
                 data-tina-field={tinaField(current, "quote")}
-                className="text-2xl font-medium leading-snug text-white md:text-4xl"
+                className="text-2xl text-white md:text-4xl"
               >
                 <ClipTextReveal key={active} text={current.quote} />
               </blockquote>
             )}
 
-            <div className="mt-10 flex items-center justify-between gap-4">
+            <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
               <motion.div
                 key={active}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 className="flex items-center gap-4"
               >
                 <div className="flex flex-col">
@@ -166,7 +166,7 @@ export function V3Testimonials({ data }) {
 
               {/* Carousel controls */}
               {testimonials.length > 1 && (
-                <div className=" flex  gap-3">
+                <div className="flex w-full justify-end gap-3 md:w-auto">
                   <button
                     type="button"
                     aria-label="Previous testimonial"
@@ -192,10 +192,10 @@ export function V3Testimonials({ data }) {
           {current?.authorImage && (
             <motion.div
               key={active}
-              initial={{ clipPath: "inset(100% 0 0 0)", scale: 1.06 }}
-              animate={{ clipPath: "inset(0% 0 0 0)", scale: 1 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="relative h-48 w-48 overflow-hidden rounded-2xl md:h-48 md:w-48"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="relative order-first h-48 w-48 shrink-0 overflow-hidden rounded-2xl xl:order-none"
             >
               <Image
                 src={current.authorImage}

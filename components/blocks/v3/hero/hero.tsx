@@ -25,11 +25,11 @@ export const V3Hero = ({ data, priority = false }) => {
       <Container
         size="custom"
         padding="px-4 sm:px-8"
-        className="mx-auto flex flex-col items-center gap-8 py-20 md:gap-16 xl:grid xl:grid-cols-2"
+        className="mx-auto flex flex-col items-center py-20 lg:grid lg:grid-cols-2 max-w-7xl"
       >
         {/* Left-hand side: brow, title, description, buttons */}
-        <div className="flex w-full flex-col text-center xl:text-left">
-          {data?.brow && (
+        <div className="flex w-full flex-col text-center lg:text-left">
+        {data?.brow && (
             <span
               data-tina-field={tinaField(data, "brow")}
               className="mb-3 font-mono text-sm uppercase tracking-wider text-sswRed"
@@ -40,7 +40,7 @@ export const V3Hero = ({ data, priority = false }) => {
           {data?.heading && (
             <h1
               data-tina-field={tinaField(data, "heading")}
-              className="p-0 text-4xl font-bold text-white lg:text-5xl"
+              className="p-0 text-4xl text-white lg:text-5xl"
             >
               <AlternatingText text={data.heading} />
             </h1>
@@ -48,7 +48,7 @@ export const V3Hero = ({ data, priority = false }) => {
           {data?.description && (
             <div
               data-tina-field={tinaField(data, "description")}
-              className="mt-4"
+              className="relative mt-4 w-full max-w-prose mx-auto lg:mx-0"
             >
               <TinaMarkdown
                 content={data.description}
@@ -65,14 +65,14 @@ export const V3Hero = ({ data, priority = false }) => {
           )}
           <ButtonRow
             data={data}
-            className={cn("mt-6 flex-wrap justify-center xl:justify-start")}
+            className={cn("mt-6 flex-wrap justify-center lg:justify-start")}
           />
         </div>
 
         {/* Right-hand side: registered animated media takes precedence,
             otherwise fall back to the Tina image. */}
         {MediaComponent ? (
-          <div className="relative flex w-full justify-center">
+          <div className="pt-12 lg:pt-0 relative flex w-full justify-center lg:justify-end">
             <MediaComponent />
           </div>
         ) : (

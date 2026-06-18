@@ -51,4 +51,11 @@ export const backgroundOptions: ColorPickerOptions[] = [
     editorClasses: "bg-[#090909] text-white",
     hex: "#090909",
   },
+  {
+    name: "SSW Median Gray",
+    classes: "bg-[#151515] text-white",
+    reference: 8,
+    editorClasses: "bg-[#151515] text-white",
+    hex: "#151515",
+  },
 ];

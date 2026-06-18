@@ -17,7 +17,7 @@ export function V3Process({ data }) {
           {data?.brow && (
             <span
               data-tina-field={tinaField(data, "brow")}
-              className="mb-3 font-mono text-sm uppercase tracking-wider text-sswRed"
+              className="font-mono text-sm uppercase tracking-wider text-sswRed"
             >
               {data.brow}
             </span>
@@ -25,7 +25,7 @@ export function V3Process({ data }) {
           {data?.heading && (
             <h2
               data-tina-field={tinaField(data, "heading")}
-              className="text-3xl font-bold text-white lg:text-4xl"
+              className="text-3xl my-4 text-white lg:text-4xl"
             >
               <AlternatingText text={data.heading} />
             </h2>
@@ -52,7 +52,7 @@ export function V3Process({ data }) {
 
         {/* Numbered steps: circled number + connector line */}
         {data?.steps?.length > 0 && (
-          <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-4 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {data.steps.map((step, index) => (
               <div key={`v3-process-step-${index}`} className="flex flex-col">
                 <div className="flex items-center">
@@ -68,7 +68,7 @@ export function V3Process({ data }) {
                 {step?.heading && (
                   <h3
                     data-tina-field={tinaField(step, "heading")}
-                    className="mt-5 text-xl font-semibold text-white"
+                    className="mt-5 text-xl text-white"
                   >
                     <AlternatingText text={step.heading} />
                   </h3>

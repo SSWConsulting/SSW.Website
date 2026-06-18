@@ -4,7 +4,7 @@ import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
-import { useLayoutEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -14,31 +14,13 @@ export function V3Faq({ data }) {
   // First item open by default, matching the design.
   const [openIndex, setOpenIndex] = useState(0);
 
-  // Measure each answer so we can reserve a constant amount of vertical space:
-  // the open answer expands inline while a spacer below shrinks by the same
-  // amount, keeping the component's total height fixed regardless of state.
-  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [heights, setHeights] = useState<number[]>([]);
-
-  useLayoutEffect(() => {
-    const measure = () =>
-      setHeights(contentRefs.current.map((el) => el?.scrollHeight ?? 0));
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [faqs]);
-
-  const maxHeight = heights.length ? Math.max(...heights, 0) : 0;
-  const openHeight = openIndex >= 0 ? heights[openIndex] ?? 0 : 0;
-  const reserve = Math.max(maxHeight - openHeight, 0);
-
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" padding="px-4 sm:px-8" className="py-16 md:py-24">
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="text-center text-4xl font-bold text-white lg:text-5xl"
+            className="text-center text-3xl text-white lg:text-4xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -74,42 +56,35 @@ export function V3Faq({ data }) {
                 </button>
 
                 <div
-                  className="overflow-hidden transition-[height] duration-200 ease-in-out"
-                  style={{ height: isOpen ? heights[index] ?? 0 : 0 }}
+                  className={cn(
+                    "grid transition-[grid-template-rows] duration-200 ease-in-out",
+                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  )}
                 >
-                  <div
-                    ref={(el) => {
-                      contentRefs.current[index] = el;
-                    }}
-                    data-tina-field={tinaField(faq, "answer")}
-                    className="pb-5 pr-8"
-                  >
-                    {faq?.answer && (
-                      <TinaMarkdown
-                        content={faq.answer}
-                        components={{
-                          p: (props) => (
-                            <p
-                              {...props}
-                              className="text-base font-light text-gray-400"
-                            />
-                          ),
-                        }}
-                      />
-                    )}
+                  <div className="overflow-hidden">
+                    <div
+                      data-tina-field={tinaField(faq, "answer")}
+                      className="pb-5 pr-8"
+                    >
+                      {faq?.answer && (
+                        <TinaMarkdown
+                          content={faq.answer}
+                          components={{
+                            p: (props) => (
+                              <p
+                                {...props}
+                                className="text-base font-light text-gray-400"
+                              />
+                            ),
+                          }}
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
             );
           })}
-
-          {/* Compensating spacer: keeps the block's total height constant
-              regardless of which answer (if any) is open. */}
-          <div
-            aria-hidden
-            className="transition-[height] duration-200 ease-in-out"
-            style={{ height: reserve }}
-          />
         </div>
       </Container>
     </V2ComponentWrapper>

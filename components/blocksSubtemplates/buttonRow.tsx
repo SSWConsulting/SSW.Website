@@ -78,14 +78,34 @@ const ButtonRow = ({ className, data }) => {
               />
             );
 
+            const isInPageAnchor = button.buttonLink?.startsWith("#");
+
             return button.buttonLink && !button.showLeadCaptureForm ? (
-              <Link
-                className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
-                href={button.buttonLink}
-                key={`link-wrapper-${index}`}
-              >
-                {buttonElement}
-              </Link>
+              isInPageAnchor ? (
+                <a
+                  className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
+                  href={button.buttonLink}
+                  key={`link-wrapper-${index}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.getElementById(
+                      button.buttonLink.slice(1)
+                    );
+                    target?.scrollIntoView({ behavior: "smooth" });
+                    history.replaceState(null, "", button.buttonLink);
+                  }}
+                >
+                  {buttonElement}
+                </a>
+              ) : (
+                <Link
+                  className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
+                  href={button.buttonLink}
+                  key={`link-wrapper-${index}`}
+                >
+                  {buttonElement}
+                </Link>
+              )
             ) : (
               <React.Fragment key={`button-fragment-${index}`}>
                 {buttonElement}
