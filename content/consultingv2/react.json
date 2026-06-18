@@ -169,6 +169,59 @@
         }
       ],
       "_template": "v3Testimonials"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Full Stack Engineers",
+      "heading": "One team for the whole build",
+      "subtitle": "React is the front door. We build the whole house.",
+      "cards": [
+        {
+          "title": "Next.js",
+          "description": "Fast, search-friendly web apps, with React under the hood.",
+          "link": "/"
+        },
+        {
+          "title": "React Native",
+          "description": "Mobile apps built with your favorite React stack.",
+          "link": "/"
+        },
+        {
+          "title": ".NET",
+          "description": "Enterprise backends that stand the test of time.",
+          "link": "/"
+        },
+        {
+          "title": "Azure",
+          "description": "Cloud infrastructure that keeps your app fast as it scales.",
+          "link": "/"
+        }
+      ],
+      "_template": "v3StackCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "heading": "Let's build something **you're proud of.**",
+      "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
+      "buttons": [
+        {
+          "buttonText": "Book your initial meeting",
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        }
+      ],
+      "_template": "v3Cta"
     }
   ]
 }

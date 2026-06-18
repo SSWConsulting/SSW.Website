@@ -182,10 +182,18 @@ const V3Process = dynamic(() =>
 
 const V3Statistics = dynamic(() => import("./blocks/v3/statistics/statistics"));
 
+const V3Cta = dynamic(() =>
+  import("./blocks/v3/cta/cta").then((mod) => mod.V3Cta)
+);
+
 const V3Testimonials = dynamic(() =>
   import("./blocks/v3/testimonials/testimonials").then(
     (mod) => mod.V3Testimonials
   )
+);
+
+const V3StackCards = dynamic(() =>
+  import("./blocks/v3/stackCards/stackCards").then((mod) => mod.V3StackCards)
 );
 
 const componentMap = {
@@ -231,7 +239,9 @@ const componentMap = {
   V3FeatureSteps,
   V3Process,
   V3Statistics,
+  V3Cta,
   V3Testimonials,
+  V3StackCards,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
