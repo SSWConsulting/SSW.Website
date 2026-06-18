@@ -154,6 +154,68 @@
     {
       "spacerHeight": "45px",
       "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Designed for **decision-makers** at Australian enterprises",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "wf01",
+          "altText": "CEOs and Managing Directors",
+          "icon": "BiSolidUserCheck",
+          "heading": "CEOs & Managing Directors",
+          "description": "Looking for a clear applicable view of where AI can save money and improve efficiency across the business.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "wf02",
+          "altText": "CTOs CIOs and Heads of Technology",
+          "icon": "BiSolidCog",
+          "heading": "CTOs, CIOs & Heads of Technology",
+          "description": "Wanting to see real examples of AI shipped into production by an Australian engineering team, and what's possible in their own systems.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "wf03",
+          "altText": "CFOs and Heads of Strategy",
+          "icon": "BiSolidReport",
+          "heading": "CFOs & Heads of Strategy",
+          "description": "Building the business case for AI investment and looking for real dollar figures, case studies and outcomes from Australian enterprises.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 0
+      },
+      "_template": "cardCarousel",
+      "tabletTextAlignment": "Left"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
         "backgroundColour": 4,
         "backgroundImage": "",
         "bleed": false
@@ -172,24 +234,24 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "The four business problems AI just made affordable",
-            "description": "What they look like in your business, and how to tell which one to start with.",
-            "icon": "BiSolidBriefcase"
-          },
-          {
-            "heading": "Real case studies. Real dollar figures.",
-            "description": "Including the engineering work that reduced one Australian client's per-transaction cost by 90%, using AI in a business application.",
+            "heading": "Straight to the economics",
+            "description": "No AI 101, no hype — we start from what an AI build actually costs and returns in a business like yours.",
             "icon": "BiSolidDollarCircle"
           },
           {
-            "heading": "Straight answers from the people doing the work",
-            "description": "Not vendor slides. Not theory. The engineers who are inside Australian enterprises this week. ",
-            "icon": "BiSolidUserVoice"
+            "heading": "No vendor pitch",
+            "description": "We're not selling a platform. Just what's working across our live engagements, what isn't, and why.",
+            "icon": "BiSolidShieldAlt2"
           },
           {
-            "heading": "A one-page action list before you leave",
-            "description": "Three things to put in front of your team on Monday morning. Specific. Costed. Yours.",
-            "icon": "BiSolidCheckSquare"
+            "heading": "Engineers in the room",
+            "description": "Four hours with the people designing and shipping AI into Australian banks, insurers and government right now — not a sales team.",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "Built for Australian enterprise",
+            "description": "Grounded in the compliance, data and legacy realities you actually operate in, with real local examples.",
+            "icon": "BiSolidBuildings"
           }
         ]
       },
@@ -389,68 +451,6 @@
       "spacerHeight": "45px",
       "background": {
         "backgroundColour": 4,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "spacerHeight": "45px",
-      "background": {
-        "backgroundColour": 0,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "isStacked": true,
-      "heading": "Designed for **decision-makers** at Australian enterprises",
-      "isH1": false,
-      "body": "",
-      "cardStyle": 1,
-      "cards": [
-        {
-          "guid": "wf01",
-          "altText": "CEOs and Managing Directors",
-          "icon": "BiSolidUserCheck",
-          "heading": "CEOs & Managing Directors",
-          "description": "Looking for a clear applicable view of where AI can save money and improve efficiency across the business.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "wf02",
-          "altText": "CTOs CIOs and Heads of Technology",
-          "icon": "BiSolidCog",
-          "heading": "CTOs, CIOs & Heads of Technology",
-          "description": "Wanting to see real examples of AI shipped into production by an Australian engineering team, and what's possible in their own systems.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "wf03",
-          "altText": "CFOs and Heads of Strategy",
-          "icon": "BiSolidReport",
-          "heading": "CFOs & Heads of Strategy",
-          "description": "Building the business case for AI investment and looking for real dollar figures, case studies and outcomes from Australian enterprises.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 0
-      },
-      "_template": "cardCarousel",
-      "tabletTextAlignment": "Left"
-    },
-    {
-      "spacerHeight": "45px",
-      "background": {
-        "backgroundColour": 0,
         "backgroundImage": "",
         "bleed": false
       },
