@@ -160,6 +160,22 @@ const Spacer = dynamic(() =>
   import("./blocks/spacer/spacer").then((mod) => mod.Spacer)
 );
 
+const V3Hero = dynamic(() =>
+  import("./blocks/v3/hero/hero").then((mod) => mod.V3Hero)
+);
+
+const V3LogoCarousel = dynamic(() =>
+  import("./blocks/v3/logoCarousel/logoCarousel").then(
+    (mod) => mod.V3LogoCarousel
+  )
+);
+
+const V3FeatureSteps = dynamic(() =>
+  import("./blocks/v3/featureSteps/featureSteps").then(
+    (mod) => mod.V3FeatureSteps
+  )
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -198,6 +214,9 @@ const componentMap = {
   TechnologyCardCarousel,
   Spacer,
   UtilityButton,
+  V3Hero,
+  V3LogoCarousel,
+  V3FeatureSteps,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

@@ -54,12 +54,18 @@ import { SpacerSchema } from "./spacer/spacer.schema";
 import { tableBlockSchema } from "./tableLayout.schema";
 import { testimonialsListSchema } from "./testimonialsList";
 import { upcomingEventsBlockSchema } from "./upcomingEvents";
+import { V3FeatureStepsSchema } from "./v3/featureSteps/featureSteps.schema";
+import { V3HeroSchema } from "./v3/hero/hero.schema";
+import { V3LogoCarouselSchema } from "./v3/logoCarousel/logoCarousel.schema";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed.schema";
 
 //NOTE: this is the order that blocks will appear in the Tina Editor
 export const pageBlocks: Template[] = [
+  V3HeroSchema,
+  V3LogoCarouselSchema,
+  V3FeatureStepsSchema,
   BreadcrumbSchema,
   ImageTextBlockSchema,
   LogoCarouselSchema,
