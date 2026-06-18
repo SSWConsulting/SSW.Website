@@ -105,9 +105,9 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
 );
 
 const variants: Record<ColorVariant, string> = {
-  primary: "border border-ssw-red bg-ssw-red hover:bg-sswDarkRed text-white",
+  primary: "border-1 border-ssw-red bg-ssw-red hover:bg-sswDarkRed text-white",
   secondary:
-    "bg-transparent border border-gray-300 text-gray-300 hover:bg-white/5 hover:text-gray-200",
+    "bg-transparent border-1 border-gray-300 text-gray-300 hover:bg-white/5 hover:text-gray-200",
 };
 
 RippleButton.displayName = "RippleButton";
