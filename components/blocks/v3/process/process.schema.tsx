@@ -2,20 +2,6 @@ import type { Template } from "tinacms";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 
-// Rich-text nested inside a list isn't coerced from a string, so its default
-// must be a rich-text AST object (matching accordionSchema's accordionItems).
-const stepDescription = {
-  type: "root",
-  children: [
-    {
-      type: "p",
-      children: [
-        { type: "text", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit." },
-      ],
-    },
-  ],
-};
-
 export const V3ProcessSchema: Template = {
   name: "v3Process",
   label: "<V3> Process",
@@ -24,9 +10,9 @@ export const V3ProcessSchema: Template = {
       brow: "Lorem ipsum",
       heading: "Lorem **ipsum** dolor sit amet",
       steps: [
-        { heading: "Lorem ipsum", description: stepDescription },
-        { heading: "Lorem ipsum", description: stepDescription },
-        { heading: "Lorem ipsum", description: stepDescription },
+        { heading: "Lorem ipsum" },
+        { heading: "Lorem ipsum" },
+        { heading: "Lorem ipsum" },
       ],
     },
   },
@@ -56,7 +42,7 @@ export const V3ProcessSchema: Template = {
         "Numbered process steps. The circled number auto-generates from order (01, 02, 03…).",
       ui: {
         itemProps: (item) => ({ label: item?.heading ?? "Step" }),
-        defaultItem: { heading: "Lorem ipsum", description: stepDescription },
+        defaultItem: { heading: "Lorem ipsum" },
       },
       fields: [
         {
