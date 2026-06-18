@@ -39,5 +39,12 @@ export const backgroundSchema = {
       name: "bleed",
       description: "If true, the background will bleed into lower blocks.",
     },
+    {
+      type: "boolean",
+      label: "Grid Overlay",
+      name: "gridOverlay",
+      description:
+        "Overlays a subtle dotted grid on top of the background, underneath all content.",
+    },
   ],
 };

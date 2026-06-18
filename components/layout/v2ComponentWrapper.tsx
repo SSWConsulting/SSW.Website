@@ -12,6 +12,7 @@ type BackgroundData = {
     backgroundColour?: number;
     backgroundImage?: string;
     bleed?: boolean;
+    gridOverlay?: boolean;
   };
 };
 
@@ -84,6 +85,12 @@ const V2ComponentWrapper = ({
               target.naturalHeight / target.naturalWidth
             );
           }}
+        />
+      )}
+      {data.background?.gridOverlay && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-[25] bg-[radial-gradient(circle,#212121_1px,transparent_1px)] bg-[length:20px_20px]"
         />
       )}
       <section
