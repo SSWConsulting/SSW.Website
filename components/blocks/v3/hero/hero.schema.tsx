@@ -72,15 +72,16 @@ export const V3HeroSchema: Template = {
       description:
         "The image displayed on the right-hand side (only used when Media Type is 'Image').",
       fields: [
-        ...optimizedImageSchema(
-          "Upload the hero image. A landscape or square aspect ratio works best."
-        ),
         {
           type: "string",
           label: "Alt Text",
           name: "altText",
           description: "Alt text for the hero image.",
         },
+        // @ts-expect-error – optimizedImageSchema's field types aren't recognised
+        ...optimizedImageSchema(
+          "Upload the hero image. A landscape or square aspect ratio works best."
+        ),
       ],
     },
   ],
