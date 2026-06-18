@@ -1,0 +1,27 @@
+{
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true
+      },
+      "brow": "REACT CONSULTING",
+      "heading": "Build your dream React App with our experts",
+      "description": "Most React apps work in the demo. We build the ones that survive real users, real data and years of change. Fast and built to last, with Australia's most-certified React consultants.\n",
+      "buttons": [
+        {
+          "buttonText": "Book your initial meeting",
+          "iconFirst": false,
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        }
+      ],
+      "_template": "v3Hero"
+    }
+  ]
+}

@@ -232,7 +232,7 @@
           "title": "React",
           "description": "Easily create interactive UIs with this JavaScript library, maintained by Facebook, Instagram and a large community!",
           "logo": "/images/thumbs/thumb-react.jpg",
-          "page": "content/consulting/react.mdx",
+          "page": null,
           "tags": [
             {
               "tag": "content/consulting/tag/web-development.json"
