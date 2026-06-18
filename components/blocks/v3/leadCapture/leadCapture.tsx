@@ -28,8 +28,7 @@ export function V3LeadCapture({ data }) {
   const isContactStep = current === steps.length;
   const progress = Math.round(((current + 1) / totalScreens) * 100);
 
-  const goNext = () =>
-    setCurrent((c) => Math.min(c + 1, totalScreens - 1));
+  const goNext = () => setCurrent((c) => Math.min(c + 1, totalScreens - 1));
   const goBack = () => setCurrent((c) => Math.max(c - 1, 0));
 
   const selectOption = (index: number, value: string) => {
@@ -38,10 +37,7 @@ export function V3LeadCapture({ data }) {
     setCurrent((c) => Math.min(c + 1, totalScreens - 1));
   };
 
-  const canSubmit = useMemo(
-    () => /.+@.+\..+/.test(email.trim()),
-    [email]
-  );
+  const canSubmit = useMemo(() => /.+@.+\..+/.test(email.trim()), [email]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,7 +58,8 @@ export function V3LeadCapture({ data }) {
     const fields: Record<string, string> = {};
     if (data?.emailFieldId) fields[data.emailFieldId] = email.trim();
     if (data?.notesFieldId) fields[data.notesFieldId] = noteLines.join("\n\n");
-    if (data?.answersFieldId) fields[data.answersFieldId] = qaLines.join("\n\n");
+    if (data?.answersFieldId)
+      fields[data.answersFieldId] = qaLines.join("\n\n");
 
     try {
       const res = await fetch("/api/lead-capture", {
@@ -78,14 +75,18 @@ export function V3LeadCapture({ data }) {
 
   return (
     <V2ComponentWrapper data={data}>
-      <Container size="custom" padding="px-4 sm:px-8" className="py-16 md:py-24">
+      <Container
+        size="custom"
+        padding="px-4 sm:px-8"
+        className="py-16 md:py-24"
+      >
         {/* Intro: brow, heading, description */}
         {(data?.brow || data?.heading || data?.description) && (
           <div className="mx-auto mb-10 max-w-3xl text-center">
             {data?.brow && (
               <span
                 data-tina-field={tinaField(data, "brow")}
-                className=" block text-sm uppercase font-mono tracking-wider text-sswRed"
+                className="block font-mono text-sm uppercase tracking-wider text-sswRed"
               >
                 {data.brow}
               </span>
@@ -94,7 +95,7 @@ export function V3LeadCapture({ data }) {
               <h2
                 data-tina-field={tinaField(data, "heading")}
                 id="lead-capture-heading"
-                className="scroll-mt-28 text-3xl my-4 text-white lg:text-4xl"
+                className="my-4 scroll-mt-28 text-3xl text-white lg:text-4xl"
               >
                 <AlternatingText text={data.heading} />
               </h2>
@@ -102,7 +103,7 @@ export function V3LeadCapture({ data }) {
             {data?.description && (
               <div
                 data-tina-field={tinaField(data, "description")}
-                className="mt-4 max-w-prose mx-auto "
+                className="mx-auto mt-4 max-w-prose"
               >
                 <TinaMarkdown
                   content={data.description}
@@ -140,7 +141,8 @@ export function V3LeadCapture({ data }) {
                 Thanks — you're booked in.
               </h3>
               <p className="mt-3 text-sm font-light text-gray-300">
-                A senior React engineer will be in touch within one business day.
+                A senior React engineer will be in touch within one business
+                day.
               </p>
             </div>
           ) : isContactStep ? (
@@ -149,7 +151,7 @@ export function V3LeadCapture({ data }) {
               {submitStep?.header && (
                 <h4
                   data-tina-field={tinaField(submitStep, "header")}
-                  className="text-lg my-4 text-white lg:text-xl"
+                  className="my-4 text-lg text-white lg:text-xl"
                 >
                   {submitStep.header}
                 </h4>
@@ -169,7 +171,9 @@ export function V3LeadCapture({ data }) {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={submitStep?.emailPlaceholder ?? "you@company.com"}
+                  placeholder={
+                    submitStep?.emailPlaceholder ?? "you@company.com"
+                  }
                   className="flex-1 rounded-lg border-[0.5px] border-white/15 bg-transparent px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
                 />
                 <button
@@ -179,7 +183,7 @@ export function V3LeadCapture({ data }) {
                 >
                   {status === "submitting"
                     ? "Sending…"
-                    : submitStep?.submitButtonText ?? "Book my meeting"}
+                    : (submitStep?.submitButtonText ?? "Book my meeting")}
                 </button>
               </div>
 
@@ -212,7 +216,7 @@ export function V3LeadCapture({ data }) {
               {steps[current]?.heading && (
                 <h2
                   data-tina-field={tinaField(steps[current], "heading")}
-                  className="text-lg my-4 text-white lg:text-xl"
+                  className="my-4 text-lg text-white lg:text-xl"
                 >
                   <AlternatingText text={steps[current].heading} />
                 </h2>
@@ -224,7 +228,10 @@ export function V3LeadCapture({ data }) {
                     rows={4}
                     value={answers[current] ?? ""}
                     onChange={(e) =>
-                      setAnswers((prev) => ({ ...prev, [current]: e.target.value }))
+                      setAnswers((prev) => ({
+                        ...prev,
+                        [current]: e.target.value,
+                      }))
                     }
                     placeholder={`What are you building, and what would a great outcome look like? 
 A sentence or two is enough`}
@@ -273,14 +280,16 @@ A sentence or two is enough`}
                               "flex size-7 shrink-0 items-center justify-center rounded-md border-[0.5px] font-mono text-xs transition-colors",
                               isSelected
                                 ? "border-sswRed text-sswRed"
-                                : "border-white/20 text-gray-400 group-hover:border-sswRed  group-hover:text-sswRed"
+                                : "border-white/20 text-gray-400 group-hover:border-sswRed group-hover:text-sswRed"
                             )}
                           >
                             {OPTION_LETTERS[i]}
                           </span>
-                          <span className="text-sm text-gray-200">{option}</span>
-                          <div className='ml-auto opacity-0 group-hover:opacity-100 transition-opacity '>
-                            <TiArrowRight className='size-6 text-white'/>
+                          <span className="text-sm text-gray-200">
+                            {option}
+                          </span>
+                          <div className="ml-auto opacity-0 transition-opacity group-hover:opacity-100">
+                            <TiArrowRight className="size-6 text-white" />
                           </div>
                         </button>
                       );

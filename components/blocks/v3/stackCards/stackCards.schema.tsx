@@ -13,7 +13,8 @@ export const V3StackCardsSchema: Template = {
       cards: [
         {
           title: "Next.js",
-          description: "Fast, search-friendly web apps, with React under the hood.",
+          description:
+            "Fast, search-friendly web apps, with React under the hood.",
           link: "/",
         },
         {
@@ -28,7 +29,8 @@ export const V3StackCardsSchema: Template = {
         },
         {
           title: "Azure",
-          description: "Cloud infrastructure that keeps your app fast as it scales.",
+          description:
+            "Cloud infrastructure that keeps your app fast as it scales.",
           link: "/",
         },
       ],
@@ -62,7 +64,8 @@ export const V3StackCardsSchema: Template = {
         itemProps: (item) => ({ label: item?.title ?? "Card" }),
         defaultItem: {
           title: "Next.js",
-          description: "Fast, search-friendly web apps, with React under the hood.",
+          description:
+            "Fast, search-friendly web apps, with React under the hood.",
           link: "/",
         },
       },

@@ -25,11 +25,11 @@ export const V3Hero = ({ data, priority = false }) => {
       <Container
         size="custom"
         padding="px-4 sm:px-8"
-        className="mx-auto flex flex-col items-center py-20 lg:grid lg:grid-cols-2 max-w-7xl"
+        className="mx-auto flex max-w-7xl flex-col items-center py-20 lg:grid lg:grid-cols-2"
       >
         {/* Left-hand side: brow, title, description, buttons */}
         <div className="flex w-full flex-col text-center lg:text-left">
-        {data?.brow && (
+          {data?.brow && (
             <span
               data-tina-field={tinaField(data, "brow")}
               className="mb-3 font-mono text-sm uppercase tracking-wider text-sswRed"
@@ -48,7 +48,7 @@ export const V3Hero = ({ data, priority = false }) => {
           {data?.description && (
             <div
               data-tina-field={tinaField(data, "description")}
-              className="relative mt-4 w-full max-w-prose mx-auto lg:mx-0"
+              className="relative mx-auto mt-4 w-full max-w-prose lg:mx-0"
             >
               <TinaMarkdown
                 content={data.description}
@@ -72,7 +72,7 @@ export const V3Hero = ({ data, priority = false }) => {
         {/* Right-hand side: registered animated media takes precedence,
             otherwise fall back to the Tina image. */}
         {MediaComponent ? (
-          <div className="pt-12 lg:pt-0 relative flex w-full justify-center lg:justify-end">
+          <div className="relative flex w-full justify-center pt-12 lg:justify-end lg:pt-0">
             <MediaComponent />
           </div>
         ) : (

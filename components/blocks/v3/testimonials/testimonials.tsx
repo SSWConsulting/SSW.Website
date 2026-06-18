@@ -73,7 +73,7 @@ function ClipTextReveal({ text }: { text: string }) {
               wordRefs.current[i] = el;
             }}
             aria-hidden
-            className="inline-block overflow-hidden pb-[0.12em] align-bottom -mb-[0.12em]"
+            className="-mb-[0.12em] inline-block overflow-hidden pb-[0.12em] align-bottom"
           >
             <motion.span
               className={`inline-block ${tok.red ? "text-sswRed" : ""}`}
@@ -127,41 +127,45 @@ export function V3Testimonials({ data }) {
                 key={active}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 1,
+                  delay: 0.2,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="flex items-center gap-4"
               >
                 <div className="flex flex-col">
-                {current?.authorName && (
-                  <span
-                    data-tina-field={tinaField(current, "authorName")}
-                    className="font-semibold text-white"
-                  >
-                    {current.authorName}
-                  </span>
-                )}
-                {current?.authorTitle && (
-                  <span
-                    data-tina-field={tinaField(current, "authorTitle")}
-                    className="text-sm text-gray-400"
-                  >
-                    {current.authorTitle}
-                  </span>
-                )}
-              </div>
+                  {current?.authorName && (
+                    <span
+                      data-tina-field={tinaField(current, "authorName")}
+                      className="font-semibold text-white"
+                    >
+                      {current.authorName}
+                    </span>
+                  )}
+                  {current?.authorTitle && (
+                    <span
+                      data-tina-field={tinaField(current, "authorTitle")}
+                      className="text-sm text-gray-400"
+                    >
+                      {current.authorTitle}
+                    </span>
+                  )}
+                </div>
 
-              {current?.companyLogo && (
-                <>
-                  <span className="h-10 w-px bg-gray-600" />
-                  <Image
-                    src={current.companyLogo}
-                    alt={current?.companyLogoAlt ?? "Company logo"}
-                    width={160}
-                    height={160}
-                    className="h-12 w-auto object-contain brightness-0 invert"
-                    data-tina-field={tinaField(current, "companyLogo")}
-                  />
-                </>
-              )}
+                {current?.companyLogo && (
+                  <>
+                    <span className="h-10 w-px bg-gray-600" />
+                    <Image
+                      src={current.companyLogo}
+                      alt={current?.companyLogoAlt ?? "Company logo"}
+                      width={160}
+                      height={160}
+                      className="h-12 w-auto object-contain brightness-0 invert"
+                      data-tina-field={tinaField(current, "companyLogo")}
+                    />
+                  </>
+                )}
               </motion.div>
 
               {/* Carousel controls */}
@@ -195,7 +199,7 @@ export function V3Testimonials({ data }) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative order-first h-48 w-48 shrink-0 overflow-hidden rounded-2xl xl:order-none"
+              className="relative order-first size-48 shrink-0 overflow-hidden rounded-2xl xl:order-none"
             >
               <Image
                 src={current.authorImage}

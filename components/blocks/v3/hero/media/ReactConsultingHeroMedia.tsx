@@ -56,16 +56,22 @@ export default function ReactConsultingHeroMedia() {
           stroke={RING_COLOUR}
           strokeOpacity={1}
           strokeWidth={3}
-  style={{
-    filter: `drop-shadow(0 0 8px ${RING_COLOUR})`,
-  }}
+          style={{
+            filter: `drop-shadow(0 0 8px ${RING_COLOUR})`,
+          }}
         />
       ))}
 
       {/* Nucleus */}
-      <circle cx={CENTRE.x} cy={CENTRE.y} r={20} fill={RING_COLOUR}             style={{
-    filter: `drop-shadow(0 0 8px ${RING_COLOUR})`,
-  }}>
+      <circle
+        cx={CENTRE.x}
+        cy={CENTRE.y}
+        r={20}
+        fill={RING_COLOUR}
+        style={{
+          filter: `drop-shadow(0 0 8px ${RING_COLOUR})`,
+        }}
+      >
         {!reduceMotion && (
           <animate
             attributeName="r"
@@ -89,14 +95,19 @@ export default function ReactConsultingHeroMedia() {
             cy={RING_STARTS[i].y}
             r={10}
             fill={ELECTRON_COLOUR}
-                        style={{
-    filter: `drop-shadow(0 0 8px ${ELECTRON_COLOUR})`,
-  }}
+            style={{
+              filter: `drop-shadow(0 0 8px ${ELECTRON_COLOUR})`,
+            }}
           />
         ) : (
-          <circle key={i} r={10} fill={ELECTRON_COLOUR}                         style={{
-    filter: `drop-shadow(0 0 8px ${ELECTRON_COLOUR})`,
-  }}>
+          <circle
+            key={i}
+            r={10}
+            fill={ELECTRON_COLOUR}
+            style={{
+              filter: `drop-shadow(0 0 8px ${ELECTRON_COLOUR})`,
+            }}
+          >
             <animateMotion
               dur={`${6 + i}s`}
               begin={`-${i * 2}s`}

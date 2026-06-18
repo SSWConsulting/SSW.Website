@@ -29,7 +29,7 @@ export function V3LogoCarousel({ data }) {
               <div className="flex h-full items-center justify-center gap-1 sm:gap-3">
                 {data?.logos?.map((logo, index) => (
                   <div
-                    className="relative h-20 md:h-26 min-w-48 rounded-lg border-[0.5px] border-[#212121]"
+                    className="md:h-26 relative h-20 min-w-48 rounded-lg border-[0.5px] border-[#212121]"
                     data-tina-field={tinaField(logo, "altText")}
                     key={`v3-logo-${index}`}
                   >

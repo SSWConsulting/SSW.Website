@@ -60,7 +60,7 @@ export const V3LeadCaptureSchema: Template = {
       label: "Email Field ID",
       name: "emailFieldId",
       description:
-        "The JotForm question ID (qid) of the Email field, e.g. \"3\".",
+        'The JotForm question ID (qid) of the Email field, e.g. "3".',
     },
     {
       type: "string",
@@ -81,7 +81,8 @@ export const V3LeadCaptureSchema: Template = {
       label: "Questions",
       name: "steps",
       list: true,
-      description: "The quiz questions, shown one per step before the contact step.",
+      description:
+        "The quiz questions, shown one per step before the contact step.",
       ui: {
         itemProps: (item) => ({ label: item?.heading ?? "Question" }),
         defaultItem: { heading: "New question?" },
@@ -97,7 +98,8 @@ export const V3LeadCaptureSchema: Template = {
           label: "Options",
           name: "options",
           list: true,
-          description: "Up to 4 multiple-choice answers (leave empty if using a text area).",
+          description:
+            "Up to 4 multiple-choice answers (leave empty if using a text area).",
           ui: {
             min: 0,
             max: 4,

@@ -26,7 +26,7 @@ export function V3FeatureSteps({ data }) {
           {data?.heading && (
             <h2
               data-tina-field={tinaField(data, "heading")}
-              className="text-3xl my-4 text-white lg:text-4xl"
+              className="my-4 text-3xl text-white lg:text-4xl"
             >
               <AlternatingText text={data.heading} />
             </h2>
@@ -34,7 +34,7 @@ export function V3FeatureSteps({ data }) {
           {data?.description && (
             <div
               data-tina-field={tinaField(data, "description")}
-              className=" max-w-3xl"
+              className="max-w-3xl"
             >
               <TinaMarkdown
                 content={data.description}
@@ -42,7 +42,7 @@ export function V3FeatureSteps({ data }) {
                   p: (props) => (
                     <p
                       {...props}
-                      className=" text-base font-light text-gray-300"
+                      className="text-base font-light text-gray-300"
                     />
                   ),
                 }}
@@ -58,9 +58,9 @@ export function V3FeatureSteps({ data }) {
               <div
                 key={`v3-step-${index}`}
                 className={cn(
-                  "flex flex-col border-t-[0.75px] border-[#212121] px-2 lg:px-4 py-6",
+                  "flex flex-col border-t-[0.75px] border-[#212121] px-2 py-6 lg:px-4",
                   index % 2 !== 0 &&
-                    "lg:border-x-[0.75px] border-[#212121] md:pl-8"
+                    "border-[#212121] md:pl-8 lg:border-x-[0.75px]"
                 )}
               >
                 {step?.brow && (

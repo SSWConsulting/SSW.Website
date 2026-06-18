@@ -30,7 +30,10 @@ export function V3Cta({ data }) {
               content={data.description}
               components={{
                 p: (props) => (
-                  <p {...props} className="text-base font-light text-gray-300" />
+                  <p
+                    {...props}
+                    className="text-base font-light text-gray-300"
+                  />
                 ),
               }}
             />

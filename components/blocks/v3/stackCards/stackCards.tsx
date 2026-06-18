@@ -9,8 +9,15 @@ export function V3StackCards({ data }) {
   const cards = data?.cards ?? [];
 
   return (
-    <V2ComponentWrapper data={data} className='border-y-[0.75px] border-[#212121]'>
-      <Container size="custom" padding="px-4 sm:px-8" className="py-16 md:py-24">
+    <V2ComponentWrapper
+      data={data}
+      className="border-y-[0.75px] border-[#212121]"
+    >
+      <Container
+        size="custom"
+        padding="px-4 sm:px-8"
+        className="py-16 md:py-24"
+      >
         {data?.brow && (
           <span
             data-tina-field={tinaField(data, "brow")}
@@ -22,7 +29,7 @@ export function V3StackCards({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="text-3xl my-4 text-white lg:text-4xl"
+            className="my-4 text-3xl text-white lg:text-4xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -40,12 +47,12 @@ export function V3StackCards({ data }) {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {cards.map((card, index) => {
               const inner = (
-                <div className="group flex h-full flex-col rounded-2xl border-[0.75px] border-[#212121] bg-[#0d0d0d] p-6 transition group">
+                <div className="group flex h-full flex-col rounded-2xl border-[0.75px] border-[#212121] bg-[#0d0d0d] p-6 transition">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="text-2xl font-semibold text-white">
                       {card?.title}
                     </h3>
-                    <span className="flex p-2 shrink-0 items-center justify-center rounded-full bg-white text-black scale-100 group-hover:scale-125 group-hover:rotate-45 transition-all ease-in-out duration-300">
+                    <span className="flex shrink-0 scale-100 items-center justify-center rounded-full bg-white p-2 text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
                       <BsArrowUpRight className="size-4" />
                     </span>
                   </div>

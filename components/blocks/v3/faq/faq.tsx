@@ -16,7 +16,11 @@ export function V3Faq({ data }) {
 
   return (
     <V2ComponentWrapper data={data}>
-      <Container size="custom" padding="px-4 sm:px-8" className="py-16 md:py-24">
+      <Container
+        size="custom"
+        padding="px-4 sm:px-8"
+        className="py-16 md:py-24"
+      >
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
