@@ -27,10 +27,7 @@ export default function V3Statistics({ data }) {
   const stats = data?.statistics ?? [];
 
   return (
-    <V2ComponentWrapper
-      className="border-y-[0.75px] border-[#212121]"
-      data={data}
-    >
+    <V2ComponentWrapper className="border-y-0.75 border-sswBorder" data={data}>
       <Container size="custom" padding="px-4 sm:px-0" className="">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {/* Intro: heading on the left */}

@@ -45,7 +45,7 @@ export default function ReactConsultingHeroMedia() {
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="Animated atom illustrating React's component model"
-      className="h-auto w-full max-w-[420px] overflow-visible"
+      className="h-auto w-full max-w-media overflow-visible"
     >
       {/* Static orbital rings */}
       {RINGS.map((d, i) => (

@@ -73,7 +73,7 @@ function ClipTextReveal({ text }: { text: string }) {
               wordRefs.current[i] = el;
             }}
             aria-hidden
-            className="-mb-[0.12em] inline-block overflow-hidden pb-[0.12em] align-bottom"
+            className="-mb-descender inline-block overflow-hidden pb-descender align-bottom"
           >
             <motion.span
               className={`inline-block ${tok.red ? "text-sswRed" : ""}`}

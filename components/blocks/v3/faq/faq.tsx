@@ -36,7 +36,7 @@ export function V3Faq({ data }) {
             return (
               <div
                 key={`v3-faq-${index}`}
-                className="border-t-[0.75px] border-white/10 last:border-b-[0.75px]"
+                className="border-t-0.75 border-white/10 last:border-b-0.75"
               >
                 <button
                   type="button"

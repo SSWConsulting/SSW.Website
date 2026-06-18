@@ -9,10 +9,7 @@ export function V3StackCards({ data }) {
   const cards = data?.cards ?? [];
 
   return (
-    <V2ComponentWrapper
-      data={data}
-      className="border-y-[0.75px] border-[#212121]"
-    >
+    <V2ComponentWrapper data={data} className="border-y-0.75 border-sswBorder">
       <Container
         size="custom"
         padding="px-4 sm:px-8"
@@ -47,7 +44,7 @@ export function V3StackCards({ data }) {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {cards.map((card, index) => {
               const inner = (
-                <div className="group flex h-full flex-col rounded-2xl border-[0.75px] border-[#212121] bg-[#0d0d0d] p-6 transition">
+                <div className="group flex h-full flex-col rounded-2xl border-0.75 border-sswBorder bg-sswCard p-6 transition">
                   <div className="flex items-start justify-between gap-4">
                     <h3 className="text-2xl font-semibold text-white">
                       {card?.title}

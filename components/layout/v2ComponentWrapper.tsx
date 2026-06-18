@@ -92,18 +92,18 @@ const V2ComponentWrapper = ({
         <>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_top_left,rgba(204,65,65,0.15),transparent_35%)]"
+            className="pointer-events-none absolute inset-0 z-10 bg-red-glow-tl"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-10 bg-[radial-gradient(circle_at_78%_50%,rgba(204,65,65,0.15),transparent_25%)]"
+            className="pointer-events-none absolute inset-0 z-10 bg-red-glow-r"
           />
         </>
       )}
       {data.background?.gridOverlay && (
         <div
           aria-hidden="true"
-          className="z-[25] pointer-events-none absolute inset-0 bg-[radial-gradient(circle,#212121_1px,transparent_1px)] bg-[length:20px_20px]"
+          className="pointer-events-none absolute inset-0 z-25 bg-dot-grid bg-dots"
         />
       )}
       <section

@@ -59,8 +59,7 @@ export const V3LeadCaptureSchema: Template = {
       type: "string",
       label: "Email Field ID",
       name: "emailFieldId",
-      description:
-        'The JotForm question ID (qid) of the Email field, e.g. "3".',
+      description: "The JotForm question ID (qid) of the Email field, e.g. 3.",
     },
     {
       type: "string",

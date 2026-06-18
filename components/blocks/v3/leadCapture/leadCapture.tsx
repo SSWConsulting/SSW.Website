@@ -121,12 +121,12 @@ export function V3LeadCapture({ data }) {
           </div>
         )}
 
-        <div className="mx-auto max-w-3xl rounded-2xl border-[0.5px] border-white/10 bg-white/5 p-6 sm:p-10">
+        <div className="mx-auto max-w-3xl rounded-2xl border-0.5 border-white/10 bg-white/5 p-6 sm:p-10">
           {/* Progress bar */}
           <div className="flex items-center gap-4">
             <div className="h-1 flex-1 overflow-hidden rounded-full bg-white/10">
               <div
-                className="h-full rounded-full bg-sswRed transition-[width] duration-300 ease-out"
+                className="h-full rounded-full bg-sswRed transition-width duration-300 ease-out"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -138,7 +138,7 @@ export function V3LeadCapture({ data }) {
           {status === "success" ? (
             <div className="flex flex-1 flex-col items-center justify-center text-center">
               <h3 className="text-lg text-white lg:text-xl">
-                Thanks — you're booked in.
+                Thanks — you&apos;re booked in.
               </h3>
               <p className="mt-3 text-sm font-light text-gray-300">
                 A senior React engineer will be in touch within one business
@@ -174,7 +174,7 @@ export function V3LeadCapture({ data }) {
                   placeholder={
                     submitStep?.emailPlaceholder ?? "you@company.com"
                   }
-                  className="flex-1 rounded-lg border-[0.5px] border-white/15 bg-transparent px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
+                  className="flex-1 rounded-lg border-0.5 border-white/15 bg-transparent px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
                 />
                 <button
                   type="submit"
@@ -235,7 +235,7 @@ export function V3LeadCapture({ data }) {
                     }
                     placeholder={`What are you building, and what would a great outcome look like? 
 A sentence or two is enough`}
-                    className="w-full rounded-lg border-[0.5px] border-white/15 bg-transparent px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
+                    className="w-full rounded-lg border-0.5 border-white/15 bg-transparent px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-sswRed focus:outline-none"
                   />
                   <div className="mt-6 flex items-center justify-between">
                     <button
@@ -269,7 +269,7 @@ A sentence or two is enough`}
                           type="button"
                           onClick={() => selectOption(current, option)}
                           className={cn(
-                            "group flex items-center gap-3 rounded-xl border-[0.5px] px-4 py-3 text-left transition-colors",
+                            "group flex items-center gap-3 rounded-xl border-0.5 px-4 py-3 text-left transition-colors",
                             isSelected
                               ? "border-sswRed bg-sswRed/10"
                               : "border-white/10 hover:border-white/30 hover:bg-white/[0.03]"
@@ -277,7 +277,7 @@ A sentence or two is enough`}
                         >
                           <span
                             className={cn(
-                              "flex size-7 shrink-0 items-center justify-center rounded-md border-[0.5px] font-mono text-xs transition-colors",
+                              "flex size-7 shrink-0 items-center justify-center rounded-md border-0.5 font-mono text-xs transition-colors",
                               isSelected
                                 ? "border-sswRed text-sswRed"
                                 : "border-white/20 text-gray-400 group-hover:border-sswRed group-hover:text-sswRed"

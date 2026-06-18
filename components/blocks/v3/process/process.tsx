@@ -56,10 +56,10 @@ export function V3Process({ data }) {
             {data.steps.map((step, index) => (
               <div key={`v3-process-step-${index}`} className="flex flex-col">
                 <div className="flex items-center">
-                  <span className="relative flex size-9 shrink-0 items-center justify-center rounded-full border-[0.5px] border-sswRed/60 font-mono text-sm text-sswRed">
+                  <span className="relative flex size-9 shrink-0 items-center justify-center rounded-full border-0.5 border-sswRed/60 font-mono text-sm text-sswRed">
                     <span
                       aria-hidden
-                      className="pointer-events-none absolute inset-0 -z-10 scale-[1.65] rounded-full bg-[radial-gradient(circle,_theme(colors.sswRed),_transparent_70%)] opacity-40 blur-sm"
+                      className="pointer-events-none absolute inset-0 -z-10 scale-165 rounded-full bg-red-radial opacity-40 blur-sm"
                     />
                     {String(index + 1).padStart(2)}
                   </span>
