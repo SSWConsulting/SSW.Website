@@ -180,6 +180,16 @@ const V3Process = dynamic(() =>
   import("./blocks/v3/process/process").then((mod) => mod.V3Process)
 );
 
+const V3Statistics = dynamic(
+  () => import("./blocks/v3/statistics/statistics")
+);
+
+const V3Testimonials = dynamic(() =>
+  import("./blocks/v3/testimonials/testimonials").then(
+    (mod) => mod.V3Testimonials
+  )
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -222,6 +232,8 @@ const componentMap = {
   V3LogoCarousel,
   V3FeatureSteps,
   V3Process,
+  V3Statistics,
+  V3Testimonials,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

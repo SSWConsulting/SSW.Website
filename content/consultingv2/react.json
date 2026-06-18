@@ -102,7 +102,7 @@
       "steps": [
         {
           "heading": "Initial Call",
-          "description": "A short call with a senior engineer to talk through your project. \n"
+          "description": "A short call with a senior engineer to talk through your project.\n"
         },
         {
           "heading": "Project Scope",
@@ -114,10 +114,61 @@
         },
         {
           "heading": "Aftercare",
-          "description": "We stay on post-launch to ensure a successful project handover. \n"
+          "description": "We stay on post-launch to ensure a successful project handover.\n"
         }
       ],
       "_template": "v3Process"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Why teams choose **SSW** for React Consulting",
+      "statistics": [
+        {
+          "figure": 1000,
+          "figureSuffix": "+",
+          "heading": "Solutions delivered",
+          "description": "Enterprise-grade software"
+        },
+        {
+          "figure": 1000,
+          "figureSuffix": "+",
+          "heading": "Happy clients",
+          "description": "Across all industries"
+        },
+        {
+          "figure": 30,
+          "figureSuffix": "+",
+          "heading": "Years experience",
+          "description": "Trusted since 1999"
+        }
+      ],
+      "_template": "v3Statistics"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "testimonials": [
+        {
+          "quote": "SSW transformed our legacy systems. Their team delivered a **cutting-edge React app** that streamlined operations and enhanced citizen services.",
+          "authorName": "Alex Johnson",
+          "authorTitle": "CTO, GovTech Agency",
+          "authorImage": "/images/testimonialAvatars/MicrosoftTeams-image.png",
+          "companyLogo": "/images/ssw-web/logos/toll_logo.png"
+        },
+        {
+          "quote": "Their engineers embedded with our team and shipped a **scalable React platform** that handles millions of requests without breaking a sweat.",
+          "authorName": "Priya Nair",
+          "authorTitle": "Head of Engineering, Domain",
+          "authorImage": "/images/testimonialAvatars/MicrosoftTeams-image.png",
+          "companyLogo": "/images/ssw-web/logos/domain_logo.png"
+        }
+      ],
+      "_template": "v3Testimonials"
     }
   ]
 }
