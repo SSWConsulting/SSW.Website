@@ -7,11 +7,18 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { heroMediaRegistry } from "./media/registry";
 
 export const V3Hero = ({ data, priority = false }) => {
   const image = data?.image;
+  const mediaType = data?.mediaType ?? "image";
+  const MediaComponent =
+    mediaType !== "image" ? heroMediaRegistry[mediaType] : undefined;
   const hasImage =
-    image?.imageSource && image?.imageWidth && image?.imageHeight;
+    mediaType === "image" &&
+    image?.imageSource &&
+    image?.imageWidth &&
+    image?.imageHeight;
 
   return (
     <V2ComponentWrapper data={data} className='py-20'>
@@ -59,8 +66,14 @@ export const V3Hero = ({ data, priority = false }) => {
           />
         </div>
 
-        {/* Right-hand side: image */}
-        {hasImage && (
+        {/* Right-hand side: registered animated media takes precedence,
+            otherwise fall back to the Tina image. */}
+        {MediaComponent ? (
+          <div className="relative flex w-full justify-center">
+            <MediaComponent />
+          </div>
+        ) : (
+          hasImage && (
           <div className="relative flex w-full justify-center">
             <Image
               width={image.imageWidth}
@@ -77,6 +90,7 @@ export const V3Hero = ({ data, priority = false }) => {
               data-tina-field={tinaField(data, "image")}
             />
           </div>
+          )
         )}
       </Container>
     </V2ComponentWrapper>

@@ -52,10 +52,22 @@ export const V3HeroSchema: Template = {
       fields: buttonSchema,
     },
     {
+      type: "string",
+      label: "Media Type",
+      name: "mediaType",
+      description:
+        "What to show on the right-hand side. 'Image' uses the Image field below; the other options render a built-in animated composition.",
+      options: [
+        { value: "image", label: "Image" },
+        { value: "reactConsultingSvg", label: "React Consulting Atom (animated)" },
+      ],
+    },
+    {
       type: "object",
       label: "Image",
       name: "image",
-      description: "The image displayed on the right-hand side.",
+      description:
+        "The image displayed on the right-hand side (only used when Media Type is 'Image').",
       fields: [
         ...optimizedImageSchema(
           "Upload the hero image. A landscape or square aspect ratio works best."
