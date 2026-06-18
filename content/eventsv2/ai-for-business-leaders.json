@@ -5,6 +5,13 @@
   },
   "blocks": [
     {
+      "background": {
+        "backgroundColour": 0
+      },
+      "finalBreadcrumb": "AI for Business Leaders",
+      "_template": "breadcrumbs"
+    },
+    {
       "spacerHeight": "45px",
       "background": {
         "backgroundColour": 0,
@@ -26,7 +33,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Register Now",
+          "buttonText": "Register now",
           "buttonLink": "#pick-your-city",
           "colour": 0
         }
@@ -65,9 +72,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Pick your city.",
+      "heading": "Pick your city",
       "isH1": false,
-      "body": "Pick your city below and secure checkout opens right here on the page - confirm your $99 seat in a few clicks.",
+      "body": "Pick your city below and confirm your $99 seat in a few clicks. Secure checkout opens right here on the page.",
       "tabletTextAlignment": "Left",
       "cardStyle": 0,
       "cards": [
@@ -85,7 +92,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Reserve My Seat - $99",
+            "buttonText": "Reserve my seat - $99",
             "eventbriteEventId": "1992027082628",
             "colour": 0
           }
@@ -104,7 +111,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Reserve My Seat - $99",
+            "buttonText": "Reserve my seat - $99",
             "eventbriteEventId": "1992027891046",
             "colour": 0
           }
@@ -123,7 +130,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Reserve My Seat - $99",
+            "buttonText": "Reserve my seat - $99",
             "eventbriteEventId": "1992027951226",
             "colour": 0
           }
@@ -157,7 +164,7 @@
       "topLabel": {
         "labelText": "Why attend"
       },
-      "heading": "Why you should spend four hours on this",
+      "heading": "What you'll get in just 4 hours",
       "isH1": false,
       "description": "If you're part of the C-Suite at an Australian business, you're being pitched on AI every week. Most of it is theory, AI 101, or a vendor selling their product. Almost none of it shows you the actual economics of an AI build in a business like yours, with real numbers.\n\n**That's what this is. Four hours in a room with the engineers who design and ship AI into Australian banks, accountancies, insurers and government departments. No theory. No vendor pitch. No AI 101.**\n",
       "tabletTextAlignment": "Left",
@@ -165,30 +172,30 @@
         "twoColumns": true,
         "features": [
           {
-            "heading": "The four business problems AI just made affordable.",
+            "heading": "The four business problems AI just made affordable",
             "description": "What they look like in your business, and how to tell which one to start with.",
-            "icon": "BiSolidCheckCircle"
+            "icon": "BiSolidBriefcase"
           },
           {
             "heading": "Real case studies. Real dollar figures.",
             "description": "Including the engineering work that reduced one Australian client's per-transaction cost by 90%, using AI in a business application.",
-            "icon": "BiSolidCheckCircle"
+            "icon": "BiSolidDollarCircle"
           },
           {
-            "heading": "Straight answers from the people doing the work.",
+            "heading": "Straight answers from the people doing the work",
             "description": "Not vendor slides. Not theory. The engineers who are inside Australian enterprises this week. ",
-            "icon": "BiSolidCheckCircle"
+            "icon": "BiSolidUserVoice"
           },
           {
             "heading": "A one-page action list before you leave",
             "description": "Three things to put in front of your team on Monday morning. Specific. Costed. Yours.",
-            "icon": "BiSolidCheckCircle"
+            "icon": "BiSolidCheckSquare"
           }
         ]
       },
       "buttons": [
         {
-          "buttonText": "Register Now",
+          "buttonText": "Register now",
           "buttonLink": "#pick-your-city",
           "colour": 0
         }
@@ -233,7 +240,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Register Now",
+          "buttonText": "Register now",
           "buttonLink": "#pick-your-city",
           "colour": 0
         }
@@ -309,7 +316,7 @@
           "content": "You leave with a checklist of things to do on Monday morning.\n"
         }
       ],
-      "isMultipleOpen": false,
+      "isMultipleOpen": true,
       "background": {
         "backgroundColour": 6
       },
@@ -336,15 +343,15 @@
     },
     {
       "isStacked": true,
-      "heading": "In 4 hours, you'll learn:",
+      "heading": "Key learnings",
       "isH1": false,
-      "body": "Three things everyone in C-Suite needs to know about AI in their business this year.",
+      "body": "3 things everyone in C-Suite needs to know about AI in their business this year",
       "cardStyle": 0,
       "cards": [
         {
           "guid": "wo01",
           "altText": "Affordable AI problems",
-          "icon": "BiSolidCheckCircle",
+          "icon": "BiSolidBulb",
           "heading": "Which expensive problems AI just made affordable",
           "description": "The four business problems that were too costly to solve 12 months ago and are realistic now, the custom build you parked, the data your executives can't see, retrofitting AI into existing software, and replacing the legacy system that's blocking new features.",
           "embeddedButton": {
@@ -354,7 +361,7 @@
         {
           "guid": "wo02",
           "altText": "Real case studies",
-          "icon": "BiSolidCheckCircle",
+          "icon": "BiSolidBarChartAlt2",
           "heading": "Real case studies with real dollar figures",
           "description": "The Australian fintech firm that reduced their per-transaction cost by 90%, using AI in a business application.\n\nThe dashboards built in days instead of months. The Dynamics 365 / Salesforce / SAP customisation with numbers from three live engagements. No theory, no sales pitch.",
           "embeddedButton": {
@@ -364,7 +371,7 @@
         {
           "guid": "wo03",
           "altText": "One-page action list",
-          "icon": "BiSolidCheckCircle",
+          "icon": "BiSolidBookContent",
           "heading": "A one-page action list for your business",
           "description": "You leave with a checklist of things to do on Monday morning, written during the session, specific to your company. Plus an open Q&A where you bring your business's actual problem and we answer it in the room.",
           "embeddedButton": {
@@ -398,7 +405,7 @@
     },
     {
       "isStacked": true,
-      "heading": "Designed for **senior decision-makers** at Australian enterprises.",
+      "heading": "Designed for **decision-makers** at Australian enterprises",
       "isH1": false,
       "body": "",
       "cardStyle": 1,
@@ -541,7 +548,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Register Now",
+          "buttonText": "Register now",
           "buttonLink": "#pick-your-city",
           "colour": 0
         }
@@ -630,7 +637,7 @@
           "content": "Not at all. We break down technical concepts into clear, digestible ideas - built for non-developers.\n"
         },
         {
-          "label": "What happens after I click \"Reserve My Seat\"?",
+          "label": "What happens after I click \"Reserve my seat\"?",
           "content": "Secure checkout opens right here on the page. Enter your details, pay, and your $99 seat is confirmed. You'll receive a calendar invite and venue details by email immediately after.\n"
         },
         {
@@ -680,9 +687,9 @@
     },
     {
       "isStacked": true,
-      "heading": "Pick your city.",
+      "heading": "Pick your city",
       "isH1": false,
-      "body": "Pick your city below and secure checkout opens right here on the page - confirm your $99 seat in a few clicks.",
+      "body": "Pick your city below and confirm your $99 seat in a few clicks. Secure checkout opens right here on the page.",
       "cardStyle": 0,
       "cards": [
         {
@@ -699,7 +706,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Reserve My Seat - $99",
+            "buttonText": "Reserve my seat - $99",
             "eventbriteEventId": "1992027082628",
             "colour": 0
           }
@@ -718,7 +725,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Reserve My Seat - $99",
+            "buttonText": "Reserve my seat - $99",
             "eventbriteEventId": "1992027891046",
             "colour": 0
           }
@@ -737,7 +744,7 @@
             ]
           },
           "embeddedButton": {
-            "buttonText": "Reserve My Seat - $99",
+            "buttonText": "Reserve my seat - $99",
             "eventbriteEventId": "1992027951226",
             "colour": 0
           }
