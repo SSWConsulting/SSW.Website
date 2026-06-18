@@ -342,6 +342,7 @@ export default {
         sswRed: "#cc4141",
         sswDarkRed: "#8e2c2c",
         sswBlack: "#333333",
+        sswDarkGray: '#090909',
         azure: "#007fff",
         ssw: {
           red: {
