@@ -200,6 +200,10 @@ const V3Faq = dynamic(() =>
   import("./blocks/v3/faq/faq").then((mod) => mod.V3Faq)
 );
 
+const V3LeadCapture = dynamic(() =>
+  import("./blocks/v3/leadCapture/leadCapture").then((mod) => mod.V3LeadCapture)
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -247,6 +251,7 @@ const componentMap = {
   V3Testimonials,
   V3StackCards,
   V3Faq,
+  V3LeadCapture,
 };
 
 export const Blocks = ({ prefix, blocks }) => {

@@ -1,11 +1,98 @@
 "use client";
-import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { tinaField } from "tinacms/dist/react";
+
+type RevealToken =
+  | { space: true; word?: undefined; red?: undefined }
+  | { space?: false; word: string; red: boolean };
+
+// Clip-style text reveal: words rise into view from behind a mask, staggered
+// line-by-line. Lines are detected by measuring each word's rendered vertical
+// position, so the stagger follows the real wrap points. Remount (via a `key`
+// on the parent) re-fires the reveal on each slide switch. Preserves **red**
+// emphasis (same convention as AlternatingText).
+function ClipTextReveal({ text }: { text: string }) {
+  const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
+  const [lineIndices, setLineIndices] = useState<number[] | null>(null);
+
+  const tokens = useMemo<RevealToken[]>(() => {
+    if (!text) return [];
+    const out: RevealToken[] = [];
+    text
+      .split(/(\*\*.*?\*\*)/g)
+      .filter(Boolean)
+      .forEach((seg) => {
+        const match = seg.match(/^\*\*(.*)\*\*$/);
+        const red = Boolean(match);
+        (match ? match[1] : seg).split(/(\s+)/).forEach((tok) => {
+          if (tok === "") return;
+          if (/^\s+$/.test(tok)) out.push({ space: true });
+          else out.push({ word: tok, red });
+        });
+      });
+    return out;
+  }, [text]);
+
+  const wordCount = tokens.filter((t) => !t.space).length;
+
+  // After layout, group words sharing the same offsetTop into a line index.
+  useEffect(() => {
+    let line = -1;
+    let lastTop: number | null = null;
+    const indices = wordRefs.current
+      .slice(0, wordCount)
+      .map((el) => (el ? el.offsetTop : 0))
+      .map((top) => {
+        if (lastTop === null || top !== lastTop) {
+          line += 1;
+          lastTop = top;
+        }
+        return line;
+      });
+    setLineIndices(indices);
+  }, [wordCount]);
+
+  if (!text) return null;
+
+  let wordIndex = -1;
+
+  return (
+    <span aria-label={text.replace(/\*\*/g, "")}>
+      {tokens.map((tok, ti) => {
+        if (tok.space) return <span key={`sp-${ti}`}> </span>;
+        const i = ++wordIndex;
+        return (
+          <span
+            key={`w-${ti}`}
+            ref={(el) => {
+              wordRefs.current[i] = el;
+            }}
+            aria-hidden
+            className="inline-block overflow-hidden pb-[0.12em] align-bottom -mb-[0.12em]"
+          >
+            <motion.span
+              className={`inline-block ${tok.red ? "text-sswRed" : ""}`}
+              initial={{ y: "110%" }}
+              animate={lineIndices ? { y: 0 } : { y: "110%" }}
+              transition={{
+                duration: 0.5,
+                delay: lineIndices ? lineIndices[i] * 0.12 : 0,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+            >
+              {tok.word}
+            </motion.span>
+          </span>
+        );
+      })}
+    </span>
+  );
+}
 
 export function V3Testimonials({ data }) {
   const testimonials = data?.testimonials ?? [];
@@ -31,12 +118,18 @@ export function V3Testimonials({ data }) {
                 data-tina-field={tinaField(current, "quote")}
                 className="text-2xl font-medium leading-snug text-white md:text-4xl"
               >
-                <AlternatingText text={current.quote} />
+                <ClipTextReveal key={active} text={current.quote} />
               </blockquote>
             )}
 
             <div className="mt-10 flex items-center justify-between gap-4">
-              <div className='flex items-center gap-4'>
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="flex items-center gap-4"
+              >
                 <div className="flex flex-col">
                 {current?.authorName && (
                   <span
@@ -69,8 +162,8 @@ export function V3Testimonials({ data }) {
                   />
                 </>
               )}
-              </div>
-              
+              </motion.div>
+
               {/* Carousel controls */}
               {testimonials.length > 1 && (
                 <div className=" flex  gap-3">
@@ -97,7 +190,13 @@ export function V3Testimonials({ data }) {
 
           {/* Author image */}
           {current?.authorImage && (
-            <div className="relative h-48 w-48 overflow-hidden rounded-2xl md:h-48 md:w-48">
+            <motion.div
+              key={active}
+              initial={{ clipPath: "inset(100% 0 0 0)", scale: 1.06 }}
+              animate={{ clipPath: "inset(0% 0 0 0)", scale: 1 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="relative h-48 w-48 overflow-hidden rounded-2xl md:h-48 md:w-48"
+            >
               <Image
                 src={current.authorImage}
                 alt={
@@ -109,7 +208,7 @@ export function V3Testimonials({ data }) {
                 className="object-cover"
                 data-tina-field={tinaField(current, "authorImage")}
               />
-            </div>
+            </motion.div>
           )}
         </div>
       </Container>
