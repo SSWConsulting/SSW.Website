@@ -59,7 +59,10 @@ export const V3HeroSchema: Template = {
         "What to show on the right-hand side. 'Image' uses the Image field below; the other options render a built-in animated composition.",
       options: [
         { value: "image", label: "Image" },
-        { value: "reactConsultingSvg", label: "React Consulting Atom (animated)" },
+        {
+          value: "reactConsultingSvg",
+          label: "React Consulting Atom (animated)",
+        },
       ],
     },
     {

@@ -23,9 +23,9 @@ export function V3Testimonials({ data }) {
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" className="py-16 sm:px-8 md:py-24">
-        <div className="flex flex-row justify-center items-center gap-10 ">
+        <div className="flex flex-row items-center justify-center gap-20">
           {/* Quote + author */}
-          <div className="flex flex-col max-w-3xl">
+          <div className="flex max-w-3xl flex-col">
             {current?.quote && (
               <blockquote
                 data-tina-field={tinaField(current, "quote")}
@@ -35,8 +35,9 @@ export function V3Testimonials({ data }) {
               </blockquote>
             )}
 
-            <div className="mt-10 flex items-center gap-4">
-              <div className="flex flex-col">
+            <div className="mt-10 flex items-center justify-between gap-4">
+              <div className='flex items-center gap-4'>
+                <div className="flex flex-col">
                 {current?.authorName && (
                   <span
                     data-tina-field={tinaField(current, "authorName")}
@@ -68,34 +69,35 @@ export function V3Testimonials({ data }) {
                   />
                 </>
               )}
-            </div>
-
-            {/* Carousel controls */}
-            {testimonials.length > 1 && (
-              <div className="mt-10 flex gap-3">
-                <button
-                  type="button"
-                  aria-label="Previous testimonial"
-                  onClick={goPrev}
-                  className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
-                >
-                  <BiLeftArrowAlt className="size-6" />
-                </button>
-                <button
-                  type="button"
-                  aria-label="Next testimonial"
-                  onClick={goNext}
-                  className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
-                >
-                  <BiRightArrowAlt className="size-6" />
-                </button>
               </div>
-            )}
+              
+              {/* Carousel controls */}
+              {testimonials.length > 1 && (
+                <div className=" flex  gap-3">
+                  <button
+                    type="button"
+                    aria-label="Previous testimonial"
+                    onClick={goPrev}
+                    className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
+                  >
+                    <BiLeftArrowAlt className="size-6" />
+                  </button>
+                  <button
+                    type="button"
+                    aria-label="Next testimonial"
+                    onClick={goNext}
+                    className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
+                  >
+                    <BiRightArrowAlt className="size-6" />
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Author image */}
           {current?.authorImage && (
-            <div className="relative h-64 w-56 overflow-hidden rounded-2xl md:h-64 md:w-56">
+            <div className="relative h-48 w-48 overflow-hidden rounded-2xl md:h-48 md:w-48">
               <Image
                 src={current.authorImage}
                 alt={

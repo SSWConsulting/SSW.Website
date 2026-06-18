@@ -8,14 +8,18 @@ export default function V3Statistics({ data }) {
 
   return (
     <V2ComponentWrapper data={data}>
-      <Container size="custom" padding="px-4 sm:px-8" className="border-y-[0.75px] border-[#212121]">
+      <Container
+        size="custom"
+        padding="px-4 sm:px-8"
+        className="border-y-[0.75px] border-[#212121]"
+      >
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-y-0 lg:divide-x-[0.75px] lg:divide-[#212121]">
           {/* Intro: heading on the left */}
-          <div className="flex  items-center lg:pr-8 py-8">
+          <div className="flex items-center py-8 lg:pr-8">
             {data?.heading && (
               <h2
                 data-tina-field={tinaField(data, "heading")}
-                className="text-xl font-semibold text-white mt-0 lg:text-2xl"
+                className="mt-0 text-xl font-semibold text-white lg:text-2xl"
               >
                 <AlternatingText text={data.heading} />
               </h2>
@@ -24,7 +28,10 @@ export default function V3Statistics({ data }) {
 
           {/* Statistic columns */}
           {stats.map((stat, index) => (
-            <div key={`v3-stat-${index}`} className="flex flex-col lg:px-8 py-8">
+            <div
+              key={`v3-stat-${index}`}
+              className="flex flex-col py-8 lg:px-8"
+            >
               <div className="flex items-baseline">
                 <span
                   data-tina-field={tinaField(stat, "figure")}
@@ -52,7 +59,7 @@ export default function V3Statistics({ data }) {
               {stat?.description && (
                 <p
                   data-tina-field={tinaField(stat, "description")}
-                  className=" text-base font-light text-gray-400"
+                  className="text-base font-light text-gray-400"
                 >
                   {stat.description}
                 </p>

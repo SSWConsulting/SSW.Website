@@ -39,8 +39,7 @@ export const V3StatisticsTemplate: Template = {
       label: "Statistics",
       name: "statistics",
       list: true,
-      description:
-        "Blocks for statistics - maximum of 3",
+      description: "Blocks for statistics - maximum of 3",
       ui: {
         max: 3,
         itemProps: (item) => ({ label: item?.heading ?? "Statistic" }),

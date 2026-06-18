@@ -28,8 +28,7 @@ export const V3TestimonialsSchema: Template = {
       ui: {
         itemProps: (item) => ({ label: item?.authorName ?? "Testimonial" }),
         defaultItem: {
-          quote:
-            "**Lorem ipsum** dolor sit amet, consectetur adipiscing elit.",
+          quote: "**Lorem ipsum** dolor sit amet, consectetur adipiscing elit.",
           authorName: "Author Name",
           authorTitle: "Role, Company",
         },

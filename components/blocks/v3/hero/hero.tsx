@@ -21,7 +21,7 @@ export const V3Hero = ({ data, priority = false }) => {
     image?.imageHeight;
 
   return (
-    <V2ComponentWrapper data={data} className='py-20'>
+    <V2ComponentWrapper data={data} className="py-20">
       <Container
         size="custom"
         padding="px-4 sm:px-8"
@@ -32,7 +32,7 @@ export const V3Hero = ({ data, priority = false }) => {
           {data?.brow && (
             <span
               data-tina-field={tinaField(data, "brow")}
-              className="mb-3 text-sm uppercase font-mono tracking-wider text-sswRed"
+              className="mb-3 font-mono text-sm uppercase tracking-wider text-sswRed"
             >
               {data.brow}
             </span>
@@ -40,13 +40,16 @@ export const V3Hero = ({ data, priority = false }) => {
           {data?.heading && (
             <h1
               data-tina-field={tinaField(data, "heading")}
-              className="text-4xl font-bold text-white lg:text-5xl p-0"
+              className="p-0 text-4xl font-bold text-white lg:text-5xl"
             >
               <AlternatingText text={data.heading} />
             </h1>
           )}
           {data?.description && (
-            <div data-tina-field={tinaField(data, "description")} className="mt-4">
+            <div
+              data-tina-field={tinaField(data, "description")}
+              className="mt-4"
+            >
               <TinaMarkdown
                 content={data.description}
                 components={{
@@ -74,22 +77,22 @@ export const V3Hero = ({ data, priority = false }) => {
           </div>
         ) : (
           hasImage && (
-          <div className="relative flex w-full justify-center">
-            <Image
-              width={image.imageWidth}
-              height={image.imageHeight}
-              priority={priority}
-              // next/image's `priority` alone no longer emits the
-              // fetchpriority="high" hint, and Lighthouse flags the LCP image
-              // without it.
-              fetchPriority={priority ? "high" : undefined}
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="w-full rounded-md"
-              src={image.imageSource}
-              alt={image.altText ?? "Hero image"}
-              data-tina-field={tinaField(data, "image")}
-            />
-          </div>
+            <div className="relative flex w-full justify-center">
+              <Image
+                width={image.imageWidth}
+                height={image.imageHeight}
+                priority={priority}
+                // next/image's `priority` alone no longer emits the
+                // fetchpriority="high" hint, and Lighthouse flags the LCP image
+                // without it.
+                fetchPriority={priority ? "high" : undefined}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="w-full rounded-md"
+                src={image.imageSource}
+                alt={image.altText ?? "Hero image"}
+                data-tina-field={tinaField(data, "image")}
+              />
+            </div>
           )
         )}
       </Container>

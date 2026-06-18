@@ -180,9 +180,7 @@ const V3Process = dynamic(() =>
   import("./blocks/v3/process/process").then((mod) => mod.V3Process)
 );
 
-const V3Statistics = dynamic(
-  () => import("./blocks/v3/statistics/statistics")
-);
+const V3Statistics = dynamic(() => import("./blocks/v3/statistics/statistics"));
 
 const V3Testimonials = dynamic(() =>
   import("./blocks/v3/testimonials/testimonials").then(

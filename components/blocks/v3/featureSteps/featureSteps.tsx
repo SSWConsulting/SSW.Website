@@ -8,13 +8,17 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export function V3FeatureSteps({ data }) {
   return (
     <V2ComponentWrapper data={data}>
-      <Container size="custom" padding="px-4 sm:px-8" className="py-12 md:py-16">
+      <Container
+        size="custom"
+        padding="px-4 sm:px-8"
+        className="py-12 md:py-16"
+      >
         {/* Full-width intro: brow, title, description */}
         <div className="flex w-full flex-col">
           {data?.brow && (
             <span
               data-tina-field={tinaField(data, "brow")}
-              className="mb-3 text-sm uppercase font-mono tracking-wider text-sswRed"
+              className="mb-3 font-mono text-sm uppercase tracking-wider text-sswRed"
             >
               {data.brow}
             </span>
@@ -49,13 +53,20 @@ export function V3FeatureSteps({ data }) {
 
         {/* Numbered steps: 01 / 02 / 03 */}
         {data?.steps?.length > 0 && (
-          <div className={`mt-10 grid grid-cols-1 md:grid-cols-3`}>
+          <div className={"mt-10 grid grid-cols-1 md:grid-cols-3"}>
             {data.steps.map((step, index) => (
-              <div key={`v3-step-${index}`} className={cn("flex flex-col border-t-[0.75px] py-6 px-4 border-[#212121]", index % 2 !== 0 && "border-x-[0.75px] border-[#212121] md:pl-8")}>
+              <div
+                key={`v3-step-${index}`}
+                className={cn(
+                  "flex flex-col border-t-[0.75px] border-[#212121] px-4 py-6",
+                  index % 2 !== 0 &&
+                    "border-x-[0.75px] border-[#212121] md:pl-8"
+                )}
+              >
                 {step?.brow && (
                   <span
                     data-tina-field={tinaField(step, "brow")}
-                    className="text-sm uppercase font-mono tracking-wider text-sswRed"
+                    className="font-mono text-sm uppercase tracking-wider text-sswRed"
                   >
                     {step.brow}
                   </span>
