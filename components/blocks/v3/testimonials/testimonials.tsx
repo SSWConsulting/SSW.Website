@@ -22,7 +22,7 @@ export function V3Testimonials({ data }) {
 
   return (
     <V2ComponentWrapper data={data}>
-      <Container size="custom" className="py-16 sm:px-8 md:py-24">
+      <Container size="custom" className="py-16 sm:px-8 md:py-32">
         <div className="flex flex-row items-center justify-center gap-20">
           {/* Quote + author */}
           <div className="flex max-w-3xl flex-col">
