@@ -61,6 +61,13 @@ export const ImageTextBlockSchema: Template = {
       description: "Choose to use the heading as an H1 instead of an H2.",
     },
     {
+      type: "string",
+      label: "Subheading",
+      name: "subheading",
+      description:
+        "Optional small line under the heading (e.g. a role/title like 'SSW · AI Engagement Lead'). Styled distinctly from the body text.",
+    },
+    {
       type: "rich-text",
       label: "Description",
       name: "description",

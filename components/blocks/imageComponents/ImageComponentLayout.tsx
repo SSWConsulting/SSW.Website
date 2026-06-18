@@ -99,7 +99,11 @@ export const ImageComponentLayout = ({ data, children, priority = false }) => {
                   fetchPriority={loadWithPriority ? "high" : undefined}
                   sizes="(min-width: 768px) 50vw, 100vw"
                   height={data.mediaConfiguration?.imageHeight}
-                  className={cn("w-full rounded-md")}
+                  className={cn(
+                    "w-full rounded-md",
+                    data.mediaConfiguration?.squareImage &&
+                      "aspect-square object-cover"
+                  )}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
                   data-tina-field={tinaField(data, "mediaConfiguration")}
