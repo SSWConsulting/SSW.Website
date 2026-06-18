@@ -113,7 +113,7 @@
       },
       "heading": "Stop losing deals to **data residency and compliance.**",
       "isH1": false,
-      "description": "Traditional SaaS asks enterprise customers to hand their data to your environment. Many regulated buyers can't. With an Azure Application offer on the Azure Marketplace, your whole app deploys into the customer's Azure tenant — they keep full ownership of data and infrastructure, and Microsoft handles billing through Partner Center.\n",
+      "description": "In healthcare, finance, and government, asking a customer to send their data to your environment is often what kills the deal. With an Azure Application offer, your app installs straight into the customer's own Azure tenant. Their data and infrastructure stay with them, you ship the same product, and Microsoft handles the billing through Partner Center.\n",
       "tabletTextAlignment": "Center",
       "featureColumns": {
         "twoColumns": true,
@@ -140,6 +140,7 @@
           "buttonText": "Create an Azure Marketplace Offer",
           "buttonLink": "https://www.ssw.com.au/rules/create-azure-marketplace-offer",
           "icon": "BiStore",
+          "iconFirst": true,
           "colour": 1
         }
       ],
@@ -154,7 +155,7 @@
       "_template": "imageTextBlock"
     },
     {
-      "isStacked": false,
+      "isStacked": true,
       "heading": "Related services",
       "isH1": false,
       "body": "",
