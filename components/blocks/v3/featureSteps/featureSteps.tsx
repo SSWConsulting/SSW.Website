@@ -1,6 +1,7 @@
 import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -48,9 +49,9 @@ export function V3FeatureSteps({ data }) {
 
         {/* Numbered steps: 01 / 02 / 03 */}
         {data?.steps?.length > 0 && (
-          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className={`mt-10 grid grid-cols-1 md:grid-cols-3`}>
             {data.steps.map((step, index) => (
-              <div key={`v3-step-${index}`} className="flex flex-col">
+              <div key={`v3-step-${index}`} className={cn("flex flex-col border-t-[0.75px] py-6 px-4 border-[#212121]", index % 2 !== 0 && "border-x-[0.75px] border-[#212121] md:pl-8")}>
                 {step?.brow && (
                   <span
                     data-tina-field={tinaField(step, "brow")}
