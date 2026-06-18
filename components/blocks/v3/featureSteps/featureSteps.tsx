@@ -13,7 +13,7 @@ export function V3FeatureSteps({ data }) {
           {data?.brow && (
             <span
               data-tina-field={tinaField(data, "brow")}
-              className="mb-3 text-sm font-semibold uppercase tracking-wide text-sswRed"
+              className="mb-3 text-sm uppercase font-mono tracking-wider text-sswRed"
             >
               {data.brow}
             </span>
@@ -51,9 +51,14 @@ export function V3FeatureSteps({ data }) {
           <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
             {data.steps.map((step, index) => (
               <div key={`v3-step-${index}`} className="flex flex-col">
-                <span className="text-sm font-semibold text-sswRed">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
+                {step?.brow && (
+                  <span
+                    data-tina-field={tinaField(step, "brow")}
+                    className="text-sm uppercase font-mono tracking-wider text-sswRed"
+                  >
+                    {step.brow}
+                  </span>
+                )}
                 {step?.heading && (
                   <h3
                     data-tina-field={tinaField(step, "heading")}

@@ -2,6 +2,18 @@ import type { Template } from "tinacms";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 
+// Rich-text nested inside a list isn't coerced from a string, so its default
+// must be a rich-text AST object (matching accordionSchema's accordionItems).
+const stepDescription = {
+  type: "root",
+  children: [
+    {
+      type: "p",
+      children: [{ type: "text", text: "Lorem ipsum dolor sit amet." }],
+    },
+  ],
+};
+
 export const V3FeatureStepsSchema: Template = {
   name: "v3FeatureSteps",
   label: "<V3> Feature Steps",
@@ -9,11 +21,14 @@ export const V3FeatureStepsSchema: Template = {
     defaultItem: {
       brow: "How it works",
       heading: "A **simple** process",
+      // Top-level rich-text: a plain string default is coerced by Tina (same
+      // as imageTextBlock). Nested-in-list rich-text is NOT coerced, so the
+      // step descriptions below must be AST objects (same as accordionSchema).
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       steps: [
-        { heading: "Discover", description: "Lorem ipsum dolor sit amet." },
-        { heading: "Build", description: "Lorem ipsum dolor sit amet." },
-        { heading: "Deliver", description: "Lorem ipsum dolor sit amet." },
+        { brow: "01", heading: "Discover", description: stepDescription },
+        { brow: "02", heading: "Build", description: stepDescription },
+        { brow: "03", heading: "Deliver", description: stepDescription },
       ],
     },
   },
@@ -43,9 +58,15 @@ export const V3FeatureStepsSchema: Template = {
         "Numbered steps shown below the intro. Numbers auto-generate (01, 02, 03…).",
       ui: {
         itemProps: (item) => ({ label: item?.heading ?? "Step" }),
-        defaultItem: { heading: "Step", description: "Lorem ipsum." },
+        defaultItem: { brow: "01", heading: "Step", description: stepDescription },
       },
       fields: [
+        {
+          type: "string",
+          label: "Brow",
+          name: "brow",
+          description: "Small label above the step title (e.g. 01).",
+        },
         {
           type: "string",
           label: "Title",
