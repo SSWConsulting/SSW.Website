@@ -13,6 +13,7 @@ type BackgroundData = {
     backgroundImage?: string;
     bleed?: boolean;
     gridOverlay?: boolean;
+    redGlow?: boolean;
   };
 };
 
@@ -85,6 +86,12 @@ const V2ComponentWrapper = ({
               target.naturalHeight / target.naturalWidth
             );
           }}
+        />
+      )}
+      {data.background?.redGlow && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-[10] bg-[radial-gradient(circle_at_top_left,rgba(204,65,65,0.28),transparent_45%),radial-gradient(circle_at_78%_100%,rgba(204,65,65,0.18),transparent_45%)]"
         />
       )}
       {data.background?.gridOverlay && (

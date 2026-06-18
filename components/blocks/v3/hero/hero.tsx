@@ -14,18 +14,18 @@ export const V3Hero = ({ data, priority = false }) => {
     image?.imageSource && image?.imageWidth && image?.imageHeight;
 
   return (
-    <V2ComponentWrapper data={data}>
+    <V2ComponentWrapper data={data} className='py-20'>
       <Container
         size="custom"
         padding="px-4 sm:px-8"
-        className="mx-auto flex flex-col items-center gap-8 py-12 md:gap-16 xl:grid xl:grid-cols-2"
+        className="mx-auto flex flex-col items-center gap-8 py-20 md:gap-16 xl:grid xl:grid-cols-2"
       >
         {/* Left-hand side: brow, title, description, buttons */}
         <div className="flex w-full flex-col text-center xl:text-left">
           {data?.brow && (
             <span
               data-tina-field={tinaField(data, "brow")}
-              className="mb-3 text-sm font-semibold uppercase tracking-wide text-sswRed"
+              className="mb-3 text-sm uppercase font-mono tracking-wider text-sswRed"
             >
               {data.brow}
             </span>

@@ -3,7 +3,8 @@
     {
       "background": {
         "backgroundColour": 7,
-        "gridOverlay": true
+        "gridOverlay": true,
+        "redGlow": true
       },
       "brow": "REACT CONSULTING",
       "heading": "Build your dream React App with our experts",
