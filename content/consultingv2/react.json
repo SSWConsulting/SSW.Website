@@ -203,6 +203,27 @@
     },
     {
       "background": {
+        "backgroundColour": 4
+      },
+      "heading": "Frequently asked questions",
+      "faqs": [
+        {
+          "question": "How much does it cost?",
+          "answer": "Every engagement is scoped to your goals, so there's no single price. The Health Check and first session are free, and you'll get a clear, costed plan before you commit to anything.\n"
+        },
+        {
+          "question": "Do you work with our existing team?",
+          "answer": "Yes — we embed alongside your team.\n"
+        },
+        {
+          "question": "Can you rescue a project that's already in trouble?",
+          "answer": "Absolutely. We start with a Health Check.\n"
+        }
+      ],
+      "_template": "v3Faq"
+    },
+    {
+      "background": {
         "backgroundColour": 7,
         "gridOverlay": true,
         "redGlow": true

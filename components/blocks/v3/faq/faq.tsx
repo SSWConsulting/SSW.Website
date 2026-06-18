@@ -1,0 +1,117 @@
+"use client";
+
+import AlternatingText from "@/components/alternating-text";
+import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
+import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
+import { useLayoutEffect, useRef, useState } from "react";
+import { FiChevronDown } from "react-icons/fi";
+import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
+
+export function V3Faq({ data }) {
+  const faqs = data?.faqs ?? [];
+  // First item open by default, matching the design.
+  const [openIndex, setOpenIndex] = useState(0);
+
+  // Measure each answer so we can reserve a constant amount of vertical space:
+  // the open answer expands inline while a spacer below shrinks by the same
+  // amount, keeping the component's total height fixed regardless of state.
+  const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [heights, setHeights] = useState<number[]>([]);
+
+  useLayoutEffect(() => {
+    const measure = () =>
+      setHeights(contentRefs.current.map((el) => el?.scrollHeight ?? 0));
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [faqs]);
+
+  const maxHeight = heights.length ? Math.max(...heights, 0) : 0;
+  const openHeight = openIndex >= 0 ? heights[openIndex] ?? 0 : 0;
+  const reserve = Math.max(maxHeight - openHeight, 0);
+
+  return (
+    <V2ComponentWrapper data={data}>
+      <Container size="custom" padding="px-4 sm:px-8" className="py-16 md:py-24">
+        {data?.heading && (
+          <h2
+            data-tina-field={tinaField(data, "heading")}
+            className="text-center text-4xl font-bold text-white lg:text-5xl"
+          >
+            <AlternatingText text={data.heading} />
+          </h2>
+        )}
+
+        <div className="mx-auto mt-12 max-w-3xl">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div
+                key={`v3-faq-${index}`}
+                className="border-t-[0.75px] border-white/10 last:border-b-[0.75px]"
+              >
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                >
+                  <span
+                    data-tina-field={tinaField(faq, "question")}
+                    className="text-base font-medium text-white"
+                  >
+                    {faq?.question}
+                  </span>
+                  <FiChevronDown
+                    aria-hidden
+                    className={cn(
+                      "size-5 shrink-0 text-sswRed transition-transform duration-200",
+                      isOpen && "rotate-180"
+                    )}
+                  />
+                </button>
+
+                <div
+                  className="overflow-hidden transition-[height] duration-200 ease-in-out"
+                  style={{ height: isOpen ? heights[index] ?? 0 : 0 }}
+                >
+                  <div
+                    ref={(el) => {
+                      contentRefs.current[index] = el;
+                    }}
+                    data-tina-field={tinaField(faq, "answer")}
+                    className="pb-5 pr-8"
+                  >
+                    {faq?.answer && (
+                      <TinaMarkdown
+                        content={faq.answer}
+                        components={{
+                          p: (props) => (
+                            <p
+                              {...props}
+                              className="text-base font-light text-gray-400"
+                            />
+                          ),
+                        }}
+                      />
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+
+          {/* Compensating spacer: keeps the block's total height constant
+              regardless of which answer (if any) is open. */}
+          <div
+            aria-hidden
+            className="transition-[height] duration-200 ease-in-out"
+            style={{ height: reserve }}
+          />
+        </div>
+      </Container>
+    </V2ComponentWrapper>
+  );
+}

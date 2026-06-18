@@ -62,6 +62,7 @@ import { V3CtaSchema } from "./v3/cta/cta.schema";
 import { V3LogoCarouselSchema } from "./v3/logoCarousel/logoCarousel.schema";
 import { V3TestimonialsSchema } from "./v3/testimonials/testimonials.schema";
 import { V3StackCardsSchema } from "./v3/stackCards/stackCards.schema";
+import { V3FaqSchema } from "./v3/faq/faq.schema";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
 import { videoEmbedBlockSchema } from "./videoEmbed.schema";
@@ -76,6 +77,7 @@ export const pageBlocks: Template[] = [
   V3CtaSchema,
   V3TestimonialsSchema,
   V3StackCardsSchema,
+  V3FaqSchema,
   BreadcrumbSchema,
   ImageTextBlockSchema,
   LogoCarouselSchema,
