@@ -176,6 +176,10 @@ const V3FeatureSteps = dynamic(() =>
   )
 );
 
+const V3Process = dynamic(() =>
+  import("./blocks/v3/process/process").then((mod) => mod.V3Process)
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -217,6 +221,7 @@ const componentMap = {
   V3Hero,
   V3LogoCarousel,
   V3FeatureSteps,
+  V3Process,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
