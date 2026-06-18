@@ -91,6 +91,33 @@
         }
       ],
       "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "OUR PROCESS",
+      "heading": "What to expect working with SSW",
+      "description": "",
+      "steps": [
+        {
+          "heading": "Initial Call",
+          "description": "A short call with a senior engineer to talk through your project. \n"
+        },
+        {
+          "heading": "Project Scope",
+          "description": "A clear, costed plan with scope, timing and the fastest path to ROI.\n"
+        },
+        {
+          "heading": "Build & Deliver",
+          "description": "SSW Joins your team, builds your product, and ships your solution.\n"
+        },
+        {
+          "heading": "Aftercare",
+          "description": "We stay on post-launch to ensure a successful project handover. \n"
+        }
+      ],
+      "_template": "v3Process"
     }
   ]
 }
