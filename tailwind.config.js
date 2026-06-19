@@ -96,6 +96,13 @@ export default {
       backgroundSize: {
         dots: "20px 20px",
       },
+      // Enable `aria-invalid:` variants used by the SSW Input (shadcn registry).
+      aria: {
+        invalid: 'invalid="true"',
+      },
+      ringWidth: {
+        3: "3px",
+      },
       textUnderlineOffset: {
         3: "3px",
       },
@@ -360,6 +367,17 @@ export default {
         sswDarkGray: '#090909',
         sswBorder: "#212121",
         sswCard: "#0d0d0d",
+        // SSW design-system tokens (from ssw-tokens via shadcn registry), mapped
+        // to the CSS variables added to styles.css so v3 generates the utilities
+        // the SSW Input component relies on.
+        background: "var(--background-base)",
+        foreground: "var(--text-strong)",
+        "muted-foreground": "var(--text-weak)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+        destructive: "var(--destructive)",
+        "stroke-strong": "var(--stroke-strong)",
+        "stroke-weak": "var(--stroke-weak)",
         azure: "#007fff",
         ssw: {
           red: {
