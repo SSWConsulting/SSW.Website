@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 
 type RevealToken =
@@ -120,6 +121,23 @@ export function V3Testimonials({ data }) {
               >
                 <ClipTextReveal key={active} text={current.quote} />
               </blockquote>
+            )}
+
+            {current?.caseStudyUrl && (
+              <motion.a
+                key={active}
+                href={current.caseStudyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-tina-field={tinaField(current, "caseStudyUrl")}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                className="group mt-6 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-white transition hover:text-sswRed"
+              >
+                See Case Study
+                <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
+              </motion.a>
             )}
 
             <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
