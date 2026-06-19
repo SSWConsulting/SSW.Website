@@ -143,8 +143,9 @@ export function V3LeadCapture({ data }) {
             )}
             {data?.heading && (
               <h2
+                id="lead-capture-heading"
                 data-tina-field={tinaField(data, "heading")}
-                className="my-4 text-3xl text-white lg:text-4xl"
+                className="my-4 scroll-mt-24 text-3xl text-white lg:text-4xl"
               >
                 <AlternatingText text={data.heading} />
               </h2>
