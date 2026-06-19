@@ -6,7 +6,8 @@ import { NextRequest } from "next/server";
  *
  * Body: { jotFormId: string, fields: Record<qid, value> }
  * Each `fields` key is a JotForm question id (qid); JotForm expects them encoded
- * as `submission[{qid}]=value`.
+ * as `submission[{qid}]=value`. An array value is a multi-option field, encoded
+ * as `submission[{qid}][{index}]=value` (e.g. location → country + state).
  */
 export async function POST(request: NextRequest) {
   try {
@@ -29,7 +30,13 @@ export async function POST(request: NextRequest) {
 
     const body = new URLSearchParams();
     for (const [qid, value] of Object.entries(fields)) {
-      if (value != null && value !== "") {
+      if (Array.isArray(value)) {
+        value.forEach((entry, index) => {
+          if (entry != null && entry !== "") {
+            body.append(`submission[${qid}][${index}]`, String(entry));
+          }
+        });
+      } else if (value != null && value !== "") {
         body.append(`submission[${qid}]`, String(value));
       }
     }

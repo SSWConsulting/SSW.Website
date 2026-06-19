@@ -48,6 +48,18 @@ const LOCATIONS: { label: string; states: string[] }[] = [
   { label: "USA", states: [] },
 ];
 
+// The UI keeps the short state codes; JotForm receives the full state name.
+const AU_STATE_NAMES: Record<string, string> = {
+  ACT: "Australian Capital Territory",
+  NSW: "New South Wales",
+  NT: "Northern Territory",
+  QLD: "Queensland",
+  SA: "South Australia",
+  TAS: "Tasmania",
+  VIC: "Victoria",
+  WA: "Western Australia",
+};
+
 const TOTAL_SCREENS = 3;
 
 const primaryButtonClass =
@@ -80,8 +92,13 @@ export function V3LeadCapture({ data }) {
 
   const selectedCountry = LOCATIONS.find((l) => l.label === country);
   const needsRegion = (selectedCountry?.states.length ?? 0) > 0;
-  const locationValue =
-    needsRegion && region ? `${country} - ${region}` : country;
+  // JotForm's location field takes country and state as two separate options
+  // (e.g. "Australia" + "New South Wales") rather than one combined string.
+  const regionName =
+    needsRegion && region ? (AU_STATE_NAMES[region] ?? region) : "";
+  const locationValue: string | string[] = regionName
+    ? [country, regionName]
+    : country;
 
   const screen1Valid =
     name.trim().length > 0 &&
@@ -98,7 +115,7 @@ export function V3LeadCapture({ data }) {
     if (status === "submitting") return;
     setStatus("submitting");
 
-    const fields: Record<string, string> = {
+    const fields: Record<string, string | string[]> = {
       [QID.name]: name.trim(),
       [QID.email]: email.trim(),
       [QID.company]: company.trim(),
