@@ -197,7 +197,7 @@ export function V3LeadCapture({ data }) {
             /* Screen 1 — your details */
             <div className="mt-8">
               <h3 className="mb-6 text-lg text-white lg:text-xl">
-                Tell us about you
+                Get in contact - let us know a bit about you.
               </h3>
               <div className="flex flex-col gap-6">
                 <SSWAdaptiveField
