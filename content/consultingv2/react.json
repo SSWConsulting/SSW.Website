@@ -101,12 +101,15 @@
         "gridOverlay": true
       },
       "videoUrl": "https://www.youtube.com/watch?v=3K4Gb54BFMo",
+      "thumbnail": "/images/consulting/thumbnail.png",
+      "greyscaleThumbnail": true,
+      "figure": "Figure: React vs. Angular: let the Experts argue! (2017 NDC Sydney) (28 mins)",
       "heading": "Why choose SSW?",
-      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years. \n",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
       "highlights": [
         {
           "title": "Deep expertise",
-          "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available \n"
+          "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available\n"
         },
         {
           "title": "Results over rhetoric",
@@ -190,7 +193,7 @@
           "authorName": "Kiriana Meha-Bettison",
           "authorTitle": "IT Project Manager, Hearing Australia",
           "authorImage": "",
-          "companyLogo": "/images/logos/hearing-australia.png"
+          "companyLogo": "/images/logos/Capture-2026-06-19-114350.png"
         }
       ],
       "_template": "v3Testimonials"
@@ -225,6 +228,69 @@
         }
       ],
       "_template": "v3StackCards"
+    },
+    {
+      "isStacked": false,
+      "brow": "learn more on SSWTV",
+      "heading": "Tech wisdowm from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
+      "buttons": [
+        {
+          "buttonText": "Lorem",
+          "colour": 0
+        },
+        {
+          "buttonText": "Ipsum",
+          "colour": 1
+        }
+      ],
+      "cards": [
+        {
+          "guid": "arf4s",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
+          "altText": "AI",
+          "category": "AI Use",
+          "heading": "If you think AI is cheating, you're doing it wrong!"
+        },
+        {
+          "guid": "ui7a6e",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
+          "altText": "Lorem Ipsum",
+          "category": "AI Trends",
+          "heading": "The Year of the AI Agent: Automation to Intelligence"
+        },
+        {
+          "guid": "hhszy",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/F06MV1qm51Y?si=u1mOLqpFCaty4NrL",
+          "altText": "Lorem Ipsum",
+          "category": "AI Model Guides",
+          "heading": " 3 Creative Uses for OpenAI API "
+        },
+        {
+          "guid": "akn4ur",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/LrnMP8T4HDE?si=uorL-73cVGtHxMTh",
+          "altText": "Lorem Ipsum",
+          "category": "AI Strategy",
+          "heading": " Create a Killer Chatbot with OpenAI"
+        },
+        {
+          "guid": "20ehn",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
+          "altText": "Lorem Ipsum",
+          "category": "Multi-Language AI Apps",
+          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor"
+        }
+      ],
+      "background": {
+        "backgroundColour": 7
+      },
+      "_template": "v3CardCarousel"
     },
     {
       "background": {
