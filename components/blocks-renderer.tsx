@@ -204,6 +204,18 @@ const V3LeadCapture = dynamic(() =>
   import("./blocks/v3/leadCapture/leadCapture").then((mod) => mod.V3LeadCapture)
 );
 
+const V3VideoHighlights = dynamic(() =>
+  import("./blocks/v3/videoHighlights/videoHighlights").then(
+    (mod) => mod.V3VideoHighlights
+  )
+);
+
+const V3CardCarousel = dynamic(() =>
+  import("./blocks/v3/cardCarousel/cardCarousel").then(
+    (mod) => mod.V3CardCarousel
+  )
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -252,6 +264,8 @@ const componentMap = {
   V3StackCards,
   V3Faq,
   V3LeadCapture,
+  V3VideoHighlights,
+  V3CardCarousel,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
