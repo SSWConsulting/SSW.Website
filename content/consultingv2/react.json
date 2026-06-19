@@ -128,50 +128,6 @@
       },
       "heading": "Tell us about **your** project",
       "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
-      "leadJotFormId": "261680507930054",
-      "emailFieldId": "4",
-      "notesFieldId": "5",
-      "answersFieldId": "6",
-      "steps": [
-        {
-          "heading": "What stage is your project at?",
-          "options": [
-            "Starting something new",
-            "Adding to an app we already run",
-            "Fixing an app that's struggling",
-            "Something else"
-          ]
-        },
-        {
-          "heading": "How many React developers do you have? ",
-          "options": [
-            "None yet",
-            "Less than 5",
-            "5 or more ",
-            "Prefer not to say"
-          ]
-        },
-        {
-          "heading": "What's your project scale?",
-          "options": [
-            "Small focused engagement",
-            "Serious product investment",
-            "Major business revolution",
-            "I'm not sure yet"
-          ]
-        },
-        {
-          "heading": "Anything we should know? ",
-          "showTextArea": true
-        }
-      ],
-      "leadSubmitStep": {
-        "header": "Where should we contact you?",
-        "subheader": "Add your email and a senior React engineer will set up a time to walk you through where we would start.",
-        "emailPlaceholder": "you@company.com",
-        "submitButtonText": "Book my meeting",
-        "footnote": "No newsletter. Replies usually within one business day"
-      },
       "_template": "v3LeadCapture"
     },
     {
@@ -209,7 +165,7 @@
       },
       "testimonials": [
         {
-          "quote": "SSW transformed our legacy systems. Their team delivered a **cutting-edge React app** that streamlined operations and enhanced citizen services.\n",
+          "quote": "I thoroughly enjoyed working with **SSW** on developing and launching our new website. What truly set them apart was not just their **evident expertise** but also their **unwavering commitment to going the extra mile.**",
           "caseStudyUrl": "/company/clients/hearing-australia",
           "authorName": "Kiriana Meha-Bettison",
           "authorTitle": "IT Project Manager, Hearing Australia",
@@ -230,17 +186,17 @@
         {
           "title": "Next.js",
           "description": "Fast, search-friendly web apps, with React under the hood.",
-          "link": "/"
+          "link": "/services/nextjs"
         },
         {
           "title": "React Native",
           "description": "Mobile apps built with your favorite React stack.",
-          "link": "/"
+          "link": "/services/react-native"
         },
         {
           "title": ".NET",
           "description": "Enterprise backends that stand the test of time.",
-          "link": "/"
+          "link": "/services/dotnet"
         },
         {
           "title": "Azure",
