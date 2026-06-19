@@ -38,21 +38,18 @@ const V3Card = ({ data, placeholder, className }: V3CardProps) => {
   return (
     <div
       className={cn(
-        "flex h-full flex-col bg-transparent text-start",
+        "flex h-full flex-col overflow-hidden rounded-2xl bg-[#212121] text-start",
         className
       )}
     >
       {youtubeUrl && isYoutubeEmbed ? (
-        <VideoModal
-          className="mb-4"
-          frameClassName="rounded-xl mb-2"
-          overflow={true}
-          url={youtubeUrl}
-        />
+        <div className="aspect-video w-full shrink-0 overflow-hidden">
+          <VideoModal overflow={true} url={youtubeUrl} />
+        </div>
       ) : (
         (data.image || placeholder) && (
           <div
-            className="relative mb-4 aspect-video w-full shrink-0 overflow-hidden rounded-xl"
+            className="relative aspect-video w-full shrink-0 overflow-hidden"
             data-tina-field={tinaField(data, "image")}
           >
             <Image
@@ -69,22 +66,24 @@ const V3Card = ({ data, placeholder, className }: V3CardProps) => {
           </div>
         )
       )}
-      {data.category && (
-        <span
-          data-tina-field={tinaField(data, "category")}
-          className="w-fit whitespace-nowrap rounded-full border-0.75 border-sswRed/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-sswRed"
-        >
-          {data.category}
-        </span>
-      )}
-      {data.heading && (
-        <h3
-          className="mt-4 text-lg font-medium leading-snug text-white"
-          data-tina-field={tinaField(data, "heading")}
-        >
-          {data.heading}
-        </h3>
-      )}
+      <div className="flex flex-col p-8">
+        {data.category && (
+          <span
+            data-tina-field={tinaField(data, "category")}
+            className="w-fit whitespace-nowrap rounded-full border-0.75 border-sswRed/60 px-3 py-1 font-mono text-xs uppercase tracking-wider text-sswRed"
+          >
+            {data.category}
+          </span>
+        )}
+        {data.heading && (
+          <h3
+            className="mt-4 text-lg font-medium leading-snug text-white"
+            data-tina-field={tinaField(data, "heading")}
+          >
+            {data.heading}
+          </h3>
+        )}
+      </div>
     </div>
   );
 };
@@ -107,11 +106,11 @@ const V3CardList = ({ cards, hasImages }: V3CardListProps) => {
         className="w-full max-w-9xl"
         itemLength={cards?.length ?? 0}
       >
-        <CarouselContent>
+        <CarouselContent className="-ml-8">
           {cards?.map((cardData, index) => {
             return (
               <CarouselItem
-                className="flex basis-72 md:basis-96"
+                className="flex basis-72 pl-8 md:basis-96"
                 key={`v3-card-carousel-${index}`}
               >
                 <V3Card
@@ -219,7 +218,7 @@ export function V3CardCarousel({ data }) {
           {data.isStacked && data.cards && (
             <div
               className={cn(
-                "grid items-stretch justify-center gap-5",
+                "grid items-stretch justify-center gap-8",
                 cardSet?.length === 2 && "sm:grid-cols-2",
                 cardSet?.length === 3 && "sm:grid-cols-2 md:grid-cols-3",
                 cardSet?.length >= 4 && "sm:grid-cols-2 lg:grid-cols-4"
