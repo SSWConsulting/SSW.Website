@@ -72,6 +72,7 @@ export const V3VideoHighlightsSchema: Template = {
         },
       },
       fields: [
+        // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
         {
           type: "string",
           label: "Icon",
