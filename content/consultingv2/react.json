@@ -32,7 +32,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane and Newcastle by",
       "logos": [
         {
           "logo": "/images/ssw-web/logos/toll_logo.png",
@@ -209,18 +209,12 @@
       },
       "testimonials": [
         {
-          "quote": "SSW transformed our legacy systems. Their team delivered a **cutting-edge React app** that streamlined operations and enhanced citizen services.",
-          "authorName": "Alex Johnson",
-          "authorTitle": "CTO, GovTech Agency",
-          "authorImage": "/images/testimonialAvatars/MicrosoftTeams-image.png",
-          "companyLogo": "/images/ssw-web/logos/toll_logo.png"
-        },
-        {
-          "quote": "Their engineers embedded with our team and shipped a **scalable React platform** that handles millions of requests without breaking a sweat.",
-          "authorName": "Priya Nair",
-          "authorTitle": "Head of Engineering, Domain",
-          "authorImage": "/images/Joe-Albahari-profile.jpg",
-          "companyLogo": "/images/ssw-web/logos/domain_logo.png"
+          "quote": "SSW transformed our legacy systems. Their team delivered a **cutting-edge React app** that streamlined operations and enhanced citizen services.\n",
+          "caseStudyUrl": "/company/clients/hearing-australia",
+          "authorName": "Kiriana Meha-Bettison",
+          "authorTitle": "IT Project Manager, Hearing Australia",
+          "authorImage": "",
+          "companyLogo": "/images/logos/Capture-2026-06-19-114350.png"
         }
       ],
       "_template": "v3Testimonials"

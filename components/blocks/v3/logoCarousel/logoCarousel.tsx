@@ -13,7 +13,7 @@ export function V3LogoCarousel({ data }) {
         <div className="flex w-full flex-col items-center pb-4 text-center sm:pb-14">
           {data?.heading && (
             <h2
-              className="!mt-4 p-2 text-xl font-semibold text-white md:text-2xl"
+              className="!mt-4 p-2 text-xl text-white md:text-3xl"
               data-tina-field={tinaField(data, "heading")}
             >
               <AlternatingText text={data.heading} />
