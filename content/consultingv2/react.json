@@ -97,6 +97,26 @@
     },
     {
       "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true
+      },
+      "videoUrl": "https://www.youtube.com/watch?v=3K4Gb54BFMo",
+      "heading": "Why choose SSW?",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years. \n",
+      "highlights": [
+        {
+          "title": "Deep expertise",
+          "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available \n"
+        },
+        {
+          "title": "Results over rhetoric",
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?\n"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
         "backgroundColour": 7
       },
       "brow": "OUR PROCESS",
@@ -170,7 +190,7 @@
           "authorName": "Kiriana Meha-Bettison",
           "authorTitle": "IT Project Manager, Hearing Australia",
           "authorImage": "",
-          "companyLogo": "/images/logos/Capture-2026-06-19-114350.png"
+          "companyLogo": "/images/logos/hearing-australia.png"
         }
       ],
       "_template": "v3Testimonials"
