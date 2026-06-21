@@ -62,6 +62,13 @@ export const V3FaqSchema: Template = {
           name: "answer",
           toolbarOverride: ["bold", "italic", "link"],
         },
+        {
+          type: "string",
+          label: "Read More Link",
+          name: "link",
+          description:
+            "Optional. If set, a 'Read More' link renders under the answer.",
+        },
       ],
     },
   ],
