@@ -8,11 +8,6 @@ import { CustomLink } from "../../customLink";
 export const PageCard = ({ page, category, pageIndex }) => {
   const { filterDidChange } = useFilterContext();
 
-  // The Next.js image optimizer rejects SVGs (returns 400) unless
-  // dangerouslyAllowSVG is enabled, so serve SVG logos unoptimized.
-  const isSvg =
-    typeof page.logo === "string" && page.logo.toLowerCase().endsWith(".svg");
-
   return (
     <motion.div
       key={pageIndex}
@@ -49,7 +44,6 @@ export const PageCard = ({ page, category, pageIndex }) => {
               src={page.logo}
               alt={`${page.title} logo`}
               loading="lazy"
-              unoptimized={isSvg}
               placeholder="blur"
               blurDataURL={BluredBase64Image}
             />
