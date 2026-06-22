@@ -1,6 +1,7 @@
 {
   "title": "July User Group - Storage Wars: Choosing the right House for your data",
-  "url": "/netug/brisbane",
+  "slug": "storage-wars",
+  "url": "https://www.meetup.com/brisbane-full-stack-user-group/events/315364332",
   "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
   "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterList": [
@@ -16,7 +17,7 @@
   "calendarType": "User Groups",
   "city": "Brisbane",
   "category": "Data and LINQ",
-  "abstract": "This presentation explores one of the most common decisions in Microsoft Fabric: where to store your data. It cuts through the confusion between Lakehouses and Warehouses — two storage options that look similar on the surface but serve very different purposes — and explains how Medallion Architecture (Bronze, Silver, Gold) brings them together into a coherent data strategy. By the end, you'll understand when to reach for a Lakehouse, when a Warehouse is the right call, and why the answer for most real-world Fabric projects is usually both.",
+  "abstract": "This presentation explores one of the most common decisions in Microsoft Fabric: where to store your data. It cuts through the confusion between Lakehouses and Warehouses, two storage options that look similar on the surface but serve very different purposes, and explains how Medallion Architecture (Bronze, Silver, Gold) brings them together into a coherent data strategy. By the end, you'll understand when to reach for a Lakehouse, when a Warehouse is the right call, and why the answer for most real-world Fabric projects is usually both.",
   "description": "**Brisbane Full Stack User Group: Storage Wars: Choosing the right House for your data with Vlad Kireyev\n**\n\n**About the Talk:**\n\nThis presentation explores one of the most common decisions in Microsoft Fabric: where to store your data.\n\nIt cuts through the confusion between Lakehouses and Warehouses,  two storage options that look similar on the surface but serve very different purposes, and explains how Medallion Architecture (Bronze, Silver, Gold) brings them together into a coherent data strategy.\n\nBy the end, you'll understand when to reach for a Lakehouse, when a Warehouse is the right call, and why the answer for most real-world Fabric projects is usually both.\n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
