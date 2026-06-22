@@ -16,8 +16,8 @@
   "calendarType": "User Groups",
   "city": "Brisbane",
   "category": "Data and LINQ",
-  "abstract": "Data expert Vlad Kireyev will be talking about Microsoft Fabric Lakehouse vs Warehouse. \nMore to come! \n",
-  "description": "Data expert Vlad Kireyev will be talking about Microsoft Fabric Lakehouse vs Warehouse.\n\nMore to come!\n",
+  "abstract": "This presentation explores one of the most common decisions in Microsoft Fabric: where to store your data. It cuts through the confusion between Lakehouses and Warehouses — two storage options that look similar on the surface but serve very different purposes — and explains how Medallion Architecture (Bronze, Silver, Gold) brings them together into a coherent data strategy. By the end, you'll understand when to reach for a Lakehouse, when a Warehouse is the right call, and why the answer for most real-world Fabric projects is usually both.",
+  "description": "**Brisbane Full Stack User Group: Storage Wars: Choosing the right House for your data with Vlad Kireyev\n**\n\n**About the Talk:**\n\nThis presentation explores one of the most common decisions in Microsoft Fabric: where to store your data.\n\nIt cuts through the confusion between Lakehouses and Warehouses,  two storage options that look similar on the surface but serve very different purposes, and explains how Medallion Architecture (Bronze, Silver, Gold) brings them together into a coherent data strategy.\n\nBy the end, you'll understand when to reach for a Lakehouse, when a Warehouse is the right call, and why the answer for most real-world Fabric projects is usually both.\n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true
