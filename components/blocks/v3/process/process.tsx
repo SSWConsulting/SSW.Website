@@ -100,15 +100,12 @@ export function V3Process({ data }) {
                   href={step.link}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
-                  className="flex flex-col !no-underline transition-transform duration-200 hover:-translate-y-1 group"
+                  className="group flex flex-col !no-underline transition-transform duration-200 hover:-translate-y-1"
                 >
                   {inner}
                 </Link>
               ) : (
-                <div
-                  key={`v3-process-step-${index}`}
-                  className="flex flex-col"
-                >
+                <div key={`v3-process-step-${index}`} className="flex flex-col">
                   {inner}
                 </div>
               );
