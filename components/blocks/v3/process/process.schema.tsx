@@ -56,6 +56,13 @@ export const V3ProcessSchema: Template = {
           name: "description",
           toolbarOverride: ["bold", "italic", "link"],
         },
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+          description:
+            "Optional. If set, the whole step card becomes clickable. Use a relative path (e.g. /consulting) for internal links or a full URL (https://…) for external ones.",
+        },
       ],
     },
   ],

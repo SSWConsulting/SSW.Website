@@ -11,7 +11,7 @@
       "description": "Most React apps work in the demo. We build the ones that survive real users, real data and years of change. Fast and built to last, with Australia's most-certified React consultants.\n",
       "buttons": [
         {
-          "buttonText": "Book your initial meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "",
           "buttonLink": "#lead-capture-heading",
           "iconFirst": false,
@@ -128,19 +128,23 @@
       "steps": [
         {
           "heading": "Initial Call",
-          "description": "A short call with a senior engineer to talk through your project.\n"
+          "description": "A short call with a senior engineer to talk through your project.\n",
+          "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
         },
         {
-          "heading": "Project Scope",
-          "description": "A clear, costed plan with scope, timing and the fastest path to ROI.\n"
+          "heading": "Spec Review",
+          "description": "A clear, costed plan with scope, timing and the fastest path to ROI.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
         },
         {
           "heading": "Build & Deliver",
-          "description": "SSW Joins your team, builds your product, and ships your solution.\n"
+          "description": "SSW can either handle the project from end-to-end or join your existing team, build your product, and ship your solution.\n",
+          "link": "https://www.ssw.com.au/rules/mentoring-programs"
         },
         {
-          "heading": "Aftercare",
-          "description": "We stay on post-launch to ensure a successful project handover.\n"
+          "heading": "Service Plan",
+          "description": "We can stay on post-launch to ensure a successful project handover.\n",
+          "link": "https://www.ssw.com.au/consulting/support-plans"
         }
       ],
       "_template": "v3Process"
@@ -209,22 +213,22 @@
         {
           "title": "Next.js",
           "description": "Fast, search-friendly web apps, with React under the hood.",
-          "link": "/services/nextjs"
+          "link": "/consulting/nextjs"
         },
         {
           "title": "React Native",
           "description": "Mobile apps built with your favorite React stack.",
-          "link": "/services/react-native"
+          "link": "/consulting/mobile-application-development"
         },
         {
           "title": ".NET",
           "description": "Enterprise backends that stand the test of time.",
-          "link": "/services/dotnet"
+          "link": "/consulting/web-applications"
         },
         {
           "title": "Azure",
           "description": "Cloud infrastructure that keeps your app fast as it scales.",
-          "link": "/"
+          "link": "/consulting/azure"
         }
       ],
       "_template": "v3StackCards"
@@ -238,12 +242,28 @@
       "tabletTextAlignment": "Left",
       "cards": [
         {
+          "guid": "akn4ur",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=5QLhrLrvWp8",
+          "altText": "Angular – Satisfying your Performance Hungry UI",
+          "category": "Angular",
+          "heading": "Angular – Satisfying your Performance Hungry UI"
+        },
+        {
+          "guid": "20ehn",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=yVHzykdKis4",
+          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
+          "category": "NEXT.JS",
+          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library"
+        },
+        {
           "guid": "arf4s",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
-          "altText": "AI",
-          "category": "AI Use",
-          "heading": "If you think AI is cheating, you're doing it wrong!"
+          "youtubeUrl": "https://www.youtube.com/watch?v=Kl1KWdMI5So",
+          "altText": "Vercel – Simplifying Your Development with Zero Configuration",
+          "category": "DevOps ",
+          "heading": "Vercel – Simplifying Your Development with Zero Configuration"
         },
         {
           "guid": "ui7a6e",
@@ -260,22 +280,6 @@
           "altText": "Lorem Ipsum",
           "category": "AI Model Guides",
           "heading": " 3 Creative Uses for OpenAI API "
-        },
-        {
-          "guid": "akn4ur",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/LrnMP8T4HDE?si=uorL-73cVGtHxMTh",
-          "altText": "Lorem Ipsum",
-          "category": "AI Strategy",
-          "heading": " Create a Killer Chatbot with OpenAI"
-        },
-        {
-          "guid": "20ehn",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
-          "altText": "Lorem Ipsum",
-          "category": "Multi-Language AI Apps",
-          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor"
         }
       ],
       "background": {
@@ -291,15 +295,22 @@
       "faqs": [
         {
           "question": "How much does it cost?",
-          "answer": "Every engagement is scoped to your goals, so there's no single price. The Health Check and first session are free, and you'll get a clear, costed plan before you commit to anything.\n"
+          "answer": "Every engagement is scoped to your goals, so there's no single price. The initial call is always 100% **free**. The specification review will be used to give the most accurate estimation possible for a projects scope, price and duration. \n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
         },
         {
           "question": "Do you work with our existing team?",
-          "answer": "Yes — we embed alongside your team.\n"
+          "answer": "Yes! We can either take over a project from end-to-end with our own team at SSW, or embed our developers into your existing team.\n",
+          "link": "https://www.ssw.com.au/rules/mentoring-programs"
         },
         {
           "question": "Can you rescue a project that's already in trouble?",
-          "answer": "Absolutely. We start with a Health Check.\n"
+          "answer": "Absolutely! SSW can support a range of projects, from large version upgrades, migrations, greenfield projects, and brownfield projects. \n"
+        },
+        {
+          "question": "How does SSW ensure quality and success of a software project?",
+          "answer": "Quality and success are the heart of our processes; we use:\n\n* Clean Architecture: Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-successful-projects"
         }
       ],
       "_template": "v3Faq"
@@ -314,7 +325,7 @@
       "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
       "buttons": [
         {
-          "buttonText": "Book your initial meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "buttonLink": "#lead-capture-heading",
           "colour": 0
         },
