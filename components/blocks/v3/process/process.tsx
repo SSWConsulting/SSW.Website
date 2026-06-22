@@ -100,7 +100,7 @@ export function V3Process({ data }) {
                   href={step.link}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
-                  className="flex flex-col !no-underline transition-transform duration-200 hover:-translate-y-1"
+                  className="flex flex-col !no-underline transition-transform duration-200 hover:-translate-y-1 group"
                 >
                   {inner}
                 </Link>
