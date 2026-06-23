@@ -53,7 +53,9 @@ export default function V3Statistics({ data }) {
                   data-tina-field={tinaField(stat, "figure")}
                   className="text-4xl leading-none text-white lg:text-5xl xl:text-6xl"
                 >
-                  {stat?.figure}
+                  {typeof stat?.figure === "number"
+                    ? stat.figure.toLocaleString("en-US")
+                    : stat?.figure}
                 </span>
                 {stat?.figureSuffix && (
                   <span
