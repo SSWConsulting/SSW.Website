@@ -103,13 +103,14 @@
       "videoUrl": "https://www.youtube.com/watch?v=3K4Gb54BFMo",
       "thumbnail": "/images/consulting/thumbnail.png",
       "greyscaleThumbnail": true,
-      "figure": "Figure: React vs. Angular: let the Experts argue! (2017 NDC Sydney) (28 mins)",
+      "figure": "Video: React vs. Angular: Let the experts argue! (28 mins)",
       "heading": "Why choose SSW?",
       "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
       "highlights": [
         {
           "title": "Deep expertise",
-          "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available\n"
+          "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-react"
         },
         {
           "title": "Results over rhetoric",
@@ -164,13 +165,13 @@
       "heading": "Why teams choose SSW for React Consulting",
       "statistics": [
         {
-          "figure": 1000,
+          "figure": 7000,
           "figureSuffix": "+",
           "heading": "Solutions delivered",
           "description": "Enterprise-grade software"
         },
         {
-          "figure": 1000,
+          "figure": 1800,
           "figureSuffix": "+",
           "heading": "Happy clients",
           "description": "Across all industries"
@@ -295,7 +296,7 @@
       "faqs": [
         {
           "question": "How much does it cost?",
-          "answer": "Every engagement is scoped to your goals, so there's no single price. The initial call is always 100% **free**. The specification review will be used to give the most accurate estimation possible for a projects scope, price and duration. \n",
+          "answer": "Every engagement is scoped to your goals, so there's no single price. The initial call is always 100% **free**. The specification review will be used to give the most accurate estimation possible for a projects scope, price and duration.\n",
           "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
         },
         {
@@ -305,7 +306,7 @@
         },
         {
           "question": "Can you rescue a project that's already in trouble?",
-          "answer": "Absolutely! SSW can support a range of projects, from large version upgrades, migrations, greenfield projects, and brownfield projects. \n"
+          "answer": "Absolutely! SSW can support a range of projects, from large version upgrades, migrations, greenfield projects, and brownfield projects.\n"
         },
         {
           "question": "How does SSW ensure quality and success of a software project?",

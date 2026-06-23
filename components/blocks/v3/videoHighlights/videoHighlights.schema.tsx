@@ -93,6 +93,13 @@ export const V3VideoHighlightsSchema: Template = {
           name: "desc2",
           toolbarOverride: ["bold", "italic", "link"],
         },
+        {
+          type: "string",
+          label: "Read More Link",
+          name: "link",
+          description:
+            "Optional. If set, a 'Read More' link renders under the highlight.",
+        },
       ],
     },
   ],

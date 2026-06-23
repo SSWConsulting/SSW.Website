@@ -4,6 +4,8 @@ import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -114,6 +116,16 @@ export function V3VideoHighlights({ data }) {
                           }}
                         />
                       </div>
+                    )}
+                    {item?.link && (
+                      <Link
+                        href={item.link}
+                        data-tina-field={tinaField(item, "link")}
+                        className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-white transition hover:text-sswRed"
+                      >
+                        Read More
+                        <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
+                      </Link>
                     )}
                   </div>
                 ))}
