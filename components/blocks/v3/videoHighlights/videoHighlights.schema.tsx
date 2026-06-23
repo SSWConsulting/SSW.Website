@@ -98,7 +98,14 @@ export const V3VideoHighlightsSchema: Template = {
           label: "Read More Link",
           name: "link",
           description:
-            "Optional. If set, a 'Read More' link renders under the highlight.",
+            "Optional. If set, a link renders under the highlight.",
+        },
+        {
+          type: "string",
+          label: "Read More Link Text",
+          name: "linkText",
+          description:
+            "Optional. Text shown for the link. Defaults to 'Read More'.",
         },
       ],
     },

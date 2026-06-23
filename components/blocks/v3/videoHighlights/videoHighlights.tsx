@@ -123,7 +123,7 @@ export function V3VideoHighlights({ data }) {
                         data-tina-field={tinaField(item, "link")}
                         className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-white transition hover:text-sswRed"
                       >
-                        Read More
+                        {item.linkText || "Read More"}
                         <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
                       </Link>
                     )}

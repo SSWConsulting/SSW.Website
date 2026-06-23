@@ -110,7 +110,8 @@
         {
           "title": "Deep expertise",
           "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available\n",
-          "link": "https://www.ssw.com.au/rules/rules-to-better-react"
+          "link": "https://www.ssw.com.au/rules/rules-to-better-react",
+          "linkText": "Rules to Better React"
         },
         {
           "title": "Results over rhetoric",
