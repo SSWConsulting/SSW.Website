@@ -92,13 +92,13 @@ export function V3LeadCapture({ data }) {
 
   const selectedCountry = LOCATIONS.find((l) => l.label === country);
   const needsRegion = (selectedCountry?.states.length ?? 0) > 0;
-  // JotForm's location field takes country and state as two separate options
-  // (e.g. "Australia" + "New South Wales") rather than one combined string.
+  // JotForm's location widget stores a newline-separated string and renders
+  // each line as its own tag (e.g. "Australia\nNew South Wales" → two tags).
+  // Submitting a real array instead crashes its submission viewer with
+  // "items.map is not a function".
   const regionName =
     needsRegion && region ? (AU_STATE_NAMES[region] ?? region) : "";
-  const locationValue: string | string[] = regionName
-    ? [country, regionName]
-    : country;
+  const locationValue = regionName ? `${country}\n${regionName}` : country;
 
   const screen1Valid =
     name.trim().length > 0 &&
