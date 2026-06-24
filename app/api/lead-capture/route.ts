@@ -1,24 +1,20 @@
 import { NextRequest } from "next/server";
 
 /**
- * Receives lead-capture answers from the V3LeadCapture block and forwards them
- * to JotForm's submissions API, keeping the API key server-side.
+ * Receives lead-capture answers from the V3LeadCapture block and submits them
+ * to JotForm through the form's public submit endpoint.
  *
- * Body: { jotFormId: string, fields: Record<qid, value> }
- * Each `fields` key is a JotForm question id (qid); JotForm expects them encoded
- * as `submission[{qid}]=value`. An array value is a multi-option field, encoded
- * as `submission[{qid}][{index}]=value` (e.g. location → country + state).
+ * We deliberately do NOT use the JotForm submissions API: API-created entries
+ * skip the form's integrations, so the webhook / Flow (and the downstream CRM
+ * automation it drives) never fires. Posting to the submit endpoint is a real
+ * submission, so every integration runs exactly as it would for the hosted form.
+ * As a bonus, the submit endpoint is public, so no server-side API key is needed.
+ *
+ * Body: { jotFormId: string, fields: Record<inputName, value> }
+ * Each `fields` key is the JotForm input name (e.g. "q6_typeA").
  */
 export async function POST(request: NextRequest) {
   try {
-    const apiKey = process.env.JOTFORM_API_KEY;
-    if (!apiKey) {
-      return Response.json(
-        { message: "JotForm is not configured." },
-        { status: 500 }
-      );
-    }
-
     const { jotFormId, fields } = await request.json();
 
     if (!jotFormId || !fields || typeof fields !== "object") {
@@ -29,22 +25,15 @@ export async function POST(request: NextRequest) {
     }
 
     const body = new URLSearchParams();
-    for (const [qid, value] of Object.entries(fields)) {
-      if (Array.isArray(value)) {
-        value.forEach((entry, index) => {
-          if (entry != null && entry !== "") {
-            body.append(`submission[${qid}][${index}]`, String(entry));
-          }
-        });
-      } else if (value != null && value !== "") {
-        body.append(`submission[${qid}]`, String(value));
+    body.append("formID", String(jotFormId));
+    for (const [name, value] of Object.entries(fields)) {
+      if (value != null && value !== "") {
+        body.append(name, String(value));
       }
     }
 
     const res = await fetch(
-      `https://api.jotform.com/form/${encodeURIComponent(
-        jotFormId
-      )}/submissions?apiKey=${encodeURIComponent(apiKey)}`,
+      `https://submit.jotform.com/submit/${encodeURIComponent(jotFormId)}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },

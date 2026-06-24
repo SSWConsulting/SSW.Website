@@ -11,18 +11,20 @@ import { TiArrowLeft } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-// Every use of this block submits to the same JotForm, so the form id and the
-// question-id (qid) mapping are fixed here rather than configured in the CMS.
+// Every use of this block submits to the same JotForm. We post to the form's
+// public submit endpoint (see /api/lead-capture), so fields are keyed by their
+// JotForm input names (q{qid}_{name}) — submitting this way fires the form's
+// webhook/Flow, which the submissions API would skip.
 const JOTFORM_ID = "233468468973070";
-const QID = {
-  name: "16",
-  email: "4",
-  company: "7",
-  phone: "17",
-  location: "6",
-  hearAboutUs: "8",
-  message: "9",
-  landingPageUrl: "20",
+const FIELD = {
+  name: "q16_fullName",
+  email: "q4_email",
+  company: "q7_company",
+  phone: "q17_phone",
+  location: "q6_typeA",
+  hearAboutUs: "q8_howDid",
+  message: "q9_howCan",
+  landingPageUrl: "q20_landingPage",
 };
 
 const HEAR_ABOUT_OPTIONS = [
@@ -116,16 +118,16 @@ export function V3LeadCapture({ data }) {
     setStatus("submitting");
 
     const fields: Record<string, string | string[]> = {
-      [QID.name]: name.trim(),
-      [QID.email]: email.trim(),
-      [QID.company]: company.trim(),
-      [QID.phone]: phone.trim(),
-      [QID.location]: locationValue,
-      [QID.message]: message.trim(),
+      [FIELD.name]: name.trim(),
+      [FIELD.email]: email.trim(),
+      [FIELD.company]: company.trim(),
+      [FIELD.phone]: phone.trim(),
+      [FIELD.location]: locationValue,
+      [FIELD.message]: message.trim(),
     };
-    if (hearAboutUs) fields[QID.hearAboutUs] = hearAboutUs;
+    if (hearAboutUs) fields[FIELD.hearAboutUs] = hearAboutUs;
     if (typeof window !== "undefined") {
-      fields[QID.landingPageUrl] = window.location.href;
+      fields[FIELD.landingPageUrl] = window.location.href;
     }
 
     try {
