@@ -21,6 +21,8 @@ on:
         required: true
       NEXT_PUBLIC_GOOGLE_GTM_ID:
         required: true
+      JOTFORM_API_KEY:
+        required: true
 
 defaults:
   run:
