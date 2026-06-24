@@ -64,6 +64,8 @@ ARG YOUTUBE_PRIVATE_KEY
 ENV YOUTUBE_PRIVATE_KEY=$YOUTUBE_PRIVATE_KEY
 ARG TINA_SEARCH_TOKEN
 ENV TINA_SEARCH_TOKEN=$TINA_SEARCH_TOKEN
+ARG JOTFORM_API_KEY
+ENV JOTFORM_API_KEY=$JOTFORM_API_KEY
 ARG NEXT_PUBLIC_SLOT_URL
 ENV NEXT_PUBLIC_SLOT_URL=$NEXT_PUBLIC_SLOT_URL
 
@@ -83,6 +85,11 @@ WORKDIR /website
 ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
+
+# JotForm key is read at runtime by /api/lead-capture, so it must persist into
+# the final image (builder-stage ENVs do not carry over to this stage).
+ARG JOTFORM_API_KEY
+ENV JOTFORM_API_KEY=$JOTFORM_API_KEY
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
