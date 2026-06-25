@@ -115,7 +115,7 @@
           "altText": "",
           "icon": "BiTestTube",
           "heading": "No tests",
-          "description": "Every change is a coin flip. Bugs ship silently because nothing catches them.",
+          "description": "Every change is a coin flip. Bugs ship because nothing catches them.",
           "embeddedButton": {
             "buttonText": ""
           }
