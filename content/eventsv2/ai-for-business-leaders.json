@@ -5,11 +5,8 @@
     "showBreadcrumb": false
   },
   "appearance": {
-    "mobile": {
-      "hideFlag": true,
-      "hideContactButton": true,
-      "hideBreadcrumb": true
-    }
+    "hideFlag": true,
+    "hideContactButton": true
   },
   "blocks": [
     {
@@ -17,10 +14,12 @@
         "backgroundColour": 0
       },
       "finalBreadcrumb": "AI for Business Leaders",
+      "hideOn": ["mobile"],
       "_template": "breadcrumbs"
     },
     {
       "spacerHeight": "45px",
+      "hideOn": ["mobile"],
       "background": {
         "backgroundColour": 0,
         "backgroundImage": "",
