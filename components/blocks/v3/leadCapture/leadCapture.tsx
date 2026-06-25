@@ -11,22 +11,6 @@ import { TiArrowLeft } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-// Every use of this block submits to the same JotForm. We post to the form's
-// public submit endpoint (see /api/lead-capture), so fields are keyed by their
-// JotForm input names (q{qid}_{name}) — submitting this way fires the form's
-// webhook/Flow, which the submissions API would skip.
-const JOTFORM_ID = "233468468973070";
-const FIELD = {
-  name: "q16_fullName",
-  email: "q4_email",
-  company: "q7_company",
-  phone: "q17_phone",
-  location: "q6_typeA",
-  hearAboutUs: "q8_howDid",
-  message: "q9_howCan",
-  landingPageUrl: "q20_landingPage",
-};
-
 const HEAR_ABOUT_OPTIONS = [
   "Conference",
   "Google",
@@ -117,24 +101,24 @@ export function V3LeadCapture({ data }) {
     if (status === "submitting") return;
     setStatus("submitting");
 
-    const fields: Record<string, string | string[]> = {
-      [FIELD.name]: name.trim(),
-      [FIELD.email]: email.trim(),
-      [FIELD.company]: company.trim(),
-      [FIELD.phone]: phone.trim(),
-      [FIELD.location]: locationValue,
-      [FIELD.message]: message.trim(),
+    const lead: Record<string, string> = {
+      name: name.trim(),
+      email: email.trim(),
+      company: company.trim(),
+      phone: phone.trim(),
+      location: locationValue,
+      message: message.trim(),
     };
-    if (hearAboutUs) fields[FIELD.hearAboutUs] = hearAboutUs;
+    if (hearAboutUs) lead.hearAboutUs = hearAboutUs;
     if (typeof window !== "undefined") {
-      fields[FIELD.landingPageUrl] = window.location.href;
+      lead.landingPageUrl = window.location.href;
     }
 
     try {
       const res = await fetch("/api/lead-capture", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ jotFormId: JOTFORM_ID, fields }),
+        body: JSON.stringify({ lead }),
       });
       setStatus(res.ok ? "success" : "error");
     } catch {
