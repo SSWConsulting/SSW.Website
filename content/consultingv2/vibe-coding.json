@@ -166,7 +166,7 @@
         {
           "guid": "7mtu8j",
           "altText": "Diagnose the Damage",
-          "heading": "01 - Diagnose the damage",
+          "heading": "Diagnose the damage",
           "description": "We audit your AI build to find what's broken, what's risky, and what's worth keeping, then give you a clear, honest path forward. No judgment.",
           "embeddedButton": {
             "buttonText": ""
@@ -175,7 +175,7 @@
         {
           "guid": "lxpq3m",
           "altText": "Fix the Plumbing",
-          "heading": "02 - Fix the plumbing",
+          "heading": "Fix the plumbing",
           "description": "Our engineers refactor the leaky code, plug the security holes, and replace the duct tape with solid, maintainable foundations that won't burst under load.",
           "embeddedButton": {
             "buttonText": ""
@@ -184,7 +184,7 @@
         {
           "guid": "5q8kz",
           "altText": "Make it Production-Ready",
-          "heading": "03 - Make it production-ready",
+          "heading": "Make it production-ready",
           "description": "We harden, test, and ship your AI solution so it's secure, scalable, and ready for real users, backed by SSW's expert developers.",
           "embeddedButton": {
             "buttonText": "SSW People",
