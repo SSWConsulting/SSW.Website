@@ -26,6 +26,34 @@ export const eventsv2Schema: Collection = {
     seoSchema,
     {
       type: "object",
+      name: "appearance",
+      label: "Appearance",
+      description: "Per-page look & feel (mobile only)",
+      fields: [
+        {
+          type: "object",
+          name: "mobile",
+          label: "Mobile",
+          fields: [
+            { type: "boolean", name: "hideFlag", label: "Hide country flag" },
+            {
+              type: "boolean",
+              name: "hideContactButton",
+              label: "Hide Contact Us button",
+              description:
+                "Also hides the desktop phone button (library limitation).",
+            },
+            {
+              type: "boolean",
+              name: "hideBreadcrumb",
+              label: "Hide breadcrumb",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "object",
       list: true,
       name: "blocks",
       label: "Blocks",

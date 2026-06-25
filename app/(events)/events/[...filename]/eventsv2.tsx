@@ -1,4 +1,5 @@
 "use client";
+import { useMobileHeaderAppearance } from "@/app/components/header-appearance";
 import { Blocks } from "@/components/blocks-renderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
@@ -15,7 +16,8 @@ type EventsV2PageProps<T> = {
 
 const EventsV2Page = memo(
   function EventsV2Page({ tinaProps }: EventsV2PageProps<object>) {
-    const { blocks } = tinaProps.data.eventsv2;
+    const { blocks, appearance } = tinaProps.data.eventsv2;
+    useMobileHeaderAppearance(appearance?.mobile ?? null);
     return (
       <div className="dark flex h-full flex-col">
         <Section color={"toggleLightMode"}>

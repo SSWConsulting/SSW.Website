@@ -1,5 +1,6 @@
 "use client";
 
+import { useHeaderAppearance } from "@/app/components/header-appearance";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import {
   Breadcrumb,
@@ -102,9 +103,11 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const paths = usePathname().split("/");
   // Index 0 is an empty string if the path starts with a slash
   const links = getLinks(paths, data, data.finalBreadcrumb);
+  const { mobile } = useHeaderAppearance();
 
   return (
-    <V2ComponentWrapper data={data}>
+    <div className={mobile.hideBreadcrumb ? "hidden md:block" : undefined}>
+      <V2ComponentWrapper data={data}>
       <Container size="custom" padding="px-4 sm:px-8" className="pt-8 sm:pt-12">
         <Breadcrumb className="text-gray-300">
           <BreadcrumbList>
@@ -123,6 +126,7 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
         </Breadcrumb>
       </Container>
     </V2ComponentWrapper>
+    </div>
   );
 }
 

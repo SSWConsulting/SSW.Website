@@ -4,6 +4,13 @@
     "description": "A half-day live workshop for Australian C-suite leaders. Real case studies, real dollar figures, and open Q&A with engineers shipping AI today.",
     "showBreadcrumb": false
   },
+  "appearance": {
+    "mobile": {
+      "hideFlag": true,
+      "hideContactButton": true,
+      "hideBreadcrumb": true
+    }
+  },
   "blocks": [
     {
       "background": {
