@@ -277,10 +277,10 @@
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageSource": "/images/consulting/open-graph/ai.jpg",
-        "imageHeight": 630,
-        "imageWidth": 1200,
-        "altText": "SSW rescues struggling AI projects and makes them production-ready"
+        "imageSource": "/images/consulting/ai-plumber-hero.webp",
+        "imageHeight": 1234,
+        "imageWidth": 1920,
+        "altText": "Emergency AI Plumber - SSW audits your AI build, refactors leaky code, and ships your AI solution"
       },
       "_template": "imageTextBlock"
     },
