@@ -37,8 +37,7 @@ export function V3LogoCarousel({ data }) {
                       src={logo?.logo ?? "/images/placeholder.png"}
                       alt={logo?.altText ?? "Logo"}
                       fill={true}
-                      objectFit="contain"
-                      className="brightness-0 invert"
+                      className="object-contain brightness-0 invert"
                     />
                   </div>
                 ))}
