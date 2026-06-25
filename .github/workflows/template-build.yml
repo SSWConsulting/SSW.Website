@@ -106,15 +106,19 @@ jobs:
             NEXT_PUBLIC_GITHUB_SHA=${{ github.sha }}
             NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
             NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
-            YOUTUBE_PRIVATE_KEY=${{ env.YOUTUBE_PRIVATE_KEY }}
             KEY_VAULT=${{ env.KEY_VAULT }}
             NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=${{ steps.AppInsight.outputs.AppInsightConnectionString }}
-            TINA_TOKEN=${{ secrets.TINA_TOKEN }}
             NEXT_PUBLIC_CHATBASE_BOT_ID=${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
             SITE_URL=https://www.ssw.com.au
-            TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
             JOTFORM_API_KEY=${{ secrets.JOTFORM_API_KEY }}
             NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{github.event.number}}.azurewebsites.net/
+
+          # Mounted as secrets (not build-args) so they are not baked into the
+          # exported BuildKit cache (cache-to mode=max).
+          secrets: |
+            TINA_TOKEN=${{ secrets.TINA_TOKEN }}
+            TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
+            YOUTUBE_PRIVATE_KEY=${{ env.YOUTUBE_PRIVATE_KEY }}
 
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
