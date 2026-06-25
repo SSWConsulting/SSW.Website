@@ -9,7 +9,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "finalBreadcrumb": "Mini Apps",
+      "finalBreadcrumb": "Chinafy",
       "_template": "breadcrumbs"
     },
     {
@@ -33,9 +33,9 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/012.jpg",
-        "imageHeight": 4480,
-        "imageWidth": 6720
+        "imageSource": "/images/Collaborating in a modern workspace.png",
+        "imageHeight": 941,
+        "imageWidth": 1672
       },
       "_template": "imageTextBlock"
     },
@@ -187,6 +187,49 @@
       "_template": "technologyCardCarousel"
     },
     {
+      "isStacked": false,
+      "heading": "What do people say? ",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "9oo6go",
+          "image": "",
+          "altText": "",
+          "heading": "Dr. Xingjun Ma, Fudan University ",
+          "description": "\"I fully endorse SSW's exceptional work on my computer science project at Fudan University. They demonstrated transparency, efficiency, and professionalism. Their communication skills are top-notch, fostering direct communication with everyone involved.\"",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "3bcfl",
+          "altText": "",
+          "icon": "info",
+          "heading": "Yun Lu, LUQI Tech",
+          "description": "\"SSW's expertise and professionalism in software development left a deep impression on me. They brought exceptional value to our dev team, inspiring them with their punctuality and diligence. I'm grateful for their unwavering commitment to excellence and delighted to have them in our office. Thank you, SSW!\"",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "9szqzq",
+          "altText": "",
+          "icon": "info",
+          "heading": "Neil Roodyn, nsquared solutions ",
+          "description": "\n\"Working with SSW on our Blazor projects has been a positive and rewarding experience. Their expertise and commitment to quality are evident.\" ",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "cardCarousel"
+    },
+    {
       "topLabel": {
         "labelText": ""
       },
@@ -221,7 +264,7 @@
       "accordionItems": [
         {
           "label": "Do I need a Chinese business entity to operate on WeChat?",
-          "content": "No. Overseas entities can directly register and authenticate. However, a domestic Chinese entity is required if your Mini Program's server is hosted in mainland China (due to ICP filing regulations). Additionally, overseas entities face more restrictions regarding the types of services they can offer.\n"
+          "content": "Not necessarily. Overseas companies can register and develop Mini Programs, but the requirements depend on where your target users are located.\n\nIf your target users are in China, it's generally best to host your backend infrastructure and data there for performance and compliance reasons. In that case, a Chinese legal entity is typically required to support ICP filing and related regulations.\n\nIf your target users are outside China — in Australia, for example — you can host your backend on local servers or cloud infrastructure to better serve those users, and a Chinese entity is not necessarily required.\n"
         },
         {
           "label": "Which Chinese platforms actually matter for my industry?",
