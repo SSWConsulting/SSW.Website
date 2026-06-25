@@ -7,6 +7,7 @@ _docs
 .vs
 Dockerfile
 node_modules
+.next
 npm-debug.log
 README.md
 test-results
