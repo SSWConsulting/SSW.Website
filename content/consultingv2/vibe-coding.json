@@ -167,7 +167,7 @@
           "guid": "7mtu8j",
           "altText": "Diagnose the Damage",
           "heading": "Diagnose the damage",
-          "description": "We audit your AI build to find what's broken, what's risky, and what's worth keeping, then give you a clear, honest path forward. No judgment.",
+          "description": "We audit your AI build to find what's broken, what's risky, and what's worth keeping, then give you a clear, honest path forward.",
           "embeddedButton": {
             "buttonText": ""
           }
