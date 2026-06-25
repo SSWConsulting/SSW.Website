@@ -26,13 +26,13 @@
       },
       "heading": "Stuck with a **half-built AI mess?** Meet your AI Plumbers",
       "isH1": true,
-      "description": "Lots of businesses experiment with AI and vibe coding, then end up with a half-working prototype that can't go live. SSW are the AI Plumbers - we rescue struggling AI projects, fix what's broken, and turn them into reliable, secure, production-ready solutions.\n",
+      "description": "Vibe-coded projects typically have shoddy plumbing. The moment real users and real data is plugged into your software, you’ve found leaks, bursting pipes, the water level is rising! We find the leaks, re-pipe your stack and pressure-test it until it holds under load.\n",
       "featureColumns": {
-        "twoColumns": true
+        "twoColumns": false
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book an AI leak inspection",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -104,17 +104,69 @@
       "_template": "logoCarousel"
     },
     {
+      "isStacked": false,
+      "heading": "Why your build is leaking",
+      "isH1": false,
+      "body": "The demo looked great. Then it met production. These are the four pipes that always burst first.",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "ol9z8n",
+          "altText": "",
+          "icon": "BiTestTube",
+          "heading": "No tests",
+          "description": "Every change is a coin flip. Bugs ship silently because nothing catches them.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "76nny",
+          "altText": "",
+          "icon": "BiShieldX",
+          "heading": "Security holes",
+          "description": "Secrets in the repo, open endpoints, no auth boundaries. A breach waiting to happen.\n\n",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "1o9ylr",
+          "altText": "",
+          "icon": "BiGitBranch",
+          "heading": "Spaghetti code",
+          "description": "AI wrote it, nobody understands it, and one small change breaks three other things.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "o9oad",
+          "altText": "Lorem Ipsum",
+          "icon": "BiErrorAlt",
+          "heading": "Breaks under load",
+          "description": "Fine for a demo. Falls over the moment real traffic turns the tap on.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 8
+      },
+      "_template": "cardCarousel"
+    },
+    {
       "isStacked": true,
-      "heading": "",
+      "heading": "Here’s where we come in",
       "isH1": false,
       "body": "",
-      "cardStyle": 0,
+      "cardStyle": 1,
       "cards": [
         {
           "guid": "7mtu8j",
           "altText": "Diagnose the Damage",
-          "icon": "BiSearchAlt",
-          "heading": "Diagnose the Damage",
+          "heading": "01 - Diagnose the Damage",
           "description": "We audit your AI build to find what's broken, what's risky, and what's worth keeping - then give you a clear, honest path forward. No judgment.",
           "embeddedButton": {
             "buttonText": ""
@@ -123,8 +175,7 @@
         {
           "guid": "lxpq3m",
           "altText": "Fix the Plumbing",
-          "icon": "BiSolidWrench",
-          "heading": "Fix the Plumbing",
+          "heading": "02 - Fix the Plumbing",
           "description": "Our engineers refactor the leaky code, plug the security holes, and replace the duct-tape with solid, maintainable foundations that won't burst under load.",
           "embeddedButton": {
             "buttonText": ""
@@ -133,8 +184,7 @@
         {
           "guid": "5q8kz",
           "altText": "Make it Production-Ready",
-          "icon": "BiCheckShield",
-          "heading": "Make it Production-Ready",
+          "heading": "03 - Make it Production-Ready",
           "description": "We harden, test, and ship your AI solution so it's secure, scalable, and ready for real users - backed by SSW's expert developers.",
           "embeddedButton": {
             "buttonText": "SSW People",
@@ -225,15 +275,15 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Let's get your **AI project** back on track",
+      "heading": "Stop the leak **before** it floods",
       "isH1": false,
-      "description": "Connect with our Account Managers to discuss how we can rescue your AI project and make it production-ready.\n",
+      "description": "Book a 30-minute leak inspection. We will tell you exactly what is broken and what it takes to make it production-ready.\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book an AI leak inspection",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
