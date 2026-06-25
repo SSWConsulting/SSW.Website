@@ -4,12 +4,6 @@ import React, { MouseEvent, useEffect, useState } from "react";
 
 export type ColorVariant = "primary" | "secondary";
 
-const variants: Record<ColorVariant, string> = {
-  primary: "bg-ssw-red hover:bg-sswDarkRed text-white",
-  secondary:
-    "bg-transparent outline -outline-1.5  outline-white -outline-offset-1.5 hover:outline-gray-200 hover:text-gray-200 text-white",
-};
-
 export type ButtonTinaFields = {
   textTinaField?: string;
 };
@@ -132,6 +126,12 @@ const RippleButton = React.forwardRef<
     );
   }
 );
+
+const variants: Record<ColorVariant, string> = {
+  primary: "border-1 border-ssw-red bg-ssw-red hover:bg-sswDarkRed text-white",
+  secondary:
+    "bg-transparent border-1 border-gray-300 text-gray-300 hover:bg-white/5 hover:text-gray-200",
+};
 
 RippleButton.displayName = "RippleButton";
 

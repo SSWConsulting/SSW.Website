@@ -161,7 +161,7 @@ export async function generateMetadata(
 
   const seo =
     newPage?.props?.data?.consultingv2?.seo ||
-    oldPage.props?.data?.consulting?.seo;
+    oldPage?.props?.data?.consulting?.seo;
 
   const headerUrl = newPage?.props?.header?.url || oldPage?.props?.header?.url;
   if (seo && !seo.canonical) {
