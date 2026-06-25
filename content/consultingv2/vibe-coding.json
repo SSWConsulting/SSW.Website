@@ -218,7 +218,7 @@
         },
         {
           "label": "My AI project sort of works but feels fragile. Can you help?",
-          "content": "Yes, that's exactly what we specialise in. We assess what you have, stabilise it, and turn a fragile prototype into a dependable, production-grade system.\n"
+          "content": "Yes! We assess what you have, stabilise it, and turn a fragile prototype into a dependable, production-grade system.\n"
         },
         {
           "label": "Do I have to throw away what I've already built?",
@@ -226,7 +226,7 @@
         },
         {
           "label": "What kinds of AI projects do you rescue?",
-          "content": "Chatbots, copilots, RAG systems, automations, vibe-coded prototypes, and AI features bolted onto existing apps, anything that started promising but stalled before production.\n"
+          "content": "Chatbots, copilots, RAG systems, automations, vibe-coded prototypes, and AI features bolted onto existing apps, and more.\n"
         },
         {
           "label": "How do you make an AI project \"production-ready\"?",
