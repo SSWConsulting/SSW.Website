@@ -107,7 +107,7 @@
       "isStacked": false,
       "heading": "Why your build is leaking",
       "isH1": false,
-      "body": "The demo looked great. Then it met production. These are the four pipes that always burst first.",
+      "body": "These are the four pipes that always burst first.",
       "cardStyle": 0,
       "cards": [
         {
