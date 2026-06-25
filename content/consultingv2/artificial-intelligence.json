@@ -254,6 +254,47 @@
     },
     {
       "topLabel": {
+        "labelText": "AI Rescue"
+      },
+      "heading": "Stuck with a **half-built AI mess?** Meet your AI Plumbers",
+      "isH1": false,
+      "description": "SSW helps businesses rescue struggling AI projects and turn them into reliable, production-ready solutions.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Rescue my AI project",
+          "buttonLink": "/consulting/vibe-coding",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/consulting/open-graph/ai.jpg",
+        "imageHeight": 630,
+        "imageWidth": 1200,
+        "altText": "SSW rescues struggling AI projects and makes them production-ready"
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "50px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
         "labelText": ""
       },
       "heading": "**YakShaver:** Our AI Agent in Action",
