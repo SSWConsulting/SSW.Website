@@ -1,7 +1,8 @@
 {
   "seo": {
     "title": "AI for Business Leaders | SSW Live Workshop",
-    "description": "A half-day live workshop for Australian C-suite leaders. Real case studies, real dollar figures, and open Q&A with engineers shipping AI today."
+    "description": "A half-day live workshop for Australian C-suite leaders. Real case studies, real dollar figures, and open Q&A with engineers shipping AI today.",
+    "showBreadcrumb": false
   },
   "blocks": [
     {
@@ -44,7 +45,7 @@
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
+        "mobilePlacement": "Below",
         "imageSource": "/images/eventsv2/ai-for-business-leaders-hero.webp",
         "imageHeight": 968,
         "imageWidth": 1625,
@@ -139,8 +140,8 @@
       "background": {
         "backgroundColour": 6
       },
-      "_template": "cardCarousel",
-      "anchorId": "pick-your-city"
+      "anchorId": "pick-your-city",
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "45px",
@@ -165,6 +166,7 @@
       "heading": "Designed for **decision-makers** at Australian enterprises",
       "isH1": false,
       "body": "",
+      "tabletTextAlignment": "Left",
       "cardStyle": 1,
       "cards": [
         {
@@ -201,8 +203,7 @@
       "background": {
         "backgroundColour": 0
       },
-      "_template": "cardCarousel",
-      "tabletTextAlignment": "Left"
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "45px",
@@ -382,7 +383,6 @@
       "background": {
         "backgroundColour": 6
       },
-      "anchorId": "agenda-cards",
       "_template": "accordionBlock"
     },
     {
@@ -408,6 +408,7 @@
       "heading": "Key learnings",
       "isH1": false,
       "body": "3 things everyone in C-Suite needs to know about AI in their business this year",
+      "tabletTextAlignment": "Left",
       "cardStyle": 0,
       "cards": [
         {
@@ -444,8 +445,7 @@
       "background": {
         "backgroundColour": 4
       },
-      "_template": "cardCarousel",
-      "tabletTextAlignment": "Left"
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "45px",
@@ -470,6 +470,7 @@
         "backgroundColour": 6
       },
       "heading": "The Australian businesses we've engineered for",
+      "tabletTextAlignment": "Left",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
@@ -514,8 +515,7 @@
           "altText": "Event Cinemas"
         }
       ],
-      "_template": "logoCarousel",
-      "tabletTextAlignment": "Left"
+      "_template": "logoCarousel"
     },
     {
       "spacerHeight": "45px",
@@ -591,6 +591,7 @@
       "heading": "Mike Smedley",
       "isH1": false,
       "description": "SSW · AI Engagement Lead · Melbourne\n\nMike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today - including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
+      "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": false
       },
@@ -606,8 +607,7 @@
         "imageWidth": 1024,
         "youtubeUrl": ""
       },
-      "_template": "imageTextBlock",
-      "tabletTextAlignment": "Left"
+      "_template": "imageTextBlock"
     },
     {
       "spacerHeight": "45px",
@@ -690,6 +690,7 @@
       "heading": "Pick your city",
       "isH1": false,
       "body": "Pick your city below and confirm your $99 seat in a few clicks. Secure checkout opens right here on the page.",
+      "tabletTextAlignment": "Left",
       "cardStyle": 0,
       "cards": [
         {
@@ -750,11 +751,10 @@
           }
         }
       ],
-      "_template": "cardCarousel",
       "background": {
         "backgroundColour": 4
       },
-      "tabletTextAlignment": "Left"
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "45px",
