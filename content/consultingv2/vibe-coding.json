@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Rescue Your AI Project (AI Plumber) | SSW",
-    "description": "Stuck with a half-built or failing AI project? SSW are the AI Plumbers - we rescue struggling AI and vibe-coded builds and turn them into reliable, secure, production-ready solutions.",
+    "description": "Stuck with a half-built or failing AI project? SSW are the AI Plumbers — we rescue struggling AI builds and make them reliable, secure and production-ready.",
     "canonical": "https://www.ssw.com.au/consulting/vibe-coding",
     "images": [
       {
@@ -26,7 +26,7 @@
       },
       "heading": "Stuck with a **half-built AI mess?** Meet your AI Plumbers",
       "isH1": true,
-      "description": "Vibe-coded projects typically have shoddy plumbing. The moment real users and real data is plugged into your software, you’ve found leaks, bursting pipes, the water level is rising! We find the leaks, re-pipe your stack and pressure-test it until it holds under load.\n",
+      "description": "Vibe-coded projects usually have shoddy plumbing. The moment real users and real data hit it, the leaks show — bursting pipes, rising water. We find the leaks, re-pipe your stack, and pressure-test it until it holds under load.\n",
       "featureColumns": {
         "twoColumns": false
       },
@@ -48,7 +48,7 @@
         "imageSource": "/images/consulting/ai-plumber-hero.webp",
         "imageHeight": 1234,
         "imageWidth": 1920,
-        "altText": "Emergency AI Plumber - SSW audits your AI build, refactors leaky code, and ships your AI solution"
+        "altText": "Emergency AI Plumber — SSW audits your AI build, refactors leaky code, and ships your AI solution"
       },
       "_template": "imageTextBlock"
     },
@@ -125,7 +125,7 @@
           "altText": "",
           "icon": "BiShieldX",
           "heading": "Security holes",
-          "description": "Secrets in the repo, open endpoints, no auth boundaries. A breach waiting to happen.\n\n",
+          "description": "Secrets in the repo, open endpoints, no auth boundaries. A breach waiting to happen.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -142,7 +142,7 @@
         },
         {
           "guid": "o9oad",
-          "altText": "Lorem Ipsum",
+          "altText": "",
           "icon": "BiErrorAlt",
           "heading": "Breaks under load",
           "description": "Fine for a demo. Falls over the moment real traffic turns the tap on.",
@@ -158,7 +158,7 @@
     },
     {
       "isStacked": true,
-      "heading": "Here’s where we come in",
+      "heading": "Here's where we come in",
       "isH1": false,
       "body": "",
       "cardStyle": 1,
@@ -166,8 +166,8 @@
         {
           "guid": "7mtu8j",
           "altText": "Diagnose the Damage",
-          "heading": "01 - Diagnose the Damage",
-          "description": "We audit your AI build to find what's broken, what's risky, and what's worth keeping - then give you a clear, honest path forward. No judgment.",
+          "heading": "01 — Diagnose the damage",
+          "description": "We audit your AI build to find what's broken, what's risky, and what's worth keeping — then give you a clear, honest path forward. No judgment.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -175,8 +175,8 @@
         {
           "guid": "lxpq3m",
           "altText": "Fix the Plumbing",
-          "heading": "02 - Fix the Plumbing",
-          "description": "Our engineers refactor the leaky code, plug the security holes, and replace the duct-tape with solid, maintainable foundations that won't burst under load.",
+          "heading": "02 — Fix the plumbing",
+          "description": "Our engineers refactor the leaky code, plug the security holes, and replace the duct tape with solid, maintainable foundations that won't burst under load.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -184,8 +184,8 @@
         {
           "guid": "5q8kz",
           "altText": "Make it Production-Ready",
-          "heading": "03 - Make it Production-Ready",
-          "description": "We harden, test, and ship your AI solution so it's secure, scalable, and ready for real users - backed by SSW's expert developers.",
+          "heading": "03 — Make it production-ready",
+          "description": "We harden, test, and ship your AI solution so it's secure, scalable, and ready for real users — backed by SSW's expert developers.",
           "embeddedButton": {
             "buttonText": "SSW People",
             "buttonLink": "https://www.ssw.com.au/people/"
@@ -218,7 +218,7 @@
         },
         {
           "label": "My AI project sort of works but feels fragile. Can you help?",
-          "content": "Yes - that's exactly what we specialise in. We assess what you have, stabilise it, and turn a fragile prototype into a dependable, production-grade system.\n"
+          "content": "Yes — that's exactly what we specialise in. We assess what you have, stabilise it, and turn a fragile prototype into a dependable, production-grade system.\n"
         },
         {
           "label": "Do I have to throw away what I've already built?",
@@ -226,11 +226,11 @@
         },
         {
           "label": "What kinds of AI projects do you rescue?",
-          "content": "Chatbots, copilots, RAG systems, automations, vibe-coded prototypes, and AI features bolted onto existing apps - anything that started promising but stalled before production.\n"
+          "content": "Chatbots, copilots, RAG systems, automations, vibe-coded prototypes, and AI features bolted onto existing apps — anything that started promising but stalled before production.\n"
         },
         {
           "label": "How do you make an AI project \"production-ready\"?",
-          "content": "We add proper security and compliance guardrails, automated testing, observability, and scalable architecture - so your solution stays powerful, safe, and maintainable as it grows.\n"
+          "content": "We add proper security and compliance guardrails, automated testing, observability, and scalable architecture — so your solution stays powerful, safe, and maintainable as it grows.\n"
         },
         {
           "label": "What happens in the free initial meeting?",
@@ -277,7 +277,7 @@
       },
       "heading": "Stop the leak **before** it floods",
       "isH1": false,
-      "description": "Book a 30-minute leak inspection. We will tell you exactly what is broken and what it takes to make it production-ready.\n",
+      "description": "Book a 30-minute leak inspection. We'll tell you exactly what's broken and what it takes to make it production-ready.\n",
       "featureColumns": {
         "twoColumns": true
       },

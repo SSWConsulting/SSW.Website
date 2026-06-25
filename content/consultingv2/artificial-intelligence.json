@@ -280,7 +280,7 @@
         "imageSource": "/images/consulting/ai-plumber-hero.webp",
         "imageHeight": 1234,
         "imageWidth": 1920,
-        "altText": "Emergency AI Plumber - SSW audits your AI build, refactors leaky code, and ships your AI solution"
+        "altText": "Emergency AI Plumber — SSW audits your AI build, refactors leaky code, and ships your AI solution"
       },
       "_template": "imageTextBlock"
     },
