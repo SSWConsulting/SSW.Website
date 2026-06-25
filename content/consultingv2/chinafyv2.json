@@ -33,9 +33,9 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "imageSource": "/images/012.jpg",
-        "imageHeight": 4480,
-        "imageWidth": 6720
+        "imageSource": "/images/Collaborating in a modern workspace.png",
+        "imageHeight": 941,
+        "imageWidth": 1672
       },
       "_template": "imageTextBlock"
     },
@@ -264,7 +264,7 @@
       "accordionItems": [
         {
           "label": "Do I need a Chinese business entity to operate on WeChat?",
-          "content": "No. Overseas entities can directly register and authenticate. However, a domestic Chinese entity is required if your Mini Program's server is hosted in mainland China (due to ICP filing regulations). Additionally, overseas entities face more restrictions regarding the types of services they can offer.\n"
+          "content": "Not necessarily. Overseas companies can register and develop Mini Programs, but the requirements depend on where your target users are located.\n\nIf your target users are in China, it's generally best to host your backend infrastructure and data there for performance and compliance reasons. In that case, a Chinese legal entity is typically required to support ICP filing and related regulations.\n\nIf your target users are outside China — in Australia, for example — you can host your backend on local servers or cloud infrastructure to better serve those users, and a Chinese entity is not necessarily required.\n"
         },
         {
           "label": "Which Chinese platforms actually matter for my industry?",
