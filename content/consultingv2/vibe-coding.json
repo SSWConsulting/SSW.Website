@@ -125,7 +125,7 @@
           "altText": "",
           "icon": "BiShieldX",
           "heading": "Security holes",
-          "description": "Secrets in the repo, open endpoints, no auth boundaries. A breach waiting to happen.",
+          "description": "Secrets in the repo, open endpoints, no auth boundaries. A security nightmare.",
           "embeddedButton": {
             "buttonText": ""
           }
