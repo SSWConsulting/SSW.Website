@@ -41,14 +41,14 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "mediaType": "youtube",
+        "mediaType": "image",
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageHeight": 768,
-        "imageWidth": 1024,
-        "youtubeUrl": "https://www.youtube.com/watch?v=5k2-NOh2tk0",
-        "altText": "How vibe coding leaves you with an AI mess - and how SSW fixes it"
+        "imageSource": "/images/consulting/ai-plumber-hero.png",
+        "imageHeight": 941,
+        "imageWidth": 1672,
+        "altText": "An SSW AI Plumber fixing a leaking AI machine, turning a binary-code leak into a reliable, production-ready system"
       },
       "_template": "imageTextBlock"
     },
