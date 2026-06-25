@@ -46,9 +46,9 @@
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
         "imageSource": "/images/consulting/ai-plumber-hero.png",
-        "imageHeight": 941,
-        "imageWidth": 1672,
-        "altText": "An SSW AI Plumber fixing a leaking AI machine, turning a binary-code leak into a reliable, production-ready system"
+        "imageHeight": 1104,
+        "imageWidth": 1944,
+        "altText": "Emergency AI Plumber - SSW audits your AI build, refactors leaky code, and ships your AI solution"
       },
       "_template": "imageTextBlock"
     },
