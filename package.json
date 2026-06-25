@@ -14,7 +14,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "tinacms dev -c \"next dev --turbopack\"",
-    "build": "tinacms build --content=local && next build && next-sitemap --config next-sitemap.config.js",
+    "build": "tinacms build && next build && next-sitemap --config next-sitemap.config.js",
     "partytown": "partytown copylib public/~partytown",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "tinacms build && node_modules/next/dist/bin/next start -p $PORT",
