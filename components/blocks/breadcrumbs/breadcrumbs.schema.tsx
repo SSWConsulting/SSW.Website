@@ -15,6 +15,19 @@ export const BreadcrumbSchema: Template = {
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
     {
+      name: "hideOn",
+      label: "Hide on",
+      description:
+        "Hide this breadcrumb on the selected screen sizes (visible on all sizes by default).",
+      type: "string",
+      list: true,
+      options: [
+        { value: "mobile", label: "Mobile (< 768px)" },
+        { value: "tablet", label: "Tablet (768–1024px)" },
+        { value: "desktop", label: "Desktop (≥ 1024px)" },
+      ],
+    },
+    {
       type: "string",
       label: "Final Breadcrumb",
       name: "finalBreadcrumb",

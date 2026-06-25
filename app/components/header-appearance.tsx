@@ -4,7 +4,6 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 export type MobileHeaderAppearance = {
   hideFlag?: boolean | null;
   hideContactButton?: boolean | null;
-  hideBreadcrumb?: boolean | null;
 };
 type Ctx = {
   mobile: MobileHeaderAppearance;

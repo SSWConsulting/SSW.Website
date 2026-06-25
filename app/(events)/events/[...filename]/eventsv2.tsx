@@ -17,7 +17,7 @@ type EventsV2PageProps<T> = {
 const EventsV2Page = memo(
   function EventsV2Page({ tinaProps }: EventsV2PageProps<object>) {
     const { blocks, appearance } = tinaProps.data.eventsv2;
-    useMobileHeaderAppearance(appearance?.mobile ?? null);
+    useMobileHeaderAppearance(appearance ?? null);
     return (
       <div className="dark flex h-full flex-col">
         <Section color={"toggleLightMode"}>
