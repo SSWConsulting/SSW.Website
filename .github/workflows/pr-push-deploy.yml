@@ -122,7 +122,6 @@ jobs:
 
   build:
     name: Build and upload artifacts
-    needs: check-slot-capacity
     uses: ./.github/workflows/template-build.yml
     with:
       tag: pr-${{ github.event.number }}
@@ -133,7 +132,7 @@ jobs:
 
   pr-deploy:
     name: Deploy to slot
-    needs: build
+    needs: [check-slot-capacity, build]
     runs-on: ubuntu-latest
     permissions:
       id-token: write
