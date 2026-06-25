@@ -62,10 +62,6 @@ var appSettings = [
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/YOUTUBE-PRIVATE-KEY)'
   }
   {
-    name: 'POWER_AUTOMATE_LEAD_WEBHOOK_URL'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/POWER-AUTOMATE-LEAD-WEBHOOK-URL)'
-  }
-  {
     name: 'WEBSITE_TIME_ZONE'
     value: 'Australia/Sydney'
   }

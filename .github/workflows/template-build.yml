@@ -23,6 +23,8 @@ on:
         required: true
       JOTFORM_API_KEY:
         required: true
+      POWER_AUTOMATE_LEAD_WEBHOOK_URL:
+        required: true
 
 defaults:
   run:
@@ -111,6 +113,7 @@ jobs:
             SITE_URL=https://www.ssw.com.au
             TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
             JOTFORM_API_KEY=${{ secrets.JOTFORM_API_KEY }}
+            POWER_AUTOMATE_LEAD_WEBHOOK_URL=${{ secrets.POWER_AUTOMATE_LEAD_WEBHOOK_URL }}
             NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{github.event.number}}.azurewebsites.net/
 
           tags: |
