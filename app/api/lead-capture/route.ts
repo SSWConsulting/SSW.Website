@@ -1,14 +1,32 @@
 import { NextRequest } from "next/server";
 
 /**
- * Receives lead-capture answers from the V3LeadCapture block and forwards them
- * to JotForm's submissions API, keeping the API key server-side.
+ * Receives lead-capture answers from the V3LeadCapture block, records them in
+ * JotForm, and triggers the CRM flow.
  *
- * Body: { jotFormId: string, fields: Record<qid, value> }
- * Each `fields` key is a JotForm question id (qid); JotForm expects them encoded
- * as `submission[{qid}]=value`. An array value is a multi-option field, encoded
- * as `submission[{qid}][{index}]=value` (e.g. location → country + state).
+ * Two steps, because JotForm's webhook (which drives the Power Automate → CRM
+ * flow) only fires on real form submissions — not on API writes, and the form's
+ * captcha blocks a server-side form submission. So we:
+ *   1. write the lead to JotForm via the submissions API (lands in the table), and
+ *   2. POST the lead straight to a Power Automate HTTP-trigger flow that does the
+ *      CRM work, bypassing the form webhook entirely.
+ *
+ * Body: { lead: Record<fieldKey, value> } with semantic keys (name, email, …).
  */
+const JOTFORM_ID = "233468468973070";
+
+// Semantic lead keys → JotForm question ids for the submissions API.
+const QID: Record<string, string> = {
+  name: "16",
+  email: "4",
+  company: "7",
+  phone: "17",
+  location: "6",
+  hearAboutUs: "8",
+  message: "9",
+  landingPageUrl: "20",
+};
+
 export async function POST(request: NextRequest) {
   try {
     const apiKey = process.env.JOTFORM_API_KEY;
@@ -19,32 +37,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { jotFormId, fields } = await request.json();
-
-    if (!jotFormId || !fields || typeof fields !== "object") {
-      return Response.json(
-        { message: "Missing jotFormId or fields." },
-        { status: 400 }
-      );
+    const { lead } = await request.json();
+    if (!lead || typeof lead !== "object") {
+      return Response.json({ message: "Missing lead." }, { status: 400 });
     }
 
+    // 1. Record the lead in JotForm (lands in the table).
     const body = new URLSearchParams();
-    for (const [qid, value] of Object.entries(fields)) {
-      if (Array.isArray(value)) {
-        value.forEach((entry, index) => {
-          if (entry != null && entry !== "") {
-            body.append(`submission[${qid}][${index}]`, String(entry));
-          }
-        });
-      } else if (value != null && value !== "") {
+    for (const [key, qid] of Object.entries(QID)) {
+      const value = lead[key];
+      if (value != null && value !== "") {
         body.append(`submission[${qid}]`, String(value));
       }
     }
 
-    const res = await fetch(
-      `https://api.jotform.com/form/${encodeURIComponent(
-        jotFormId
-      )}/submissions?apiKey=${encodeURIComponent(apiKey)}`,
+    const jf = await fetch(
+      `https://api.jotform.com/form/${JOTFORM_ID}/submissions?apiKey=${encodeURIComponent(
+        apiKey
+      )}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -52,12 +62,34 @@ export async function POST(request: NextRequest) {
       }
     );
 
-    if (!res.ok) {
-      const detail = await res.text();
-      console.error("JotForm submission failed:", res.status, detail);
+    if (!jf.ok) {
+      const detail = await jf.text();
+      console.error("JotForm submission failed:", jf.status, detail);
       return Response.json(
         { message: "Failed to submit lead." },
         { status: 502 }
+      );
+    }
+
+    // 2. Trigger the CRM flow directly. The lead is already saved, so a flow
+    //    failure is logged but doesn't fail the user's submission.
+    const flowUrl = process.env.POWER_AUTOMATE_LEAD_WEBHOOK_URL;
+    if (flowUrl) {
+      const flow = await fetch(flowUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(lead),
+      });
+      if (!flow.ok) {
+        console.error(
+          "Power Automate trigger failed:",
+          flow.status,
+          await flow.text()
+        );
+      }
+    } else {
+      console.warn(
+        "POWER_AUTOMATE_LEAD_WEBHOOK_URL not set — CRM flow not triggered."
       );
     }
 

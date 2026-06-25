@@ -11,20 +11,6 @@ import { TiArrowLeft } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-// Every use of this block submits to the same JotForm, so the form id and the
-// question-id (qid) mapping are fixed here rather than configured in the CMS.
-const JOTFORM_ID = "233468468973070";
-const QID = {
-  name: "16",
-  email: "4",
-  company: "7",
-  phone: "17",
-  location: "6",
-  hearAboutUs: "8",
-  message: "9",
-  landingPageUrl: "20",
-};
-
 const HEAR_ABOUT_OPTIONS = [
   "Conference",
   "Google",
@@ -115,24 +101,24 @@ export function V3LeadCapture({ data }) {
     if (status === "submitting") return;
     setStatus("submitting");
 
-    const fields: Record<string, string | string[]> = {
-      [QID.name]: name.trim(),
-      [QID.email]: email.trim(),
-      [QID.company]: company.trim(),
-      [QID.phone]: phone.trim(),
-      [QID.location]: locationValue,
-      [QID.message]: message.trim(),
+    const lead: Record<string, string> = {
+      name: name.trim(),
+      email: email.trim(),
+      company: company.trim(),
+      phone: phone.trim(),
+      location: locationValue,
+      message: message.trim(),
     };
-    if (hearAboutUs) fields[QID.hearAboutUs] = hearAboutUs;
+    if (hearAboutUs) lead.hearAboutUs = hearAboutUs;
     if (typeof window !== "undefined") {
-      fields[QID.landingPageUrl] = window.location.href;
+      lead.landingPageUrl = window.location.href;
     }
 
     try {
       const res = await fetch("/api/lead-capture", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ jotFormId: JOTFORM_ID, fields }),
+        body: JSON.stringify({ lead }),
       });
       setStatus(res.ok ? "success" : "error");
     } catch {
