@@ -145,7 +145,7 @@
           "altText": "",
           "icon": "BiErrorAlt",
           "heading": "Breaks under load",
-          "description": "Fine for a demo. Falls over the moment real traffic turns the tap on.",
+          "description": "Fine for a demo. Falls over the moment real traffic arrives.",
           "embeddedButton": {
             "buttonText": ""
           }
