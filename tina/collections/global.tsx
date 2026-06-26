@@ -254,6 +254,7 @@ export const globalSchema: Collection = {
       ],
     },
     {
+      // Includes Threads + BlueSky options added 2026-06.
       type: "object",
       label: "Socials",
       name: "socials",
