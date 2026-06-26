@@ -1,11 +1,10 @@
-import AlternatingText from "@/components/alternating-text";
-import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
 import { tinaField } from "tinacms/dist/react";
+import { SectionHeader } from "../shared/sectionHeader";
 
 const ArrowButton = ({ className = "size-16" }: { className?: string }) => (
   <span
@@ -141,28 +140,7 @@ export function V3FeaturedProducts({ data }) {
         padding="px-4 sm:px-8"
         className="flex max-w-[1280px] flex-col gap-12 py-16 md:gap-20 md:py-24"
       >
-        {/* Two-column header: heading left, description + CTA right */}
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          {data?.heading && (
-            <h2
-              data-tina-field={tinaField(data, "heading")}
-              className="m-0 w-full p-0 text-4xl leading-tight text-white md:max-w-[560px] md:flex-1 lg:text-5xl"
-            >
-              <AlternatingText text={data.heading} />
-            </h2>
-          )}
-          <div className="flex w-full flex-col items-start md:max-w-[560px] md:flex-1">
-            {data?.subtitle && (
-              <p
-                data-tina-field={tinaField(data, "subtitle")}
-                className="max-w-[560px] text-base font-light text-gray-400"
-              >
-                {data.subtitle}
-              </p>
-            )}
-            <ButtonRow data={data} className="mt-6 justify-start" />
-          </div>
-        </div>
+        <SectionHeader data={data} />
 
         {hasHighlight && <HighlightCard project={data.highlighted} />}
 
