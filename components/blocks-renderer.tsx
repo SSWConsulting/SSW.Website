@@ -164,6 +164,10 @@ const V3Hero = dynamic(() =>
   import("./blocks/v3/hero/hero").then((mod) => mod.V3Hero)
 );
 
+const V3HeroBox = dynamic(() =>
+  import("./blocks/v3/heroBox/heroBox").then((mod) => mod.V3HeroBox)
+);
+
 const V3LogoCarousel = dynamic(() =>
   import("./blocks/v3/logoCarousel/logoCarousel").then(
     (mod) => mod.V3LogoCarousel
@@ -255,6 +259,7 @@ const componentMap = {
   Spacer,
   UtilityButton,
   V3Hero,
+  V3HeroBox,
   V3LogoCarousel,
   V3FeatureSteps,
   V3Process,
