@@ -95,7 +95,7 @@ export function V3ImageCards({ data }) {
                         {card.description}
                       </p>
                     )}
-                    <span className="mt-auto flex size-10 shrink-0 scale-100 items-center justify-center self-end rounded-full bg-white p-2 text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-110">
+                    <span className="mt-auto flex size-10 shrink-0 scale-100 items-center justify-center self-end rounded-full bg-white p-2 text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
                       <BsArrowUpRight className="size-4" />
                     </span>
                   </div>
