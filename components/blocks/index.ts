@@ -58,6 +58,8 @@ import { V3FeatureStepsSchema } from "./v3/featureSteps/featureSteps.schema";
 import { V3HeroSchema } from "./v3/hero/hero.schema";
 import { V3HeroBoxSchema } from "./v3/heroBox/heroBox.schema";
 import { V3ImageCardsSchema } from "./v3/imageCards/imageCards.schema";
+import { V3VideoHeroSchema } from "./v3/videoHero/videoHero.schema";
+import { V3FeaturedProductsSchema } from "./v3/featuredProducts/featuredProducts.schema";
 import { V3ProcessSchema } from "./v3/process/process.schema";
 import { V3StatisticsTemplate } from "./v3/statistics/statistics.schema";
 import { V3CtaSchema } from "./v3/cta/cta.schema";
@@ -77,6 +79,8 @@ export const pageBlocks: Template[] = [
   V3HeroSchema,
   V3HeroBoxSchema,
   V3ImageCardsSchema,
+  V3VideoHeroSchema,
+  V3FeaturedProductsSchema,
   V3LogoCarouselSchema,
   V3FeatureStepsSchema,
   V3ProcessSchema,
