@@ -182,6 +182,12 @@ const V3FeaturedProducts = dynamic(() =>
   )
 );
 
+const V3PeopleCarousel = dynamic(() =>
+  import("./blocks/v3/peopleCarousel/peopleCarousel").then(
+    (mod) => mod.V3PeopleCarousel
+  )
+);
+
 const V3LogoCarousel = dynamic(() =>
   import("./blocks/v3/logoCarousel/logoCarousel").then(
     (mod) => mod.V3LogoCarousel
@@ -277,6 +283,7 @@ const componentMap = {
   V3ImageCards,
   V3VideoHero,
   V3FeaturedProducts,
+  V3PeopleCarousel,
   V3LogoCarousel,
   V3FeatureSteps,
   V3Process,
