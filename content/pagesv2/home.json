@@ -259,6 +259,80 @@
         }
       ],
       "_template": "v3LogoCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "We work together to form an amazing collective brain",
+      "subtitle": "We're enthusiastic and have a 'Make it happen' culture.",
+      "people": [
+        {
+          "name": "Adam Cogan",
+          "role": "CEO + Chief Architect",
+          "image": {
+            "imageSource": "/images/people-carousel/adam.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
+          "linkedin": "https://www.linkedin.com/in/adamcogan/",
+          "twitter": "https://x.com/AdamCogan"
+        },
+        {
+          "name": "Gert Marx",
+          "role": "VIC State Manager + Solution Architect",
+          "image": {
+            "imageSource": "/images/people-carousel/gert.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
+          "linkedin": "https://www.linkedin.com/in/gertmarx/",
+          "twitter": "https://x.com/GertMarx"
+        },
+        {
+          "name": "Penny Walker",
+          "role": "QLD State + International Manager",
+          "image": {
+            "imageSource": "/images/people-carousel/penny.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
+          "linkedin": "https://www.linkedin.com/in/penny-walker-%F0%9F%96%96-9878b624/"
+        },
+        {
+          "name": "Michael Smedley",
+          "role": "Head of Sales",
+          "image": {
+            "imageSource": "/images/people-carousel/mike.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
+          "linkedin": "https://www.linkedin.com/in/michaelsmedley/",
+          "twitter": "https://x.com/michaelsmedley"
+        }
+      ],
+      "_template": "v3PeopleCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "videoUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA",
+      "greyscaleThumbnail": true,
+      "figure": "Video: The people behind SSW - Australia's leading software consulatancy (3 min)",
+      "heading": "Why choose SSW?",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.\n",
+      "highlights": [
+        {
+          "title": "Deep expertise",
+          "desc2": "We go deep on every technology we touch – building with it, codifying best practices, and making that knowledge freely available.\n"
+        },
+        {
+          "title": "Results over Rhetoric",
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?\n"
+        }
+      ],
+      "_template": "v3VideoHighlights"
     }
   ]
 }
