@@ -98,11 +98,11 @@ export const V3HeroBox = ({ data, priority = false }) => {
 
           {/* Scroll-down indicator nested in a concave scoop */}
           {data?.showScrollIndicator && (
-            <div className="absolute bottom-0 right-16 z-20 hidden h-[70px] w-[336px] sm:block">
+            <div className="pointer-events-none absolute bottom-0 right-16 z-20 hidden w-[336px] sm:block">
               <svg
                 viewBox="0 0 336 125"
                 preserveAspectRatio="none"
-                className="absolute inset-0 h-full w-full"
+                className="absolute bottom-[-43px] left-0 h-[125px] w-full"
                 aria-hidden="true"
               >
                 <path
@@ -114,7 +114,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 type="button"
                 aria-label="Scroll to next section"
                 onClick={scrollToNext}
-                className="group absolute bottom-3 left-1/2 flex size-11 -translate-x-1/2 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
+                className="group pointer-events-auto absolute bottom-3 left-1/2 flex size-11 -translate-x-1/2 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
               >
                 <FiArrowDown className="size-5 transition-transform group-hover:translate-y-0.5" />
               </button>
