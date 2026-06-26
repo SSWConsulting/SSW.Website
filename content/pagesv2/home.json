@@ -35,6 +35,50 @@
       "applyRedTint": true,
       "showScrollIndicator": true,
       "_template": "v3HeroBox"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "brow": "",
+      "heading": "Australia's leading AI, .NET and Cloud Consultants",
+      "subtitle": "Tell us about your platform. We'll show you what's possible.",
+      "cardBackgroundColour": 4,
+      "showBorder": false,
+      "cards": [
+        {
+          "title": "Web Development",
+          "description": "Ever since SSW developed the very first .NET Website in Australia, we've been known as leaders in Web Development.",
+          "graphic": {
+            "imageSource": "/images/custom-icons/graphic-1.png",
+            "imageHeight": 150,
+            "imageWidth": 150
+          },
+          "link": "/",
+          "newTab": false
+        },
+        {
+          "title": "Artificial Intelligence",
+          "description": "Custom AI solutions using LLMs (ChatGPT, Llama, Gemini, Claude, etc) and Azure AI to revolutionize your business.",
+          "graphic": {
+            "imageSource": "/images/custom-icons/custom-graphic-2.png",
+            "imageHeight": 150,
+            "imageWidth": 150
+          },
+          "link": "/"
+        },
+        {
+          "title": "DevOps & Cloud",
+          "description": "Make sure your software ships by using SSW's best practices in Azure, DevOps and Docker Containers.",
+          "graphic": {
+            "imageSource": "/images/custom-icons/custom-graphic3.png",
+            "imageHeight": 150,
+            "imageWidth": 150
+          },
+          "link": "/"
+        }
+      ],
+      "_template": "v3ImageCards"
     }
   ]
 }
