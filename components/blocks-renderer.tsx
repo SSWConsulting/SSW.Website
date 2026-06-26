@@ -188,6 +188,14 @@ const V3PeopleCarousel = dynamic(() =>
   )
 );
 
+const V3Events = dynamic(() =>
+  import("./blocks/v3/events/events").then((mod) => mod.V3Events)
+);
+
+const V3Globe = dynamic(() =>
+  import("./blocks/v3/globe/globe").then((mod) => mod.V3Globe)
+);
+
 const V3LogoCarousel = dynamic(() =>
   import("./blocks/v3/logoCarousel/logoCarousel").then(
     (mod) => mod.V3LogoCarousel
@@ -284,6 +292,8 @@ const componentMap = {
   V3VideoHero,
   V3FeaturedProducts,
   V3PeopleCarousel,
+  V3Events,
+  V3Globe,
   V3LogoCarousel,
   V3FeatureSteps,
   V3Process,
