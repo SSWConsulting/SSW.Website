@@ -333,6 +333,127 @@
         }
       ],
       "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Upcoming Events",
+      "subtitle": "We run webinars, live events, in-house and online courses.",
+      "buttons": [
+        {
+          "buttonText": "Explore Events & Training",
+          "colour": 0
+        }
+      ],
+      "featuredEvent": {
+        "title": "Angular Workshop",
+        "description": "In this 2-day Angular Workshop, you will get hands on experience building applications from scratch with guidance from Angular experts.",
+        "image": {
+          "imageSource": "/images/new-homepage-background-assets/angular-workshop-fra.png",
+          "imageHeight": 1754,
+          "imageWidth": 3444
+        },
+        "eventDate": "2026-08-14T05:46:28.184Z",
+        "spotsText": "10 Spots left!"
+      },
+      "eventCards": [
+        {
+          "title": ".NET Developer Workshop",
+          "description": "Join our .NET developer workshop to master the latest open-source, cross-platform framework and elevate your coding skills.",
+          "duration": "45 minutes",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/dotnet-dev-workshop.png",
+            "imageHeight": 1278,
+            "imageWidth": 1917
+          }
+        },
+        {
+          "title": "Clean Architecture Workshop",
+          "description": "Join our workshop to master clean architecture and elevate your full-stack development and consulting skills.",
+          "duration": "45 minutes",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/ca-workshop.png",
+            "imageHeight": 1278,
+            "imageWidth": 2272
+          }
+        },
+        {
+          "title": "Artificial Intelligence Workshop",
+          "description": "Join us for an exciting AI workshop where you'll explore the latest advancements in artificial intelligence.",
+          "duration": "45 minutes",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/ai-workshop.png",
+            "imageHeight": 1721,
+            "imageWidth": 2891
+          }
+        }
+      ],
+      "_template": "v3Events"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "SSW around the globe",
+      "subtitle": "Partner with us, any time and any place.",
+      "buttons": [
+        {
+          "buttonText": "Schedule a Free Discovery Call",
+          "colour": 0
+        }
+      ],
+      "offices": [
+        {
+          "name": "Sydney",
+          "email": "info@ssw.com.au",
+          "phone": "+61 2 9953 3000",
+          "address": "Level 1, 81-91 Military Road\nNeutral Bay, Sydney, NSW 2089, Australia",
+          "lat": -33.84,
+          "lng": 151.21
+        },
+        {
+          "name": "Brisbane",
+          "email": "info@ssw.com.au",
+          "phone": "+61 7 3142 5400",
+          "address": "Brisbane, QLD, Australia",
+          "lat": -27.47,
+          "lng": 153.02
+        },
+        {
+          "name": "Melbourne",
+          "email": "info@ssw.com.au",
+          "phone": "+61 3 8400 4500",
+          "address": "Melbourne, VIC, Australia",
+          "lat": -37.81,
+          "lng": 144.96
+        },
+        {
+          "name": "Newcastle",
+          "email": "info@ssw.com.au",
+          "phone": "+61 2 4925 8200",
+          "address": "Newcastle, NSW, Australia",
+          "lat": -32.93,
+          "lng": 151.78
+        },
+        {
+          "name": "Hangzhou, China",
+          "email": "info@ssw.com.au",
+          "phone": "+86 571 8765 4321",
+          "address": "Hangzhou, China",
+          "lat": 30.27,
+          "lng": 120.15
+        },
+        {
+          "name": "Strasbourg, France",
+          "email": "info@ssw.com.au",
+          "phone": "+33 3 88 00 00 00",
+          "address": "Strasbourg, France",
+          "lat": 48.57,
+          "lng": 7.75
+        }
+      ],
+      "_template": "v3Globe"
     }
   ]
 }
