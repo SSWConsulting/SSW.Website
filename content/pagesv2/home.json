@@ -79,6 +79,106 @@
         }
       ],
       "_template": "v3ImageCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Why teams choose **SSW**",
+      "statistics": [
+        {
+          "figure": 7000,
+          "figureSuffix": "+",
+          "heading": "Solutions delivered",
+          "description": "Enterprise-grade software"
+        },
+        {
+          "figure": 1800,
+          "figureSuffix": "+",
+          "heading": "Happy clients",
+          "description": "Across all industries"
+        },
+        {
+          "figure": 27,
+          "figureSuffix": "+",
+          "heading": "Years experience",
+          "description": "Trusted since 1999"
+        }
+      ],
+      "_template": "v3Statistics"
+    },
+    {
+      "videoBackground": "/images/videos/Untitled design.mp4",
+      "heading": "AI solutions that deliver, the first time.",
+      "buttons": [
+        {
+          "buttonText": "Schedule a Free Discovery Call",
+          "colour": 0
+        }
+      ],
+      "_template": "v3VideoHero"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Featured Projects",
+      "subtitle": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.",
+      "buttons": [
+        {
+          "buttonText": "Our Client Stories"
+        }
+      ],
+      "highlighted": {
+        "logo": {
+          "altText": "FPE Client Logo",
+          "imageSource": "/images/clientLogos/FPE.png",
+          "imageHeight": 128,
+          "imageWidth": 128
+        },
+        "title": "AI Powered Navigation for French Payroll Expert",
+        "description": "French Payroll Expert (FPE) faced a high volume of inquiries from their clients about French legislation. The time spent responding to these time-consuming emails was a resource our client knew they could save, especially with the emergence of artificial intelligence. ",
+        "image": {
+          "altText": "FPE Background Asset",
+          "imageSource": "/images/new-homepage-background-assets/200bfef7f1e17564508eda6b1106ff931217f4ce.png",
+          "imageHeight": 1432,
+          "imageWidth": 2555
+        },
+        "link": "/"
+      },
+      "products": [
+        {
+          "title": "Improving Radiologists' Ability to Detect Breast Cancer",
+          "description": "Improving radiologists’ ability to detect breast cancer",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/254e4a248ee8390a3d3e3833f4a3b89e8891e19c.png",
+            "imageHeight": 1427,
+            "imageWidth": 2547
+          },
+          "link": "/"
+        },
+        {
+          "title": "Helping Deaf Children reach their full potential",
+          "description": "Developing web apps for clinical assessment of deaf children",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/2ce1529fac980d08f5ac53a18e2e343d961b0138.png",
+            "imageHeight": 1432,
+            "imageWidth": 2551
+          },
+          "link": "/"
+        },
+        {
+          "title": "How We Developed 'KNOWnoise' with Hutchison Weller",
+          "description": "Managing construction noise with the new web app",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/f49a5b53bd803d89a5b84d65df8fbb02d78d16e3.png",
+            "imageHeight": 1432,
+            "imageWidth": 2556
+          },
+          "link": "/"
+        }
+      ],
+      "_template": "v3FeaturedProducts"
     }
   ]
 }
