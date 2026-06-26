@@ -15,7 +15,7 @@
   "blocks": [
     {
       "background": {
-        "backgroundColour": 8,
+        "backgroundColour": 7,
         "bleed": false
       },
       "heading": "Three decades of enterprise solutions",
@@ -38,7 +38,7 @@
     },
     {
       "background": {
-        "backgroundColour": 8
+        "backgroundColour": 7
       },
       "brow": "",
       "heading": "Australia's leading AI, .NET and Cloud Consultants",
@@ -82,7 +82,7 @@
     },
     {
       "background": {
-        "backgroundColour": 8
+        "backgroundColour": 7
       },
       "heading": "Why teams choose **SSW**",
       "statistics": [
@@ -120,7 +120,7 @@
     },
     {
       "background": {
-        "backgroundColour": 8
+        "backgroundColour": 7
       },
       "heading": "Featured Projects",
       "subtitle": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.",
@@ -182,7 +182,7 @@
     },
     {
       "background": {
-        "backgroundColour": 8,
+        "backgroundColour": 7,
         "gridOverlay": true,
         "redGlow": true
       },
@@ -218,9 +218,9 @@
     },
     {
       "background": {
-        "backgroundColour": 8,
+        "backgroundColour": 7,
         "bleed": false,
-        "gridOverlay": false,
+        "gridOverlay": true,
         "redGlow": false
       },
       "heading": "",
@@ -315,10 +315,12 @@
     },
     {
       "background": {
-        "backgroundColour": 8
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": false
       },
       "videoUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA",
-      "greyscaleThumbnail": true,
+      "greyscaleThumbnail": false,
       "figure": "Video: The people behind SSW - Australia's leading software consulatancy (3 min)",
       "heading": "Why choose SSW?",
       "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.\n",
@@ -393,7 +395,9 @@
     },
     {
       "background": {
-        "backgroundColour": 8
+        "backgroundColour": 7,
+        "bleed": false,
+        "redGlow": false
       },
       "heading": "SSW around the globe",
       "subtitle": "Partner with us, any time and any place.",
