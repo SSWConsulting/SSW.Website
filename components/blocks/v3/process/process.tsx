@@ -64,7 +64,7 @@ export function V3Process({ data }) {
                         aria-hidden
                         className="pointer-events-none absolute inset-0 -z-10 scale-165 rounded-full bg-red-radial opacity-40 blur-sm"
                       />
-                      {String(index + 1).padStart(2)}
+                      {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="ml-3 h-px flex-1 bg-gradient-to-r from-sswRed/60 to-transparent" />
                   </div>
