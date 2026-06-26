@@ -24,7 +24,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
     heroRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
 
   return (
-    <V2ComponentWrapper data={data} className="py-6 sm:py-10">
+    <V2ComponentWrapper data={data} className="py-6 sm:py-20">
       <Container
         size="custom"
         width="custom"
@@ -64,7 +64,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
           {hasImage && (
             <div
               aria-hidden="true"
-              className="absolute inset-0 z-[2] bg-gradient-to-r from-black from-30% via-[#400505] to-transparent"
+              className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_70%_45%,#3E080899_0%,#3E080833_30%,#3E080800_60%),linear-gradient(90deg,#080808_25%,#3B0B0B_55%,#3E080844_78%,#40050500_100%)]"
             />
           )}
 
