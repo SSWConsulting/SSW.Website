@@ -6,6 +6,7 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
+import { Turnstile } from "@marsidev/react-turnstile";
 import { useState } from "react";
 import { TiArrowLeft } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
@@ -47,6 +48,7 @@ const AU_STATE_NAMES: Record<string, string> = {
 };
 
 const TOTAL_SCREENS = 3;
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const primaryButtonClass =
   "rounded-lg bg-sswRed px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50";
@@ -71,6 +73,7 @@ export function V3LeadCapture({ data }) {
   const [hearAboutUs, setHearAboutUs] = useState("");
   // Screen 3 — how can we help
   const [message, setMessage] = useState("");
+  const [captchaToken, setCaptchaToken] = useState("");
 
   const progress = Math.round(((current + 1) / TOTAL_SCREENS) * 100);
   const goBack = () => setCurrent((c) => Math.max(c - 1, 0));
@@ -114,11 +117,16 @@ export function V3LeadCapture({ data }) {
       lead.landingPageUrl = window.location.href;
     }
 
+    if (!captchaToken) {
+      setStatus("error");
+      return;
+    }
+
     try {
       const res = await fetch("/api/lead-capture", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lead }),
+        body: JSON.stringify({ lead, turnstileToken: captchaToken }),
       });
       setStatus(res.ok ? "success" : "error");
     } catch {
@@ -390,6 +398,18 @@ export function V3LeadCapture({ data }) {
                 </p>
               )}
 
+              {TURNSTILE_SITE_KEY && (
+                <div className="mt-6">
+                  <Turnstile
+                    siteKey={TURNSTILE_SITE_KEY}
+                    options={{ appearance: "interaction-only", theme: "dark" }}
+                    onSuccess={setCaptchaToken}
+                    onExpire={() => setCaptchaToken("")}
+                    onError={() => setCaptchaToken("")}
+                  />
+                </div>
+              )}
+
               <div className="mt-8 flex items-center justify-between">
                 <button
                   type="button"
@@ -401,7 +421,9 @@ export function V3LeadCapture({ data }) {
                 </button>
                 <button
                   type="submit"
-                  disabled={status === "submitting" || !screen3Valid}
+                  disabled={
+                    status === "submitting" || !screen3Valid || !captchaToken
+                  }
                   className={primaryButtonClass}
                 >
                   {status === "submitting" ? "Sending…" : "Complete"}
