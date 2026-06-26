@@ -24,7 +24,7 @@ export function V3ImageCards({ data }) {
       : "lg:grid-cols-4";
 
   return (
-    <V2ComponentWrapper data={data} className="border-y-0.75 border-sswBorder">
+    <V2ComponentWrapper data={data}>
       <Container
         size="custom"
         width="custom"
