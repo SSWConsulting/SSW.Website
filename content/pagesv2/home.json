@@ -1,0 +1,40 @@
+{
+  "seo": {
+    "title": "SSW Enterprise Software Development",
+    "description": "30 years of Microsoft software development experience in Australia. Artificial intelligence (AI), Angular, React, .NET, and Azure.",
+    "canonical": "https://www.ssw.com.au",
+    "images": [
+      {
+        "url": "/images/ssw-default-og.jpg",
+        "width": 800,
+        "height": 600,
+        "alt": "SSW Enterprise Software Development"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 8,
+        "bleed": false
+      },
+      "heading": "Three decades of enterprise solutions",
+      "description": "We find the best way to build software and make that knowledge available to everyone.\n",
+      "buttons": [
+        {
+          "buttonText": "Schedule a Free Discovery Call",
+          "buttonLink": "#",
+          "iconFirst": false,
+          "colour": 0
+        }
+      ],
+      "backgroundMedia": {
+        "altText": "SSW team members collaborating",
+        "imageSource": "/images/carousel/Why-you-should-choose-SSW-v4.jpg"
+      },
+      "applyRedTint": true,
+      "showScrollIndicator": true,
+      "_template": "v3HeroBox"
+    }
+  ]
+}
