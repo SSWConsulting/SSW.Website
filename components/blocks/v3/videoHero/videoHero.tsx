@@ -20,7 +20,7 @@ export function V3VideoHero({ data }) {
       {/* Darkening overlay for legibility */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-videoMask bg-black/40"
+        className="absolute inset-0 z-videoMask bg-black/60"
       />
 
       <div className="relative z-content flex w-full max-w-4xl flex-col items-center px-4 text-center">
