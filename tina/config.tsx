@@ -128,7 +128,7 @@ const config = defineStaticConfig({
   },
   ui: {
     previewUrl: () => {
-      const origin = "https://www.ssw.com.au"
+      const origin = "https://www.ssw.com.au";
       // In Tina's preview mode the current page's route lives in the hash:
       // .../admin/index.html#/~/about -> "about"
       const hash = typeof window !== "undefined" ? window.location.hash : "";
