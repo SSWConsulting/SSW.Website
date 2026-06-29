@@ -22,7 +22,7 @@
       "description": "We find the best way to build software and make that knowledge available to everyone.\n",
       "buttons": [
         {
-          "buttonText": "Schedule a Free Discovery Call",
+          "buttonText": "Schedule a Discovery Call",
           "buttonLink": "#",
           "iconFirst": false,
           "colour": 0
@@ -34,7 +34,6 @@
         "imageHeight": 576,
         "imageWidth": 1300
       },
-      "applyRedTint": true,
       "showScrollIndicator": true,
       "_template": "v3HeroBox"
     },
@@ -282,10 +281,10 @@
           "twitter": "https://x.com/AdamCogan"
         },
         {
-          "name": "Gert Marx",
-          "role": "VIC State Manager + Solution Architect",
+          "name": "Ulysses Maclaren",
+          "role": "COO",
           "image": {
-            "imageSource": "/images/people-carousel/gert.png",
+            "imageSource": "/images/people-carousel/uly.png",
             "imageHeight": 535,
             "imageWidth": 590
           },
@@ -293,20 +292,20 @@
           "twitter": "https://x.com/GertMarx"
         },
         {
-          "name": "Penny Walker",
-          "role": "QLD State + International Manager",
+          "name": "Calum Simpson",
+          "role": "VP of AI",
           "image": {
-            "imageSource": "/images/people-carousel/penny.png",
+            "imageSource": "/images/people-carousel/calum.png",
             "imageHeight": 535,
             "imageWidth": 590
           },
           "linkedin": "https://www.linkedin.com/in/penny-walker-%F0%9F%96%96-9878b624/"
         },
         {
-          "name": "Michael Smedley",
-          "role": "Head of Sales",
+          "name": "Matt Wicks",
+          "role": "Solution Architect",
           "image": {
-            "imageSource": "/images/people-carousel/mike.png",
+            "imageSource": "/images/people-carousel/wicksy.png",
             "imageHeight": 535,
             "imageWidth": 590
           },
