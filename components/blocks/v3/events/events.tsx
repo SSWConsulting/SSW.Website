@@ -1,4 +1,9 @@
 "use client";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
@@ -176,7 +181,7 @@ function EventCard({ event }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="flex flex-1 flex-col p-4 lg:p-6">
         {event?.duration && (
           <div className="flex items-center gap-2 text-sm font-light text-gray-400">
             <FiClock className="size-4" />
@@ -211,34 +216,66 @@ export function V3Events({ data }) {
   const hasFeatured =
     data?.featuredEvent?.title || data?.featuredEvent?.image?.imageSource;
 
+  // Repeat the cards until there are enough slides for embla's loop to engage
+  // (it won't loop a short list when ~3 are visible on md).
+  const MIN_CAROUSEL_SLIDES = 6;
+  const carouselCards =
+    eventCards.length > 0 && eventCards.length < MIN_CAROUSEL_SLIDES
+      ? Array.from(
+          { length: Math.ceil(MIN_CAROUSEL_SLIDES / eventCards.length) },
+          () => eventCards
+        ).flat()
+      : eventCards;
+
   return (
     <V2ComponentWrapper data={data}>
       <Container
         size="custom"
         width="custom"
-        padding="px-4 sm:px-8"
+        padding="px-0 lg:px-4"
         className="flex max-w-[1280px] flex-col gap-12 py-16 md:gap-20 md:py-24"
       >
         <SectionHeader data={data} />
 
         {hasFeatured && (
-          <div data-tina-field={tinaField(data.featuredEvent, "title")}>
+          <div className="p-4" data-tina-field={tinaField(data.featuredEvent, "title")}>
             <FeaturedEvent event={data.featuredEvent} />
           </div>
         )}
 
         {eventCards.length > 0 && (
-          <div className="flex flex-col gap-8 md:flex-row">
-            {eventCards.map((event, index) => (
-              <div
-                key={`v3-event-card-${index}`}
-                className="md:flex-1"
-                data-tina-field={tinaField(event, "title")}
-              >
-                <EventCard event={event} />
-              </div>
-            ))}
-          </div>
+          <>
+            {/* Below lg: horizontal infinite-scroll carousel */}
+            <Carousel
+              opts={{ align: "start", loop: true, dragFree: true }}
+              autoplay={false}
+              className="lg:hidden"
+            >
+              <CarouselContent>
+                {carouselCards.map((event, index) => (
+                  <CarouselItem
+                    key={`v3-event-card-${index}`}
+                    className="basis-[80%] pl-6 sm:basis-1/2 md:basis-1/3 md:min-w-[380px]"
+                  >
+                    <EventCard event={event} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            {/* lg+ : row */}
+            <div className="hidden gap-8 lg:flex">
+              {eventCards.map((event, index) => (
+                <div
+                  key={`v3-event-card-${index}`}
+                  className="lg:flex-1"
+                  data-tina-field={tinaField(event, "title")}
+                >
+                  <EventCard event={event} />
+                </div>
+              ))}
+            </div>
+          </>
         )}
       </Container>
     </V2ComponentWrapper>
