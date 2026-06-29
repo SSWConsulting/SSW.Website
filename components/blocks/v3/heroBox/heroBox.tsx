@@ -64,7 +64,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
           {hasImage && (
             <div
               aria-hidden="true"
-              className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_70%_45%,#3E080899_0%,#3E080833_30%,#3E080800_60%),linear-gradient(90deg,#080808_25%,#3B0B0B_55%,#3E080844_78%,#40050500_100%)]"
+              className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,#66212160_0%,#B2393980_33%,#99313150_66%,#80292940_100%)]"
             />
           )}
 
