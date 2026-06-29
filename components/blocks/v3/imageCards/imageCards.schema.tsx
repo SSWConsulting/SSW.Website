@@ -52,6 +52,7 @@ export const V3ImageCardsSchema: Template = {
       description: "Short subtitle shown beneath the title.",
       ui: { component: "textarea" },
     },
+    // @ts-expect-error – number field uses a custom ColorPickerInput component
     {
       type: "number",
       label: "Card Background Colour",
