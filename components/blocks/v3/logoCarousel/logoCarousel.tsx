@@ -23,7 +23,6 @@ export function V3LogoCarousel({ data }) {
             <Marquee
               gap="[--gap:0.25rem] sm:[--gap:0.75rem]"
               paused={data?.paused === true}
-              pauseOnHover
               className="h-full justify-center overflow-hidden"
             >
               <div className="flex h-full items-center justify-center gap-1 sm:gap-3">
