@@ -357,6 +357,8 @@ export default {
           linkedin: "#0077b5",
           facebook: "#3b5998",
           xtwitter: "#000",
+          bluesky: "#1083fe",
+          threads: "#000",
           tiktok: "#000",
           github: "#fff",
           meetup: "#f05664",
