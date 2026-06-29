@@ -19,6 +19,8 @@ type CarouselProps = {
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
   itemLength?: number;
+  /** Auto-advance the carousel. Defaults to true. */
+  autoplay?: boolean;
 };
 
 type CarouselContextProps = {
@@ -56,6 +58,7 @@ const Carousel = React.forwardRef<
       className,
       children,
       itemLength,
+      autoplay = true,
       ...props
     },
     ref
@@ -68,12 +71,16 @@ const Carousel = React.forwardRef<
       },
 
       [
-        AutoPlay({
-          delay: 5000,
-          playOnInit: true,
-          stopOnInteraction: true,
-          stopOnMouseEnter: true,
-        }),
+        ...(autoplay
+          ? [
+              AutoPlay({
+                delay: 5000,
+                playOnInit: true,
+                stopOnInteraction: true,
+                stopOnMouseEnter: true,
+              }),
+            ]
+          : []),
         ...(plugins || []),
       ]
     );
