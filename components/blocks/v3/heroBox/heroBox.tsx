@@ -22,12 +22,12 @@ export const V3HeroBox = ({ data, priority = false }) => {
     heroRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
 
   return (
-    <V2ComponentWrapper data={data} className="py-6 sm:py-20">
+    <V2ComponentWrapper data={data} className="pt-20">
       <Container
         size="custom"
         width="custom"
         padding="px-4 sm:px-8"
-        className="max-w-[1280px]"
+        className="max-w-9xl"
       >
         <div
           ref={heroRef}
@@ -42,7 +42,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
               sizes="100vw"
               src={media.imageSource}
               alt={media.altText ?? "Hero background"}
-              className="object-cover saturate-[0.45]"
+              className="object-cover"
               data-tina-field={tinaField(data, "backgroundMedia")}
             />
           )}
@@ -59,16 +59,16 @@ export const V3HeroBox = ({ data, priority = false }) => {
           {hasImage && (
             <div
               aria-hidden="true"
-              className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,_rgba(102,33,33,0.25)_0%,_rgba(178,57,57,0.5)_50%,_rgba(153,49,49,0.25)_75%,_rgba(128,41,41,0.25)_100%)]"
+              className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,_rgba(102,33,33,0.4)_10%,_rgba(178,57,57,0.5)_50%,_rgba(153,49,49,0.25)_75%,_rgba(128,41,41,0.25)_100%)]"
             />
           )}
 
           {/* Content */}
-          <div className="relative z-10 flex w-full max-w-xl flex-col p-8 sm:p-12 lg:p-16">
+          <div className="relative z-10 flex w-full max-w-2xl flex-col p-8 sm:p-12 lg:p-16">
             {data?.heading && (
               <h1
                 data-tina-field={tinaField(data, "heading")}
-                className="p-0 text-4xl leading-tight tracking-tight text-white sm:text-5xl lg:text-[52px]"
+                className="p-0 text-4xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
               >
                 <AlternatingText text={data.heading} />
               </h1>
