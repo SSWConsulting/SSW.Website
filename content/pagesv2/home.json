@@ -30,9 +30,9 @@
       ],
       "backgroundMedia": {
         "altText": "SSW team members collaborating",
-        "imageSource": "/images/carousel/why-you-should-choose-SSW-OG.png",
-        "imageHeight": 820,
-        "imageWidth": 2280
+        "imageSource": "/images/carousel/Why-you-should-chooe-SSW-OG.png",
+        "imageHeight": 576,
+        "imageWidth": 1300
       },
       "applyRedTint": true,
       "showScrollIndicator": true,
