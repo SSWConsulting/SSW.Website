@@ -6,7 +6,7 @@ import { tinaField } from "tinacms/dist/react";
 // Shared by Featured Products and Events.
 export function SectionHeader({ data }) {
   return (
-    <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+    <div className="p-4 flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
       {data?.heading && (
         <h2
           data-tina-field={tinaField(data, "heading")}
