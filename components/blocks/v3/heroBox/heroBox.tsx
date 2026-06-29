@@ -4,7 +4,6 @@ import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { backgroundOptions } from "@/components/blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRef } from "react";
 import { FiArrowDown } from "react-icons/fi";
@@ -14,7 +13,6 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export const V3HeroBox = ({ data, priority = false }) => {
   const media = data?.backgroundMedia;
   const hasImage = media?.imageSource;
-  const applyRedTint = data?.applyRedTint ?? true;
   const scoopColor = backgroundOptions.find(
     (option) => option.reference === data?.background?.backgroundColour
   )?.hex;
@@ -44,27 +42,24 @@ export const V3HeroBox = ({ data, priority = false }) => {
               sizes="100vw"
               src={media.imageSource}
               alt={media.altText ?? "Hero background"}
-              className={cn(
-                "object-cover object-right",
-                applyRedTint && "saturate-[0.45]"
-              )}
+              className="object-cover saturate-[0.45]"
               data-tina-field={tinaField(data, "backgroundMedia")}
             />
           )}
 
           {/* Red duotone tint over the image */}
-          {hasImage && applyRedTint && (
+          {/* {hasImage && applyRedTint && (
             <div
               aria-hidden="true"
               className="absolute inset-0 z-[1] bg-sswRed/40 mix-blend-multiply"
             />
-          )}
+          )} */}
 
           {/* Black → dark-red → transparent wash for legibility */}
           {hasImage && (
             <div
               aria-hidden="true"
-              className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,#66212160_0%,#B2393980_33%,#99313150_66%,#80292940_100%)]"
+              className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,_rgba(102,33,33,0.25)_0%,_rgba(178,57,57,0.5)_50%,_rgba(153,49,49,0.25)_75%,_rgba(128,41,41,0.25)_100%)]"
             />
           )}
 

@@ -17,7 +17,6 @@ export const V3HeroBoxSchema: Template = {
       description:
         "We find the best way to build software and make that knowledge available to everyone.",
       buttons: [{ buttonText: "Schedule a Free Discovery Call", colour: 0 }],
-      applyRedTint: true,
       showScrollIndicator: true,
     },
   },
@@ -64,13 +63,6 @@ export const V3HeroBoxSchema: Template = {
           "Upload the background image for the hero box."
         ),
       ],
-    },
-    {
-      type: "boolean",
-      label: "Apply Red Tint",
-      name: "applyRedTint",
-      description:
-        "Applies the SSW red duotone tint over the background image (as shown in the design).",
     },
     {
       type: "boolean",
