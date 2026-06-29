@@ -29,7 +29,5 @@ export default function PageContent({ props }) {
     };
   }, [structuredData]);
 
-  return (
-    <Blocks prefix="Pagesv2Blocks" blocks={data.pagesv2.blocks} />
-  );
+  return <Blocks prefix="Pagesv2Blocks" blocks={data.pagesv2.blocks} />;
 }

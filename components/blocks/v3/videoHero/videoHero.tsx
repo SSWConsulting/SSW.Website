@@ -1,6 +1,7 @@
 "use client";
 import AlternatingText from "@/components/alternating-text";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
+import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 
@@ -8,7 +9,11 @@ const VideoBackground = dynamic(() => import("../../videoBackground"));
 
 export function V3VideoHero({ data }) {
   return (
-    <section className="relative flex min-h-[36rem] w-full items-center justify-center overflow-hidden bg-black md:min-h-[80vh]">
+    <section
+      className={cn(
+        "relative flex min-h-[36rem] w-full items-center justify-center overflow-hidden bg-black md:min-h-screen-4/5"
+      )}
+    >
       {data?.videoBackground && (
         <VideoBackground
           videoBackground={data.videoBackground}
@@ -20,10 +25,10 @@ export function V3VideoHero({ data }) {
       {/* Darkening overlay for legibility */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 z-videoMask bg-black/60"
+        className="absolute inset-0 bg-black/60 z-videoMask"
       />
 
-      <div className="relative z-content flex w-full max-w-4xl flex-col items-center px-4 text-center">
+      <div className="relative flex w-full max-w-4xl flex-col items-center px-4 text-center z-content">
         {data?.heading && (
           <h1
             data-tina-field={tinaField(data, "heading")}

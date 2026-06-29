@@ -1,7 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 
-type Remaining = { days: number; hours: number; minutes: number; seconds: number };
+type Remaining = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
 
 const getRemaining = (target: number): Remaining => {
   const total = Math.max(target - Date.now(), 0);

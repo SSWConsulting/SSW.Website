@@ -4,7 +4,11 @@ import { buttonSchema } from "../../../button/templateButton.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { optimizedImageSchema } from "../../../../tina/collections/shared-fields";
 
-const imageField = (name: string, label: string, description: string): TinaField => ({
+const imageField = (
+  name: string,
+  label: string,
+  description: string
+): TinaField => ({
   type: "object",
   label,
   name,
@@ -63,12 +67,14 @@ export const V3FeaturedProductsSchema: Template = {
       products: [
         {
           title: "Improving Radiologists' Ability to Detect Breast Cancer",
-          description: "Improving radiologists' ability to detect breast cancer",
+          description:
+            "Improving radiologists' ability to detect breast cancer",
           link: "/",
         },
         {
           title: "Helping Deaf Children reach their full potential",
-          description: "Developing web apps for clinical assessment of deaf children",
+          description:
+            "Developing web apps for clinical assessment of deaf children",
           link: "/",
         },
         {

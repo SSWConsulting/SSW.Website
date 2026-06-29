@@ -4,6 +4,7 @@ import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { backgroundOptions } from "@/components/blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRef } from "react";
 import { FiArrowDown } from "react-icons/fi";
@@ -32,7 +33,9 @@ export const V3HeroBox = ({ data, priority = false }) => {
         className="max-w-9xl"
       >
         <div
-          className="relative flex min-h-[28rem] w-full items-center justify-center sm:justify-start overflow-hidden rounded-[2rem] bg-black sm:min-h-[34rem] lg:min-h-[32rem] lg:rounded-[45px]"
+          className={cn(
+            "relative flex min-h-[28rem] w-full items-center justify-center overflow-hidden rounded-[2rem] bg-black sm:min-h-[34rem] sm:justify-start lg:min-h-128 lg:rounded-[45px]"
+          )}
         >
           {/* Background image, anchored to the right of the box */}
           {hasImage && (
@@ -43,14 +46,16 @@ export const V3HeroBox = ({ data, priority = false }) => {
               sizes="100vw"
               src={media.imageSource}
               alt={media.altText ?? "Hero background"}
-              className="object-cover justify-left object-right opacity-30 lg:opacity-100 transition-opacity duration-200"
+              className="object-cover object-right opacity-30 transition-opacity duration-200 lg:opacity-100"
               data-tina-field={tinaField(data, "backgroundMedia")}
             />
           )}
           {hasImage && (
             <div
               aria-hidden="true"
-              className="absolute inset-0 z-[2] bg-[linear-gradient(90deg,_rgba(102,33,33,0.4)_10%,_rgba(178,57,57,0.5)_50%,_rgba(153,49,49,0.25)_75%,_rgba(128,41,41,0.25)_100%)]"
+              className={cn(
+                "z-[2] absolute inset-0 bg-[linear-gradient(90deg,_rgba(102,33,33,0.4)_10%,_rgba(178,57,57,0.5)_50%,_rgba(153,49,49,0.25)_75%,_rgba(128,41,41,0.25)_100%)]"
+              )}
             />
           )}
 
@@ -79,16 +84,25 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 />
               </div>
             )}
-            <ButtonRow data={data} className="mb-16 sm:mb-0 mt-8 flex-wrap justify-start" />
+            <ButtonRow
+              data={data}
+              className="mb-16 mt-8 flex-wrap justify-start sm:mb-0"
+            />
           </div>
 
           {/* Scroll-down indicator nested in a concave scoop */}
           {data?.showScrollIndicator && (
-            <div className="pointer-events-none absolute bottom-0 sm:right-16 z-20 w-[280px] sm:w-[336px] block">
+            <div
+              className={cn(
+                "pointer-events-none absolute bottom-0 z-20 block w-[280px] sm:right-16 sm:w-[336px]"
+              )}
+            >
               <svg
                 viewBox="0 0 336 125"
                 preserveAspectRatio="none"
-                className="absolute bottom-[-43px] left-0 h-[125px] w-full"
+                className={cn(
+                  "absolute bottom-[-43px] left-0 h-[125px] w-full"
+                )}
                 aria-hidden="true"
               >
                 <path

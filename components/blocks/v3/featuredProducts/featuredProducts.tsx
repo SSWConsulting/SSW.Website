@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/carousel";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
@@ -38,7 +39,11 @@ const MaybeLink = ({ link, newTab, field, children }) =>
 
 function HighlightCard({ project }) {
   const inner = (
-    <div className="group relative flex min-h-[360px] w-full overflow-hidden rounded-[45px] md:h-[446px]">
+    <div
+      className={cn(
+        "group relative flex min-h-[360px] w-full overflow-hidden rounded-[45px] md:h-[446px]"
+      )}
+    >
       {project?.image?.imageSource && (
         <Image
           src={project.image.imageSource}
@@ -50,7 +55,7 @@ function HighlightCard({ project }) {
       )}
       <div aria-hidden="true" className="absolute inset-0 bg-black/80" />
 
-      <div className="relative z-10 flex flex-col md:flex-row w-full items-end justify-between gap-6 p-4 md:px-16 md:py-20">
+      <div className="relative z-10 flex w-full flex-col items-end justify-between gap-6 p-4 md:flex-row md:px-16 md:py-20">
         <div className="flex max-w-xl flex-col gap-4">
           {project?.logo?.imageSource && (
             <div className="relative size-16 overflow-hidden rounded-full">
@@ -92,10 +97,18 @@ function HighlightCard({ project }) {
 
 function ProjectCard({ project }) {
   const inner = (
-    <div className="group flex h-full flex-col overflow-hidden rounded-[15px] bg-[#212121]">
+    <div
+      className={cn(
+        "group flex h-full flex-col overflow-hidden rounded-[15px] bg-sswBorder"
+      )}
+    >
       <div className="flex flex-1 flex-col gap-8 p-4 lg:p-8">
         <div className="flex flex-col gap-4">
-          <h4 className="text-[22px] font-medium leading-snug tracking-tight text-white">
+          <h4
+            className={cn(
+              "text-[22px] font-medium leading-snug tracking-tight text-white"
+            )}
+          >
             {project?.title}
           </h4>
           {project?.description && (
@@ -154,11 +167,15 @@ export function V3FeaturedProducts({ data }) {
         size="custom"
         width="custom"
         padding="px-0 lg:px-4"
-        className="flex max-w-[1280px] flex-col gap-12 py-16 md:gap-20 md:py-24"
+        className="flex max-w-screen-xl flex-col gap-12 py-16 md:gap-20 md:py-24"
       >
         <SectionHeader data={data} />
 
-        {hasHighlight && <div className='p-4'><HighlightCard project={data.highlighted} /></div>}
+        {hasHighlight && (
+          <div className="p-4">
+            <HighlightCard project={data.highlighted} />
+          </div>
+        )}
 
         {products.length > 0 && (
           <>
@@ -172,7 +189,9 @@ export function V3FeaturedProducts({ data }) {
                 {carouselProducts.map((project, index) => (
                   <CarouselItem
                     key={`v3-featured-project-${index}`}
-                    className="basis-[80%] pl-6 sm:basis-1/2 md:basis-1/3 md:min-w-[380px]"
+                    className={cn(
+                      "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+                    )}
                   >
                     <ProjectCard project={project} />
                   </CarouselItem>
@@ -183,10 +202,7 @@ export function V3FeaturedProducts({ data }) {
             {/* lg+ : row */}
             <div className="hidden gap-8 lg:flex">
               {products.map((project, index) => (
-                <div
-                  key={`v3-featured-project-${index}`}
-                  className="lg:flex-1"
-                >
+                <div key={`v3-featured-project-${index}`} className="lg:flex-1">
                   <ProjectCard project={project} />
                 </div>
               ))}

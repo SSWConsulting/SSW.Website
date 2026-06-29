@@ -22,9 +22,13 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
         showBorder && "border-0.75 border-sswBorder"
       )}
     >
-      <div className="flex items-center justify-center bg-sswRed p-4 aspect-[4/3] sm:p-8">
+      <div
+        className={cn(
+          "flex aspect-[4/3] items-center justify-center bg-sswRed p-4 sm:p-8"
+        )}
+      >
         {card?.graphic?.imageSource && (
-          <div className="relative max-w-[70%] size-40">
+          <div className={cn("relative size-40 max-w-[70%]")}>
             <Image
               src={card.graphic.imageSource}
               alt={card.graphic.altText ?? card?.title ?? ""}
@@ -100,7 +104,7 @@ export function V3ImageCards({ data }) {
         size="custom"
         width="custom"
         padding="px-0 lg:px-8"
-        className="max-w-[1280px] py-16 md:py-24"
+        className="max-w-screen-xl py-16 md:py-24"
       >
         {data?.brow && (
           <span
@@ -113,7 +117,7 @@ export function V3ImageCards({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="px-8 my-4 max-w-2xl text-3xl text-white lg:text-5xl"
+            className="my-4 max-w-2xl px-8 text-3xl text-white lg:text-5xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -121,7 +125,7 @@ export function V3ImageCards({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className="px-8 max-w-2xl text-base font-light text-gray-400"
+            className="max-w-2xl px-8 text-base font-light text-gray-400"
           >
             {data.subtitle}
           </p>
@@ -139,7 +143,9 @@ export function V3ImageCards({ data }) {
                 {carouselCards.map((card, index) => (
                   <CarouselItem
                     key={`v3-image-card-${index}`}
-                    className="basis-[80%] pl-6 sm:basis-1/2 md:basis-1/3 md:min-w-[380px]"
+                    className={cn(
+                      "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+                    )}
                   >
                     <ImageCard
                       card={card}
@@ -152,12 +158,7 @@ export function V3ImageCards({ data }) {
             </Carousel>
 
             {/* lg+ : grid */}
-            <div
-              className={cn(
-                "mt-12 hidden gap-8 lg:grid",
-                lgColumnsClass
-              )}
-            >
+            <div className={cn("mt-12 hidden gap-8 lg:grid", lgColumnsClass)}>
               {cards.map((card, index) => (
                 <ImageCard
                   key={`v3-image-card-${index}`}

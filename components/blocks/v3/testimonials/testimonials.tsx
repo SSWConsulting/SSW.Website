@@ -128,7 +128,9 @@ export function V3Testimonials({ data }) {
                   }
                   className={cn(
                     "col-start-1 row-start-1 text-2xl text-white transition-opacity duration-300 md:text-4xl",
-                    i === active ? "opacity-100" : "pointer-events-none opacity-0"
+                    i === active
+                      ? "opacity-100"
+                      : "pointer-events-none opacity-0"
                   )}
                 >
                   {i === active ? (
