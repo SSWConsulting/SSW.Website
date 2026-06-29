@@ -7,6 +7,9 @@
   "presenterList": [
     {
       "presenter": "content/presenters/ben-neoh.mdx"
+    },
+    {
+      "presenter": "content/presenters/rick-su.mdx"
     }
   ],
   "headerLayout": "avatars",
