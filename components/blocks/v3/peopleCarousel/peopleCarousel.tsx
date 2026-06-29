@@ -141,7 +141,22 @@ export function V3PeopleCarousel({ data }) {
           </p>
         )}
 
-        {people.length > 0 && (
+        {/* 4 or fewer all fit on screen, so skip the carousel UI and lay them
+            out in a static grid; only carousel when there's more to scroll. */}
+        {people.length > 0 && people.length <= 4 && (
+          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {people.map((person, index) => (
+              <div
+                key={`v3-person-${index}`}
+                data-tina-field={tinaField(person, "name")}
+              >
+                <PersonCard person={person} />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {people.length > 4 && (
           <Carousel opts={{ align: "start" }} className="mt-12">
             <CarouselContent className="-ml-8">
               {people.map((person, index) => (
