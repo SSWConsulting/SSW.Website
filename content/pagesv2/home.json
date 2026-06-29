@@ -52,9 +52,9 @@
           "title": "Web Development",
           "description": "Ever since SSW developed the very first .NET Website in Australia, we've been known as leaders in Web Development.",
           "graphic": {
-            "imageSource": "/images/custom-icons/graphic-1.png",
-            "imageHeight": 150,
-            "imageWidth": 150
+            "imageSource": "/images/custom-icons/web-dev-custom-graphic.svg",
+            "imageHeight": 163,
+            "imageWidth": 170
           },
           "link": "/consulting/web-applications",
           "newTab": false
@@ -63,9 +63,9 @@
           "title": "Artificial Intelligence",
           "description": "Custom AI solutions using LLMs (ChatGPT, Llama, Gemini, Claude, etc) and Azure AI to revolutionize your business.",
           "graphic": {
-            "imageSource": "/images/custom-icons/custom-graphic-2.png",
-            "imageHeight": 150,
-            "imageWidth": 150
+            "imageSource": "/images/custom-icons/ai-graphic.svg",
+            "imageHeight": 204,
+            "imageWidth": 200
           },
           "link": "/consulting/artificial-intelligence"
         },
@@ -73,9 +73,9 @@
           "title": "DevOps & Cloud",
           "description": "Make sure your software ships by using SSW's best practices in Azure, DevOps and Docker Containers.",
           "graphic": {
-            "imageSource": "/images/custom-icons/custom-graphic3.png",
-            "imageHeight": 150,
-            "imageWidth": 150
+            "imageSource": "/images/custom-icons/cloud-custom-graphic.svg",
+            "imageHeight": 158,
+            "imageWidth": 244
           },
           "link": "/consulting/devops"
         }
