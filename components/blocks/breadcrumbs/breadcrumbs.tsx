@@ -142,7 +142,7 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
             className="unstyled inline-flex items-center gap-1 text-sm no-underline transition-colors hover:text-white hover:no-underline"
             aria-label={`Back to ${mobileParent.label}`}
           >
-            <ArrowLeft className="h-[1em] w-[1em]" aria-hidden="true" />
+            <ArrowLeft className="size-3.5" aria-hidden="true" />
             {mobileParent.label}
           </a>
         </nav>
