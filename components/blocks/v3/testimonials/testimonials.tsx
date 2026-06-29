@@ -1,6 +1,7 @@
 "use client";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -114,14 +115,30 @@ export function V3Testimonials({ data }) {
         <div className="mx-auto flex max-w-3xl flex-col items-start justify-center gap-10 xl:max-w-none xl:flex-row xl:items-center xl:gap-20">
           {/* Quote + author */}
           <div className="flex max-w-3xl flex-col">
-            {current?.quote && (
-              <blockquote
-                data-tina-field={tinaField(current, "quote")}
-                className="text-2xl text-white md:text-4xl"
-              >
-                <ClipTextReveal key={active} text={current.quote} />
-              </blockquote>
-            )}
+            {/* All quotes are stacked in one grid cell so the block always
+                reserves the height of the tallest quote — switching slides
+                no longer changes the component height. */}
+            <div className="grid">
+              {testimonials.map((t, i) => (
+                <blockquote
+                  key={`v3-testimonial-quote-${i}`}
+                  aria-hidden={i !== active}
+                  data-tina-field={
+                    i === active ? tinaField(t, "quote") : undefined
+                  }
+                  className={cn(
+                    "col-start-1 row-start-1 text-2xl text-white transition-opacity duration-300 md:text-4xl",
+                    i === active ? "opacity-100" : "pointer-events-none opacity-0"
+                  )}
+                >
+                  {i === active ? (
+                    <ClipTextReveal key={active} text={t?.quote ?? ""} />
+                  ) : (
+                    <span>{(t?.quote ?? "").replace(/\*\*/g, "")}</span>
+                  )}
+                </blockquote>
+              ))}
+            </div>
 
             {current?.caseStudyUrl && (
               <motion.a
