@@ -81,7 +81,7 @@ export function V3Globe({ data }) {
         size="custom"
         width="custom"
         padding="px-4 sm:px-8"
-        className="max-w-[1280px] py-16 md:py-24"
+        className="max-w-screen-xl py-16 md:py-24"
       >
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           {/* Left: header + office accordion */}
@@ -107,7 +107,7 @@ export function V3Globe({ data }) {
             {offices.length > 0 && (
               // Reserve the open-state height so toggling a tab doesn't change
               // the column height (which would shift the centered map).
-              <div className="mt-10 lg:min-h-[37rem]">
+              <div className={cn("mt-10 lg:min-h-[37rem]")}>
                 {offices.map((office, index) => (
                   <OfficeAccordionItem
                     key={`v3-office-${index}`}
@@ -128,7 +128,7 @@ export function V3Globe({ data }) {
               (and the dots don't shift) when the accordion opens/closes. */}
           {offices.length > 0 && (
             <div className="hidden lg:block">
-              <div className="aspect-[2/1] w-full">
+              <div className={cn("aspect-[2/1] w-full")}>
                 <OfficeMap offices={offices} selectedIndex={openIndex} />
               </div>
             </div>

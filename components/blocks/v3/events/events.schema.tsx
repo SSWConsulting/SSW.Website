@@ -108,7 +108,7 @@ export const V3EventsSchema: Template = {
           type: "string",
           label: "Spots Text",
           name: "spotsText",
-          description: "e.g. \"10 Spots left!\". Leave blank to hide.",
+          description: "e.g. '10 Spots left!'. Leave blank to hide.",
         },
       ],
     },
@@ -117,7 +117,8 @@ export const V3EventsSchema: Template = {
       label: "Event Cards",
       name: "eventCards",
       list: true,
-      description: "Up to 3 event/video cards shown beneath the featured event.",
+      description:
+        "Up to 3 event/video cards shown beneath the featured event.",
       ui: {
         max: 3,
         itemProps: (item) => ({ label: item?.title ?? "Event" }),
@@ -139,14 +140,15 @@ export const V3EventsSchema: Template = {
           type: "string",
           label: "Duration",
           name: "duration",
-          description: "e.g. \"45 minutes\".",
+          description: "e.g. '45 minutes'.",
         },
         imageObject("image", "Thumbnail", "Thumbnail / video poster image."),
         {
           type: "string",
           label: "Video URL",
           name: "videoUrl",
-          description: "YouTube or Vimeo URL. Adds a play button over the image.",
+          description:
+            "YouTube or Vimeo URL. Adds a play button over the image.",
         },
         imageObject(
           "presenterImage",

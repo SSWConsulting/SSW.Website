@@ -7,6 +7,7 @@ import {
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
+import { cn } from "@/lib/utils";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,9 +19,9 @@ import { Countdown } from "./countdown";
 
 function EmailRegister() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">(
-    "idle"
-  );
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,7 +86,7 @@ function EmailRegister() {
 
 function FeaturedEvent({ event }) {
   return (
-    <div className="relative overflow-hidden rounded-[45px]">
+    <div className={cn("relative overflow-hidden rounded-[45px]")}>
       {event?.image?.imageSource && (
         <Image
           src={event.image.imageSource}
@@ -149,7 +150,11 @@ function EventCard({ event }) {
   const image = event?.image?.imageSource;
 
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-[15px] bg-[#212121]">
+    <div
+      className={cn(
+        "flex h-full flex-col overflow-hidden rounded-[15px] bg-sswBorder"
+      )}
+    >
       <div className="relative aspect-video w-full">
         {hasVideo ? (
           <VideoModal
@@ -201,7 +206,7 @@ function EventCard({ event }) {
         {event?.registerLink && (
           <Link
             href={event.registerLink}
-            className="mt-6 inline-block self-start rounded-lg border border-white/40 px-5 py-2.5 text-sm text-white transition-colors hover:bg-white hover:text-black !no-underline"
+            className="mt-6 inline-block self-start rounded-lg border border-white/40 px-5 py-2.5 text-sm text-white !no-underline transition-colors hover:bg-white hover:text-black"
           >
             Register Now
           </Link>
@@ -233,12 +238,15 @@ export function V3Events({ data }) {
         size="custom"
         width="custom"
         padding="px-0 lg:px-4"
-        className="flex max-w-[1280px] flex-col gap-12 py-16 md:gap-20 md:py-24"
+        className="flex max-w-screen-xl flex-col gap-12 py-16 md:gap-20 md:py-24"
       >
         <SectionHeader data={data} />
 
         {hasFeatured && (
-          <div className="p-4" data-tina-field={tinaField(data.featuredEvent, "title")}>
+          <div
+            className="p-4"
+            data-tina-field={tinaField(data.featuredEvent, "title")}
+          >
             <FeaturedEvent event={data.featuredEvent} />
           </div>
         )}
@@ -255,7 +263,9 @@ export function V3Events({ data }) {
                 {carouselCards.map((event, index) => (
                   <CarouselItem
                     key={`v3-event-card-${index}`}
-                    className="basis-[80%] pl-6 sm:basis-1/2 md:basis-1/3 md:min-w-[380px]"
+                    className={cn(
+                      "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+                    )}
                   >
                     <EventCard event={event} />
                   </CarouselItem>

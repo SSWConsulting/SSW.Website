@@ -26,7 +26,11 @@ const socials = [
 function PersonCard({ person }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="relative aspect-square w-full max-w-[280px] overflow-hidden rounded-full">
+      <div
+        className={cn(
+          "relative aspect-square w-full max-w-[280px] overflow-hidden rounded-full"
+        )}
+      >
         {person?.image?.imageSource && (
           <Image
             src={person.image.imageSource}
@@ -114,7 +118,7 @@ export function V3PeopleCarousel({ data }) {
         size="custom"
         width="custom"
         padding="px-4 sm:px-8"
-        className="max-w-[1280px] py-16 md:py-24"
+        className="max-w-screen-xl py-16 md:py-24"
       >
         {data?.brow && (
           <span

@@ -35,7 +35,7 @@ export default function V3Statistics({ data }) {
             {data?.heading && (
               <h2
                 data-tina-field={tinaField(data, "heading")}
-                className="my-0 text-white text-2xl"
+                className="my-0 text-2xl text-white"
               >
                 <AlternatingText text={data.heading} />
               </h2>

@@ -16,7 +16,8 @@ export const V3GlobeSchema: Template = {
           name: "Sydney",
           email: "info@ssw.com.au",
           phone: "+61 2 9953 3000",
-          address: "Level 1, 81-91 Military Road\nNeutral Bay, Sydney, NSW 2089, Australia",
+          address:
+            "Level 1, 81-91 Military Road\nNeutral Bay, Sydney, NSW 2089, Australia",
           lat: -33.84,
           lng: 151.21,
         },
