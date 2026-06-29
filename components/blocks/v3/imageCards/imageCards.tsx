@@ -1,12 +1,71 @@
 import AlternatingText from "@/components/alternating-text";
 import { backgroundOptions } from "@/components/blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
 import { tinaField } from "tinacms/dist/react";
+
+function ImageCard({ card, cardBackgroundClass, showBorder }) {
+  const inner = (
+    <div
+      className={cn(
+        "group flex h-full flex-col overflow-hidden rounded-2xl transition",
+        cardBackgroundClass,
+        showBorder && "border-0.75 border-sswBorder"
+      )}
+    >
+      <div className="flex items-center justify-center bg-sswRed p-4 aspect-[4/3] sm:p-8">
+        {card?.graphic?.imageSource && (
+          <div className="relative max-w-[70%] size-40">
+            <Image
+              src={card.graphic.imageSource}
+              alt={card.graphic.altText ?? card?.title ?? ""}
+              fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+              className="object-contain"
+            />
+          </div>
+        )}
+      </div>
+
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="text-2xl font-semibold text-white">{card?.title}</h3>
+        {card?.description && (
+          <p className="mt-4 text-base font-light text-gray-400">
+            {card.description}
+          </p>
+        )}
+        <span className="mt-auto flex size-10 shrink-0 scale-100 items-center justify-center self-end rounded-full bg-white p-2 text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
+          <BsArrowUpRight className="size-4" />
+        </span>
+      </div>
+    </div>
+  );
+
+  return card?.link ? (
+    <Link
+      href={card.link}
+      target={card?.newTab ? "_blank" : undefined}
+      rel={card?.newTab ? "noopener noreferrer" : undefined}
+      data-tina-field={tinaField(card, "title")}
+      className="h-full !no-underline"
+    >
+      {inner}
+    </Link>
+  ) : (
+    <div data-tina-field={tinaField(card, "title")} className="h-full">
+      {inner}
+    </div>
+  );
+}
 
 export function V3ImageCards({ data }) {
   const cards = data?.cards ?? [];
@@ -23,12 +82,24 @@ export function V3ImageCards({ data }) {
       ? "lg:grid-cols-3"
       : "lg:grid-cols-4";
 
+  // Embla's loop only engages when there are clearly more slides than fit in
+  // the viewport. With ~3 cards visible on md, a small list won't loop — so
+  // repeat the cards until there are enough slides for a seamless loop.
+  const MIN_CAROUSEL_SLIDES = 6;
+  const carouselCards =
+    cards.length > 0 && cards.length < MIN_CAROUSEL_SLIDES
+      ? Array.from(
+          { length: Math.ceil(MIN_CAROUSEL_SLIDES / cards.length) },
+          () => cards
+        ).flat()
+      : cards;
+
   return (
     <V2ComponentWrapper data={data}>
       <Container
         size="custom"
         width="custom"
-        padding="px-4 sm:px-8"
+        padding="px-0 lg:px-8"
         className="max-w-[1280px] py-16 md:py-24"
       >
         {data?.brow && (
@@ -42,7 +113,7 @@ export function V3ImageCards({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="my-4 text-3xl text-white lg:text-5xl max-w-2xl"
+            className="px-8 my-4 max-w-2xl text-3xl text-white lg:text-5xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -50,79 +121,53 @@ export function V3ImageCards({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className="max-w-2xl text-base font-light text-gray-400"
+            className="px-8 max-w-2xl text-base font-light text-gray-400"
           >
             {data.subtitle}
           </p>
         )}
 
         {cards.length > 0 && (
-          <div
-            className={cn(
-              "mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2",
-              lgColumnsClass
-            )}
-          >
-            {cards.map((card, index) => {
-              const inner = (
-                <div
-                  className={cn(
-                    "group flex h-full flex-col overflow-hidden rounded-2xl transition",
-                    cardBackgroundClass,
-                    showBorder && "border-0.75 border-sswBorder"
-                  )}
-                >
-                  <div className="flex aspect-[4/3] items-center justify-center bg-sswRed p-8">
-                    {card?.graphic?.imageSource && (
-                      <div className="relative size-40 max-w-[70%]">
-                        <Image
-                          src={card.graphic.imageSource}
-                          alt={card.graphic.altText ?? card?.title ?? ""}
-                          fill
-                          sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                          className="object-contain"
-                        />
-                      </div>
-                    )}
-                  </div>
+          <>
+            {/* Below lg: horizontal infinite-scroll carousel */}
+            <Carousel
+              opts={{ align: "start", loop: true, dragFree: true }}
+              autoplay={false}
+              className="mt-12 lg:hidden"
+            >
+              <CarouselContent>
+                {carouselCards.map((card, index) => (
+                  <CarouselItem
+                    key={`v3-image-card-${index}`}
+                    className="basis-[80%] pl-6 sm:basis-1/2 md:basis-1/3 md:min-w-[380px]"
+                  >
+                    <ImageCard
+                      card={card}
+                      cardBackgroundClass={cardBackgroundClass}
+                      showBorder={showBorder}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
 
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-2xl font-semibold text-white">
-                      {card?.title}
-                    </h3>
-                    {card?.description && (
-                      <p className="mt-4 text-base font-light text-gray-400">
-                        {card.description}
-                      </p>
-                    )}
-                    <span className="mt-auto flex size-10 shrink-0 scale-100 items-center justify-center self-end rounded-full bg-white p-2 text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
-                      <BsArrowUpRight className="size-4" />
-                    </span>
-                  </div>
-                </div>
-              );
-
-              return card?.link ? (
-                <Link
+            {/* lg+ : grid */}
+            <div
+              className={cn(
+                "mt-12 hidden gap-8 lg:grid",
+                lgColumnsClass
+              )}
+            >
+              {cards.map((card, index) => (
+                <ImageCard
                   key={`v3-image-card-${index}`}
-                  href={card.link}
-                  target={card?.newTab ? "_blank" : undefined}
-                  rel={card?.newTab ? "noopener noreferrer" : undefined}
-                  data-tina-field={tinaField(card, "title")}
-                  className="h-full !no-underline"
-                >
-                  {inner}
-                </Link>
-              ) : (
-                <div
-                  key={`v3-image-card-${index}`}
-                  data-tina-field={tinaField(card, "title")}
-                >
-                  {inner}
-                </div>
-              );
-            })}
-          </div>
+                  card={card}
+                  cardBackgroundClass={cardBackgroundClass}
+                  showBorder={showBorder}
+                />
+              ))}
+            </div>
+          </>
         )}
       </Container>
     </V2ComponentWrapper>
