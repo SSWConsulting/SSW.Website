@@ -1,0 +1,22 @@
+{
+  "title": "Newcastle Coders July: From Portal Panic to Pipeline Power: Introduction to Azure IaC",
+  "slug": "newcastle-azureiac",
+  "url": "https://www.meetup.com/newcastle-coders-group/events/314656442/",
+  "thumbnail": "/images/events/newcastle-coders-group.png",
+  "thumbnailDescription": "Newcastle Coders Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/ben-neoh.mdx"
+    }
+  ],
+  "headerLayout": "avatars",
+  "startDateTime": "2026-07-01T08:00:50.616Z",
+  "endDateTime": "2026-07-01T11:00:02.064Z",
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "category": "Azure",
+  "abstract": "Howdy Coders, We're back for a whole new financial year. \n\nWe'll have Ben Neoh and Rick Su joining forces to give their talk From Portal Panic to Pipeline Power: Introduction to Azure IaC.\n\nFor this talk we'll be at the SSW Newcastle office.\nParking: The best parking is at the Wright Lane Carpark.\nPublic Transport: The Civic light rail station is directly outside the venue.\n\nWe'd like to thank our sponsors\n\n- SSW Newcastle\n- Saphi Engineering\n\nProduction applications need infrastructure that is secure, repeatable, and maintainable. In this beginner-friendly session, Rick and Ben N. will introduce Azure Infrastructure as Code and explain how it helps teams build enterprise-grade cloud infrastructure with better consistency, maintainability, and scalability. You’ll learn why IaC matters and how it helps teams move from ad-hoc setup to reliable, code-based deployments.",
+  "description": "Howdy Coders, We're back for a whole new financial year.\n\nWe'll have Ben Neoh and Rick Su joining forces to give their talk From Portal Panic to Pipeline Power: Introduction to Azure IaC.\n\nFor this talk we'll be at the SSW Newcastle office.\n\n* Parking: The best parking is at the Wright Lane Carpark.\n* Public Transport: The Civic light rail station is directly outside the venue.\n\nWe'd like to thank our sponsors\n\n* SSW Newcastle\n* Saphi Engineering\n\nProduction applications need infrastructure that is secure, repeatable, and maintainable. In this beginner-friendly session, Rick and Ben N. will introduce Azure Infrastructure as Code and explain how it helps teams build enterprise-grade cloud infrastructure with better consistency, maintainability, and scalability. You’ll learn why IaC matters and how it helps teams move from ad-hoc setup to reliable, code-based deployments.\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
