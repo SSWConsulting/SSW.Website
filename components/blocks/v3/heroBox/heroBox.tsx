@@ -17,12 +17,14 @@ export const V3HeroBox = ({ data, priority = false }) => {
     (option) => option.reference === data?.background?.backgroundColour
   )?.hex;
 
-  const heroRef = useRef<HTMLDivElement>(null);
-  const scrollToNext = () =>
-    heroRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+  const arrowRef = useRef<HTMLButtonElement>(null);
+  const scrollToNext = () => {
+    const rect = arrowRef.current?.getBoundingClientRect();
+    if (rect) window.scrollBy({ top: rect.top - 50, behavior: "smooth" });
+  };
 
   return (
-    <V2ComponentWrapper data={data} className="pt-20">
+    <V2ComponentWrapper data={data} className="pt-4 sm:pt-20">
       <Container
         size="custom"
         width="custom"
@@ -30,8 +32,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
         className="max-w-9xl"
       >
         <div
-          ref={heroRef}
-          className="relative flex min-h-[28rem] w-full items-center overflow-hidden rounded-[2rem] bg-black sm:min-h-[34rem] lg:min-h-[35rem] lg:rounded-[45px]"
+          className="relative flex min-h-[28rem] w-full items-center justify-center sm:justify-start overflow-hidden rounded-[2rem] bg-black sm:min-h-[34rem] lg:min-h-[32rem] lg:rounded-[45px]"
         >
           {/* Background image, anchored to the right of the box */}
           {hasImage && (
@@ -42,20 +43,10 @@ export const V3HeroBox = ({ data, priority = false }) => {
               sizes="100vw"
               src={media.imageSource}
               alt={media.altText ?? "Hero background"}
-              className="object-cover"
+              className="object-cover justify-left object-right opacity-30 lg:opacity-100 transition-opacity duration-200"
               data-tina-field={tinaField(data, "backgroundMedia")}
             />
           )}
-
-          {/* Red duotone tint over the image */}
-          {/* {hasImage && applyRedTint && (
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 z-[1] bg-sswRed/40 mix-blend-multiply"
-            />
-          )} */}
-
-          {/* Black → dark-red → transparent wash for legibility */}
           {hasImage && (
             <div
               aria-hidden="true"
@@ -88,12 +79,12 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 />
               </div>
             )}
-            <ButtonRow data={data} className="mt-8 flex-wrap justify-start" />
+            <ButtonRow data={data} className="mb-16 sm:mb-0 mt-8 flex-wrap justify-start" />
           </div>
 
           {/* Scroll-down indicator nested in a concave scoop */}
           {data?.showScrollIndicator && (
-            <div className="pointer-events-none absolute bottom-0 right-16 z-20 hidden w-[336px] sm:block">
+            <div className="pointer-events-none absolute bottom-0 sm:right-16 z-20 w-[280px] sm:w-[336px] block">
               <svg
                 viewBox="0 0 336 125"
                 preserveAspectRatio="none"
@@ -106,6 +97,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 />
               </svg>
               <button
+                ref={arrowRef}
                 type="button"
                 aria-label="Scroll to next section"
                 onClick={scrollToNext}
