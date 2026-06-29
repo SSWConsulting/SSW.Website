@@ -227,9 +227,21 @@
       "username": "SSW_TV"
     },
     {
+      "type": "bluesky",
+      "title": "SSW on BlueSky",
+      "url": "https://bsky.app/profile/ssw.com.au",
+      "username": "ssw.com.au"
+    },
+    {
       "type": "instagram",
       "title": "SSW on Instagram",
       "url": "https://www.instagram.com/ssw_tv",
+      "username": "ssw_tv"
+    },
+    {
+      "type": "threads",
+      "title": "SSW on Threads",
+      "url": "https://www.threads.net/@ssw_tv",
       "username": "ssw_tv"
     },
     {
