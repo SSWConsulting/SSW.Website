@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Image from "next/image";
 import { Key } from "react";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
 import { isEmpty } from "../training/eventBooking";
 

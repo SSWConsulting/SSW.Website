@@ -1,9 +1,15 @@
 {
-  "title": "June User Group - TBA!",
+  "title": "June User Group - AI: It's a Skill Issue",
   "slug": "june-user-group-2026",
   "url": "https://www.meetup.com/sydney-net-user-group/",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    }
+  ],
+  "headerLayout": "avatars",
   "startDateTime": "2026-06-17T08:00:18.554Z",
   "endDateTime": "2026-06-17T11:00:27.447Z",
   "startShowBannerDateTime": "2026-06-16T14:00:08.971Z",
@@ -11,8 +17,9 @@
   "calendarType": "User Groups",
   "city": "Sydney",
   "category": "Artificial Intelligence",
-  "abstract": "Agenda TBA - watch this space!",
-  "description": "Agenda TBA - watch this space!\n",
+  "abstract": "Join SSW's VP of AI, Calum Simpson, for a talk about the current state of AI-assisted development and what you really need to know about to get the most out of the tools. \n\nCalum will explain what AI Skills are and how to use them, share some practical examples with you, and leave you with thoughts on the Human Skills required to succeed in the world of AI.\n\n",
+  "description": "Join SSW's VP of AI, Calum Simpson, for a talk about the current state of AI-assisted development and what you really need to know about to get the most out of the tools.\n\nCalum will explain what AI Skills are and how to use them, share some practical examples with you, and leave you with thoughts on the Human Skills required to succeed in the world of AI.\n",
+  "youTubeId": "xXTg10XxH1w",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true

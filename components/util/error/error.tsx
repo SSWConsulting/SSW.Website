@@ -3,7 +3,7 @@
 import { CustomLink } from "@/components/customLink";
 import { Disclosure } from "@headlessui/react";
 import classNames from "classnames";
-import { BiChevronRight } from "react-icons/bi";
+import { BiChevronRight } from "@react-icons/all-files/bi/BiChevronRight";
 import { FaXmark } from "react-icons/fa6";
 import { Container } from "../container";
 

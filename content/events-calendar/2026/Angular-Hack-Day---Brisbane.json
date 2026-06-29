@@ -1,0 +1,23 @@
+{
+  "title": "Angular Hack Day - Brisbane",
+  "slug": "angularhackdaybrisbane26",
+  "url": "https://www.eventbrite.com/e/angular-hack-day-brisbane-tickets-1991345732692",
+  "thumbnail": "/images/events/AHD-thumb.jpg",
+  "thumbnailDescription": "Angular Hack Day",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jernej-kavka.mdx"
+    }
+  ],
+  "headerLayout": "multi-torso",
+  "startDateTime": "2027-01-08T23:00:36.207Z",
+  "endDateTime": "2027-01-09T07:00:03.666Z",
+  "calendarType": "Hack Days",
+  "city": "Brisbane",
+  "category": "Angular and React",
+  "abstract": "What is Angular Hack Day?\nAngular Hack Days are community-run events for Angular Developers or people who want to learn Angular for free.\n\nThere will be something for everyone. Experienced Angular developers can share ideas with other experienced developers. If you are a beginner, then there’s plenty to learn on the day.\n\nIt’s recommended that attendees bring their own laptop on the day with Angular already set up and installed. If you’ve never played with Angular before, it would be good to do a little bit of learning before the day, but it’s not a requirement, as all are welcome.\n\nWhy Learn Angular?\nAI makes it easier to write code. Angular makes it easier to organise that code into something a team can maintain.\n\nAI makes it easier than ever to write code quickly, but speed is only useful if that code can be maintained, tested, and scaled by a real team.\n\nThat is where Angular still matters.\n\nWhile React gets a lot of attention, Angular gives developers a strong, opinionated framework with TypeScript-first development, built-in routing, forms, services, dependency injection, and clear conventions. Those guardrails are especially valuable in the AI age, because they help keep AI-generated code structured, consistent, and production-ready.\n\nFor new or AI-curious developers, Angular is worth a taste test. It shows how AI can help you move fast without creating chaos, and how a well-structured framework can make your apps easier for both humans and AI to understand, extend, and maintain.\n\n",
+  "description": "### What is Angular Hack Day?\n\nAngular Hack Days are community-run events for Angular Developers or people who want to learn Angular for free.\n\nThere will be something for everyone. Experienced Angular developers can share ideas with other experienced developers. If you are a beginner, then there’s plenty to learn on the day.\n\nIt’s recommended that attendees bring their own laptop on the day with Angular already set up and installed. If you’ve never played with Angular before, it would be good to do a little bit of learning before the day, but it’s not a requirement, as all are welcome.\n\n### Why Learn Angular?\n\nAI makes it easier to write code. Angular makes it easier to organise that code into something a team can maintain.\n\nAI makes it easier than ever to write code quickly, but speed is only useful if that code can be maintained, tested, and scaled by a real team.\n\nThat is where Angular still matters.\n\nWhile React gets a lot of attention, Angular gives developers a strong, opinionated framework with TypeScript-first development, built-in routing, forms, services, dependency injection, and clear conventions. Those guardrails are especially valuable in the AI age, because they help keep AI-generated code structured, consistent, and production-ready.\n\nFor new or AI-curious developers, Angular is worth a taste test. It shows how AI can help you move fast without creating chaos, and how a well-structured framework can make your apps easier for both humans and AI to understand, extend, and maintain.\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}

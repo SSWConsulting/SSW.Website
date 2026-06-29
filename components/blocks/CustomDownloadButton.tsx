@@ -1,5 +1,5 @@
 import { FaFileDownload } from "react-icons/fa";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import Button from "../button/rippleButton";
 import { CustomLink } from "../customLink";
 

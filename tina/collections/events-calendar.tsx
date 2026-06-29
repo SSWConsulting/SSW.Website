@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Collection, TextField } from "tinacms";
+import { TextField } from "tinacms";
+import type { Collection } from "tinacms";
 import {
   DEFAULT_HEADER_LAYOUT,
   HEADER_LAYOUT_OPTIONS,

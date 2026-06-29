@@ -1,7 +1,7 @@
 import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletTextAlignment.schema";
-import { Template, TinaField } from "tinacms";
+import type { Template, TinaField } from "tinacms";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
-import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel";
+import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel.schema";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import { buttonSchema } from "../../../button/templateButton.schema";

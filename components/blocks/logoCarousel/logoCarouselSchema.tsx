@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Template, TinaField, wrapFieldsWithMeta } from "tinacms";
+import { Button, wrapFieldsWithMeta } from "tinacms";
+import type { Template, TinaField } from "tinacms";
 import alternatingHeadingSchema from "../../../components/blocksSubtemplates/alternatingHeading.schema";
 import tabletTextAlignmentField from "../../../components/blocksSubtemplates/tabletTextAlignment.schema";
 import { backgroundSchema } from "../../../components/layout/v2ComponentWrapper.schema";

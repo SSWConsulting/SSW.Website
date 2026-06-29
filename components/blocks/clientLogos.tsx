@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import layoutData from "../../content/global/index.json";
 
 const clientsData = layoutData.clients.clientsList;

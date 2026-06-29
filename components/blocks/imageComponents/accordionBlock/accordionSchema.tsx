@@ -1,5 +1,5 @@
 import tabletTextAlignmentField from "@/components/blocksSubtemplates/tabletTextAlignment.schema";
-import { Template, TinaField } from "tinacms";
+import type { Template, TinaField } from "tinacms";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { ImageComponentLayoutSchema } from "../ImageComponentLayoutSchema";

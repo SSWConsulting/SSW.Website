@@ -3,7 +3,7 @@
 import React, { PropsWithChildren, useState } from "react";
 import Jotform from "react-jotform";
 import { twMerge } from "tailwind-merge";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import { useSessionStorage } from "usehooks-ts";
 import { UtilityButton } from "../button/utilityButton";
 import Popup from "../popup/popup";

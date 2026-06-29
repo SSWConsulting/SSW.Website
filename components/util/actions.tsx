@@ -1,6 +1,6 @@
 import * as React from "react";
-import { BiRightArrowAlt } from "react-icons/bi";
-import { classNames } from "tinacms";
+import { BiRightArrowAlt } from "@react-icons/all-files/bi/BiRightArrowAlt";
+import { cn } from "@/lib/utils";
 import { CustomLink } from "../customLink";
 // import { useTheme } from "../layout";
 
@@ -66,7 +66,7 @@ export const Actions = ({
               <CustomLink key={index} href={action.link ? action.link : "/"}>
                 <button
                   data-tinafield={`${parentField}.${index}`}
-                  className={classNames(
+                  className={cn(
                     "focus:shadow-outline relative z-10 flex items-center whitespace-nowrap rounded-lg px-7 py-3 text-lg font-semibold ring-offset-2 ring-offset-current transition duration-150 ease-out focus:outline-none focus:ring-2",
                     parentColor === "primary"
                       ? invertedButtonColorClasses.blue
@@ -89,7 +89,7 @@ export const Actions = ({
                 key={index}
                 href={action.link ? action.link : "/"}
                 data-tinafield={`${parentField}.${index}`}
-                className={classNames(
+                className={cn(
                   "group inline-flex items-center text-lg font-semibold transition duration-150 ease-out",
                   parentColor === "primary"
                     ? "text-white hover:text-gray-50"

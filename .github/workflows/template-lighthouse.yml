@@ -19,7 +19,7 @@ jobs:
     name: Run Lighthouse Insights
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           ref: ${{ github.event.pull_request.head.ref }}
@@ -52,6 +52,7 @@ jobs:
             ${{ inputs.url }}/employment
             ${{ inputs.url }}/events/angular-superpowers-tour
             ${{ inputs.url }}/events/ai-workshop
+            ${{ inputs.url }}/events/ai-workshop-essentials
             ${{ inputs.url }}/netug/sydney
             ${{ inputs.url }}/training/internship-fullstack
 

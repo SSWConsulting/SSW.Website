@@ -1,5 +1,5 @@
 import React from "react";
-import { Collection, Template } from "tinacms";
+import type { Collection, Template } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
 import { kebabCaseFilename } from "./shared-fields";

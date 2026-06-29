@@ -74,6 +74,8 @@ export default {
     borderWidth: {
       DEFAULT: "3px",
       0: "0",
+      0.5: "0.5px",
+      0.75: "0.75px",
       1: "1px",
       1.5: "1.5px",
       2: "2px",
@@ -84,6 +86,22 @@ export default {
     extend: {
       aspectRatio: {
         "4/3": "4 / 3",
+      },
+      scale: {
+        165: "1.65",
+      },
+      transitionProperty: {
+        width: "width",
+      },
+      backgroundSize: {
+        dots: "20px 20px",
+      },
+      // Enable `aria-invalid:` variants used by the SSW Input (shadcn registry).
+      aria: {
+        invalid: 'invalid="true"',
+      },
+      ringWidth: {
+        3: "3px",
       },
       textUnderlineOffset: {
         3: "3px",
@@ -110,11 +128,13 @@ export default {
       },
       zIndex: {
         1: 1,
+        25: "25",
         videoThumbnail: 11,
         1000: "1000",
       },
       height: {
         22: "5.5rem",
+        26: "6.5rem",
         62: "15.5rem",
         97: "24.25rem",
         102: "25.5rem",
@@ -172,6 +192,7 @@ export default {
         "screen-5/6": "83.333333vh",
       },
       maxWidth: {
+        media: "420px",
         "8xl": "83rem",
         "9xl": "86rem",
         "1/2": "50%",
@@ -193,6 +214,7 @@ export default {
       spacing: {
         0.25: "0.0625rem",
         0.75: "0.1875rem",
+        descender: "0.12em",
         15: "60px",
         17: "4.25rem",
         25: "100px",
@@ -335,6 +357,8 @@ export default {
           linkedin: "#0077b5",
           facebook: "#3b5998",
           xtwitter: "#000",
+          bluesky: "#1083fe",
+          threads: "#000",
           tiktok: "#000",
           github: "#fff",
           meetup: "#f05664",
@@ -342,6 +366,20 @@ export default {
         sswRed: "#cc4141",
         sswDarkRed: "#8e2c2c",
         sswBlack: "#333333",
+        sswDarkGray: '#090909',
+        sswBorder: "#212121",
+        sswCard: "#0d0d0d",
+        // SSW design-system tokens (from ssw-tokens via shadcn registry), mapped
+        // to the CSS variables added to styles.css so v3 generates the utilities
+        // the SSW Input component relies on.
+        background: "var(--background-base)",
+        foreground: "var(--text-strong)",
+        "muted-foreground": "var(--text-weak)",
+        input: "var(--input)",
+        ring: "var(--ring)",
+        destructive: "var(--destructive)",
+        "stroke-strong": "var(--stroke-strong)",
+        "stroke-weak": "var(--stroke-weak)",
         azure: "#007fff",
         ssw: {
           red: {
@@ -440,6 +478,12 @@ export default {
         },
       }),
       backgroundImage: {
+        "dot-grid": "radial-gradient(circle, #212121 1px, transparent 1px)",
+        "red-glow-tl":
+          "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
+        "red-glow-r":
+          "radial-gradient(circle at 78% 50%, rgba(204,65,65,0.15), transparent 25%)",
+        "red-radial": "radial-gradient(circle, #cc4141, transparent 70%)",
         done: "url('/images/icons/done.png')",
         "arrow-right": "url('/images/icons/arrow-right.png')",
         "live-banner-wait":

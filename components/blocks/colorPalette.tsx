@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 import platformColors from "../util/preval/get-tailwind-platform-colors.preval";
 
 export const ColorPalette = () => {

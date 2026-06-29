@@ -2,7 +2,7 @@
 
 import classNames from "classnames";
 import dynamic from "next/dynamic";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { FaPlayCircle } from "react-icons/fa";
 import {
@@ -12,7 +12,8 @@ import {
   getYouTubeId,
 } from "../helpers/embeds";
 
-const Image = dynamic(() => import("next/image"), { ssr: false });
+import Image from "next/image";
+
 const YouTubeEmbed = dynamic(
   () => import("./embeds/youtubeEmbed").then((mod) => mod.YouTubeEmbed),
   { ssr: false }
@@ -29,6 +30,9 @@ type VideoModalProps = {
   roundedEdges?: boolean;
   url?: string;
   overflow?: boolean;
+  priority?: boolean;
+  /** Optional thumbnail that overrides the auto-derived video poster. */
+  thumbnail?: string;
 };
 
 type VideoType = "youtube" | "vimeo";
@@ -39,14 +43,17 @@ const getVimeoData = async (id: string) => {
   return video[0]?.thumbnail_large || "";
 };
 
-type VideoState = {
-  videoType: VideoType | undefined;
-  videoId: string | undefined;
+const extractVideoId = (url?: string) => {
+  const isYouTube = !!url && MATCH_URL_YOUTUBE.test(url);
+  const isVimeo = !!url && MATCH_URL_VIMEO.test(url);
+  let videoId: string | undefined;
+  if (isYouTube) {
+    videoId = getYouTubeId(url);
+  } else if (isVimeo) {
+    videoId = getVimeoId(url);
+  }
 
-  test?: string;
-  imageSrc: string;
-  isVimeo?: boolean;
-  isYoutube?: boolean;
+  return { isYouTube, isVimeo, videoId };
 };
 
 export const VideoModal = ({
@@ -56,49 +63,47 @@ export const VideoModal = ({
   overflow,
   roundedEdges,
   className,
+  priority = false,
+  thumbnail,
 }: VideoModalProps) => {
-  const [videoState, setVideoState] = useState<VideoState>({
-    videoType: undefined,
-    videoId: undefined,
-    imageSrc: "",
-  });
   const [clicked, setClicked] = useState<boolean>(false);
-  const setVideoThumbnail = useCallback(({ isYouTube, isVimeo, videoId }) => {
-    if (isYouTube) {
-      setVideoState({
-        videoId,
-        videoType: "youtube",
-        imageSrc: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-      });
-      return;
-    }
-    if (isVimeo)
-      getVimeoData(videoId).then((res) => {
-        setVideoState({
-          videoId,
-          videoType: "vimeo",
-          imageSrc: res[0].thumbnail_large,
-        });
-      });
-  }, []);
 
-  const extractVideoId = useCallback((url: string) => {
-    let videoId;
-    const isYouTube = MATCH_URL_YOUTUBE.test(url);
-    const isVimeo = MATCH_URL_VIMEO.test(url);
-    if (isYouTube) {
-      videoId = getYouTubeId(url);
-    } else if (isVimeo) {
-      videoId = getVimeoId(url);
-    }
+  // YouTube IDs resolve synchronously, so the thumbnail is derived during render —
+  // this puts the <Image> in the server HTML so the LCP preload can fire immediately
+  // when the consumer opts in via `priority`. Vimeo needs an async fetch, so it
+  // resolves later via the effect.
+  const { isYouTube, isVimeo, videoId } = useMemo(
+    () => extractVideoId(url),
+    [url]
+  );
+  const videoType: VideoType | undefined = isYouTube
+    ? "youtube"
+    : isVimeo
+      ? "vimeo"
+      : undefined;
 
-    return { isYouTube, isVimeo, videoId };
-  }, []);
+  const [vimeoSrc, setVimeoSrc] = useState("");
+  const [youTubeFailed, setYouTubeFailed] = useState(false);
 
   useEffect(() => {
-    const { isVimeo, isYouTube, videoId } = extractVideoId(url);
-    setVideoThumbnail({ isVimeo, isYouTube, videoId });
-  }, [setVideoThumbnail, extractVideoId, url]);
+    if (!isVimeo || !videoId) return;
+    let active = true;
+    getVimeoData(videoId).then((src) => {
+      if (active) setVimeoSrc(src);
+    });
+    return () => {
+      active = false;
+    };
+  }, [isVimeo, videoId]);
+
+  // A CMS-supplied thumbnail wins; otherwise fall back to the poster derived
+  // from the video provider (YouTube still URL or fetched Vimeo thumbnail).
+  const derivedSrc = isYouTube
+    ? `https://img.youtube.com/vi/${videoId}/${
+        youTubeFailed ? "mqdefault" : "maxresdefault"
+      }.jpg`
+    : vimeoSrc;
+  const imageSrc = thumbnail || derivedSrc;
 
   return (
     <div
@@ -112,22 +117,16 @@ export const VideoModal = ({
       <div className="relative mx-auto aspect-video w-full cursor-pointer">
         {!clicked ? (
           <div className="size-full" onClick={() => setClicked(true)}>
-            {videoState.imageSrc && (
+            {imageSrc && (
               <>
                 <Image
                   className={classNames("!my-0", frameClassName)}
-                  src={videoState.imageSrc}
+                  src={imageSrc}
                   fill
+                  priority={priority}
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   alt="Video player"
-                  onError={() => {
-                    setVideoState({
-                      ...videoState,
-                      imageSrc:
-                        videoState.videoType === "youtube"
-                          ? `https://img.youtube.com/vi/${videoState.videoId}/mqdefault.jpg`
-                          : "",
-                    });
-                  }}
+                  onError={() => setYouTubeFailed(true)}
                 />
                 <PlayArrow />
               </>
@@ -135,28 +134,28 @@ export const VideoModal = ({
           </div>
         ) : (
           <>
-            {videoState.videoType === "youtube" && (
+            {videoType === "youtube" && (
               <>
                 <YouTubeEmbed
                   className={classNames(
                     "absolute left-0 top-0",
                     frameClassName
                   )}
-                  id={videoState.videoId}
+                  id={videoId}
                   width={"100%"}
                   height={"100%"}
                   autoplay={true}
                 />
               </>
             )}
-            {videoState.videoType === "vimeo" && (
+            {videoType === "vimeo" && (
               <>
                 <VimeoEmbed
                   className={classNames(
                     "absolute left-0 top-0",
                     frameClassName
                   )}
-                  id={videoState.videoId}
+                  id={videoId}
                   autoplay={true}
                 />
               </>
