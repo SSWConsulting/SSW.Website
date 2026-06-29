@@ -117,7 +117,7 @@ export function V3ImageCards({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="my-4 max-w-2xl px-8 text-3xl text-white lg:text-5xl"
+            className="my-4 max-w-3xl px-8 text-3xl text-white lg:text-5xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
