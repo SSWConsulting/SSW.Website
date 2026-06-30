@@ -1,5 +1,6 @@
 "use client";
 import AlternatingText from "@/components/alternating-text";
+import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import {
   Carousel,
   CarouselContent,
@@ -13,14 +14,17 @@ import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaDribbble, FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { tinaField } from "tinacms/dist/react";
+
+const SSW_PEOPLE_ICON =
+  "/images/company-logos/downloads/images/ssw-logo-icon.png";
 
 const socials = [
   { key: "linkedin", label: "LinkedIn", Icon: FaLinkedinIn },
   { key: "twitter", label: "X", Icon: FaXTwitter },
-  { key: "dribbble", label: "Dribbble", Icon: FaDribbble },
+  { key: "sswPeople", label: "SSW People", image: SSW_PEOPLE_ICON },
 ];
 
 function PersonCard({ person }) {
@@ -50,7 +54,7 @@ function PersonCard({ person }) {
       )}
 
       <div className="mt-4 flex items-center gap-4">
-        {socials.map(({ key, label, Icon }) =>
+        {socials.map(({ key, label, Icon, image }) =>
           person?.[key] ? (
             <Link
               key={key}
@@ -60,7 +64,17 @@ function PersonCard({ person }) {
               aria-label={`${person?.name ?? ""} on ${label}`}
               className="text-white transition-colors hover:text-sswRed"
             >
-              <Icon className="size-4" />
+              {image ? (
+                <Image
+                  src={image}
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="size-4 transition-opacity hover:opacity-80"
+                />
+              ) : (
+                <Icon className="size-4" />
+              )}
             </Link>
           ) : null
         )}
@@ -144,6 +158,8 @@ export function V3PeopleCarousel({ data }) {
             {data.subtitle}
           </p>
         )}
+
+        <ButtonRow data={data} className="mt-6 flex-wrap" />
 
         {/* 4 or fewer all fit on screen, so skip the carousel UI and lay them
             out in a static grid; only carousel when there's more to scroll. */}

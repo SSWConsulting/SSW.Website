@@ -1,5 +1,6 @@
 import type { Template } from "tinacms";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
+import { buttonSchema } from "../../../button/templateButton.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { optimizedImageSchema } from "../../../../tina/collections/shared-fields";
 
@@ -46,6 +47,20 @@ export const V3PeopleCarouselSchema: Template = {
       name: "subtitle",
       description: "Short subtitle shown beneath the title.",
       ui: { component: "textarea" },
+    },
+    {
+      type: "object",
+      label: "Buttons",
+      name: "buttons",
+      list: true,
+      description: "A row of buttons. Max 2.",
+      ui: {
+        defaultItem: { buttonText: "Lorem Ipsum" },
+        max: 2,
+        itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
+      },
+      //@ts-expect-error – fields are not being recognized
+      fields: buttonSchema,
     },
     {
       type: "object",
@@ -99,8 +114,8 @@ export const V3PeopleCarouselSchema: Template = {
         },
         {
           type: "string",
-          label: "Dribbble URL",
-          name: "dribbble",
+          label: "SSW People URL",
+          name: "sswPeople",
         },
       ],
     },
