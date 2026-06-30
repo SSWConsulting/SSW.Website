@@ -44,7 +44,7 @@
       "brow": "",
       "heading": "Australia's Leading AI, .NET and Cloud Consultants",
       "subtitle": "Tell us about your platform. We'll show you what's possible.",
-      "cardBackgroundColour": 4,
+      "cardBackgroundColour": 8,
       "showBorder": false,
       "cards": [
         {
@@ -85,7 +85,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "Why teams choose **SSW**",
+      "heading": "Why teams choose SSW",
       "statistics": [
         {
           "figure": 7000,
@@ -272,7 +272,6 @@
         {
           "buttonText": "SSW People",
           "buttonLink": "/people",
-          "icon": "BiRightArrowAlt",
           "iconFirst": false
         }
       ],
@@ -379,7 +378,7 @@
         {
           "title": "July User Group",
           "description": "Join our .NET developer workshop to master the latest open-source, cross-platform framework and elevate your coding skills.",
-          "duration": "45 minutes",
+          "duration": "45 mins",
           "date": "2026-07-23T00:18:41.261Z",
           "location": "Sydney",
           "image": {
@@ -387,12 +386,17 @@
             "imageHeight": 1278,
             "imageWidth": 1917
           },
+          "presenterImage": {
+            "imageSource": "/images/people-carousel/wicksy.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
           "registerLink": "/some-link"
         },
         {
           "title": "Clean Architecture Workshop",
           "description": "Join our workshop to master clean architecture and elevate your full-stack development and consulting skills.",
-          "duration": "45 minutes",
+          "duration": "45 mins",
           "date": "2026-08-04T00:18:50.472Z",
           "location": "Melbourne",
           "image": {
@@ -400,18 +404,28 @@
             "imageHeight": 1278,
             "imageWidth": 2272
           },
+          "presenterImage": {
+            "imageSource": "/images/people-carousel/calum.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
           "registerLink": "/some-link"
         },
         {
           "title": "Artificial Intelligence Workshop",
           "description": "Join us for an exciting AI workshop where you'll explore the latest advancements in artificial intelligence.",
-          "duration": "45 minutes",
+          "duration": "45 min",
           "date": "2026-08-26T00:19:00.058Z",
           "location": "Strasbourg",
           "image": {
             "imageSource": "/images/new-homepage-background-assets/ai-workshop.png",
             "imageHeight": 1721,
             "imageWidth": 2891
+          },
+          "presenterImage": {
+            "imageSource": "/images/people-carousel/uly.png",
+            "imageHeight": 535,
+            "imageWidth": 590
           },
           "registerLink": "/some-link"
         }

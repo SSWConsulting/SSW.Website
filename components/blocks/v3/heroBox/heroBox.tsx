@@ -117,7 +117,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 onClick={scrollToNext}
                 className="group pointer-events-auto absolute bottom-3 left-1/2 flex size-11 -translate-x-1/2 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
               >
-                <FiArrowDown className="size-5 transition-transform group-hover:translate-y-0.5" />
+                <FiArrowDown className="size-5" />
               </button>
             </div>
           )}
