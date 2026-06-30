@@ -267,9 +267,7 @@ export function V3Events({ data }) {
         <SectionHeader data={data} />
 
         {hasFeatured && (
-          <div
-            data-tina-field={tinaField(data.featuredEvent, "title")}
-          >
+          <div data-tina-field={tinaField(data.featuredEvent, "title")}>
             <FeaturedEvent event={data.featuredEvent} />
           </div>
         )}

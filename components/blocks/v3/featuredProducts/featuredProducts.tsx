@@ -167,13 +167,11 @@ export function V3FeaturedProducts({ data }) {
         size="custom"
         width="custom"
         padding="px-0 lg:px-4"
-        className="flex max-w-screen-xl flex-col gap-8 py-16  md:py-24"
+        className="flex max-w-screen-xl flex-col gap-8 py-16 md:py-24"
       >
         <SectionHeader data={data} />
 
-        {hasHighlight && (          
-            <HighlightCard project={data.highlighted} />
-        )}
+        {hasHighlight && <HighlightCard project={data.highlighted} />}
 
         {products.length > 0 && (
           <>
