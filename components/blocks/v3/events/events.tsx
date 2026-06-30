@@ -58,7 +58,7 @@ function EmailRegister() {
     <>
       <form
         onSubmit={submit}
-        className="flex w-full max-w-md items-center gap-2 rounded-lg bg-white/10 p-1.5"
+        className="flex w-full max-w-md flex-col items-stretch gap-2 sm:flex-row"
       >
         <input
           type="email"
@@ -66,12 +66,12 @@ function EmailRegister() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
-          className="min-w-0 flex-1 bg-transparent px-4 py-2 text-white placeholder:text-gray-400 focus:outline-none"
+          className="min-h-12 min-w-0 flex-1 rounded-lg border border-white/30 bg-white/20 px-4 text-white placeholder:text-gray-400 focus:border-white/60 focus:outline-none"
         />
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="shrink-0 rounded-md bg-white px-5 py-2 text-sm font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-50"
+          className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-lg bg-white px-5 text-sm font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-50"
         >
           {status === "submitting" ? "…" : "Register Now"}
         </button>
@@ -267,7 +267,10 @@ export function V3Events({ data }) {
         <SectionHeader data={data} />
 
         {hasFeatured && (
-          <div data-tina-field={tinaField(data.featuredEvent, "title")}>
+          <div
+            className="px-4 lg:px-0"
+            data-tina-field={tinaField(data.featuredEvent, "title")}
+          >
             <FeaturedEvent event={data.featuredEvent} />
           </div>
         )}
@@ -280,7 +283,7 @@ export function V3Events({ data }) {
               autoplay={false}
               className="lg:hidden"
             >
-              <CarouselContent>
+              <CarouselContent className="-ml-22">
                 {carouselCards.map((event, index) => (
                   <CarouselItem
                     key={`v3-event-card-${index}`}

@@ -171,7 +171,11 @@ export function V3FeaturedProducts({ data }) {
       >
         <SectionHeader data={data} />
 
-        {hasHighlight && <HighlightCard project={data.highlighted} />}
+        {hasHighlight && (
+          <div className="px-4 lg:px-0">
+            <HighlightCard project={data.highlighted} />
+          </div>
+        )}
 
         {products.length > 0 && (
           <>
@@ -181,7 +185,7 @@ export function V3FeaturedProducts({ data }) {
               autoplay={false}
               className="lg:hidden"
             >
-              <CarouselContent>
+              <CarouselContent className="-ml-22">
                 {carouselProducts.map((project, index) => (
                   <CarouselItem
                     key={`v3-featured-project-${index}`}

@@ -148,7 +148,7 @@ export function V3ImageCards({ data }) {
               autoplay={false}
               className="mt-12 lg:hidden"
             >
-              <CarouselContent>
+              <CarouselContent className="-ml-22">
                 {carouselCards.map((card, index) => (
                   <CarouselItem
                     key={`v3-image-card-${index}`}
