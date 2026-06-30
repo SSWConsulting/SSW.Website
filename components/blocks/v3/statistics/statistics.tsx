@@ -51,7 +51,7 @@ export default function V3Statistics({ data }) {
               <div className="flex items-baseline">
                 <span
                   data-tina-field={tinaField(stat, "figure")}
-                  className="text-4xl leading-none text-white lg:text-5xl xl:text-6xl"
+                  className="text-6xl leading-none text-white lg:text-5xl xl:text-6xl"
                 >
                   {typeof stat?.figure === "number"
                     ? stat.figure.toLocaleString("en-US")
@@ -60,7 +60,7 @@ export default function V3Statistics({ data }) {
                 {stat?.figureSuffix && (
                   <span
                     data-tina-field={tinaField(stat, "figureSuffix")}
-                    className="ml-1 text-3xl font-light text-white lg:text-3xl xl:text-4xl"
+                    className="ml-1 text-4xl font-light text-white lg:text-3xl xl:text-4xl"
                   >
                     {stat.figureSuffix}
                   </span>
