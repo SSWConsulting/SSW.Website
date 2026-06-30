@@ -175,7 +175,7 @@ function EventCard({ event }) {
           )
         )}
         {event?.presenterImage?.imageSource && (
-          <div className="pointer-events-none absolute right-4 top-4 z-10 size-12 overflow-hidden rounded-full border-2 border-white">
+          <div className="pointer-events-none absolute right-4 top-4 z-10 size-12 overflow-hidden">
             <Image
               src={event.presenterImage.imageSource}
               alt={event.presenterImage.altText ?? ""}

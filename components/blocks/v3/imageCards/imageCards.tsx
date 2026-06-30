@@ -17,14 +17,23 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
   const inner = (
     <div
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-2xl transition",
-        cardBackgroundClass,
+        "group relative flex h-full flex-col overflow-hidden rounded-2xl transition border-0.75 border-sswBorder",
         showBorder && "border-0.75 border-sswBorder"
       )}
     >
+      {/* Card-body background sits on its own layer so we can fade it from
+          60% at rest to full on hover without touching the text or graphic.
+          Works for both solid and gradient background options. */}
+      <div
+        aria-hidden
+        className={cn(
+          "absolute inset-0 opacity-60 transition-opacity duration-300 group-hover:opacity-100",
+          cardBackgroundClass
+        )}
+      />
       <div
         className={cn(
-          "flex aspect-[4/3] items-center justify-center bg-sswRed p-4 sm:p-8"
+          "relative flex aspect-[4/3] items-center justify-center bg-sswRed p-4 sm:p-8"
         )}
       >
         {card?.graphic?.imageSource && (
@@ -40,7 +49,7 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-6">
+      <div className="relative flex flex-1 flex-col p-6">
         <h3 className="text-2xl font-semibold text-white">{card?.title}</h3>
         {card?.description && (
           <p className="mt-4 text-base font-light text-gray-400">
@@ -117,7 +126,7 @@ export function V3ImageCards({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="my-4 max-w-3xl px-8 text-3xl text-white lg:text-5xl"
+            className="my-4 max-w-3xl px-8 lg:px-0 text-3xl text-white lg:text-5xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -125,7 +134,7 @@ export function V3ImageCards({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className="max-w-2xl px-8 text-base font-light text-gray-400"
+            className="max-w-2xl px-8 lg:px-0 text-base font-light text-gray-400"
           >
             {data.subtitle}
           </p>
