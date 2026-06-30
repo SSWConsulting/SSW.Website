@@ -118,8 +118,10 @@ export function V3Testimonials({ data }) {
             // Desktop: 2×2 grid — quote/image on top, author/buttons pinned to
             // the bottom row. The top row is `1fr` so it absorbs the slack,
             // keeping the author (bottom-left) and controls (bottom-right) on
-            // the same baseline regardless of quote length.
-            "xl:grid xl:max-w-none xl:grid-cols-[minmax(0,1fr)_auto] xl:grid-rows-[1fr_auto] xl:items-start xl:gap-x-20 xl:gap-y-4"
+            // the same baseline regardless of quote length. Cap the width
+            // (centred via mx-auto) so the image sits beside the quote instead
+            // of being flung to the far edge of a full-width section.
+            "xl:grid xl:max-w-5xl xl:grid-cols-[minmax(0,1fr)_auto] xl:grid-rows-[1fr_auto] xl:items-start xl:gap-x-12 xl:gap-y-4"
           )}
         >
           {/* Quote (+ optional case study) — top-left */}

@@ -30,9 +30,9 @@
       ],
       "backgroundMedia": {
         "altText": "SSW team members collaborating",
-        "imageSource": "/images/carousel/Why-you-should-chooe-SSW-OG.png",
-        "imageHeight": 576,
-        "imageWidth": 1300
+        "imageSource": "/images/carousel/Why-you-should-choose-SSW-OG-2600.jpg",
+        "imageHeight": 1150,
+        "imageWidth": 2600
       },
       "showScrollIndicator": true,
       "_template": "v3HeroBox"
