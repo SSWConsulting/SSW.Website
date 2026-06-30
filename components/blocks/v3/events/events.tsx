@@ -12,7 +12,8 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { FiClock } from "react-icons/fi";
+import { BsArrowUpRight } from "react-icons/bs";
+import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
@@ -152,7 +153,7 @@ function EventCard({ event }) {
   return (
     <div
       className={cn(
-        "flex h-full flex-col overflow-hidden rounded-[15px] bg-sswBorder"
+        "group flex h-full flex-col overflow-hidden rounded-[15px] bg-sswBorder"
       )}
     >
       <div className="relative aspect-video w-full">
@@ -187,10 +188,30 @@ function EventCard({ event }) {
       </div>
 
       <div className="flex flex-1 flex-col p-4 lg:p-6">
-        {event?.duration && (
-          <div className="flex items-center gap-2 text-sm font-light text-gray-400">
-            <FiClock className="size-4" />
-            {event.duration}
+        {(event?.duration || event?.date || event?.location) && (
+          <div className="flex flex-col gap-1 text-sm font-light text-gray-400">
+            {(event?.duration || event?.date) && (
+              <div className="flex flex-wrap items-center gap-4">
+                {event?.duration && (
+                  <span className="flex items-center gap-2">
+                    <FiClock className="size-4" />
+                    {event.duration}
+                  </span>
+                )}
+                {event?.date && (
+                  <span className="flex items-center gap-2">
+                    <FiCalendar className="size-4" />
+                    {dayjs(event.date).format("ddd D MMM")}
+                  </span>
+                )}
+              </div>
+            )}
+            {event?.location && (
+              <span className="flex items-center gap-2">
+                <FiMapPin className="size-4" />
+                {event.location}
+              </span>
+            )}
           </div>
         )}
         {event?.title && (
@@ -206,9 +227,12 @@ function EventCard({ event }) {
         {event?.registerLink && (
           <Link
             href={event.registerLink}
-            className="mt-6 inline-block self-start rounded-lg border border-white/40 px-5 py-2.5 text-sm text-white !no-underline transition-colors hover:bg-white hover:text-black"
+            aria-label="Register"
+            className="mt-auto self-end pt-6 !no-underline"
           >
-            Register Now
+            <span className="flex size-10 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
+              <BsArrowUpRight className="size-1/3" />
+            </span>
           </Link>
         )}
       </div>
@@ -238,13 +262,12 @@ export function V3Events({ data }) {
         size="custom"
         width="custom"
         padding="px-0 lg:px-4"
-        className="flex max-w-screen-xl flex-col gap-12 py-16 md:gap-20 md:py-24"
+        className="flex max-w-screen-xl flex-col gap-8 py-16 md:py-24"
       >
         <SectionHeader data={data} />
 
         {hasFeatured && (
           <div
-            className="p-4"
             data-tina-field={tinaField(data.featuredEvent, "title")}
           >
             <FeaturedEvent event={data.featuredEvent} />
