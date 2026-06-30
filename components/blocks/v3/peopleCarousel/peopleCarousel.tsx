@@ -32,7 +32,7 @@ function PersonCard({ person }) {
     <div className="flex flex-col items-center text-center">
       <div
         className={cn(
-          "relative aspect-square w-full max-w-[280px] overflow-hidden rounded-full"
+          "relative aspect-square w-full max-w-[140px] overflow-hidden rounded-full sm:max-w-[280px]"
         )}
       >
         {person?.image?.imageSource && (
@@ -53,7 +53,7 @@ function PersonCard({ person }) {
         <p className="mt-1 text-sm font-light text-gray-400">{person.role}</p>
       )}
 
-      <div className="mt-4 flex items-center gap-4">
+      <div className="mt-2 flex items-center gap-1">
         {socials.map(({ key, label, Icon, image }) =>
           person?.[key] ? (
             <Link
@@ -62,7 +62,9 @@ function PersonCard({ person }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${person?.name ?? ""} on ${label}`}
-              className="text-white transition-colors hover:text-sswRed"
+              // Keep the icon at 16px but give the link a ≥36×36px hit area
+              // so it meets the minimum accessible touch-target size.
+              className="flex size-9 items-center justify-center text-white transition-colors hover:text-sswRed"
             >
               {image ? (
                 <Image
@@ -164,7 +166,7 @@ export function V3PeopleCarousel({ data }) {
         {/* 4 or fewer all fit on screen, so skip the carousel UI and lay them
             out in a static grid; only carousel when there's more to scroll. */}
         {people.length > 0 && people.length <= 4 && (
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 gap-8 lg:grid-cols-4">
             {people.map((person, index) => (
               <div
                 key={`v3-person-${index}`}
@@ -178,7 +180,7 @@ export function V3PeopleCarousel({ data }) {
 
         {people.length > 4 && (
           <Carousel opts={{ align: "start" }} className="mt-12">
-            <CarouselContent className="-ml-8">
+            <CarouselContent className="-ml-22">
               {people.map((person, index) => (
                 <CarouselItem
                   key={`v3-person-${index}`}
