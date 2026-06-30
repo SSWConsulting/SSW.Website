@@ -44,7 +44,7 @@ function PersonCard({ person }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col items-center p-4 xl:p-6 text-center">
+      <div className="flex flex-1 flex-col items-center p-4 text-center xl:p-6">
         {person?.name && (
           <h3 className="text-xl font-semibold text-white">{person.name}</h3>
         )}
@@ -190,7 +190,9 @@ export function V3PeopleCarousel({ data }) {
                 {carouselPeople.map((person, index) => (
                   <CarouselItem
                     key={`v3-person-${index}`}
-                    className="basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+                    className={cn(
+                      "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+                    )}
                     data-tina-field={tinaField(person, "name")}
                   >
                     <PersonCard person={person} />
