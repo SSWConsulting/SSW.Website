@@ -180,7 +180,7 @@ export function V3PeopleCarousel({ data }) {
 
         {people.length > 4 && (
           <Carousel opts={{ align: "start" }} className="mt-12">
-            <CarouselContent className="-ml-22">
+            <CarouselContent className="-ml-24">
               {people.map((person, index) => (
                 <CarouselItem
                   key={`v3-person-${index}`}

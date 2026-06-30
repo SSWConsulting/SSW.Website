@@ -17,7 +17,7 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
   const inner = (
     <div
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-2xl transition border-0.75 border-sswBorder",
+        "group relative flex h-full flex-col overflow-hidden rounded-2xl border-0.75 border-sswBorder transition",
         showBorder && "border-0.75 border-sswBorder"
       )}
     >
@@ -126,7 +126,7 @@ export function V3ImageCards({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="my-4 max-w-3xl px-8 lg:px-0 text-3xl text-white lg:text-5xl"
+            className="my-4 max-w-3xl px-8 text-3xl text-white lg:px-0 lg:text-5xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -134,7 +134,7 @@ export function V3ImageCards({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className="max-w-2xl px-8 lg:px-0 text-base font-light text-gray-400"
+            className="max-w-2xl px-8 text-base font-light text-gray-400 lg:px-0"
           >
             {data.subtitle}
           </p>
@@ -148,7 +148,7 @@ export function V3ImageCards({ data }) {
               autoplay={false}
               className="mt-12 lg:hidden"
             >
-              <CarouselContent className="-ml-22">
+              <CarouselContent className="-ml-24">
                 {carouselCards.map((card, index) => (
                   <CarouselItem
                     key={`v3-image-card-${index}`}

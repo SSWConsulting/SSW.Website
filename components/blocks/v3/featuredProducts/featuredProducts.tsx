@@ -185,7 +185,7 @@ export function V3FeaturedProducts({ data }) {
               autoplay={false}
               className="lg:hidden"
             >
-              <CarouselContent className="-ml-22">
+              <CarouselContent className="-ml-24">
                 {carouselProducts.map((project, index) => (
                   <CarouselItem
                     key={`v3-featured-project-${index}`}

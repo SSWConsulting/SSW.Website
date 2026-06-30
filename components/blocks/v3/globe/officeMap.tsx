@@ -65,10 +65,7 @@ export function OfficeMap({
           Math.max(x - labelW / 2, edge),
           MAP_W - labelW - edge
         );
-        const baseX = Math.min(
-          Math.max(x, pillX + 3),
-          pillX + labelW - 3
-        );
+        const baseX = Math.min(Math.max(x, pillX + 3), pillX + labelW - 3);
         return (
           <g>
             {selectedName && (
