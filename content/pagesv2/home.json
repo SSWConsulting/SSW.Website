@@ -286,7 +286,8 @@
             "imageWidth": 590
           },
           "linkedin": "https://www.linkedin.com/in/adamcogan/",
-          "twitter": "https://x.com/AdamCogan"
+          "twitter": "https://x.com/AdamCogan",
+          "sswPeople": "https://www.ssw.com.au/people/adam-cogan/"
         },
         {
           "name": "Ulysses Maclaren",
@@ -297,7 +298,8 @@
             "imageWidth": 590
           },
           "linkedin": "https://www.linkedin.com/in/ulyssesmaclaren/",
-          "twitter": "https://x.com/ulyssesmac"
+          "twitter": "https://x.com/ulyssesmac",
+          "sswPeople": "https://www.ssw.com.au/people/ulysses-maclaren/"
         },
         {
           "name": "Calum Simpson",
@@ -308,7 +310,8 @@
             "imageWidth": 590
           },
           "linkedin": "https://www.linkedin.com/in/calumjs/",
-          "twitter": "https://x.com/_____Calum"
+          "twitter": "https://x.com/_____Calum",
+          "sswPeople": "https://www.ssw.com.au/people/calum-simpson/"
         },
         {
           "name": "Matt Wicks",
@@ -319,7 +322,8 @@
             "imageWidth": 590
           },
           "linkedin": "https://www.linkedin.com/in/matt-wicks/",
-          "twitter": "https://x.com/matteightyate"
+          "twitter": "https://x.com/matteightyate",
+          "sswPeople": "https://www.ssw.com.au/people/matt-wicks/"
         }
       ],
       "_template": "v3PeopleCarousel"
@@ -376,31 +380,40 @@
           "title": "July User Group",
           "description": "Join our .NET developer workshop to master the latest open-source, cross-platform framework and elevate your coding skills.",
           "duration": "45 minutes",
+          "date": "2026-07-23T00:18:41.261Z",
+          "location": "Sydney",
           "image": {
             "imageSource": "/images/new-homepage-background-assets/dotnet-dev-workshop.png",
             "imageHeight": 1278,
             "imageWidth": 1917
-          }
+          },
+          "registerLink": "/some-link"
         },
         {
           "title": "Clean Architecture Workshop",
           "description": "Join our workshop to master clean architecture and elevate your full-stack development and consulting skills.",
           "duration": "45 minutes",
+          "date": "2026-08-04T00:18:50.472Z",
+          "location": "Melbourne",
           "image": {
             "imageSource": "/images/new-homepage-background-assets/ca-workshop.png",
             "imageHeight": 1278,
             "imageWidth": 2272
-          }
+          },
+          "registerLink": "/some-link"
         },
         {
           "title": "Artificial Intelligence Workshop",
           "description": "Join us for an exciting AI workshop where you'll explore the latest advancements in artificial intelligence.",
           "duration": "45 minutes",
+          "date": "2026-08-26T00:19:00.058Z",
+          "location": "Strasbourg",
           "image": {
             "imageSource": "/images/new-homepage-background-assets/ai-workshop.png",
             "imageHeight": 1721,
             "imageWidth": 2891
-          }
+          },
+          "registerLink": "/some-link"
         }
       ],
       "_template": "v3Events"
