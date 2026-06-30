@@ -142,6 +142,18 @@ export const V3EventsSchema: Template = {
           name: "duration",
           description: "e.g. '45 minutes'.",
         },
+        {
+          type: "datetime",
+          label: "Date",
+          name: "date",
+          description: "Optional event date shown on the card.",
+        },
+        {
+          type: "string",
+          label: "Location",
+          name: "location",
+          description: "Optional event location shown on the card.",
+        },
         imageObject("image", "Thumbnail", "Thumbnail / video poster image."),
         {
           type: "string",
