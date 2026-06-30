@@ -126,10 +126,10 @@ export function V3Testimonials({ data }) {
         >
           {/* Quote (+ optional case study) — top-left */}
           <div className="flex max-w-3xl flex-col xl:col-start-1 xl:row-start-1">
-            {/* Only the active quote sits in normal flow (defining the block
-                height so the author hugs it); the rest overlay absolutely so a
-                shorter quote doesn't reserve the tallest one's height. */}
-            <div className="relative">
+            {/* All quotes share one grid cell so the cell always sizes to the
+                tallest quote — switching slides never changes the block height
+                (only the active quote is visible; the rest fade to opacity-0). */}
+            <div className="grid">
               {testimonials.map((t, i) => (
                 <blockquote
                   key={`v3-testimonial-quote-${i}`}
@@ -138,10 +138,10 @@ export function V3Testimonials({ data }) {
                     i === active ? tinaField(t, "quote") : undefined
                   }
                   className={cn(
-                    "text-2xl text-white transition-opacity duration-300 md:text-4xl",
+                    "col-start-1 row-start-1 text-2xl text-white transition-opacity duration-300 md:text-4xl",
                     i === active
-                      ? "relative opacity-100"
-                      : "pointer-events-none absolute inset-x-0 top-0 opacity-0"
+                      ? "opacity-100"
+                      : "pointer-events-none opacity-0"
                   )}
                 >
                   {i === active ? (
