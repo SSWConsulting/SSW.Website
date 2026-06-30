@@ -242,7 +242,7 @@ export function V3Testimonials({ data }) {
 
           {/* Carousel controls — bottom-right, under the image */}
           {testimonials.length > 1 && (
-            <div className="mt-6 flex justify-end gap-3 xl:col-start-2 xl:row-start-2 xl:mt-0 xl:self-end xl:justify-self-end">
+            <div className="mt-6 flex justify-end gap-3 xl:col-start-2 xl:row-start-2 xl:mt-0 xl:place-self-end">
               <button
                 type="button"
                 aria-label="Previous testimonial"
