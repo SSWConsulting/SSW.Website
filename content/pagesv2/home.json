@@ -280,9 +280,9 @@
           "name": "Adam Cogan",
           "role": "CEO + Chief Architect",
           "image": {
-            "imageSource": "/images/people-carousel/adam.png",
+            "imageSource": "/images/people-carousel/adam-nobg.png",
             "imageHeight": 535,
-            "imageWidth": 590
+            "imageWidth": 509
           },
           "linkedin": "https://www.linkedin.com/in/adamcogan/",
           "twitter": "https://x.com/AdamCogan",
@@ -292,9 +292,9 @@
           "name": "Ulysses Maclaren",
           "role": "COO",
           "image": {
-            "imageSource": "/images/people-carousel/uly.png",
-            "imageHeight": 535,
-            "imageWidth": 590
+            "imageSource": "/images/people-carousel/uly-nobg.png",
+            "imageHeight": 534,
+            "imageWidth": 533
           },
           "linkedin": "https://www.linkedin.com/in/ulyssesmaclaren/",
           "twitter": "https://x.com/ulyssesmac",
@@ -304,9 +304,9 @@
           "name": "Calum Simpson",
           "role": "VP of AI",
           "image": {
-            "imageSource": "/images/people-carousel/calum.png",
-            "imageHeight": 535,
-            "imageWidth": 590
+            "imageSource": "/images/people-carousel/calum-nobg.png",
+            "imageHeight": 529,
+            "imageWidth": 475
           },
           "linkedin": "https://www.linkedin.com/in/calumjs/",
           "twitter": "https://x.com/_____Calum",
@@ -316,9 +316,9 @@
           "name": "Matt Wicks",
           "role": "Solution Architect",
           "image": {
-            "imageSource": "/images/people-carousel/wicksy.png",
-            "imageHeight": 535,
-            "imageWidth": 590
+            "imageSource": "/images/people-carousel/wicks-nobg.png",
+            "imageHeight": 1064,
+            "imageWidth": 986
           },
           "linkedin": "https://www.linkedin.com/in/matt-wicks/",
           "twitter": "https://x.com/matteightyate",

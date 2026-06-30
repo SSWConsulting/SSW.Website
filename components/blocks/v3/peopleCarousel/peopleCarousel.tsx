@@ -29,57 +29,57 @@ const socials = [
 
 function PersonCard({ person }) {
   return (
-    <div className="flex flex-col items-center text-center">
-      <div
-        className={cn(
-          "relative aspect-square w-full max-w-[140px] overflow-hidden rounded-full sm:max-w-[280px]"
-        )}
-      >
+    <div className="flex h-full flex-col overflow-hidden rounded-2xl border-0.75 border-sswBorder bg-sswCard">
+      {/* Red panel frames the photo with padding on the sides and top while the
+          photo stays flush to the bottom, so the person reads as standing in it. */}
+      <div className="relative aspect-square w-full bg-sswRed">
         {person?.image?.imageSource && (
           <Image
             src={person.image.imageSource}
             alt={person.image.altText ?? person?.name ?? ""}
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 80vw"
-            className="object-cover"
+            className="object-contain object-bottom px-2 pt-2"
           />
         )}
       </div>
 
-      {person?.name && (
-        <h3 className="mt-6 text-xl font-semibold text-white">{person.name}</h3>
-      )}
-      {person?.role && (
-        <p className="mt-1 text-sm font-light text-gray-400">{person.role}</p>
-      )}
-
-      <div className="mt-2 flex items-center gap-1">
-        {socials.map(({ key, label, Icon, image }) =>
-          person?.[key] ? (
-            <Link
-              key={key}
-              href={person[key]}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${person?.name ?? ""} on ${label}`}
-              // Keep the icon at 16px but give the link a ≥36×36px hit area
-              // so it meets the minimum accessible touch-target size.
-              className="flex size-9 items-center justify-center text-white transition-colors hover:text-sswRed"
-            >
-              {image ? (
-                <Image
-                  src={image}
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="size-4 transition-opacity hover:opacity-80"
-                />
-              ) : (
-                <Icon className="size-4" />
-              )}
-            </Link>
-          ) : null
+      <div className="flex flex-1 flex-col items-center p-4 xl:p-6 text-center">
+        {person?.name && (
+          <h3 className="text-xl font-semibold text-white">{person.name}</h3>
         )}
+        {person?.role && (
+          <p className="mt-1 text-sm font-light text-gray-400">{person.role}</p>
+        )}
+
+        <div className="mt-4 flex items-center gap-1">
+          {socials.map(({ key, label, Icon, image }) =>
+            person?.[key] ? (
+              <Link
+                key={key}
+                href={person[key]}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${person?.name ?? ""} on ${label}`}
+                // Keep the icon at 16px but give the link a ≥36×36px hit area
+                // so it meets the minimum accessible touch-target size.
+                className="flex size-9 items-center justify-center text-white transition-colors hover:text-sswRed"
+              >
+                {image ? (
+                  <Image
+                    src={image}
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="size-4 transition-opacity hover:opacity-80"
+                  />
+                ) : (
+                  <Icon className="size-4" />
+                )}
+              </Link>
+            ) : null
+          )}
+        </div>
       </div>
     </div>
   );
@@ -89,7 +89,7 @@ function CarouselControls({ count }: { count: number }) {
   const { selectedIndex, scrollPrev, scrollNext } = useCarousel();
 
   return (
-    <div className="mt-10 flex items-center justify-between">
+    <div className="mt-10 flex items-center justify-between px-8 lg:px-0">
       <div className="flex items-center gap-2">
         {Array.from({ length: count }).map((_, index) => (
           <CarouselPickItem
@@ -128,18 +128,30 @@ function CarouselControls({ count }: { count: number }) {
 export function V3PeopleCarousel({ data }) {
   const people = (data?.people ?? []).filter(Boolean);
 
+  // Embla's loop only engages when there are clearly more slides than fit in
+  // the viewport. With only a few people, repeat them until there are enough
+  // slides for a seamless loop (mirrors the image-cards block).
+  const MIN_CAROUSEL_SLIDES = 6;
+  const carouselPeople =
+    people.length > 0 && people.length < MIN_CAROUSEL_SLIDES
+      ? Array.from(
+          { length: Math.ceil(MIN_CAROUSEL_SLIDES / people.length) },
+          () => people
+        ).flat()
+      : people;
+
   return (
     <V2ComponentWrapper data={data}>
       <Container
         size="custom"
         width="custom"
-        padding="px-4 sm:px-8"
+        padding="px-0 lg:px-8"
         className="max-w-screen-xl py-16 md:py-24"
       >
         {data?.brow && (
           <span
             data-tina-field={tinaField(data, "brow")}
-            className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-sswRed"
+            className="flex items-center gap-2 px-8 font-mono text-xs uppercase tracking-wider text-sswRed lg:px-0"
           >
             {data.brow}
           </span>
@@ -147,7 +159,7 @@ export function V3PeopleCarousel({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="my-4 max-w-2xl text-4xl leading-tight text-white lg:text-5xl"
+            className="my-4 max-w-2xl px-8 text-4xl leading-tight text-white lg:px-0 lg:text-5xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -155,27 +167,51 @@ export function V3PeopleCarousel({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className="max-w-2xl text-base font-light text-gray-400"
+            className="max-w-2xl px-8 text-base font-light text-gray-400 lg:px-0"
           >
             {data.subtitle}
           </p>
         )}
 
-        <ButtonRow data={data} className="mt-6 flex-wrap" />
+        <ButtonRow data={data} className="mt-6 flex-wrap px-8 lg:px-0" />
 
-        {/* 4 or fewer all fit on screen, so skip the carousel UI and lay them
-            out in a static grid; only carousel when there's more to scroll. */}
+        {/* 4 or fewer: swipe through them on smaller views and only settle
+            into a static grid once there's room (lg+), like the image-cards
+            block. Carousel when there's more than fits to scroll. */}
         {people.length > 0 && people.length <= 4 && (
-          <div className="mt-12 grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {people.map((person, index) => (
-              <div
-                key={`v3-person-${index}`}
-                data-tina-field={tinaField(person, "name")}
-              >
-                <PersonCard person={person} />
-              </div>
-            ))}
-          </div>
+          <>
+            {/* Below lg: horizontal infinite-scroll carousel */}
+            <Carousel
+              opts={{ align: "start", loop: true, dragFree: true }}
+              autoplay={false}
+              className="mt-12 lg:hidden"
+            >
+              <CarouselContent className="-ml-24">
+                {carouselPeople.map((person, index) => (
+                  <CarouselItem
+                    key={`v3-person-${index}`}
+                    className="basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+                    data-tina-field={tinaField(person, "name")}
+                  >
+                    <PersonCard person={person} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            {/* lg+ : static grid */}
+            <div className="mt-12 hidden gap-8 lg:grid lg:grid-cols-4">
+              {people.map((person, index) => (
+                <div
+                  key={`v3-person-${index}`}
+                  data-tina-field={tinaField(person, "name")}
+                  className="h-full"
+                >
+                  <PersonCard person={person} />
+                </div>
+              ))}
+            </div>
+          </>
         )}
 
         {people.length > 4 && (
