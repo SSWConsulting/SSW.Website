@@ -43,7 +43,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
               fill
               priority={priority}
               fetchPriority={priority ? "high" : undefined}
-              quality={90}
+              quality={100}
               sizes="(min-width: 1440px) 1312px, 100vw"
               src={media.imageSource}
               alt={media.altText ?? "Hero background"}
