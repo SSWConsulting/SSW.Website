@@ -25,7 +25,8 @@ export const V3GlobeSchema: Template = {
           name: "Brisbane",
           email: "info@ssw.com.au",
           phone: "+61 7 3077 7081",
-          address: "Level 1, 471 Adelaide Street\nBrisbane, QLD 4000, Australia",
+          address:
+            "Level 1, 471 Adelaide Street\nBrisbane, QLD 4000, Australia",
           lat: -27.47,
           lng: 153.02,
         },
@@ -33,7 +34,8 @@ export const V3GlobeSchema: Template = {
           name: "Melbourne",
           email: "info@ssw.com.au",
           phone: "+61 3 9005 2034",
-          address: "Level 1, 370 Little Bourke Street\nMelbourne, VIC 3000, Australia",
+          address:
+            "Level 1, 370 Little Bourke Street\nMelbourne, VIC 3000, Australia",
           lat: -37.81,
           lng: 144.96,
         },
