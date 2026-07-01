@@ -288,7 +288,7 @@ export function V3Events({ data }) {
               autoplay={false}
               className="lg:hidden"
             >
-              <CarouselContent className="-ml-24">
+              <CarouselContent className="ml-0">
                 {carouselCards.map((event, index) => (
                   <CarouselItem
                     key={`v3-event-card-${index}`}
