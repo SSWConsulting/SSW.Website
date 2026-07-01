@@ -1,0 +1,122 @@
+{
+  "socials": [
+    {
+      "type": "youtube",
+      "title": "SSW on YouTube",
+      "url": "https://www.youtube.com/user/sswtechtalks/",
+      "username": "sswtechtalks"
+    },
+    {
+      "type": "linkedin",
+      "title": "SSW on LinkedIn",
+      "url": "https://www.linkedin.com/company/ssw/"
+    },
+    {
+      "type": "facebook",
+      "title": "SSW on Facebook",
+      "url": "https://www.facebook.com/SSW.page"
+    },
+    {
+      "type": "xtwitter",
+      "title": "SSW on X",
+      "url": "https://x.com/SSW_TV",
+      "username": "SSW_TV"
+    },
+    {
+      "type": "bluesky",
+      "title": "SSW on BlueSky",
+      "url": "https://bsky.app/profile/ssw.com.au",
+      "username": "ssw.com.au"
+    },
+    {
+      "type": "instagram",
+      "title": "SSW on Instagram",
+      "url": "https://www.instagram.com/ssw_tv",
+      "username": "ssw_tv"
+    },
+    {
+      "type": "threads",
+      "title": "SSW on Threads",
+      "url": "https://www.threads.net/@ssw_tv",
+      "username": "ssw_tv"
+    },
+    {
+      "type": "tiktok",
+      "title": "SSW on TikTok",
+      "url": "https://www.tiktok.com/@ssw_tv",
+      "username": "ssw_tv"
+    },
+    {
+      "type": "github",
+      "title": "SSW on GitHub",
+      "url": "https://www.github.com/sswconsulting",
+      "username": "sswconsulting"
+    },
+    {
+      "type": "meetup",
+      "url": "https://www.meetup.com/Sydney-NET-User-Group/"
+    }
+  ],
+  "linkColumns": [
+    {
+      "title": "Services",
+      "links": [
+        { "label": "AI Development", "url": "/consulting/ai" },
+        { "label": "Web Development", "url": "/consulting/web-application-development" },
+        { "label": "App Development", "url": "/consulting/app-development" },
+        { "label": "Database Development", "url": "/consulting/database-development" },
+        { "label": "Cloud & Infrastructure", "url": "/consulting/azure" }
+      ]
+    },
+    {
+      "title": "Products",
+      "links": [
+        { "label": "TinaCMS", "url": "https://tina.io" },
+        { "label": "YakShaver", "url": "https://www.yakshaver.ai" },
+        { "label": "EagleEye", "url": "https://www.ssw.com.au/eagle-eye" },
+        { "label": "TimePro", "url": "https://www.timepro.com.au" },
+        { "label": "SugarLearning", "url": "https://www.sugarlearning.com" }
+      ]
+    },
+    {
+      "title": "Events & Training",
+      "links": [
+        { "label": "User Groups", "url": "/user-groups" },
+        { "label": "Hack Days", "url": "/events" },
+        { "label": "1-Day Training", "url": "/training" },
+        { "label": "2-Day Training", "url": "/training" },
+        { "label": "12-Week Programs", "url": "/training" }
+      ]
+    },
+    {
+      "title": "About Us",
+      "links": [
+        { "label": "Our People", "url": "https://www.ssw.com.au/people" },
+        { "label": "Our History", "url": "/company" },
+        { "label": "Awards", "url": "/company" },
+        { "label": "Our Clients' Stories", "url": "/company/clients" },
+        { "label": "Testimonials", "url": "/company/testimonials" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        { "label": "SSW TV", "url": "https://tv.ssw.com" },
+        { "label": "SSW Rules", "url": "https://www.ssw.com.au/rules" },
+        { "label": "Adam's Blog", "url": "https://adamcogan.com" },
+        { "label": "Partners", "url": "/company/partners" }
+      ]
+    }
+  ],
+  "bottomBar": {
+    "copyrightText": "SSW Enterprise Software Development. All rights reserved.",
+    "links": [
+      { "label": "Privacy Policy", "url": "/privacy" },
+      { "label": "Terms & Conditions", "url": "/terms-and-conditions" }
+    ],
+    "poweredBy": [
+      { "label": "Powered by TinaCMS", "url": "https://tina.io" },
+      { "label": "Built on Microsoft Azure", "url": "/consulting/azure" }
+    ]
+  }
+}
