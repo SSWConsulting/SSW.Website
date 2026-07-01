@@ -186,7 +186,7 @@ export function V3PeopleCarousel({ data }) {
               autoplay={false}
               className="mt-12 lg:hidden"
             >
-              <CarouselContent className="-ml-24">
+              <CarouselContent className="ml-0">
                 {carouselPeople.map((person, index) => (
                   <CarouselItem
                     key={`v3-person-${index}`}
@@ -218,7 +218,7 @@ export function V3PeopleCarousel({ data }) {
 
         {people.length > 4 && (
           <Carousel opts={{ align: "start" }} className="mt-12">
-            <CarouselContent className="-ml-24">
+            <CarouselContent className="ml-0">
               {people.map((person, index) => (
                 <CarouselItem
                   key={`v3-person-${index}`}
