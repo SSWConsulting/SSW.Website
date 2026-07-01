@@ -114,10 +114,10 @@ const V2ComponentWrapper = ({
           !isInInitialViewport && isInView && "opacity-100"
         )}
         style={
-          data.background?.bleed
+          data.background?.bleed || !data.background?.backgroundImage
             ? {}
             : {
-                backgroundImage: `url(${data.background?.backgroundImage})`,
+                backgroundImage: `url(${data.background.backgroundImage})`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
