@@ -51,9 +51,9 @@
           "title": "Web Development",
           "description": "Ever since SSW developed the very first .NET Website in Australia, we've been known as leaders in Web Development.",
           "graphic": {
-            "imageSource": "/images/custom-icons/web-dev-custom-graphic.svg",
-            "imageHeight": 163,
-            "imageWidth": 170
+            "imageSource": "/images/custom-icons/simple-web.svg",
+            "imageHeight": 200,
+            "imageWidth": 200
           },
           "link": "/consulting/web-applications",
           "newTab": false
@@ -62,9 +62,9 @@
           "title": "Artificial Intelligence",
           "description": "Custom AI solutions using LLMs (ChatGPT, Llama, Gemini, Claude, etc) and Azure AI to revolutionize your business.",
           "graphic": {
-            "imageSource": "/images/custom-icons/ai-graphic.svg",
-            "imageHeight": 204,
-            "imageWidth": 200
+            "imageSource": "/images/custom-icons/simple-ai.svg",
+            "imageHeight": 203,
+            "imageWidth": 203
           },
           "link": "/consulting/artificial-intelligence"
         },
@@ -72,9 +72,9 @@
           "title": "DevOps & Cloud",
           "description": "Make sure your software ships by using SSW's best practices in Azure, DevOps and Docker Containers.",
           "graphic": {
-            "imageSource": "/images/custom-icons/cloud-custom-graphic.svg",
-            "imageHeight": 158,
-            "imageWidth": 244
+            "imageSource": "/images/custom-icons/simple-cloud.svg",
+            "imageHeight": 200,
+            "imageWidth": 203
           },
           "link": "/consulting/devops"
         }
@@ -494,6 +494,13 @@
           "address": "Strasbourg, France",
           "lat": 48.57,
           "lng": 7.75
+        },
+        {
+          "name": "North America",
+          "email": "hello@ssw.com",
+          "address": "Vancouver, Canada",
+          "lat": 49.28,
+          "lng": -123.12
         }
       ],
       "_template": "v3Globe"

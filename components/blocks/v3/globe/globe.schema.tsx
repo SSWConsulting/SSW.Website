@@ -61,6 +61,13 @@ export const V3GlobeSchema: Template = {
           lat: 48.57,
           lng: 7.75,
         },
+        {
+          name: "North America",
+          email: "hello@ssw.com",
+          address: "Vancouver, Canada",
+          lat: 49.28,
+          lng: -123.12,
+        },
       ],
     },
   },
