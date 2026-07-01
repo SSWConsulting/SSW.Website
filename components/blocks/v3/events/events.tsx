@@ -153,10 +153,12 @@ function EventCard({ event }) {
   return (
     <div
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-[15px] bg-sswBorder"
+        "group relative flex h-full flex-col overflow-hidden rounded-[15px] bg-sswBorder"
       )}
     >
-      <div className="relative aspect-video w-full">
+      {/* When there's a video, lift the media above the card-wide link overlay
+          so clicking the thumbnail opens the modal instead of navigating. */}
+      <div className={cn("relative aspect-video w-full", hasVideo && "z-10")}>
         {hasVideo ? (
           <VideoModal
             url={event.videoUrl}
@@ -227,9 +229,12 @@ function EventCard({ event }) {
         {event?.registerLink && (
           <Link
             href={event.registerLink}
-            aria-label="Register"
+            aria-label={`Register for ${event?.title ?? "this event"}`}
             className="mt-auto self-end pt-6 !no-underline"
           >
+            {/* Full-card overlay makes the whole card clickable, not just the
+                arrow. The video modal is raised above it so it stays usable. */}
+            <span aria-hidden="true" className="absolute inset-0" />
             <span className="flex size-10 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
               <BsArrowUpRight className="size-1/3" />
             </span>
