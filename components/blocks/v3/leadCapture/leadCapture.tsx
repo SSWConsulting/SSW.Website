@@ -6,8 +6,8 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
-import { Turnstile } from "@marsidev/react-turnstile";
-import { useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useRef, useState } from "react";
 import { TiArrowLeft } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -74,9 +74,16 @@ export function V3LeadCapture({ data }) {
   // Screen 3 — how can we help
   const [message, setMessage] = useState("");
   const [captchaToken, setCaptchaToken] = useState("");
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const progress = Math.round(((current + 1) / TOTAL_SCREENS) * 100);
   const goBack = () => setCurrent((c) => Math.max(c - 1, 0));
+  // Turnstile tokens are single-use; a submit that reaches siteverify consumes
+  // it, so clear and re-issue one before any retry.
+  const resetCaptcha = () => {
+    setCaptchaToken("");
+    turnstileRef.current?.reset();
+  };
   const goNext = () => setCurrent((c) => Math.min(c + 1, TOTAL_SCREENS - 1));
 
   const selectedCountry = LOCATIONS.find((l) => l.label === country);
@@ -128,9 +135,15 @@ export function V3LeadCapture({ data }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ lead, turnstileToken: captchaToken }),
       });
-      setStatus(res.ok ? "success" : "error");
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+        resetCaptcha();
+      }
     } catch {
       setStatus("error");
+      resetCaptcha();
     }
   };
 
@@ -398,9 +411,10 @@ export function V3LeadCapture({ data }) {
                 </p>
               )}
 
-              {TURNSTILE_SITE_KEY && (
+              {TURNSTILE_SITE_KEY ? (
                 <div className="mt-6">
                   <Turnstile
+                    ref={turnstileRef}
                     siteKey={TURNSTILE_SITE_KEY}
                     options={{ appearance: "interaction-only", theme: "dark" }}
                     onSuccess={setCaptchaToken}
@@ -408,6 +422,11 @@ export function V3LeadCapture({ data }) {
                     onError={() => setCaptchaToken("")}
                   />
                 </div>
+              ) : (
+                <p className="mt-6 text-sm text-white/60">
+                  Verification is temporarily unavailable. Please try again
+                  later.
+                </p>
               )}
 
               <div className="mt-8 flex items-center justify-between">
