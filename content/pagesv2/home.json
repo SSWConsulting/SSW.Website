@@ -456,6 +456,8 @@
           "email": "info@ssw.com.au",
           "phone": "+61 2 9953 3000",
           "address": "Level 1, 81-91 Military Road\nNeutral Bay, Sydney, NSW 2089, Australia",
+          "siteLinkText": "SSW Sydney Office",
+          "siteLinkUrl": "/offices/sydney",
           "lat": -33.84,
           "lng": 151.21
         },
@@ -464,6 +466,8 @@
           "email": "info@ssw.com.au",
           "phone": "+61 7 3077 7081",
           "address": "Level 1, 471 Adelaide Street\nBrisbane, QLD 4000, Australia",
+          "siteLinkText": "SSW Brisbane Office",
+          "siteLinkUrl": "/offices/brisbane",
           "lat": -27.47,
           "lng": 153.02
         },
@@ -472,6 +476,8 @@
           "email": "info@ssw.com.au",
           "phone": "+61 3 9005 2034",
           "address": "Level 1, 370 Little Bourke Street\nMelbourne, VIC 3000, Australia",
+          "siteLinkText": "SSW Melbourne Office",
+          "siteLinkUrl": "/offices/melbourne",
           "lat": -37.81,
           "lng": 144.96
         },
@@ -480,6 +486,8 @@
           "email": "info@ssw.com.au",
           "phone": "+61 2 9953 3000",
           "address": "432 Hunter St\nNewcastle, NSW 2300, Australia",
+          "siteLinkText": "SSW Newcastle Office",
+          "siteLinkUrl": "/offices/newcastle",
           "lat": -32.93,
           "lng": 151.78
         },
@@ -488,6 +496,8 @@
           "email": "info@ssw.com.au",
           "phone": "+86 571 8517 8910",
           "address": "Room 305, Building 2, Xingcheng Development Building, No. 406 Xintiandi Street\nHangzhou, China, Zheijang Province 310004, China",
+          "siteLinkText": "SSW China Office",
+          "siteLinkUrl": "https://ssw.cn",
           "lat": 30.27,
           "lng": 120.15
         },
@@ -496,6 +506,8 @@
           "email": "info@ssw.com.au",
           "phone": "+33 3 67 39 05 39",
           "address": "Level 4–19 Rue du Fossé des Treize\nStrasbourg, France, Strasbourg 67000, France",
+          "siteLinkText": "SSW Europe Office",
+          "siteLinkUrl": "https://ssw.fr",
           "lat": 48.57,
           "lng": 7.75
         },
@@ -504,6 +516,8 @@
           "email": "hello@ssw.com",
           "phone": "+1 302 520 3805",
           "address": "Online Only\nNorth America, DE 2111, USA",
+          "siteLinkText": "SSW North America",
+          "siteLinkUrl": "https://www.ssw.com.au/",
           "lat": 39.16,
           "lng": -75.52
         }

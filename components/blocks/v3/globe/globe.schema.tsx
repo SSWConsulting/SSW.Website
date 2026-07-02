@@ -127,6 +127,19 @@ export const V3GlobeSchema: Template = {
           ui: { component: "textarea" },
         },
         {
+          type: "string",
+          label: "Site Link Text",
+          name: "siteLinkText",
+          description:
+            "Label for the office's site link shown in the dropdown, e.g. 'Visit our Sydney page'.",
+        },
+        {
+          type: "string",
+          label: "Site Link URL",
+          name: "siteLinkUrl",
+          description: "Where the site link points to.",
+        },
+        {
           type: "number",
           label: "Latitude",
           name: "lat",

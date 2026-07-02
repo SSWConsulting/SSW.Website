@@ -5,7 +5,13 @@ import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { FiChevronDown, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import {
+  FiChevronDown,
+  FiExternalLink,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+} from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { OfficeMap } from "./officeMap";
 
@@ -64,6 +70,15 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
                 <span className="whitespace-pre-line">{office.address}</span>
               </div>
             )}
+            {office?.siteLinkUrl && (
+              <a
+                href={office.siteLinkUrl}
+                className="flex items-center gap-3 transition-colors hover:text-white"
+              >
+                <FiExternalLink className="size-5 shrink-0" />
+                <span>{office.siteLinkText || office.siteLinkUrl}</span>
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -81,7 +96,7 @@ export function V3Globe({ data }) {
         size="custom"
         width="custom"
         padding="px-4 sm:px-8"
-        className="max-w-screen-xl py-16 md:py-24"
+        className="max-w-screen-xl py-24"
       >
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           {/* Left: header + office accordion */}
