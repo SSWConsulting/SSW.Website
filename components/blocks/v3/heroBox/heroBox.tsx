@@ -65,7 +65,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
             {data?.heading && (
               <h1
                 data-tina-field={tinaField(data, "heading")}
-                className="p-0 text-4xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+                className="p-0 text-3xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
               >
                 <AlternatingText text={data.heading} />
               </h1>
