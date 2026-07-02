@@ -164,6 +164,38 @@ const V3Hero = dynamic(() =>
   import("./blocks/v3/hero/hero").then((mod) => mod.V3Hero)
 );
 
+const V3HeroBox = dynamic(() =>
+  import("./blocks/v3/heroBox/heroBox").then((mod) => mod.V3HeroBox)
+);
+
+const V3ImageCards = dynamic(() =>
+  import("./blocks/v3/imageCards/imageCards").then((mod) => mod.V3ImageCards)
+);
+
+const V3VideoHero = dynamic(() =>
+  import("./blocks/v3/videoHero/videoHero").then((mod) => mod.V3VideoHero)
+);
+
+const V3FeaturedProducts = dynamic(() =>
+  import("./blocks/v3/featuredProducts/featuredProducts").then(
+    (mod) => mod.V3FeaturedProducts
+  )
+);
+
+const V3PeopleCarousel = dynamic(() =>
+  import("./blocks/v3/peopleCarousel/peopleCarousel").then(
+    (mod) => mod.V3PeopleCarousel
+  )
+);
+
+const V3Events = dynamic(() =>
+  import("./blocks/v3/events/events").then((mod) => mod.V3Events)
+);
+
+const V3Globe = dynamic(() =>
+  import("./blocks/v3/globe/globe").then((mod) => mod.V3Globe)
+);
+
 const V3LogoCarousel = dynamic(() =>
   import("./blocks/v3/logoCarousel/logoCarousel").then(
     (mod) => mod.V3LogoCarousel
@@ -255,6 +287,13 @@ const componentMap = {
   Spacer,
   UtilityButton,
   V3Hero,
+  V3HeroBox,
+  V3ImageCards,
+  V3VideoHero,
+  V3FeaturedProducts,
+  V3PeopleCarousel,
+  V3Events,
+  V3Globe,
   V3LogoCarousel,
   V3FeatureSteps,
   V3Process,

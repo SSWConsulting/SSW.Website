@@ -15,7 +15,7 @@ export function V3VideoHighlights({ data }) {
       <Container
         size="custom"
         padding="px-4 sm:px-8"
-        className="py-16 md:py-24"
+        className="py-24 md:py-40"
       >
         <div className="grid grid-cols-1 items-start gap-10 xl:grid-cols-2 xl:gap-16">
           {/* Video */}
@@ -24,7 +24,7 @@ export function V3VideoHighlights({ data }) {
               <div
                 data-tina-field={tinaField(data, "videoUrl")}
                 className={cn(
-                  "overflow-hidden rounded-2xl border-0.5 border-sswRed/40",
+                  "overflow-hidden rounded-2xl",
                   // Greyscale the poster image only; the played iframe stays colour.
                   data?.greyscaleThumbnail && "[&_img]:grayscale"
                 )}

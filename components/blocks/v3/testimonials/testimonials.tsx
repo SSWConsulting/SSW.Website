@@ -1,6 +1,7 @@
 "use client";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -111,21 +112,50 @@ export function V3Testimonials({ data }) {
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" className="py-16 sm:px-8 md:py-32">
-        <div className="mx-auto flex max-w-3xl flex-col items-start justify-center gap-10 xl:max-w-none xl:flex-row xl:items-center xl:gap-20">
-          {/* Quote + author */}
-          <div className="flex max-w-3xl flex-col">
-            {current?.quote && (
-              <blockquote
-                data-tina-field={tinaField(current, "quote")}
-                className="text-2xl text-white md:text-4xl"
-              >
-                <ClipTextReveal key={active} text={current.quote} />
-              </blockquote>
-            )}
+        <div
+          className={cn(
+            "mx-auto flex max-w-xl flex-col gap-10",
+            // Desktop: 2×2 grid — quote/image on top, author/buttons pinned to
+            // the bottom row. The top row is `1fr` so it absorbs the slack,
+            // keeping the author (bottom-left) and controls (bottom-right) on
+            // the same baseline regardless of quote length. Cap the width
+            // (centred via mx-auto) so the image sits beside the quote instead
+            // of being flung to the far edge of a full-width section.
+            "xl:grid xl:max-w-5xl xl:grid-cols-[minmax(0,1fr)_auto] xl:grid-rows-[1fr_auto] xl:items-start xl:gap-x-12 xl:gap-y-4"
+          )}
+        >
+          {/* Quote (+ optional case study) — top-left */}
+          <div className="flex max-w-3xl flex-col xl:col-start-1 xl:row-start-1">
+            {/* All quotes share one grid cell so the cell always sizes to the
+                tallest quote — switching slides never changes the block height
+                (only the active quote is visible; the rest fade to opacity-0). */}
+            <div className="grid">
+              {testimonials.map((t, i) => (
+                <blockquote
+                  key={`v3-testimonial-quote-${i}`}
+                  aria-hidden={i !== active}
+                  data-tina-field={
+                    i === active ? tinaField(t, "quote") : undefined
+                  }
+                  className={cn(
+                    "col-start-1 row-start-1 text-2xl text-white transition-opacity duration-300 md:text-4xl",
+                    i === active
+                      ? "opacity-100"
+                      : "pointer-events-none opacity-0"
+                  )}
+                >
+                  {i === active ? (
+                    <ClipTextReveal key={active} text={t?.quote ?? ""} />
+                  ) : (
+                    <span>{(t?.quote ?? "").replace(/\*\*/g, "")}</span>
+                  )}
+                </blockquote>
+              ))}
+            </div>
 
             {current?.caseStudyUrl && (
               <motion.a
-                key={active}
+                key={`case-study-${active}`}
                 href={current.caseStudyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -143,85 +173,16 @@ export function V3Testimonials({ data }) {
                 <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
               </motion.a>
             )}
-
-            <div className="mt-10 flex flex-wrap items-center justify-between gap-4">
-              <motion.div
-                key={active}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.2,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="flex items-center gap-4"
-              >
-                <div className="flex flex-col">
-                  {current?.authorName && (
-                    <span
-                      data-tina-field={tinaField(current, "authorName")}
-                      className="font-semibold text-white"
-                    >
-                      {current.authorName}
-                    </span>
-                  )}
-                  {current?.authorTitle && (
-                    <span
-                      data-tina-field={tinaField(current, "authorTitle")}
-                      className="text-sm text-gray-400"
-                    >
-                      {current.authorTitle}
-                    </span>
-                  )}
-                </div>
-
-                {current?.companyLogo && (
-                  <>
-                    <span className="h-10 w-px bg-gray-600" />
-                    <Image
-                      src={current.companyLogo}
-                      alt={current?.companyLogoAlt ?? "Company logo"}
-                      width={160}
-                      height={160}
-                      className="h-12 w-auto object-contain brightness-0 invert"
-                      data-tina-field={tinaField(current, "companyLogo")}
-                    />
-                  </>
-                )}
-              </motion.div>
-
-              {/* Carousel controls */}
-              {testimonials.length > 1 && (
-                <div className="flex w-full justify-end gap-3 md:w-auto">
-                  <button
-                    type="button"
-                    aria-label="Previous testimonial"
-                    onClick={goPrev}
-                    className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
-                  >
-                    <BiLeftArrowAlt className="size-6" />
-                  </button>
-                  <button
-                    type="button"
-                    aria-label="Next testimonial"
-                    onClick={goNext}
-                    className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
-                  >
-                    <BiRightArrowAlt className="size-6" />
-                  </button>
-                </div>
-              )}
-            </div>
           </div>
 
-          {/* Author image */}
+          {/* Author image — top-right */}
           {current?.authorImage && (
             <motion.div
-              key={active}
+              key={`author-image-${active}`}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative order-first size-48 shrink-0 overflow-hidden rounded-2xl xl:order-none"
+              className="relative order-first size-48 shrink-0 overflow-hidden rounded-2xl xl:order-none xl:col-start-2 xl:row-start-1 xl:self-start"
             >
               <Image
                 src={current.authorImage}
@@ -235,6 +196,70 @@ export function V3Testimonials({ data }) {
                 data-tina-field={tinaField(current, "authorImage")}
               />
             </motion.div>
+          )}
+
+          {/* Author name / role / logo — bottom-left */}
+          <motion.div
+            key={`author-${active}`}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center gap-4 xl:col-start-1 xl:row-start-2 xl:self-end"
+          >
+            <div className="flex flex-col">
+              {current?.authorName && (
+                <span
+                  data-tina-field={tinaField(current, "authorName")}
+                  className="font-semibold text-white"
+                >
+                  {current.authorName}
+                </span>
+              )}
+              {current?.authorTitle && (
+                <span
+                  data-tina-field={tinaField(current, "authorTitle")}
+                  className="text-sm text-gray-400"
+                >
+                  {current.authorTitle}
+                </span>
+              )}
+            </div>
+
+            {current?.companyLogo && (
+              <>
+                <span className="h-10 w-px bg-gray-600" />
+                <Image
+                  src={current.companyLogo}
+                  alt={current?.companyLogoAlt ?? "Company logo"}
+                  width={160}
+                  height={160}
+                  className="h-12 w-auto object-contain brightness-0 invert"
+                  data-tina-field={tinaField(current, "companyLogo")}
+                />
+              </>
+            )}
+          </motion.div>
+
+          {/* Carousel controls — bottom-right, under the image */}
+          {testimonials.length > 1 && (
+            <div className="mt-6 flex justify-end gap-3 xl:col-start-2 xl:row-start-2 xl:mt-0 xl:place-self-end">
+              <button
+                type="button"
+                aria-label="Previous testimonial"
+                onClick={goPrev}
+                className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
+              >
+                <BiLeftArrowAlt className="size-6" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next testimonial"
+                onClick={goNext}
+                className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
+              >
+                <BiRightArrowAlt className="size-6" />
+              </button>
+            </div>
           )}
         </div>
       </Container>

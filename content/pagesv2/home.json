@@ -1,0 +1,528 @@
+{
+  "seo": {
+    "title": "SSW Enterprise Software Development",
+    "description": "30 years of Microsoft software development experience in Australia. Artificial intelligence (AI), Angular, React, .NET, and Azure.",
+    "canonical": "https://www.ssw.com.au",
+    "images": [
+      {
+        "url": "/images/ssw-default-og.jpg",
+        "width": 800,
+        "height": 600,
+        "alt": "SSW Enterprise Software Development"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 7,
+        "bleed": false
+      },
+      "heading": "Three decades of enterprise solutions",
+      "description": "We find the best way to build software and make that knowledge available to everyone.\n",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Call",
+          "buttonLink": "#",
+          "iconFirst": false,
+          "colour": 0
+        }
+      ],
+      "backgroundMedia": {
+        "altText": "SSW team members collaborating",
+        "imageSource": "/images/carousel/Why-you-should-choose-SSW-OG-2600.jpg",
+        "imageHeight": 1150,
+        "imageWidth": 2600
+      },
+      "showScrollIndicator": true,
+      "_template": "v3HeroBox"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "",
+      "heading": "Australia's Leading AI, .NET and Azure Consultants",
+      "subtitle": "Tell us about your platform. We'll show you what's possible.",
+      "mobilePlusMore": "/consulting",
+      "cardBackgroundColour": 8,
+      "showBorder": false,
+      "cards": [
+        {
+          "title": "Artificial Intelligence",
+          "description": "Custom AI solutions using LLMs (ChatGPT, Llama, Gemini, Claude, etc) and Azure AI to revolutionize your business.",
+          "graphic": {
+            "imageSource": "/images/custom-icons/simple-ai.svg",
+            "imageHeight": 203,
+            "imageWidth": 203
+          },
+          "link": "/consulting/artificial-intelligence"
+        },
+        {
+          "title": "Web Development",
+          "description": "Ever since SSW developed the very first .NET Website in Australia, we've been known as leaders in Web Development.",
+          "graphic": {
+            "imageSource": "/images/custom-icons/simple-web.svg",
+            "imageHeight": 200,
+            "imageWidth": 200
+          },
+          "link": "/consulting/web-applications",
+          "newTab": false
+        },
+        {
+          "title": "DevOps & Cloud",
+          "description": "Make sure your software ships by using SSW's best practices in Azure, AWS, DevOps and Docker Containers.",
+          "graphic": {
+            "imageSource": "/images/custom-icons/updated-cloud.svg",
+            "imageHeight": 200,
+            "imageWidth": 203
+          },
+          "link": "/consulting/devops"
+        }
+      ],
+      "_template": "v3ImageCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "The SSW Difference",
+      "statistics": [
+        {
+          "figure": 7000,
+          "figureSuffix": "+",
+          "heading": "Solutions delivered",
+          "description": "Enterprise-grade software"
+        },
+        {
+          "figure": 1800,
+          "figureSuffix": "+",
+          "heading": "Happy clients",
+          "description": "Across all industries"
+        },
+        {
+          "figure": 27,
+          "figureSuffix": "+",
+          "heading": "Years experience",
+          "description": "Trusted since 1999"
+        }
+      ],
+      "_template": "v3Statistics"
+    },
+    {
+      "videoBackground": "/images/videos/Untitled design.mp4",
+      "heading": "AI solutions that deliver, the first time.",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Call",
+          "colour": 0
+        }
+      ],
+      "_template": "v3VideoHero"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Featured Projects",
+      "subtitle": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.",
+      "mobilePlusMore": "/company/clients",
+      "buttons": [
+        {
+          "buttonText": "Our Client Stories",
+          "buttonLink": "/company/clients"
+        }
+      ],
+      "highlighted": {
+        "logo": {
+          "altText": "FPE Client Logo",
+          "imageSource": "/images/clientLogos/FPE.png",
+          "imageHeight": 128,
+          "imageWidth": 128
+        },
+        "title": "AI Powered Navigation for French Payroll Expert",
+        "description": "French Payroll Expert (FPE) faced a high volume of inquiries from their clients about French legislation. The time spent responding to these time-consuming emails was a resource our client knew they could save, especially with the emergence of artificial intelligence. ",
+        "image": {
+          "altText": "FPE Background Asset",
+          "imageSource": "/images/new-homepage-background-assets/200bfef7f1e17564508eda6b1106ff931217f4ce.png",
+          "imageHeight": 1432,
+          "imageWidth": 2555
+        },
+        "link": "/company/clients/fpe"
+      },
+      "products": [
+        {
+          "title": "Improving Radiologists' Ability to Detect Breast Cancer",
+          "description": "Improving radiologists’ ability to detect breast cancer",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/254e4a248ee8390a3d3e3833f4a3b89e8891e19c.png",
+            "imageHeight": 1427,
+            "imageWidth": 2547
+          },
+          "link": "/company/clients/sydney-uni"
+        },
+        {
+          "title": "Helping Deaf Children reach their full potential",
+          "description": "Developing web apps for clinical assessment of deaf children",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/2ce1529fac980d08f5ac53a18e2e343d961b0138.png",
+            "imageHeight": 1432,
+            "imageWidth": 2551
+          },
+          "link": "/company/clients/shepherd-centre"
+        },
+        {
+          "title": "How We Developed 'KNOWnoise' with Hutchison Weller",
+          "description": "Managing construction noise with the new web app",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/f49a5b53bd803d89a5b84d65df8fbb02d78d16e3.png",
+            "imageHeight": 1432,
+            "imageWidth": 2556
+          },
+          "link": "/company/clients/hutchison-weller"
+        }
+      ],
+      "_template": "v3FeaturedProducts"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "testimonials": [
+        {
+          "quote": "\"SSW helped us streamline our development process by reducing complexity in our environment and increase our development throughput. Their expertise, innovative approach and access to SMEs in all areas enabled the project to exceed goals\"",
+          "authorName": "Dino Tius",
+          "authorTitle": "Chief Information Officer, BizCover",
+          "authorImage": "/images/testimonialAvatars/DinoTBizCover.png",
+          "authorImageAlt": "Dino Tius BizCover",
+          "companyLogo": "/images/clientLogos/bizcover.png",
+          "companyLogoAlt": "BizCover"
+        },
+        {
+          "quote": "\"Spent the last 2 days learning more about clean architecture at SSW. Both presenters did an amazing job and I am happy to say I walked away with quite a few learnings from the event. Now I just have a bit of homework to do on how I can apply them to improve our own products\"",
+          "authorName": "Peter Coombe",
+          "authorTitle": "Software Development Manager, Berkley",
+          "authorImage": "/images/testimonialAvatars/MicrosoftTeams-image.png",
+          "authorImageAlt": "Peter Coombe",
+          "companyLogo": "/images/clientLogos/berkley.png",
+          "companyLogoAlt": "Berkley Re Australia"
+        },
+        {
+          "quote": "\"We have dealt with several people at SSW from a network tech helping us with a domain issue, to a couple of graphic designers and several programmers and they have ALL been first rate.\"",
+          "authorName": "Peter Dimaridis",
+          "authorTitle": "Lead Product Engineer, AuctionPlus",
+          "authorImage": "/images/testimonialAvatars/peter-dimaridis.jpg",
+          "authorImageAlt": "Peter Dimaridis",
+          "companyLogo": "/images/clientLogos/auctionplus-logo.png"
+        }
+      ],
+      "_template": "v3Testimonials"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "bleed": false,
+        "gridOverlay": true,
+        "redGlow": false
+      },
+      "heading": "",
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
+        }
+      ],
+      "_template": "v3LogoCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "We work together to form an amazing collective brain",
+      "subtitle": "We're enthusiastic and have a 'Make it happen' culture.",
+      "mobilePlusMore": "/people",
+      "buttons": [
+        {
+          "buttonText": "SSW People",
+          "buttonLink": "/people",
+          "iconFirst": false
+        }
+      ],
+      "people": [
+        {
+          "name": "Adam Cogan",
+          "role": "CEO + Chief Architect",
+          "image": {
+            "imageSource": "/images/people-carousel/adam-nobg.png",
+            "imageHeight": 535,
+            "imageWidth": 509
+          },
+          "linkedin": "https://www.linkedin.com/in/adamcogan/",
+          "twitter": "https://x.com/AdamCogan",
+          "sswPeople": "https://www.ssw.com.au/people/adam-cogan/"
+        },
+        {
+          "name": "Ulysses Maclaren",
+          "role": "COO",
+          "image": {
+            "imageSource": "/images/people-carousel/uly-nobg.png",
+            "imageHeight": 534,
+            "imageWidth": 533
+          },
+          "linkedin": "https://www.linkedin.com/in/ulyssesmaclaren/",
+          "twitter": "https://x.com/ulyssesmac",
+          "sswPeople": "https://www.ssw.com.au/people/ulysses-maclaren/"
+        },
+        {
+          "name": "Calum Simpson",
+          "role": "VP of AI",
+          "image": {
+            "imageSource": "/images/people-carousel/calum-nobg.png",
+            "imageHeight": 529,
+            "imageWidth": 475
+          },
+          "linkedin": "https://www.linkedin.com/in/calumjs/",
+          "twitter": "https://x.com/_____Calum",
+          "sswPeople": "https://www.ssw.com.au/people/calum-simpson/"
+        },
+        {
+          "name": "Matt Wicks",
+          "role": "Solution Architect",
+          "image": {
+            "imageSource": "/images/people-carousel/wicks-nobg.png",
+            "imageHeight": 1064,
+            "imageWidth": 986
+          },
+          "linkedin": "https://www.linkedin.com/in/matt-wicks/",
+          "twitter": "https://x.com/matteightyate",
+          "sswPeople": "https://www.ssw.com.au/people/matt-wicks/"
+        }
+      ],
+      "_template": "v3PeopleCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": false
+      },
+      "videoUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA",
+      "greyscaleThumbnail": false,
+      "figure": "Video: The people behind SSW - Australia's leading software consulatancy (3 min)",
+      "heading": "Why choose SSW?",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.\n",
+      "highlights": [
+        {
+          "title": "Deep expertise",
+          "desc2": "We go deep on every technology we touch – building with it, codifying best practices, and making that knowledge freely available.\n"
+        },
+        {
+          "title": "Results over Rhetoric",
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?\n"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Upcoming Events",
+      "subtitle": "We run webinars, live events, in-house and online courses.",
+      "mobilePlusMore": "/events",
+      "buttons": [
+        {
+          "buttonText": "Explore Events & Training",
+          "buttonLink": "/events",
+          "colour": 0
+        }
+      ],
+      "featuredEvent": {
+        "title": "AI Hack Day (Sydney)",
+        "description": "AI Hack Days are community-run events for Developers or people who want to learn AI for free. There will be something for everyone.",
+        "image": {
+          "imageSource": "/images/new-homepage-background-assets/angular-workshop-fra.png",
+          "imageHeight": 1754,
+          "imageWidth": 3444
+        },
+        "eventDate": "2026-07-11T05:46:28.184Z",
+        "spotsText": "10 Spots left!"
+      },
+      "eventCards": [
+        {
+          "title": "July User Group",
+          "description": "Join our .NET developer workshop to master the latest open-source, cross-platform framework and elevate your coding skills.",
+          "duration": "45 mins",
+          "date": "2026-07-23T00:18:41.261Z",
+          "location": "Sydney",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/dotnet-dev-workshop.png",
+            "imageHeight": 1278,
+            "imageWidth": 1917
+          },
+          "presenterImage": {
+            "imageSource": "/images/people-carousel/wicksy.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
+          "registerLink": "/some-link"
+        },
+        {
+          "title": "Clean Architecture Workshop",
+          "description": "Join our workshop to master clean architecture and elevate your full-stack development and consulting skills.",
+          "duration": "45 mins",
+          "date": "2026-08-04T00:18:50.472Z",
+          "location": "Melbourne",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/ca-workshop.png",
+            "imageHeight": 1278,
+            "imageWidth": 2272
+          },
+          "presenterImage": {
+            "imageSource": "/images/people-carousel/calum.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
+          "registerLink": "/some-link"
+        },
+        {
+          "title": "Artificial Intelligence Workshop",
+          "description": "Join us for an exciting AI workshop where you'll explore the latest advancements in artificial intelligence.",
+          "duration": "45 min",
+          "date": "2026-08-26T00:19:00.058Z",
+          "location": "Strasbourg",
+          "image": {
+            "imageSource": "/images/new-homepage-background-assets/ai-workshop.png",
+            "imageHeight": 1721,
+            "imageWidth": 2891
+          },
+          "presenterImage": {
+            "imageSource": "/images/people-carousel/uly.png",
+            "imageHeight": 535,
+            "imageWidth": 590
+          },
+          "registerLink": "/some-link"
+        }
+      ],
+      "_template": "v3Events"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "bleed": false,
+        "redGlow": false
+      },
+      "heading": "SSW around the globe",
+      "subtitle": "Partner with us, any time and any place.",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Call",
+          "colour": 0
+        }
+      ],
+      "offices": [
+        {
+          "name": "Sydney",
+          "email": "info@ssw.com.au",
+          "phone": "+61 2 9953 3000",
+          "address": "Level 1, 81-91 Military Road\nNeutral Bay, Sydney, NSW 2089, Australia",
+          "siteLinkText": "SSW Sydney Office",
+          "siteLinkUrl": "/offices/sydney",
+          "lat": -33.84,
+          "lng": 151.21
+        },
+        {
+          "name": "Brisbane",
+          "email": "info@ssw.com.au",
+          "phone": "+61 7 3077 7081",
+          "address": "Level 1, 471 Adelaide Street\nBrisbane, QLD 4000, Australia",
+          "siteLinkText": "SSW Brisbane Office",
+          "siteLinkUrl": "/offices/brisbane",
+          "lat": -27.47,
+          "lng": 153.02
+        },
+        {
+          "name": "Melbourne",
+          "email": "info@ssw.com.au",
+          "phone": "+61 3 9005 2034",
+          "address": "Level 1, 370 Little Bourke Street\nMelbourne, VIC 3000, Australia",
+          "siteLinkText": "SSW Melbourne Office",
+          "siteLinkUrl": "/offices/melbourne",
+          "lat": -37.81,
+          "lng": 144.96
+        },
+        {
+          "name": "Newcastle",
+          "email": "info@ssw.com.au",
+          "phone": "+61 2 9953 3000",
+          "address": "432 Hunter St\nNewcastle, NSW 2300, Australia",
+          "siteLinkText": "SSW Newcastle Office",
+          "siteLinkUrl": "/offices/newcastle",
+          "lat": -32.93,
+          "lng": 151.78
+        },
+        {
+          "name": "Hangzhou, China",
+          "email": "info@ssw.com.au",
+          "phone": "+86 571 8517 8910",
+          "address": "Room 305, Building 2, Xingcheng Development Building, No. 406 Xintiandi Street\nHangzhou, China, Zheijang Province 310004, China",
+          "siteLinkText": "SSW China Office",
+          "siteLinkUrl": "https://ssw.cn",
+          "lat": 30.27,
+          "lng": 120.15
+        },
+        {
+          "name": "Strasbourg, France",
+          "email": "info@ssw.com.au",
+          "phone": "+33 3 67 39 05 39",
+          "address": "Level 4–19 Rue du Fossé des Treize\nStrasbourg, France, Strasbourg 67000, France",
+          "siteLinkText": "SSW Europe Office",
+          "siteLinkUrl": "https://ssw.fr",
+          "lat": 48.57,
+          "lng": 7.75
+        },
+        {
+          "name": "Delaware, USA",
+          "email": "hello@ssw.com",
+          "phone": "+1 302 520 3805",
+          "address": "Online Only\nNorth America, DE 2111, USA",
+          "siteLinkText": "SSW North America",
+          "siteLinkUrl": "https://www.ssw.com.au/",
+          "lat": 39.16,
+          "lng": -75.52
+        }
+      ],
+      "_template": "v3Globe"
+    }
+  ]
+}
