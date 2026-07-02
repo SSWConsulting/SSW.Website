@@ -7,16 +7,13 @@ import { useSessionStorage } from "usehooks-ts";
 import globals from "../../content/global/index.json";
 import Popup from "../popup/popup";
 import { SESSION_STORAGE_KEYS } from "../util/constants";
-import RippleButton, { ButtonTinaFields, ColorVariant } from "./rippleButtonV2";
-
-enum ButtonColors {
-  Red = 0,
-  Transparent = 1,
-}
+import { buttonColorVariants } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
+import RippleButton, { ButtonTinaFields } from "./rippleButtonV2";
 
 type TemplateButtonOptions = {
   buttonText?: string;
-  colour?: ButtonColors;
+  // Index into buttonOptions / buttonColorVariants (Red=0, Transparent=1).
+  colour?: number;
   iconFirst?: boolean;
   icon?: string;
   leadCaptureFormOption?: string;
@@ -27,7 +24,6 @@ type ButtonProps = { className: string; data: TemplateButtonOptions };
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, data }: ButtonProps, ref) => {
     const [open, setOpen] = useState(false);
-    const variants: ColorVariant[] = ["primary", "secondary"];
     const { iconFirst, buttonText, colour, leadCaptureFormOption } = data;
     const selectedFormId =
       globals.forms[leadCaptureFormOption] || globals.forms[0];
@@ -55,7 +51,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             "gap-2",
             iconFirst ? "flex-row" : "flex-row-reverse"
           )}
-          variant={variants[colour]}
+          variant={buttonColorVariants[colour]}
         >
           <Icon
             tinaField={tinaField(data, "icon")}

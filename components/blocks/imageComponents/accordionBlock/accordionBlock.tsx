@@ -73,7 +73,7 @@ export const AccordionBlock = ({ data, priority = false }) => {
       {data.accordionItems && (
         <Accordion
           type={data.isMultipleOpen ? "multiple" : "single"}
-          collapsible
+          collapsible={data.isMultipleOpen ? undefined : true}
           className="mt-15 w-full"
         >
           {data.accordionItems?.map((item, index) => {
