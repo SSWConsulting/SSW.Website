@@ -15,7 +15,7 @@ export function V3VideoHighlights({ data }) {
       <Container
         size="custom"
         padding="px-4 sm:px-8"
-        className="py-16 md:py-40"
+        className="py-24 md:py-40"
       >
         <div className="grid grid-cols-1 items-start gap-10 xl:grid-cols-2 xl:gap-16">
           {/* Video */}

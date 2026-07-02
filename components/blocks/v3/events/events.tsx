@@ -258,7 +258,7 @@ export function V3Events({ data }) {
         size="custom"
         width="custom"
         padding="px-0 lg:px-4"
-        className="flex max-w-screen-xl flex-col gap-8 py-16 md:py-24"
+        className="flex max-w-screen-xl flex-col gap-8 py-24"
       >
         <SectionHeader data={data} />
 
