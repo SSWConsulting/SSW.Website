@@ -30,7 +30,7 @@ export const DeploymentInfo = () => {
         {tooltip && (
           <span
             role="tooltip"
-            className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-1 -translate-x-1/2 whitespace-nowrap rounded bg-white px-2 py-1 text-xs leading-none text-gray-900 opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100"
+            className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-white px-2 py-1 text-xs leading-none text-gray-900 opacity-0 shadow-md transition-opacity duration-150 group-hover:opacity-100 sm:block"
           >
             {tooltip}
           </span>
