@@ -163,7 +163,10 @@ export function V3PeopleCarousel({ data }) {
           </p>
         )}
 
-        <ButtonRow data={data} className="mt-6 flex-wrap px-8 lg:px-0 hidden lg:block" />
+        <ButtonRow
+          data={data}
+          className="mt-6 hidden flex-wrap px-8 lg:block lg:px-0"
+        />
 
         {/* 4 or fewer: swipe through them on smaller views and only settle
             into a static grid once there's room (lg+), like the image-cards
