@@ -13,7 +13,11 @@ import { tinaField } from "tinacms/dist/react";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { SectionHeader } from "../shared/sectionHeader";
 
-const ArrowButton = ({ className = "size-12 md:size-16" }: { className?: string }) => (
+const ArrowButton = ({
+  className = "size-12 md:size-16",
+}: {
+  className?: string;
+}) => (
   <span
     className={`flex shrink-0 scale-100 items-center justify-center self-end rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125 ${className}`}
   >
