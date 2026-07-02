@@ -491,7 +491,7 @@
           "title": "Chinafy",
           "description": "China is a booming market and now is the time to take advantage of this growing user base. Includes WeChat Mini Programs.",
           "logo": "/images/thumbs/consulting/new/chinafy.svg",
-          "page": "content/consulting/chinafy-app.mdx",
+          "page": "content/consultingv2/chinafy-app.json",
           "tags": [
             {
               "tag": "content/consulting/tag/consulting.json"

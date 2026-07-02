@@ -14,7 +14,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-import { FaXTwitter } from "react-icons/fa6";
+import { FaBluesky, FaThreads, FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
 
@@ -25,6 +25,8 @@ export type SocialTypes =
   | "instagram"
   | "meetup"
   | "xtwitter"
+  | "bluesky"
+  | "threads"
   | "tiktok"
   | "github";
 
@@ -51,6 +53,14 @@ export const socialStyles: Record<
   xtwitter: {
     icon: FaXTwitter,
     bgClassName: "bg-social-xtwitter",
+  },
+  bluesky: {
+    icon: FaBluesky,
+    bgClassName: "bg-social-bluesky",
+  },
+  threads: {
+    icon: FaThreads,
+    bgClassName: "bg-social-threads",
   },
   tiktok: {
     icon: FaTiktok,
