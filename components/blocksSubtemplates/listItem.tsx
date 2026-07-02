@@ -10,7 +10,7 @@ export const ListItem = ({ data }) => {
           <Icon
             data={{ name: data.icon }}
             tinaField={tinaField(data, "icon")}
-            className="size-6 text-white"
+            className="size-6 text-sswRed"
           />
         </div>
       )}
