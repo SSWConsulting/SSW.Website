@@ -22,7 +22,7 @@
       "description": "We find the best way to build software and make that knowledge available to everyone.\n",
       "buttons": [
         {
-          "buttonText": "Schedule a Discovery Call",
+          "buttonText": "Book a Free Initial Call",
           "buttonLink": "#",
           "iconFirst": false,
           "colour": 0
@@ -42,11 +42,22 @@
         "backgroundColour": 7
       },
       "brow": "",
-      "heading": "Australia's Leading AI, .NET and Cloud Consultants",
+      "heading": "Australia's Leading AI, .NET and Azure Consultants",
       "subtitle": "Tell us about your platform. We'll show you what's possible.",
+      "mobilePlusMore": "/consulting",
       "cardBackgroundColour": 8,
       "showBorder": false,
       "cards": [
+        {
+          "title": "Artificial Intelligence",
+          "description": "Custom AI solutions using LLMs (ChatGPT, Llama, Gemini, Claude, etc) and Azure AI to revolutionize your business.",
+          "graphic": {
+            "imageSource": "/images/custom-icons/simple-ai.svg",
+            "imageHeight": 203,
+            "imageWidth": 203
+          },
+          "link": "/consulting/artificial-intelligence"
+        },
         {
           "title": "Web Development",
           "description": "Ever since SSW developed the very first .NET Website in Australia, we've been known as leaders in Web Development.",
@@ -59,18 +70,8 @@
           "newTab": false
         },
         {
-          "title": "Artificial Intelligence",
-          "description": "Custom AI solutions using LLMs (ChatGPT, Llama, Gemini, Claude, etc) and Azure AI to revolutionize your business.",
-          "graphic": {
-            "imageSource": "/images/custom-icons/simple-ai.svg",
-            "imageHeight": 203,
-            "imageWidth": 203
-          },
-          "link": "/consulting/artificial-intelligence"
-        },
-        {
           "title": "DevOps & Cloud",
-          "description": "Make sure your software ships by using SSW's best practices in Azure, DevOps and Docker Containers.",
+          "description": "Make sure your software ships by using SSW's best practices in Azure, AWS, DevOps and Docker Containers.",
           "graphic": {
             "imageSource": "/images/custom-icons/updated-cloud.svg",
             "imageHeight": 200,
@@ -85,7 +86,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "Why teams choose SSW",
+      "heading": "The SSW Difference",
       "statistics": [
         {
           "figure": 7000,
@@ -113,7 +114,7 @@
       "heading": "AI solutions that deliver, the first time.",
       "buttons": [
         {
-          "buttonText": "Schedule a Free Discovery Call",
+          "buttonText": "Book a Free Initial Call",
           "colour": 0
         }
       ],
@@ -125,6 +126,7 @@
       },
       "heading": "Featured Projects",
       "subtitle": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.",
+      "mobilePlusMore": "/company/clients",
       "buttons": [
         {
           "buttonText": "Our Client Stories",
@@ -268,6 +270,7 @@
       },
       "heading": "We work together to form an amazing collective brain",
       "subtitle": "We're enthusiastic and have a 'Make it happen' culture.",
+      "mobilePlusMore": "/people",
       "buttons": [
         {
           "buttonText": "SSW People",
@@ -356,6 +359,7 @@
       },
       "heading": "Upcoming Events",
       "subtitle": "We run webinars, live events, in-house and online courses.",
+      "mobilePlusMore": "/events",
       "buttons": [
         {
           "buttonText": "Explore Events & Training",
@@ -442,7 +446,7 @@
       "subtitle": "Partner with us, any time and any place.",
       "buttons": [
         {
-          "buttonText": "Schedule a Free Discovery Call",
+          "buttonText": "Book a Free Initial Call",
           "colour": 0
         }
       ],
@@ -496,12 +500,12 @@
           "lng": 7.75
         },
         {
-          "name": "North America",
+          "name": "Delaware, USA",
           "email": "hello@ssw.com",
           "phone": "+1 302 520 3805",
           "address": "Online Only\nNorth America, DE 2111, USA",
-          "lat": 49.28,
-          "lng": -123.12
+          "lat": 39.16,
+          "lng": -75.52
         }
       ],
       "_template": "v3Globe"
