@@ -1,8 +1,12 @@
+type TurnstileResult = { success: boolean; "error-codes"?: string[] };
+
 /**
  * Verifies a Cloudflare Turnstile token server-side via the siteverify API.
  * https://developers.cloudflare.com/turnstile/get-started/server-side-validation/
  */
-export const validateTurnstile = async (token: string) => {
+export const validateTurnstile = async (
+  token: string
+): Promise<TurnstileResult> => {
   const secret = process.env.TURNSTILE_SECRET_KEY;
   if (!secret) return { success: false };
 
@@ -15,5 +19,5 @@ export const validateTurnstile = async (token: string) => {
     }
   );
 
-  return (await res.json()) as { success: boolean; "error-codes"?: string[] };
+  return (await res.json()) as TurnstileResult;
 };
