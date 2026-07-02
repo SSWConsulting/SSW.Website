@@ -86,33 +86,14 @@
       "cardStyle": 0,
       "cards": [
         {
-          "guid": "wa02",
-          "altText": "Reserve your seat for the Brisbane event on Thursday 2 July 2026, 9:00am – 1:00pm",
-          "heading": "Brisbane",
-          "description": "",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Thursday 2 July 2026 · 9:00am – 1:00pm",
-                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Reserve my seat - $99",
-            "eventbriteEventId": "1992027082628",
-            "colour": 0
-          }
-        },
-        {
           "guid": "wa03",
-          "altText": "Reserve your seat for the Melbourne event on Thursday 9 July 2026, 9:00am – 1:00pm",
+          "altText": "Reserve your seat for the Melbourne event on Wednesday 16 September 2026, 9:00am – 1:00pm",
           "heading": "Melbourne",
           "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "Thursday 9 July 2026 · 9:00am – 1:00pm",
+                "heading": "Wednesday 16 September 2026 · 9:00am – 1:00pm",
                 "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
               }
             ]
@@ -124,14 +105,52 @@
           }
         },
         {
+          "guid": "wa02",
+          "altText": "Reserve your seat for the Brisbane event on Friday 18 September 2026, 9:00am – 1:00pm",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Friday 18 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027082628",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "wa05",
+          "altText": "Reserve your seat for the Newcastle event on Tuesday 29 September 2026, 9:00am – 1:00pm",
+          "heading": "Newcastle",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Tuesday 29 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Newcastle Office 432 Hunter Street Newcastle NSW 2300"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "colour": 0,
+            "eventbriteEventId": "1992796293358"
+          }
+        },
+        {
           "guid": "wa04",
-          "altText": "Reserve your seat for the Sydney event on Thursday 16 July 2026, 9:00am – 1:00pm",
+          "altText": "Reserve your seat for the Sydney event on Thursday 1 October 2026, 9:00am – 1:00pm",
           "heading": "Sydney",
           "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "Thursday 16 July 2026 · 9:00am – 1:00pm",
+                "heading": "Thursday 1 October 2026 · 9:00am – 1:00pm",
                 "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
               }
             ]
@@ -147,7 +166,8 @@
         "backgroundColour": 6
       },
       "anchorId": "pick-your-city",
-      "_template": "cardCarousel"
+      "_template": "cardCarousel",
+      "cardsPerRow": "2"
     },
     {
       "spacerHeight": "45px",
@@ -700,33 +720,14 @@
       "cardStyle": 0,
       "cards": [
         {
-          "guid": "na8owi",
-          "altText": "Reserve your seat for the Brisbane event on Thursday 2 July 2026, 9:00am – 1:00pm",
-          "heading": "Brisbane",
-          "description": "",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Thursday 2 July 2026 · 9:00am – 1:00pm",
-                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Reserve my seat - $99",
-            "eventbriteEventId": "1992027082628",
-            "colour": 0
-          }
-        },
-        {
           "guid": "a5ne6z",
-          "altText": "Reserve your seat for the Melbourne event on Thursday 9 July 2026, 9:00am – 1:00pm",
+          "altText": "Reserve your seat for the Melbourne event on Wednesday 16 September 2026, 9:00am – 1:00pm",
           "heading": "Melbourne",
           "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "Thursday 9 July 2026 · 9:00am – 1:00pm",
+                "heading": "Wednesday 16 September 2026 · 9:00am – 1:00pm",
                 "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
               }
             ]
@@ -738,14 +739,52 @@
           }
         },
         {
+          "guid": "na8owi",
+          "altText": "Reserve your seat for the Brisbane event on Friday 18 September 2026, 9:00am – 1:00pm",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Friday 18 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027082628",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "k2nc9w",
+          "altText": "Reserve your seat for the Newcastle event on Tuesday 29 September 2026, 9:00am – 1:00pm",
+          "heading": "Newcastle",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Tuesday 29 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Newcastle Office 432 Hunter Street Newcastle NSW 2300"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "colour": 0,
+            "eventbriteEventId": "1992796293358"
+          }
+        },
+        {
           "guid": "m94ybh",
-          "altText": "Reserve your seat for the Sydney event on Thursday 16 July 2026, 9:00am – 1:00pm",
+          "altText": "Reserve your seat for the Sydney event on Thursday 1 October 2026, 9:00am – 1:00pm",
           "heading": "Sydney",
           "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "Thursday 16 July 2026 · 9:00am – 1:00pm",
+                "heading": "Thursday 1 October 2026 · 9:00am – 1:00pm",
                 "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
               }
             ]
@@ -760,7 +799,8 @@
       "background": {
         "backgroundColour": 4
       },
-      "_template": "cardCarousel"
+      "_template": "cardCarousel",
+      "cardsPerRow": "2"
     },
     {
       "spacerHeight": "45px",
