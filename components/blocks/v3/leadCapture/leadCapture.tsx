@@ -74,6 +74,7 @@ export function V3LeadCapture({ data }) {
   // Screen 3 — how can we help
   const [message, setMessage] = useState("");
   const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaError, setCaptchaError] = useState(false);
   const turnstileRef = useRef<TurnstileInstance>(null);
 
   const progress = Math.round(((current + 1) / TOTAL_SCREENS) * 100);
@@ -417,10 +418,22 @@ export function V3LeadCapture({ data }) {
                     ref={turnstileRef}
                     siteKey={TURNSTILE_SITE_KEY}
                     options={{ appearance: "interaction-only", theme: "dark" }}
-                    onSuccess={setCaptchaToken}
+                    onSuccess={(token) => {
+                      setCaptchaToken(token);
+                      setCaptchaError(false);
+                    }}
                     onExpire={() => setCaptchaToken("")}
-                    onError={() => setCaptchaToken("")}
+                    onError={() => {
+                      setCaptchaToken("");
+                      setCaptchaError(true);
+                    }}
                   />
+                  {captchaError && (
+                    <p className="mt-3 text-sm text-sswRed">
+                      Couldn&apos;t load verification. Please disable any ad or
+                      privacy blocker for this site, then try again.
+                    </p>
+                  )}
                 </div>
               ) : (
                 <p className="mt-6 text-sm text-white/60">
