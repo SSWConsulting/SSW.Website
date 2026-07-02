@@ -104,7 +104,7 @@ export function V3ImageCards({ data }) {
         size="custom"
         width="custom"
         padding="px-0 lg:px-8"
-        className="max-w-screen-xl py-16 md:py-24"
+        className="max-w-screen-xl py-24"
       >
         {data?.brow && (
           <span
