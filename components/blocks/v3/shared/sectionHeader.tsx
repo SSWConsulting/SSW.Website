@@ -31,7 +31,7 @@ export function SectionHeader({ data }) {
             {data.subtitle}
           </p>
         )}
-        <ButtonRow data={data} className="mt-6 justify-start" />
+        <ButtonRow data={data} className="mt-6 justify-start hidden lg:block" />
       </div>
     </div>
   );

@@ -65,9 +65,11 @@ const Carousel = React.forwardRef<
   ) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
+        // Loop by default, but let callers opt out with `opts={{ loop: false }}`
+        // for a finite carousel. `axis` stays last so orientation always wins.
+        loop: true,
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
-        loop: true,
       },
 
       [
