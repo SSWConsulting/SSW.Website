@@ -52,6 +52,13 @@ export const V3ImageCardsSchema: Template = {
       description: "Short subtitle shown beneath the title.",
       ui: { component: "textarea" },
     },
+    {
+      type: "string",
+      label: "Mobile + more Link",
+      name: "mobilePlusMore",
+      description:
+        "Destination for the + more card at the end of the mobile carousel. Leave blank to hide it.",
+    },
     // @ts-expect-error – number field uses a custom ColorPickerInput component
     {
       type: "number",

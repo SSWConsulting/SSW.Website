@@ -17,6 +17,7 @@ import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { tinaField } from "tinacms/dist/react";
+import { CarouselMoreCard } from "../shared/carouselMoreCard";
 
 const SSW_PEOPLE_ICON =
   "/images/company-logos/downloads/images/ssw-logo-icon.png";
@@ -127,18 +128,7 @@ function CarouselControls({ count }: { count: number }) {
 
 export function V3PeopleCarousel({ data }) {
   const people = (data?.people ?? []).filter(Boolean);
-
-  // Embla's loop only engages when there are clearly more slides than fit in
-  // the viewport. With only a few people, repeat them until there are enough
-  // slides for a seamless loop (mirrors the image-cards block).
-  const MIN_CAROUSEL_SLIDES = 6;
-  const carouselPeople =
-    people.length > 0 && people.length < MIN_CAROUSEL_SLIDES
-      ? Array.from(
-          { length: Math.ceil(MIN_CAROUSEL_SLIDES / people.length) },
-          () => people
-        ).flat()
-      : people;
+  const moreLink = data?.mobilePlusMore;
 
   return (
     <V2ComponentWrapper data={data}>
@@ -173,21 +163,21 @@ export function V3PeopleCarousel({ data }) {
           </p>
         )}
 
-        <ButtonRow data={data} className="mt-6 flex-wrap px-8 lg:px-0" />
+        <ButtonRow data={data} className="mt-6 flex-wrap px-8 lg:px-0 hidden lg:block" />
 
         {/* 4 or fewer: swipe through them on smaller views and only settle
             into a static grid once there's room (lg+), like the image-cards
             block. Carousel when there's more than fits to scroll. */}
         {people.length > 0 && people.length <= 4 && (
           <>
-            {/* Below lg: horizontal infinite-scroll carousel */}
+            {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
             <Carousel
-              opts={{ align: "start", loop: true, dragFree: true }}
+              opts={{ align: "start", loop: false, dragFree: true }}
               autoplay={false}
               className="mt-12 lg:hidden"
             >
               <CarouselContent className="ml-0">
-                {carouselPeople.map((person, index) => (
+                {people.map((person, index) => (
                   <CarouselItem
                     key={`v3-person-${index}`}
                     className={cn(
@@ -198,6 +188,11 @@ export function V3PeopleCarousel({ data }) {
                     <PersonCard person={person} />
                   </CarouselItem>
                 ))}
+                {moreLink && (
+                  <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
+                    <CarouselMoreCard href={moreLink} />
+                  </CarouselItem>
+                )}
               </CarouselContent>
             </Carousel>
 

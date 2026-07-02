@@ -97,6 +97,13 @@ export const V3FeaturedProductsSchema: Template = {
       ui: { component: "textarea" },
     },
     {
+      type: "string",
+      label: "Mobile + more Link",
+      name: "mobilePlusMore",
+      description:
+        "Destination for the + more card at the end of the mobile carousel. Leave blank to hide it.",
+    },
+    {
       type: "object",
       label: "Header Button",
       name: "buttons",

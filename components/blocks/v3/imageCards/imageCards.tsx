@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/carousel";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
+import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
@@ -95,17 +96,7 @@ export function V3ImageCards({ data }) {
       ? "lg:grid-cols-3"
       : "lg:grid-cols-4";
 
-  // Embla's loop only engages when there are clearly more slides than fit in
-  // the viewport. With ~3 cards visible on md, a small list won't loop — so
-  // repeat the cards until there are enough slides for a seamless loop.
-  const MIN_CAROUSEL_SLIDES = 6;
-  const carouselCards =
-    cards.length > 0 && cards.length < MIN_CAROUSEL_SLIDES
-      ? Array.from(
-          { length: Math.ceil(MIN_CAROUSEL_SLIDES / cards.length) },
-          () => cards
-        ).flat()
-      : cards;
+  const moreLink = data?.mobilePlusMore;
 
   return (
     <V2ComponentWrapper data={data}>
@@ -142,14 +133,14 @@ export function V3ImageCards({ data }) {
 
         {cards.length > 0 && (
           <>
-            {/* Below lg: horizontal infinite-scroll carousel */}
+            {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
             <Carousel
-              opts={{ align: "start", loop: true, dragFree: true }}
+              opts={{ align: "start", loop: false, dragFree: true }}
               autoplay={false}
               className="mt-12 lg:hidden"
             >
               <CarouselContent className="ml-0">
-                {carouselCards.map((card, index) => (
+                {cards.map((card, index) => (
                   <CarouselItem
                     key={`v3-image-card-${index}`}
                     className={cn(
@@ -163,6 +154,11 @@ export function V3ImageCards({ data }) {
                     />
                   </CarouselItem>
                 ))}
+                {moreLink && (
+                  <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
+                    <CarouselMoreCard href={moreLink} />
+                  </CarouselItem>
+                )}
               </CarouselContent>
             </Carousel>
 

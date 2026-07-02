@@ -15,6 +15,7 @@ import { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
+import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
 
@@ -249,17 +250,7 @@ export function V3Events({ data }) {
   const eventCards = (data?.eventCards ?? []).filter(Boolean);
   const hasFeatured =
     data?.featuredEvent?.title || data?.featuredEvent?.image?.imageSource;
-
-  // Repeat the cards until there are enough slides for embla's loop to engage
-  // (it won't loop a short list when ~3 are visible on md).
-  const MIN_CAROUSEL_SLIDES = 6;
-  const carouselCards =
-    eventCards.length > 0 && eventCards.length < MIN_CAROUSEL_SLIDES
-      ? Array.from(
-          { length: Math.ceil(MIN_CAROUSEL_SLIDES / eventCards.length) },
-          () => eventCards
-        ).flat()
-      : eventCards;
+  const moreLink = data?.mobilePlusMore;
 
   return (
     <V2ComponentWrapper data={data}>
@@ -282,14 +273,14 @@ export function V3Events({ data }) {
 
         {eventCards.length > 0 && (
           <>
-            {/* Below lg: horizontal infinite-scroll carousel */}
+            {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
             <Carousel
-              opts={{ align: "start", loop: true, dragFree: true }}
+              opts={{ align: "start", loop: false, dragFree: true }}
               autoplay={false}
               className="lg:hidden"
             >
               <CarouselContent className="ml-0">
-                {carouselCards.map((event, index) => (
+                {eventCards.map((event, index) => (
                   <CarouselItem
                     key={`v3-event-card-${index}`}
                     className={cn(
@@ -299,6 +290,11 @@ export function V3Events({ data }) {
                     <EventCard event={event} />
                   </CarouselItem>
                 ))}
+                {moreLink && (
+                  <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
+                    <CarouselMoreCard href={moreLink} />
+                  </CarouselItem>
+                )}
               </CarouselContent>
             </Carousel>
 
