@@ -8,7 +8,7 @@ const MAX_COLUMNS = 5;
 
 export const Footer = () => {
   const { linkColumns, bottomBar } = footerData;
-  const columns = linkColumns.slice(0, MAX_COLUMNS);
+  const columns = (linkColumns ?? []).slice(0, MAX_COLUMNS);
   const currentYear = new Date().getFullYear();
 
   return (
@@ -19,8 +19,8 @@ export const Footer = () => {
             <Image
               src="/images/ssw-logo-darkmode.svg"
               alt="SSW Enterprise Software Development"
-              width={250}
-              height={250}
+              width={332}
+              height={98}
               className="h-auto w-56"
             />
           </div>
@@ -30,7 +30,7 @@ export const Footer = () => {
           />
         </div>
 
-        <hr className="my-8 h-[0.5px] border-gray-700" />
+        <hr className="my-8 h-px border-gray-700" />
 
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           {columns.map((column, index) => (
@@ -43,7 +43,7 @@ export const Footer = () => {
                   <li key={(link.url ?? "") + linkIndex}>
                     <CustomLink
                       href={link.url}
-                      className="unstyled relative inline-block text-gray-300 transition-colors hover:text-white after:absolute after:left-0 after:bottom-0 after:h-[0.5px] after:w-0 after:bg-sswRed after:transition-all after:duration-300 hover:after:w-full"
+                      className="unstyled relative inline-block text-gray-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-sswRed after:transition-all after:duration-300 hover:text-white hover:after:w-full"
                     >
                       {link.label}
                     </CustomLink>
@@ -54,7 +54,7 @@ export const Footer = () => {
           ))}
         </div>
 
-        <hr className="my-8 h-[0.5px] border-gray-700" />
+        <hr className="my-8 h-px border-gray-700" />
 
         <div className="flex flex-col gap-4 text-sm md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-400">

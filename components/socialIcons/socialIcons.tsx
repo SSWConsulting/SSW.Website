@@ -107,7 +107,7 @@ export const SocialIcons = ({
         className
       )}
     >
-      {footerData.socials.map((social, index) => {
+      {(footerData.socials ?? []).map((social, index) => {
         const hideOnDesktop =
           excludeDesktop?.length &&
           !!excludeDesktop.find((icon) => icon === social.type);
@@ -148,13 +148,15 @@ export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
 
   const Icon = styling.icon;
 
+  const label = social.title ?? `SSW on ${social.type}`;
+
   if (variant === "plain") {
     return (
       <CustomLink
         href={url}
         className="unstyled flex size-9 cursor-pointer items-center justify-center text-xl text-white hover:opacity-70"
-        title={social.title}
-        aria-label={"Link to " + social.title}
+        title={label}
+        aria-label={"Link to " + label}
       >
         <Icon className="text-lg" color="white" />
       </CustomLink>
@@ -168,8 +170,8 @@ export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
         "unstyled flex size-9 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
         styling.bgClassName
       )}
-      title={social.title}
-      aria-label={"Link to " + social.title}
+      title={label}
+      aria-label={"Link to " + label}
     >
       <Icon className="text-lg" color={styling.fill ?? "white"} />
     </CustomLink>
