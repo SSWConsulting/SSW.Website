@@ -1,4 +1,17 @@
 {
+  "seo": {
+    "title": "React Development | SSW",
+    "description": "We've been designing, building, and delivering enterprise React apps since day one. Find out how SSW can help you build your dream React app today.",
+    "canonical": "https://www.ssw.com.au/consulting/react",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/react.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "SSW React Consulting - Enterprise Software Development"
+      }
+    ]
+  },
   "blocks": [
     {
       "background": {

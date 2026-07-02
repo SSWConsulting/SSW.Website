@@ -6,7 +6,8 @@ import { Field, FieldLabel } from "@/components/ui/field";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { useRef, useState } from "react";
 import { TiArrowLeft } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -47,6 +48,7 @@ const AU_STATE_NAMES: Record<string, string> = {
 };
 
 const TOTAL_SCREENS = 3;
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const primaryButtonClass =
   "rounded-lg bg-sswRed px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50";
@@ -71,9 +73,18 @@ export function V3LeadCapture({ data }) {
   const [hearAboutUs, setHearAboutUs] = useState("");
   // Screen 3 — how can we help
   const [message, setMessage] = useState("");
+  const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaError, setCaptchaError] = useState(false);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const progress = Math.round(((current + 1) / TOTAL_SCREENS) * 100);
   const goBack = () => setCurrent((c) => Math.max(c - 1, 0));
+  // Turnstile tokens are single-use; a submit that reaches siteverify consumes
+  // it, so clear and re-issue one before any retry.
+  const resetCaptcha = () => {
+    setCaptchaToken("");
+    turnstileRef.current?.reset();
+  };
   const goNext = () => setCurrent((c) => Math.min(c + 1, TOTAL_SCREENS - 1));
 
   const selectedCountry = LOCATIONS.find((l) => l.label === country);
@@ -114,15 +125,26 @@ export function V3LeadCapture({ data }) {
       lead.landingPageUrl = window.location.href;
     }
 
+    if (!captchaToken) {
+      setStatus("error");
+      return;
+    }
+
     try {
       const res = await fetch("/api/lead-capture", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ lead }),
+        body: JSON.stringify({ lead, turnstileToken: captchaToken }),
       });
-      setStatus(res.ok ? "success" : "error");
+      if (res.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+        resetCaptcha();
+      }
     } catch {
       setStatus("error");
+      resetCaptcha();
     }
   };
 
@@ -390,6 +412,36 @@ export function V3LeadCapture({ data }) {
                 </p>
               )}
 
+              {TURNSTILE_SITE_KEY ? (
+                <div className="mt-6">
+                  <Turnstile
+                    ref={turnstileRef}
+                    siteKey={TURNSTILE_SITE_KEY}
+                    options={{ appearance: "interaction-only", theme: "dark" }}
+                    onSuccess={(token) => {
+                      setCaptchaToken(token);
+                      setCaptchaError(false);
+                    }}
+                    onExpire={() => setCaptchaToken("")}
+                    onError={() => {
+                      setCaptchaToken("");
+                      setCaptchaError(true);
+                    }}
+                  />
+                  {captchaError && (
+                    <p className="mt-3 text-sm text-sswRed">
+                      Couldn&apos;t load verification. Please disable any ad or
+                      privacy blocker for this site, then try again.
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <p className="mt-6 text-sm text-white/60">
+                  Verification is temporarily unavailable. Please try again
+                  later.
+                </p>
+              )}
+
               <div className="mt-8 flex items-center justify-between">
                 <button
                   type="button"
@@ -401,7 +453,9 @@ export function V3LeadCapture({ data }) {
                 </button>
                 <button
                   type="submit"
-                  disabled={status === "submitting" || !screen3Valid}
+                  disabled={
+                    status === "submitting" || !screen3Valid || !captchaToken
+                  }
                   className={primaryButtonClass}
                 >
                   {status === "submitting" ? "Sending…" : "Complete"}
