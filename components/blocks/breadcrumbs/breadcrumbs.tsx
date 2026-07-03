@@ -20,9 +20,26 @@ import { Container } from "@/components/util/container";
 import global from "@/content/global/index.json";
 import { cn } from "@/lib/utils";
 import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
+import { ChevronLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { tinaField } from "tinacms/dist/react";
+
+function getBackLink(
+  paths: string[],
+  displayNames: string[]
+): { href: string; label: string } | null {
+  const initialTitle = global.breadcrumbHomeRoute;
+
+  // Need at least a current page plus a parent to link back to
+  if (paths.length < 2) return null;
+
+  const parentIndex = paths.length - 2;
+  const label = parentIndex === 0 ? initialTitle : displayNames[parentIndex];
+  const href = paths.slice(0, -1).join("/") || "/";
+
+  return { href, label };
+}
 
 function getLinks(
   paths: string[],
@@ -103,10 +120,30 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   // Index 0 is an empty string if the path starts with a slash
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
+  // Replace paths with character replacements (mirrors getLinks)
+  const displayNames = paths.map(
+    (path) =>
+      global.breadcrumbReplacements.find((value) => value.from === path)?.to ||
+      path
+  );
+  const backLink = getBackLink(paths, displayNames);
+
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" padding="px-4 sm:px-8" className="pt-8 sm:pt-12">
-        <Breadcrumb className="text-gray-300">
+        {/* Mobile: single back link to the immediate parent */}
+        {backLink ? (
+          <BreadcrumbLink
+            href={backLink.href}
+            className="flex items-center gap-1 text-sm font-light no-underline sm:hidden"
+          >
+            <ChevronLeft className="size-4" />
+            {backLink.label}
+          </BreadcrumbLink>
+        ) : null}
+
+        {/* Desktop: full breadcrumb trail */}
+        <Breadcrumb className={cn("text-gray-300", backLink && "max-sm:hidden")}>
           <BreadcrumbList>
             {links.map((link, index) => (
               // react fragments don't appear in the dom
