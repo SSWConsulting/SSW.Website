@@ -143,7 +143,9 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
         ) : null}
 
         {/* Desktop: full breadcrumb trail */}
-        <Breadcrumb className={cn("text-gray-300", backLink && "max-sm:hidden")}>
+        <Breadcrumb
+          className={cn("text-gray-300", backLink && "max-sm:hidden")}
+        >
           <BreadcrumbList>
             {links.map((link, index) => (
               // react fragments don't appear in the dom
