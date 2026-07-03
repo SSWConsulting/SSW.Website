@@ -135,7 +135,7 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
         {backLink ? (
           <BreadcrumbLink
             href={backLink.href}
-            className="flex items-center gap-1 text-sm font-light no-underline sm:hidden"
+            className="inline-flex w-fit items-center gap-1 text-sm font-light no-underline sm:hidden"
           >
             <ChevronLeft className="size-4" />
             {backLink.label}
