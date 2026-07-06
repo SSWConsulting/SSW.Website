@@ -376,7 +376,9 @@
           "imageWidth": 3444
         },
         "eventDate": "2026-07-11T05:46:28.184Z",
-        "spotsText": "10 Spots left!"
+        "spotsText": "10 Spots left!",
+        "registerText": "Register Now",
+        "registerLink": "/events"
       },
       "eventCards": [
         {

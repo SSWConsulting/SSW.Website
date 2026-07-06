@@ -11,80 +11,12 @@ import { cn } from "@/lib/utils";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
-
-function EmailRegister() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    "idle" | "submitting" | "success" | "error"
-  >("idle");
-
-  const submit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (status === "submitting") return;
-    setStatus("submitting");
-    try {
-      const res = await fetch("/api/lead-capture", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          lead: {
-            email: email.trim(),
-            landingPageUrl:
-              typeof window !== "undefined" ? window.location.href : "",
-          },
-        }),
-      });
-      setStatus(res.ok ? "success" : "error");
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  if (status === "success") {
-    return (
-      <p className="text-base font-medium text-white">
-        Thanks — you&apos;re registered. We&apos;ll be in touch.
-      </p>
-    );
-  }
-
-  return (
-    <>
-      <form
-        onSubmit={submit}
-        className="flex w-full max-w-md flex-col items-stretch gap-2 sm:flex-row"
-      >
-        <input
-          type="email"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-          className="min-h-12 min-w-0 flex-1 rounded-lg border border-white/30 bg-white/20 px-4 text-white placeholder:text-gray-400 focus:border-white/60 focus:outline-none"
-        />
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-lg bg-white px-5 text-sm font-semibold text-black transition-opacity hover:opacity-90 disabled:opacity-50"
-        >
-          {status === "submitting" ? "…" : "Register Now"}
-        </button>
-      </form>
-      {status === "error" && (
-        <p className="mt-2 text-sm text-sswRed">
-          Something went wrong — please try again.
-        </p>
-      )}
-    </>
-  );
-}
 
 function FeaturedEvent({ event }) {
   return (
@@ -113,19 +45,17 @@ function FeaturedEvent({ event }) {
               {event.description}
             </p>
           )}
-          <div className="mt-8">
-            <EmailRegister />
-            <p className="mt-3 text-xs font-light text-gray-400">
-              By submitting you&apos;re confirming that you agree with our{" "}
+          {event?.registerLink && (
+            <div className="mt-8">
               <Link
-                href="/terms-and-conditions"
-                className="underline hover:text-white"
+                href={event.registerLink}
+                data-tina-field={tinaField(event, "registerText")}
+                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-5 text-sm font-semibold text-black !no-underline transition-opacity hover:opacity-90"
               >
-                Terms and Conditions
+                {event.registerText ?? "Register Now"}
               </Link>
-              .
-            </p>
-          </div>
+            </div>
+          )}
         </div>
 
         {/* Right: date, countdown, spots */}

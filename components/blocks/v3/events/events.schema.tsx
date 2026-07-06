@@ -32,6 +32,8 @@ export const V3EventsSchema: Template = {
         description:
           "In this 2-day Angular Workshop, you will get hands on experience building applications from scratch with guidance from Angular experts.",
         spotsText: "10 Spots left!",
+        registerText: "Register Now",
+        registerLink: "/events",
       },
       eventCards: [
         {
@@ -116,6 +118,19 @@ export const V3EventsSchema: Template = {
           label: "Spots Text",
           name: "spotsText",
           description: "e.g. '10 Spots left!'. Leave blank to hide.",
+        },
+        {
+          type: "string",
+          label: "Register Button Text",
+          name: "registerText",
+          description: "Label for the register button. e.g. 'Register Now'.",
+        },
+        {
+          type: "string",
+          label: "Register Button Link",
+          name: "registerLink",
+          description:
+            "Destination for the register button. Leave blank to hide it.",
         },
       ],
     },
