@@ -29,6 +29,10 @@ inputs:
   AZURE_SERVICE_PRINCIPAL_OBJECT_ID:
     description: Object Id of Service Principal
     required: true
+  create_slot:
+    description: create the slot (and its ACR/Key Vault roles) before deploying - PR slots only
+    default: "false"
+    required: false
 
 outputs:
   url:
@@ -48,7 +52,7 @@ runs:
     - name: AppService - Create slot
       shell: pwsh
       id: create-slot
-      if: github.event_name == 'pull_request'
+      if: inputs.create_slot == 'true'
       run: |
         # create the environment
         az deployment group create `
