@@ -16,13 +16,18 @@ const AboutUs = dynamic(() =>
   import("./blocks/aboutUs").then((mod) => mod.AboutUs)
 );
 
-import { Agenda } from "./blocks/agenda";
-
-const BuiltOnAzure = dynamic(() =>
-  import("./blocks/builtOnAzure").then((mod) => mod.BuiltOnAzure)
+const Agenda = dynamic(() =>
+  import("./blocks/agenda").then((mod) => mod.Agenda)
 );
 
-import { Carousel } from "./blocks/carousel";
+const UtilityButton = dynamic(() =>
+  import("./button/utilityButton").then((mod) => mod.UtilityButton)
+);
+
+const Carousel = dynamic(() =>
+  import("./blocks/carousel").then((mod) => mod.Carousel)
+);
+
 const ClientLogos = dynamic(() =>
   import("./blocks/clientLogos").then((mod) => mod.ClientLogos)
 );
@@ -54,7 +59,9 @@ const JotFormEmbed = dynamic(
   }
 );
 
-import { ServiceCards } from "./blocks/serviceCards";
+const ServiceCards = dynamic(() =>
+  import("./blocks/serviceCards").then((mod) => mod.ServiceCards)
+);
 
 const TableLayout = dynamic(() =>
   import("./blocks/tableLayout").then((mod) => mod.TableLayout)
@@ -153,6 +160,62 @@ const Spacer = dynamic(() =>
   import("./blocks/spacer/spacer").then((mod) => mod.Spacer)
 );
 
+const V3Hero = dynamic(() =>
+  import("./blocks/v3/hero/hero").then((mod) => mod.V3Hero)
+);
+
+const V3LogoCarousel = dynamic(() =>
+  import("./blocks/v3/logoCarousel/logoCarousel").then(
+    (mod) => mod.V3LogoCarousel
+  )
+);
+
+const V3FeatureSteps = dynamic(() =>
+  import("./blocks/v3/featureSteps/featureSteps").then(
+    (mod) => mod.V3FeatureSteps
+  )
+);
+
+const V3Process = dynamic(() =>
+  import("./blocks/v3/process/process").then((mod) => mod.V3Process)
+);
+
+const V3Statistics = dynamic(() => import("./blocks/v3/statistics/statistics"));
+
+const V3Cta = dynamic(() =>
+  import("./blocks/v3/cta/cta").then((mod) => mod.V3Cta)
+);
+
+const V3Testimonials = dynamic(() =>
+  import("./blocks/v3/testimonials/testimonials").then(
+    (mod) => mod.V3Testimonials
+  )
+);
+
+const V3StackCards = dynamic(() =>
+  import("./blocks/v3/stackCards/stackCards").then((mod) => mod.V3StackCards)
+);
+
+const V3Faq = dynamic(() =>
+  import("./blocks/v3/faq/faq").then((mod) => mod.V3Faq)
+);
+
+const V3LeadCapture = dynamic(() =>
+  import("./blocks/v3/leadCapture/leadCapture").then((mod) => mod.V3LeadCapture)
+);
+
+const V3VideoHighlights = dynamic(() =>
+  import("./blocks/v3/videoHighlights/videoHighlights").then(
+    (mod) => mod.V3VideoHighlights
+  )
+);
+
+const V3CardCarousel = dynamic(() =>
+  import("./blocks/v3/cardCarousel/cardCarousel").then(
+    (mod) => mod.V3CardCarousel
+  )
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -160,7 +223,6 @@ const componentMap = {
   Breadcrumbs,
   ServiceCards,
   UpcomingEvents,
-  BuiltOnAzure,
   CustomImage,
   ClientLogos,
   VerticalImageLayout,
@@ -191,6 +253,19 @@ const componentMap = {
   CardCarousel,
   TechnologyCardCarousel,
   Spacer,
+  UtilityButton,
+  V3Hero,
+  V3LogoCarousel,
+  V3FeatureSteps,
+  V3Process,
+  V3Statistics,
+  V3Cta,
+  V3Testimonials,
+  V3StackCards,
+  V3Faq,
+  V3LeadCapture,
+  V3VideoHighlights,
+  V3CardCarousel,
 };
 
 export const Blocks = ({ prefix, blocks }) => {
@@ -220,7 +295,14 @@ const Block = ({ prefix, blockData, i }) => {
   }
 
   const field = `blocks.${i}`;
-  const blockProps = { ...blockData, data: blockData, parentField: field };
+  // Only the first block is treated as the above-the-fold LCP candidate, so image
+  // blocks below it don't all emit competing <link rel="preload"> hints.
+  const blockProps = {
+    ...blockData,
+    data: blockData,
+    parentField: field,
+    priority: i === 0,
+  };
 
   return (
     <div className="contents" data-tinafield={field}>

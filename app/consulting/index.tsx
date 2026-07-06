@@ -1,6 +1,5 @@
 "use client";
 
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { Category } from "@/components/consulting/index/category";
 import { Tag } from "@/components/consulting/index/tag";
 import { Container } from "@/components/util/container";
@@ -24,6 +23,11 @@ export default function ConsultingIndex({ tinaProps }) {
   const categories = useMemo(() => {
     return node.categories.reduce((acc, curr) => {
       const mappedPages = curr.pages.reduce((pageAcc, p) => {
+        // Skip entries with neither an external URL nor a linked page —
+        // otherwise reading p.page.id below crashes the build prerender.
+        if (!p.externalUrl && !p.page?.id) {
+          return pageAcc;
+        }
         const mappedPage = {
           url:
             p.externalUrl ||
@@ -132,7 +136,6 @@ export default function ConsultingIndex({ tinaProps }) {
           </div>
         </div>
       </Container>
-      <BuiltOnAzure data={tinaProps.azureBanner} />
     </>
   );
 }

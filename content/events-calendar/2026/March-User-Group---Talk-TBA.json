@@ -1,17 +1,23 @@
 {
-  "title": "March User Group - Talk TBA",
+  "title": "March .NET User Group - From Copilot to the Garden of Eden",
   "url": "/netug/sydney",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
-  "startDateTime": "2026-03-18T16:00:00.000Z",
-  "endDateTime": "2026-03-18T21:00:00.000Z",
-  "startShowBannerDateTime": "2026-03-18T10:00:00.000Z",
-  "endShowBannerDateTime": "2026-03-18T16:00:00.000Z",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "startDateTime": "2026-03-18T07:00:00.000Z",
+  "endDateTime": "2026-03-18T09:30:00.000Z",
+  "startShowBannerDateTime": "2026-03-17T13:00:00.000Z",
+  "endShowBannerDateTime": "2026-03-18T11:00:00.000Z",
   "calendarType": "User Groups",
   "city": "Sydney",
   "category": "Artificial Intelligence",
-  "abstract": "Agenda TBA - watch this space!",
-  "description": "Agenda TBA - watch this space!\n",
+  "abstract": "March .NET User Group: From Copilot to the Garden of Eden with Microsoft MVP & Regional Director Adam Cogan\n\nMove beyond the underwhelming 2023 \"Copilot hype\" to the tools actually delivering value for developers. Adam Cogan cuts through the noise, exploring how AI is fundamentally reshaping the enterprise stack, from Copilot and Cowork to agentic workflows and CLI-based coding.\n\nLearn how roles are shifting, which AI assistants are winning, and what an AI-integrated \"Garden of Eden\" looks like. Leave with a practical roadmap to build, analyze, and automate with confidence.\n",
+  "description": "**March .NET User Group: From Copilot to the Garden of Eden with Microsoft MVP & Regional Director, SSW's Adam Cogan**\n\nMove beyond the underwhelming 2023 \"Copilot hype\" to the tools actually delivering value for developers. Adam Cogan cuts through the noise, exploring how AI is fundamentally reshaping the enterprise stack, from Copilot and Cowork to agentic workflows and CLI-based coding.\n\nLearn how roles are shifting, which AI assistants are winning, and what an AI-integrated \"Garden of Eden\" looks like. Leave with a practical roadmap to build, analyze, and automate with confidence.\n\n**Agenda (AEDT):**\n\n6:00pm - 🍕 Pizza & Networking\n\n6:30pm - Tech News with Adam and Eve Cogan (live from SSW Sydney).\n\nThen - **From Copilot to the Garden of Eden with Adam Cogan**\n",
+  "youTubeId": "ml8WGXydH4E",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true

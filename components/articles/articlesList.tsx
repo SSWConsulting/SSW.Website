@@ -17,6 +17,7 @@ const ArticlesList = () => {
       author,
       title,
       seo,
+      publishedDate,
       _sys: { filename },
     } = article;
     const description = seo?.description ?? null;
@@ -27,6 +28,7 @@ const ArticlesList = () => {
       authorName: author?.presenter?.name,
       authorPosition: author?.position,
       body: description,
+      publishedDate,
     };
 
     return <ArticleCard data={prop} key={`article-card-${index}`} />;

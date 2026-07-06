@@ -2,7 +2,6 @@
 
 import { Blocks } from "@/components/blocks-renderer";
 import { Booking } from "@/components/blocks/booking";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { ClientLogos } from "@/components/blocks/clientLogos";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { BookingButton } from "@/components/bookingButton/bookingButton";
@@ -16,18 +15,31 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { sanitiseXSS, spanWhitelist } from "@/helpers/validator";
 import { removeExtension } from "@/services/client/utils.service";
+import { type default as client } from "@/tina/client";
 import { Breadcrumbs } from "app/components/breadcrumb";
+import { Open_Sans } from "next/font/google";
 import { ReactElement } from "react";
 import ReactDOMServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+const openSans = Open_Sans({
+  variable: "--open-sans-font",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "600"],
+});
+
+export type OldConsultingPage = Awaited<
+  ReturnType<typeof client.queries.consultingContentQuery>
+>;
+
 export default function Consulting({ tinaProps, props }) {
   const { techCards, marketingData, categories, mediaCardProps } = props;
   const { data } = tinaProps;
   return (
-    <>
-      <Section className="mx-auto min-h-24 w-full max-w-9xl px-8 py-5 md:min-h-16">
+    <div className={openSans.className}>
+      <Section className="mx-auto min-h-24 w-full max-w-9xl px-4 py-5 sm:px-8 md:min-h-16">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
           title={data.consulting.seo?.title}
@@ -132,18 +144,7 @@ export default function Consulting({ tinaProps, props }) {
           ></h2>
         </CallToAction>
       )}
-      <Section>
-        <BuiltOnAzure
-          data={
-            data.consulting?.azureBanner?.azureFooterColor
-              ? data.consulting
-              : {
-                  azureFooterColor: "white",
-                }
-          }
-        />
-      </Section>
-    </>
+    </div>
   );
 }
 

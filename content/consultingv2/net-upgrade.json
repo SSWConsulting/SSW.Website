@@ -1,7 +1,8 @@
 {
   "seo": {
-    "title": "Expert .NET Upgrade Services | Minimal Downtime",
-    "description": "Seamlessly upgrade to the latest .NET framework with SSW. Enjoy faster performance, reduced load times, and lower memory usage."
+    "title": ".NET Upgrade Services | SSW",
+    "description": ".NET framework upgrade services in Australia. We tailor strategic migrations to your codebase for minimal downtime, better performance and long-term support.",
+    "canonical": "https://www.ssw.com.au/consulting/net-upgrade"
   },
   "blocks": [
     {
@@ -34,7 +35,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "buttonLink": "",
           "iconFirst": false,
@@ -63,7 +64,7 @@
         "backgroundImage": "",
         "bleed": false
       },
-      "heading": "Trusted by",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
@@ -111,12 +112,12 @@
       "_template": "logoCarousel"
     },
     {
-      "heading": "Strategic .NET 8 or 9 migration",
+      "heading": "Strategic .NET 10 migration",
       "body": "Your .NET applications need care and planning to upgrade to the latest version. The payoff? More stable, efficient systems that keep your business running at top speed. We’ll handle upgrades so you can sleep at night, knowing your vital operations won’t skip a beat. ",
       "accordionItems": [
         {
           "label": "Phase 1: Understanding Your .NET Landscape",
-          "content": "We start with a comprehensive evaluation of your current system through our **Specification Review.** This critical first step helps us:\n\n* Map out your application's architecture and dependencies: Gain a clear understanding of your current .NET Framework or previous .NET Core versions, identifying all components and their inter-relationships for a smoother upgrade process.\n* Identify potential migration challenges and compatibility issues: Proactively pinpoint roadblocks and latest version compatibility concerns early on, minimizing risks during the migration execution. This is where our expertise with tools like the .NET Upgrade Assistant proves invaluable.\n* Document critical business functionality that must be preserved: Ensure no essential features are overlooked during the .NET upgrade, safeguarding core business operations throughout the migration to the latest .NET framework.\n* Assess your team's readiness and training needs: Evaluate your team's current skill set and identify any training requirements to effectively manage and maintain your applications post .NET upgrade.\n"
+          "content": "We start with a comprehensive evaluation of your current system through our **Specification Review.** This critical first step helps us:\n\n* Map out your application's architecture and dependencies: Gain a clear understanding of your currently used .NET Framework or older .NET version, identifying all components and their inter-relationships for a smoother upgrade process.\n* Identify potential migration challenges and compatibility issues: Proactively pinpoint roadblocks and latest version compatibility concerns early on, minimizing risks during the migration execution. This is where our expertise with tools like the .NET Upgrade Assistant and Microsoft's GitHub Copilot Modernization Agent proves invaluable.\n* Document critical business functionality that must be preserved: Ensure no essential features are overlooked during the .NET upgrade, safeguarding core business operations throughout the migration to the latest .NET framework.\n* Assess your team's readiness and training needs: Evaluate your team's current skill set and identify any training requirements to effectively manage and maintain your applications post .NET upgrade.\n"
         },
         {
           "label": "Phase 2: Tailoring the Right Migration Path",
@@ -138,13 +139,13 @@
       "isMultipleOpen": true,
       "buttons": [
         {
-          "buttonText": "Explore our Migration Guide",
-          "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy/",
+          "buttonText": "Rules to Better .NET Migrations",
+          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net10-migrations",
           "colour": 1
         },
         {
-          "buttonText": "Rules to Better .NET Migrations",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-net8-migrations/",
+          "buttonText": "Explore a Migration Journey",
+          "buttonLink": "https://adamcogan.com/2024/03/19/dotnet-8-migrations-made-easy",
           "colour": 1
         }
       ],
@@ -157,9 +158,8 @@
         "mediaType": "youtube",
         "placement": "Right",
         "verticalPlacement": "Top",
-        "imageSource": "/images/Louis Test Images/net-8/migrate_net_8.png",
         "youtubeUrl": "https://youtu.be/N9QOoTwOo_U?si=nFwcvCSFgc0k37Nn",
-        "altText": "Strategic .NET 8 Migration: A Phased Approach"
+        "altText": "Strategic .NET 10 Migration: A Phased Approach"
       },
       "_template": "accordionBlock"
     },
@@ -321,7 +321,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "buttonLink": "",
           "colour": 0
@@ -431,15 +431,15 @@
       "accordionItems": [
         {
           "label": "Which .NET versions do you support for upgrades?",
-          "content": "We support upgrades to the latest .NET versions, including .NET 8 (LTS) and .NET 9 (STS). .NET major versions are released annually in November. STS releases (like .NET 9) occur every even-numbered year and receive free support and patches for 18 months. LTS releases (like .NET 8) occur every odd-numbered year and receive free support and patches for 3 years.\n"
+          "content": "We support upgrades to the latest .NET versions. .NET major versions are released annually in November. STS releases (like .NET 9) occur every even-numbered year and receive free support and patches for 18 months. LTS releases (like .NET 10) occur every odd-numbered year and receive free support and patches for 3 years.\n"
         },
         {
           "label": "What's the difference between STS and LTS?",
           "content": "New major .NET versions are released annually in November. Each release is designated as either Standard Term Support (STS) or Long Term Support (LTS). STS releases occur in even-numbered years and get support for 18 months, while LTS releases are in odd-numbered years and receive free support and patches for 3 years. Both types of releases are identical in quality, the only difference is their support lifecycle.\n"
         },
         {
-          "label": "Is migrating to .NET 9 worthwhile?",
-          "content": "Yes, especially if you are using older .NET versions like .NET Framework, .NET Core 3.1, .NET 6, .NET 7, or even .NET 8. A strategic move to .NET 9 provides several key advantages:\n\n* Current Platform & Support: Stay on a currently supported .NET release, receiving the latest updates and fixes from Microsoft. While .NET 9 is a Current release (not Long-Term Support), migrating ensures you benefit from ongoing development and community support during its lifecycle.\n* Improved Performance: Experience gains in application speed, startup times, and memory efficiency due to ongoing optimizations in .NET 9.\n* Advanced Cloud Capabilities: Utilize the newest cloud-native features and better integration with Azure and other cloud platforms offered by .NET 9.\n* Latest Security Updates: Improve application security with the most recent security features and patches incorporated in .NET 9.\n* Access to New C# Features: Equip your developers with the latest language features and productivity gains in the newest C# version supported by .NET 9.\n"
+          "label": "Is migrating to .NET 10 worthwhile?",
+          "content": "Yes, especially if you are using older .NET versions like .NET Framework, .NET Core 3.1, .NET 6/7/8, or even .NET 9. A strategic move to .NET 10 provides several key advantages:\n\n* Current Platform & Support: Stay on a currently supported .NET release, receiving the latest updates and fixes from Microsoft. While .NET 10 is a Current release (not Long-Term Support), migrating ensures you benefit from ongoing development and community support during its lifecycle.\n* Improved Performance: Experience gains in application speed, startup times, and memory efficiency due to ongoing optimizations in .NET.\n* Advanced Cloud Capabilities: Utilize the newest cloud-native features and better integration with Azure and other cloud platforms offered by .NET 10.\n* Latest Security Updates: Improve application security with the most recent security features and patches incorporated in .NET 10.\n* Access to New C# Features: Equip your developers with the latest language features and productivity gains in the newest C# version supported by .NET 10.\n"
         },
         {
           "label": "What about our existing dependencies?",
@@ -447,7 +447,7 @@
         },
         {
           "label": "What kind of support is available post-migration?",
-          "content": "Our Support Includes:\n\n* Performance monitoring: Continuous performance monitoring and analysis to identify and address any performance regressions or areas for .NET 8 optimization.\n* Security updates: Ongoing monitoring for security vulnerabilities and assistance with applying timely security updates to your .NET 8 environment.\n* Optional managed services: Consider our managed services for proactive ongoing support, maintenance, and .NET 8 optimization of your upgraded applications.\n* Regular health checks: Scheduled health checks and system reviews to proactively identify potential issues and ensure the continued stability and performance of your .NET 8 systems.\n* Continuous optimization: Ongoing recommendations and support for further .NET 8 optimization, helping you leverage new features and maintain peak application performance over time.\n\n[Learn more about our support plans](https://www.ssw.com.au/consulting/support-plans).\n"
+          "content": "Our Support Includes:\n\n* Performance monitoring: Continuous performance monitoring and analysis to identify and address any performance regressions or areas for .NET 10 optimization.\n* Security updates: Ongoing monitoring for security vulnerabilities and assistance with applying timely security updates to your .NET 10 environment.\n* Optional managed services: Consider our managed services for proactive ongoing support, maintenance, and .NET 10 optimization of your upgraded applications.\n* Regular health checks: Scheduled health checks and system reviews to proactively identify potential issues and ensure the continued stability and performance of your .NET 10 systems.\n* Continuous optimization: Ongoing recommendations and support for further .NET 10 optimization, helping you leverage new features and maintain peak application performance over time.\n\n[Learn more about our support plans](https://www.ssw.com.au/consulting/support-plans).\n"
         }
       ],
       "isMultipleOpen": true,
@@ -457,9 +457,33 @@
       "_template": "accordionBlock"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/Some-other-tech.mdx"
+          "technology": "content/v2Technologies/technologies/dotnet-mini.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/dotnet-framework-mini.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/ef-core-db-mini.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/angular-mini.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Blazor-mini.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/react-mini.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/ms-azure-mini.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/NET-MAUI.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/wpf-mini.mdx"
         }
       ],
       "techCardStyle": 0,
@@ -500,7 +524,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

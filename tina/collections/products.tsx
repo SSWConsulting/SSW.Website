@@ -1,7 +1,7 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
-import { tipField } from "./shared-fields";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const productsIndexSchema: Collection = {
   label: "Products - Index",
@@ -80,12 +80,12 @@ export const productsSchema: Collection = {
   path: "content/products",
   format: "mdx",
   ui: {
+    ...kebabCaseFilename,
     router: ({ document }) => {
       return `/products/${document._sys.filename}`;
     },
   },
   fields: [
-    tipField,
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     seoSchema,

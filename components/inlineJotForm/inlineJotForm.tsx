@@ -1,5 +1,5 @@
 import Jotform from "react-jotform";
-import { type Template } from "tinacms";
+import type { Template } from "tinacms";
 import { useSessionStorage } from "usehooks-ts";
 import { SESSION_STORAGE_KEYS } from "../util/constants";
 

@@ -1,8 +1,8 @@
 {
   "seo": {
-    "title": "ServiceNow Consulting and Enterprise Solutions",
-    "description": "SSW helps organisations streamline workflows and automate business processes with expert ServiceNow consulting, development, and integration services",
-    "canonical": "servicenow",
+    "title": "ServiceNow Consulting | SSW",
+    "description": "Custom ServiceNow development in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke ServiceNow solutions with tailored workflows and integrations for your business.",
+    "canonical": "https://www.ssw.com.au/consulting/servicenow",
     "showBreadcrumb": true
   },
   "blocks": [
@@ -49,7 +49,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "heading": "Trusted by",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
@@ -275,7 +275,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Schedule a FREE Initial Meeting",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

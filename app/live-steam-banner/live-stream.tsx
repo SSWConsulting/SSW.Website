@@ -13,7 +13,7 @@ import {
   EventInfo,
   EventInfoStatic,
   formatDates,
-} from "@/services/server/events";
+} from "@/services/server/events-types";
 import { PropsWithChildren, useEffect, useState } from "react";
 dayjs.extend(relativeTime);
 dayjs.extend(timezone);
@@ -123,24 +123,23 @@ export function LiveStream({ event, children }: LiveStreamProps) {
         </LiveStreamClient>
       )}
 
-      <MenuWrapper>
-        {isLive ? (
+      {isLive ? (
+        <LiveStreamWidget
+          {...{ eventDynamic, liveStreamDelayMinutes }}
+          event={eventDynamic}
+          isLive={!!isLive}
+        />
+      ) : (
+        <LiveStreamClient param={"liveStream"}>
           <LiveStreamWidget
             {...{ eventDynamic, liveStreamDelayMinutes }}
             event={eventDynamic}
             isLive={!!isLive}
           />
-        ) : (
-          <LiveStreamClient param={"liveStream"}>
-            <LiveStreamWidget
-              {...{ eventDynamic, liveStreamDelayMinutes }}
-              event={eventDynamic}
-              isLive={!!isLive}
-            />
-          </LiveStreamClient>
-        )}
-        {children}
-      </MenuWrapper>
+        </LiveStreamClient>
+      )}
+
+      <MenuWrapper>{children}</MenuWrapper>
     </>
   );
 }

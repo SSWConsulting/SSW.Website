@@ -1,7 +1,6 @@
 "use client";
 
 import AOS from "aos";
-
 import { useEffect } from "react";
 import { useTina } from "tinacms/dist/react";
 export type UseTinaProps = {

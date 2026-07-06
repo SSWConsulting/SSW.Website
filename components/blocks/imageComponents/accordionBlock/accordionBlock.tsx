@@ -14,7 +14,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ImageComponentLayout } from "../ImageComponentLayout";
 
-export const AccordionBlock = ({ data }) => {
+export const AccordionBlock = ({ data, priority = false }) => {
   const headingClasses = "my-0 py-2 dark:text-gray-200";
   const isYouTube = data.mediaConfiguration?.mediaType === "youtube";
   const isImage =
@@ -24,7 +24,7 @@ export const AccordionBlock = ({ data }) => {
     data.mediaConfiguration?.imageHeight;
   const hasMedia = isYouTube || isImage;
   return (
-    <ImageComponentLayout data={data}>
+    <ImageComponentLayout data={data} priority={priority}>
       <section
         className={cn(
           hasMedia && "thisHasMediaSomehow",
@@ -80,15 +80,15 @@ export const AccordionBlock = ({ data }) => {
             return (
               <AccordionItem
                 key={`accord-${index}`}
-                className="w-full"
+                className="w-full border-t-1 border-gray-300 last:border-b-1"
                 value={`accord-${index}`}
               >
-                <AccordionTrigger className="border-t-1 border-gray-300 text-white">
+                <AccordionTrigger className="text-white">
                   {item.label}
                 </AccordionTrigger>
                 <AccordionContent
                   data-tina-field={tinaField(item, "content")}
-                  className="marker:text-sswRed child-ul:!ml-0 descendant-ul:ml-6 descendant-ul:!list-square"
+                  className="max-w-prose marker:text-sswRed child-ul:!ml-0 descendant-ul:ml-6 descendant-ul:!list-square"
                 >
                   <TinaMarkdown
                     content={item.content}

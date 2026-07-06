@@ -1,6 +1,6 @@
 "use client";
 
-import { EventInfo } from "@/services/server/events";
+import { EventInfo } from "@/services/server/events-types";
 import classNames from "classnames";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
@@ -45,7 +45,7 @@ const LiveStreamBanner = ({
       <CustomLink className="unstyled" href="/live">
         <div
           className={classNames(
-            "mx-auto max-w-9xl bg-ssw-black bg-right-top bg-no-repeat px-6 py-1 uppercase sm:px-8",
+            "mx-auto max-w-9xl bg-ssw-black bg-right-top bg-no-repeat px-4 py-1 uppercase sm:px-8",
             isLive ? "md:bg-live-banner-live" : "md:bg-live-banner-wait"
           )}
         >

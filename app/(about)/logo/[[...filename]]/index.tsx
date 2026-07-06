@@ -2,7 +2,6 @@
 
 import { Breadcrumbs } from "@/app/components/breadcrumb";
 import { Blocks } from "@/components/blocks-renderer";
-import { BuiltOnAzure } from "@/components/blocks/builtOnAzure";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
@@ -44,7 +43,6 @@ export default function LogoPage({ props, tinaProps }) {
           </Section>
         )}
       </Container>
-      <BuiltOnAzure data={data.logos.azureBanner} />
     </>
   );
 }

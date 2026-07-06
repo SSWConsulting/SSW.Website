@@ -1,4 +1,4 @@
-import { Template } from "tinacms";
+import type { Template } from "tinacms";
 
 import { utcDateToHoursMinutes } from "@/services/client/date.service";
 import React, { useState } from "react";
@@ -106,8 +106,8 @@ export const eventBookingSchema: Template = {
           label: "Start Date",
           name: eventBookingBlock.eventList.date,
           ui: {
-            //@ts-expect-error - TODO: update when tina datetime picker is updated to support utc https://github.com/tinacms/tina.io/issues/2989
             utc: true,
+            // @ts-expect-error – Tina 3.8.x retyped the datetime format callback (works at runtime)
             format: (value) => {
               const val =
                 value && dateFormat.format(new Date(Date.parse(value)));

@@ -14,6 +14,9 @@ public/admin/.gitignore
 # testing
 /coverage
 
+# playwright-mcp scratch output (snapshots, console logs, screenshots)
+.playwright-mcp/
+
 # next.js
 /.next/
 /out/
@@ -43,3 +46,4 @@ npm-debug.log*
 
 # TypeScript
 next-env.d.ts
+*.tsbuildinfo

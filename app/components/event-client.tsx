@@ -1,10 +1,11 @@
 "use client";
 
 import { EventTrimmed } from "@/components/filter/events";
+import { mapEventEdge } from "@/helpers/getTrimmedEvents";
+import { getFutureEventsSimple } from "@/services/server/events";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { EventsCard } from "../../components/blocks/upcomingEvents";
-import client from "../../tina/__generated__/client";
 
 interface EventImageClientProps {
   thumbnail: string;
@@ -45,19 +46,14 @@ export const UpcomingEventsClient = ({ data }) => {
     const fetchEvents = async () => {
       const today = new Date();
       today.setHours(0, 0, 0, 0);
-      const events = await client.queries.getFutureEventsQuery({
-        fromDate: today.toISOString(),
-        top: data.numberOfEvents,
-      });
+      const events = await getFutureEventsSimple(
+        data.numberOfEvents,
+        today.toISOString()
+      );
 
       if (!events.data) return;
-      const mappedEvents = events.data.eventsCalendarConnection.edges.map(
-        (event) => ({
-          ...event.node,
-          startDateTime: new Date(event.node.startDateTime),
-          endDateTime: new Date(event.node.endDateTime),
-        })
-      );
+      const mappedEvents =
+        events.data.eventsCalendarConnection.edges.map(mapEventEdge);
       setEvents(mappedEvents);
     };
 

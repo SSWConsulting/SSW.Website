@@ -1,10 +1,9 @@
 "use client";
 import { Blocks } from "@/components/blocks-renderer";
-import { PreFooter } from "@/components/layout/footer/pre-footer";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { Consultingv2Query } from "@/tina/types";
-import _ from "lodash";
+import isEqual from "lodash/isEqual";
 import React, { memo } from "react";
 
 type ConsultingV2PageProps<T> = {
@@ -42,12 +41,11 @@ const Consulting2 = memo(
               </div>
             </Container>
           </Section>
-          <PreFooter data={data.consultingv2.azureBanner} />
         </div>
       </>
     );
   },
-  (prevProps, nextProps) => _.isEqual(prevProps, nextProps)
+  (prevProps, nextProps) => isEqual(prevProps, nextProps)
 );
 
 export default Consulting2;

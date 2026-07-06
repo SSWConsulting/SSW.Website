@@ -8,20 +8,13 @@ import {
   EventInfo,
   EventInfoStatic,
   formatDates,
-} from "@/services/server/events";
-import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
+} from "@/services/server/events-types";
 import dayjs from "dayjs";
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
-import { useReportWebVitals } from "next/web-vitals";
+import { inter } from "@/lib/fonts";
 import { MegaMenuLayout, NavMenuGroup } from "ssw.megamenu";
 import { CustomLink } from "../customLink";
 import { ErrorBoundary } from "../util/error/error-boundary";
-
-const inter = Inter({
-  variable: "--inter-font",
-  subsets: ["latin"],
-});
 
 const LiveStreamWidget = dynamic(
   () => {
@@ -88,23 +81,6 @@ export const Layout = ({
       "[)"
     );
 
-  const appInsights = useAppInsightsContext();
-
-  useReportWebVitals((metric) => {
-    switch (metric.name) {
-      case "TTFB":
-      case "FCP":
-      case "LCP":
-      case "FID":
-      case "CLS":
-      case "INP":
-        appInsights.trackMetric(
-          { name: metric.name, average: metric.value },
-          { page: router.asPath }
-        );
-        break;
-    }
-  });
   return (
     <>
       <Theme>
@@ -129,7 +105,7 @@ export const Layout = ({
                 isLive={!!isLive}
               />
             )}
-            <div className="mx-auto max-w-9xl px-8">
+            <div className="mx-auto max-w-9xl px-4 sm:px-8">
               {event && (isLive || router?.query?.liveStream) && (
                 <LiveStreamWidget
                   event={event}

@@ -1,9 +1,12 @@
 import { TinaClient } from "@/app/tina-client";
+import ClientFallback from "@/components/client-fallback";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import CaseStudies from "./index";
+
+export const dynamic = "force-static";
 
 export async function generateStaticParams() {
   let pageListData = await client.queries.caseStudyConnection();
@@ -32,6 +35,9 @@ const getData = async (filename: string) => {
     client.queries.caseStudyContentQuery,
     filename
   );
+  if (!tinaProps) {
+    return null;
+  }
 
   const seo = tinaProps.data.caseStudy.seo;
 
@@ -59,6 +65,9 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const params = await props.params;
   const tinaProps = await getData(params.filename);
+  if (!tinaProps) {
+    return {};
+  }
 
   const seo = tinaProps.props.seo;
   if (seo && !seo.canonical) {
@@ -74,7 +83,16 @@ export default async function Consulting(prop: {
   const params = await prop.params;
   const { filename } = params;
 
-  const { props } = await getData(filename);
+  const data = await getData(filename);
+  if (!data) {
+    return (
+      <ClientFallback
+        queryName="caseStudyContentQuery"
+        variables={{ relativePath: `${filename}.mdx` }}
+        Component={CaseStudies}
+      />
+    );
+  }
 
-  return <TinaClient props={props} Component={CaseStudies} />;
+  return <TinaClient props={data.props} Component={CaseStudies} />;
 }

@@ -24,7 +24,7 @@ jobs:
       imageTagList: ${{ steps.comparison.outputs.imageTagList }}
     steps:
       - name: Checking out
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
@@ -32,7 +32,7 @@ jobs:
           path: ./.github
 
       - name: Azure CLI - Login
-        uses: azure/login@v2
+        uses: azure/login@v3
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}

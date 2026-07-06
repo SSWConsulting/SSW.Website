@@ -4,7 +4,6 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Booking } from "../../components/blocks/booking";
 
-import { BuiltOnAzure } from "../../components/blocks/builtOnAzure";
 import { componentRenderer } from "../../components/blocks/mdxComponentRenderer";
 import {
   Opportunities,
@@ -68,7 +67,7 @@ export default function EmploymentPage({ tinaProps, props }) {
   return (
     <>
       {/* <SEO seo={props.seo} /> */}
-      <Section className="mx-auto w-full max-w-9xl px-8 py-5">
+      <Section className="mx-auto w-full max-w-9xl px-4 py-5 sm:px-8">
         <Breadcrumbs
           path={removeExtension(props.variables.relativePath)}
           title={data.employment.seo?.title}
@@ -158,17 +157,6 @@ export default function EmploymentPage({ tinaProps, props }) {
             />
           </div>
         </Container>
-      </Section>
-      <Section>
-        <BuiltOnAzure
-          data={
-            data.azureBanner?.azureFooterColor
-              ? data.azureBanner
-              : {
-                  azureFooterColor: "white",
-                }
-          }
-        />
       </Section>
     </>
   );

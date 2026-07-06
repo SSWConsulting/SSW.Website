@@ -50,48 +50,12 @@ var appSettings = [
     value: 'https://${dockerRegistryServerURL}'
   }
   {
-    name: 'CREATE_LEAD_ENDPOINT'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Create-Lead-Endpoint-PROD)'
-  }
-  {
     name: 'GOOGLE_RECAPTCHA_KEY'
     value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/GOOGLE-RECAPTCHA-KEY)'
   }
   {
-    name: 'GOOGLE_RECAPTCHA_SITE_KEY'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Google-Recaptcha-Site-KEY)'
-  }
-  {
     name: 'NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING'
     value: appInsightConnectionString
-  }
-  {
-    name: 'NEWSLETTERS_ENDPOINT'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/Newsletters-Endpoint-PROD)'
-  }
-  {
-    name: 'MICROSOFT_OAUTH_TENANT_ID'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/MICROSOFT-OAUTH-TENANT-ID)'
-  }
-  {
-    name: 'MICROSOFT_OAUTH_CLIENT_ID'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/MICROSOFT-OAUTH-CLIENT-ID)'
-  }
-  {
-    name: 'MICROSOFT_OAUTH_CLIENT_SECRET'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/MICROSOFT-OAUTH-CLIENT-SECRET)'
-  }
-  {
-    name: 'RECAPTCHA_BYPASS_SECRET'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/SECRET-KEY-TO-BYPASS-RECAPTCHA)'
-  }
-  {
-    name: 'DYNAMICS_CLIENT_ID'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/DYNAMICS-CLIENT-ID)'
-  }
-  {
-    name: 'DYNAMICS_CLIENT_SECRET'
-    value: '@Microsoft.KeyVault(SecretUri=https://${keyVaultName}.vault.azure.net/secrets/DYNAMICS-CLIENT-SECRET)'
   }
   {
     name: 'YOUTUBE_PRIVATE_KEY'

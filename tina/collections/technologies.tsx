@@ -52,12 +52,12 @@ export const v2TechnologySchema: Collection = {
       isTitle: true,
       required: true,
     },
+    // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
     {
       type: "string",
       label: "Icon",
       name: "icon",
       ui: {
-        // @ts-expect-error – component is not being recognized
         component: IconPickerInput,
       },
     },

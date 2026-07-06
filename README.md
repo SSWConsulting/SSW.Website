@@ -19,6 +19,7 @@ This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCM
 - [Definition of Done](https://github.com/SSWConsulting/SSW.Website/wiki/Definition-of-Done)
 - [Definition of Ready](https://github.com/SSWConsulting/SSW.Website/wiki/Definition-of-Ready)
 - [SSW Website - Power Automate flows](https://github.com/SSWConsulting/SSW.Website/wiki/Power-Automate-Flows)
+- [Application Insights Configuration](_docs/APPLICATION_INSIGHTS.md) - Cost optimization and monitoring configuration
 
 ## Architecture Overview
 

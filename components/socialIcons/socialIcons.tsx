@@ -14,7 +14,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-import { FaXTwitter } from "react-icons/fa6";
+import { FaBluesky, FaThreads, FaXTwitter } from "react-icons/fa6";
 import layoutData from "../../content/global/index.json";
 import { CustomLink } from "../customLink";
 
@@ -25,6 +25,8 @@ export type SocialTypes =
   | "instagram"
   | "meetup"
   | "xtwitter"
+  | "bluesky"
+  | "threads"
   | "tiktok"
   | "github";
 
@@ -46,11 +48,19 @@ export const socialStyles: Record<
   },
   instagram: {
     icon: FaInstagram,
-    bgClassName: "bg-gradient-tr-social-instagram",
+    bgClassName: "bg-social-instagram",
   },
   xtwitter: {
     icon: FaXTwitter,
     bgClassName: "bg-social-xtwitter",
+  },
+  bluesky: {
+    icon: FaBluesky,
+    bgClassName: "bg-social-bluesky",
+  },
+  threads: {
+    icon: FaThreads,
+    bgClassName: "bg-social-threads",
   },
   tiktok: {
     icon: FaTiktok,
@@ -131,13 +141,13 @@ export const SocialIcon = ({ social }: SocialIconProps) => {
     <CustomLink
       href={url}
       className={classNames(
-        "unstyled flex h-12 w-12 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
+        "unstyled flex size-9 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
         styling.bgClassName
       )}
       title={social.title}
       aria-label={"Link to " + social.title}
     >
-      <Icon className="text-2xl" color={styling.fill ?? "white"} />
+      <Icon className="text-lg" color={styling.fill ?? "white"} />
     </CustomLink>
   );
 };

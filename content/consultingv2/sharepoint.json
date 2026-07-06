@@ -1,7 +1,16 @@
 {
   "seo": {
-    "title": "SSW SharePoint Consulting",
-    "description": "Australian leaders in SharePoint and intranet development, with over 30 years' experience in Microsoft solutions."
+    "title": "SharePoint Consulting | SSW",
+    "description": "Custom SharePoint implementations in Sydney, Brisbane, Melbourne & Newcastle. We build bespoke SharePoint solutions tailored to your business processes. 30+ years experience.",
+    "canonical": "https://www.ssw.com.au/consulting/sharepoint",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/sharepoint.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "SharePoint Consulting"
+      }
+    ]
   },
   "blocks": [
     {
@@ -42,7 +51,7 @@
       "background": {
         "backgroundColour": 6
       },
-      "heading": "Trusted by",
+      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
@@ -303,9 +312,9 @@
       "_template": "accordionBlock"
     },
     {
-      "technologyGroups": [
+      "technologies": [
         {
-          "technologyGroup": "content/v2Technologies/groups/SharePoint-Related.mdx"
+          "technology": "content/v2Technologies/technologies/Microsoft-Teams.mdx"
         }
       ],
       "isStacked": false,

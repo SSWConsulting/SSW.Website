@@ -81,6 +81,8 @@ module.exports = {
         disallow: [
           "/404",
           "/500",
+          // Block crawling of unfilled dynamic-route template URLs (e.g. /consulting/[filename])
+          "/*[filename]",
           "/*Browse.aspx*",
           "/*browse.aspx*",
           "/*browsexml.aspx*",

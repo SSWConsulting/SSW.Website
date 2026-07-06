@@ -1,7 +1,7 @@
 import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
-import { EventInfoStatic } from "@/services/server/events";
+import { EventInfoStatic } from "@/services/server/events-types";
 import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
@@ -11,7 +11,7 @@ import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
+import { inter } from "@/lib/fonts";
 import "styles.css";
 import client from "../tina/__generated__/client";
 import LandingPageCapture from "./components/landing-page-capture";
@@ -29,13 +29,6 @@ dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
 dayjs.extend(isBetween);
-
-const inter = Inter({
-  variable: "--inter-font",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["200", "300", "400", "500", "600", "700"],
-});
 
 const ChatBaseBot = dynamic(
   () => import("@/components/zendeskButton/chatBaseBot")

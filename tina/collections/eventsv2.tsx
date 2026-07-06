@@ -1,6 +1,7 @@
 import type { Collection } from "tinacms";
 import * as Schemas from "../../components/blocks";
 import { seoSchema } from "../../components/util/seo";
+import { kebabCaseFilename } from "./shared-fields";
 
 export const eventsv2Schema: Collection = {
   label: "Eventsv2 - Pages",
@@ -9,6 +10,7 @@ export const eventsv2Schema: Collection = {
   path: "content/eventsv2",
   description: "Add components to build your page",
   ui: {
+    ...kebabCaseFilename,
     router: (args) => {
       return `/events/${args.document._sys.filename}`;
     },

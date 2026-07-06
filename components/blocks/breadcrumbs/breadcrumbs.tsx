@@ -20,6 +20,7 @@ import { Container } from "@/components/util/container";
 import global from "@/content/global/index.json";
 import { cn } from "@/lib/utils";
 import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
+import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -44,7 +45,7 @@ function getLinks(
     case 1:
       return [
         <BreadcrumbPage
-          key={"breadcrumb-item-1"}
+          key="breadcrumb-item-1"
           data-tina-field={tinaField(data, "finalBreadcrumb")}
         >
           {finalNode || initialTitle || placeholder}
@@ -55,7 +56,7 @@ function getLinks(
     case 3:
     case 4:
       return [
-        <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
+        <BreadcrumbLink key="breadcrumb-item-1" href="/">
           {initialTitle}
         </BreadcrumbLink>,
         ...paths.slice(1, -1).map((path, index) => (
@@ -67,7 +68,7 @@ function getLinks(
           </BreadcrumbLink>
         )),
         <BreadcrumbPage
-          key={"breadcrumb-last-item"}
+          key="breadcrumb-last-item"
           data-tina-field={tinaField(data, "finalBreadcrumb")}
         >
           {finalNode || placeholder}
@@ -75,7 +76,7 @@ function getLinks(
       ];
     default:
       return [
-        <BreadcrumbLink key={"breadcrumb-item-1"} href={"/"}>
+        <BreadcrumbLink key="breadcrumb-item-1" href="/">
           {initialTitle}
         </BreadcrumbLink>,
         <DropdownMenu key={"breadcrumb-dropdown"}>
@@ -91,7 +92,7 @@ function getLinks(
             ))}
           </DropdownMenuContent>
         </DropdownMenu>,
-        <BreadcrumbPage key={"breadcrumb-last-item"}>
+        <BreadcrumbPage key="breadcrumb-last-item">
           {finalNode || placeholder}
         </BreadcrumbPage>,
       ];
@@ -103,10 +104,21 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   // Index 0 is an empty string if the path starts with a slash
   const links = getLinks(paths, data, data.finalBreadcrumb);
 
+  // Parent one level above the current page, for the collapsed mobile view
+  const segments = paths.filter((segment) => segment !== "");
+  const replacementMap = new Map(
+    global.breadcrumbReplacements.map((r) => [r.from, r.to])
+  );
+  const parent = segments[segments.length - 2];
+  const mobileParent =
+    segments.length >= 2
+      ? { label: replacementMap.get(parent) ?? parent, href: `/${parent}` }
+      : { label: global.breadcrumbHomeRoute, href: "/" };
+
   return (
     <V2ComponentWrapper data={data}>
       <Container size="custom" padding="px-4 sm:px-8" className="pt-8 sm:pt-12">
-        <Breadcrumb className="text-gray-300">
+        <Breadcrumb className="hidden text-gray-300 sm:block">
           <BreadcrumbList>
             {links.map((link, index) => (
               // react fragments don't appear in the dom
@@ -121,6 +133,19 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
             ))}
           </BreadcrumbList>
         </Breadcrumb>
+        <nav
+          className="text-gray-300 sm:hidden"
+          aria-label={`Back to ${mobileParent.label}`}
+        >
+          <a
+            href={mobileParent.href}
+            className="unstyled inline-flex items-center gap-1 text-sm no-underline transition-colors hover:text-white hover:no-underline"
+            aria-label={`Back to ${mobileParent.label}`}
+          >
+            <ArrowLeft className="size-3.5" aria-hidden="true" />
+            {mobileParent.label}
+          </a>
+        </nav>
       </Container>
     </V2ComponentWrapper>
   );

@@ -1,15 +1,22 @@
 import { TinaClient } from "@/app/tina-client";
+import ClientFallback from "@/components/client-fallback";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
 import { Metadata } from "next";
 import OfficePage from ".";
 
+export const dynamic = "force-dynamic";
+
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.officeContentQuery,
     filename
   );
+
+  if (!tinaProps) {
+    return null;
+  }
 
   return {
     props: {
@@ -34,11 +41,15 @@ export async function generateMetadata(
   prop: GenerateMetaDataProps
 ): Promise<Metadata> {
   const params = await prop.params;
-  const tinaProps = await getData(params.filename);
-  const seo = tinaProps.props.seo;
+  const data = await getData(params.filename);
+  if (!data) {
+    return {};
+  }
+
+  const seo = data.props.seo;
 
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.props.header.url}offices/${params.filename}`;
+    seo.canonical = `${data.props.header.url}offices/${params.filename}`;
   }
 
   return getSEOProps(seo);
@@ -70,6 +81,18 @@ export default async function Office(prop: {
 }) {
   const params = await prop.params;
   const { filename } = params;
-  const { props } = await getData(filename);
-  return <TinaClient props={props} Component={OfficePage} />;
+  const data = await getData(filename);
+
+  if (!data) {
+    // Fallback to client-side fetch if SSR data is missing
+    return (
+      <ClientFallback
+        queryName="officeContentQuery"
+        variables={{ relativePath: `${filename}.mdx` }}
+        Component={OfficePage}
+      />
+    );
+  }
+
+  return <TinaClient props={data.props} Component={OfficePage} />;
 }

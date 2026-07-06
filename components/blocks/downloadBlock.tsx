@@ -84,7 +84,6 @@ const Download = (data: Downloads) => {
             />
           )}
         </div>
-        <div className={"bg-gray-300 p-2 font-bold"}>Download</div>
         <div
           className={classNames(
             "flex gap-x-0.25 border-t-2 border-white text-black"
@@ -164,7 +163,6 @@ export const downloadBlockSchema: Template = {
           type: "image",
           label: "Image",
           name: "img",
-          // @ts-expect-error - tina-cms types are incorrect
           uploadDir: () => "company-logos",
         },
         {
@@ -183,7 +181,6 @@ export const downloadBlockSchema: Template = {
           type: "image",
           label: "First Link",
           name: "firstLink",
-          // @ts-expect-error - tina-cms types are incorrect
           uploadDir: () => "company-logos/downloads/",
         },
         {
@@ -191,14 +188,11 @@ export const downloadBlockSchema: Template = {
           label: "Second Link Text",
           name: "secondLinkText",
           description: "Defaults to PDF",
-          // @ts-expect-error - tina-cms types are incorrect
-          uploadDir: () => "company-logos/downloads/",
         },
         {
           type: "image",
           label: "Second Link",
           name: "secondLink",
-          // @ts-expect-error - tina-cms types are incorrect
           uploadDir: () => "company-logos/downloads/",
         },
       ],

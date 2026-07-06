@@ -1,5 +1,4 @@
 import { defineStaticConfig, TinaCMS } from "tinacms";
-import azureBannerSchema from "../components/util/showAzureBanner";
 import { articlesIndexSchema, articlesSchema } from "./collections/articles";
 import { caseStudySchema } from "./collections/case-study";
 import {
@@ -49,24 +48,10 @@ import {
 } from "./collections/usergroup";
 import { videoProductionSchema } from "./collections/videoProduction";
 
-const appendSharedSchemas = (
-  schemas,
-  leadingFields = [],
-  trailingFields = []
-) => {
-  for (const schema of schemas) {
-    if (!schema.fields) {
-      continue;
-    }
-    schema.fields = [...leadingFields, ...schema.fields, ...trailingFields];
-  }
-  return schemas;
-};
 const formattedSchemas = () => {
-  return [
-    ...schemas,
-    ...appendSharedSchemas(pageSchemas, [], [azureBannerSchema]),
-  ].sort((a, b) => a.name.localeCompare(b.name));
+  return [...schemas, ...pageSchemas].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
 };
 
 const pageSchemas = [
@@ -142,15 +127,16 @@ const config = defineStaticConfig({
     outputFolder: "admin", // within the public folder
   },
   ui: {
-    previewUrl: (context) => {
-      const { branch } = context;
-      const url =
-        branch === "main"
-          ? "https://www.ssw.com.au"
-          : process.env.NEXT_PUBLIC_SLOT_URL;
+    previewUrl: () => {
+      const origin = "https://www.ssw.com.au";
+      // In Tina's preview mode the current page's route lives in the hash:
+      // .../admin/index.html#/~/about -> "about"
+      const hash = typeof window !== "undefined" ? window.location.hash : "";
+      const match = hash.match(/^#\/~\/(.*)$/);
+      const route = match ? match[1].split("?")[0] : "";
 
       return {
-        url: url,
+        url: route ? `${origin}/${route}` : origin,
       };
     },
   },
