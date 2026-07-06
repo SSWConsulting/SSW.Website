@@ -22,12 +22,12 @@ const Popup: React.FC<PopupProps> = (props) => {
           closeButton: styles.closeButton,
           modalAnimationIn: styles.formEnterModalAnimation,
           modalAnimationOut: styles.formLeaveModalAnimation,
-          overlay: "bg-black/50",
+          overlay: "bg-black/50 backdrop-blur-sm",
 
           modal: classNames([
             "sm:max-w-2xl w-modal",
-            "w-full mx-0",
-            "shadow-none bg-black/0",
+            "w-full mx-0 !p-0",
+            "!shadow-none !bg-transparent",
             props.className,
           ]),
         }}
