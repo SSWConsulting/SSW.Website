@@ -61,10 +61,10 @@ To build the Docker image, execute the following command to extract the necessar
 
 This script will generate the final Docker build command and automatically copy it to your clipboard. Simply paste the command into your terminal (CMD), and the Docker image build process will commence.
 
-Once the docker image is ready, run the following command:
+Once the Docker image is ready, run the following command:
 
 ```bash
- docker run --env-file .env -p 3000:3000 ssw-website
+docker run --env-file .env -p 3000:3000 ssw-website
 ```
 
 ⚠️ **Important**: Ensure that all required secrets are present in your .env file and stored in the root directory of your project. Additionally, make sure to update the `NEXT_PUBLIC_TINA_BRANCH` to match the branch you're testing on.
