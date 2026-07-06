@@ -23,9 +23,9 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Call",
-          "buttonLink": "#",
           "iconFirst": false,
-          "colour": 0
+          "colour": 0,
+          "leadCaptureFormOption": "projectFormModal"
         }
       ],
       "backgroundMedia": {
@@ -115,7 +115,8 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Call",
-          "colour": 0
+          "colour": 0,
+          "leadCaptureFormOption": "projectFormModal"
         }
       ],
       "_template": "v3VideoHero"
@@ -449,7 +450,8 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Call",
-          "colour": 0
+          "colour": 0,
+          "leadCaptureFormOption": "projectFormModal"
         }
       ],
       "offices": [
