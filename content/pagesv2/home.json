@@ -50,7 +50,7 @@
       "cards": [
         {
           "title": "Artificial Intelligence",
-          "description": "Custom AI solutions using LLMs (ChatGPT, Llama, Gemini, Claude, etc) and Azure AI to revolutionize your business.",
+          "description": "Custom AI solutions using LLMs (ChatGPT, Claude, Gemini, etc) and Azure AI to revolutionize your business.",
           "graphic": {
             "imageSource": "/images/custom-icons/simple-ai.svg",
             "imageHeight": 203,
@@ -86,7 +86,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "The SSW Difference",
+      "heading": "The SSW difference",
       "statistics": [
         {
           "figure": 7000,
