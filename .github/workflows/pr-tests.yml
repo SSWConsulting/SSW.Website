@@ -7,7 +7,8 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ci-${{ github.event.number }}-${{ github.workflow }}
+  # Fall back to run_id so manual dispatch runs don't share one group and cancel each other
+  group: ci-${{ github.event.number || github.run_id }}-${{ github.workflow }}
   cancel-in-progress: true
 
 defaults:
@@ -19,7 +20,7 @@ jobs:
     name: Run tests & coverage
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pull-requests: write
     steps:
       - uses: actions/checkout@v7

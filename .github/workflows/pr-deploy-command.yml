@@ -19,10 +19,12 @@ defaults:
 jobs:
   validate:
     name: Validate /deploy command
-    if: github.event.issue.pull_request && github.event.comment.body == '/deploy'
+    # startsWith so trailing whitespace/text doesn't silently ignore the command
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/deploy')
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      issues: write
       pull-requests: write
     outputs:
       pr_number: ${{ steps.pr.outputs.pr_number }}
