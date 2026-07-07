@@ -1,4 +1,5 @@
 import AlternatingText from "@/components/alternating-text";
+import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { backgroundOptions } from "@/components/blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import {
@@ -97,6 +98,7 @@ export function V3ImageCards({ data }) {
       : "lg:grid-cols-4";
 
   const moreLink = data?.mobilePlusMore;
+  const seeMoreButtons = data?.seeMoreButton ?? [];
 
   return (
     <V2ComponentWrapper data={data}>
@@ -173,6 +175,15 @@ export function V3ImageCards({ data }) {
                 />
               ))}
             </div>
+
+            {seeMoreButtons.length > 0 && (
+              <div className="mt-8 flex justify-end px-8 lg:px-0">
+                <ButtonRow
+                  className="mt-0 justify-end"
+                  data={{ buttons: seeMoreButtons }}
+                />
+              </div>
+            )}
           </>
         )}
       </Container>

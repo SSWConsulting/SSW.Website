@@ -95,6 +95,13 @@
           "link": "/consulting/devops"
         }
       ],
+      "seeMoreButton": [
+        {
+          "buttonText": "View All Services",
+          "buttonLink": "/services",
+          "icon": "BiChevronRight"
+        }
+      ],
       "_template": "v3ImageCards"
     },
     {
@@ -192,6 +199,13 @@
           "link": "/company/clients/hutchison-weller"
         }
       ],
+      "seeMoreButton": [
+        {
+          "buttonText": "More Client Stories",
+          "buttonLink": "/company/clients",
+          "icon": "BiChevronRight"
+        }
+      ],
       "_template": "v3FeaturedProducts"
     },
     {
@@ -281,14 +295,6 @@
       "heading": "We work together to form an amazing collective brain",
       "subtitle": "We're enthusiastic and have a 'Make it happen' culture.",
       "mobilePlusMore": "/people",
-      "buttons": [
-        {
-          "buttonText": "SSW People",
-          "buttonLink": "/people",
-          "icon": "BiChevronRight",
-          "iconFirst": false
-        }
-      ],
       "people": [
         {
           "name": "Adam Cogan",
@@ -341,6 +347,13 @@
           "linkedin": "https://www.linkedin.com/in/matt-wicks/",
           "twitter": "https://x.com/matteightyate",
           "sswPeople": "https://www.ssw.com.au/people/matt-wicks/"
+        }
+      ],
+      "seeMoreButton": [
+        {
+          "buttonText": "SSW People",
+          "buttonLink": "/people",
+          "icon": "BiChevronRight"
         }
       ],
       "_template": "v3PeopleCarousel"
@@ -459,8 +472,13 @@
           "registerLink": "/some-link"
         }
       ],
-      "seeMoreText": "See More Events >",
-      "seeMoreLink": "/events",
+      "seeMoreButton": [
+        {
+          "buttonText": "See More Events",
+          "buttonLink": "/events",
+          "icon": "BiChevronRight"
+        }
+      ],
       "_template": "v3Events"
     },
     {

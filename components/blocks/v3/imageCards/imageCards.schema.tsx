@@ -2,6 +2,7 @@ import type { Template } from "tinacms";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { backgroundOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
+import { buttonSchema } from "../../../button/templateButton.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { optimizedImageSchema } from "../../../../tina/collections/shared-fields";
 
@@ -13,6 +14,9 @@ export const V3ImageCardsSchema: Template = {
       heading: "Australia's leading AI, .NET and Cloud consultants",
       subtitle: "Tell us about your platform. We'll show you what's possible.",
       showBorder: true,
+      seeMoreButton: [
+        { buttonText: "View All Services", buttonLink: "/services" },
+      ],
       cards: [
         {
           title: "Web Development",
@@ -132,6 +136,23 @@ export const V3ImageCardsSchema: Template = {
           name: "newTab",
         },
       ],
+    },
+    {
+      type: "object",
+      label: "See More Button",
+      name: "seeMoreButton",
+      list: true,
+      description: "Call-to-action shown under the image cards. Max 1.",
+      ui: {
+        max: 1,
+        itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
+        defaultItem: {
+          buttonText: "View All Services",
+          buttonLink: "/services",
+        },
+      },
+      //@ts-expect-error – fields are not being recognized
+      fields: buttonSchema,
     },
   ],
 };

@@ -55,8 +55,7 @@ export const V3EventsSchema: Template = {
           time: "6:00pm AEST",
         },
       ],
-      seeMoreText: "See More Events",
-      seeMoreLink: "/events",
+      seeMoreButton: [{ buttonText: "See More Events", buttonLink: "/events" }],
     },
   },
   fields: [
@@ -211,17 +210,18 @@ export const V3EventsSchema: Template = {
       ],
     },
     {
-      type: "string",
-      label: "See More Button Text",
-      name: "seeMoreText",
-      description: "Label for the button under the event cards.",
-    },
-    {
-      type: "string",
-      label: "See More Button Link",
-      name: "seeMoreLink",
-      description:
-        "Destination for the button under the event cards. Leave blank to hide it.",
+      type: "object",
+      label: "See More Button",
+      name: "seeMoreButton",
+      list: true,
+      description: "Call-to-action shown under the event cards. Max 1.",
+      ui: {
+        max: 1,
+        itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
+        defaultItem: { buttonText: "See More Events", buttonLink: "/events" },
+      },
+      //@ts-expect-error – fields are not being recognized
+      fields: buttonSchema,
     },
   ],
 };

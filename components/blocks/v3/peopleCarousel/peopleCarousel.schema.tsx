@@ -11,6 +11,7 @@ export const V3PeopleCarouselSchema: Template = {
     defaultItem: {
       heading: "We work together to form an amazing collective brain",
       subtitle: "We're enthusiastic and have a 'Make it happen' culture.",
+      seeMoreButton: [{ buttonText: "Meet the Team", buttonLink: "/people" }],
       people: [
         {
           name: "Adam Cogan",
@@ -125,6 +126,20 @@ export const V3PeopleCarouselSchema: Template = {
           name: "sswPeople",
         },
       ],
+    },
+    {
+      type: "object",
+      label: "See More Button",
+      name: "seeMoreButton",
+      list: true,
+      description: "Call-to-action shown under the people carousel. Max 1.",
+      ui: {
+        max: 1,
+        itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
+        defaultItem: { buttonText: "Meet the Team", buttonLink: "/people" },
+      },
+      //@ts-expect-error – fields are not being recognized
+      fields: buttonSchema,
     },
   ],
 };

@@ -4,7 +4,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import RippleButton from "@/components/button/rippleButtonV2";
+import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
@@ -204,6 +204,18 @@ export function V3Events({ data }) {
   const hasFeatured =
     data?.featuredEvent?.title || data?.featuredEvent?.image?.imageSource;
   const moreLink = data?.mobilePlusMore;
+  const seeMoreButtons =
+    data?.seeMoreButton?.length > 0
+      ? data.seeMoreButton
+      : data?.seeMoreLink
+        ? [
+            {
+              buttonText: data.seeMoreText ?? "See More Events",
+              buttonLink: data.seeMoreLink,
+              colour: 0,
+            },
+          ]
+        : [];
 
   return (
     <V2ComponentWrapper data={data}>
@@ -264,17 +276,12 @@ export function V3Events({ data }) {
               ))}
             </div>
 
-            {data?.seeMoreLink && (
+            {seeMoreButtons.length > 0 && (
               <div className="flex justify-end px-4 lg:px-0">
-                <Link href={data.seeMoreLink} className="!no-underline">
-                  <RippleButton
-                    variant="primary"
-                    textTinaField={tinaField(data, "seeMoreText")}
-                    className="text-base font-semibold"
-                  >
-                    {data.seeMoreText ?? "See More Events"}
-                  </RippleButton>
-                </Link>
+                <ButtonRow
+                  className="mt-0 justify-end"
+                  data={{ buttons: seeMoreButtons }}
+                />
               </div>
             )}
           </>

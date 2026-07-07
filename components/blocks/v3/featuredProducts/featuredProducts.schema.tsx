@@ -58,6 +58,9 @@ export const V3FeaturedProductsSchema: Template = {
       subtitle:
         "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.",
       buttons: [{ buttonText: "Our Client Stories", colour: 0 }],
+      seeMoreButton: [
+        { buttonText: "More Client Stories", buttonLink: "/company/clients" },
+      ],
       highlighted: {
         title: "AI Powered Navigation for French Payroll Expert",
         description:
@@ -147,6 +150,23 @@ export const V3FeaturedProductsSchema: Template = {
         },
       },
       fields: productFields,
+    },
+    {
+      type: "object",
+      label: "See More Button",
+      name: "seeMoreButton",
+      list: true,
+      description: "Call-to-action shown under the featured products. Max 1.",
+      ui: {
+        max: 1,
+        itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
+        defaultItem: {
+          buttonText: "More Client Stories",
+          buttonLink: "/company/clients",
+        },
+      },
+      //@ts-expect-error – fields are not being recognized
+      fields: buttonSchema,
     },
   ],
 };

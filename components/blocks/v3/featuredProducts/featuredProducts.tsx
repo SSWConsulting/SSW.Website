@@ -3,6 +3,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
@@ -155,6 +156,7 @@ export function V3FeaturedProducts({ data }) {
   const hasHighlight =
     data?.highlighted?.title || data?.highlighted?.image?.imageSource;
   const moreLink = data?.mobilePlusMore;
+  const seeMoreButtons = data?.seeMoreButton ?? [];
 
   return (
     <V2ComponentWrapper data={data} className="border-y-0.75 border-sswBorder">
@@ -207,6 +209,15 @@ export function V3FeaturedProducts({ data }) {
                 </div>
               ))}
             </div>
+
+            {seeMoreButtons.length > 0 && (
+              <div className="flex justify-end px-4 lg:px-0">
+                <ButtonRow
+                  className="mt-0 justify-end"
+                  data={{ buttons: seeMoreButtons }}
+                />
+              </div>
+            )}
           </>
         )}
       </Container>
