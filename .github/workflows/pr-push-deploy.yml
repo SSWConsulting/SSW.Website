@@ -23,7 +23,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
@@ -96,7 +96,7 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
         with:
           package_json_file: package.json
@@ -122,7 +122,6 @@ jobs:
 
   build:
     name: Build and upload artifacts
-    needs: check-slot-capacity
     uses: ./.github/workflows/template-build.yml
     with:
       tag: pr-${{ github.event.number }}
@@ -133,7 +132,7 @@ jobs:
 
   pr-deploy:
     name: Deploy to slot
-    needs: build
+    needs: [check-slot-capacity, build]
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -142,7 +141,7 @@ jobs:
     outputs:
       url: ${{ steps.deploy.outputs.url }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2

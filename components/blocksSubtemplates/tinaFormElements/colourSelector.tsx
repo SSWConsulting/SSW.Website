@@ -6,6 +6,7 @@ export interface ColorPickerOptions {
   classes: string;
   editorClasses?: string;
   reference: number;
+  hex?: string;
 }
 
 export const ColorPickerInput = (colours: ColorPickerOptions[]) => {
@@ -29,7 +30,14 @@ export const ColorPickerInput = (colours: ColorPickerOptions[]) => {
                   input.onChange(colour.reference);
                 }}
               >
-                {colour.name}
+                <span className="inline-flex items-center gap-2">
+                  {colour.name}
+                  {colour.hex && (
+                    <span className="font-mono text-xs opacity-70">
+                      {colour.hex}
+                    </span>
+                  )}
+                </span>
               </button>
             );
           })}

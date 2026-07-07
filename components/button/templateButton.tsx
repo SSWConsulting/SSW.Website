@@ -52,7 +52,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           textTinaField={tinaField(data, "buttonText")}
           className={className}
           fontClassName={classNames(
-            "gap-0.5",
+            "gap-2",
             iconFirst ? "flex-row" : "flex-row-reverse"
           )}
           variant={variants[colour]}

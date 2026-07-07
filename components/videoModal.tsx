@@ -31,6 +31,8 @@ type VideoModalProps = {
   url?: string;
   overflow?: boolean;
   priority?: boolean;
+  /** Optional thumbnail that overrides the auto-derived video poster. */
+  thumbnail?: string;
 };
 
 type VideoType = "youtube" | "vimeo";
@@ -62,6 +64,7 @@ export const VideoModal = ({
   roundedEdges,
   className,
   priority = false,
+  thumbnail,
 }: VideoModalProps) => {
   const [clicked, setClicked] = useState<boolean>(false);
 
@@ -93,11 +96,14 @@ export const VideoModal = ({
     };
   }, [isVimeo, videoId]);
 
-  const imageSrc = isYouTube
+  // A CMS-supplied thumbnail wins; otherwise fall back to the poster derived
+  // from the video provider (YouTube still URL or fetched Vimeo thumbnail).
+  const derivedSrc = isYouTube
     ? `https://img.youtube.com/vi/${videoId}/${
         youTubeFailed ? "mqdefault" : "maxresdefault"
       }.jpg`
     : vimeoSrc;
+  const imageSrc = thumbnail || derivedSrc;
 
   return (
     <div

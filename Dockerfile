@@ -11,7 +11,7 @@ WORKDIR /website
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
-RUN \
+RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
   elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm i --frozen-lockfile; \
@@ -54,22 +54,23 @@ ARG KEY_VAULT
 ENV KEY_VAULT=$KEY_VAULT
 ARG NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING
 ENV NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=$NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING
-ARG TINA_TOKEN
-ENV TINA_TOKEN=$TINA_TOKEN
 ARG NEXT_PUBLIC_CHATBASE_BOT_ID
 ENV NEXT_PUBLIC_CHATBASE_BOT_ID=$NEXT_PUBLIC_CHATBASE_BOT_ID
 ARG SITE_URL
 ENV SITE_URL=$SITE_URL
-ARG YOUTUBE_PRIVATE_KEY
-ENV YOUTUBE_PRIVATE_KEY=$YOUTUBE_PRIVATE_KEY
-ARG TINA_SEARCH_TOKEN
-ENV TINA_SEARCH_TOKEN=$TINA_SEARCH_TOKEN
 ARG NEXT_PUBLIC_SLOT_URL
 ENV NEXT_PUBLIC_SLOT_URL=$NEXT_PUBLIC_SLOT_URL
 
 
 
-RUN \
+# Secrets are mounted (not passed as build-args/ENV) so they are never written
+# to an image layer or the exported BuildKit cache (cache-to mode=max).
+RUN --mount=type=secret,id=TINA_TOKEN \
+    --mount=type=secret,id=TINA_SEARCH_TOKEN \
+    --mount=type=secret,id=YOUTUBE_PRIVATE_KEY \
+  export TINA_TOKEN="$(cat /run/secrets/TINA_TOKEN)" && \
+  export TINA_SEARCH_TOKEN="$(cat /run/secrets/TINA_SEARCH_TOKEN)" && \
+  export YOUTUBE_PRIVATE_KEY="$(cat /run/secrets/YOUTUBE_PRIVATE_KEY)" && \
   if [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
   elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run build; \
@@ -83,6 +84,14 @@ WORKDIR /website
 ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
+
+# JotForm key + Power Automate lead webhook URL are read at runtime by
+# /api/lead-capture, so they must persist into the final image (builder-stage
+# ENVs do not carry over to this stage).
+ARG JOTFORM_API_KEY
+ENV JOTFORM_API_KEY=$JOTFORM_API_KEY
+ARG POWER_AUTOMATE_LEAD_WEBHOOK_URL
+ENV POWER_AUTOMATE_LEAD_WEBHOOK_URL=$POWER_AUTOMATE_LEAD_WEBHOOK_URL
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
