@@ -7,6 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React, { FC, useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -47,7 +48,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
 }) => {
   const pathname = usePathname();
 
-  const breadcrumbItems = useMemo(() => {
+  const { breadcrumbItems, mobileParent } = useMemo(() => {
     const pathSegments = pathname
       .split("/")
       .filter((segment) => segment !== "");
@@ -70,7 +71,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbLink
           href="/"
           className={
-            "text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+            "text-sm text-gray-700 underline-offset-1 hover:text-sswRed"
           }
         >
           Home
@@ -87,9 +88,9 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       items.push(
         <BreadcrumbSeparator
           key={`separator-${index}`}
-          className="text-xs text-gray-700"
+          className="text-sm text-gray-700"
         >
-          {">"}
+          {"/"}
         </BreadcrumbSeparator>
       );
 
@@ -97,7 +98,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbItem key={`item-${index}`}>
           {isLast ? (
             <BreadcrumbPage
-              className={"text-xs text-gray-700 no-underline"}
+              className={"text-sm text-gray-700 no-underline"}
               {...(seoSchema
                 ? { "data-tina-field": tinaField(seoSchema, "title") }
                 : {})}
@@ -108,7 +109,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
             <BreadcrumbLink
               href={href}
               className={
-                "text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
+                "text-sm text-gray-700 underline-offset-1 hover:text-sswRed"
               }
             >
               {displayName}
@@ -118,14 +119,37 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       );
     });
 
-    return items;
+    let mobileParent: { label: string; href: string };
+    if (pathSegments.length >= 2) {
+      const parentIndex = pathSegments.length - 2;
+      mobileParent = {
+        label: getDisplayName(pathSegments[parentIndex]),
+        href: "/" + pathSegments.slice(0, parentIndex + 1).join("/"),
+      };
+    } else {
+      mobileParent = { label: "Home", href: "/" };
+    }
+
+    return { breadcrumbItems: items, mobileParent };
   }, [pathname, path, title, seoSchema, additionalReplacements]);
 
   return (
-    <Breadcrumb>
-      <BreadcrumbList className="gap-2 font-normal">
-        {breadcrumbItems}
-      </BreadcrumbList>
-    </Breadcrumb>
+    <>
+      <Breadcrumb className="hidden sm:block">
+        <BreadcrumbList className="gap-2 font-normal">
+          {breadcrumbItems}
+        </BreadcrumbList>
+      </Breadcrumb>
+      <nav className="sm:hidden" aria-label={`Back to ${mobileParent.label}`}>
+        <a
+          href={mobileParent.href}
+          className="unstyled inline-flex items-center gap-1 text-sm text-gray-700 no-underline hover:text-sswRed hover:no-underline"
+          aria-label={`Back to ${mobileParent.label}`}
+        >
+          <ArrowLeft className="size-3.5" aria-hidden="true" />
+          {mobileParent.label}
+        </a>
+      </nav>
+    </>
   );
 };
