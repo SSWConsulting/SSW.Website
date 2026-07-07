@@ -72,6 +72,7 @@ import { V3StackCardsSchema } from "./v3/stackCards/stackCards.schema";
 import { V3FaqSchema } from "./v3/faq/faq.schema";
 import { V3LeadCaptureSchema } from "./v3/leadCapture/leadCapture.template";
 import { V3VideoHighlightsSchema } from "./v3/videoHighlights/videoHighlights.schema";
+import { V3VideoFeatureSchema } from "./v3/videoFeature/videoFeature.schema";
 import { V3CardCarouselSchema } from "./v3/cardCarousel/cardCarousel.schema";
 import { verticalImageLayoutBlockSchema } from "./verticalImageLayout";
 import { verticalListItemSchema } from "./verticalListItem";
@@ -97,6 +98,7 @@ export const pageBlocks: Template[] = [
   V3FaqSchema,
   V3LeadCaptureSchema,
   V3VideoHighlightsSchema,
+  V3VideoFeatureSchema,
   V3CardCarouselSchema,
   BreadcrumbSchema,
   ImageTextBlockSchema,

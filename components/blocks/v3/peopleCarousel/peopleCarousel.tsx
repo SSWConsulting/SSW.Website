@@ -237,7 +237,7 @@ export function V3PeopleCarousel({ data }) {
         {seeMoreButtons.length > 0 && (
           <div className="mt-8 flex justify-end px-8 lg:px-0">
             <ButtonRow
-              className="mt-0 justify-end"
+              className="mt-0 hidden justify-end lg:block"
               data={{ buttons: seeMoreButtons }}
             />
           </div>

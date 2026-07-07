@@ -279,7 +279,7 @@ export function V3Events({ data }) {
             {seeMoreButtons.length > 0 && (
               <div className="flex justify-end px-4 lg:px-0">
                 <ButtonRow
-                  className="mt-0 justify-end"
+                  className="mt-0 hidden justify-end lg:block"
                   data={{ buttons: seeMoreButtons }}
                 />
               </div>

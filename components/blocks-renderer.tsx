@@ -242,6 +242,12 @@ const V3VideoHighlights = dynamic(() =>
   )
 );
 
+const V3VideoFeature = dynamic(() =>
+  import("./blocks/v3/videoFeature/videoFeature").then(
+    (mod) => mod.V3VideoFeature
+  )
+);
+
 const V3CardCarousel = dynamic(() =>
   import("./blocks/v3/cardCarousel/cardCarousel").then(
     (mod) => mod.V3CardCarousel
@@ -304,6 +310,7 @@ const componentMap = {
   V3Faq,
   V3LeadCapture,
   V3VideoHighlights,
+  V3VideoFeature,
   V3CardCarousel,
 };
 

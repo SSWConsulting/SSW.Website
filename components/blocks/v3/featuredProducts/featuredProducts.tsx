@@ -47,7 +47,7 @@ function HighlightCard({ project }) {
   const inner = (
     <div
       className={cn(
-        "group relative flex min-h-[360px] w-full overflow-hidden rounded-[45px] md:h-[446px]"
+        "group relative flex min-h-[360px] w-full overflow-hidden rounded-[45px] md:h-[380px]"
       )}
     >
       {project?.image?.imageSource && (
@@ -59,33 +59,35 @@ function HighlightCard({ project }) {
           className="object-cover"
         />
       )}
-      <div aria-hidden="true" className="absolute inset-0 bg-black/80" />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/85" />
 
-      <div className="relative z-10 flex w-full flex-col items-end justify-between gap-6 p-4 md:flex-row md:px-16 md:py-20">
-        <div className="flex max-w-xl flex-col gap-4">
-          {project?.logo?.imageSource && (
-            <div className="relative size-16 overflow-hidden rounded-full">
-              <Image
-                src={project.logo.imageSource}
-                alt={project.logo.altText ?? ""}
-                fill
-                sizes="64px"
-                className="object-cover"
-              />
-            </div>
-          )}
-          {project?.title && (
-            <h3 className="text-3xl font-medium leading-snug tracking-tight text-white lg:text-4xl">
-              {project.title}
-            </h3>
-          )}
+      <div className="relative z-10 flex w-full flex-col items-center justify-center gap-8 p-6 text-center md:flex-row md:justify-between md:px-16 md:py-12 md:text-left">
+        <div className="flex max-w-xl flex-col items-center gap-4 md:items-start">
+          <div className="flex flex-col items-center gap-4 md:flex-row md:gap-8">
+            {project?.logo?.imageSource && (
+              <div className="relative size-16 shrink-0 overflow-hidden">
+                <Image
+                  src={project.logo.imageSource}
+                  alt={project.logo.altText ?? ""}
+                  fill
+                  sizes="64px"
+                  className="object-contain"
+                />
+              </div>
+            )}
+            {project?.title && (
+              <h3 className="text-3xl font-medium leading-snug tracking-tight text-white lg:text-4xl">
+                {project.title}
+              </h3>
+            )}
+          </div>
           {project?.description && (
             <p className="text-base font-light text-gray-300">
               {project.description}
             </p>
           )}
         </div>
-        <ArrowButton className="size-16" />
+        <ArrowButton className="size-16 self-center" />
       </div>
     </div>
   );
@@ -213,7 +215,7 @@ export function V3FeaturedProducts({ data }) {
             {seeMoreButtons.length > 0 && (
               <div className="flex justify-end px-4 lg:px-0">
                 <ButtonRow
-                  className="mt-0 justify-end"
+                  className="mt-0 hidden justify-end lg:block"
                   data={{ buttons: seeMoreButtons }}
                 />
               </div>

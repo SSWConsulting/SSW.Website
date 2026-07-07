@@ -147,7 +147,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "Featured Projects",
+      "heading": "Case Studies",
       "subtitle": "",
       "mobilePlusMore": "/company/clients",
       "highlighted": {
@@ -361,38 +361,41 @@
     {
       "background": {
         "backgroundColour": 7,
-        "bleed": false,
-        "gridOverlay": false,
-        "redGlow": true
+        "gridOverlay": true
       },
       "videoUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA",
-      "thumbnail": "/images/new-homepage-background-assets/ssw-group-photo.png",
-      "greyscaleThumbnail": false,
-      "figure": "Video: The people behind SSW - Australia's leading software consulatancy (3 min)",
+      "thumbnail": "/images/Collaborating in a modern workspace.png",
+      "videoCaption": "Video: The people behind SSW - Australia's leading software consultancy (3 min)",
       "heading": "Why choose SSW?",
-      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.\n",
-      "highlights": [
+      "introText": "SSW's consulting services have delivered best-in-class React solutions for thousands of clients in 15 countries over more than 30 years.",
+      "buttons": [
         {
-          "customImage": {
-            "altText": "Microsoft Solutions Partner",
-            "imageSource": "/images/new-homepage-background-assets/msfot-svg.svg",
-            "imageHeight": 68,
-            "imageWidth": 223
-          },
-          "title": "Microsoft Cloud Partner",
-          "desc2": "In 1999, we were first recognized as a Microsoft Gold Partner - now renamed Microsoft Cloud Partner\n"
-        },
-        {
-          "customImage": {
-            "imageSource": "/images/new-homepage-background-assets/mapa-svg.svg",
-            "imageHeight": 100,
-            "imageWidth": 205
-          },
-          "title": "MAPA - Learning Excellence",
-          "desc2": "SSW has won the **Microsoft Australia Partner Award** for excellence in learning from the [SSW FireBootCamp](https://firebootcamp.com)\n"
+          "buttonText": "Schedule a Free Discovery Call",
+          "leadCaptureFormOption": "projectFormModal",
+          "colour": 0
         }
       ],
-      "_template": "v3VideoHighlights"
+      "highlights": [
+        {
+          "title": "Deep expertise",
+          "highlightBody": "We go deep on every technology we touch, building with it, codifying best practices, and making that knowledge freely available."
+        },
+        {
+          "title": "Results over rhetoric",
+          "highlightBody": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?"
+        }
+      ],
+      "recognitionHeading": "Trusted & Recognised",
+      "recognitionBadges": [
+        {
+          "label": "We ❤️ Microsoft - Cloud Partner"
+        },
+        {
+          "label": "MAPA Learning Excellence",
+          "icon": "BiAward"
+        }
+      ],
+      "_template": "v3VideoFeature"
     },
     {
       "background": {
