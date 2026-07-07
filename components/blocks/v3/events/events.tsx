@@ -200,9 +200,7 @@ function EventListItem({ event }) {
                 {event.time}
               </span>
             )}
-            {presenters.length > 0 && (
-              <PresenterList presenters={presenters} />
-            )}
+            {presenters.length > 0 && <PresenterList presenters={presenters} />}
           </div>
         )}
       </div>

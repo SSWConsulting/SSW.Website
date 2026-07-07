@@ -388,7 +388,7 @@
       "recognitionHeading": "Trusted & Recognised",
       "recognitionBadges": [
         {
-          "label": "We ♥ Microsoft - Solutions Partner Award",
+          "label": "We ♥ Microsoft - Solutions Partner",
           "customImage": {
             "imageSource": "/images/logos/msoft-4-squares.png",
             "imageHeight": 960,
@@ -412,7 +412,6 @@
       },
       "heading": "Upcoming Events",
       "subtitle": "",
-      "mobilePlusMore": "/events",
       "featuredEvent": {
         "title": "AI Hack Day ",
         "location": "Sydney & Online",
@@ -424,7 +423,12 @@
         },
         "eventDate": "2026-07-11T05:46:28.184Z",
         "time": "6:30pm AEST",
-        "spotsText": "10 Spots left!",
+        "presenters": [
+          {
+            "name": "Jeoffrey Fischer",
+            "link": "/people/jeoffrey"
+          }
+        ],
         "registerText": "Register Now",
         "registerLink": "/events"
       },
@@ -440,11 +444,12 @@
             "imageHeight": 1278,
             "imageWidth": 1917
           },
-          "presenterImage": {
-            "imageSource": "/images/people-carousel/wicksy.png",
-            "imageHeight": 535,
-            "imageWidth": 590
-          },
+          "presenters": [
+            {
+              "name": "Matt Wicks",
+              "link": "/people/matt-wicks"
+            }
+          ],
           "registerLink": "/some-link"
         },
         {
@@ -458,29 +463,12 @@
             "imageHeight": 1278,
             "imageWidth": 2272
           },
-          "presenterImage": {
-            "imageSource": "/images/people-carousel/calum.png",
-            "imageHeight": 535,
-            "imageWidth": 590
-          },
-          "registerLink": "/some-link"
-        },
-        {
-          "title": "Artificial Intelligence Workshop",
-          "description": "",
-          "time": "5:30pm CET",
-          "date": "2026-08-26T00:19:00.058Z",
-          "location": "Strasbourg",
-          "image": {
-            "imageSource": "/images/new-homepage-background-assets/ai-workshop.png",
-            "imageHeight": 1721,
-            "imageWidth": 2891
-          },
-          "presenterImage": {
-            "imageSource": "/images/people-carousel/uly.png",
-            "imageHeight": 535,
-            "imageWidth": 590
-          },
+          "presenters": [
+            {
+              "name": "Ulysses Maclaren",
+              "link": "/people/uly"
+            }
+          ],
           "registerLink": "/some-link"
         }
       ],
