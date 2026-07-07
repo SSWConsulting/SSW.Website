@@ -13,6 +13,8 @@ type BackgroundData = {
     backgroundColour?: number;
     backgroundImage?: string;
     bleed?: boolean;
+    gridOverlay?: boolean;
+    redGlow?: boolean;
   };
 };
 
@@ -88,6 +90,24 @@ const V2ComponentWrapper = ({
               target.naturalHeight / target.naturalWidth
             );
           }}
+        />
+      )}
+      {data.background?.redGlow && (
+        <>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-10 bg-red-glow-tl"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 z-10 bg-red-glow-r"
+          />
+        </>
+      )}
+      {data.background?.gridOverlay && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-25 bg-dot-grid bg-dots"
         />
       )}
       <section

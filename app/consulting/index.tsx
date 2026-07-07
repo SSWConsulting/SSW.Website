@@ -23,6 +23,11 @@ export default function ConsultingIndex({ tinaProps }) {
   const categories = useMemo(() => {
     return node.categories.reduce((acc, curr) => {
       const mappedPages = curr.pages.reduce((pageAcc, p) => {
+        // Skip entries with neither an external URL nor a linked page —
+        // otherwise reading p.page.id below crashes the build prerender.
+        if (!p.externalUrl && !p.page?.id) {
+          return pageAcc;
+        }
         const mappedPage = {
           url:
             p.externalUrl ||

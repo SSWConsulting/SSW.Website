@@ -1,7 +1,12 @@
 {
   "seo": {
     "title": "AI for Business Leaders | SSW Live Workshop",
-    "description": "A half-day live workshop for Australian C-suite leaders. Real case studies, real dollar figures, and open Q&A with engineers shipping AI today."
+    "description": "A half-day live workshop for Australian C-suite leaders. Real case studies, real dollar figures, and open Q&A with engineers shipping AI today.",
+    "showBreadcrumb": false
+  },
+  "appearance": {
+    "hideFlag": true,
+    "hideContactButton": true
   },
   "blocks": [
     {
@@ -9,10 +14,12 @@
         "backgroundColour": 0
       },
       "finalBreadcrumb": "AI for Business Leaders",
+      "hideOn": ["mobile"],
       "_template": "breadcrumbs"
     },
     {
       "spacerHeight": "45px",
+      "hideOn": ["mobile"],
       "background": {
         "backgroundColour": 0,
         "backgroundImage": "",
@@ -22,7 +29,7 @@
     },
     {
       "topLabel": {
-        "labelText": "Live Half-Day Workshop for C-Suite Executives"
+        "labelText": "In-Person 1/2 Day Workshop for C-Suite Executives"
       },
       "heading": "Solving the **Hardest Enterprise Problems** with AI",
       "isH1": true,
@@ -44,7 +51,7 @@
       "mediaConfiguration": {
         "placement": "Left",
         "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
+        "mobilePlacement": "Below",
         "imageSource": "/images/eventsv2/ai-for-business-leaders-hero.webp",
         "imageHeight": 968,
         "imageWidth": 1625,
@@ -79,33 +86,14 @@
       "cardStyle": 0,
       "cards": [
         {
-          "guid": "wa02",
-          "altText": "Reserve your seat for the Brisbane event on Thursday 2 July 2026, 9:00am – 1:00pm",
-          "heading": "Brisbane",
-          "description": "",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Thursday 2 July 2026 · 9:00am – 1:00pm",
-                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Reserve my seat - $99",
-            "eventbriteEventId": "1992027082628",
-            "colour": 0
-          }
-        },
-        {
           "guid": "wa03",
-          "altText": "Reserve your seat for the Melbourne event on Thursday 9 July 2026, 9:00am – 1:00pm",
+          "altText": "Reserve your seat for the Melbourne event on Wednesday 16 September 2026, 9:00am – 1:00pm",
           "heading": "Melbourne",
           "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "Thursday 9 July 2026 · 9:00am – 1:00pm",
+                "heading": "Wednesday 16 September 2026 · 9:00am – 1:00pm",
                 "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
               }
             ]
@@ -117,14 +105,52 @@
           }
         },
         {
+          "guid": "wa02",
+          "altText": "Reserve your seat for the Brisbane event on Friday 18 September 2026, 9:00am – 1:00pm",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Friday 18 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027082628",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "wa05",
+          "altText": "Reserve your seat for the Newcastle event on Tuesday 29 September 2026, 9:00am – 1:00pm",
+          "heading": "Newcastle",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Tuesday 29 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Newcastle Office 432 Hunter Street Newcastle NSW 2300"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "colour": 0,
+            "eventbriteEventId": "1992796293358"
+          }
+        },
+        {
           "guid": "wa04",
-          "altText": "Reserve your seat for the Sydney event on Thursday 16 July 2026, 9:00am – 1:00pm",
+          "altText": "Reserve your seat for the Sydney event on Thursday 1 October 2026, 9:00am – 1:00pm",
           "heading": "Sydney",
           "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "Thursday 16 July 2026 · 9:00am – 1:00pm",
+                "heading": "Thursday 1 October 2026 · 9:00am – 1:00pm",
                 "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
               }
             ]
@@ -139,8 +165,9 @@
       "background": {
         "backgroundColour": 6
       },
+      "anchorId": "pick-your-city",
       "_template": "cardCarousel",
-      "anchorId": "pick-your-city"
+      "cardsPerRow": "2"
     },
     {
       "spacerHeight": "45px",
@@ -165,6 +192,7 @@
       "heading": "Designed for **decision-makers** at Australian enterprises",
       "isH1": false,
       "body": "",
+      "tabletTextAlignment": "Left",
       "cardStyle": 1,
       "cards": [
         {
@@ -201,8 +229,7 @@
       "background": {
         "backgroundColour": 0
       },
-      "_template": "cardCarousel",
-      "tabletTextAlignment": "Left"
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "45px",
@@ -382,7 +409,6 @@
       "background": {
         "backgroundColour": 6
       },
-      "anchorId": "agenda-cards",
       "_template": "accordionBlock"
     },
     {
@@ -408,6 +434,7 @@
       "heading": "Key learnings",
       "isH1": false,
       "body": "3 things everyone in C-Suite needs to know about AI in their business this year",
+      "tabletTextAlignment": "Left",
       "cardStyle": 0,
       "cards": [
         {
@@ -444,8 +471,7 @@
       "background": {
         "backgroundColour": 4
       },
-      "_template": "cardCarousel",
-      "tabletTextAlignment": "Left"
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "45px",
@@ -470,6 +496,7 @@
         "backgroundColour": 6
       },
       "heading": "The Australian businesses we've engineered for",
+      "tabletTextAlignment": "Left",
       "paused": false,
       "isWhiteImages": true,
       "logos": [
@@ -514,8 +541,7 @@
           "altText": "Event Cinemas"
         }
       ],
-      "_template": "logoCarousel",
-      "tabletTextAlignment": "Left"
+      "_template": "logoCarousel"
     },
     {
       "spacerHeight": "45px",
@@ -592,6 +618,7 @@
       "isH1": false,
       "subheading": "SSW · AI Engagement Lead · Melbourne",
       "description": "Mike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today - including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
+      "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": false
       },
@@ -608,8 +635,7 @@
         "youtubeUrl": "",
         "squareImage": true
       },
-      "_template": "imageTextBlock",
-      "tabletTextAlignment": "Left"
+      "_template": "imageTextBlock"
     },
     {
       "spacerHeight": "45px",
@@ -692,36 +718,18 @@
       "heading": "Pick your city",
       "isH1": false,
       "body": "Pick your city below and confirm your $99 seat in a few clicks. Secure checkout opens right here on the page.",
+      "tabletTextAlignment": "Left",
       "cardStyle": 0,
       "cards": [
         {
-          "guid": "na8owi",
-          "altText": "Reserve your seat for the Brisbane event on Thursday 2 July 2026, 9:00am – 1:00pm",
-          "heading": "Brisbane",
-          "description": "",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Thursday 2 July 2026 · 9:00am – 1:00pm",
-                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": "Reserve my seat - $99",
-            "eventbriteEventId": "1992027082628",
-            "colour": 0
-          }
-        },
-        {
           "guid": "a5ne6z",
-          "altText": "Reserve your seat for the Melbourne event on Thursday 9 July 2026, 9:00am – 1:00pm",
+          "altText": "Reserve your seat for the Melbourne event on Wednesday 16 September 2026, 9:00am – 1:00pm",
           "heading": "Melbourne",
           "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "Thursday 9 July 2026 · 9:00am – 1:00pm",
+                "heading": "Wednesday 16 September 2026 · 9:00am – 1:00pm",
                 "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
               }
             ]
@@ -733,14 +741,52 @@
           }
         },
         {
+          "guid": "na8owi",
+          "altText": "Reserve your seat for the Brisbane event on Friday 18 September 2026, 9:00am – 1:00pm",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Friday 18 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027082628",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "k2nc9w",
+          "altText": "Reserve your seat for the Newcastle event on Tuesday 29 September 2026, 9:00am – 1:00pm",
+          "heading": "Newcastle",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Tuesday 29 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Newcastle Office 432 Hunter Street Newcastle NSW 2300"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "colour": 0,
+            "eventbriteEventId": "1992796293358"
+          }
+        },
+        {
           "guid": "m94ybh",
-          "altText": "Reserve your seat for the Sydney event on Thursday 16 July 2026, 9:00am – 1:00pm",
+          "altText": "Reserve your seat for the Sydney event on Thursday 1 October 2026, 9:00am – 1:00pm",
           "heading": "Sydney",
           "description": "",
           "featureList": {
             "features": [
               {
-                "heading": "Thursday 16 July 2026 · 9:00am – 1:00pm",
+                "heading": "Thursday 1 October 2026 · 9:00am – 1:00pm",
                 "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
               }
             ]
@@ -752,11 +798,11 @@
           }
         }
       ],
-      "_template": "cardCarousel",
       "background": {
         "backgroundColour": 4
       },
-      "tabletTextAlignment": "Left"
+      "_template": "cardCarousel",
+      "cardsPerRow": "2"
     },
     {
       "spacerHeight": "45px",

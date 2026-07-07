@@ -17,6 +17,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Container } from "@/components/util/container";
+import { hideOnClasses } from "@/components/util/hideOn";
 import global from "@/content/global/index.json";
 import { cn } from "@/lib/utils";
 import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
@@ -102,8 +103,9 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const paths = usePathname().split("/");
   // Index 0 is an empty string if the path starts with a slash
   const links = getLinks(paths, data, data.finalBreadcrumb);
+  const hideClasses = hideOnClasses(data?.hideOn);
 
-  return (
+  const breadcrumb = (
     <V2ComponentWrapper data={data}>
       <Container size="custom" padding="px-4 sm:px-8" className="pt-8 sm:pt-12">
         <Breadcrumb className="text-gray-300">
@@ -123,6 +125,12 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
         </Breadcrumb>
       </Container>
     </V2ComponentWrapper>
+  );
+
+  return hideClasses ? (
+    <div className={hideClasses}>{breadcrumb}</div>
+  ) : (
+    breadcrumb
   );
 }
 

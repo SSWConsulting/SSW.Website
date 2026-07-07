@@ -277,6 +277,8 @@ export const globalSchema: Collection = {
             { label: "Github", value: "github" },
             { label: "YouTube", value: "youtube" },
             { label: "TikTok", value: "tiktok" },
+            { label: "Threads", value: "threads" },
+            { label: "BlueSky", value: "bluesky" },
           ],
         },
         {
