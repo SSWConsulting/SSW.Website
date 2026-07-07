@@ -18,6 +18,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { tinaField } from "tinacms/dist/react";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
+import { CardPattern } from "./cardPatterns";
 
 const SSW_PEOPLE_ICON =
   "/images/company-logos/downloads/images/ssw-logo-icon.png";
@@ -28,12 +29,13 @@ const socials = [
   { key: "sswPeople", label: "SSW People", image: SSW_PEOPLE_ICON },
 ];
 
-function PersonCard({ person }) {
+function PersonCard({ person, index }) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-2xl border-0.75 border-sswBorder bg-sswCard">
       {/* Red panel frames the photo with padding on the sides and top while the
           photo stays flush to the bottom, so the person reads as standing in it. */}
       <div className="relative aspect-square w-full bg-sswRed">
+        <CardPattern index={index} />
         {person?.image?.imageSource && (
           <Image
             src={person.image.imageSource}
@@ -188,7 +190,7 @@ export function V3PeopleCarousel({ data }) {
                     )}
                     data-tina-field={tinaField(person, "name")}
                   >
-                    <PersonCard person={person} />
+                    <PersonCard person={person} index={index} />
                   </CarouselItem>
                 ))}
                 {moreLink && (
@@ -207,7 +209,7 @@ export function V3PeopleCarousel({ data }) {
                   data-tina-field={tinaField(person, "name")}
                   className="h-full"
                 >
-                  <PersonCard person={person} />
+                  <PersonCard person={person} index={index} />
                 </div>
               ))}
             </div>
@@ -223,7 +225,7 @@ export function V3PeopleCarousel({ data }) {
                   className="basis-4/5 pl-8 sm:basis-1/2 lg:basis-1/4"
                   data-tina-field={tinaField(person, "name")}
                 >
-                  <PersonCard person={person} />
+                  <PersonCard person={person} index={index} />
                 </CarouselItem>
               ))}
             </CarouselContent>

@@ -40,21 +40,23 @@ export const V3EventsSchema: Template = {
           title: ".NET Developer Workshop",
           description:
             "Join our .NET developer workshop to master the latest open-source, cross-platform framework and elevate your coding skills.",
-          duration: "45 minutes",
+          time: "6:00pm AEST",
         },
         {
           title: "Clean Architecture Workshop",
           description:
             "Join our workshop to master clean architecture and elevate your full-stack development and consulting skills.",
-          duration: "45 minutes",
+          time: "6:00pm AEST",
         },
         {
           title: "Artificial Intelligence Workshop",
           description:
             "Join us for an exciting AI workshop where you'll explore the latest advancements in artificial intelligence.",
-          duration: "45 minutes",
+          time: "6:00pm AEST",
         },
       ],
+      seeMoreText: "See More Events",
+      seeMoreLink: "/events",
     },
   },
   fields: [
@@ -98,6 +100,12 @@ export const V3EventsSchema: Template = {
         { type: "string", label: "Title", name: "title" },
         {
           type: "string",
+          label: "Location",
+          name: "location",
+          description: "Optional event location shown under the title.",
+        },
+        {
+          type: "string",
           label: "Description",
           name: "description",
           ui: { component: "textarea" },
@@ -112,6 +120,12 @@ export const V3EventsSchema: Template = {
           label: "Event Date",
           name: "eventDate",
           description: "Drives the countdown and the displayed date.",
+        },
+        {
+          type: "string",
+          label: "Time",
+          name: "time",
+          description: "Start time of the event. e.g. '6:00pm AEST'.",
         },
         {
           type: "string",
@@ -147,7 +161,7 @@ export const V3EventsSchema: Template = {
         defaultItem: {
           title: "New Workshop",
           description: "A short blurb about this workshop.",
-          duration: "45 minutes",
+          time: "6:00pm AEST",
         },
       },
       fields: [
@@ -160,9 +174,9 @@ export const V3EventsSchema: Template = {
         },
         {
           type: "string",
-          label: "Duration",
-          name: "duration",
-          description: "e.g. '45 minutes'.",
+          label: "Time",
+          name: "time",
+          description: "Start time of the event. e.g. '6:00pm AEST'.",
         },
         {
           type: "datetime",
@@ -187,7 +201,7 @@ export const V3EventsSchema: Template = {
         imageObject(
           "presenterImage",
           "Presenter Avatar",
-          "Optional round presenter avatar shown over the image."
+          "Optional round presenter avatar shown at the bottom left of the card."
         ),
         {
           type: "string",
@@ -195,6 +209,19 @@ export const V3EventsSchema: Template = {
           name: "registerLink",
         },
       ],
+    },
+    {
+      type: "string",
+      label: "See More Button Text",
+      name: "seeMoreText",
+      description: "Label for the button under the event cards.",
+    },
+    {
+      type: "string",
+      label: "See More Button Link",
+      name: "seeMoreLink",
+      description:
+        "Destination for the button under the event cards. Leave blank to hide it.",
     },
   ],
 };

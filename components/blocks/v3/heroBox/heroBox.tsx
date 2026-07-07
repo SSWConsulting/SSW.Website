@@ -6,23 +6,68 @@ import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useRef } from "react";
-import { FiArrowDown } from "react-icons/fi";
+import { useRef, useState } from "react";
+import { FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export const V3HeroBox = ({ data, priority = false }) => {
-  const media = data?.backgroundMedia;
-  const hasImage = media?.imageSource;
+  // The block's own fields form the first slide; `slides` adds more of the same shape.
+  const slides = [data, ...(data?.slides ?? []).filter(Boolean)];
+  const [activeSlide, setActiveSlide] = useState(0);
+  const current = Math.min(activeSlide, slides.length - 1);
+  const hasImage = slides[current]?.backgroundMedia?.imageSource;
+
+  function slideLeft() {
+    setActiveSlide((current - 1 + slides.length) % slides.length);
+  }
+
+  function slideRight() {
+    setActiveSlide((current + 1) % slides.length);
+  }
+
+  const prevAndNextSlideButtons = slides.length > 1 && (
+    <div className="absolute bottom-1/2 left-1/2 flex w-full -translate-x-1/2 -translate-y-2/5 items-center justify-center gap-2">
+                <button
+                  type="button"
+                  aria-label="Scroll to next section"
+                  onClick={() => slideLeft()}
+                  className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
+                >
+                  <FiArrowLeft className="size-5" />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Scroll to next section"
+                  onClick ={() => slideRight()}
+                  className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
+                >
+                  <FiArrowRight className="size-5" />
+                </button>
+              </div>)
+
+  const slidePagination = slides.length > 1 && (
+    <div className="absolute bottom-6 left-8 z-20 flex items-center gap-4 sm:left-12 lg:left-16">
+      <div className="flex items-center gap-2">
+        {slides.map((_, index) => (
+          <button
+            key={`hero-slide-section-${index}`}
+            type="button"
+            aria-label={`Go to slide ${index + 1}`}
+            onClick={() => setActiveSlide(index)}
+            className={cn(
+              "w-20 h-1 transition-colors",
+              index === current ? "bg-white" : "bg-white/40 hover:bg-white/70"
+            )}
+          />
+        ))}
+      </div>
+    </div>
+  );
+
   const scoopColor = backgroundOptions.find(
     (option) => option.reference === data?.background?.backgroundColour
   )?.hex;
-
-  const arrowRef = useRef<HTMLButtonElement>(null);
-  const scrollToNext = () => {
-    const rect = arrowRef.current?.getBoundingClientRect();
-    if (rect) window.scrollBy({ top: rect.top - 50, behavior: "smooth" });
-  };
 
   return (
     <V2ComponentWrapper data={data} className="pt-4 sm:pt-20">
@@ -34,22 +79,28 @@ export const V3HeroBox = ({ data, priority = false }) => {
       >
         <div
           className={cn(
-            "relative flex min-h-[28rem] w-full items-center justify-center overflow-hidden rounded-[2rem] bg-black sm:min-h-[34rem] sm:justify-start lg:min-h-128 lg:rounded-[45px]"
+            "relative flex min-h-[28rem] w-full items-center overflow-hidden rounded-[2rem] bg-black sm:min-h-[34rem] lg:min-h-128 lg:rounded-[45px]"
           )}
         >
-          {/* Background image, anchored to the right of the box */}
-          {hasImage && (
-            <Image
-              fill
-              priority={priority}
-              fetchPriority={priority ? "high" : undefined}
-              quality={100}
-              sizes="(min-width: 1440px) 1312px, 100vw"
-              src={media.imageSource}
-              alt={media.altText ?? "Hero background"}
-              className="object-cover object-right opacity-30 transition-opacity duration-200 lg:opacity-100"
-              data-tina-field={tinaField(data, "backgroundMedia")}
-            />
+          {/* Background images, anchored to the right of the box, cross-fading between slides */}
+          {slides.map((slide, index) =>
+            slide?.backgroundMedia?.imageSource ? (
+              <Image
+                key={`hero-slide-image-${index}`}
+                fill
+                priority={priority && index === 0}
+                fetchPriority={priority && index === 0 ? "high" : undefined}
+                quality={100}
+                sizes="(min-width: 1440px) 1312px, 100vw"
+                src={slide.backgroundMedia.imageSource}
+                alt={slide.backgroundMedia.altText ?? "Hero background"}
+                className={cn(
+                  "object-cover object-right transition-opacity duration-500",
+                  index === current ? "opacity-30 lg:opacity-100" : "opacity-0"
+                )}
+                data-tina-field={tinaField(slide, "backgroundMedia")}
+              />
+            ) : null
           )}
           {hasImage && (
             <div
@@ -60,42 +111,59 @@ export const V3HeroBox = ({ data, priority = false }) => {
             />
           )}
 
-          {/* Content */}
-          <div className="relative z-10 flex w-full max-w-2xl flex-col p-8 sm:p-12 lg:p-16">
-            {data?.heading && (
-              <h1
-                data-tina-field={tinaField(data, "heading")}
-                className="p-0 text-3xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
-              >
-                <AlternatingText text={data.heading} />
-              </h1>
-            )}
-            {data?.description && (
-              <div
-                data-tina-field={tinaField(data, "description")}
-                className="mt-4 max-w-md"
-              >
-                <TinaMarkdown
-                  content={data.description}
-                  components={{
-                    p: (props) => (
-                      <p {...props} className="text-base text-white/90" />
-                    ),
-                  }}
-                />
-              </div>
-            )}
-            <ButtonRow
-              data={data}
-              className="mb-16 mt-8 flex-wrap justify-start sm:mb-0"
-            />
+          {/* Content*/}
+          <div className="relative z-10 grid w-full">
+            {slides.map((slide, index) => {
+              const Heading = index === 0 ? "h1" : "h2";
+              return (
+                <div
+                  key={`hero-slide-content-${index}`}
+                  className={cn(
+                    "col-start-1 row-start-1 flex w-full max-w-2xl flex-col p-8 transition-[opacity,visibility] duration-500 sm:p-12 lg:p-16",
+                    index === current
+                      ? "visible opacity-100"
+                      : "invisible opacity-0"
+                  )}
+                >
+                  {slide?.heading && (
+                    <Heading
+                      data-tina-field={tinaField(slide, "heading")}
+                      className="m-0 p-0 text-3xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+                    >
+                      <AlternatingText text={slide.heading} />
+                    </Heading>
+                  )}
+                  {slide?.description && (
+                    <div
+                      data-tina-field={tinaField(slide, "description")}
+                      className="mt-4 max-w-md"
+                    >
+                      <TinaMarkdown
+                        content={slide.description}
+                        components={{
+                          p: (props) => (
+                            <p {...props} className="text-base text-white/90" />
+                          ),
+                        }}
+                      />
+                    </div>
+                  )}
+                  <ButtonRow
+                    data={slide}
+                    className="mb-16 mt-8 flex-wrap justify-start sm:mb-0"
+                  />
+                </div>
+              );
+            })}
           </div>
 
+          {slidePagination}
+
           {/* Scroll-down indicator nested in a concave scoop */}
-          {data?.showScrollIndicator && (
+          
             <div
               className={cn(
-                "pointer-events-none absolute bottom-0 z-20 block w-[280px] sm:right-16 sm:w-[336px]"
+                "pointer-events-none absolute bottom-0 z-20 block w-[280px] sm:right-16 sm:w-[380px]"
               )}
             >
               <svg
@@ -111,17 +179,8 @@ export const V3HeroBox = ({ data, priority = false }) => {
                   fill={scoopColor}
                 />
               </svg>
-              <button
-                ref={arrowRef}
-                type="button"
-                aria-label="Scroll to next section"
-                onClick={scrollToNext}
-                className="group pointer-events-auto absolute bottom-3 left-1/2 flex size-11 -translate-x-1/2 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
-              >
-                <FiArrowDown className="size-5" />
-              </button>
+              {prevAndNextSlideButtons}
             </div>
-          )}
         </div>
       </Container>
     </V2ComponentWrapper>

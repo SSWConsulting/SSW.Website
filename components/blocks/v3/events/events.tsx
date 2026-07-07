@@ -4,6 +4,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import RippleButton from "@/components/button/rippleButtonV2";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
@@ -40,6 +41,33 @@ function FeaturedEvent({ event }) {
               {event.title}
             </h3>
           )}
+          {event?.location && (
+            <span
+              data-tina-field={tinaField(event, "location")}
+              className="mt-4 flex items-center gap-2 text-sm font-light text-white"
+            >
+              <FiMapPin className="size-4" />
+              {event.location}
+            </span>
+          )}
+          {event?.eventDate && (
+            <span
+              data-tina-field={tinaField(event, "eventDate")}
+              className="mt-2 flex items-center gap-2 text-sm font-light text-white"
+            >
+              <FiCalendar className="size-4" />
+              {dayjs(event.eventDate).format("ddd D MMM")}
+            </span>
+          )}
+          {event?.time && (
+            <span
+              data-tina-field={tinaField(event, "time")}
+              className="mt-2 flex items-center gap-2 text-sm font-light text-white"
+            >
+              <FiClock className="size-4" />
+              {event.time}
+            </span>
+          )}
           {event?.description && (
             <p className="mt-6 max-w-md text-base font-light text-gray-300">
               {event.description}
@@ -58,13 +86,8 @@ function FeaturedEvent({ event }) {
           )}
         </div>
 
-        {/* Right: date, countdown, spots */}
+        {/* Right: countdown, spots */}
         <div className="flex flex-col items-center gap-6">
-          {event?.eventDate && (
-            <p className="text-2xl font-medium text-white">
-              {dayjs(event.eventDate).format("ddd D MMM")}
-            </p>
-          )}
           <Countdown date={event?.eventDate} />
           {event?.spotsText && (
             <span className="rounded-full bg-white px-4 py-1 text-sm font-semibold text-black">
@@ -107,42 +130,27 @@ function EventCard({ event }) {
             />
           )
         )}
-        {event?.presenterImage?.imageSource && (
-          <div className="pointer-events-none absolute right-4 top-4 z-10 size-12 overflow-hidden">
-            <Image
-              src={event.presenterImage.imageSource}
-              alt={event.presenterImage.altText ?? ""}
-              fill
-              sizes="48px"
-              className="object-cover"
-            />
-          </div>
-        )}
       </div>
 
       <div className="flex flex-1 flex-col p-4 lg:p-6">
-        {(event?.duration || event?.date || event?.location) && (
+        {(event?.time || event?.date || event?.location) && (
           <div className="flex flex-col gap-1 text-sm font-light text-gray-400">
-            {(event?.duration || event?.date) && (
-              <div className="flex flex-wrap items-center gap-4">
-                {event?.duration && (
-                  <span className="flex items-center gap-2">
-                    <FiClock className="size-4" />
-                    {event.duration}
-                  </span>
-                )}
-                {event?.date && (
-                  <span className="flex items-center gap-2">
-                    <FiCalendar className="size-4" />
-                    {dayjs(event.date).format("ddd D MMM")}
-                  </span>
-                )}
-              </div>
-            )}
-            {event?.location && (
-              <span className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-4 text-white">
+              {event?.date && (
+                <span className="flex items-center gap-2">
+                  <FiCalendar className="size-4" />
+                  {dayjs(event.date).format("ddd D MMM")}
+                </span>
+              )}
+              <span className="flex items-center gap-2 text-white">
                 <FiMapPin className="size-4" />
                 {event.location}
+              </span>
+            </div>
+            {event?.time && (
+              <span className="flex items-center gap-2">
+                <FiClock className="size-4" />
+                {event.time}
               </span>
             )}
           </div>
@@ -157,19 +165,34 @@ function EventCard({ event }) {
             {event.description}
           </p>
         )}
-        {event?.registerLink && (
-          <Link
-            href={event.registerLink}
-            aria-label={`Register for ${event?.title ?? "this event"}`}
-            className="mt-auto self-end pt-6 !no-underline"
-          >
-            {/* Full-card overlay makes the whole card clickable, not just the
-                arrow. The video modal is raised above it so it stays usable. */}
-            <span aria-hidden="true" className="absolute inset-0" />
-            <span className="flex size-10 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
-              <BsArrowUpRight className="size-1/3" />
-            </span>
-          </Link>
+        {(event?.presenterImage?.imageSource || event?.registerLink) && (
+          <div className="mt-auto flex items-center pt-6">
+            {event?.presenterImage?.imageSource && (
+              <div className="relative size-12 overflow-hidden">
+                <Image
+                  src={event.presenterImage.imageSource}
+                  alt={event.presenterImage.altText ?? ""}
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
+              </div>
+            )}
+            {event?.registerLink && (
+              <Link
+                href={event.registerLink}
+                aria-label={`Register for ${event?.title ?? "this event"}`}
+                className="ml-auto !no-underline"
+              >
+                {/* Full-card overlay makes the whole card clickable, not just the
+                    arrow. The video modal is raised above it so it stays usable. */}
+                <span aria-hidden="true" className="absolute inset-0" />
+                <span className="flex size-10 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
+                  <BsArrowUpRight className="size-1/3" />
+                </span>
+              </Link>
+            )}
+          </div>
         )}
       </div>
     </div>
@@ -240,6 +263,20 @@ export function V3Events({ data }) {
                 </div>
               ))}
             </div>
+
+            {data?.seeMoreLink && (
+              <div className="flex justify-end px-4 lg:px-0">
+                <Link href={data.seeMoreLink} className="!no-underline">
+                  <RippleButton
+                    variant="primary"
+                    textTinaField={tinaField(data, "seeMoreText")}
+                    className="text-base font-semibold"
+                  >
+                    {data.seeMoreText ?? "See More Events"}
+                  </RippleButton>
+                </Link>
+              </div>
+            )}
           </>
         )}
       </Container>

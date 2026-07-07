@@ -23,9 +23,9 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Call",
+          "leadCaptureFormOption": "projectFormModal",
           "iconFirst": false,
-          "colour": 0,
-          "leadCaptureFormOption": "projectFormModal"
+          "colour": 0
         }
       ],
       "backgroundMedia": {
@@ -34,7 +34,22 @@
         "imageHeight": 1150,
         "imageWidth": 2600
       },
-      "showScrollIndicator": true,
+      "slides": [
+        {
+          "heading": "NDC Sydney 2026",
+          "description": "Join us at NDC Sydney 2026 from August 16-18 at the Metro Theatre\n",
+          "buttons": [
+            {
+              "buttonText": "Get your tickets"
+            }
+          ],
+          "backgroundMedia": {
+            "imageSource": "/images/marketings/sswMarketingBackground.webp",
+            "imageHeight": 537,
+            "imageWidth": 1920
+          }
+        }
+      ],
       "_template": "v3HeroBox"
     },
     {
@@ -70,7 +85,7 @@
           "newTab": false
         },
         {
-          "title": "DevOps & Cloud",
+          "title": "DevOps & Azure",
           "description": "Make sure your software ships by using SSW's best practices in Azure, AWS, DevOps and Docker Containers.",
           "graphic": {
             "imageSource": "/images/custom-icons/github.svg",
@@ -101,10 +116,10 @@
           "description": "Across all industries"
         },
         {
-          "figure": 27,
+          "figure": 30,
           "figureSuffix": "+",
           "heading": "Years experience",
-          "description": "Trusted since 1999"
+          "description": "Trusted since 1995"
         }
       ],
       "_template": "v3Statistics"
@@ -115,8 +130,8 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Call",
-          "colour": 0,
-          "leadCaptureFormOption": "projectFormModal"
+          "leadCaptureFormOption": "projectFormModal",
+          "colour": 0
         }
       ],
       "_template": "v3VideoHero"
@@ -126,14 +141,8 @@
         "backgroundColour": 7
       },
       "heading": "Featured Projects",
-      "subtitle": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.",
+      "subtitle": "",
       "mobilePlusMore": "/company/clients",
-      "buttons": [
-        {
-          "buttonText": "Our Client Stories",
-          "buttonLink": "/company/clients"
-        }
-      ],
       "highlighted": {
         "logo": {
           "altText": "FPE Client Logo",
@@ -276,6 +285,7 @@
         {
           "buttonText": "SSW People",
           "buttonLink": "/people",
+          "icon": "BiChevronRight",
           "iconFirst": false
         }
       ],
@@ -284,6 +294,7 @@
           "name": "Adam Cogan",
           "role": "CEO + Chief Architect",
           "image": {
+            "altText": "adam-cogan",
             "imageSource": "/images/people-carousel/adam-nobg.png",
             "imageHeight": 535,
             "imageWidth": 509
@@ -296,6 +307,7 @@
           "name": "Ulysses Maclaren",
           "role": "COO",
           "image": {
+            "altText": "uly-maclaren",
             "imageSource": "/images/people-carousel/uly-nobg.png",
             "imageHeight": 534,
             "imageWidth": 533
@@ -308,6 +320,7 @@
           "name": "Calum Simpson",
           "role": "VP of AI",
           "image": {
+            "altText": "calum-simpson",
             "imageSource": "/images/people-carousel/calum-nobg.png",
             "imageHeight": 529,
             "imageWidth": 475
@@ -320,6 +333,7 @@
           "name": "Matt Wicks",
           "role": "Solution Architect",
           "image": {
+            "altText": "matt-wicks",
             "imageSource": "/images/people-carousel/wicks-nobg.png",
             "imageHeight": 1064,
             "imageWidth": 986
@@ -334,22 +348,35 @@
     {
       "background": {
         "backgroundColour": 7,
-        "gridOverlay": true,
-        "redGlow": false
+        "bleed": false,
+        "gridOverlay": false,
+        "redGlow": true
       },
       "videoUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA",
+      "thumbnail": "/images/new-homepage-background-assets/ssw-group-photo.png",
       "greyscaleThumbnail": false,
       "figure": "Video: The people behind SSW - Australia's leading software consulatancy (3 min)",
       "heading": "Why choose SSW?",
       "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.\n",
       "highlights": [
         {
-          "title": "Deep expertise",
-          "desc2": "We go deep on every technology we touch – building with it, codifying best practices, and making that knowledge freely available.\n"
+          "customImage": {
+            "altText": "Microsoft Solutions Partner",
+            "imageSource": "/images/new-homepage-background-assets/msfot-svg.svg",
+            "imageHeight": 68,
+            "imageWidth": 223
+          },
+          "title": "Microsoft Cloud Partner",
+          "desc2": "In 1999, we were first recognized as a Microsoft Gold Partner - now renamed Microsoft Cloud Partner\n"
         },
         {
-          "title": "Results over Rhetoric",
-          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?\n"
+          "customImage": {
+            "imageSource": "/images/new-homepage-background-assets/mapa-svg.svg",
+            "imageHeight": 100,
+            "imageWidth": 205
+          },
+          "title": "MAPA - Learning Excellence",
+          "desc2": "SSW has won the **Microsoft Australia Partner Award** for excellence in learning from the [SSW FireBootCamp](https://firebootcamp.com)\n"
         }
       ],
       "_template": "v3VideoHighlights"
@@ -359,33 +386,28 @@
         "backgroundColour": 8
       },
       "heading": "Upcoming Events",
-      "subtitle": "We run webinars, live events, in-house and online courses.",
+      "subtitle": "",
       "mobilePlusMore": "/events",
-      "buttons": [
-        {
-          "buttonText": "Explore Events & Training",
-          "buttonLink": "/events",
-          "colour": 0
-        }
-      ],
       "featuredEvent": {
-        "title": "AI Hack Day (Sydney)",
-        "description": "AI Hack Days are community-run events for Developers or people who want to learn AI for free. There will be something for everyone.",
+        "title": "AI Hack Day ",
+        "location": "Sydney & Online",
+        "description": "",
         "image": {
           "imageSource": "/images/new-homepage-background-assets/angular-workshop-fra.png",
           "imageHeight": 1754,
           "imageWidth": 3444
         },
         "eventDate": "2026-07-11T05:46:28.184Z",
+        "time": "6:30pm AEST",
         "spotsText": "10 Spots left!",
         "registerText": "Register Now",
         "registerLink": "/events"
       },
       "eventCards": [
         {
-          "title": "July User Group",
-          "description": "Join our .NET developer workshop to master the latest open-source, cross-platform framework and elevate your coding skills.",
-          "duration": "45 mins",
+          "title": "July User Group - Storage Wars: Choosing the right House for your data",
+          "description": "",
+          "time": "6:00pm AEST",
           "date": "2026-07-23T00:18:41.261Z",
           "location": "Sydney",
           "image": {
@@ -401,9 +423,9 @@
           "registerLink": "/some-link"
         },
         {
-          "title": "Clean Architecture Workshop",
-          "description": "Join our workshop to master clean architecture and elevate your full-stack development and consulting skills.",
-          "duration": "45 mins",
+          "title": "Clean Architecture Workshop ",
+          "description": "",
+          "time": "7:30pm AEST",
           "date": "2026-08-04T00:18:50.472Z",
           "location": "Melbourne",
           "image": {
@@ -420,8 +442,8 @@
         },
         {
           "title": "Artificial Intelligence Workshop",
-          "description": "Join us for an exciting AI workshop where you'll explore the latest advancements in artificial intelligence.",
-          "duration": "45 min",
+          "description": "",
+          "time": "5:30pm CET",
           "date": "2026-08-26T00:19:00.058Z",
           "location": "Strasbourg",
           "image": {
@@ -437,6 +459,8 @@
           "registerLink": "/some-link"
         }
       ],
+      "seeMoreText": "See More Events >",
+      "seeMoreLink": "/events",
       "_template": "v3Events"
     },
     {
@@ -450,8 +474,8 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Call",
-          "colour": 0,
-          "leadCaptureFormOption": "projectFormModal"
+          "leadCaptureFormOption": "projectFormModal",
+          "colour": 0
         }
       ],
       "offices": [
@@ -519,7 +543,7 @@
           "name": "Delaware, USA",
           "email": "hello@ssw.com",
           "phone": "+1 302 520 3805",
-          "address": "Online Only\nNorth America, DE 2111, USA",
+          "address": "North America, DE 2111, USA",
           "siteLinkText": "SSW North America",
           "siteLinkUrl": "https://www.ssw.com.au/",
           "lat": 39.16,
