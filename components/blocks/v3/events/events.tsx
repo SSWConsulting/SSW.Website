@@ -13,7 +13,41 @@ import { tinaField } from "tinacms/dist/react";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
 
+function PresenterList({ presenters }) {
+  if (presenters.length === 0) return null;
+
+  return (
+    <div className="relative z-10 flex items-center gap-2">
+      <FiUser className="size-4 shrink-0" />
+      <div className="flex flex-wrap gap-x-4 gap-y-2">
+        {presenters.map((presenter, index) => {
+          const content = <span>{presenter?.name}</span>;
+
+          return presenter?.link ? (
+            <Link
+              key={`v3-event-presenter-${index}`}
+              href={presenter.link}
+              className="inline-flex items-center !no-underline transition-colors hover:text-white"
+            >
+              {content}
+            </Link>
+          ) : (
+            <span
+              key={`v3-event-presenter-${index}`}
+              className="inline-flex items-center"
+            >
+              {content}
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function FeaturedEvent({ event }) {
+  const presenters = (event?.presenters ?? []).filter(Boolean);
+
   return (
     <div className={cn("relative overflow-hidden rounded-[45px]")}>
       {event?.image?.imageSource && (
@@ -61,6 +95,11 @@ function FeaturedEvent({ event }) {
               <FiClock className="size-4" />
               {event.time}
             </span>
+          )}
+          {presenters.length > 0 && (
+            <div className="mt-2 flex flex-col gap-2 text-sm font-light text-white">
+              <PresenterList presenters={presenters} />
+            </div>
           )}
           {event?.description && (
             <p className="mt-6 max-w-md text-base font-light text-gray-300">
@@ -162,31 +201,7 @@ function EventListItem({ event }) {
               </span>
             )}
             {presenters.length > 0 && (
-              <div className="relative z-10 flex items-center gap-2">
-                <FiUser className="size-4 shrink-0" />
-                <div className="flex flex-wrap gap-x-4 gap-y-2">
-                  {presenters.map((presenter, index) => {
-                    const content = <span>{presenter?.name}</span>;
-
-                    return presenter?.link ? (
-                      <Link
-                        key={`v3-event-presenter-${index}`}
-                        href={presenter.link}
-                        className="inline-flex items-center !no-underline transition-colors hover:text-white"
-                      >
-                        {content}
-                      </Link>
-                    ) : (
-                      <span
-                        key={`v3-event-presenter-${index}`}
-                        className="inline-flex items-center"
-                      >
-                        {content}
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
+              <PresenterList presenters={presenters} />
             )}
           </div>
         )}

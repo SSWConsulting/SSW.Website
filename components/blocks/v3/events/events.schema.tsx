@@ -119,6 +119,26 @@ export const V3EventsSchema: Template = {
           description: "Start time of the event. e.g. '6:00pm AEST'.",
         },
         {
+          type: "object",
+          label: "Presenters",
+          name: "presenters",
+          list: true,
+          description: "Presenter links shown under the event time.",
+          ui: {
+            itemProps: (item) => ({ label: item?.name ?? "Presenter" }),
+            defaultItem: { name: "Presenter name" },
+          },
+          fields: [
+            { type: "string", label: "Name", name: "name" },
+            {
+              type: "string",
+              label: "Link",
+              name: "link",
+              description: "Presenter profile URL.",
+            },
+          ],
+        },
+        {
           type: "string",
           label: "Register Button Text",
           name: "registerText",
