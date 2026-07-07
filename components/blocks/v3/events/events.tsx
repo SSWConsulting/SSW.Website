@@ -138,7 +138,10 @@ function EventListItem({ event }) {
             {event.description}
           </p>
         )}
-        {(event?.time || event?.date || event?.location) && (
+        {(event?.time ||
+          event?.date ||
+          event?.location ||
+          presenters.length > 0) && (
           <div className="mt-4 flex flex-col gap-2 text-sm font-light text-gray-300">
             {event?.location && (
               <span className="flex items-center gap-2">
@@ -158,34 +161,33 @@ function EventListItem({ event }) {
                 {event.time}
               </span>
             )}
-          </div>
-        )}
+            {presenters.length > 0 && (
+              <div className="relative z-10 flex items-center gap-2">
+                <FiUser className="size-4 shrink-0" />
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  {presenters.map((presenter, index) => {
+                    const content = <span>{presenter?.name}</span>;
 
-        {presenters.length > 0 && (
-          <div className="relative z-10 mt-3 flex items-start gap-2 text-sm text-gray-300">
-            <FiUser className="mt-0.5 size-4 shrink-0" />
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
-              {presenters.map((presenter, index) => {
-                const content = <span>{presenter?.name}</span>;
-
-                return presenter?.link ? (
-                  <Link
-                    key={`v3-event-presenter-${index}`}
-                    href={presenter.link}
-                    className="inline-flex items-center gap-2 !no-underline transition-colors hover:text-white"
-                  >
-                    {content}
-                  </Link>
-                ) : (
-                  <span
-                    key={`v3-event-presenter-${index}`}
-                    className="inline-flex items-center gap-2"
-                  >
-                    {content}
-                  </span>
-                );
-              })}
-            </div>
+                    return presenter?.link ? (
+                      <Link
+                        key={`v3-event-presenter-${index}`}
+                        href={presenter.link}
+                        className="inline-flex items-center !no-underline transition-colors hover:text-white"
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      <span
+                        key={`v3-event-presenter-${index}`}
+                        className="inline-flex items-center"
+                      >
+                        {content}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
