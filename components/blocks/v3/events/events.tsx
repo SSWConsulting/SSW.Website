@@ -196,7 +196,7 @@ function EventListItem({ event }) {
         <Link
           href={event.registerLink}
           aria-label={`Register for ${event?.title ?? "this event"}`}
-          className="flex items-center px-5 !no-underline sm:px-6"
+          className="flex items-end px-5 py-6 !no-underline sm:px-6"
         >
           <span className="flex size-12 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-110">
             <BsArrowUpRight className="size-1/3" />
