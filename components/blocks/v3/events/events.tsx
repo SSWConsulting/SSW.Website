@@ -97,7 +97,7 @@ function EventListItem({ event }) {
   return (
     <div
       className={cn(
-        "group relative flex min-h-[172px] overflow-hidden rounded-[15px] bg-sswBorder"
+        "group relative flex min-h-[172px] overflow-hidden rounded-[15px] bg-sswBorder transition-colors duration-300 hover:bg-white/10"
       )}
     >
       {/* When there's a video, lift the media above the card-wide link overlay
@@ -140,26 +140,24 @@ function EventListItem({ event }) {
         )}
         {(event?.time || event?.date || event?.location) && (
           <div className="mt-4 flex flex-col gap-2 text-sm font-light text-gray-300">
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-              {event?.location && (
-                <span className="flex items-center gap-2">
-                  <FiMapPin className="size-4" />
-                  {event.location}
-                </span>
-              )}
-              {event?.date && (
-                <span className="flex items-center gap-2">
-                  <FiCalendar className="size-4" />
-                  {dayjs(event.date).format("ddd D MMM")}
-                </span>
-              )}
-              {event?.time && (
-                <span className="flex items-center gap-2">
-                  <FiClock className="size-4" />
-                  {event.time}
-                </span>
-              )}
-            </div>
+            {event?.location && (
+              <span className="flex items-center gap-2">
+                <FiMapPin className="size-4" />
+                {event.location}
+              </span>
+            )}
+            {event?.date && (
+              <span className="flex items-center gap-2">
+                <FiCalendar className="size-4" />
+                {dayjs(event.date).format("ddd D MMM")}
+              </span>
+            )}
+            {event?.time && (
+              <span className="flex items-center gap-2">
+                <FiClock className="size-4" />
+                {event.time}
+              </span>
+            )}
           </div>
         )}
 
