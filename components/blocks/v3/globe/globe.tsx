@@ -98,9 +98,9 @@ export function V3Globe({ data }) {
         padding="px-4 sm:px-8"
         className="max-w-screen-xl py-24"
       >
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-5 lg:items-center">
           {/* Left: header + office accordion */}
-          <div>
+          <div className="lg:col-span-2">
             {data?.heading && (
               <h2
                 data-tina-field={tinaField(data, "heading")}
@@ -142,7 +142,7 @@ export function V3Globe({ data }) {
           {/* Right: dotted world map — fixed aspect so it doesn't resize
               (and the dots don't shift) when the accordion opens/closes. */}
           {offices.length > 0 && (
-            <div className="hidden lg:block">
+            <div className="hidden lg:col-span-3 lg:block">
               <div className={cn("aspect-[2/1] w-full")}>
                 <OfficeMap offices={offices} selectedIndex={openIndex} />
               </div>
