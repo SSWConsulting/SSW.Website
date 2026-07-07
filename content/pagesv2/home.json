@@ -388,11 +388,20 @@
       "recognitionHeading": "Trusted & Recognised",
       "recognitionBadges": [
         {
-          "label": "We ❤️ Microsoft - Cloud Partner"
+          "label": "We ♥ Microsoft - Solutions Partner Award",
+          "customImage": {
+            "imageSource": "/images/logos/msoft-4-squares.png",
+            "imageHeight": 960,
+            "imageWidth": 960
+          }
         },
         {
-          "label": "MAPA Learning Excellence",
-          "icon": "BiAward"
+          "label": "MAPA Learning Excellence Award",
+          "customImage": {
+            "imageSource": "/images/logos/mapa-crop.svg",
+            "imageHeight": 24,
+            "imageWidth": 24
+          }
         }
       ],
       "_template": "v3VideoFeature"
