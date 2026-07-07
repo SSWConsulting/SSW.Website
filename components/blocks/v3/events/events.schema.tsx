@@ -31,7 +31,6 @@ export const V3EventsSchema: Template = {
         title: "Angular Workshop",
         description:
           "In this 2-day Angular Workshop, you will get hands on experience building applications from scratch with guidance from Angular experts.",
-        spotsText: "10 Spots left!",
         registerText: "Register Now",
         registerLink: "/events",
       },
@@ -68,13 +67,6 @@ export const V3EventsSchema: Template = {
       name: "subtitle",
       description: "Paragraph shown on the right of the header.",
       ui: { component: "textarea" },
-    },
-    {
-      type: "string",
-      label: "Mobile + more Link",
-      name: "mobilePlusMore",
-      description:
-        "Destination for the + more card at the end of the mobile carousel. Leave blank to hide it.",
     },
     {
       type: "object",
@@ -128,12 +120,6 @@ export const V3EventsSchema: Template = {
         },
         {
           type: "string",
-          label: "Spots Text",
-          name: "spotsText",
-          description: "e.g. '10 Spots left!'. Leave blank to hide.",
-        },
-        {
-          type: "string",
           label: "Register Button Text",
           name: "registerText",
           description: "Label for the register button. e.g. 'Register Now'.",
@@ -152,10 +138,8 @@ export const V3EventsSchema: Template = {
       label: "Event Cards",
       name: "eventCards",
       list: true,
-      description:
-        "Up to 3 event/video cards shown beneath the featured event.",
+      description: "Event list shown beneath the featured event.",
       ui: {
-        max: 3,
         itemProps: (item) => ({ label: item?.title ?? "Event" }),
         defaultItem: {
           title: "New Workshop",
@@ -197,11 +181,26 @@ export const V3EventsSchema: Template = {
           description:
             "YouTube or Vimeo URL. Adds a play button over the image.",
         },
-        imageObject(
-          "presenterImage",
-          "Presenter Avatar",
-          "Optional round presenter avatar shown at the bottom left of the card."
-        ),
+        {
+          type: "object",
+          label: "Presenters",
+          name: "presenters",
+          list: true,
+          description: "Presenter links shown under the event time.",
+          ui: {
+            itemProps: (item) => ({ label: item?.name ?? "Presenter" }),
+            defaultItem: { name: "Presenter name" },
+          },
+          fields: [
+            { type: "string", label: "Name", name: "name" },
+            {
+              type: "string",
+              label: "Link",
+              name: "link",
+              description: "Presenter profile URL.",
+            },
+          ],
+        },
         {
           type: "string",
           label: "Register Link",

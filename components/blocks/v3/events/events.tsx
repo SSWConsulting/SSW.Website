@@ -1,9 +1,4 @@
 "use client";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
@@ -15,7 +10,6 @@ import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
 import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
-import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
 
@@ -86,33 +80,34 @@ function FeaturedEvent({ event }) {
           )}
         </div>
 
-        {/* Right: countdown, spots */}
+        {/* Right: countdown */}
         <div className="flex flex-col items-center gap-6">
           <Countdown date={event?.eventDate} />
-          {event?.spotsText && (
-            <span className="rounded-full bg-white px-4 py-1 text-sm font-semibold text-black">
-              {event.spotsText}
-            </span>
-          )}
         </div>
       </div>
     </div>
   );
 }
 
-function EventCard({ event }) {
+function EventListItem({ event }) {
   const hasVideo = Boolean(event?.videoUrl);
   const image = event?.image?.imageSource;
+  const presenters = (event?.presenters ?? []).filter(Boolean);
 
   return (
     <div
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[15px] bg-sswBorder"
+        "group relative flex min-h-[172px] overflow-hidden rounded-[15px] bg-sswBorder"
       )}
     >
       {/* When there's a video, lift the media above the card-wide link overlay
           so clicking the thumbnail opens the modal instead of navigating. */}
-      <div className={cn("relative aspect-video w-full", hasVideo && "z-10")}>
+      <div
+        className={cn(
+          "relative hidden w-[32%] max-w-[285px] shrink-0 sm:block",
+          hasVideo && "z-10"
+        )}
+      >
         {hasVideo ? (
           <VideoModal
             url={event.videoUrl}
@@ -132,69 +127,84 @@ function EventCard({ event }) {
         )}
       </div>
 
-      <div className="flex flex-1 flex-col p-4 lg:p-6">
+      <div className="flex min-w-0 flex-1 flex-col px-5 py-6 sm:px-6 lg:px-8">
+        {event?.title && (
+          <h4 className="text-2xl font-semibold leading-tight text-white">
+            {event.title}
+          </h4>
+        )}
+        {event?.description && (
+          <p className="mt-2 max-w-2xl text-base font-light text-gray-400">
+            {event.description}
+          </p>
+        )}
         {(event?.time || event?.date || event?.location) && (
-          <div className="flex flex-col gap-1 text-sm font-light text-gray-400">
-            <div className="flex flex-wrap items-center gap-4 text-white">
+          <div className="mt-4 flex flex-col gap-2 text-sm font-light text-gray-300">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              {event?.location && (
+                <span className="flex items-center gap-2">
+                  <FiMapPin className="size-4" />
+                  {event.location}
+                </span>
+              )}
               {event?.date && (
                 <span className="flex items-center gap-2">
                   <FiCalendar className="size-4" />
                   {dayjs(event.date).format("ddd D MMM")}
                 </span>
               )}
-              <span className="flex items-center gap-2 text-white">
-                <FiMapPin className="size-4" />
-                {event.location}
-              </span>
+              {event?.time && (
+                <span className="flex items-center gap-2">
+                  <FiClock className="size-4" />
+                  {event.time}
+                </span>
+              )}
             </div>
-            {event?.time && (
-              <span className="flex items-center gap-2">
-                <FiClock className="size-4" />
-                {event.time}
-              </span>
-            )}
           </div>
         )}
-        {event?.title && (
-          <h4 className="mt-4 text-xl font-semibold text-white">
-            {event.title}
-          </h4>
-        )}
-        {event?.description && (
-          <p className="mt-2 text-base font-light text-gray-400">
-            {event.description}
-          </p>
-        )}
-        {(event?.presenterImage?.imageSource || event?.registerLink) && (
-          <div className="mt-auto flex items-center pt-6">
-            {event?.presenterImage?.imageSource && (
-              <div className="relative size-12 overflow-hidden">
-                <Image
-                  src={event.presenterImage.imageSource}
-                  alt={event.presenterImage.altText ?? ""}
-                  fill
-                  sizes="48px"
-                  className="object-cover"
-                />
-              </div>
-            )}
-            {event?.registerLink && (
-              <Link
-                href={event.registerLink}
-                aria-label={`Register for ${event?.title ?? "this event"}`}
-                className="ml-auto !no-underline"
-              >
-                {/* Full-card overlay makes the whole card clickable, not just the
-                    arrow. The video modal is raised above it so it stays usable. */}
-                <span aria-hidden="true" className="absolute inset-0" />
-                <span className="flex size-10 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
-                  <BsArrowUpRight className="size-1/3" />
+
+        {presenters.length > 0 && (
+          <div className="relative z-10 mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-300">
+            {presenters.map((presenter, index) => {
+              const content = (
+                <>
+                  <span aria-hidden="true">👤</span>
+                  <span>{presenter?.name}</span>
+                </>
+              );
+
+              return presenter?.link ? (
+                <Link
+                  key={`v3-event-presenter-${index}`}
+                  href={presenter.link}
+                  className="inline-flex items-center gap-2 !no-underline transition-colors hover:text-white"
+                >
+                  {content}
+                </Link>
+              ) : (
+                <span
+                  key={`v3-event-presenter-${index}`}
+                  className="inline-flex items-center gap-2"
+                >
+                  {content}
                 </span>
-              </Link>
-            )}
+              );
+            })}
           </div>
         )}
       </div>
+
+      {event?.registerLink && (
+        <Link
+          href={event.registerLink}
+          aria-label={`Register for ${event?.title ?? "this event"}`}
+          className="flex items-center px-5 !no-underline sm:px-6"
+        >
+          <span className="flex size-12 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-110">
+            <BsArrowUpRight className="size-1/3" />
+          </span>
+        </Link>
+      )}
     </div>
   );
 }
@@ -203,7 +213,6 @@ export function V3Events({ data }) {
   const eventCards = (data?.eventCards ?? []).filter(Boolean);
   const hasFeatured =
     data?.featuredEvent?.title || data?.featuredEvent?.image?.imageSource;
-  const moreLink = data?.mobilePlusMore;
   const seeMoreButtons =
     data?.seeMoreButton?.length > 0
       ? data.seeMoreButton
@@ -238,40 +247,13 @@ export function V3Events({ data }) {
 
         {eventCards.length > 0 && (
           <>
-            {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
-            <Carousel
-              opts={{ align: "start", loop: false, dragFree: true }}
-              autoplay={false}
-              className="lg:hidden"
-            >
-              <CarouselContent className="ml-0">
-                {eventCards.map((event, index) => (
-                  <CarouselItem
-                    key={`v3-event-card-${index}`}
-                    className={cn(
-                      "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
-                    )}
-                  >
-                    <EventCard event={event} />
-                  </CarouselItem>
-                ))}
-                {moreLink && (
-                  <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
-                    <CarouselMoreCard href={moreLink} />
-                  </CarouselItem>
-                )}
-              </CarouselContent>
-            </Carousel>
-
-            {/* lg+ : row */}
-            <div className="hidden gap-8 lg:flex">
+            <div className="flex flex-col gap-8 px-4 lg:px-0">
               {eventCards.map((event, index) => (
                 <div
                   key={`v3-event-card-${index}`}
-                  className="lg:flex-1"
                   data-tina-field={tinaField(event, "title")}
                 >
-                  <EventCard event={event} />
+                  <EventListItem event={event} />
                 </div>
               ))}
             </div>
