@@ -50,7 +50,7 @@ export const V3VideoFeatureSchema: Template = {
         },
       ],
       recognitionHeading: "Trusted & Recognised",
-      badges: [
+      recognitionBadges: [
         { label: "We love Microsoft - Cloud Partner", icon: "SiMicrosoft" },
         { label: "MAPA Learning Excellence", icon: "BiAward" },
       ],
@@ -143,8 +143,8 @@ export const V3VideoFeatureSchema: Template = {
     },
     {
       type: "object",
-      label: "Recognition Badges",
-      name: "badges",
+      label: "Badges",
+      name: "recognitionBadges",
       list: true,
       description: "Small badges shown beneath the right card.",
       ui: {
