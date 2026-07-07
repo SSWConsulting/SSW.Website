@@ -40,7 +40,7 @@ function Badge({ badge }) {
   return (
     <div
       data-tina-field={tinaField(badge, "label")}
-      className="inline-flex min-h-9 items-center gap-2 rounded-full border-[1px] border-white/5 bg-sswCard px-4 py-2 text-sm text-white"
+      className="inline-flex min-h-9 items-center gap-2 rounded-full border-1 border-white/5 bg-sswCard px-4 py-2 text-sm text-white"
     >
       {badge?.customImage?.imageSource ? (
         <span className="relative size-4 shrink-0">
@@ -86,7 +86,7 @@ export function V3VideoFeature({ data }) {
               <div
                 data-tina-field={tinaField(data, "videoUrl")}
                 className={cn(
-                  "overflow-hidden rounded-2xl ",
+                  "overflow-hidden rounded-2xl",
                   data?.greyscaleThumbnail && "[&_img]:grayscale"
                 )}
               >
@@ -99,7 +99,7 @@ export function V3VideoFeature({ data }) {
             </div>
           )}
 
-          <div className="flex h-full flex-col rounded-2xl border-[1px] border-white/5 bg-sswCard p-6 md:p-8 lg:col-span-2">
+          <div className="flex h-full flex-col rounded-2xl border-1 border-white/5 bg-sswCard p-6 md:p-8 lg:col-span-2">
             {data?.brow && (
               <span
                 data-tina-field={tinaField(data, "brow")}

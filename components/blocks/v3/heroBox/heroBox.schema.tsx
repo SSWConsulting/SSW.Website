@@ -81,6 +81,5 @@ export const V3HeroBoxSchema: Template = {
       },
       fields: slideFields,
     },
-    
   ],
 };

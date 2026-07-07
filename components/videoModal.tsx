@@ -170,7 +170,7 @@ export const VideoModal = ({
 
 const PlayArrow = () => {
   return (
-    <span className="absolute left-1/2 top-1/2 flex size-[70px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-gradient-to-b from-sswRed/80 to-sswRed/40 shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.6)] backdrop-blur-md">
+    <span className="absolute left-1/2 top-1/2 flex size-17 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-gradient-to-b from-sswRed/80 to-sswRed/40 backdrop-blur-md">
       <FaPlay className="ml-1 size-6 text-white" />
     </span>
   );
