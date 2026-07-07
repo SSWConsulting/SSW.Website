@@ -8,7 +8,7 @@ import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
 import { BsArrowUpRight } from "react-icons/bs";
-import { FiCalendar, FiClock, FiMapPin } from "react-icons/fi";
+import { FiCalendar, FiClock, FiMapPin, FiUser } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
@@ -162,32 +162,30 @@ function EventListItem({ event }) {
         )}
 
         {presenters.length > 0 && (
-          <div className="relative z-10 mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm text-gray-300">
-            {presenters.map((presenter, index) => {
-              const content = (
-                <>
-                  <span aria-hidden="true">👤</span>
-                  <span>{presenter?.name}</span>
-                </>
-              );
+          <div className="relative z-10 mt-3 flex items-start gap-2 text-sm text-gray-300">
+            <FiUser className="mt-0.5 size-4 shrink-0" />
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              {presenters.map((presenter, index) => {
+                const content = <span>{presenter?.name}</span>;
 
-              return presenter?.link ? (
-                <Link
-                  key={`v3-event-presenter-${index}`}
-                  href={presenter.link}
-                  className="inline-flex items-center gap-2 !no-underline transition-colors hover:text-white"
-                >
-                  {content}
-                </Link>
-              ) : (
-                <span
-                  key={`v3-event-presenter-${index}`}
-                  className="inline-flex items-center gap-2"
-                >
-                  {content}
-                </span>
-              );
-            })}
+                return presenter?.link ? (
+                  <Link
+                    key={`v3-event-presenter-${index}`}
+                    href={presenter.link}
+                    className="inline-flex items-center gap-2 !no-underline transition-colors hover:text-white"
+                  >
+                    {content}
+                  </Link>
+                ) : (
+                  <span
+                    key={`v3-event-presenter-${index}`}
+                    className="inline-flex items-center gap-2"
+                  >
+                    {content}
+                  </span>
+                );
+              })}
+            </div>
           </div>
         )}
       </div>
