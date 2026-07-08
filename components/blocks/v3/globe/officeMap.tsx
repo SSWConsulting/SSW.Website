@@ -14,7 +14,7 @@ const MAP_REGION = {
   lat: { min: -56, max: 78 },
   lng: { min: -179, max: 179 },
 };
-const SELECTED_ZOOM = 2.5;
+const SELECTED_ZOOM = 1.35;
 
 function clamp(value: number, min: number, max: number) {
   return Math.min(Math.max(value, min), max);
@@ -96,9 +96,9 @@ export function OfficeMap({
     : "0%";
 
   return (
-    <div className="size-full overflow-hidden">
+    <div className="size-full overflow-visible">
       <motion.div
-        className="size-full"
+        className="size-full origin-center"
         animate={{ scale: zoom, x, y }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
@@ -115,7 +115,7 @@ export function OfficeMap({
           // Extend the northern bound past svg-dotted-map's 71° default so the top
           // of the Northern Hemisphere isn't clipped.
           region={MAP_REGION}
-          className={cn("size-full", className)}
+          className={cn("size-full overflow-visible", className)}
           renderMarkerOverlay={({ index, x, y, r }) => {
             if (index !== selectedMarkerIndex) return null;
             // Rendered inside the SVG (viewBox units), so all of this is SVG.

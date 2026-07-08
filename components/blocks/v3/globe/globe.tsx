@@ -19,8 +19,8 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
   return (
     <div
       className={cn(
-        "border-b border-white/10",
-        isOpen && "border-t-2 border-t-sswRed bg-white/[0.03]"
+        "border-b border-white/10 bg-sswBorder",
+        isOpen && "border-t-2 border-t-sswRed bg-sswBlack"
       )}
     >
       <button
@@ -119,13 +119,15 @@ export function V3Globe({ data }) {
             <ButtonRow data={data} className="mt-6 justify-start" />
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-6 lg:items-center">
+          <div className="relative grid gap-12 lg:grid-cols-12 lg:items-center xl:gap-16">
             {/* Left: office accordion */}
-            <div className="lg:col-span-2">
+            <div className="relative z-20 lg:col-span-4">
               {offices.length > 0 && (
-                // Reserve the open-state height so toggling a tab doesn't change
-                // the column height (which would shift the centered map).
-                <div className={cn("lg:min-h-[37rem]")}>
+                <div
+                  className={cn(
+                    "overflow-hidden rounded-lg bg-sswBorder shadow-2xl"
+                  )}
+                >
                   {offices.map((office, index) => (
                     <OfficeAccordionItem
                       key={`v3-office-${index}`}
@@ -145,8 +147,12 @@ export function V3Globe({ data }) {
             {/* Right: dotted world map — fixed aspect so it doesn't resize
               (and the dots don't shift) when the accordion opens/closes. */}
             {offices.length > 0 && (
-              <div className="hidden lg:col-span-4 lg:block">
-                <div className={cn("aspect-[2/1] w-full")}>
+              <div className="relative z-0 hidden lg:col-span-8 lg:block">
+                <div
+                  className={cn(
+                    "relative aspect-[2/1] w-[calc(100%+4rem)] max-w-none -translate-x-4 xl:w-[calc(100%+7rem)]"
+                  )}
+                >
                   <OfficeMap offices={offices} selectedIndex={openIndex} />
                 </div>
               </div>
