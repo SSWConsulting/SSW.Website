@@ -616,7 +616,8 @@
       },
       "heading": "Mike Smedley",
       "isH1": false,
-      "description": "SSW · AI Engagement Lead · Melbourne\n\nMike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today - including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
+      "subheading": "SSW · AI Engagement Lead · Melbourne",
+      "description": "Mike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today - including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": false
@@ -631,7 +632,8 @@
         "imageSource": "/images/eventsv2/mike-smedley-host.webp",
         "imageHeight": 768,
         "imageWidth": 1024,
-        "youtubeUrl": ""
+        "youtubeUrl": "",
+        "squareImage": true
       },
       "_template": "imageTextBlock"
     },
