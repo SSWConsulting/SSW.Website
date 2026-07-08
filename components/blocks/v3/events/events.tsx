@@ -274,12 +274,9 @@ function FeaturedEvent({ event }) {
                 tinaFieldName="eventDate"
               >
                 {event?.eventDate ? (
-                  <>
-                    <span className="min-w-0 truncate">
-                      {dayjs(event.eventDate).format("ddd D MMM")}
-                    </span>
-                    <DaysToGoBadge date={event.eventDate} />
-                  </>
+                  <span className="min-w-0 truncate">
+                    {dayjs(event.eventDate).format("ddd D MMM")}
+                  </span>
                 ) : null}
               </EventMetaItem>
               <EventMetaItem
