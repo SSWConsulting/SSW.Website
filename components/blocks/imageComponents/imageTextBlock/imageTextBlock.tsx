@@ -61,7 +61,7 @@ export const ImageTextBlock = ({ data, priority = false }) => {
       {data.chips && <PillGroup data={data.chips} />}
       {data.featureColumns?.features?.length ? (
         <div
-          className={`my-4 grid gap-3 ${data.featureColumns?.twoColumns ? "sm:grid-cols-2" : "grid-cols-1"}`}
+          className={`my-4 grid gap-3 ${data.featureColumns.twoColumns ? "sm:grid-cols-2" : "grid-cols-1"}`}
         >
           {data.featureColumns.features.map((item, index) => {
             return <ListItem key={index} data={item} />;
