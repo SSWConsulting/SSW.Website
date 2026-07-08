@@ -102,7 +102,7 @@ export const ImageComponentLayout = ({ data, children, priority = false }) => {
                   className={cn(
                     "w-full rounded-md",
                     data.mediaConfiguration?.squareImage &&
-                      "aspect-square object-cover"
+                      "aspect-square object-cover object-top"
                   )}
                   src={data.mediaConfiguration?.imageSource}
                   alt={data.mediaConfiguration?.altText ?? "image"}
