@@ -47,7 +47,6 @@ module acrRoleAssignment 'acrRoleAssignment.bicep' = {
     acrName: acrName
     principalId: appServiceSlot.outputs.slotPrincipalId
     roleName: 'ACR Pull'
-    slotName: slotName
   }
 }
 
