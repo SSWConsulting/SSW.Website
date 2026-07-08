@@ -136,7 +136,8 @@ function EventListItem({ event }) {
   return (
     <div
       className={cn(
-        "group relative flex min-h-[172px] overflow-hidden rounded-[15px] bg-sswBorder transition-colors duration-300 hover:bg-white/10"
+        "group relative flex min-h-[172px] overflow-hidden rounded-[15px] bg-sswBorder transition-colors duration-300 hover:bg-white/10",
+        event?.registerLink && "cursor-pointer"
       )}
     >
       {/* When there's a video, lift the media above the card-wide link overlay
