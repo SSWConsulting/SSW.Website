@@ -88,8 +88,8 @@
           "title": "DevOps & Azure",
           "description": "Make sure your software ships by using SSW's best practices in Azure, AWS, DevOps and Docker Containers.",
           "graphic": {
-            "imageSource": "/images/custom-icons/github.svg",
-            "imageHeight": 200,
+            "imageSource": "/images/custom-icons/azure.svg",
+            "imageHeight": 189,
             "imageWidth": 200
           },
           "link": "/consulting/devops"
