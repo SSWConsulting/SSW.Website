@@ -3,7 +3,7 @@ import { Icon } from "./tinaFormElements/icon";
 
 export const IconLabel = ({ data }) => {
   return (
-    <div className="flex gap-1 py-2 align-top text-sswRed dark:text-red-400">
+    <div className="flex gap-1 py-2 align-top text-sswRed">
       {data.icon && (
         <div className="h-full">
           <Icon
