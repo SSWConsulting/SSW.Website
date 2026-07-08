@@ -3,18 +3,18 @@ import { Icon } from "./tinaFormElements/icon";
 
 export const IconLabel = ({ data }) => {
   return (
-    <div className="flex gap-1 py-2 align-top">
+    <div className="flex gap-1 py-2 align-top text-sswRed dark:text-red-400">
       {data.icon && (
         <div className="h-full">
           <Icon
             data={{ name: data.icon }}
             tinaField={tinaField(data, "icon")}
-            className="size-5 text-sswRed dark:text-red-400"
+            className="size-5"
           />
         </div>
       )}
       <p
-        className="text-sm font-semibold uppercase tracking-wide text-sswRed dark:text-red-400"
+        className="text-sm font-semibold uppercase tracking-wide"
         data-tina-field={tinaField(data, "labelText")}
       >
         {data.labelText}
