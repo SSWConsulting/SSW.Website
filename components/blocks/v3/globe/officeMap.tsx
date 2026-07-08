@@ -1,24 +1,60 @@
 "use client";
 import { cn } from "@/lib/utils";
-// Installed via: pnpm dlx shadcn@latest add @magicui/dotted-map
-import { DottedMap, type Marker } from "@/components/ui/dotted-map";
-import { motion, useReducedMotion } from "framer-motion";
-import { useMemo } from "react";
-import { createMap } from "svg-dotted-map";
+import createGlobe, { type Arc, type Marker } from "cobe";
+import {
+  type CSSProperties,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 
 type Office = { name?: string; lat?: number; lng?: number };
+type MarkerTagStyle = CSSProperties & { positionAnchor: string };
 
-const MAP_W = 150;
-const MAP_H = 75;
-const MAP_REGION = {
-  lat: { min: -56, max: 78 },
-  lng: { min: -179, max: 179 },
+const SSW_RED_RGB: [number, number, number] = [0.8, 0.2549, 0.2549];
+const LAND_DOT_RGB: [number, number, number] = [0.92, 0.92, 0.92];
+const GLOBE_GLOW_RGB: [number, number, number] = [0.35, 0.35, 0.35];
+
+const locationToAngles = (lat: number, lng: number) => [
+  Math.PI - (lng * Math.PI) / 180 + Math.PI / 2,
+  (lat * Math.PI) / 180,
+];
+
+const shortestAngleDistance = (from: number, to: number) => {
+  const twoPi = Math.PI * 2;
+  return ((((to - from) % twoPi) + Math.PI * 3) % twoPi) - Math.PI;
 };
-const SELECTED_ZOOM = 1.35;
 
-function clamp(value: number, min: number, max: number) {
-  return Math.min(Math.max(value, min), max);
-}
+const getLocation = (office?: Office): [number, number] | null => {
+  if (typeof office?.lat !== "number" || typeof office?.lng !== "number") {
+    return null;
+  }
+
+  return [office.lat, office.lng];
+};
+
+const getTagOffsetClassName = (name: string) => {
+  const normalizedName = name.toLowerCase();
+
+  if (normalizedName.includes("brisbane")) {
+    return "translate-x-4 -translate-y-8";
+  }
+
+  if (normalizedName.includes("newcastle")) {
+    return "translate-x-5 translate-y-3";
+  }
+
+  if (normalizedName.includes("sydney")) {
+    return "translate-x-4 -translate-y-1/2";
+  }
+
+  if (normalizedName.includes("melbourne")) {
+    return "-translate-x-full translate-y-3";
+  }
+
+  return "translate-x-3 -translate-y-1/2";
+};
 
 export function OfficeMap({
   offices,
@@ -29,154 +65,242 @@ export function OfficeMap({
   selectedIndex: number;
   className?: string;
 }) {
-  const pinned = useMemo(
-    () =>
-      offices.filter(
-        (o) => typeof o?.lat === "number" && typeof o?.lng === "number"
-      ),
-    [offices]
-  );
-  // Map the selected office back to its index within the pinned subset.
-  const selectedOffice = offices[selectedIndex];
-  const selectedName = selectedOffice?.name ?? "";
-  const shouldReduceMotion = useReducedMotion();
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const pointerInteracting = useRef<{ x: number; y: number } | null>(null);
+  const dragOffset = useRef({ phi: 0, theta: 0 });
+  const phiOffset = useRef(0);
+  const thetaOffset = useRef(0);
+  const targetRotation = useRef<{ phi: number; theta: number } | null>(null);
+  const isSelectionFocused = useRef(false);
+  const speed = useRef(1);
 
   const markerEntries = useMemo(
     () =>
-      pinned
-        .map((o) => ({
-          marker: {
-            lat: o.lat as number,
-            lng: o.lng as number,
-          },
-          isSelected: o === selectedOffice,
-        }))
-        .sort((a, b) => Number(a.isSelected) - Number(b.isSelected)),
-    [pinned, selectedOffice]
+      offices
+        .map((office, index) => {
+          const location = getLocation(office);
+          if (!location) return null;
+
+          return {
+            index,
+            name: office?.name ?? "",
+            marker: {
+              id: `office-${index}`,
+              location,
+              size: index === selectedIndex ? 0.055 : 0.035,
+              color: SSW_RED_RGB,
+            },
+          };
+        })
+        .filter(Boolean) as { index: number; name: string; marker: Marker }[],
+    [offices, selectedIndex]
   );
 
-  const markers: Marker[] = useMemo(
+  const markers = useMemo(
     () => markerEntries.map((entry) => entry.marker),
     [markerEntries]
   );
-  const selectedMarkerIndex = markerEntries.findIndex(
-    (entry) => entry.isSelected
+  const arcs = useMemo(
+    () =>
+      markerEntries.slice(0, -1).map((entry, index) => ({
+        from: entry.marker.location,
+        to: markerEntries[index + 1].marker.location,
+        color: SSW_RED_RGB,
+      })) satisfies Arc[],
+    [markerEntries]
   );
+  const markersRef = useRef(markers);
+  const arcsRef = useRef(arcs);
 
-  const selectedPoint = useMemo(() => {
-    if (
-      typeof selectedOffice?.lat !== "number" ||
-      typeof selectedOffice?.lng !== "number"
-    ) {
-      return null;
+  useEffect(() => {
+    markersRef.current = markers;
+  }, [markers]);
+
+  useEffect(() => {
+    arcsRef.current = arcs;
+  }, [arcs]);
+
+  useEffect(() => {
+    const selectedLocation = getLocation(offices[selectedIndex]);
+    if (!selectedLocation) return;
+
+    const [phi, theta] = locationToAngles(
+      selectedLocation[0],
+      selectedLocation[1]
+    );
+    phiOffset.current = 0;
+    thetaOffset.current = 0;
+    dragOffset.current = { phi: 0, theta: 0 };
+    isSelectionFocused.current = true;
+    targetRotation.current = { phi, theta };
+  }, [offices, selectedIndex]);
+
+  const handlePointerDown = useCallback((e: React.PointerEvent) => {
+    isSelectionFocused.current = false;
+    targetRotation.current = null;
+    pointerInteracting.current = { x: e.clientX, y: e.clientY };
+    if (canvasRef.current) canvasRef.current.style.cursor = "grabbing";
+  }, []);
+
+  const handlePointerMove = useCallback((e: PointerEvent) => {
+    if (pointerInteracting.current === null) return;
+
+    const deltaX = e.clientX - pointerInteracting.current.x;
+    const deltaY = e.clientY - pointerInteracting.current.y;
+    dragOffset.current = {
+      phi: deltaX / 220,
+      theta: deltaY / 650,
+    };
+  }, []);
+
+  const handlePointerUp = useCallback(() => {
+    if (pointerInteracting.current !== null) {
+      phiOffset.current += dragOffset.current.phi;
+      thetaOffset.current += dragOffset.current.theta;
+      dragOffset.current = { phi: 0, theta: 0 };
     }
 
-    const { addMarkers } = createMap({
-      width: MAP_W,
-      height: MAP_H,
-      mapSamples: 2000,
-      region: MAP_REGION,
+    pointerInteracting.current = null;
+    if (canvasRef.current) canvasRef.current.style.cursor = "grab";
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("pointermove", handlePointerMove, {
+      passive: true,
+    });
+    window.addEventListener("pointerup", handlePointerUp, { passive: true });
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerup", handlePointerUp);
+    };
+  }, [handlePointerMove, handlePointerUp]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    let phi = targetRotation.current?.phi ?? 0;
+    let theta = targetRotation.current?.theta ?? 0.2;
+    const width = canvas.offsetWidth || 600;
+    const dpr = Math.min(
+      window.devicePixelRatio || 1,
+      window.innerWidth < 640 ? 1.8 : 2
+    );
+
+    const globe = createGlobe(canvas, {
+      devicePixelRatio: dpr,
+      width,
+      height: width,
+      phi,
+      theta,
+      dark: 1,
+      diffuse: 1.2,
+      mapSamples: 16000,
+      mapBrightness: 14,
+      mapBaseBrightness: 0,
+      baseColor: LAND_DOT_RGB,
+      markerColor: SSW_RED_RGB,
+      glowColor: GLOBE_GLOW_RGB,
+      markers: markersRef.current,
+      arcs: arcsRef.current,
+      arcColor: SSW_RED_RGB,
+      arcWidth: 0.5,
+      arcHeight: 0.01,
     });
 
-    return addMarkers([
-      {
-        lat: selectedOffice.lat,
-        lng: selectedOffice.lng,
-      },
-    ])[0];
-  }, [selectedOffice]);
+    let animationId = 0;
 
-  const zoom = selectedPoint && !shouldReduceMotion ? SELECTED_ZOOM : 1;
-  const maxPan = ((zoom - 1) * 100) / 2;
-  const x = selectedPoint
-    ? `${clamp(zoom * (50 - (selectedPoint.x / MAP_W) * 100), -maxPan, maxPan)}%`
-    : "0%";
-  const y = selectedPoint
-    ? `${clamp(zoom * (50 - (selectedPoint.y / MAP_H) * 100), -maxPan, maxPan)}%`
-    : "0%";
+    const animate = () => {
+      const target = targetRotation.current;
+
+      if (target) {
+        const phiDistance = shortestAngleDistance(phi, target.phi);
+        const thetaDistance = target.theta - theta;
+
+        phi += phiDistance * 0.08;
+        theta += thetaDistance * 0.08;
+
+        if (Math.abs(phiDistance) < 0.002 && Math.abs(thetaDistance) < 0.002) {
+          phi = target.phi;
+          theta = target.theta;
+          targetRotation.current = null;
+        }
+      } else if (
+        pointerInteracting.current === null &&
+        !isSelectionFocused.current
+      ) {
+        phi += 0.003 * speed.current;
+      }
+
+      globe.update({
+        phi: phi + phiOffset.current + dragOffset.current.phi,
+        theta: theta + thetaOffset.current + dragOffset.current.theta,
+        markers: markersRef.current,
+        arcs: arcsRef.current,
+      });
+
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    const fadeIn = window.setTimeout(() => {
+      if (canvasRef.current) canvasRef.current.style.opacity = "1";
+    });
+
+    return () => {
+      window.clearTimeout(fadeIn);
+      cancelAnimationFrame(animationId);
+      globe.destroy();
+    };
+  }, []);
 
   return (
-    <div className="size-full overflow-visible">
-      <motion.div
-        className="size-full origin-center"
-        animate={{ scale: zoom, x, y }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <DottedMap
-          width={MAP_W}
-          height={MAP_H}
-          mapSamples={8000}
-          markers={markers}
-          dotColor="#3f3f46"
-          markerColor="#a1a1aa"
-          dotRadius={0.35}
-          // Aligned grid (not the honeycomb default) to match the design.
-          stagger={false}
-          // Extend the northern bound past svg-dotted-map's 71° default so the top
-          // of the Northern Hemisphere isn't clipped.
-          region={MAP_REGION}
-          className={cn("size-full overflow-visible", className)}
-          renderMarkerOverlay={({ index, x, y, r }) => {
-            if (index !== selectedMarkerIndex) return null;
-            // Rendered inside the SVG (viewBox units), so all of this is SVG.
-            const pinR = r * 1.5;
-            const fs = 3.2;
-            const padX = 2;
-            const padY = 1;
-            const ptr = 1.3; // pointer height
-            const gap = 0.6;
-            const labelH = fs + padY * 2;
-            const labelW = Math.max(
-              selectedName.length * fs * 0.58 + padX * 2,
-              7
-            );
-            const pointerTipY = y - pinR - gap;
-            const pillBottomY = pointerTipY - ptr;
-            const pillTopY = pillBottomY - labelH;
-            // Keep the pill inside the viewBox (the root SVG clips), then slant the
-            // pointer so it still reaches the pin when the pill is shifted.
-            const edge = 1;
-            const pillX = Math.min(
-              Math.max(x - labelW / 2, edge),
-              MAP_W - labelW - edge
-            );
-            const baseX = Math.min(Math.max(x, pillX + 3), pillX + labelW - 3);
-            return (
-              <g>
-                {selectedName && (
-                  <>
-                    {/* Google-Maps-style label above the pin */}
-                    <rect
-                      x={pillX}
-                      y={pillTopY}
-                      width={labelW}
-                      height={labelH}
-                      rx={labelH / 2}
-                      fill="#ffffff"
-                    />
-                    <path
-                      d={`M ${baseX - 2} ${pillBottomY - 0.2} L ${baseX + 2} ${pillBottomY - 0.2} L ${x} ${pointerTipY} Z`}
-                      fill="#ffffff"
-                    />
-                    <text
-                      x={pillX + labelW / 2}
-                      y={pillTopY + labelH / 2}
-                      textAnchor="middle"
-                      dominantBaseline="central"
-                      fontSize={fs}
-                      fontWeight="600"
-                      fill="#111111"
-                    >
-                      {selectedName}
-                    </text>
-                  </>
-                )}
-                <circle cx={x} cy={y} r={pinR} fill="#cc4141" />
-              </g>
-            );
-          }}
-        />
-      </motion.div>
+    <div
+      className={cn(
+        "relative aspect-square w-full max-w-3xl cursor-grab touch-none select-none active:cursor-grabbing",
+        className
+      )}
+      onPointerDown={handlePointerDown}
+      onPointerEnter={() => {
+        speed.current = 0.8;
+      }}
+      onPointerLeave={() => {
+        speed.current = 1;
+      }}
+    >
+      <canvas
+        ref={canvasRef}
+        className="pointer-events-none aspect-square size-full rounded-full opacity-0 transition-opacity duration-700"
+      />
+      {markerEntries.map(({ index, marker, name }) => {
+        if (!marker.id || !name) return null;
+
+        const style = {
+          positionAnchor: `--cobe-${marker.id}`,
+          top: "anchor(center)",
+          left: "anchor(right)",
+          opacity: `var(--cobe-visible-${marker.id}, 0)`,
+          filter: `blur(calc((1 - var(--cobe-visible-${marker.id}, 0)) * 8px))`,
+        } satisfies MarkerTagStyle;
+
+        return (
+          <div
+            key={marker.id}
+            className={cn(
+              "pointer-events-none absolute whitespace-nowrap rounded-full px-3 py-1 text-sm font-semibold leading-tight shadow-xl transition-opacity duration-300",
+              getTagOffsetClassName(name),
+              index === selectedIndex
+                ? "bg-sswRed text-white"
+                : "bg-gray-50 text-gray-950"
+            )}
+            style={style}
+          >
+            {name}
+          </div>
+        );
+      })}
     </div>
   );
 }

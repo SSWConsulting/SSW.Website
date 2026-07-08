@@ -34,22 +34,6 @@
         "imageHeight": 1150,
         "imageWidth": 2600
       },
-      "slides": [
-        {
-          "heading": "NDC Sydney 2026",
-          "description": "Join us at NDC Sydney 2026 from August 16-18 at the Metro Theatre\n",
-          "buttons": [
-            {
-              "buttonText": "Get your tickets"
-            }
-          ],
-          "backgroundMedia": {
-            "imageSource": "/images/marketings/sswMarketingBackground.webp",
-            "imageHeight": 537,
-            "imageWidth": 1920
-          }
-        }
-      ],
       "_template": "v3HeroBox"
     },
     {

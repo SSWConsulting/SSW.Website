@@ -19,8 +19,8 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
   return (
     <div
       className={cn(
-        "border-b border-white/10 bg-sswBorder",
-        isOpen && "border-t-2 border-t-sswRed bg-sswBlack"
+        "relative border-b border-white/10 bg-sswBorder",
+        isOpen && "bg-sswBlack"
       )}
     >
       <button
@@ -121,7 +121,7 @@ export function V3Globe({ data }) {
 
           <div className="relative grid gap-12 lg:grid-cols-12 lg:items-center xl:gap-16">
             {/* Left: office accordion */}
-            <div className="relative z-20 lg:col-span-4">
+            <div className="relative z-20 lg:col-span-5">
               {offices.length > 0 && (
                 <div
                   className={cn(
@@ -144,13 +144,12 @@ export function V3Globe({ data }) {
               )}
             </div>
 
-            {/* Right: dotted world map — fixed aspect so it doesn't resize
-              (and the dots don't shift) when the accordion opens/closes. */}
+            {/* Right: 3D globe stage. */}
             {offices.length > 0 && (
-              <div className="relative z-0 hidden lg:col-span-8 lg:block">
+              <div className="relative z-0 hidden lg:col-span-7 lg:block">
                 <div
                   className={cn(
-                    "relative aspect-[2/1] w-[calc(100%+4rem)] max-w-none -translate-x-4 xl:w-[calc(100%+7rem)]"
+                    "relative flex min-h-[34rem] w-full items-center justify-center xl:min-h-[40rem]"
                   )}
                 >
                   <OfficeMap offices={offices} selectedIndex={openIndex} />
