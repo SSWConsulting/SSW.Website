@@ -3,40 +3,67 @@ import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
+import { buildEventUrl } from "@/helpers/getTrimmedEvents";
 import { cn } from "@/lib/utils";
+import { getFutureEventsSimple } from "@/services/server/events";
 import dayjs from "dayjs";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useMemo, useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { FiCalendar, FiClock, FiMapPin, FiUser } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
 
-function PresenterList({ presenters }) {
+const MS_PER_DAY = 86_400_000;
+
+const getDaysToGo = (date?: string): number | null => {
+  if (!date) return null;
+
+  const target = new Date(date);
+  if (Number.isNaN(target.getTime())) return null;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  target.setHours(0, 0, 0, 0);
+
+  const days = Math.ceil((target.getTime() - today.getTime()) / MS_PER_DAY);
+  return days >= 0 ? days : null;
+};
+
+function DaysToGoBadge({ date }: { date?: string }) {
+  const [daysToGo, setDaysToGo] = useState<number | null>(null);
+
+  useEffect(() => {
+    setDaysToGo(getDaysToGo(date));
+  }, [date]);
+
+  if (daysToGo === null) return null;
+
+  return (
+    <span className="inline-flex shrink-0 items-center rounded-sm bg-sswRed px-1.5 py-0.5 text-xs font-semibold uppercase leading-none text-white">
+      {daysToGo} {daysToGo === 1 ? "day" : "days"} to go
+    </span>
+  );
+}
+
+function PresenterList({ presenters, className = "" }) {
   if (presenters.length === 0) return null;
 
   return (
-    <div className="relative z-10 flex items-center gap-2">
+    <div
+      className={cn("relative z-10 flex min-w-0 items-center gap-2", className)}
+    >
       <FiUser className="size-4 shrink-0" />
       <div className="flex flex-wrap gap-x-4 gap-y-2">
         {presenters.map((presenter, index) => {
-          const content = <span>{presenter?.name}</span>;
-
-          return presenter?.link ? (
-            <Link
-              key={`v3-event-presenter-${index}`}
-              href={presenter.link}
-              className="inline-flex items-center !no-underline transition-colors hover:text-white"
-            >
-              {content}
-            </Link>
-          ) : (
+          return (
             <span
               key={`v3-event-presenter-${index}`}
               className="inline-flex items-center"
             >
-              {content}
+              {presenter?.name}
             </span>
           );
         })}
@@ -45,8 +72,168 @@ function PresenterList({ presenters }) {
   );
 }
 
+function EventMetaItem({
+  icon: Icon,
+  children,
+  tinaData = null,
+  tinaFieldName = "",
+}) {
+  if (!children) return null;
+
+  return (
+    <span
+      data-tina-field={
+        tinaData && tinaFieldName
+          ? tinaField(tinaData, tinaFieldName)
+          : undefined
+      }
+      className="flex min-w-0 items-center gap-2"
+    >
+      <Icon className="size-4 shrink-0" />
+      <span className="flex min-w-0 items-center gap-2">{children}</span>
+    </span>
+  );
+}
+
+function EventMetaGrid({ children, className = "" }) {
+  return (
+    <div
+      className={cn(
+        "grid grid-cols-1 gap-x-6 gap-y-2 text-sm font-light sm:grid-cols-2",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+}
+
+function getPresenterLink(presenter) {
+  const url = presenter?.presenter?.peopleProfileURL;
+  if (!url) return undefined;
+  return url.startsWith("/") ? url : `/${url}`;
+}
+
+function getPresenters(event) {
+  if (event?.presenterName) {
+    return [
+      {
+        name: event.presenterName,
+        link: event.presenterProfileUrl,
+      },
+    ];
+  }
+
+  return (event?.presenterList ?? [])
+    .map((item) => item?.presenter)
+    .filter(Boolean)
+    .map((presenter) => ({
+      name: presenter?.presenter?.name,
+      link: getPresenterLink(presenter),
+    }))
+    .filter((presenter) => presenter.name);
+}
+
+function getEventLocation(event) {
+  if (!event?.city) return "";
+  return event.city === "Other" ? event.cityOther : event.city;
+}
+
+function getEventTime(event) {
+  if (!event?.startDateTime) return "";
+  return dayjs(event.startDateTime).format("h:mma AEST");
+}
+
+function getFeaturedButton(eventUrl: string, featuredEventDisplay) {
+  const button = featuredEventDisplay?.buttons?.filter(Boolean)?.[0];
+  const fallbackText = featuredEventDisplay?.registerText ?? "Register Now";
+
+  if (!button) {
+    return [{ buttonText: fallbackText, buttonLink: eventUrl, colour: 0 }];
+  }
+
+  return [
+    {
+      ...button,
+      buttonText: button.buttonText ?? fallbackText,
+      buttonLink: button.leadCaptureFormOption
+        ? button.buttonLink
+        : button.buttonLink || eventUrl,
+    },
+  ];
+}
+
+function mapCalendarEvent(event, featuredEventDisplay = null) {
+  const eventUrl = buildEventUrl(event);
+  const imageOverride = featuredEventDisplay?.image?.imageSource
+    ? featuredEventDisplay.image
+    : null;
+
+  return {
+    title: event?.title,
+    location: getEventLocation(event),
+    image: imageOverride ?? {
+      imageSource: event?.thumbnail,
+      altText: event?.thumbnailDescription ?? event?.title,
+    },
+    eventDate: event?.startDateTime,
+    date: event?.startDateTime,
+    time: getEventTime(event),
+    presenters: getPresenters(event),
+    buttons: getFeaturedButton(eventUrl, featuredEventDisplay),
+    registerLink: eventUrl,
+    videoUrl: event?.youTubeId
+      ? `https://www.youtube.com/watch?v=${event.youTubeId}`
+      : undefined,
+  };
+}
+
+function getEventNodes(eventsConnection) {
+  return (
+    eventsConnection?.data?.eventsCalendarConnection?.edges
+      ?.map((edge) => edge?.node)
+      .filter(Boolean) ?? []
+  );
+}
+
+function useCalendarEvents(numberOfEvents: number, preloadedEvents = []) {
+  const [events, setEvents] = useState(preloadedEvents);
+
+  useEffect(() => {
+    if (preloadedEvents.length > 0) {
+      setEvents(preloadedEvents);
+      return;
+    }
+
+    let isMounted = true;
+
+    const fetchEvents = async () => {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const events = await getFutureEventsSimple(
+        numberOfEvents,
+        today.toISOString()
+      );
+
+      if (!isMounted || !events?.data) return;
+
+      setEvents(getEventNodes(events));
+    };
+
+    fetchEvents();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [numberOfEvents, preloadedEvents]);
+
+  return events;
+}
+
 function FeaturedEvent({ event }) {
   const presenters = (event?.presenters ?? []).filter(Boolean);
+  const buttons = (event?.buttons ?? []).filter(Boolean);
 
   return (
     <div className={cn("relative overflow-hidden rounded-[45px]")}>
@@ -69,53 +256,46 @@ function FeaturedEvent({ event }) {
               {event.title}
             </h3>
           )}
-          {event?.location && (
-            <span
-              data-tina-field={tinaField(event, "location")}
-              className="mt-4 flex items-center gap-2 text-sm font-light text-white"
-            >
-              <FiMapPin className="size-4" />
-              {event.location}
-            </span>
-          )}
-          {event?.eventDate && (
-            <span
-              data-tina-field={tinaField(event, "eventDate")}
-              className="mt-2 flex items-center gap-2 text-sm font-light text-white"
-            >
-              <FiCalendar className="size-4" />
-              {dayjs(event.eventDate).format("ddd D MMM")}
-            </span>
-          )}
-          {event?.time && (
-            <span
-              data-tina-field={tinaField(event, "time")}
-              className="mt-2 flex items-center gap-2 text-sm font-light text-white"
-            >
-              <FiClock className="size-4" />
-              {event.time}
-            </span>
-          )}
-          {presenters.length > 0 && (
-            <div className="mt-2 flex flex-col gap-2 text-sm font-light text-white">
-              <PresenterList presenters={presenters} />
-            </div>
-          )}
-          {event?.description && (
-            <p className="mt-6 max-w-md text-base font-light text-gray-300">
-              {event.description}
-            </p>
-          )}
-          {event?.registerLink && (
-            <div className="mt-8">
-              <Link
-                href={event.registerLink}
-                data-tina-field={tinaField(event, "registerText")}
-                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-5 text-sm font-semibold text-black !no-underline transition-opacity hover:opacity-90"
+          {(event?.location ||
+            event?.eventDate ||
+            event?.time ||
+            presenters.length > 0) && (
+            <EventMetaGrid className="mt-4 text-white">
+              <EventMetaItem
+                icon={FiMapPin}
+                tinaData={event}
+                tinaFieldName="location"
               >
-                {event.registerText ?? "Register Now"}
-              </Link>
-            </div>
+                {event?.location}
+              </EventMetaItem>
+              <EventMetaItem
+                icon={FiCalendar}
+                tinaData={event}
+                tinaFieldName="eventDate"
+              >
+                {event?.eventDate ? (
+                  <>
+                    <span className="min-w-0 truncate">
+                      {dayjs(event.eventDate).format("ddd D MMM")}
+                    </span>
+                    <DaysToGoBadge date={event.eventDate} />
+                  </>
+                ) : null}
+              </EventMetaItem>
+              <EventMetaItem
+                icon={FiClock}
+                tinaData={event}
+                tinaFieldName="time"
+              >
+                {event?.time}
+              </EventMetaItem>
+              {presenters.length > 0 && (
+                <PresenterList presenters={presenters} />
+              )}
+            </EventMetaGrid>
+          )}
+          {buttons.length > 0 && (
+            <ButtonRow data={{ buttons }} className="mt-8 justify-start" />
           )}
         </div>
 
@@ -140,12 +320,20 @@ function EventListItem({ event }) {
         event?.registerLink && "cursor-pointer"
       )}
     >
+      {event?.registerLink && (
+        <Link
+          href={event.registerLink}
+          aria-label={`Register for ${event?.title ?? "this event"}`}
+          className="absolute inset-0 z-10 rounded-2xl !no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        />
+      )}
+
       {/* When there's a video, lift the media above the card-wide link overlay
           so clicking the thumbnail opens the modal instead of navigating. */}
       <div
         className={cn(
           "relative hidden w-[32%] max-w-[285px] shrink-0 sm:block",
-          hasVideo && "z-10"
+          hasVideo && "z-20"
         )}
       >
         {hasVideo ? (
@@ -173,58 +361,55 @@ function EventListItem({ event }) {
             {event.title}
           </h4>
         )}
-        {event?.description && (
-          <p className="mt-2 max-w-2xl text-base font-light text-gray-400">
-            {event.description}
-          </p>
-        )}
         {(event?.time ||
           event?.date ||
           event?.location ||
           presenters.length > 0) && (
-          <div className="mt-4 flex flex-col gap-2 text-sm font-light text-gray-300">
-            {event?.location && (
-              <span className="flex items-center gap-2">
-                <FiMapPin className="size-4" />
-                {event.location}
-              </span>
-            )}
-            {event?.date && (
-              <span className="flex items-center gap-2">
-                <FiCalendar className="size-4" />
-                {dayjs(event.date).format("ddd D MMM")}
-              </span>
-            )}
-            {event?.time && (
-              <span className="flex items-center gap-2">
-                <FiClock className="size-4" />
-                {event.time}
-              </span>
-            )}
+          <EventMetaGrid className="mt-4 text-gray-300">
+            <EventMetaItem icon={FiMapPin}>{event?.location}</EventMetaItem>
+            <EventMetaItem icon={FiCalendar}>
+              {event?.date ? (
+                <>
+                  <span className="min-w-0 truncate">
+                    {dayjs(event.date).format("ddd D MMM")}
+                  </span>
+                  <DaysToGoBadge date={event.date} />
+                </>
+              ) : null}
+            </EventMetaItem>
+            <EventMetaItem icon={FiClock}>{event?.time}</EventMetaItem>
             {presenters.length > 0 && <PresenterList presenters={presenters} />}
-          </div>
+          </EventMetaGrid>
         )}
       </div>
 
       {event?.registerLink && (
-        <Link
-          href={event.registerLink}
-          aria-label={`Register for ${event?.title ?? "this event"}`}
-          className="flex items-end px-5 py-6 !no-underline sm:px-6"
-        >
+        <div className="pointer-events-none relative z-20 flex items-end px-5 py-6 sm:px-6">
           <span className="flex size-12 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-110">
             <BsArrowUpRight className="size-1/3" />
           </span>
-        </Link>
+        </div>
       )}
     </div>
   );
 }
 
 export function V3Events({ data }) {
-  const eventCards = (data?.eventCards ?? []).filter(Boolean);
-  const hasFeatured =
-    data?.featuredEvent?.title || data?.featuredEvent?.image?.imageSource;
+  const numberOfEvents = data?.numberOfEvents ?? 3;
+  const preloadedEvents = useMemo(
+    () => getEventNodes(data?.events),
+    [data?.events]
+  );
+  const calendarEvents = useCalendarEvents(numberOfEvents, preloadedEvents);
+  const featuredEvent =
+    calendarEvents.length > 0
+      ? mapCalendarEvent(calendarEvents[0], data?.featuredEvent)
+      : data?.featuredEvent;
+  const eventCards =
+    calendarEvents.length > 0
+      ? calendarEvents.slice(1).map((event) => mapCalendarEvent(event))
+      : (data?.eventCards ?? []).filter(Boolean);
+  const hasFeatured = featuredEvent?.title || featuredEvent?.image?.imageSource;
   const seeMoreButtons =
     data?.seeMoreButton?.length > 0
       ? data.seeMoreButton
@@ -251,9 +436,13 @@ export function V3Events({ data }) {
         {hasFeatured && (
           <div
             className="px-4 lg:px-0"
-            data-tina-field={tinaField(data.featuredEvent, "title")}
+            data-tina-field={
+              calendarEvents.length === 0 && data?.featuredEvent
+                ? tinaField(data.featuredEvent, "title")
+                : undefined
+            }
           >
-            <FeaturedEvent event={data.featuredEvent} />
+            <FeaturedEvent event={featuredEvent} />
           </div>
         )}
 
@@ -263,7 +452,11 @@ export function V3Events({ data }) {
               {eventCards.map((event, index) => (
                 <div
                   key={`v3-event-card-${index}`}
-                  data-tina-field={tinaField(event, "title")}
+                  data-tina-field={
+                    calendarEvents.length === 0
+                      ? tinaField(event, "title")
+                      : undefined
+                  }
                 >
                   <EventListItem event={event} />
                 </div>

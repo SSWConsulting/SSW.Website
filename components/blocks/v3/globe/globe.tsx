@@ -98,9 +98,8 @@ export function V3Globe({ data }) {
         padding="px-4 sm:px-8"
         className="max-w-screen-xl py-24"
       >
-        <div className="grid gap-12 lg:grid-cols-5 lg:items-center">
-          {/* Left: header + office accordion */}
-          <div className="lg:col-span-2">
+        <div className="flex flex-col gap-12">
+          <div>
             {data?.heading && (
               <h2
                 data-tina-field={tinaField(data, "heading")}
@@ -112,42 +111,47 @@ export function V3Globe({ data }) {
             {data?.subtitle && (
               <p
                 data-tina-field={tinaField(data, "subtitle")}
-                className="mt-4 text-base font-light text-gray-400"
+                className="mt-4 max-w-2xl text-base font-light text-gray-400"
               >
                 {data.subtitle}
               </p>
             )}
             <ButtonRow data={data} className="mt-6 justify-start" />
+          </div>
 
+          <div className="grid gap-12 lg:grid-cols-6 lg:items-center">
+            {/* Left: office accordion */}
+            <div className="lg:col-span-2">
+              {offices.length > 0 && (
+                // Reserve the open-state height so toggling a tab doesn't change
+                // the column height (which would shift the centered map).
+                <div className={cn("lg:min-h-[37rem]")}>
+                  {offices.map((office, index) => (
+                    <OfficeAccordionItem
+                      key={`v3-office-${index}`}
+                      office={office}
+                      isOpen={openIndex === index}
+                      onToggle={() =>
+                        setOpenIndex((current) =>
+                          current === index ? -1 : index
+                        )
+                      }
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Right: dotted world map — fixed aspect so it doesn't resize
+              (and the dots don't shift) when the accordion opens/closes. */}
             {offices.length > 0 && (
-              // Reserve the open-state height so toggling a tab doesn't change
-              // the column height (which would shift the centered map).
-              <div className={cn("mt-10 lg:min-h-[37rem]")}>
-                {offices.map((office, index) => (
-                  <OfficeAccordionItem
-                    key={`v3-office-${index}`}
-                    office={office}
-                    isOpen={openIndex === index}
-                    onToggle={() =>
-                      setOpenIndex((current) =>
-                        current === index ? -1 : index
-                      )
-                    }
-                  />
-                ))}
+              <div className="hidden lg:col-span-4 lg:block">
+                <div className={cn("aspect-[2/1] w-full")}>
+                  <OfficeMap offices={offices} selectedIndex={openIndex} />
+                </div>
               </div>
             )}
           </div>
-
-          {/* Right: dotted world map — fixed aspect so it doesn't resize
-              (and the dots don't shift) when the accordion opens/closes. */}
-          {offices.length > 0 && (
-            <div className="hidden lg:col-span-3 lg:block">
-              <div className={cn("aspect-[2/1] w-full")}>
-                <OfficeMap offices={offices} selectedIndex={openIndex} />
-              </div>
-            </div>
-          )}
         </div>
       </Container>
     </V2ComponentWrapper>

@@ -18,7 +18,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { tinaField } from "tinacms/dist/react";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
-import { CardPattern } from "./cardPatterns";
+import { PersonCardTexture } from "./personCardTexture";
 
 const SSW_PEOPLE_ICON =
   "/images/company-logos/downloads/images/ssw-logo-icon.png";
@@ -35,7 +35,7 @@ function PersonCard({ person, index }) {
       {/* Red panel frames the photo with padding on the sides and top while the
           photo stays flush to the bottom, so the person reads as standing in it. */}
       <div className="relative aspect-square w-full bg-sswRed">
-        <CardPattern index={index} />
+        <PersonCardTexture index={index} />
         {person?.image?.imageSource && (
           <Image
             src={person.image.imageSource}

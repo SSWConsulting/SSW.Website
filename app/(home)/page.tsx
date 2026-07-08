@@ -14,7 +14,32 @@ const getData = async () => {
     FileType.JSON
   );
 
+  if (!tinaProps) {
+    throw new Error("Failed to fetch Tina data for the home page.");
+  }
+
   const global = await client.queries.global({ relativePath: "index.json" });
+  const blocks = tinaProps.data.pagesv2?.blocks ?? [];
+  const preFetchedV3Events = await Promise.all(
+    blocks.map(async (block) => {
+      if (block.__typename !== "Pagesv2BlocksV3Events") return block;
+
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const events = await client.queries.getFutureEventsQuery({
+        fromDate: today.toISOString(),
+        top: block.numberOfEvents ?? 3,
+      });
+
+      return {
+        ...block,
+        events,
+      };
+    })
+  );
+
+  tinaProps.data.pagesv2.blocks = preFetchedV3Events;
 
   return {
     ...tinaProps,

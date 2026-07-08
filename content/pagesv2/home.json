@@ -170,7 +170,7 @@
       "products": [
         {
           "title": "Improving Radiologists' Ability to Detect Breast Cancer",
-          "description": "Improving radiologists’ ability to detect breast cancer",
+          "description": "Giving radiologists instant, benchmarked feedback to catch more of the cancers mammography misses.",
           "image": {
             "imageSource": "/images/new-homepage-background-assets/254e4a248ee8390a3d3e3833f4a3b89e8891e19c.png",
             "imageHeight": 1427,
@@ -180,7 +180,7 @@
         },
         {
           "title": "Helping Deaf Children reach their full potential",
-          "description": "Developing web apps for clinical assessment of deaf children",
+          "description": "A cloud-based platform helping over 40% of children with hearing loss reach age-appropriate listening skills through real-time data.",
           "image": {
             "imageSource": "/images/new-homepage-background-assets/2ce1529fac980d08f5ac53a18e2e343d961b0138.png",
             "imageHeight": 1432,
@@ -190,7 +190,7 @@
         },
         {
           "title": "How We Developed 'KNOWnoise' with Hutchison Weller",
-          "description": "Managing construction noise with the new web app",
+          "description": "Turning weeks of manual spreadsheet work into instant noise impact modelling.",
           "image": {
             "imageSource": "/images/new-homepage-background-assets/f49a5b53bd803d89a5b84d65df8fbb02d78d16e3.png",
             "imageHeight": 1432,
@@ -351,7 +351,7 @@
       ],
       "seeMoreButton": [
         {
-          "buttonText": "SSW People",
+          "buttonText": "More SSW People",
           "buttonLink": "/people",
           "icon": "BiChevronRight"
         }
@@ -364,13 +364,13 @@
         "gridOverlay": true
       },
       "videoUrl": "https://www.youtube.com/watch?v=Jveq6VFjWTA",
-      "thumbnail": "/images/Collaborating in a modern workspace.png",
+      "thumbnail": "/images/ssw-web/background/jake-b.png",
       "videoCaption": "Video: The people behind SSW - Australia's leading software consultancy (3 min)",
       "heading": "Why choose SSW?",
-      "introText": "SSW's consulting services have delivered best-in-class React solutions for thousands of clients in 15 countries over more than 30 years.",
+      "introText": "SSW's consulting services have delivered best-in-class solutions for thousands of clients in 15 countries over more than 30 years.",
       "buttons": [
         {
-          "buttonText": "Schedule a Free Discovery Call",
+          "buttonText": "Book a Free Initial Call",
           "leadCaptureFormOption": "projectFormModal",
           "colour": 0
         }
@@ -412,66 +412,23 @@
       },
       "heading": "Upcoming Events",
       "subtitle": "",
+      "numberOfEvents": 3,
       "featuredEvent": {
-        "title": "AI Hack Day ",
-        "location": "Sydney & Online",
-        "description": "",
         "image": {
-          "imageSource": "/images/new-homepage-background-assets/angular-workshop-fra.png",
-          "imageHeight": 1754,
-          "imageWidth": 3444
+          "altText": "AI-HackDay-SYD",
+          "imageSource": "/images/background/banner-custom-trainings.jpg",
+          "imageHeight": 876,
+          "imageWidth": 3684
         },
-        "eventDate": "2026-07-11T05:46:28.184Z",
-        "time": "6:30pm AEST",
-        "presenters": [
-          {
-            "name": "Jeoffrey Fischer",
-            "link": "/people/jeoffrey"
-          }
-        ],
         "registerText": "Register Now",
-        "registerLink": "/events"
+        "buttons": [
+          {
+            "buttonText": "Register Now",
+            "buttonLink": "/events/2026/ai-hack-day---sydney",
+            "colour": 0
+          }
+        ]
       },
-      "eventCards": [
-        {
-          "title": "July User Group - Storage Wars: Choosing the right House for your data",
-          "description": "",
-          "time": "6:00pm AEST",
-          "date": "2026-07-23T00:18:41.261Z",
-          "location": "Sydney",
-          "image": {
-            "imageSource": "/images/new-homepage-background-assets/dotnet-dev-workshop.png",
-            "imageHeight": 1278,
-            "imageWidth": 1917
-          },
-          "presenters": [
-            {
-              "name": "Matt Wicks",
-              "link": "/people/matt-wicks"
-            }
-          ],
-          "registerLink": "/some-link"
-        },
-        {
-          "title": "Clean Architecture Workshop ",
-          "description": "",
-          "time": "7:30pm AEST",
-          "date": "2026-08-04T00:18:50.472Z",
-          "location": "Melbourne",
-          "image": {
-            "imageSource": "/images/new-homepage-background-assets/ca-workshop.png",
-            "imageHeight": 1278,
-            "imageWidth": 2272
-          },
-          "presenters": [
-            {
-              "name": "Ulysses Maclaren",
-              "link": "/people/uly"
-            }
-          ],
-          "registerLink": "/some-link"
-        }
-      ],
       "seeMoreButton": [
         {
           "buttonText": "See More Events",
@@ -488,7 +445,7 @@
         "redGlow": false
       },
       "heading": "SSW around the globe",
-      "subtitle": "Partner with us, any time and any place.",
+      "subtitle": "Work with us, any time and any place.",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Call",
@@ -501,7 +458,7 @@
           "name": "Sydney",
           "email": "info@ssw.com.au",
           "phone": "+61 2 9953 3000",
-          "address": "Level 1, 81-91 Military Road\nNeutral Bay, Sydney, NSW 2089, Australia",
+          "address": "Level 1, 81-91 Military Rd\nNeutral Bay, Sydney, NSW 2089\nAustralia",
           "siteLinkText": "SSW Sydney Office",
           "siteLinkUrl": "/offices/sydney",
           "lat": -33.84,
@@ -511,7 +468,7 @@
           "name": "Brisbane",
           "email": "info@ssw.com.au",
           "phone": "+61 7 3077 7081",
-          "address": "Level 1, 471 Adelaide Street\nBrisbane, QLD 4000, Australia",
+          "address": "Level 1, 471 Adelaide St\nBrisbane, QLD 4000\nAustralia",
           "siteLinkText": "SSW Brisbane Office",
           "siteLinkUrl": "/offices/brisbane",
           "lat": -27.47,
@@ -521,7 +478,7 @@
           "name": "Melbourne",
           "email": "info@ssw.com.au",
           "phone": "+61 3 9005 2034",
-          "address": "Level 1, 370 Little Bourke Street\nMelbourne, VIC 3000, Australia",
+          "address": "Level 1, 370 Little Bourke St\nMelbourne, VIC 3000\nAustralia",
           "siteLinkText": "SSW Melbourne Office",
           "siteLinkUrl": "/offices/melbourne",
           "lat": -37.81,
@@ -531,7 +488,7 @@
           "name": "Newcastle",
           "email": "info@ssw.com.au",
           "phone": "+61 2 9953 3000",
-          "address": "432 Hunter St\nNewcastle, NSW 2300, Australia",
+          "address": "432 Hunter St\nNewcastle, NSW 2300\nAustralia",
           "siteLinkText": "SSW Newcastle Office",
           "siteLinkUrl": "/offices/newcastle",
           "lat": -32.93,
@@ -541,7 +498,7 @@
           "name": "Hangzhou, China",
           "email": "info@ssw.com.au",
           "phone": "+86 571 8517 8910",
-          "address": "Room 305, Building 2, Xingcheng Development Building, No. 406 Xintiandi Street\nHangzhou, China, Zheijang Province 310004, China",
+          "address": "R 305, B 2, Xingcheng Development Building\n406 Xintiandi St,\nHangzhou, China, Zheijang 310004, China",
           "siteLinkText": "SSW China Office",
           "siteLinkUrl": "https://ssw.cn",
           "lat": 30.27,
@@ -551,7 +508,7 @@
           "name": "Strasbourg, France",
           "email": "info@ssw.com.au",
           "phone": "+33 3 67 39 05 39",
-          "address": "Level 4–19 Rue du Fossé des Treize\nStrasbourg, France, Strasbourg 67000, France",
+          "address": "Level 4–19 Rue du Fossé des Treize\nStrasbourg, France, Strasbourg 67000 \nFrance",
           "siteLinkText": "SSW Europe Office",
           "siteLinkUrl": "https://ssw.fr",
           "lat": 48.57,

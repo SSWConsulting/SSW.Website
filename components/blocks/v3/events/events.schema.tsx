@@ -1,10 +1,19 @@
 import type { Template, TinaField } from "tinacms";
+import { optimizedImageSchema } from "../../../../tina/collections/shared-fields";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
-import { optimizedImageSchema } from "../../../../tina/collections/shared-fields";
 
-const imageObject = (
+const hiddenFieldUi = { component: () => null };
+
+const hiddenStringField = (label: string, name: string): TinaField => ({
+  type: "string",
+  label,
+  name,
+  ui: hiddenFieldUi,
+});
+
+const hiddenImageObject = (
   name: string,
   label: string,
   description: string
@@ -12,12 +21,25 @@ const imageObject = (
   type: "object",
   label,
   name,
+  ui: hiddenFieldUi,
   fields: [
     { type: "string", label: "Alt Text", name: "altText" },
     // @ts-expect-error – optimizedImageSchema's field types aren't recognised
     ...optimizedImageSchema(description),
   ],
 });
+
+const hiddenPresentersField: TinaField = {
+  type: "object",
+  label: "Presenters",
+  name: "presenters",
+  list: true,
+  ui: hiddenFieldUi,
+  fields: [
+    { type: "string", label: "Name", name: "name" },
+    { type: "string", label: "Link", name: "link" },
+  ],
+};
 
 export const V3EventsSchema: Template = {
   name: "v3Events",
@@ -27,33 +49,11 @@ export const V3EventsSchema: Template = {
       heading: "Upcoming Events",
       subtitle: "We run webinars, live events, in-house and online courses.",
       buttons: [{ buttonText: "Explore Events & Training", colour: 0 }],
+      numberOfEvents: 3,
       featuredEvent: {
-        title: "Angular Workshop",
-        description:
-          "In this 2-day Angular Workshop, you will get hands on experience building applications from scratch with guidance from Angular experts.",
         registerText: "Register Now",
-        registerLink: "/events",
+        buttons: [{ buttonText: "Register Now", colour: 0 }],
       },
-      eventCards: [
-        {
-          title: ".NET Developer Workshop",
-          description:
-            "Join our .NET developer workshop to master the latest open-source, cross-platform framework and elevate your coding skills.",
-          time: "6:00pm AEST",
-        },
-        {
-          title: "Clean Architecture Workshop",
-          description:
-            "Join our workshop to master clean architecture and elevate your full-stack development and consulting skills.",
-          time: "6:00pm AEST",
-        },
-        {
-          title: "Artificial Intelligence Workshop",
-          description:
-            "Join us for an exciting AI workshop where you'll explore the latest advancements in artificial intelligence.",
-          time: "6:00pm AEST",
-        },
-      ],
       seeMoreButton: [{ buttonText: "See More Events", buttonLink: "/events" }],
     },
   },
@@ -83,74 +83,68 @@ export const V3EventsSchema: Template = {
       fields: buttonSchema,
     },
     {
+      type: "number",
+      label: "Number of Events",
+      name: "numberOfEvents",
+      description:
+        "Number of upcoming events to pull from the Events Calendar collection. The first event is featured.",
+    },
+    {
       type: "object",
-      label: "Featured Event",
+      label: "Featured Event Display",
       name: "featuredEvent",
-      description: "The large highlighted event with a countdown and sign-up.",
+      description:
+        "Event details are pulled from the Events Calendar collection. These fields only control display labels.",
       fields: [
-        { type: "string", label: "Title", name: "title" },
+        hiddenStringField("Title", "title"),
+        hiddenStringField("Location", "location"),
+        hiddenStringField("Description", "description"),
         {
-          type: "string",
-          label: "Location",
-          name: "location",
-          description: "Optional event location shown under the title.",
+          type: "object",
+          label: "Background Image Override",
+          name: "image",
+          description:
+            "Optional. Leave blank to use the image from the Events Calendar collection.",
+          fields: [
+            { type: "string", label: "Alt Text", name: "altText" },
+            // @ts-expect-error – optimizedImageSchema's field types aren't recognised
+            ...optimizedImageSchema(
+              "Override image for the featured event card."
+            ),
+          ],
         },
-        {
-          type: "string",
-          label: "Description",
-          name: "description",
-          ui: { component: "textarea" },
-        },
-        imageObject(
-          "image",
-          "Background Image",
-          "Background image for the featured event card."
-        ),
         {
           type: "datetime",
           label: "Event Date",
           name: "eventDate",
-          description: "Drives the countdown and the displayed date.",
+          ui: hiddenFieldUi,
         },
-        {
-          type: "string",
-          label: "Time",
-          name: "time",
-          description: "Start time of the event. e.g. '6:00pm AEST'.",
-        },
-        {
-          type: "object",
-          label: "Presenters",
-          name: "presenters",
-          list: true,
-          description: "Presenter links shown under the event time.",
-          ui: {
-            itemProps: (item) => ({ label: item?.name ?? "Presenter" }),
-            defaultItem: { name: "Presenter name" },
-          },
-          fields: [
-            { type: "string", label: "Name", name: "name" },
-            {
-              type: "string",
-              label: "Link",
-              name: "link",
-              description: "Presenter profile URL.",
-            },
-          ],
-        },
+        hiddenStringField("Time", "time"),
+        hiddenPresentersField,
         {
           type: "string",
           label: "Register Button Text",
           name: "registerText",
-          description: "Label for the register button. e.g. 'Register Now'.",
+          description:
+            "Legacy fallback. Prefer the Featured Button field below.",
+          ui: hiddenFieldUi,
         },
         {
-          type: "string",
-          label: "Register Button Link",
-          name: "registerLink",
+          type: "object",
+          label: "Featured Button",
+          name: "buttons",
+          list: true,
           description:
-            "Destination for the register button. Leave blank to hide it.",
+            "Optional. Leave Button Link blank to use the featured event page URL.",
+          ui: {
+            max: 1,
+            itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
+            defaultItem: { buttonText: "Register Now", colour: 0 },
+          },
+          //@ts-expect-error – fields are not being recognized
+          fields: buttonSchema,
         },
+        hiddenStringField("Register Button Link", "registerLink"),
       ],
     },
     {
@@ -158,74 +152,26 @@ export const V3EventsSchema: Template = {
       label: "Event Cards",
       name: "eventCards",
       list: true,
-      description: "Event list shown beneath the featured event.",
-      ui: {
-        itemProps: (item) => ({ label: item?.title ?? "Event" }),
-        defaultItem: {
-          title: "New Workshop",
-          description: "A short blurb about this workshop.",
-          time: "6:00pm AEST",
-        },
-      },
+      ui: hiddenFieldUi,
       fields: [
-        { type: "string", label: "Title", name: "title" },
-        {
-          type: "string",
-          label: "Description",
-          name: "description",
-          ui: { component: "textarea" },
-        },
-        {
-          type: "string",
-          label: "Time",
-          name: "time",
-          description: "Start time of the event. e.g. '6:00pm AEST'.",
-        },
+        hiddenStringField("Title", "title"),
+        hiddenStringField("Description", "description"),
+        hiddenStringField("Time", "time"),
         {
           type: "datetime",
           label: "Date",
           name: "date",
-          description: "Optional event date shown on the card.",
+          ui: hiddenFieldUi,
         },
-        {
-          type: "string",
-          label: "Location",
-          name: "location",
-          description: "Optional event location shown on the card.",
-        },
-        imageObject("image", "Thumbnail", "Thumbnail / video poster image."),
-        {
-          type: "string",
-          label: "Video URL",
-          name: "videoUrl",
-          description:
-            "YouTube or Vimeo URL. Adds a play button over the image.",
-        },
-        {
-          type: "object",
-          label: "Presenters",
-          name: "presenters",
-          list: true,
-          description: "Presenter links shown under the event time.",
-          ui: {
-            itemProps: (item) => ({ label: item?.name ?? "Presenter" }),
-            defaultItem: { name: "Presenter name" },
-          },
-          fields: [
-            { type: "string", label: "Name", name: "name" },
-            {
-              type: "string",
-              label: "Link",
-              name: "link",
-              description: "Presenter profile URL.",
-            },
-          ],
-        },
-        {
-          type: "string",
-          label: "Register Link",
-          name: "registerLink",
-        },
+        hiddenStringField("Location", "location"),
+        hiddenImageObject(
+          "image",
+          "Thumbnail",
+          "Thumbnail / video poster image."
+        ),
+        hiddenStringField("Video URL", "videoUrl"),
+        hiddenPresentersField,
+        hiddenStringField("Register Link", "registerLink"),
       ],
     },
     {
