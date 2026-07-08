@@ -36,7 +36,7 @@ export const ImageTextBlock = ({ data, priority = false }) => {
 
         {data.subheading && (
           <p
-            className="pb-2 text-sm font-semibold uppercase tracking-wide text-sswRed dark:text-red-400"
+            className="pb-2 text-sm font-semibold uppercase tracking-wide text-sswRed"
             data-tina-field={tinaField(data, "subheading")}
           >
             {data.subheading}
