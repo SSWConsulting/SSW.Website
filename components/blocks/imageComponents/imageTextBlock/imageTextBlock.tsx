@@ -27,7 +27,7 @@ export const ImageTextBlock = ({ data, priority = false }) => {
   };
   return (
     <ImageComponentLayout data={data} priority={priority}>
-      {data.topLabel && (data.toplabel?.icon || data.topLabel?.labelText) && (
+      {data.topLabel && (data.topLabel?.icon || data.topLabel?.labelText) && (
         <IconLabel data={data.topLabel} />
       )}
 
