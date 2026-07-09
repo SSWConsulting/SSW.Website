@@ -59,13 +59,15 @@ export const ImageTextBlock = ({ data, priority = false }) => {
       </section>
 
       {data.chips && <PillGroup data={data.chips} />}
-      <div
-        className={`grid gap-x-3 ${data.featureColumns?.twoColumns ? "sm:grid-cols-2" : "grid-cols-1"}`}
-      >
-        {data.featureColumns?.features?.map((item, index) => {
-          return <ListItem key={index} data={item} />;
-        })}
-      </div>
+      {data.featureColumns?.features?.length ? (
+        <div
+          className={`my-4 grid gap-3 ${data.featureColumns.twoColumns ? "sm:grid-cols-2" : "grid-cols-1"}`}
+        >
+          {data.featureColumns.features.map((item, index) => {
+            return <ListItem key={index} data={item} />;
+          })}
+        </div>
+      ) : null}
       <ButtonRow
         data={data}
         className={cn(
