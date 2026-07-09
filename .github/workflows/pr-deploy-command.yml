@@ -214,7 +214,7 @@ jobs:
       contents: read
       issues: write
       pull-requests: write
-    needs: [pr-deploy]
+    needs: [validate, pr-deploy]
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
       commit_report: false
@@ -236,7 +236,7 @@ jobs:
       - name: Comment with failure details
         run: |
           # Literal here-string (@'...'@): backticks are markdown, not pwsh escapes.
-          # ${{ }} expressions are substituted by Actions before pwsh runs.
+          # Template expressions are substituted by Actions before pwsh runs.
           $body = @'
           🛑 **Staging deployment failed.**
 

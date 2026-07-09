@@ -1,4 +1,5 @@
 name: Deploy
+description: Deploy the built container image to an Azure App Service slot
 
 inputs:
   AZURE_CLIENT_ID:
