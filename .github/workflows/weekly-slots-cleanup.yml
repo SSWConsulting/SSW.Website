@@ -75,7 +75,7 @@ jobs:
             $updated = ([datetime]$openMap[$slot]).ToUniversalTime()
             if ($updated -lt $cutoff) {
               Write-Host "🧹 pr-$slot - PR #$slot inactive since $updated -> delete + comment"
-              gh pr comment $slot --body "🧹 Your **staging deployment was removed** during weekly cleanup because this PR has been inactive for over $staleDays days. Push a new commit (or re-run the **PR - build and deploy to slot** workflow) to spin up a fresh staging environment."
+              gh pr comment $slot --body "🧹 Your **staging deployment was removed** during weekly cleanup because this PR has been inactive for over $staleDays days. Comment ``/deploy`` on this PR to spin up a fresh staging environment."
               $toDelete += $slot
             }
             else {
