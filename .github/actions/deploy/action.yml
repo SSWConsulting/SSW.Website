@@ -56,7 +56,7 @@ runs:
       run: |
         # create the environment
         az deployment group create `
-          --name ${{ inputs.slot_name }}-$timestamp `
+          --name ${{ inputs.slot_name }}-${{ github.run_id }}-${{ github.run_attempt }} `
           --resource-group ${{ inputs.AZURE_RESOURCE_GROUP }} `
           --template-file ./infra/create-pr-environment.bicep `
           --parameters `

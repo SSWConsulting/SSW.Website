@@ -5,15 +5,13 @@ param appServiceName string
 param acrLoginServer string
 param servicePrincipalObjectId string
 
-param now string = utcNow('yyyy-MM-ddTHH-mm')
-
 var dev = {
   'cost-category': 'dev/test'
 }
 
 var acrName = replace(acrLoginServer, '.azurecr.io', '')
 module keyVault 'keyVault.bicep' = {
-  name:'keyVault-${now}'
+  name: '${slotName}-keyVault'
   params: {
     projectName: projectName
     location: location
@@ -21,7 +19,7 @@ module keyVault 'keyVault.bicep' = {
 }
 
 module appInsight 'appInsight.bicep' = {
-  name: '${slotName}-appInsight-${now}'
+  name: '${slotName}-appInsight'
   params: {
     projectName: '${projectName}-dev'
     location: location
@@ -29,7 +27,7 @@ module appInsight 'appInsight.bicep' = {
   }
 }
 module appServiceSlot 'appService-create-pr-slot.bicep' = {
-  name:'${slotName}-create-slot-${now}'
+  name: '${slotName}-create-slot'
   params:{
     location:location
     slotName:slotName
@@ -42,7 +40,7 @@ module appServiceSlot 'appService-create-pr-slot.bicep' = {
 }
 
 module acrRoleAssignment 'acrRoleAssignment.bicep' = {
-  name: '${slotName}-acrRoleAssignment-${now}'
+  name: '${slotName}-acrRoleAssignment'
   params: {
     acrName: acrName
     principalId: appServiceSlot.outputs.slotPrincipalId
@@ -52,7 +50,7 @@ module acrRoleAssignment 'acrRoleAssignment.bicep' = {
 
 
 module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
-  name: '${slotName}-KVRoleAssignment-${now}'
+  name: '${slotName}-KVRoleAssignment'
   params: {
     keyVaultName: keyVault.outputs.keyVaultName
     principalId: appServiceSlot.outputs.slotPrincipalId
@@ -61,12 +59,11 @@ module kVAppRoleAssignment 'keyVaultRoleAssignment.bicep' = {
 }
 
 module kVServicePrincipalRoleAssignment 'keyVaultRoleAssignment.bicep' = {
-  name: '${slotName}-KVServicePrincipalRoleAssignment-${now}'
+  name: '${slotName}-KVServicePrincipalRoleAssignment'
   params: {
     keyVaultName: keyVault.outputs.keyVaultName
     principalId: servicePrincipalObjectId
     roleName: 'Key Vault Secrets User'
   }
 }
-
 
