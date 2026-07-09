@@ -30,6 +30,7 @@ jobs:
       pr_number: ${{ steps.pr.outputs.pr_number }}
       head_ref: ${{ steps.pr.outputs.head_ref }}
       head_sha: ${{ steps.pr.outputs.head_sha }}
+      head_repository: ${{ steps.pr.outputs.head_repository }}
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
@@ -61,6 +62,7 @@ jobs:
           "pr_number=$prNumber" >> $env:GITHUB_OUTPUT
           "head_ref=$($pr.head.ref)" >> $env:GITHUB_OUTPUT
           "head_sha=$($pr.head.sha)" >> $env:GITHUB_OUTPUT
+          "head_repository=$($pr.head.repo.full_name)" >> $env:GITHUB_OUTPUT
           Write-Host "✅ Deploying PR #$prNumber ($($pr.head.ref) @ $($pr.head.sha))"
 
       - name: React to comment
@@ -217,7 +219,7 @@ jobs:
       url: ${{ needs.pr-deploy.outputs.url }}
       commit_report: false
       ref: ${{ needs.validate.outputs.head_sha }}
-      repository: ${{ github.repository }}
+      repository: ${{ needs.validate.outputs.head_repository }}
     secrets:
       GH_APP_KEY: ${{ secrets.GH_APP_KEY }}
 
@@ -233,7 +235,9 @@ jobs:
     steps:
       - name: Comment with failure details
         run: |
-          $body = @"
+          # Literal here-string (@'...'@): backticks are markdown, not pwsh escapes.
+          # ${{ }} expressions are substituted by Actions before pwsh runs.
+          $body = @'
           🛑 **Staging deployment failed.**
 
           The `/deploy` workflow passed validation and slot-capacity checks, but a later stage failed.
@@ -246,7 +250,7 @@ jobs:
           | Lighthouse Insights | `${{ needs.prLighthouseInsights.result }}` |
 
           [View the failed workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
-          "@
+          '@
 
           gh api "repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" `
             -f body="$body" --silent
