@@ -75,6 +75,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      issues: write
       pull-requests: write
     steps:
       - uses: actions/checkout@v7
@@ -159,6 +160,7 @@ jobs:
     permissions:
       id-token: write
       contents: read
+      issues: write
       pull-requests: write
     outputs:
       url: ${{ steps.deploy.outputs.url }}
@@ -207,9 +209,42 @@ jobs:
     name: Run PR Lighthouse Insights
     uses: ./.github/workflows/template-lighthouse.yml
     permissions:
+      contents: read
+      issues: write
       pull-requests: write
     needs: [pr-deploy]
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
+      commit_report: false
     secrets:
       GH_APP_KEY: ${{ secrets.GH_APP_KEY }}
+
+  notify-failure:
+    name: Comment on PR when deploy workflow fails
+    needs: [validate, check-slot-capacity, build, pr-deploy, ui-test, prLighthouseInsights]
+    if: ${{ always() && github.event.issue.pull_request && startsWith(github.event.comment.body, '/deploy') && needs.validate.result == 'success' && needs.check-slot-capacity.result == 'success' && (needs.build.result == 'failure' || needs.pr-deploy.result == 'failure' || needs.ui-test.result == 'failure' || needs.prLighthouseInsights.result == 'failure') }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Comment with failure details
+        run: |
+          $body = @"
+          🛑 **Staging deployment failed.**
+
+          The `/deploy` workflow passed validation and slot-capacity checks, but a later stage failed.
+
+          | Stage | Result |
+          | --- | --- |
+          | Build and upload artifacts | `${{ needs.build.result }}` |
+          | Deploy to slot | `${{ needs.pr-deploy.result }}` |
+          | Playwright tests | `${{ needs.ui-test.result }}` |
+          | Lighthouse Insights | `${{ needs.prLighthouseInsights.result }}` |
+
+          [View the failed workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          "@
+
+          gh api "repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" `
+            -f body="$body" --silent
