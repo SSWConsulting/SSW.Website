@@ -216,6 +216,8 @@ jobs:
     with:
       url: ${{ needs.pr-deploy.outputs.url }}
       commit_report: false
+      ref: ${{ needs.validate.outputs.head_sha }}
+      repository: ${{ github.repository }}
     secrets:
       GH_APP_KEY: ${{ secrets.GH_APP_KEY }}
 
