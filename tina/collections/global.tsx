@@ -255,51 +255,6 @@ export const globalSchema: Collection = {
     },
     {
       type: "object",
-      label: "Socials",
-      name: "socials",
-      list: true,
-      ui: {
-        itemProps: (item) => {
-          return { label: item?.type };
-        },
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Type",
-          name: "type",
-          options: [
-            { label: "Phone", value: "phone" },
-            { label: "Facebook", value: "facebook" },
-            { label: "Twitter", value: "twitter" },
-            { label: "Instagram", value: "instagram" },
-            { label: "LinkedIn", value: "linkedin" },
-            { label: "Github", value: "github" },
-            { label: "YouTube", value: "youtube" },
-            { label: "TikTok", value: "tiktok" },
-            { label: "Threads", value: "threads" },
-            { label: "BlueSky", value: "bluesky" },
-          ],
-        },
-        {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-        {
-          type: "string",
-          label: "URL",
-          name: "url",
-        },
-        {
-          type: "string",
-          label: "Username",
-          name: "username",
-        },
-      ],
-    },
-    {
-      type: "object",
       label: "Contact Icon",
       name: "contactIcon",
       fields: [

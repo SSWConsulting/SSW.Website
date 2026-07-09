@@ -18,6 +18,7 @@ import { employmentSchema } from "./collections/employment";
 import { eventsIndexSchema, eventsSchema } from "./collections/events";
 import { eventsCalendarSchema } from "./collections/events-calendar";
 import { eventsv2Schema } from "./collections/eventsv2";
+import { footerSchema } from "./collections/footer";
 import { globalSchema } from "./collections/global";
 import { industryIndexSchema, industrySchema } from "./collections/industry";
 import { liveSchema } from "./collections/live";
@@ -99,6 +100,7 @@ const schemas = [
   testimonialCategoriesSchema,
   opportunitiesSchema,
   globalSchema,
+  footerSchema,
   megaMenuSchema,
   phishingBannerSchema,
   userGroupGlobalSchema,
