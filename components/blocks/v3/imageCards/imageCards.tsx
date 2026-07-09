@@ -19,7 +19,7 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
   const inner = (
     <div
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-2xl border-0.75 border-sswBorder transition",
+        "group relative flex h-full flex-col overflow-hidden rounded-card border-0.75 border-sswBorder transition",
         showBorder && "border-0.75 border-sswBorder"
       )}
     >

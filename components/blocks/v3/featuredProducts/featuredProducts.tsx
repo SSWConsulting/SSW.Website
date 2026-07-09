@@ -47,7 +47,7 @@ function HighlightCard({ project }) {
   const inner = (
     <div
       className={cn(
-        "group relative flex min-h-[360px] w-full overflow-hidden rounded-[45px] md:h-[380px]"
+        "group relative flex min-h-[360px] w-full overflow-hidden rounded-feature md:h-[380px]"
       )}
     >
       {project?.image?.imageSource && (
@@ -107,7 +107,7 @@ function ProjectCard({ project }) {
   const inner = (
     <div
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-[15px] bg-sswBorder"
+        "group flex h-full flex-col overflow-hidden rounded-card bg-sswBorder"
       )}
     >
       <div className="flex flex-1 flex-col gap-8 p-4 lg:p-8">

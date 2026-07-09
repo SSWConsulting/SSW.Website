@@ -182,7 +182,7 @@ export function V3Testimonials({ data }) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative order-first size-48 shrink-0 overflow-hidden rounded-2xl xl:order-none xl:col-start-2 xl:row-start-1 xl:self-start"
+              className="relative order-first size-48 shrink-0 overflow-hidden rounded-card xl:order-none xl:col-start-2 xl:row-start-1 xl:self-start"
             >
               <Image
                 src={current.authorImage}

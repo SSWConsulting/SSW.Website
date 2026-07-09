@@ -86,7 +86,7 @@ export function V3VideoFeature({ data }) {
               <div
                 data-tina-field={tinaField(data, "videoUrl")}
                 className={cn(
-                  "overflow-hidden rounded-2xl",
+                  "overflow-hidden rounded-card",
                   data?.greyscaleThumbnail && "[&_img]:grayscale"
                 )}
               >
@@ -99,7 +99,7 @@ export function V3VideoFeature({ data }) {
             </div>
           )}
 
-          <div className="flex h-full flex-col rounded-2xl border-1 border-white/5 bg-sswCard p-6 md:p-8 lg:col-span-2">
+          <div className="flex h-full flex-col rounded-card border-1 border-white/5 bg-sswCard p-6 md:p-8 lg:col-span-2">
             {data?.brow && (
               <span
                 data-tina-field={tinaField(data, "brow")}

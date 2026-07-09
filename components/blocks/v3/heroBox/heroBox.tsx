@@ -80,7 +80,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
       >
         <div
           className={cn(
-            "relative flex min-h-[28rem] w-full items-center overflow-hidden rounded-[2rem] bg-black sm:min-h-[34rem] lg:min-h-128 lg:rounded-[45px]"
+            "relative flex min-h-[28rem] w-full items-center overflow-hidden rounded-feature bg-black sm:min-h-[34rem] lg:min-h-128"
           )}
         >
           {/* Background images, anchored to the right of the box, cross-fading between slides */}

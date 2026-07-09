@@ -31,7 +31,7 @@ const socials = [
 
 function PersonCard({ person, index }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-2xl border-0.75 border-sswBorder bg-sswCard">
+    <div className="flex h-full flex-col overflow-hidden rounded-card border-0.75 border-sswBorder bg-sswCard">
       {/* Red panel frames the photo with padding on the sides and top while the
           photo stays flush to the bottom, so the person reads as standing in it. */}
       <div className="relative aspect-square w-full bg-sswRed">

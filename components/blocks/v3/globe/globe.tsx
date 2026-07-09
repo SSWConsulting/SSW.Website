@@ -125,7 +125,7 @@ export function V3Globe({ data }) {
               {offices.length > 0 && (
                 <div
                   className={cn(
-                    "overflow-hidden rounded-lg bg-sswBorder shadow-2xl"
+                    "overflow-hidden rounded-utility bg-sswBorder shadow-2xl"
                   )}
                 >
                   {offices.map((office, index) => (

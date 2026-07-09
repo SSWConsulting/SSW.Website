@@ -22,7 +22,7 @@ export function CarouselMoreCard({
       target={newTab ? "_blank" : undefined}
       rel={newTab ? "noopener noreferrer" : undefined}
       className={cn(
-        "group flex h-full flex-col items-center justify-center gap-4 rounded-2xl p-6 text-center !no-underline",
+        "group flex h-full flex-col items-center justify-center gap-4 rounded-card p-6 text-center !no-underline",
         className
       )}
     >

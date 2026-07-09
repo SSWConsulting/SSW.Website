@@ -236,7 +236,7 @@ function FeaturedEvent({ event }) {
   const buttons = (event?.buttons ?? []).filter(Boolean);
 
   return (
-    <div className={cn("relative overflow-hidden rounded-[45px]")}>
+    <div className={cn("relative overflow-hidden rounded-feature")}>
       {event?.image?.imageSource && (
         <Image
           src={event.image.imageSource}
@@ -313,7 +313,7 @@ function EventListItem({ event }) {
   return (
     <div
       className={cn(
-        "group relative flex min-h-[172px] overflow-hidden rounded-[15px] bg-sswBorder transition-colors duration-300 hover:bg-white/10",
+        "group relative flex min-h-[172px] overflow-hidden rounded-card bg-sswBorder transition-colors duration-300 hover:bg-white/10",
         event?.registerLink && "cursor-pointer"
       )}
     >
@@ -321,7 +321,7 @@ function EventListItem({ event }) {
         <Link
           href={event.registerLink}
           aria-label={`Register for ${event?.title ?? "this event"}`}
-          className="absolute inset-0 z-10 rounded-2xl !no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         />
       )}
 
