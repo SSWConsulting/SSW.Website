@@ -26,12 +26,13 @@ export const Footer = () => {
           <SocialIcons variant="plain" className="grow-0 md:justify-end" />
         </div>
 
-        <hr className="mt-4 h-px border-gray-700" />
+        <hr className="my-2 h-px border-gray-700 md:my-8" />
 
         <div className="md:hidden">
           {columns.map((column, index) => (
             <details
               key={(column.title ?? "") + index}
+              /* eslint-disable-next-line tailwindcss/no-arbitrary-value, tailwindcss/no-unnecessary-arbitrary-value -- intentional 1px bottom border */
               className="group border-b-[1px] border-gray-700"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between py-6 text-sm font-semibold uppercase tracking-widest text-white [&::-webkit-details-marker]:hidden">
