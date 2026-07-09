@@ -1,13 +1,15 @@
-name: PR - build and deploy to slot
+name: PR - deploy to slot on /deploy
+
+# Staging slots are opt-in: comment `/deploy` on a PR to build it and deploy it
+# to a pr-<number> slot. Slots are a shared, limited resource (MAX_PR_SLOTS) -
+# see https://github.com/SSWConsulting/SSW.Website/issues/4767.
 
 on:
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+  issue_comment:
+    types: [created]
 
 concurrency:
-  group: ci-${{ github.event.number }}-${{ github.workflow }}
+  group: ci-${{ github.event.issue.number }}-${{ github.workflow }}
   cancel-in-progress: true
 
 defaults:
@@ -15,8 +17,60 @@ defaults:
     shell: pwsh
 
 jobs:
+  validate:
+    name: Validate /deploy command
+    # startsWith so trailing whitespace/text doesn't silently ignore the command
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/deploy')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    outputs:
+      pr_number: ${{ steps.pr.outputs.pr_number }}
+      head_ref: ${{ steps.pr.outputs.head_ref }}
+      head_sha: ${{ steps.pr.outputs.head_sha }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check commenter has write access
+        run: |
+          $login = '${{ github.event.comment.user.login }}'
+          $permission = gh api "repos/${{ github.repository }}/collaborators/$login/permission" --jq '.permission'
+
+          if ($permission -notin @('admin', 'maintain', 'write')) {
+            gh api "repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" `
+              -f body="🛑 Sorry @$login - write access to this repo is required to deploy a staging slot." --silent
+            Write-Host "::error::$login has '$permission' permission - write access is required to deploy."
+            exit 1
+          }
+
+          Write-Host "✅ $login has '$permission' permission - proceeding."
+
+      - name: Get PR details
+        id: pr
+        run: |
+          $prNumber = '${{ github.event.issue.number }}'
+          $pr = gh api "repos/${{ github.repository }}/pulls/$prNumber" | ConvertFrom-Json
+
+          if ($pr.state -ne 'open') {
+            Write-Host "::error::PR #$prNumber is not open (state: $($pr.state)) - nothing to deploy."
+            exit 1
+          }
+
+          "pr_number=$prNumber" >> $env:GITHUB_OUTPUT
+          "head_ref=$($pr.head.ref)" >> $env:GITHUB_OUTPUT
+          "head_sha=$($pr.head.sha)" >> $env:GITHUB_OUTPUT
+          Write-Host "✅ Deploying PR #$prNumber ($($pr.head.ref) @ $($pr.head.sha))"
+
+      - name: React to comment
+        run: |
+          gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" `
+            -f content=rocket --silent
+
   check-slot-capacity:
     name: Check staging slot capacity
+    needs: validate
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -40,16 +94,10 @@ jobs:
       - name: Enforce slot cap
         id: cap
         env:
-          PR_SLOT: pr-${{ github.event.number }}
+          PR_SLOT: pr-${{ needs.validate.outputs.pr_number }}
         run: |
-          # Only PRs create slots (the deploy step is PR-gated); skip the cap on manual dispatch
-          if ("${{ github.event_name }}" -ne "pull_request") {
-            Write-Host "Not a pull_request event - slot cap not applicable, skipping."
-            exit 0
-          }
-
-          # Default to 10; only override if MAX_PR_SLOTS is a valid positive int
-          $max = 10
+          # Default to 5; only override if MAX_PR_SLOTS is a valid positive int
+          $max = 5
           $parsed = 0
           if ([int]::TryParse("${{ env.MAX_PR_SLOTS }}", [ref]$parsed) -and $parsed -gt 0) { $max = $parsed }
 
@@ -65,14 +113,14 @@ jobs:
 
           Write-Host "Open PR slots: $count / $max"
 
-          # An existing PR re-running is an update to its own slot, not a new one - always allow
+          # An existing PR re-deploying is an update to its own slot, not a new one - always allow
           if ($slotArray -contains "$env:PR_SLOT") {
             Write-Host "✅ This PR already owns slot $env:PR_SLOT - allowing (update, not a new slot)."
             exit 0
           }
 
           if ($count -ge $max) {
-            $msg = "🛑 **Staging slot limit reached ($count/$max).** This PR can't get a staging deployment until one frees up. Please close or merge another open PR to release its slot, then re-run this workflow."
+            $msg = "🛑 **Staging slot limit reached ($count/$max).** This PR can't get a staging deployment until one frees up. Please close or merge another open PR to release its slot, then comment ``/deploy`` again."
             "blocked=true"   >> $env:GITHUB_OUTPUT
             "message=$msg"   >> $env:GITHUB_OUTPUT
             Write-Host $msg
@@ -89,42 +137,16 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: false
 
-  run-tests-and-coverage:
-    name: Run tests & coverage
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v7
-      - uses: pnpm/action-setup@v6
-        with:
-          package_json_file: package.json
-          standalone: true
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: ".nvmrc"
-          cache: "pnpm"
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Run Tests & Coverage
-        run: pnpm test-and-coverage --outputFile=coverage-report.json
-
-      - name: Upload Coverage Report to PR
-        uses: ArtiomTr/jest-coverage-report-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          coverage-file: coverage-report.json
-          base-coverage-file: coverage-report.json
-          skip-step: all
-          annotations: none
-
   build:
     name: Build and upload artifacts
+    # Gated behind the slot cap so a blocked PR doesn't push a throwaway image to ACR
+    needs: [validate, check-slot-capacity]
     uses: ./.github/workflows/template-build.yml
     with:
-      tag: pr-${{ github.event.number }}
+      tag: pr-${{ needs.validate.outputs.pr_number }}
+      ref: ${{ needs.validate.outputs.head_sha }}
+      tina_branch: ${{ needs.validate.outputs.head_ref }}
+      pr_number: ${{ needs.validate.outputs.pr_number }}
     permissions:
       id-token: write
       contents: read
@@ -132,7 +154,7 @@ jobs:
 
   pr-deploy:
     name: Deploy to slot
-    needs: [check-slot-capacity, build]
+    needs: [validate, check-slot-capacity, build]
     runs-on: ubuntu-latest
     permissions:
       id-token: write
@@ -152,7 +174,8 @@ jobs:
         uses: ./.github/actions/deploy
         id: deploy
         with:
-          slot_name: pr-${{ github.event.number }}
+          slot_name: pr-${{ needs.validate.outputs.pr_number }}
+          create_slot: "true"
           AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
@@ -167,6 +190,8 @@ jobs:
         with:
           message: |
             Deployed changes to <${{ steps.deploy.outputs.url }}>
+
+            ℹ️ Staging slots are no longer created automatically - comment `/deploy` to deploy new commits.
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           allow-repeats: true
 

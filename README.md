@@ -122,7 +122,9 @@ It generates report and saves into `.lighthouseci` folder. You can also change t
 
 ## Pull Requests
 
-Each Pull Request will be deployed to its own staging environment, the URL to the environment is available in the PR thread.
+Staging deployments are opt-in - comment `/deploy` on a Pull Request to build it and deploy it to its own staging environment (requires write access). The URL to the environment is posted in the PR thread. New commits are not deployed automatically - comment `/deploy` again to update the slot.
+
+Slots are a shared, limited resource (see [#4767](https://github.com/SSWConsulting/SSW.Website/issues/4767)) - they are capped at 5 concurrent PR slots and cleaned up when a PR closes or goes inactive for 7 days.
 
 ⚠️ **Warning**: Changes in the mdx files must be done with TinaCMS. This is because TinaCMS maps mdx files with its fields with specific characters for customized UI (e.g., rich-text field). So avoid direct edits as they may result in build failures or go unnoticed during PR reviews.
 
