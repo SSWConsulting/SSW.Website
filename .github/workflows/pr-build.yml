@@ -1,0 +1,21 @@
+name: PR - build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ci-${{ github.event.number }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and upload artifacts
+    uses: ./.github/workflows/template-build.yml
+    with:
+      tag: pr-${{ github.event.number }}
+    permissions:
+      id-token: write
+      contents: read
+    secrets: inherit
