@@ -63,9 +63,9 @@
       "links": [
         { "label": "AI Development", "url": "/consulting/ai" },
         { "label": "Web Development", "url": "/consulting/web-application-development" },
-        { "label": "App Development", "url": "/consulting/app-development" },
-        { "label": "Database Development", "url": "/consulting/database-development" },
-        { "label": "Cloud & Infrastructure", "url": "/consulting/azure" }
+        { "label": "Cloud & Infrastructure", "url": "/consulting/azure" },
+        { "label": "Mobile App Development", "url": "/consulting/mobile-application-development" },
+        { "label": "Database Development", "url": "/consulting/database-development" }
       ]
     },
     {
@@ -84,8 +84,7 @@
         { "label": "User Groups", "url": "/user-groups" },
         { "label": "Hack Days", "url": "/events" },
         { "label": "1-Day Training", "url": "/training" },
-        { "label": "2-Day Training", "url": "/training" },
-        { "label": "12-Week Programs", "url": "/training" }
+        { "label": "2-Day Training", "url": "/training" }
       ]
     },
     {
@@ -93,9 +92,9 @@
       "links": [
         { "label": "Our People", "url": "https://www.ssw.com.au/people" },
         { "label": "Our History", "url": "/company" },
-        { "label": "Awards", "url": "/company" },
+        { "label": "Our Awards", "url": "/company" },
         { "label": "Our Clients' Stories", "url": "/company/clients" },
-        { "label": "Testimonials", "url": "/company/testimonials" }
+        { "label": "Contact Us", "url": "/company/contact-us" }
       ]
     },
     {

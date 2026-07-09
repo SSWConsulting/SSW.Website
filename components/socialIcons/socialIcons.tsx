@@ -34,7 +34,7 @@ export type SocialTypes =
 
 export const socialStyles: Record<
   SocialTypes,
-  { icon: IconType; bgClassName: string; fill?: string }
+  { icon: IconType; bgClassName: string; textClassName?: string }
 > = {
   youtube: {
     icon: FaYoutube,
@@ -71,7 +71,7 @@ export const socialStyles: Record<
   github: {
     icon: FaGithub,
     bgClassName: "bg-social-github",
-    fill: "black",
+    textClassName: "text-black",
   },
   meetup: {
     icon: FaMeetup,
@@ -154,11 +154,11 @@ export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
     return (
       <CustomLink
         href={url}
-        className="unstyled flex size-9 cursor-pointer items-center justify-center text-xl text-white hover:opacity-70"
+        className="unstyled flex size-9 cursor-pointer items-center justify-center text-xl text-white transition-colors hover:text-sswRed"
         title={label}
         aria-label={"Link to " + label}
       >
-        <Icon className="text-lg" color="white" />
+        <Icon className="text-lg" />
       </CustomLink>
     );
   }
@@ -167,13 +167,14 @@ export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
     <CustomLink
       href={url}
       className={classNames(
-        "unstyled flex size-9 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
-        styling.bgClassName
+        "unstyled flex size-9 cursor-pointer items-center justify-center rounded-lg text-xl transition-colors hover:text-sswRed",
+        styling.bgClassName,
+        styling.textClassName ?? "text-white"
       )}
       title={label}
       aria-label={"Link to " + label}
     >
-      <Icon className="text-lg" color={styling.fill ?? "white"} />
+      <Icon className="text-lg" />
     </CustomLink>
   );
 };
