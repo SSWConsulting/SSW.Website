@@ -40,6 +40,7 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
       </button>
 
       <div
+        inert={!isOpen}
         className={cn(
           "grid transition-all duration-300 ease-in-out",
           isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"

@@ -30,7 +30,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
     <div className="absolute bottom-1/2 left-1/2 flex w-full -translate-x-1/2 items-center justify-center gap-2">
       <button
         type="button"
-        aria-label="Scroll to next section"
+        aria-label="Previous slide"
         onClick={() => slideLeft()}
         className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
       >
@@ -38,7 +38,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
       </button>
       <button
         type="button"
-        aria-label="Scroll to next section"
+        aria-label="Next slide"
         onClick={() => slideRight()}
         className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
       >

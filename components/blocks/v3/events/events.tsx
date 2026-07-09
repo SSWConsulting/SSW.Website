@@ -466,31 +466,29 @@ export function V3Events({ data }) {
         )}
 
         {eventCards.length > 0 && (
-          <>
-            <div className="flex flex-col gap-8 px-4 lg:px-0">
-              {eventCards.map((event, index) => (
-                <div
-                  key={`v3-event-card-${index}`}
-                  data-tina-field={
-                    calendarEvents.length === 0
-                      ? tinaField(event, "title")
-                      : undefined
-                  }
-                >
-                  <EventListItem event={event} />
-                </div>
-              ))}
-            </div>
-
-            {seeMoreButtons.length > 0 && (
-              <div className="flex justify-end px-4 lg:px-0">
-                <ButtonRow
-                  className="mt-0 hidden justify-end lg:block"
-                  data={{ buttons: seeMoreButtons }}
-                />
+          <div className="flex flex-col gap-8 px-4 lg:px-0">
+            {eventCards.map((event, index) => (
+              <div
+                key={`v3-event-card-${index}`}
+                data-tina-field={
+                  calendarEvents.length === 0
+                    ? tinaField(event, "title")
+                    : undefined
+                }
+              >
+                <EventListItem event={event} />
               </div>
-            )}
-          </>
+            ))}
+          </div>
+        )}
+
+        {/* Keep the "See More" CTA visible on every breakpoint and independent
+            of the card count so mobile visitors (and featured-only renders)
+            still get a path to the full events page. */}
+        {seeMoreButtons.length > 0 && (
+          <div className="flex justify-center px-4 lg:justify-end lg:px-0">
+            <ButtonRow className="mt-0" data={{ buttons: seeMoreButtons }} />
+          </div>
         )}
       </Container>
     </V2ComponentWrapper>
