@@ -97,7 +97,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 alt={slide.backgroundMedia.altText ?? "Hero background"}
                 className={cn(
                   "object-cover object-right transition-opacity duration-500",
-                  index === current ? "opacity-30 lg:opacity-100" : "opacity-0"
+                  index === current ? "opacity-60 lg:opacity-100" : "opacity-0"
                 )}
                 data-tina-field={tinaField(slide, "backgroundMedia")}
               />

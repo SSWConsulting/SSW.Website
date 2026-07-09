@@ -246,7 +246,7 @@ function FeaturedEvent({ event }) {
           className="object-cover"
         />
       )}
-      <div aria-hidden="true" className="absolute inset-0 bg-black/70" />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 grid items-center gap-12 p-8 md:grid-cols-2 md:p-16">
         {/* Left: title, description, sign-up */}

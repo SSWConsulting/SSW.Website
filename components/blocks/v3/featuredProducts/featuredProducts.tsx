@@ -59,7 +59,7 @@ function HighlightCard({ project }) {
           className="object-cover"
         />
       )}
-      <div aria-hidden="true" className="absolute inset-0 bg-black/85" />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 flex w-full flex-col items-center justify-center gap-8 p-6 text-center md:flex-row md:justify-between md:px-16 md:py-12 md:text-left">
         <div className="flex max-w-xl flex-col items-center gap-4 md:items-start">
@@ -82,7 +82,7 @@ function HighlightCard({ project }) {
             )}
           </div>
           {project?.description && (
-            <p className="text-base font-light text-gray-300">
+            <p className="text-base font-light text-white">
               {project.description}
             </p>
           )}
