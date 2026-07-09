@@ -154,7 +154,7 @@ export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
     return (
       <CustomLink
         href={url}
-        className="unstyled flex size-9 cursor-pointer items-center justify-center text-xl text-white transition-colors hover:text-sswRed"
+        className="unstyled flex size-9 min-h-9 min-w-9 cursor-pointer items-center justify-center text-xl text-white transition-colors hover:text-sswRed"
         title={label}
         aria-label={"Link to " + label}
       >
@@ -167,7 +167,7 @@ export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
     <CustomLink
       href={url}
       className={classNames(
-        "unstyled flex size-9 cursor-pointer items-center justify-center rounded-lg text-xl transition-colors hover:text-sswRed",
+        "unstyled flex size-9 min-h-9 min-w-9 cursor-pointer items-center justify-center rounded-lg text-xl transition-colors hover:text-sswRed",
         styling.bgClassName,
         styling.textClassName ?? "text-white"
       )}

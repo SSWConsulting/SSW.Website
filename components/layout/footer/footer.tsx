@@ -1,4 +1,5 @@
 import footerData from "@/content/footer/index.json";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import { CustomLink } from "../../customLink";
 import { SocialIcons } from "../../socialIcons/socialIcons";
@@ -14,7 +15,7 @@ export const Footer = () => {
   return (
     <footer className="no-print w-full bg-sswBorder text-gray-300">
       <Container width="large" size="large">
-        <div className="hidden items-end justify-between gap-6 md:flex">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Image
             src="/images/ssw-logo-darkmode.svg"
             alt="SSW Enterprise Software Development"
@@ -22,39 +23,42 @@ export const Footer = () => {
             height={98}
             className="h-auto w-56"
           />
-          <SocialIcons variant="plain" className="grow-0 justify-end" />
+          <SocialIcons variant="plain" className="grow-0 md:justify-end" />
         </div>
 
-        <hr className="my-8 h-px border-gray-700" />
+        <hr className="mt-4 h-px border-gray-700" />
 
         <div className="md:hidden">
           {columns.map((column, index) => (
             <details
               key={(column.title ?? "") + index}
-              className="group border-b border-gray-700"
+              className="group border-b-[1px] border-gray-700"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between py-6 text-sm font-semibold uppercase tracking-widest text-white [&::-webkit-details-marker]:hidden">
                 <span>{column.title}</span>
-                <span
+                <ChevronDown
                   aria-hidden="true"
-                  className="relative size-5 shrink-0 transition-transform duration-200 group-open:rotate-45"
-                >
-                  <span className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-white" />
-                  <span className="absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-white" />
-                </span>
+                  className="size-5 shrink-0 transition-opacity duration-200 group-open:hidden"
+                />
+                <ChevronUp
+                  aria-hidden="true"
+                  className="hidden size-5 shrink-0 transition-opacity duration-200 group-open:block"
+                />
               </summary>
-              <ul className="space-y-3 pb-6">
-                {column.links?.map((link, linkIndex) => (
-                  <li key={(link.url ?? "") + linkIndex}>
-                    <CustomLink
-                      href={link.url}
-                      className="unstyled text-gray-300 transition-colors hover:text-white"
-                    >
-                      {link.label}
-                    </CustomLink>
-                  </li>
-                ))}
-              </ul>
+              <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-out group-open:max-h-96 group-open:opacity-100">
+                <ul className="space-y-3 pb-6">
+                  {column.links?.map((link, linkIndex) => (
+                    <li key={(link.url ?? "") + linkIndex}>
+                      <CustomLink
+                        href={link.url}
+                        className="unstyled text-gray-300 transition-colors hover:text-white"
+                      >
+                        {link.label}
+                      </CustomLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </details>
           ))}
         </div>
@@ -81,9 +85,7 @@ export const Footer = () => {
           ))}
         </div>
 
-        <hr className="my-8 h-px border-gray-700" />
-
-        <div className="flex flex-col gap-4 text-sm md:flex-row md:items-center md:justify-between">
+        <div className="mt-4 flex flex-col gap-4 text-sm md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-400">
             <span>
               &copy; {currentYear} {bottomBar?.copyrightText}
