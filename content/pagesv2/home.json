@@ -492,7 +492,7 @@
           "name": "Strasbourg, France",
           "email": "info@ssw.com.au",
           "phone": "+33 3 67 39 05 39",
-          "address": "Level 4–19 Rue du Fossé des Treize\nStrasbourg, France, Strasbourg 67000 \nFrance",
+          "address": "Level 4–19 Rue du Fossé des Treize, Strasbourg 67000 \nFrance",
           "siteLinkText": "SSW Europe Office",
           "siteLinkUrl": "https://ssw.fr",
           "lat": 48.57,
@@ -504,7 +504,7 @@
           "phone": "+1 302 520 3805",
           "address": "North America, DE 2111, USA",
           "siteLinkText": "SSW North America",
-          "siteLinkUrl": "https://www.ssw.com.au/",
+          "siteLinkUrl": "https://www.ssw.com",
           "lat": 39.16,
           "lng": -75.52
         }
