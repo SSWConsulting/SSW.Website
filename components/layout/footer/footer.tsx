@@ -86,9 +86,9 @@ export const Footer = () => {
           ))}
         </div>
 
-        <hr className="hidden sm:block my-2 h-px border-gray-700 md:my-8" />
+        <hr className="my-2 hidden h-px border-gray-700 sm:block md:my-8" />
 
-        <div className="mt-4 sm:mt-0 flex flex-col gap-4 text-sm md:flex-row md:items-center md:justify-between">
+        <div className="mt-4 flex flex-col gap-4 text-sm sm:mt-0 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-400">
             <span>
               &copy; {currentYear} {bottomBar?.copyrightText}

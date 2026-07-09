@@ -30,12 +30,12 @@ export function V3VideoHero({ data }) {
 
       <div className="relative flex w-full max-w-4xl flex-col items-center px-4 text-center z-content">
         {data?.heading && (
-          <h1
+          <h2
             data-tina-field={tinaField(data, "heading")}
             className="text-4xl leading-tight text-white sm:text-5xl lg:text-7xl"
           >
             <AlternatingText text={data.heading} />
-          </h1>
+          </h2>
         )}
         <ButtonRow data={data} className="mt-8 justify-center" />
       </div>

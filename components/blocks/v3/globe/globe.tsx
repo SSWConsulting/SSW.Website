@@ -3,6 +3,7 @@ import AlternatingText from "@/components/alternating-text";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import {
@@ -89,6 +90,10 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
 export function V3Globe({ data }) {
   const offices = (data?.offices ?? []).filter(Boolean);
   const [openIndex, setOpenIndex] = useState(0);
+  // The globe stage is `hidden lg:block`; only mount the WebGL canvas on the
+  // desktop viewports that actually show it so phones/tablets don't pay the
+  // GPU/battery cost of an off-screen, never-visible animation.
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   return (
     <V2ComponentWrapper data={data}>
@@ -145,7 +150,7 @@ export function V3Globe({ data }) {
             </div>
 
             {/* Right: 3D globe stage. */}
-            {offices.length > 0 && (
+            {offices.length > 0 && isDesktop && (
               <div className="relative z-0 hidden lg:col-span-7 lg:block">
                 <div
                   className={cn(

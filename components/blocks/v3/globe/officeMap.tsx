@@ -245,11 +245,30 @@ export function OfficeMap({
 
     animate();
 
+    // Pause the render loop while the globe is scrolled off-screen so it stops
+    // driving the GPU when it can't be seen, and resume on the way back in.
+    const observer =
+      typeof IntersectionObserver === "undefined"
+        ? null
+        : new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting && !animationId) {
+                animate();
+              } else if (!entry.isIntersecting && animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = 0;
+              }
+            },
+            { threshold: 0 }
+          );
+    observer?.observe(canvas);
+
     const fadeIn = window.setTimeout(() => {
       if (canvasRef.current) canvasRef.current.style.opacity = "1";
     });
 
     return () => {
+      observer?.disconnect();
       window.clearTimeout(fadeIn);
       cancelAnimationFrame(animationId);
       globe.destroy();

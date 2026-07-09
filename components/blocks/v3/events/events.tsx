@@ -7,6 +7,8 @@ import { buildEventUrl } from "@/helpers/getTrimmedEvents";
 import { cn } from "@/lib/utils";
 import { getFutureEventsSimple } from "@/services/server/events";
 import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
@@ -16,7 +18,11 @@ import { tinaField } from "tinacms/dist/react";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 const MS_PER_DAY = 86_400_000;
+const SYDNEY_TIME_ZONE = "Australia/Sydney";
 
 const getDaysToGo = (date?: string): number | null => {
   if (!date) return null;
@@ -139,9 +145,25 @@ function getEventLocation(event) {
   return event.city === "Other" ? event.cityOther : event.city;
 }
 
+// Emit the real zone label (AEST vs AEDT) for the advertised city rather than
+// the runtime's local zone, so Vercel/UTC servers don't mislabel Sydney times.
+const getSydneyZoneAbbreviation = (date: Date): string =>
+  new Intl.DateTimeFormat("en-AU", {
+    timeZone: SYDNEY_TIME_ZONE,
+    timeZoneName: "short",
+  })
+    .formatToParts(date)
+    .find((part) => part.type === "timeZoneName")?.value ?? "";
+
 function getEventTime(event) {
   if (!event?.startDateTime) return "";
-  return dayjs(event.startDateTime).format("h:mma AEST");
+
+  const start = dayjs(event.startDateTime);
+  if (!start.isValid()) return "";
+
+  const zone = getSydneyZoneAbbreviation(start.toDate());
+  const time = start.tz(SYDNEY_TIME_ZONE).format("h:mma");
+  return zone ? `${time} ${zone}` : time;
 }
 
 function getFeaturedButton(eventUrl: string, featuredEventDisplay) {
