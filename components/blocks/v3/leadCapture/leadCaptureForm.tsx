@@ -22,7 +22,7 @@ const HEAR_ABOUT_OPTIONS = [
 const LOCATIONS: { label: string; states: string[] }[] = [
   {
     label: "Australia",
-    states: ["ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC"],
+    states: ["ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"],
   },
   { label: "China", states: [] },
   { label: "Europe", states: [] },
