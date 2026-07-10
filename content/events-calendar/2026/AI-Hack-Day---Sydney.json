@@ -6,6 +6,12 @@
   "presenterList": [
     {
       "presenter": "content/presenters/adam-cogan.mdx"
+    },
+    {
+      "presenter": "content/presenters/ben-neoh.mdx"
+    },
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
     }
   ],
   "startDateTime": "2026-07-10T23:00:02.631Z",
@@ -14,7 +20,7 @@
   "city": "Sydney",
   "category": "Artificial Intelligence",
   "abstract": "AI Hack Days are community run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you’re a beginner, then there’s plenty to learn on the day.\n\nIf you then want to build something yourself, you’ll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you’ve never played with AI or ML before it would be good to do a little bit of learning before the day but it’s not a requirement as all experience levels are welcome.",
-  "description": "AI Hack Days are community-run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you’re a beginner, then there’s plenty to learn on the day.\n\nIf you then want to build something yourself, you’ll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you’ve never played with AI or ML before it would be good to do a little bit of learning before the day but it’s not a requirement as all experience levels are welcome.\n",
+  "description": "AI Hack Days are community-run events for Developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you’re a beginner, then there’s plenty to learn on the day.\n\nIf you then want to build something yourself, you’ll need some of the Microsoft AI and/or Machine Learning (ML) tools already setup and installed. If you’ve never played with AI or ML before it would be good to do a little bit of learning before the day but it’s not a requirement as all experience levels are welcome.\n\n#### 💬 Agenda\n\n**9:00 am** - Welcome – check in + muffins\n\n**9:15 am** - Presentations:\n\n* Adam Cogan - Welcome + An intro to AI tools\n* Ben Neoh – Passing the vibe check\n* Calum Simpson - AI: It's a Skill Issue\n\n**11:00 am **-** **Give AI a go! Start Hacking\n\n**1:00 pm** - Presentations – show us something you’ve built\n\n**2:00 pm** - Wrap up and head home\n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true
