@@ -3,9 +3,9 @@ import AlternatingText from "@/components/alternating-text";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { useMediaQuery } from "usehooks-ts";
 import {
   FiChevronDown,
   FiExternalLink,
@@ -94,7 +94,9 @@ export function V3Globe({ data }) {
   // The globe stage is `hidden lg:block`; only mount the WebGL canvas on the
   // desktop viewports that actually show it so phones/tablets don't pay the
   // GPU/battery cost of an off-screen, never-visible animation.
-  const isDesktop = useMediaQuery("(min-width: 1024px)");
+  const isDesktop = useMediaQuery("(min-width: 1024px)", {
+    initializeWithValue: false,
+  });
 
   return (
     <V2ComponentWrapper data={data}>

@@ -9,22 +9,10 @@ import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { BsArrowUpRight } from "react-icons/bs";
 import { tinaField } from "tinacms/dist/react";
+import { ArrowCircle } from "../shared/arrowCircle";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { SectionHeader } from "../shared/sectionHeader";
-
-const ArrowButton = ({
-  className = "size-12 md:size-16",
-}: {
-  className?: string;
-}) => (
-  <span
-    className={`flex shrink-0 scale-100 items-center justify-center self-end rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125 ${className}`}
-  >
-    <BsArrowUpRight className="size-1/3" />
-  </span>
-);
 
 const MaybeLink = ({ link, newTab, field, children }) =>
   link ? (
@@ -87,7 +75,7 @@ function HighlightCard({ project }) {
             </p>
           )}
         </div>
-        <ArrowButton className="size-16 self-center" />
+        <ArrowCircle className="size-16 self-center" />
       </div>
     </div>
   );
@@ -125,7 +113,7 @@ function ProjectCard({ project }) {
             </p>
           )}
         </div>
-        <ArrowButton className="mt-auto size-10" />
+        <ArrowCircle className="mt-auto size-10 self-end" />
       </div>
       {project?.image?.imageSource && (
         <div className="relative aspect-video w-full">

@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { BsArrowUpRight } from "react-icons/bs";
+import { ArrowCircle } from "./arrowCircle";
 
 // End cap for the finite mobile carousels: a "+ more" tile rendered after the
 // last card that links to the section's full page (e.g. /people, /events).
@@ -26,9 +26,7 @@ export function CarouselMoreCard({
         className
       )}
     >
-      <span className="flex size-12 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
-        <BsArrowUpRight className="size-5" />
-      </span>
+      <ArrowCircle className="size-12" iconClassName="size-5" />
       <span className="text-lg font-semibold text-white">{label}</span>
     </Link>
   );

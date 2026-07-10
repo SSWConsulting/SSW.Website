@@ -12,9 +12,9 @@ import utc from "dayjs/plugin/utc";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { BsArrowUpRight } from "react-icons/bs";
 import { FiCalendar, FiClock, FiMapPin, FiUser } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
+import { ArrowCircle } from "../shared/arrowCircle";
 import { SectionHeader } from "../shared/sectionHeader";
 import { Countdown } from "./countdown";
 
@@ -404,9 +404,7 @@ function EventListItem({ event }) {
 
       {event?.registerLink && (
         <div className="pointer-events-none relative z-20 flex items-end px-5 py-6 sm:px-6">
-          <span className="flex size-12 shrink-0 scale-100 items-center justify-center rounded-full bg-white text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-110">
-            <BsArrowUpRight className="size-1/3" />
-          </span>
+          <ArrowCircle className="size-12 group-hover:scale-110" />
         </div>
       )}
     </div>

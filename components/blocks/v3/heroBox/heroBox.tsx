@@ -7,9 +7,13 @@ import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+
+// Fallback scoop fill when the section's background colour has no matching hex
+// (e.g. an unset/legacy value) — SSW dark gray, the default section background.
+const DEFAULT_SCOOP_COLOR = "#090909";
 
 export const V3HeroBox = ({ data, priority = false }) => {
   // The block's own fields form the first slide; `slides` adds more of the same shape.
@@ -47,6 +51,23 @@ export const V3HeroBox = ({ data, priority = false }) => {
     </div>
   );
 
+  // With a single slide there are no prev/next controls, so fill the scoop with
+  // a scroll-down affordance instead of leaving the notch empty.
+  const scrollDownButton = slides.length <= 1 && (
+    <div className="absolute bottom-1/2 left-1/2 flex w-full -translate-x-1/2 items-center justify-center">
+      <button
+        type="button"
+        aria-label="Scroll to content"
+        onClick={() =>
+          window.scrollBy({ top: window.innerHeight, behavior: "smooth" })
+        }
+        className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
+      >
+        <FiArrowDown className="size-5" />
+      </button>
+    </div>
+  );
+
   const slidePagination = slides.length > 1 && (
     <div className="absolute bottom-6 left-8 z-20 flex items-center gap-4 sm:left-12 lg:left-16">
       <div className="flex items-center gap-2">
@@ -66,9 +87,10 @@ export const V3HeroBox = ({ data, priority = false }) => {
     </div>
   );
 
-  const scoopColor = backgroundOptions.find(
-    (option) => option.reference === data?.background?.backgroundColour
-  )?.hex;
+  const scoopColor =
+    backgroundOptions.find(
+      (option) => option.reference === data?.background?.backgroundColour
+    )?.hex ?? DEFAULT_SCOOP_COLOR;
 
   return (
     <V2ComponentWrapper data={data} className="pt-4 sm:pt-20">
@@ -179,6 +201,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
               />
             </svg>
             {prevAndNextSlideButtons}
+            {scrollDownButton}
           </div>
         </div>
       </Container>

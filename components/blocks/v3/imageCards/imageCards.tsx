@@ -9,10 +9,10 @@ import {
 } from "@/components/ui/carousel";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
+import { ArrowCircle } from "../shared/arrowCircle";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import Image from "next/image";
 import Link from "next/link";
-import { BsArrowUpRight } from "react-icons/bs";
 import { tinaField } from "tinacms/dist/react";
 
 function ImageCard({ card, cardBackgroundClass, showBorder }) {
@@ -58,9 +58,10 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
             {card.description}
           </p>
         )}
-        <span className="mt-auto flex size-10 shrink-0 scale-100 items-center justify-center self-end rounded-full bg-white p-2 text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
-          <BsArrowUpRight className="size-4" />
-        </span>
+        <ArrowCircle
+          className="mt-auto size-10 self-end p-2"
+          iconClassName="size-4"
+        />
       </div>
     </div>
   );
