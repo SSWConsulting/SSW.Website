@@ -58,9 +58,15 @@ export const V3HeroBox = ({ data, priority = false }) => {
       <button
         type="button"
         aria-label="Scroll to content"
-        onClick={() =>
-          window.scrollBy({ top: window.innerHeight, behavior: "smooth" })
-        }
+        onClick={(e) => {
+          // Scroll so the arrow ends up 10% of the viewport height down from
+          // the top of the screen, pulling the hero up out of the way.
+          const { top } = e.currentTarget.getBoundingClientRect();
+          window.scrollTo({
+            top: window.scrollY + top - window.innerHeight * 0.1,
+            behavior: "smooth",
+          });
+        }}
         className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
       >
         <FiArrowDown className="size-5" />
