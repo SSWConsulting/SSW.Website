@@ -9,8 +9,18 @@ import {
   useRef,
 } from "react";
 
-type Office = { name?: string; lat?: number; lng?: number };
+type Office = {
+  name?: string;
+  lat?: number;
+  lng?: number;
+  address?: string;
+};
 type MarkerTagStyle = CSSProperties & { positionAnchor: string };
+
+const isSydneyOffice = (name: string) => name.toLowerCase().includes("sydney");
+
+const isAustralianOffice = (office?: Office) =>
+  (office?.address ?? "").toLowerCase().includes("australia");
 
 const SSW_RED_RGB: [number, number, number] = [0.8, 0.2549, 0.2549];
 const LAND_DOT_RGB: [number, number, number] = [0.92, 0.92, 0.92];
@@ -42,7 +52,7 @@ const getTagOffsetClassName = (name: string) => {
   }
 
   if (normalizedName.includes("newcastle")) {
-    return "translate-x-5 translate-y-3";
+    return "translate-x-5 translate-y-5";
   }
 
   if (normalizedName.includes("sydney")) {
@@ -84,6 +94,7 @@ export function OfficeMap({
           return {
             index,
             name: office?.name ?? "",
+            isAustralian: isAustralianOffice(office),
             marker: {
               id: `office-${index}`,
               location,
@@ -92,7 +103,12 @@ export function OfficeMap({
             },
           };
         })
-        .filter(Boolean) as { index: number; name: string; marker: Marker }[],
+        .filter(Boolean) as {
+        index: number;
+        name: string;
+        isAustralian: boolean;
+        marker: Marker;
+      }[],
     [offices, selectedIndex]
   );
 
@@ -100,15 +116,35 @@ export function OfficeMap({
     () => markerEntries.map((entry) => entry.marker),
     [markerEntries]
   );
-  const arcs = useMemo(
-    () =>
-      markerEntries.slice(0, -1).map((entry, index) => ({
+  // Sydney is the hub: each Australian office fans out to it as a spoke, while
+  // the overseas offices form a chain leading out from Sydney in listed order
+  // (Sydney -> China -> France -> USA).
+  const arcs = useMemo<Arc[]>(() => {
+    const hub = markerEntries.find((entry) => isSydneyOffice(entry.name));
+    if (!hub) return [];
+
+    const domesticSpokes = markerEntries
+      .filter((entry) => entry !== hub && entry.isAustralian)
+      .map((entry) => ({
         from: entry.marker.location,
-        to: markerEntries[index + 1].marker.location,
+        to: hub.marker.location,
         color: SSW_RED_RGB,
-      })) satisfies Arc[],
-    [markerEntries]
-  );
+      }));
+
+    const overseasChain = [
+      hub,
+      ...markerEntries.filter((entry) => !entry.isAustralian),
+    ];
+    const internationalArcs = overseasChain
+      .slice(0, -1)
+      .map((entry, index) => ({
+        from: entry.marker.location,
+        to: overseasChain[index + 1].marker.location,
+        color: SSW_RED_RGB,
+      }));
+
+    return [...domesticSpokes, ...internationalArcs];
+  }, [markerEntries]);
   const markersRef = useRef(markers);
   const arcsRef = useRef(arcs);
 

@@ -8,6 +8,8 @@ import styles from "./popup.module.css";
 export interface PopupProps extends React.HTMLAttributes<HTMLDivElement> {
   isVisible: boolean;
   showCloseIcon?: boolean;
+  closeOnOverlayClick?: boolean;
+  closeOnEsc?: boolean;
   onClose: () => void;
 }
 
@@ -18,6 +20,8 @@ const Popup: React.FC<PopupProps> = (props) => {
         open={props.isVisible}
         onClose={props.onClose}
         showCloseIcon={!!props.showCloseIcon}
+        closeOnOverlayClick={props.closeOnOverlayClick ?? true}
+        closeOnEsc={props.closeOnEsc ?? true}
         classNames={{
           closeButton: styles.closeButton,
           modalAnimationIn: styles.formEnterModalAnimation,

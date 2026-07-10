@@ -14,7 +14,12 @@ export function LeadCaptureModal({
   onClose,
 }: LeadCaptureModalProps) {
   return (
-    <Popup isVisible={isVisible} showCloseIcon={true} onClose={onClose}>
+    <Popup
+      isVisible={isVisible}
+      showCloseIcon={true}
+      closeOnOverlayClick={false}
+      onClose={onClose}
+    >
       {/* `dark` re-scopes the theme tokens (--background etc.) inside the
           portal, which renders outside the page's dark wrapper. */}
       <div className="dark rounded-2xl border-0.5 border-white/10 bg-black p-4 text-foreground sm:p-8">
