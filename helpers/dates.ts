@@ -25,8 +25,10 @@ export const formatEventDate = (start: Date, end: Date) => {
   return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
 };
 
-export const formatEventLongDate = (start: Date, end: Date) => {
-  if (!start || !end) return "";
+// Splits the long event date into a date line and a time line so callers can
+// render them on separate lines.
+export const formatEventLongDateParts = (start: Date, end: Date) => {
+  if (!start || !end) return { date: "", time: "" };
 
   const dateformat = "dddd, MMMM D, YYYY h:mm A";
 
@@ -35,14 +37,24 @@ export const formatEventLongDate = (start: Date, end: Date) => {
 
   const isOneDayEvent = startObj.startOf("day").isSame(endObj.startOf("day"));
 
-  const startDate = startObj.format(dateformat);
-  const endDate = endObj.format(dateformat);
-
   if (isOneDayEvent) {
-    return `${startDate} - ${endObj.format("h:mm A")}`;
-  } else {
-    return `${startDate} - ${endDate}`;
+    return {
+      date: startObj.format("dddd, MMMM D, YYYY"),
+      time: `${startObj.format("h:mm A")} - ${endObj.format("h:mm A")}`,
+    };
   }
+
+  return {
+    date: startObj.format(dateformat),
+    time: `- ${endObj.format(dateformat)}`,
+  };
+};
+
+export const formatEventLongDate = (start: Date, end: Date) => {
+  if (!start || !end) return "";
+
+  const { date, time } = formatEventLongDateParts(start, end);
+  return `${date} ${time}`;
 };
 
 export const formatRelativeEventDate = (startDate: Date, endDate: Date) => {

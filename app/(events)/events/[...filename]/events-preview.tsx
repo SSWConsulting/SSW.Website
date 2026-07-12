@@ -35,7 +35,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const event = (tinaProps.data as { eventsCalendar: EventData })
     .eventsCalendar;
 
-  const { relativeDate, formattedDate } = useFormatDates(
+  const { relativeDate, formattedDate, formattedDateParts } = useFormatDates(
     {
       title: event.title,
       url: event.url,
@@ -247,7 +247,13 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                       className="mt-0.5 shrink-0 text-sswRed"
                     />
                     <span className="text-sm text-gray-700">
-                      {formattedDate}
+                      {formattedDateParts.date}
+                      {formattedDateParts.time && (
+                        <>
+                          <br />
+                          {formattedDateParts.time}
+                        </>
+                      )}
                     </span>
                   </div>
                 )}
