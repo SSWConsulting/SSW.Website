@@ -227,14 +227,14 @@
           "link": "/consulting/power-platform"
         },
         {
-          "title": "React Native",
-          "description": "Mobile apps built with your favorite React stack.",
-          "link": "/consulting/mobile-application-development"
+          "title": "Power BI",
+          "description": "Live CRM dashboards and reporting. No manual exports required.",
+          "link": "/consulting/power-bi"
         },
         {
-          "title": ".NET",
-          "description": "Enterprise backends that stand the test of time.",
-          "link": "/consulting/web-applications"
+          "title": "Outlook & Office 365",
+          "description": "Manage CRM directly within your inbox and calendar.",
+          "link": "/consulting/microsoft-365"
         },
         {
           "title": "Azure",
