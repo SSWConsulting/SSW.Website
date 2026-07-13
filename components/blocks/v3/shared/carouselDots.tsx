@@ -20,7 +20,9 @@ export function CarouselDots({
   if (count <= 1) return null;
 
   return (
-    <div className={cn("mt-8 flex items-center justify-center gap-2", className)}>
+    <div
+      className={cn("mt-8 flex items-center justify-center gap-2", className)}
+    >
       {Array.from({ length: count }).map((_, index) => (
         <CarouselPickItem
           key={`carousel-dot-${index}`}
