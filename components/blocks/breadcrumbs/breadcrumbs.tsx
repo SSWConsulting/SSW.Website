@@ -106,9 +106,6 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
   const links = getLinks(paths, data, data.finalBreadcrumb);
   const hideClasses = hideOnClasses(data?.hideOn);
 
-<<<<<<< HEAD
-  const breadcrumb = (
-=======
   // Parent one level above the current page, for the collapsed mobile view
   const segments = paths.filter((segment) => segment !== "");
   const replacementMap = new Map(
@@ -120,8 +117,7 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
       ? { label: replacementMap.get(parent) ?? parent, href: `/${parent}` }
       : { label: global.breadcrumbHomeRoute, href: "/" };
 
-  return (
->>>>>>> origin/main
+  const breadcrumb = (
     <V2ComponentWrapper data={data}>
       <Container size="custom" padding="px-4 sm:px-8" className="pt-8 sm:pt-12">
         <Breadcrumb className="hidden text-gray-300 sm:block">
