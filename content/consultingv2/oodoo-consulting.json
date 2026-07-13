@@ -217,14 +217,14 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "Full Stack Engineers",
-      "heading": "One team for the whole build",
-      "subtitle": "React is the front door. We build the whole house.",
+      "brow": "Beyond the CRM",
+      "heading": "What we build around your CRM",
+      "subtitle": "Most CRM projects need touch reporting, workflow automation, or the inbox your sales team already lives in ",
       "cards": [
         {
-          "title": "Next.js",
-          "description": "Fast, search-friendly web apps, with React under the hood.",
-          "link": "/consulting/nextjs"
+          "title": "Power Platform",
+          "description": "Build custom apps and automated workflows using your CRM data with Power Apps and Power Automate.",
+          "link": "/consulting/power-platform"
         },
         {
           "title": "React Native",
