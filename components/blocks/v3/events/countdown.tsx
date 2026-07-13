@@ -41,7 +41,7 @@ export function Countdown({ date }: { date?: string }) {
   ];
 
   return (
-    <div className="flex items-center justify-center gap-2 rounded-full bg-white/10 px-4 py-4 backdrop-blur-sm sm:gap-6 sm:px-8 sm:py-5">
+    <div className="flex items-center justify-center gap-2 rounded-full bg-white/10 p-4 backdrop-blur-sm sm:gap-6 sm:px-8 sm:py-5">
       {units.map((unit, index) => (
         <div key={unit.label} className="flex items-center gap-2 sm:gap-6">
           {index > 0 && <span className="h-10 w-px bg-white/20" />}
