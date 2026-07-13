@@ -68,6 +68,7 @@ const RippleButton = React.forwardRef<
       }
     }, [buttonRipples, duration]);
 
+<<<<<<< HEAD
     const sharedClassName = cn(
       "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-md px-6 py-3 text-center",
       variants[variant],
@@ -76,6 +77,20 @@ const RippleButton = React.forwardRef<
 
     const inner = (
       <>
+=======
+    return (
+      <button
+        onClick={(e) => onClick(e)}
+        className={cn(
+          "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-control px-6 py-3 text-center",
+          variants[variant],
+          className
+        )}
+        onMouseEnter={isPrimary ? createRipple : undefined}
+        ref={ref}
+        {...props}
+      >
+>>>>>>> origin/main
         <div
           data-tina-field={textTinaField}
           className={cn(

@@ -15,8 +15,10 @@ import {
 } from "react-icons/fa";
 
 import { FaBluesky, FaThreads, FaXTwitter } from "react-icons/fa6";
-import layoutData from "../../content/global/index.json";
+import footerData from "../../content/footer/index.json";
 import { CustomLink } from "../customLink";
+
+export type SocialIconVariant = "chip" | "plain";
 
 export type SocialTypes =
   | "youtube"
@@ -32,7 +34,7 @@ export type SocialTypes =
 
 export const socialStyles: Record<
   SocialTypes,
-  { icon: IconType; bgClassName: string; fill?: string }
+  { icon: IconType; bgClassName: string; textClassName?: string }
 > = {
   youtube: {
     icon: FaYoutube,
@@ -69,7 +71,7 @@ export const socialStyles: Record<
   github: {
     icon: FaGithub,
     bgClassName: "bg-social-github",
-    fill: "black",
+    textClassName: "text-black",
   },
   meetup: {
     icon: FaMeetup,
@@ -81,12 +83,14 @@ type SocialIconsProps = {
   className?: string;
   excludeDesktop?: SocialTypes[];
   excludeMobile?: SocialTypes[];
+  variant?: SocialIconVariant;
 };
 
 export const SocialIcons = ({
   excludeDesktop,
   excludeMobile,
   className,
+  variant = "chip",
 }: SocialIconsProps) => {
   const [isOnMobile, setIsOnMobile] = useState(false);
 
@@ -103,7 +107,7 @@ export const SocialIcons = ({
         className
       )}
     >
-      {layoutData.socials.map((social, index) => {
+      {(footerData.socials ?? []).map((social, index) => {
         const hideOnDesktop =
           excludeDesktop?.length &&
           !!excludeDesktop.find((icon) => icon === social.type);
@@ -120,34 +124,57 @@ export const SocialIcons = ({
           return null;
         }
 
-        return <SocialIcon key={social.type + index} social={social} />;
+        return (
+          <SocialIcon
+            key={social.type + index}
+            social={social}
+            variant={variant}
+          />
+        );
       })}
     </div>
   );
 };
 
 type SocialIconProps = {
-  social: (typeof layoutData.socials)[number];
+  social: (typeof footerData.socials)[number];
+  variant?: SocialIconVariant;
 };
 
-export const SocialIcon = ({ social }: SocialIconProps) => {
+export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
   const url = social.url;
 
   const styling = socialStyles[social.type];
 
   const Icon = styling.icon;
 
+  const label = social.title ?? `SSW on ${social.type}`;
+
+  if (variant === "plain") {
+    return (
+      <CustomLink
+        href={url}
+        className="unstyled flex size-9 min-h-9 min-w-9 cursor-pointer items-center justify-center text-xl text-white transition-colors hover:text-sswRed"
+        title={label}
+        aria-label={"Link to " + label}
+      >
+        <Icon className="text-lg" />
+      </CustomLink>
+    );
+  }
+
   return (
     <CustomLink
       href={url}
       className={classNames(
-        "unstyled flex size-9 cursor-pointer items-center justify-center rounded-lg text-xl hover:opacity-70",
-        styling.bgClassName
+        "unstyled flex size-9 min-h-9 min-w-9 cursor-pointer items-center justify-center rounded-lg text-xl transition-colors hover:text-sswRed",
+        styling.bgClassName,
+        styling.textClassName ?? "text-white"
       )}
-      title={social.title}
-      aria-label={"Link to " + social.title}
+      title={label}
+      aria-label={"Link to " + label}
     >
-      <Icon className="text-lg" color={styling.fill ?? "white"} />
+      <Icon className="text-lg" />
     </CustomLink>
   );
 };

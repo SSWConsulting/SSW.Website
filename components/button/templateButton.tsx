@@ -1,3 +1,4 @@
+import { LeadCaptureModal } from "@/components/blocks/v3/leadCapture/leadCaptureModal";
 import { Icon } from "@/components/blocksSubtemplates/tinaFormElements/icon";
 import classNames from "classnames";
 import React, { useState } from "react";
@@ -7,8 +8,18 @@ import { useSessionStorage } from "usehooks-ts";
 import globals from "../../content/global/index.json";
 import Popup from "../popup/popup";
 import { SESSION_STORAGE_KEYS } from "../util/constants";
+<<<<<<< HEAD
 import { buttonColorVariants } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import RippleButton, { ButtonTinaFields } from "./rippleButtonV2";
+=======
+import RippleButton, { ButtonTinaFields, ColorVariant } from "./rippleButtonV2";
+import { PROJECT_FORM_MODAL } from "./templateButton.schema";
+
+enum ButtonColors {
+  Red = 0,
+  Transparent = 1,
+}
+>>>>>>> origin/main
 
 type TemplateButtonOptions = {
   buttonText?: string;
@@ -63,20 +74,28 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 
           {buttonText}
         </RippleButton>
-        {leadCaptureFormOption && open && (
-          <Popup
-            isVisible={open}
-            showCloseIcon={true}
-            onClose={() => setOpen(false)}
-          >
-            <Jotform
-              defaults={{
-                landingPage,
-              }}
-              src={jotFormLink}
-            ></Jotform>
-          </Popup>
-        )}
+        {leadCaptureFormOption === PROJECT_FORM_MODAL
+          ? open && (
+              <LeadCaptureModal
+                isVisible={open}
+                onClose={() => setOpen(false)}
+              />
+            )
+          : leadCaptureFormOption &&
+            open && (
+              <Popup
+                isVisible={open}
+                showCloseIcon={true}
+                onClose={() => setOpen(false)}
+              >
+                <Jotform
+                  defaults={{
+                    landingPage,
+                  }}
+                  src={jotFormLink}
+                ></Jotform>
+              </Popup>
+            )}
       </>
     );
   }

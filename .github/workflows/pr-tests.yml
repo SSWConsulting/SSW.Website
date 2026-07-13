@@ -1,0 +1,48 @@
+name: PR - tests and coverage
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  # Fall back to run_id so manual dispatch runs don't share one group and cancel each other
+  group: ci-${{ github.event.number || github.run_id }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  run-tests-and-coverage:
+    name: Run tests & coverage
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          package_json_file: package.json
+          standalone: true
+      - uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Tests & Coverage
+        run: pnpm test-and-coverage --outputFile=coverage-report.json
+
+      - name: Upload Coverage Report to PR
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          coverage-file: coverage-report.json
+          base-coverage-file: coverage-report.json
+          skip-step: all
+          annotations: none

@@ -8,6 +8,7 @@ export const V3LogoCarouselSchema: Template = {
   ui: {
     defaultItem: {
       heading: "Trusted by **industry leaders**",
+      showBorders: true,
       logos: [{ logo: "", altText: "Logo" }],
     },
   },
@@ -26,6 +27,12 @@ export const V3LogoCarouselSchema: Template = {
       label: "Mask Images and Whiten",
       name: "isWhiteImages",
       description: "Completely saturates images so they appear white.",
+    },
+    {
+      type: "boolean",
+      label: "Show Borders",
+      name: "showBorders",
+      description: "Draws a border around each logo box.",
     },
     {
       type: "object",

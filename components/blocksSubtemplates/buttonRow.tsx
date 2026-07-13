@@ -80,7 +80,7 @@ const ButtonRow = ({ className, data }) => {
 
             const isInPageAnchor = button.buttonLink?.startsWith("#");
 
-            return button.buttonLink && !button.showLeadCaptureForm ? (
+            return button.buttonLink && !button.leadCaptureFormOption ? (
               isInPageAnchor ? (
                 <a
                   className={cn(buttonIsFullWidth && "w-full sm:w-auto")}

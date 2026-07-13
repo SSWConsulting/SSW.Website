@@ -2,8 +2,8 @@ import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import Link from "next/link";
-import { BsArrowUpRight } from "react-icons/bs";
 import { tinaField } from "tinacms/dist/react";
+import { ArrowCircle } from "../shared/arrowCircle";
 
 export function V3StackCards({ data }) {
   const cards = data?.cards ?? [];
@@ -49,9 +49,7 @@ export function V3StackCards({ data }) {
                     <h3 className="text-2xl font-semibold text-white">
                       {card?.title}
                     </h3>
-                    <span className="flex shrink-0 scale-100 items-center justify-center rounded-full bg-white p-2 text-black transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125">
-                      <BsArrowUpRight className="size-4" />
-                    </span>
+                    <ArrowCircle className="p-2" iconClassName="size-4" />
                   </div>
                   {card?.description && (
                     <p className="mt-10 text-base font-light text-gray-400">
