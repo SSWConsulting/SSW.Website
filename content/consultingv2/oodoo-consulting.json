@@ -89,17 +89,17 @@
         {
           "brow": "01",
           "heading": "Built around a demo, not your day-today",
-          "description": "Odoo ships with sensible defaults for a generic business. Most implementations configure those defaults and call it finished, so staff end up entering the same information twice: once in Odoo because someone told them to, and once in the spreadsheet that actually gets used\n"
+          "description": "Odoo ships with generic defaults. Most implementations stop there, leaving staff to enter data twice: once in Odoo, and again in the spreadsheets they actually use to work.\n"
         },
         {
           "brow": "02",
           "heading": "Data that still lives in five places",
-          "description": "Odoo can hold your finance, sales and warehouse data in one system. Most rollouts stop short of connecting it to the accounting software, the website, or whatever the warehouse team already runs, so someone is still exporting CSVs by hand every week. \n"
+          "description": "Odoo connects your finance, sales, and warehouse data in one place. Most setups fail to link this to your accounting software or warehouse tools, so staff are still stuck exporting manual CSVs every week.\n"
         },
         {
           "brow": "03",
           "heading": "One person manages everything",
-          "description": "A lot of Odoo work gets done by a single person who picks it up as they go. It holds up fine until that person goes on leave, changes roles, or leaves the company. After that, nobody knows why a particular workflow was set up the way it was\n"
+          "description": "Odoo builds often rely on one person learning as they go. It works fine until they change roles or leave. Then, you are left with workflows nobody understands and no way to support them.\n"
         }
       ],
       "_template": "v3FeatureSteps"
