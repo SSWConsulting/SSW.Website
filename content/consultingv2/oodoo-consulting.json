@@ -82,14 +82,14 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "What usually goes wrong",
+      "brow": "Based on our experience",
       "heading": "Where Odoo projects usually go wrong",
-      "description": "The software gets installed without much trouble. Mapping the real workflow , migrating clean data, and training people to actually use the new system are the parts that usually get compressed. \n",
+      "description": "The software gets installed without much trouble. Mapping the real workflow, migrating clean data, and training people to use the new system are the parts that usually get overlooked.\n",
       "steps": [
         {
           "brow": "01",
-          "heading": "Built around a demo, not your day-today",
-          "description": "Odoo ships with generic defaults. Most implementations stop there, leaving staff to enter data twice: once in Odoo, and again in the spreadsheets they actually use to work.\n"
+          "heading": "Built around a demo, not your day-to-day",
+          "description": "Odoo ships with generic defaults. Most implementations stop there, leaving staff to enter data twice: once in Odoo, and again in the spreadsheets they actively use.\n"
         },
         {
           "brow": "02",
@@ -217,7 +217,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "Beyond the CRM",
+      "brow": "Full stack engineers",
       "heading": "What we build around your CRM",
       "subtitle": "Most CRM projects need touch reporting, workflow automation, or the inbox your sales team already lives in ",
       "cards": [
@@ -238,7 +238,7 @@
         },
         {
           "title": "Azure Integrations",
-          "description": "Connect Dynamics 365 to your other business systems using Azure Functions and Logic Apps.",
+          "description": "Connect your CRM to your other business systems using Azure Functions and Logic Apps.",
           "link": "/consulting/azure"
         }
       ],
@@ -255,26 +255,26 @@
         {
           "guid": "akn4ur",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=5QLhrLrvWp8",
+          "youtubeUrl": "https://www.youtube.com/watch?v=fhnatho4nSg",
           "altText": "Angular – Satisfying your Performance Hungry UI",
-          "category": "Angular",
-          "heading": "Angular – Satisfying your Performance Hungry UI"
+          "category": "Dynamics 365",
+          "heading": "Searching employee skills - (AD vs SharePoint vs Dynamics 365 CRM)"
         },
         {
           "guid": "20ehn",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=yVHzykdKis4",
-          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
-          "category": "NEXT.JS",
-          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library"
+          "youtubeUrl": "https://www.youtube.com/watch?v=WwF69cj8490",
+          "altText": "How to supercharge a company with AI | Ulysses Maclaren",
+          "category": "AI",
+          "heading": "How to supercharge a company with AI | Ulysses Maclaren"
         },
         {
           "guid": "arf4s",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Kl1KWdMI5So",
-          "altText": "Vercel – Simplifying Your Development with Zero Configuration",
-          "category": "DevOps ",
-          "heading": "Vercel – Simplifying Your Development with Zero Configuration"
+          "youtubeUrl": "https://www.youtube.com/watch?v=5eXx67EY_y4",
+          "altText": "Do you allow multiple options rather than forcing a best fit?",
+          "category": "Dynamics 365",
+          "heading": "Do you allow multiple options rather than forcing a best fit?"
         },
         {
           "guid": "ui7a6e",
