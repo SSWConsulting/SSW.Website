@@ -77,7 +77,7 @@ export const V3Hero = ({ data, priority = false }) => {
           </div>
         ) : (
           hasImage && (
-            <div className="relative flex w-full justify-center ml-0 mt-4 xl:mt-0 md:ml-4">
+            <div className="relative ml-0 mt-4 flex w-full justify-center md:ml-4 xl:mt-0">
               <Image
                 width={image.imageWidth}
                 height={image.imageHeight}
