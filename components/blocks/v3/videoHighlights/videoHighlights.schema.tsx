@@ -2,6 +2,7 @@ import type { Template } from "tinacms";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
+import { optimizedImageSchema } from "../../../../tina/collections/shared-fields";
 
 export const V3VideoHighlightsSchema: Template = {
   name: "v3VideoHighlights",
@@ -81,6 +82,19 @@ export const V3VideoHighlightsSchema: Template = {
           ui: {
             component: IconPickerInput,
           },
+        },
+        {
+          type: "object",
+          label: "Custom Image",
+          name: "customImage",
+          description: "Optional. Shown above the title instead of the icon.",
+          fields: [
+            { type: "string", label: "Alt Text", name: "altText" },
+            // @ts-expect-error – optimizedImageSchema's field types aren't recognised
+            ...optimizedImageSchema(
+              "Small image shown above the title instead of the icon."
+            ),
+          ],
         },
         {
           type: "string",

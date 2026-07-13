@@ -203,64 +203,6 @@
       "days": "Monday - Friday"
     }
   ],
-  "socials": [
-    {
-      "type": "youtube",
-      "title": "SSW on YouTube",
-      "url": "https://www.youtube.com/user/sswtechtalks/",
-      "username": "sswtechtalks"
-    },
-    {
-      "type": "linkedin",
-      "title": "SSW on LinkedIn",
-      "url": "https://www.linkedin.com/company/ssw/"
-    },
-    {
-      "type": "facebook",
-      "title": "SSW on Facebook",
-      "url": "https://www.facebook.com/SSW.page"
-    },
-    {
-      "type": "xtwitter",
-      "title": "SSW on X",
-      "url": "https://x.com/SSW_TV",
-      "username": "SSW_TV"
-    },
-    {
-      "type": "bluesky",
-      "title": "SSW on BlueSky",
-      "url": "https://bsky.app/profile/ssw.com.au",
-      "username": "ssw.com.au"
-    },
-    {
-      "type": "instagram",
-      "title": "SSW on Instagram",
-      "url": "https://www.instagram.com/ssw_tv",
-      "username": "ssw_tv"
-    },
-    {
-      "type": "threads",
-      "title": "SSW on Threads",
-      "url": "https://www.threads.net/@ssw_tv",
-      "username": "ssw_tv"
-    },
-    {
-      "type": "tiktok",
-      "title": "SSW on TikTok",
-      "url": "https://www.tiktok.com/@ssw_tv",
-      "username": "ssw_tv"
-    },
-    {
-      "type": "github",
-      "title": "SSW on GitHub",
-      "url": "https://www.github.com/sswconsulting",
-      "username": "sswconsulting"
-    },
-    {
-      "type": "meetup",
-      "url": "https://www.meetup.com/Sydney-NET-User-Group/"
-    }
-  ],
   "contactIcon": {
     "url": "tel:+61299533000",
     "linkText": "CALL US",

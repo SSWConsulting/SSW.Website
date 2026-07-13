@@ -6,6 +6,23 @@ on:
       tag:
         type: string
         required: true
+      # For comment-triggered (issue_comment) builds the event context points at
+      # main, not the PR - so the caller must pass the PR's ref/branch/number.
+      ref:
+        type: string
+        required: false
+        default: ""
+        description: "Git ref to build; defaults to the ref that triggered the workflow"
+      tina_branch:
+        type: string
+        required: false
+        default: ""
+        description: "Tina branch to build against; defaults to the triggering branch"
+      pr_number:
+        type: string
+        required: false
+        default: ""
+        description: "PR number for the slot URL; defaults to the event's PR number"
     secrets:
       AZURE_CLIENT_ID:
         required: true
@@ -39,6 +56,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.ref }}
 
       - name: Load .env file
         uses: xom9ikk/dotenv@v2
@@ -105,16 +124,16 @@ jobs:
             NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}
             NEXT_PUBLIC_GITHUB_RUN_NUMBER=${{ github.run_number }}
             NEXT_PUBLIC_GITHUB_REPOSITORY=${{ github.repository }}
-            NEXT_PUBLIC_GITHUB_SHA=${{ github.sha }}
+            NEXT_PUBLIC_GITHUB_SHA=${{ inputs.ref || github.sha }}
             NEXT_PUBLIC_TINA_CLIENT_ID=${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
-            NEXT_PUBLIC_TINA_BRANCH=${{ github.head_ref || github.ref_name }}
+            NEXT_PUBLIC_TINA_BRANCH=${{ inputs.tina_branch || github.head_ref || github.ref_name }}
             KEY_VAULT=${{ env.KEY_VAULT }}
             NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=${{ steps.AppInsight.outputs.AppInsightConnectionString }}
             NEXT_PUBLIC_CHATBASE_BOT_ID=${{ env.NEXT_PUBLIC_CHATBASE_BOT_ID }}
             SITE_URL=https://www.ssw.com.au
             JOTFORM_API_KEY=${{ secrets.JOTFORM_API_KEY }}
             POWER_AUTOMATE_LEAD_WEBHOOK_URL=${{ secrets.POWER_AUTOMATE_LEAD_WEBHOOK_URL }}
-            NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{github.event.number}}.azurewebsites.net/
+            NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{ inputs.pr_number || github.event.number }}.azurewebsites.net/
 
           # Mounted as secrets (not build-args) so they are not baked into the
           # exported BuildKit cache (cache-to mode=max).

@@ -1,0 +1,256 @@
+name: PR - deploy to slot on /deploy
+
+# Staging slots are opt-in: comment `/deploy` on a PR to build it and deploy it
+# to a pr-<number> slot. Slots are a shared, limited resource (MAX_PR_SLOTS) -
+# see https://github.com/SSWConsulting/SSW.Website/issues/4767.
+
+on:
+  issue_comment:
+    types: [created]
+
+concurrency:
+  group: ci-${{ github.event.issue.number }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  validate:
+    name: Validate /deploy command
+    # startsWith so trailing whitespace/text doesn't silently ignore the command
+    if: github.event.issue.pull_request && startsWith(github.event.comment.body, '/deploy')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    outputs:
+      pr_number: ${{ steps.pr.outputs.pr_number }}
+      head_ref: ${{ steps.pr.outputs.head_ref }}
+      head_sha: ${{ steps.pr.outputs.head_sha }}
+      head_repository: ${{ steps.pr.outputs.head_repository }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check commenter has write access
+        run: |
+          $login = '${{ github.event.comment.user.login }}'
+          $permission = gh api "repos/${{ github.repository }}/collaborators/$login/permission" --jq '.permission'
+
+          if ($permission -notin @('admin', 'maintain', 'write')) {
+            gh api "repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" `
+              -f body="🛑 Sorry @$login - write access to this repo is required to deploy a staging slot." --silent
+            Write-Host "::error::$login has '$permission' permission - write access is required to deploy."
+            exit 1
+          }
+
+          Write-Host "✅ $login has '$permission' permission - proceeding."
+
+      - name: Get PR details
+        id: pr
+        run: |
+          $prNumber = '${{ github.event.issue.number }}'
+          $pr = gh api "repos/${{ github.repository }}/pulls/$prNumber" | ConvertFrom-Json
+
+          if ($pr.state -ne 'open') {
+            Write-Host "::error::PR #$prNumber is not open (state: $($pr.state)) - nothing to deploy."
+            exit 1
+          }
+
+          "pr_number=$prNumber" >> $env:GITHUB_OUTPUT
+          "head_ref=$($pr.head.ref)" >> $env:GITHUB_OUTPUT
+          "head_sha=$($pr.head.sha)" >> $env:GITHUB_OUTPUT
+          "head_repository=$($pr.head.repo.full_name)" >> $env:GITHUB_OUTPUT
+          Write-Host "✅ Deploying PR #$prNumber ($($pr.head.ref) @ $($pr.head.sha))"
+
+      - name: React to comment
+        run: |
+          gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" `
+            -f content=rocket --silent
+
+  check-slot-capacity:
+    name: Check staging slot capacity
+    needs: validate
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: Azure CLI - Login
+        uses: azure/login@v3
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Enforce slot cap
+        id: cap
+        env:
+          PR_SLOT: pr-${{ needs.validate.outputs.pr_number }}
+        run: |
+          # Default to 5; only override if MAX_PR_SLOTS is a valid positive int
+          $max = 5
+          $parsed = 0
+          if ([int]::TryParse("${{ env.MAX_PR_SLOTS }}", [ref]$parsed) -and $parsed -gt 0) { $max = $parsed }
+
+          # Count only PR slots (the permanent 'staging' slot and 'production' are not PR slots)
+          $slots = az webapp deployment slot list `
+            --name ${{ env.APP_SERVICE_NAME }} `
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP }} `
+            --query "[?starts_with(name, 'pr-')].name" `
+            --output tsv
+
+          $slotArray = @($slots -split "`n" | Where-Object { $_ -ne '' })
+          $count = $slotArray.Count
+
+          Write-Host "Open PR slots: $count / $max"
+
+          # An existing PR re-deploying is an update to its own slot, not a new one - always allow
+          if ($slotArray -contains "$env:PR_SLOT") {
+            Write-Host "✅ This PR already owns slot $env:PR_SLOT - allowing (update, not a new slot)."
+            exit 0
+          }
+
+          if ($count -ge $max) {
+            $msg = "🛑 **Staging slot limit reached ($count/$max).** This PR can't get a staging deployment until one frees up. Please close or merge another open PR to release its slot, then comment ``/deploy`` again."
+            "blocked=true"   >> $env:GITHUB_OUTPUT
+            "message=$msg"   >> $env:GITHUB_OUTPUT
+            Write-Host $msg
+            exit 1
+          }
+
+          Write-Host "✅ Capacity available ($count/$max) - proceeding."
+
+      - name: Comment on PR when blocked
+        if: failure() && steps.cap.outputs.blocked == 'true'
+        uses: mshick/add-pr-comment@v3
+        with:
+          message: ${{ steps.cap.outputs.message }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: false
+
+  build:
+    name: Build and upload artifacts
+    # Gated behind the slot cap so a blocked PR doesn't push a throwaway image to ACR
+    needs: [validate, check-slot-capacity]
+    uses: ./.github/workflows/template-build.yml
+    with:
+      tag: pr-${{ needs.validate.outputs.pr_number }}
+      ref: ${{ needs.validate.outputs.head_sha }}
+      tina_branch: ${{ needs.validate.outputs.head_ref }}
+      pr_number: ${{ needs.validate.outputs.pr_number }}
+    permissions:
+      id-token: write
+      contents: read
+    secrets: inherit
+
+  pr-deploy:
+    name: Deploy to slot
+    needs: [validate, check-slot-capacity, build]
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      issues: write
+      pull-requests: write
+    outputs:
+      url: ${{ steps.deploy.outputs.url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Load .env file
+        uses: xom9ikk/dotenv@v2
+        with:
+          path: ./.github
+
+      - name: Deploy to slot
+        uses: ./.github/actions/deploy
+        id: deploy
+        with:
+          slot_name: pr-${{ needs.validate.outputs.pr_number }}
+          create_slot: "true"
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          AZURE_RESOURCE_GROUP: ${{ env.AZURE_RESOURCE_GROUP }}
+          APP_SERVICE_NAME: ${{ env.APP_SERVICE_NAME }}
+          ACR_LOGIN_SERVER: ${{ env.ACR_LOGIN_SERVER }}
+          IMAGE_NAME: ${{ env.IMAGE_NAME }}
+          AZURE_SERVICE_PRINCIPAL_OBJECT_ID: ${{ secrets.AZURE_SERVICE_PRINCIPAL_OBJECT_ID }}
+
+      - name: Comment on PR
+        uses: mshick/add-pr-comment@v3
+        with:
+          message: |
+            Deployed changes to <${{ steps.deploy.outputs.url }}>
+
+            ℹ️ Staging slots are no longer created automatically - comment `/deploy` to deploy new commits.
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          allow-repeats: true
+
+  ui-test:
+    name: Run Playwright Tests
+    needs: pr-deploy
+    uses: ./.github/workflows/template-ui-tests.yml
+    with:
+      deploy_url: ${{ needs.pr-deploy.outputs.url }}
+      tests_to_run: "images seo-noindex"
+
+  prLighthouseInsights:
+    name: Run PR Lighthouse Insights
+    uses: ./.github/workflows/template-lighthouse.yml
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+    needs: [validate, pr-deploy]
+    with:
+      url: ${{ needs.pr-deploy.outputs.url }}
+      commit_report: false
+      ref: ${{ needs.validate.outputs.head_sha }}
+      repository: ${{ needs.validate.outputs.head_repository }}
+    secrets:
+      GH_APP_KEY: ${{ secrets.GH_APP_KEY }}
+
+  notify-failure:
+    name: Comment on PR when deploy workflow fails
+    needs: [validate, check-slot-capacity, build, pr-deploy, ui-test, prLighthouseInsights]
+    if: ${{ always() && github.event.issue.pull_request && startsWith(github.event.comment.body, '/deploy') && needs.validate.result == 'success' && needs.check-slot-capacity.result == 'success' && (needs.build.result == 'failure' || needs.pr-deploy.result == 'failure' || needs.ui-test.result == 'failure' || needs.prLighthouseInsights.result == 'failure') }}
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Comment with failure details
+        run: |
+          # Literal here-string (@'...'@): backticks are markdown, not pwsh escapes.
+          # Template expressions are substituted by Actions before pwsh runs.
+          $body = @'
+          🛑 **Staging deployment failed.**
+
+          The `/deploy` workflow passed validation and slot-capacity checks, but a later stage failed.
+
+          | Stage | Result |
+          | --- | --- |
+          | Build and upload artifacts | `${{ needs.build.result }}` |
+          | Deploy to slot | `${{ needs.pr-deploy.result }}` |
+          | Playwright tests | `${{ needs.ui-test.result }}` |
+          | Lighthouse Insights | `${{ needs.prLighthouseInsights.result }}` |
+
+          [View the failed workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          '@
+
+          gh api "repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" `
+            -f body="$body" --silent

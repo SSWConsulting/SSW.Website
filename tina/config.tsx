@@ -18,6 +18,7 @@ import { employmentSchema } from "./collections/employment";
 import { eventsIndexSchema, eventsSchema } from "./collections/events";
 import { eventsCalendarSchema } from "./collections/events-calendar";
 import { eventsv2Schema } from "./collections/eventsv2";
+import { footerSchema } from "./collections/footer";
 import { globalSchema } from "./collections/global";
 import { industryIndexSchema, industrySchema } from "./collections/industry";
 import { liveSchema } from "./collections/live";
@@ -29,6 +30,7 @@ import { newsletterSchema } from "./collections/newsletters";
 import { officeIndexSchema, officeSchema } from "./collections/offices";
 import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
+import { pagesv2Schema } from "./collections/pagesv2";
 import { partnerIndexSchema } from "./collections/partner";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { phishingBannerSchema } from "./collections/phishing-banner";
@@ -57,6 +59,7 @@ const formattedSchemas = () => {
 const pageSchemas = [
   caseStudySchema,
   pagesSchema,
+  pagesv2Schema,
   articlesIndexSchema,
   articlesSchema,
   companyIndexSchema,
@@ -99,6 +102,7 @@ const schemas = [
   testimonialCategoriesSchema,
   opportunitiesSchema,
   globalSchema,
+  footerSchema,
   megaMenuSchema,
   phishingBannerSchema,
   userGroupGlobalSchema,
