@@ -10,9 +10,9 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "brow": "REACT CONSULTING",
-      "heading": "Build your dream React App with our experts",
-      "description": "Most React apps work in the demo. We build the ones that survive real users, real data and years of change. Fast and built to last, with Australia's most-certified React consultants.\n",
+      "brow": "Odoo CONSULTING",
+      "heading": "We build Odoo to support how your team actually works.",
+      "description": "Most Odoo implementations work in the demo. We build the ones that survive real operations, real data and years of growth, backed by 30+ years of enterprise software delivery in Australia.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
@@ -29,7 +29,12 @@
           "colour": 1
         }
       ],
-      "mediaType": "reactConsultingSvg",
+      "mediaType": "image",
+      "image": {
+        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
+        "imageHeight": 1758,
+        "imageWidth": 2638
+      },
       "_template": "v3Hero"
     },
     {
