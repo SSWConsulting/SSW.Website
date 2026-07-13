@@ -99,7 +99,7 @@
         {
           "brow": "03",
           "heading": "One person manages everything",
-          "description": "Built by a single developer, so the whole system lives in their head and leaves with them. You’re left reverse-engineering your own codebase.\n"
+          "description": "A lot of Odoo work gets done by a single person who picks it up as they go. It holds up fine until that person goes on leave, changes roles, or leaves the company. After that, nobody knows why a particular workflow was set up the way it was\n"
         }
       ],
       "_template": "v3FeatureSteps"
