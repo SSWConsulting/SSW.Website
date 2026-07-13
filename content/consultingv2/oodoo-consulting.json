@@ -237,8 +237,8 @@
           "link": "/consulting/microsoft-365"
         },
         {
-          "title": "Azure",
-          "description": "Cloud infrastructure that keeps your app fast as it scales.",
+          "title": "Azure Integrations",
+          "description": "Connect Dynamics 365 to your other business systems using Azure Functions and Logic Apps.",
           "link": "/consulting/azure"
         }
       ],
