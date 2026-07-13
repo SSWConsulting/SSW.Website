@@ -83,7 +83,7 @@
         "backgroundColour": 7
       },
       "brow": "What usually goes wrong",
-      "heading": "Most Odoo problems aren't technical",
+      "heading": "Where Odoo projects usually go wrong",
       "description": "The software gets installed without much trouble. Mapping the real workflow , migrating clean data, and training people to actually use the new system are the parts that usually get compressed. \n",
       "steps": [
         {
@@ -109,18 +109,18 @@
         "backgroundColour": 7,
         "gridOverlay": true
       },
-      "videoUrl": "https://www.youtube.com/watch?v=3K4Gb54BFMo",
-      "thumbnail": "/images/consulting/thumbnail.png",
+      "videoUrl": "https://www.youtube.com/watch?v=3nkO8BxG8Sc",
+      "thumbnail": "",
       "greyscaleThumbnail": true,
-      "figure": "Video: React vs. Angular: Let the experts argue! (28 mins)",
+      "figure": "Video: Every client deserves a Team (4 mins)",
       "heading": "Why choose SSW?",
       "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
       "highlights": [
         {
           "title": "Deep expertise",
           "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available\n",
-          "link": "https://www.ssw.com.au/rules/rules-to-better-react",
-          "linkText": "Rules to Better React"
+          "link": "https://www.ssw.com.au/rules/rules-to-better-crm",
+          "linkText": "Rules to Better CRM"
         },
         {
           "title": "Results over rhetoric",
@@ -172,7 +172,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "Why teams choose SSW for React Consulting",
+      "heading": "Why teams choose SSW for Odoo Consulting",
       "statistics": [
         {
           "figure": 7000,
