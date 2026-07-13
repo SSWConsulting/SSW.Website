@@ -30,6 +30,7 @@ import { newsletterSchema } from "./collections/newsletters";
 import { officeIndexSchema, officeSchema } from "./collections/offices";
 import { opportunitiesSchema } from "./collections/opportunities";
 import { pagesSchema } from "./collections/pages";
+import { pagesv2Schema } from "./collections/pagesv2";
 import { partnerIndexSchema } from "./collections/partner";
 import { paymentDetailsSchema } from "./collections/payment-details";
 import { phishingBannerSchema } from "./collections/phishing-banner";
@@ -58,6 +59,7 @@ const formattedSchemas = () => {
 const pageSchemas = [
   caseStudySchema,
   pagesSchema,
+  pagesv2Schema,
   articlesIndexSchema,
   articlesSchema,
   companyIndexSchema,

@@ -19,6 +19,8 @@ type CarouselProps = {
   orientation?: "horizontal" | "vertical";
   setApi?: (api: CarouselApi) => void;
   itemLength?: number;
+  /** Auto-advance the carousel. Defaults to true. */
+  autoplay?: boolean;
 };
 
 type CarouselContextProps = {
@@ -56,24 +58,31 @@ const Carousel = React.forwardRef<
       className,
       children,
       itemLength,
+      autoplay = true,
       ...props
     },
     ref
   ) => {
     const [carouselRef, api] = useEmblaCarousel(
       {
+        // Loop by default, but let callers opt out with `opts={{ loop: false }}`
+        // for a finite carousel. `axis` stays last so orientation always wins.
+        loop: true,
         ...opts,
         axis: orientation === "horizontal" ? "x" : "y",
-        loop: true,
       },
 
       [
-        AutoPlay({
-          delay: 5000,
-          playOnInit: true,
-          stopOnInteraction: true,
-          stopOnMouseEnter: true,
-        }),
+        ...(autoplay
+          ? [
+              AutoPlay({
+                delay: 5000,
+                playOnInit: true,
+                stopOnInteraction: true,
+                stopOnMouseEnter: true,
+              }),
+            ]
+          : []),
         ...(plugins || []),
       ]
     );

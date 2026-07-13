@@ -84,6 +84,12 @@ export default {
       8: "8px",
     },
     extend: {
+      borderRadius: {
+        control: "0.375rem",
+        utility: "0.5rem",
+        card: "1rem",
+        feature: "2.8125rem",
+      },
       aspectRatio: {
         "4/3": "4 / 3",
       },

@@ -66,7 +66,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
       <button
         onClick={(e) => onClick(e)}
         className={cn(
-          "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-md px-6 py-3 text-center",
+          "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-control px-6 py-3 text-center",
           variants[variant],
           className
         )}
