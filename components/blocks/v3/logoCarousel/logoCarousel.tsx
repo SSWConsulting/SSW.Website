@@ -2,6 +2,7 @@ import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Marquee } from "@/components/ui/marquee";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 
@@ -28,7 +29,11 @@ export function V3LogoCarousel({ data }) {
               <div className="flex h-full items-center justify-center gap-1 sm:gap-3">
                 {data?.logos?.map((logo, index) => (
                   <div
-                    className="relative h-20 min-w-48 rounded-utility border-0.5 border-sswBorder md:h-26"
+                    className={cn(
+                      "relative h-20 min-w-48 rounded-utility md:h-26",
+                      data?.showBorders !== false &&
+                        "border-0.5 border-sswBorder"
+                    )}
                     data-tina-field={tinaField(logo, "altText")}
                     key={`v3-logo-${index}`}
                   >

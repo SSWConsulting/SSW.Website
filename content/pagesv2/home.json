@@ -232,10 +232,11 @@
       "background": {
         "backgroundColour": 7,
         "bleed": false,
-        "gridOverlay": true,
+        "gridOverlay": false,
         "redGlow": false
       },
       "heading": "",
+      "showBorders": true,
       "logos": [
         {
           "logo": "/images/ssw-web/logos/toll_logo.png",

@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { ArrowCircle } from "../shared/arrowCircle";
+import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { SectionHeader } from "../shared/sectionHeader";
 
@@ -168,7 +169,12 @@ export function V3FeaturedProducts({ data }) {
           <>
             {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
             <Carousel
-              opts={{ align: "start", loop: false, dragFree: true }}
+              opts={{
+                align: "start",
+                loop: false,
+                dragFree: true,
+                containScroll: "keepSnaps",
+              }}
               autoplay={false}
               className="lg:hidden"
             >
@@ -189,6 +195,7 @@ export function V3FeaturedProducts({ data }) {
                   </CarouselItem>
                 )}
               </CarouselContent>
+              <CarouselDots count={products.length} />
             </Carousel>
 
             {/* lg+ : row */}

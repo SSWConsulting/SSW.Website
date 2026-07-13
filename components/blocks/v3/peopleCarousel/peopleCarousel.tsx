@@ -5,7 +5,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPickItem,
   useCarousel,
 } from "@/components/ui/carousel";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
@@ -17,6 +16,7 @@ import Link from "next/link";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { tinaField } from "tinacms/dist/react";
+import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { PersonCardTexture } from "./personCardTexture";
 
@@ -89,22 +89,11 @@ function PersonCard({ person, index }) {
 }
 
 function CarouselControls({ count }: { count: number }) {
-  const { selectedIndex, scrollPrev, scrollNext } = useCarousel();
+  const { scrollPrev, scrollNext } = useCarousel();
 
   return (
     <div className="mt-10 flex items-center justify-between px-8 lg:px-0">
-      <div className="flex items-center gap-2">
-        {Array.from({ length: count }).map((_, index) => (
-          <CarouselPickItem
-            key={`v3-people-dot-${index}`}
-            index={index}
-            className={cn(
-              "h-1.5 rounded-full transition-all duration-300",
-              selectedIndex === index ? "w-6 bg-white" : "w-3 bg-white/30"
-            )}
-          />
-        ))}
-      </div>
+      <CarouselDots count={count} className="mt-0 justify-start" />
 
       <div className="flex items-center gap-3">
         <button
@@ -178,7 +167,12 @@ export function V3PeopleCarousel({ data }) {
           <>
             {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
             <Carousel
-              opts={{ align: "start", loop: false, dragFree: true }}
+              opts={{
+                align: "start",
+                loop: false,
+                dragFree: true,
+                containScroll: "keepSnaps",
+              }}
               autoplay={false}
               className="mt-12 lg:hidden"
             >
@@ -200,6 +194,7 @@ export function V3PeopleCarousel({ data }) {
                   </CarouselItem>
                 )}
               </CarouselContent>
+              <CarouselDots count={people.length} />
             </Carousel>
 
             {/* lg+ : static grid */}
@@ -218,7 +213,10 @@ export function V3PeopleCarousel({ data }) {
         )}
 
         {people.length > 4 && (
-          <Carousel opts={{ align: "start" }} className="mt-12">
+          <Carousel
+            opts={{ align: "start", containScroll: "keepSnaps" }}
+            className="mt-12"
+          >
             <CarouselContent className="ml-0">
               {people.map((person, index) => (
                 <CarouselItem

@@ -10,6 +10,7 @@ import {
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import { ArrowCircle } from "../shared/arrowCircle";
+import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import Image from "next/image";
 import Link from "next/link";
@@ -138,7 +139,12 @@ export function V3ImageCards({ data }) {
           <>
             {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
             <Carousel
-              opts={{ align: "start", loop: false, dragFree: true }}
+              opts={{
+                align: "start",
+                loop: false,
+                dragFree: true,
+                containScroll: "keepSnaps",
+              }}
               autoplay={false}
               className="mt-12 lg:hidden"
             >
@@ -163,6 +169,7 @@ export function V3ImageCards({ data }) {
                   </CarouselItem>
                 )}
               </CarouselContent>
+              <CarouselDots count={cards.length} />
             </Carousel>
 
             {/* lg+ : grid */}
