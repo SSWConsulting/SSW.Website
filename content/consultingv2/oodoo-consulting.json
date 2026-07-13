@@ -82,19 +82,19 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "BASED ON OUR EXPERIENCE",
-      "heading": "Why many React projects hit a wall",
-      "description": "The demo proves the idea. Software that runs your business for years is a different job. Production has to survive real users, real data, and years of change. This is where teams lose time and money.\n",
+      "brow": "What usually goes wrong",
+      "heading": "Most Odoo problems aren't technical",
+      "description": "The software gets installed without much trouble. Mapping the real workflow , migrating clean data, and training people to actually use the new system are the parts that usually get compressed. \n",
       "steps": [
         {
           "brow": "01",
-          "heading": "It slows under real load",
-          "description": "Apps that were not built for real data and traffic struggle with load times and basic interactions. People eventually just give up.\n"
+          "heading": "Built around a demo, not your day-today",
+          "description": "Odoo ships with sensible defaults for a generic business. Most implementations configure those defaults and call it finished, so staff end up entering the same information twice: once in Odoo because someone told them to, and once in the spreadsheet that actually gets used\n"
         },
         {
           "brow": "02",
-          "heading": "Changes take longer and longer",
-          "description": "Early features shipped fast because there was little code to work around. Now every change risks breaking something & progress slows to a crawl.\n"
+          "heading": "Data that still lives in five places",
+          "description": "Odoo can hold your finance, sales and warehouse data in one system. Most rollouts stop short of connecting it to the accounting software, the website, or whatever the warehouse team already runs, so someone is still exporting CSVs by hand every week. \n"
         },
         {
           "brow": "03",
