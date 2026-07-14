@@ -51,10 +51,10 @@ export function LogoCarousel({ data }) {
                         style={{ scale: logo?.scale ? logo.scale / 100 : 1 }}
                         alt={logo?.altText ?? "Logo"}
                         fill={true}
-                        objectFit="contain"
-                        className={
-                          data.isWhiteImages ? "brightness-0 invert" : ""
-                        }
+                        className={cn(
+                          "object-contain",
+                          data.isWhiteImages && "brightness-0 invert"
+                        )}
                       />
                     </div>
                   ))}
