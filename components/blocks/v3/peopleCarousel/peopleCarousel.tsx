@@ -29,77 +29,85 @@ const socials = [
   { key: "sswPeople", label: "SSW People", image: SSW_PEOPLE_ICON },
 ];
 
+// The photo and name link to the profile; the social icons link out on their
+// own. A plain <div> stands in when there's no profile to link to.
+function ProfileLink({ person, className, children }) {
+  if (!person?.sswPeople) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <Link
+      href={person.sswPeople}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`View ${person?.name ?? "this person"}'s SSW People profile`}
+      className={cn("!no-underline", className)}
+    >
+      {children}
+    </Link>
+  );
+}
+
 function PersonCard({ person, index, scope }) {
   return (
-    <div
-      className={cn(
-        "relative flex h-full flex-col overflow-hidden rounded-card border-0.75 border-sswBorder bg-sswCard transition-colors duration-300",
-        person?.sswPeople && "cursor-pointer hover:border-sswRed"
-      )}
-    >
-      {/* Card-wide link overlay at z-10. The social links sit above it at z-20
-          so they still win the click. Avoids nesting anchors. */}
-      {person?.sswPeople && (
-        <Link
-          href={person.sswPeople}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`View ${person?.name ?? "this person"}'s SSW People profile`}
-          className="absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-        />
-      )}
-
-      {/* Red panel frames the photo with padding on the sides and top while the
-          photo stays flush to the bottom, so the person reads as standing in it. */}
-      <div className="relative aspect-square w-full bg-sswRed">
-        <PersonCardTexture index={index} scope={scope} />
-        {person?.image?.imageSource && (
-          <Image
-            src={person.image.imageSource}
-            alt={person.image.altText ?? person?.name ?? ""}
-            fill
-            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 80vw"
-            className="object-contain object-bottom px-2 pt-2"
-          />
-        )}
-      </div>
-
-      <div className="flex flex-1 flex-col items-center p-4 text-center xl:p-6">
-        {person?.name && (
-          <h3 className="text-xl font-semibold text-white">{person.name}</h3>
-        )}
-        {person?.role && (
-          <p className="mt-1 text-sm font-light text-gray-400">{person.role}</p>
-        )}
-
-        <div className="relative z-20 mt-4 flex items-center gap-1">
-          {socials.map(({ key, label, Icon, image }) =>
-            person?.[key] ? (
-              <Link
-                key={key}
-                href={person[key]}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${person?.name ?? ""} on ${label}`}
-                // Keep the icon at 16px but give the link a ≥36×36px hit area
-                // so it meets the minimum accessible touch-target size.
-                className="flex size-9 items-center justify-center text-white transition-colors hover:text-sswRed"
-              >
-                {image ? (
-                  <Image
-                    src={image}
-                    alt=""
-                    width={16}
-                    height={16}
-                    className="size-4 transition-opacity hover:opacity-80"
-                  />
-                ) : (
-                  <Icon className="size-4" />
-                )}
-              </Link>
-            ) : null
+    <div className="flex h-full flex-col overflow-hidden rounded-card border-0.75 border-sswBorder bg-sswCard transition-colors duration-300 hover:border-sswRed">
+      <ProfileLink person={person} className="block">
+        {/* Red panel frames the photo with padding on the sides and top while the
+            photo stays flush to the bottom, so the person reads as standing in it. */}
+        <div className="relative aspect-square w-full bg-sswRed">
+          <PersonCardTexture index={index} scope={scope} />
+          {person?.image?.imageSource && (
+            <Image
+              src={person.image.imageSource}
+              alt={person.image.altText ?? person?.name ?? ""}
+              fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 80vw"
+              className="object-contain object-bottom px-2 pt-2"
+            />
           )}
         </div>
+
+        <div className="px-4 pt-4 text-center xl:px-6 xl:pt-6">
+          {person?.name && (
+            <h3 className="text-xl font-semibold text-white">{person.name}</h3>
+          )}
+          {person?.role && (
+            <p className="mt-1 text-sm font-light text-gray-400">
+              {person.role}
+            </p>
+          )}
+        </div>
+      </ProfileLink>
+
+      {/* flex-1 keeps the icon rows aligned when names wrap to two lines. */}
+      <div className="flex flex-1 items-start justify-center gap-1 p-4 xl:px-6 xl:pb-6">
+        {socials.map(({ key, label, Icon, image }) =>
+          person?.[key] ? (
+            <Link
+              key={key}
+              href={person[key]}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${person?.name ?? ""} on ${label}`}
+              // Keep the icon at 16px but give the link a ≥36×36px hit area
+              // so it meets the minimum accessible touch-target size.
+              className="flex size-9 items-center justify-center text-white transition-colors hover:text-sswRed"
+            >
+              {image ? (
+                <Image
+                  src={image}
+                  alt=""
+                  width={16}
+                  height={16}
+                  className="size-4 transition-opacity hover:opacity-80"
+                />
+              ) : (
+                <Icon className="size-4" />
+              )}
+            </Link>
+          ) : null
+        )}
       </div>
     </div>
   );
