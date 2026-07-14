@@ -29,13 +29,13 @@ const socials = [
   { key: "sswPeople", label: "SSW People", image: SSW_PEOPLE_ICON },
 ];
 
-function PersonCard({ person, index }) {
+function PersonCard({ person, index, scope }) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-card border-0.75 border-sswBorder bg-sswCard">
       {/* Red panel frames the photo with padding on the sides and top while the
           photo stays flush to the bottom, so the person reads as standing in it. */}
       <div className="relative aspect-square w-full bg-sswRed">
-        <PersonCardTexture index={index} />
+        <PersonCardTexture index={index} scope={scope} />
         {person?.image?.imageSource && (
           <Image
             src={person.image.imageSource}
@@ -185,7 +185,7 @@ export function V3PeopleCarousel({ data }) {
                     )}
                     data-tina-field={tinaField(person, "name")}
                   >
-                    <PersonCard person={person} index={index} />
+                    <PersonCard person={person} index={index} scope="sm" />
                   </CarouselItem>
                 ))}
                 {moreLink && (
@@ -205,7 +205,7 @@ export function V3PeopleCarousel({ data }) {
                   data-tina-field={tinaField(person, "name")}
                   className="h-full"
                 >
-                  <PersonCard person={person} index={index} />
+                  <PersonCard person={person} index={index} scope="lg" />
                 </div>
               ))}
             </div>
@@ -224,7 +224,7 @@ export function V3PeopleCarousel({ data }) {
                   className="basis-4/5 pl-8 sm:basis-1/2 lg:basis-1/4"
                   data-tina-field={tinaField(person, "name")}
                 >
-                  <PersonCard person={person} index={index} />
+                  <PersonCard person={person} index={index} scope="carousel" />
                 </CarouselItem>
               ))}
             </CarouselContent>

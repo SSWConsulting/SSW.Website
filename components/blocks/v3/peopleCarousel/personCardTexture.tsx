@@ -1,5 +1,3 @@
-import { useId } from "react";
-
 const BASE = "#cc4141";
 const DARK = "#8e2c2c";
 const DEEP = "#5f1b1b";
@@ -13,9 +11,11 @@ const svgProps = {
   "aria-hidden": true,
 } as const;
 
-function SmokeTexture() {
-  const id = useId();
+// The ids are only used to reference this SVG's own <defs>. They're derived
+// from the card's position rather than useId() so the server and client agree.
+type TextureProps = { id: string };
 
+function SmokeTexture({ id }: TextureProps) {
   return (
     <svg {...svgProps}>
       <defs>
@@ -72,9 +72,7 @@ const contourLines: Array<[y: number, opacity: number]> = [
   [345, 0.14],
 ];
 
-function ContoursTexture() {
-  const id = useId();
-
+function ContoursTexture({ id }: TextureProps) {
   return (
     <svg {...svgProps}>
       <defs>
@@ -116,9 +114,7 @@ function ContoursTexture() {
   );
 }
 
-function AuroraTexture() {
-  const id = useId();
-
+function AuroraTexture({ id }: TextureProps) {
   return (
     <svg {...svgProps}>
       <defs>
@@ -148,9 +144,7 @@ function AuroraTexture() {
   );
 }
 
-function GrainTexture() {
-  const id = useId();
-
+function GrainTexture({ id }: TextureProps) {
   return (
     <svg {...svgProps}>
       <defs>
@@ -192,7 +186,13 @@ function GrainTexture() {
 
 const TEXTURES = [SmokeTexture, ContoursTexture, AuroraTexture, GrainTexture];
 
-export function PersonCardTexture({ index }: { index: number }) {
+export function PersonCardTexture({
+  index,
+  scope,
+}: {
+  index: number;
+  scope: string;
+}) {
   const Texture = TEXTURES[index % TEXTURES.length];
-  return <Texture />;
+  return <Texture id={`person-texture-${scope}-${index}`} />;
 }
