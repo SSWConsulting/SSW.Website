@@ -37,8 +37,8 @@ function PersonCard({ person, index, scope }) {
         person?.sswPeople && "cursor-pointer hover:border-sswRed"
       )}
     >
-      {/* Card-wide link overlay — the social links sit above it (z-10) so they
-          still win the click. Avoids nesting anchors. */}
+      {/* Card-wide link overlay at z-10. The social links sit above it at z-20
+          so they still win the click. Avoids nesting anchors. */}
       {person?.sswPeople && (
         <Link
           href={person.sswPeople}
