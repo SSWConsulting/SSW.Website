@@ -20,13 +20,23 @@ import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { PersonCardTexture } from "./personCardTexture";
 
-const SSW_PEOPLE_ICON =
-  "/images/company-logos/downloads/images/ssw-logo-icon.png";
+// The SSW mark is a 2×2 grid of squares. Rendered in currentColor so it inherits
+// the white→sswRed hover from its link, like the react-icons beside it.
+function SswPeopleIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 100 100" fill="currentColor" className={className}>
+      <rect x="0" y="0" width="46" height="46" />
+      <rect x="54" y="0" width="46" height="46" />
+      <rect x="0" y="54" width="46" height="46" />
+      <rect x="54" y="54" width="46" height="46" />
+    </svg>
+  );
+}
 
 const socials = [
   { key: "linkedin", label: "LinkedIn", Icon: FaLinkedinIn },
   { key: "twitter", label: "X", Icon: FaXTwitter },
-  { key: "sswPeople", label: "SSW People", image: SSW_PEOPLE_ICON },
+  { key: "sswPeople", label: "SSW People", Icon: SswPeopleIcon },
 ];
 
 // The photo and name link to the profile; the social icons link out on their
@@ -82,7 +92,7 @@ function PersonCard({ person, index, scope }) {
 
       {/* flex-1 keeps the icon rows aligned when names wrap to two lines. */}
       <div className="flex flex-1 items-start justify-center gap-1 p-4 xl:px-6 xl:pb-6">
-        {socials.map(({ key, label, Icon, image }) =>
+        {socials.map(({ key, label, Icon }) =>
           person?.[key] ? (
             <Link
               key={key}
@@ -94,17 +104,7 @@ function PersonCard({ person, index, scope }) {
               // so it meets the minimum accessible touch-target size.
               className="flex size-9 items-center justify-center text-white transition-colors hover:text-sswRed"
             >
-              {image ? (
-                <Image
-                  src={image}
-                  alt=""
-                  width={16}
-                  height={16}
-                  className="size-4 transition-opacity hover:opacity-80"
-                />
-              ) : (
-                <Icon className="size-4" />
-              )}
+              <Icon className="size-4" />
             </Link>
           ) : null
         )}
