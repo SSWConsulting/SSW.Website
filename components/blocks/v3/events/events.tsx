@@ -335,7 +335,7 @@ function EventListItem({ event }) {
   return (
     <div
       className={cn(
-        "group relative flex min-h-[172px] overflow-hidden rounded-card bg-sswBorder transition-colors duration-300 hover:bg-white/10",
+        "group relative flex min-h-[172px] overflow-hidden rounded-card bg-gray-100 transition-colors duration-300 hover:bg-black/5 dark:bg-sswBorder dark:hover:bg-white/10",
         event?.registerLink && "cursor-pointer"
       )}
     >
@@ -343,7 +343,7 @@ function EventListItem({ event }) {
         <Link
           href={event.registerLink}
           aria-label={`Register for ${event?.title ?? "this event"}`}
-          className="absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          className="absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground"
         />
       )}
 
@@ -376,7 +376,7 @@ function EventListItem({ event }) {
 
       <div className="flex min-w-0 flex-1 flex-col px-5 py-6 sm:px-6 lg:px-8">
         {event?.title && (
-          <h4 className="text-2xl font-semibold leading-tight text-white">
+          <h4 className="text-2xl font-semibold leading-tight text-foreground">
             {event.title}
           </h4>
         )}
@@ -384,7 +384,7 @@ function EventListItem({ event }) {
           event?.date ||
           event?.location ||
           presenters.length > 0) && (
-          <EventMetaGrid className="mt-4 text-gray-300">
+          <EventMetaGrid className="mt-4 text-muted-foreground">
             <EventMetaItem icon={FiMapPin}>{event?.location}</EventMetaItem>
             <EventMetaItem icon={FiCalendar}>
               {event?.date ? (

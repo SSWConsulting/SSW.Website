@@ -9,12 +9,12 @@ import { tinaField } from "tinacms/dist/react";
 export function V3LogoCarousel({ data }) {
   return (
     <V2ComponentWrapper data={data}>
-      <hr className="m-0 w-full border-0 border-b-0.5 border-sswBorder" />
+      <hr className="m-0 w-full border-0 border-b-0.5 border-hairline" />
       <Container size="custom" padding="px-4 pt-6 sm:px-8">
         <div className="flex w-full flex-col items-center pb-4 text-center sm:pb-14">
           {data?.heading && (
             <h2
-              className="!mt-4 p-2 text-xl text-white md:text-3xl"
+              className="!mt-4 p-2 text-xl text-foreground md:text-3xl"
               data-tina-field={tinaField(data, "heading")}
             >
               <AlternatingText text={data.heading} />
@@ -32,7 +32,7 @@ export function V3LogoCarousel({ data }) {
                     className={cn(
                       "relative h-20 min-w-48 rounded-utility md:h-26",
                       data?.showBorders !== false &&
-                        "border-0.5 border-sswBorder"
+                        "border-0.5 border-hairline"
                     )}
                     data-tina-field={tinaField(logo, "altText")}
                     key={`v3-logo-${index}`}
@@ -42,7 +42,7 @@ export function V3LogoCarousel({ data }) {
                       alt={logo?.altText ?? "Logo"}
                       fill={true}
                       objectFit="contain"
-                      className="brightness-0 invert"
+                      className="brightness-0 dark:invert"
                     />
                   </div>
                 ))}

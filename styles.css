@@ -105,6 +105,7 @@
     --text-information: hsla(262, 74%, 38%, 1);
     --stroke-strong: rgba(0, 0, 0, 0.45);
     --stroke-weak: rgba(0, 0, 0, 0.1);
+    --hairline: #e5e7eb;
     --fill-weak: rgba(0, 0, 0, 0.04);
     --fill-weaker: rgba(0, 0, 0, 0.02);
     --background-base: white;
@@ -169,6 +170,7 @@
     --text-information: hsla(262, 45%, 75%, 1);
     --stroke-strong: rgba(255, 255, 255, 0.6);
     --stroke-weak: rgba(255, 255, 255, 0.12);
+    --hairline: #212121;
     --fill-weak: rgba(255, 255, 255, 0.06);
     --fill-weaker: rgba(255, 255, 255, 0.03);
     --background-base: #171717;

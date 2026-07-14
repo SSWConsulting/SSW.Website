@@ -386,6 +386,7 @@ export default {
         destructive: "var(--destructive)",
         "stroke-strong": "var(--stroke-strong)",
         "stroke-weak": "var(--stroke-weak)",
+        hairline: "var(--hairline)",
         azure: "#007fff",
         ssw: {
           red: {

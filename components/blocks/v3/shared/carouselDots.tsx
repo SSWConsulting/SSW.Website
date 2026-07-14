@@ -29,7 +29,9 @@ export function CarouselDots({
           index={index}
           className={cn(
             "h-1.5 rounded-full transition-all duration-300",
-            selectedIndex === index ? "w-6 bg-white" : "w-3 bg-white/30"
+            selectedIndex === index
+              ? "w-6 bg-foreground"
+              : "bg-foreground/30 w-3"
           )}
         />
       ))}

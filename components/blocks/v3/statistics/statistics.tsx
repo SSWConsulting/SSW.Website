@@ -11,7 +11,7 @@ import { tinaField } from "tinacms/dist/react";
 //  - >=1024px: single row, vertical line between each column
 const cellBorder = (i: number) =>
   cn(
-    "border-[#212121]",
+    "border-hairline",
     // stacked
     i > 0 && "border-t-[0.75px]",
     // square (2x2)
@@ -27,7 +27,7 @@ export default function V3Statistics({ data }) {
   const stats = data?.statistics ?? [];
 
   return (
-    <V2ComponentWrapper className="border-y-0.75 border-sswBorder" data={data}>
+    <V2ComponentWrapper className="border-y-0.75 border-hairline" data={data}>
       <Container size="custom" padding="px-4 sm:px-0" className="">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           {/* Intro: heading on the left */}
@@ -35,7 +35,7 @@ export default function V3Statistics({ data }) {
             {data?.heading && (
               <h2
                 data-tina-field={tinaField(data, "heading")}
-                className="my-0 text-2xl text-white"
+                className="my-0 text-2xl text-foreground"
               >
                 <AlternatingText text={data.heading} />
               </h2>
@@ -51,7 +51,7 @@ export default function V3Statistics({ data }) {
               <div className="flex items-baseline">
                 <span
                   data-tina-field={tinaField(stat, "figure")}
-                  className="text-6xl leading-none text-white lg:text-5xl xl:text-6xl"
+                  className="text-6xl leading-none text-foreground lg:text-5xl xl:text-6xl"
                 >
                   {typeof stat?.figure === "number"
                     ? stat.figure.toLocaleString("en-US")
@@ -60,7 +60,7 @@ export default function V3Statistics({ data }) {
                 {stat?.figureSuffix && (
                   <span
                     data-tina-field={tinaField(stat, "figureSuffix")}
-                    className="ml-1 text-4xl font-light text-white lg:text-3xl xl:text-4xl"
+                    className="ml-1 text-4xl font-light text-foreground lg:text-3xl xl:text-4xl"
                   >
                     {stat.figureSuffix}
                   </span>
@@ -69,7 +69,7 @@ export default function V3Statistics({ data }) {
               {stat?.heading && (
                 <h3
                   data-tina-field={tinaField(stat, "heading")}
-                  className="text-white lg:text-base xl:text-lg"
+                  className="text-foreground lg:text-base xl:text-lg"
                 >
                   {stat.heading}
                 </h3>
@@ -77,7 +77,7 @@ export default function V3Statistics({ data }) {
               {stat?.description && (
                 <p
                   data-tina-field={tinaField(stat, "description")}
-                  className="text-gray-400 lg:text-sm xl:text-base"
+                  className="text-muted-foreground lg:text-sm xl:text-base"
                 >
                   {stat.description}
                 </p>
