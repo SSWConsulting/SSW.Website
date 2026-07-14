@@ -31,7 +31,24 @@ const socials = [
 
 function PersonCard({ person, index, scope }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-card border-0.75 border-sswBorder bg-sswCard">
+    <div
+      className={cn(
+        "relative flex h-full flex-col overflow-hidden rounded-card border-0.75 border-sswBorder bg-sswCard transition-colors duration-300",
+        person?.sswPeople && "cursor-pointer hover:border-sswRed"
+      )}
+    >
+      {/* Card-wide link overlay — the social links sit above it (z-10) so they
+          still win the click. Avoids nesting anchors. */}
+      {person?.sswPeople && (
+        <Link
+          href={person.sswPeople}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${person?.name ?? "this person"}'s SSW People profile`}
+          className="absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        />
+      )}
+
       {/* Red panel frames the photo with padding on the sides and top while the
           photo stays flush to the bottom, so the person reads as standing in it. */}
       <div className="relative aspect-square w-full bg-sswRed">
@@ -55,7 +72,7 @@ function PersonCard({ person, index, scope }) {
           <p className="mt-1 text-sm font-light text-gray-400">{person.role}</p>
         )}
 
-        <div className="mt-4 flex items-center gap-1">
+        <div className="relative z-20 mt-4 flex items-center gap-1">
           {socials.map(({ key, label, Icon, image }) =>
             person?.[key] ? (
               <Link
