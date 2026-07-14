@@ -1,0 +1,24 @@
+{
+  "title": "August User Group - Mobile 101: Tales of Mobile Development",
+  "url": "/netug/brisbane",
+  "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/hark-singh.mdx"
+    }
+  ],
+  "headerLayout": "avatars",
+  "startDateTime": "2026-08-19T08:00:00.000Z",
+  "endDateTime": "2026-08-19T10:00:00.000Z",
+  "startShowBannerDateTime": "2026-08-18T14:00:00.000Z",
+  "endShowBannerDateTime": "2026-08-19T12:30:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "category": "Mobile",
+  "abstract": "August Full Stack User Group: Mobile 101: Tales of Mobile Development with Hark Singh\n\nEver wondered what it really takes to ship a mobile app? Hark Singh shares tales from the trenches of mobile development - picking the right framework, handling devices and app stores, and the lessons you only learn the hard way.\n\nAgenda (AEST):\n\n6:00 pm - 🍕 Pizza & Networking\n6:30 pm - Tech News with Adam and Eve Cogan (live from SSW Sydney).\nThen \"Mobile 101: Tales of Mobile Development\" with Hark Singh!",
+  "description": "#### August Full Stack User Group: “Mobile 101: Tales of Mobile Development” with Hark Singh\n\nEver wondered what it really takes to ship a mobile app? In this session, Hark Singh takes you on a journey through the world of mobile development - from choosing the right framework (Flutter, .NET MAUI, or React Native?) to wrangling emulators, real devices, and the dreaded app store review process.\n\nExpect real war stories, practical tips, and the lessons you only learn the hard way - perfect for web developers curious about going mobile, and a good laugh for anyone who has already survived it.\n\n#### Agenda (AEST):\n\n6:00 pm - 🍕 Pizza & Networking\n\n6:30 pm - Tech News with Adam and Eve Cogan (live from SSW Sydney).\n\nThen \"Mobile 101: Tales of Mobile Development\" with Hark Singh!\n\nCan't make it? Join us on the Live feed! 👇\n\n[www.ssw.com.au/live/](http://www.ssw.com.au/live/)\n\n**About Hark:**\n\nHark is a Full-Stack Developer at SSW Newcastle who builds clean, reliable software with a focus on user experience and delivery discipline. He joined SSW through FireBootCamp and works across Angular, .NET, Azure, and Flutter.\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
