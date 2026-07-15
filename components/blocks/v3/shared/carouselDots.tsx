@@ -31,7 +31,7 @@ export function CarouselDots({
             "h-1.5 rounded-full transition-all duration-300",
             selectedIndex === index
               ? "w-6 bg-foreground"
-              : "bg-foreground/30 w-3"
+              : "w-3 bg-foreground opacity-30"
           )}
         />
       ))}

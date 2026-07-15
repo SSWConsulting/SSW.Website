@@ -76,7 +76,7 @@ function HighlightCard({ project }) {
             </p>
           )}
         </div>
-        <ArrowCircle className="size-16 self-center" />
+        <ArrowCircle className="size-16 self-center bg-white text-black" />
       </div>
     </div>
   );
