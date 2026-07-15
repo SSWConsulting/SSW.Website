@@ -11,6 +11,8 @@ export interface PopupProps extends React.HTMLAttributes<HTMLDivElement> {
   closeOnOverlayClick?: boolean;
   closeOnEsc?: boolean;
   onClose: () => void;
+  /** Inline styles for the modal box (the library's stylesheet can beat Tailwind classes). */
+  modalStyle?: React.CSSProperties;
 }
 
 const Popup: React.FC<PopupProps> = (props) => {
@@ -35,6 +37,7 @@ const Popup: React.FC<PopupProps> = (props) => {
             props.className,
           ]),
         }}
+        styles={props.modalStyle ? { modal: props.modalStyle } : undefined}
         animationDuration={700}
         center
       >

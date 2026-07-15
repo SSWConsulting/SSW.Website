@@ -34,6 +34,15 @@ export const ImageTextBlock = ({ data, priority = false }) => {
       <section className={cn(getTabletAlignment(), hasMedia && "sm:text-left")}>
         {data.heading && <Heading data={data} />}
 
+        {data.subheading && (
+          <p
+            className="pb-2 text-sm font-semibold uppercase tracking-wide text-sswRed"
+            data-tina-field={tinaField(data, "subheading")}
+          >
+            {data.subheading}
+          </p>
+        )}
+
         {data.description && (
           <TinaMarkdown
             content={data.description}
