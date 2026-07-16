@@ -22,7 +22,7 @@ export function MegaMenuWrapper(props) {
     <div
       className={classNames(
         isHome &&
-          "ssw-home-nav relative isolate text-foreground before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:border-b before:content-['']",
+          "ssw-home-nav relative isolate text-foreground before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:border-b-1 before:content-['']",
         // Between xl (1280) and 1360 the desktop nav's designed gutters leave the
         // "Let's Talk" pill ~40px too wide; reclaim the side padding in just that
         // band so the ≥1360 (incl. the 1440 Figma) spacing stays untouched.
