@@ -8,7 +8,12 @@ export const validateTurnstile = async (
   token: string
 ): Promise<TurnstileResult> => {
   const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) return { success: false };
+  // Missing secret fails closed, but log it: otherwise an unprovisioned server
+  // rejects every legit user with the same 403 a real bot gets, silently.
+  if (!secret) {
+    console.error("TURNSTILE_SECRET_KEY not set — rejecting submission.");
+    return { success: false };
+  }
 
   const res = await fetch(
     "https://challenges.cloudflare.com/turnstile/v0/siteverify",
@@ -18,6 +23,11 @@ export const validateTurnstile = async (
       body: JSON.stringify({ secret, response: token }),
     }
   );
+
+  if (!res.ok) {
+    console.error("Turnstile siteverify HTTP error:", res.status);
+    return { success: false };
+  }
 
   return (await res.json()) as TurnstileResult;
 };
