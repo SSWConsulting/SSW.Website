@@ -39,7 +39,6 @@ export function MegaMenuWrapper(props) {
         isFlagVisible={isHome ? false : !mobile.hideFlag}
         menuBarItems={props.menu}
         rightSideActionsOverride={isHome ? () => <HomeNavActions /> : undefined}
-        tagline={isHome ? undefined : "Enterprise Software Development"}
         linkComponent={(props) => (
           <CustomLink
             {...props}
