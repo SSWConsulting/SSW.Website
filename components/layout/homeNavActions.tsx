@@ -28,7 +28,7 @@ const REGIONS = [
 ];
 
 const ICON_BUTTON =
-  "flex size-10 items-center justify-center rounded-full text-foreground transition-colors hover:text-sswRed";
+  "flex size-9 items-center justify-center rounded-full text-foreground transition-colors hover:text-sswRed";
 
 // Popovers render in a portal so the mega menu's `overflow-hidden` can't clip
 // them; the wrapper re-applies `dark` so they still resolve the theme tokens
@@ -178,8 +178,8 @@ export function HomeNavActions() {
   const toggleLabel = isDark ? "Switch to light mode" : "Switch to dark mode";
 
   return (
-    <div className="flex items-center gap-6 pl-4 text-foreground">
-      <div className="flex items-center gap-1">
+    <div className="flex items-center gap-2 text-foreground max-sm:w-full max-sm:justify-between max-sm:px-4 max-sm:pb-4">
+      <div className="flex items-center">
         <SearchButton isDark={isDark} />
         <RegionGlobe isDark={isDark} />
         <button
@@ -198,12 +198,12 @@ export function HomeNavActions() {
       </div>
 
       <span
-        className={`h-7 w-px shrink-0 ${isDark ? "bg-white/25" : "bg-hairline"}`}
+        className={`h-7 w-px shrink-0 max-sm:hidden ${isDark ? "bg-white/25" : "bg-hairline"}`}
       />
 
       <Link
         href={CONTACT_URL}
-        className="group flex h-12 shrink-0 items-center gap-3 rounded-full bg-sswRed py-1 pl-6 pr-1 font-medium text-white !no-underline transition-colors duration-200 hover:bg-sswDarkRed"
+        className="group flex h-12 shrink-0 items-center gap-2 rounded-full bg-sswRed py-1 pl-4 pr-1 font-medium text-white !no-underline transition-colors duration-200 hover:bg-sswDarkRed"
       >
         Let&apos;s Talk
         <span className="flex size-10 items-center justify-center rounded-full bg-white text-sswRed transition-transform duration-200 group-hover:translate-x-1">

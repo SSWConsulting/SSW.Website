@@ -45,7 +45,7 @@
       "subtitle": "Tell us about your platform. We'll show you what's possible.",
       "mobilePlusMore": "/consulting",
       "cardBackgroundColour": 8,
-      "showBorder": false,
+      "showBorder": true,
       "cards": [
         {
           "title": "Artificial Intelligence",

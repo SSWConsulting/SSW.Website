@@ -5,6 +5,7 @@ import { backgroundOptions } from "@/components/blocksSubtemplates/tinaFormEleme
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
+import { useHomeTheme } from "@/components/layout/homeTheme";
 import Image from "next/image";
 import { useState } from "react";
 import { FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
@@ -36,7 +37,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
         type="button"
         aria-label="Previous slide"
         onClick={() => slideLeft()}
-        className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
+        className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-black/70 text-black transition-colors hover:bg-black hover:text-white dark:border-white/80 dark:text-white dark:hover:bg-white dark:hover:text-black"
       >
         <FiArrowLeft className="size-5" />
       </button>
@@ -44,7 +45,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
         type="button"
         aria-label="Next slide"
         onClick={() => slideRight()}
-        className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
+        className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-black/70 text-black transition-colors hover:bg-black hover:text-white dark:border-white/80 dark:text-white dark:hover:bg-white dark:hover:text-black"
       >
         <FiArrowRight className="size-5" />
       </button>
@@ -67,7 +68,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
             behavior: "smooth",
           });
         }}
-        className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-white/80 text-white transition-colors hover:bg-white hover:text-black"
+        className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-black/70 text-black transition-colors hover:bg-black hover:text-white dark:border-white/80 dark:text-white dark:hover:bg-white dark:hover:text-black"
       >
         <FiArrowDown className="size-5" />
       </button>
@@ -93,10 +94,15 @@ export const V3HeroBox = ({ data, priority = false }) => {
     </div>
   );
 
-  const scoopColor =
-    backgroundOptions.find(
-      (option) => option.reference === data?.background?.backgroundColour
-    )?.hex ?? DEFAULT_SCOOP_COLOR;
+  const { isDark } = useHomeTheme();
+  // The scoop reveals what sits beneath the hero, so it must match the next
+  // section's background — light mode is the gray-50 section below, dark keeps
+  // the configured dark hex.
+  const scoopColor = isDark
+    ? (backgroundOptions.find(
+        (option) => option.reference === data?.background?.backgroundColour
+      )?.hex ?? DEFAULT_SCOOP_COLOR)
+    : "#f9f9f9";
 
   return (
     <V2ComponentWrapper data={data} className="pt-4 sm:pt-20">
@@ -192,7 +198,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
 
           <div
             className={cn(
-              "pointer-events-none absolute bottom-0 z-20 block w-[280px] sm:right-16 sm:w-[380px]"
+              "pointer-events-none absolute bottom-0 left-1/2 z-20 block w-[280px] -translate-x-1/2 sm:left-auto sm:right-16 sm:w-[380px] sm:translate-x-0"
             )}
           >
             <svg

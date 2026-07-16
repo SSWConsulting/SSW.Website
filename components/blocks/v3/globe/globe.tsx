@@ -133,7 +133,7 @@ export function V3Globe({ data }) {
               {offices.length > 0 && (
                 <div
                   className={cn(
-                    "overflow-hidden rounded-utility bg-gray-100 shadow-2xl dark:bg-sswBorder"
+                    "overflow-hidden rounded-utility border-0.75 border-hairline bg-white dark:bg-sswBorder"
                   )}
                 >
                   {offices.map((office, index) => (

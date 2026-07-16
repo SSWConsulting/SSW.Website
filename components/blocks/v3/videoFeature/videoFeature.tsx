@@ -99,7 +99,7 @@ export function V3VideoFeature({ data }) {
             </div>
           )}
 
-          <div className="flex h-full flex-col rounded-card border-1 border-hairline bg-white p-6 md:p-8 lg:col-span-2 dark:border-white/5 dark:bg-sswCard">
+          <div className="flex h-full flex-col rounded-card border-0.75 border-hairline bg-white p-6 md:p-8 lg:col-span-2 dark:bg-sswCard">
             {data?.brow && (
               <span
                 data-tina-field={tinaField(data, "brow")}

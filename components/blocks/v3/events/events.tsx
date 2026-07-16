@@ -335,7 +335,7 @@ function EventListItem({ event }) {
   return (
     <div
       className={cn(
-        "group relative flex min-h-[172px] overflow-hidden rounded-card bg-gray-100 transition-colors duration-300 hover:bg-black/5 dark:bg-sswBorder dark:hover:bg-white/10",
+        "group relative flex min-h-[172px] overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:bg-gray-50 dark:bg-sswBorder dark:hover:bg-white/10",
         event?.registerLink && "cursor-pointer"
       )}
     >

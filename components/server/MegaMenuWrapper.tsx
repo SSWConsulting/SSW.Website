@@ -23,6 +23,10 @@ export function MegaMenuWrapper(props) {
       className={classNames(
         isHome &&
           "ssw-home-nav relative isolate text-foreground before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:border-b before:content-['']",
+        // Between xl (1280) and 1360 the desktop nav's designed gutters leave the
+        // "Let's Talk" pill ~40px too wide; reclaim the side padding in just that
+        // band so the ≥1360 (incl. the 1440 Figma) spacing stays untouched.
+        isHome && "xl:-mx-6 min-[1360px]:mx-0",
         isHome && !isDark && "before:border-[#f2f2f2] before:bg-white",
         isHome && isDark && "dark before:border-white/30 before:bg-[#090909]"
       )}
@@ -32,7 +36,7 @@ export function MegaMenuWrapper(props) {
           pathName === "/company/contact-us" ||
           Boolean(mobile.hideContactButton)
         }
-        isFlagVisible={!mobile.hideFlag}
+        isFlagVisible={isHome ? false : !mobile.hideFlag}
         menuBarItems={props.menu}
         rightSideActionsOverride={isHome ? () => <HomeNavActions /> : undefined}
         tagline="Enterprise Software Development"

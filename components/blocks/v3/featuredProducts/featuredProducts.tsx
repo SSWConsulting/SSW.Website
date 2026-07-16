@@ -96,7 +96,7 @@ function ProjectCard({ project }) {
   const inner = (
     <div
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-card bg-gray-100 dark:bg-sswBorder"
+        "group flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white dark:bg-sswBorder"
       )}
     >
       <div className="flex flex-1 flex-col gap-8 p-4 lg:p-8">

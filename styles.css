@@ -96,7 +96,7 @@
     --destructive-foreground: hsla(0, 0%, 100%, 1);
     --ring: hsla(0, 58%, 53%, 0.2);
     --text-strong: rgba(0, 0, 0, 0.9);
-    --text-weak: rgba(0, 0, 0, 0.6);
+    --text-weak: rgba(0, 0, 0, 0.72);
     --text-brand: oklch(57.5% 0.176 24.5);
     --text-disabled: rgba(0, 0, 0, 0.1);
     --text-error: oklch(57.7% 0.215 27.3);
@@ -106,6 +106,7 @@
     --stroke-strong: rgba(0, 0, 0, 0.45);
     --stroke-weak: rgba(0, 0, 0, 0.1);
     --hairline: #e5e7eb;
+    --dot-color: rgba(0, 0, 0, 0.12);
     --logo-filter: none;
     --fill-weak: rgba(0, 0, 0, 0.04);
     --fill-weaker: rgba(0, 0, 0, 0.02);
@@ -172,6 +173,7 @@
     --stroke-strong: rgba(255, 255, 255, 0.6);
     --stroke-weak: rgba(255, 255, 255, 0.12);
     --hairline: #212121;
+    --dot-color: #212121;
     --logo-filter: brightness(0) invert(1);
     --fill-weak: rgba(255, 255, 255, 0.06);
     --fill-weaker: rgba(255, 255, 255, 0.03);

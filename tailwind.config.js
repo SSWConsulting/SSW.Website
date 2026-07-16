@@ -485,7 +485,7 @@ export default {
         },
       }),
       backgroundImage: {
-        "dot-grid": "radial-gradient(circle, #212121 1px, transparent 1px)",
+        "dot-grid": "radial-gradient(circle, var(--dot-color) 1px, transparent 1px)",
         "red-glow-tl":
           "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
         "red-glow-r":
