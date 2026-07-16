@@ -48,7 +48,7 @@ function DaysToGoBadge({ date }: { date?: string }) {
   if (daysToGo === null) return null;
 
   return (
-    <span className="inline-flex shrink-0 items-center rounded-sm bg-sswRed px-1.5 py-0.5 text-xs font-semibold uppercase leading-none text-white">
+    <span className="inline-flex shrink-0 items-center rounded-sm bg-sswRed px-1.5 pb-px pt-0.5 text-xs font-semibold uppercase leading-none text-white">
       {daysToGo} {daysToGo === 1 ? "day" : "days"} to go
     </span>
   );
