@@ -171,8 +171,8 @@ importers:
         specifier: ^0.34.3
         version: 0.34.3
       ssw.megamenu:
-        specifier: 4.13.8
-        version: 4.13.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: github:SSWConsulting/SSW.MegaMenu#feat/v3-home-dark-light-mode
+        version: https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2f8ad7287f4cd5a9b1232d1cc2ba3191fb8209f1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -9225,8 +9225,9 @@ packages:
   sqlite-level@2.1.1:
     resolution: {integrity: sha512-hhRnO7R4fym5PjWiRkKyMju1Ok6B3MfK3wWyyoeAaGd9OZPrTqGbjEbghHLh7uco4r3syZrbk3/9IQTWCv3/sw==}
 
-  ssw.megamenu@4.13.8:
-    resolution: {integrity: sha512-SMkfHw6dT4L8ojQseutTYo2kw2G73UcF8VkzspYoDs5wnMxM6nEoJ5T5SE9IKAZrGWwEvR/D3HqJ/Wu94q9sbA==}
+  ssw.megamenu@https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2f8ad7287f4cd5a9b1232d1cc2ba3191fb8209f1:
+    resolution: {tarball: https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2f8ad7287f4cd5a9b1232d1cc2ba3191fb8209f1}
+    version: 4.13.10
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -9420,9 +9421,6 @@ packages:
 
   tabbable@6.4.0:
     resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
-
-  tailwind-merge@2.6.0:
-    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
 
   tailwind-merge@2.6.1:
     resolution: {integrity: sha512-Oo6tHdpZsGpkKG88HJ8RR1rg/RdnEkQEfMoEk2x1XRI3F1AxeU+ijRXpiVUF4UbLfcxxRGw6TbUINKYdWVsQTQ==}
@@ -20983,7 +20981,7 @@ snapshots:
       better-sqlite3: 12.10.0
       module-error: 1.0.2
 
-  ssw.megamenu@4.13.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  ssw.megamenu@https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2f8ad7287f4cd5a9b1232d1cc2ba3191fb8209f1(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       '@headlessui/react': 2.2.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@heroicons/react': 2.2.0(react@19.2.3)
@@ -20993,7 +20991,7 @@ snapshots:
       react-dom: 19.2.3(react@19.2.3)
       react-hotkeys-hook: 4.6.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react-icons: 4.12.0(react@19.2.3)
-      tailwind-merge: 2.6.0
+      tailwind-merge: 2.6.1
 
   stable-hash@0.0.5: {}
 
@@ -21211,8 +21209,6 @@ snapshots:
   tabbable@6.2.0: {}
 
   tabbable@6.4.0: {}
-
-  tailwind-merge@2.6.0: {}
 
   tailwind-merge@2.6.1: {}
 

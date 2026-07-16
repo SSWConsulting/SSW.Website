@@ -106,6 +106,7 @@
     --stroke-strong: rgba(0, 0, 0, 0.45);
     --stroke-weak: rgba(0, 0, 0, 0.1);
     --hairline: #e5e7eb;
+    --logo-filter: none;
     --fill-weak: rgba(0, 0, 0, 0.04);
     --fill-weaker: rgba(0, 0, 0, 0.02);
     --background-base: white;
@@ -171,6 +172,7 @@
     --stroke-strong: rgba(255, 255, 255, 0.6);
     --stroke-weak: rgba(255, 255, 255, 0.12);
     --hairline: #212121;
+    --logo-filter: brightness(0) invert(1);
     --fill-weak: rgba(255, 255, 255, 0.06);
     --fill-weaker: rgba(255, 255, 255, 0.03);
     --background-base: #171717;

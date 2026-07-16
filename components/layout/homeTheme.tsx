@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "./themeToggle";
 
 export type HomeThemeMode = "light" | "dark";
 
@@ -14,21 +13,27 @@ type HomeThemeContextValue = {
 };
 
 const STORAGE_KEY = "ssw-home-theme";
-// The homepage ships dark-first. Flip this to "light" (or add prefers-color-scheme
-// detection) once every v3 block has been migrated to theme tokens.
+// Seed for SSR + the first client render only (the server can't read the OS
+// preference). After mount the provider resolves the real theme from a saved
+// choice or `prefers-color-scheme`.
 const DEFAULT_THEME: HomeThemeMode = "dark";
+
+// The global mega menu reads the theme on every route, including ones with no
+// HomeThemeProvider ancestor (error pages, etc.), so fall back to defaults there
+// instead of throwing.
+const FALLBACK: HomeThemeContextValue = {
+  theme: DEFAULT_THEME,
+  isDark: DEFAULT_THEME === "dark",
+  setTheme: () => {},
+  toggleTheme: () => {},
+};
 
 const HomeThemeContext = React.createContext<HomeThemeContextValue | undefined>(
   undefined
 );
 
-export const useHomeTheme = (): HomeThemeContextValue => {
-  const ctx = React.useContext(HomeThemeContext);
-  if (!ctx) {
-    throw new Error("useHomeTheme must be used within a HomeThemeProvider");
-  }
-  return ctx;
-};
+export const useHomeTheme = (): HomeThemeContextValue =>
+  React.useContext(HomeThemeContext) ?? FALLBACK;
 
 const persist = (mode: HomeThemeMode) => {
   try {
@@ -45,17 +50,29 @@ export const HomeThemeProvider = ({
 }) => {
   const [theme, setThemeState] = React.useState<HomeThemeMode>(DEFAULT_THEME);
 
-  // Restore the saved choice after mount so SSR and the first client render both
-  // use DEFAULT_THEME (avoids a hydration mismatch).
+  // After mount, resolve the real theme: a saved choice always wins, otherwise
+  // follow the OS `prefers-color-scheme` and keep following it live until the
+  // user explicitly toggles.
   React.useEffect(() => {
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
+    const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const resolve = () => {
+      let stored: string | null = null;
+      try {
+        stored = window.localStorage.getItem(STORAGE_KEY);
+      } catch {
+        /* ignore */
+      }
       if (stored === "light" || stored === "dark") {
         setThemeState(stored);
+      } else {
+        setThemeState(media.matches ? "dark" : "light");
       }
-    } catch {
-      /* ignore */
-    }
+    };
+
+    resolve();
+    media.addEventListener("change", resolve);
+    return () => media.removeEventListener("change", resolve);
   }, []);
 
   const setTheme = React.useCallback((mode: HomeThemeMode) => {
@@ -97,7 +114,6 @@ export const HomeThemeShell = ({ children }: { children: React.ReactNode }) => {
       )}
     >
       {children}
-      <ThemeToggle />
     </div>
   );
 };
