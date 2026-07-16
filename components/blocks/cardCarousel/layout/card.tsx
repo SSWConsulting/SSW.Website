@@ -8,6 +8,7 @@ import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { Icon } from "../../../blocksSubtemplates/tinaFormElements/icon";
+import { EmbeddedCardButton } from "./embeddedCardButton";
 
 type CardProps = {
   data;
@@ -60,6 +61,14 @@ const Card = ({ data, placeholder, className }: CardProps) => {
       )}
       <Icon data={{ name: data.icon }} className="size-6 text-sswRed" />
       {data.chips && <PillGroup data={data.chips} />}
+      {data.eyebrow && (
+        <p
+          className="pb-1 text-sm font-bold text-sswRed dark:text-gray-300"
+          data-tina-field={tinaField(data, "eyebrow")}
+        >
+          {data.eyebrow}
+        </p>
+      )}
       <h3
         className="pb-2 text-xl font-semibold leading-6 dark:text-gray-200"
         data-tina-field={tinaField(data, "heading")}
@@ -77,20 +86,7 @@ const Card = ({ data, placeholder, className }: CardProps) => {
       {data.featureList?.features?.map((item, index) => {
         return <ListItem key={index} data={item} />;
       })}
-      {data.embeddedButton && (
-        <div className="flex h-full flex-col-reverse justify-between">
-          <a
-            href={data.embeddedButton.buttonLink}
-            className="pt-2 font-semibold text-white !decoration-gray-400 !decoration-1 hover:!decoration-sswRed"
-          >
-            {data.embeddedButton.buttonText}
-            <Icon
-              data={{ name: data.embeddedButton.icon }}
-              className="inline size-4"
-            />
-          </a>
-        </div>
-      )}
+      <EmbeddedCardButton data={data.embeddedButton} />
     </div>
   );
 };

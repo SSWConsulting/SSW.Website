@@ -53,9 +53,9 @@
       },
       "mediaConfiguration": {
         "placement": "Right",
-        "imageSource": "/images/ssw-web/hero/Generated%20Image%20November%2007,%202025%20-%202_22PM.png",
-        "imageHeight": 768,
-        "imageWidth": 1344,
+        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
+        "imageHeight": 700,
+        "imageWidth": 1400,
         "altText": "Meeting with an Azure Solution Architect"
       },
       "_template": "imageTextBlock"

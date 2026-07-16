@@ -25,6 +25,7 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],
@@ -172,7 +173,7 @@
       "accordionItems": [
         {
           "label": "Can you work with our existing DevOps setup?",
-          "content": "Yes. We work with what you already have and improve it incrementally. No forced rewrites or unnecessary tool changes. \n"
+          "content": "Yes. We work with what you already have and improve it incrementally. No forced rewrites or unnecessary tool changes.\n"
         },
         {
           "label": "Can you help us migrate from our current tools to GitHub, Azure DevOps, or Octopus Deploy?",
@@ -287,6 +288,7 @@
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
       ],

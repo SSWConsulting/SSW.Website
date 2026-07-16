@@ -1,14 +1,19 @@
 import { default as React, useEffect, useState } from "react";
 import { wrapFieldsWithMeta } from "tinacms";
 import type { Template, TinaField } from "tinacms";
+import { IconLabelSchema } from "../../../blocksSubtemplates/iconLabel.schema";
 import { listItemSchema } from "../../../blocksSubtemplates/listItem.schema";
 import { pillGroupSchema } from "../../../blocksSubtemplates/pillGroup";
 import tabletTextAlignmentField from "../../../blocksSubtemplates/tabletTextAlignment.schema";
+import {
+  buttonOptions,
+  DEFAULT_BUTTON_COLOUR,
+} from "../../../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import { cardOptions } from "../../../blocksSubtemplates/tinaFormElements/colourOptions/cardOptions";
 import { ColorPickerInput } from "../../../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../../../blocksSubtemplates/tinaFormElements/iconSelector";
 import { buttonSchema } from "../../../button/templateButton.schema";
-import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
+import { wrapperBaseFields } from "../../../layout/v2ComponentWrapper.schema";
 import { mediaTypeField } from "../../mediaType.schema";
 import { youtubeEmbedField } from "../../youtubeEmbed.schema";
 
@@ -120,6 +125,14 @@ export const CardCarouselSchema: Template = {
       label: "Stacked Mode",
       name: "isStacked",
       description: "Remove the carousel effect and stack card entries.",
+    },
+    {
+      type: "object",
+      label: "Top Label",
+      name: "topLabel",
+      description: "Add an eyebrow label above the heading.",
+      //@ts-expect-error – fields are not being recognized
+      fields: IconLabelSchema,
     },
     alternatingHeadingSchema,
     {
@@ -290,6 +303,18 @@ export const CardCarouselSchema: Template = {
       },
     },
     {
+      type: "string",
+      label: "Cards per row",
+      name: "cardsPerRow",
+      description:
+        "Cards per row when the carousel effect is off (Stacked Mode). Has no effect in carousel mode.",
+      options: [
+        { label: "1", value: "1" },
+        { label: "2", value: "2" },
+        { label: "3", value: "3" },
+      ],
+    },
+    {
       type: "object",
       label: "Cards",
       name: "cards",
@@ -356,6 +381,13 @@ export const CardCarouselSchema: Template = {
         },
         {
           type: "string",
+          label: "Eyebrow",
+          name: "eyebrow",
+          description:
+            "Optional small label above the card heading (e.g. a timestamp like '9:00 – 9:20').",
+        },
+        {
+          type: "string",
           label: "Heading",
           name: "heading",
         },
@@ -396,7 +428,8 @@ export const CardCarouselSchema: Template = {
           type: "object",
           label: "Embedded Button",
           name: "embeddedButton",
-          description: "The link appearing at the bottom of each card.",
+          description:
+            "Optional link or CTA at the bottom of each card. Leave Button Text blank to omit the button entirely.",
           fields: [
             {
               type: "string",
@@ -406,9 +439,44 @@ export const CardCarouselSchema: Template = {
             },
             {
               type: "string",
+              label: "Style",
+              name: "displayStyle",
+              description:
+                "Link = plain text link (default). Button = filled button (uses Colour below). Eventbrite checkouts always render as a button.",
+              options: [
+                { label: "Link", value: "link" },
+                { label: "Button", value: "button" },
+              ],
+            },
+            {
+              type: "string",
+              label: "Eventbrite Event ID",
+              name: "eventbriteEventId",
+              description:
+                "Numeric event ID from the Eventbrite event URL (e.g. eventbrite.com/e/<name>-<EVENT_ID>). When set, the button opens that event's checkout in a modal — the embed only loads on click. Leave the Button Link blank when using this.",
+              ui: {
+                // Event ID wins over Button Link, so warn if both are set (swap the field.name leaf to read the sibling).
+                validate: (value, allValues, _meta, field) => {
+                  if (!value) return undefined;
+                  const siblingPath = field?.name?.replace(
+                    /eventbriteEventId$/,
+                    "buttonLink"
+                  );
+                  const buttonLink = siblingPath
+                    ?.split(".")
+                    .reduce((obj, key) => obj?.[key], allValues);
+                  if (buttonLink) {
+                    return "Set either an Eventbrite Event ID or a Button Link, not both — the Event ID wins and the link is ignored.";
+                  }
+                },
+              },
+            },
+            {
+              type: "string",
               label: "Button Link",
               name: "buttonLink",
-              description: "Link to the page the button will navigate to.",
+              description:
+                "Link the button navigates to (supports in-page anchors like #pick-your-city). Leave blank when using an Eventbrite Event ID.",
             },
             // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
             {
@@ -419,11 +487,22 @@ export const CardCarouselSchema: Template = {
                 component: IconPickerInput,
               },
             },
+            {
+              type: "number",
+              label: "Colour",
+              name: "colour",
+              description:
+                "Button colour. Applies when Style is Button or an Eventbrite Event ID is set; ignored for plain links.",
+              // @ts-expect-error – Tina 3.8.x: custom ui.component type no longer matches Field
+              ui: {
+                component: ColorPickerInput(buttonOptions),
+                defaultValue: DEFAULT_BUTTON_COLOUR,
+              },
+            },
           ],
         },
       ],
     },
-    //@ts-expect-error – fields are not being recognized
-    backgroundSchema,
+    ...wrapperBaseFields,
   ],
 };

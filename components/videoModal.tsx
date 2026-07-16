@@ -4,7 +4,7 @@ import classNames from "classnames";
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 
-import { FaPlayCircle } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 import {
   MATCH_URL_VIMEO,
   MATCH_URL_YOUTUBE,
@@ -170,9 +170,8 @@ export const VideoModal = ({
 
 const PlayArrow = () => {
   return (
-    <FaPlayCircle
-      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white text-sswRed"
-      size={70}
-    />
+    <span className="absolute left-1/2 top-1/2 flex size-17 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-gradient-to-b from-sswRed/80 to-sswRed/40 backdrop-blur-md">
+      <FaPlay className="ml-1 size-6 text-white" />
+    </span>
   );
 };

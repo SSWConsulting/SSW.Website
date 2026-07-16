@@ -9,5 +9,9 @@ export function PageClient({ props }) {
     variables: props.variables,
     data: props.data,
   });
-  return <PageContent props={{ data, variables: props.variables }} />;
+  return (
+    <PageContent
+      props={{ data, variables: props.variables, global: props.global }}
+    />
+  );
 }

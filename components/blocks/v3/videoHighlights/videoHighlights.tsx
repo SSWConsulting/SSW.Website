@@ -4,6 +4,7 @@ import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
@@ -15,7 +16,7 @@ export function V3VideoHighlights({ data }) {
       <Container
         size="custom"
         padding="px-4 sm:px-8"
-        className="py-16 md:py-24"
+        className="py-24 md:py-40"
       >
         <div className="grid grid-cols-1 items-start gap-10 xl:grid-cols-2 xl:gap-16">
           {/* Video */}
@@ -24,7 +25,7 @@ export function V3VideoHighlights({ data }) {
               <div
                 data-tina-field={tinaField(data, "videoUrl")}
                 className={cn(
-                  "overflow-hidden rounded-2xl border-0.5 border-sswRed/40",
+                  "overflow-hidden rounded-2xl",
                   // Greyscale the poster image only; the played iframe stays colour.
                   data?.greyscaleThumbnail && "[&_img]:grayscale"
                 )}
@@ -87,12 +88,23 @@ export function V3VideoHighlights({ data }) {
               <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
                 {data.highlights.map((item, index) => (
                   <div key={`v3-highlight-${index}`} className="flex flex-col">
-                    {item?.icon && (
-                      <Icon
-                        data={{ name: item.icon }}
-                        tinaField={tinaField(item, "icon")}
-                        className="size-8 text-white"
+                    {item?.customImage?.imageSource ? (
+                      <Image
+                        src={item.customImage.imageSource}
+                        alt={item.customImage.altText ?? ""}
+                        width={item.customImage.imageWidth ?? 80}
+                        height={item.customImage.imageHeight ?? 80}
+                        data-tina-field={tinaField(item, "customImage")}
+                        className="h-20 w-auto self-start object-contain grayscale"
                       />
+                    ) : (
+                      item?.icon && (
+                        <Icon
+                          data={{ name: item.icon }}
+                          tinaField={tinaField(item, "icon")}
+                          className="size-8 text-white"
+                        />
+                      )
                     )}
                     {item?.title && (
                       <h3

@@ -7,8 +7,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPickItem,
-  useCarousel,
 } from "@/components/ui/carousel";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
@@ -21,6 +19,7 @@ import {
   Tabs,
   useTabCarousel,
 } from "../../cardCarousel/layout/cardCarouselTabs";
+import { CarouselDots } from "../shared/carouselDots";
 
 type V3CardProps = {
   data;
@@ -122,27 +121,12 @@ const V3CardList = ({ cards, hasImages }: V3CardListProps) => {
             );
           })}
         </CarouselContent>
-        <div className="m-auto flex w-3/4 justify-center gap-2 pt-8">
-          {cards?.map((_, index) => {
-            return (
-              <V3CarouselDot key={`v3-carousel-dot-${index}`} index={index} />
-            );
-          })}
-        </div>
+        <CarouselDots
+          count={cards?.length ?? 0}
+          className="mx-auto mt-0 w-3/4 pt-8"
+        />
       </Carousel>
     </div>
-  );
-};
-
-const V3CarouselDot = ({ index }) => {
-  const { selectedIndex } = useCarousel();
-  return (
-    <CarouselPickItem
-      className={`h-0.5 w-full max-w-8 rounded-full sm:h-1 ${
-        selectedIndex === index ? "bg-gray-200" : "bg-gray-600"
-      }`}
-      index={index}
-    />
   );
 };
 

@@ -8,7 +8,11 @@ import styles from "./popup.module.css";
 export interface PopupProps extends React.HTMLAttributes<HTMLDivElement> {
   isVisible: boolean;
   showCloseIcon?: boolean;
+  closeOnOverlayClick?: boolean;
+  closeOnEsc?: boolean;
   onClose: () => void;
+  /** Inline styles for the modal box (the library's stylesheet can beat Tailwind classes). */
+  modalStyle?: React.CSSProperties;
 }
 
 const Popup: React.FC<PopupProps> = (props) => {
@@ -18,19 +22,22 @@ const Popup: React.FC<PopupProps> = (props) => {
         open={props.isVisible}
         onClose={props.onClose}
         showCloseIcon={!!props.showCloseIcon}
+        closeOnOverlayClick={props.closeOnOverlayClick ?? true}
+        closeOnEsc={props.closeOnEsc ?? true}
         classNames={{
           closeButton: styles.closeButton,
           modalAnimationIn: styles.formEnterModalAnimation,
           modalAnimationOut: styles.formLeaveModalAnimation,
-          overlay: "bg-black/50",
+          overlay: "bg-black/50 backdrop-blur-sm",
 
           modal: classNames([
             "sm:max-w-2xl w-modal",
-            "w-full mx-0",
-            "shadow-none bg-black/0",
+            "w-full mx-0 !p-0",
+            "!shadow-none !bg-transparent",
             props.className,
           ]),
         }}
+        styles={props.modalStyle ? { modal: props.modalStyle } : undefined}
         animationDuration={700}
         center
       >

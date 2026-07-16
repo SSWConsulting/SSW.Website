@@ -27,12 +27,21 @@ export const ImageTextBlock = ({ data, priority = false }) => {
   };
   return (
     <ImageComponentLayout data={data} priority={priority}>
-      {data.topLabel && (data.toplabel?.icon || data.topLabel?.labelText) && (
+      {data.topLabel && (data.topLabel.icon || data.topLabel.labelText) && (
         <IconLabel data={data.topLabel} />
       )}
 
       <section className={cn(getTabletAlignment(), hasMedia && "sm:text-left")}>
         {data.heading && <Heading data={data} />}
+
+        {data.subheading && (
+          <p
+            className="pb-2 text-sm font-semibold uppercase tracking-wide text-sswRed"
+            data-tina-field={tinaField(data, "subheading")}
+          >
+            {data.subheading}
+          </p>
+        )}
 
         {data.description && (
           <TinaMarkdown
@@ -59,13 +68,15 @@ export const ImageTextBlock = ({ data, priority = false }) => {
       </section>
 
       {data.chips && <PillGroup data={data.chips} />}
-      <div
-        className={`grid gap-x-3 ${data.featureColumns?.twoColumns ? "sm:grid-cols-2" : "grid-cols-1"}`}
-      >
-        {data.featureColumns?.features?.map((item, index) => {
-          return <ListItem key={index} data={item} />;
-        })}
-      </div>
+      {data.featureColumns?.features?.length ? (
+        <div
+          className={`my-4 grid gap-3 ${data.featureColumns.twoColumns ? "sm:grid-cols-2" : "grid-cols-1"}`}
+        >
+          {data.featureColumns.features.map((item, index) => {
+            return <ListItem key={index} data={item} />;
+          })}
+        </div>
+      ) : null}
       <ButtonRow
         data={data}
         className={cn(

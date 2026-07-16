@@ -6,10 +6,17 @@ import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
+import { IconLabel } from "../../../blocksSubtemplates/iconLabel";
 import V2ComponentWrapper from "../../../layout/v2ComponentWrapper";
 import { Card } from "../layout/card";
 import { CardList } from "../layout/cardCarouseSlideshow";
 import { Tabs, useTabCarousel } from "../layout/cardCarouselTabs";
+
+// Stacked-mode columns by cards-per-row. Full static strings so the Tailwind JIT picks them up.
+const STACKED_GRID_COLS: Record<number, string> = {
+  2: "sm:grid-cols-2",
+  3: "sm:grid-cols-2 md:grid-cols-3 lg:gap-8",
+};
 
 export const CardCarousel = ({ data }) => {
   //Check if any images are used in cards (adds a placeholder to the other cards)
@@ -19,6 +26,15 @@ export const CardCarousel = ({ data }) => {
     categoryGroup: data.categoryGroup,
   });
   const [cardSet, setCardSet] = useState(data.cards);
+
+  const resolveCardsPerRow = () => {
+    if (data.cardsPerRow) return Number(data.cardsPerRow);
+    if (data.cards?.length === 3) return 3;
+    if (data.cards?.length === 2) return 2;
+    return 1;
+  };
+  const cardsPerRow = resolveCardsPerRow();
+  const stackedGridColsClass = STACKED_GRID_COLS[cardsPerRow] ?? "";
 
   useEffect(() => {
     if (activeCategory && data.cards) {
@@ -47,6 +63,17 @@ export const CardCarousel = ({ data }) => {
               tabletTextLeft ? "text-left md:text-center" : "text-center"
             )}
           >
+            {data.topLabel &&
+              (data.topLabel.icon || data.topLabel.labelText) && (
+                <div
+                  className={cn(
+                    "flex",
+                    tabletTextLeft ? "md:justify-center" : "justify-center"
+                  )}
+                >
+                  <IconLabel data={data.topLabel} />
+                </div>
+              )}
             {data.isH1 ? (
               <h1
                 data-tina-field={tinaField(data, "heading")}
@@ -83,9 +110,7 @@ export const CardCarousel = ({ data }) => {
               <div
                 className={cn(
                   data.cardStyle === 1 ? "gap-8" : "gap-4",
-                  data.cards?.length === 2 && "sm:grid-cols-2",
-                  data.cards?.length === 3 &&
-                    "sm:grid-cols-2 md:grid-cols-3 lg:gap-8",
+                  stackedGridColsClass,
                   "grid items-stretch justify-center"
                 )}
               >

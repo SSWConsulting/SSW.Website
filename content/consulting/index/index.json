@@ -459,6 +459,12 @@
               "tag": "content/consulting/tag/platform-development.json"
             }
           ]
+        },
+        {
+          "title": "Odoo",
+          "description": "Odoo is an open-source suite of business apps, including CRM, inventory, accounting and manufacturing, that share one database so they work as a single connected system when combined.",
+          "logo": "/images/thumbs/Odoo-Logo.png",
+          "page": "content/consultingv2/odoo-consulting.json"
         }
       ]
     },

@@ -373,21 +373,21 @@
         {
           "guid": "6o99x4do",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=l2qCRsz69JI",
-          "altText": "Mastering Web-Based Data Entry: A UX Handbook | Toby Churches | SSW Rules",
+          "youtubeUrl": "https://www.youtube.com/watch?v=iqUyLDrEFDM",
+          "altText": "Stop Rebuilding UI: The Real Power of Design Systems Explained | Alex Blum | SSW Rules",
           "chips": [
             {
-              "chipText": "Data Design",
+              "chipText": "Design Systems",
               "chipType": "filledChip"
             },
             {
-              "chipText": "7 min.",
+              "chipText": "3 min.",
               "chipType": "clearChip"
             }
           ],
           "icon": "info",
-          "heading": "Designing Consistent and Streamlined Data Entry Forms",
-          "description": "SSW Software Developer Toby Churches shares practical tips for building consistent, streamlined data entry forms. He covers form states, field formatting, validation, and common pitfalls – showing how thoughtful form design improves user experience and reduces developer frustration.",
+          "heading": "Stop Rebuilding UI: The Real Power of Design Systems Explained",
+          "description": "In this video, Alex Blum explains why inconsistent UI patterns create technical debt, how small design changes can spiral into massive refactors, and how Storybook-powered design systems solve the problem.",
           "embeddedButton": {
             "buttonText": ""
           }
