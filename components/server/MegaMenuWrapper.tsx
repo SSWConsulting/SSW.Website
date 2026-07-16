@@ -3,6 +3,7 @@
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
 import { MegaMenuLayout } from "ssw.megamenu";
+import { useHeaderAppearance } from "@/app/components/header-appearance";
 import { CustomLink } from "../customLink";
 import { HomeNavActions } from "../layout/homeNavActions";
 import { useHomeTheme } from "../layout/homeTheme";
@@ -10,6 +11,7 @@ import { useHomeTheme } from "../layout/homeTheme";
 export function MegaMenuWrapper(props) {
   const pathName = usePathname();
   const { isDark } = useHomeTheme();
+  const { mobile } = useHeaderAppearance();
 
   // Only the homepage opts into theming; other routes keep the default menu.
   // The token utilities (bg-background/text-foreground/border-hairline) flip via
@@ -26,7 +28,11 @@ export function MegaMenuWrapper(props) {
       )}
     >
       <MegaMenuLayout
-        hidePhone={pathName === "/company/contact-us"}
+        hidePhone={
+          pathName === "/company/contact-us" ||
+          Boolean(mobile.hideContactButton)
+        }
+        isFlagVisible={!mobile.hideFlag}
         menuBarItems={props.menu}
         rightSideActionsOverride={isHome ? () => <HomeNavActions /> : undefined}
         tagline="Enterprise Software Development"

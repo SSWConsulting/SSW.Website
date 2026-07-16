@@ -16,10 +16,15 @@ interface RippleButtonProps
   fontClassName?: string;
   duration?: string;
   variant: ColorVariant;
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
+  /** When set, renders an <a> instead of a <button> for link-style CTAs. */
+  href?: string;
+  onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
+const RippleButton = React.forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  RippleButtonProps
+>(
   (
     {
       variant = "primary",
@@ -29,6 +34,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
       rippleColor = "rgba(0, 0, 0, 0.25)",
       duration = "600ms",
       textTinaField,
+      href,
       onClick = () => {},
       ...props
     },
@@ -39,7 +45,7 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
     >([]);
 
     const isPrimary = variant === "primary";
-    const createRipple = (event: MouseEvent<HTMLButtonElement>) => {
+    const createRipple = (event: MouseEvent<HTMLElement>) => {
       const button = event.currentTarget;
       const rect = button.getBoundingClientRect();
       const size = Math.max(rect.width, rect.height);
@@ -62,18 +68,14 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
       }
     }, [buttonRipples, duration]);
 
-    return (
-      <button
-        onClick={(e) => onClick(e)}
-        className={cn(
-          "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-control px-6 py-3 text-center",
-          variants[variant],
-          className
-        )}
-        onMouseEnter={isPrimary ? createRipple : undefined}
-        ref={ref}
-        {...props}
-      >
+    const sharedClassName = cn(
+      "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-control px-6 py-3 text-center",
+      variants[variant],
+      className
+    );
+
+    const inner = (
+      <>
         <div
           data-tina-field={textTinaField}
           className={cn(
@@ -99,7 +101,28 @@ const RippleButton = React.forwardRef<HTMLButtonElement, RippleButtonProps>(
             />
           ))}
         </span>
-      </button>
+      </>
+    );
+
+    // A real <a> for link CTAs, so we never nest a <button> inside an <a>.
+    const Comp = (href ? "a" : "button") as React.ElementType;
+    // Default rel on new-tab links (tabnabbing); an explicit rel in props wins.
+    const newTabRel =
+      href && (props as { target?: string }).target === "_blank"
+        ? { rel: "noopener noreferrer" }
+        : {};
+    return (
+      <Comp
+        href={href}
+        onClick={onClick}
+        className={sharedClassName}
+        onMouseEnter={isPrimary ? createRipple : undefined}
+        ref={ref}
+        {...newTabRel}
+        {...props}
+      >
+        {inner}
+      </Comp>
     );
   }
 );

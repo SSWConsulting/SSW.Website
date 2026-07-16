@@ -1,0 +1,354 @@
+{
+  "seo": {
+    "title": "Odoo Consulting | SSW",
+    "description": "Need an Odoo consultant? SSW brings 30+ years of Australian enterprise software experience to Odoo implementation, customisation & integration"
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "brow": "Odoo CONSULTING",
+      "heading": "We build Odoo to support how your team actually works.",
+      "description": "Most Odoo implementations work in the demo. We build the ones that survive real operations, real data and years of growth, backed by 30+ years of enterprise software delivery in Australia.\n",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "",
+          "buttonLink": "#lead-capture-heading",
+          "iconFirst": false,
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        }
+      ],
+      "mediaType": "image",
+      "image": {
+        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
+        "imageHeight": 1758,
+        "imageWidth": 2638
+      },
+      "_template": "v3Hero"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane and Newcastle by",
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
+        }
+      ],
+      "_template": "v3LogoCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Based on our experience",
+      "heading": "Where Odoo projects usually go wrong",
+      "description": "The software gets installed without much trouble. Mapping the real workflow, migrating clean data, and training people to use the new system are the parts that usually get overlooked.\n",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "Built around a demo, not your day-to-day",
+          "description": "Odoo ships with generic defaults. Most implementations stop there, leaving staff to enter data twice: once in Odoo, and again in the spreadsheets they actively use.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Data that still lives in five places",
+          "description": "Odoo connects your finance, sales, and warehouse data in one place. Most setups fail to link this to your accounting software or warehouse tools, so staff are still stuck exporting manual CSVs every week.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "One person manages everything",
+          "description": "Odoo builds often rely on one person learning as they go. It works fine until they change roles or leave. Then, you are left with workflows nobody understands and no way to support them.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true
+      },
+      "videoUrl": "https://www.youtube.com/watch?v=3nkO8BxG8Sc",
+      "thumbnail": "",
+      "greyscaleThumbnail": true,
+      "figure": "Video: Every client deserves a Team! Link Microsoft Teams with your CRM (4 mins)",
+      "heading": "Why choose SSW?",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
+      "highlights": [
+        {
+          "title": "Deep expertise",
+          "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-crm",
+          "linkText": "Rules to Better CRM"
+        },
+        {
+          "title": "Results over rhetoric",
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?\n"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "OUR PROCESS",
+      "heading": "What to expect working with SSW",
+      "description": "",
+      "steps": [
+        {
+          "heading": "Initial Call",
+          "description": "A short call with a senior engineer to talk through your project.\n",
+          "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
+        },
+        {
+          "heading": "Spec Review",
+          "description": "A clear, costed plan with scope, timing and the fastest path to ROI.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
+        },
+        {
+          "heading": "Build & Deliver",
+          "description": "SSW can either handle the project from end-to-end or join your existing team, build your product, and ship your solution.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-scrum"
+        },
+        {
+          "heading": "Service Plan",
+          "description": "We can stay on post-launch to ensure a successful project handover.\n",
+          "link": "https://www.ssw.com.au/consulting/support-plans"
+        }
+      ],
+      "_template": "v3Process"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Tell us about **your** project",
+      "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
+      "_template": "v3LeadCapture"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Why teams choose SSW for Odoo Consulting",
+      "statistics": [
+        {
+          "figure": 7000,
+          "figureSuffix": "+",
+          "heading": "Solutions delivered",
+          "description": "Enterprise-grade software"
+        },
+        {
+          "figure": 1800,
+          "figureSuffix": "+",
+          "heading": "Happy clients",
+          "description": "Across all industries"
+        },
+        {
+          "figure": 30,
+          "figureSuffix": "+",
+          "heading": "Years experience",
+          "description": "Trusted since 1999"
+        }
+      ],
+      "_template": "v3Statistics"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "testimonials": [
+        {
+          "quote": "I thoroughly enjoyed working with **SSW** on developing and launching our new website. What truly set them apart was not just their **evident expertise** but also their **unwavering commitment to going the extra mile.**",
+          "caseStudyUrl": "/company/clients/hearing-australia",
+          "authorName": "Kiriana Meha-Bettison",
+          "authorTitle": "IT Project Manager, Hearing Australia",
+          "authorImage": "",
+          "companyLogo": "/images/logos/hearing-australia.png"
+        }
+      ],
+      "_template": "v3Testimonials"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Full stack engineers",
+      "heading": "What we build around your CRM",
+      "subtitle": "Most CRM projects need touch reporting, workflow automation, or the inbox your sales team already lives in ",
+      "cards": [
+        {
+          "title": "Power Platform",
+          "description": "Build custom apps and automated workflows using your CRM data with Power Apps and Power Automate.",
+          "link": "/consulting/power-platform"
+        },
+        {
+          "title": "Power BI",
+          "description": "Live CRM dashboards and reporting. No manual exports required.",
+          "link": "/consulting/power-bi"
+        },
+        {
+          "title": "Outlook & Office 365",
+          "description": "Manage CRM directly within your inbox and calendar.",
+          "link": "/consulting/microsoft-365"
+        },
+        {
+          "title": "Azure Integrations",
+          "description": "Connect your CRM to your other business systems using Azure Functions and Logic Apps.",
+          "link": "/consulting/azure"
+        }
+      ],
+      "_template": "v3StackCards"
+    },
+    {
+      "isStacked": false,
+      "brow": "learn more on SSWTV",
+      "heading": "Tech wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
+      "tabletTextAlignment": "Left",
+      "cards": [
+        {
+          "guid": "akn4ur",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=fhnatho4nSg",
+          "altText": "Angular – Satisfying your Performance Hungry UI",
+          "category": "Dynamics 365",
+          "heading": "Searching employee skills - (AD vs SharePoint vs Dynamics 365 CRM)"
+        },
+        {
+          "guid": "20ehn",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=WwF69cj8490",
+          "altText": "How to supercharge a company with AI | Ulysses Maclaren",
+          "category": "AI",
+          "heading": "How to supercharge a company with AI | Ulysses Maclaren"
+        },
+        {
+          "guid": "arf4s",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=5eXx67EY_y4",
+          "altText": "Do you allow multiple options rather than forcing a best fit?",
+          "category": "Dynamics 365",
+          "heading": "Do you allow multiple options rather than forcing a best fit?"
+        },
+        {
+          "guid": "ui7a6e",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
+          "altText": "Lorem Ipsum",
+          "category": "AI Trends",
+          "heading": "The Year of the AI Agent: Automation to Intelligence"
+        },
+        {
+          "guid": "hhszy",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://youtu.be/F06MV1qm51Y?si=u1mOLqpFCaty4NrL",
+          "altText": "Lorem Ipsum",
+          "category": "AI Model Guides",
+          "heading": " 3 Creative Uses for OpenAI API "
+        }
+      ],
+      "background": {
+        "backgroundColour": 7
+      },
+      "_template": "v3CardCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Frequently asked questions",
+      "faqs": [
+        {
+          "question": "How much does it cost?",
+          "answer": "Every engagement is scoped to your goals, so there's no single price. The initial call is always 100% **free**. The specification review will be used to give the most accurate estimation possible for a projects scope, price and duration.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
+        },
+        {
+          "question": "Do you work with our existing team?",
+          "answer": "Yes! We can either take over a project from end-to-end with our own team at SSW, or embed our developers into your existing team.\n",
+          "link": "https://www.ssw.com.au/consulting/mentoring"
+        },
+        {
+          "question": "Can you rescue a project that's already in trouble?",
+          "answer": "Absolutely! SSW can support a range of projects, from large version upgrades, migrations, greenfield projects, and brownfield projects.\n"
+        },
+        {
+          "question": "How does SSW ensure quality and success of a software project?",
+          "answer": "Quality and success are the heart of our processes; we use:\n\n* Clean Architecture: Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-successful-projects"
+        }
+      ],
+      "_template": "v3Faq"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "heading": "Let's build something you're proud of",
+      "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "buttonLink": "#lead-capture-heading",
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        }
+      ],
+      "_template": "v3Cta"
+    }
+  ]
+}

@@ -270,7 +270,7 @@ function FeaturedEvent({ event }) {
       )}
       <div aria-hidden="true" className="absolute inset-0 bg-black/60" />
 
-      <div className="relative z-10 grid items-center gap-12 p-8 md:grid-cols-2 md:p-16">
+      <div className="relative z-10 grid grid-cols-1 items-center gap-12 p-8 md:grid-cols-2 md:p-16">
         {/* Left: title, description, sign-up */}
         <div className="flex flex-col">
           {event?.title && (
