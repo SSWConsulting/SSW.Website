@@ -43,36 +43,60 @@ const persist = (mode: HomeThemeMode) => {
   }
 };
 
+// Resolve the theme from a saved choice, else the OS preference. On the server
+// there's no way to know either, so it falls back to the SSR default; the
+// pre-paint script + client seed below correct it before first paint.
+const resolveTheme = (): HomeThemeMode => {
+  if (typeof window === "undefined") return DEFAULT_THEME;
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    if (stored === "light" || stored === "dark") return stored;
+  } catch {
+    /* ignore */
+  }
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+// Inline script that runs synchronously while the HTML is still parsing — before
+// the browser paints the nav/hero — and sets `.dark` on its own parent wrapper.
+// That makes the homepage's first paint already match the resolved theme, so
+// there's no dark→light flash. Rendered inside each themed wrapper; the logic is
+// kept in lockstep with resolveTheme() above. Gated to the homepage.
+const PRE_PAINT_SCRIPT = `(function(){try{if(location.pathname!=='/')return;var t;try{t=localStorage.getItem('${STORAGE_KEY}')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=document.currentScript&&document.currentScript.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()`;
+
+export const HomeThemePrePaint = () => (
+  <script dangerouslySetInnerHTML={{ __html: PRE_PAINT_SCRIPT }} />
+);
+
 export const HomeThemeProvider = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [theme, setThemeState] = React.useState<HomeThemeMode>(DEFAULT_THEME);
+  // Seed from the resolver so the first CLIENT render already matches the theme
+  // the pre-paint script applied to the DOM (server seeds the SSR default). The
+  // themed wrappers carry `suppressHydrationWarning` to allow that difference.
+  const [theme, setThemeState] = React.useState<HomeThemeMode>(resolveTheme);
 
-  // After mount, resolve the real theme: a saved choice always wins, otherwise
-  // follow the OS `prefers-color-scheme` and keep following it live until the
-  // user explicitly toggles.
+  // Keep following the OS preference live, but only until the user makes an
+  // explicit choice (a saved choice always wins).
   React.useEffect(() => {
     const media = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const resolve = () => {
+    const onChange = () => {
       let stored: string | null = null;
       try {
         stored = window.localStorage.getItem(STORAGE_KEY);
       } catch {
         /* ignore */
       }
-      if (stored === "light" || stored === "dark") {
-        setThemeState(stored);
-      } else {
+      if (stored !== "light" && stored !== "dark") {
         setThemeState(media.matches ? "dark" : "light");
       }
     };
-
-    resolve();
-    media.addEventListener("change", resolve);
-    return () => media.removeEventListener("change", resolve);
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
   }, []);
 
   const setTheme = React.useCallback((mode: HomeThemeMode) => {
@@ -108,11 +132,13 @@ export const HomeThemeShell = ({ children }: { children: React.ReactNode }) => {
   const { isDark } = useHomeTheme();
   return (
     <div
+      suppressHydrationWarning
       className={cn(
         "relative isolate bg-background text-foreground",
         isDark && "dark"
       )}
     >
+      <HomeThemePrePaint />
       {children}
     </div>
   );

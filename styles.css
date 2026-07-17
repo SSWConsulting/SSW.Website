@@ -107,6 +107,8 @@
     --stroke-weak: rgba(0, 0, 0, 0.1);
     --hairline: #e5e7eb;
     --dot-color: rgba(0, 0, 0, 0.12);
+    --home-nav-bg: #ffffff;
+    --home-nav-border: #f2f2f2;
     --logo-filter: none;
     --fill-weak: rgba(0, 0, 0, 0.04);
     --fill-weaker: rgba(0, 0, 0, 0.02);
@@ -174,6 +176,8 @@
     --stroke-weak: rgba(255, 255, 255, 0.12);
     --hairline: #212121;
     --dot-color: #212121;
+    --home-nav-bg: #090909;
+    --home-nav-border: rgba(255, 255, 255, 0.3);
     --logo-filter: brightness(0) invert(1);
     --fill-weak: rgba(255, 255, 255, 0.06);
     --fill-weaker: rgba(255, 255, 255, 0.03);
@@ -222,6 +226,16 @@
 }
 
 @layer utilities {
+  /* Hero scoop fill: light is the gray-50 section beneath the hero; dark is the
+     section's configured hex (passed in via the --home-scoop-dark custom prop).
+     Driven by the `.dark` class so it resolves on first paint — no theme flash. */
+  .home-scoop-fill {
+    fill: #f9f9f9;
+  }
+  .dark .home-scoop-fill {
+    fill: var(--home-scoop-dark, #090909);
+  }
+
   .mask-horizontal-fade {
     -webkit-mask-image: linear-gradient(
       to right,

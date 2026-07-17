@@ -5,9 +5,8 @@ import { backgroundOptions } from "@/components/blocksSubtemplates/tinaFormEleme
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
-import { useHomeTheme } from "@/components/layout/homeTheme";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -94,15 +93,14 @@ export const V3HeroBox = ({ data, priority = false }) => {
     </div>
   );
 
-  const { isDark } = useHomeTheme();
   // The scoop reveals what sits beneath the hero, so it must match the next
-  // section's background — light mode is the gray-50 section below, dark keeps
-  // the configured dark hex.
-  const scoopColor = isDark
-    ? (backgroundOptions.find(
-        (option) => option.reference === data?.background?.backgroundColour
-      )?.hex ?? DEFAULT_SCOOP_COLOR)
-    : "#f9f9f9";
+  // section's background. Light is the gray-50 section below; dark uses the
+  // configured section hex. The light/dark swap is done by the `.dark` class in
+  // CSS (not JS), so it resolves on first paint with no theme flash.
+  const scoopDarkColor =
+    backgroundOptions.find(
+      (option) => option.reference === data?.background?.backgroundColour
+    )?.hex ?? DEFAULT_SCOOP_COLOR;
 
   return (
     <V2ComponentWrapper data={data} className="pt-4 sm:pt-20">
@@ -209,7 +207,8 @@ export const V3HeroBox = ({ data, priority = false }) => {
             >
               <path
                 d="M168 0C129.336 0 107.496 24.1667 88.224 44.75C68.952 65.3333 51.72 83.3333 12 83.3333C8.8174 83.3333 5.76515 85.5283 3.51472 89.4353C1.26428 93.3423 0 98.6413 0 104.167C0 109.692 1.26428 114.991 3.51472 118.898C5.76515 122.805 8.8174 125 12 125H324C327.183 125 330.235 122.805 332.485 118.898C334.736 114.991 336 109.692 336 104.167C336 98.6413 334.736 93.3423 332.485 89.4353C330.235 85.5283 327.183 83.3333 324 83.3333C284.28 83.3333 267.048 65.3333 247.776 44.75C228.504 24.1667 206.664 0 168 0Z"
-                fill={scoopColor}
+                className="home-scoop-fill"
+                style={{ "--home-scoop-dark": scoopDarkColor } as CSSProperties}
               />
             </svg>
             {prevAndNextSlideButtons}

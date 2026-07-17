@@ -30,6 +30,10 @@ const REGIONS = [
 const ICON_BUTTON =
   "flex size-9 items-center justify-center rounded-full text-foreground transition-colors hover:text-sswRed";
 
+// Static so it never disagrees between SSR (seeded dark) and the client's
+// resolved theme — the sun/moon glyph already conveys the current mode.
+const THEME_TOGGLE_LABEL = "Toggle light or dark mode";
+
 // Popovers render in a portal so the mega menu's `overflow-hidden` can't clip
 // them; the wrapper re-applies `dark` so they still resolve the theme tokens
 // once they're outside the homepage scope.
@@ -175,7 +179,6 @@ function RegionGlobe({ isDark }: { isDark: boolean }) {
 // `rightSideActionsOverride` so it only replaces the actions on the homepage.
 export function HomeNavActions() {
   const { isDark, toggleTheme } = useHomeTheme();
-  const toggleLabel = isDark ? "Switch to light mode" : "Switch to dark mode";
 
   return (
     <div className="flex items-center gap-2 text-foreground max-sm:w-full max-sm:justify-between max-sm:px-4 max-sm:pb-4">
@@ -185,21 +188,16 @@ export function HomeNavActions() {
         <button
           type="button"
           onClick={toggleTheme}
-          aria-label={toggleLabel}
-          title={toggleLabel}
+          aria-label={THEME_TOGGLE_LABEL}
+          title={THEME_TOGGLE_LABEL}
           className={ICON_BUTTON}
         >
-          {isDark ? (
-            <Moon className="size-6" aria-hidden="true" />
-          ) : (
-            <Sun className="size-6" aria-hidden="true" />
-          )}
+          <Sun className="size-6 dark:hidden" aria-hidden="true" />
+          <Moon className="hidden size-6 dark:block" aria-hidden="true" />
         </button>
       </div>
 
-      <span
-        className={`h-7 w-px shrink-0 max-sm:hidden ${isDark ? "bg-white/25" : "bg-hairline"}`}
-      />
+      <span className="h-7 w-px shrink-0 bg-hairline max-sm:hidden dark:bg-white/25" />
 
       <Link
         href={CONTACT_URL}
