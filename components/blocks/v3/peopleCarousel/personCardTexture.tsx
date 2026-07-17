@@ -1,5 +1,3 @@
-import { useId } from "react";
-
 const BASE = "#cc4141";
 const DARK = "#8e2c2c";
 const DEEP = "#5f1b1b";
@@ -13,9 +11,10 @@ const svgProps = {
   "aria-hidden": true,
 } as const;
 
-function SmokeTexture() {
-  const id = useId();
-
+// SVG def ids are derived from the card index (stable + deterministic) rather
+// than useId, whose tree-position-based value can differ between the server and
+// client render and break hydration.
+function SmokeTexture({ id }: { id: string }) {
   return (
     <svg {...svgProps}>
       <defs>
@@ -72,9 +71,7 @@ const contourLines: Array<[y: number, opacity: number]> = [
   [345, 0.14],
 ];
 
-function ContoursTexture() {
-  const id = useId();
-
+function ContoursTexture({ id }: { id: string }) {
   return (
     <svg {...svgProps}>
       <defs>
@@ -116,9 +113,7 @@ function ContoursTexture() {
   );
 }
 
-function AuroraTexture() {
-  const id = useId();
-
+function AuroraTexture({ id }: { id: string }) {
   return (
     <svg {...svgProps}>
       <defs>
@@ -148,9 +143,7 @@ function AuroraTexture() {
   );
 }
 
-function GrainTexture() {
-  const id = useId();
-
+function GrainTexture({ id }: { id: string }) {
   return (
     <svg {...svgProps}>
       <defs>
@@ -194,5 +187,5 @@ const TEXTURES = [SmokeTexture, ContoursTexture, AuroraTexture, GrainTexture];
 
 export function PersonCardTexture({ index }: { index: number }) {
   const Texture = TEXTURES[index % TEXTURES.length];
-  return <Texture />;
+  return <Texture id={`person-texture-${index}`} />;
 }
