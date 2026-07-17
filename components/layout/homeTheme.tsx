@@ -67,7 +67,13 @@ const resolveTheme = (): HomeThemeMode => {
 const PRE_PAINT_SCRIPT = `(function(){try{if(location.pathname!=='/')return;var t;try{t=localStorage.getItem('${STORAGE_KEY}')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=document.currentScript&&document.currentScript.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()`;
 
 export const HomeThemePrePaint = () => (
-  <script dangerouslySetInnerHTML={{ __html: PRE_PAINT_SCRIPT }} />
+  // suppressHydrationWarning: the script has already run (and mutated the DOM)
+  // by the time React hydrates, so React must not re-validate its contents —
+  // otherwise it flags a mismatch (#418) and regenerates the subtree.
+  <script
+    suppressHydrationWarning
+    dangerouslySetInnerHTML={{ __html: PRE_PAINT_SCRIPT }}
+  />
 );
 
 export const HomeThemeProvider = ({
