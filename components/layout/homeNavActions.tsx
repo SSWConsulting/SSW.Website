@@ -1,13 +1,8 @@
 "use client";
 
-import {
-  ArrowRight,
-  Globe,
-  Moon,
-  Search as SearchIcon,
-  Sun,
-} from "lucide-react";
+import { Globe, Moon, Search as SearchIcon, Sun } from "lucide-react";
 import Link from "next/link";
+import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import {
   useEffect,
   useRef,
@@ -201,12 +196,13 @@ export function HomeNavActions() {
 
       <Link
         href={CONTACT_URL}
-        className="group flex h-12 shrink-0 items-center gap-2 rounded-full bg-sswRed py-1 pl-4 pr-1 font-medium text-white !no-underline transition-colors duration-200 hover:bg-sswDarkRed"
+        className="unstyled group flex h-12 shrink-0 items-center gap-2 rounded-full bg-sswRed py-1 pl-4 pr-1 font-medium text-white"
       >
         Let&apos;s Talk
-        <span className="flex size-10 items-center justify-center rounded-full bg-white text-sswRed transition-transform duration-200 group-hover:translate-x-1">
-          <ArrowRight className="size-5" aria-hidden="true" />
-        </span>
+        <ArrowCircle
+          className="size-10 bg-white text-sswRed group-hover:scale-110"
+          iconClassName="size-5"
+        />
       </Link>
     </div>
   );
