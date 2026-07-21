@@ -664,6 +664,28 @@
       "_template": "imageTextBlock"
     },
     {
+      "topLabel": {
+        "labelText": "Your Host"
+      },
+      "heading": "Calum Simpson",
+      "isH1": false,
+      "subheading": "SSW · VP of AI · Sydney",
+      "description": "Calum is SSW's VP of AI, with a decade-plus of enterprise Microsoft consulting behind him - work that's ranged from small two-person startups to some of Australia's largest organisations. He's since turned that same rigour toward applied AI and LLM engineering: building YakShaver, SSW's open-source agent-orchestration framework, and the retrieval, benchmarking and guardrail work behind the production AI assistants SSW ships into regulated industries like finance and health.\n\nHe's the one who can tell you whether an AI plan is real or just a demo - backed by systems he's built and shipped himself, not just advised on. On the day, you get four hours with Calum, the case studies, and his direct answers to your business's situation.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 1
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/Calum-1x1.jpg",
+        "imageHeight": 945,
+        "imageWidth": 945
+      },
+      "_template": "imageTextBlock"
+    },
+    {
       "spacerHeight": "45px",
       "background": {
         "backgroundColour": 1,
