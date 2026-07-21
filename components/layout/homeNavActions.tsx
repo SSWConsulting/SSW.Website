@@ -52,6 +52,13 @@ function SearchButton({ isDark }: { isDark: boolean }) {
   const [open, setOpen] = useState(false);
   const [term, setTerm] = useState("");
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (term.trim()) {
@@ -59,7 +66,8 @@ function SearchButton({ isDark }: { isDark: boolean }) {
         `https://www.google.com.au/search?q=site:${SEARCH_SITE}%20${encodeURIComponent(
           term
         )}`,
-        "_blank"
+        "_blank",
+        "noopener,noreferrer"
       );
     }
     setOpen(false);
@@ -79,6 +87,9 @@ function SearchButton({ isDark }: { isDark: boolean }) {
       {open && (
         <Portal isDark={isDark}>
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Site search"
             className="fixed inset-0 z-1000 flex items-start justify-center bg-black/50 p-6 pt-24"
             onClick={() => setOpen(false)}
           >
@@ -118,6 +129,13 @@ function RegionGlobe({ isDark }: { isDark: boolean }) {
   const [open, setOpen] = useState(false);
   const [pos, setPos] = useState<{ top: number; right: number } | null>(null);
   const btnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   const toggle = () => {
     if (!open && btnRef.current) {
