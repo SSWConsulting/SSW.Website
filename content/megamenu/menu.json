@@ -126,19 +126,22 @@
                   "name": "SugarLearning",
                   "url": "https://www.sugarlearning.com/",
                   "description": "The next generation on-boarding & induction tool for smart companies",
-                  "iconImg": "/images/megamenu-icons/SugarLearning.svg"
+                  "iconImg": "/images/megamenu-icons/SugarLearning.svg",
+                  "iconImgDarkMode": "/images/megamenu-icons/SugarLearning-darkmode.svg"
                 },
                 {
                   "name": "TimePro",
                   "url": "https://sswtimepro.com/",
                   "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting",
-                  "iconImg": "/images/megamenu-icons/TimePro.svg"
+                  "iconImg": "/images/megamenu-icons/TimePro.svg",
+                  "iconImgDarkMode": "/images/megamenu-icons/TimePro-darkmode.svg"
                 },
                 {
                   "name": "CodeAuditor",
                   "url": "https://codeauditor.com",
                   "description": "Scan any website for broken links and HTML Issues",
-                  "iconImg": "/images/megamenu-icons/CodeAuditor.svg"
+                  "iconImg": "/images/megamenu-icons/CodeAuditor.svg",
+                  "iconImgDarkMode": "/images/megamenu-icons/CodeAuditor-darkmode.svg"
                 }
               ]
             }
@@ -161,19 +164,22 @@
                   "name": "EagleEye",
                   "url": "https://www.ssweagleeye.com",
                   "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions",
-                  "iconImg": "/images/megamenu-icons/EagleEye-Icon.svg"
+                  "iconImg": "/images/megamenu-icons/EagleEye-Icon.svg",
+                  "iconImgDarkMode": "/images/megamenu-icons/EagleEye-darkmode.svg"
                 },
                 {
                   "name": "SophieBot",
                   "url": "https://sswsophie.com/sophiebot",
                   "description": "AI-driven solution that delivers a competitive edge through its ability to find data",
-                  "iconImg": "/images/megamenu-icons/SophieBot.svg"
+                  "iconImg": "/images/megamenu-icons/SophieBot.svg",
+                  "iconImgDarkMode": "/images/megamenu-icons/SophieBot-darkmode.svg"
                 },
                 {
                   "name": "SophieHub",
                   "url": "https://sswsophie.com",
                   "description": "A Smart Environment System which shows user specific information based on the user",
-                  "iconImg": "/images/megamenu-icons/SophieHub.svg"
+                  "iconImg": "/images/megamenu-icons/SophieHub.svg",
+                  "iconImgDarkMode": "/images/megamenu-icons/SophieHub-darkmode.svg"
                 }
               ]
             }
@@ -188,7 +194,8 @@
                   "name": "SSW Rewards",
                   "url": "/products/rewards",
                   "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes",
-                  "iconImg": "/images/megamenu-icons/SSWRewards.svg"
+                  "iconImg": "/images/megamenu-icons/SSWRewards.svg",
+                  "iconImgDarkMode": "/images/megamenu-icons/SSWRewards-darkmode.svg"
                 }
               ]
             }

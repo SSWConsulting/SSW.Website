@@ -172,7 +172,7 @@ importers:
         version: 0.34.3
       ssw.megamenu:
         specifier: github:SSWConsulting/SSW.MegaMenu#feat/v3-home-dark-light-mode
-        version: https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2ddfcc2b3e1cbb49d986f7e3ccaa9af5e37d82f4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        version: https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2e84dd4334577b74ca3f7b2f0aa531044f807028(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -8686,8 +8686,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-is@19.2.7:
-    resolution: {integrity: sha512-kZFnouyVv7eP/Phmrlo9FK+zcAdriZJvzxXHF1Sl1P377WSGe2G/JxVolhTrB/jeV47lKImhNUsijjHAAbcl/A==}
+  react-is@19.2.8:
+    resolution: {integrity: sha512-s5un28nYxKJw5gvUHyW5PCC28CvBqLu9r3cWgzHT4Vo/5fqqkFcdRYsGcKf50WMPpjjFZS5d76fn3YCo2njKwQ==}
 
   react-jotform@1.0.2:
     resolution: {integrity: sha512-K8ULWGIsvmyWw0hMomprsjuhmC54QNm25x/HHVjcjDSR7A23nrCSe01cJEjud5RtE2RJhjohO6qWYigGqCDJlA==}
@@ -9225,8 +9225,8 @@ packages:
   sqlite-level@2.1.1:
     resolution: {integrity: sha512-hhRnO7R4fym5PjWiRkKyMju1Ok6B3MfK3wWyyoeAaGd9OZPrTqGbjEbghHLh7uco4r3syZrbk3/9IQTWCv3/sw==}
 
-  ssw.megamenu@https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2ddfcc2b3e1cbb49d986f7e3ccaa9af5e37d82f4:
-    resolution: {tarball: https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2ddfcc2b3e1cbb49d986f7e3ccaa9af5e37d82f4}
+  ssw.megamenu@https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2e84dd4334577b74ca3f7b2f0aa531044f807028:
+    resolution: {tarball: https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2e84dd4334577b74ca3f7b2f0aa531044f807028}
     version: 4.13.10
     peerDependencies:
       react: ^18.2.0
@@ -20062,7 +20062,7 @@ snapshots:
       '@jest/schemas': 30.4.1
       ansi-styles: 5.2.0
       react-is-18: react-is@18.3.1
-      react-is-19: react-is@19.2.7
+      react-is-19: react-is@19.2.8
 
   prism-react-renderer@2.4.1(react@19.2.3):
     dependencies:
@@ -20290,7 +20290,7 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-is@19.2.7: {}
+  react-is@19.2.8: {}
 
   react-jotform@1.0.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
@@ -20981,7 +20981,7 @@ snapshots:
       better-sqlite3: 12.10.0
       module-error: 1.0.2
 
-  ssw.megamenu@https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2ddfcc2b3e1cbb49d986f7e3ccaa9af5e37d82f4(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  ssw.megamenu@https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/2e84dd4334577b74ca3f7b2f0aa531044f807028(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       '@headlessui/react': 2.2.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@heroicons/react': 2.2.0(react@19.2.3)
