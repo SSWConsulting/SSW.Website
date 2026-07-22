@@ -119,7 +119,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 fill
                 priority={priority && index === 0}
                 fetchPriority={priority && index === 0 ? "high" : undefined}
-                quality={100}
+                quality={75}
                 sizes="(min-width: 1440px) 1312px, 100vw"
                 src={slide.backgroundMedia.imageSource}
                 alt={slide.backgroundMedia.altText ?? "Hero background"}
