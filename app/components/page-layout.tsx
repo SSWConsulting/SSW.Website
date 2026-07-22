@@ -13,7 +13,7 @@ const PageLayout = ({
 }: PageLayoutProps) => {
   return (
     <HeaderAppearanceProvider>
-      <div className="flex h-screen min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col">
         <header className="no-print z-1">
           {phishingBanner}
           {megaMenu}

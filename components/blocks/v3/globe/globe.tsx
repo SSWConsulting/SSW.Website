@@ -152,15 +152,21 @@ export function V3Globe({ data }) {
               )}
             </div>
 
-            {/* Right: 3D globe stage. */}
-            {offices.length > 0 && isDesktop && (
+            {/* Right: 3D globe stage. The stage box is gated purely by CSS
+                (`hidden lg:block`) so its height is reserved in the server HTML
+                at first paint — this stops the section, and the footer below
+                it, from jumping when the client-only WebGL canvas mounts. Only
+                the canvas itself waits for `isDesktop` (see note above). */}
+            {offices.length > 0 && (
               <div className="relative z-0 hidden lg:col-span-7 lg:block">
                 <div
                   className={cn(
                     "relative flex min-h-[34rem] w-full items-center justify-center xl:min-h-[40rem]"
                   )}
                 >
-                  <OfficeMap offices={offices} selectedIndex={openIndex} />
+                  {isDesktop && (
+                    <OfficeMap offices={offices} selectedIndex={openIndex} />
+                  )}
                 </div>
               </div>
             )}
