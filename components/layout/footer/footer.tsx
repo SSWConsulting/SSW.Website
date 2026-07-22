@@ -103,7 +103,7 @@ export const Footer = () => {
               </CustomLink>
             ))}
           </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-wider text-gray-500">
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-wider text-gray-400">
             {bottomBar?.poweredBy?.map((item, index) =>
               item.url ? (
                 <CustomLink
