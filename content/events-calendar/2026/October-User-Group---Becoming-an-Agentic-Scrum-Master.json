@@ -1,5 +1,5 @@
 {
-  "title": "September User Group - Becoming an Agentic Scrum Master",
+  "title": "October User Group - Becoming an Agentic Scrum Master",
   "slug": "becoming-an-agentic-scrum-master",
   "url": "https://www.meetup.com/melbourne-net-user-group/events/315677548",
   "thumbnail": "/images/events/melbourne-ug-thumb.jpg",
@@ -10,10 +10,10 @@
     }
   ],
   "headerLayout": "avatars",
-  "startDateTime": "2026-09-16T08:00:00.000Z",
-  "endDateTime": "2026-09-16T11:00:00.000Z",
-  "startShowBannerDateTime": "2026-09-15T14:00:00.000Z",
-  "endShowBannerDateTime": "2026-09-16T12:00:00.000Z",
+  "startDateTime": "2026-10-21T07:00:00.000Z",
+  "endDateTime": "2026-10-21T09:00:00.000Z",
+  "startShowBannerDateTime": "2026-10-20T13:00:00.000Z",
+  "endShowBannerDateTime": "2026-10-21T11:00:00.000Z",
   "calendarType": "User Groups",
   "city": "Melbourne",
   "category": "Artificial Intelligence",
