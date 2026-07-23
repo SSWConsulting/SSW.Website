@@ -21,7 +21,8 @@ export function Marquee({
   pauseOnHover = false,
   children,
   vertical = false,
-  repeat = 7,
+  // 3 copies keep the loop seamless while one copy (the logo strip) stays >= half the viewport; every carousel has >= 7 logos, so this holds.
+  repeat = 3,
   ...props
 }: MarqueeProps) {
   return (
