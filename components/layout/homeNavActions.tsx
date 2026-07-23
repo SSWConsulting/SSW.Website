@@ -194,7 +194,7 @@ export function HomeNavActions() {
   const { isDark, toggleTheme } = useHomeTheme();
 
   return (
-    <div className="flex items-center gap-2 text-foreground max-sm:w-full max-sm:justify-between max-sm:px-4 max-sm:pb-4">
+    <div className="flex items-center gap-2 text-foreground max-sm:w-full max-sm:justify-between max-sm:pb-4 max-[400px]:flex-col max-[400px]:items-start max-[400px]:gap-4">
       <div className="flex items-center">
         <SearchButton isDark={isDark} />
         <RegionGlobe isDark={isDark} />

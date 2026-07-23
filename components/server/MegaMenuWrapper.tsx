@@ -42,6 +42,9 @@ export function MegaMenuWrapper(props) {
         isFlagVisible={isHome ? false : !mobile.hideFlag}
         menuBarItems={props.menu}
         rightSideActionsOverride={isHome ? () => <HomeNavActions /> : undefined}
+        // The mobile menu is portaled outside this `.ssw-home-nav` scope, so
+        // re-apply `dark` on it directly to keep the panel's dark tokens.
+        mobileMenuClassName={isHome && isDark ? "dark" : undefined}
         linkComponent={(props) => (
           <CustomLink
             {...props}
