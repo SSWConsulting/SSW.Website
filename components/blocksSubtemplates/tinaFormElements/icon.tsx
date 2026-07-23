@@ -255,7 +255,12 @@ export const Icon = ({ data, className = "", tinaField = "", label = "" }) => {
       className={`${className} shrink-0`}
       focusable="false"
       {...(label
-        ? { role: "img", "aria-label": label }
+        ? {
+            role: "img",
+            "aria-label": label,
+            "aria-hidden": "false",
+            title: label,
+          }
         : { "aria-hidden": "true" })}
     />
   );
