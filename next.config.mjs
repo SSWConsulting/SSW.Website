@@ -1,6 +1,14 @@
 import bundleAnalyser from "@next/bundle-analyzer";
 import createNextPluginPreval from "next-plugin-preval/config.js";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 const withNextPluginPreval = createNextPluginPreval();
+
+// Absolute so webpack and Turbopack resolve it identically regardless of cwd.
+const TINACMS_MDX_SHIM = path.join(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "lib/tinacms-mdx-shim.js"
+);
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -58,6 +66,16 @@ const config = {
       use: ["@svgr/webpack"],
     });
 
+    // `tinacms/dist/rich-text` imports `sanitizeUrl` from `@tinacms/mdx`, whose
+    // single entry point bundles the entire markdown parser (~1.97 MB) to supply
+    // a 22-line function. Swap in a shim that keeps sanitizeUrl and drops the
+    // parser. Exact match ("$") — the package publishes no subpaths.
+    // Remove once tinacms#7233 lands a `@tinacms/mdx/sanitize-url` subpath.
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@tinacms/mdx$": TINACMS_MDX_SHIM,
+    };
+
     return config;
   },
   async rewrites() {
@@ -80,6 +98,11 @@ const config = {
   serverExternalPackages: ["applicationinsights"],
   turbopack: {
     resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
+    // Mirrors the webpack alias above — `next dev` uses Turbopack, `next build`
+    // uses webpack, so both need it or dev and prod diverge.
+    resolveAlias: {
+      "@tinacms/mdx": TINACMS_MDX_SHIM,
+    },
   },
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
