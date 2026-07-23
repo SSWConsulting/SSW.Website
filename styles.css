@@ -281,3 +281,20 @@
     }
   }
 }
+
+/*
+ * Mobile header appearance (CLS fix — see app/components/header-appearance.tsx).
+ * A page that opts out server-renders a hidden [data-mm-hide-flag] / [data-mm-hide-contact]
+ * marker; these rules hide the matching ssw.megamenu elements on first paint instead of
+ * after hydration. Selectors target ssw.megamenu@4.13.8 internals — revisit on upgrade.
+ * Left unlayered so they beat Tailwind's @layer utilities without !important.
+ * Degrades gracefully where :has() is unsupported (Firefox < 121): the flag/Contact
+ * button simply stay visible — no layout shift, just no opt-out.
+ */
+body:has([data-mm-hide-flag]) header .xl\:hidden button:has(img[alt$="flag" i]),
+body:has([data-mm-hide-flag]) header .xl\:hidden .h-4.w-px {
+  display: none;
+}
+body:has([data-mm-hide-contact]) header .gap-2.sm\:flex-grow-0 {
+  display: none;
+}

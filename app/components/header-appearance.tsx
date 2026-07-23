@@ -1,44 +1,27 @@
-"use client";
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
-
 export type MobileHeaderAppearance = {
   hideFlag?: boolean | null;
   hideContactButton?: boolean | null;
 };
-type Ctx = {
-  mobile: MobileHeaderAppearance;
-  setMobile: (v: MobileHeaderAppearance) => void;
-};
-const HeaderAppearanceContext = createContext<Ctx>({
-  mobile: {},
-  setMobile: () => {},
-});
 
-export function HeaderAppearanceProvider({
-  children,
+// The header lives in the root layout and can't see the current page's data, so
+// hiding the mobile flag/Contact button used to happen in a client effect AFTER
+// hydration — reflowing the header and everything below it (CLS). Instead, the page
+// server-renders this hidden marker; CSS in styles.css reads it via `:has()` and hides
+// the elements on first paint, so SSR and hydration match. Client-side navigation swaps
+// the marker in/out with the page, so the header updates without any header-side JS.
+// (Middleware `x-pathname` + server resolution — the other documented fix — was rejected:
+// reading headers() in the root layout breaks the `dynamic = "force-static"` routes.)
+export function HeaderAppearanceMarker({
+  appearance,
 }: {
-  children: React.ReactNode;
+  appearance?: MobileHeaderAppearance | null;
 }) {
-  const [mobile, setMobile] = useState<MobileHeaderAppearance>({});
-  const value = useMemo(() => ({ mobile, setMobile }), [mobile]);
+  if (!appearance?.hideFlag && !appearance?.hideContactButton) return null;
   return (
-    <HeaderAppearanceContext.Provider value={value}>
-      {children}
-    </HeaderAppearanceContext.Provider>
+    <div
+      hidden
+      data-mm-hide-flag={appearance.hideFlag ? "" : undefined}
+      data-mm-hide-contact={appearance.hideContactButton ? "" : undefined}
+    />
   );
-}
-
-export const useHeaderAppearance = () => useContext(HeaderAppearanceContext);
-
-// ponytail: client context → SSR shows full header for one frame before hiding flag/
-// contact. Upgrade path if the flash matters: set `x-pathname` in middleware.ts and
-// resolve appearance server-side in app/layout.tsx so the header renders correctly at SSR.
-export function useMobileHeaderAppearance(
-  value: MobileHeaderAppearance | null
-) {
-  const { setMobile } = useHeaderAppearance();
-  useEffect(() => {
-    setMobile(value ?? {});
-    return () => setMobile({});
-  }, [value, setMobile]);
 }
