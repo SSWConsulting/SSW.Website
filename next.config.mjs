@@ -10,7 +10,7 @@ const config = {
   },
   images: {
     deviceSizes: [384, 640, 750, 828, 1080, 1200, 1440, 1920, 2048, 3840],
-    minimumCacheTTL: 60,
+    minimumCacheTTL: 31536000,
 
     remotePatterns: [
       {
