@@ -117,17 +117,20 @@ const V2ComponentWrapper = ({
           isInInitialViewport === false && "opacity-0",
           !isInInitialViewport && isInView && "opacity-100"
         )}
+        // Only emit a background-image when there actually is one. Interpolating a
+        // missing value produced `url(null)` / `url()`, and the browser resolved
+        // those against the current path — on /events/* that fetched /events/null,
+        // which the catch-all route answered with 200 and ~631 KiB of HTML, at high
+        // priority, on every page load.
         style={
-          // Without the guard, a block with no background image renders
-          // `url(null)` and the browser fetches /null.
-          data.background?.bleed || !data.background?.backgroundImage
-            ? {}
-            : {
+          !data.background?.bleed && data.background?.backgroundImage
+            ? {
                 backgroundImage: `url(${data.background.backgroundImage})`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
               }
+            : undefined
         }
       >
         {children}
