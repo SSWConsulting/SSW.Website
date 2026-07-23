@@ -64,34 +64,38 @@ function ClipTextReveal({ text }: { text: string }) {
   let wordIndex = -1;
 
   return (
-    <span aria-label={text.replace(/\*\*/g, "")}>
-      {tokens.map((tok, ti) => {
-        if (tok.space) return <span key={`sp-${ti}`}> </span>;
-        const i = ++wordIndex;
-        return (
-          <span
-            key={`w-${ti}`}
-            ref={(el) => {
-              wordRefs.current[i] = el;
-            }}
-            aria-hidden
-            className="-mb-descender inline-block overflow-hidden pb-descender align-bottom"
-          >
-            <motion.span
-              className={`inline-block ${tok.red ? "text-sswRed" : ""}`}
-              initial={{ y: "110%" }}
-              animate={lineIndices ? { y: 0 } : { y: "110%" }}
-              transition={{
-                duration: 1,
-                delay: lineIndices ? lineIndices[i] * 0.12 : 0,
-                ease: [0.22, 1, 0.36, 1],
+    <span>
+      {/* Readable copy for assistive tech; the animated words below are
+          split per-word and hidden, so this carries the full quote. */}
+      <span className="sr-only">{text.replace(/\*\*/g, "")}</span>
+      <span aria-hidden="true">
+        {tokens.map((tok, ti) => {
+          if (tok.space) return <span key={`sp-${ti}`}> </span>;
+          const i = ++wordIndex;
+          return (
+            <span
+              key={`w-${ti}`}
+              ref={(el) => {
+                wordRefs.current[i] = el;
               }}
+              className="-mb-descender inline-block overflow-hidden pb-descender align-bottom"
             >
-              {tok.word}
-            </motion.span>
-          </span>
-        );
-      })}
+              <motion.span
+                className={`inline-block ${tok.red ? "text-sswRed" : ""}`}
+                initial={{ y: "110%" }}
+                animate={lineIndices ? { y: 0 } : { y: "110%" }}
+                transition={{
+                  duration: 1,
+                  delay: lineIndices ? lineIndices[i] * 0.12 : 0,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                {tok.word}
+              </motion.span>
+            </span>
+          );
+        })}
+      </span>
     </span>
   );
 }

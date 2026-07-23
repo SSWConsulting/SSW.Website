@@ -409,7 +409,6 @@
         "buttons": [
           {
             "buttonText": "Register Now",
-            "buttonLink": "/events/2026/storage-wars",
             "colour": 0
           }
         ]

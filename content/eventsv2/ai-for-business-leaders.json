@@ -13,13 +13,17 @@
       "background": {
         "backgroundColour": 0
       },
+      "hideOn": [
+        "mobile"
+      ],
       "finalBreadcrumb": "AI for Business Leaders",
-      "hideOn": ["mobile"],
       "_template": "breadcrumbs"
     },
     {
       "spacerHeight": "45px",
-      "hideOn": ["mobile"],
+      "hideOn": [
+        "mobile"
+      ],
       "background": {
         "backgroundColour": 0,
         "backgroundImage": "",
@@ -84,6 +88,7 @@
       "body": "Pick your city below and confirm your $99 seat in a few clicks. Secure checkout opens right here on the page.",
       "tabletTextAlignment": "Left",
       "cardStyle": 0,
+      "cardsPerRow": "2",
       "cards": [
         {
           "guid": "wa03",
@@ -138,8 +143,8 @@
           },
           "embeddedButton": {
             "buttonText": "Reserve my seat - $99",
-            "colour": 0,
-            "eventbriteEventId": "1992796293358"
+            "eventbriteEventId": "1992796293358",
+            "colour": 0
           }
         },
         {
@@ -166,8 +171,7 @@
         "backgroundColour": 6
       },
       "anchorId": "pick-your-city",
-      "_template": "cardCarousel",
-      "cardsPerRow": "2"
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "45px",
@@ -638,6 +642,50 @@
       "_template": "imageTextBlock"
     },
     {
+      "topLabel": {
+        "labelText": "Your Host"
+      },
+      "heading": "Ulysses Maclaren",
+      "isH1": false,
+      "subheading": "SSW · COO · Sydney",
+      "description": "Ulysses is SSW's COO and 2IC to Chief Architect Adam Cogan, and has run the operational side of the business since 2006. He leads the practical AI work behind SSW's own workflow automation, process re-engineering, data-driven decision-making and customer engagement, while personally managing the relationships behind SSW's largest client accounts as Principal Account Manager.\n\n He's the person who can talk AI from both sides of the table - what it takes to run it inside a real business, and what it takes to keep a client happy with the result. On the day, you get four hours with Ulysses, the case studies, and his direct answers to your business's situation.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 1
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/Uly-1x1.jpg",
+        "imageHeight": 945,
+        "imageWidth": 945
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Your Host"
+      },
+      "heading": "Calum Simpson",
+      "isH1": false,
+      "subheading": "SSW · VP of AI · Sydney",
+      "description": "Calum is SSW's VP of AI, with a decade-plus of enterprise Microsoft consulting behind him - work that's ranged from small two-person startups to some of Australia's largest organisations. He's since turned that same rigour toward applied AI and LLM engineering: building YakShaver, SSW's open-source agent-orchestration framework, and the retrieval, benchmarking and guardrail work behind the production AI assistants SSW ships into regulated industries like finance and health.\n\nHe's the one who can tell you whether an AI plan is real or just a demo - backed by systems he's built and shipped himself, not just advised on. On the day, you get four hours with Calum, the case studies, and his direct answers to your business's situation.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 1
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/Calum-1x1.jpg",
+        "imageHeight": 945,
+        "imageWidth": 945
+      },
+      "_template": "imageTextBlock"
+    },
+    {
       "spacerHeight": "45px",
       "background": {
         "backgroundColour": 1,
@@ -720,6 +768,7 @@
       "body": "Pick your city below and confirm your $99 seat in a few clicks. Secure checkout opens right here on the page.",
       "tabletTextAlignment": "Left",
       "cardStyle": 0,
+      "cardsPerRow": "2",
       "cards": [
         {
           "guid": "a5ne6z",
@@ -774,8 +823,8 @@
           },
           "embeddedButton": {
             "buttonText": "Reserve my seat - $99",
-            "colour": 0,
-            "eventbriteEventId": "1992796293358"
+            "eventbriteEventId": "1992796293358",
+            "colour": 0
           }
         },
         {
@@ -801,8 +850,7 @@
       "background": {
         "backgroundColour": 4
       },
-      "_template": "cardCarousel",
-      "cardsPerRow": "2"
+      "_template": "cardCarousel"
     },
     {
       "spacerHeight": "45px",

@@ -134,6 +134,7 @@ export default {
       },
       zIndex: {
         1: 1,
+        2: 2,
         25: "25",
         videoThumbnail: 11,
         1000: "1000",
