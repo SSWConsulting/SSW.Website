@@ -13,9 +13,11 @@ export function MegaMenuWrapper(props) {
   const { isDark } = useHomeTheme();
   const { mobile } = useHeaderAppearance();
 
-  // Only the homepage opts into theming; other routes keep the default menu.
-  // The token utilities (bg-background/text-foreground/border-hairline) flip via
-  // the CSS variables under the `dark` class on this element.
+  // Every route gets the same v3 menu — including the HomeNavActions cluster
+  // (search / region globe / Let's Talk). Only the homepage additionally opts
+  // into theming: the dark toggle and the `.dark` scope below, whose token
+  // utilities (bg-background/text-foreground/border-hairline) flip via the CSS
+  // variables under the `dark` class on this element.
   const isHome = pathName === "/";
 
   return (
@@ -39,9 +41,11 @@ export function MegaMenuWrapper(props) {
           pathName === "/company/contact-us" ||
           Boolean(mobile.hideContactButton)
         }
-        isFlagVisible={isHome ? false : !mobile.hideFlag}
+        // The HomeNavActions cluster carries its own region globe, so the
+        // menu's built-in flag is off on every route (avoids a duplicate).
+        isFlagVisible={false}
         menuBarItems={props.menu}
-        rightSideActionsOverride={isHome ? () => <HomeNavActions /> : undefined}
+        rightSideActionsOverride={() => <HomeNavActions isHome={isHome} />}
         // The mobile menu is portaled outside this `.ssw-home-nav` scope, so
         // re-apply `dark` on it directly to keep the panel's dark tokens.
         mobileMenuClassName={isHome && isDark ? "dark" : undefined}
