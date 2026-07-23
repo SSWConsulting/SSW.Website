@@ -58,6 +58,8 @@ export const EventbriteModalButton = ({
   const reactId = useId().replace(/[^a-zA-Z0-9_-]/g, "");
   const containerId = `eventbrite-checkout-${eventId}-${reactId}`;
   const [open, setOpen] = useState(false);
+  // Gate the Popup on first open so a closed CTA mounts no react-responsive-modal; once opened it stays mounted for the close animation.
+  const [hasOpened, setHasOpened] = useState(false);
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [scriptFailed, setScriptFailed] = useState(false);
   // The popup portals its content, so bind via the callback ref once the node mounts, not when `open` flips.
@@ -120,49 +122,54 @@ export const EventbriteModalButton = ({
         variant={variant}
         className={className}
         textTinaField={textTinaField}
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setHasOpened(true);
+          setOpen(true);
+        }}
       >
         {children}
       </RippleButton>
-      {/* Always mounted (for the close animation); the library unmounts contents while closed, resetting the widget. */}
-      <Popup
-        isVisible={open}
-        showCloseIcon
-        onClose={() => setOpen(false)}
-        modalStyle={{
-          maxWidth: CHECKOUT_WIDTH_PX,
-          padding: 0, // padding reads as a white border around the checkout
-          borderRadius: "0.375rem", // rounded-md, matching the site cards
-          overflow: "hidden",
-          background: THEME_SETTINGS.background,
-        }}
-      >
-        {scriptFailed && !scriptLoaded ? (
-          <div className="flex flex-col items-center justify-center gap-4 p-12 text-center">
-            <p>The booking form could not be loaded.</p>
-            <a
-              href={`${EVENTBRITE_DOMAIN}/e/${eventId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-sswRed underline"
-            >
-              Register on the Eventbrite event page instead
-            </a>
-          </div>
-        ) : (
-          <div
-            ref={setContainerEl}
-            id={containerId}
-            className="w-full"
-            // Capped height with scroll: Eventbrite sizes the iframe to full height, clipping the pay button in short viewports.
-            style={{
-              height: `min(${CHECKOUT_HEIGHT_PX}px, 85vh)`,
-              overflowY: "auto",
-              backgroundColor: THEME_SETTINGS.background,
-            }}
-          />
-        )}
-      </Popup>
+      {/* Mounted only after the first open; stays mounted thereafter so the close animation plays. The library unmounts contents while closed, resetting the widget. */}
+      {hasOpened && (
+        <Popup
+          isVisible={open}
+          showCloseIcon
+          onClose={() => setOpen(false)}
+          modalStyle={{
+            maxWidth: CHECKOUT_WIDTH_PX,
+            padding: 0, // padding reads as a white border around the checkout
+            borderRadius: "0.375rem", // rounded-md, matching the site cards
+            overflow: "hidden",
+            background: THEME_SETTINGS.background,
+          }}
+        >
+          {scriptFailed && !scriptLoaded ? (
+            <div className="flex flex-col items-center justify-center gap-4 p-12 text-center">
+              <p>The booking form could not be loaded.</p>
+              <a
+                href={`${EVENTBRITE_DOMAIN}/e/${eventId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-sswRed underline"
+              >
+                Register on the Eventbrite event page instead
+              </a>
+            </div>
+          ) : (
+            <div
+              ref={setContainerEl}
+              id={containerId}
+              className="w-full"
+              // Capped height with scroll: Eventbrite sizes the iframe to full height, clipping the pay button in short viewports.
+              style={{
+                height: `min(${CHECKOUT_HEIGHT_PX}px, 85vh)`,
+                overflowY: "auto",
+                backgroundColor: THEME_SETTINGS.background,
+              }}
+            />
+          )}
+        </Popup>
+      )}
     </>
   );
 };
