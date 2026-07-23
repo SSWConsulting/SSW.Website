@@ -72,8 +72,11 @@ export const AccordionBlock = ({ data, priority = false }) => {
       />
       {data.accordionItems && (
         <Accordion
-          type={data.isMultipleOpen ? "multiple" : "single"}
-          collapsible={data.isMultipleOpen ? undefined : true}
+          // collapsible only exists on the single-type accordion; passing it
+          // alongside type="multiple" leaks the attribute to the DOM.
+          {...(data.isMultipleOpen
+            ? { type: "multiple" as const }
+            : { type: "single" as const, collapsible: true })}
           className="mt-15 w-full"
         >
           {data.accordionItems?.map((item, index) => {
