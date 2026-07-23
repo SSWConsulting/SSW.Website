@@ -43,6 +43,7 @@ export function Marquee({
         .map((_, i) => (
           <div
             key={i}
+            aria-hidden={i > 0 ? "true" : undefined}
             className={cn(
               "flex shrink-0 justify-around [gap:var(--gap)]",
               {
