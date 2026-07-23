@@ -135,7 +135,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
             <div
               aria-hidden="true"
               className={cn(
-                "z-[2] absolute inset-0 hidden bg-[linear-gradient(90deg,_rgba(102,33,33,0.4)_10%,_rgba(178,57,57,0.4)_30%,_rgba(153,49,49,0.1)_55%,_rgba(128,41,41,0.05)_100%)] lg:block"
+                "absolute inset-0 z-2 hidden bg-[linear-gradient(90deg,_rgba(102,33,33,0.4)_10%,_rgba(178,57,57,0.4)_30%,_rgba(153,49,49,0.1)_55%,_rgba(128,41,41,0.05)_100%)] lg:block"
               )}
             />
           )}
