@@ -39,4 +39,27 @@ describe("web-vitals buffer", () => {
       { page: "/b" }
     );
   });
+
+  it("re-buffers after reset and replays to a fresh sink without double-sending the old one (StrictMode/remount)", () => {
+    const firstSink = jest.fn();
+    trackWebVital({ name: "LCP", average: 1 }, { page: "/a" });
+    flushWebVitals(firstSink);
+    expect(firstSink).toHaveBeenCalledTimes(1);
+
+    // Provider unmounts -> sink cleared, later metrics buffer again.
+    resetWebVitalsSink();
+    trackWebVital({ name: "INP", average: 2 }, { page: "/b" });
+    expect(firstSink).toHaveBeenCalledTimes(1); // no send to the unloaded sink
+
+    // Fresh SDK on remount -> only the post-reset metric replays, once.
+    const secondSink = jest.fn();
+    flushWebVitals(secondSink);
+    expect(secondSink).toHaveBeenCalledTimes(1);
+    expect(secondSink).toHaveBeenNthCalledWith(
+      1,
+      { name: "INP", average: 2 },
+      { page: "/b" }
+    );
+    expect(firstSink).toHaveBeenCalledTimes(1); // old sink never re-fired
+  });
 });
