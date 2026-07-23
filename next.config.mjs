@@ -4,11 +4,16 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 const withNextPluginPreval = createNextPluginPreval();
 
-// Absolute so webpack and Turbopack resolve it identically regardless of cwd.
-const TINACMS_MDX_SHIM = path.join(
+// The two bundlers want this path in different forms, so don't unify them:
+// webpack's resolve.alias needs an absolute path, while Turbopack's resolveAlias
+// resolves values against the project root and prepends "./" to whatever it is
+// given — an absolute path there becomes "./Users/..." and fails to resolve,
+// 500ing every page that renders <TinaMarkdown> under `next dev`.
+const TINACMS_MDX_SHIM_ABS = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
   "lib/tinacms-mdx-shim.js"
 );
+const TINACMS_MDX_SHIM_REL = "./lib/tinacms-mdx-shim.js";
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -73,7 +78,7 @@ const config = {
     // Remove once tinacms#7233 lands a `@tinacms/mdx/sanitize-url` subpath.
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@tinacms/mdx$": TINACMS_MDX_SHIM,
+      "@tinacms/mdx$": TINACMS_MDX_SHIM_ABS,
     };
 
     return config;
@@ -101,7 +106,7 @@ const config = {
     // Mirrors the webpack alias above — `next dev` uses Turbopack, `next build`
     // uses webpack, so both need it or dev and prod diverge.
     resolveAlias: {
-      "@tinacms/mdx": TINACMS_MDX_SHIM,
+      "@tinacms/mdx": TINACMS_MDX_SHIM_REL,
     },
   },
   experimental: {
