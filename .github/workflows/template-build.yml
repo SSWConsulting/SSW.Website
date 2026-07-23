@@ -42,6 +42,12 @@ on:
         required: true
       POWER_AUTOMATE_LEAD_WEBHOOK_URL:
         required: true
+      # Not required so builds don't fail before the keys are provisioned; the
+      # lead-capture form fails closed at runtime until they're set.
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY:
+        required: false
+      TURNSTILE_SECRET_KEY:
+        required: false
 
 defaults:
   run:
@@ -133,6 +139,8 @@ jobs:
             SITE_URL=https://www.ssw.com.au
             JOTFORM_API_KEY=${{ secrets.JOTFORM_API_KEY }}
             POWER_AUTOMATE_LEAD_WEBHOOK_URL=${{ secrets.POWER_AUTOMATE_LEAD_WEBHOOK_URL }}
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY=${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+            TURNSTILE_SECRET_KEY=${{ secrets.TURNSTILE_SECRET_KEY }}
             NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{ inputs.pr_number || github.event.number }}.azurewebsites.net/
 
           # Mounted as secrets (not build-args) so they are not baked into the

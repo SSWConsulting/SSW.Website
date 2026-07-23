@@ -58,9 +58,8 @@ export function V3FeatureSteps({ data }) {
               <div
                 key={`v3-step-${index}`}
                 className={cn(
-                  "flex flex-col border-t-[0.75px] border-[#212121] px-2 py-6 lg:px-4",
-                  index % 2 !== 0 &&
-                    "border-[#212121] md:pl-8 lg:border-x-[0.75px]"
+                  "flex flex-col border-t-0.75 border-sswBorder px-2 py-6 lg:px-4",
+                  index % 2 !== 0 && "md:pl-8 lg:border-x-0.75"
                 )}
               >
                 {step?.brow && (
