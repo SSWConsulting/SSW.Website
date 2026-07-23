@@ -237,7 +237,10 @@ export const IconOptions = {
   VscDashboard,
 };
 
-export const Icon = ({ data, className = "", tinaField = "" }) => {
+// `label` opts an icon into being announced (role="img"); without it the icon
+// is decorative and hidden from assistive tech, since every icon here sits
+// beside its own visible text label.
+export const Icon = ({ data, className = "", tinaField = "", label = "" }) => {
   if (IconOptions[data.name] === null || IconOptions[data.name] === undefined) {
     return <></>;
   }
@@ -247,6 +250,13 @@ export const Icon = ({ data, className = "", tinaField = "" }) => {
   const IconSVG = IconOptions[name];
 
   return (
-    <IconSVG data-tina-field={tinaField} className={`${className} shrink-0`} />
+    <IconSVG
+      data-tina-field={tinaField}
+      className={`${className} shrink-0`}
+      focusable="false"
+      {...(label
+        ? { role: "img", "aria-label": label }
+        : { "aria-hidden": "true" })}
+    />
   );
 };
