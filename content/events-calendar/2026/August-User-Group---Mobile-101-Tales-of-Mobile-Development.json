@@ -1,0 +1,25 @@
+{
+  "title": "August User Group - Mobile 101: Tales of Mobile Development",
+  "slug": "august-user-group-2026",
+  "url": "https://www.meetup.com/sydney-net-user-group/events/315677367",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/hark-singh.mdx"
+    }
+  ],
+  "headerLayout": "avatars",
+  "startDateTime": "2026-08-19T08:00:00.000Z",
+  "endDateTime": "2026-08-19T11:00:00.000Z",
+  "startShowBannerDateTime": "2026-08-18T14:00:00.000Z",
+  "endShowBannerDateTime": "2026-08-19T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Mobile",
+  "abstract": "Everyone has a mobile phone, but how does an app actually get onto it? This is a beginner-friendly tour of the mobile world, whether you write code or not.\n\nWe start with a simple question: why do we even need mobile apps when the web is right there? From there we follow an app on its journey to the customer and watch the friction you may face, from a web page you can ship in minutes, to a desktop app, to the app stores where going live is a real challenge.\n\nThen the interesting part. How you actually build for mobile, native versus cross-platform like Flutter and React Native, and a question my colleague Callum put to me: if AI can write the code now, do we still need cross-platform frameworks at all? We will work through that together.\n\nYou will leave knowing how mobile development really works, and a curiosity to explore Mobile development\n",
+  "description": "Everyone has a mobile phone, but how does an app actually get onto it? This is a beginner-friendly tour of the mobile world, whether you write code or not.\n\nWe start with a simple question: why do we even need mobile apps when the web is right there? From there we follow an app on its journey to the customer and watch the friction you may face, from a web page you can ship in minutes, to a desktop app, to the app stores where going live is a real challenge.\n\nThen the interesting part. How you actually build for mobile, native versus cross-platform like Flutter and React Native, and a question my colleague Callum put to me: if AI can write the code now, do we still need cross-platform frameworks at all? We will work through that together.\n\nYou will leave knowing how mobile development really works, and a curiosity to explore Mobile development\n\n**About Hark:**\n\nHark is a Full-Stack Developer at SSW who builds clean, reliable software with a focus on user experience and delivery discipline. He joined SSW through FireBootCamp and works across Angular, .NET, Azure, and Flutter.\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}

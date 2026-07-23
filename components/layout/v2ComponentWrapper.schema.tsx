@@ -1,3 +1,4 @@
+import type { TinaField } from "tinacms";
 import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
@@ -55,3 +56,28 @@ export const backgroundSchema = {
     },
   ],
 };
+
+export const anchorIdSchema: TinaField = {
+  type: "string",
+  label: "Anchor ID",
+  name: "anchorId",
+  ui: {
+    validate: (value: string) => {
+      if (!value) {
+        return;
+      }
+      if (!/^[A-Za-z][A-Za-z0-9_-]*$/.test(value)) {
+        return "Anchor IDs must start with a letter and contain only letters, numbers, hyphens or underscores (no spaces)";
+      }
+    },
+  },
+  description:
+    "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to jump here (the offset for the sticky header is handled automatically).",
+};
+
+// Background + anchor fields every V2 block shares — spread once via `...wrapperBaseFields`.
+export const wrapperBaseFields: TinaField[] = [
+  //@ts-expect-error – custom component typing won't be pinned down
+  backgroundSchema,
+  anchorIdSchema,
+];

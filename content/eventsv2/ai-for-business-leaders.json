@@ -1,0 +1,865 @@
+{
+  "seo": {
+    "title": "AI for Business Leaders | SSW Live Workshop",
+    "description": "A half-day live workshop for Australian C-suite leaders. Real case studies, real dollar figures, and open Q&A with engineers shipping AI today.",
+    "showBreadcrumb": false
+  },
+  "appearance": {
+    "hideFlag": true,
+    "hideContactButton": true
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 0
+      },
+      "hideOn": [
+        "mobile"
+      ],
+      "finalBreadcrumb": "AI for Business Leaders",
+      "_template": "breadcrumbs"
+    },
+    {
+      "spacerHeight": "45px",
+      "hideOn": [
+        "mobile"
+      ],
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "In-Person 1/2 Day Workshop for C-Suite Executives"
+      },
+      "heading": "Solving the **Hardest Enterprise Problems** with AI",
+      "isH1": true,
+      "description": "A half-day live workshop for Australian C-Suite executives. Spend four hours with the team building AI into Australian enterprises right now, walking through the four expensive business problems AI has just made affordable to solve, with real case studies, real dollar figures, and an open Q\\&A.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Register now",
+          "buttonLink": "#pick-your-city",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 0
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Below",
+        "imageSource": "/images/eventsv2/ai-for-business-leaders-hero.webp",
+        "imageHeight": 968,
+        "imageWidth": 1625,
+        "youtubeUrl": ""
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Pick your city",
+      "isH1": false,
+      "body": "Pick your city below and confirm your $99 seat in a few clicks. Secure checkout opens right here on the page.",
+      "tabletTextAlignment": "Left",
+      "cardStyle": 0,
+      "cardsPerRow": "2",
+      "cards": [
+        {
+          "guid": "wa03",
+          "altText": "Reserve your seat for the Melbourne event on Wednesday 16 September 2026, 9:00am – 1:00pm",
+          "heading": "Melbourne",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Wednesday 16 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027891046",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "wa02",
+          "altText": "Reserve your seat for the Brisbane event on Friday 18 September 2026, 9:00am – 1:00pm",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Friday 18 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027082628",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "wa05",
+          "altText": "Reserve your seat for the Newcastle event on Tuesday 29 September 2026, 9:00am – 1:00pm",
+          "heading": "Newcastle",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Tuesday 29 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Newcastle Office 432 Hunter Street Newcastle NSW 2300"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992796293358",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "wa04",
+          "altText": "Reserve your seat for the Sydney event on Thursday 1 October 2026, 9:00am – 1:00pm",
+          "heading": "Sydney",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 1 October 2026 · 9:00am – 1:00pm",
+                "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027951226",
+            "colour": 0
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 6
+      },
+      "anchorId": "pick-your-city",
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Designed for **decision-makers** at Australian enterprises",
+      "isH1": false,
+      "body": "",
+      "tabletTextAlignment": "Left",
+      "cardStyle": 1,
+      "cards": [
+        {
+          "guid": "wf01",
+          "altText": "CEOs and Managing Directors",
+          "icon": "BiSolidUserCheck",
+          "heading": "CEOs & Managing Directors",
+          "description": "Looking for a clear applicable view of where AI can save money and improve efficiency across the business.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "wf02",
+          "altText": "CTOs CIOs and Heads of Technology",
+          "icon": "BiSolidCog",
+          "heading": "CTOs, CIOs & Heads of Technology",
+          "description": "Wanting to see real examples of AI shipped into production by an Australian engineering team, and what's possible in their own systems.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "wf03",
+          "altText": "CFOs and Heads of Strategy",
+          "icon": "BiSolidReport",
+          "heading": "CFOs & Heads of Strategy",
+          "description": "Building the business case for AI investment and looking for real dollar figures, case studies and outcomes from Australian enterprises.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 0
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 0,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Why attend"
+      },
+      "heading": "What you'll get in just 4 hours",
+      "isH1": false,
+      "description": "If you're part of the C-Suite at an Australian business, you're being pitched on AI every week. Most of it is theory, AI 101, or a vendor selling their product. Almost none of it shows you the actual economics of an AI build in a business like yours, with real numbers.\n\n**That's what this is. Four hours in a room with the engineers who design and ship AI into Australian banks, accountancies, insurers and government departments. No theory. No vendor pitch. No AI 101.**\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Straight to the economics",
+            "description": "No AI 101, no hype — we start from what an AI build actually costs and returns in a business like yours.",
+            "icon": "BiSolidDollarCircle"
+          },
+          {
+            "heading": "No vendor pitch",
+            "description": "We're not selling a platform. Just what's working across our live engagements, what isn't, and why.",
+            "icon": "BiSolidShieldAlt2"
+          },
+          {
+            "heading": "Engineers in the room",
+            "description": "Four hours with the people designing and shipping AI into Australian banks, insurers and government right now — not a sales team.",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "Built for Australian enterprise",
+            "description": "Grounded in the compliance, data and legacy realities you actually operate in, with real local examples.",
+            "icon": "BiSolidBuildings"
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Register now",
+          "buttonLink": "#pick-your-city",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 4
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "youtubeUrl": ""
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 1,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "The Opportunity"
+      },
+      "heading": "Your business problems didn't change. **The cost of solving them just did.**",
+      "isH1": false,
+      "description": "For years, the upgrade was too expensive. The custom build was too expensive. The data project was too expensive. The legacy replacement was too expensive. So you parked them.\n\nAI has just rewritten the maths on every one of those decisions. The roadmap your business shelved three years ago is now realistic. The system your executive team has been asking for can be built in weeks, not quarters. The legacy system breaking every Monday morning can finally be replaced.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Register now",
+          "buttonLink": "#pick-your-city",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 1
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "verticalPlacement": "Centered",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/eventsv2/ai-for-business-leaders-opportunity.webp",
+        "imageHeight": 1024,
+        "imageWidth": 1536,
+        "youtubeUrl": ""
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 1,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "heading": "The agenda",
+      "isH1": false,
+      "body": "Here's exactly what we'll cover",
+      "tabletTextAlignment": "Left",
+      "accordionItems": [
+        {
+          "label": "9:00 – 9:20 · Welcome & the four expensive problems",
+          "content": "We frame the four business problems AI has just made affordable to solve, and how to recognise them in your own company.\n"
+        },
+        {
+          "label": "9:20 – 10:00 · Problem 1 -> The custom build you parked",
+          "content": "The system, the dashboard, the automation - the business case never stacked up. AI changed that. Projects that were too expensive to justify are now economically viable.\n"
+        },
+        {
+          "label": "10:00 – 10:40 · Problem 2 -> The data your executives can't see",
+          "content": "AI can help you make better decisions - but it's only as good as the data you feed it. Most businesses are sitting on messy, scattered data. We'll walk through the new tools that get your data AI-ready.\n"
+        },
+        {
+          "label": "10:40 – 11:00 · Break & informal Q&A with the SSW team",
+          "content": "Coffee, conversation, and the chance to corner us with the questions you didn't want to ask in the room.\n"
+        },
+        {
+          "label": "11:00 – 11:40 · Problem 3 -> Adding AI to the software you already own",
+          "content": "Your existing software has more in it than you think. Integrate AI and it gets smarter, more intuitive, more powerful - the legacy system you were ready to retire becomes the engine of growth for your business.\n"
+        },
+        {
+          "label": "11:40 – 12:20 · Problem 4 -> Replacing the legacy system",
+          "content": "That 15-year-old system you couldn't afford to replace? The maths has changed. The reason rebuilds cost a fortune was the code itself - old, undocumented, understood by no one. AI can now read that code, untangle it, and rebuild it. The replacement you've put off for years is finally affordable.\n"
+        },
+        {
+          "label": "12:20 – 12:50 · Open Q&A",
+          "content": "Bring your specific business problem. We answer it in the room, because the other attendees usually have the same one.\n"
+        },
+        {
+          "label": "12:50 – 1:00 · Your one-page action list",
+          "content": "You leave with a checklist of things to do on Monday morning.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Key learnings",
+      "isH1": false,
+      "body": "3 things everyone in C-Suite needs to know about AI in their business this year",
+      "tabletTextAlignment": "Left",
+      "cardStyle": 0,
+      "cards": [
+        {
+          "guid": "wo01",
+          "altText": "Affordable AI problems",
+          "icon": "BiSolidBulb",
+          "heading": "Which expensive problems AI just made affordable",
+          "description": "The four business problems that were too costly to solve 12 months ago and are realistic now, the custom build you parked, the data your executives can't see, retrofitting AI into existing software, and replacing the legacy system that's blocking new features.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "wo02",
+          "altText": "Real case studies",
+          "icon": "BiSolidBarChartAlt2",
+          "heading": "Real case studies with real dollar figures",
+          "description": "The Australian fintech firm that reduced their per-transaction cost by 90%, using AI in a business application.\n\nThe dashboards built in days instead of months. The Dynamics 365 / Salesforce / SAP customisation with numbers from three live engagements. No theory, no sales pitch.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "wo03",
+          "altText": "One-page action list",
+          "icon": "BiSolidBookContent",
+          "heading": "A one-page action list for your business",
+          "description": "You leave with a checklist of things to do on Monday morning, written during the session, specific to your company. Plus an open Q&A where you bring your business's actual problem and we answer it in the room.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 4
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "background": {
+        "backgroundColour": 6
+      },
+      "heading": "The Australian businesses we've engineered for",
+      "tabletTextAlignment": "Left",
+      "paused": false,
+      "isWhiteImages": true,
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "scale": 170,
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "scale": 195,
+          "altText": "Allianz"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "scale": 175,
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "scale": 180,
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "scale": 195,
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "scale": 160,
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "scale": 175,
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "scale": 200,
+          "altText": "Event Cinemas"
+        }
+      ],
+      "_template": "logoCarousel"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Why this is different"
+      },
+      "heading": "Real cases. Real numbers. **Real engineers in the room.**",
+      "isH1": false,
+      "description": "You're spending half a day with the team that actually builds AI into Australian enterprises; with the case studies, the dollar figures, and the freedom to ask anything you want about your own business.\n\nOur presenters consult to real companies, building systems that solve these problems in Australian businesses today. Come talk to the people who have the technical know-how to make it happen.\n\n***Limited seats per room. Sessions don't run twice.***\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "buttons": [
+        {
+          "buttonText": "Register now",
+          "buttonLink": "#pick-your-city",
+          "colour": 0
+        }
+      ],
+      "background": {
+        "backgroundColour": 4
+      },
+      "mediaConfiguration": {
+        "placement": "Right",
+        "imageSource": "",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "",
+        "altText": ""
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 1,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "Your host"
+      },
+      "heading": "Mike Smedley",
+      "isH1": false,
+      "subheading": "SSW · AI Engagement Lead · Melbourne",
+      "description": "Mike leads AI engagement at SSW, working alongside Australian banks, accountancies, insurers and government departments to design and build the AI systems those organisations are running in production today - including the work that took one client's per-transaction cost from $120 to $5.\n\nHe's the person SSW sends into the room when a CIO or CEO needs a straight answer on what AI will actually do for their business. On the day, you get four hours with him, the case studies, and his direct answers to your business's situation.\n",
+      "tabletTextAlignment": "Left",
+      "featureColumns": {
+        "twoColumns": false
+      },
+      "background": {
+        "backgroundColour": 1
+      },
+      "mediaConfiguration": {
+        "mediaType": "image",
+        "placement": "Left",
+        "mobilePlacement": "Above",
+        "imageSource": "/images/eventsv2/mike-smedley-host.webp",
+        "imageHeight": 768,
+        "imageWidth": 1024,
+        "youtubeUrl": "",
+        "squareImage": true
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Your Host"
+      },
+      "heading": "Ulysses Maclaren",
+      "isH1": false,
+      "subheading": "SSW · COO · Sydney",
+      "description": "Ulysses is SSW's COO and 2IC to Chief Architect Adam Cogan, and has run the operational side of the business since 2006. He leads the practical AI work behind SSW's own workflow automation, process re-engineering, data-driven decision-making and customer engagement, while personally managing the relationships behind SSW's largest client accounts as Principal Account Manager.\n\n He's the person who can talk AI from both sides of the table - what it takes to run it inside a real business, and what it takes to keep a client happy with the result. On the day, you get four hours with Ulysses, the case studies, and his direct answers to your business's situation.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 1
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/Uly-1x1.jpg",
+        "imageHeight": 945,
+        "imageWidth": 945
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
+        "labelText": "Your Host"
+      },
+      "heading": "Calum Simpson",
+      "isH1": false,
+      "subheading": "SSW · VP of AI · Sydney",
+      "description": "Calum is SSW's VP of AI, with a decade-plus of enterprise Microsoft consulting behind him - work that's ranged from small two-person startups to some of Australia's largest organisations. He's since turned that same rigour toward applied AI and LLM engineering: building YakShaver, SSW's open-source agent-orchestration framework, and the retrieval, benchmarking and guardrail work behind the production AI assistants SSW ships into regulated industries like finance and health.\n\nHe's the one who can tell you whether an AI plan is real or just a demo - backed by systems he's built and shipped himself, not just advised on. On the day, you get four hours with Calum, the case studies, and his direct answers to your business's situation.\n",
+      "featureColumns": {
+        "twoColumns": true
+      },
+      "background": {
+        "backgroundColour": 1
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/Calum-1x1.jpg",
+        "imageHeight": 945,
+        "imageWidth": 945
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 1,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "heading": "Frequently asked questions",
+      "body": "",
+      "tabletTextAlignment": "Left",
+      "accordionItems": [
+        {
+          "label": "Is this technical? I'm not a developer.",
+          "content": "Not at all. We break down technical concepts into clear, digestible ideas - built for non-developers.\n"
+        },
+        {
+          "label": "What happens after I click \"Reserve my seat\"?",
+          "content": "Secure checkout opens right here on the page. Enter your details, pay, and your $99 seat is confirmed. You'll receive a calendar invite and venue details by email immediately after.\n"
+        },
+        {
+          "label": "Can I send a colleague in my place if something comes up?",
+          "content": "Yes. Tickets are non-refundable but fully transferable, just email us with the new attendee's name and details before the event.\n"
+        },
+        {
+          "label": "Is this a sales pitch for SSW?",
+          "content": "We're upfront: SSW runs this event and you'll meet our team. But the four hours are case studies, frameworks and Q\\&A, not slides about us. If we've done our job, you'll want to talk to us afterwards. If we haven't, you'll have walked out with a one-page action list either way.\n"
+        },
+        {
+          "label": "Will it be recorded?",
+          "content": "No. This is in-room only. We do this so the Q\\&A is candid, attendees ask real questions about their real businesses, which doesn't happen on camera.\n"
+        },
+        {
+          "label": "What size businesses is this designed for?",
+          "content": "Australian companies roughly between $5M and $100M in revenue. The case studies and economics are pitched at that range. If you're significantly smaller or larger, email us first and we'll tell you honestly whether it's a fit.\n"
+        },
+        {
+          "label": "Parking and public transport?",
+          "content": "Full venue details including parking, nearest station, building access, are sent in the confirmation email immediately after you book.\n"
+        }
+      ],
+      "isMultipleOpen": true,
+      "background": {
+        "backgroundColour": 6
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 6,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    },
+    {
+      "isStacked": true,
+      "heading": "Pick your city",
+      "isH1": false,
+      "body": "Pick your city below and confirm your $99 seat in a few clicks. Secure checkout opens right here on the page.",
+      "tabletTextAlignment": "Left",
+      "cardStyle": 0,
+      "cardsPerRow": "2",
+      "cards": [
+        {
+          "guid": "a5ne6z",
+          "altText": "Reserve your seat for the Melbourne event on Wednesday 16 September 2026, 9:00am – 1:00pm",
+          "heading": "Melbourne",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Wednesday 16 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Melbourne Office Level 1, 370 Little Bourke Street Melbourne VIC 3000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027891046",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "na8owi",
+          "altText": "Reserve your seat for the Brisbane event on Friday 18 September 2026, 9:00am – 1:00pm",
+          "heading": "Brisbane",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Friday 18 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Brisbane Office Level 1, 471 Adelaide Street Brisbane QLD 4000"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027082628",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "k2nc9w",
+          "altText": "Reserve your seat for the Newcastle event on Tuesday 29 September 2026, 9:00am – 1:00pm",
+          "heading": "Newcastle",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Tuesday 29 September 2026 · 9:00am – 1:00pm",
+                "description": "SSW Newcastle Office 432 Hunter Street Newcastle NSW 2300"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992796293358",
+            "colour": 0
+          }
+        },
+        {
+          "guid": "m94ybh",
+          "altText": "Reserve your seat for the Sydney event on Thursday 1 October 2026, 9:00am – 1:00pm",
+          "heading": "Sydney",
+          "description": "",
+          "featureList": {
+            "features": [
+              {
+                "heading": "Thursday 1 October 2026 · 9:00am – 1:00pm",
+                "description": "SSW Sydney Office Level 1, 81-91 Military Road Neutral Bay NSW 2089"
+              }
+            ]
+          },
+          "embeddedButton": {
+            "buttonText": "Reserve my seat - $99",
+            "eventbriteEventId": "1992027951226",
+            "colour": 0
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 4
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "spacerHeight": "45px",
+      "background": {
+        "backgroundColour": 4,
+        "backgroundImage": "",
+        "bleed": false
+      },
+      "_template": "spacer"
+    }
+  ]
+}

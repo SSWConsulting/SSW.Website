@@ -26,6 +26,22 @@ export const eventsv2Schema: Collection = {
     seoSchema,
     {
       type: "object",
+      name: "appearance",
+      label: "Appearance",
+      description: "Mobile-only header settings",
+      fields: [
+        { type: "boolean", name: "hideFlag", label: "Hide country flag" },
+        {
+          type: "boolean",
+          name: "hideContactButton",
+          label: "Hide Contact Us button",
+          description:
+            "Also hides the desktop phone button (library limitation).",
+        },
+      ],
+    },
+    {
+      type: "object",
       list: true,
       name: "blocks",
       label: "Blocks",
