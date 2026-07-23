@@ -10,6 +10,9 @@ const config = {
   },
   images: {
     deviceSizes: [384, 640, 750, 828, 1080, 1200, 1440, 1920, 2048, 3840],
+    // Next 16 will only serve qualities listed here. 75 is the default; 100 is
+    // used by the hero and event banners.
+    qualities: [75, 100],
     minimumCacheTTL: 60,
 
     remotePatterns: [

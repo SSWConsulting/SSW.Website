@@ -118,10 +118,12 @@ const V2ComponentWrapper = ({
           !isInInitialViewport && isInView && "opacity-100"
         )}
         style={
-          data.background?.bleed
+          // Without the guard, a block with no background image renders
+          // `url(null)` and the browser fetches /null.
+          data.background?.bleed || !data.background?.backgroundImage
             ? {}
             : {
-                backgroundImage: `url(${data.background?.backgroundImage})`,
+                backgroundImage: `url(${data.background.backgroundImage})`,
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
