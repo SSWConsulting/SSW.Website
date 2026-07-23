@@ -1,14 +1,14 @@
 {
   "seo": {
-    "title": "Vibe Coding Consulting | SSW",
-    "description": "Vibe Coding: Custom prototyping and rapid development in Australia. Build bespoke prototypes and MVPs fast with expert coaching. No production coding required.",
+    "title": "Rescue Your AI Project (AI Plumber) | SSW",
+    "description": "Stuck with a half-built or failing AI project? SSW are the AI Plumbers, we rescue struggling AI builds and make them reliable, secure and production-ready.",
     "canonical": "https://www.ssw.com.au/consulting/vibe-coding",
     "images": [
       {
         "url": "/images/consulting/open-graph/ai.jpg",
         "width": 1200,
         "height": 630,
-        "alt": "Vibe Coding Consulting"
+        "alt": "AI Project Rescue Consulting"
       }
     ]
   },
@@ -17,22 +17,22 @@
       "background": {
         "backgroundColour": 3
       },
-      "finalBreadcrumb": "Enterprise Development and Consulting for Vibe Coding",
+      "finalBreadcrumb": "Rescuing Struggling AI Projects",
       "_template": "breadcrumbs"
     },
     {
       "topLabel": {
         "labelText": ""
       },
-      "heading": "**Vibe Coding** - Empowering Product Owners to Build Without Limits",
+      "heading": "Stuck with a **half-built AI mess?** Meet your AI Plumbers",
       "isH1": true,
-      "description": "We help tech-savvy visionaries bring their product ideas to life, giving them the tools and support to prototype and vibe code. No production coding needed.\n",
+      "description": "Vibe-coded projects usually have shoddy plumbing. The moment real users and real data hit it, the leaks show, bursting pipes, rising water. We find the leaks, re-pipe your stack, and pressure-test it until it holds under load.\n",
       "featureColumns": {
-        "twoColumns": true
+        "twoColumns": false
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book an AI leak inspection",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -41,14 +41,14 @@
         "backgroundColour": 6
       },
       "mediaConfiguration": {
-        "mediaType": "youtube",
+        "mediaType": "image",
         "placement": "Right",
         "verticalPlacement": "Centered",
         "mobilePlacement": "Above",
-        "imageHeight": 768,
-        "imageWidth": 1024,
-        "youtubeUrl": "https://www.youtube.com/watch?v=5k2-NOh2tk0",
-        "altText": "What is Vibe Coding? Here's how I do it..."
+        "imageSource": "/images/consulting/ai-plumber-hero.webp",
+        "imageHeight": 1234,
+        "imageWidth": 1920,
+        "altText": "Emergency AI Plumber, SSW audits your AI build, refactors leaky code, and ships your AI solution"
       },
       "_template": "imageTextBlock"
     },
@@ -104,38 +104,88 @@
       "_template": "logoCarousel"
     },
     {
-      "isStacked": true,
-      "heading": "",
+      "isStacked": false,
+      "heading": "Why your build is leaking",
       "isH1": false,
-      "body": "",
+      "body": "These are the four pipes that always burst first.",
       "cardStyle": 0,
       "cards": [
         {
+          "guid": "ol9z8n",
+          "altText": "",
+          "icon": "BiTestTube",
+          "heading": "No tests",
+          "description": "Every change is a coin flip. Bugs ship because nothing catches them.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "76nny",
+          "altText": "",
+          "icon": "BiShieldX",
+          "heading": "Security holes",
+          "description": "Secrets in the repo, open endpoints, no auth boundaries. A security nightmare.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "1o9ylr",
+          "altText": "",
+          "icon": "BiGitBranch",
+          "heading": "Spaghetti code",
+          "description": "AI wrote it, nobody understands it, and one small change breaks three other things.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        },
+        {
+          "guid": "o9oad",
+          "altText": "",
+          "icon": "BiErrorAlt",
+          "heading": "Breaks under load",
+          "description": "Fine for a demo. Falls over the moment real traffic arrives.",
+          "embeddedButton": {
+            "buttonText": ""
+          }
+        }
+      ],
+      "background": {
+        "backgroundColour": 8
+      },
+      "_template": "cardCarousel"
+    },
+    {
+      "isStacked": true,
+      "heading": "Here's where we come in",
+      "isH1": false,
+      "body": "",
+      "cardStyle": 1,
+      "cards": [
+        {
           "guid": "7mtu8j",
-          "altText": "Launch Ideas",
-          "icon": "BiSolidRocket",
-          "heading": "Launch Ideas Without the Dev Bottleneck",
-          "description": "We empower tech-savvy Product Owners to prototype and build early versions—fast, lean, and without waiting on developers.",
+          "altText": "Diagnose the Damage",
+          "heading": "Diagnose the damage",
+          "description": "We audit your AI build to find what's broken, what's risky, and what's worth keeping, then give you a clear, honest path forward.",
           "embeddedButton": {
             "buttonText": ""
           }
         },
         {
           "guid": "lxpq3m",
-          "altText": "Let You Vibe Code",
-          "icon": "BiCog",
-          "heading": "Tools That Let You Vibe Code",
-          "description": "From Notion and Figma to low-code platforms and modern dev tools, we set up everything you need to bring your vision to life.",
+          "altText": "Fix the Plumbing",
+          "heading": "Fix the plumbing",
+          "description": "Our engineers refactor the leaky code, plug the security holes, and replace the duct tape with solid, maintainable foundations that won't burst under load.",
           "embeddedButton": {
             "buttonText": ""
           }
         },
         {
           "guid": "5q8kz",
-          "altText": "Real Engineers",
-          "icon": "BiCheckShield",
-          "heading": "Backed by Real Engineers",
-          "description": "You’re never alone. We support your vibe coding journey with expert coaching, technical reviews, and a path to production when you're ready.",
+          "altText": "Make it Production-Ready",
+          "heading": "Make it production-ready",
+          "description": "We harden, test, and ship your AI solution so it's secure, scalable, and ready for real users, backed by SSW's expert developers.",
           "embeddedButton": {
             "buttonText": "SSW People",
             "buttonLink": "https://www.ssw.com.au/people/"
@@ -163,28 +213,28 @@
       "body": "",
       "accordionItems": [
         {
-          "label": "What is Vibe Coding?",
-          "content": "Vibe Coding is a service that helps tech-savvy Product Owners turn their ideas into working prototypes—without needing to write production code.\n"
+          "label": "What is an \"AI Plumber\"?",
+          "content": "It's our nickname for what we do. Businesses experiment with AI and vibe coding and end up with a half-working, leaky mess. We come in, find the problems, fix the plumbing, and make everything flow reliably in production.\n"
         },
         {
-          "label": "Do I need to be a developer?",
-          "content": "No. You just need to be comfortable with tech and have a clear product vision. We'll guide you through modern tools that let you build without deep coding knowledge.\n"
+          "label": "My AI project sort of works but feels fragile. Can you help?",
+          "content": "Yes! We assess what you have, stabilise it, and turn a fragile prototype into a dependable, production-grade system.\n"
         },
         {
-          "label": "What kind of tools will I use?",
-          "content": "We set you up with tools like Figma, Notion, Retool, Vercel, and GitHub—plus optional low-code platforms depending on your goals.\n"
+          "label": "Do I have to throw away what I've already built?",
+          "content": "Usually not. We keep what's valuable, refactor what's risky, and only rebuild what genuinely needs it. The goal is to protect your existing investment, not start from scratch.\n"
         },
         {
-          "label": "Can I build something real with this?",
-          "content": "Absolutely. While it’s not production-grade code, you can create real, working prototypes to test, pitch, or validate your idea before engaging full developers.\n"
+          "label": "What kinds of AI projects do you rescue?",
+          "content": "Chatbots, copilots, RAG systems, automations, vibe-coded prototypes, and AI features bolted onto existing apps, and more.\n"
         },
         {
-          "label": "What happens when I’m ready to scale?",
-          "content": "We’ll help transition your prototype into a real product—bringing in our expert developers to build out secure, scalable, production-quality systems.\n"
+          "label": "How do you make an AI project \"production-ready\"?",
+          "content": "We add proper security and compliance guardrails, automated testing, observability, and scalable architecture, so your solution stays powerful, safe, and maintainable as it grows.\n"
         },
         {
           "label": "What happens in the free initial meeting?",
-          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
+          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project, what's gone wrong, and your goals. We'll listen, ask questions, offer initial thoughts on how to get it back on track, and determine if SSW is the right fit to help.\n"
         }
       ],
       "background": {
@@ -195,10 +245,25 @@
     {
       "technologies": [
         {
-          "technology": "content/v2Technologies/technologies/MongoDBv2.mdx"
+          "technology": "content/v2Technologies/technologies/chatgpt.mdx"
         },
         {
-          "technology": "content/v2Technologies/technologies/PostgreSQLv2.mdx"
+          "technology": "content/v2Technologies/technologies/azure-cognitive-services.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Google-Vertex-AI-v2.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/GitHub-Copilot-v2.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Semantic-Kernel-v2.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Microsoft-AutoGen.mdx"
+        },
+        {
+          "technology": "content/v2Technologies/technologies/Python.mdx"
         }
       ],
       "isStacked": false,
@@ -222,15 +287,15 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Talk to us about your **product idea** today",
+      "heading": "Stop the leak **before** it floods",
       "isH1": false,
-      "description": "Connect with our Account Managers to discuss how we can help.\n",
+      "description": "Book a 30-minute leak inspection. We'll tell you exactly what's broken and what it takes to make it production-ready.\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book an AI leak inspection",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
