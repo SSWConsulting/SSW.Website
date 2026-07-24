@@ -52,11 +52,11 @@ const getTagOffsetClassName = (name: string) => {
   }
 
   if (normalizedName.includes("newcastle")) {
-    return "translate-x-5 translate-y-5";
+    return "translate-x-4 -translate-y-1/2";
   }
 
   if (normalizedName.includes("sydney")) {
-    return "translate-x-4 -translate-y-1/2";
+    return "translate-x-5 translate-y-5";
   }
 
   if (normalizedName.includes("melbourne")) {

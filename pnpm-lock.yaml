@@ -171,8 +171,8 @@ importers:
         specifier: ^0.34.3
         version: 0.34.3
       ssw.megamenu:
-        specifier: 4.13.8
-        version: 4.13.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 4.14.0
+        version: 4.14.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -8680,8 +8680,8 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
-  react-is@19.2.7:
-    resolution: {integrity: sha512-kZFnouyVv7eP/Phmrlo9FK+zcAdriZJvzxXHF1Sl1P377WSGe2G/JxVolhTrB/jeV47lKImhNUsijjHAAbcl/A==}
+  react-is@19.2.8:
+    resolution: {integrity: sha512-s5un28nYxKJw5gvUHyW5PCC28CvBqLu9r3cWgzHT4Vo/5fqqkFcdRYsGcKf50WMPpjjFZS5d76fn3YCo2njKwQ==}
 
   react-jotform@1.0.2:
     resolution: {integrity: sha512-K8ULWGIsvmyWw0hMomprsjuhmC54QNm25x/HHVjcjDSR7A23nrCSe01cJEjud5RtE2RJhjohO6qWYigGqCDJlA==}
@@ -9219,8 +9219,8 @@ packages:
   sqlite-level@2.1.1:
     resolution: {integrity: sha512-hhRnO7R4fym5PjWiRkKyMju1Ok6B3MfK3wWyyoeAaGd9OZPrTqGbjEbghHLh7uco4r3syZrbk3/9IQTWCv3/sw==}
 
-  ssw.megamenu@4.13.8:
-    resolution: {integrity: sha512-SMkfHw6dT4L8ojQseutTYo2kw2G73UcF8VkzspYoDs5wnMxM6nEoJ5T5SE9IKAZrGWwEvR/D3HqJ/Wu94q9sbA==}
+  ssw.megamenu@4.14.0:
+    resolution: {integrity: sha512-GybRbkxvdDOKMKJ296hZq3s/Z4DoDNhDHpox27frgBbn/9YA6FGJ7b9a2pK/HfkZbur1YyFiL+QntaL0fvRNWw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -9414,9 +9414,6 @@ packages:
 
   tabbable@6.4.0:
     resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
-
-  tailwind-merge@2.6.0:
-    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
 
   tailwind-merge@2.6.1:
     resolution: {integrity: sha512-Oo6tHdpZsGpkKG88HJ8RR1rg/RdnEkQEfMoEk2x1XRI3F1AxeU+ijRXpiVUF4UbLfcxxRGw6TbUINKYdWVsQTQ==}
@@ -20054,7 +20051,7 @@ snapshots:
       '@jest/schemas': 30.4.1
       ansi-styles: 5.2.0
       react-is-18: react-is@18.3.1
-      react-is-19: react-is@19.2.7
+      react-is-19: react-is@19.2.8
 
   prism-react-renderer@2.4.1(react@19.2.3):
     dependencies:
@@ -20282,7 +20279,7 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-is@19.2.7: {}
+  react-is@19.2.8: {}
 
   react-jotform@1.0.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
@@ -20973,7 +20970,7 @@ snapshots:
       better-sqlite3: 12.10.0
       module-error: 1.0.2
 
-  ssw.megamenu@4.13.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  ssw.megamenu@4.14.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       '@headlessui/react': 2.2.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@heroicons/react': 2.2.0(react@19.2.3)
@@ -20983,7 +20980,7 @@ snapshots:
       react-dom: 19.2.3(react@19.2.3)
       react-hotkeys-hook: 4.6.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       react-icons: 4.12.0(react@19.2.3)
-      tailwind-merge: 2.6.0
+      tailwind-merge: 2.6.1
 
   stable-hash@0.0.5: {}
 
@@ -21201,8 +21198,6 @@ snapshots:
   tabbable@6.2.0: {}
 
   tabbable@6.4.0: {}
-
-  tailwind-merge@2.6.0: {}
 
   tailwind-merge@2.6.1: {}
 

@@ -76,7 +76,7 @@ function HighlightCard({ project }) {
             </p>
           )}
         </div>
-        <ArrowCircle className="size-16 self-center" />
+        <ArrowCircle className="size-16 self-center bg-white text-black" />
       </div>
     </div>
   );
@@ -96,20 +96,20 @@ function ProjectCard({ project }) {
   const inner = (
     <div
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-card bg-sswBorder"
+        "group flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white dark:bg-sswBorder"
       )}
     >
       <div className="flex flex-1 flex-col gap-8 p-4 lg:p-8">
         <div className="flex flex-col gap-4">
           <h4
             className={cn(
-              "text-[22px] font-medium leading-snug tracking-tight text-white"
+              "text-[22px] font-medium leading-snug tracking-tight text-foreground"
             )}
           >
             {project?.title}
           </h4>
           {project?.description && (
-            <p className="text-base font-light text-gray-300">
+            <p className="text-base font-light text-muted-foreground">
               {project.description}
             </p>
           )}
@@ -150,7 +150,7 @@ export function V3FeaturedProducts({ data }) {
   const seeMoreButtons = data?.seeMoreButton ?? [];
 
   return (
-    <V2ComponentWrapper data={data} className="border-y-0.75 border-sswBorder">
+    <V2ComponentWrapper data={data} className="border-y-0.75 border-hairline">
       <Container
         size="custom"
         width="custom"

@@ -20,18 +20,20 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
   const inner = (
     <div
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-card border-0 transition",
-        showBorder && "border-0.75 border-sswBorder"
+        "group relative flex h-full flex-col overflow-hidden rounded-card transition",
+        showBorder && "border-0.75 border-hairline"
       )}
     >
-      {/* Card-body background sits on its own layer so we can fade it from
-          60% at rest to full on hover without touching the text or graphic.
-          Works for both solid and gradient background options. */}
+      {/* Card-body background sits on its own layer: white in light mode so the
+          surface reads lighter than the section behind it, faded to 60% in dark
+          mode so it can brighten to full on hover. `bg-white` is merged after
+          the configured class so only its light-mode colour is overridden. */}
       <div
         aria-hidden
         className={cn(
-          "absolute inset-0 opacity-60 transition-opacity duration-300 group-hover:opacity-100",
-          cardBackgroundClass
+          "absolute inset-0 transition-opacity duration-300 dark:opacity-60 dark:group-hover:opacity-100",
+          cardBackgroundClass,
+          "bg-white"
         )}
       />
       <div
@@ -53,9 +55,11 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
       </div>
 
       <div className="relative flex flex-1 flex-col p-6">
-        <h3 className="text-2xl font-semibold text-white">{card?.title}</h3>
+        <h3 className="text-2xl font-semibold text-foreground">
+          {card?.title}
+        </h3>
         {card?.description && (
-          <p className="mt-4 text-base font-light text-gray-400">
+          <p className="mt-4 text-base font-light text-muted-foreground">
             {card.description}
           </p>
         )}
@@ -90,7 +94,7 @@ export function V3ImageCards({ data }) {
   const cardBackgroundClass =
     backgroundOptions.find(
       (option) => option.reference === data?.cardBackgroundColour
-    )?.classes ?? "bg-sswCard";
+    )?.classes ?? "bg-white dark:bg-sswCard";
 
   // 3-up when the count divides evenly by 3 but not by 4 (e.g. 3, 6, 9),
   // otherwise keep the default 4-up grid.
@@ -121,7 +125,7 @@ export function V3ImageCards({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="my-4 max-w-2xl px-8 text-3xl text-white lg:px-0 lg:text-5xl"
+            className="my-4 max-w-2xl px-8 text-3xl text-foreground lg:px-0 lg:text-5xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -129,7 +133,7 @@ export function V3ImageCards({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className="max-w-3xl px-8 text-base font-light text-gray-400 lg:px-0"
+            className="max-w-3xl px-8 text-base font-light text-muted-foreground lg:px-0"
           >
             {data.subtitle}
           </p>

@@ -1,4 +1,5 @@
 import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
+import { HomeThemeBoundary } from "@/components/layout/homeTheme";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events-types";
@@ -53,26 +54,28 @@ export default async function RootLayout({
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
           <LandingPageCapture />
-          <PageLayout
-            phishingBanner={
-              bannerData?.data?.phishingBanner && (
-                <PhishingBanner
-                  enabled={bannerData.data.phishingBanner.enabled}
-                  message={bannerData.data.phishingBanner.message}
-                />
-              )
-            }
-            megaMenu={MegaMenu({
-              menuData: menuData,
-              liveStreamData: liveStreamData,
-            })}
-          >
-            <AppInsightsProvider>
-              <WebVitals />
-              {children}
-            </AppInsightsProvider>
-            {/* </Theme> */}
-          </PageLayout>
+          <HomeThemeBoundary>
+            <PageLayout
+              phishingBanner={
+                bannerData?.data?.phishingBanner && (
+                  <PhishingBanner
+                    enabled={bannerData.data.phishingBanner.enabled}
+                    message={bannerData.data.phishingBanner.message}
+                  />
+                )
+              }
+              megaMenu={MegaMenu({
+                menuData: menuData,
+                liveStreamData: liveStreamData,
+              })}
+            >
+              <AppInsightsProvider>
+                <WebVitals />
+                {children}
+              </AppInsightsProvider>
+              {/* </Theme> */}
+            </PageLayout>
+          </HomeThemeBoundary>
 
           <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
           <ChatBaseBot />

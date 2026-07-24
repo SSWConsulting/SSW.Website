@@ -58,7 +58,7 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "node_modules/ssw.megamenu/**/*.js",
+    "node_modules/ssw.megamenu/dist/**/*.{js,cjs}",
   ],
   safelist: [...platform.map((p) => `bg-platform-${p.name}`)],
   // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
@@ -387,6 +387,7 @@ export default {
         destructive: "var(--destructive)",
         "stroke-strong": "var(--stroke-strong)",
         "stroke-weak": "var(--stroke-weak)",
+        hairline: "var(--hairline)",
         azure: "#007fff",
         ssw: {
           red: {
@@ -485,7 +486,7 @@ export default {
         },
       }),
       backgroundImage: {
-        "dot-grid": "radial-gradient(circle, #212121 1px, transparent 1px)",
+        "dot-grid": "radial-gradient(circle, var(--dot-color) 1px, transparent 1px)",
         "red-glow-tl":
           "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
         "red-glow-r":

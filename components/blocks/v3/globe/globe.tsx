@@ -20,8 +20,8 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
   return (
     <div
       className={cn(
-        "relative border-b border-white/10 bg-sswBorder",
-        isOpen && "bg-sswBlack"
+        "relative border-b border-hairline bg-gray-100 dark:border-white/10 dark:bg-sswBorder",
+        isOpen && "bg-gray-200 dark:bg-sswBlack"
       )}
     >
       <button
@@ -30,10 +30,10 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
         aria-expanded={isOpen}
         className="flex w-full items-center justify-between px-4 py-5 text-left"
       >
-        <span className="text-lg text-white">{office?.name}</span>
+        <span className="text-lg text-foreground">{office?.name}</span>
         <FiChevronDown
           className={cn(
-            "size-5 shrink-0 text-white transition-transform duration-300",
+            "size-5 shrink-0 text-foreground transition-transform duration-300",
             isOpen && "rotate-180"
           )}
         />
@@ -47,11 +47,11 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
         )}
       >
         <div className="overflow-hidden">
-          <div className="flex flex-col gap-4 px-4 pb-6 text-gray-300">
+          <div className="flex flex-col gap-4 px-4 pb-6 text-muted-foreground">
             {office?.email && (
               <a
                 href={`mailto:${office.email}`}
-                className="flex items-center gap-3 transition-colors hover:text-white"
+                className="flex items-center gap-3 transition-colors hover:text-foreground"
               >
                 <FiMail className="size-5 shrink-0" />
                 <span>{office.email}</span>
@@ -60,7 +60,7 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
             {office?.phone && (
               <a
                 href={`tel:${office.phone.replace(/\s+/g, "")}`}
-                className="flex items-center gap-3 transition-colors hover:text-white"
+                className="flex items-center gap-3 transition-colors hover:text-foreground"
               >
                 <FiPhone className="size-5 shrink-0" />
                 <span>{office.phone}</span>
@@ -75,7 +75,7 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
             {office?.siteLinkUrl && (
               <a
                 href={office.siteLinkUrl}
-                className="flex items-center gap-3 transition-colors hover:text-white"
+                className="flex items-center gap-3 transition-colors hover:text-foreground"
               >
                 <FiExternalLink className="size-5 shrink-0" />
                 <span>{office.siteLinkText || office.siteLinkUrl}</span>
@@ -111,7 +111,7 @@ export function V3Globe({ data }) {
             {data?.heading && (
               <h2
                 data-tina-field={tinaField(data, "heading")}
-                className="m-0 p-0 text-4xl leading-tight text-white lg:text-5xl"
+                className="m-0 p-0 text-4xl leading-tight text-foreground lg:text-5xl"
               >
                 <AlternatingText text={data.heading} />
               </h2>
@@ -119,7 +119,7 @@ export function V3Globe({ data }) {
             {data?.subtitle && (
               <p
                 data-tina-field={tinaField(data, "subtitle")}
-                className="mt-4 max-w-2xl text-base font-light text-gray-400"
+                className="mt-4 max-w-2xl text-base font-light text-muted-foreground"
               >
                 {data.subtitle}
               </p>
@@ -133,7 +133,7 @@ export function V3Globe({ data }) {
               {offices.length > 0 && (
                 <div
                   className={cn(
-                    "overflow-hidden rounded-utility bg-sswBorder shadow-2xl"
+                    "overflow-hidden rounded-utility border-0.75 border-hairline bg-white dark:bg-sswBorder"
                   )}
                 >
                   {offices.map((office, index) => (

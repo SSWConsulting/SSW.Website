@@ -61,7 +61,7 @@ function ProfileLink({ person, className, children }) {
 
 function PersonCard({ person, index, scope }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-card border-0.75 border-sswBorder bg-sswCard transition-colors duration-300 hover:border-sswRed">
+    <div className="flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:border-sswRed dark:border-sswBorder dark:bg-sswCard">
       <ProfileLink person={person} className="block">
         {/* Red panel frames the photo with padding on the sides and top while the
             photo stays flush to the bottom, so the person reads as standing in it. */}
@@ -80,10 +80,12 @@ function PersonCard({ person, index, scope }) {
 
         <div className="px-4 pt-4 text-center xl:px-6 xl:pt-6">
           {person?.name && (
-            <h3 className="text-xl font-semibold text-white">{person.name}</h3>
+            <h3 className="text-xl font-semibold text-foreground">
+              {person.name}
+            </h3>
           )}
           {person?.role && (
-            <p className="mt-1 text-sm font-light text-gray-400">
+            <p className="mt-1 text-sm font-light text-muted-foreground">
               {person.role}
             </p>
           )}
@@ -102,7 +104,7 @@ function PersonCard({ person, index, scope }) {
               aria-label={`${person?.name ?? ""} on ${label}`}
               // Keep the icon at 16px but give the link a ≥36×36px hit area
               // so it meets the minimum accessible touch-target size.
-              className="flex size-9 items-center justify-center text-white transition-colors hover:text-sswRed"
+              className="flex size-9 items-center justify-center text-foreground transition-colors hover:text-sswRed"
             >
               <Icon className="size-4" />
             </Link>
@@ -125,7 +127,7 @@ function CarouselControls({ count }: { count: number }) {
           type="button"
           aria-label="Previous"
           onClick={scrollPrev}
-          className="flex size-12 items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:bg-white hover:text-black"
+          className="flex size-12 items-center justify-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground hover:text-background dark:border-white/40"
         >
           <ArrowLeft className="size-5" />
         </button>
@@ -133,7 +135,7 @@ function CarouselControls({ count }: { count: number }) {
           type="button"
           aria-label="Next"
           onClick={scrollNext}
-          className="flex size-12 items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:bg-white hover:text-black"
+          className="flex size-12 items-center justify-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground hover:text-background dark:border-white/40"
         >
           <ArrowRight className="size-5" />
         </button>
@@ -166,7 +168,7 @@ export function V3PeopleCarousel({ data }) {
         {data?.heading && (
           <h2
             data-tina-field={tinaField(data, "heading")}
-            className="my-4 max-w-2xl px-8 text-4xl leading-tight text-white lg:px-0 lg:text-5xl"
+            className="my-4 max-w-2xl px-8 text-4xl leading-tight text-foreground lg:px-0 lg:text-5xl"
           >
             <AlternatingText text={data.heading} />
           </h2>
@@ -174,7 +176,7 @@ export function V3PeopleCarousel({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className="max-w-2xl px-8 text-base font-light text-gray-400 lg:px-0"
+            className="max-w-2xl px-8 text-base font-light text-muted-foreground lg:px-0"
           >
             {data.subtitle}
           </p>

@@ -19,7 +19,7 @@ function Highlight({ item }) {
       {item?.title && (
         <h3
           data-tina-field={tinaField(item, "title")}
-          className="text-xl font-semibold text-white"
+          className="text-xl font-semibold text-foreground"
         >
           {item.title}
         </h3>
@@ -27,7 +27,7 @@ function Highlight({ item }) {
       {item?.highlightBody && (
         <p
           data-tina-field={tinaField(item, "highlightBody")}
-          className="mt-3 text-base font-light text-gray-400"
+          className="mt-3 text-base font-light text-muted-foreground"
         >
           {item.highlightBody}
         </p>
@@ -40,7 +40,7 @@ function Badge({ badge }) {
   return (
     <div
       data-tina-field={tinaField(badge, "label")}
-      className="inline-flex min-h-9 items-center gap-2 rounded-full border-1 border-white/5 bg-sswCard px-4 py-2 text-sm text-white"
+      className="inline-flex min-h-9 items-center gap-2 rounded-full border-1 border-hairline bg-white px-4 py-2 text-sm text-foreground dark:border-white/5 dark:bg-sswCard dark:text-white"
     >
       {badge?.customImage?.imageSource ? (
         <span className="relative size-4 shrink-0">
@@ -57,7 +57,7 @@ function Badge({ badge }) {
           <Icon
             data={{ name: badge.icon }}
             tinaField={tinaField(badge, "icon")}
-            className="size-4 shrink-0 text-white"
+            className="size-4 shrink-0 text-foreground dark:text-white"
           />
         )
       )}
@@ -99,7 +99,7 @@ export function V3VideoFeature({ data }) {
             </div>
           )}
 
-          <div className="flex h-full flex-col rounded-card border-1 border-white/5 bg-sswCard p-6 md:p-8 lg:col-span-2">
+          <div className="flex h-full flex-col rounded-card border-0.75 border-hairline bg-white p-6 md:p-8 lg:col-span-2 dark:bg-sswCard">
             {data?.brow && (
               <span
                 data-tina-field={tinaField(data, "brow")}
@@ -111,7 +111,7 @@ export function V3VideoFeature({ data }) {
             {data?.heading && (
               <h2
                 data-tina-field={tinaField(data, "heading")}
-                className="m-0 text-3xl leading-tight text-white lg:text-4xl"
+                className="m-0 text-3xl leading-tight text-foreground lg:text-4xl"
               >
                 <AlternatingText text={data.heading} />
               </h2>
@@ -119,7 +119,7 @@ export function V3VideoFeature({ data }) {
             {data?.introText && (
               <p
                 data-tina-field={tinaField(data, "introText")}
-                className="mt-6 text-base font-light text-gray-300"
+                className="mt-6 text-base font-light text-muted-foreground"
               >
                 {data.introText}
               </p>
@@ -134,7 +134,7 @@ export function V3VideoFeature({ data }) {
           <div className="grid lg:grid-cols-5">
             <p
               data-tina-field={tinaField(data, "videoCaption")}
-              className="mt-4 text-sm text-gray-400 lg:col-span-3"
+              className="mt-4 text-sm text-muted-foreground lg:col-span-3"
             >
               {data.videoCaption}
             </p>
@@ -174,7 +174,7 @@ export function V3VideoFeature({ data }) {
               {data?.recognitionHeading && (
                 <span
                   data-tina-field={tinaField(data, "recognitionHeading")}
-                  className="font-mono text-xs uppercase tracking-widest text-gray-500"
+                  className="font-mono text-xs uppercase tracking-widest text-muted-foreground"
                 >
                   {data.recognitionHeading}
                 </span>
