@@ -3,7 +3,7 @@ import { HomeThemeBoundary } from "@/components/layout/homeTheme";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events-types";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManagerLazy } from "./components/google-tag-manager-lazy";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
@@ -77,7 +77,7 @@ export default async function RootLayout({
             </PageLayout>
           </HomeThemeBoundary>
 
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+          <GoogleTagManagerLazy gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
           <ChatBaseBot />
         </QueryProvider>
       </body>
