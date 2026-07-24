@@ -6,10 +6,8 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
-import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
 import { inter } from "@/lib/fonts";
 import "styles.css";
@@ -19,12 +17,10 @@ import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
 import { WebVitals } from "./components/web-vitals";
 import { LiveStream } from "./live-steam-banner/live-stream";
-import { DEFAULT } from "./meta-data/default";
 import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu, MegaMenuProps } from "./utils/get-mega-menu";
 import { getPhishingBanner } from "./utils/get-phishing-banner";
 
-dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
@@ -33,18 +29,6 @@ dayjs.extend(isBetween);
 const ChatBaseBot = dynamic(
   () => import("@/components/zendeskButton/chatBaseBot")
 );
-
-export const metadata: Metadata = {
-  ...DEFAULT,
-};
-
-export const viewport: Viewport = {
-  themeColor: "#cc4141",
-  width: "device-width",
-  initialScale: 1,
-};
-
-export const revalidate = 1800; // 30 minutes
 
 export default async function RootLayout({
   children,

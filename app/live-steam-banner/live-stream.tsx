@@ -4,7 +4,6 @@ import { MenuWrapper } from "app/components/MenuWrapper";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
-import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
@@ -15,7 +14,6 @@ import {
   formatDates,
 } from "@/services/server/events-types";
 import { PropsWithChildren, useEffect, useState } from "react";
-dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
