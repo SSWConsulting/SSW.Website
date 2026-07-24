@@ -1,5 +1,5 @@
 import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
-import { HomeThemeProvider } from "@/components/layout/homeTheme";
+import { HomeThemeBoundary } from "@/components/layout/homeTheme";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events-types";
@@ -70,7 +70,7 @@ export default async function RootLayout({
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
           <LandingPageCapture />
-          <HomeThemeProvider>
+          <HomeThemeBoundary>
             <PageLayout
               phishingBanner={
                 bannerData?.data?.phishingBanner && (
@@ -91,7 +91,7 @@ export default async function RootLayout({
               </AppInsightsProvider>
               {/* </Theme> */}
             </PageLayout>
-          </HomeThemeProvider>
+          </HomeThemeBoundary>
 
           <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
           <ChatBaseBot />

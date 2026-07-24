@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
@@ -128,6 +129,18 @@ export const HomeThemeProvider = ({
       {children}
     </HomeThemeContext.Provider>
   );
+};
+
+export const HomeThemeBoundary = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
+  const pathname = usePathname();
+  if (pathname === "/") {
+    return <HomeThemeProvider>{children}</HomeThemeProvider>;
+  }
+  return <>{children}</>;
 };
 
 // Applies the theme class to a homepage-scoped wrapper (NOT <html>) so theming
