@@ -59,7 +59,8 @@
         "imageSource": "/images/eventsv2/ai-for-business-leaders-hero.webp",
         "imageHeight": 968,
         "imageWidth": 1625,
-        "youtubeUrl": ""
+        "youtubeUrl": "",
+        "loadWithPriority": true
       },
       "_template": "imageTextBlock"
     },
@@ -648,7 +649,7 @@
       "heading": "Ulysses Maclaren",
       "isH1": false,
       "subheading": "SSW · COO · Sydney",
-      "description": "Ulysses is SSW's COO and 2IC to Chief Architect Adam Cogan, and has run the operational side of the business since 2006. He leads the practical AI work behind SSW's own workflow automation, process re-engineering, data-driven decision-making and customer engagement, while personally managing the relationships behind SSW's largest client accounts as Principal Account Manager.\n\n He's the person who can talk AI from both sides of the table - what it takes to run it inside a real business, and what it takes to keep a client happy with the result. On the day, you get four hours with Ulysses, the case studies, and his direct answers to your business's situation.\n",
+      "description": "Ulysses is SSW's COO and 2IC to Chief Architect Adam Cogan, and has run the operational side of the business since 2006. He leads the practical AI work behind SSW's own workflow automation, process re-engineering, data-driven decision-making and customer engagement, while personally managing the relationships behind SSW's largest client accounts as Principal Account Manager.\n\nHe's the person who can talk AI from both sides of the table - what it takes to run it inside a real business, and what it takes to keep a client happy with the result. On the day, you get four hours with Ulysses, the case studies, and his direct answers to your business's situation.\n",
       "featureColumns": {
         "twoColumns": true
       },
