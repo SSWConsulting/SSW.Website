@@ -3,8 +3,6 @@ import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourS
 import { IconPickerInput } from "../blocksSubtemplates/tinaFormElements/iconSelector";
 import { PROJECT_FORM_MODAL } from "./templateButton.constants";
 
-export { PROJECT_FORM_MODAL };
-
 export const bookingForms = [
   {
     label: "Tell us about your project (multi-step)",
