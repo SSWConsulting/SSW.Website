@@ -6,7 +6,6 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
-import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
@@ -22,7 +21,6 @@ import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu, MegaMenuProps } from "./utils/get-mega-menu";
 import { getPhishingBanner } from "./utils/get-phishing-banner";
 
-dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
