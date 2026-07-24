@@ -205,7 +205,7 @@ jobs:
     uses: ./.github/workflows/template-ui-tests.yml
     with:
       deploy_url: ${{ needs.pr-deploy.outputs.url }}
-      tests_to_run: "images seo-noindex"
+      tests_to_run: "images seo-noindex gtm-tracking"
 
   prLighthouseInsights:
     name: Run PR Lighthouse Insights
