@@ -1,10 +1,9 @@
 import { buttonOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../blocksSubtemplates/tinaFormElements/iconSelector";
+import { PROJECT_FORM_MODAL } from "./templateButton.constants";
 
-// Special value: opens the native multi-step "Tell us about your project"
-// modal instead of a JotForm popup. Must not resolve to a JotForm id.
-export const PROJECT_FORM_MODAL = "projectFormModal";
+export { PROJECT_FORM_MODAL };
 
 export const bookingForms = [
   {
