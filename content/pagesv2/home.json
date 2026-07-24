@@ -82,7 +82,7 @@
       "seeMoreButton": [
         {
           "buttonText": "View All Services",
-          "buttonLink": "/services",
+          "buttonLink": "/consulting",
           "icon": "BiChevronRight"
         }
       ],
