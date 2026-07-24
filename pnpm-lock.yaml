@@ -171,8 +171,8 @@ importers:
         specifier: ^0.34.3
         version: 0.34.3
       ssw.megamenu:
-        specifier: github:SSWConsulting/SSW.MegaMenu#feat/v3-home-dark-light-mode
-        version: https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/ec25bae486b91b2caa1d0d517f85e6fdc2b59d30(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 4.14.0
+        version: 4.14.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -9219,9 +9219,8 @@ packages:
   sqlite-level@2.1.1:
     resolution: {integrity: sha512-hhRnO7R4fym5PjWiRkKyMju1Ok6B3MfK3wWyyoeAaGd9OZPrTqGbjEbghHLh7uco4r3syZrbk3/9IQTWCv3/sw==}
 
-  ssw.megamenu@https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/ec25bae486b91b2caa1d0d517f85e6fdc2b59d30:
-    resolution: {tarball: https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/ec25bae486b91b2caa1d0d517f85e6fdc2b59d30}
-    version: 4.13.10
+  ssw.megamenu@4.14.0:
+    resolution: {integrity: sha512-GybRbkxvdDOKMKJ296hZq3s/Z4DoDNhDHpox27frgBbn/9YA6FGJ7b9a2pK/HfkZbur1YyFiL+QntaL0fvRNWw==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -20971,7 +20970,7 @@ snapshots:
       better-sqlite3: 12.10.0
       module-error: 1.0.2
 
-  ssw.megamenu@https://codeload.github.com/SSWConsulting/SSW.MegaMenu/tar.gz/ec25bae486b91b2caa1d0d517f85e6fdc2b59d30(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  ssw.megamenu@4.14.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       '@headlessui/react': 2.2.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@heroicons/react': 2.2.0(react@19.2.3)
