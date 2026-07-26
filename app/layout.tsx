@@ -76,10 +76,9 @@ export default async function RootLayout({
               {/* </Theme> */}
             </PageLayout>
           </HomeThemeBoundary>
-
-          <GoogleTagManagerLazy gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
-          <ChatBaseBot />
         </QueryProvider>
+        <GoogleTagManagerLazy gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+        <ChatBaseBot />
       </body>
     </html>
   );
