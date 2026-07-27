@@ -1,11 +1,10 @@
 "use client";
 
-import { useAppInsightsContext } from "@microsoft/applicationinsights-react-js";
+import { trackWebVital } from "@/context/app-insights-web-vitals-buffer";
 import { usePathname } from "next/navigation";
 import { useReportWebVitals } from "next/web-vitals";
 
 export const WebVitals = () => {
-  const appInsights = useAppInsightsContext();
   const pathname = usePathname();
 
   // Check if Web Vitals tracking is enabled (default: true)
@@ -23,7 +22,9 @@ export const WebVitals = () => {
       case "FID":
       case "CLS":
       case "INP":
-        appInsights?.trackMetric(
+        // Buffered until App Insights loads (init is deferred), then flushed —
+        // so metrics measured before init are not lost.
+        trackWebVital(
           { name: metric.name, average: metric.value },
           { page: `${pathname}` }
         );
