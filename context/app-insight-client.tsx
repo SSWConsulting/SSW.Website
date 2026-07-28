@@ -1,10 +1,10 @@
 "use client";
 
+import { loadAppInsights } from "@/lib/app-insights";
 import {
   AppInsightsContext,
   ReactPlugin,
 } from "@microsoft/applicationinsights-react-js";
-import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 import React, { ReactNode, useEffect, useMemo } from "react";
 
 export function AppInsightsProvider({ children }: { children: ReactNode }) {
@@ -22,39 +22,33 @@ export function AppInsightsProvider({ children }: { children: ReactNode }) {
         ? clientSamplingPercentageRaw
         : 20;
 
-    const appInsights = new ApplicationInsights({
-      config: {
-        connectionString: process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING,
-        extensions: [reactPlugin],
-        samplingPercentage: clientSamplingPercentage, // Apply client-side sampling
-        autoExceptionInstrumented: true, // Always track exceptions
-        autoTrackPageVisitTime: true,
-        enableRequestHeaderTracking: true,
-        enableResponseHeaderTracking: true,
-        enableAjaxErrorStatusText: true,
-        distributedTracingMode: 0,
-        loggingLevelTelemetry: 1,
-        loggingLevelConsole: 1,
-        extensionConfig: {
-          [reactPlugin.identifier]: {},
-        },
-        disablePageUnloadEvents: ["unload"],
-      },
+    let loaded: { unload: () => void } | null = null;
+    let unmounted = false;
+
+    void loadAppInsights({
+      reactPlugin,
+      samplingPercentage: clientSamplingPercentage,
+    }).then((appInsights) => {
+      if (unmounted) {
+        appInsights?.unload();
+        return;
+      }
+
+      loaded = appInsights;
+      if (appInsights) {
+        // eslint-disable-next-line no-console
+        console.log("✅ App Insights - Client Side logging is turned on!");
+        // eslint-disable-next-line no-console
+        console.log(`   📊 Client Sampling: ${clientSamplingPercentage}%`);
+      } else {
+        // eslint-disable-next-line no-console
+        console.log("Client side logging is not turned on!");
+      }
     });
 
-    if (appInsights.config.connectionString) {
-      appInsights.loadAppInsights();
-      // eslint-disable-next-line no-console
-      console.log("✅ App Insights - Client Side logging is turned on!");
-      // eslint-disable-next-line no-console
-      console.log(`   📊 Client Sampling: ${clientSamplingPercentage}%`);
-    } else {
-      // eslint-disable-next-line no-console
-      console.log("Client side logging is not turned on!");
-    }
-
     return () => {
-      appInsights.unload();
+      unmounted = true;
+      loaded?.unload();
     };
   }, [reactPlugin]);
 
