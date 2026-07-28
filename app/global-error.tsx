@@ -1,6 +1,7 @@
 "use client";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { ErrorPage } from "@/components/util/error-page";
+import { loadAppInsights } from "@/lib/app-insights";
 import { inter } from "@/lib/fonts";
 import { useEffect } from "react";
 import "styles.css";
@@ -12,35 +13,21 @@ import PageLayout from "./components/page-layout";
 
 export default function GlobalError({ error }: { error: Error }) {
   useEffect(() => {
-    // Loaded on demand so the SDK stays out of the bundle every page ships —
-    // this boundary only renders when the root layout throws.
-    void Promise.all([
-      import("@microsoft/applicationinsights-react-js"),
-      import("@microsoft/applicationinsights-web"),
-    ]).then(([{ ReactPlugin }, { ApplicationInsights }]) => {
-      const reactPlugin = new ReactPlugin();
-      const appInsights = new ApplicationInsights({
-        config: {
-          connectionString:
-            process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING,
-          extensions: [reactPlugin],
-          autoExceptionInstrumented: true,
-          autoTrackPageVisitTime: true,
-          enableRequestHeaderTracking: true,
-          enableResponseHeaderTracking: true,
-          enableAjaxErrorStatusText: true,
-          distributedTracingMode: 0,
-          loggingLevelTelemetry: 1,
-          loggingLevelConsole: 1,
-          extensionConfig: {
-            [reactPlugin.identifier]: {},
-          },
-          disablePageUnloadEvents: ["unload"],
-        },
-      });
-
-      if (appInsights.config.connectionString) {
-        appInsights.loadAppInsights();
+    // This boundary replaces the root layout, so AppInsightsProvider is not in
+    // the tree — it needs its own plugin and instance. No samplingPercentage:
+    // every root-layout crash should be reported.
+    void import("@microsoft/applicationinsights-react-js")
+      .then(({ ReactPlugin }) =>
+        loadAppInsights({ reactPlugin: new ReactPlugin() })
+      )
+      .then((appInsights) => {
+        if (!appInsights) {
+          // eslint-disable-next-line no-console
+          console.error(
+            "Failed to log root layout exception to Application Insights!"
+          );
+          return;
+        }
         appInsights.trackException({
           exception: error,
           properties: {
@@ -49,13 +36,7 @@ export default function GlobalError({ error }: { error: Error }) {
             ErrorInfo: error.stack || error.message,
           },
         });
-      } else {
-        // eslint-disable-next-line no-console
-        console.error(
-          "Failed to log root layout exception to Application Insights!"
-        );
-      }
-    });
+      });
   }, [error]);
 
   const errorDetails = error.stack || error.message;
