@@ -57,6 +57,7 @@
           "title": "Artificial Intelligence",
           "description": "Develop custom AI solutions tailored for your business.",
           "logo": "/images/thumbs/consulting/new/artificial-intelligence.svg",
+          "popular": true,
           "page": "content/consultingv2/artificial-intelligence.json",
           "tags": [
             {
