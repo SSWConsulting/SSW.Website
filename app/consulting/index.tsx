@@ -2,6 +2,7 @@
 
 import { useHomeTheme } from "@/components/layout/homeTheme";
 import { BluredBase64Image } from "@/helpers/images";
+import { cn } from "@/lib/utils";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -76,7 +77,9 @@ export default function ConsultingIndex({ tinaProps }) {
 
   const sections = useMemo(() => {
     return tags.map((tag) => {
-      const pages = allMappedPages.filter((page) => page.tags.includes(tag.name));
+      const pages = allMappedPages.filter((page) =>
+        page.tags.includes(tag.name)
+      );
       return {
         ...tag,
         pages,
@@ -115,7 +118,9 @@ export default function ConsultingIndex({ tinaProps }) {
     });
 
     const hash = window.location.hash.replace("#", "");
-    const fromHash = contentSections.find((section) => section.sectionId === hash);
+    const fromHash = contentSections.find(
+      (section) => section.sectionId === hash
+    );
     if (fromHash) {
       setActiveSectionId(fromHash.sectionId);
       window.requestAnimationFrame(() => {
@@ -131,7 +136,10 @@ export default function ConsultingIndex({ tinaProps }) {
     return () => observer.disconnect();
   }, [contentSections]);
 
-  const onNavClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const onNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
     event.preventDefault();
     setActiveSectionId(id);
     window.history.replaceState(null, "", `#${id}`);
@@ -143,7 +151,7 @@ export default function ConsultingIndex({ tinaProps }) {
 
   return (
     <div
-      className={`${styles.shell}${isDark ? " dark" : ""}`}
+      className={cn(styles.shell, isDark && "dark")}
       data-theme={isDark ? "dark" : "light"}
     >
       <main className={styles.page}>
@@ -169,7 +177,9 @@ export default function ConsultingIndex({ tinaProps }) {
                     >
                       <a
                         href={`#${section.sectionId}`}
-                        onClick={(event) => onNavClick(event, section.sectionId)}
+                        onClick={(event) =>
+                          onNavClick(event, section.sectionId)
+                        }
                         aria-current={isActive ? "true" : undefined}
                         className={`${styles.navLink} unstyled`}
                         data-active={isActive ? "true" : "false"}
@@ -192,7 +202,10 @@ export default function ConsultingIndex({ tinaProps }) {
               >
                 <h2
                   className={styles.sectionTitle}
-                  data-tina-field={tinaField(node.sidebar[section.index], "label")}
+                  data-tina-field={tinaField(
+                    node.sidebar[section.index],
+                    "label"
+                  )}
                 >
                   {section.label}
                 </h2>
@@ -231,13 +244,19 @@ export default function ConsultingIndex({ tinaProps }) {
                         <p
                           className={styles.cardSubtitle}
                           title={page.description}
-                          data-tina-field={tinaField(page.tinaPage, "description")}
+                          data-tina-field={tinaField(
+                            page.tinaPage,
+                            "description"
+                          )}
                         >
                           {page.description}
                         </p>
                       </div>
 
-                      <ChevronRight className={styles.chevron} aria-hidden="true" />
+                      <ChevronRight
+                        className={styles.chevron}
+                        aria-hidden="true"
+                      />
                     </a>
                   ))}
                 </div>
