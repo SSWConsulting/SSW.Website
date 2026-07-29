@@ -58,6 +58,7 @@ export default function ConsultingIndex({ tinaProps }) {
           title: page.title,
           description: page.description,
           logo: page.logo,
+          popular: page.popular,
           tags: page.tags
             ? [allServices, ...page.tags.map((t) => t.tag?.name)]
             : [allServices],
@@ -240,6 +241,9 @@ export default function ConsultingIndex({ tinaProps }) {
                           >
                             {page.title}
                           </h3>
+                          {page.popular && (
+                            <span className={styles.popularTag}>Popular</span>
+                          )}
                         </div>
                         <p
                           className={styles.cardSubtitle}
