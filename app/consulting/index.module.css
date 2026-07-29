@@ -1,0 +1,320 @@
+.shell {
+  --consulting-accent: var(--text-brand);
+  --consulting-focus: var(--text-brand);
+  --consulting-sticky-top: 104px;
+  min-height: 100%;
+}
+
+.shell[data-theme="light"] {
+  --consulting-page-bg: var(--background-sunken);
+  --consulting-panel-bg: #ffffff;
+  --consulting-panel-border: rgba(0, 0, 0, 0.1);
+  --consulting-nav-muted: #aaaaaa;
+  --consulting-nav-hover: #111111;
+  --consulting-title: #111111;
+  --consulting-subtitle: rgba(0, 0, 0, 0.62);
+  --consulting-card-bg: #fbfbfc;
+  --consulting-card-bg-hover: #ffffff;
+  --consulting-card-border: rgba(0, 0, 0, 0.08);
+  --consulting-chevron: rgba(0, 0, 0, 0.4);
+  --consulting-chip-bg: #f2f3f5;
+}
+
+.shell[data-theme="dark"] {
+  --consulting-page-bg: #0c0d0f;
+  --consulting-panel-bg: #131418;
+  --consulting-panel-border: rgba(255, 255, 255, 0.14);
+  --consulting-nav-muted: #aaaaaa;
+  --consulting-nav-hover: #ffffff;
+  --consulting-title: #ffffff;
+  --consulting-subtitle: rgba(255, 255, 255, 0.68);
+  --consulting-card-bg: var(--card);
+  --consulting-card-bg-hover: var(--card-hover);
+  --consulting-card-border: var(--hairline);
+  --consulting-chevron: rgba(255, 255, 255, 0.5);
+  --consulting-chip-bg: #1a1c21;
+}
+
+.shell {
+  background:
+    radial-gradient(1200px 450px at 100% -10%, rgba(227, 72, 65, 0.1), transparent 70%),
+    linear-gradient(180deg, var(--consulting-page-bg), var(--consulting-page-bg));
+}
+
+.page {
+  margin: 0 auto;
+  max-width: 1320px;
+  min-height: 100%;
+  padding: 16px 24px 64px;
+}
+
+.breadcrumbRow {
+  min-height: 48px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 30%) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: var(--consulting-sticky-top);
+  align-self: start;
+}
+
+.heading {
+  margin: 0;
+  padding: 0;
+  color: var(--consulting-title);
+  font-size: clamp(2.25rem, 1.9rem + 1.2vw, 3rem);
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.navList {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.navLink {
+  display: block;
+  min-height: 44px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: var(--consulting-nav-muted);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.25;
+  transition: color 150ms ease, background-color 150ms ease;
+}
+
+.navLink:hover {
+  color: var(--consulting-nav-hover);
+  background: color-mix(in srgb, var(--consulting-chip-bg) 86%, transparent);
+}
+
+.navLink[data-active="true"] {
+  color: var(--consulting-accent);
+}
+
+.navLink:focus-visible {
+  outline: 2px solid var(--consulting-focus);
+  outline-offset: 2px;
+}
+
+.content {
+  min-width: 0;
+}
+
+.section {
+  scroll-margin-top: calc(var(--consulting-sticky-top) + 24px);
+}
+
+.section + .section {
+  margin-top: clamp(64px, 7vw, 80px);
+}
+
+.sectionTitle {
+  margin: 0 0 16px;
+  padding: 0;
+  color: var(--consulting-accent);
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.95rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 80px;
+  border-radius: 12px;
+  border: 1px solid var(--consulting-card-border);
+  background: var(--consulting-card-bg);
+  padding: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 300ms ease, border-color 300ms ease;
+}
+
+.card:hover {
+  background: var(--consulting-card-bg-hover);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--consulting-focus);
+  outline-offset: 2px;
+}
+
+.iconWrap {
+  display: flex;
+  height: 48px;
+  width: 48px;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.logo {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+}
+
+.cardBody {
+  min-width: 0;
+  flex: 1;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cardTitle {
+  margin: 0;
+  padding: 0;
+  color: var(--consulting-title);
+  font-size: 1rem;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.cardSubtitle {
+  margin: 4px 0 0;
+  color: var(--consulting-subtitle);
+  font-size: 0.78rem;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.chevron {
+  height: 16px;
+  width: 16px;
+  flex: 0 0 16px;
+  color: var(--consulting-chevron);
+  transition: color 150ms ease, transform 150ms ease;
+}
+
+.card:hover .chevron {
+  color: var(--consulting-accent);
+  transform: translateX(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .chevron,
+  .navLink {
+    transition: none;
+  }
+
+  .card:hover .chevron {
+    transform: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .layout {
+    grid-template-columns: minmax(240px, 30%) minmax(0, 1fr);
+  }
+
+  .cardGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .page {
+    padding: 12px 12px 48px;
+  }
+
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 72px;
+    z-index: 15;
+    margin: 0 -12px;
+    padding: 8px 12px 10px;
+    border-bottom: 1px solid var(--consulting-panel-border);
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--consulting-page-bg) 90%, transparent),
+        color-mix(in srgb, var(--consulting-page-bg) 98%, transparent)
+      );
+    backdrop-filter: blur(8px);
+  }
+
+  .heading {
+    margin-bottom: 8px;
+    font-size: clamp(1.75rem, 1.2rem + 4vw, 2.2rem);
+  }
+
+  .navList {
+    margin-top: 0;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 8px;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+
+  .navLink {
+    border: 1px solid var(--consulting-panel-border);
+    background: var(--consulting-chip-bg);
+    border-radius: 999px;
+    padding: 10px 12px;
+    min-height: 44px;
+  }
+
+  .section {
+    scroll-margin-top: 136px;
+  }
+
+  .sectionTitle {
+    margin-bottom: 12px;
+    font-size: 1.45rem;
+  }
+
+  .card {
+    min-height: 68px;
+    padding: 10px;
+  }
+
+  .iconWrap {
+    height: 40px;
+    width: 40px;
+    flex-basis: 40px;
+  }
+
+  .logo {
+    height: 26px;
+    width: 26px;
+  }
+}

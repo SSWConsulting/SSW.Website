@@ -18,7 +18,7 @@ export function MegaMenuWrapper(props) {
   // into theming: the dark toggle and the `.dark` scope below, whose token
   // utilities (bg-background/text-foreground/border-hairline) flip via the CSS
   // variables under the `dark` class on this element.
-  const isHome = pathName === "/";
+  const isHome = pathName === "/" || pathName === "/consulting";
 
   return (
     <div

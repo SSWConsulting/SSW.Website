@@ -19,6 +19,9 @@ const STORAGE_KEY = "ssw-home-theme";
 // choice or `prefers-color-scheme`.
 const DEFAULT_THEME: HomeThemeMode = "dark";
 
+const isThemedRoute = (pathname: string) =>
+  pathname === "/" || pathname === "/consulting";
+
 // The global mega menu reads the theme on every route, including ones with no
 // HomeThemeProvider ancestor (error pages, etc.), so fall back to defaults there
 // instead of throwing.
@@ -65,7 +68,7 @@ const resolveTheme = (): HomeThemeMode => {
 // That makes the homepage's first paint already match the resolved theme, so
 // there's no dark→light flash. Rendered inside each themed wrapper; the logic is
 // kept in lockstep with resolveTheme() above. Gated to the homepage.
-const PRE_PAINT_SCRIPT = `(function(){try{if(location.pathname!=='/')return;var t;try{t=localStorage.getItem('${STORAGE_KEY}')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=document.currentScript&&document.currentScript.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()`;
+const PRE_PAINT_SCRIPT = `(function(){try{var p=location.pathname;if(!(p==='/'||p==='/consulting'))return;var t;try{t=localStorage.getItem('${STORAGE_KEY}')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=document.currentScript&&document.currentScript.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()`;
 
 export const HomeThemePrePaint = () => (
   // suppressHydrationWarning: the script has already run (and mutated the DOM)
@@ -137,7 +140,7 @@ export const HomeThemeBoundary = ({
   children: React.ReactNode;
 }) => {
   const pathname = usePathname();
-  if (pathname === "/") {
+  if (isThemedRoute(pathname)) {
     return <HomeThemeProvider>{children}</HomeThemeProvider>;
   }
   return <>{children}</>;

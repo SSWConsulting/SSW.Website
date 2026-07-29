@@ -1,186 +1,251 @@
 "use client";
 
-import { Category } from "@/components/consulting/index/category";
-import { Tag } from "@/components/consulting/index/tag";
-import { Container } from "@/components/util/container";
+import { useHomeTheme } from "@/components/layout/homeTheme";
+import { BluredBase64Image } from "@/helpers/images";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { MdLiveHelp } from "react-icons/md";
+import { ChevronRight } from "lucide-react";
+import Image from "next/image";
+import React, { useEffect, useMemo, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
+import styles from "./index.module.css";
 
 const allServices = "All SSW Services";
 
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-");
+
+const mapPageUrl = (page) =>
+  page.externalUrl ||
+  page.page.id
+    .replace("content/consultingv2", "/consulting")
+    .replace("content", "")
+    .replace(".mdx", "")
+    .replace(".json", "");
+
 export default function ConsultingIndex({ tinaProps }) {
-  const gridRef = useRef(null);
-  const router = useRouter();
-  const [selectedTag, setSelectedTag] = useState(allServices);
-
-  const filterDidChange = useRef<boolean>(false);
-
+  const { isDark } = useHomeTheme();
   const node = tinaProps.data.consultingIndex;
-  const searchParams = useSearchParams();
-  const categories = useMemo(() => {
-    return node.categories.reduce((acc, curr) => {
-      const mappedPages = curr.pages.reduce((pageAcc, p) => {
-        // Skip entries with neither an external URL nor a linked page —
-        // otherwise reading p.page.id below crashes the build prerender.
-        if (!p.externalUrl && !p.page?.id) {
-          return pageAcc;
+  const [activeSectionId, setActiveSectionId] = useState<string>("");
+
+  const tags = useMemo(() => {
+    return (
+      node.sidebar?.map((item, index) => ({
+        label: item.label,
+        name: item.tag?.name,
+        index,
+        sectionId: `consulting-${slugify(item.tag?.name || item.label || String(index))}`,
+      })) || []
+    );
+  }, [node]);
+
+  const allMappedPages = useMemo(() => {
+    const pages = [];
+
+    node.categories.forEach((category, categoryIndex) => {
+      category.pages.forEach((page, pageIndex) => {
+        if (!page.externalUrl && !page.page?.id) {
+          return;
         }
-        const mappedPage = {
-          url:
-            p.externalUrl ||
-            p.page.id
-              .replace("content/consultingv2", "/consulting")
-              .replace("content", "")
-              .replace(".mdx", "")
-              .replace(".json", ""),
-          title: p.title,
-          description: p.description,
-          logo: p.logo,
-          tags: p.tags
-            ? [allServices, ...p.tags.map((t) => t.tag?.name)]
+
+        pages.push({
+          id: `${categoryIndex}-${pageIndex}-${page.title}`,
+          url: mapPageUrl(page),
+          title: page.title,
+          description: page.description,
+          logo: page.logo,
+          tags: page.tags
+            ? [allServices, ...page.tags.map((t) => t.tag?.name)]
             : [allServices],
-        };
+          tinaPage: node.categories[categoryIndex].pages[pageIndex],
+        });
+      });
+    });
 
-        if (mappedPage.tags.includes(selectedTag)) {
-          return [...pageAcc, mappedPage];
-        }
-        return pageAcc;
-      }, []);
-      if (mappedPages.length > 0) {
-        return [
-          ...acc,
-          {
-            name: curr.category.name,
-            pages: mappedPages,
-          },
-        ];
+    const unique = new Map();
+    pages.forEach((page) => {
+      if (!unique.has(page.url)) {
+        unique.set(page.url, page);
       }
-      return acc;
-    }, []);
-  }, [node, selectedTag]);
+    });
+    return Array.from(unique.values());
+  }, [node]);
 
-  const tags = useMemo(
-    () =>
-      node.sidebar?.map((item) => {
-        return {
-          label: item.label,
-          name: item.tag?.name,
-        };
-      }),
-    [node]
+  const sections = useMemo(() => {
+    return tags.map((tag) => {
+      const pages = allMappedPages.filter((page) => page.tags.includes(tag.name));
+      return {
+        ...tag,
+        pages,
+      };
+    });
+  }, [allMappedPages, tags]);
+
+  const contentSections = useMemo(
+    () => sections.filter((section) => section.name !== allServices),
+    [sections]
   );
 
   useEffect(() => {
-    // We stopped using Next.js's useSearchParams function because it lead to complete client-side rendering, which impacts SEO and page load performance,
-    // Therefore we are now using javascript's function
+    if (!contentSections.length) return;
 
-    const tagParam = searchParams.get("tag");
-    const query = getSelectedTagFromQuery(tagParam);
-    setSelectedTag(query || allServices);
-  }, [searchParams]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible[0]?.target?.id) {
+          setActiveSectionId(visible[0].target.id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "-24% 0px -60% 0px",
+        threshold: [0.2, 0.45, 0.7],
+      }
+    );
+
+    contentSections.forEach((section) => {
+      const element = document.getElementById(section.sectionId);
+      if (element) observer.observe(element);
+    });
+
+    const hash = window.location.hash.replace("#", "");
+    const fromHash = contentSections.find((section) => section.sectionId === hash);
+    if (fromHash) {
+      setActiveSectionId(fromHash.sectionId);
+      window.requestAnimationFrame(() => {
+        document.getElementById(fromHash.sectionId)?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      });
+    } else {
+      setActiveSectionId(contentSections[0].sectionId);
+    }
+
+    return () => observer.disconnect();
+  }, [contentSections]);
+
+  const onNavClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    event.preventDefault();
+    setActiveSectionId(id);
+    window.history.replaceState(null, "", `#${id}`);
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
 
   return (
-    <>
-      <Container className="flex-1 pt-2">
-        <div className="min-h-8 w-full max-w-9xl md:min-h-12">
+    <div
+      className={`${styles.shell}${isDark ? " dark" : ""}`}
+      data-theme={isDark ? "dark" : "light"}
+    >
+      <main className={styles.page}>
+        <div className={styles.breadcrumbRow}>
           <Breadcrumbs path={"/consulting"} title={"Services"} />
         </div>
 
-        <div className="flex flex-col md:flex-row">
-          <div className="shrink-0 md:pr-20">
-            <h1 className="pt-0 text-3xl">Consulting Services</h1>
-            <h3 className="mb-4 text-sswRed">
-              <MdLiveHelp className="inline-block" /> I am looking for...
-            </h3>
-            <ul className="list-none">
-              {tags?.map((tag, index) => (
-                <div
-                  data-tina-field={tinaField(node.sidebar[index], "label")}
-                  key={tag.name}
-                >
-                  <Tag
-                    label={tag.label}
-                    tag={tag.name}
-                    selectedTag={selectedTag}
-                    setSelectedTag={(val) => {
-                      filterDidChange.current = true;
-                      updateParams(router, tags, val);
-                      setSelectedTag(val);
-                    }}
-                  />
-                </div>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <div
-              ref={gridRef}
-              className="mt-4 grid grid-cols-1 gap-2 lg:grid-cols-2"
-            >
-              <FilterContextProvider filterDidChange={filterDidChange.current}>
-                {categories.map((category, index) => {
+        <div className={styles.layout}>
+          <aside className={styles.sidebar}>
+            <h1 className={styles.heading}>Consulting Services</h1>
+            <nav aria-label="Consulting categories">
+              <ul className={styles.navList}>
+                {contentSections.map((section) => {
+                  const isActive = section.sectionId === activeSectionId;
+
                   return (
-                    <Category
-                      tinaData={node}
-                      key={category.name}
-                      category={category}
-                      index={index}
-                    />
+                    <li
+                      key={section.sectionId}
+                      data-tina-field={tinaField(
+                        node.sidebar[section.index],
+                        "label"
+                      )}
+                    >
+                      <a
+                        href={`#${section.sectionId}`}
+                        onClick={(event) => onNavClick(event, section.sectionId)}
+                        aria-current={isActive ? "true" : undefined}
+                        className={`${styles.navLink} unstyled`}
+                        data-active={isActive ? "true" : "false"}
+                      >
+                        {section.label}
+                      </a>
+                    </li>
                   );
                 })}
-              </FilterContextProvider>
-            </div>
+              </ul>
+            </nav>
+          </aside>
+
+          <div className={styles.content}>
+            {contentSections.map((section) => (
+              <section
+                id={section.sectionId}
+                key={section.sectionId}
+                className={styles.section}
+              >
+                <h2
+                  className={styles.sectionTitle}
+                  data-tina-field={tinaField(node.sidebar[section.index], "label")}
+                >
+                  {section.label}
+                </h2>
+
+                <div className={styles.cardGrid}>
+                  {section.pages.map((page) => (
+                    <a
+                      href={page.url}
+                      key={`${section.sectionId}-${page.id}`}
+                      className={`${styles.card} unstyled`}
+                    >
+                      <div className={styles.iconWrap}>
+                        {page.logo && (
+                          <Image
+                            src={page.logo}
+                            alt={`${page.title} logo`}
+                            width={48}
+                            height={48}
+                            loading="lazy"
+                            placeholder="blur"
+                            blurDataURL={BluredBase64Image}
+                            className={styles.logo}
+                          />
+                        )}
+                      </div>
+
+                      <div className={styles.cardBody}>
+                        <div className={styles.cardTitleRow}>
+                          <h3
+                            className={styles.cardTitle}
+                            data-tina-field={tinaField(page.tinaPage, "title")}
+                          >
+                            {page.title}
+                          </h3>
+                        </div>
+                        <p
+                          className={styles.cardSubtitle}
+                          title={page.description}
+                          data-tina-field={tinaField(page.tinaPage, "description")}
+                        >
+                          {page.description}
+                        </p>
+                      </div>
+
+                      <ChevronRight className={styles.chevron} aria-hidden="true" />
+                    </a>
+                  ))}
+                </div>
+              </section>
+            ))}
           </div>
         </div>
-      </Container>
-    </>
+      </main>
+    </div>
   );
 }
-
-const getSelectedTagFromQuery = (query: string): string => {
-  let parsedTag = allServices;
-  if (query) {
-    const tag = query;
-
-    if (Array.isArray(tag)) {
-      parsedTag = tag[0];
-    } else {
-      parsedTag = tag;
-    }
-    parsedTag = parsedTag.replace("-", " ");
-  }
-  return parsedTag;
-};
-
-export const useFilterContext = () => React.useContext(FilterContext);
-
-const FilterContext = React.createContext({ filterDidChange: false });
-
-const FilterContextProvider = ({
-  children,
-  filterDidChange,
-}: {
-  children: React.ReactNode;
-  filterDidChange: boolean;
-}) => {
-  return (
-    <FilterContext.Provider value={{ filterDidChange }}>
-      {children}
-    </FilterContext.Provider>
-  );
-};
-
-const updateParams = (router, tags, selectedTag) => {
-  if (tags.some((x) => x.name === selectedTag)) {
-    const query =
-      selectedTag === allServices
-        ? {}
-        : {
-            tag: selectedTag?.replace(" ", "-"),
-          };
-    router.push(`/consulting${query.tag ? `?tag=${query.tag}` : ""}`);
-  }
-};
