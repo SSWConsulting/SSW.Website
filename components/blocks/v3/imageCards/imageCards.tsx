@@ -25,15 +25,16 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
       )}
     >
       {/* Card-body background sits on its own layer: white in light mode so the
-          surface reads lighter than the section behind it, faded to 60% in dark
-          mode so it can brighten to full on hover. `bg-white` is merged after
-          the configured class so only its light-mode colour is overridden. */}
+          surface reads lighter than the section behind it; dark mode uses the
+          shared card tokens (`--card`, brightening to `--card-hover` on hover),
+          same as the /consulting cards. These classes are merged after the
+          configured class so they win over it. */}
       <div
         aria-hidden
         className={cn(
-          "absolute inset-0 transition-opacity duration-300 dark:opacity-60 dark:group-hover:opacity-100",
+          "absolute inset-0 transition-colors duration-300",
           cardBackgroundClass,
-          "bg-white"
+          "bg-white dark:bg-card dark:group-hover:bg-card-hover"
         )}
       />
       <div
