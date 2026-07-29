@@ -185,6 +185,8 @@
     --background-sunken: black;
     --background-raised: #262626;
     --background-overlay: #44403c;
+    --card: #101010;
+    --card-hover: #151515;
     --shadow-raised: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
     --shadow-overlay: 0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
     --spacing-xs: 8px;

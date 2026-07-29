@@ -388,6 +388,8 @@ export default {
         "stroke-strong": "var(--stroke-strong)",
         "stroke-weak": "var(--stroke-weak)",
         hairline: "var(--hairline)",
+        card: "var(--card)",
+        "card-hover": "var(--card-hover)",
         azure: "#007fff",
         ssw: {
           red: {
