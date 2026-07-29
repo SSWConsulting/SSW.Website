@@ -1,0 +1,78 @@
+---
+seo:
+  title: Do LLMs Still Need Architecture Instructions?
+  description: 'Should you specify language and architecture when prompting an LLM, or let it decide? We break down when to hand off control and when to stay explicit.'
+bannerImg: /images/articles/Gemini_Generated_Image_lhu4tulhu4tulhu4.png
+title: 'Do You Still Need to Tell the LLM What Language or Architecture to Use? '
+subTitle: |
+  A year ago, the hot take was that prompt engineering was the skill to learn. Now the hot take is that prompt engineering is dead. Neither of those is quite right, but the shift in conversation points to something real: as models get better, the way we direct them has to change too. The question is, how much of the technical decision-making can you actually hand off? 
+
+  This is something the SSW team has been going back and forth on, and honestly, there isn't a clean answer. But the tension is worth exploring. 
+
+  ## The Case for Letting the Model Decide 
+
+  If you're a non-technical founder or a business owner who just wants a working app, the idea of specifying Vertical Slice Architecture (VSA) versus Clean Architecture is about as useful to you as being told to choose between two engine configurations for a car you're renting. You don't care. You want it to go. 
+
+  And to be fair, that's not an unreasonable position. Tools like Lovable and Replit have basically hard-coded sensible defaults so you don't have to think about it. Ask for an app, get an app. For a lot of use cases, that's genuinely fine. If you're building a prototype to figure out what you actually want, or validating an idea before committing to a proper build, the architecture probably isn't your biggest problem right now. 
+
+  There's also an interesting argument that experienced developers might be falling into a golden hammer trap. If you're a C# developer who lives in VSA, there's a decent chance you're going to ask the model to build in C# with VSA, not because it's necessarily the best choice, but because it's your choice. The model then confirms that bias right back at you. You've engineered the context without even realising it, and not always in a good way. 
+
+  ## The Case for Still Being Explicit 
+
+  Here's the problem with letting the model decide: it tends to take the shortest path to technically satisfying what you asked for. Ask for something secure and scalable and testable, and it'll tick those boxes in whatever way requires the least resistance. 
+
+  Without guardrails, you get spaghetti. Not always, but often enough that experienced developers are still reaching for architecture templates before they write a single line of code. A good starting point is something like SSW's software architecture decision tree, which gives the model a structured way to reason about which architecture best fits the problem, rather than defaulting to whatever pattern has the most Stack Overflow posts. Yes, this adds a little complexity upfront. But that complexity is the point, it's what makes the system easier to extend, modify, and reason about six months down the track. 
+
+  There's also the language question. Models are heavily trained on Python, so if you leave the door open, there's a reasonable chance you're getting Python whether or not that's the right call. That might be fine, but it might also box you into decisions that you'd have made differently if you'd thought about it up front. 
+
+  ## What "Works" and What Survives Are Different Things 
+
+  Here's why examples matter: both scenarios below produce code that passes a basic test. Neither one falls apart on day one. 
+
+  Take a customer search screen. The initial implementation searches across several text columns and returns orders, contacts, and notes. No particular indexing strategy, because the database is small and every search completes in 80 milliseconds. Fine. Ship it. 
+
+  Six months later, the business has millions of orders and activity records. That same query is now scanning large portions of several tables, consuming CPU, holding database connections open, and competing with writes from the rest of the application. The search screen still works. Unfortunately, it just became the thing dragging everything else down, without anyone noticing. 
+
+   
+
+  The questions an LLM won't naturally ask itself are things like: how will data volumes change over time? Which access patterns need indexes? Are transactional and reporting workloads competing for the same resources? Is there a retention and archival strategy?  
+
+  Memory management has a similar shape. Imagine generated code that caches user data to speed up repeat requests, but never expires those cache entries. In testing, memory usage looks healthy. With 100 users, the leak might take days to become noticeable. With 10,000 users, memory climbs steadily, garbage collection starts consuming CPU, requests slow down, health checks fail, and the hosting platform restarts the process. Everything looks fine again. Then the cycle repeats. 
+
+  A team monitoring only average response times might diagnose this as a capacity problem and add more servers, at which point every server has the same leak and the defect has become a permanent infrastructure bill. The underlying code for adding items to a cache can look completely correct in isolation. The failure is in what never happens: eviction, expiry, disposal, releasing a reference after a request ends. An LLM working from a feature request has no particular reason to think about any of that. 
+
+  This is why "the tests pass" and "the system is healthy" are not the same claim. 
+
+  ## Where It Gets Complicated 
+
+  The honest answer is that this debate changes depending on what you're building and who's building it. 
+
+  For genuinely mid-level tasks, well-defined problems with lots of prior art in the training data, models are excellent. Hand it off. For novel problems, or systems that need to survive real load, the model starts to miss things. It optimises for what you asked for and won’t take into account what you might need later. 
+
+  The analogy that feels right is an offshore development team circa 2002. Sometimes you get exactly what you needed. Sometimes you get something that technically does the thing but makes you question every decision in the process. The skill isn't blindly trusting the output or micromanaging every line. It's knowing which jobs to hand off and which ones need someone with production experience in the room. 
+
+  Context engineering is the right framing here. Not over-specifying every detail up front, but giving the agent what it needs to make good decisions: the codebase conventions, the constraints, the prior decisions, the non-negotiables. That's different from writing a perfect prompt. It's more like onboarding a developer properly rather than just throwing tickets at them and hoping for the best. 
+
+  ## So, Do You Need to Specify? 
+
+  For prototyping and proof of concept work, probably not. Let it run. See what you get. Even a flawed prototype teaches you something useful about what you actually want to build. 
+
+  For anything heading toward production, yes. Not because the model can't make decisions, but because the decisions made early compound. A poor architectural choice in week one defines what's possible in month six. Poor indexing, unbounded caches, no eviction strategy - none of these fail immediately. They accumulate until something breaks under load, and by then the fix costs a lot more than the whole conversation you skipped at the start. 
+
+  Knowing enough to set the constraints early, point the model at the right resources, and then getting out of the way is where the real skills are in AI-assisted development.  
+author: content/presenters/michael-smedley.mdx
+sidebarPanel:
+  title: 2-Day Pre-Migration Assessment Engagement
+  description: 'Get a solid foundation for your .NET 8 migration project, ensuring you are well-prepared to tackle the migration with confidence.'
+  showSidebarPanel: true
+  actionUrl: /
+  actionText: Learn more
+callToAction:
+  title: Talk to us about your project
+  subTitle: Connect with our Account Managers to discuss how we can help.
+  showCallToAction: true
+  buttonText: Book a Free Initial Meeting
+  animated: true
+  buttonSubtitle: or call +61 2 9953 3000
+---
+
