@@ -15,491 +15,377 @@
   "blocks": [
     {
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
       },
-      "finalBreadcrumb": "Expert AI Consultants",
-      "_template": "breadcrumbs"
-    },
-    {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "Custom AI solutions, **expertly implemented**",
-      "isH1": true,
-      "description": "Our solutions go beyond basic automation to create real business value, turning AI into a genuine intellectual partner for your specific business challenges.\n",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "",
-            "description": ""
-          },
-          {
-            "heading": "",
-            "description": ""
-          }
-        ]
-      },
+      "brow": "AI CONSULTING",
+      "heading": "Build AI your business can actually rely on",
+      "description": "Most AI demos impress in the room and stall on the way to production. We build the ones that ship, grounded in your data, secured for your business, and measured on results you can point at.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "leadCaptureFormOption": "",
+          "buttonLink": "#lead-capture-heading",
+          "iconFirst": false,
           "colour": 0
         },
         {
-          "buttonText": " AI Discovery Workshop",
-          "buttonLink": "/consulting/ai-discovery-workshop",
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
           "colour": 1
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "mobilePlacement": "Above",
-        "imageSource": "/images/Louis Test Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
-        "imageHeight": 700,
-        "imageWidth": 1400
-      },
-      "_template": "imageTextBlock"
+      "mediaType": "aiConsultingSvg",
+      "_template": "v3Hero"
     },
     {
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 7
       },
-      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
-      "paused": false,
-      "isWhiteImages": true,
+      "heading": "Trusted in Sydney, Melbourne, Brisbane and Newcastle by",
       "logos": [
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/7-removebg-preview.png",
-          "scale": 195
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/6-removebg-preview.png",
-          "scale": 160
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/5-removebg-preview.png",
-          "scale": 180
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/4-removebg-preview.png",
-          "scale": 175
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/3-removebg-preview.png",
-          "scale": 170
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/1-removebg-preview.png",
-          "scale": 195,
-          "altText": "Logo"
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
         },
         {
-          "logo": "/images/Louis Test Images/Incident-io-batch/Logos/2-removebg-preview.png",
-          "scale": 175
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
         }
       ],
-      "_template": "logoCarousel"
+      "_template": "v3LogoCarousel"
     },
     {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "From quick prototypes to secure AI models, **we make AI work for you.**",
-      "isH1": false,
-      "description": "AI can be overwhelming, but we make it simple. Our consultants analyze your systems and recommend practical AI solutions to improve efficiency, automate tasks, and extract insights from data.\n\nGet expert guidance to integrate AI where it matters most.\n",
-      "featureColumns": {
-        "twoColumns": false
-      },
-      "buttons": [
-        {
-          "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "iconFirst": true
-        },
-        {
-          "buttonText": "Rules to Better AI",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-ai/",
-          "icon": "BiSolidWrench",
-          "colour": 1
-        }
-      ],
       "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
-        "bleed": true
+        "backgroundColour": 7
       },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Left",
-        "mobilePlacement": "Above",
-        "youtubeUrl": "https://youtu.be/-q9lLqtkC00?si=ep-UD9gBNQ_gUcSR",
-        "altText": "The Future of Business with AI: Automation, Intelligence, and Customer Relations"
-      },
-      "_template": "imageTextBlock"
+      "brow": "BASED ON OUR EXPERIENCE",
+      "heading": "Why most AI projects never leave the demo",
+      "description": "Getting a model to say something clever takes an afternoon. Putting it in front of customers, on your data, inside your compliance rules, is a different job. This is where teams stall.\n",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "The pilot never reaches production",
+          "description": "The prototype wins the room, then hits hosting, security and evaluation. With no plan for any of it, the demo stays a demo.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "It answers confidently and wrongly",
+          "description": "A model with no grounding in your data will happily invent an answer. One bad answer in front of a customer costs more than the project saved.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "Nobody can prove it paid off",
+          "description": "Token spend climbs, value stays unmeasured, and the budget gets pulled before the useful part ever shipped.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
     },
     {
-      "isStacked": true,
-      "heading": "",
-      "isH1": false,
-      "body": "",
-      "cardStyle": 0,
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true
+      },
+      "videoUrl": "https://youtu.be/-q9lLqtkC00",
+      "greyscaleThumbnail": true,
+      "figure": "Video: The Future of Business with AI - Automation, Intelligence and Customer Relations",
+      "heading": "Why choose SSW?",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
+      "highlights": [
+        {
+          "title": "Deep expertise",
+          "desc2": "We go deep on every technology we touch - building with it, codifying best practices, and making that knowledge freely available\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-ai/",
+          "linkText": "Rules to Better AI"
+        },
+        {
+          "title": "Results over rhetoric",
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?\n"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "OUR PROCESS",
+      "heading": "What to expect working with SSW",
+      "description": "",
+      "steps": [
+        {
+          "heading": "Initial Call",
+          "description": "A short call with a senior engineer to talk through your project.\n",
+          "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
+        },
+        {
+          "heading": "AI Discovery Workshop",
+          "description": "A structured session to find where AI pays off in your business, and where it does not.\n",
+          "link": "/consulting/ai-discovery-workshop"
+        },
+        {
+          "heading": "Build & Deliver",
+          "description": "SSW can either handle the project from end-to-end or join your existing team, build your product, and ship your solution.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-scrum"
+        },
+        {
+          "heading": "Service Plan",
+          "description": "We can stay on post-launch to ensure a successful project handover.\n",
+          "link": "https://www.ssw.com.au/consulting/support-plans"
+        }
+      ],
+      "_template": "v3Process"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Tell us about **your** AI project",
+      "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
+      "_template": "v3LeadCapture"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Why teams choose SSW for AI Consulting",
+      "statistics": [
+        {
+          "figure": 7000,
+          "figureSuffix": "+",
+          "heading": "Solutions delivered",
+          "description": "Enterprise-grade software"
+        },
+        {
+          "figure": 1800,
+          "figureSuffix": "+",
+          "heading": "Happy clients",
+          "description": "Across all industries"
+        },
+        {
+          "figure": 30,
+          "figureSuffix": "+",
+          "heading": "Years experience",
+          "description": "Trusted since 1999"
+        }
+      ],
+      "_template": "v3Statistics"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "testimonials": [
+        {
+          "quote": "You've got soccer players and then you have the professional soccer players. **They are the professional soccer players.**",
+          "caseStudyUrl": "/company/clients/fpe",
+          "authorName": "Thomas Bidou",
+          "authorTitle": "French Payroll Expert",
+          "authorImage": "/images/testimonialAvatars/thomas-bideau.png",
+          "authorImageAlt": "Thomas Bidou",
+          "companyLogo": "/images/clientLogos/FPE.png",
+          "companyLogoAlt": "French Payroll Expert"
+        }
+      ],
+      "_template": "v3Testimonials"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "BUILT BY SSW",
+      "videoUrl": "https://youtu.be/CBes1SEvV54",
+      "greyscaleThumbnail": true,
+      "figure": "Video: YakShaver - AI to make the perfect PBI in 30 seconds",
+      "heading": "We don't just talk about AI. We ship it.",
+      "description": "YakShaver is our own AI agent. It watches a screen recording, works out what needs doing, and writes the work item. It is the same approach we bring to your projects: practical AI, aimed at a task people actually repeat.\n",
+      "highlights": [
+        {
+          "title": "Real work, not a chatbot",
+          "desc2": "YakShaver replaced a task every developer does several times a day, which is where AI returns the most.\n",
+          "link": "https://www.ssw.com.au/articles/yakshaver-article",
+          "linkText": "Read the story"
+        },
+        {
+          "title": "Try it yourself",
+          "desc2": "It's free in the Chrome Web Store, so you can judge the output before you judge us.\n",
+          "link": "https://chromewebstore.google.com/detail/yakshaver/glcoihkbmomiblcbpnlkafcipcfnikjc",
+          "linkText": "Get the extension"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Beyond the model",
+      "heading": "One team for the whole AI build",
+      "subtitle": "The model is the easy part. We build everything around it.",
       "cards": [
         {
-          "guid": "ib0xbk",
-          "altText": "Lorem Ipsum",
-          "icon": "BiLogoMicrosoft",
-          "heading": "Intelligent Automation, Precisely Applied",
-          "description": "We build automation that cuts through complexity and adapts to your specific business needs. No generic solutions, just practical AI that solves real problems.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "title": "AI Discovery Workshop",
+          "description": "A structured day to find where AI pays off in your business.",
+          "link": "/consulting/ai-discovery-workshop"
         },
         {
-          "guid": "hukqtq",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidLockAlt",
-          "heading": "Secure, Compliant Implementation",
-          "description": "AI models offer incredible capabilities but require proper security and compliance guardrails. We implement safeguards that protect your customer data, ensuring your solutions stay both powerful and compliant.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "title": "Chat Bots",
+          "description": "Assistants grounded in your own documents, not the open internet.",
+          "link": "/consulting/chat-bots"
         },
         {
-          "guid": "65qp3c",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidStar",
-          "heading": "Trusted Expertise at Scale",
-          "description": "From operational efficiency to customer experience, we scale AI solutions that deliver measurable results. Our team brings enterprise-level expertise to organizations of all size.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "cardCarousel"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": "Case Study"
-      },
-      "heading": "Boosting Payroll Expertise with a **Custom AI Chatbot**",
-      "isH1": false,
-      "description": "French Payroll Expert (FPE) spent too much time answering the same questions about French labor law. We built them a custom AI chatbot that delivers accurate, multilingual answers 24/7, directly from official sources.\n",
-      "chips": [
-        {
-          "chipText": "Semantic Kernel",
-          "chipType": "filledChip"
+          "title": "Local LLMs",
+          "description": "Run models on your own infrastructure, with your data staying put.",
+          "link": "/consulting/local-llm-deployment"
         },
         {
-          "chipText": "OpenAI",
-          "chipType": "filledChip"
+          "title": "Azure",
+          "description": "Cloud foundations that keep AI fast and affordable as it scales.",
+          "link": "/consulting/azure"
         }
       ],
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Instant Answers, Any Language",
-            "description": "Clients get fast, 24/7 payroll answers in their own language. The AI uses verified French legislation, breaking down barriers."
-          },
-          {
-            "heading": "AI Becomes a Selling Point",
-            "description": "The chatbot isn't just support, it's a competitive edge that helped FPE attract new clients and win more business."
-          }
-        ]
-      },
-      "buttons": [
-        {
-          "buttonText": "Read the full story",
-          "buttonLink": "https://www.ssw.com.au/company/clients/fpe",
-          "colour": 0
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Right",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "youtubeUrl": "https://www.youtube.com/watch?v=YlsbPEvVyq4"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "**YakShaver:** Our AI Agent in Action",
-      "isH1": false,
-      "description": "At SSW, we don't just talk about AI, we build it. YakShaver is our AI solution that automates work item creation, proving how AI can streamline repetitive dev tasks.\n\nBeyond the typical chatbot, YakShaver shows how AI capabilities can transform development workflows.\n\nIt's the same approach we bring to your projects, practical AI that delivers real results.\n",
-      "featureColumns": {
-        "twoColumns": true
-      },
-      "buttons": [
-        {
-          "buttonText": "Give it a try",
-          "buttonLink": "https://chromewebstore.google.com/detail/yakshaver/glcoihkbmomiblcbpnlkafcipcfnikjc?pli=1"
-        },
-        {
-          "buttonText": "Learn more",
-          "buttonLink": "https://www.ssw.com.au/articles/yakshaver-article",
-          "colour": 1
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Left",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "youtubeUrl": "https://youtu.be/CBes1SEvV54?si=LV2O5t0MthCIaYIF",
-        "altText": "YakShaver - AI to make the perfect PBI in 30 seconds"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
+      "_template": "v3StackCards"
     },
     {
       "isStacked": false,
-      "heading": "Tech Wisdom from the Trenches",
+      "brow": "learn more on SSWTV",
+      "heading": "Tech wisdom from the trenches",
       "isH1": false,
-      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
-      "cardStyle": 1,
+      "body": "At SSW, we've been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
+      "tabletTextAlignment": "Left",
       "cards": [
         {
           "guid": "arf4s",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=LzFG7pUylZo",
-          "altText": "AI",
-          "chips": [
-            {
-              "chipText": "AI Use",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "6 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "If you think AI is cheating, you're doing it wrong!",
-          "description": "AI is the tool of this generation, but are we using it responsibly? Ulysses Maclaren dives into the best practices for AI use - covering transparency, critical thinking, data privacy, and how to leverage AI to boost productivity. Learn why using AI intelligently is the key to staying ahead in your career.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "altText": "If you think AI is cheating, you're doing it wrong!",
+          "category": "AI Use",
+          "heading": "If you think AI is cheating, you're doing it wrong!"
         },
         {
           "guid": "ui7a6e",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "AI Trends",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "90 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "The Year of the AI Agent: Automation to Intelligence",
-          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
-          "embeddedButton": {
-            "buttonText": "",
-            "buttonLink": ""
-          }
+          "altText": "The Year of the AI Agent: Automation to Intelligence",
+          "category": "AI Trends",
+          "heading": "The Year of the AI Agent: Automation to Intelligence"
         },
         {
           "guid": "hhszy",
           "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/sVELvhGdSfs?si=YgXhKVW1AOiyx-CQ",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "AI Model Guides",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "3 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
-          "description": "Confused about selecting the perfect AI model? Join Isaac Lombard and Caleb Williams as they explore how GitHub Models simplifies the process! Discover the ease of finding and utilizing AI models for your projects in this quick guide.",
-          "embeddedButton": {
-            "buttonText": "",
-            "buttonLink": ""
-          }
-        },
-        {
-          "guid": "20ehn",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/Us04IRcNJ9c?si=e03yF4HpD0eFosqu",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Multi-Language AI Apps",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "60 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Creating Multi-Language AI-Powered Apps w/ Rust, Python & Blazor",
-          "description": "Discover how to build AI-powered applications that speak multiple languages! Join TJ Gokken in this User Group session as he dives into the world of multi-language app development using Rust, Python, and Blazor. Learn practical techniques and best practices for creating global-ready AI solutions.",
-          "embeddedButton": {
-            "buttonText": "",
-            "buttonLink": ""
-          }
+          "youtubeUrl": "https://youtu.be/sVELvhGdSfs",
+          "altText": "Choosing the Right AI Model? GitHub Models Makes It Easy!",
+          "category": "AI Model Guides",
+          "heading": "Choosing the Right AI Model? GitHub Models Makes It Easy!"
         },
         {
           "guid": "hupqdh",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=WwF69cj8490",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "AI Strategy",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "8 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "How to supercharge a company with AI",
-          "description": "Supercharge your company with AI!  🚀  See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features.  Discover actionable tips to implement AI",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "altText": "How to supercharge a company with AI",
+          "category": "AI Strategy",
+          "heading": "How to supercharge a company with AI"
         },
         {
           "guid": "akn4ur",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=_Lx1DmMMJbg",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "AI Strategy",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "1 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Do you provide an llms.txt file to make your website LLM-friendly?",
-          "description": "Ever wondered how to make your website visible to AI models like ChatGPT, Claude, and Cursor? 🤖 Traditional SEO is all about optimizing for search engines, but in the AI era, we need to rethink our approach!",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "altText": "Do you provide an llms.txt file to make your website LLM-friendly?",
+          "category": "AI Strategy",
+          "heading": "Do you provide an llms.txt file to make your website LLM-friendly?"
         }
       ],
       "background": {
-        "backgroundColour": 2
+        "backgroundColour": 7
       },
-      "_template": "cardCarousel"
+      "_template": "v3CardCarousel"
     },
     {
-      "technologies": [
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Frequently asked questions",
+      "faqs": [
         {
-          "technology": "content/v2Technologies/technologies/GitHub-Copilot-v2.mdx"
+          "question": "How much does it cost?",
+          "answer": "Every engagement is scoped to your goals, so there's no single price. The initial call is always 100% **free**. The specification review will be used to give the most accurate estimation possible for a projects scope, price and duration.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
         },
         {
-          "technology": "content/v2Technologies/technologies/Google-Vertex-AI-v2.mdx"
+          "question": "Will our data be used to train someone else's model?",
+          "answer": "Not unless you want it to. We build on enterprise agreements where your prompts and data are not used for training, and where the requirement is stricter, we deploy models to your own infrastructure so nothing leaves your environment.\n",
+          "link": "https://www.ssw.com.au/consulting/local-llm-deployment"
         },
         {
-          "technology": "content/v2Technologies/technologies/Microsoft-AutoGen.mdx"
+          "question": "Which AI model should we use?",
+          "answer": "That's a decision we make together, with your data, your budget and your compliance rules on the table. We build so the model can be swapped later, because the best one today rarely stays the best one for long.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-ai/"
         },
         {
-          "technology": "content/v2Technologies/technologies/Python.mdx"
+          "question": "Do you work with our existing team?",
+          "answer": "Yes! We can either take over a project from end-to-end with our own team at SSW, or embed our developers into your existing team.\n",
+          "link": "https://www.ssw.com.au/consulting/mentoring"
         },
         {
-          "technology": "content/v2Technologies/technologies/Semantic-Kernel-v2.mdx"
+          "question": "How does SSW ensure quality and success of a software project?",
+          "answer": "Quality and success are the heart of our processes; we use:\n\n* Clean Architecture: Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-successful-projects"
         }
       ],
-      "isStacked": false,
-      "techCardStyle": 0,
-      "background": {
-        "backgroundColour": 3
-      },
-      "_template": "technologyCardCarousel"
+      "_template": "v3Faq"
     },
     {
-      "topLabel": {
-        "labelText": ""
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
       },
-      "heading": "Talk to Us About Your AI Project Today",
-      "isH1": false,
-      "description": "Connect with our Account Managers to discuss how we can help.\n",
-      "featureColumns": {
-        "twoColumns": true
-      },
+      "heading": "Let's build AI you can put in front of customers",
+      "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonLink": "#lead-capture-heading",
           "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "100px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
+      "_template": "v3Cta"
     }
   ]
 }
