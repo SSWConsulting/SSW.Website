@@ -31,7 +31,7 @@ export function HeaderAppearanceProvider({
 export const useHeaderAppearance = () => useContext(HeaderAppearanceContext);
 
 // ponytail: client context → SSR shows full header for one frame before hiding flag/
-// contact. Upgrade path if the flash matters: set `x-pathname` in middleware.ts and
+// contact. Upgrade path if the flash matters: set `x-pathname` in proxy.ts and
 // resolve appearance server-side in app/layout.tsx so the header renders correctly at SSR.
 export function useMobileHeaderAppearance(
   value: MobileHeaderAppearance | null
