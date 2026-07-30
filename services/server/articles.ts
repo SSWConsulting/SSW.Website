@@ -15,7 +15,7 @@ export const getArticles = async ({
 }): Promise<GetArticlesQueryQuery> => {
   const res = await client.queries.getArticlesQuery({
     top: 10,
-    after: pageParam,
+    before: pageParam,
   });
 
   return res.data;

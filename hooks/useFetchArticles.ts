@@ -10,7 +10,7 @@ export const useFetchArticles = () => {
       queryFn: getArticles,
       initialPageParam: undefined,
       getNextPageParam: (lastPage) => {
-        return lastPage.articlesConnection.pageInfo.endCursor;
+        return lastPage.articlesConnection.pageInfo.startCursor;
       },
     });
   return {
@@ -27,6 +27,6 @@ export const useFetchArticles = () => {
     isFetchingArticles: isFetchingNextPage,
     hasMoreArticles:
       data?.pages[data?.pages.length - 1].articlesConnection.pageInfo
-        .hasNextPage,
+        .hasPreviousPage,
   };
 };
