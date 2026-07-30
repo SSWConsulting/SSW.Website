@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { addNoIndexHeaders } from "./middleware/noIndex";
+import { addNoIndexHeaders } from "./lib/noIndex";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const response = NextResponse.next();
 
   // Add HSTS headers (2 years) — note: includeSubDomains/preload intentionally omitted
