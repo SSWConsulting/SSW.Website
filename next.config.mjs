@@ -70,6 +70,26 @@ const config = {
         destination: "/admin/index.html",
         permanent: true,
       },
+      {
+        source: "/consulting/web-application-development",
+        destination: "/consulting/web-applications",
+        permanent: true,
+      },
+      {
+        source: "/eagle-eye",
+        destination: "https://ssweagleeye.com",
+        permanent: true,
+      },
+      {
+        source: "/eagleeye",
+        destination: "https://ssweagleeye.com",
+        permanent: true,
+      },
+      {
+        source: "/yakshaver",
+        destination: "https://yakshaver.ai",
+        permanent: true,
+      },
     ];
   },
   serverExternalPackages: ["applicationinsights"],
