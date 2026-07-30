@@ -48,7 +48,9 @@ export default async function RootLayout({
       ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
   return (
-    <html lang="en" className={inter.className}>
+    // data-scroll-behavior: opts back into Next suppressing the `scroll-smooth`
+    // in styles.css during route changes, so navigations jump rather than animate.
+    <html lang="en" className={inter.className} data-scroll-behavior="smooth">
       <body>
         <QueryProvider>
           {/* <Theme> */}
