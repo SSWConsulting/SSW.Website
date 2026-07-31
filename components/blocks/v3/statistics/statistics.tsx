@@ -13,14 +13,14 @@ const cellBorder = (i: number) =>
   cn(
     "border-hairline",
     // stacked
-    i > 0 && "border-t-[0.75px]",
+    i > 0 && "border-t-0.75",
     // square (2x2)
     "md:border-t-0",
-    (i === 0 || i === 2) && "md:border-r-[0.75px]",
-    (i === 0 || i === 1) && "md:border-b-[0.75px]",
+    (i === 0 || i === 2) && "md:border-r-0.75",
+    (i === 0 || i === 1) && "md:border-b-0.75",
     // single row
     "lg:border-b-0 lg:border-r-0",
-    i > 0 && "lg:border-l-[0.75px]"
+    i > 0 && "lg:border-l-0.75"
   );
 
 export default function V3Statistics({ data }) {

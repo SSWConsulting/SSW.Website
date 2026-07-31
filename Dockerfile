@@ -56,6 +56,8 @@ ARG NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING
 ENV NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING=$NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING
 ARG NEXT_PUBLIC_CHATBASE_BOT_ID
 ENV NEXT_PUBLIC_CHATBASE_BOT_ID=$NEXT_PUBLIC_CHATBASE_BOT_ID
+ARG NEXT_PUBLIC_TURNSTILE_SITE_KEY
+ENV NEXT_PUBLIC_TURNSTILE_SITE_KEY=$NEXT_PUBLIC_TURNSTILE_SITE_KEY
 ARG SITE_URL
 ENV SITE_URL=$SITE_URL
 ARG NEXT_PUBLIC_SLOT_URL
@@ -85,13 +87,15 @@ ENV NODE_ENV production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-# JotForm key + Power Automate lead webhook URL are read at runtime by
-# /api/lead-capture, so they must persist into the final image (builder-stage
-# ENVs do not carry over to this stage).
+# JotForm key, Power Automate lead webhook URL, and the Turnstile secret are read
+# at runtime by /api/lead-capture, so they must persist into the final image
+# (builder-stage ENVs do not carry over to this stage).
 ARG JOTFORM_API_KEY
 ENV JOTFORM_API_KEY=$JOTFORM_API_KEY
 ARG POWER_AUTOMATE_LEAD_WEBHOOK_URL
 ENV POWER_AUTOMATE_LEAD_WEBHOOK_URL=$POWER_AUTOMATE_LEAD_WEBHOOK_URL
+ARG TURNSTILE_SECRET_KEY
+ENV TURNSTILE_SECRET_KEY=$TURNSTILE_SECRET_KEY
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs

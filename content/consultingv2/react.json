@@ -1,7 +1,16 @@
 {
   "seo": {
     "title": "React Development & Consulting | SSW",
-    "description": "Need React developers who build for scale? SSW brings an experienced React team and a 30+ year history of enterprise delivery for your next project."
+    "description": "Need React developers who build for scale? SSW brings an experienced React team and a 30+ year history of enterprise delivery for your next project.",
+    "canonical": "https://www.ssw.com.au/consulting/react",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/react.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "SSW React Consulting - Enterprise Software Development"
+      }
+    ]
   },
   "blocks": [
     {

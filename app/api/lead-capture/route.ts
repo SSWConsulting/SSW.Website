@@ -1,8 +1,13 @@
+import { validateTurnstile } from "@/services/server/cloudflare-turnstile";
 import { NextRequest } from "next/server";
 
 /**
  * Receives lead-capture answers from the V3LeadCapture block, records them in
  * JotForm, and triggers the CRM flow.
+ *
+ * The endpoint is public and spends the JotForm API key plus fires the CRM
+ * flow, so a valid Cloudflare Turnstile token is required first — otherwise it
+ * can be scripted to spam leads into both JotForm and the CRM.
  *
  * Two steps, because JotForm's webhook (which drives the Power Automate → CRM
  * flow) only fires on real form submissions — not on API writes, and the form's
@@ -11,7 +16,8 @@ import { NextRequest } from "next/server";
  *   2. POST the lead straight to a Power Automate HTTP-trigger flow that does the
  *      CRM work, bypassing the form webhook entirely.
  *
- * Body: { lead: Record<fieldKey, value> } with semantic keys (name, email, …).
+ * Body: { lead: Record<fieldKey, value>, turnstileToken: string } with semantic
+ * keys (name, email, …).
  */
 const JOTFORM_ID = "233468468973070";
 
@@ -37,9 +43,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { lead } = await request.json();
+    const { lead, turnstileToken } = await request.json();
     if (!lead || typeof lead !== "object") {
       return Response.json({ message: "Missing lead." }, { status: 400 });
+    }
+
+    if (!turnstileToken) {
+      return Response.json(
+        { message: "Missing Turnstile token." },
+        { status: 400 }
+      );
+    }
+
+    const turnstile = await validateTurnstile(turnstileToken);
+    if (!turnstile.success) {
+      return Response.json(
+        { message: "Turnstile verification failed." },
+        { status: 403 }
+      );
     }
 
     // 1. Record the lead in JotForm (lands in the table).
