@@ -15,6 +15,8 @@ jobs:
     uses: ./.github/workflows/template-build.yml
     with:
       tag: pr-${{ github.event.number }}
+      # Validate the build only - `/deploy` is what pushes a pr-<n> image to ACR.
+      push: false
     permissions:
       id-token: write
       contents: read
