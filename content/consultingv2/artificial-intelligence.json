@@ -20,8 +20,8 @@
         "redGlow": true
       },
       "brow": "AI CONSULTING",
-      "heading": "Build AI your business can actually rely on",
-      "description": "Most AI demos impress in the room and stall on the way to production. We build the ones that ship, grounded in your data, secured for your business, and measured on results you can point at.\n",
+      "heading": " Custom AI solutions, expertly implemented",
+      "description": "Our solutions go beyond basic automation to create real business value, turning AI into a genuine intellectual partner for your specific business challenges.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
@@ -38,7 +38,11 @@
           "colour": 1
         }
       ],
-      "mediaType": "aiConsultingSvg",
+      "mediaType": "image",
+      "image": {
+        "imageHeight": 1432,
+        "imageWidth": 2555
+      },
       "_template": "v3Hero"
     },
     {
@@ -87,23 +91,23 @@
         "backgroundColour": 7
       },
       "brow": "BASED ON OUR EXPERIENCE",
-      "heading": "Why most AI projects never leave the demo",
-      "description": "Getting a model to say something clever takes an afternoon. Putting it in front of customers, on your data, inside your compliance rules, is a different job. This is where teams stall.\n",
+      "heading": "Why teams trust us to get AI right",
+      "description": "AI can be overwhelming, but we make it simple. Our consultants analyze your systems and recommend practical AI solutions to improve efficiency, automate tasks, and extract insights from data.\n\nGet expert guidance to integrate AI where it matters most.\n",
       "steps": [
         {
           "brow": "01",
-          "heading": "The pilot never reaches production",
-          "description": "The prototype wins the room, then hits hosting, security and evaluation. With no plan for any of it, the demo stays a demo.\n"
+          "heading": "We build automation that fits your business",
+          "description": "We study how your business operates before we build anything. The automation we deliver is shaped around your systems and your problems, so it works from day one.\n"
         },
         {
           "brow": "02",
-          "heading": "It answers confidently and wrongly",
-          "description": "A model with no grounding in your data will happily invent an answer. One bad answer in front of a customer costs more than the project saved.\n"
+          "heading": "We implement with security and compliance from dya one",
+          "description": "AI is only as good as the guardrails around it. We put safeguards in place to protect your customer data, so your solution stays powerful and compliant.\n"
         },
         {
           "brow": "03",
-          "heading": "Nobody can prove it paid off",
-          "description": "Token spend climbs, value stays unmeasured, and the budget gets pulled before the useful part ever shipped.\n"
+          "heading": "We bring enterprise expertise, at any scale",
+          "description": "From operational efficiency to customer experience, our team has delivered AI solutions at enterprise level. We bring that same rigor to organizations of every size, with results you can measure.\n"
         }
       ],
       "_template": "v3FeatureSteps"
@@ -222,10 +226,10 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "BUILT BY SSW",
       "videoUrl": "https://youtu.be/CBes1SEvV54",
       "greyscaleThumbnail": true,
       "figure": "Video: YakShaver - AI to make the perfect PBI in 30 seconds",
+      "brow": "BUILT BY SSW",
       "heading": "We don't just talk about AI. We ship it.",
       "description": "YakShaver is our own AI agent. It watches a screen recording, works out what needs doing, and writes the work item. It is the same approach we bring to your projects: practical AI, aimed at a task people actually repeat.\n",
       "highlights": [
@@ -357,7 +361,7 @@
         },
         {
           "question": "How does SSW ensure quality and success of a software project?",
-          "answer": "Quality and success are the heart of our processes; we use:\n\n* Clean Architecture: Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n",
+          "answer": "Quality and success are the heart of our processes; we use:\n\nClean Architecture: Designing for scalability, testability, and maintainability.\n\nScrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n\nDevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n\nBest Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n\nExpert Teams: Employing rigorously hired and continuously developed technical experts.\n\nStrong Communication: Keeping clients informed and involved throughout the project lifecycle.\n",
           "link": "https://www.ssw.com.au/rules/rules-to-successful-projects"
         }
       ],
