@@ -1,15 +1,14 @@
 import { PhishingBanner } from "@/components/phishing-banner/phishing-banner";
+import { HomeThemeBoundary } from "@/components/layout/homeTheme";
 import { MegaMenuWrapper } from "@/components/server/MegaMenuWrapper";
 import { AppInsightsProvider } from "@/context/app-insight-client";
 import { EventInfoStatic } from "@/services/server/events-types";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleTagManagerLazy } from "./components/google-tag-manager-lazy";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
-import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
-import { Metadata, Viewport } from "next";
 import dynamic from "next/dynamic";
 import { inter } from "@/lib/fonts";
 import "styles.css";
@@ -19,12 +18,10 @@ import { MenuWrapper } from "./components/MenuWrapper";
 import PageLayout from "./components/page-layout";
 import { WebVitals } from "./components/web-vitals";
 import { LiveStream } from "./live-steam-banner/live-stream";
-import { DEFAULT } from "./meta-data/default";
 import { QueryProvider } from "./providers/query-provider";
 import { getMegamenu, MegaMenuProps } from "./utils/get-mega-menu";
 import { getPhishingBanner } from "./utils/get-phishing-banner";
 
-dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
@@ -33,18 +30,6 @@ dayjs.extend(isBetween);
 const ChatBaseBot = dynamic(
   () => import("@/components/zendeskButton/chatBaseBot")
 );
-
-export const metadata: Metadata = {
-  ...DEFAULT,
-};
-
-export const viewport: Viewport = {
-  themeColor: "#cc4141",
-  width: "device-width",
-  initialScale: 1,
-};
-
-export const revalidate = 1800; // 30 minutes
 
 export default async function RootLayout({
   children,
@@ -63,36 +48,39 @@ export default async function RootLayout({
       ? nextUG?.data?.eventsCalendarConnection?.edges[0]?.node
       : null;
   return (
-    <html lang="en" className={inter.className}>
+    // data-scroll-behavior: opts back into Next suppressing the `scroll-smooth`
+    // in styles.css during route changes, so navigations jump rather than animate.
+    <html lang="en" className={inter.className} data-scroll-behavior="smooth">
       <body>
         <QueryProvider>
           {/* <Theme> */}
           {/* Ensures next/font CSS variable is accessible for all components */}
           <LandingPageCapture />
-          <PageLayout
-            phishingBanner={
-              bannerData?.data?.phishingBanner && (
-                <PhishingBanner
-                  enabled={bannerData.data.phishingBanner.enabled}
-                  message={bannerData.data.phishingBanner.message}
-                />
-              )
-            }
-            megaMenu={MegaMenu({
-              menuData: menuData,
-              liveStreamData: liveStreamData,
-            })}
-          >
-            <AppInsightsProvider>
-              <WebVitals />
-              {children}
-            </AppInsightsProvider>
-            {/* </Theme> */}
-          </PageLayout>
-
-          <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
-          <ChatBaseBot />
+          <HomeThemeBoundary>
+            <PageLayout
+              phishingBanner={
+                bannerData?.data?.phishingBanner && (
+                  <PhishingBanner
+                    enabled={bannerData.data.phishingBanner.enabled}
+                    message={bannerData.data.phishingBanner.message}
+                  />
+                )
+              }
+              megaMenu={MegaMenu({
+                menuData: menuData,
+                liveStreamData: liveStreamData,
+              })}
+            >
+              <AppInsightsProvider>
+                <WebVitals />
+                {children}
+              </AppInsightsProvider>
+              {/* </Theme> */}
+            </PageLayout>
+          </HomeThemeBoundary>
         </QueryProvider>
+        <GoogleTagManagerLazy gtmId={process.env.NEXT_PUBLIC_GOOGLE_GTM_ID} />
+        <ChatBaseBot />
       </body>
     </html>
   );

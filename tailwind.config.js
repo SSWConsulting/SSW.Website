@@ -3,53 +3,7 @@ import typographyPlugin from "@tailwindcss/typography";
 import colors from "tailwindcss/colors";
 import plugin from "tailwindcss/plugin";
 
-export const platform = [
-  {
-    name: "angular",
-    text: "Angular",
-    color: "#DD0031",
-  },
-  {
-    name: "dotnet",
-    text: ".NET",
-    color: "#5C2D91",
-  },
-  {
-    name: "visualstudio",
-    text: "Visual Studio",
-    color: "#9455CE",
-  },
-  {
-    name: "blazor",
-    text: "Blazor",
-    color: "#5C2D91",
-  },
-  {
-    name: "xamarin",
-    text: "Xamarin",
-    color: "#3498DB",
-  },
-  {
-    name: "azure",
-    text: "Azure",
-    color: "#0088D5",
-  },
-  {
-    name: "sharepoint",
-    text: "SharePoint",
-    color: "#038185",
-  },
-  {
-    name: "powerbi",
-    text: "PowerBI",
-    color: "#F2C811",
-  },
-  {
-    name: "tina",
-    text: "TinaCMS",
-    color: "#EC4815",
-  },
-];
+import { platform } from "./lib/platform.js";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -58,7 +12,7 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "node_modules/ssw.megamenu/**/*.js",
+    "node_modules/ssw.megamenu/dist/**/*.{js,cjs}",
   ],
   safelist: [...platform.map((p) => `bg-platform-${p.name}`)],
   // This needs to be set to `class` or it will use OS settings https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
@@ -134,6 +88,7 @@ export default {
       },
       zIndex: {
         1: 1,
+        2: 2,
         25: "25",
         videoThumbnail: 11,
         1000: "1000",
@@ -386,6 +341,7 @@ export default {
         destructive: "var(--destructive)",
         "stroke-strong": "var(--stroke-strong)",
         "stroke-weak": "var(--stroke-weak)",
+        hairline: "var(--hairline)",
         azure: "#007fff",
         ssw: {
           red: {
@@ -484,7 +440,7 @@ export default {
         },
       }),
       backgroundImage: {
-        "dot-grid": "radial-gradient(circle, #212121 1px, transparent 1px)",
+        "dot-grid": "radial-gradient(circle, var(--dot-color) 1px, transparent 1px)",
         "red-glow-tl":
           "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
         "red-glow-r":

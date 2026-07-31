@@ -23,6 +23,11 @@ on:
         required: false
         default: ""
         description: "PR number for the slot URL; defaults to the event's PR number"
+      push:
+        type: boolean
+        required: false
+        default: true
+        description: "Push the image to ACR. Set false to validate the build only - the BuildKit cache is still exported either way."
     secrets:
       AZURE_CLIENT_ID:
         required: true
@@ -121,7 +126,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: .
-          push: true
+          push: ${{ inputs.push }}
           build-args: |
             NODE_VERSION=${{ steps.node-version.outputs.version }}
             NODE_OPTIONS=--max_old_space_size=8192

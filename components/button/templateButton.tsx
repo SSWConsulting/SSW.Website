@@ -10,7 +10,7 @@ import Popup from "../popup/popup";
 import { SESSION_STORAGE_KEYS } from "../util/constants";
 import { buttonColorVariants } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import RippleButton, { ButtonTinaFields } from "./rippleButtonV2";
-import { PROJECT_FORM_MODAL } from "./templateButton.schema";
+import { PROJECT_FORM_MODAL } from "./templateButton.constants";
 
 type TemplateButtonOptions = {
   buttonText?: string;

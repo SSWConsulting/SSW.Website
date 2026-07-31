@@ -2,7 +2,6 @@ import { describe, expect, it } from "@jest/globals";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
-import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import {
@@ -10,7 +9,6 @@ import {
   formatEventLongDate,
   formatRelativeEventDate,
 } from "../../helpers/dates";
-dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);

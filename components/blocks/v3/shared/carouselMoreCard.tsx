@@ -27,7 +27,7 @@ export function CarouselMoreCard({
       )}
     >
       <ArrowCircle className="size-12" iconClassName="size-5" />
-      <span className="text-lg font-semibold text-white">{label}</span>
+      <span className="text-lg font-semibold text-foreground">{label}</span>
     </Link>
   );
 }

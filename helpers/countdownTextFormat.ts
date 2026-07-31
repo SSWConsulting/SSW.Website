@@ -1,6 +1,9 @@
 export default function countdownTextFormat(countdownMins: number) {
-  const hours = Math.floor(countdownMins / 60);
-  const minutes = countdownMins % 60;
+  // Guard against negative input (a stream that has already started or
+  // finished); otherwise the floor/modulo maths below yields nonsensical text.
+  const remaining = Math.max(0, countdownMins);
+  const hours = Math.floor(remaining / 60);
+  const minutes = remaining % 60;
 
   let countdownText = "";
 

@@ -12,7 +12,7 @@ export function SectionHeader({ data }) {
         <h2
           data-tina-field={tinaField(data, "heading")}
           className={cn(
-            "m-0 w-full p-0 text-4xl leading-tight text-white md:max-w-[560px] md:flex-1 lg:text-5xl"
+            "m-0 w-full p-0 text-4xl leading-tight text-foreground md:max-w-[560px] md:flex-1 lg:text-5xl"
           )}
         >
           <AlternatingText text={data.heading} />
@@ -26,7 +26,9 @@ export function SectionHeader({ data }) {
         {data?.subtitle && (
           <p
             data-tina-field={tinaField(data, "subtitle")}
-            className={cn("max-w-[560px] text-base font-light text-gray-400")}
+            className={cn(
+              "max-w-[560px] text-base font-light text-muted-foreground"
+            )}
           >
             {data.subtitle}
           </p>

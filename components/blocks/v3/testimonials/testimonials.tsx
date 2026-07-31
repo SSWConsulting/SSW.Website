@@ -64,34 +64,38 @@ function ClipTextReveal({ text }: { text: string }) {
   let wordIndex = -1;
 
   return (
-    <span aria-label={text.replace(/\*\*/g, "")}>
-      {tokens.map((tok, ti) => {
-        if (tok.space) return <span key={`sp-${ti}`}> </span>;
-        const i = ++wordIndex;
-        return (
-          <span
-            key={`w-${ti}`}
-            ref={(el) => {
-              wordRefs.current[i] = el;
-            }}
-            aria-hidden
-            className="-mb-descender inline-block overflow-hidden pb-descender align-bottom"
-          >
-            <motion.span
-              className={`inline-block ${tok.red ? "text-sswRed" : ""}`}
-              initial={{ y: "110%" }}
-              animate={lineIndices ? { y: 0 } : { y: "110%" }}
-              transition={{
-                duration: 1,
-                delay: lineIndices ? lineIndices[i] * 0.12 : 0,
-                ease: [0.22, 1, 0.36, 1],
+    <span>
+      {/* Readable copy for assistive tech; the animated words below are
+          split per-word and hidden, so this carries the full quote. */}
+      <span className="sr-only">{text.replace(/\*\*/g, "")}</span>
+      <span aria-hidden="true">
+        {tokens.map((tok, ti) => {
+          if (tok.space) return <span key={`sp-${ti}`}> </span>;
+          const i = ++wordIndex;
+          return (
+            <span
+              key={`w-${ti}`}
+              ref={(el) => {
+                wordRefs.current[i] = el;
               }}
+              className="-mb-descender inline-block overflow-hidden pb-descender align-bottom"
             >
-              {tok.word}
-            </motion.span>
-          </span>
-        );
-      })}
+              <motion.span
+                className={`inline-block ${tok.red ? "text-sswRed" : ""}`}
+                initial={{ y: "110%" }}
+                animate={lineIndices ? { y: 0 } : { y: "110%" }}
+                transition={{
+                  duration: 1,
+                  delay: lineIndices ? lineIndices[i] * 0.12 : 0,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                {tok.word}
+              </motion.span>
+            </span>
+          );
+        })}
+      </span>
     </span>
   );
 }
@@ -138,7 +142,7 @@ export function V3Testimonials({ data }) {
                     i === active ? tinaField(t, "quote") : undefined
                   }
                   className={cn(
-                    "col-start-1 row-start-1 text-2xl text-white transition-opacity duration-300 md:text-4xl",
+                    "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 md:text-4xl",
                     i === active
                       ? "opacity-100"
                       : "pointer-events-none opacity-0"
@@ -167,7 +171,7 @@ export function V3Testimonials({ data }) {
                   delay: 0.2,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group mt-6 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-white transition hover:text-sswRed"
+                className="group mt-6 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
               >
                 See Case Study
                 <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
@@ -210,7 +214,7 @@ export function V3Testimonials({ data }) {
               {current?.authorName && (
                 <span
                   data-tina-field={tinaField(current, "authorName")}
-                  className="font-semibold text-white"
+                  className="font-semibold text-foreground"
                 >
                   {current.authorName}
                 </span>
@@ -218,7 +222,7 @@ export function V3Testimonials({ data }) {
               {current?.authorTitle && (
                 <span
                   data-tina-field={tinaField(current, "authorTitle")}
-                  className="text-sm text-gray-400"
+                  className="text-sm text-muted-foreground"
                 >
                   {current.authorTitle}
                 </span>
@@ -227,13 +231,13 @@ export function V3Testimonials({ data }) {
 
             {current?.companyLogo && (
               <>
-                <span className="h-10 w-px bg-gray-600" />
+                <span className="h-10 w-px bg-hairline" />
                 <Image
                   src={current.companyLogo}
                   alt={current?.companyLogoAlt ?? "Company logo"}
                   width={160}
                   height={160}
-                  className="h-12 w-auto object-contain brightness-0 invert"
+                  className="h-12 w-auto object-contain brightness-0 dark:invert"
                   data-tina-field={tinaField(current, "companyLogo")}
                 />
               </>
@@ -247,7 +251,7 @@ export function V3Testimonials({ data }) {
                 type="button"
                 aria-label="Previous testimonial"
                 onClick={goPrev}
-                className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
+                className="flex size-12 items-center justify-center rounded-full bg-foreground text-background transition hover:opacity-90"
               >
                 <BiLeftArrowAlt className="size-6" />
               </button>
@@ -255,7 +259,7 @@ export function V3Testimonials({ data }) {
                 type="button"
                 aria-label="Next testimonial"
                 onClick={goNext}
-                className="flex size-12 items-center justify-center rounded-full bg-white text-black transition hover:bg-gray-200"
+                className="flex size-12 items-center justify-center rounded-full bg-foreground text-background transition hover:opacity-90"
               >
                 <BiRightArrowAlt className="size-6" />
               </button>

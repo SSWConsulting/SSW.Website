@@ -45,7 +45,7 @@
       "subtitle": "Tell us about your platform. We'll show you what's possible.",
       "mobilePlusMore": "/consulting",
       "cardBackgroundColour": 8,
-      "showBorder": false,
+      "showBorder": true,
       "cards": [
         {
           "title": "Artificial Intelligence",
@@ -82,7 +82,7 @@
       "seeMoreButton": [
         {
           "buttonText": "View All Services",
-          "buttonLink": "/services",
+          "buttonLink": "/consulting",
           "icon": "BiChevronRight"
         }
       ],
@@ -409,7 +409,6 @@
         "buttons": [
           {
             "buttonText": "Register Now",
-            "buttonLink": "/events/2026/storage-wars",
             "colour": 0
           }
         ]

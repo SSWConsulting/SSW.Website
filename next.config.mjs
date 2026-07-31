@@ -1,15 +1,19 @@
 import bundleAnalyser from "@next/bundle-analyzer";
-import createNextPluginPreval from "next-plugin-preval/config.js";
-const withNextPluginPreval = createNextPluginPreval();
+
+// Turbopack resolves resolveAlias values against the project root and prepends
+// "./" to whatever it is given, so this has to stay a project-relative path — an
+// absolute one becomes "./Users/..." and fails to resolve, 500ing every page
+// that renders <TinaMarkdown>.
+const TINACMS_MDX_SHIM = "./lib/tinacms-mdx-shim.js";
 
 /** @type {import('next').NextConfig} */
 const config = {
   poweredByHeader: false,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   images: {
-    deviceSizes: [384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    deviceSizes: [384, 640, 750, 828, 1080, 1200, 1440, 1920, 2048, 3840],
+    // Next 16 will only serve qualities listed here. 75 is the default; 100 is
+    // used by the hero and event banners.
+    qualities: [75, 100],
     minimumCacheTTL: 60,
 
     remotePatterns: [
@@ -51,15 +55,6 @@ const config = {
     ],
   },
   output: "standalone", // required for Docker support
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
-    });
-
-    return config;
-  },
   async rewrites() {
     return [
       {
@@ -75,11 +70,39 @@ const config = {
         destination: "/admin/index.html",
         permanent: true,
       },
+      {
+        source: "/consulting/web-application-development",
+        destination: "/consulting/web-applications",
+        permanent: true,
+      },
+      {
+        source: "/eagle-eye",
+        destination: "https://ssweagleeye.com",
+        permanent: true,
+      },
+      {
+        source: "/eagleeye",
+        destination: "https://ssweagleeye.com",
+        permanent: true,
+      },
+      {
+        source: "/yakshaver",
+        destination: "https://yakshaver.ai",
+        permanent: true,
+      },
     ];
   },
   serverExternalPackages: ["applicationinsights"],
   turbopack: {
     resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
+    // `tinacms/dist/rich-text` imports `sanitizeUrl` from `@tinacms/mdx`, whose
+    // single entry point bundles the entire markdown parser (~1.97 MB) to supply
+    // a 22-line function. Swap in a shim that keeps sanitizeUrl and drops the
+    // parser. Remove once tinacms#7233 lands a `@tinacms/mdx/sanitize-url`
+    // subpath.
+    resolveAlias: {
+      "@tinacms/mdx": TINACMS_MDX_SHIM,
+    },
   },
   experimental: {
     optimizePackageImports: ["tinacms", "@fortawesome/fontawesome-svg-core"],
@@ -95,4 +118,4 @@ const withBundleAnalyzer = bundleAnalyser({
   enabled: process.env.BUNDLE_ANALYSE === "true",
 });
 
-export default withNextPluginPreval(withBundleAnalyzer(config));
+export default withBundleAnalyzer(config);

@@ -1,14 +1,14 @@
 import classNames from "classnames";
 import type { Template } from "tinacms";
-import platformColors from "../util/preval/get-tailwind-platform-colors.preval";
+import { platform } from "../../lib/platform";
 
 export const ColorPalette = () => {
   return (
     <div className="flex min-h-24 w-full flex-wrap">
-      {platformColors?.map((block) => (
+      {platform.map((block) => (
         <div
           className={classNames(
-            block.className,
+            `bg-platform-${block.name}`,
             "flex flex-grow flex-col items-center justify-center text-white"
           )}
           key={block.name}

@@ -4,7 +4,6 @@ import { MenuWrapper } from "app/components/MenuWrapper";
 import dayjs from "dayjs";
 import advancedFormat from "dayjs/plugin/advancedFormat";
 import isBetween from "dayjs/plugin/isBetween";
-import relativeTime from "dayjs/plugin/relativeTime";
 import timezone from "dayjs/plugin/timezone";
 import utc from "dayjs/plugin/utc";
 import dynamic from "next/dynamic";
@@ -15,7 +14,6 @@ import {
   formatDates,
 } from "@/services/server/events-types";
 import { PropsWithChildren, useEffect, useState } from "react";
-dayjs.extend(relativeTime);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(advancedFormat);
@@ -52,6 +50,12 @@ interface LiveStreamProps extends PropsWithChildren {
 export function LiveStream({ event, children }: LiveStreamProps) {
   const [countdownMins, setCountdownMins] = useState<number>();
   const [liveStreamDelayMinutes, setLiveStreamDelayMinutes] = useState(0);
+  // Gate all time-dependent output behind mount so the server render and the
+  // first client render are identical. The root layout is cached (revalidate),
+  // so a render-time clock check would otherwise disagree between the cached
+  // server HTML and the live client, causing a hydration mismatch (React #418).
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const eventDynamic: EventInfo = {
     ...event,
@@ -106,37 +110,41 @@ export function LiveStream({ event, children }: LiveStreamProps) {
 
   return (
     <>
-      {showBanner ? (
-        <LiveStreamBanner
-          countdownMins={countdownMins}
-          liveStreamData={eventDynamic}
-          isLive={!!isLive}
-        />
-      ) : (
-        <LiveStreamClient param={"liveBanner"}>
-          {" "}
-          <LiveStreamBanner
-            countdownMins={countdownMins}
-            liveStreamData={eventDynamic}
-            isLive={!!isLive}
-          />
-        </LiveStreamClient>
-      )}
+      {mounted && (
+        <>
+          {showBanner ? (
+            <LiveStreamBanner
+              countdownMins={countdownMins}
+              liveStreamData={eventDynamic}
+              isLive={!!isLive}
+            />
+          ) : (
+            <LiveStreamClient param={"liveBanner"}>
+              {" "}
+              <LiveStreamBanner
+                countdownMins={countdownMins}
+                liveStreamData={eventDynamic}
+                isLive={!!isLive}
+              />
+            </LiveStreamClient>
+          )}
 
-      {isLive ? (
-        <LiveStreamWidget
-          {...{ eventDynamic, liveStreamDelayMinutes }}
-          event={eventDynamic}
-          isLive={!!isLive}
-        />
-      ) : (
-        <LiveStreamClient param={"liveStream"}>
-          <LiveStreamWidget
-            {...{ eventDynamic, liveStreamDelayMinutes }}
-            event={eventDynamic}
-            isLive={!!isLive}
-          />
-        </LiveStreamClient>
+          {isLive ? (
+            <LiveStreamWidget
+              {...{ eventDynamic, liveStreamDelayMinutes }}
+              event={eventDynamic}
+              isLive={!!isLive}
+            />
+          ) : (
+            <LiveStreamClient param={"liveStream"}>
+              <LiveStreamWidget
+                {...{ eventDynamic, liveStreamDelayMinutes }}
+                event={eventDynamic}
+                isLive={!!isLive}
+              />
+            </LiveStreamClient>
+          )}
+        </>
       )}
 
       <MenuWrapper>{children}</MenuWrapper>

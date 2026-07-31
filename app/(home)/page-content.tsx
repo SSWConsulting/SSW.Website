@@ -1,4 +1,5 @@
 import { Blocks } from "@/components/blocks-renderer";
+import { HomeThemeShell } from "@/components/layout/homeTheme";
 import { useEffect, useMemo } from "react";
 import { WebSite, WithContext } from "schema-dts";
 
@@ -29,5 +30,9 @@ export default function PageContent({ props }) {
     };
   }, [structuredData]);
 
-  return <Blocks prefix="Pagesv2Blocks" blocks={data.pagesv2.blocks} />;
+  return (
+    <HomeThemeShell>
+      <Blocks prefix="Pagesv2Blocks" blocks={data.pagesv2.blocks} />
+    </HomeThemeShell>
+  );
 }

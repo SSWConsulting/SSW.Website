@@ -100,6 +100,16 @@ export const megaMenuSchema: Collection = {
                       uploadDir: () => "/megamenu-icons",
                     },
                     {
+                      type: "image",
+                      name: "iconImgDarkMode",
+                      label: "Dark Mode Icon (optional)",
+                      description:
+                        "Shown instead of Icon on the dark homepage. Leave blank to use the default Icon in both themes.",
+                      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                      // @ts-ignore
+                      uploadDir: () => "/megamenu-icons",
+                    },
+                    {
                       type: "string",
                       name: "documentationLink",
                       label: "Link to Documentation",
