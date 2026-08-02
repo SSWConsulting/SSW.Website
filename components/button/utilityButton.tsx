@@ -5,6 +5,7 @@ import { JSX } from "react";
 import { BsArrowLeftCircle, BsArrowRightCircle } from "react-icons/bs";
 import type { Template } from "tinacms";
 import { CustomLink } from "../customLink";
+import AosLoader from "../util/aosLoader";
 import Button from "./rippleButton";
 
 const sizes = {
@@ -64,6 +65,7 @@ export const UtilityButton = ({
       onClick={() => !disabled && onClick()}
       data-aos={animated ? "fade-up" : undefined}
     >
+      {animated && <AosLoader />}
       {buttonText}
       {btnIcon && iconMapper(btnIcon)}
     </Button>
