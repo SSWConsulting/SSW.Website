@@ -31,17 +31,18 @@
           "colour": 0
         },
         {
-          "buttonText": "+61 2 9953 3000",
-          "buttonLink": "tel:+61299533000",
-          "icon": "BiPhone",
-          "iconFirst": true,
+          "buttonText": "AI Discovery Workshop",
+          "buttonLink": "/consulting/ai-discovery-workshop",
+          "icon": "BiChevronRight",
+          "iconFirst": false,
           "colour": 1
         }
       ],
       "mediaType": "image",
       "image": {
-        "imageHeight": 1432,
-        "imageWidth": 2555
+        "imageSource": "/images/ssw-web/hero/Jean.JPG",
+        "imageHeight": 1926,
+        "imageWidth": 2889
       },
       "_template": "v3Hero"
     },
@@ -96,17 +97,17 @@
       "steps": [
         {
           "brow": "01",
-          "heading": "We build automation that fits your business",
+          "heading": "Automation that fits your business",
           "description": "We study how your business operates before we build anything. The automation we deliver is shaped around your systems and your problems, so it works from day one.\n"
         },
         {
           "brow": "02",
-          "heading": "We implement with security and compliance from dya one",
-          "description": "AI is only as good as the guardrails around it. We put safeguards in place to protect your customer data, so your solution stays powerful and compliant.\n"
+          "heading": "Security and compliance from day one",
+          "description": "AI is only as good as the guardrails around it. We put safeguards in place to protect your customer data, so your solution stays both powerful and compliant.\n"
         },
         {
           "brow": "03",
-          "heading": "We bring enterprise expertise, at any scale",
+          "heading": "Enterprise expertise, at any scale",
           "description": "From operational efficiency to customer experience, our team has delivered AI solutions at enterprise level. We bring that same rigor to organizations of every size, with results you can measure.\n"
         }
       ],
@@ -118,7 +119,7 @@
         "gridOverlay": true
       },
       "videoUrl": "https://youtu.be/-q9lLqtkC00",
-      "greyscaleThumbnail": true,
+      "greyscaleThumbnail": false,
       "figure": "Video: The Future of Business with AI - Automation, Intelligence and Customer Relations",
       "heading": "Why choose SSW?",
       "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
@@ -150,9 +151,9 @@
           "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
         },
         {
-          "heading": "AI Discovery Workshop",
-          "description": "A structured session to find where AI pays off in your business, and where it does not.\n",
-          "link": "/consulting/ai-discovery-workshop"
+          "heading": "Spec Review",
+          "description": "A clear, costed plan with scope, timing and the fastest path to ROI.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
         },
         {
           "heading": "Build & Deliver",
@@ -212,6 +213,7 @@
         {
           "quote": "You've got soccer players and then you have the professional soccer players. **They are the professional soccer players.**",
           "caseStudyUrl": "/company/clients/fpe",
+          "caseStudyLabel": "See case study video",
           "authorName": "Thomas Bidou",
           "authorTitle": "French Payroll Expert",
           "authorImage": "/images/testimonialAvatars/thomas-bideau.png",
@@ -227,7 +229,7 @@
         "backgroundColour": 7
       },
       "videoUrl": "https://youtu.be/CBes1SEvV54",
-      "greyscaleThumbnail": true,
+      "greyscaleThumbnail": false,
       "figure": "Video: YakShaver - AI to make the perfect PBI in 30 seconds",
       "brow": "BUILT BY SSW",
       "heading": "We don't just talk about AI. We ship it.",
