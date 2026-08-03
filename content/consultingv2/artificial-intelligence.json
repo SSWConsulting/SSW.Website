@@ -17,6 +17,16 @@
       "background": {
         "backgroundColour": 7,
         "gridOverlay": true,
+        "redGlow": false
+      },
+      "finalBreadcrumb": "Expert AI Consultants",
+      "_template": "breadcrumbs"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "bleed": true,
+        "gridOverlay": true,
         "redGlow": true
       },
       "brow": "AI CONSULTING",
@@ -33,7 +43,6 @@
         {
           "buttonText": "AI Discovery Workshop",
           "buttonLink": "/consulting/ai-discovery-workshop",
-          "icon": "BiChevronRight",
           "iconFirst": false,
           "colour": 1
         }
@@ -116,6 +125,7 @@
     {
       "background": {
         "backgroundColour": 7,
+        "bleed": true,
         "gridOverlay": true,
         "redGlow": true
       },
@@ -153,7 +163,7 @@
         },
         {
           "title": "Results over rhetoric",
-          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?\n"
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it work?\n"
         }
       ],
       "_template": "v3VideoHighlights"
@@ -233,7 +243,7 @@
       "figure": "Video: YakShaver - AI to make the perfect PBI in 30 seconds",
       "brow": "BUILT BY SSW",
       "heading": "We don't just talk about AI. We ship it.",
-      "description": "YakShaver is our own AI agent. It watches a screen recording, works out what needs doing, and writes the work item. It is the same approach we bring to your projects: practical AI, aimed at a task people actually repeat.\n",
+      "description": "YakShaver watches a screen recording, works out what needs doing, and writes the work item before you've finished talking. No forms, no triage, no Monday morning spent tidying the backlog. It's a great example of the sort of intelligence and automation we can bring to your company\n",
       "highlights": [
         {
           "title": "Real work, not a chatbot",
@@ -243,9 +253,9 @@
         },
         {
           "title": "Try it yourself",
-          "desc2": "It's free in the Chrome Web Store, so you can judge the output before you judge us.\n",
-          "link": "https://chromewebstore.google.com/detail/yakshaver/glcoihkbmomiblcbpnlkafcipcfnikjc",
-          "linkText": "Get the extension"
+          "desc2": "Put YakShaver to the test with your own screen recording. It's free to try at yakshaver.ai\n",
+          "link": "https://www.yakshaver.ai",
+          "linkText": "Try it now"
         }
       ],
       "_template": "v3VideoHighlights"
@@ -264,9 +274,9 @@
           "link": "/consulting/ai-discovery-workshop"
         },
         {
-          "title": "Chat Bots",
-          "description": "Assistants grounded in your own documents, not the open internet.",
-          "link": "/consulting/chat-bots"
+          "title": "Vibe Coding",
+          "description": "Ship faster by putting AI to work inside your dev team.",
+          "link": "/consulting/vibe-coding"
         },
         {
           "title": "Local LLMs",
@@ -307,7 +317,7 @@
           "label": "DeepSeek"
         },
         {
-          "label": "LLama"
+          "label": "Spark"
         },
         {
           "label": "Mistral"
@@ -316,7 +326,7 @@
           "label": "Gemma"
         },
         {
-          "label": "Kimi"
+          "label": "Kimi K"
         }
       ],
       "_template": "v3Pills"
