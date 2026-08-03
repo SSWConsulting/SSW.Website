@@ -116,6 +116,27 @@
     {
       "background": {
         "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "testimonials": [
+        {
+          "quote": "You've got soccer players and then you have the professional soccer players. **They are the professional soccer players.**",
+          "caseStudyUrl": "/company/clients/fpe",
+          "caseStudyLabel": "See case study video",
+          "authorName": "Thomas Bidou",
+          "authorTitle": "French Payroll Expert",
+          "authorImage": "/images/testimonialAvatars/thomas-bideau.png",
+          "authorImageAlt": "Thomas Bidou",
+          "companyLogo": "/images/clientLogos/FPE.png",
+          "companyLogoAlt": "French Payroll Expert"
+        }
+      ],
+      "_template": "v3Testimonials"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
         "gridOverlay": true
       },
       "videoUrl": "https://youtu.be/-q9lLqtkC00",
@@ -205,27 +226,6 @@
     },
     {
       "background": {
-        "backgroundColour": 7,
-        "gridOverlay": true,
-        "redGlow": true
-      },
-      "testimonials": [
-        {
-          "quote": "You've got soccer players and then you have the professional soccer players. **They are the professional soccer players.**",
-          "caseStudyUrl": "/company/clients/fpe",
-          "caseStudyLabel": "See case study video",
-          "authorName": "Thomas Bidou",
-          "authorTitle": "French Payroll Expert",
-          "authorImage": "/images/testimonialAvatars/thomas-bideau.png",
-          "authorImageAlt": "Thomas Bidou",
-          "companyLogo": "/images/clientLogos/FPE.png",
-          "companyLogoAlt": "French Payroll Expert"
-        }
-      ],
-      "_template": "v3Testimonials"
-    },
-    {
-      "background": {
         "backgroundColour": 7
       },
       "videoUrl": "https://youtu.be/CBes1SEvV54",
@@ -280,6 +280,46 @@
         }
       ],
       "_template": "v3StackCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "",
+      "heading": "AI Models We Work With",
+      "pills": [
+        {
+          "label": "Claude"
+        },
+        {
+          "label": "ChatGPT"
+        },
+        {
+          "label": "Gemini"
+        },
+        {
+          "label": "Microsoft Copilot"
+        },
+        {
+          "label": "Grok"
+        },
+        {
+          "label": "DeepSeek"
+        },
+        {
+          "label": "LLama"
+        },
+        {
+          "label": "Mistral"
+        },
+        {
+          "label": "Gemma"
+        },
+        {
+          "label": "Kimi"
+        }
+      ],
+      "_template": "v3Pills"
     },
     {
       "isStacked": false,
