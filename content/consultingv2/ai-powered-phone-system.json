@@ -8,300 +8,255 @@
   "blocks": [
     {
       "background": {
-        "backgroundColour": 3
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": false
       },
       "finalBreadcrumb": "AI-Powered Phone System",
       "_template": "breadcrumbs"
     },
     {
-      "topLabel": {
-        "labelText": ""
+      "background": {
+        "backgroundColour": 7,
+        "bleed": true,
+        "gridOverlay": true,
+        "redGlow": true
       },
-      "heading": "Want to turn your phone system into a 24/7 AI assistant?",
-      "isH1": true,
-      "description": "Turn your phone system into an Intelligent 24/7 conversational assistant that automates inbound and outbound calls, improves customer experience, reduce wait times\n\nAt SSW, our AI phone system saves us a huge amount of time, freeing our team for higher-value work.\n\nCall us to try it now.\n",
-      "featureColumns": {
-        "twoColumns": true
-      },
+      "brow": "AI VOICE",
+      "heading": "Turn your phone system into a **24/7 AI assistant**",
+      "description": "An intelligent conversational assistant that handles inbound and outbound calls, cuts wait times, and hands over to a human the moment it should. Our own phone system runs on it, which is the most honest reference we can offer. Call us and try it.\n",
       "buttons": [
         {
-          "buttonText": "Call +61 2 9953 3000",
-          "buttonLink": "<a href=\"tel:+61212345678\">Call us</a>",
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 0
+        },
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "buttonLink": "#lead-capture-heading",
+          "colour": 1
+        }
+      ],
+      "mediaType": "image",
+      "image": {
+        "altText": "SSW team working on an AI phone system",
+        "imageSource": "/images/ssw-web/hero/hero-2-ssw.png",
+        "imageWidth": 1024,
+        "imageHeight": 768
+      },
+      "_template": "v3Hero"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane and Newcastle by",
+      "logos": [
+        { "logo": "/images/ssw-web/logos/toll_logo.png", "altText": "Toll" },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        { "logo": "/images/ssw-web/logos/cisco_logo.png", "altText": "Cisco" },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
+        }
+      ],
+      "_template": "v3LogoCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "WHAT IT CHANGES",
+      "heading": "Automate the calls, keep the human touch",
+      "description": "The goal isn't to keep customers away from your team. It's to make sure the calls that reach your team are the ones worth their time.\n",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "Natural conversations, clean handoffs",
+          "description": "The AI handles routine calls conversationally and passes to your team the moment the conversation needs a person.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Lower call load, lower cost",
+          "description": "Answer, route and resolve automatically. Wait times drop and your team gets its day back.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "Wired into your systems",
+          "description": "Connected to your CRM, booking system and internal tools, so every call becomes structured, actionable data instead of a note someone forgot to write.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true
+      },
+      "videoUrl": "https://www.youtube.com/watch?v=-q9lLqtkC00",
+      "heading": "Why choose SSW?",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
+      "highlights": [
+        {
+          "title": "We run it ourselves",
+          "desc2": "SSW's own phone system is AI-powered. It saves us a significant amount of time and frees the team for higher-value work.\n"
+        },
+        {
+          "title": "Results over rhetoric",
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it work?\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-ai/",
+          "linkText": "Rules to Better AI"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "OUR PROCESS",
+      "heading": "What to expect working with SSW",
+      "steps": [
+        {
+          "heading": "Initial Call",
+          "description": "A short call with a senior engineer to talk through your project.\n",
+          "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
+        },
+        {
+          "heading": "Spec Review",
+          "description": "A clear, costed plan with scope, timing and the fastest path to ROI.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
+        },
+        {
+          "heading": "Build & Deliver",
+          "description": "SSW can either handle the project from end-to-end or join your existing team, build your product, and ship your solution.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-scrum"
+        },
+        {
+          "heading": "Service Plan",
+          "description": "We can stay on post-launch to ensure a successful project handover.\n",
+          "link": "https://www.ssw.com.au/consulting/support-plans"
+        }
+      ],
+      "_template": "v3Process"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Tell us about **your** phone system",
+      "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
+      "_template": "v3LeadCapture"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Related Services",
+      "heading": "What we usually connect it to",
+      "subtitle": "A phone assistant is only as good as the systems behind it.",
+      "cards": [
+        {
+          "title": "Power Platform",
+          "description": "Build apps, automate workflows and analyse data, without heavy coding.",
+          "link": "/consulting/power-platform"
+        },
+        {
+          "title": "Chatbots",
+          "description": "The same assistant on your website, trained on your own content.",
+          "link": "/consulting/chat-bots"
+        },
+        {
+          "title": "Service Desk",
+          "description": "Centralised support that resolves issues fast and keeps operations running.",
+          "link": "/consulting/service-desk"
+        },
+        {
+          "title": "Entra ID",
+          "description": "Secure identity and access management that keeps people and apps connected.",
+          "link": "/consulting/entra-id-1-hour-briefing"
+        }
+      ],
+      "_template": "v3StackCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Frequently asked questions",
+      "faqs": [
+        {
+          "question": "What is an AI-powered phone system?",
+          "answer": "An AI-powered phone system uses speech recognition and natural language understanding to answer calls, understand intent, respond conversationally, and route or escalate calls when needed.\n"
+        },
+        {
+          "question": "What types of calls can the AI handle?",
+          "answer": "Common enquiries such as FAQs, appointment bookings, order or case lookups, lead qualification, call routing and after-hours support, while escalating complex calls to a human.\n"
+        },
+        {
+          "question": "Can the AI transfer calls to a real person?",
+          "answer": "Yes. Calls can be transferred at any point based on intent, confidence level, keywords or customer request, ensuring a smooth handover without repeating information.\n"
+        },
+        {
+          "question": "Does this replace our existing phone system?",
+          "answer": "It depends on your starting point. We can integrate with your existing telephone provider and systems, extending what you already have rather than forcing a full replacement. Sometimes it's best to start fresh, particularly when migrating from a complex setup. Costs vary based on which path you take, and many customers see reduced overall costs.\n"
+        },
+        {
+          "question": "How accurate is the voice recognition?",
+          "answer": "Accuracy is high and improves over time. We train the system using your terminology, common phrases and call data, then continue refining it after launch.\n"
+        },
+        {
+          "question": "What happens in the free initial meeting?",
+          "answer": "You'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n",
+          "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
+        }
+      ],
+      "_template": "v3Faq"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "heading": "Talk to us about implementing **AI** into your business today",
+      "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "buttonLink": "#lead-capture-heading",
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
           "icon": "BiPhone",
           "iconFirst": true,
           "colour": 1
-        },
-        {
-          "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "colour": 0
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Right",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "imageHeight": 768,
-        "imageWidth": 1024,
-        "youtubeUrl": "https://www.youtube.com/watch?v=-q9lLqtkC00&t=5s",
-        "altText": "The Future of Business with AI - Why choose SSW"
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "background": {
-        "backgroundColour": 6
-      },
-      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
-      "paused": false,
-      "isWhiteImages": true,
-      "logos": [
-        {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/event_cinemas_logo.png",
-          "scale": 200,
-          "altText": "Event Cinemas Logo"
-        },
-        {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/7-removebg-preview.png",
-          "scale": 195,
-          "altText": "Toll Logo"
-        },
-        {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/5-removebg-preview.png",
-          "scale": 180,
-          "altText": "Microsoft Logo"
-        },
-        {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/6-removebg-preview.png",
-          "scale": 160,
-          "altText": "Symantec Logo"
-        },
-        {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/4-removebg-preview.png",
-          "scale": 175,
-          "altText": "Domain Logo"
-        },
-        {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/3-removebg-preview.png",
-          "scale": 170,
-          "altText": "CBA Logo"
-        },
-        {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/2-removebg-preview.png",
-          "scale": 175,
-          "altText": "Cisco Logo"
-        },
-        {
-          "logo": "/images/Louis%20Test%20Images/Incident-io-batch/Logos/1-removebg-preview.png",
-          "scale": 195,
-          "altText": "Allianz Logo"
-        }
-      ],
-      "_template": "logoCarousel"
-    },
-    {
-      "isStacked": true,
-      "heading": "",
-      "isH1": false,
-      "body": "",
-      "cardStyle": 0,
-      "cards": [
-        {
-          "guid": "lxpq3m",
-          "altText": "Lorem Ipsum",
-          "icon": "BiBrain",
-          "heading": "Automate Calls Without Losing the Human Touch",
-          "description": "We design AI phone systems that handle routine conversations naturally, while seamlessly handing off to your team when it matters most.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "7mtu8j",
-          "altText": "Lorem Ipsum",
-          "icon": "BiMoneyWithdraw",
-          "heading": "Reduce Call Load and Operational Costs",
-          "description": "Our AI voice solutions answer, route, and resolve calls automatically - cutting client wait times and freeing up your team.",
-          "embeddedButton": {
-            "buttonText": "",
-            "buttonLink": ""
-          }
-        },
-        {
-          "guid": "5q8kz",
-          "altText": "Lorem Ipsum",
-          "icon": "BiUserVoice",
-          "heading": "Integrate Voice AI Into Your Existing Systems",
-          "description": "Connect your AI phone system with CRMs, booking systems, and internal tools so every call becomes structured, actionable data",
-          "embeddedButton": {
-            "buttonText": "",
-            "buttonLink": ""
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png",
-        "bleed": true
-      },
-      "_template": "cardCarousel"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "heading": "Frequently Asked Questions",
-      "body": "",
-      "accordionItems": [
-        {
-          "label": "What is an AI-powered phone system?",
-          "content": "An AI-powered phone system uses speech recognition and natural language understanding to answer calls, understand intent, respond conversationally, and route or escalate calls when needed.\n"
-        },
-        {
-          "label": "What types of calls can the AI handle?",
-          "content": "The AI can handle common enquiries such as FAQs, appointment bookings, order or case lookups, lead qualification, call routing, and after-hours support - while escalating complex calls to a human.\n"
-        },
-        {
-          "label": "Can the AI transfer calls to a real person?",
-          "content": "Yes. Calls can be transferred at any point based on intent, confidence level, keywords, or customer request, ensuring a smooth handover without repeating information.\n"
-        },
-        {
-          "label": "Does this replace our existing phone system?",
-          "content": "It depends on your starting point. We can integrate with your existing telephone provider and systems, extending what you already have rather than forcing a full replacement. In some cases, it’s best to start fresh — particularly when migrating from a complex setup — and costs vary based on whether you’re starting new or transitioning from another system, with many customers seeing reduced overall costs.\n"
-        },
-        {
-          "label": "How accurate is the voice recognition?",
-          "content": "Accuracy is high and improves over time. We train the system using your terminology, common phrases, and call data, and continuously refine it after launch.\n"
-        },
-        {
-          "label": "What happens in the free initial meeting?",
-          "content": "In this meeting, you'll talk with one of our experienced Solution Architects and your Account Manager. You can discuss your project idea, business challenges, and goals. We'll listen, ask questions, offer initial thoughts on potential approaches or technologies, and determine if SSW is the right fit to help you achieve your objectives. There's no obligation.\n"
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "accordionBlock"
-    },
-    {
-      "isStacked": false,
-      "heading": "Related Technologies",
-      "isH1": false,
-      "body": "",
-      "cards": [
-        {
-          "guid": "h3ueb",
-          "altText": "Lorem Ipsum",
-          "icon": "BiLogoMicrosoft",
-          "heading": "Power Platform",
-          "description": "Build apps, automate workflows, and analyse data, all without heavy coding.",
-          "embeddedButton": {
-            "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/consulting/power-platform"
-          }
-        },
-        {
-          "guid": "v93zjp",
-          "altText": "Lorem Ipsum",
-          "icon": "BiCommentCheck",
-          "heading": "Zendesk",
-          "description": "Streamline support by centralising all communication channels into one hub.",
-          "embeddedButton": {
-            "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/consulting/zendesk"
-          }
-        },
-        {
-          "guid": "fm6ndo",
-          "altText": "Lorem Ipsum",
-          "icon": "BiCloudUpload",
-          "heading": "Intune",
-          "description": "A cloud-based unified management solution for mobile devices and operating systems. ",
-          "embeddedButton": {
-            "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/consulting/intune"
-          }
-        },
-        {
-          "guid": "gylswt8",
-          "altText": "Lorem Ipsum",
-          "icon": "BiFingerprint",
-          "heading": "Azure Entra ID",
-          "description": "Secure identity and access management that keeps your people and apps connected.",
-          "embeddedButton": {
-            "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id/"
-          }
-        },
-        {
-          "guid": "e7umlf",
-          "altText": "",
-          "icon": "BiUserVoice",
-          "heading": "Service Desk",
-          "description": "Centralised support that resolves issues fast and keeps your operations running smoothly.",
-          "embeddedButton": {
-            "buttonText": "Read More",
-            "buttonLink": "https://www.ssw.com.au/consulting/service-desk"
-          }
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "bleed": false
-      },
-      "_template": "cardCarousel"
-    },
-    {
-      "spacerHeight": "50px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
-    },
-    {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "Talk to us about implementing **AI** into your business today",
-      "isH1": false,
-      "description": "Connect with our Account Managers to discuss how we can help.\n",
-      "featureColumns": {
-        "twoColumns": true
-      },
-      "buttons": [
-        {
-          "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "colour": 0
-        }
-      ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": true
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "150px",
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
+      "_template": "v3Cta"
     }
   ]
 }
