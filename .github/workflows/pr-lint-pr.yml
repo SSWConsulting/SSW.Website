@@ -34,6 +34,7 @@ jobs:
           $ignorePatterns = @(
             '^content/',
             '^public/',
+            '^tina/',
             '^.github/ISSUE_TEMPLATE/',
             'package.json',
             'pnpm-lock.yaml'
