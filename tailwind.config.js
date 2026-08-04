@@ -327,7 +327,7 @@ export default {
         sswRed: "#cc4141",
         sswDarkRed: "#8e2c2c",
         sswBlack: "#333333",
-        sswDarkGray: '#090909',
+        sswDarkGray: "#090909",
         sswBorder: "#212121",
         sswCard: "#0d0d0d",
         // SSW design-system tokens (from ssw-tokens via shadcn registry), mapped
@@ -440,11 +440,19 @@ export default {
         },
       }),
       backgroundImage: {
-        "dot-grid": "radial-gradient(circle, var(--dot-color) 1px, transparent 1px)",
+        "dot-grid":
+          "radial-gradient(circle, var(--dot-color) 1px, transparent 1px)",
         "red-glow-tl":
           "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
         "red-glow-r":
           "radial-gradient(circle at 78% 50%, rgba(204,65,65,0.15), transparent 25%)",
+        // Bleed variants: the layer is grown 10rem past the block top and bottom,
+        // so the top-left glow is anchored 10rem down to keep its centre on the
+        // block's corner, and both stops shrink to offset the taller gradient box.
+        "red-glow-tl-bleed":
+          "radial-gradient(circle at left 10rem, rgba(204,65,65,0.15), transparent 30%)",
+        "red-glow-r-bleed":
+          "radial-gradient(circle at 78% 50%, rgba(204,65,65,0.15), transparent 23%)",
         "red-radial": "radial-gradient(circle, #cc4141, transparent 70%)",
         done: "url('/images/icons/done.png')",
         "arrow-right": "url('/images/icons/arrow-right.png')",

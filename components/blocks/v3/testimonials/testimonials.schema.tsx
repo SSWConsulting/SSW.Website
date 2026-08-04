@@ -45,8 +45,14 @@ export const V3TestimonialsSchema: Template = {
           type: "string",
           label: "Case Study URL",
           name: "caseStudyUrl",
+          description: "If set, a link is shown below the quote.",
+        },
+        {
+          type: "string",
+          label: "Case Study Link Text",
+          name: "caseStudyLabel",
           description:
-            "If set, a 'SEE CASE STUDY' link is shown below the quote.",
+            "Text for the case study link (always shown in uppercase). Defaults to 'See Case Study'.",
         },
         {
           type: "string",

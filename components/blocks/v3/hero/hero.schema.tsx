@@ -63,6 +63,10 @@ export const V3HeroSchema: Template = {
           value: "reactConsultingSvg",
           label: "React Consulting Atom (animated)",
         },
+        {
+          value: "aiConsultingSvg",
+          label: "AI Consulting Neural Network (animated)",
+        },
       ],
     },
     {

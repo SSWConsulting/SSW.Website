@@ -13,6 +13,7 @@ import type { ComponentType } from "react";
  */
 export const heroMediaRegistry: Record<string, ComponentType> = {
   reactConsultingSvg: dynamic(() => import("./ReactConsultingHeroMedia")),
+  aiConsultingSvg: dynamic(() => import("./AiConsultingHeroMedia")),
 };
 
 export type HeroMediaKey = keyof typeof heroMediaRegistry;
