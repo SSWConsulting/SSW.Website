@@ -52,7 +52,7 @@ export const V3GlobeSchema: Template = {
           email: "info@ssw.com.au",
           phone: "+86 571 8517 8910",
           address:
-            "Room 305, Building 2, Xingcheng Development Building, No. 406 Xintiandi Street\nHangzhou, China, Zheijang Province 310004, China",
+            "Room 305, Building 2, Xingcheng Development Building, No. 406 Xintiandi Street\nHangzhou, China, Zhejiang Province 310004, China",
           lat: 30.27,
           lng: 120.15,
         },
