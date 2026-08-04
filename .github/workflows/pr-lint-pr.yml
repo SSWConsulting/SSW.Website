@@ -63,7 +63,7 @@ jobs:
         if: ${{steps.check_file_changed.outputs.hasCodeChanges == 'True' }}
         id: check-linked-issues
         with:
-          exclude-branches: "dependabot/**"
+          exclude-branches: "dependabot/**, tina/**"
 
       - name: Generate summary
         run: |
