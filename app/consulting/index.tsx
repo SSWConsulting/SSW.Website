@@ -257,7 +257,10 @@ export default function ConsultingIndex({ tinaProps }) {
                             : `#${section.sectionId}`
                         }
                         onClick={(event) => onNavClick(event, section)}
-                        aria-current={isActive ? "true" : undefined}
+                        // "location", not "true": this expresses which
+                        // section is the current position in an in-page flow,
+                        // which is the exact case ARIA defines the value for.
+                        aria-current={isActive ? "location" : undefined}
                         className={cn(
                           "unstyled block min-h-11 rounded-lg px-2.5 py-2 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
                           // Hover changes the label colour only — no background.
