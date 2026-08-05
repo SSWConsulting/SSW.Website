@@ -170,6 +170,20 @@ export default function ConsultingIndex({ tinaProps }) {
     );
     if (fromHash) {
       setSelectedTag(fromHash.name);
+      // The browser's native anchor-scroll already ran against the full,
+      // unfiltered SSR page (every section rendered, since selectedTag
+      // defaults to "All" server-side) — landing wherever this section sits
+      // among all ten. Filtering down to just this one section shrinks the
+      // page height afterwards, and the old scroll offset gets clamped
+      // against that new, much shorter page: it lands near the bottom
+      // instead of the top. Correct it once the filtered content has
+      // committed and the browser has had a frame to reflow against it.
+      window.requestAnimationFrame(() => {
+        contentRef.current?.scrollIntoView({
+          behavior: "auto",
+          block: "start",
+        });
+      });
     }
   }, [contentSections]);
 
