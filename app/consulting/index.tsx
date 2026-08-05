@@ -218,7 +218,12 @@ export default function ConsultingIndex({ tinaProps }) {
         </div>
 
         <div className="grid grid-cols-sidebar items-start gap-8 max-xl:grid-cols-sidebar-narrow max-md:grid-cols-1 max-md:gap-4">
-          <aside
+          {/* A plain div, not <aside>: the only other child is <nav
+              aria-label="Consulting categories">, which is already its own
+              landmark — wrapping it in a complementary region added nothing
+              but filed the page's <h1> under "complementary" instead of
+              "main" for landmark navigation. */}
+          <div
             className={cn(
               "sticky top-headerOffset self-start",
               "max-md:top-headerOffsetMobile max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
@@ -272,7 +277,7 @@ export default function ConsultingIndex({ tinaProps }) {
                 })}
               </ul>
             </nav>
-          </aside>
+          </div>
 
           <div
             ref={contentRef}
