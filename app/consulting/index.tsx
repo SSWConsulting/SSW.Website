@@ -1,15 +1,19 @@
 "use client";
 
-import { useHomeTheme } from "@/components/layout/homeTheme";
-import { BluredBase64Image } from "@/helpers/images";
+import ConsultingCard from "@/components/consulting/consultingCard/consultingCard";
+import { HomeThemeShell } from "@/components/layout/homeTheme";
 import { cn } from "@/lib/utils";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 
 const allServices = "All SSW Services";
+// The tag content/consulting/tag/consulting.json ("Other SSW Services") is
+// already the established catch-all for anything that doesn't fit a specific
+// category — every other page in that bucket is tagged this explicitly. Pages
+// with no tags at all get defaulted here too, so they render under Other SSW
+// Services instead of silently matching zero sections.
+const otherServices = "Other SSW Services";
 
 // Styling is Tailwind-only (no CSS module). Every colour resolves to a global
 // design token from styles.css via the utilities mapped in tailwind.config.js
@@ -38,9 +42,12 @@ const mapPageUrl = (page) =>
     .replace(".json", "");
 
 export default function ConsultingIndex({ tinaProps }) {
-  const { isDark } = useHomeTheme();
   const node = tinaProps.data.consultingIndex;
-  const [activeSectionId, setActiveSectionId] = useState<string>("");
+  // "All SSW Services" shows every section; picking any other tag hides the
+  // rest. Defaults to All so a fresh visit (or an unrecognised/missing hash)
+  // shows everything rather than an empty filtered view.
+  const [selectedTag, setSelectedTag] = useState<string>(allServices);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const tags = useMemo(() => {
     return (
@@ -69,18 +76,25 @@ export default function ConsultingIndex({ tinaProps }) {
           description: page.description,
           logo: page.logo,
           popular: page.popular,
-          tags: page.tags
+          tags: page.tags?.length
             ? [allServices, ...page.tags.map((t) => t.tag?.name)]
-            : [allServices],
+            : [allServices, otherServices],
           tinaPage: node.categories[categoryIndex].pages[pageIndex],
         });
       });
     });
 
+    // Dedup on (url, title), not url alone: two categories can legitimately
+    // point different, differently-titled cards (e.g. "Azure AI" and
+    // "Microsoft Azure") at the same destination page, and keying on url
+    // alone silently drops whichever one isn't first. Keying on the pair
+    // still catches an actual copy-paste duplicate — same title, same
+    // destination, entered twice by content mistake.
     const unique = new Map();
     pages.forEach((page) => {
-      if (!unique.has(page.url)) {
-        unique.set(page.url, page);
+      const key = `${page.url}|${page.title}`;
+      if (!unique.has(key)) {
+        unique.set(key, page);
       }
     });
     return Array.from(unique.values());
@@ -103,66 +117,85 @@ export default function ConsultingIndex({ tinaProps }) {
     [sections]
   );
 
+  // For the "All SSW Services" view only: a page tagged under several
+  // sections (e.g. "Microsoft Azure" is both Cloud and Infrastructure and
+  // Platform Development) should still appear once per section when that
+  // section is filtered to directly, but shouldn't repeat when everything is
+  // shown at once. Claim each shared page into its smallest matching
+  // section, not sidebar order — every Content Management Systems page is
+  // also tagged Website Development, so claiming in sidebar order (Website
+  // Development comes first) hands all 8 of them to the broader bucket and
+  // CMS's heading vanishes entirely. Smallest-first means the more specific
+  // category keeps its cards and the broader one only loses the overlap.
+  const allViewSections = useMemo(() => {
+    const bySize = [...contentSections].sort(
+      (a, b) => a.pages.length - b.pages.length
+    );
+    const claimedBy = new Map();
+    bySize.forEach((section) => {
+      section.pages.forEach((page) => {
+        const key = `${page.url}|${page.title}`;
+        if (!claimedBy.has(key)) claimedBy.set(key, section.name);
+      });
+    });
+    return contentSections
+      .map((section) => ({
+        ...section,
+        pages: section.pages.filter(
+          (page) => claimedBy.get(`${page.url}|${page.title}`) === section.name
+        ),
+      }))
+      .filter((section) => section.pages.length > 0);
+  }, [contentSections]);
+
+  // A specific tag filters the grid down to that one section (every matching
+  // page, tags intact); "All SSW Services" shows every section with each
+  // page deduped to its first category.
+  const visibleSections = useMemo(
+    () =>
+      selectedTag === allServices
+        ? allViewSections
+        : contentSections.filter((section) => section.name === selectedTag),
+    [contentSections, allViewSections, selectedTag]
+  );
+
+  // Deep links (e.g. the mega menu's #consulting-platform-development) select
+  // that filter on load, rather than scrolling to it among everything else.
   useEffect(() => {
     if (!contentSections.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-        if (visible[0]?.target?.id) {
-          setActiveSectionId(visible[0].target.id);
-        }
-      },
-      {
-        root: null,
-        rootMargin: "-24% 0px -60% 0px",
-        threshold: [0.2, 0.45, 0.7],
-      }
-    );
-
-    contentSections.forEach((section) => {
-      const element = document.getElementById(section.sectionId);
-      if (element) observer.observe(element);
-    });
 
     const hash = window.location.hash.replace("#", "");
     const fromHash = contentSections.find(
       (section) => section.sectionId === hash
     );
     if (fromHash) {
-      setActiveSectionId(fromHash.sectionId);
-      window.requestAnimationFrame(() => {
-        document.getElementById(fromHash.sectionId)?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      });
-    } else {
-      setActiveSectionId(contentSections[0].sectionId);
+      setSelectedTag(fromHash.name);
     }
-
-    return () => observer.disconnect();
   }, [contentSections]);
 
   const onNavClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
-    id: string
+    tag: { name: string; sectionId: string }
   ) => {
     event.preventDefault();
-    setActiveSectionId(id);
-    window.history.replaceState(null, "", `#${id}`);
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    setSelectedTag(tag.name);
+    window.history.replaceState(
+      null,
+      "",
+      tag.name === allServices ? window.location.pathname : `#${tag.sectionId}`
+    );
+    // On mobile the sidebar collapses into a sticky chip row above the grid;
+    // if the page was scrolled past it, bring the (now-filtered) grid back
+    // into view instead of leaving the user looking at whatever used to be
+    // at their old scroll position.
+    contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <div className={cn("min-h-full bg-sunken-glow", isDark && "dark")}>
-      <main className="mx-auto min-h-full max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
+    // PageLayout (app/components/page-layout.tsx) already wraps every route's
+    // children in a <main> — this is a div, not a nested <main>.
+    <HomeThemeShell className="min-h-full bg-sunken-glow">
+      <div className="mx-auto min-h-full max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
         <div className="min-h-12">
           <Breadcrumbs path={"/consulting"} title={"Services"} />
         </div>
@@ -184,8 +217,8 @@ export default function ConsultingIndex({ tinaProps }) {
             </h1>
             <nav aria-label="Consulting categories">
               <ul className="m-0 mt-5 flex list-none flex-col gap-1.5 p-0 max-md:mt-0 max-md:flex-row max-md:gap-2 max-md:overflow-x-auto max-md:whitespace-nowrap max-md:pb-0.5">
-                {contentSections.map((section) => {
-                  const isActive = section.sectionId === activeSectionId;
+                {sections.map((section) => {
+                  const isActive = section.name === selectedTag;
 
                   return (
                     <li
@@ -196,10 +229,12 @@ export default function ConsultingIndex({ tinaProps }) {
                       )}
                     >
                       <a
-                        href={`#${section.sectionId}`}
-                        onClick={(event) =>
-                          onNavClick(event, section.sectionId)
+                        href={
+                          section.name === allServices
+                            ? "/consulting"
+                            : `#${section.sectionId}`
                         }
+                        onClick={(event) => onNavClick(event, section)}
                         aria-current={isActive ? "true" : undefined}
                         className={cn(
                           "unstyled block min-h-11 rounded-lg px-2.5 py-2 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
@@ -222,8 +257,11 @@ export default function ConsultingIndex({ tinaProps }) {
             </nav>
           </aside>
 
-          <div className="min-w-0">
-            {contentSections.map((section) => (
+          <div
+            ref={contentRef}
+            className="min-w-0 scroll-mt-28 max-md:scroll-mt-32"
+          >
+            {visibleSections.map((section) => (
               <section
                 id={section.sectionId}
                 key={section.sectionId}
@@ -244,73 +282,22 @@ export default function ConsultingIndex({ tinaProps }) {
 
                 <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
                   {section.pages.map((page) => (
-                    <a
-                      href={page.url}
+                    <ConsultingCard
                       key={`${section.sectionId}-${page.id}`}
-                      className={cn(
-                        // border-0.75, not `border`: borderWidth.DEFAULT is 3px
-                        // in this repo, which is far too heavy for a card hairline.
-                        "unstyled group flex min-h-20 items-center gap-3 rounded-xl border-0.75 p-3 text-inherit no-underline transition-colors duration-300 motion-reduce:transition-none",
-                        "border-stroke-weak bg-gray-50 hover:bg-white dark:border-hairline dark:bg-card dark:hover:bg-card-hover",
-                        "max-md:min-h-16 max-md:p-2.5"
-                      )}
-                    >
-                      <div className="flex size-12 flex-none items-center justify-center rounded-lg bg-white max-md:size-10">
-                        {page.logo && (
-                          <Image
-                            src={page.logo}
-                            alt={`${page.title} logo`}
-                            width={48}
-                            height={48}
-                            loading="lazy"
-                            placeholder="blur"
-                            blurDataURL={BluredBase64Image}
-                            className="size-8 object-contain max-md:size-6"
-                          />
-                        )}
-                      </div>
-
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2">
-                          <h3
-                            className="m-0 p-0 text-base font-medium leading-tight text-foreground"
-                            data-tina-field={tinaField(page.tinaPage, "title")}
-                          >
-                            {page.title}
-                          </h3>
-                          {page.popular && (
-                            // Plain string, not cn(): tailwind-merge doesn't know
-                            // `xxs` is a custom font size and would drop it as a
-                            // text-colour conflict with `text-brand`.
-                            <span className="flex-none self-center rounded-full bg-brand-subtle px-1.5 py-0.5 text-xxs font-bold uppercase leading-tight tracking-wider text-brand">
-                              Popular
-                            </span>
-                          )}
-                        </div>
-                        <p
-                          className="mt-1 line-clamp-2 text-xs leading-tight text-muted-foreground"
-                          title={page.description}
-                          data-tina-field={tinaField(
-                            page.tinaPage,
-                            "description"
-                          )}
-                        >
-                          {page.description}
-                        </p>
-                      </div>
-
-                      <ChevronRight
-                        className="size-4 flex-none text-stroke-strong transition duration-150 group-hover:translate-x-0.5 group-hover:text-brand motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
-                        aria-hidden="true"
-                      />
-                    </a>
+                      url={page.url}
+                      title={page.title}
+                      description={page.description}
+                      logo={page.logo}
+                      popular={page.popular}
+                      tinaPage={page.tinaPage}
+                    />
                   ))}
                 </div>
               </section>
             ))}
           </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </HomeThemeShell>
   );
 }

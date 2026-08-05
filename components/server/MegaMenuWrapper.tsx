@@ -6,7 +6,11 @@ import { MegaMenuLayout } from "ssw.megamenu";
 import { useHeaderAppearance } from "@/app/components/header-appearance";
 import { CustomLink } from "../customLink";
 import { HomeNavActions } from "../layout/homeNavActions";
-import { HomeThemePrePaint, useHomeTheme } from "../layout/homeTheme";
+import {
+  HomeThemePrePaint,
+  isThemedRoute,
+  useHomeTheme,
+} from "../layout/homeTheme";
 
 export function MegaMenuWrapper(props) {
   const pathName = usePathname();
@@ -18,7 +22,7 @@ export function MegaMenuWrapper(props) {
   // into theming: the dark toggle and the `.dark` scope below, whose token
   // utilities (bg-background/text-foreground/border-hairline) flip via the CSS
   // variables under the `dark` class on this element.
-  const isHome = pathName === "/" || pathName === "/consulting";
+  const isHome = isThemedRoute(pathName);
 
   return (
     <div
