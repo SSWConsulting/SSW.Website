@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2015",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -9,23 +13,43 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "baseUrl": "./",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/blocks/*": ["components/blocks/*"],
-      "@/tina/*": ["tina/__generated__/*"],
-      "@/tina-collections/*": ["tina/collections/*"],
-      "@/context/*": ["context/*"],
-      "@/services/*": ["services/*"],
-      "@/content/*": ["content/*"],
-      "@/helpers/*": ["helpers/*"],
-      "@/app/*": ["app/*"],
-      "@/*": ["./*"]
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/blocks/*": [
+        "components/blocks/*"
+      ],
+      "@/tina/*": [
+        "tina/__generated__/*"
+      ],
+      "@/tina-collections/*": [
+        "tina/collections/*"
+      ],
+      "@/context/*": [
+        "context/*"
+      ],
+      "@/services/*": [
+        "services/*"
+      ],
+      "@/content/*": [
+        "content/*"
+      ],
+      "@/helpers/*": [
+        "helpers/*"
+      ],
+      "@/app/*": [
+        "app/*"
+      ],
+      "@/*": [
+        "./*"
+      ]
     },
     "plugins": [
       {
@@ -35,7 +59,9 @@
     "strictNullChecks": false,
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
@@ -43,6 +69,7 @@
     ".forestry/types.ts",
     ".forestry/config.ts",
     "next-sitemap.config.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ]
 }

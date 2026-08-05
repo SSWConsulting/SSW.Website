@@ -194,8 +194,25 @@ export default function ConsultingIndex({ tinaProps }) {
   return (
     // PageLayout (app/components/page-layout.tsx) already wraps every route's
     // children in a <main> — this is a div, not a nested <main>.
-    <HomeThemeShell className="min-h-full bg-sunken-glow">
-      <div className="mx-auto min-h-full max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
+    //
+    // min-h-screen, not min-h-full: PageLayout's <main> is grow inside a flex
+    // column, so its height is only "definite" (for our min-h-full% to
+    // resolve against) via the flexbox used-main-size rule — real, but easy
+    // to break in a future PageLayout refactor with no visible error, just a
+    // silent gap. <main>'s bg-white is unconditional, so any such gap (or a
+    // short filtered view — e.g. the Video category has 2 cards) would show
+    // as a white band beneath the themed content, jarring in dark mode.
+    // min-h-screen sidesteps that entirely: 100vh needs no ancestor
+    // cooperation, and it's always >= <main>'s own grown height (<=100vh,
+    // since <main> only fills the space the header and footer leave inside
+    // the outer min-h-screen column) — the tradeoff is a few extra px of
+    // scroll past a very short page, never a gap.
+    <HomeThemeShell className="min-h-screen bg-sunken-glow">
+      {/* No min-height here: full-height background coverage is the outer
+          HomeThemeShell wrapper's job (min-h-screen, above) — this div only
+          centers and width-constrains the content, and its parent has no
+          definite `height` for a min-h-full% to resolve against anyway. */}
+      <div className="mx-auto max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
         <div className="min-h-12">
           <Breadcrumbs path={"/consulting"} title={"Services"} />
         </div>
