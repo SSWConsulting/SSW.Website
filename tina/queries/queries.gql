@@ -117,8 +117,8 @@ query articlesContentQuery($relativePath: String!, $date: String) {
   }
 }
 
-query getArticlesQuery($after: String, $top: Float!) {
-  articlesConnection(first: $top, after: $after) {
+query getArticlesQuery($before: String, $top: Float!) {
+  articlesConnection(sort: "publishedDate", last: $top, before: $before) {
     ...GetArticleParts
   }
 }
