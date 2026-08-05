@@ -75,6 +75,11 @@ export default {
       gridTemplateRows: {
         12: "repeat(12, minmax(min-content, 0fr))",
       },
+      gridTemplateColumns: {
+        // Sticky-sidebar + fluid-content layout (used by /consulting).
+        sidebar: "minmax(280px, 30%) minmax(0, 1fr)",
+        "sidebar-narrow": "minmax(240px, 30%) minmax(0, 1fr)",
+      },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
       },
@@ -89,6 +94,7 @@ export default {
       zIndex: {
         1: 1,
         2: 2,
+        15: "15",
         25: "25",
         videoThumbnail: 11,
         1000: "1000",
@@ -176,6 +182,9 @@ export default {
         0.25: "0.0625rem",
         0.75: "0.1875rem",
         descender: "0.12em",
+        // Height of the sticky mega menu, so sticky/scroll offsets can clear it.
+        headerOffset: "104px",
+        headerOffsetMobile: "72px",
         15: "60px",
         17: "4.25rem",
         25: "100px",
@@ -344,6 +353,8 @@ export default {
         hairline: "var(--hairline)",
         card: "var(--card)",
         "card-hover": "var(--card-hover)",
+        brand: "var(--text-brand)",
+        "brand-subtle": "color-mix(in srgb, var(--text-brand) 16%, transparent)",
         azure: "#007fff",
         ssw: {
           red: {
@@ -447,6 +458,15 @@ export default {
           "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
         "red-glow-r":
           "radial-gradient(circle at 78% 50%, rgba(204,65,65,0.15), transparent 25%)",
+        // Sunken page background with a red glow bleeding in from the top-right.
+        // The flat colour is baked in as a second layer (rather than pairing this
+        // with a `bg-*` colour utility) so `cn()`/tailwind-merge can't treat the
+        // two as conflicting `bg-*` classes and drop one.
+        "sunken-glow":
+          "radial-gradient(1200px 450px at 100% -10%, rgba(227,72,65,0.1), transparent 70%), linear-gradient(180deg, var(--background-sunken), var(--background-sunken))",
+        // Translucent wash of the page background, for scrims over sunken pages.
+        "sunken-scrim":
+          "linear-gradient(180deg, color-mix(in srgb, var(--background-sunken) 90%, transparent), color-mix(in srgb, var(--background-sunken) 98%, transparent))",
         "red-radial": "radial-gradient(circle, #cc4141, transparent 70%)",
         done: "url('/images/icons/done.png')",
         "arrow-right": "url('/images/icons/arrow-right.png')",
