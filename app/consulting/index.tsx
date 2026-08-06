@@ -278,7 +278,10 @@ export default function ConsultingIndex({ tinaProps }) {
                         className={cn(
                           "unstyled block min-h-11 rounded-lg px-2.5 py-2 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
                           // Hover changes the label colour only — no background.
-                          "text-ssw-gray-light hover:text-foreground",
+                          // gray-600 in light mode reads clearly without being
+                          // as heavy as muted-foreground; dark mode keeps
+                          // muted-foreground, which is already light enough there.
+                          "text-gray-600 hover:text-foreground dark:text-muted-foreground",
                           // A ring rather than an outline: tailwind-merge folds
                           // bare `outline` into the outline-width group and drops
                           // it, which would leave outline-style: none.
