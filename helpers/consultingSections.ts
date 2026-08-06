@@ -26,7 +26,7 @@ export type ConsultingSection = {
   pages: ConsultingPage[];
 };
 
-export const slugify = (value: string) =>
+const slugify = (value: string) =>
   value
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, "")
@@ -35,7 +35,7 @@ export const slugify = (value: string) =>
 
 export const sectionIdFor = (name: string) => `consulting-${slugify(name)}`;
 
-export const mapPageUrl = (page) =>
+const mapPageUrl = (page) =>
   page.externalUrl ||
   page.page.id
     .replace("content/consultingv2", "/consulting")
@@ -92,7 +92,7 @@ const buildPages = (node): ConsultingPage[] => {
 // Content Management Systems page is also tagged Website Development, so
 // claiming in sidebar order would hand all of them to the broader bucket and
 // CMS's heading would disappear entirely.
-export const claimSharedPages = (
+const claimSharedPages = (
   contentSections: ConsultingSection[]
 ): ConsultingSection[] => {
   const bySize = [...contentSections].sort(

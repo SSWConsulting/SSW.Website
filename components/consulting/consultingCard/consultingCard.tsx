@@ -9,7 +9,7 @@ import { CustomLink } from "../../customLink";
 export type ConsultingCardProps = {
   url: string;
   title: string;
-  description: string;
+  description?: string;
   logo?: string;
   popular?: boolean;
   tinaPage: Record<string, unknown>;

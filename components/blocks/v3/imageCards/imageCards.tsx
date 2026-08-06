@@ -24,16 +24,16 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
         showBorder && "border-0.75 border-hairline"
       )}
     >
-      {/* cardBackgroundClass goes LAST so an editor's Tina colour choice wins.
-          Merging it first let tailwind-merge drop it entirely, silently
-          disabling the picker. group-hover is its own variant group, so the
-          hover token survives whatever the editor picks. */}
+      {/* Card-body background sits on its own layer: white in light mode so the
+          surface reads lighter than the section behind it, faded to 60% in dark
+          mode so it can brighten to full on hover. `bg-white` is merged after
+          the configured class so only its light-mode colour is overridden. */}
       <div
         aria-hidden
         className={cn(
-          "absolute inset-0 transition-colors duration-300",
-          "dark:group-hover:bg-card-hover",
-          cardBackgroundClass
+          "absolute inset-0 transition-opacity duration-300 dark:opacity-60 dark:group-hover:opacity-100",
+          cardBackgroundClass,
+          "bg-white"
         )}
       />
       <div
@@ -94,7 +94,7 @@ export function V3ImageCards({ data }) {
   const cardBackgroundClass =
     backgroundOptions.find(
       (option) => option.reference === data?.cardBackgroundColour
-    )?.classes ?? "bg-white dark:bg-card";
+    )?.classes ?? "bg-white dark:bg-sswCard";
 
   // 3-up when the count divides evenly by 3 but not by 4 (e.g. 3, 6, 9),
   // otherwise keep the default 4-up grid.

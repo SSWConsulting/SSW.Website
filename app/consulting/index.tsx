@@ -45,7 +45,11 @@ export default function ConsultingIndex({ tinaProps }) {
     () =>
       selectedTag === ALL_SERVICES
         ? allViewSections
-        : contentSections.filter((section) => section.name === selectedTag),
+        : contentSections.filter(
+            // Skip empty sections so a tag with no pages doesn't render a
+            // heading over an empty grid.
+            (section) => section.name === selectedTag && section.pages.length
+          ),
     [contentSections, allViewSections, selectedTag]
   );
 
@@ -66,7 +70,13 @@ export default function ConsultingIndex({ tinaProps }) {
         section.sectionId === hash ||
         (!!legacyTag && section.name?.toLowerCase() === legacyTag.toLowerCase())
     );
-    if (!match) return;
+    // A bare /consulting means All Services. Returning early instead would
+    // leave the previous filter applied while the URL claims otherwise —
+    // visible when going Back out of a filtered view.
+    if (!match) {
+      setSelectedTag(ALL_SERVICES);
+      return;
+    }
 
     setSelectedTag(match.name);
     // Native anchor-scroll already ran against the unfiltered SSR page.
@@ -83,8 +93,12 @@ export default function ConsultingIndex({ tinaProps }) {
 
   useEffect(() => {
     applyUrlFilter();
-    // Same-route hash navigation (the mega menu links here) does not remount
-    // this component, so without these listeners a second click is a no-op.
+    // Covers back/forward and a hand-edited address bar. It does NOT cover the
+    // mega menu's #consulting-* links clicked while already on this page:
+    // App Router navigates by history.pushState, which fires neither event,
+    // and Next exposes no hook for it (vercel/next.js#62670, #69256). That
+    // case degrades to the browser's native anchor scroll, which still lands
+    // on the right section whenever the All Services view is showing.
     window.addEventListener("hashchange", applyUrlFilter);
     window.addEventListener("popstate", applyUrlFilter);
     return () => {
