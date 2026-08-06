@@ -185,7 +185,6 @@ export default {
         // Gutter above the sticky /consulting sidebar. The site header is not
         // sticky, so this is breathing room, not clearance.
         headerOffset: "104px",
-        headerOffsetMobile: "72px",
         15: "60px",
         17: "4.25rem",
         25: "100px",

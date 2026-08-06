@@ -173,7 +173,11 @@ export default function ConsultingIndex({ tinaProps }) {
           <div
             className={cn(
               "sticky top-headerOffset self-start",
-              "max-md:top-headerOffsetMobile max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
+              // top-0 on mobile: the scrim and backdrop-blur are there for
+              // cards to slide underneath. Any offset leaves a gap that cards
+              // scroll through in full view, above the bar rather than behind
+              // it — there is no sticky site header here to clear.
+              "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
             )}
           >
             <h1
