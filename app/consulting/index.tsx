@@ -7,13 +7,13 @@ import { Breadcrumbs } from "app/components/breadcrumb";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 
-const allServices = "All SSW Services";
-// The tag content/consulting/tag/consulting.json ("Other SSW Services") is
+const allServices = "All Services";
+// The tag content/consulting/tag/consulting.json ("Other Services") is
 // already the established catch-all for anything that doesn't fit a specific
 // category — every other page in that bucket is tagged this explicitly. Pages
-// with no tags at all get defaulted here too, so they render under Other SSW
+// with no tags at all get defaulted here too, so they render under Other
 // Services instead of silently matching zero sections.
-const otherServices = "Other SSW Services";
+const otherServices = "Other Services";
 
 // Styling is Tailwind-only (no CSS module). Every colour resolves to a global
 // design token from styles.css via the utilities mapped in tailwind.config.js
@@ -43,7 +43,7 @@ const mapPageUrl = (page) =>
 
 export default function ConsultingIndex({ tinaProps }) {
   const node = tinaProps.data.consultingIndex;
-  // "All SSW Services" shows every section; picking any other tag hides the
+  // "All Services" shows every section; picking any other tag hides the
   // rest. Defaults to All so a fresh visit (or an unrecognised/missing hash)
   // shows everything rather than an empty filtered view.
   const [selectedTag, setSelectedTag] = useState<string>(allServices);
@@ -117,7 +117,7 @@ export default function ConsultingIndex({ tinaProps }) {
     [sections]
   );
 
-  // For the "All SSW Services" view only: a page tagged under several
+  // For the "All Services" view only: a page tagged under several
   // sections (e.g. "Microsoft Azure" is both Cloud and Infrastructure and
   // Platform Development) should still appear once per section when that
   // section is filtered to directly, but shouldn't repeat when everything is
@@ -149,7 +149,7 @@ export default function ConsultingIndex({ tinaProps }) {
   }, [contentSections]);
 
   // A specific tag filters the grid down to that one section (every matching
-  // page, tags intact); "All SSW Services" shows every section with each
+  // page, tags intact); "All Services" shows every section with each
   // page deduped to its first category.
   const visibleSections = useMemo(
     () =>
