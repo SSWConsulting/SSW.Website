@@ -13,6 +13,7 @@ const node = {
     { label: "Website Development", tag: { name: "Website Development" } },
     { label: "Content Management Systems", tag: { name: "CMS" } },
     { label: "Other Services", tag: { name: OTHER_SERVICES } },
+    { label: "Row an editor left untagged" },
   ],
   categories: [
     {
@@ -56,6 +57,14 @@ describe("buildConsultingSections", () => {
 
   test("the All Services tag is not itself a content section", () => {
     expect(section(contentSections, ALL_SERVICES)).toBeUndefined();
+  });
+
+  test("sidebar rows with no tag are dropped, not rendered as dead filters", () => {
+    // Selecting one would set the filter to undefined and blank the page.
+    expect(sections.every((s) => !!s.name)).toBe(true);
+    expect(sections.map((s) => s.label)).not.toContain(
+      "Row an editor left untagged"
+    );
   });
 
   test("filtering a section shows every page tagged with it", () => {

@@ -59,16 +59,19 @@ export default function ConsultingIndex({ tinaProps }) {
     if (!contentSections.length) return;
 
     const hash = window.location.hash.replace("#", "");
-    // ?tag= was the pre-redesign filter URL and is still live in bookmarks and
-    // search results, so keep honouring it.
-    const legacyTag = new URLSearchParams(window.location.search)
-      .get("tag")
-      ?.replace(/-/g, " ");
+    // The hash wins outright. ?tag= is only the pre-redesign filter URL, kept
+    // alive for bookmarks and search results — if both are present, ORing them
+    // would let sidebar order pick the winner instead of the more specific one.
+    const legacyTag = hash
+      ? undefined
+      : new URLSearchParams(window.location.search)
+          .get("tag")
+          ?.replace(/-/g, " ");
 
-    const match = contentSections.find(
-      (section) =>
-        section.sectionId === hash ||
-        (!!legacyTag && section.name?.toLowerCase() === legacyTag.toLowerCase())
+    const match = contentSections.find((section) =>
+      hash
+        ? section.sectionId === hash
+        : !!legacyTag && section.name?.toLowerCase() === legacyTag.toLowerCase()
     );
     // A bare /consulting means All Services. Returning early instead would
     // leave the previous filter applied while the URL claims otherwise —
@@ -127,7 +130,11 @@ export default function ConsultingIndex({ tinaProps }) {
     window.history.replaceState(
       null,
       "",
-      tag.name === ALL_SERVICES ? window.location.pathname : `#${tag.sectionId}`
+      // Always rebuild from pathname: a relative "#id" would resolve against
+      // the current URL and keep a legacy ?tag= alive alongside the new hash.
+      tag.name === ALL_SERVICES
+        ? window.location.pathname
+        : `${window.location.pathname}#${tag.sectionId}`
     );
     // Scroll only AFTER the filtered content has committed — same
     // shrink-then-clamp trap as applyUrlFilter above.

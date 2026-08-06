@@ -50,12 +50,17 @@ const pageKey = (page: Pick<ConsultingPage, "url" | "title">) =>
   `${page.url}|${page.title}`;
 
 const buildTags = (node): Omit<ConsultingSection, "pages">[] =>
-  node.sidebar?.map((item, index) => ({
-    label: item.label,
-    name: item.tag?.name,
-    index,
-    sectionId: sectionIdFor(item.tag?.name || item.label || String(index)),
-  })) || [];
+  node.sidebar
+    ?.map((item, index) => ({
+      label: item.label,
+      name: item.tag?.name,
+      index,
+      sectionId: sectionIdFor(item.tag?.name || item.label || String(index)),
+    }))
+    // The Tina `tag` reference isn't required, and a row without one has no
+    // name to match pages against — it would render as a filter that selects
+    // nothing at all. Drop it rather than ship a dead sidebar entry.
+    .filter((tag) => !!tag.name) || [];
 
 const buildPages = (node): ConsultingPage[] => {
   const pages: ConsultingPage[] = [];
