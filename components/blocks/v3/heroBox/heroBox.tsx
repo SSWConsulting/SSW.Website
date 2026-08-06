@@ -59,8 +59,8 @@ export const V3HeroBox = ({ data, priority = false }) => {
         type="button"
         aria-label="Scroll to content"
         onClick={(e) => {
-          // Scroll so the arrow ends up 10% of the viewport height down from
-          // the top of the screen, pulling the hero up out of the way.
+          // Scroll the arrow 10% of the viewport height past the top of the
+          // screen, clearing the hero out of the way.
           const { top } = e.currentTarget.getBoundingClientRect();
           window.scrollTo({
             top: window.scrollY + top - window.innerHeight * -0.1,
