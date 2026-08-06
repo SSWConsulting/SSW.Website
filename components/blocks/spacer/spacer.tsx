@@ -17,7 +17,7 @@ export function Spacer({ data }: { data: Consultingv2BlocksSpacer }) {
   );
 
   const spacer = isDecorated ? (
-    <V2ComponentWrapper data={data}>
+    <V2ComponentWrapper data={data} ariaHidden>
       <div
         style={{
           height: data?.spacerHeight,
@@ -38,5 +38,11 @@ export function Spacer({ data }: { data: Consultingv2BlocksSpacer }) {
     />
   );
 
-  return hideClasses ? <div className={hideClasses}>{spacer}</div> : spacer;
+  return hideClasses ? (
+    <div aria-hidden="true" className={hideClasses}>
+      {spacer}
+    </div>
+  ) : (
+    spacer
+  );
 }

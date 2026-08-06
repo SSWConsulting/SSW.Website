@@ -23,11 +23,13 @@ const V2ComponentWrapper = ({
   children,
   fadeInMargin = "-100px",
   className,
+  ariaHidden,
 }: {
   data: BackgroundData;
   children: React.ReactNode;
   fadeInMargin?: UseInViewOptions["margin"];
   className?: string;
+  ariaHidden?: boolean;
 }) => {
   //Bleed effect setup
   const bleed = useRef(null);
@@ -58,12 +60,13 @@ const V2ComponentWrapper = ({
   return (
     <section
       id={data.anchorId || undefined}
+      aria-hidden={ariaHidden || undefined}
       className={classNames(
         backgroundOptions.find((value) => {
           return value.reference === data.background?.backgroundColour;
         })?.classes,
         "relative w-full overflow-visible",
-        // Offset in-page anchor scrolling so the target clears the sticky header
+        // Breathing room above a section jumped to by an in-page anchor link.
         data.anchorId && "scroll-mt-24",
         className
       )}
@@ -110,8 +113,12 @@ const V2ComponentWrapper = ({
           className="pointer-events-none absolute inset-0 z-25 bg-dot-grid bg-dots"
         />
       )}
+      {/* data-block-content marks where this block's content starts, past the
+          wrapper's padding and the decorative layers above. lib/scrollToBlock
+          targets it. */}
       <section
         ref={ref}
+        data-block-content=""
         className={classNames(
           "relative z-30 transition-opacity duration-300",
           isInInitialViewport === false && "opacity-0",

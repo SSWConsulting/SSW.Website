@@ -72,7 +72,7 @@ export const anchorIdSchema: TinaField = {
     },
   },
   description:
-    "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to jump here (the offset for the sticky header is handled automatically).",
+    "Optional id for in-page links. Set this on a section, then point a button's link at #<id> to jump here (a little breathing room above the section is added automatically).",
 };
 
 // Background + anchor fields every V2 block shares — spread once via `...wrapperBaseFields`.

@@ -4,6 +4,7 @@ import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { backgroundOptions } from "@/components/blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { findNextBlock, scrollToBlockContent } from "@/lib/scrollToBlock";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState, type CSSProperties } from "react";
@@ -59,13 +60,8 @@ export const V3HeroBox = ({ data, priority = false }) => {
         type="button"
         aria-label="Scroll to content"
         onClick={(e) => {
-          // Scroll so the arrow ends up 10% of the viewport height down from
-          // the top of the screen, pulling the hero up out of the way.
-          const { top } = e.currentTarget.getBoundingClientRect();
-          window.scrollTo({
-            top: window.scrollY + top - window.innerHeight * 0.1,
-            behavior: "smooth",
-          });
+          const nextBlock = findNextBlock(e.currentTarget);
+          if (nextBlock) scrollToBlockContent(nextBlock);
         }}
         className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-black/70 text-black transition-colors hover:bg-black hover:text-white dark:border-white/80 dark:text-white dark:hover:bg-white dark:hover:text-black"
       >
