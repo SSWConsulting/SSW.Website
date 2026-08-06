@@ -38,11 +38,11 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
       />
       <div
         className={cn(
-          "relative flex aspect-[4/3] items-center justify-center bg-sswRed p-4 sm:p-8"
+          "relative flex aspect-[3/2] items-center justify-center bg-sswRed p-4 sm:p-8"
         )}
       >
         {card?.graphic?.imageSource && (
-          <div className={cn("relative size-40 max-w-[70%]")}>
+          <div className={cn("relative size-28 max-w-[70%]")}>
             <Image
               src={card.graphic.imageSource}
               alt={card.graphic.altText ?? card?.title ?? ""}
