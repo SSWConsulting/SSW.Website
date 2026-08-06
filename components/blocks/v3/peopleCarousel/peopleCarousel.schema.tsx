@@ -122,8 +122,16 @@ export const V3PeopleCarouselSchema: Template = {
         },
         {
           type: "string",
+          label: "GitHub URL",
+          name: "github",
+          description: "Optional. The icon only shows when a URL is set.",
+        },
+        {
+          type: "string",
           label: "SSW People URL",
           name: "sswPeople",
+          description:
+            "Where the card itself links to. The whole card is clickable.",
         },
       ],
     },

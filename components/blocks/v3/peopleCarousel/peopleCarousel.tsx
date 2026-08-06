@@ -13,34 +13,24 @@ import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { tinaField } from "tinacms/dist/react";
 import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { PersonCardTexture } from "./personCardTexture";
 
-// The SSW mark is a 2×2 grid of squares. Rendered in currentColor so it inherits
-// the white→sswRed hover from its link, like the react-icons beside it.
-function SswPeopleIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 100 100" fill="currentColor" className={className}>
-      <rect x="0" y="0" width="46" height="46" />
-      <rect x="54" y="0" width="46" height="46" />
-      <rect x="0" y="54" width="46" height="46" />
-      <rect x="54" y="54" width="46" height="46" />
-    </svg>
-  );
-}
-
 const socials = [
   { key: "linkedin", label: "LinkedIn", Icon: FaLinkedinIn },
   { key: "twitter", label: "X", Icon: FaXTwitter },
-  { key: "sswPeople", label: "SSW People", Icon: SswPeopleIcon },
+  { key: "github", label: "GitHub", Icon: FaGithub },
 ];
 
-// The photo and name link to the profile; the social icons link out on their
-// own. A plain <div> stands in when there's no profile to link to.
+// The profile link stretches over the whole card via an ::after overlay, so
+// anywhere that isn't a social icon opens the SSW People profile. The icons
+// sit above that overlay (z-10) and keep their own targets — nesting real
+// <a>s inside one another isn't valid, hence the pseudo-element.
+// A plain <div> stands in when there's no profile to link to.
 function ProfileLink({ person, className, children }) {
   if (!person?.sswPeople) {
     return <div className={className}>{children}</div>;
@@ -52,7 +42,7 @@ function ProfileLink({ person, className, children }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`View ${person?.name ?? "this person"}'s SSW People profile`}
-      className={cn("!no-underline", className)}
+      className={cn("!no-underline after:absolute after:inset-0", className)}
     >
       {children}
     </Link>
@@ -61,7 +51,7 @@ function ProfileLink({ person, className, children }) {
 
 function PersonCard({ person, index, scope }) {
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:border-sswRed dark:border-sswBorder dark:bg-sswCard">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:border-sswRed dark:border-sswBorder dark:bg-sswCard">
       <ProfileLink person={person} className="block">
         {/* Red panel frames the photo with padding on the sides and top while the
             photo stays flush to the bottom, so the person reads as standing in it. */}
@@ -80,7 +70,7 @@ function PersonCard({ person, index, scope }) {
 
         <div className="px-4 pt-4 text-center xl:px-6 xl:pt-6">
           {person?.name && (
-            <h3 className="text-xl font-semibold text-foreground">
+            <h3 className="text-xl font-semibold text-foreground transition-colors group-hover:text-sswRed">
               {person.name}
             </h3>
           )}
@@ -92,8 +82,10 @@ function PersonCard({ person, index, scope }) {
         </div>
       </ProfileLink>
 
-      {/* flex-1 keeps the icon rows aligned when names wrap to two lines. */}
-      <div className="flex flex-1 items-start justify-center gap-1 p-4 xl:px-6 xl:pb-6">
+      {/* flex-1 keeps the icon rows aligned when names wrap to two lines.
+          z-10 lifts the icons above the profile link's ::after overlay so they
+          stay independently clickable. */}
+      <div className="relative z-10 flex flex-1 items-start justify-center gap-1 p-4 xl:px-6 xl:pb-6">
         {socials.map(({ key, label, Icon }) =>
           person?.[key] ? (
             <Link

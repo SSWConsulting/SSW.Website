@@ -159,6 +159,13 @@ export const footerSchema: Collection = {
               label: "URL",
               name: "url",
             },
+            {
+              type: "image",
+              label: "Logo",
+              name: "logo",
+              description:
+                "Optional 16x16 logo shown before the label, e.g. the TinaCMS llama.",
+            },
           ],
         },
       ],

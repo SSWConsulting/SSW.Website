@@ -114,8 +114,16 @@
       { "label": "Terms & Conditions", "url": "/terms-and-conditions" }
     ],
     "poweredBy": [
-      { "label": "Powered by TinaCMS", "url": "https://tina.io" },
-      { "label": "Built on Microsoft Azure", "url": "/consulting/azure" }
+      {
+        "label": "Powered by TinaCMS",
+        "url": "https://tina.io",
+        "logo": "/images/logos/tina-llama-orange.png"
+      },
+      {
+        "label": "Built on Microsoft Azure",
+        "url": "/consulting/azure",
+        "logo": "/images/logos/azure.png"
+      }
     ]
   }
 }

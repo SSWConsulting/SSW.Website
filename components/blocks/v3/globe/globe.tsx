@@ -20,20 +20,26 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
   return (
     <div
       className={cn(
-        "relative border-b border-hairline bg-gray-100 dark:border-white/10 dark:bg-sswBorder",
+        // last:border-b-0 stops the final row doubling up against the
+        // container's own bottom border.
+        "relative border-b border-hairline bg-gray-100 last:border-b-0 dark:border-white/10 dark:bg-sswBorder",
         isOpen && "bg-gray-200 dark:bg-sswBlack"
       )}
     >
+      {/* Hover tints the label and chevron red rather than the row background,
+          so the background keeps meaning "open" and the two never read alike. */}
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between px-4 py-5 text-left"
+        className="group flex w-full items-center justify-between px-4 py-5 text-left"
       >
-        <span className="text-lg text-foreground">{office?.name}</span>
+        <span className="text-lg text-foreground transition-colors group-hover:text-sswRed">
+          {office?.name}
+        </span>
         <FiChevronDown
           className={cn(
-            "size-5 shrink-0 text-foreground transition-transform duration-300",
+            "size-5 shrink-0 text-foreground transition-all duration-300 group-hover:text-sswRed",
             isOpen && "rotate-180"
           )}
         />
