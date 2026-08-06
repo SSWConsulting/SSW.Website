@@ -63,7 +63,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
           // screen, clearing the hero out of the way.
           const { top } = e.currentTarget.getBoundingClientRect();
           window.scrollTo({
-            top: window.scrollY + top - window.innerHeight * -0.1,
+            top: window.scrollY + top + window.innerHeight * 0.1,
             behavior: "smooth",
           });
         }}
