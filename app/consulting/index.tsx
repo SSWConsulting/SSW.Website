@@ -198,11 +198,38 @@ export default function ConsultingIndex({ tinaProps }) {
       "",
       tag.name === allServices ? window.location.pathname : `#${tag.sectionId}`
     );
-    // On mobile the sidebar collapses into a sticky chip row above the grid;
-    // if the page was scrolled past it, bring the (now-filtered) grid back
-    // into view instead of leaving the user looking at whatever used to be
-    // at their old scroll position.
-    contentRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    // Scroll only AFTER the filtered content has committed. Filtering can
+    // shrink the page from ~6900px to ~1600px, and scrolling against the old,
+    // taller layout leaves the browser to clamp the result against the new
+    // one — which dumps you at the page bottom with both the section heading
+    // and the (grid-bound) sticky sidebar scrolled off the top. Same
+    // shrink-then-clamp trap the hash effect above documents.
+    window.requestAnimationFrame(() => {
+      const content = contentRef.current;
+      if (!content) return;
+      // Read scroll-margin-top off the element rather than hard-coding the
+      // header offset, so this stays in step with `scroll-mt-28` /
+      // `max-md:scroll-mt-32` at whatever breakpoint is active.
+      const offset =
+        parseFloat(window.getComputedStyle(content).scrollMarginTop) || 0;
+      const target = Math.max(
+        0,
+        window.scrollY + content.getBoundingClientRect().top - offset
+      );
+      // Only ever scroll *up*, to bring the top of the filtered section into
+      // view. If the page is already at or above that point the section top
+      // is on screen already, and scrolling down to pin it would just hide
+      // the breadcrumbs — that gratuitous jump was the original complaint.
+      if (window.scrollY > target) {
+        window.scrollTo({
+          top: target,
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+            .matches
+            ? "auto"
+            : "smooth",
+        });
+      }
+    });
   };
 
   return (
