@@ -70,7 +70,7 @@ const resolveTheme = (): HomeThemeMode => {
 
 // Inline script that runs synchronously while the HTML is still parsing — before
 // the browser paints the nav/hero — and sets `.dark` on its own parent wrapper.
-// That makes the homepage's first paint already match the resolved theme, so
+// That makes a themed route's first paint already match the resolved theme, so
 // there's no dark→light flash. Rendered inside each themed wrapper; the logic is
 // kept in lockstep with resolveTheme() above. Gated to THEMED_ROUTES.
 const PRE_PAINT_SCRIPT = `(function(){try{var p=location.pathname;if(${JSON.stringify(THEMED_ROUTES)}.indexOf(p)===-1)return;var t;try{t=localStorage.getItem('${STORAGE_KEY}')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=document.currentScript&&document.currentScript.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()`;
@@ -151,8 +151,8 @@ export const HomeThemeBoundary = ({
   return <>{children}</>;
 };
 
-// Applies the theme class to a homepage-scoped wrapper (NOT <html>) so theming
-// stays contained to the v3 homepage and cannot affect other routes. Tailwind's
+// Applies the theme class to a route-scoped wrapper (NOT <html>) so theming
+// stays contained to THEMED_ROUTES and cannot affect other routes. Tailwind's
 // `dark:` variants and the design-token CSS variables both resolve from this
 // ancestor, so descendant blocks pick up the active theme automatically.
 export const HomeThemeShell = ({

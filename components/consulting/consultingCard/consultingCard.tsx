@@ -4,6 +4,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
+import { CustomLink } from "../../customLink";
 
 export type ConsultingCardProps = {
   url: string;
@@ -23,7 +24,9 @@ const ConsultingCard: FC<ConsultingCardProps> = ({
   tinaPage,
 }) => {
   return (
-    <a
+    // CustomLink, not a raw <a>: it routes internal URLs through next/link
+    // (soft nav + prefetch) and adds target/rel to the genuinely external ones.
+    <CustomLink
       href={url}
       className={cn(
         // border-0.75, not `border`: borderWidth.DEFAULT is 3px
@@ -78,7 +81,7 @@ const ConsultingCard: FC<ConsultingCardProps> = ({
         className="size-4 flex-none text-stroke-strong transition duration-150 group-hover:translate-x-1 group-hover:text-brand motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
         aria-hidden="true"
       />
-    </a>
+    </CustomLink>
   );
 };
 

@@ -182,7 +182,8 @@ export default {
         0.25: "0.0625rem",
         0.75: "0.1875rem",
         descender: "0.12em",
-        // Height of the sticky mega menu, so sticky/scroll offsets can clear it.
+        // Gutter above the sticky /consulting sidebar. The site header is not
+        // sticky, so this is breathing room, not clearance.
         headerOffset: "104px",
         headerOffsetMobile: "72px",
         15: "60px",
@@ -336,8 +337,10 @@ export default {
         sswRed: "#cc4141",
         sswDarkRed: "#8e2c2c",
         sswBlack: "#333333",
-        sswDarkGray: '#090909',
+        sswDarkGray: "#090909",
         sswBorder: "#212121",
+        // Dark-only literal. Not aliased to var(--card): several blocks use
+        // `bg-sswCard` unprefixed, which would pick up the light --card.
         sswCard: "#0d0d0d",
         // SSW design-system tokens (from ssw-tokens via shadcn registry), mapped
         // to the CSS variables added to styles.css so v3 generates the utilities
@@ -354,7 +357,8 @@ export default {
         card: "var(--card)",
         "card-hover": "var(--card-hover)",
         brand: "var(--text-brand)",
-        "brand-subtle": "color-mix(in srgb, var(--text-brand) 16%, transparent)",
+        "brand-subtle":
+          "color-mix(in srgb, var(--text-brand) 16%, transparent)",
         azure: "#007fff",
         ssw: {
           red: {
@@ -453,7 +457,8 @@ export default {
         },
       }),
       backgroundImage: {
-        "dot-grid": "radial-gradient(circle, var(--dot-color) 1px, transparent 1px)",
+        "dot-grid":
+          "radial-gradient(circle, var(--dot-color) 1px, transparent 1px)",
         "red-glow-tl":
           "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
         "red-glow-r":

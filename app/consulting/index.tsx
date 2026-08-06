@@ -2,158 +2,48 @@
 
 import ConsultingCard from "@/components/consulting/consultingCard/consultingCard";
 import { HomeThemeShell } from "@/components/layout/homeTheme";
+import {
+  ALL_SERVICES,
+  buildConsultingSections,
+} from "@/helpers/consultingSections";
 import { cn } from "@/lib/utils";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { tinaField } from "tinacms/dist/react";
 
-const allServices = "All Services";
-// The tag content/consulting/tag/consulting.json ("Other Services") is
-// already the established catch-all for anything that doesn't fit a specific
-// category — every other page in that bucket is tagged this explicitly. Pages
-// with no tags at all get defaulted here too, so they render under Other
-// Services instead of silently matching zero sections.
-const otherServices = "Other Services";
-
-// Styling is Tailwind-only (no CSS module). Every colour resolves to a global
-// design token from styles.css via the utilities mapped in tailwind.config.js
-// (`sunken-glow`, `brand`, `hairline`, `card`, `foreground`, …), switched
-// with `dark:` — this page defines no CSS variables of its own. `max-md:` /
-// `max-xl:` mirror the old max-width 767px / 1279px media queries, so the
-// cascade order is unchanged.
-
 // Shared by the sidebar <h1> and the category <h2>s so the two stay in lockstep.
-const headingType =
+const headingClass =
   "text-xl font-semibold leading-tight max-md:text-lg xl:text-2xl";
 
-const slugify = (value: string) =>
-  value
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-");
-
-const mapPageUrl = (page) =>
-  page.externalUrl ||
-  page.page.id
-    .replace("content/consultingv2", "/consulting")
-    .replace("content", "")
-    .replace(".mdx", "")
-    .replace(".json", "");
+// scroll-behavior: smooth is set globally on html (styles.css), and "auto"
+// defers to it — only "instant" actually skips the animation.
+const scrollBehaviour = (): ScrollBehavior =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "instant"
+    : "smooth";
 
 export default function ConsultingIndex({ tinaProps }) {
   const node = tinaProps.data.consultingIndex;
-  // "All Services" shows every section; picking any other tag hides the
-  // rest. Defaults to All so a fresh visit (or an unrecognised/missing hash)
-  // shows everything rather than an empty filtered view.
-  const [selectedTag, setSelectedTag] = useState<string>(allServices);
+  // Defaults to All so a fresh visit (or an unrecognised hash) shows everything
+  // rather than an empty filtered view. Also what SSR renders, so crawlers see
+  // every section.
+  const [selectedTag, setSelectedTag] = useState<string>(ALL_SERVICES);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const tags = useMemo(() => {
-    return (
-      node.sidebar?.map((item, index) => ({
-        label: item.label,
-        name: item.tag?.name,
-        index,
-        sectionId: `consulting-${slugify(item.tag?.name || item.label || String(index))}`,
-      })) || []
-    );
-  }, [node]);
-
-  const allMappedPages = useMemo(() => {
-    const pages = [];
-
-    node.categories.forEach((category, categoryIndex) => {
-      category.pages.forEach((page, pageIndex) => {
-        if (!page.externalUrl && !page.page?.id) {
-          return;
-        }
-
-        pages.push({
-          id: `${categoryIndex}-${pageIndex}-${page.title}`,
-          url: mapPageUrl(page),
-          title: page.title,
-          description: page.description,
-          logo: page.logo,
-          popular: page.popular,
-          tags: page.tags?.length
-            ? [allServices, ...page.tags.map((t) => t.tag?.name)]
-            : [allServices, otherServices],
-          tinaPage: node.categories[categoryIndex].pages[pageIndex],
-        });
-      });
-    });
-
-    // Dedup on (url, title), not url alone: two categories can legitimately
-    // point different, differently-titled cards (e.g. "Azure AI" and
-    // "Microsoft Azure") at the same destination page, and keying on url
-    // alone silently drops whichever one isn't first. Keying on the pair
-    // still catches an actual copy-paste duplicate — same title, same
-    // destination, entered twice by content mistake.
-    const unique = new Map();
-    pages.forEach((page) => {
-      const key = `${page.url}|${page.title}`;
-      if (!unique.has(key)) {
-        unique.set(key, page);
-      }
-    });
-    return Array.from(unique.values());
-  }, [node]);
-
-  const sections = useMemo(() => {
-    return tags.map((tag) => {
-      const pages = allMappedPages.filter((page) =>
-        page.tags.includes(tag.name)
-      );
-      return {
-        ...tag,
-        pages,
-      };
-    });
-  }, [allMappedPages, tags]);
-
-  const contentSections = useMemo(
-    () => sections.filter((section) => section.name !== allServices),
-    [sections]
+  const { sections, contentSections, allViewSections } = useMemo(
+    () => buildConsultingSections(node),
+    [node]
   );
 
-  // For the "All Services" view only: a page tagged under several
-  // sections (e.g. "Microsoft Azure" is both Cloud and Infrastructure and
-  // Platform Development) should still appear once per section when that
-  // section is filtered to directly, but shouldn't repeat when everything is
-  // shown at once. Claim each shared page into its smallest matching
-  // section, not sidebar order — every Content Management Systems page is
-  // also tagged Website Development, so claiming in sidebar order (Website
-  // Development comes first) hands all 8 of them to the broader bucket and
-  // CMS's heading vanishes entirely. Smallest-first means the more specific
-  // category keeps its cards and the broader one only loses the overlap.
-  const allViewSections = useMemo(() => {
-    const bySize = [...contentSections].sort(
-      (a, b) => a.pages.length - b.pages.length
-    );
-    const claimedBy = new Map();
-    bySize.forEach((section) => {
-      section.pages.forEach((page) => {
-        const key = `${page.url}|${page.title}`;
-        if (!claimedBy.has(key)) claimedBy.set(key, section.name);
-      });
-    });
-    return contentSections
-      .map((section) => ({
-        ...section,
-        pages: section.pages.filter(
-          (page) => claimedBy.get(`${page.url}|${page.title}`) === section.name
-        ),
-      }))
-      .filter((section) => section.pages.length > 0);
-  }, [contentSections]);
-
-  // A specific tag filters the grid down to that one section (every matching
-  // page, tags intact); "All Services" shows every section with each
-  // page deduped to its first category.
   const visibleSections = useMemo(
     () =>
-      selectedTag === allServices
+      selectedTag === ALL_SERVICES
         ? allViewSections
         : contentSections.filter((section) => section.name === selectedTag),
     [contentSections, allViewSections, selectedTag]
@@ -161,109 +51,104 @@ export default function ConsultingIndex({ tinaProps }) {
 
   // Deep links (e.g. the mega menu's #consulting-platform-development) select
   // that filter on load, rather than scrolling to it among everything else.
-  useEffect(() => {
+  const applyUrlFilter = useCallback(() => {
     if (!contentSections.length) return;
 
     const hash = window.location.hash.replace("#", "");
-    const fromHash = contentSections.find(
-      (section) => section.sectionId === hash
+    // ?tag= was the pre-redesign filter URL and is still live in bookmarks and
+    // search results, so keep honouring it.
+    const legacyTag = new URLSearchParams(window.location.search)
+      .get("tag")
+      ?.replace(/-/g, " ");
+
+    const match = contentSections.find(
+      (section) =>
+        section.sectionId === hash ||
+        (!!legacyTag && section.name?.toLowerCase() === legacyTag.toLowerCase())
     );
-    if (fromHash) {
-      setSelectedTag(fromHash.name);
-      // The browser's native anchor-scroll already ran against the full,
-      // unfiltered SSR page (every section rendered, since selectedTag
-      // defaults to "All" server-side) — landing wherever this section sits
-      // among all ten. Filtering down to just this one section shrinks the
-      // page height afterwards, and the old scroll offset gets clamped
-      // against that new, much shorter page: it lands near the bottom
-      // instead of the top. Correct it once the filtered content has
-      // committed and the browser has had a frame to reflow against it.
-      window.requestAnimationFrame(() => {
-        contentRef.current?.scrollIntoView({
-          behavior: "auto",
-          block: "start",
-        });
+    if (!match) return;
+
+    setSelectedTag(match.name);
+    // Native anchor-scroll already ran against the unfiltered SSR page.
+    // Filtering shrinks the page afterwards and the old offset gets clamped
+    // against the shorter one, landing near the bottom. Re-align once the
+    // filtered content has committed.
+    window.requestAnimationFrame(() => {
+      contentRef.current?.scrollIntoView({
+        behavior: "instant",
+        block: "start",
       });
-    }
+    });
   }, [contentSections]);
+
+  useEffect(() => {
+    applyUrlFilter();
+    // Same-route hash navigation (the mega menu links here) does not remount
+    // this component, so without these listeners a second click is a no-op.
+    window.addEventListener("hashchange", applyUrlFilter);
+    window.addEventListener("popstate", applyUrlFilter);
+    return () => {
+      window.removeEventListener("hashchange", applyUrlFilter);
+      window.removeEventListener("popstate", applyUrlFilter);
+    };
+  }, [applyUrlFilter]);
 
   const onNavClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     tag: { name: string; sectionId: string }
   ) => {
+    // Let the browser handle modified clicks so the href still opens in a new
+    // tab or window.
+    if (
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      event.button !== 0
+    ) {
+      return;
+    }
     event.preventDefault();
     setSelectedTag(tag.name);
     window.history.replaceState(
       null,
       "",
-      tag.name === allServices ? window.location.pathname : `#${tag.sectionId}`
+      tag.name === ALL_SERVICES ? window.location.pathname : `#${tag.sectionId}`
     );
-    // Scroll only AFTER the filtered content has committed. Filtering can
-    // shrink the page from ~6900px to ~1600px, and scrolling against the old,
-    // taller layout leaves the browser to clamp the result against the new
-    // one — which dumps you at the page bottom with both the section heading
-    // and the (grid-bound) sticky sidebar scrolled off the top. Same
-    // shrink-then-clamp trap the hash effect above documents.
+    // Scroll only AFTER the filtered content has committed — same
+    // shrink-then-clamp trap as applyUrlFilter above.
     window.requestAnimationFrame(() => {
       const content = contentRef.current;
       if (!content) return;
-      // Read scroll-margin-top off the element rather than hard-coding the
-      // header offset, so this stays in step with `scroll-mt-28` /
-      // `max-md:scroll-mt-32` at whatever breakpoint is active.
+      // Read scroll-margin-top off the element so this stays in step with
+      // whichever scroll-mt-* is active at the current breakpoint.
       const offset =
         parseFloat(window.getComputedStyle(content).scrollMarginTop) || 0;
       const target = Math.max(
         0,
         window.scrollY + content.getBoundingClientRect().top - offset
       );
-      // Only ever scroll *up*, to bring the top of the filtered section into
-      // view. If the page is already at or above that point the section top
-      // is on screen already, and scrolling down to pin it would just hide
-      // the breadcrumbs — that gratuitous jump was the original complaint.
+      // Only ever scroll up. If the section top is already on screen, pinning
+      // it would just hide the breadcrumbs for no reason.
       if (window.scrollY > target) {
-        window.scrollTo({
-          top: target,
-          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
-            .matches
-            ? "auto"
-            : "smooth",
-        });
+        window.scrollTo({ top: target, behavior: scrollBehaviour() });
       }
     });
   };
 
   return (
-    // PageLayout (app/components/page-layout.tsx) already wraps every route's
-    // children in a <main> — this is a div, not a nested <main>.
-    //
-    // min-h-screen, not min-h-full: PageLayout's <main> is grow inside a flex
-    // column, so its height is only "definite" (for our min-h-full% to
-    // resolve against) via the flexbox used-main-size rule — real, but easy
-    // to break in a future PageLayout refactor with no visible error, just a
-    // silent gap. <main>'s bg-white is unconditional, so any such gap (or a
-    // short filtered view — e.g. the Video category has 2 cards) would show
-    // as a white band beneath the themed content, jarring in dark mode.
-    // min-h-screen sidesteps that entirely: 100vh needs no ancestor
-    // cooperation, and it's always >= <main>'s own grown height (<=100vh,
-    // since <main> only fills the space the header and footer leave inside
-    // the outer min-h-screen column) — the tradeoff is a few extra px of
-    // scroll past a very short page, never a gap.
+    // min-h-screen, not min-h-full: PageLayout's <main> has an unconditional
+    // bg-white, so any shortfall shows as a white band under the themed
+    // content. 100vh needs no cooperation from the ancestor's height.
     <HomeThemeShell className="min-h-screen bg-sunken-glow">
-      {/* No min-height here: full-height background coverage is the outer
-          HomeThemeShell wrapper's job (min-h-screen, above) — this div only
-          centers and width-constrains the content, and its parent has no
-          definite `height` for a min-h-full% to resolve against anyway. */}
       <div className="mx-auto max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
         <div className="min-h-12">
           <Breadcrumbs path={"/consulting"} title={"Services"} />
         </div>
 
         <div className="grid grid-cols-sidebar items-start gap-8 max-xl:grid-cols-sidebar-narrow max-md:grid-cols-1 max-md:gap-4">
-          {/* A plain div, not <aside>: the only other child is <nav
-              aria-label="Consulting categories">, which is already its own
-              landmark — wrapping it in a complementary region added nothing
-              but filed the page's <h1> under "complementary" instead of
-              "main" for landmark navigation. */}
+          {/* A plain div, not <aside>: <nav> below is already its own landmark,
+              and wrapping it only filed the <h1> under "complementary". */}
           <div
             className={cn(
               "sticky top-headerOffset self-start",
@@ -272,7 +157,7 @@ export default function ConsultingIndex({ tinaProps }) {
           >
             <h1
               className={cn(
-                headingType,
+                headingClass,
                 "m-0 whitespace-nowrap p-0 text-foreground max-md:mb-2"
               )}
             >
@@ -293,25 +178,20 @@ export default function ConsultingIndex({ tinaProps }) {
                     >
                       <a
                         href={
-                          section.name === allServices
+                          section.name === ALL_SERVICES
                             ? "/consulting"
                             : `#${section.sectionId}`
                         }
                         onClick={(event) => onNavClick(event, section)}
-                        // "location", not "true": this expresses which
-                        // section is the current position in an in-page flow,
-                        // which is the exact case ARIA defines the value for.
+                        // "location" is the ARIA value for current position
+                        // within a flow, which is what this expresses.
                         aria-current={isActive ? "location" : undefined}
                         className={cn(
                           "unstyled block min-h-11 rounded-lg px-2.5 py-2 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
-                          // Hover changes the label colour only — no background.
-                          // gray-600 in light mode reads clearly without being
-                          // as heavy as muted-foreground; dark mode keeps
-                          // muted-foreground, which is already light enough there.
+                          // Label colour only on hover, no background.
                           "text-gray-600 hover:text-foreground dark:text-muted-foreground",
-                          // A ring rather than an outline: tailwind-merge folds
-                          // bare `outline` into the outline-width group and drops
-                          // it, which would leave outline-style: none.
+                          // A ring, not `outline`: tailwind-merge drops the
+                          // bare `outline` class, leaving outline-style: none.
                           "focus-visible:ring-2 focus-visible:ring-brand",
                           "max-md:rounded-full max-md:border-0.75 max-md:border-hairline max-md:bg-gray-100 max-md:px-3 max-md:py-2.5 dark:max-md:bg-card",
                           isActive && "text-brand"
@@ -338,7 +218,7 @@ export default function ConsultingIndex({ tinaProps }) {
               >
                 <h2
                   className={cn(
-                    headingType,
+                    headingClass,
                     "m-0 mb-4 p-0 text-brand max-md:mb-3"
                   )}
                   data-tina-field={tinaField(

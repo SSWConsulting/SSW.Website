@@ -190,18 +190,18 @@ function RegionGlobe({ isDark }: { isDark: boolean }) {
 // The v3 menu actions: search, region globe, then the "Let's Talk" pill. These
 // render on EVERY route (injected via the mega menu's `rightSideActionsOverride`).
 // The sun/moon theme toggle is the one homepage-only extra — it's the only piece
-// gated behind `isHome`, and off-home the cluster is always light (even if the OS
+// gated behind `isThemed`, and elsewhere the cluster is always light (even if the OS
 // prefers dark) since theming is scoped to the homepage.
-export function HomeNavActions({ isHome = false }: { isHome?: boolean }) {
+export function HomeNavActions({ isThemed = false }: { isThemed?: boolean }) {
   const { isDark, toggleTheme } = useHomeTheme();
-  const themed = isHome && isDark;
+  const themed = isThemed && isDark;
 
   return (
     <div className="flex items-center gap-2 text-foreground max-sm:w-full max-sm:justify-between max-sm:pb-4 max-[400px]:flex-col max-[400px]:items-start max-[400px]:gap-4">
       <div className="flex items-center">
         <SearchButton isDark={themed} />
         <RegionGlobe isDark={themed} />
-        {isHome && (
+        {isThemed && (
           <button
             type="button"
             onClick={toggleTheme}
