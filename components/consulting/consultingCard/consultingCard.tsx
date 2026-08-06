@@ -29,7 +29,7 @@ const ConsultingCard: FC<ConsultingCardProps> = ({
         // border-0.75, not `border`: borderWidth.DEFAULT is 3px
         // in this repo, which is far too heavy for a card hairline.
         "unstyled group flex min-h-20 items-center gap-3 rounded-xl border-0.75 p-3 text-inherit no-underline transition-colors duration-300 motion-reduce:transition-none",
-        "border-stroke-weak bg-gray-50 hover:bg-white dark:border-hairline dark:bg-card dark:hover:bg-card-hover",
+        "border-stroke-weak bg-gray-50 hover:border-brand hover:bg-white dark:border-hairline dark:bg-card dark:hover:border-brand dark:hover:bg-card-hover",
         "max-md:min-h-16 max-md:p-2.5"
       )}
     >
@@ -75,7 +75,7 @@ const ConsultingCard: FC<ConsultingCardProps> = ({
       </div>
 
       <ChevronRight
-        className="size-4 flex-none text-stroke-strong transition duration-150 group-hover:translate-x-0.5 group-hover:text-brand motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+        className="size-4 flex-none text-stroke-strong transition duration-150 group-hover:translate-x-1 group-hover:text-brand motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
         aria-hidden="true"
       />
     </a>
