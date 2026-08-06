@@ -213,13 +213,21 @@ export default function ConsultingIndex({ tinaProps }) {
                         aria-current={isActive ? "location" : undefined}
                         className={cn(
                           "unstyled block min-h-11 rounded-lg px-2.5 py-2 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
-                          // Label colour only on hover, no background.
-                          "text-gray-600 hover:text-foreground dark:text-muted-foreground",
                           // A ring, not `outline`: tailwind-merge drops the
                           // bare `outline` class, leaving outline-style: none.
                           "focus-visible:ring-2 focus-visible:ring-brand",
                           "max-md:rounded-full max-md:border-0.75 max-md:border-hairline max-md:bg-gray-100 max-md:px-3 max-md:py-2.5 dark:max-md:bg-card",
-                          isActive && "text-brand"
+                          // Active and inactive colours are mutually exclusive,
+                          // never layered. Adding `text-brand` on top of
+                          // `dark:text-muted-foreground` loses in dark mode:
+                          // tailwind-merge keeps both (different variants) and
+                          // `.dark .dark:text-muted-foreground` outranks a bare
+                          // `.text-brand` on specificity, so the active item
+                          // rendered the same colour as the inactive ones.
+                          // Label colour only on hover, no background.
+                          isActive
+                            ? "text-brand dark:text-brand"
+                            : "text-gray-600 hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
                         )}
                       >
                         {section.label}
