@@ -41,6 +41,7 @@ const config: Config = {
 
     // Handle module aliases
     "^@/components/(.*)$": "<rootDir>/components/$1",
+    "^@/helpers/(.*)$": "<rootDir>/helpers/$1",
 
     // Handle @next/font
     "@next/font/(.*)": "<rootDir>/__mocks__/nextFontMock.js",
