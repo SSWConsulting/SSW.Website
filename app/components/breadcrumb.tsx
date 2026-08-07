@@ -71,7 +71,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbLink
           href="/"
           className={
-            "text-sm text-gray-700 underline-offset-1 hover:text-sswRed"
+            "text-sm text-muted-foreground underline-offset-1 hover:text-sswRed"
           }
         >
           Home
@@ -88,7 +88,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       items.push(
         <BreadcrumbSeparator
           key={`separator-${index}`}
-          className="text-sm text-gray-700"
+          className="text-sm text-muted-foreground"
         >
           {"/"}
         </BreadcrumbSeparator>
@@ -98,7 +98,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
         <BreadcrumbItem key={`item-${index}`}>
           {isLast ? (
             <BreadcrumbPage
-              className={"text-sm text-gray-700 no-underline"}
+              className={"text-sm text-muted-foreground no-underline"}
               {...(seoSchema
                 ? { "data-tina-field": tinaField(seoSchema, "title") }
                 : {})}
@@ -109,7 +109,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
             <BreadcrumbLink
               href={href}
               className={
-                "text-sm text-gray-700 underline-offset-1 hover:text-sswRed"
+                "text-sm text-muted-foreground underline-offset-1 hover:text-sswRed"
               }
             >
               {displayName}
@@ -143,7 +143,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       <nav className="sm:hidden" aria-label={`Back to ${mobileParent.label}`}>
         <a
           href={mobileParent.href}
-          className="unstyled inline-flex items-center gap-1 text-sm text-gray-700 no-underline hover:text-sswRed hover:no-underline"
+          className="unstyled inline-flex items-center gap-1 text-sm text-muted-foreground no-underline hover:text-sswRed hover:no-underline"
           aria-label={`Back to ${mobileParent.label}`}
         >
           <ArrowLeft className="size-3.5" aria-hidden="true" />

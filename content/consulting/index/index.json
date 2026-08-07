@@ -5,7 +5,7 @@
   },
   "sidebar": [
     {
-      "label": "All SSW Services",
+      "label": "All Services",
       "tag": "content/consulting/tag/all-ssw-services.json"
     },
     {
@@ -45,7 +45,7 @@
       "tag": "content/consulting/tag/video.json"
     },
     {
-      "label": "Other SSW Services",
+      "label": "Other Services",
       "tag": "content/consulting/tag/consulting.json"
     }
   ],
@@ -57,6 +57,7 @@
           "title": "Artificial Intelligence",
           "description": "Develop custom AI solutions tailored for your business.",
           "logo": "/images/thumbs/consulting/new/artificial-intelligence.svg",
+          "popular": true,
           "page": "content/consultingv2/artificial-intelligence.json",
           "tags": [
             {

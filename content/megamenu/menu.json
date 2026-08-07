@@ -35,7 +35,7 @@
                 },
                 {
                   "name": "Platform Development",
-                  "url": "/consulting?tag=Platform-Development",
+                  "url": "/consulting#consulting-platform-development",
                   "description": "Delivering versatile, integrated solutions that optimize business operations",
                   "iconImg": "/images/megamenu-icons/PlatformDevelopment.svg"
                 }
@@ -62,7 +62,7 @@
                 },
                 {
                   "name": "Cloud and Infrastructure",
-                  "url": "/consulting?tag=Cloud-and+Infrastructure",
+                  "url": "/consulting#consulting-cloud-and-infrastructure",
                   "description": "Designing scalable, secure, and resilient cloud computing environments",
                   "iconImg": "/images/megamenu-icons/CloudAndInfrastructure.svg"
                 }
