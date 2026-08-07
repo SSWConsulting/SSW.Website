@@ -1,10 +1,8 @@
 "use client";
 import classNames from "classnames";
-import { useInView } from "framer-motion";
 import Image from "next/image";
 
-import { UseInViewOptions } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { backgroundOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/blockBackgroundOptions";
 
 type BackgroundData = {
@@ -18,6 +16,38 @@ type BackgroundData = {
   };
 };
 
+// "pending" until the observer's first report, so a block never goes
+// visible→hidden after paint — hiding painted content disqualifies it as an
+// LCP candidate.
+const useFadeIn = (rootMargin: string) => {
+  const ref = useRef<HTMLElement>(null);
+  const [state, setState] = useState<"pending" | "hidden" | "visible">(
+    "pending"
+  );
+
+  useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setState("visible");
+          observer.disconnect();
+        } else {
+          setState((current) => (current === "pending" ? "hidden" : current));
+        }
+      },
+      { rootMargin }
+    );
+
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, [rootMargin]);
+
+  return [ref, state] as const;
+};
+
 const V2ComponentWrapper = ({
   data,
   children,
@@ -26,7 +56,7 @@ const V2ComponentWrapper = ({
 }: {
   data: BackgroundData;
   children: React.ReactNode;
-  fadeInMargin?: UseInViewOptions["margin"];
+  fadeInMargin?: string;
   className?: string;
 }) => {
   //Bleed effect setup
@@ -47,13 +77,7 @@ const V2ComponentWrapper = ({
     };
   }, []);
 
-  //Fade-in effect setup
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: fadeInMargin });
-  useEffect(() => {
-    setIsInInitialViewport(isInView);
-  }, [isInView]);
-  const [isInInitialViewport, setIsInInitialViewport] = React.useState(null);
+  const [ref, fadeState] = useFadeIn(fadeInMargin);
 
   return (
     <section
@@ -114,8 +138,8 @@ const V2ComponentWrapper = ({
         ref={ref}
         className={classNames(
           "relative z-30 transition-opacity duration-300",
-          isInInitialViewport === false && "opacity-0",
-          !isInInitialViewport && isInView && "opacity-100"
+          fadeState === "hidden" && "opacity-0",
+          fadeState === "visible" && "opacity-100"
         )}
         // Only emit a background-image when there actually is one. Interpolating a
         // missing value produced `url(null)` / `url()`, and the browser resolved
