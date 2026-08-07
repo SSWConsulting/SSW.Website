@@ -138,10 +138,11 @@ export const Footer = () => {
               isn't knowable here — flex-wrap plus a basis on the sentence puts
               the two side by side only while both still fit, and drops the
               credits onto their own line the moment they don't. The previous
-              `md:flex-row` flipped at 768px, where the container (max-w-9xl,
-              1312px inner) can never fit the sentence and the credits on one
-              line each, so both blocks wrapped into a ragged two-column
-              block from 768px all the way up. */}
+              `md:flex-row` flipped at 768px, which leaves ~680px of inner
+              width against the ~1050px the sentence and credits need side by
+              side, so both blocks wrapped into a ragged two-column block from
+              768px up. The fold now lands around 1150px, and either side of it
+              each block gets its own clean line. */}
           <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-xs">
             <DeploymentInfo className="min-w-0 grow basis-128" />
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 uppercase tracking-wider text-gray-400">
@@ -165,8 +166,9 @@ export const Footer = () => {
                 // (or from its logo) when the group wraps; the group's own
                 // flex-wrap breaks between credits instead. The widest credit
                 // still fits a 320px viewport, so this can't cause overflow.
-                // py-1/-my-1 grows the tap target to 26px without moving
-                // anything — the text alone is only 18px tall.
+                // py-1/-my-1 grows the tap target to 27px without moving
+                // anything — the text alone is only 18px tall, under the 24px
+                // WCAG 2.5.8 minimum.
                 const itemClass =
                   "-my-1 flex items-center gap-1.5 whitespace-nowrap py-1";
 
