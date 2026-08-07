@@ -78,7 +78,7 @@ jobs:
       - name: Get current date
         id: date
         run: |
-          echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
+          echo "date=$(Get-Date -Format yyyy-MM-ddTHH:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
 
       - name: Azure CLI - Login
         uses: azure/login@v3

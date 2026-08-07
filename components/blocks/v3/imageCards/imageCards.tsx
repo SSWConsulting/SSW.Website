@@ -38,7 +38,7 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
       />
       <div
         className={cn(
-          "relative flex aspect-[3/2] items-center justify-center bg-sswRed p-4 sm:p-8"
+          "relative flex aspect-3/2 items-center justify-center bg-sswRed p-4 sm:p-8"
         )}
       >
         {card?.graphic?.imageSource && (

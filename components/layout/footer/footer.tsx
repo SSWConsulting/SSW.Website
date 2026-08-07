@@ -1,11 +1,11 @@
 import footerData from "@/content/footer/index.json";
-import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import { CustomLink } from "../../customLink";
 import { SocialIcons } from "../../socialIcons/socialIcons";
 import { Container } from "../../util/container";
 import { DeploymentInfo } from "./deployment-info";
+import { PoweredByCredits } from "./powered-by-credits";
 
 const MAX_COLUMNS = 5;
 
@@ -45,9 +45,11 @@ export const Footer = () => {
               /* eslint-disable-next-line tailwindcss/no-arbitrary-value, tailwindcss/no-unnecessary-arbitrary-value -- intentional 1px bottom border */
               className="group border-b-[1px] border-gray-700"
             >
-              {/* Collapsed rows keep a balanced 24px/24px tap target. Once open,
-                  the gap down to the first link tightens to 16px so it matches
-                  the desktop heading's mb-4 and both layouts read the same. */}
+              {/* Collapsed rows carry equal padding above and below, giving a
+                  comfortably large tap target for the whole row. Once open,
+                  the gap below tightens so the heading reads as attached to
+                  the list it just revealed rather than floating between two
+                  columns. */}
               <summary className="flex cursor-pointer list-none items-center justify-between py-6 text-sm font-semibold uppercase tracking-widest text-white group-open:pb-4 [&::-webkit-details-marker]:hidden">
                 <span>{column.title}</span>
                 <ChevronDown
@@ -137,59 +139,13 @@ export const Footer = () => {
               `poweredBy` is CMS-editable, so how much room the credits need
               isn't knowable here — flex-wrap plus a basis on the sentence puts
               the two side by side only while both still fit, and drops the
-              credits onto their own line the moment they don't. The previous
-              `md:flex-row` flipped at 768px, which leaves ~680px of inner
-              width against the ~1050px the sentence and credits need side by
-              side, so both blocks wrapped into a ragged two-column block from
-              768px up. The fold now lands around 1150px, and either side of it
-              each block gets its own clean line. */}
+              credits onto their own line the moment they don't. A fixed
+              `md:flex-row` folded on viewport width instead, which left both
+              blocks wrapping into a ragged two-column block well before there
+              was room for them side by side. */}
           <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 text-xs">
             <DeploymentInfo className="min-w-0 grow basis-128" />
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 uppercase tracking-wider text-gray-400">
-              {bottomBar?.poweredBy?.map((item, index) => {
-                const content = (
-                  <>
-                    {item.logo && (
-                      <Image
-                        src={item.logo}
-                        alt=""
-                        height={16}
-                        width={16}
-                        className="size-4 shrink-0 object-contain"
-                      />
-                    )}
-                    <span>{item.label}</span>
-                  </>
-                );
-
-                // whitespace-nowrap keeps a credit from splitting mid-phrase
-                // (or from its logo) when the group wraps; the group's own
-                // flex-wrap breaks between credits instead. The widest credit
-                // still fits a 320px viewport, so this can't cause overflow.
-                // py-1/-my-1 grows the tap target to 27px without moving
-                // anything — the text alone is only 18px tall, under the 24px
-                // WCAG 2.5.8 minimum.
-                const itemClass =
-                  "-my-1 flex items-center gap-1.5 whitespace-nowrap py-1";
-
-                return item.url ? (
-                  <CustomLink
-                    key={(item.url ?? "") + index}
-                    href={item.url}
-                    className={cn(
-                      "unstyled transition-colors hover:text-white",
-                      itemClass
-                    )}
-                  >
-                    {content}
-                  </CustomLink>
-                ) : (
-                  <span key={(item.label ?? "") + index} className={itemClass}>
-                    {content}
-                  </span>
-                );
-              })}
-            </div>
+            <PoweredByCredits items={bottomBar?.poweredBy} />
           </div>
         </Container>
       </div>
