@@ -1,9 +1,13 @@
+"use client";
+
 import { CustomLink } from "@/components/customLink";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import utc from "dayjs/plugin/utc";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 dayjs.extend(utc);
 dayjs.extend(relativeTime);
@@ -11,7 +15,15 @@ dayjs.extend(relativeTime);
 const DEPLOYMENT_RULE_URL =
   "https://www.ssw.com.au/rules/rules-to-better-websites-deployment";
 
-const buildDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE;
+// isValid() is the guard that matters, not the null check: dayjs returns a
+// truthy object for unparseable input, so a set-but-garbage env var would
+// otherwise render "Invalid Date" (and toISOString() on it throws).
+const rawBuildDate = process.env.NEXT_PUBLIC_GITHUB_RUN_DATE;
+const parsedBuildDate = rawBuildDate ? dayjs.utc(rawBuildDate) : null;
+const buildDate = parsedBuildDate?.isValid() ? parsedBuildDate : null;
+const exact = buildDate?.format("D MMM YYYY [at] HH:mm UTC") ?? null;
+const iso = buildDate?.toISOString();
+
 const commitHash = process.env.NEXT_PUBLIC_GITHUB_SHA;
 const repo = process.env.NEXT_PUBLIC_GITHUB_REPOSITORY;
 
@@ -26,7 +38,16 @@ type DeploymentBannerProps = {
 };
 
 export const DeploymentBanner = ({ poweredBy }: DeploymentBannerProps) => {
-  const build = buildDate ? dayjs.utc(buildDate) : null;
+  // Relative time is resolved after mount, never during render. Every page is
+  // `force-static`, so a server-rendered `.fromNow()` would be evaluated once
+  // during the Docker build that also stamps NEXT_PUBLIC_GITHUB_RUN_DATE —
+  // baking "a few seconds ago" into the HTML and leaving it there until the
+  // next deploy. The absolute date renders first and is swapped on hydration.
+  const [relative, setRelative] = useState<string | null>(null);
+  useEffect(() => {
+    if (!buildDate) return;
+    setRelative(buildDate.fromNow());
+  }, []);
 
   return (
     <div className="bg-sswDarkGray text-xs text-gray-400">
@@ -43,15 +64,19 @@ export const DeploymentBanner = ({ poweredBy }: DeploymentBannerProps) => {
           >
             continuous deployment
           </CustomLink>
-          {build && (
+          {buildDate && (
             <>
               {". Last updated "}
-              <span
-                className="cursor-help font-medium text-gray-100"
-                title={`Last updated ${build.format("D MMM YYYY [at] HH:mm UTC")}`}
+              <time
+                dateTime={iso}
+                title={`Last updated ${exact}`}
+                className={cn(
+                  "font-medium text-gray-100",
+                  relative && "cursor-help"
+                )}
               >
-                {build.fromNow()}
-              </span>
+                {relative ?? exact}
+              </time>
             </>
           )}
           {commitHash && repo && (
@@ -78,7 +103,7 @@ export const DeploymentBanner = ({ poweredBy }: DeploymentBannerProps) => {
                     alt=""
                     width={16}
                     height={16}
-                    className="size-4 shrink-0"
+                    className="size-4 shrink-0 object-contain"
                   />
                 )}
                 <span className="font-semibold uppercase tracking-wider">
