@@ -33,9 +33,9 @@ export const DeploymentBanner = ({ poweredBy }: DeploymentBannerProps) => {
       <Container
         width="large"
         size="custom"
-        className="flex flex-col items-center gap-4 py-4 md:flex-row md:justify-between"
+        className="flex flex-col items-start gap-4 py-4 md:flex-row md:items-center md:justify-between"
       >
-        <p className="text-center md:text-left">
+        <p className="text-left">
           This website is under{" "}
           <CustomLink
             href={DEPLOYMENT_RULE_URL}
@@ -68,7 +68,7 @@ export const DeploymentBanner = ({ poweredBy }: DeploymentBannerProps) => {
           .
         </p>
 
-        <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {poweredBy?.map((item, index) => {
             const content = (
               <>
