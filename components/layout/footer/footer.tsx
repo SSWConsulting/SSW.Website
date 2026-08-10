@@ -68,7 +68,7 @@ export const Footer = () => {
         <div className="hidden gap-8 md:grid md:grid-cols-3 lg:grid-cols-5">
           {columns.map((column, index) => (
             <div key={(column.title ?? "") + index}>
-              <h3 className="mb-4 text-lg font-semibold text-white">
+              <h3 className="mb-4 mt-0 text-lg font-semibold text-white">
                 {column.title}
               </h3>
               <ul className="space-y-3">
