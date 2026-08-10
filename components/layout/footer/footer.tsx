@@ -15,7 +15,7 @@ export const Footer = () => {
 
   return (
     <footer className="no-print w-full bg-sswBorder text-gray-300">
-      <Container width="large" size="large" className="pb-10">
+      <Container width="large" size="custom" className="pb-0 pt-20">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Image
             src="/images/ssw-logo-darkmode.svg"
@@ -87,9 +87,9 @@ export const Footer = () => {
           ))}
         </div>
 
-        <hr className="my-2 hidden h-px border-gray-700 md:my-8 md:block" />
+        <hr className="hidden h-px border-gray-700 md:mt-8 md:block" />
 
-        <div className="mt-4 flex flex-col gap-4 text-sm text-gray-400 md:mt-0 md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-4 py-6 text-sm text-gray-400 md:flex-row md:items-center md:justify-between">
           <span>
             &copy; {currentYear} {bottomBar?.copyrightText}
           </span>
