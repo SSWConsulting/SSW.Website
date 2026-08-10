@@ -4,6 +4,7 @@ import Image from "next/image";
 import { CustomLink } from "../../customLink";
 import { SocialIcons } from "../../socialIcons/socialIcons";
 import { Container } from "../../util/container";
+import { DeploymentBanner } from "./deployment-banner";
 
 const MAX_COLUMNS = 5;
 
@@ -14,7 +15,7 @@ export const Footer = () => {
 
   return (
     <footer className="no-print w-full bg-sswBorder text-gray-300">
-      <Container width="large" size="large">
+      <Container width="large" size="large" className="pb-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Image
             src="/images/ssw-logo-darkmode.svg"
@@ -88,11 +89,11 @@ export const Footer = () => {
 
         <hr className="my-2 hidden h-px border-gray-700 md:my-8 md:block" />
 
-        <div className="mt-4 flex flex-col gap-4 text-sm md:mt-0 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-gray-400">
-            <span>
-              &copy; {currentYear} {bottomBar?.copyrightText}
-            </span>
+        <div className="mt-4 flex flex-col gap-4 text-sm text-gray-400 md:mt-0 md:flex-row md:items-center md:justify-between">
+          <span>
+            &copy; {currentYear} {bottomBar?.copyrightText}
+          </span>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {bottomBar?.links?.map((link, index) => (
               <CustomLink
                 key={(link.url ?? "") + index}
@@ -103,23 +104,10 @@ export const Footer = () => {
               </CustomLink>
             ))}
           </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-wider text-gray-400">
-            {bottomBar?.poweredBy?.map((item, index) =>
-              item.url ? (
-                <CustomLink
-                  key={(item.url ?? "") + index}
-                  href={item.url}
-                  className="unstyled transition-colors hover:text-white"
-                >
-                  {item.label}
-                </CustomLink>
-              ) : (
-                <span key={(item.label ?? "") + index}>{item.label}</span>
-              )
-            )}
-          </div>
         </div>
       </Container>
+
+      <DeploymentBanner poweredBy={bottomBar?.poweredBy} />
     </footer>
   );
 };
