@@ -20,14 +20,10 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
   return (
     <div
       className={cn(
-        // last:border-b-0 stops the final row doubling up against the
-        // container's own bottom border.
         "relative border-b border-hairline bg-gray-100 last:border-b-0 dark:border-white/10 dark:bg-sswBorder",
         isOpen && "bg-gray-200 dark:bg-sswBlack"
       )}
     >
-      {/* Hover tints the label and chevron red rather than the row background,
-          so the background keeps meaning "open" and the two never read alike. */}
       <button
         type="button"
         onClick={onToggle}

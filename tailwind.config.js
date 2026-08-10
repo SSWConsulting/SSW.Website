@@ -45,7 +45,6 @@ export default {
         feature: "2.8125rem",
       },
       aspectRatio: {
-        "4/3": "4 / 3",
         "3/2": "3 / 2",
       },
       scale: {

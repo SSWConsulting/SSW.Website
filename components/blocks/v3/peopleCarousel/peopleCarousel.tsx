@@ -26,10 +26,8 @@ const socials = [
   { key: "github", label: "GitHub", Icon: FaGithub },
 ];
 
-// The profile link stretches over the whole card via an ::after overlay, so
-// anywhere that isn't a social icon opens the SSW People profile. The icons
-// sit above that overlay (z-10) and keep their own targets — nesting real
-// <a>s inside one another isn't valid, hence the pseudo-element.
+// The ::after overlay stretches the profile link over the whole card; a
+// pseudo-element because nesting the social <a>s inside it isn't valid.
 // A plain <div> stands in when there's no profile to link to.
 function ProfileLink({ person, className, children }) {
   if (!person?.sswPeople) {
@@ -83,8 +81,7 @@ function PersonCard({ person, index, scope }) {
       </ProfileLink>
 
       {/* flex-1 keeps the icon rows aligned when names wrap to two lines.
-          z-10 lifts the icons above the profile link's ::after overlay so they
-          stay independently clickable. */}
+          z-10 lifts the icons above the profile link's ::after overlay. */}
       <div className="relative z-10 flex flex-1 items-start justify-center gap-1 p-4 xl:px-6 xl:pb-6">
         {socials.map(({ key, label, Icon }) =>
           person?.[key] ? (

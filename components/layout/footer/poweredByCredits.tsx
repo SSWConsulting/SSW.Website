@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { CustomLink } from "../../customLink";
 
@@ -7,10 +8,8 @@ export type PoweredByItem = {
   logo?: string;
 };
 
-// whitespace-nowrap keeps a credit from splitting mid-phrase (or from its
-// logo) when the group wraps; the group's own flex-wrap breaks between
-// credits instead. py-1/-my-1 grows the tap target past the WCAG 2.5.8
-// minimum without moving anything, since the text alone falls short of it.
+// py-1/-my-1 grows the tap target to the WCAG 2.5.8 minimum without shifting
+// layout; whitespace-nowrap keeps a credit from splitting from its logo.
 const ITEM_CLASS = "-my-1 flex items-center gap-1.5 whitespace-nowrap py-1";
 
 const CreditContent = ({ item }: { item: PoweredByItem }) => (
@@ -38,7 +37,10 @@ export const PoweredByCredits = ({ items }: { items?: PoweredByItem[] }) => {
           <CustomLink
             key={item.url + index}
             href={item.url}
-            className={`unstyled transition-colors hover:text-white ${ITEM_CLASS}`}
+            className={cn(
+              "unstyled transition-colors hover:text-white",
+              ITEM_CLASS
+            )}
           >
             <CreditContent item={item} />
           </CustomLink>
