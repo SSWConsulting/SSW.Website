@@ -12,7 +12,7 @@
         "redGlow": true
       },
       "brow": "claude training",
-      "heading": "Turn Claude into a practical advantage for your team",
+      "heading": "Give your staff the superpowers they need",
       "description": "Move beyond one-off prompts. SSW’s hands-on Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes.\n",
       "buttons": [
         {
@@ -85,7 +85,7 @@
       },
       "heading": "At a Glance",
       "isH1": false,
-      "description": "Two focused half-day sessions, connected by a real-world pilot, so your team learns first and builds from evidence second.\n",
+      "description": "Two focused half-day sessions, 1 to 2 weeks apart, so your team can digest the foundations and then build on them.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -143,7 +143,7 @@
         {
           "brow": "03",
           "heading": "Good results are hard to repeat",
-          "description": "Chat, Cowork and Code are designed for different jobs. Without a simple mental model, people choose the wrong mode, overcomplicate the task or avoid it altogether.\n"
+          "description": "Useful context, constraints and skills live inside one person’s chat history. The next person starts again, and quality varies across the team.\n"
         }
       ],
       "_template": "v3FeatureSteps"
@@ -179,27 +179,27 @@
       "body": "The Foundation session gives your pilot group the habits and confidence to use Claude effectively. After the team applies the learning to real work, the Advanced session turns the most valuable opportunities into skills, prototypes and a practical implementation plan.",
       "accordionItems": [
         {
-          "label": "Foundation — What Claude Is and Where It Fits",
+          "label": "Foundation - What Claude Is and Where It Fits",
           "content": "Understand what Claude is good at, where it is limited and where human judgement is still required.\n\nYour team learns the principles for using Claude safely, responsibly and effectively in day-to-day business work.\n"
         },
         {
-          "label": "Foundation — Chat, Cowork and Code",
+          "label": "Foundation - Chat, Cowork and Code",
           "content": "Learn when the conversation itself is the work, when to hand Claude a task and when Claude Code is the right tool for a software team.\n\nParticipants leave with a clear mental model for choosing the appropriate Claude mode for each job.\n"
         },
         {
-          "label": "Foundation — Prompting and Everyday Work",
+          "label": "Foundation - Prompting and Everyday Work",
           "content": "Practise giving Claude clear goals, context, constraints and examples.\n\nYour team applies these techniques to relevant finance, operations and everyday business tasks rather than working through generic demonstrations.\n"
         },
         {
-          "label": "Foundation — Applied Workflow Scenarios",
-          "content": "Work through practical scenarios based on relevant real-world workflows.\n\nThe session finishes with questions, useful tips and clear next steps for what the pilot group should test and share internally.\n"
+          "label": "Foundation - Applied Workflow Scenarios",
+          "content": "Work through practical scenarios based on relevant real-world workflows. Learn how to package these into reusable and sharable skills.\n\nThe session finishes with questions, useful tips and clear next steps for what the pilot group should test and share internally.\n"
         },
         {
-          "label": "Advanced — Using Claude Code ",
+          "label": "Advanced - Using Claude Code ",
           "content": "Starting using Claude Code and vibing up solutions - get comfortable with the processes and best practice in getting the results you want.\n"
         },
         {
-          "label": "Advanced — Skills, Prototypes and Automation",
+          "label": "Advanced - Skills, Prototypes and Automation",
           "content": "Two SSW presenters work with your experienced users to design custom Claude skills, specify valuable use cases and rapidly prototype working solutions.\n\nThe session can also explore automation and integration patterns, deployment options, solution architecture and the business case for further investment.\n"
         }
       ],
