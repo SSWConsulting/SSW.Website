@@ -101,14 +101,14 @@ export const eventsCalendarSchema: Collection = {
       label: "Button label",
       name: "ctaLabel",
       description:
-        'Text on the registration button, e.g. "Get tickets". Defaults to "Register now".',
+        "Text on the registration button, e.g. 'Get tickets'. Defaults to 'Register now'.",
     },
     {
       type: "string",
       label: "Price",
       name: "price",
       description:
-        'Optional price shown on the button, e.g. "$99 AUD". Leave blank to hide.',
+        "Optional price shown on the button, e.g. '$99 AUD'. Leave blank to hide.",
     },
     {
       type: "image",
@@ -210,7 +210,7 @@ export const eventsCalendarSchema: Collection = {
           name: "role",
           label: "Role in this event",
           description:
-            'Shown under the speaker in the header, e.g. "Lead" or "Co-lead". Defaults to "Speaker" when blank.',
+            "Shown under the speaker in the header, e.g. 'Lead' or 'Co-lead'. Defaults to 'Speaker' when blank.",
         },
       ],
     },
@@ -289,14 +289,14 @@ export const eventsCalendarSchema: Collection = {
       label: "Entry",
       name: "entryCost",
       description:
-        'Shown as a pill in the page header, e.g. "Free entry" or "$50". Leave blank to hide.',
+        "Shown as a pill in the page header, e.g. 'Free entry' or '$50'. Leave blank to hide.",
     },
     {
       type: "string",
       label: "Venue",
       name: "venue",
       description:
-        'The specific venue or room, shown before the city in the header, e.g. "SSW Chapel". Leave blank to show the city only.',
+        "The specific venue or room, shown before the city in the header, e.g. 'SSW Chapel'. Leave blank to show the city only.",
     },
     {
       type: "string",

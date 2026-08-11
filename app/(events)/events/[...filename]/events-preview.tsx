@@ -42,7 +42,7 @@ function SpeakerAvatar({
   return (
     <div
       className={cn(
-        "relative shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-sswRed ring-offset-2 ring-offset-white",
+        "relative shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-sswRed",
         size
       )}
     >
@@ -78,8 +78,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
     true
   );
 
-  const cityLabel =
-    event.cityOther || CITY_MAP[event.city]?.name || event.city;
+  const cityLabel = event.cityOther || CITY_MAP[event.city]?.name || event.city;
   const locationLine = [event.venue, cityLabel].filter(Boolean).join(", ");
 
   const presenters = event.presenterList ?? [];
@@ -108,7 +107,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
       {/* Hero */}
       <Section className="py-8 md:py-12">
         <Container width="custom" size="custom" className="w-full max-w-8xl">
-          <div className="relative overflow-hidden rounded-3xl border-0.75 border-gray-100 bg-gray-50 px-6 py-10 md:px-14 md:py-14">
+          <div className="relative overflow-hidden rounded-3xl border-0.75 border-gray-100 bg-gray-50 px-6 py-10 md:p-14">
             {/* Dotted texture */}
             <div
               aria-hidden
@@ -150,7 +149,9 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                   {(event.calendarType || event.entryCost) && (
                     <span className="flex items-center gap-2 text-gray-400">
                       {event.calendarType && (
-                        <span data-tina-field={tinaField(event, "calendarType")}>
+                        <span
+                          data-tina-field={tinaField(event, "calendarType")}
+                        >
                           {event.calendarType}
                         </span>
                       )}
@@ -169,7 +170,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 {/* Title */}
                 <h1
                   data-tina-field={tinaField(event, "title")}
-                  className="mb-6 mt-0 max-w-3xl py-0 text-4xl font-bold leading-[1.1] text-sswBlack md:text-6xl"
+                  className="mb-6 mt-0 max-w-3xl py-0 text-4xl font-bold leading-tight text-sswBlack md:text-6xl"
                 >
                   {event.title}
                 </h1>
@@ -266,7 +267,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator>/</BreadcrumbSeparator>
                 <BreadcrumbItem>
-                  <BreadcrumbPage className="max-w-[16rem] truncate text-gray-500">
+                  <BreadcrumbPage className="max-w-64 truncate text-gray-500">
                     {event.title}
                   </BreadcrumbPage>
                 </BreadcrumbItem>
@@ -384,10 +385,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                     {cardBody}
                   </CustomLink>
                 ) : (
-                  <div
-                    key={`presenter-${index}-${name}`}
-                    className={cardClass}
-                  >
+                  <div key={`presenter-${index}-${name}`} className={cardClass}>
                     {cardBody}
                   </div>
                 );
