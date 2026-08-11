@@ -81,9 +81,6 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const cityLabel =
     event.cityOther || CITY_MAP[event.city]?.name || event.city;
   const locationLine = [event.venue, cityLabel].filter(Boolean).join(", ");
-  // Speaker affiliation line, e.g. "SSW Brisbane" for SSW-hosted events.
-  const speakerLocation =
-    cityLabel && event.hostedAtSsw ? `SSW ${cityLabel}` : cityLabel;
 
   const presenters = event.presenterList ?? [];
   const validPresenters = presenters.filter(
@@ -329,9 +326,6 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 const photo = presenter?.profileImg;
                 const about = presenter?.about;
                 const position = presenter?.position;
-                const metaLine = [position, speakerLocation]
-                  .filter(Boolean)
-                  .join(" · ");
 
                 const cardClass =
                   "unstyled group relative flex flex-col rounded-2xl border-0.75 border-gray-100 bg-gray-50 p-6 pb-20 text-inherit no-underline transition-colors duration-300 hover:border-gray-200 hover:bg-white md:p-8 md:pb-20";
@@ -339,7 +333,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 const cardBody = (
                   <>
                     <div className="flex items-start gap-4">
-                      <div className="relative size-20 shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-transparent ring-offset-2 ring-offset-gray-50 transition-all duration-300 group-hover:ring-sswRed group-hover:ring-offset-white">
+                      <div className="relative size-20 shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-transparent transition-all duration-300 group-hover:ring-sswRed">
                         {photo ? (
                           <Image
                             src={photo}
@@ -357,9 +351,9 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                         <h3 className="m-0 text-xl font-bold text-sswBlack underline decoration-1 underline-offset-4">
                           {name}
                         </h3>
-                        {metaLine && (
+                        {position && (
                           <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gray-400">
-                            {metaLine}
+                            {position}
                           </p>
                         )}
                       </div>
