@@ -80,6 +80,49 @@
       "_template": "v3LogoCarousel"
     },
     {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "At a Glance",
+      "isH1": false,
+      "description": "Two focused half-day sessions, connected by a real-world pilot, so your team learns first and builds from evidence second.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "$5,200 + GST per tier",
+            "description": "$10,400 + GST for the full two-tier program",
+            "icon": "BiMoneyWithdraw"
+          },
+          {
+            "heading": "Hands-On by Design",
+            "description": "Real prompts, workflows, skills and live prototypes",
+            "icon": "BiSolidBookBookmark"
+          },
+          {
+            "heading": "Post-Training Toolkit",
+            "description": "Includes slides, cheat sheets, and workflows",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "One-Stop-Shop",
+            "description": "Get the right training for your business context",
+            "icon": "BiSolidCustomize"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 7
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
+        "imageHeight": 1758,
+        "imageWidth": 2638
+      },
+      "_template": "imageTextBlock"
+    },
+    {
       "background": {
         "backgroundColour": 7
       },
@@ -101,6 +144,32 @@
           "brow": "03",
           "heading": "Good results are hard to repeat",
           "description": "Chat, Cowork and Code are designed for different jobs. Without a simple mental model, people choose the wrong mode, overcomplicate the task or avoid it altogether.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "",
+      "heading": "How It Works",
+      "description": "",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "Quick call to map goals",
+          "description": "We map your objectives, attendee experience, approved tools, data-handling requirements and the workflows your team most wants to improve. We then tailor the Foundation session and prepare relevant scenarios.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Foundation training and pilot",
+          "description": "Your pilot group completes a practical half-day at your office, then applies Claude to real work and runs internal sessions. This reveals which habits stick and where the real bottlenecks are.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "Check-in and Advanced build",
+          "description": "We review the pilot results and plan the Advanced session. Two SSW presenters then work with your experienced users to build skills, prototype solutions and define practical implementation options.\n"
         }
       ],
       "_template": "v3FeatureSteps"
@@ -138,74 +207,6 @@
         "backgroundColour": 7
       },
       "_template": "accordionBlock"
-    },
-    {
-      "topLabel": {
-        "labelText": ""
-      },
-      "heading": "At a Glance",
-      "isH1": false,
-      "description": "Two focused half-day sessions, connected by a real-world pilot, so your team learns first and builds from evidence second.\n",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "$5,200 + GST per tier",
-            "description": "$10,400 + GST for the full two-tier program",
-            "icon": "BiMoneyWithdraw"
-          },
-          {
-            "heading": "Hands-On by Design",
-            "description": "Real prompts, workflows, skills and live prototypes",
-            "icon": "BiSolidBookBookmark"
-          },
-          {
-            "heading": "Post-Training Toolkit",
-            "description": "Includes slides, cheat sheets, and workflows",
-            "icon": "BiSolidWrench"
-          },
-          {
-            "heading": "One-Stop-Shop",
-            "description": "Get the right training for your business context",
-            "icon": "BiSolidCustomize"
-          }
-        ]
-      },
-      "background": {
-        "backgroundColour": 7
-      },
-      "mediaConfiguration": {
-        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
-        "imageHeight": 1758,
-        "imageWidth": 2638
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "background": {
-        "backgroundColour": 7
-      },
-      "brow": "",
-      "heading": "How It Works",
-      "description": "",
-      "steps": [
-        {
-          "brow": "01",
-          "heading": "Quick call to map goals",
-          "description": "We map your objectives, attendee experience, approved tools, data-handling requirements and the workflows your team most wants to improve. We then tailor the Foundation session and prepare relevant scenarios.\n"
-        },
-        {
-          "brow": "02",
-          "heading": "Foundation training and pilot",
-          "description": "Your pilot group completes a practical half-day at your office, then applies Claude to real work and runs internal sessions. This reveals which habits stick and where the real bottlenecks are.\n"
-        },
-        {
-          "brow": "03",
-          "heading": "Check-in and Advanced build",
-          "description": "We review the pilot results and plan the Advanced session. Two SSW presenters then work with your experienced users to build skills, prototype solutions and define practical implementation options.\n"
-        }
-      ],
-      "_template": "v3FeatureSteps"
     },
     {
       "background": {
