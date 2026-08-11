@@ -131,35 +131,32 @@
       "_template": "v3VideoHighlights"
     },
     {
+      "heading": "A two-tier program built for **Claude adoption**",
+      "body": "The Foundation session gives your pilot group the habits and confidence to use Claude effectively. After the team applies the learning to real work, the Advanced session turns the most valuable opportunities into skills, prototypes and a practical implementation plan.",
+      "accordionItems": [
+        {
+          "label": "Foundation — What Claude Is and Where It Fits",
+          "content": "Understand what Claude is good at, where it is limited and where human judgement is still required.\n\nYour team learns the principles for using Claude safely, responsibly and effectively in day-to-day business work.\n"
+        },
+        {
+          "label": "Ipsum",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+        }
+      ],
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
       "background": {
         "backgroundColour": 7
       },
-      "brow": "OUR PROCESS",
-      "heading": "What to expect working with SSW",
-      "description": "",
-      "steps": [
-        {
-          "heading": "Initial Call",
-          "description": "A short call with a senior engineer to talk through your project.\n",
-          "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
-        },
-        {
-          "heading": "Spec Review",
-          "description": "A clear, costed plan with scope, timing and the fastest path to ROI.\n",
-          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
-        },
-        {
-          "heading": "Build & Deliver",
-          "description": "SSW can either handle the project from end-to-end or join your existing team, build your product, and ship your solution.\n",
-          "link": "https://www.ssw.com.au/rules/rules-to-better-scrum"
-        },
-        {
-          "heading": "Service Plan",
-          "description": "We can stay on post-launch to ensure a successful project handover.\n",
-          "link": "https://www.ssw.com.au/consulting/support-plans"
-        }
-      ],
-      "_template": "v3Process"
+      "_template": "accordionBlock"
     },
     {
       "background": {
