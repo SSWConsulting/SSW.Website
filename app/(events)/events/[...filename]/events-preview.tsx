@@ -123,7 +123,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
               <div className="mb-1 flex items-center gap-6">
                 <h1
                   data-tina-field={tinaField(event, "title")}
-                  className="mt-0 self-start py-0 max-md:text-2xl"
+                  className="mt-0 self-start py-0 font-bold max-md:text-2xl"
                 >
                   {event.title}
                 </h1>
