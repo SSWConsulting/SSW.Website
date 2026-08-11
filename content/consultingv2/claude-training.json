@@ -279,99 +279,14 @@
     },
     {
       "background": {
-        "backgroundColour": 7
-      },
-      "brow": "Full Stack Engineers",
-      "heading": "One team for the whole build",
-      "subtitle": "React is the front door. We build the whole house.",
-      "cards": [
-        {
-          "title": "Next.js",
-          "description": "Fast, search-friendly web apps, with React under the hood.",
-          "link": "/consulting/nextjs"
-        },
-        {
-          "title": "React Native",
-          "description": "Mobile apps built with your favorite React stack.",
-          "link": "/consulting/mobile-application-development"
-        },
-        {
-          "title": ".NET",
-          "description": "Enterprise backends that stand the test of time.",
-          "link": "/consulting/web-applications"
-        },
-        {
-          "title": "Azure",
-          "description": "Cloud infrastructure that keeps your app fast as it scales.",
-          "link": "/consulting/azure"
-        }
-      ],
-      "_template": "v3StackCards"
-    },
-    {
-      "isStacked": false,
-      "brow": "learn more on SSWTV",
-      "heading": "Tech wisdom from the trenches",
-      "isH1": false,
-      "body": "At SSW, we’ve been building enterprise projects for thirty years: We're thought leaders in software architecture, and document all our learning for free on the SSW Rules and SSW TV.",
-      "tabletTextAlignment": "Left",
-      "cards": [
-        {
-          "guid": "akn4ur",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=5QLhrLrvWp8",
-          "altText": "Angular – Satisfying your Performance Hungry UI",
-          "category": "Angular",
-          "heading": "Angular – Satisfying your Performance Hungry UI"
-        },
-        {
-          "guid": "20ehn",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=yVHzykdKis4",
-          "altText": "Why Everyone is Choosing Next.JS & the Best Headless UI Library",
-          "category": "NEXT.JS",
-          "heading": "Why Everyone is Choosing Next.JS & the Best Headless UI Library"
-        },
-        {
-          "guid": "arf4s",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Kl1KWdMI5So",
-          "altText": "Vercel – Simplifying Your Development with Zero Configuration",
-          "category": "DevOps ",
-          "heading": "Vercel – Simplifying Your Development with Zero Configuration"
-        },
-        {
-          "guid": "ui7a6e",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=BlqJ7bnivLE",
-          "altText": "Lorem Ipsum",
-          "category": "AI Trends",
-          "heading": "The Year of the AI Agent: Automation to Intelligence"
-        },
-        {
-          "guid": "hhszy",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://youtu.be/F06MV1qm51Y?si=u1mOLqpFCaty4NrL",
-          "altText": "Lorem Ipsum",
-          "category": "AI Model Guides",
-          "heading": " 3 Creative Uses for OpenAI API "
-        }
-      ],
-      "background": {
-        "backgroundColour": 7
-      },
-      "_template": "v3CardCarousel"
-    },
-    {
-      "background": {
         "backgroundColour": 8
       },
       "heading": "Frequently asked questions",
       "faqs": [
         {
           "question": "How much does it cost?",
-          "answer": "Every engagement is scoped to your goals, so there's no single price. The initial call is always 100% **free**. The specification review will be used to give the most accurate estimation possible for a projects scope, price and duration.\n",
-          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
+          "answer": "Foundation Training is $5,200 + GST.\n\nAdvanced Training is $5,200 + GST.\n\nThe total for both tiers is $10,400 + GST.\n\nEach fee includes a half-day onsite session and dedicated preparation. Advanced Training is delivered by two SSW presenters. Any additional consulting, development or implementation work can be scoped separately.\n",
+          "link": ""
         },
         {
           "question": "Do you work with our existing team?",
