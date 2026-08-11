@@ -289,18 +289,22 @@
           "link": ""
         },
         {
-          "question": "Do you work with our existing team?",
-          "answer": "Yes! We can either take over a project from end-to-end with our own team at SSW, or embed our developers into your existing team.\n",
-          "link": "https://www.ssw.com.au/consulting/mentoring"
+          "question": "Do attendees need to know how to code?",
+          "answer": "No coding experience is required for Foundation Training. The Foundation session is designed for a mixed business audience and is suitable for finance, operations, leadership and technical team members. Claude Code is introduced so the group understands where it fits, but Foundation Training is not a software development course.\n",
+          "link": ""
         },
         {
-          "question": "Can you rescue a project that's already in trouble?",
-          "answer": "Absolutely! SSW can support a range of projects, from large version upgrades, migrations, greenfield projects, and brownfield projects.\n"
+          "question": "How long is the training?",
+          "answer": "Each training tier is delivered as a separate half-day onsite session.\n\nThe proposed Foundation session runs from 1:30 pm to 5:00 pm, including a 30-minute break from 3:00 pm to 3:30 pm. This provides three hours of delivery.\n\nAdvanced Training is another half-day session, scheduled after the pilot group has applied the Foundation learning and completed a planning check-in with SSW.\n"
         },
         {
-          "question": "How does SSW ensure quality and success of a software project?",
-          "answer": "Quality and success are the heart of our processes; we use:\n\n* Clean Architecture: Designing for scalability, testability, and maintainability.\n* Scrum Methodology: Ensuring transparency, client involvement, and adaptability through fast feedback loops.\n* DevOps Practices: Streamlining development and deployment for faster delivery and reliability.\n* Best Practices: Adhering to and sharing industry best practices (via SSW Rules and SSW TV).\n* Expert Teams: Employing rigorously hired and continuously developed technical experts.\n* Strong Communication: Keeping clients informed and involved throughout the project lifecycle.\n",
-          "link": "https://www.ssw.com.au/rules/rules-to-successful-projects"
+          "question": "Who should attend?",
+          "answer": "Foundation Training is for pilot groups and people who are new to Claude or are still developing consistent working habits.\n\nIt is suitable for business, finance, operations and relevant technical team members.\n\nAdvanced Training is for experienced users who have already applied Claude to real work and can bring specific bottlenecks, workflows or solution ideas into the room.\n\nThe appropriate group size is confirmed during planning so participants receive useful support during the hands-on exercises.\n",
+          "link": ""
+        },
+        {
+          "question": "What will our team take away?",
+          "answer": "After Foundation Training, your team will have a shared understanding of Chat, Cowork and Code, practical prompting techniques, safe-use principles and a focused list of workflows to test.\n\nAfter Advanced Training, your team may leave with custom Claude skills, working prototypes, documented use cases and clearer options for automation, integration, architecture and further implementation.\n"
         }
       ],
       "_template": "v3Faq"
