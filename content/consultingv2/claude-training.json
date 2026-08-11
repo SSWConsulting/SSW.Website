@@ -124,6 +124,10 @@
         {
           "label": "Foundation — Applied Workflow Scenarios",
           "content": "Work through practical scenarios based on relevant real-world workflows.\n\nThe session finishes with questions, useful tips and clear next steps for what the pilot group should test and share internally.\n"
+        },
+        {
+          "label": "Advanced — Using Claude Code ",
+          "content": "Starting using Claude Code and vibing up solutions - get comfortable with the processes and best practice in getting the results you want.\n"
         }
       ],
       "background": {
@@ -234,12 +238,12 @@
       },
       "testimonials": [
         {
-          "quote": "I thoroughly enjoyed working with **SSW** on developing and launching our new website. What truly set them apart was not just their **evident expertise** but also their **unwavering commitment to going the extra mile.**",
-          "caseStudyUrl": "/company/clients/hearing-australia",
-          "authorName": "Kiriana Meha-Bettison",
-          "authorTitle": "IT Project Manager, Hearing Australia",
+          "quote": "My team and I gained a ton of **valuable insights**! Their expertise and engaging approach truly simplified complex concepts for us. We're now excited to put our **new knowledge into practice**.  Highly recommended for anyone in the field.",
+          "caseStudyUrl": "",
+          "authorName": "Ian Newmarch",
+          "authorTitle": "Tech Advisor, Twana",
           "authorImage": "",
-          "companyLogo": "/images/logos/hearing-australia.png"
+          "companyLogo": ""
         }
       ],
       "_template": "v3Testimonials"
