@@ -1,4 +1,5 @@
 "use client";
+import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
@@ -80,6 +81,9 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const cityLabel =
     event.cityOther || CITY_MAP[event.city]?.name || event.city;
   const locationLine = [event.venue, cityLabel].filter(Boolean).join(", ");
+  // Speaker affiliation line, e.g. "SSW Brisbane" for SSW-hosted events.
+  const speakerLocation =
+    cityLabel && event.hostedAtSsw ? `SSW ${cityLabel}` : cityLabel;
 
   const presenters = event.presenterList ?? [];
   const validPresenters = presenters.filter(
@@ -107,7 +111,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
       {/* Hero */}
       <Section className="py-8 md:py-12">
         <Container width="custom" size="custom" className="w-full max-w-8xl">
-          <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50 px-6 py-10 md:px-14 md:py-14">
+          <div className="relative overflow-hidden rounded-3xl border-0.75 border-gray-100 bg-gray-50 px-6 py-10 md:px-14 md:py-14">
             {/* Dotted texture */}
             <div
               aria-hidden
@@ -310,14 +314,14 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
         </Section>
       )}
       {validPresenters.length > 0 && (
-        <Section color="lightgray">
+        <Section>
           <Container width="custom" size="medium" className="w-full max-w-8xl">
-            <h2 className="mb-6 mt-0 text-lg font-semibold text-sswRed">
+            <h2 className="mb-8 mt-0 text-sm font-semibold uppercase tracking-widest text-sswRed">
               {validPresenters.length > 1
                 ? "About the Speakers"
                 : "About the Speaker"}
             </h2>
-            <div className="flex flex-col gap-10">
+            <div className="grid gap-6 md:grid-cols-2">
               {validPresenters.map((item, index) => {
                 const presenter = item.presenter;
                 const name = presenter?.presenter?.name as string;
@@ -325,48 +329,72 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 const photo = presenter?.profileImg;
                 const about = presenter?.about;
                 const position = presenter?.position;
+                const metaLine = [position, speakerLocation]
+                  .filter(Boolean)
+                  .join(" · ");
 
-                return (
-                  <div
-                    key={`presenter-${index}-${name}`}
-                    className="flex flex-col gap-6"
-                  >
-                    <div className="flex items-center gap-4">
-                      {photo && (
-                        <Image
-                          src={photo}
-                          alt={name}
-                          width={220}
-                          height={220}
-                          className="size-16 shrink-0 rounded-full object-cover"
-                        />
-                      )}
-                      <div>
-                        {url ? (
-                          <CustomLink
-                            className="font-semibold uppercase underline"
-                            href={url}
-                          >
-                            {name}
-                          </CustomLink>
+                const cardClass =
+                  "unstyled group relative flex flex-col rounded-2xl border-0.75 border-gray-100 bg-gray-50 p-6 pb-20 text-inherit no-underline transition-colors duration-300 hover:border-gray-200 hover:bg-white md:p-8 md:pb-20";
+
+                const cardBody = (
+                  <>
+                    <div className="flex items-start gap-4">
+                      <div className="relative size-20 shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-transparent ring-offset-2 ring-offset-gray-50 transition-all duration-300 group-hover:ring-sswRed group-hover:ring-offset-white">
+                        {photo ? (
+                          <Image
+                            src={photo}
+                            alt={name}
+                            fill
+                            className="object-cover"
+                          />
                         ) : (
-                          <span className="font-semibold uppercase">
-                            {name}
+                          <span className="flex size-full items-center justify-center text-gray-300">
+                            <User className="size-1/2" aria-hidden />
                           </span>
                         )}
-                        {position && (
-                          <p className="text-gray-500">{position}</p>
+                      </div>
+                      <div className="min-w-0">
+                        <h3 className="m-0 text-xl font-bold text-sswBlack underline decoration-1 underline-offset-4">
+                          {name}
+                        </h3>
+                        {metaLine && (
+                          <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                            {metaLine}
+                          </p>
                         )}
                       </div>
                     </div>
-                    <div className="prose max-w-none">
-                      {about && (
+                    {about && (
+                      <div className="prose prose-sm mt-5 max-w-none text-gray-600">
                         <TinaMarkdown
                           content={about}
                           components={componentRenderer}
                         />
-                      )}
-                    </div>
+                      </div>
+                    )}
+                    {url && (
+                      <ArrowCircle
+                        className="absolute bottom-6 right-6 size-12"
+                        iconClassName="size-4"
+                      />
+                    )}
+                  </>
+                );
+
+                return url ? (
+                  <CustomLink
+                    key={`presenter-${index}-${name}`}
+                    href={url}
+                    className={cardClass}
+                  >
+                    {cardBody}
+                  </CustomLink>
+                ) : (
+                  <div
+                    key={`presenter-${index}-${name}`}
+                    className={cardClass}
+                  >
+                    {cardBody}
                   </div>
                 );
               })}
