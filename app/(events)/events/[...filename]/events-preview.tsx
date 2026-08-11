@@ -198,7 +198,7 @@ function EventSidebar({
     <aside className="w-full shrink-0 lg:sticky lg:top-24 lg:w-80">
       <div className="overflow-hidden rounded-2xl border-0.75 border-gray-200 bg-white shadow-sm">
         {event.bannerImage ? (
-          <div className="relative aspect-video w-full">
+          <div className="relative aspect-video h-28 w-full lg:h-auto">
             <Image
               src={event.bannerImage}
               alt={event.title}
@@ -207,7 +207,7 @@ function EventSidebar({
             />
           </div>
         ) : event.thumbnail ? (
-          <div className="relative flex aspect-video w-full items-center justify-center border-b-0.75 border-gray-100 bg-gray-50">
+          <div className="relative flex aspect-video h-28 w-full items-center justify-center border-b-0.75 border-gray-100 bg-gray-50 lg:h-auto">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0"
@@ -563,7 +563,9 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
         </Container>
       </Section>
 
-      <Section>
+      {/* Plain <section>, not <Section>: Section sets overflow-hidden, which
+          would disable the sidebar's position: sticky. */}
+      <section className="relative">
         <Container className="w-full max-w-8xl" width="custom" size="medium">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
             <div className="min-w-0 flex-1">
@@ -608,7 +610,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
             />
           </div>
         </Container>
-      </Section>
+      </section>
       {validPresenters.length > 0 && (
         <Section>
           <Container width="custom" size="medium" className="w-full max-w-8xl">
