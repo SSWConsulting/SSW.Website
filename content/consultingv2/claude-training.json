@@ -106,31 +106,6 @@
       "_template": "v3FeatureSteps"
     },
     {
-      "background": {
-        "backgroundColour": 7,
-        "gridOverlay": true
-      },
-      "videoUrl": "https://www.youtube.com/watch?v=3K4Gb54BFMo",
-      "thumbnail": "/images/consulting/thumbnail.png",
-      "greyscaleThumbnail": true,
-      "figure": "Video: React vs. Angular: Let the experts argue! (28 mins)",
-      "heading": "Why choose SSW?",
-      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
-      "highlights": [
-        {
-          "title": "Deep expertise",
-          "desc2": "We go deep on every Technology we touch - building with it, codifying best practices, and making that knowledge freely available\n",
-          "link": "https://www.ssw.com.au/rules/rules-to-better-react",
-          "linkText": "Rules to Better React"
-        },
-        {
-          "title": "Results over rhetoric",
-          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?\n"
-        }
-      ],
-      "_template": "v3VideoHighlights"
-    },
-    {
       "heading": "A two-tier program built for **Claude adoption**",
       "body": "The Foundation session gives your pilot group the habits and confidence to use Claude effectively. After the team applies the learning to real work, the Advanced session turns the most valuable opportunities into skills, prototypes and a practical implementation plan.",
       "accordionItems": [
@@ -149,16 +124,6 @@
         {
           "label": "Foundation — Applied Workflow Scenarios",
           "content": "Work through practical scenarios based on relevant real-world workflows.\n\nThe session finishes with questions, useful tips and clear next steps for what the pilot group should test and share internally.\n"
-        }
-      ],
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
         }
       ],
       "background": {
@@ -185,6 +150,16 @@
             "heading": "Hands-On by Design",
             "description": "Real prompts, workflows, skills and live prototypes",
             "icon": "BiSolidBookBookmark"
+          },
+          {
+            "heading": "Post-Training Toolkit",
+            "description": "Includes slides, cheat sheets, and workflows",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "One-Stop-Shop",
+            "description": "Get the right training for your business context",
+            "icon": "BiSolidCustomize"
           }
         ]
       },
@@ -223,14 +198,6 @@
         }
       ],
       "_template": "v3FeatureSteps"
-    },
-    {
-      "background": {
-        "backgroundColour": 7
-      },
-      "heading": "Tell us about **your** project",
-      "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
-      "_template": "v3LeadCapture"
     },
     {
       "background": {
@@ -315,8 +282,8 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "heading": "Let's build something you're proud of",
-      "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
+      "heading": "Equip your team with essential AI skills",
+      "description": "",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
