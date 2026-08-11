@@ -85,8 +85,6 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const validPresenters = presenters.filter(
     (p) => p?.presenter?.presenter?.name
   );
-  const speakerCount = validPresenters.length;
-  const firstSpeaker = validPresenters[0]?.presenter;
 
   return (
     <>
@@ -196,38 +194,31 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
               </div>
 
               {/* Speaker(s) */}
-              {speakerCount > 0 && (
+              {validPresenters.length > 0 && (
                 <div
                   data-tina-field={tinaField(event, "presenterList")}
-                  className="flex shrink-0 flex-col items-center gap-4 md:w-44"
+                  className="flex shrink-0 flex-wrap items-start justify-center gap-x-6 gap-y-8 md:max-w-md md:justify-end"
                 >
-                  {speakerCount === 1 ? (
-                    <SpeakerAvatar
-                      photo={firstSpeaker?.profileImg}
-                      name={firstSpeaker?.presenter?.name}
-                    />
-                  ) : (
-                    <div className="flex -space-x-6">
-                      {validPresenters.slice(0, 4).map((item, index) => (
-                        <SpeakerAvatar
-                          key={`hero-speaker-${index}`}
-                          size="size-16"
-                          photo={item.presenter?.profileImg}
-                          name={item.presenter?.presenter?.name}
-                        />
-                      ))}
+                  {validPresenters.map((item, index) => (
+                    <div
+                      key={`hero-speaker-${index}`}
+                      className="flex w-28 flex-col items-center gap-3 text-center"
+                    >
+                      <SpeakerAvatar
+                        size="size-28"
+                        photo={item.presenter?.profileImg}
+                        name={item.presenter?.presenter?.name}
+                      />
+                      <div>
+                        <p className="font-bold leading-tight text-sswBlack">
+                          {item.presenter?.presenter?.name}
+                        </p>
+                        <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                          {item.role || "Speaker"}
+                        </p>
+                      </div>
                     </div>
-                  )}
-                  <div className="text-center">
-                    <p className="font-bold leading-tight text-sswBlack">
-                      {speakerCount === 1
-                        ? firstSpeaker?.presenter?.name
-                        : `${speakerCount} Speakers`}
-                    </p>
-                    <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gray-400">
-                      {speakerCount === 1 ? "Speaker" : "Speakers"}
-                    </p>
-                  </div>
+                  ))}
                 </div>
               )}
             </div>

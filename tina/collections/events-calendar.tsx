@@ -191,6 +191,13 @@ export const eventsCalendarSchema: Collection = {
           label: "Presenter",
           collections: ["presenter"],
         },
+        {
+          type: "string",
+          name: "role",
+          label: "Role in this event",
+          description:
+            'Shown under the speaker in the header, e.g. "Lead" or "Co-lead". Defaults to "Speaker" when blank.',
+        },
       ],
     },
     {
