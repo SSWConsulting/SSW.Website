@@ -202,6 +202,32 @@
       "background": {
         "backgroundColour": 7
       },
+      "brow": "",
+      "heading": "How It Works",
+      "description": "",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "Quick call to map goals",
+          "description": "We map your objectives, attendee experience, approved tools, data-handling requirements and the workflows your team most wants to improve. We then tailor the Foundation session and prepare relevant scenarios.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Foundation training and pilot",
+          "description": "Your pilot group completes a practical half-day at your office, then applies Claude to real work and runs internal sessions. This reveals which habits stick and where the real bottlenecks are.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "Check-in and Advanced build",
+          "description": "We review the pilot results and plan the Advanced session. Two SSW presenters then work with your experienced users to build skills, prototype solutions and define practical implementation options.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
       "heading": "Tell us about **your** project",
       "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
       "_template": "v3LeadCapture"
