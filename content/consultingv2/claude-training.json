@@ -139,8 +139,8 @@
           "content": "Understand what Claude is good at, where it is limited and where human judgement is still required.\n\nYour team learns the principles for using Claude safely, responsibly and effectively in day-to-day business work.\n"
         },
         {
-          "label": "Ipsum",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
+          "label": "Foundation — Chat, Cowork and Code",
+          "content": "Learn when the conversation itself is the work, when to hand Claude a task and when Claude Code is the right tool for a software team.\n\nParticipants leave with a clear mental model for choosing the appropriate Claude mode for each job.\n"
         }
       ],
       "buttons": [
