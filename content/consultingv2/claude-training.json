@@ -182,21 +182,12 @@
             "icon": "BiMoneyWithdraw"
           },
           {
-            "heading": "Ipsum",
-            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+            "heading": "Hands-On by Design",
+            "description": "Real prompts, workflows, skills and live prototypes",
+            "icon": "BiSolidBookBookmark"
           }
         ]
       },
-      "buttons": [
-        {
-          "buttonText": "Lorem Ipsum",
-          "colour": 0
-        },
-        {
-          "buttonText": "Dolor Sit",
-          "colour": 1
-        }
-      ],
       "background": {
         "backgroundColour": 7
       },
