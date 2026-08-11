@@ -329,12 +329,12 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 const position = presenter?.position;
 
                 const cardClass =
-                  "unstyled group relative flex flex-col rounded-2xl border-0.75 border-gray-100 bg-gray-50 p-6 pb-20 text-inherit no-underline transition-colors duration-300 hover:border-gray-200 hover:bg-white md:p-8 md:pb-20";
+                  "unstyled group relative flex flex-col rounded-2xl border-0.75 border-gray-200 bg-gray-50 p-6 pb-20 text-inherit no-underline transition-colors duration-300 hover:border-sswRed md:p-8 md:pb-20";
 
                 const cardBody = (
                   <>
                     <div className="flex items-start gap-4">
-                      <div className="relative size-20 shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-transparent transition-all duration-300 group-hover:ring-sswRed">
+                      <div className="relative size-20 shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-gray-200">
                         {photo ? (
                           <Image
                             src={photo}
@@ -349,7 +349,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                         )}
                       </div>
                       <div className="min-w-0">
-                        <h3 className="m-0 text-xl font-bold text-sswBlack underline decoration-1 underline-offset-4">
+                        <h3 className="m-0 text-xl font-bold text-sswBlack">
                           {name}
                         </h3>
                         {position && (
