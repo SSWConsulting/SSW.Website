@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { TextField } from "tinacms";
 import type { Collection } from "tinacms";
-import {
-  DEFAULT_HEADER_LAYOUT,
-  HEADER_LAYOUT_OPTIONS,
-} from "./events-calendar.constants";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
@@ -61,7 +57,6 @@ export const eventsCalendarSchema: Collection = {
     defaultItem: () => ({
       enabled: true,
       liveStreamDelayMinutes: 30,
-      headerLayout: DEFAULT_HEADER_LAYOUT,
     }),
   },
   fields: [
@@ -134,23 +129,6 @@ export const eventsCalendarSchema: Collection = {
       uploadDir: () => "events",
       description:
         "Optional wide banner for the event sidebar. Leave blank to show the thumbnail logo on a tinted panel instead.",
-    },
-    {
-      type: "string",
-      label: "Availability",
-      name: "availability",
-      description:
-        "Optional urgency note shown in the sidebar, e.g. when tickets are running low.",
-      ui: {
-        component: "select",
-      },
-      options: [
-        "",
-        "Limited spots available",
-        "Selling fast",
-        "Almost full",
-        "Sold out",
-      ],
     },
     {
       type: "object",
@@ -256,18 +234,6 @@ export const eventsCalendarSchema: Collection = {
         "Use this for external presenters - This link will appear the on the presenter's name when the field above is filled out \"",
     },
     {
-      type: "string",
-      label: "Header Layout",
-      name: "headerLayout",
-      description:
-        "How presenter images appear in the page header. Single = one tall photo (first presenter). Multi-torso = multiple tall photos side by side with slight overlap (default for multi-presenter). Avatars = overlapping circular avatar stack.",
-      ui: {
-        component: "select",
-      },
-      options: [...HEADER_LAYOUT_OPTIONS],
-    },
-
-    {
       type: "datetime",
       label: "Start Date/Time",
       name: "startDateTime",
@@ -324,6 +290,23 @@ export const eventsCalendarSchema: Collection = {
       name: "venue",
       description:
         "The specific venue or room, shown before the city in the header, e.g. 'SSW Chapel'. Leave blank to show the city only.",
+    },
+    {
+      type: "string",
+      label: "Availability",
+      name: "availability",
+      description:
+        "Optional urgency note shown in the sidebar, e.g. when tickets are running low.",
+      ui: {
+        component: "select",
+      },
+      options: [
+        "",
+        "Limited spots available",
+        "Selling fast",
+        "Almost full",
+        "Sold out",
+      ],
     },
     {
       type: "string",

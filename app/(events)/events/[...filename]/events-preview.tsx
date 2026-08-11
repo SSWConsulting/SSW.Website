@@ -364,8 +364,12 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
     true
   );
 
-  const cityLabel = event.cityOther || CITY_MAP[event.city]?.name || event.city;
-  const locationLine = [event.venue, cityLabel].filter(Boolean).join(", ");
+  // Venue + city, e.g. "SSW Chapel, Melbourne"; falls back to the CITY_MAP
+  // name (which already includes the city) when no venue is set.
+  const cityName = event.cityOther || event.city;
+  const locationLine = event.venue
+    ? [event.venue, cityName].filter(Boolean).join(", ")
+    : CITY_MAP[event.city]?.name || cityName;
 
   const presenters = event.presenterList ?? [];
   const validPresenters = presenters.filter(
