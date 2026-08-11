@@ -25,6 +25,13 @@ export const formatEventDate = (start: Date, end: Date) => {
   return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
 };
 
+// Short month + day for the calendar chip, e.g. { month: "SEP", day: "16" }.
+export const formatEventDateChip = (start: Date) => {
+  if (!start) return { month: "", day: "" };
+  const s = dayjs(start);
+  return { month: s.format("MMM").toUpperCase(), day: s.format("D") };
+};
+
 // Splits the long event date into a date line and a time line so callers can
 // render them on separate lines.
 export const formatEventLongDateParts = (start: Date, end: Date) => {

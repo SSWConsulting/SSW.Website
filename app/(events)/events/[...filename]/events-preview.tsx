@@ -17,8 +17,17 @@ import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
 import { cn } from "@/lib/utils";
 import type { EventsCalendarQuery } from "@/tina/types";
-import { Calendar, Clock, MapPin, User } from "lucide-react";
+import {
+  Calendar,
+  CalendarPlus,
+  Check,
+  Clock,
+  MapPin,
+  Share2,
+  User,
+} from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -62,11 +71,288 @@ function SpeakerAvatar({
   );
 }
 
+// Escape reserved characters for an iCalendar text value.
+function escapeIcs(text: string) {
+  return (text || "")
+    .replace(/\\/g, "\\\\")
+    .replace(/;/g, "\\;")
+    .replace(/,/g, "\\,")
+    .replace(/\n/g, "\\n");
+}
+
+// ISO date -> iCalendar UTC stamp, e.g. 20260916T073000Z.
+function toIcsDate(iso: string) {
+  return new Date(iso)
+    .toISOString()
+    .replace(/[-:]/g, "")
+    .replace(/\.\d{3}/, "");
+}
+
+function buildIcs({
+  title,
+  start,
+  end,
+  location,
+  url,
+  uid,
+}: {
+  title: string;
+  start: string;
+  end: string;
+  location: string;
+  url?: string | null;
+  uid: string;
+}) {
+  return [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//SSW//Events//EN",
+    "CALSCALE:GREGORIAN",
+    "BEGIN:VEVENT",
+    `UID:${uid}`,
+    `DTSTAMP:${toIcsDate(new Date().toISOString())}`,
+    `DTSTART:${toIcsDate(start)}`,
+    `DTEND:${toIcsDate(end)}`,
+    `SUMMARY:${escapeIcs(title)}`,
+    location ? `LOCATION:${escapeIcs(location)}` : "",
+    url ? `URL:${url}` : "",
+    "END:VEVENT",
+    "END:VCALENDAR",
+  ]
+    .filter(Boolean)
+    .join("\r\n");
+}
+
+type EventSidebarProps = {
+  event: EventData;
+  ctaLabel: string;
+  ctaHref?: string | null;
+  dateChip: { month: string; day: string };
+  dateLine: string;
+  timeLine: string;
+};
+
+// Sticky event-details card shown alongside the About content.
+function EventSidebar({
+  event,
+  ctaLabel,
+  ctaHref,
+  dateChip,
+  dateLine,
+  timeLine,
+}: EventSidebarProps) {
+  const [copied, setCopied] = useState(false);
+
+  const city = event.cityOther || event.city;
+  const state = CITY_MAP[event.city]?.state;
+  const venueUrl = CITY_MAP[event.city]?.url;
+  const venueName = event.venue || CITY_MAP[event.city]?.name || city;
+  const cityStateLine = [city, state].filter(Boolean).join(", ");
+  const dateNoYear = dateLine.replace(/,\s*\d{4}$/, "");
+
+  const handleAddToCalendar = () => {
+    if (!event.startDateTime || !event.endDateTime) return;
+    const ics = buildIcs({
+      title: event.title,
+      start: event.startDateTime,
+      end: event.endDateTime,
+      location: [venueName, cityStateLine].filter(Boolean).join(", "),
+      url: event.url,
+      uid: `${event.slug || event.title}@ssw.com.au`,
+    });
+    const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+    const href = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = href;
+    link.download = `${event.slug || "event"}.ics`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(href);
+  };
+
+  const handleShare = async () => {
+    const shareUrl =
+      typeof window !== "undefined" ? window.location.href : event.url;
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({ title: event.title, url: shareUrl });
+      } catch {
+        /* share cancelled */
+      }
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* clipboard unavailable */
+    }
+  };
+
+  const secondaryButton =
+    "flex items-center justify-center gap-2 rounded-md border-0.75 border-gray-200 px-3 py-2 text-sm font-medium text-sswBlack transition-colors hover:border-sswRed hover:text-sswRed";
+
+  return (
+    <aside className="w-full shrink-0 lg:sticky lg:top-24 lg:w-80">
+      <div className="overflow-hidden rounded-2xl border-0.75 border-gray-200 bg-white shadow-sm">
+        {event.bannerImage ? (
+          <div className="relative aspect-video w-full">
+            <Image
+              src={event.bannerImage}
+              alt={event.title}
+              fill
+              className="object-cover"
+            />
+          </div>
+        ) : event.thumbnail ? (
+          <div className="relative flex aspect-video w-full items-center justify-center border-b-0.75 border-gray-100 bg-gray-50">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                backgroundImage:
+                  "radial-gradient(rgba(15,23,42,0.05) 1px, transparent 1px)",
+                backgroundSize: "16px 16px",
+              }}
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-red-100/50 via-transparent to-transparent"
+            />
+            <Image
+              src={event.thumbnail}
+              alt={event.title}
+              width={240}
+              height={120}
+              className="relative max-h-20 w-auto object-contain"
+            />
+          </div>
+        ) : null}
+
+        <div className="flex flex-col gap-5 p-6">
+          <div className="flex items-center justify-between">
+            <span className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+              Event details
+            </span>
+            {event.entryCost && (
+              <span
+                data-tina-field={tinaField(event, "entryCost")}
+                className="text-lg font-semibold text-sswRed"
+              >
+                {event.entryCost}
+              </span>
+            )}
+          </div>
+
+          <div className="flex items-start gap-3">
+            <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg bg-sswRed leading-none text-white">
+              <span className="text-xxs font-semibold uppercase tracking-wider">
+                {dateChip.month}
+              </span>
+              <span className="text-lg font-bold">{dateChip.day}</span>
+            </div>
+            <div data-tina-field={tinaField(event, "startDateTime")}>
+              {dateNoYear && (
+                <p className="font-medium text-sswBlack">{dateNoYear}</p>
+              )}
+              {timeLine && <p className="text-sm text-gray-500">{timeLine}</p>}
+            </div>
+          </div>
+
+          {(venueName || cityStateLine) && (
+            <div className="flex items-start gap-3">
+              <MapPin size={18} className="mt-0.5 shrink-0 text-sswRed" />
+              <div data-tina-field={tinaField(event, "venue")}>
+                {venueName &&
+                  (venueUrl ? (
+                    <a
+                      href={venueUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-sswBlack underline underline-offset-2 hover:text-sswRed"
+                    >
+                      {venueName}
+                    </a>
+                  ) : (
+                    <span className="font-medium text-sswBlack">
+                      {venueName}
+                    </span>
+                  ))}
+                {cityStateLine && (
+                  <p className="text-sm text-gray-500">{cityStateLine}</p>
+                )}
+              </div>
+            </div>
+          )}
+
+          {ctaHref && (
+            <a
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <RippleButton className="w-full text-base" variant="primary">
+                {ctaLabel}
+              </RippleButton>
+            </a>
+          )}
+
+          <div className="grid grid-cols-2 gap-3">
+            <button
+              type="button"
+              onClick={handleAddToCalendar}
+              className={secondaryButton}
+            >
+              <CalendarPlus size={16} /> Add to calendar
+            </button>
+            <button
+              type="button"
+              onClick={handleShare}
+              className={secondaryButton}
+            >
+              {copied ? (
+                <>
+                  <Check size={16} /> Copied
+                </>
+              ) : (
+                <>
+                  <Share2 size={16} /> Share
+                </>
+              )}
+            </button>
+          </div>
+
+          {(event.availability || event.hostedAtSsw) && (
+            <hr className="border-gray-100" />
+          )}
+          {event.availability && (
+            <div
+              data-tina-field={tinaField(event, "availability")}
+              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sswRed"
+            >
+              <span className="size-2 rounded-full bg-sswRed" aria-hidden />
+              {event.availability}
+            </div>
+          )}
+          {event.hostedAtSsw && (
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400">
+              Hosted by SSW
+            </p>
+          )}
+        </div>
+      </div>
+    </aside>
+  );
+}
+
 export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const event = (tinaProps.data as { eventsCalendar: EventData })
     .eventsCalendar;
 
-  const { relativeDate, formattedDateParts } = useFormatDates(
+  const { relativeDate, formattedDateParts, dateChip } = useFormatDates(
     {
       title: event.title,
       url: event.url,
@@ -277,40 +563,52 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
         </Container>
       </Section>
 
-      {(event.lead || event.description || event.abstract) && (
-        <Section>
-          <Container className="w-full max-w-8xl" width="custom" size="medium">
-            <div className="max-w-4xl">
-              <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-sswRed">
-                About the Event
-              </p>
-              {event.lead && (
-                <p
-                  data-tina-field={tinaField(event, "lead")}
-                  className="mb-8 text-pretty text-2xl font-normal leading-snug text-sswBlack md:text-3xl"
-                >
-                  {event.lead}
-                </p>
-              )}
-              {(event.description || event.abstract) && (
-                <section
-                  data-tina-field={tinaField(event, "description")}
-                  className="prose prose-lg max-w-none text-gray-600"
-                >
-                  {event.description ? (
-                    <TinaMarkdown
-                      content={event.description}
-                      components={componentRenderer}
-                    />
-                  ) : (
-                    <p className="whitespace-pre-line">{event.abstract}</p>
+      <Section>
+        <Container className="w-full max-w-8xl" width="custom" size="medium">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
+            <div className="min-w-0 flex-1">
+              {(event.lead || event.description || event.abstract) && (
+                <>
+                  <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-sswRed">
+                    About the Event
+                  </p>
+                  {event.lead && (
+                    <p
+                      data-tina-field={tinaField(event, "lead")}
+                      className="mb-8 max-w-3xl text-pretty text-2xl font-normal leading-snug text-sswBlack md:text-3xl"
+                    >
+                      {event.lead}
+                    </p>
                   )}
-                </section>
+                  {(event.description || event.abstract) && (
+                    <section
+                      data-tina-field={tinaField(event, "description")}
+                      className="prose prose-lg max-w-3xl text-gray-600"
+                    >
+                      {event.description ? (
+                        <TinaMarkdown
+                          content={event.description}
+                          components={componentRenderer}
+                        />
+                      ) : (
+                        <p className="whitespace-pre-line">{event.abstract}</p>
+                      )}
+                    </section>
+                  )}
+                </>
               )}
             </div>
-          </Container>
-        </Section>
-      )}
+            <EventSidebar
+              event={event}
+              ctaLabel={ctaLabel}
+              ctaHref={ctaHref}
+              dateChip={dateChip}
+              dateLine={formattedDateParts.date}
+              timeLine={formattedDateParts.time}
+            />
+          </div>
+        </Container>
+      </Section>
       {validPresenters.length > 0 && (
         <Section>
           <Container width="custom" size="medium" className="w-full max-w-8xl">

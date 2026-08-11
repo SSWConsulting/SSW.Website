@@ -126,6 +126,33 @@ export const eventsCalendarSchema: Collection = {
       description: "Used as alt text for the thumbnail",
     },
     {
+      type: "image",
+      label: "Banner Image",
+      name: "bannerImage",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore - upload dir not included in Tina type but works anyway
+      uploadDir: () => "events",
+      description:
+        "Optional wide banner for the event sidebar. Leave blank to show the thumbnail logo on a tinted panel instead.",
+    },
+    {
+      type: "string",
+      label: "Availability",
+      name: "availability",
+      description:
+        "Optional urgency note shown in the sidebar, e.g. when tickets are running low.",
+      ui: {
+        component: "select",
+      },
+      options: [
+        "",
+        "Limited spots available",
+        "Selling fast",
+        "Almost full",
+        "Sold out",
+      ],
+    },
+    {
       type: "object",
       name: "presenterList",
       label: "Presenters",

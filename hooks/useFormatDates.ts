@@ -2,6 +2,7 @@ import { EventTrimmed } from "@/components/filter/events";
 import { useEffect, useState } from "react";
 import {
   formatEventDate,
+  formatEventDateChip,
   formatEventLongDate,
   formatEventLongDateParts,
   formatRelativeEventDate,
@@ -14,12 +15,17 @@ export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
     date: string;
     time: string;
   }>({ date: "", time: "" });
+  const [dateChip, setDateChip] = useState<{ month: string; day: string }>({
+    month: "",
+    day: "",
+  });
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       setRelativeDate(
         formatRelativeEventDate(event.startDateTime, event.endDateTime)
       );
+      setDateChip(formatEventDateChip(event.startDateTime));
 
       if (formatLong) {
         setFormattedDate(
@@ -36,5 +42,5 @@ export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
     }
   }, [event.startDateTime, event.endDateTime, formatLong]);
 
-  return { relativeDate, formattedDate, formattedDateParts };
+  return { relativeDate, formattedDate, formattedDateParts, dateChip };
 };
