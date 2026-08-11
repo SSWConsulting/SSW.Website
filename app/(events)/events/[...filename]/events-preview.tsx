@@ -42,7 +42,7 @@ function SpeakerAvatar({
   return (
     <div
       className={cn(
-        "relative shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-sswRed",
+        "relative shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-gray-200",
         size
       )}
     >
