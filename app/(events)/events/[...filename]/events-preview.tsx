@@ -86,6 +86,22 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
     (p) => p?.presenter?.presenter?.name
   );
 
+  // `relativeDate` is "" during SSR then filled on the client, so `isPast`
+  // stays false until hydration and the status line renders consistently.
+  const isPast = relativeDate.endsWith("ago");
+  const statusLabel = isPast ? "Past event" : relativeDate;
+
+  const recordingUrl = event.youTubeId
+    ? `https://www.youtube.com/watch?v=${event.youTubeId}`
+    : event.trailerUrl;
+  const showRecordingCta = isPast && !!recordingUrl;
+
+  const registerLabel = [event.ctaLabel || "Register now", event.price]
+    .filter(Boolean)
+    .join(" · ");
+  const ctaLabel = showRecordingCta ? "Watch the recording" : registerLabel;
+  const ctaHref = showRecordingCta ? recordingUrl : event.url;
+
   return (
     <>
       {/* Hero */}
@@ -112,16 +128,22 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
               <div className="min-w-0 flex-1">
                 {/* Label row */}
                 <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold uppercase tracking-widest">
-                  {relativeDate && (
+                  {statusLabel && (
                     <span
                       data-tina-field={tinaField(event, "startDateTime")}
-                      className="flex items-center gap-2 text-sswRed"
+                      className={cn(
+                        "flex items-center gap-2",
+                        isPast ? "text-gray-400" : "text-sswRed"
+                      )}
                     >
                       <span
-                        className="size-2 rounded-full bg-sswRed"
+                        className={cn(
+                          "size-2 rounded-full",
+                          isPast ? "bg-gray-400" : "bg-sswRed"
+                        )}
                         aria-hidden
                       />
-                      {relativeDate}
+                      {statusLabel}
                     </span>
                   )}
                   {(event.calendarType || event.entryCost) && (
@@ -179,15 +201,11 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                   )}
                 </div>
 
-                {/* Register */}
-                {event.url && (
-                  <a
-                    href={event.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                {/* Call to action */}
+                {ctaHref && (
+                  <a href={ctaHref} target="_blank" rel="noopener noreferrer">
                     <RippleButton className="text-base" variant="primary">
-                      Register now
+                      {ctaLabel}
                     </RippleButton>
                   </a>
                 )}
@@ -257,33 +275,25 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
         </Container>
       </Section>
 
-      {(event.description || event.abstract) && (
+      {(event.lead || event.description || event.abstract) && (
         <Section>
           <Container className="w-full max-w-8xl" width="custom" size="medium">
-            <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              {event.thumbnail && (
-                <div className="w-full shrink-0 rounded-xl bg-gray-75 p-5 md:order-last md:w-64">
-                  <div className="flex justify-center">
-                    <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-arcBackground bg-contain bg-bottom bg-no-repeat">
-                      <div className="absolute left-1/2 top-1/2 mx-auto size-20 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-white">
-                        <Image
-                          fill
-                          src={event.thumbnail}
-                          alt={event.title}
-                          className="object-contain"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div className="max-w-4xl">
+              <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-sswRed">
+                About the Event
+              </p>
+              {event.lead && (
+                <p
+                  data-tina-field={tinaField(event, "lead")}
+                  className="mb-8 text-pretty text-2xl font-normal leading-snug text-sswBlack md:text-3xl"
+                >
+                  {event.lead}
+                </p>
               )}
-              <div className="flex-1">
-                <h2 className="mb-4 mt-0 text-base font-semibold text-sswRed">
-                  About the Event
-                </h2>
+              {(event.description || event.abstract) && (
                 <section
                   data-tina-field={tinaField(event, "description")}
-                  className="prose max-w-none"
+                  className="prose prose-lg max-w-none text-gray-600"
                 >
                   {event.description ? (
                     <TinaMarkdown
@@ -294,7 +304,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                     <p className="whitespace-pre-line">{event.abstract}</p>
                   )}
                 </section>
-              </div>
+              )}
             </div>
           </Container>
         </Section>

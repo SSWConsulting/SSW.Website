@@ -97,6 +97,20 @@ export const eventsCalendarSchema: Collection = {
         "Where people go to actually sign up. Usually an Eventbrite, Humanitix, or Meetup URL.",
     },
     {
+      type: "string",
+      label: "Button label",
+      name: "ctaLabel",
+      description:
+        'Text on the registration button, e.g. "Get tickets". Defaults to "Register now".',
+    },
+    {
+      type: "string",
+      label: "Price",
+      name: "price",
+      description:
+        'Optional price shown on the button, e.g. "$99 AUD". Leave blank to hide.',
+    },
+    {
       type: "image",
       label: "Thumbnail",
       name: "thumbnail",
@@ -354,6 +368,16 @@ export const eventsCalendarSchema: Collection = {
       },
       description:
         "Only necessary for User Groups - shown on the landing page for user groups e.g. https://www.ssw.com.au/netug/sydney Ensure this is concise enough to fit on the above page, and does not double up on any information that already exists on the page",
+    },
+    {
+      type: "string",
+      label: "Lead / Intro",
+      name: "lead",
+      ui: {
+        component: "textarea",
+      },
+      description:
+        "A one or two sentence summary shown large at the top of the About section.",
     },
     {
       type: "rich-text",
