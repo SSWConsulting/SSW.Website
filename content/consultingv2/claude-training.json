@@ -141,6 +141,18 @@
         {
           "label": "Foundation — Chat, Cowork and Code",
           "content": "Learn when the conversation itself is the work, when to hand Claude a task and when Claude Code is the right tool for a software team.\n\nParticipants leave with a clear mental model for choosing the appropriate Claude mode for each job.\n"
+        },
+        {
+          "label": "Foundation — Prompting and Everyday Work",
+          "content": "Practise giving Claude clear goals, context, constraints and examples.\n\nYour team applies these techniques to relevant finance, operations and everyday business tasks rather than working through generic demonstrations.\n"
+        },
+        {
+          "label": "Foundation — Applied Workflow Scenarios",
+          "content": "Work through practical scenarios based on relevant real-world workflows.\n\nThe session finishes with questions, useful tips and clear next steps for what the pilot group should test and share internally.\n"
+        },
+        {
+          "label": "✨ Between the Tiers — Pilot and Check-In",
+          "content": "Your pilot group applies the training to real work and runs its internal sessions.\n\nWe then meet to review the wins, recurring friction and highest-value bottlenecks. Those findings become the brief for the Advanced session.\n"
         }
       ],
       "buttons": [
