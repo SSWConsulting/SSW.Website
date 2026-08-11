@@ -167,6 +167,47 @@
       "_template": "accordionBlock"
     },
     {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "At a Glance",
+      "isH1": false,
+      "description": "Two focused half-day sessions, connected by a real-world pilot, so your team learns first and builds from evidence second.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "$5,200 + GST per tier",
+            "description": "$10,400 + GST for the full two-tier program",
+            "icon": "BiMoneyWithdraw"
+          },
+          {
+            "heading": "Ipsum",
+            "description": "Lorem dolor sit amet, consectetur adipiscing elit."
+          }
+        ]
+      },
+      "buttons": [
+        {
+          "buttonText": "Lorem Ipsum",
+          "colour": 0
+        },
+        {
+          "buttonText": "Dolor Sit",
+          "colour": 1
+        }
+      ],
+      "background": {
+        "backgroundColour": 7
+      },
+      "mediaConfiguration": {
+        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
+        "imageHeight": 1758,
+        "imageWidth": 2638
+      },
+      "_template": "imageTextBlock"
+    },
+    {
       "background": {
         "backgroundColour": 7
       },
