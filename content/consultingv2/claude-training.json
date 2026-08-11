@@ -12,8 +12,8 @@
         "redGlow": true
       },
       "brow": "claude training",
-      "heading": "Build your dream React App with our experts",
-      "description": "Most React apps work in the demo. We build the ones that survive real users, real data and years of change. Fast and built to last, with Australia's most-certified React consultants.\n",
+      "heading": "Turn Claude into a practical advantage for your team",
+      "description": "Move beyond one-off prompts. SSW’s hands-on Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
@@ -84,23 +84,23 @@
         "backgroundColour": 7
       },
       "brow": "BASED ON OUR EXPERIENCE",
-      "heading": "Why many React projects hit a wall",
-      "description": "The demo proves the idea. Software that runs your business for years is a different job. Production has to survive real users, real data, and years of change. This is where teams lose time and money.\n",
+      "heading": "Why Claude Adoption Stalls After the First Prompt",
+      "description": "Access alone does not create shared habits, safe-use boundaries or repeatable workflows. Without a practical adoption plan, people remain stuck with isolated experiments and inconsistent results.\n",
       "steps": [
         {
           "brow": "01",
-          "heading": "It slows under real load",
-          "description": "Apps that were not built for real data and traffic struggle with load times and basic interactions. People eventually just give up.\n"
+          "heading": "People stay stuck in basic chat",
+          "description": "Most users ask one-off questions and stop there. They miss the value of Cowork, Projects, skills and other ways Claude can support recurring work.\n"
         },
         {
           "brow": "02",
-          "heading": "Changes take longer and longer",
-          "description": "Early features shipped fast because there was little code to work around. Now every change risks breaking something & progress slows to a crawl.\n"
+          "heading": "The wrong Claude tool gets used",
+          "description": "Chat, Cowork and Code are designed for different jobs. Without a simple mental model, people choose the wrong mode, overcomplicate the task or avoid it altogether.\n"
         },
         {
           "brow": "03",
-          "heading": "One person manages everything",
-          "description": "Built by a single developer, so the whole system lives in their head and leaves with them. You’re left reverse-engineering your own codebase.\n"
+          "heading": "Good results are hard to repeat",
+          "description": "Chat, Cowork and Code are designed for different jobs. Without a simple mental model, people choose the wrong mode, overcomplicate the task or avoid it altogether.\n"
         }
       ],
       "_template": "v3FeatureSteps"
