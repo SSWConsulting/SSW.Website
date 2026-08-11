@@ -265,6 +265,20 @@ export const eventsCalendarSchema: Collection = {
     },
     {
       type: "string",
+      label: "Entry",
+      name: "entryCost",
+      description:
+        'Shown as a pill in the page header, e.g. "Free entry" or "$50". Leave blank to hide.',
+    },
+    {
+      type: "string",
+      label: "Venue",
+      name: "venue",
+      description:
+        'The specific venue or room, shown before the city in the header, e.g. "SSW Chapel". Leave blank to show the city only.',
+    },
+    {
+      type: "string",
       label: "City",
       name: "city",
       ui: {

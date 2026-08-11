@@ -15,12 +15,8 @@ import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
 import { cn } from "@/lib/utils";
-import {
-  DEFAULT_HEADER_LAYOUT,
-  type HeaderLayout,
-} from "@/tina-collections/events-calendar.constants";
 import type { EventsCalendarQuery } from "@/tina/types";
-import { Calendar, MapPin } from "lucide-react";
+import { Calendar, Clock, MapPin, User } from "lucide-react";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -31,11 +27,45 @@ type EventsPreviewProps = {
   tinaProps: { data: object };
 };
 
+// Circular speaker portrait with the SSW-red ring used in the hero.
+// Falls back to a neutral placeholder when no photo is set.
+function SpeakerAvatar({
+  photo,
+  name,
+  size = "size-32",
+}: {
+  photo?: string | null;
+  name?: string | null;
+  size?: string;
+}) {
+  return (
+    <div
+      className={cn(
+        "relative shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-sswRed ring-offset-2 ring-offset-white",
+        size
+      )}
+    >
+      {photo ? (
+        <Image
+          src={photo}
+          alt={name ?? "Speaker"}
+          fill
+          className="object-cover"
+        />
+      ) : (
+        <span className="flex size-full items-center justify-center text-gray-300">
+          <User className="size-1/2" aria-hidden />
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const event = (tinaProps.data as { eventsCalendar: EventData })
     .eventsCalendar;
 
-  const { relativeDate, formattedDate, formattedDateParts } = useFormatDates(
+  const { relativeDate, formattedDateParts } = useFormatDates(
     {
       title: event.title,
       url: event.url,
@@ -47,186 +77,202 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
     true
   );
 
-  const locationOverride = CITY_MAP[event.city]?.name || event.city;
-  const presenters = event.presenterList ?? [];
+  const cityLabel =
+    event.cityOther || CITY_MAP[event.city]?.name || event.city;
+  const locationLine = [event.venue, cityLabel].filter(Boolean).join(", ");
 
+  const presenters = event.presenterList ?? [];
   const validPresenters = presenters.filter(
     (p) => p?.presenter?.presenter?.name
   );
-  const torsoPresenters = presenters.filter((p) => p?.presenter?.torsoImg);
-  const avatarPresenters = presenters.filter((p) => p?.presenter?.profileImg);
-  const singlePresenter = torsoPresenters[0]?.presenter;
-
-  const headerLayout: HeaderLayout =
-    (event.headerLayout as HeaderLayout) ?? DEFAULT_HEADER_LAYOUT;
-  const resolvedLayout: HeaderLayout = (() => {
-    if (headerLayout === "none") return "none";
-    if (presenters.length === 0) return "none";
-    if (headerLayout === "avatars") {
-      return avatarPresenters.length > 0 ? "avatars" : "none";
-    }
-    if (headerLayout === "single") {
-      return singlePresenter?.torsoImg ? "single" : "none";
-    }
-    if (torsoPresenters.length > 1) return "multi-torso";
-    if (torsoPresenters.length === 1) return "single";
-    if (avatarPresenters.length > 0) return "avatars";
-    return "none";
-  })();
-
-  const showHeaderMedia = resolvedLayout !== "none";
-
-  const city = event.cityOther || event.city;
+  const speakerCount = validPresenters.length;
+  const firstSpeaker = validPresenters[0]?.presenter;
 
   return (
     <>
-      <Section>
-        <Image
-          quality={100}
-          className="object-cover"
-          src="/images/background/polygonBackground-light.jpg"
-          alt="Event Background"
-          fill
-        />
-        <Container className="z-10 w-full py-0" width="default" size="large">
-          <div className="grid md:grid-cols-2 md:items-end lg:grid-cols-4">
+      {/* Hero */}
+      <Section className="py-8 md:py-12">
+        <Container width="custom" size="custom" className="w-full max-w-8xl">
+          <div className="relative overflow-hidden rounded-3xl border border-gray-100 bg-gray-50 px-6 py-10 md:px-14 md:py-14">
+            {/* Dotted texture */}
             <div
-              className={cn(
-                "py-20 max-md:pb-8 md:flex md:flex-col md:justify-center md:self-stretch",
-                showHeaderMedia
-                  ? resolvedLayout === "multi-torso"
-                    ? // multiple torsos side-by-side need ~half the row
-                      "md:col-span-1 lg:col-span-2"
-                    : // single torso or avatar stack: leave them a narrow column on the right
-                      "md:col-span-1 lg:col-span-3"
-                  : // no header media, title takes the full width
-                    "md:col-span-2 lg:col-span-4"
-              )}
-            >
-              <div className="mb-7 flex items-center gap-3">
-                {event.calendarType && (
-                  <p className="text-nowrap rounded-md bg-ssw-black p-2 py-0.5 text-xs uppercase tracking-widest text-white">
-                    {event.calendarType}
-                  </p>
-                )}
-                <hr
-                  className="h-px w-10 border-ssw-gray-dark"
-                  aria-hidden="true"
-                />
-                <span
-                  data-tina-field={tinaField(event, "startDateTime")}
-                  className="text-nowrap rounded-md text-sm font-semibold uppercase tracking-wider text-sswBlack"
-                >
-                  {relativeDate}
-                </span>
-              </div>
-              <div className="mb-1 flex items-center gap-6">
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                backgroundImage:
+                  "radial-gradient(rgba(15,23,42,0.06) 1px, transparent 1px)",
+                backgroundSize: "18px 18px",
+              }}
+            />
+            {/* Warm tint towards the top-right */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-gradient-to-bl from-red-100/60 via-transparent to-transparent"
+            />
+
+            <div className="relative flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-12">
+              <div className="min-w-0 flex-1">
+                {/* Label row */}
+                <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold uppercase tracking-widest">
+                  {relativeDate && (
+                    <span
+                      data-tina-field={tinaField(event, "startDateTime")}
+                      className="flex items-center gap-2 text-sswRed"
+                    >
+                      <span
+                        className="size-2 rounded-full bg-sswRed"
+                        aria-hidden
+                      />
+                      {relativeDate}
+                    </span>
+                  )}
+                  {(event.calendarType || event.entryCost) && (
+                    <span className="flex items-center gap-2 text-gray-400">
+                      {event.calendarType && (
+                        <span data-tina-field={tinaField(event, "calendarType")}>
+                          {event.calendarType}
+                        </span>
+                      )}
+                      {event.calendarType && event.entryCost && (
+                        <span aria-hidden>·</span>
+                      )}
+                      {event.entryCost && (
+                        <span data-tina-field={tinaField(event, "entryCost")}>
+                          {event.entryCost}
+                        </span>
+                      )}
+                    </span>
+                  )}
+                </div>
+
+                {/* Title */}
                 <h1
                   data-tina-field={tinaField(event, "title")}
-                  className="mt-0 self-start py-0 font-bold max-md:text-2xl"
+                  className="mb-6 mt-0 max-w-3xl py-0 text-4xl font-bold leading-[1.1] text-sswBlack md:text-6xl"
                 >
                   {event.title}
                 </h1>
+
+                {/* Date / time / location */}
+                <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600 md:text-base">
+                  {formattedDateParts.date && (
+                    <span
+                      data-tina-field={tinaField(event, "startDateTime")}
+                      className="flex items-center gap-2"
+                    >
+                      <Calendar size={18} className="shrink-0 text-sswRed" />
+                      {formattedDateParts.date}
+                    </span>
+                  )}
+                  {formattedDateParts.time && (
+                    <span className="flex items-center gap-2">
+                      <Clock size={18} className="shrink-0 text-sswRed" />
+                      {formattedDateParts.time}
+                    </span>
+                  )}
+                  {locationLine && (
+                    <span
+                      data-tina-field={tinaField(event, "venue")}
+                      className="flex items-center gap-2"
+                    >
+                      <MapPin size={18} className="shrink-0 text-sswRed" />
+                      {locationLine}
+                    </span>
+                  )}
+                </div>
+
+                {/* Register */}
+                {event.url && (
+                  <a
+                    href={event.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <RippleButton className="text-base" variant="primary">
+                      Register now
+                    </RippleButton>
+                  </a>
+                )}
               </div>
-              {event.url && (
-                <a href={event.url} target="_blank" rel="noopener noreferrer">
-                  <RippleButton className="text-base" variant="primary">
-                    Find out more
-                  </RippleButton>
-                </a>
+
+              {/* Speaker(s) */}
+              {speakerCount > 0 && (
+                <div
+                  data-tina-field={tinaField(event, "presenterList")}
+                  className="flex shrink-0 flex-col items-center gap-4 md:w-44"
+                >
+                  {speakerCount === 1 ? (
+                    <SpeakerAvatar
+                      photo={firstSpeaker?.profileImg}
+                      name={firstSpeaker?.presenter?.name}
+                    />
+                  ) : (
+                    <div className="flex -space-x-6">
+                      {validPresenters.slice(0, 4).map((item, index) => (
+                        <SpeakerAvatar
+                          key={`hero-speaker-${index}`}
+                          size="size-16"
+                          photo={item.presenter?.profileImg}
+                          name={item.presenter?.presenter?.name}
+                        />
+                      ))}
+                    </div>
+                  )}
+                  <div className="text-center">
+                    <p className="font-bold leading-tight text-sswBlack">
+                      {speakerCount === 1
+                        ? firstSpeaker?.presenter?.name
+                        : `${speakerCount} Speakers`}
+                    </p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                      {speakerCount === 1 ? "Speaker" : "Speakers"}
+                    </p>
+                  </div>
+                </div>
               )}
             </div>
-            {resolvedLayout === "single" && singlePresenter?.torsoImg && (
-              <div
-                data-tina-field={tinaField(event, "headerLayout")}
-                className="md:col-span-1 md:justify-end"
-              >
-                <Image
-                  src={singlePresenter.torsoImg}
-                  alt={singlePresenter?.presenter?.name ?? "Presenter"}
-                  height={900}
-                  width={900}
-                  className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
-                />
-              </div>
-            )}
-            {resolvedLayout === "multi-torso" && torsoPresenters.length > 0 && (
-              <div
-                data-tina-field={tinaField(event, "headerLayout")}
-                className="flex items-end justify-end md:col-span-1 lg:col-span-2"
-              >
-                {torsoPresenters.map((item, index) => {
-                  const photo = item.presenter?.torsoImg;
-                  const name = item.presenter?.presenter?.name ?? "Presenter";
-                  if (!photo) return null;
-                  return (
-                    <div
-                      key={`torso-${index}-${name}`}
-                      className={cn(
-                        "flex-1",
-                        index > 0 && "-ml-6 md:-ml-10 lg:-ml-12"
-                      )}
-                    >
-                      <Image
-                        src={photo}
-                        alt={name}
-                        height={900}
-                        width={900}
-                        className="mx-auto max-h-72 w-auto object-contain object-bottom md:max-h-none md:w-full"
-                      />
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-            {resolvedLayout === "avatars" && avatarPresenters.length > 0 && (
-              <div
-                data-tina-field={tinaField(event, "headerLayout")}
-                className="flex items-center justify-center py-8 md:col-span-1 md:justify-end md:py-20 md:pl-8"
-              >
-                <div className="flex flex-wrap justify-center gap-y-2 md:justify-end">
-                  {avatarPresenters.map((item, index) => {
-                    const photo = item.presenter?.profileImg;
-                    const name = item.presenter?.presenter?.name ?? "Presenter";
-                    const sizeClass =
-                      avatarPresenters.length > 4
-                        ? "size-20 md:size-24"
-                        : "size-32 md:size-40";
-                    const overlapClass =
-                      avatarPresenters.length > 4
-                        ? "-ml-5 md:-ml-6"
-                        : "-ml-8 md:-ml-10";
-                    return (
-                      <div
-                        key={`avatar-${index}-${name}`}
-                        className={cn(
-                          "relative overflow-hidden rounded-full border-4 border-white shadow-md",
-                          sizeClass,
-                          index > 0 && overlapClass
-                        )}
-                      >
-                        <Image
-                          src={photo}
-                          alt={name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
+          </div>
+
+          {/* Breadcrumb */}
+          <div className="mt-6">
+            <Breadcrumb>
+              <BreadcrumbList className="gap-2 text-xs font-medium uppercase tracking-widest text-gray-400">
+                <BreadcrumbItem>
+                  <BreadcrumbLink
+                    href="/"
+                    className="text-gray-400 underline-offset-2 hover:text-sswRed"
+                  >
+                    Home
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator>/</BreadcrumbSeparator>
+                <BreadcrumbItem>
+                  <BreadcrumbLink
+                    href="/events"
+                    className="text-gray-400 underline-offset-2 hover:text-sswRed"
+                  >
+                    Events
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator>/</BreadcrumbSeparator>
+                <BreadcrumbItem>
+                  <BreadcrumbPage className="max-w-[16rem] truncate text-gray-500">
+                    {event.title}
+                  </BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
           </div>
         </Container>
       </Section>
+
       {(event.description || event.abstract) && (
         <Section>
-          <Container className="w-full" width="default" size="medium">
+          <Container className="w-full max-w-8xl" width="custom" size="medium">
             <div className="flex flex-col gap-6 md:flex-row md:items-start">
-              <div className="w-full shrink-0 rounded-xl bg-gray-75 p-5 md:order-last md:w-64">
-                {event.thumbnail && (
-                  <div className="mb-4 flex justify-center">
+              {event.thumbnail && (
+                <div className="w-full shrink-0 rounded-xl bg-gray-75 p-5 md:order-last md:w-64">
+                  <div className="flex justify-center">
                     <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-arcBackground bg-contain bg-bottom bg-no-repeat">
                       <div className="absolute left-1/2 top-1/2 mx-auto size-20 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-white">
                         <Image
@@ -238,61 +284,10 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                       </div>
                     </div>
                   </div>
-                )}
-
-                {formattedDate && (
-                  <div className="mb-4 flex items-start gap-3">
-                    <Calendar
-                      size={18}
-                      className="mt-0.5 shrink-0 text-sswRed"
-                    />
-                    <span className="text-sm text-gray-700">
-                      {formattedDateParts.date}
-                      {formattedDateParts.time && (
-                        <>
-                          <br />
-                          {formattedDateParts.time}
-                        </>
-                      )}
-                    </span>
-                  </div>
-                )}
-                {city && (
-                  <div className="flex items-start gap-3">
-                    <MapPin size={18} className="mt-0.5 shrink-0 text-sswRed" />
-                    <span className="text-sm text-gray-700">
-                      {locationOverride}
-                    </span>
-                  </div>
-                )}
-              </div>
+                </div>
+              )}
               <div className="flex-1">
-                <Breadcrumb>
-                  <BreadcrumbList className="gap-2 text-xs font-normal text-gray-700">
-                    <BreadcrumbItem className="font-normal">
-                      <BreadcrumbLink
-                        href="/"
-                        className="text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
-                      >
-                        Home
-                      </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
-                    <BreadcrumbItem className="font-normal">
-                      <BreadcrumbLink
-                        href="/events"
-                        className="text-xs text-gray-700 underline-offset-1 hover:text-sswRed"
-                      >
-                        Events
-                      </BreadcrumbLink>
-                    </BreadcrumbItem>
-                    <BreadcrumbSeparator>{">"}</BreadcrumbSeparator>
-                    <BreadcrumbItem className="font-normal">
-                      <BreadcrumbPage>{event.title}</BreadcrumbPage>
-                    </BreadcrumbItem>
-                  </BreadcrumbList>
-                </Breadcrumb>
-                <h2 className="mb-4 mt-8 text-base font-semibold text-sswRed">
+                <h2 className="mb-4 mt-0 text-base font-semibold text-sswRed">
                   About the Event
                 </h2>
                 <section
@@ -315,7 +310,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
       )}
       {validPresenters.length > 0 && (
         <Section color="lightgray">
-          <Container width="default" size="medium">
+          <Container width="custom" size="medium" className="w-full max-w-8xl">
             <h2 className="mb-6 mt-0 text-lg font-semibold text-sswRed">
               {validPresenters.length > 1
                 ? "About the Speakers"
