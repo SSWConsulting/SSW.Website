@@ -11,7 +11,7 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "brow": "REACT CONSULTING",
+      "brow": "claude training",
       "heading": "Build your dream React App with our experts",
       "description": "Most React apps work in the demo. We build the ones that survive real users, real data and years of change. Fast and built to last, with Australia's most-certified React consultants.\n",
       "buttons": [
@@ -30,7 +30,12 @@
           "colour": 1
         }
       ],
-      "mediaType": "reactConsultingSvg",
+      "mediaType": "image",
+      "image": {
+        "imageSource": "/images/ai-for-business-leaders-hero.png",
+        "imageHeight": 968,
+        "imageWidth": 1625
+      },
       "_template": "v3Hero"
     },
     {
