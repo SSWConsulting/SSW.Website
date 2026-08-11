@@ -128,6 +128,10 @@
         {
           "label": "Advanced — Using Claude Code ",
           "content": "Starting using Claude Code and vibing up solutions - get comfortable with the processes and best practice in getting the results you want.\n"
+        },
+        {
+          "label": "Advanced — Skills, Prototypes and Automation",
+          "content": "Two SSW presenters work with your experienced users to design custom Claude skills, specify valuable use cases and rapidly prototype working solutions.\n\nThe session can also explore automation and integration patterns, deployment options, solution architecture and the business case for further investment.\n"
         }
       ],
       "background": {
