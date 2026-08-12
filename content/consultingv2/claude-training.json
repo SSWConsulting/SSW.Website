@@ -126,9 +126,9 @@
       },
       "mediaConfiguration": {
         "placement": "Left",
-        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
-        "imageHeight": 1758,
-        "imageWidth": 2638
+        "imageSource": "/images/ssw-web/hero/Jean.JPG",
+        "imageHeight": 1926,
+        "imageWidth": 2889
       },
       "_template": "imageTextBlock"
     },
