@@ -264,12 +264,16 @@ function EventSidebar({
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg bg-sswRed leading-none text-white">
-              <span className="text-xxs font-semibold uppercase tracking-wider">
-                {dateChip.month}
-              </span>
-              <span className="text-lg font-bold">{dateChip.day}</span>
-            </div>
+            {/* Dates are formatted client-side (timezone), so render the chip
+                only once filled — an empty red square would flash otherwise. */}
+            {dateChip.month && (
+              <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg bg-sswRed leading-none text-white">
+                <span className="text-xxs font-semibold uppercase tracking-wider">
+                  {dateChip.month}
+                </span>
+                <span className="text-lg font-bold">{dateChip.day}</span>
+              </div>
+            )}
             <div data-tina-field={tinaField(event, "startDateTime")}>
               {dateNoYear && (
                 <p className="font-medium text-sswBlack">{dateNoYear}</p>
