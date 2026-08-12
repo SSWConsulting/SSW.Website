@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "Claude Training and Development | SSW",
+    "title": "Claude Training Workshop | SSW",
     "description": "Expert Claude AI training for teams and businesses. Learn prompt engineering, workflow integration, and best practices from certified consultants.",
     "canonical": ""
   },
@@ -11,7 +11,7 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "brow": "claude training",
+      "brow": "claude training workshop",
       "heading": "Give your staff the superpowers they **need**",
       "description": "Move beyond one-off prompts. SSW’s hands-on group Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes. The outcome is one shared way of working with AI across your organisation, not 100 different ones.\n",
       "buttons": [
@@ -126,9 +126,9 @@
       },
       "mediaConfiguration": {
         "placement": "Left",
-        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
-        "imageHeight": 1758,
-        "imageWidth": 2638
+        "imageSource": "/images/ssw-web/hero/Jean.JPG",
+        "imageHeight": 1926,
+        "imageWidth": 2889
       },
       "_template": "imageTextBlock"
     },
