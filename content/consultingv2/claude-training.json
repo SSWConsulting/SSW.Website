@@ -95,6 +95,11 @@
             "icon": "BiMoneyWithdraw"
           },
           {
+            "heading": "Two Instructors, Not One",
+            "description": "One leads the teaching, one mentors the room, so nobody gets stuck",
+            "icon": "BiSolidGroup"
+          },
+          {
             "heading": "Hands-On by Design",
             "description": "Real prompts, workflows, skills and live prototypes",
             "icon": "BiSolidBookBookmark"
@@ -105,9 +110,14 @@
             "icon": "BiSolidWrench"
           },
           {
-            "heading": "One-Stop-Shop",
-            "description": "Get the right training for your business context",
+            "heading": "Tailored to Your Industry",
+            "description": "Built around your industry, your use cases and your real workflows",
             "icon": "BiSolidCustomize"
+          },
+          {
+            "heading": "Built Fresh Each Time",
+            "description": "Curriculum designed close to delivery, because AI moves fast",
+            "icon": "BiSolidBolt"
           }
         ]
       },
@@ -159,12 +169,12 @@
         {
           "brow": "01",
           "heading": "Quick call to map goals",
-          "description": "We map your objectives, attendee experience, approved tools, data-handling requirements and the workflows your team most wants to improve. We then tailor the Foundation session and prepare relevant scenarios.\n"
+          "description": "We map your objectives, attendee experience, approved tools, data-handling requirements and the workflows your team most wants to improve. We then tailor the Foundation session to your industry and use cases, and prepare relevant scenarios.\n\nWe design the curriculum close to the delivery date on purpose. AI is moving fast, so what we teach reflects what Claude can do the week you are in the room, not what it could do last quarter.\n"
         },
         {
           "brow": "02",
           "heading": "Foundation training and pilot",
-          "description": "Your pilot group completes a practical half-day at your office, then applies Claude to real work and runs internal sessions. This reveals which habits stick and where the real bottlenecks are.\n"
+          "description": "Your pilot group completes a practical half-day at your office with two SSW presenters: one leading the teaching, one mentoring attendees through the hands-on exercises so nobody gets left behind.\n\nThe group then applies Claude to real work and runs internal sessions. This reveals which habits stick and where the real bottlenecks are.\n"
         },
         {
           "brow": "03",
@@ -265,7 +275,7 @@
       "faqs": [
         {
           "question": "How much does it cost?",
-          "answer": "Foundation Training is $5,200 + GST.\n\nAdvanced Training is $5,200 + GST.\n\nThe total for both tiers is $10,400 + GST, but either could be done separately if needed.\n\nEach fee includes a half-day onsite session and dedicated preparation. Advanced Training is delivered by two SSW presenters. Any additional consulting, development or implementation work can be scoped separately.\n",
+          "answer": "Foundation Training is $5,200 + GST.\n\nAdvanced Training is $5,200 + GST.\n\nThe total for both tiers is $10,400 + GST, but either could be done separately if needed.\n\nEach fee includes a half-day onsite session, dedicated preparation and two SSW presenters: one leading the teaching and one mentoring attendees through the hands-on work. Any additional consulting, development or implementation work can be scoped separately.\n",
           "link": ""
         },
         {
