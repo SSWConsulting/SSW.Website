@@ -37,7 +37,7 @@ type EventsPreviewProps = {
   tinaProps: { data: object };
 };
 
-// Circular speaker portrait with the SSW-red ring used in the hero.
+// Circular speaker portrait with a neutral grey ring, used in the hero.
 // Falls back to a neutral placeholder when no photo is set.
 function SpeakerAvatar({
   photo,
