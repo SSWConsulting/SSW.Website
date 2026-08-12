@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "Claude Training and Development | SSW",
+    "title": "Claude Training Workshop | SSW",
     "description": "Expert Claude AI training for teams and businesses. Learn prompt engineering, workflow integration, and best practices from certified consultants.",
     "canonical": ""
   },
@@ -11,9 +11,9 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "brow": "claude training",
+      "brow": "claude training workshop",
       "heading": "Give your staff the superpowers they **need**",
-      "description": "Move beyond one-off prompts. SSW’s hands-on group Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes.\n",
+      "description": "Move beyond one-off prompts. SSW’s hands-on group Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes. The outcome is one shared way of working with AI across your organisation, not 100 different ones.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
@@ -95,6 +95,11 @@
             "icon": "BiMoneyWithdraw"
           },
           {
+            "heading": "Two Instructors, Not One",
+            "description": "One leads the teaching, one mentors the room, so nobody gets stuck",
+            "icon": "BiSolidGroup"
+          },
+          {
             "heading": "Hands-On by Design",
             "description": "Real prompts, workflows, skills and live prototypes",
             "icon": "BiSolidBookBookmark"
@@ -105,9 +110,14 @@
             "icon": "BiSolidWrench"
           },
           {
-            "heading": "One-Stop-Shop",
-            "description": "Get the right training for your business context",
+            "heading": "Tailored to Your Industry",
+            "description": "Built around your industry, your use cases and your real workflows",
             "icon": "BiSolidCustomize"
+          },
+          {
+            "heading": "Built Fresh Each Time",
+            "description": "Curriculum designed close to delivery, because AI moves fast",
+            "icon": "BiSolidBolt"
           }
         ]
       },
@@ -116,9 +126,9 @@
       },
       "mediaConfiguration": {
         "placement": "Left",
-        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
-        "imageHeight": 1758,
-        "imageWidth": 2638
+        "imageSource": "/images/ssw-web/hero/Jean.JPG",
+        "imageHeight": 1926,
+        "imageWidth": 2889
       },
       "_template": "imageTextBlock"
     },
@@ -142,8 +152,8 @@
         },
         {
           "brow": "03",
-          "heading": "Good results are hard to repeat",
-          "description": "Useful context, constraints and skills live inside one person’s chat history. The next person starts again, and quality varies across the team.\n"
+          "heading": "Every team invents its own way",
+          "description": "Useful context, constraints and skills live inside one person’s chat history. The next person starts from scratch, so quality varies wildly and the organisation accumulates dozens of competing approaches instead of one standard.\n"
         }
       ],
       "_template": "v3FeatureSteps"
@@ -159,12 +169,12 @@
         {
           "brow": "01",
           "heading": "Quick call to map goals",
-          "description": "We map your objectives, attendee experience, approved tools, data-handling requirements and the workflows your team most wants to improve. We then tailor the Foundation session and prepare relevant scenarios.\n"
+          "description": "We map your objectives, attendee experience, approved tools, data-handling requirements and the workflows your team most wants to improve. We then tailor the Foundation session to your industry and use cases, and prepare relevant scenarios.\n\nWe design the curriculum close to the delivery date on purpose. AI is moving fast, so what we teach reflects what Claude can do the week you are in the room, not what it could do last quarter.\n"
         },
         {
           "brow": "02",
           "heading": "Foundation training and pilot",
-          "description": "Your pilot group completes a practical half-day at your office, then applies Claude to real work and runs internal sessions. This reveals which habits stick and where the real bottlenecks are.\n"
+          "description": "Your pilot group completes a practical half-day at your office with two SSW presenters: one leading the teaching, one mentoring attendees through the hands-on exercises so nobody gets left behind.\n\nThe group then applies Claude to real work and runs internal sessions. This reveals which habits stick and where the real bottlenecks are.\n"
         },
         {
           "brow": "03",
@@ -181,6 +191,10 @@
         {
           "label": "Foundation - What Claude Is and Where It Fits",
           "content": "Understand what Claude is good at, where it is limited and where human judgement is still required.\n\nYour team learns the principles for using Claude safely, responsibly and effectively in day-to-day business work.\n"
+        },
+        {
+          "label": "Foundation - A Shared Way of Working with AI",
+          "content": "Agree what “good” looks like for your organisation: what work is worth handing to Claude, where the safe-use boundaries sit, and what shared language your teams use to talk about AI work.\n\nYour pilot group leaves with a common standard they can take back and spread through their own teams.\n"
         },
         {
           "label": "Foundation - Chat, Cowork and Code",
@@ -261,7 +275,7 @@
       "faqs": [
         {
           "question": "How much does it cost?",
-          "answer": "Foundation Training is $5,200 + GST.\n\nAdvanced Training is $5,200 + GST.\n\nThe total for both tiers is $10,400 + GST, but either could be done separately if needed.\n\nEach fee includes a half-day onsite session and dedicated preparation. Advanced Training is delivered by two SSW presenters. Any additional consulting, development or implementation work can be scoped separately.\n",
+          "answer": "Foundation Training is $5,200 + GST.\n\nAdvanced Training is $5,200 + GST.\n\nThe total for both tiers is $10,400 + GST, but either could be done separately if needed.\n\nEach fee includes a half-day onsite session, dedicated preparation and two SSW presenters: one leading the teaching and one mentoring attendees through the hands-on work. Any additional consulting, development or implementation work can be scoped separately.\n",
           "link": ""
         },
         {
@@ -276,6 +290,11 @@
         {
           "question": "Who should attend?",
           "answer": "Foundation Training is for pilot groups and people who are new to Claude or are still developing consistent working habits.\n\nIt is suitable for business, finance, operations and relevant technical team members.\n\nAdvanced Training is for experienced users who have already applied Claude to real work and can bring specific bottlenecks, workflows or solution ideas into the room.\n\nThe appropriate group size is confirmed during planning so participants receive useful support during the hands-on exercises.\n",
+          "link": ""
+        },
+        {
+          "question": "Will this give us a consistent approach across the company?",
+          "answer": "That is the intent. Foundation Training gives everyone the same mental model for Chat, Cowork and Code, and the same safe-use boundaries.\n\nAdvanced Training turns the best of what your people discover into custom Claude skills, so a good workflow becomes company property rather than one person’s chat history.\n\nThe pilot group is chosen so they can carry that standard back into their own teams.\n",
           "link": ""
         },
         {
