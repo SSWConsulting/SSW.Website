@@ -13,7 +13,7 @@
       },
       "brow": "claude training",
       "heading": "Give your staff the superpowers they **need**",
-      "description": "Move beyond one-off prompts. SSW’s hands-on group Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes.\n",
+      "description": "Move beyond one-off prompts. SSW’s hands-on group Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes. The outcome is one shared way of working with AI across your organisation, not 100 different ones.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
@@ -142,8 +142,8 @@
         },
         {
           "brow": "03",
-          "heading": "Good results are hard to repeat",
-          "description": "Useful context, constraints and skills live inside one person’s chat history. The next person starts again, and quality varies across the team.\n"
+          "heading": "Every team invents its own way",
+          "description": "Useful context, constraints and skills live inside one person’s chat history. The next person starts from scratch, so quality varies wildly and the organisation accumulates dozens of competing approaches instead of one standard.\n"
         }
       ],
       "_template": "v3FeatureSteps"
@@ -181,6 +181,10 @@
         {
           "label": "Foundation - What Claude Is and Where It Fits",
           "content": "Understand what Claude is good at, where it is limited and where human judgement is still required.\n\nYour team learns the principles for using Claude safely, responsibly and effectively in day-to-day business work.\n"
+        },
+        {
+          "label": "Foundation - A Shared Way of Working with AI",
+          "content": "Agree what “good” looks like for your organisation - which work is worth handing to Claude, where the safe-use boundaries sit, and the shared language your teams use to talk about AI work.\n\nYour pilot group leaves with a common standard they can take back and spread through their own teams.\n"
         },
         {
           "label": "Foundation - Chat, Cowork and Code",
@@ -276,6 +280,11 @@
         {
           "question": "Who should attend?",
           "answer": "Foundation Training is for pilot groups and people who are new to Claude or are still developing consistent working habits.\n\nIt is suitable for business, finance, operations and relevant technical team members.\n\nAdvanced Training is for experienced users who have already applied Claude to real work and can bring specific bottlenecks, workflows or solution ideas into the room.\n\nThe appropriate group size is confirmed during planning so participants receive useful support during the hands-on exercises.\n",
+          "link": ""
+        },
+        {
+          "question": "Will this give us a consistent approach across the company?",
+          "answer": "That is the intent. Foundation Training gives everyone the same mental model for Chat, Cowork and Code, and the same safe-use boundaries.\n\nAdvanced Training turns the best of what your people discover into custom Claude skills, so a good workflow becomes company property rather than one person’s chat history.\n\nThe pilot group is chosen so they can carry that standard back into their own teams.\n",
           "link": ""
         },
         {
