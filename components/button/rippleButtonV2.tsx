@@ -18,6 +18,8 @@ interface RippleButtonProps
   variant: ColorVariant;
   /** When set, renders an <a> instead of a <button> for link-style CTAs. */
   href?: string;
+  /** Anchor target; only applies when `href` is set. */
+  target?: string;
   onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 

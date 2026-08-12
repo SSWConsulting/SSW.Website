@@ -12,7 +12,6 @@
       "presenter": "content/presenters/rick-su.mdx"
     }
   ],
-  "headerLayout": "avatars",
   "startDateTime": "2026-07-01T08:00:50.616Z",
   "endDateTime": "2026-07-01T11:00:02.064Z",
   "calendarType": "User Groups",

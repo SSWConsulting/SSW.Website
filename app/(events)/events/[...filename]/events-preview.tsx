@@ -71,13 +71,27 @@ function SpeakerAvatar({
   );
 }
 
-// Escape reserved characters for an iCalendar text value.
+// Escape reserved characters for an iCalendar text value. Windows line endings
+// are normalised first so a bare CR never lands inside a value (RFC 5545).
 function escapeIcs(text: string) {
   return (text || "")
     .replace(/\\/g, "\\\\")
     .replace(/;/g, "\\;")
     .replace(/,/g, "\\,")
+    .replace(/\r\n?/g, "\n")
     .replace(/\n/g, "\\n");
+}
+
+// Fold content lines longer than 75 octets, per RFC 5545.
+function foldIcsLine(line: string) {
+  if (line.length <= 75) return line;
+  let folded = line.slice(0, 75);
+  let rest = line.slice(75);
+  while (rest.length) {
+    folded += `\r\n ${rest.slice(0, 74)}`;
+    rest = rest.slice(74);
+  }
+  return folded;
 }
 
 // ISO date -> iCalendar UTC stamp, e.g. 20260916T073000Z.
@@ -120,6 +134,7 @@ function buildIcs({
     "END:VCALENDAR",
   ]
     .filter(Boolean)
+    .map(foldIcsLine)
     .join("\r\n");
 }
 
@@ -145,8 +160,10 @@ function EventSidebar({
 
   const city = event.cityOther || event.city;
   const state = CITY_MAP[event.city]?.state;
-  const venueUrl = CITY_MAP[event.city]?.url;
-  const venueName = event.venue || CITY_MAP[event.city]?.name || city;
+  // Only link to the SSW chapel page when we're actually using that chapel as
+  // the venue; a custom venue name links nowhere rather than the wrong place.
+  const venueUrl = event.venue ? null : CITY_MAP[event.city]?.url;
+  const venueName = event.venue || CITY_MAP[event.city]?.name;
   const cityStateLine = [city, state].filter(Boolean).join(", ");
   const dateNoYear = dateLine.replace(/,\s*\d{4}$/, "");
 
@@ -288,16 +305,14 @@ function EventSidebar({
           )}
 
           {ctaHref && (
-            <a
+            <RippleButton
               href={ctaHref}
               target="_blank"
-              rel="noopener noreferrer"
-              className="block"
+              variant="primary"
+              className="block w-full text-base"
             >
-              <RippleButton className="w-full text-base" variant="primary">
-                {ctaLabel}
-              </RippleButton>
-            </a>
+              {ctaLabel}
+            </RippleButton>
           )}
 
           <div className="grid grid-cols-2 gap-3">
@@ -376,9 +391,10 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
     (p) => p?.presenter?.presenter?.name
   );
 
-  // `relativeDate` is "" during SSR then filled on the client, so `isPast`
-  // stays false until hydration and the status line renders consistently.
-  const isPast = relativeDate.endsWith("ago");
+  // Compare the end date directly so the CTA/status are correct during SSR too
+  // (both sides are absolute instants — no timezone drift, no relative-copy coupling).
+  const isPast =
+    !!event.endDateTime && new Date(event.endDateTime) < new Date();
   const statusLabel = isPast ? "Past event" : relativeDate;
 
   const recordingUrl = event.youTubeId
@@ -495,11 +511,14 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
 
                 {/* Call to action */}
                 {ctaHref && (
-                  <a href={ctaHref} target="_blank" rel="noopener noreferrer">
-                    <RippleButton className="text-base" variant="primary">
-                      {ctaLabel}
-                    </RippleButton>
-                  </a>
+                  <RippleButton
+                    href={ctaHref}
+                    target="_blank"
+                    variant="primary"
+                    className="inline-block text-base"
+                  >
+                    {ctaLabel}
+                  </RippleButton>
                 )}
               </div>
 
@@ -632,11 +651,14 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 const about = presenter?.about;
                 const position = presenter?.position;
 
-                const cardClass =
-                  "unstyled group relative flex flex-col rounded-2xl border-0.75 border-gray-200 bg-gray-50 p-6 pb-20 text-inherit no-underline transition-colors duration-300 hover:border-sswRed md:p-8 md:pb-20";
-
-                const cardBody = (
-                  <>
+                return (
+                  <div
+                    key={`presenter-${index}-${name}`}
+                    className={cn(
+                      "group relative flex flex-col rounded-2xl border-0.75 border-gray-200 bg-gray-50 p-6 transition-colors duration-300 hover:border-sswRed md:p-8",
+                      url && "pb-20 md:pb-20"
+                    )}
+                  >
                     <div className="flex items-start gap-4">
                       <div className="relative size-20 shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-gray-200">
                         {photo ? (
@@ -654,7 +676,16 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                       </div>
                       <div className="min-w-0">
                         <h3 className="m-0 text-xl font-bold text-sswBlack">
-                          {name}
+                          {url ? (
+                            <CustomLink
+                              href={url}
+                              className="unstyled text-sswBlack no-underline transition-colors hover:text-sswRed"
+                            >
+                              {name}
+                            </CustomLink>
+                          ) : (
+                            name
+                          )}
                         </h3>
                         {position && (
                           <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gray-400">
@@ -672,25 +703,17 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                       </div>
                     )}
                     {url && (
-                      <ArrowCircle
-                        className="absolute bottom-6 right-6 size-12"
-                        iconClassName="size-4"
-                      />
+                      <CustomLink
+                        href={url}
+                        aria-label={`View ${name}'s profile`}
+                        className="unstyled absolute bottom-6 right-6"
+                      >
+                        <ArrowCircle
+                          className="size-12"
+                          iconClassName="size-4"
+                        />
+                      </CustomLink>
                     )}
-                  </>
-                );
-
-                return url ? (
-                  <CustomLink
-                    key={`presenter-${index}-${name}`}
-                    href={url}
-                    className={cardClass}
-                  >
-                    {cardBody}
-                  </CustomLink>
-                ) : (
-                  <div key={`presenter-${index}-${name}`} className={cardClass}>
-                    {cardBody}
                   </div>
                 );
               })}
