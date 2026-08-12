@@ -352,6 +352,10 @@
               "name": "1-Day Training",
               "menuItems": [
                 {
+                  "name": "Claude Training Workshop ",
+                  "url": "https://www.ssw.com.au/consulting/claude-training"
+                },
+                {
                   "name": "AI Essentials Workshop",
                   "url": "/events/ai-workshop-essentials"
                 },
@@ -370,14 +374,6 @@
                 {
                   "name": ".NET Superpowers Tour",
                   "url": "/events/net-superpowers-tour"
-                },
-                {
-                  "name": "Azure Super Skills",
-                  "url": "/events/azure-superskills"
-                },
-                {
-                  "name": "Claude Training Workshop ",
-                  "url": "https://www.ssw.com.au/consulting/claude-training"
                 }
               ]
             },
