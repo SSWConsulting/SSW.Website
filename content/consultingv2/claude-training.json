@@ -1,0 +1,313 @@
+{
+  "seo": {
+    "title": "Claude Training and Development | SSW",
+    "description": "Expert Claude AI training for teams and businesses. Learn prompt engineering, workflow integration, and best practices from certified consultants.",
+    "canonical": ""
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "brow": "claude training",
+      "heading": "Give your staff the superpowers they **need**",
+      "description": "Move beyond one-off prompts. SSW’s hands-on group Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes.\n",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "",
+          "buttonLink": "#lead-capture-heading",
+          "iconFirst": false,
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        }
+      ],
+      "mediaType": "image",
+      "image": {
+        "imageSource": "/images/ai-for-business-leaders-hero.png",
+        "imageHeight": 968,
+        "imageWidth": 1625
+      },
+      "_template": "v3Hero"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane and Newcastle by",
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
+        }
+      ],
+      "_template": "v3LogoCarousel"
+    },
+    {
+      "topLabel": {
+        "labelText": ""
+      },
+      "heading": "At a Glance",
+      "isH1": false,
+      "description": "Two focused half-day sessions, 1 to 2 weeks apart, so your team can digest the foundations and then build on them.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "$5,200 + GST per tier",
+            "description": "$10,400 + GST for the full two-tier program",
+            "icon": "BiMoneyWithdraw"
+          },
+          {
+            "heading": "Hands-On by Design",
+            "description": "Real prompts, workflows, skills and live prototypes",
+            "icon": "BiSolidBookBookmark"
+          },
+          {
+            "heading": "Post-Training Toolkit",
+            "description": "Includes slides, cheat sheets, and workflows",
+            "icon": "BiSolidWrench"
+          },
+          {
+            "heading": "One-Stop-Shop",
+            "description": "Get the right training for your business context",
+            "icon": "BiSolidCustomize"
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 7
+      },
+      "mediaConfiguration": {
+        "placement": "Left",
+        "imageSource": "/images/2023-08-01-sydney-office-mobile.jpg",
+        "imageHeight": 1758,
+        "imageWidth": 2638
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "BASED ON OUR EXPERIENCE",
+      "heading": "Why Claude Adoption Stalls After the First Prompt",
+      "description": "Access alone does not create shared habits, safe-use boundaries or repeatable workflows. Without a practical adoption plan, people remain stuck with isolated experiments and inconsistent results.\n",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "People stay stuck in basic chat",
+          "description": "Most users ask one-off questions and stop there. They miss the value of Cowork, Projects, skills and other ways Claude can support recurring work.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "The wrong Claude tool gets used",
+          "description": "Chat, Cowork and Code are designed for different jobs. Without a simple mental model, people choose the wrong mode, overcomplicate the task or avoid it altogether.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "Good results are hard to repeat",
+          "description": "Useful context, constraints and skills live inside one person’s chat history. The next person starts again, and quality varies across the team.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "",
+      "heading": "How It Works",
+      "description": "",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "Quick call to map goals",
+          "description": "We map your objectives, attendee experience, approved tools, data-handling requirements and the workflows your team most wants to improve. We then tailor the Foundation session and prepare relevant scenarios.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Foundation training and pilot",
+          "description": "Your pilot group completes a practical half-day at your office, then applies Claude to real work and runs internal sessions. This reveals which habits stick and where the real bottlenecks are.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "Check-in and Advanced build",
+          "description": "We review the pilot results and plan the Advanced session. Two SSW presenters then work with your experienced users to build skills, prototype solutions and define practical implementation options.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "heading": "A two-tier program built for **Claude adoption**",
+      "body": "The Foundation session gives your pilot group the habits and confidence to use Claude effectively. After the team applies the learning to real work, the Advanced session turns the most valuable opportunities into skills, prototypes and a practical implementation plan.",
+      "accordionItems": [
+        {
+          "label": "Foundation - What Claude Is and Where It Fits",
+          "content": "Understand what Claude is good at, where it is limited and where human judgement is still required.\n\nYour team learns the principles for using Claude safely, responsibly and effectively in day-to-day business work.\n"
+        },
+        {
+          "label": "Foundation - Chat, Cowork and Code",
+          "content": "Learn when the conversation itself is the work, when to hand Claude a task and when Claude Code is the right tool for a software team.\n\nParticipants leave with a clear mental model for choosing the appropriate Claude mode for each job.\n"
+        },
+        {
+          "label": "Foundation - Prompting and Everyday Work",
+          "content": "Practise giving Claude clear goals, context, constraints and examples.\n\nYour team applies these techniques to relevant finance, operations and everyday business tasks rather than working through generic demonstrations.\n"
+        },
+        {
+          "label": "Foundation - Applied Workflow Scenarios",
+          "content": "Work through practical scenarios based on relevant real-world workflows. Learn how to package these into reusable and sharable skills.\n\nThe session finishes with questions, useful tips and clear next steps for what the pilot group should test and share internally.\n"
+        },
+        {
+          "label": "Advanced - Using Claude Code ",
+          "content": "Starting using Claude Code and vibing up solutions - get comfortable with the processes and best practice in getting the results you want.\n"
+        },
+        {
+          "label": "Advanced - Skills, Prototypes and Automation",
+          "content": "Two SSW presenters work with your experienced users to design custom Claude skills, specify valuable use cases and rapidly prototype working solutions.\n\nThe session can also explore automation and integration patterns, deployment options, solution architecture and the business case for further investment.\n"
+        }
+      ],
+      "background": {
+        "backgroundColour": 7
+      },
+      "_template": "accordionBlock"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Why teams choose SSW for AI Training",
+      "statistics": [
+        {
+          "figure": 7000,
+          "figureSuffix": "+",
+          "heading": "Solutions delivered",
+          "description": "Enterprise-grade software"
+        },
+        {
+          "figure": 1800,
+          "figureSuffix": "+",
+          "heading": "Happy clients",
+          "description": "Across all industries"
+        },
+        {
+          "figure": 30,
+          "figureSuffix": "+",
+          "heading": "Years experience",
+          "description": "Trusted since 1999"
+        }
+      ],
+      "_template": "v3Statistics"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "testimonials": [
+        {
+          "quote": "My team and I gained a ton of **valuable insights**! Their expertise and engaging approach truly simplified complex concepts for us. We're now excited to put our **new knowledge into practice**.  Highly recommended for anyone in the field.",
+          "caseStudyUrl": "",
+          "authorName": "Ian Newmarch",
+          "authorTitle": "Tech Advisor, Twana",
+          "authorImage": "",
+          "companyLogo": ""
+        }
+      ],
+      "_template": "v3Testimonials"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Frequently asked questions",
+      "faqs": [
+        {
+          "question": "How much does it cost?",
+          "answer": "Foundation Training is $5,200 + GST.\n\nAdvanced Training is $5,200 + GST.\n\nThe total for both tiers is $10,400 + GST, but either could be done separately if needed.\n\nEach fee includes a half-day onsite session and dedicated preparation. Advanced Training is delivered by two SSW presenters. Any additional consulting, development or implementation work can be scoped separately.\n",
+          "link": ""
+        },
+        {
+          "question": "Do attendees need to know how to code?",
+          "answer": "No coding experience is required. These sessions are designed for a mixed business audience and is suitable for finance, operations, leadership and technical team members. Claude Code is introduced so the group understands where it fits, but Foundation Training is not a software development course.\n\nThe advanced course introduces Vibe Coding, but this is doable by anyone.\n",
+          "link": ""
+        },
+        {
+          "question": "How long is the training?",
+          "answer": "Each training tier is delivered as a separate half-day onsite session.\n\nAdvanced Training is another half-day session, scheduled after the pilot group has applied the Foundation learning and completed a planning check-in with SSW.\n"
+        },
+        {
+          "question": "Who should attend?",
+          "answer": "Foundation Training is for pilot groups and people who are new to Claude or are still developing consistent working habits.\n\nIt is suitable for business, finance, operations and relevant technical team members.\n\nAdvanced Training is for experienced users who have already applied Claude to real work and can bring specific bottlenecks, workflows or solution ideas into the room.\n\nThe appropriate group size is confirmed during planning so participants receive useful support during the hands-on exercises.\n",
+          "link": ""
+        },
+        {
+          "question": "What will our team take away?",
+          "answer": "After Foundation Training, your team will have a shared understanding of Chat, Cowork and Code, practical prompting techniques, safe-use principles and a focused list of workflows to test.\n\nAfter Advanced Training, your team may leave with custom Claude skills, working prototypes, documented use cases and clearer options for automation, integration, architecture and further implementation.\n"
+        }
+      ],
+      "_template": "v3Faq"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "heading": "Equip your team with essential AI skills",
+      "description": "",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "buttonLink": "#lead-capture-heading",
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        }
+      ],
+      "_template": "v3Cta"
+    }
+  ]
+}
