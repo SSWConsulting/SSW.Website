@@ -122,6 +122,11 @@ export const V3PeopleCarouselSchema: Template = {
         },
         {
           type: "string",
+          label: "GitHub URL",
+          name: "github",
+        },
+        {
+          type: "string",
           label: "SSW People URL",
           name: "sswPeople",
         },
