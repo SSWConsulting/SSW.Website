@@ -14,12 +14,21 @@ import { tinaField } from "tinacms/dist/react";
 
 interface BreadcrumbsProps {
   additionalReplacements?: { from: string; to: string }[];
+  /**
+   * URL segments to leave out of the trail, for parts of a path that aren't
+   * pages in their own right (e.g. the year in /events/2026/my-event). Links
+   * for the remaining crumbs still point at the real URL.
+   */
+  excludeSegments?: string[];
   path: string;
   title: string;
   seoSchema?: {
     title?: string;
   };
 }
+
+// Module-level so the default prop keeps a stable identity between renders.
+const NO_SEGMENTS: string[] = [];
 
 const defaultReplacements = [
   { from: "consulting", to: "Services" },
@@ -42,6 +51,7 @@ const defaultReplacements = [
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({
   additionalReplacements = [],
+  excludeSegments = NO_SEGMENTS,
   path,
   title,
   seoSchema,
@@ -49,9 +59,15 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
   const pathname = usePathname();
 
   const { breadcrumbItems, mobileParent } = useMemo(() => {
-    const pathSegments = pathname
-      .split("/")
-      .filter((segment) => segment !== "");
+    // Resolve each href against the full path first, so hiding a segment
+    // doesn't change where the remaining crumbs point.
+    const allSegments = pathname.split("/").filter((segment) => segment !== "");
+    const pathSegments = allSegments
+      .map((segment, index) => ({
+        segment,
+        href: "/" + allSegments.slice(0, index + 1).join("/"),
+      }))
+      .filter(({ segment }) => !excludeSegments.includes(segment));
 
     const allReplacements = [
       ...defaultReplacements,
@@ -80,9 +96,8 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
     );
 
     // Add intermediate segments as links
-    pathSegments.forEach((segment, index) => {
+    pathSegments.forEach(({ segment, href }, index) => {
       const isLast = index === pathSegments.length - 1;
-      const href = "/" + pathSegments.slice(0, index + 1).join("/");
       const displayName = getDisplayName(segment);
 
       items.push(
@@ -121,17 +136,24 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
 
     let mobileParent: { label: string; href: string };
     if (pathSegments.length >= 2) {
-      const parentIndex = pathSegments.length - 2;
+      const parent = pathSegments[pathSegments.length - 2];
       mobileParent = {
-        label: getDisplayName(pathSegments[parentIndex]),
-        href: "/" + pathSegments.slice(0, parentIndex + 1).join("/"),
+        label: getDisplayName(parent.segment),
+        href: parent.href,
       };
     } else {
       mobileParent = { label: "Home", href: "/" };
     }
 
     return { breadcrumbItems: items, mobileParent };
-  }, [pathname, path, title, seoSchema, additionalReplacements]);
+  }, [
+    pathname,
+    path,
+    title,
+    seoSchema,
+    additionalReplacements,
+    excludeSegments,
+  ]);
 
   return (
     <>

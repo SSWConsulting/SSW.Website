@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -368,7 +368,19 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   // `title`; take it from the URL so it matches whether the page resolved by
   // slug or filename.
   const pathname = usePathname();
-  const lastPathSegment = pathname.split("/").filter(Boolean).pop() ?? "";
+  const { lastPathSegment, yearSegments } = useMemo(() => {
+    const segments = pathname.split("/").filter(Boolean);
+    return {
+      lastPathSegment: segments.at(-1) ?? "",
+      // Event URLs are /events/{year}/{slug}, but there's no page for the year,
+      // so leave that crumb out rather than linking somewhere that 404s. Never
+      // drop the last segment — that's the event itself, even if it looks like
+      // a year.
+      yearSegments: segments
+        .slice(0, -1)
+        .filter((segment) => /^\d{4}$/.test(segment)),
+    };
+  }, [pathname]);
 
   const { relativeDate, schedule } = useFormatDates(
     {
@@ -421,7 +433,11 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
           size="custom"
           className="w-full max-w-8xl pt-8"
         >
-          <Breadcrumbs path={lastPathSegment} title={event.title} />
+          <Breadcrumbs
+            path={lastPathSegment}
+            title={event.title}
+            excludeSegments={yearSegments}
+          />
         </Container>
       </section>
 
