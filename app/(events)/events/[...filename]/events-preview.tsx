@@ -6,11 +6,13 @@ import { CustomLink } from "@/components/customLink";
 import { CITY_MAP } from "@/components/util/constants/country";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
+import type { EventSchedule } from "@/helpers/dates";
 import { useFormatDates } from "@/hooks/useFormatDates";
 import { cn } from "@/lib/utils";
 import type { EventsCalendarQuery } from "@/tina/types";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import {
+  ArrowRight,
   Calendar,
   CalendarPlus,
   Check,
@@ -136,9 +138,7 @@ type EventSidebarProps = {
   event: EventData;
   ctaLabel: string;
   ctaHref?: string | null;
-  dateChip: { month: string; day: string };
-  dateLine: string;
-  timeLine: string;
+  schedule: EventSchedule;
 };
 
 // Sticky event-details card shown alongside the About content.
@@ -146,9 +146,7 @@ function EventSidebar({
   event,
   ctaLabel,
   ctaHref,
-  dateChip,
-  dateLine,
-  timeLine,
+  schedule,
 }: EventSidebarProps) {
   const [copied, setCopied] = useState(false);
 
@@ -159,7 +157,6 @@ function EventSidebar({
   const venueUrl = event.venue ? null : CITY_MAP[event.city]?.url;
   const venueName = event.venue || CITY_MAP[event.city]?.name;
   const cityStateLine = [city, state].filter(Boolean).join(", ");
-  const dateNoYear = dateLine.replace(/,\s*\d{4}$/, "");
 
   const handleAddToCalendar = () => {
     if (!event.startDateTime || !event.endDateTime) return;
@@ -245,38 +242,38 @@ function EventSidebar({
         ) : null}
 
         <div className="flex flex-col gap-5 p-6">
-          <div className="flex items-center justify-between">
-            <span className="font-mono text-xs uppercase tracking-wider text-gray-400">
-              Event details
-            </span>
-            {event.entryCost && (
-              <span
-                data-tina-field={tinaField(event, "entryCost")}
-                className="text-lg font-semibold text-sswRed"
-              >
-                {event.entryCost}
-              </span>
-            )}
-          </div>
-
-          <div className="flex items-start gap-3">
-            {/* Dates are formatted client-side (timezone), so render the chip
-                only once filled — an empty red square would flash otherwise. */}
-            {dateChip.month && (
-              <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg bg-sswRed leading-none text-white">
-                <span className="font-mono text-xxs uppercase tracking-wider">
-                  {dateChip.month}
-                </span>
-                <span className="text-lg font-bold">{dateChip.day}</span>
+          {/* Dates are formatted client-side (timezone), so this block only
+              renders once filled — empty red squares would flash otherwise. */}
+          {schedule.chips.length > 0 && (
+            <div
+              data-tina-field={tinaField(event, "startDateTime")}
+              className="flex items-center gap-3"
+            >
+              {schedule.chips.map((chip, index) => (
+                <div key={`chip-${index}`} className="flex items-center gap-3">
+                  {index > 0 && (
+                    <ArrowRight
+                      size={16}
+                      className="shrink-0 text-sswRed"
+                      aria-hidden
+                    />
+                  )}
+                  <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg bg-sswRed leading-none text-white">
+                    <span className="font-mono text-xxs uppercase tracking-wider">
+                      {chip.month}
+                    </span>
+                    <span className="text-lg font-bold">{chip.day}</span>
+                  </div>
+                </div>
+              ))}
+              <div className="min-w-0">
+                <p className="font-medium text-sswBlack">
+                  {schedule.dateShort}
+                </p>
+                <p className="text-sm text-gray-500">{schedule.timeLine}</p>
               </div>
-            )}
-            <div data-tina-field={tinaField(event, "startDateTime")}>
-              {dateNoYear && (
-                <p className="font-medium text-sswBlack">{dateNoYear}</p>
-              )}
-              {timeLine && <p className="text-sm text-gray-500">{timeLine}</p>}
             </div>
-          </div>
+          )}
 
           {(venueName || cityStateLine) && (
             <div className="flex items-start gap-3">
@@ -373,7 +370,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const pathname = usePathname();
   const lastPathSegment = pathname.split("/").filter(Boolean).pop() ?? "";
 
-  const { relativeDate, formattedDateParts, dateChip } = useFormatDates(
+  const { relativeDate, schedule } = useFormatDates(
     {
       title: event.title,
       url: event.url,
@@ -408,9 +405,10 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
     : event.trailerUrl;
   const showRecordingCta = isPast && !!recordingUrl;
 
-  const registerLabel = [event.ctaLabel || "Register now", event.price]
-    .filter(Boolean)
-    .join(" · ");
+  // Always state the cost on the button — the price when set, otherwise "Free".
+  const registerLabel = `${event.ctaLabel || "Register now"} · ${
+    event.price || "Free"
+  }`;
   const ctaLabel = showRecordingCta ? "Watch the recording" : registerLabel;
   const ctaHref = showRecordingCta ? recordingUrl : event.url;
 
@@ -500,19 +498,19 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
 
                 {/* Date / time / location */}
                 <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600 md:text-base">
-                  {formattedDateParts.date && (
+                  {schedule.dateLong && (
                     <span
                       data-tina-field={tinaField(event, "startDateTime")}
                       className="flex items-center gap-2"
                     >
                       <Calendar size={18} className="shrink-0 text-sswRed" />
-                      {formattedDateParts.date}
+                      {schedule.dateLong}
                     </span>
                   )}
-                  {formattedDateParts.time && (
+                  {schedule.timeLine && (
                     <span className="flex items-center gap-2">
                       <Clock size={18} className="shrink-0 text-sswRed" />
-                      {formattedDateParts.time}
+                      {schedule.timeLine}
                     </span>
                   )}
                   {locationLine && (
@@ -701,9 +699,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
               event={event}
               ctaLabel={ctaLabel}
               ctaHref={ctaHref}
-              dateChip={dateChip}
-              dateLine={formattedDateParts.date}
-              timeLine={formattedDateParts.time}
+              schedule={schedule}
             />
           </div>
         </Container>

@@ -2,11 +2,20 @@ import { EventTrimmed } from "@/components/filter/events";
 import { useEffect, useState } from "react";
 import {
   formatEventDate,
-  formatEventDateChip,
   formatEventLongDate,
   formatEventLongDateParts,
+  formatEventSchedule,
   formatRelativeEventDate,
+  type EventSchedule,
 } from "../helpers/dates";
+
+const EMPTY_SCHEDULE: EventSchedule = {
+  isMultiDay: false,
+  chips: [],
+  dateShort: "",
+  dateLong: "",
+  timeLine: "",
+};
 
 export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
   const [relativeDate, setRelativeDate] = useState<string>("");
@@ -15,10 +24,7 @@ export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
     date: string;
     time: string;
   }>({ date: "", time: "" });
-  const [dateChip, setDateChip] = useState<{ month: string; day: string }>({
-    month: "",
-    day: "",
-  });
+  const [schedule, setSchedule] = useState<EventSchedule>(EMPTY_SCHEDULE);
 
   // Depend on primitive timestamps, not the Date objects: callers usually build
   // `new Date(...)` on every render, so using those as deps would re-run this
@@ -32,7 +38,7 @@ export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
     const end = new Date(endTime);
 
     setRelativeDate(formatRelativeEventDate(start, end));
-    setDateChip(formatEventDateChip(start));
+    setSchedule(formatEventSchedule(start, end));
 
     if (formatLong) {
       setFormattedDate(formatEventLongDate(start, end));
@@ -44,5 +50,5 @@ export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
     }
   }, [startTime, endTime, formatLong]);
 
-  return { relativeDate, formattedDate, formattedDateParts, dateChip };
+  return { relativeDate, formattedDate, formattedDateParts, schedule };
 };

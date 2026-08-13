@@ -25,11 +25,64 @@ export const formatEventDate = (start: Date, end: Date) => {
   return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
 };
 
-// Short month + day for the calendar chip, e.g. { month: "SEP", day: "16" }.
-export const formatEventDateChip = (start: Date) => {
-  if (!start) return { month: "", day: "" };
+export type EventSchedule = {
+  isMultiDay: boolean;
+  /** One chip for a single-day event, two (start and end) for a multi-day one. */
+  chips: { month: string; day: string }[];
+  /** "Wed 16 Sep" / "Mon 20 - Tue 21 Jul" */
+  dateShort: string;
+  /** As above plus the year, for the page header. */
+  dateLong: string;
+  /** "5:30 PM - 7:30 PM", with " daily" when the same hours repeat each day. */
+  timeLine: string;
+};
+
+// Event date/time broken into the pieces the event page renders: calendar
+// chips, a date line and a time line. Multi-day events get a chip per end.
+export const formatEventSchedule = (start: Date, end: Date): EventSchedule => {
+  const empty = {
+    isMultiDay: false,
+    chips: [],
+    dateShort: "",
+    dateLong: "",
+    timeLine: "",
+  };
+  if (!start || !end) return empty;
+
   const s = dayjs(start);
-  return { month: s.format("MMM").toUpperCase(), day: s.format("D") };
+  const e = dayjs(end);
+  const chip = (d: dayjs.Dayjs) => ({
+    month: d.format("MMM").toUpperCase(),
+    day: d.format("D"),
+  });
+  const times = `${s.format("h:mm A")} - ${e.format("h:mm A")}`;
+
+  if (s.startOf("day").isSame(e.startOf("day"))) {
+    return {
+      isMultiDay: false,
+      chips: [chip(s)],
+      dateShort: s.format("ddd D MMM"),
+      dateLong: s.format("ddd D MMM YYYY"),
+      timeLine: times,
+    };
+  }
+
+  // Same month: name it once at the end ("Mon 20 - Tue 21 Jul").
+  const dateShort = s.isSame(e, "month")
+    ? `${s.format("ddd D")} - ${e.format("ddd D MMM")}`
+    : `${s.format("ddd D MMM")} - ${e.format("ddd D MMM")}`;
+
+  // "daily" only when the hours actually repeat each day. An event that simply
+  // runs past midnight ends earlier in the day than it starts, and isn't daily.
+  const repeatsDaily = e.format("HH:mm") > s.format("HH:mm");
+
+  return {
+    isMultiDay: true,
+    chips: [chip(s), chip(e)],
+    dateShort,
+    dateLong: `${dateShort} ${e.format("YYYY")}`,
+    timeLine: repeatsDaily ? `${times} daily` : times,
+  };
 };
 
 // Splits the long event date into a date line and a time line so callers can
