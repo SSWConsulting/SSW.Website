@@ -608,6 +608,94 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                   )}
                 </>
               )}
+
+              {/* Speakers live in this column too, so the sidebar has
+                  the full text length to stick alongside. */}
+              {validPresenters.length > 0 && (
+                <div className="mt-16">
+                  <h2 className="mb-8 mt-0 font-mono text-sm uppercase tracking-wider text-sswRed">
+                    {validPresenters.length > 1
+                      ? "About the Speakers"
+                      : "About the Speaker"}
+                  </h2>
+                  <div className="grid gap-6 xl:grid-cols-2">
+                    {validPresenters.map((item, index) => {
+                      const presenter = item.presenter;
+                      const name = presenter?.presenter?.name as string;
+                      const url = presenter?.presenter?.peopleProfileURL;
+                      const photo = presenter?.profileImg;
+                      const about = presenter?.about;
+                      const position = presenter?.position;
+
+                      return (
+                        <div
+                          key={`presenter-${index}-${name}`}
+                          className={cn(
+                            "group relative flex flex-col rounded-2xl border-0.75 border-gray-200 bg-gray-50 p-6 transition-colors duration-300 hover:border-sswRed md:p-8",
+                            url && "pb-20 md:pb-20"
+                          )}
+                        >
+                          <div className="flex items-start gap-4">
+                            <div className="relative size-20 shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-gray-200">
+                              {photo ? (
+                                <Image
+                                  src={photo}
+                                  alt={name}
+                                  fill
+                                  className="object-cover"
+                                />
+                              ) : (
+                                <span className="flex size-full items-center justify-center text-gray-300">
+                                  <User className="size-1/2" aria-hidden />
+                                </span>
+                              )}
+                            </div>
+                            <div className="min-w-0">
+                              <h3 className="m-0 text-xl font-bold text-sswBlack">
+                                {url ? (
+                                  <CustomLink
+                                    href={url}
+                                    className="unstyled text-sswBlack no-underline transition-colors hover:text-sswRed"
+                                  >
+                                    {name}
+                                  </CustomLink>
+                                ) : (
+                                  name
+                                )}
+                              </h3>
+                              {position && (
+                                <p className="mt-1 font-mono text-xs uppercase tracking-wider text-gray-400">
+                                  {position}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                          {about && (
+                            <div className="prose prose-sm mt-5 max-w-none text-gray-600">
+                              <TinaMarkdown
+                                content={about}
+                                components={componentRenderer}
+                              />
+                            </div>
+                          )}
+                          {url && (
+                            <CustomLink
+                              href={url}
+                              aria-label={`View ${name}'s profile`}
+                              className="unstyled absolute bottom-6 right-6"
+                            >
+                              <ArrowCircle
+                                className="size-12"
+                                iconClassName="size-4"
+                              />
+                            </CustomLink>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
             <EventSidebar
               event={event}
@@ -620,93 +708,6 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
           </div>
         </Container>
       </section>
-      {validPresenters.length > 0 && (
-        <Section>
-          <Container width="custom" size="medium" className="w-full max-w-8xl">
-            <h2 className="mb-8 mt-0 font-mono text-sm uppercase tracking-wider text-sswRed">
-              {validPresenters.length > 1
-                ? "About the Speakers"
-                : "About the Speaker"}
-            </h2>
-            <div className="grid gap-6 md:grid-cols-2">
-              {validPresenters.map((item, index) => {
-                const presenter = item.presenter;
-                const name = presenter?.presenter?.name as string;
-                const url = presenter?.presenter?.peopleProfileURL;
-                const photo = presenter?.profileImg;
-                const about = presenter?.about;
-                const position = presenter?.position;
-
-                return (
-                  <div
-                    key={`presenter-${index}-${name}`}
-                    className={cn(
-                      "group relative flex flex-col rounded-2xl border-0.75 border-gray-200 bg-gray-50 p-6 transition-colors duration-300 hover:border-sswRed md:p-8",
-                      url && "pb-20 md:pb-20"
-                    )}
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="relative size-20 shrink-0 overflow-hidden rounded-full bg-gray-100 ring-2 ring-gray-200">
-                        {photo ? (
-                          <Image
-                            src={photo}
-                            alt={name}
-                            fill
-                            className="object-cover"
-                          />
-                        ) : (
-                          <span className="flex size-full items-center justify-center text-gray-300">
-                            <User className="size-1/2" aria-hidden />
-                          </span>
-                        )}
-                      </div>
-                      <div className="min-w-0">
-                        <h3 className="m-0 text-xl font-bold text-sswBlack">
-                          {url ? (
-                            <CustomLink
-                              href={url}
-                              className="unstyled text-sswBlack no-underline transition-colors hover:text-sswRed"
-                            >
-                              {name}
-                            </CustomLink>
-                          ) : (
-                            name
-                          )}
-                        </h3>
-                        {position && (
-                          <p className="mt-1 font-mono text-xs uppercase tracking-wider text-gray-400">
-                            {position}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    {about && (
-                      <div className="prose prose-sm mt-5 max-w-none text-gray-600">
-                        <TinaMarkdown
-                          content={about}
-                          components={componentRenderer}
-                        />
-                      </div>
-                    )}
-                    {url && (
-                      <CustomLink
-                        href={url}
-                        aria-label={`View ${name}'s profile`}
-                        className="unstyled absolute bottom-6 right-6"
-                      >
-                        <ArrowCircle
-                          className="size-12"
-                          iconClassName="size-4"
-                        />
-                      </CustomLink>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </Container>
-        </Section>
-      )}
     </>
   );
 }
