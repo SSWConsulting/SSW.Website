@@ -493,7 +493,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 {/* Title */}
                 <h1
                   data-tina-field={tinaField(event, "title")}
-                  className="mb-6 mt-0 max-w-3xl py-0 text-4xl font-bold leading-tight text-sswBlack md:text-6xl"
+                  className="mb-6 mt-0 max-w-3xl py-0 text-4xl font-bold leading-tight text-sswBlack lg:text-5xl"
                 >
                   {event.title}
                 </h1>
