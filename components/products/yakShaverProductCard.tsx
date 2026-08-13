@@ -94,8 +94,15 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
         src={GRADIENT_SRC}
         alt=""
         aria-hidden
-        width={1670}
-        height={1069}
+        // Matches the asset's real intrinsic size. These must stay in step with
+        // the file: next/image builds its srcset from `width`, so leaving the
+        // old 1670x1069 here would make it request 1670w/3840w candidates of a
+        // 500px source. No `sizes` prop is needed precisely because the source
+        // is now no larger than the slot ever renders (roughly 320-400px wide,
+        // since `h-full w-auto` scales it off the card height, not the
+        // viewport) - the optimizer never upscales past intrinsic width.
+        width={500}
+        height={320}
         loading="lazy"
         className="pointer-events-none absolute inset-y-0 right-0 h-full w-auto max-w-none select-none"
       />
