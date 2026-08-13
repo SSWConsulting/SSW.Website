@@ -40,7 +40,7 @@ function ProfileLink({ person, className, children }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`View ${person?.name ?? "this person"}'s SSW People profile`}
-      className={cn("!no-underline after:absolute after:inset-0", className)}
+      className={cn("!no-underline after:absolute after:inset-0 after:content-['']", className)}
     >
       {children}
     </Link>
