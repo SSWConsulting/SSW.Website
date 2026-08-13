@@ -1,12 +1,11 @@
 "use client";
 
-import { CustomLink } from "@/components/customLink";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
-import { ArrowCircle } from "../blocks/v3/shared/arrowCircle";
-import { cardShell, destinationLabel } from "./shared";
+import { cardShell } from "./shared";
+import { ProductCardShell } from "./productCardShell";
 
 // YakShaver's official horizontal dark-mode lockup, already in the repo's
 // company-logos download set. 212x41.
@@ -47,8 +46,8 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
   tinaNode,
 }) => {
   return (
-    <CustomLink
-      href={product.url ?? ""}
+    <ProductCardShell
+      href={product.url}
       className={cn(
         cardShell,
         // `dark` makes this card its own always-dark token scope — see note 1 in
@@ -67,7 +66,15 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
         "border-hairline hover:border-brand",
         // Surface still lifts to card-hover on hover. Flat — no lift, no shadow.
         "hover:bg-card-hover",
-        "gap-4 p-6"
+        "gap-4 p-6",
+        // Extra right padding (40px vs p-6's 24px) so the copy keeps clear of
+        // the gradient artwork anchored to the right edge - the side of the card
+        // where its brightest stops sit, and the only place contrast is tight.
+        //
+        // MUST stay after p-6 in this argument list: tailwind-merge treats a
+        // later `p-*` as overriding an earlier `pr-*`, so ordering it before p-6
+        // makes it silently disappear (verified with twMerge directly).
+        "pr-10"
       )}
     >
       {/* Their official gradient artwork, filling the card's right-hand side.
@@ -157,23 +164,37 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
         </p>
       )}
 
-      {/* No divider rule above this footer — unlike the standard cards, the two
-          brand cards carry their own surface and read as whole panels, so the
-          line was extra furniture. pt-3 stays, to keep the footer's spacing
-          from the copy above unchanged. */}
-      <div className="relative flex items-center justify-between gap-3 pt-3">
-        <span className="min-w-0 truncate text-sm text-muted-foreground">
-          {destinationLabel(product.url)}
+      {/* Footer: a Learn More call to action instead of the destination URL.
+          No divider rule above it - the brand cards carry their own surface and
+          read as whole panels, so the line was extra furniture.
+
+          It is a <span>, NOT a <button> or a nested <a>. The whole card is
+          already one link (see ProductCardShell), and both a button and an
+          anchor are invalid inside an <a>. A span keeps the markup valid and
+          the card a single tab stop, while the click still lands on the card's
+          own link. */}
+      <div className="relative flex items-center pt-3">
+        <span
+          className={cn(
+            "inline-flex items-center justify-center rounded-control px-4 py-2",
+            // transition-all, not transition-colors: the hover gesture is a
+            // transform now, and a colour-only transition would snap it instead
+            // of easing it. scale-100 states the rest value explicitly so the
+            // interpolation has both ends.
+            "text-sm font-medium transition-all duration-300 motion-reduce:transition-none",
+            "scale-100 group-hover:scale-105",
+            // Inside this card's `dark` scope these resolve to a white field
+            // with a near-black label, the same inversion the removed arrow
+            // used, so the chip reads as the brightest thing on the card.
+            "bg-foreground text-background",
+            // The gradient's bright stops sit on the right-hand side; this chip
+            // is left-aligned in the footer, so it never overlaps them.
+            "self-start"
+          )}
+        >
+          Learn More
         </span>
-        {/* No colour override needed: ArrowCircle's own defaults are
-            `bg-foreground text-background`, which inside this card's `dark` scope
-            already resolve to a white circle with a dark glyph. scale-100 keeps
-            the rotation as its only gesture. */}
-        <ArrowCircle
-          className="size-9 flex-none p-2 group-hover:scale-100"
-          iconClassName="size-3.5"
-        />
       </div>
-    </CustomLink>
+    </ProductCardShell>
   );
 };

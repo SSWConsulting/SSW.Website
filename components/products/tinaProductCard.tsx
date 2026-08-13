@@ -1,10 +1,9 @@
-import { CustomLink } from "@/components/customLink";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
-import { ArrowCircle } from "../blocks/v3/shared/arrowCircle";
-import { cardShell, destinationLabel } from "./shared";
+import { cardShell } from "./shared";
+import { ProductCardShell } from "./productCardShell";
 
 // The llama mark on its own, used only for the watermark in the bottom-right
 // corner. Same single-path artwork the mega menu uses, filled with Tina's
@@ -42,8 +41,8 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
     // inside and nesting a button in an <a> is invalid. With that chip gone the
     // overlay is unnecessary, which also means the focus outline can sit on the
     // card itself again instead of on a child that overflow-hidden would clip.
-    <CustomLink
-      href={product.url ?? ""}
+    <ProductCardShell
+      href={product.url}
       className={cn(
         cardShell,
         "justify-between gap-4 bg-brand-tina-field p-6",
@@ -70,12 +69,27 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
         // White, because the site's brand focus colour (#cc4141) measures
         // 1.15:1 against this orange field and is effectively invisible, while
         // white measures 5.49:1. Overrides cardShell's outline-brand.
-        "focus-visible:outline-white"
+        "focus-visible:outline-white",
+        // Extra right padding (40px vs p-6's 24px) so the copy keeps clear of
+        // the llama watermark in the bottom-right corner, which is larger now
+        // than the h-1/2 it was originally sized at.
+        //
+        // MUST stay after p-6 in this argument list: tailwind-merge treats a
+        // later `p-*` as overriding an earlier `pr-*`, so ordering it before p-6
+        // makes it silently disappear (verified with twMerge directly).
+        "pr-10"
       )}
     >
       {/* Their llama, watermarked into the bottom-right corner. Sized by height
-          (h-1/2 of the card) with w-auto so this tall artwork stays whole and
-          fully inside the card rather than bleeding off the corner.
+          (h-3/4 of the card) with w-auto so this tall 448x621 artwork scales on
+          its own aspect ratio rather than being distorted.
+
+          `-bottom-4` is intentional: the mark is pushed 16px below the card's
+          bottom edge so it sits lower in the composition, and cardShell's
+          overflow-hidden crops the feet rather than letting it overflow the
+          card. So this is a deliberate partial crop, not an accident - if the
+          whole mark is ever required again, `bottom-4` restores it.
+
           brightness-0 turns the orange artwork black and invert then makes it
           white. A plain string, not cn(): `opacity-15` is a custom scale key
           that tailwind-merge would drop against `group-hover:opacity-25`. */}
@@ -86,7 +100,7 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
         width={448}
         height={621}
         loading="lazy"
-        className="pointer-events-none absolute bottom-4 right-4 h-1/2 w-auto select-none opacity-15 brightness-0 invert transition-opacity duration-300 group-hover:opacity-25 motion-reduce:transition-none"
+        className="pointer-events-none absolute -bottom-4 right-4 h-3/4 w-auto select-none opacity-15 brightness-0 invert transition-opacity duration-300 group-hover:opacity-25 motion-reduce:transition-none"
       />
 
       <div className="relative flex flex-col gap-3">
@@ -131,22 +145,41 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
         )}
       </div>
 
-      {/* No divider rule above this footer — unlike the standard cards, the two
-          brand cards carry their own surface and read as whole panels, so the
-          line was extra furniture. pt-3 stays, to keep the footer's spacing
-          from the copy above unchanged. */}
-      <div className="relative flex items-center justify-between gap-3 pt-3">
-        <span className="min-w-0 truncate text-sm text-white">
-          {destinationLabel(product.url)}
+      {/* Footer: a Learn More call to action instead of the destination URL.
+          No divider rule above it - the brand cards carry their own surface and
+          read as whole panels, so the line was extra furniture.
+
+          It is a <span>, NOT a <button> or a nested <a>. The whole card is
+          already one link (see the note on ProductCardShell above), and both a
+          button and an anchor are invalid inside an <a> - which is the exact
+          trap the install-command chip hit before. A span keeps the markup
+          valid and the card a single tab stop, while the click still lands on
+          the card's own link. */}
+      <div className="relative flex items-center pt-3">
+        <span
+          className={cn(
+            "inline-flex items-center justify-center rounded-control px-4 py-2",
+            // transition-all, not transition-colors: the hover gesture is a
+            // transform now, and a colour-only transition would snap it instead
+            // of easing it. scale-100 states the rest value explicitly so the
+            // interpolation has both ends.
+            "text-sm font-medium transition-all duration-300 motion-reduce:transition-none",
+            "scale-100 group-hover:scale-105",
+            // White field with the darkened brand orange as the label: #c2360d
+            // on white measures 5.49:1, clearing AA. The raw brand orange
+            // (#ec4815) would only reach 3.82:1 and fail, which is the same
+            // reason the card's own field is not the raw orange.
+            "bg-white text-brand-tina-field"
+            // Deliberately no group-hover colour swap. The card's own field
+            // brightens to --brand-tina-field-hover on hover, so tinting this
+            // element the same colour would dissolve it into the surface. A
+            // white chip stays legible against both field shades, and the
+            // surface change is already the hover gesture.
+          )}
+        >
+          Learn More
         </span>
-        {/* Everything on this card is white, including the accent — so the
-            arrow fills white with an orange glyph rather than using the
-            foreground/background tokens. */}
-        <ArrowCircle
-          className="size-9 flex-none bg-white p-2 text-brand-tina group-hover:scale-100"
-          iconClassName="size-3.5"
-        />
       </div>
-    </CustomLink>
+    </ProductCardShell>
   );
 };

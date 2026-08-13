@@ -1,4 +1,3 @@
-import { CustomLink } from "@/components/customLink";
 import { BluredBase64Image } from "@/helpers/images";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -6,6 +5,7 @@ import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { ArrowCircle } from "../blocks/v3/shared/arrowCircle";
 import { cardShell, destinationLabel } from "./shared";
+import { ProductCardShell } from "./productCardShell";
 
 export type ProductCardProps = {
   product: {
@@ -25,11 +25,13 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
   const domain = destinationLabel(product.url);
 
   return (
-    // CustomLink, not a raw <a>: it routes the one internal product
-    // (/products/rewards) through next/link and adds target/rel to the
-    // genuinely external ones.
-    <CustomLink
-      href={product.url ?? ""}
+    // ProductCardShell, not a raw <a>: for a product that has a url it wraps
+    // CustomLink, which routes the one internal product (/products/rewards)
+    // through next/link and adds target/rel to the genuinely external ones. For
+    // a product with no url it renders this same shell as a plain div, so the
+    // card keeps its chrome instead of collapsing into loose grid items.
+    <ProductCardShell
+      href={product.url}
       className={cn(
         cardShell,
         "gap-3 p-5",
@@ -47,10 +49,16 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
       )}
     >
       {/* Logo plate. The two brand cards drop this and show their mark
-          unplated; here it keeps eleven differently-shaped logos on a
-          consistent ground, and stays white in both themes because several of
-          these logos are dark-on-transparent. */}
-      <div className="flex size-16 flex-none items-center justify-center rounded-utility bg-white">
+          unplated; here it keeps the nine remaining differently-shaped logos on
+          a consistent ground, and stays white in both themes because several of
+          these logos are dark-on-transparent.
+
+          rounded-card (16px), not rounded-utility (8px): on a 64px plate that
+          is a quarter of the side, which reads as a deliberate squircle and
+          echoes the card's own corner radius instead of looking like a
+          slightly-softened square. Both are design tokens, so this stays inside
+          the scale rather than reaching for a raw Tailwind default. */}
+      <div className="flex size-16 flex-none items-center justify-center rounded-card bg-white">
         {product.logo && (
           <Image
             src={product.logo}
@@ -101,15 +109,21 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
             {domain}
           </span>
         )}
-        {/* Starts as a quiet outline and fills with the foreground colour on
-            hover. scale-100 on hover neutralises ArrowCircle's default
-            group-hover:scale-125 so the rotation is the element's only
-            gesture. */}
+        {/* Filled at rest and filled on hover - the only hover gesture is the
+            45deg turn plus the scale-up. Deliberately passes nothing but size
+            and padding so ArrowCircle's own defaults do the work:
+            `bg-foreground text-background` inverts with the theme (dark circle
+            with a light glyph in light mode, white circle with a dark glyph in
+            dark mode) and `group-hover:rotate-45 group-hover:scale-125` supply
+            the turn and the growth. An earlier revision overrode all of that to
+            start as a quiet outline that filled on hover, and pinned
+            group-hover:scale-100 to suppress the growth; adding any of those
+            back re-breaks this. */}
         <ArrowCircle
-          className="size-9 flex-none border-0.75 border-stroke-weak bg-transparent p-2 text-foreground group-hover:scale-100 group-hover:border-transparent group-hover:bg-foreground group-hover:text-background"
+          className="size-9 flex-none p-2"
           iconClassName="size-3.5"
         />
       </div>
-    </CustomLink>
+    </ProductCardShell>
   );
 };
