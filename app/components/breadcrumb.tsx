@@ -7,7 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
 import React, { FC, useMemo } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -88,9 +88,9 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       items.push(
         <BreadcrumbSeparator
           key={`separator-${index}`}
-          className="flex items-center text-muted-foreground"
+          className="text-sm text-muted-foreground"
         >
-          <ChevronRight className="size-3.5" aria-hidden="true" />
+          {"/"}
         </BreadcrumbSeparator>
       );
 
