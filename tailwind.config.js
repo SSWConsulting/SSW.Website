@@ -358,6 +358,13 @@ export default {
         brand: "var(--text-brand)",
         "brand-subtle":
           "color-mix(in srgb, var(--text-brand) 16%, transparent)",
+        // Third-party brand colours (TinaCMS), namespaced so they stay visibly
+        // separate from the SSW palette above. Values and the contrast
+        // measurements behind them are documented in styles.css. Used only by
+        // the TinaCMS card on /products.
+        "brand-tina": "var(--brand-tina-orange)",
+        "brand-tina-field": "var(--brand-tina-field)",
+        "brand-tina-field-hover": "var(--brand-tina-field-hover)",
         azure: "#007fff",
         ssw: {
           red: {
