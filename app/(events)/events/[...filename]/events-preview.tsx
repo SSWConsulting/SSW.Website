@@ -3,20 +3,13 @@ import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { CITY_MAP } from "@/components/util/constants/country";
 import { Container } from "@/components/util/container";
 import { Section } from "@/components/util/section";
 import { useFormatDates } from "@/hooks/useFormatDates";
 import { cn } from "@/lib/utils";
 import type { EventsCalendarQuery } from "@/tina/types";
+import { Breadcrumbs } from "app/components/breadcrumb";
 import {
   Calendar,
   CalendarPlus,
@@ -27,6 +20,7 @@ import {
   User,
 } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
@@ -208,8 +202,10 @@ function EventSidebar({
     }
   };
 
+  // Icon-only: the icons carry the meaning, and dropping the labels keeps both
+  // buttons on one line. `title`/`aria-label` keep them discoverable.
   const secondaryButton =
-    "flex items-center justify-center gap-2 rounded-md border-0.75 border-gray-200 px-3 py-2 text-sm font-medium text-sswBlack transition-colors hover:border-sswRed hover:text-sswRed";
+    "flex items-center justify-center rounded-md border-0.75 border-gray-200 py-2.5 text-sswBlack transition-colors hover:border-sswRed hover:text-sswRed";
 
   return (
     <aside className="w-full shrink-0 lg:sticky lg:top-24 lg:w-80">
@@ -250,7 +246,7 @@ function EventSidebar({
 
         <div className="flex flex-col gap-5 p-6">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-semibold uppercase tracking-widest text-gray-400">
+            <span className="font-mono text-xs uppercase tracking-wider text-gray-400">
               Event details
             </span>
             {event.entryCost && (
@@ -268,7 +264,7 @@ function EventSidebar({
                 only once filled — an empty red square would flash otherwise. */}
             {dateChip.month && (
               <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg bg-sswRed leading-none text-white">
-                <span className="text-xxs font-semibold uppercase tracking-wider">
+                <span className="font-mono text-xxs uppercase tracking-wider">
                   {dateChip.month}
                 </span>
                 <span className="text-lg font-bold">{dateChip.day}</span>
@@ -313,7 +309,7 @@ function EventSidebar({
               href={ctaHref}
               target="_blank"
               variant="primary"
-              className="block w-full text-base"
+              className="block w-full text-base font-semibold"
             >
               {ctaLabel}
             </RippleButton>
@@ -324,22 +320,22 @@ function EventSidebar({
               type="button"
               onClick={handleAddToCalendar}
               className={secondaryButton}
+              title="Add to calendar"
+              aria-label="Add to calendar"
             >
-              <CalendarPlus size={16} /> Add to calendar
+              <CalendarPlus size={22} aria-hidden />
             </button>
             <button
               type="button"
               onClick={handleShare}
               className={secondaryButton}
+              title={copied ? "Link copied" : "Share"}
+              aria-label={copied ? "Link copied" : "Share"}
             >
               {copied ? (
-                <>
-                  <Check size={16} /> Copied
-                </>
+                <Check size={22} aria-hidden />
               ) : (
-                <>
-                  <Share2 size={16} /> Share
-                </>
+                <Share2 size={22} aria-hidden />
               )}
             </button>
           </div>
@@ -350,14 +346,14 @@ function EventSidebar({
           {event.availability && (
             <div
               data-tina-field={tinaField(event, "availability")}
-              className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-sswRed"
+              className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-sswRed"
             >
               <span className="size-2 rounded-full bg-sswRed" aria-hidden />
               {event.availability}
             </div>
           )}
           {event.hostedAtSsw && (
-            <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400">
+            <p className="text-center font-mono text-xs uppercase tracking-wider text-gray-400">
               Hosted by SSW
             </p>
           )}
@@ -370,6 +366,12 @@ function EventSidebar({
 export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const event = (tinaProps.data as { eventsCalendar: EventData })
     .eventsCalendar;
+
+  // The shared Breadcrumbs component swaps the segment matching `path` for
+  // `title`; take it from the URL so it matches whether the page resolved by
+  // slug or filename.
+  const pathname = usePathname();
+  const lastPathSegment = pathname.split("/").filter(Boolean).pop() ?? "";
 
   const { relativeDate, formattedDateParts, dateChip } = useFormatDates(
     {
@@ -414,6 +416,17 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
 
   return (
     <>
+      {/* Breadcrumb — the shared site-wide component, above the hero */}
+      <section className="relative">
+        <Container
+          width="custom"
+          size="custom"
+          className="w-full max-w-8xl pt-8"
+        >
+          <Breadcrumbs path={lastPathSegment} title={event.title} />
+        </Container>
+      </section>
+
       {/* Hero */}
       <Section className="py-8 md:py-12">
         <Container width="custom" size="custom" className="w-full max-w-8xl">
@@ -437,7 +450,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
             <div className="relative flex flex-col gap-10 md:flex-row md:items-center md:justify-between md:gap-12">
               <div className="min-w-0 flex-1">
                 {/* Label row */}
-                <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold uppercase tracking-widest">
+                <div className="mb-6 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-sm uppercase tracking-wider">
                   {statusLabel && (
                     <span
                       data-tina-field={tinaField(event, "startDateTime")}
@@ -519,7 +532,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                     href={ctaHref}
                     target="_blank"
                     variant="primary"
-                    className="inline-block text-base"
+                    className="inline-block text-base font-semibold"
                   >
                     {ctaLabel}
                   </RippleButton>
@@ -546,7 +559,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                         <p className="font-bold leading-tight text-sswBlack">
                           {item.presenter?.presenter?.name}
                         </p>
-                        <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                        <p className="mt-1 font-mono text-xs uppercase tracking-wider text-gray-400">
                           {item.role || "Speaker"}
                         </p>
                       </div>
@@ -555,37 +568,6 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                 </div>
               )}
             </div>
-          </div>
-
-          {/* Breadcrumb */}
-          <div className="mt-6">
-            <Breadcrumb>
-              <BreadcrumbList className="gap-2 text-xs font-medium uppercase tracking-widest text-gray-400">
-                <BreadcrumbItem>
-                  <BreadcrumbLink
-                    href="/"
-                    className="text-gray-400 underline-offset-2 hover:text-sswRed"
-                  >
-                    Home
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator>/</BreadcrumbSeparator>
-                <BreadcrumbItem>
-                  <BreadcrumbLink
-                    href="/events"
-                    className="text-gray-400 underline-offset-2 hover:text-sswRed"
-                  >
-                    Events
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator>/</BreadcrumbSeparator>
-                <BreadcrumbItem>
-                  <BreadcrumbPage className="max-w-64 truncate text-gray-500">
-                    {event.title}
-                  </BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
           </div>
         </Container>
       </Section>
@@ -598,7 +580,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
             <div className="min-w-0 flex-1">
               {(event.lead || event.description || event.abstract) && (
                 <>
-                  <p className="mb-5 text-sm font-semibold uppercase tracking-widest text-sswRed">
+                  <p className="mb-5 font-mono text-sm uppercase tracking-wider text-sswRed">
                     About the Event
                   </p>
                   {event.lead && (
@@ -641,7 +623,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
       {validPresenters.length > 0 && (
         <Section>
           <Container width="custom" size="medium" className="w-full max-w-8xl">
-            <h2 className="mb-8 mt-0 text-sm font-semibold uppercase tracking-widest text-sswRed">
+            <h2 className="mb-8 mt-0 font-mono text-sm uppercase tracking-wider text-sswRed">
               {validPresenters.length > 1
                 ? "About the Speakers"
                 : "About the Speaker"}
@@ -692,7 +674,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                           )}
                         </h3>
                         {position && (
-                          <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gray-400">
+                          <p className="mt-1 font-mono text-xs uppercase tracking-wider text-gray-400">
                             {position}
                           </p>
                         )}
