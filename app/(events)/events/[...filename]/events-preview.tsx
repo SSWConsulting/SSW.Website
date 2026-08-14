@@ -208,7 +208,7 @@ function EventSidebar({
     <aside className="w-full shrink-0 lg:sticky lg:top-24 lg:w-80">
       <div className="overflow-hidden rounded-2xl border-0.75 border-gray-200 bg-white shadow-sm">
         {event.bannerImage ? (
-          <div className="relative aspect-video h-28 w-full lg:h-auto">
+          <div className="relative h-24 w-full lg:h-32">
             <Image
               src={event.bannerImage}
               alt={event.title}
@@ -217,7 +217,7 @@ function EventSidebar({
             />
           </div>
         ) : event.thumbnail ? (
-          <div className="relative flex aspect-video h-28 w-full items-center justify-center border-b-0.75 border-gray-100 bg-gray-50 lg:h-auto">
+          <div className="relative flex h-24 w-full items-center justify-center border-b-0.75 border-gray-100 bg-gray-50 lg:h-32">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-0"
@@ -444,7 +444,7 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
       {/* Hero */}
       <Section className="py-8 md:py-12">
         <Container width="custom" size="custom" className="w-full max-w-8xl">
-          <div className="relative overflow-hidden rounded-3xl border-0.75 border-gray-100 bg-gray-50 px-6 py-10 md:p-14">
+          <div className="relative overflow-hidden rounded-3xl border-0.75 border-gray-200 bg-gray-50 px-6 py-10 md:p-14">
             {/* Dotted texture */}
             <div
               aria-hidden
@@ -632,7 +632,14 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
                       ? "About the Speakers"
                       : "About the Speaker"}
                   </h2>
-                  <div className="grid gap-6 xl:grid-cols-2">
+                  {/* A lone speaker gets the full column rather than a
+                      half-width card with empty space beside it. */}
+                  <div
+                    className={cn(
+                      "grid gap-6",
+                      validPresenters.length > 1 && "xl:grid-cols-2"
+                    )}
+                  >
                     {validPresenters.map((item, index) => {
                       const presenter = item.presenter;
                       const name = presenter?.presenter?.name as string;
