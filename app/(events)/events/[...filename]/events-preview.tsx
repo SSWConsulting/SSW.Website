@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -272,26 +272,30 @@ function EventSidebar({
               data-tina-field={tinaField(event, "startDateTime")}
               className="flex items-center gap-3"
             >
-              {schedule.chips.map((chip, index) => (
-                <div key={`chip-${index}`} className="flex items-center gap-3">
-                  {index > 0 && (
-                    <ArrowRight
-                      size={16}
-                      className="shrink-0 text-sswRed"
-                      aria-hidden
-                    />
-                  )}
-                  <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg bg-sswRed leading-none text-white">
-                    <span className="font-mono text-xxs uppercase tracking-wider">
-                      {chip.month}
-                    </span>
-                    <span className="text-lg font-bold">{chip.day}</span>
-                  </div>
-                </div>
-              ))}
+              {/* Chips keep a tighter gap around the arrow than the gap out to
+                  the text, so the two dates read as one unit. */}
+              <div className="flex shrink-0 items-center gap-1.5">
+                {schedule.chips.map((chip, index) => (
+                  <Fragment key={`chip-${index}`}>
+                    {index > 0 && (
+                      <ArrowRight
+                        size={14}
+                        className="shrink-0 text-sswRed"
+                        aria-hidden
+                      />
+                    )}
+                    <div className="flex size-12 shrink-0 flex-col items-center justify-center rounded-lg bg-sswRed leading-none text-white">
+                      <span className="font-mono text-xxs uppercase tracking-wider">
+                        {chip.month}
+                      </span>
+                      <span className="text-lg font-bold">{chip.day}</span>
+                    </div>
+                  </Fragment>
+                ))}
+              </div>
               <div className="min-w-0">
                 <p className="font-medium text-sswBlack">
-                  {schedule.dateShort}
+                  {schedule.weekdayLine}
                 </p>
                 <p className="text-sm text-gray-500">{schedule.timeLine}</p>
               </div>

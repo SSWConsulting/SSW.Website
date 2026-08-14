@@ -29,9 +29,13 @@ export type EventSchedule = {
   isMultiDay: boolean;
   /** One chip for a single-day event, two (start and end) for a multi-day one. */
   chips: { month: string; day: string }[];
-  /** "Wed 16 Sep" / "Mon 20 - Tue 21 Jul" */
-  dateShort: string;
-  /** As above plus the year, for the page header. */
+  /**
+   * Weekday only — the chips already carry the month and day, so repeating
+   * them would say the same thing twice. "Wednesday" for a single-day event,
+   * "Mon - Tue" across several.
+   */
+  weekdayLine: string;
+  /** Full date for the page header, e.g. "Wed 16 Sep 2026". */
   dateLong: string;
   /**
    * "5:30 PM - 7:30 PM". Multi-day events append " daily": only the overall
@@ -47,7 +51,7 @@ export const formatEventSchedule = (start: Date, end: Date): EventSchedule => {
   const empty = {
     isMultiDay: false,
     chips: [],
-    dateShort: "",
+    weekdayLine: "",
     dateLong: "",
     timeLine: "",
   };
@@ -65,7 +69,7 @@ export const formatEventSchedule = (start: Date, end: Date): EventSchedule => {
     return {
       isMultiDay: false,
       chips: [chip(s)],
-      dateShort: s.format("ddd D MMM"),
+      weekdayLine: s.format("dddd"),
       dateLong: s.format("ddd D MMM YYYY"),
       timeLine: times,
     };
@@ -87,7 +91,7 @@ export const formatEventSchedule = (start: Date, end: Date): EventSchedule => {
   return {
     isMultiDay: true,
     chips: [chip(s), chip(e)],
-    dateShort,
+    weekdayLine: `${s.format("ddd")} - ${e.format("ddd")}`,
     // dateShort already carries both years when they differ.
     dateLong: sameYear ? `${dateShort} ${e.format("YYYY")}` : dateShort,
     timeLine: repeatsDaily ? `${times} daily` : times,

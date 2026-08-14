@@ -14,7 +14,7 @@ const EMPTY_DATE_PARTS = { date: "", time: "" };
 const EMPTY_SCHEDULE: EventSchedule = {
   isMultiDay: false,
   chips: [],
-  dateShort: "",
+  weekdayLine: "",
   dateLong: "",
   timeLine: "",
 };
