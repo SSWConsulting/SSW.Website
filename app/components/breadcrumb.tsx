@@ -27,8 +27,10 @@ interface BreadcrumbsProps {
   };
 }
 
-// Module-level so the default prop keeps a stable identity between renders.
+// Module-level so the default props keep a stable identity between renders —
+// a fresh [] each render would re-run the memo below every time.
 const NO_SEGMENTS: string[] = [];
+const NO_REPLACEMENTS: { from: string; to: string }[] = [];
 
 const defaultReplacements = [
   { from: "consulting", to: "Services" },
@@ -50,7 +52,7 @@ const defaultReplacements = [
 ];
 
 export const Breadcrumbs: FC<BreadcrumbsProps> = ({
-  additionalReplacements = [],
+  additionalReplacements = NO_REPLACEMENTS,
   excludeSegments = NO_SEGMENTS,
   path,
   title,

@@ -33,7 +33,11 @@ export type EventSchedule = {
   dateShort: string;
   /** As above plus the year, for the page header. */
   dateLong: string;
-  /** "5:30 PM - 7:30 PM", with " daily" when the same hours repeat each day. */
+  /**
+   * "5:30 PM - 7:30 PM". Multi-day events append " daily": only the overall
+   * start and end are stored, so this assumes each day keeps the first day's
+   * hours — it can't know a day that starts or finishes at a different time.
+   */
   timeLine: string;
 };
 
@@ -67,10 +71,14 @@ export const formatEventSchedule = (start: Date, end: Date): EventSchedule => {
     };
   }
 
-  // Same month: name it once at the end ("Mon 20 - Tue 21 Jul").
-  const dateShort = s.isSame(e, "month")
-    ? `${s.format("ddd D")} - ${e.format("ddd D MMM")}`
-    : `${s.format("ddd D MMM")} - ${e.format("ddd D MMM")}`;
+  // Same month: name it once at the end ("Mon 20 - Tue 21 Jul"). Across a year
+  // boundary both halves need their own year, or the start reads as the wrong one.
+  const sameYear = s.isSame(e, "year");
+  const dateShort = !sameYear
+    ? `${s.format("ddd D MMM YYYY")} - ${e.format("ddd D MMM YYYY")}`
+    : s.isSame(e, "month")
+      ? `${s.format("ddd D")} - ${e.format("ddd D MMM")}`
+      : `${s.format("ddd D MMM")} - ${e.format("ddd D MMM")}`;
 
   // "daily" only when the hours actually repeat each day. An event that simply
   // runs past midnight ends earlier in the day than it starts, and isn't daily.
@@ -80,7 +88,8 @@ export const formatEventSchedule = (start: Date, end: Date): EventSchedule => {
     isMultiDay: true,
     chips: [chip(s), chip(e)],
     dateShort,
-    dateLong: `${dateShort} ${e.format("YYYY")}`,
+    // dateShort already carries both years when they differ.
+    dateLong: sameYear ? `${dateShort} ${e.format("YYYY")}` : dateShort,
     timeLine: repeatsDaily ? `${times} daily` : times,
   };
 };

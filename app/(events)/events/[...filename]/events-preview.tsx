@@ -78,16 +78,33 @@ function escapeIcs(text: string) {
     .replace(/\n/g, "\\n");
 }
 
-// Fold content lines longer than 75 octets, per RFC 5545.
+// Fold content lines longer than 75 octets, per RFC 5545. Measured in UTF-8
+// bytes and split on code point boundaries, so accented names and emoji can't
+// blow the limit or get cut in half.
 function foldIcsLine(line: string) {
-  if (line.length <= 75) return line;
-  let folded = line.slice(0, 75);
-  let rest = line.slice(75);
-  while (rest.length) {
-    folded += `\r\n ${rest.slice(0, 74)}`;
-    rest = rest.slice(74);
+  const encoder = new TextEncoder();
+  if (encoder.encode(line).length <= 75) return line;
+
+  const parts: string[] = [];
+  let current = "";
+  let bytes = 0;
+  // Continuation lines carry a leading space, which counts toward the 75.
+  let limit = 75;
+
+  for (const char of line) {
+    const size = encoder.encode(char).length;
+    if (bytes + size > limit) {
+      parts.push(current);
+      current = "";
+      bytes = 0;
+      limit = 74;
+    }
+    current += char;
+    bytes += size;
   }
-  return folded;
+  if (current) parts.push(current);
+
+  return parts.join("\r\n ");
 }
 
 // ISO date -> iCalendar UTC stamp, e.g. 20260916T073000Z.
@@ -151,11 +168,17 @@ function EventSidebar({
   const [copied, setCopied] = useState(false);
 
   const city = event.cityOther || event.city;
-  const state = CITY_MAP[event.city]?.state;
-  // Only link to the SSW chapel page when we're actually using that chapel as
-  // the venue; a custom venue name links nowhere rather than the wrong place.
-  const venueUrl = event.venue ? null : CITY_MAP[event.city]?.url;
-  const venueName = event.venue || CITY_MAP[event.city]?.name;
+  const chapel = CITY_MAP[event.city];
+  const state = chapel?.state;
+  // Link to the chapel page only when the venue actually is that chapel
+  // ("SSW Chapel" matches "SSW Chapel Melbourne"); anywhere else gets no link
+  // rather than one pointing at the wrong building.
+  const venueUrl =
+    !event.venue ||
+    chapel?.name?.toLowerCase().startsWith(event.venue.trim().toLowerCase())
+      ? chapel?.url
+      : null;
+  const venueName = event.venue || chapel?.name;
   const cityStateLine = [city, state].filter(Boolean).join(", ");
 
   const handleAddToCalendar = () => {
@@ -406,8 +429,9 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
     (p) => p?.presenter?.presenter?.name
   );
 
-  // Compare the end date directly so the CTA/status are correct during SSR too
-  // (both sides are absolute instants — no timezone drift, no relative-copy coupling).
+  // Compare the end date directly so the CTA is right during SSR (both sides
+  // are absolute instants — no timezone drift, no coupling to relative copy).
+  // Upcoming events still show no status until `relativeDate` lands on hydration.
   const isPast =
     !!event.endDateTime && new Date(event.endDateTime) < new Date();
   const statusLabel = isPast ? "Past event" : relativeDate;

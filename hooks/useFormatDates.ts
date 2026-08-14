@@ -9,6 +9,8 @@ import {
   type EventSchedule,
 } from "../helpers/dates";
 
+const EMPTY_DATE_PARTS = { date: "", time: "" };
+
 const EMPTY_SCHEDULE: EventSchedule = {
   isMultiDay: false,
   chips: [],
@@ -20,10 +22,8 @@ const EMPTY_SCHEDULE: EventSchedule = {
 export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
   const [relativeDate, setRelativeDate] = useState<string>("");
   const [formattedDate, setFormattedDate] = useState<string>("");
-  const [formattedDateParts, setFormattedDateParts] = useState<{
-    date: string;
-    time: string;
-  }>({ date: "", time: "" });
+  const [formattedDateParts, setFormattedDateParts] =
+    useState<typeof EMPTY_DATE_PARTS>(EMPTY_DATE_PARTS);
   const [schedule, setSchedule] = useState<EventSchedule>(EMPTY_SCHEDULE);
 
   // Depend on primitive timestamps, not the Date objects: callers usually build
@@ -33,7 +33,15 @@ export const useFormatDates = (event: EventTrimmed, formatLong: boolean) => {
   const endTime = event.endDateTime?.getTime();
 
   useEffect(() => {
-    if (startTime == null || endTime == null) return;
+    // Number.isFinite, not a null check: callers build `new Date(value)`, so a
+    // missing or malformed date arrives as an Invalid Date whose time is NaN.
+    if (!Number.isFinite(startTime) || !Number.isFinite(endTime)) {
+      setRelativeDate("");
+      setFormattedDate("");
+      setFormattedDateParts(EMPTY_DATE_PARTS);
+      setSchedule(EMPTY_SCHEDULE);
+      return;
+    }
     const start = new Date(startTime);
     const end = new Date(endTime);
 
