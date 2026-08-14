@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
-import { cardShell } from "./shared";
+import { cardShell, learnMoreChip, tinaTagChip, visibleTags } from "./shared";
 import { ProductCardShell } from "./productCardShell";
 
 // The llama mark on its own, used only for the watermark in the bottom-right
@@ -16,7 +16,12 @@ const LLAMA_SRC = "/images/megamenu-icons/TinaDefault.svg";
 const LOGO_SRC = "/images/company-logos/TinaCms-Logo-Full-Default.svg";
 
 type TinaProductCardProps = {
-  product: { name?: string; url?: string; description?: string };
+  product: {
+    name?: string;
+    url?: string;
+    description?: string;
+    tags?: string[];
+  };
   tinaNode?: Record<string, unknown>;
 };
 
@@ -35,6 +40,8 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
   product,
   tinaNode,
 }) => {
+  const tags = visibleTags(product.tags);
+
   return (
     // A plain link — the whole card is one target. It used to be a div wrapping
     // a full-bleed link overlay, because an install-command copy <button> lived
@@ -143,6 +150,26 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
             {product.description}
           </p>
         )}
+        {/* Capability tags, in the text column so they stay inside the padding
+            that keeps this card's copy clear of the llama watermark.
+
+            tinaTagChip, not productTagChip: this card's field is a fixed orange
+            that does not follow the theme, and the red stroke the other cards'
+            pills carry measures only 1.15:1 against it - white is the more
+            visible border here, not less. Bare string, never cn() - see the note
+            on the constant. */}
+        {tags.length > 0 && (
+          <ul
+            className="m-0 flex list-none flex-wrap gap-1.5 p-0"
+            data-tina-field={tinaNode ? tinaField(tinaNode, "tags") : undefined}
+          >
+            {tags.map((tag) => (
+              <li key={tag} className={tinaTagChip}>
+                {tag}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       {/* Footer: a Learn More call to action instead of the destination URL.
@@ -156,29 +183,11 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
           valid and the card a single tab stop, while the click still lands on
           the card's own link. */}
       <div className="relative flex items-center pt-3">
-        <span
-          className={cn(
-            "inline-flex items-center justify-center rounded-control px-4 py-2",
-            // transition-all, not transition-colors: the hover gesture is a
-            // transform now, and a colour-only transition would snap it instead
-            // of easing it. scale-100 states the rest value explicitly so the
-            // interpolation has both ends.
-            "text-sm font-medium transition-all duration-300 motion-reduce:transition-none",
-            "scale-100 group-hover:scale-105",
-            // White field with the darkened brand orange as the label: #c2360d
-            // on white measures 5.49:1, clearing AA. The raw brand orange
-            // (#ec4815) would only reach 3.82:1 and fail, which is the same
-            // reason the card's own field is not the raw orange.
-            "bg-white text-brand-tina-field"
-            // Deliberately no group-hover colour swap. The card's own field
-            // brightens to --brand-tina-field-hover on hover, so tinting this
-            // element the same colour would dissolve it into the surface. A
-            // white chip stays legible against both field shades, and the
-            // surface change is already the hover gesture.
-          )}
-        >
-          Learn More
-        </span>
+        {/* learnMoreChip, shared with the YakShaver card so the two cannot
+            drift: a white field with a near-black label on both. This card's
+            chip used to carry the darkened brand orange (#c2360d) as its label
+            instead - see the constant for why it is now the same near-black. */}
+        <span className={learnMoreChip}>Learn More</span>
       </div>
     </ProductCardShell>
   );

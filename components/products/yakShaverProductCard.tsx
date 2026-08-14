@@ -4,7 +4,12 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
-import { cardShell } from "./shared";
+import {
+  cardShell,
+  learnMoreChip,
+  productTagChip,
+  visibleTags,
+} from "./shared";
 import { ProductCardShell } from "./productCardShell";
 
 // YakShaver's official horizontal dark-mode lockup, already in the repo's
@@ -18,7 +23,12 @@ const LOCKUP_SRC =
 const GRADIENT_SRC = "/images/YakShaver-Gradient-BG.png";
 
 type YakShaverProductCardProps = {
-  product: { name?: string; url?: string; description?: string };
+  product: {
+    name?: string;
+    url?: string;
+    description?: string;
+    tags?: string[];
+  };
   tinaNode?: Record<string, unknown>;
 };
 
@@ -45,6 +55,8 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
   product,
   tinaNode,
 }) => {
+  const tags = visibleTags(product.tags);
+
   return (
     <ProductCardShell
       href={product.url}
@@ -164,6 +176,28 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
         </p>
       )}
 
+      {/* Capability tags. productTagChip works unchanged here: inside this
+          card's `dark` scope its red stroke, red wash and foreground label
+          resolve exactly as they do on the nine standard cards in dark mode -
+          this surface is the same #101010 they use, so the 3.99:1 stroke figure
+          measured for them holds here too.
+
+          `relative` lifts the row above the gradient artwork, which is an
+          absolutely-positioned sibling earlier in the DOM. Bare string on the
+          chips themselves, never cn() - see the note on the constant. */}
+      {tags.length > 0 && (
+        <ul
+          className="relative m-0 flex list-none flex-wrap gap-1.5 p-0"
+          data-tina-field={tinaNode ? tinaField(tinaNode, "tags") : undefined}
+        >
+          {tags.map((tag) => (
+            <li key={tag} className={productTagChip}>
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
+
       {/* Footer: a Learn More call to action instead of the destination URL.
           No divider rule above it - the brand cards carry their own surface and
           read as whole panels, so the line was extra furniture.
@@ -174,26 +208,13 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
           the card a single tab stop, while the click still lands on the card's
           own link. */}
       <div className="relative flex items-center pt-3">
-        <span
-          className={cn(
-            "inline-flex items-center justify-center rounded-control px-4 py-2",
-            // transition-all, not transition-colors: the hover gesture is a
-            // transform now, and a colour-only transition would snap it instead
-            // of easing it. scale-100 states the rest value explicitly so the
-            // interpolation has both ends.
-            "text-sm font-medium transition-all duration-300 motion-reduce:transition-none",
-            "scale-100 group-hover:scale-105",
-            // Inside this card's `dark` scope these resolve to a white field
-            // with a near-black label, the same inversion the removed arrow
-            // used, so the chip reads as the brightest thing on the card.
-            "bg-foreground text-background",
-            // The gradient's bright stops sit on the right-hand side; this chip
-            // is left-aligned in the footer, so it never overlaps them.
-            "self-start"
-          )}
-        >
-          Learn More
-        </span>
+        {/* learnMoreChip, shared with the TinaCMS card so the two cannot drift.
+            Inside this card's `dark` scope it resolves to a white field with a
+            near-black label - the same inversion the removed arrow used - so the
+            chip reads as the brightest thing on the card. It is also
+            left-aligned, which keeps it off the gradient's bright stops on the
+            right-hand side. */}
+        <span className={learnMoreChip}>Learn More</span>
       </div>
     </ProductCardShell>
   );

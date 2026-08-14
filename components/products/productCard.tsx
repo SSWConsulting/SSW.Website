@@ -4,7 +4,12 @@ import Image from "next/image";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { ArrowCircle } from "../blocks/v3/shared/arrowCircle";
-import { cardShell, destinationLabel } from "./shared";
+import {
+  cardShell,
+  destinationLabel,
+  productTagChip,
+  visibleTags,
+} from "./shared";
 import { ProductCardShell } from "./productCardShell";
 
 export type ProductCardProps = {
@@ -13,6 +18,7 @@ export type ProductCardProps = {
     url?: string;
     description?: string;
     logo?: string;
+    tags?: string[];
   };
   // The Tina document node this product came from, for visual editing.
   tinaNode?: Record<string, unknown>;
@@ -23,6 +29,7 @@ export type ProductCardProps = {
 // surfaces.
 export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
   const domain = destinationLabel(product.url);
+  const tags = visibleTags(product.tags);
 
   return (
     // ProductCardShell, not a raw <a>: for a product that has a url it wraps
@@ -100,6 +107,33 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
         )}
       </div>
 
+      {/* Capability tags. Sits between the copy and the footer rather than up by
+          the title, so the title/description block stays the card's single
+          reading unit and the footer keeps its mt-auto pin.
+
+          flex-wrap is load-bearing: at the 4-up tier six of the eleven cards fit
+          their three tags on one row and five wrap to two (see the note on
+          productTagChip), and a longer tag an editor adds later would otherwise
+          overflow. A card that wraps ends up one row taller than its neighbours,
+          which is harmless - the grid stretches every card in a row to the
+          tallest (cardShell's h-full) and the footer is bottom-pinned, so the
+          footers stay aligned either way.
+
+          className is the bare `productTagChip` string rather than cn() — see the
+          note on the constant for why that is kept. */}
+      {tags.length > 0 && (
+        <ul
+          className="m-0 flex list-none flex-wrap gap-1.5 p-0"
+          data-tina-field={tinaNode ? tinaField(tinaNode, "tags") : undefined}
+        >
+          {tags.map((tag) => (
+            <li key={tag} className={productTagChip}>
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
+
       {/* Footer: destination + arrow. mt-auto pins it to the bottom of the card
           so the rule lines up across a row regardless of how much description
           each card has. */}
@@ -110,17 +144,42 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
           </span>
         )}
         {/* Filled at rest and filled on hover - the only hover gesture is the
-            45deg turn plus the scale-up. Deliberately passes nothing but size
-            and padding so ArrowCircle's own defaults do the work:
-            `bg-foreground text-background` inverts with the theme (dark circle
-            with a light glyph in light mode, white circle with a dark glyph in
-            dark mode) and `group-hover:rotate-45 group-hover:scale-125` supply
-            the turn and the growth. An earlier revision overrode all of that to
-            start as a quiet outline that filled on hover, and pinned
-            group-hover:scale-100 to suppress the growth; adding any of those
-            back re-breaks this. */}
+            45deg turn plus the scale-up, both of which come from ArrowCircle's
+            own `group-hover:rotate-45 group-hover:scale-125` defaults. An
+            earlier revision overrode those to start as a quiet outline that
+            filled on hover, and pinned group-hover:scale-100 to suppress the
+            growth; adding any of that back re-breaks this.
+
+            The FILL, though, is overridden here. ArrowCircle's default is
+            `bg-foreground text-background`, a full-strength inversion: a
+            rgba(0,0,0,.9) circle in light mode and a pure white one in dark.
+            Against these cards that is the loudest thing in the footer - the
+            disc measures 16.7:1 against the light card and 19.0:1 against the
+            dark one, i.e. more contrast than the card's own title carries, for
+            what is only an affordance. The greys below drop that to 1.27:1 light
+            / 1.20:1 dark: the disc is now barely a tint away from the card, so
+            it reads as a soft recess the arrow sits in rather than as a button
+            competing with the copy, and the two themes are within 0.07 of each
+            other so neither feels heavier. (Two intermediate revisions were
+            still too strong: gray-400/gray-800 at 2.31:1 / 1.86:1, then
+            gray-300/gray-900 at 1.53:1 / 1.51:1.)
+
+            Softening the disc this far is only safe because the GLYPH carries
+            the affordance, and it gets sharper as the disc fades - #333333 on
+            #dfdfdf is 9.5:1 and white on #222222 is 15.9:1. Do not soften the
+            disc any further without checking the glyph again: below roughly
+            1.2:1 the disc stops registering as a shape at all, and the arrow
+            would need its own boundary back. All figures measured in a browser
+            against the rendered surfaces, not derived from the tokens.
+
+            Overridden at this call site, NOT in ArrowCircle: that component is
+            used across the v3 blocks, where the strong inversion is wanted.
+            The unprefixed `bg-gray-200`/`text-gray-900` are what displace the
+            defaults through tailwind-merge (a `dark:`-prefixed class alone
+            would not, being a different variant group), and the `dark:` pair
+            then wins in dark mode on ordering. Verified with twMerge directly. */}
         <ArrowCircle
-          className="size-9 flex-none p-2"
+          className="size-9 flex-none bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
           iconClassName="size-3.5"
         />
       </div>

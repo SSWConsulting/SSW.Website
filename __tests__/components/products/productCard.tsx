@@ -79,3 +79,51 @@ describe("ProductCard shell", () => {
     expect(screen.queryByText("sugarlearning.com")).toBeNull();
   });
 });
+
+// Tags come from a Tina `list: true` string field, so the component has to cope
+// with the array being absent, holding blanks an editor left behind, or holding
+// more entries than a card can show without changing height.
+describe("ProductCard tags", () => {
+  const tagNames = (list: HTMLElement) =>
+    Array.from(list.querySelectorAll("li")).map((li) => li.textContent);
+
+  test("renders each tag as a pill", () => {
+    render(
+      <ProductCard
+        product={{ ...withUrl, tags: ["Onboarding", "Induction"] }}
+      />
+    );
+
+    const list = screen.getByRole("list");
+    expect(tagNames(list)).toEqual(["Onboarding", "Induction"]);
+
+    // The chip's own type scale has to land on the element, not just its colour.
+    // An earlier revision used the custom `text-xxs` key, which tailwind-merge
+    // silently dropped as a conflict with the text-colour class beside it, so
+    // the chips rendered at the inherited size; this pins the size class as a
+    // cheap guard against that class of regression coming back.
+    expect(list.querySelector("li")).toHaveClass("text-xs");
+  });
+
+  test("renders no list at all when there are no tags", () => {
+    const { unmount } = render(<ProductCard product={withUrl} />);
+    expect(screen.queryByRole("list")).toBeNull();
+    unmount();
+
+    // Blank entries are dropped, so a list of only blanks is the same as none -
+    // an empty <ul> would otherwise add its gap to the card for nothing.
+    render(<ProductCard product={{ ...withUrl, tags: ["", "   "] }} />);
+    expect(screen.queryByRole("list")).toBeNull();
+  });
+
+  test("shows at most three tags so cards keep a predictable height", () => {
+    render(
+      <ProductCard
+        product={{ ...withUrl, tags: ["One", "Two", "Three", "Four"] }}
+      />
+    );
+
+    expect(tagNames(screen.getByRole("list"))).toEqual(["One", "Two", "Three"]);
+    expect(screen.queryByText("Four")).toBeNull();
+  });
+});
