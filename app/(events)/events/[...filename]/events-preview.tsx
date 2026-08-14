@@ -441,12 +441,16 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
     : event.trailerUrl;
   const showRecordingCta = isPast && !!recordingUrl;
 
-  // Always state the cost on the button — the price when set, otherwise "Free".
-  const registerLabel = `${event.ctaLabel || "Register now"} · ${
-    event.price || "Free"
-  }`;
+  // Only state a cost when one is set — a blank price hides it, as the Tina
+  // field description promises. Never assume an unpriced event is free.
+  const registerLabel = event.price
+    ? `${event.ctaLabel || "Register now"} · ${event.price}`
+    : event.ctaLabel || "Register now";
+
+  // Three states: upcoming, finished with a recording, and finished without.
+  // The last gets no button rather than one pointing at closed registration.
   const ctaLabel = showRecordingCta ? "Watch the recording" : registerLabel;
-  const ctaHref = showRecordingCta ? recordingUrl : event.url;
+  const ctaHref = showRecordingCta ? recordingUrl : isPast ? null : event.url;
 
   return (
     <>
