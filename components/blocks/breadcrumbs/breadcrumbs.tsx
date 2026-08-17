@@ -19,7 +19,6 @@ import {
 import { Container } from "@/components/util/container";
 import { hideOnClasses } from "@/components/util/hideOn";
 import global from "@/content/global/index.json";
-import { cn } from "@/lib/utils";
 import { Consultingv2BlocksBreadcrumbs } from "@/tina/types";
 import { ArrowLeft } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -125,11 +124,7 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
             {links.map((link, index) => (
               // react fragments don't appear in the dom
               <React.Fragment key={`breadcrumb-${index}`}>
-                {index !== 0 ? (
-                  <BreadcrumbSeparator>
-                    <Separator />
-                  </BreadcrumbSeparator>
-                ) : null}
+                {index !== 0 ? <BreadcrumbSeparator /> : null}
                 <BreadcrumbItem>{link}</BreadcrumbItem>
               </React.Fragment>
             ))}
@@ -158,20 +153,3 @@ export function Breadcrumbs({ data }: { data: Consultingv2BlocksBreadcrumbs }) {
     breadcrumb
   );
 }
-
-const Separator = () => {
-  return (
-    <svg
-      className={cn("h-4 w-4", "dark:stroke-gray-300")}
-      strokeWidth={1}
-      width="10"
-      height="10"
-      viewBox="0 0 20 20"
-      sharp-rendering="auto"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path d="M14 2L6.2384 18.5754" strokeLinecap="round" />
-    </svg>
-  );
-};
