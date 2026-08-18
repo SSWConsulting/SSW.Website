@@ -105,10 +105,8 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({
       items.push(
         <BreadcrumbSeparator
           key={`separator-${index}`}
-          className="text-sm text-muted-foreground"
-        >
-          {"/"}
-        </BreadcrumbSeparator>
+          className="flex items-center text-muted-foreground"
+        />
       );
 
       items.push(
