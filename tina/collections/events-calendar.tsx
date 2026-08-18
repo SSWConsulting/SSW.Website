@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import { TextField } from "tinacms";
 import type { Collection } from "tinacms";
-import {
-  DEFAULT_HEADER_LAYOUT,
-  HEADER_LAYOUT_OPTIONS,
-} from "./events-calendar.constants";
 
 const datetimeFormat = {
   timeFormat: "hh:mm a",
@@ -61,7 +57,6 @@ export const eventsCalendarSchema: Collection = {
     defaultItem: () => ({
       enabled: true,
       liveStreamDelayMinutes: 30,
-      headerLayout: DEFAULT_HEADER_LAYOUT,
     }),
   },
   fields: [
@@ -97,6 +92,20 @@ export const eventsCalendarSchema: Collection = {
         "Where people go to actually sign up. Usually an Eventbrite, Humanitix, or Meetup URL.",
     },
     {
+      type: "string",
+      label: "Button label",
+      name: "ctaLabel",
+      description:
+        "Text on the registration button, e.g. 'Get tickets'. Defaults to 'Register now'.",
+    },
+    {
+      type: "string",
+      label: "Price",
+      name: "price",
+      description:
+        "Optional price shown on the button, e.g. '$99 AUD'. Leave blank to hide.",
+    },
+    {
       type: "image",
       label: "Thumbnail",
       name: "thumbnail",
@@ -110,6 +119,16 @@ export const eventsCalendarSchema: Collection = {
       label: "Thumbnail Description",
       name: "thumbnailDescription",
       description: "Used as alt text for the thumbnail",
+    },
+    {
+      type: "image",
+      label: "Banner Image",
+      name: "bannerImage",
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore - upload dir not included in Tina type but works anyway
+      uploadDir: () => "events",
+      description:
+        "Optional wide banner for the event sidebar. Leave blank to show the thumbnail logo on a tinted panel instead.",
     },
     {
       type: "object",
@@ -191,6 +210,13 @@ export const eventsCalendarSchema: Collection = {
           label: "Presenter",
           collections: ["presenter"],
         },
+        {
+          type: "string",
+          name: "role",
+          label: "Role in this event",
+          description:
+            "Shown under the speaker in the header, e.g. 'Lead' or 'Co-lead'. Defaults to 'Speaker' when blank.",
+        },
       ],
     },
     {
@@ -207,18 +233,6 @@ export const eventsCalendarSchema: Collection = {
       description:
         "Use this for external presenters - This link will appear the on the presenter's name when the field above is filled out \"",
     },
-    {
-      type: "string",
-      label: "Header Layout",
-      name: "headerLayout",
-      description:
-        "How presenter images appear in the page header. Single = one tall photo (first presenter). Multi-torso = multiple tall photos side by side with slight overlap (default for multi-presenter). Avatars = overlapping circular avatar stack.",
-      ui: {
-        component: "select",
-      },
-      options: [...HEADER_LAYOUT_OPTIONS],
-    },
-
     {
       type: "datetime",
       label: "Start Date/Time",
@@ -261,6 +275,37 @@ export const eventsCalendarSchema: Collection = {
         "User Groups",
         "Hack Days",
         "Other",
+      ],
+    },
+    {
+      type: "string",
+      label: "Entry",
+      name: "entryCost",
+      description:
+        "Shown as a pill in the page header, e.g. 'Free entry' or '$50'. Leave blank to hide.",
+    },
+    {
+      type: "string",
+      label: "Venue",
+      name: "venue",
+      description:
+        "The specific venue or room, shown before the city in the header, e.g. 'SSW Chapel'. Leave blank to show the city only.",
+    },
+    {
+      type: "string",
+      label: "Availability",
+      name: "availability",
+      description:
+        "Optional urgency note shown in the sidebar, e.g. when tickets are running low.",
+      ui: {
+        component: "select",
+      },
+      options: [
+        "",
+        "Limited spots available",
+        "Selling fast",
+        "Almost full",
+        "Sold out",
       ],
     },
     {
@@ -333,6 +378,16 @@ export const eventsCalendarSchema: Collection = {
       },
       description:
         "Only necessary for User Groups - shown on the landing page for user groups e.g. https://www.ssw.com.au/netug/sydney Ensure this is concise enough to fit on the above page, and does not double up on any information that already exists on the page",
+    },
+    {
+      type: "string",
+      label: "Lead / Intro",
+      name: "lead",
+      ui: {
+        component: "textarea",
+      },
+      description:
+        "A one or two sentence summary shown large at the top of the About section.",
     },
     {
       type: "rich-text",

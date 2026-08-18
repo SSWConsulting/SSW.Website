@@ -18,6 +18,8 @@ interface RippleButtonProps
   variant: ColorVariant;
   /** When set, renders an <a> instead of a <button> for link-style CTAs. */
   href?: string;
+  /** Anchor target; only applies when `href` is set. */
+  target?: string;
   onClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
@@ -68,8 +70,10 @@ const RippleButton = React.forwardRef<
       }
     }, [buttonRipples, duration]);
 
+    // `unstyled` opts out of the global `a:not(.unstyled)` rule, which would
+    // otherwise underline link-style buttons and turn their text red on hover.
     const sharedClassName = cn(
-      "text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-control px-6 py-3 text-center",
+      "unstyled text-primary relative cursor-pointer items-center justify-center overflow-hidden rounded-control px-6 py-3 text-center no-underline",
       variants[variant],
       className
     );
