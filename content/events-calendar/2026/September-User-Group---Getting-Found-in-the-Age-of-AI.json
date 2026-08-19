@@ -9,7 +9,6 @@
       "presenter": "content/presenters/jack-bear.mdx"
     }
   ],
-  "headerLayout": "avatars",
   "startDateTime": "2026-09-16T08:00:00.000Z",
   "endDateTime": "2026-09-16T11:00:00.000Z",
   "startShowBannerDateTime": "2026-09-15T14:00:00.000Z",
