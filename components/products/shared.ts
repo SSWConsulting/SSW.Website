@@ -75,16 +75,14 @@ export const learnMoreChip = [
 // is the load-bearing one:
 //
 //  1. Readability. That chip is a single one-word status badge, where uppercase
-//     plus tracking-wider reads as a label. These are two- and three-word
-//     capability phrases, three to a card, and letter-spaced uppercase makes
+//     plus tracking-wider reads as a label. These are one- and two-word
+//     capability phrases, two to a card, and letter-spaced uppercase makes
 //     them scan word by word instead of at a glance.
 //  2. Width. Uppercase plus tracking-wider inflated the chips enough that all
-//     eleven cards wrapped their three tags onto TWO rows at the 4-up tier.
-//     Dropping both gets six of the eleven down to a single row (measured in a
-//     browser at 1440px); the five that still wrap are the ones with a
-//     two-word tag in them - SophieBot, SophieHub, CodeAuditor,
-//     SmashingBarrier, SSW Rewards. Worth knowing before adding letter-spacing
-//     or lengthening a tag, since either pushes cards back to two rows.
+//     eleven cards wrapped their tags onto TWO rows at the 4-up tier. Dropping
+//     both, together with the move to two tags per card, fits every card on a
+//     single row. Worth knowing before adding letter-spacing or lengthening a
+//     tag, since either can push cards back to two rows.
 //
 // `rounded` (0.25rem, 4.5px at this root scale) rather than the pill it was: at
 // this larger type a full pill read as a button. It is deliberately TIGHTER than
@@ -126,7 +124,7 @@ const tagChipBase = [
 //
 // bg-brand-subtle is a 16% red wash (1.25:1 / 1.14:1 against the card): far too
 // faint to affect the label, but enough to give the pills a body so they read as
-// chips rather than as three floating outlines.
+// chips rather than as a pair of floating outlines.
 export const productTagChip = `${tagChipBase} border-brand bg-brand-subtle text-foreground`;
 
 // The TinaCMS card only, and deliberately NOT given the red stroke or the red
@@ -140,9 +138,12 @@ export const productTagChip = `${tagChipBase} border-brand bg-brand-subtle text-
 // stays an outline chip while the others carry a body.
 export const tinaTagChip = `${tagChipBase} border-white/40 text-white`;
 
-// Cards carry at most three tags. Editors can add more in the CMS without
-// breaking a card's height: the extras are simply not rendered.
-export const MAX_VISIBLE_TAGS = 3;
+// Cards carry at most TWO tags. Three was the original brief and every product
+// was authored with three, but a third chip earns little: the first two already
+// say what a product is, and three pushed most cards onto a second chip row.
+// Editors can still add more in the CMS without breaking a card's height - the
+// extras are simply not rendered.
+export const MAX_VISIBLE_TAGS = 2;
 
 // Tags come from a Tina `list: true` string field, so the array can be absent,
 // hold empty strings an editor left behind, or hold duplicates.
@@ -152,9 +153,10 @@ export const visibleTags = (tags?: string[]): string[] =>
     .filter(Boolean)
     .slice(0, MAX_VISIBLE_TAGS);
 
-// The label in each card's footer names where the link goes. Relative CMS URLs
-// (e.g. SSW Rewards' "/products/rewards") are resolved against the SSW site so
-// they report a real host instead of an empty string.
+// The label in each card's footer names where the link goes. Every product is
+// authored with an absolute URL today, but the base is kept because the `url`
+// field does not enforce that: a relative path an editor types would otherwise
+// resolve to an empty hostname and the footer label would silently vanish.
 export const destinationLabel = (url?: string): string => {
   if (!url) return "";
   try {

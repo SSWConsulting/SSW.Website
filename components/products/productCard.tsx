@@ -33,8 +33,12 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
 
   return (
     // ProductCardShell, not a raw <a>: for a product that has a url it wraps
-    // CustomLink, which routes the one internal product (/products/rewards)
-    // through next/link and adds target/rel to the genuinely external ones. For
+    // CustomLink, which routes the one on-site product (SSW Rewards, at
+    // https://www.ssw.com.au/products/rewards) through next/link and adds
+    // target/rel to the genuinely external ones. That URL is absolute like every
+    // other product's, and still routes internally: customLink.tsx only treats
+    // an https URL as external when it does NOT contain ssw.com.au, or when it
+    // points at the separate /people, /rules or /ssw sites. For
     // a product with no url it renders this same shell as a plain div, so the
     // card keeps its chrome instead of collapsing into loose grid items.
     <ProductCardShell
@@ -111,13 +115,13 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
           the title, so the title/description block stays the card's single
           reading unit and the footer keeps its mt-auto pin.
 
-          flex-wrap is load-bearing: at the 4-up tier six of the eleven cards fit
-          their three tags on one row and five wrap to two (see the note on
-          productTagChip), and a longer tag an editor adds later would otherwise
-          overflow. A card that wraps ends up one row taller than its neighbours,
-          which is harmless - the grid stretches every card in a row to the
-          tallest (cardShell's h-full) and the footer is bottom-pinned, so the
-          footers stay aligned either way.
+          flex-wrap is a safety net rather than the normal case: at two tags per
+          card every current card fits one row at the 4-up tier, and this is here
+          so a longer tag an editor adds later wraps instead of overflowing. A
+          card that wraps ends up one row taller than its neighbours, which is
+          harmless - the grid stretches every card in a row to the tallest
+          (cardShell's h-full) and the footer is bottom-pinned, so the footers
+          stay aligned either way.
 
           className is the bare `productTagChip` string rather than cn() — see the
           note on the constant for why that is kept. */}

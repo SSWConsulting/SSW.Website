@@ -67,7 +67,7 @@ export const productsIndexSchema: Collection = {
           name: "tags",
           list: true,
           description:
-            "Short capability labels shown as pills on the product card, so the grid can be skimmed without reading every description. Keep them to one or two words. Only the first three are rendered — extras are kept but not shown.",
+            "Short capability labels shown as chips on the product card, so the grid can be skimmed without reading every description. Keep them to one or two words. Only the first two are rendered — extras are kept but not shown.",
         },
         {
           type: "image",

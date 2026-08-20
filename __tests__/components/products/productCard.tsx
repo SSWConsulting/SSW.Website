@@ -116,14 +116,15 @@ describe("ProductCard tags", () => {
     expect(screen.queryByRole("list")).toBeNull();
   });
 
-  test("shows at most three tags so cards keep a predictable height", () => {
+  test("shows at most two tags so cards keep a predictable height", () => {
     render(
       <ProductCard
         product={{ ...withUrl, tags: ["One", "Two", "Three", "Four"] }}
       />
     );
 
-    expect(tagNames(screen.getByRole("list"))).toEqual(["One", "Two", "Three"]);
+    expect(tagNames(screen.getByRole("list"))).toEqual(["One", "Two"]);
+    expect(screen.queryByText("Three")).toBeNull();
     expect(screen.queryByText("Four")).toBeNull();
   });
 });
