@@ -15,313 +15,299 @@
   },
   "blocks": [
     {
-      "finalBreadcrumb": "Azure consultants - Landing zones, migration & DevOps | SSW",
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": false
+      },
+      "finalBreadcrumb": "Azure Consultants",
       "_template": "breadcrumbs"
     },
     {
-      "topLabel": {
-        "labelText": "Azure Consulting"
+      "background": {
+        "backgroundColour": 7,
+        "bleed": true,
+        "gridOverlay": true,
+        "redGlow": true
       },
-      "heading": "From quick assessments to secure, scalable platforms, **we make Azure work for you.**",
-      "isH1": false,
-      "description": "Azure can be complex. We keep it simple and outcome-driven. Our consultants analyse your environment and deliver practical improvements that boost reliability, security, and speed while keeping costs under control.\n",
-      "tabletTextAlignment": "Left",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Built for real-world cloud teams",
-            "description": "From strategy to hands-on delivery, we help you get Azure right the first time.",
-            "icon": "BiAnalyse"
-          },
-          {
-            "heading": "Secure, scalable, and cost-efficient",
-            "description": "Get guidance that improves reliability, strengthens security, and cuts unnecessary spend.",
-            "icon": "BiShieldAlt2"
-          }
-        ]
-      },
+      "brow": "AZURE CONSULTING",
+      "heading": "From quick assessments to secure, scalable platforms, **we make Azure work for you**",
+      "description": "Azure can be complex. We keep it simple and outcome-driven. Our consultants analyse your environment and deliver practical improvements that boost reliability, security and speed while keeping costs under control.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonLink": "#lead-capture-heading",
           "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "placement": "Right",
-        "imageSource": "/images/Louis%20Test%20Images/Incident-io-batch/hero/hero_1400_700px(MS2).png",
-        "imageHeight": 700,
+      "mediaType": "image",
+      "image": {
+        "altText": "SSW Azure consultants at work",
+        "imageSource": "/images/ssw-web/hero/hero_1400_700px(MS2).png",
         "imageWidth": 1400,
-        "altText": "Meeting with an Azure Solution Architect"
+        "imageHeight": 700
       },
-      "_template": "imageTextBlock"
+      "_template": "v3Hero"
     },
     {
       "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/bckg-9-25-ssw.png"
+        "backgroundColour": 7
       },
-      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
-      "tabletTextAlignment": "Center",
-      "isWhiteImages": true,
+      "heading": "Trusted in Sydney, Melbourne, Brisbane and Newcastle by",
       "logos": [
+        { "logo": "/images/ssw-web/logos/toll_logo.png", "altText": "Toll" },
         {
-          "logo": "/images/ssw-web/logos/allianz_logo.png",
-          "altText": "Allianz"
-        },
-        {
-          "logo": "/images/ssw-web/logos/cba_logo.png",
-          "altText": "CommBank"
-        },
-        {
-          "logo": "/images/ssw-web/logos/cisco_logo.png",
-          "altText": "Cisco"
-        },
-        {
-          "logo": "/images/ssw-web/logos/domain_logo.png",
-          "altText": "Domain"
-        },
-        {
-          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
-          "altText": "Event"
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
         },
         {
           "logo": "/images/ssw-web/logos/microsoft_logo.png",
           "altText": "Microsoft"
         },
         {
-          "logo": "/images/ssw-web/logos/ASF-Transparent.png",
-          "altText": "ASF"
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
         },
         {
-          "logo": "/images/ssw-web/logos/toll_logo.png",
-          "altText": "Toll"
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        { "logo": "/images/ssw-web/logos/cisco_logo.png", "altText": "Cisco" },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "Commonwealth Bank"
         },
         {
-          "logo": "/images/ssw-web/logos/symantec_logo.png",
-          "altText": "Symantec"
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
         }
       ],
-      "_template": "logoCarousel"
+      "_template": "v3LogoCarousel"
     },
     {
-      "topLabel": {
-        "labelText": "Azure services"
-      },
-      "heading": "Planning a move to Azure? Start with a proven **migration roadmap.**",
-      "isH1": false,
-      "description": "We work with regulated, high-scale, multi-subscription Azure estates. Our consultants review your environment, identify quick wins, and deliver secure, scalable cloud solutions that reduce cost and improve performance.\n\nWhether you’re migrating, modernizing, or tightening security, we give you a clear path forward.\n",
-      "tabletTextAlignment": "Center",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Practical advice, proven results",
-            "description": "We analyse your environment and give you a clear plan with fast, low-risk wins.",
-            "icon": "BiAtom"
-          },
-          {
-            "heading": "Control your costs",
-            "description": "SpendOps guidance that keeps your Azure bill predictable and transparent.",
-            "icon": "BiDollarCircle"
-          }
-        ]
-      },
-      "buttons": [
-        {
-          "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "colour": 0
-        },
-        {
-          "buttonText": "Rules to better Azure ",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure/",
-          "icon": "BiSolidCloud",
-          "colour": 1
-        }
-      ],
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 7
       },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Left",
-        "youtubeUrl": "https://youtu.be/Ai2Xv1jq3_s"
-      },
-      "_template": "imageTextBlock"
+      "brow": "AZURE SERVICES",
+      "heading": "Planning a move to Azure? Start with a proven **migration roadmap**",
+      "description": "We work with regulated, high-scale, multi-subscription Azure estates. Our consultants review your environment, identify quick wins, and deliver secure, scalable cloud solutions that reduce cost and improve performance. Whether you're migrating, modernising or tightening security, you get a clear plan.\n",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "Built for real-world cloud teams",
+          "description": "From strategy to hands-on delivery, we help you get Azure right the first time.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Secure, scalable and cost-efficient",
+          "description": "Guidance that improves reliability, strengthens security, and cuts unnecessary spend.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "Practical advice, proven results",
+          "description": "We analyse your environment and give you a clear plan with fast, low-risk wins.\n"
+        },
+        {
+          "brow": "04",
+          "heading": "Control your costs",
+          "description": "SpendOps guidance that keeps your Azure bill predictable and transparent.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
     },
     {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true
+      },
+      "videoUrl": "https://youtu.be/Ai2Xv1jq3_s",
+      "heading": "Why choose SSW?",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
+      "highlights": [
+        {
+          "title": "Deep expertise",
+          "desc2": "We go deep on every technology we touch - building with it, codifying best practices, and making that knowledge freely available\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-azure/",
+          "linkText": "Rules to Better Azure"
+        },
+        {
+          "title": "Results over rhetoric",
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it work?\n"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "videoUrl": "https://youtu.be/whXWijQCQTU",
+      "brow": "FOUNDATIONS",
       "heading": "Azure Landing Zones",
-      "body": "A clear, secure, repeatable foundation for any workload in Azure.",
-      "tabletTextAlignment": "Center",
-      "accordionItems": [
+      "description": "A clear, secure, repeatable foundation for any workload in Azure. Get the subscription design, networking, identity and guardrails right once, and every workload after it lands faster.\n",
+      "highlights": [
         {
-          "label": "Cloud Migrations",
-          "content": "We assess your existing environment, plan the move, and migrate workloads safely into Azure. Whether it’s rehost, refactor, or modernise, we ensure reliability and cost efficiency.\n"
+          "title": "Secure by default",
+          "desc2": "Policy, identity and network guardrails baked into the foundation rather than retrofitted after an audit.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-cloud-security/",
+          "linkText": "Rules to Better Cloud Security"
         },
         {
-          "label": "DevOps & CI/CD Automation",
-          "content": "We build automated CI/CD pipelines with Azure DevOps or GitHub Actions, improve deployment speed, reduce failures, and set you up with a clean development workflow.\n"
+          "title": "Costs you can predict",
+          "desc2": "Tagging, budgets and right-sizing from day one, so the bill stays explainable as the estate grows.\n",
+          "link": "https://www.ssw.com.au/rules/reduce-azure-costs/",
+          "linkText": "Cost Optimization in Azure"
         }
       ],
-      "buttons": [
-        {
-          "buttonText": "Rules to Better Cloud Security",
-          "leadCaptureFormOption": "bookingJotFormId",
-          "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-cloud-security/",
-          "colour": 1
-        },
-        {
-          "buttonText": "Cost Optimization in Azure Rule",
-          "buttonLink": "https://www.ssw.com.au/rules/reduce-azure-costs/",
-          "colour": 1
-        }
-      ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "placement": "Right",
-        "youtubeUrl": "https://youtu.be/whXWijQCQTU?si=epp1wOYCkjuX2Gx7"
-      },
-      "_template": "accordionBlock"
+      "_template": "v3VideoHighlights"
     },
     {
-      "isStacked": false,
-      "heading": "Related Technologies",
-      "isH1": false,
-      "body": "",
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "OUR PROCESS",
+      "heading": "What to expect working with SSW",
+      "steps": [
+        {
+          "heading": "Initial Call",
+          "description": "A short call with a senior engineer to talk through your project.\n",
+          "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
+        },
+        {
+          "heading": "Spec Review",
+          "description": "A clear, costed plan with scope, timing and the fastest path to ROI.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
+        },
+        {
+          "heading": "Build & Deliver",
+          "description": "SSW can either handle the project from end-to-end or join your existing team, build your product, and ship your solution.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-scrum"
+        },
+        {
+          "heading": "Service Plan",
+          "description": "We can stay on post-launch to ensure a successful project handover.\n",
+          "link": "https://www.ssw.com.au/consulting/support-plans"
+        }
+      ],
+      "_template": "v3Process"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Tell us about **your** Azure project",
+      "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
+      "_template": "v3LeadCapture"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Related Services",
+      "heading": "The rest of the Azure estate",
+      "subtitle": "Landing zones are the start. These are the workloads that usually land on them.",
       "cards": [
         {
-          "guid": "ik9aho",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidBarChartAlt2",
-          "heading": "Azure Synapse",
-          "description": "An integrated enterprise analytics service that unifies data warehousing and big data systems.",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/consulting/azure-synapse"
-          }
+          "title": "Azure Synapse",
+          "description": "Enterprise analytics that unifies data warehousing and big data systems.",
+          "link": "/consulting/azure-synapse"
         },
         {
-          "guid": "jhhhl9",
-          "altText": "Lorem Ipsum",
-          "icon": "BiCloud",
-          "heading": "Azure App Service",
-          "description": "A fully managed platform-as-a-service (PaaS) for hosting web applications, REST APIs, and mobile backends.",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
-          }
+          "title": "Database Development",
+          "description": "Limitless, trusted, AI-ready apps on a fully managed SQL database.",
+          "link": "/consulting/database-development"
         },
         {
-          "guid": "jk7m5l",
-          "altText": "Lorem Ipsum",
-          "icon": "BiServer",
-          "heading": "Azure Blob Storage",
-          "description": "Massively scalable and secure object storage for cloud-native workloads, archives, data lakes, HPC, and machine learning.\n\n",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
-          }
+          "title": "DevOps",
+          "description": "CI/CD pipelines that ship faster and fail less, on Azure DevOps or GitHub.",
+          "link": "/consulting/devops"
         },
         {
-          "guid": "6bap5",
-          "altText": "Lorem Ipsum",
-          "icon": "BiLogoPostgresql",
-          "heading": "Azure SQL Database",
-          "description": "Build limitless, trusted, AI-ready apps on a fully managed SQL database\n\n",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-sql-server-schema-deployment"
-          }
-        },
-        {
-          "guid": "hh8nhk",
-          "altText": "Lorem Ipsum",
-          "icon": "BiCoinStack",
-          "heading": "Azure Cosmos DB",
-          "description": "Develop AI-powered apps and agents with a fully managed and serverless NoSQL vector database at any scale.",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-azure"
-          }
-        },
-        {
-          "guid": "sv6mmo",
-          "altText": "Lorem Ipsum",
-          "icon": "BiLogoDocker",
-          "heading": "Docker",
-          "description": "Containerization platform that packages applications with their dependencies, enabling consistent deployments across any environment.",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.youtube.com/watch?v=Yhp37fPn6dQ"
-          }
-        },
-        {
-          "guid": "oed4sf",
-          "altText": "Lorem Ipsum",
-          "icon": "BiLogoKubernetes",
-          "heading": "Kubernetes",
-          "description": "Container orchestration platform for deploying, scaling, and managing containerized applications in production environments.\n\n",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.youtube.com/watch?v=J-xyKoYW4Pc"
-          }
-        },
-        {
-          "guid": "qmd20r",
-          "altText": "Lorem Ipsum",
-          "icon": "BiBarChartAlt2",
-          "heading": "Power BI",
-          "description": "Transform complex SQL data into intuitive, actionable business insights.\n\n",
-          "embeddedButton": {
-            "buttonText": "Read more",
-            "buttonLink": "https://www.ssw.com.au/consulting/power-bi"
-          }
-        },
-        {
-          "guid": "nanos",
-          "altText": "Lorem Ipsum",
-          "icon": "BiColor",
-          "heading": "EF Core",
-          "description": "A modern object-database mapper for .NET. It supports LINQ queries, change tracking, updates, and schema migrations\n\n",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "title": "Power BI",
+          "description": "Turn complex SQL data into intuitive, actionable business insights.",
+          "link": "/consulting/powerbiv2"
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "cardCarousel"
+      "_template": "v3StackCards"
     },
     {
-      "topLabel": {
-        "labelText": ""
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "TECH WE USE",
+      "heading": "Services we work with every day",
+      "pills": [
+        { "label": "Azure App Service" },
+        { "label": "Azure Blob Storage" },
+        { "label": "Azure SQL" },
+        { "label": "Cosmos DB" },
+        { "label": "Azure DevOps" },
+        { "label": "GitHub Actions" },
+        { "label": "Docker" },
+        { "label": "Kubernetes" },
+        { "label": "Entra ID" },
+        { "label": "EF Core" }
+      ],
+      "_template": "v3Pills"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Frequently asked questions",
+      "faqs": [
+        {
+          "question": "Can you help us migrate to Azure?",
+          "answer": "Yes. We assess your existing environment, plan the move, and migrate workloads safely into Azure. Whether it's rehost, refactor or modernise, we make sure it stays reliable and cost-efficient.\n"
+        },
+        {
+          "question": "Do you set up DevOps and CI/CD?",
+          "answer": "We build automated CI/CD pipelines with Azure DevOps or GitHub Actions, improve deployment speed, reduce failures, and set you up with a clean development workflow.\n",
+          "link": "https://www.ssw.com.au/consulting/devops"
+        },
+        {
+          "question": "Our Azure bill keeps climbing. Can you help?",
+          "answer": "That's one of the most common reasons people call. We look at right-sizing, reserved capacity, orphaned resources and tagging, then give you the guardrails that keep the bill predictable rather than a one-off cleanup.\n",
+          "link": "https://www.ssw.com.au/rules/reduce-azure-costs/"
+        },
+        {
+          "question": "How much does it cost?",
+          "answer": "Every engagement is scoped to your goals, so there's no single price. The initial call is always 100% **free**. The specification review will be used to give the most accurate estimation possible for a projects scope, price and duration.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
+        }
+      ],
+      "_template": "v3Faq"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
       },
       "heading": "Talk to us about your Azure project today",
-      "isH1": false,
-      "description": "Connect with our Account Managers to discuss how we can help.\n",
-      "featureColumns": {
-        "twoColumns": false
-      },
+      "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonLink": "#lead-capture-heading",
           "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "imageTextBlock"
+      "_template": "v3Cta"
     }
   ]
 }

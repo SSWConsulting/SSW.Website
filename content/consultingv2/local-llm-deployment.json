@@ -7,416 +7,286 @@
   "blocks": [
     {
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": false
       },
       "finalBreadcrumb": "Local LLM Deployment",
       "_template": "breadcrumbs"
     },
     {
-      "topLabel": {
-        "labelText": "Own Your AI. Keep Your Data."
+      "background": {
+        "backgroundColour": 7,
+        "bleed": true,
+        "gridOverlay": true,
+        "redGlow": true
       },
-      "heading": "Run open-source LLMs inside your network. Private, fast, and under **your control.**",
-      "isH1": false,
-      "description": "",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Total Data Sovereignty\t",
-            "description": "Guarantee data privacy and compliance by keeping everything inside your network.\t",
-            "icon": "BiSolidCheckShield"
-          },
-          {
-            "heading": "Instant Integration",
-            "description": "Your developers can use their favorite tools by simply changing an API endpoint.",
-            "icon": "BiNetworkChart"
-          }
-        ]
-      },
+      "brow": "OWN YOUR AI. KEEP YOUR DATA.",
+      "heading": "Run open-source LLMs inside your network. Private, fast, and under **your control**",
+      "description": "No prompts leaving your perimeter, no vendor holding your data, no surprise pricing change. We stand up open-source models on your infrastructure and hand your developers an endpoint they already know how to use.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonLink": "#lead-capture-heading",
           "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
+      "mediaType": "image",
+      "image": {
+        "altText": "Local LLM deployment running on-premises",
         "imageSource": "/images/ssw-web/hero/local-llm-hero.jpg",
-        "imageHeight": 752,
-        "imageWidth": 1392
+        "imageWidth": 1392,
+        "imageHeight": 752
       },
-      "_template": "imageTextBlock"
+      "_template": "v3Hero"
     },
     {
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 7
       },
-      "heading": "Trusted in Sydney, Melbourne, Brisbane, and Newcastle by",
-      "isWhiteImages": true,
+      "heading": "Trusted in Sydney, Melbourne, Brisbane and Newcastle by",
       "logos": [
+        { "logo": "/images/ssw-web/logos/toll_logo.png", "altText": "Toll" },
         {
-          "logo": "/images/ssw-web/logos/cisco_logo.png",
-          "scale": 120,
-          "altText": "Logo"
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
         },
         {
-          "logo": "/images/ssw-web/logos/cba_logo.png"
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
         },
         {
-          "logo": "/images/ssw-web/logos/microsoft_logo.png"
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
         },
         {
-          "logo": "/images/ssw-web/logos/domain_logo.png"
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        { "logo": "/images/ssw-web/logos/cisco_logo.png", "altText": "Cisco" },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "Commonwealth Bank"
         },
         {
-          "logo": "/images/ssw-web/logos/symantec_logo.png"
-        },
-        {
-          "logo": "/images/ssw-web/logos/event_cinemas_logo.png"
-        },
-        {
-          "logo": "/images/ssw-web/logos/toll_logo.png"
-        },
-        {
-          "logo": "/images/ssw-web/logos/allianz_logo.png"
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
         }
       ],
-      "_template": "logoCarousel"
+      "_template": "v3LogoCarousel"
     },
     {
-      "isStacked": true,
-      "heading": "",
-      "isH1": false,
-      "body": "",
-      "cardStyle": 1,
-      "cards": [
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "WHY RUN IT YOURSELF",
+      "heading": "Everything stays where the auditors can see it",
+      "description": "Cloud AI is fine until legal asks where the prompts go. Running the model on your own infrastructure turns that conversation from a risk assessment into a network diagram.\n",
+      "steps": [
         {
-          "guid": "pzx5dv",
-          "image": "/images/ssw-web/hero/local-llm.jpg",
-          "altText": "Lorem Ipsum",
+          "brow": "01",
           "heading": "Run where the auditors are happy",
-          "description": "VPC, private cloud, or on-prem with air-gap.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Zero data leaves",
-                "description": "Sensitive info never leaves; tick SOC 2/HIPAA boxes.",
-                "icon": "BiSolidCheckShield"
-              },
-              {
-                "heading": "Performance local",
-                "description": "Cut network hops and jitter for more reliable responses.",
-                "icon": "BiSolidBolt"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "description": "VPC, private cloud, or on-prem with a full air-gap. You pick the boundary and we deploy inside it.\n"
         },
         {
-          "guid": "07ihrh",
-          "image": "/images/ssw-web/blog/openai-api.jpg",
-          "altText": "Lorem Ipsum",
-          "icon": "info",
-          "heading": "Drop-in integration",
-          "description": "Your developers can use the tools they already know and love. Simply swap a single API endpoint.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "No learning curve",
-                "description": "Teams ship features faster because nothing gets rewritten",
-                "icon": "BiCodeCurly"
-              },
-              {
-                "heading": "Model freedom",
-                "description": "Swap open-source models (OpenAI, Qwen, etc.) without changing your app.",
-                "icon": "BiSolidBrain"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "brow": "02",
+          "heading": "Zero data leaves",
+          "description": "Sensitive information never crosses your perimeter, which makes the SOC 2 and HIPAA conversations considerably shorter.\n"
         },
         {
-          "guid": "xnidab",
-          "image": "/images/ssw-web/blog/one-click-deploy.jpg",
-          "altText": "Lorem Ipsum",
-          "icon": "info",
-          "heading": "One-click model management",
-          "description": "Launch, scale, and roll back without MLOps drama.",
-          "featureList": {
-            "features": [
-              {
-                "heading": "Simple ops",
-                "description": "Autoscale for traffic spikes without pager chaos",
-                "icon": "BiArrowToTop"
-              },
-              {
-                "heading": "Minutes, not months",
-                "description": "Go from “found a model” to “prod endpoint” quickly.",
-                "icon": "BiAlarm"
-              }
-            ]
-          },
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "brow": "03",
+          "heading": "Performance stays local",
+          "description": "Cutting the network hops and the jitter that comes with them gives you response times you can actually design around.\n"
         }
       ],
-      "background": {
-        "backgroundColour": 6,
-        "backgroundImage": ""
-      },
-      "_template": "cardCarousel"
+      "_template": "v3FeatureSteps"
     },
     {
-      "topLabel": {
-        "labelText": "From Theory to Reality"
-      },
-      "heading": "Offline AI in Action: A Developer's Guide to Local LLMs",
-      "isH1": false,
-      "description": "Discover why running large language models locally is a game-changer for data privacy, security, and speed. In this session, SSW Solution Architect Jernej Kavka provides a hands-on guide to the essential tools and techniques, culminating in a live demo of an offline AI copilot for home automation.\n",
-      "featureColumns": {
-        "twoColumns": false
-      },
       "background": {
-        "backgroundColour": 6,
-        "backgroundImage": "/images/ssw-web/background/ssw_background_3.png",
-        "bleed": true
+        "backgroundColour": 7,
+        "gridOverlay": true
       },
-      "mediaConfiguration": {
-        "mediaType": "youtube",
-        "imageSource": "/images/ssw-web/hero/case_study_local-llm.jpg",
-        "imageHeight": 768,
-        "imageWidth": 1408,
-        "youtubeUrl": "https://www.youtube.com/watch?v=is4fO4NnjY0"
-      },
-      "_template": "imageTextBlock"
+      "videoUrl": "https://www.youtube.com/watch?v=is4fO4NnjY0",
+      "brow": "FROM THEORY TO REALITY",
+      "heading": "Offline AI in action: a developer's guide to local LLMs",
+      "description": "SSW Solution Architect Jernej Kavka walks through why running large language models locally is a game-changer for privacy, security and speed, then gives a hands-on guide to the tooling and a live demo of an offline AI copilot for home automation.\n",
+      "highlights": [
+        {
+          "title": "Drop-in integration",
+          "desc2": "We expose an OpenAI-compatible endpoint, so your developers keep the tools they already know and swap a single base URL.\n"
+        },
+        {
+          "title": "Model freedom",
+          "desc2": "Swap open-source models without touching your app, so you're never stuck with whoever was best the month you signed.\n"
+        }
+      ],
+      "_template": "v3VideoHighlights"
     },
     {
-      "isStacked": true,
-      "heading": "",
-      "isH1": false,
-      "body": "",
-      "cardStyle": 0,
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "WHAT YOU GET",
+      "heading": "Production-ready, not a science project",
+      "subtitle": "Standing a model up is the easy half. Keeping it running is the half we're here for.",
       "cards": [
         {
-          "guid": "e4a7x7",
-          "altText": "Lorem Ipsum",
-          "icon": "BiCrosshair",
-          "heading": "100% Air-Gap Ready",
-          "description": "",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "title": "No learning curve",
+          "description": "Teams ship features faster because nothing has to be rewritten to talk to it."
         },
         {
-          "guid": "2jlc1p",
-          "altText": "Lorem Ipsum",
-          "icon": "BiSolidLock",
-          "heading": "Satisfy the most rigorous security audits with ease",
-          "description": "",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "title": "One-click model management",
+          "description": "Launch, scale and roll back without the MLOps drama."
         },
         {
-          "guid": "pwvxts",
-          "altText": "Lorem Ipsum",
-          "icon": "BiCurrentLocation",
-          "heading": "Process requests instantly without cloud latency",
-          "description": "",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "title": "Simple ops",
+          "description": "Autoscale for traffic spikes without pager chaos."
+        },
+        {
+          "title": "Minutes, not months",
+          "description": "Go from \"found a model\" to \"prod endpoint\" quickly."
         }
       ],
+      "_template": "v3StackCards"
+    },
+    {
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 7
       },
-      "_template": "cardCarousel"
+      "brow": "TECH WE USE",
+      "heading": "Models we deploy",
+      "subtitle": "All open-weight, all running on hardware you control.",
+      "pills": [
+        { "label": "Llama" },
+        { "label": "Qwen" },
+        { "label": "Mistral" },
+        { "label": "Gemma" },
+        { "label": "DeepSeek" },
+        { "label": "Phi" },
+        { "label": "Ollama" },
+        { "label": "vLLM" },
+        { "label": "Kubernetes" }
+      ],
+      "_template": "v3Pills"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Tell us about **your** deployment",
+      "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start\n",
+      "_template": "v3LeadCapture"
     },
     {
       "isStacked": false,
+      "brow": "learn more on SSWTV",
       "heading": "Tech wisdom from the trenches",
       "isH1": false,
-      "body": "At SSW, we’ve been knee-deep in projects for years: debugging giant solutions, fixing game-stopping bugs, and staying on the cutting edge. No guesswork, just proven tips that help you build better software.",
-      "cardStyle": 1,
+      "body": "SSW has been building enterprise projects for thirty years. We document what we learn for free on SSW Rules and SSW TV.",
+      "tabletTextAlignment": "Left",
       "cards": [
         {
-          "guid": "20w4bj",
+          "guid": "llm001",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=sE5VCL48bzo&t=2480s",
+          "youtubeUrl": "https://www.youtube.com/watch?v=sE5VCL48bzo",
           "altText": "Build AI Tools Faster with MCP",
-          "chips": [
-            {
-              "chipText": "Model Context Protocol",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "52 min.",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Build AI Tools Faster with MCP",
-          "description": "Join Anton Polkanov to demystify MCP! Build and connect an MCP server in .NET 9, wire up tools, resources, and prompts, add human-in-the-loop & secure actions, and deploy via Docker or remote endpoints!",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "category": "Model Context Protocol",
+          "heading": "Build AI Tools Faster with MCP"
         },
         {
-          "guid": "y1uoh",
+          "guid": "llm002",
           "mediaType": "youtube",
           "youtubeUrl": "https://youtu.be/BlqJ7bnivLE",
           "altText": "The Year of the AI Agent: Automation to Intelligence",
-          "chips": [
-            {
-              "chipText": "AI Trends",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "90 min.",
-              "chipType": "filledChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "The Year of the AI Agent: Automation to Intelligence",
-          "description": "Dive into the future of AI with Ulysses Maclaren in this insightful SSW User Group session! Explore the exciting shift from automation to true AI intelligence and discover what the year of the AI agent holds for developers.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "category": "AI Trends",
+          "heading": "The Year of the AI Agent: Automation to Intelligence"
         },
         {
-          "guid": "n7hexc",
+          "guid": "llm003",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=nD6XDMP1-CM&t=104s",
+          "youtubeUrl": "https://www.youtube.com/watch?v=nD6XDMP1-CM",
           "altText": "Mastering Microsoft Copilot, Agents & Connectors",
-          "chips": [
-            {
-              "chipText": "MS Copilot",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "8 min.",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Mastering Microsoft Copilot, Agents & Connectors",
-          "description": "Join Jean Thirion (SSW France) to explore the three Copilot types, when to use them, and how agents + connectors tap internal and external data (SQL, Jira). See Copilot Studio, M365 architecture, and next steps for ROI!",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "category": "MS Copilot",
+          "heading": "Mastering Microsoft Copilot, Agents & Connectors"
         },
         {
-          "guid": "0jobui",
+          "guid": "llm004",
           "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=NXY80p4k6Ac&t=1s",
+          "youtubeUrl": "https://www.youtube.com/watch?v=NXY80p4k6Ac",
           "altText": "Beyond the API: MCP for Plug-and-Play Integrations",
-          "chips": [
-            {
-              "chipText": "Model Context Protocol",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "2 hr.",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "Beyond the API: MCP for Plug-and-Play Integrations",
-          "description": "Join Calum Simpson as he demystifies Model Context Protocol, evolving brittle APIs into AI-ready workflows! Explore Cloud Code, GitHub MCP, and TeloScript, with demos from dev automation to Scrum mastering.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "category": "Model Context Protocol",
+          "heading": "Beyond the API: MCP for Plug-and-Play Integrations"
         },
         {
-          "guid": "pv7uh",
+          "guid": "llm005",
           "mediaType": "youtube",
           "youtubeUrl": "https://www.youtube.com/watch?v=WwF69cj8490",
-          "altText": "Lorem Ipsum",
-          "chips": [
-            {
-              "chipText": "Business",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "8 min.",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "How to supercharge a company with AI",
-          "description": "Supercharge your company with AI! 🚀 See how SSW transformed their business and Tina CMS using practical AI strategies, from customer support chatbots to AI-powered product features. Discover actionable tips to implement AI",
-          "embeddedButton": {
-            "buttonText": ""
-          }
+          "altText": "How to supercharge a company with AI",
+          "category": "Business",
+          "heading": "How to supercharge a company with AI"
         }
       ],
       "background": {
-        "backgroundColour": 6
+        "backgroundColour": 7
       },
-      "_template": "cardCarousel"
+      "_template": "v3CardCarousel"
     },
     {
-      "heading": "FAQ",
-      "body": "",
-      "accordionItems": [
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Frequently asked questions",
+      "faqs": [
         {
-          "label": "How do you prove zero data egress?",
-          "content": "Default-deny firewall + Kubernetes NetworkPolicy, scripted egress probes (hourly), and signed logs. We include the egress test pack and data-flow diagram for audits.\n"
+          "question": "How do you prove zero data egress?",
+          "answer": "Default-deny firewall plus Kubernetes NetworkPolicy, scripted egress probes hourly, and signed logs. We include the egress test pack and a data-flow diagram for your audits.\n"
         },
         {
-          "label": "Do we need GPUs?",
-          "content": "Recommended for throughput and p95. Typical start: 4× L40S (or A100/H100 equivalents). CPU-only is fine for light loads or batch jobs; we share a sizing guide.\n\nPrivate cloud is also an option if you don't have any of your own hardware.\n"
+          "question": "Do we need GPUs?",
+          "answer": "Recommended for throughput and p95. A typical start is 4x L40S, or A100/H100 equivalents. CPU-only is fine for light loads or batch jobs, and we share a sizing guide. Private cloud is an option if you don't have your own hardware.\n"
         },
         {
-          "label": "Will our apps need changes?",
-          "content": "Minimal. We expose an OpenAI-compatible endpoint, so existing clients usually point to a new base URL. Auth and rate limits are configured in the gateway.\n"
+          "question": "Will our apps need changes?",
+          "answer": "Minimal. We expose an OpenAI-compatible endpoint, so existing clients usually just point at a new base URL. Auth and rate limits are configured in the gateway.\n"
+        },
+        {
+          "question": "How much does it cost?",
+          "answer": "Every engagement is scoped to your goals, so there's no single price. The initial call is always 100% **free**. The specification review will be used to give the most accurate estimation possible for a projects scope, price and duration.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "accordionBlock"
+      "_template": "v3Faq"
     },
     {
-      "topLabel": {
-        "labelText": ""
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
       },
-      "heading": "Bring models to your data. Zero egress. Real numbers.",
-      "isH1": false,
-      "description": "",
-      "featureColumns": {
-        "twoColumns": true
-      },
+      "heading": "Bring models to your data. Zero egress, real numbers.",
+      "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
       "buttons": [
         {
-          "buttonText": "👉 Book a Free Initial Meeting",
-          "leadCaptureFormOption": "bookingJotFormId",
+          "buttonText": "Book a Free Initial Meeting",
+          "buttonLink": "#lead-capture-heading",
           "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
         }
       ],
-      "background": {
-        "backgroundColour": 2
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "spacerHeight": "150px",
-      "background": {
-        "backgroundColour": 5,
-        "backgroundImage": "",
-        "bleed": false
-      },
-      "_template": "spacer"
+      "_template": "v3Cta"
     }
   ]
 }
