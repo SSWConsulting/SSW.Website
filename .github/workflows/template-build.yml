@@ -23,6 +23,11 @@ on:
         required: false
         default: ""
         description: "PR number for the slot URL; defaults to the event's PR number"
+      push:
+        type: boolean
+        required: false
+        default: true
+        description: "Push the image to ACR. Set false to validate the build only - the BuildKit cache is still exported either way."
     secrets:
       AZURE_CLIENT_ID:
         required: true
@@ -42,6 +47,12 @@ on:
         required: true
       POWER_AUTOMATE_LEAD_WEBHOOK_URL:
         required: true
+      # Not required so builds don't fail before the keys are provisioned; the
+      # lead-capture form fails closed at runtime until they're set.
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY:
+        required: false
+      TURNSTILE_SECRET_KEY:
+        required: false
 
 defaults:
   run:
@@ -67,7 +78,7 @@ jobs:
       - name: Get current date
         id: date
         run: |
-          echo "date=$(Get-Date -Format yyyy-MM-ddThh:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
+          echo "date=$(Get-Date -Format yyyy-MM-ddTHH:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
 
       - name: Azure CLI - Login
         uses: azure/login@v3
@@ -115,7 +126,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: .
-          push: true
+          push: ${{ inputs.push }}
           build-args: |
             NODE_VERSION=${{ steps.node-version.outputs.version }}
             NODE_OPTIONS=--max_old_space_size=8192
@@ -133,6 +144,8 @@ jobs:
             SITE_URL=https://www.ssw.com.au
             JOTFORM_API_KEY=${{ secrets.JOTFORM_API_KEY }}
             POWER_AUTOMATE_LEAD_WEBHOOK_URL=${{ secrets.POWER_AUTOMATE_LEAD_WEBHOOK_URL }}
+            NEXT_PUBLIC_TURNSTILE_SITE_KEY=${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+            TURNSTILE_SECRET_KEY=${{ secrets.TURNSTILE_SECRET_KEY }}
             NEXT_PUBLIC_SLOT_URL=https://${{ env.APP_SERVICE_NAME}}-pr-${{ inputs.pr_number || github.event.number }}.azurewebsites.net/
 
           # Mounted as secrets (not build-args) so they are not baked into the

@@ -143,6 +143,8 @@ export const footerSchema: Collection = {
           label: "Powered By",
           name: "poweredBy",
           list: true,
+          description:
+            "Shown in the deployment banner at the very bottom of the footer.",
           ui: {
             itemProps: (item) => {
               return { label: item?.label };
@@ -158,6 +160,12 @@ export const footerSchema: Collection = {
               type: "string",
               label: "URL",
               name: "url",
+            },
+            {
+              type: "image",
+              label: "Icon",
+              name: "icon",
+              description: "Displayed at 16x16px beside the label.",
             },
           ],
         },

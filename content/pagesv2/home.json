@@ -92,7 +92,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "The SSW difference",
+      "heading": "The SSW Advantage",
       "statistics": [
         {
           "figure": 7000,
@@ -110,7 +110,7 @@
           "figure": 30,
           "figureSuffix": "+",
           "heading": "Years experience",
-          "description": "Trusted since 1995"
+          "description": "Across 15 countries"
         }
       ],
       "_template": "v3Statistics"
@@ -318,6 +318,7 @@
           },
           "linkedin": "https://www.linkedin.com/in/calumjs/",
           "twitter": "https://x.com/_____Calum",
+          "github": "https://github.com/calumjs",
           "sswPeople": "https://www.ssw.com.au/people/calum-simpson/"
         },
         {
@@ -331,12 +332,13 @@
           },
           "linkedin": "https://www.linkedin.com/in/matt-wicks/",
           "twitter": "https://x.com/matteightyate",
+          "github": "https://github.com/wicksipedia",
           "sswPeople": "https://www.ssw.com.au/people/matt-wicks/"
         }
       ],
       "seeMoreButton": [
         {
-          "buttonText": "More SSW People",
+          "buttonText": "See All SSW People",
           "buttonLink": "/people",
           "icon": "BiChevronRight"
         }
@@ -482,7 +484,7 @@
           "name": "Hangzhou, China",
           "email": "info@ssw.com.au",
           "phone": "+86 571 8517 8910",
-          "address": "R 305, B 2, Xingcheng Development Building\n406 Xintiandi St,\nHangzhou, China, Zheijang 310004, China",
+          "address": "R 305, B 2, Xingcheng Development Building\n406 Xintiandi St,\nHangzhou, Zhejiang 310004, China",
           "siteLinkText": "SSW China Office",
           "siteLinkUrl": "https://ssw.cn",
           "lat": 30.27,

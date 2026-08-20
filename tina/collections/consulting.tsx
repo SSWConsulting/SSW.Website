@@ -100,6 +100,13 @@ export const consultingIndexSchema: Collection = {
               uploadDir: () => "thumbs",
             },
             {
+              type: "boolean",
+              label: "Popular",
+              name: "popular",
+              description:
+                "Show a POPULAR tag next to the card title on /consulting.",
+            },
+            {
               type: "reference",
               label: "Page",
               name: "page",

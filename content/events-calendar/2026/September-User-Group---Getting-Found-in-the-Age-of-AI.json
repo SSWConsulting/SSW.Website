@@ -4,8 +4,11 @@
   "url": "https://www.meetup.com/sydney-net-user-group/",
   "thumbnail": "/images/events/sydney-ug-thumb.jpg",
   "thumbnailDescription": "Sydney .NET User Group",
-  "presenterName": "Jack Bear",
-  "headerLayout": "avatars",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/jack-bear.mdx"
+    }
+  ],
   "startDateTime": "2026-09-16T08:00:00.000Z",
   "endDateTime": "2026-09-16T11:00:00.000Z",
   "startShowBannerDateTime": "2026-09-15T14:00:00.000Z",
@@ -14,7 +17,7 @@
   "city": "Sydney",
   "category": "Artificial Intelligence",
   "abstract": "How AI is rewriting the way businesses get discovered online. From traditional SEO to AI-powered search, and what it means for your brand's visibility.",
-  "description": "How AI is rewriting the way businesses get discovered online. From traditional SEO to AI-powered search, and what it means for your brand's visibility.\n\n**About Jack:**\n\nJack Bear is an Australian technology founder and consultant specialising in AI infrastructure and the \"answer economy.\" He is the founder and CEO of Norg AI, a platform building operating systems for AI agents.\n\n[Connect with Jack on LinkedIn](https://www.linkedin.com/in/jack-bear-726578226/)\n",
+  "description": "How AI is rewriting the way businesses get discovered online. From traditional SEO to AI-powered search, and what it means for your brand's visibility.\n\n[Connect with Jack on LinkedIn](https://www.linkedin.com/in/jack-bear-726578226/)\n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true

@@ -116,6 +116,13 @@
     --background-sunken: #fafafa;
     --background-raised: white;
     --background-overlay: white;
+    /* Matches the light-mode values consultingCard.tsx hardcodes
+       (bg-gray-50 -> hover:bg-white). Filling these in changes no current
+       rendering, since every bg-card / bg-card-hover usage today is
+       dark:-guarded, but an unprefixed bg-card would otherwise resolve to
+       nothing in light mode. */
+    --card: #f9f9f9;
+    --card-hover: #ffffff;
     --shadow-raised: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
     --shadow-overlay: 0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
     --spacing-xs: 8px;
@@ -185,6 +192,8 @@
     --background-sunken: black;
     --background-raised: #262626;
     --background-overlay: #44403c;
+    --card: #101010;
+    --card-hover: #151515;
     --shadow-raised: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
     --shadow-overlay: 0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
     --spacing-xs: 8px;

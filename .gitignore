@@ -47,3 +47,6 @@ npm-debug.log*
 # TypeScript
 next-env.d.ts
 *.tsbuildinfo
+
+# git worktrees
+/.worktrees/

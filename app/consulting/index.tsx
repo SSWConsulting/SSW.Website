@@ -1,186 +1,285 @@
 "use client";
 
-import { Category } from "@/components/consulting/index/category";
-import { Tag } from "@/components/consulting/index/tag";
-import { Container } from "@/components/util/container";
+import ConsultingCard from "@/components/consulting/consultingCard/consultingCard";
+import { HomeThemeShell } from "@/components/layout/homeTheme";
+import {
+  ALL_SERVICES,
+  buildConsultingSections,
+} from "@/helpers/consultingSections";
+import { cn } from "@/lib/utils";
 import { Breadcrumbs } from "app/components/breadcrumb";
-import { useRouter, useSearchParams } from "next/navigation";
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { MdLiveHelp } from "react-icons/md";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { tinaField } from "tinacms/dist/react";
 
-const allServices = "All SSW Services";
+// Shared by the sidebar <h1> and the category <h2>s so the two stay in lockstep.
+const headingClass =
+  "text-xl font-semibold leading-tight max-md:text-lg xl:text-2xl";
+
+// scroll-behavior: smooth is set globally on html (styles.css), and "auto"
+// defers to it — only "instant" actually skips the animation.
+const scrollBehaviour = (): ScrollBehavior =>
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "instant"
+    : "smooth";
 
 export default function ConsultingIndex({ tinaProps }) {
-  const gridRef = useRef(null);
-  const router = useRouter();
-  const [selectedTag, setSelectedTag] = useState(allServices);
-
-  const filterDidChange = useRef<boolean>(false);
-
   const node = tinaProps.data.consultingIndex;
-  const searchParams = useSearchParams();
-  const categories = useMemo(() => {
-    return node.categories.reduce((acc, curr) => {
-      const mappedPages = curr.pages.reduce((pageAcc, p) => {
-        // Skip entries with neither an external URL nor a linked page —
-        // otherwise reading p.page.id below crashes the build prerender.
-        if (!p.externalUrl && !p.page?.id) {
-          return pageAcc;
-        }
-        const mappedPage = {
-          url:
-            p.externalUrl ||
-            p.page.id
-              .replace("content/consultingv2", "/consulting")
-              .replace("content", "")
-              .replace(".mdx", "")
-              .replace(".json", ""),
-          title: p.title,
-          description: p.description,
-          logo: p.logo,
-          tags: p.tags
-            ? [allServices, ...p.tags.map((t) => t.tag?.name)]
-            : [allServices],
-        };
+  // Defaults to All so a fresh visit (or an unrecognised hash) shows everything
+  // rather than an empty filtered view. Also what SSR renders, so crawlers see
+  // every section.
+  const [selectedTag, setSelectedTag] = useState<string>(ALL_SERVICES);
+  const contentRef = useRef<HTMLDivElement>(null);
 
-        if (mappedPage.tags.includes(selectedTag)) {
-          return [...pageAcc, mappedPage];
-        }
-        return pageAcc;
-      }, []);
-      if (mappedPages.length > 0) {
-        return [
-          ...acc,
-          {
-            name: curr.category.name,
-            pages: mappedPages,
-          },
-        ];
-      }
-      return acc;
-    }, []);
-  }, [node, selectedTag]);
-
-  const tags = useMemo(
-    () =>
-      node.sidebar?.map((item) => {
-        return {
-          label: item.label,
-          name: item.tag?.name,
-        };
-      }),
+  const { sections, contentSections, allViewSections } = useMemo(
+    () => buildConsultingSections(node),
     [node]
   );
 
-  useEffect(() => {
-    // We stopped using Next.js's useSearchParams function because it lead to complete client-side rendering, which impacts SEO and page load performance,
-    // Therefore we are now using javascript's function
+  const visibleSections = useMemo(
+    () =>
+      selectedTag === ALL_SERVICES
+        ? allViewSections
+        : contentSections.filter(
+            // Skip empty sections so a tag with no pages doesn't render a
+            // heading over an empty grid.
+            (section) => section.name === selectedTag && section.pages.length
+          ),
+    [contentSections, allViewSections, selectedTag]
+  );
 
-    const tagParam = searchParams.get("tag");
-    const query = getSelectedTagFromQuery(tagParam);
-    setSelectedTag(query || allServices);
-  }, [searchParams]);
+  // Deep links (e.g. the mega menu's #consulting-platform-development) select
+  // that filter on load, rather than scrolling to it among everything else.
+  const applyUrlFilter = useCallback(() => {
+    if (!contentSections.length) return;
+
+    const hash = window.location.hash.replace("#", "");
+    // The hash wins outright. ?tag= is only the pre-redesign filter URL, kept
+    // alive for bookmarks and search results — if both are present, ORing them
+    // would let sidebar order pick the winner instead of the more specific one.
+    const legacyTag = hash
+      ? undefined
+      : new URLSearchParams(window.location.search)
+          .get("tag")
+          ?.replace(/-/g, " ");
+
+    const match = contentSections.find((section) =>
+      hash
+        ? section.sectionId === hash
+        : !!legacyTag && section.name?.toLowerCase() === legacyTag.toLowerCase()
+    );
+    // A bare /consulting means All Services. Returning early instead would
+    // leave the previous filter applied while the URL claims otherwise —
+    // visible when going Back out of a filtered view.
+    if (!match) {
+      setSelectedTag(ALL_SERVICES);
+      return;
+    }
+
+    setSelectedTag(match.name);
+    // Native anchor-scroll already ran against the unfiltered SSR page.
+    // Filtering shrinks the page afterwards and the old offset gets clamped
+    // against the shorter one, landing near the bottom. Re-align once the
+    // filtered content has committed.
+    window.requestAnimationFrame(() => {
+      contentRef.current?.scrollIntoView({
+        behavior: "instant",
+        block: "start",
+      });
+    });
+  }, [contentSections]);
+
+  useEffect(() => {
+    applyUrlFilter();
+    // Covers back/forward and a hand-edited address bar. It does NOT cover the
+    // mega menu's #consulting-* links clicked while already on this page:
+    // App Router navigates by history.pushState, which fires neither event,
+    // and Next exposes no hook for it (vercel/next.js#62670, #69256). That
+    // case degrades to the browser's native anchor scroll, which still lands
+    // on the right section whenever the All Services view is showing.
+    window.addEventListener("hashchange", applyUrlFilter);
+    window.addEventListener("popstate", applyUrlFilter);
+    return () => {
+      window.removeEventListener("hashchange", applyUrlFilter);
+      window.removeEventListener("popstate", applyUrlFilter);
+    };
+  }, [applyUrlFilter]);
+
+  const onNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    tag: { name: string; sectionId: string }
+  ) => {
+    // Let the browser handle modified clicks so the href still opens in a new
+    // tab or window.
+    if (
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey ||
+      event.button !== 0
+    ) {
+      return;
+    }
+    event.preventDefault();
+    setSelectedTag(tag.name);
+    window.history.replaceState(
+      null,
+      "",
+      // Always rebuild from pathname: a relative "#id" would resolve against
+      // the current URL and keep a legacy ?tag= alive alongside the new hash.
+      tag.name === ALL_SERVICES
+        ? window.location.pathname
+        : `${window.location.pathname}#${tag.sectionId}`
+    );
+    // Scroll only AFTER the filtered content has committed — same
+    // shrink-then-clamp trap as applyUrlFilter above.
+    window.requestAnimationFrame(() => {
+      const content = contentRef.current;
+      if (!content) return;
+      // Read scroll-margin-top off the element so this stays in step with
+      // whichever scroll-mt-* is active at the current breakpoint.
+      const offset =
+        parseFloat(window.getComputedStyle(content).scrollMarginTop) || 0;
+      const target = Math.max(
+        0,
+        window.scrollY + content.getBoundingClientRect().top - offset
+      );
+      // Only ever scroll up. If the section top is already on screen, pinning
+      // it would just hide the breadcrumbs for no reason.
+      if (window.scrollY > target) {
+        window.scrollTo({ top: target, behavior: scrollBehaviour() });
+      }
+    });
+  };
 
   return (
-    <>
-      <Container className="flex-1 pt-2">
-        <div className="min-h-8 w-full max-w-9xl md:min-h-12">
+    // min-h-screen, not min-h-full: PageLayout's <main> has an unconditional
+    // bg-white, so any shortfall shows as a white band under the themed
+    // content. 100vh needs no cooperation from the ancestor's height.
+    <HomeThemeShell className="min-h-screen bg-sunken-glow">
+      <div className="mx-auto max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
+        <div className="min-h-12">
           <Breadcrumbs path={"/consulting"} title={"Services"} />
         </div>
 
-        <div className="flex flex-col md:flex-row">
-          <div className="shrink-0 md:pr-20">
-            <h1 className="pt-0 text-3xl">Consulting Services</h1>
-            <h3 className="mb-4 text-sswRed">
-              <MdLiveHelp className="inline-block" /> I am looking for...
-            </h3>
-            <ul className="list-none">
-              {tags?.map((tag, index) => (
-                <div
-                  data-tina-field={tinaField(node.sidebar[index], "label")}
-                  key={tag.name}
-                >
-                  <Tag
-                    label={tag.label}
-                    tag={tag.name}
-                    selectedTag={selectedTag}
-                    setSelectedTag={(val) => {
-                      filterDidChange.current = true;
-                      updateParams(router, tags, val);
-                      setSelectedTag(val);
-                    }}
-                  />
-                </div>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <div
-              ref={gridRef}
-              className="mt-4 grid grid-cols-1 gap-2 lg:grid-cols-2"
+        <div className="grid grid-cols-sidebar items-start gap-8 max-xl:grid-cols-sidebar-narrow max-md:grid-cols-1 max-md:gap-4">
+          {/* A plain div, not <aside>: <nav> below is already its own landmark,
+              and wrapping it only filed the <h1> under "complementary". */}
+          <div
+            className={cn(
+              "sticky top-headerOffset self-start",
+              // top-0 on mobile: the scrim and backdrop-blur are there for
+              // cards to slide underneath. Any offset leaves a gap that cards
+              // scroll through in full view, above the bar rather than behind
+              // it — there is no sticky site header here to clear.
+              "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
+            )}
+          >
+            <h1
+              className={cn(
+                headingClass,
+                "m-0 whitespace-nowrap p-0 text-foreground max-md:mb-2"
+              )}
             >
-              <FilterContextProvider filterDidChange={filterDidChange.current}>
-                {categories.map((category, index) => {
+              SSW Services
+            </h1>
+            <nav aria-label="Consulting categories">
+              <ul className="m-0 mt-5 flex list-none flex-col gap-1.5 p-0 max-md:mt-0 max-md:flex-row max-md:gap-2 max-md:overflow-x-auto max-md:whitespace-nowrap max-md:pb-0.5">
+                {sections.map((section) => {
+                  const isActive = section.name === selectedTag;
+
                   return (
-                    <Category
-                      tinaData={node}
-                      key={category.name}
-                      category={category}
-                      index={index}
-                    />
+                    <li
+                      key={section.sectionId}
+                      data-tina-field={tinaField(
+                        node.sidebar[section.index],
+                        "label"
+                      )}
+                    >
+                      <a
+                        href={
+                          section.name === ALL_SERVICES
+                            ? "/consulting"
+                            : `#${section.sectionId}`
+                        }
+                        onClick={(event) => onNavClick(event, section)}
+                        // "location" is the ARIA value for current position
+                        // within a flow, which is what this expresses.
+                        aria-current={isActive ? "location" : undefined}
+                        className={cn(
+                          "unstyled block min-h-11 rounded-lg px-2.5 py-2 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
+                          // A ring, not `outline`: tailwind-merge drops the
+                          // bare `outline` class, leaving outline-style: none.
+                          "focus-visible:ring-2 focus-visible:ring-brand",
+                          "max-md:rounded-full max-md:border-0.75 max-md:border-hairline max-md:bg-gray-100 max-md:px-3 max-md:py-2.5 dark:max-md:bg-card",
+                          // Active and inactive colours are mutually exclusive,
+                          // never layered. Adding `text-brand` on top of
+                          // `dark:text-muted-foreground` loses in dark mode:
+                          // tailwind-merge keeps both (different variants) and
+                          // `.dark .dark:text-muted-foreground` outranks a bare
+                          // `.text-brand` on specificity, so the active item
+                          // rendered the same colour as the inactive ones.
+                          // Label colour only on hover, no background.
+                          isActive
+                            ? "text-brand dark:text-brand"
+                            : "text-gray-600 hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
+                        )}
+                      >
+                        {section.label}
+                      </a>
+                    </li>
                   );
                 })}
-              </FilterContextProvider>
-            </div>
+              </ul>
+            </nav>
+          </div>
+
+          <div
+            ref={contentRef}
+            className="min-w-0 scroll-mt-28 max-md:scroll-mt-32"
+          >
+            {visibleSections.map((section) => (
+              <section
+                id={section.sectionId}
+                key={section.sectionId}
+                className="scroll-mt-28 not-first:mt-16 max-md:scroll-mt-32"
+              >
+                <h2
+                  className={cn(
+                    headingClass,
+                    "m-0 mb-4 p-0 text-brand max-md:mb-3"
+                  )}
+                  data-tina-field={tinaField(
+                    node.sidebar[section.index],
+                    "label"
+                  )}
+                >
+                  {section.label}
+                </h2>
+
+                <div className="grid grid-cols-1 gap-4 xl:grid-cols-2">
+                  {section.pages.map((page) => (
+                    <ConsultingCard
+                      key={`${section.sectionId}-${page.id}`}
+                      url={page.url}
+                      title={page.title}
+                      description={page.description}
+                      logo={page.logo}
+                      popular={page.popular}
+                      tinaPage={page.tinaPage}
+                    />
+                  ))}
+                </div>
+              </section>
+            ))}
           </div>
         </div>
-      </Container>
-    </>
+      </div>
+    </HomeThemeShell>
   );
 }
-
-const getSelectedTagFromQuery = (query: string): string => {
-  let parsedTag = allServices;
-  if (query) {
-    const tag = query;
-
-    if (Array.isArray(tag)) {
-      parsedTag = tag[0];
-    } else {
-      parsedTag = tag;
-    }
-    parsedTag = parsedTag.replace("-", " ");
-  }
-  return parsedTag;
-};
-
-export const useFilterContext = () => React.useContext(FilterContext);
-
-const FilterContext = React.createContext({ filterDidChange: false });
-
-const FilterContextProvider = ({
-  children,
-  filterDidChange,
-}: {
-  children: React.ReactNode;
-  filterDidChange: boolean;
-}) => {
-  return (
-    <FilterContext.Provider value={{ filterDidChange }}>
-      {children}
-    </FilterContext.Provider>
-  );
-};
-
-const updateParams = (router, tags, selectedTag) => {
-  if (tags.some((x) => x.name === selectedTag)) {
-    const query =
-      selectedTag === allServices
-        ? {}
-        : {
-            tag: selectedTag?.replace(" ", "-"),
-          };
-    router.push(`/consulting${query.tag ? `?tag=${query.tag}` : ""}`);
-  }
-};
