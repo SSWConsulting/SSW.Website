@@ -12,9 +12,8 @@
       "url": "https://tina.io",
       "description": "Build stunning websites with TinaCMS visual editor, or create beautiful documentation with TinaDocs. Both powered by Git and built for developers who love great UX.",
       "tags": [
-        "Visual Editing",
-        "Git-Based",
-        "Docs"
+        "Headless CMS",
+        "Git-Based"
       ],
       "logo": "/images/products/tina-small-orange.png"
     },
@@ -23,9 +22,8 @@
       "url": "https://yakshaver.ai/",
       "description": "Save hours writing PBIs and bug reports. YakShaver AI automatically turns your meetings into actionable backlog items.",
       "tags": [
-        "AI Agent",
-        "PBI Automation",
-        "Meetings"
+        "AI Bug Reports",
+        "PBI Automation"
       ],
       "logo": "/images/products/YakShaver-LogoIcon-Red-WithSpace.png"
     },
@@ -35,7 +33,6 @@
       "description": "The next generation on-boarding & induction tool for smart companies.",
       "tags": [
         "Onboarding",
-        "Induction",
         "Training"
       ],
       "logo": "/images/products/thumb-SugarLearning.jpg"
@@ -46,8 +43,7 @@
       "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions.",
       "tags": [
         "AI Insights",
-        "Analytics",
-        "Productivity"
+        "Analytics"
       ],
       "logo": "/images/products/EagleEye-Icon-Color-With-Space.png"
     },
@@ -57,8 +53,7 @@
       "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting.",
       "tags": [
         "Timesheets",
-        "Invoicing",
-        "Enterprise"
+        "Invoicing"
       ],
       "logo": "/images/products/thumb-TimePro.jpg"
     },
@@ -68,8 +63,7 @@
       "description": "AI-driven solution that delivers a competitive edge through its ability to find data using advanced business-grade artificial intelligence.",
       "tags": [
         "AI Search",
-        "Enterprise Data",
-        "Assistant"
+        "Enterprise Data"
       ],
       "logo": "/images/products/thumb-SophieBot.jpg"
     },
@@ -79,10 +73,19 @@
       "description": "A Smart Environment System which shows user specific information based on the user it detects to help clients and employees.",
       "tags": [
         "Smart Office",
-        "Visitor Detection",
-        "Displays"
+        "AI for Home"
       ],
       "logo": "/images/products/thumb-SophieHub.jpg"
+    },
+    {
+      "name": "SSW Dory",
+      "url": "https://www.sswdory.com/",
+      "description": "Identify checked-out SharePoint pages or stale GitHub pull requests.",
+      "tags": [
+        "AI Monitoring",
+        "Pull Requests"
+      ],
+      "logo": "/images/products/SSW-Dory-v2.png"
     },
     {
       "name": "CodeAuditor",
@@ -90,10 +93,20 @@
       "description": "Scan any website for broken links and HTML Issues.",
       "tags": [
         "Site Scanning",
-        "Broken Links",
-        "HTML Quality"
+        "Broken Links Detection"
       ],
       "logo": "/images/products/thumb-CodeAuditor.jpg"
+    },
+    {
+      "name": "SSW Rewards",
+      "url": "https://www.ssw.com.au/products/rewards",
+      "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes!",
+      "tags": [
+        "Mobile App",
+        "Fun Quizes",
+        "Treasure Hunt"
+      ],
+      "logo": "/images/products/ssw-rewards.jpeg"
     },
     {
       "name": "SmashingBarrier",
@@ -101,32 +114,9 @@
       "description": "SmashingBarrier is an user control that integrates with web applications, allowing users to send feature requests or issue reports directly into related team projects.",
       "tags": [
         "Feedback Widget",
-        "Bug Reports",
-        "Integrations"
+        "Bug Reports"
       ],
       "logo": "/images/products/thumb-SmashingBarrier.jpg"
-    },
-    {
-      "name": "SSW Rewards",
-      "url": "/products/rewards",
-      "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes!",
-      "tags": [
-        "Mobile App",
-        "QR Scanning",
-        "Rewards"
-      ],
-      "logo": "/images/products/ssw-rewards.jpeg"
-    },
-    {
-      "name": "SSW Dory",
-      "url": "https://www.sswdory.com/",
-      "description": "Identify checked-out SharePoint pages or stale GitHub pull requests.",
-      "tags": [
-        "SharePoint",
-        "GitHub",
-        "Pull Requests"
-      ],
-      "logo": "/images/products/SSW-Dory-v2.png"
     }
   ]
 }
