@@ -6,7 +6,6 @@ import { getSEOProps } from "@/lib/seo";
 import { EVENTS_MAX_SIZE_OVERRIDE } from "@/services/server/getEvents";
 import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
-import "aos/dist/aos.css"; // This is important to keep the animation
 import { Metadata } from "next";
 import { cache } from "react";
 import EventsPage from "./events";
