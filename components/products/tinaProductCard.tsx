@@ -32,10 +32,10 @@ type TinaProductCardProps = {
 // Flat fills only — no gradient anywhere on this card.
 //
 // Contrast: the field is --brand-tina-field (#c2360d), not the raw brand orange
-// (#ec4815), because white body text on #ec4815 measures 3.82:1 and fails AA.
-// On #c2360d it measures 5.49:1, and 4.92:1 on the hover shade. Note this rules
-// out the muted-foreground token here too: white at 78% alpha over this field is
-// only 3.89:1, so all copy on this card is pure white.
+// (#ec4815) — white body text on the raw orange fails WCAG AA, while it passes
+// on this darker field and its hover shade. This also rules out the
+// muted-foreground token here: alpha-reduced white over this field falls back
+// under AA, so all copy on this card is pure white.
 export const TinaProductCard: FC<TinaProductCardProps> = ({
   product,
   tinaNode,
@@ -43,11 +43,8 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
   const tags = visibleTags(product.tags);
 
   return (
-    // A plain link — the whole card is one target. It used to be a div wrapping
-    // a full-bleed link overlay, because an install-command copy <button> lived
-    // inside and nesting a button in an <a> is invalid. With that chip gone the
-    // overlay is unnecessary, which also means the focus outline can sit on the
-    // card itself again instead of on a child that overflow-hidden would clip.
+    // A plain link — the whole card is one target, so the focus outline sits
+    // directly on the card rather than on a clipped child.
     <ProductCardShell
       href={product.url}
       className={cn(
@@ -66,20 +63,17 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
         // Border matches the standard cards' dark-mode border exactly: #212121
         // at rest, brand red on hover.
         //
-        // Caveat, accepted deliberately: brand red measures only 1.15:1 against
-        // this orange field (1.03:1 against the hover shade), so the hover
-        // border is effectively invisible here — it reads as the border simply
-        // disappearing. The field brightening below is what actually signals
-        // hover on this card.
+        // Caveat, accepted deliberately: brand red is barely visible against
+        // this orange field, so the hover border effectively disappears — the
+        // field brightening below is what actually signals hover on this card.
         "border-hairline hover:border-brand",
         "hover:bg-brand-tina-field-hover",
-        // White, because the site's brand focus colour (#cc4141) measures
-        // 1.15:1 against this orange field and is effectively invisible, while
-        // white measures 5.49:1. Overrides cardShell's outline-brand.
+        // White, because the site's brand focus colour is barely visible
+        // against this orange field, while white reads clearly. Overrides
+        // cardShell's outline-brand.
         "focus-visible:outline-white",
         // Extra right padding (40px vs p-6's 24px) so the copy keeps clear of
-        // the llama watermark in the bottom-right corner, which is larger now
-        // than the h-1/2 it was originally sized at.
+        // the llama watermark in the bottom-right corner.
         //
         // MUST stay after p-6 in this argument list: tailwind-merge treats a
         // later `p-*` as overriding an earlier `pr-*`, so ordering it before p-6
@@ -155,7 +149,7 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
 
             tinaTagChip, not productTagChip: this card's field is a fixed orange
             that does not follow the theme, and the red stroke the other cards'
-            pills carry measures only 1.15:1 against it - white is the more
+            pills carry is barely visible against it - white is the more
             visible border here, not less. Bare string, never cn() - see the note
             on the constant. */}
         {tags.length > 0 && (
@@ -178,15 +172,12 @@ export const TinaProductCard: FC<TinaProductCardProps> = ({
 
           It is a <span>, NOT a <button> or a nested <a>. The whole card is
           already one link (see the note on ProductCardShell above), and both a
-          button and an anchor are invalid inside an <a> - which is the exact
-          trap the install-command chip hit before. A span keeps the markup
-          valid and the card a single tab stop, while the click still lands on
-          the card's own link. */}
+          button and an anchor are invalid inside an <a>. A span keeps the
+          markup valid and the card a single tab stop, while the click still
+          lands on the card's own link. */}
       <div className="relative flex items-center pt-3">
         {/* learnMoreChip, shared with the YakShaver card so the two cannot
-            drift: a white field with a near-black label on both. This card's
-            chip used to carry the darkened brand orange (#c2360d) as its label
-            instead - see the constant for why it is now the same near-black. */}
+            drift: a white field with a near-black label on both. */}
         <span className={learnMoreChip}>Learn More</span>
       </div>
     </ProductCardShell>

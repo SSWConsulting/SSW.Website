@@ -5,23 +5,56 @@ import { TinaProductCard } from "@/components/products/tinaProductCard";
 import { YakShaverProductCard } from "@/components/products/yakShaverProductCard";
 import { Container } from "@/components/util/container";
 import { Breadcrumbs } from "app/components/breadcrumb";
+import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 
-// The two products whose owners' media kits require their own card surface.
-// Matched on name rather than list position so the treatment follows the
-// product if an editor reorders the CMS list.
-const BRAND_CARDS = ["tinacms", "yakshaver"];
-const isBrandCard = (name?: string) =>
-  BRAND_CARDS.includes((name ?? "").trim().toLowerCase());
+type BrandCardProps = {
+  product: {
+    name?: string;
+    url?: string;
+    description?: string;
+    tags?: string[];
+  };
+  tinaNode?: Record<string, unknown>;
+};
+
+// The two products whose owners' media kits require their own card surface,
+// keyed by lowercase name so the treatment follows the product if an editor
+// reorders the CMS list. cellCount and the render below both read from this
+// one map, so it cannot drift the way two separately-maintained lists could.
+const BRAND_CARD_COMPONENTS: Record<string, FC<BrandCardProps>> = {
+  tinacms: TinaProductCard,
+  yakshaver: YakShaverProductCard,
+};
+
+const brandCardFor = (name?: string) =>
+  BRAND_CARD_COMPONENTS[(name ?? "").trim().toLowerCase()];
 
 export default function ProductsIndexContent({ props }) {
   const node = props.productsIndex;
-  const products = node?.productsList ?? [];
+
+  // Brand cards are pinned to the front of the render order, independent of
+  // where the CMS list actually puts them. `.sort` is stable, so this only
+  // reorders brand cards ahead of standard ones and otherwise preserves the
+  // CMS order on both sides of that split.
+  //
+  // This is load-bearing for cellCount below, not cosmetic: CSS Grid's default
+  // sparse auto-placement bumps a col-span-2 card that doesn't fit the
+  // remaining columns of its row to a fresh row, leaving the skipped cells
+  // empty rather than backfilling them from later cards. cellCount has no way
+  // to see that empty cell, so if a brand card ever landed mid-row the panel
+  // would compute a span that doesn't fit the real remaining slots and wrap to
+  // a row of its own - the exact ragged edge the panel exists to prevent.
+  // Pinning brand cards first guarantees they always open a row at a multiple
+  // of their own span (2), so this can't happen.
+  const products = [...(node?.productsList ?? [])].sort(
+    (a, b) => Number(!!brandCardFor(b?.name)) - Number(!!brandCardFor(a?.name))
+  );
 
   // Each brand card occupies two grid cells at the tiers where it spans, so the
   // trailing gap the panel fills is measured in cells, not products.
   const cellCount =
-    products.length + products.filter((p) => isBrandCard(p?.name)).length;
+    products.length + products.filter((p) => brandCardFor(p?.name)).length;
 
   return (
     // min-h-screen, not min-h-full: PageLayout's <main> carries an
@@ -76,13 +109,6 @@ export default function ProductsIndexContent({ props }) {
             {node.title}
           </h1>
         )}
-        {/* The CMS `subTitle` is deliberately not rendered. It still holds
-            "Explore the future of enterprise development with our scalable,
-            cutting-edge products", because the field is `required: true` in
-            tina/collections/products.tsx and emptying it would make the document
-            invalid and unsaveable for editors — so the copy is dropped here at
-            the render rather than deleted from the content. */}
-
         <div
           // grid-cols-N in Tailwind is already repeat(N, minmax(0, 1fr)), which
           // is what keeps a wide logo from blowing out a track.
@@ -98,23 +124,15 @@ export default function ProductsIndexContent({ props }) {
         >
           {products.map((product, index) => {
             const key = `${product?.name ?? "product"}-${index}`;
-            const name = (product?.name ?? "").trim().toLowerCase();
+            const BrandCard = brandCardFor(product?.name);
 
             // Brand cards span two columns from md up. The base tier stays at
             // span 1: a col-span-2 in the single-column grid would add an
             // implicit second column and cause horizontal scroll.
-            if (name === "tinacms") {
+            if (BrandCard) {
               return (
                 <div key={key} className="md:col-span-2">
-                  <TinaProductCard product={product} tinaNode={product} />
-                </div>
-              );
-            }
-
-            if (name === "yakshaver") {
-              return (
-                <div key={key} className="md:col-span-2">
-                  <YakShaverProductCard product={product} tinaNode={product} />
+                  <BrandCard product={product} tinaNode={product} />
                 </div>
               );
             }

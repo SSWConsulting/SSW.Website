@@ -47,10 +47,11 @@ type YakShaverProductCardProps = {
 //    #f9f9f9 in light mode and the card would render near-white.
 //    Corollary: any `dark:`-prefixed utility used inside this card is always on.
 //
-// 2. The gradient artwork's stops are bright — white over them measures roughly
-//    2:1 to 4.75:1 and fails. Nothing may sit on top of it. Two independent
-//    things keep copy off it: the artwork sits on the right-hand side, and the
-//    text column is capped to half the card at the 4-up tier.
+// 2. The gradient artwork's stops are bright enough that white text over them
+//    can fail AA. Nothing sits on top of it that needs full-strength white —
+//    the artwork sits on the right-hand side, and the copy that runs the full
+//    width still clears AA over it using the muted-foreground token (see the
+//    note below).
 export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
   product,
   tinaNode,
@@ -68,13 +69,12 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
         // #101010 at rest, #151515 on hover.
         //
         // cardShell's brand-coloured focus outline is kept as-is here (unlike on
-        // the TinaCMS card, which needs a white one): #cc4141 measures 3.99:1
-        // against this surface, clearing the 3:1 a focus indicator needs.
+        // the TinaCMS card, which needs a white one): brand red clears the
+        // WCAG 3:1 a focus indicator needs against this surface.
         "dark justify-between bg-card",
         // Border matches the standard cards' dark-mode border exactly: because
         // this card is a `dark` scope, `border-hairline` resolves to the same
-        // #212121 they use, and `border-brand` to the same #cc4141 on hover
-        // (3.99:1 against this surface).
+        // #212121 they use, and `border-brand` to the same #cc4141 on hover.
         "border-hairline hover:border-brand",
         // Surface still lifts to card-hover on hover. Flat — no lift, no shadow.
         "hover:bg-card-hover",
@@ -95,13 +95,12 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
           anchored right at full height it reads as light entering from the card's
           right edge.
 
-          No blend mode. The asset carries a real alpha channel (its dark area is
-          alpha 0, and the bloom is a smooth alpha ramp), so normal compositing
-          renders it exactly as designed and the image's bounding box leaves no
-          visible edge. An earlier revision used `mix-blend-screen` to cope with
-          the black surround of a different export of this artwork — with a proper
-          alpha channel that would now be wrong, because screen blends additively
-          and would wash the bloom brighter than intended.
+          No blend mode: the asset carries a real alpha channel (its dark area
+          is alpha 0, and the bloom is a smooth alpha ramp), so normal
+          compositing renders it exactly as designed and the image's bounding
+          box leaves no visible edge. Do not add mix-blend-screen — it blends
+          additively and would wash the bloom brighter than intended given this
+          alpha channel.
 
           `h-full w-auto max-w-none` keeps the artwork's own aspect ratio (Tailwind
           preflight's `img { max-width: 100% }` would otherwise squash it on a
@@ -114,12 +113,12 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
         alt=""
         aria-hidden
         // Matches the asset's real intrinsic size. These must stay in step with
-        // the file: next/image builds its srcset from `width`, so leaving the
-        // old 1670x1069 here would make it request 1670w/3840w candidates of a
-        // 500px source. No `sizes` prop is needed precisely because the source
-        // is now no larger than the slot ever renders (roughly 320-400px wide,
-        // since `h-full w-auto` scales it off the card height, not the
-        // viewport) - the optimizer never upscales past intrinsic width.
+        // the file: next/image builds its srcset from `width`, so a stale
+        // value here would make it request oversized candidates of a smaller
+        // source. No `sizes` prop is needed because the source is no larger
+        // than the slot ever renders (roughly 320-400px wide, since
+        // `h-full w-auto` scales it off the card height, not the viewport) -
+        // the optimizer never upscales past intrinsic width.
         width={500}
         height={320}
         loading="lazy"
@@ -156,17 +155,14 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
 
       {product.description && (
         <p
-          // Runs the full width of the card. There is deliberately no width cap:
-          // an earlier revision capped this to half the card at the 4-up tier to
-          // keep the copy clear of the gradient's bright stops, but the measured
-          // contrast over the bloom stays above AA (see below), so the cap was
-          // not load-bearing.
+          // Runs the full width of the card — no width cap is needed to keep the
+          // copy clear of the gradient's bright stops; text-muted-foreground
+          // stays within WCAG AA even over the brightest part of the gradient.
           //
           // text-muted-foreground is safe here only because the card is a `dark`
-          // scope: it resolves to rgba(255,255,255,0.78) — 11.7:1 on the flat
-          // surface, and still 4.5:1+ where it crosses the brightest part of the
-          // gradient. If the artwork is ever swapped for a lighter one, re-check
-          // this: the old export's stops measured as low as 2:1.
+          // scope, resolving to a near-white rather than the page's light-mode
+          // value. If the artwork is ever swapped for a lighter one, re-check
+          // this contrast — a brighter gradient could push it under AA.
           className="relative m-0 p-0 text-sm font-light leading-snug text-muted-foreground"
           data-tina-field={
             tinaNode ? tinaField(tinaNode, "description") : undefined
@@ -179,8 +175,8 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
       {/* Capability tags. productTagChip works unchanged here: inside this
           card's `dark` scope its red stroke, red wash and foreground label
           resolve exactly as they do on the nine standard cards in dark mode -
-          this surface is the same #101010 they use, so the 3.99:1 stroke figure
-          measured for them holds here too.
+          this surface is the same #101010 they use, so the contrast already
+          verified for them holds here too.
 
           `relative` lifts the row above the gradient artwork, which is an
           absolutely-positioned sibling earlier in the DOM. Bare string on the
@@ -210,10 +206,9 @@ export const YakShaverProductCard: FC<YakShaverProductCardProps> = ({
       <div className="relative flex items-center pt-3">
         {/* learnMoreChip, shared with the TinaCMS card so the two cannot drift.
             Inside this card's `dark` scope it resolves to a white field with a
-            near-black label - the same inversion the removed arrow used - so the
-            chip reads as the brightest thing on the card. It is also
-            left-aligned, which keeps it off the gradient's bright stops on the
-            right-hand side. */}
+            near-black label, so the chip reads as the brightest thing on the
+            card. It is also left-aligned, which keeps it off the gradient's
+            bright stops on the right-hand side. */}
         <span className={learnMoreChip}>Learn More</span>
       </div>
     </ProductCardShell>

@@ -5,7 +5,6 @@
     "canonical": "/products"
   },
   "title": "SSW Products",
-  "subTitle": "Explore the future of enterprise development with our scalable, cutting-edge products",
   "productsList": [
     {
       "name": "TinaCMS",
@@ -99,11 +98,11 @@
     },
     {
       "name": "SSW Rewards",
-      "url": "https://ssw.com.au/products/rewards",
+      "url": "/products/rewards",
       "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes!",
       "tags": [
         "Mobile App",
-        "Fun Quizes",
+        "Fun Quizzes",
         "Treasure Hunt"
       ],
       "logo": "/images/products/ssw-rewards.jpeg"

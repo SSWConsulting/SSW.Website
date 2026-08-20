@@ -28,12 +28,6 @@ export const productsIndexSchema: Collection = {
       required: true,
     },
     {
-      type: "string",
-      label: "Subtitle",
-      name: "subTitle",
-      required: true,
-    },
-    {
       type: "object",
       label: "Products List",
       name: "productsList",

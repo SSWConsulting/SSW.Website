@@ -15,8 +15,7 @@ type ProductCardShellProps = PropsWithChildren<{
 // cell - and on the YakShaver card the absolutely-positioned artwork would lose
 // its `relative` ancestor and escape to the page shell. `url` is optional on
 // productsList in tina/collections/products.tsx, so an editor can produce that
-// state; the design this replaced guarded it with `{page.url && ...}` in
-// components/blocks/pageCards.tsx.
+// state.
 //
 // Guarding here rather than in CustomLink is deliberate. CustomLink has ~99 call
 // sites, around twenty of which can pass a nullable href, and several sit inside

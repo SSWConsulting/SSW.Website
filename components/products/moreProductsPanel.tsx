@@ -45,17 +45,12 @@ export const MoreProductsPanel: FC<MoreProductsPanelProps> = ({
       className={cn(
         // Dashed, and deliberately without hover or lift: this is a state, not
         // a destination.
-        // No gap utility: this holds a single line now, so a gap would only
-        // matter if a second line came back.
+        // No gap utility: this holds a single line, so a gap doesn't apply.
         "flex min-h-24 flex-col items-center justify-center rounded-card border-0.75 border-dashed border-stroke-weak p-6 text-center dark:border-hairline",
         MID_SPAN_CLASS[spanFor(cellsAtMidTier, 2)],
         WIDE_SPAN_CLASS[spanFor(cellsAtWidestTier, 4)]
       )}
     >
-      {/* One line only. A second line ("We ship new tools regularly - check
-          back soon.") sat under this and was removed: the heading already says
-          the whole thing, and the filler read as marketing copy in what is
-          really just a placeholder for the grid's ragged edge. */}
       <p className="m-0 p-0 text-sm font-medium text-foreground">
         More products coming
       </p>

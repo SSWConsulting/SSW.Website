@@ -34,28 +34,32 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
   return (
     // ProductCardShell, not a raw <a>: for a product that has a url it wraps
     // CustomLink, which routes the one on-site product (SSW Rewards, at
-    // https://www.ssw.com.au/products/rewards) through next/link and adds
-    // target/rel to the genuinely external ones. That URL is absolute like every
-    // other product's, and still routes internally: customLink.tsx only treats
-    // an https URL as external when it does NOT contain ssw.com.au, or when it
-    // points at the separate /people, /rules or /ssw sites. For
-    // a product with no url it renders this same shell as a plain div, so the
-    // card keeps its chrome instead of collapsing into loose grid items.
+    // /products/rewards) through next/link and adds target/rel to the
+    // genuinely external ones. That URL is relative, unlike every other
+    // product's absolute one: customLink.tsx only treats an href as external
+    // when it starts with https:// and does NOT contain ssw.com.au, or when it
+    // points at the separate /people, /rules or /ssw sites, so a relative path
+    // always routes internally. For a product with no url it renders this same
+    // shell as a plain div, so the card keeps its chrome instead of collapsing
+    // into loose grid items.
     <ProductCardShell
       href={product.url}
       className={cn(
         cardShell,
         "gap-3 p-5",
-        // Surface, border and hover are the same tokens ConsultingCard uses, so
-        // the two index pages render identical card chrome: gray-50 -> white in
-        // light, card -> card-hover in dark, hairline border brightening to the
-        // brand colour. No shadow, matching /consulting.
+        // Surface, border and hover use the same colour tokens ConsultingCard
+        // uses: gray-50 -> white in light, card -> card-hover in dark, hairline
+        // border brightening to the brand colour, no shadow. The corner radius
+        // differs from ConsultingCard's — this uses rounded-card (16px, see the
+        // squircle note on the logo plate below), ConsultingCard uses rounded-xl
+        // (12px) — so parity between the two index pages is on colour and motion
+        // only, not shape.
         "border-stroke-weak bg-gray-50 hover:border-brand hover:bg-white",
         "dark:border-hairline dark:bg-card dark:hover:border-brand dark:hover:bg-card-hover",
         // Kept from the original brief's requirement that every interactive
         // element have an :active state — ConsultingCard has none. It is a
-        // colour step rather than a transform, so it does not reintroduce the
-        // lift that was removed to match /consulting.
+        // colour step rather than a transform, so it doesn't introduce a lift
+        // or shadow that would break parity with /consulting.
         "active:bg-gray-100 dark:active:bg-card"
       )}
     >
@@ -88,8 +92,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
         <h3
           // No hover colour change: the title stays on text-foreground in both
           // states, so the card's hover gesture is the surface/border/arrow
-          // only. The transition-colors that used to drive the red tint went
-          // with it — nothing on this element animates any more.
+          // only.
           className="m-0 p-0 text-lg font-semibold leading-tight text-foreground"
           data-tina-field={tinaNode ? tinaField(tinaNode, "name") : undefined}
         >
@@ -149,32 +152,26 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
         )}
         {/* Filled at rest and filled on hover - the only hover gesture is the
             45deg turn plus the scale-up, both of which come from ArrowCircle's
-            own `group-hover:rotate-45 group-hover:scale-125` defaults. An
-            earlier revision overrode those to start as a quiet outline that
-            filled on hover, and pinned group-hover:scale-100 to suppress the
-            growth; adding any of that back re-breaks this.
+            own `group-hover:rotate-45 group-hover:scale-125` defaults. Do not
+            override those to a quiet outline that fills on hover, or pin
+            group-hover:scale-100 — that suppresses the growth this card
+            deliberately keeps.
 
             The FILL, though, is overridden here. ArrowCircle's default is
             `bg-foreground text-background`, a full-strength inversion: a
             rgba(0,0,0,.9) circle in light mode and a pure white one in dark.
-            Against these cards that is the loudest thing in the footer - the
-            disc measures 16.7:1 against the light card and 19.0:1 against the
-            dark one, i.e. more contrast than the card's own title carries, for
-            what is only an affordance. The greys below drop that to 1.27:1 light
-            / 1.20:1 dark: the disc is now barely a tint away from the card, so
-            it reads as a soft recess the arrow sits in rather than as a button
-            competing with the copy, and the two themes are within 0.07 of each
-            other so neither feels heavier. (Two intermediate revisions were
-            still too strong: gray-400/gray-800 at 2.31:1 / 1.86:1, then
-            gray-300/gray-900 at 1.53:1 / 1.51:1.)
+            Against these cards that reads as the loudest thing in the footer -
+            more contrast than the card's own title carries, for what is only
+            an affordance. The greys below soften the disc to little more than
+            a tint against the card, so it reads as a soft recess the arrow
+            sits in rather than as a button competing with the copy, with the
+            two themes balanced against each other.
 
             Softening the disc this far is only safe because the GLYPH carries
-            the affordance, and it gets sharper as the disc fades - #333333 on
-            #dfdfdf is 9.5:1 and white on #222222 is 15.9:1. Do not soften the
-            disc any further without checking the glyph again: below roughly
-            1.2:1 the disc stops registering as a shape at all, and the arrow
-            would need its own boundary back. All figures measured in a browser
-            against the rendered surfaces, not derived from the tokens.
+            the affordance, and it gets sharper as the disc fades. Do not
+            soften the disc any further without re-checking the glyph's
+            contrast against it: the disc needs to stay perceptible as a shape,
+            or the arrow would need its own boundary back.
 
             Overridden at this call site, NOT in ArrowCircle: that component is
             used across the v3 blocks, where the strong inversion is wanted.

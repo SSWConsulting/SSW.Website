@@ -12,8 +12,7 @@
 //   shadow appears. This deliberately matches ConsultingCard
 //   (components/consulting/consultingCard/consultingCard.tsx), which uses
 //   `transition-colors duration-300` with no transform and no box-shadow, so
-//   the two index pages feel like one system. An earlier revision lifted the
-//   card 6px and deepened a shadow on hover; both were removed to match.
+//   the two index pages feel like one system.
 // - `transition-colors`, not `transition`: there is nothing but colour to
 //   animate now, and limiting the property list avoids animating layout.
 // - Focus uses `outline-*`, NOT `ring-*`. A Tailwind ring is a box-shadow, and
@@ -41,13 +40,11 @@ export const cardShell = [
 // Both brand cards are their own always-`dark` token scope, which is what makes
 // one set of classes correct on both: `bg-foreground` resolves to white and
 // `text-background` to #171717 inside either of them, regardless of the page
-// theme. So the chip is a white field with a near-black label on both — on the
-// TinaCMS card that replaced a #c2360d orange label, which was the only thing
-// the two chips did differently.
+// theme. So the chip is a white field with a near-black label on both.
 //
-// `text-background` (#171717 @ 17.4:1 on white) rather than a pure #000: it is
-// the same near-black the site uses for body copy everywhere else, and pure
-// black next to it reads as a different, harder ink.
+// `text-background` (#171717) rather than a pure #000: it is the same
+// near-black the site uses for body copy everywhere else, and pure black next
+// to it reads as a different, harder ink.
 //
 // Deliberately no group-hover colour swap on either card. The TinaCMS card's own
 // field brightens on hover, so tinting the chip to match would dissolve it into
@@ -70,28 +67,23 @@ export const learnMoreChip = [
 // Capability tags, rendered as small chips under each product's description so
 // the grid can be skimmed without reading every blurb.
 //
-// Sentence case at text-xs, NOT the uppercase text-xxs badge this started as
-// (which borrowed ConsultingCard's "Popular" chip). Two reasons, and the second
+// Sentence case at text-xs, not an uppercase badge. Two reasons, and the second
 // is the load-bearing one:
 //
-//  1. Readability. That chip is a single one-word status badge, where uppercase
-//     plus tracking-wider reads as a label. These are one- and two-word
-//     capability phrases, two to a card, and letter-spaced uppercase makes
-//     them scan word by word instead of at a glance.
-//  2. Width. Uppercase plus tracking-wider inflated the chips enough that all
-//     eleven cards wrapped their tags onto TWO rows at the 4-up tier. Dropping
-//     both, together with the move to two tags per card, fits every card on a
-//     single row. Worth knowing before adding letter-spacing or lengthening a
-//     tag, since either can push cards back to two rows.
+//  1. Readability. These are one- and two-word capability phrases, two to a
+//     card, and letter-spaced uppercase makes them scan word by word instead
+//     of at a glance.
+//  2. Width. Uppercase plus tracking-wider inflates the chips enough that all
+//     eleven cards wrap their tags onto TWO rows at the 4-up tier. Worth
+//     knowing before adding letter-spacing or lengthening a tag, since either
+//     can push cards back to two rows.
 //
-// `rounded` (0.25rem, 4.5px at this root scale) rather than the pill it was: at
-// this larger type a full pill read as a button. It is deliberately TIGHTER than
-// the Learn More chip's rounded-control (0.375rem) — an intermediate revision
-// matched that token so every chip on the page shared one radius, but a tag is
-// not a button and reads better squarer than the thing you actually click. This
-// is Tailwind's own scale rather than a design token because `control` is the
-// smallest radius token the theme defines, so there is nothing between it and
-// square to reach for.
+// `rounded` (0.25rem, 4.5px at this root scale): at this larger type a full
+// pill reads as a button. It is deliberately TIGHTER than the Learn More
+// chip's rounded-control (0.375rem) — a tag is not a button and reads better
+// squarer than the thing you actually click. This is Tailwind's own scale
+// rather than a design token because `control` is the smallest radius token
+// the theme defines, so there is nothing between it and square to reach for.
 //
 // Applied as a bare string rather than through cn(). That used to be mandatory —
 // `text-xxs` is a custom font-size key that tailwind-merge does not recognise, so
@@ -110,32 +102,28 @@ const tagChipBase = [
 // dark value, which is exactly what that surface needs.
 //
 // The stroke is the brand red (#cc4141), which is what makes these pills read as
-// pills at all: the neutral `border-stroke-weak` they started with measures
-// 1.25:1 against the light card and 1.38:1 against the dark one — a hairline
-// that effectively disappears. Red measures 4.53:1 and 3.99:1 on the same two
-// surfaces, roughly a 3x jump, and clears the 3:1 that a non-text boundary
-// needs in both themes.
+// pills at all: the neutral `border-stroke-weak` they started with was too
+// faint to register as a border, while brand red clears the WCAG 3:1 non-text
+// contrast requirement against both the light and dark card surfaces.
 //
-// The label deliberately stays NEUTRAL rather than going red with the stroke.
-// `text-brand` measures 4.53:1 on the light card but only 3.99:1 on the dark one
-// (3.83:1 on its hover shade), and these are 12px — well under the 18.66px where
-// AA relaxes to 3:1 — so a red label would fail AA in dark mode. The foreground
-// token measures 11.97:1 / 19.41:1 over the fill below instead.
+// The label deliberately stays NEUTRAL rather than going red with the stroke:
+// at this text size (well under the size where AA relaxes to 3:1), a red label
+// would fail WCAG AA in dark mode. The foreground token stays comfortably
+// within AA over the fill instead.
 //
-// bg-brand-subtle is a 16% red wash (1.25:1 / 1.14:1 against the card): far too
-// faint to affect the label, but enough to give the pills a body so they read as
-// chips rather than as a pair of floating outlines.
+// bg-brand-subtle is a 16% red wash: far too faint to affect the label's
+// contrast, but enough to give the pills a body so they read as chips rather
+// than as a pair of floating outlines.
 export const productTagChip = `${tagChipBase} border-brand bg-brand-subtle text-foreground`;
 
 // The TinaCMS card only, and deliberately NOT given the red stroke or the red
-// wash the others now carry: this card's field is a fixed orange that does not
-// follow the theme, and brand red measures 1.15:1 against it — it would be a
-// less visible border than the white one, not a more visible one. Its white
-// stroke measures 2.00:1 against the field, and the white label 5.49:1.
+// wash the others carry: this card's field is a fixed orange that does not
+// follow the theme, and brand red would be a less visible border against it
+// than white, not a more visible one.
 //
-// No fill here either, for a measured reason: a white/15 wash would drop that
-// label from 5.49:1 to 4.33:1, under AA for type this size. So this variant
-// stays an outline chip while the others carry a body.
+// No fill here either: a white wash over the label would drop its contrast
+// under AA for type this size. So this variant stays an outline chip while the
+// others carry a body.
 export const tinaTagChip = `${tagChipBase} border-white/40 text-white`;
 
 // Cards carry at most TWO tags. Three was the original brief and every product
@@ -157,13 +145,16 @@ export const visibleTags = (tags?: string[]): string[] =>
 // authored with an absolute URL today, but the base is kept because the `url`
 // field does not enforce that: a relative path an editor types would otherwise
 // resolve to an empty hostname and the footer label would silently vanish.
+//
+// The path is appended when the URL points below the domain root (e.g. SSW
+// Rewards' /products/rewards): the hostname alone would read as a link to the
+// site's homepage rather than the specific page the card actually opens.
 export const destinationLabel = (url?: string): string => {
   if (!url) return "";
   try {
-    return new URL(url, "https://www.ssw.com.au").hostname.replace(
-      /^www\./,
-      ""
-    );
+    const { hostname, pathname } = new URL(url, "https://www.ssw.com.au");
+    const host = hostname.replace(/^www\./, "");
+    return pathname === "/" ? host : `${host}${pathname}`;
   } catch {
     return "";
   }
