@@ -173,7 +173,9 @@ export function V3Testimonials({ data }) {
                 }}
                 className="group mt-6 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
               >
-                See Case Study
+                <span data-tina-field={tinaField(current, "caseStudyLabel")}>
+                  {current.caseStudyLabel || "See Case Study"}
+                </span>
                 <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
               </motion.a>
             )}

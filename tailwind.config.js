@@ -462,6 +462,13 @@ export default {
           "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
         "red-glow-r":
           "radial-gradient(circle at 78% 50%, rgba(204,65,65,0.15), transparent 25%)",
+        // Bleed variants: the layer is grown 10rem past the block top and bottom,
+        // so the top-left glow is anchored 10rem down to keep its centre on the
+        // block's corner, and both stops shrink to offset the taller gradient box.
+        "red-glow-tl-bleed":
+          "radial-gradient(circle at left 10rem, rgba(204,65,65,0.15), transparent 30%)",
+        "red-glow-r-bleed":
+          "radial-gradient(circle at 78% 50%, rgba(204,65,65,0.15), transparent 23%)",
         // Sunken page background with a red glow bleeding in from the top-right.
         // The flat colour is baked in as a second layer (rather than pairing this
         // with a `bg-*` colour utility) so `cn()`/tailwind-merge can't treat the
