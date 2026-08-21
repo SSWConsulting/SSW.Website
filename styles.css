@@ -125,6 +125,35 @@
     --card-hover: #ffffff;
     --shadow-raised: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
     --shadow-overlay: 0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
+
+    /* ---------------------------------------------------------------------
+       THIRD-PARTY BRAND COLOURS — not part of the SSW palette.
+       These are TinaCMS's and YakShaver's own brand values, taken from their
+       official media kits (tina.io/media, yakshaver.ai/media). They are kept
+       in this separate --brand-<company>-* namespace so they are never
+       mistaken for SSW tokens and never reused as generic UI colours.
+       Declared once, in :root only — deliberately NOT overridden in .dark,
+       because another company's brand colour does not follow our theme.
+       --------------------------------------------------------------------- */
+
+    /* Official Tina orange. Same value as public/images/megamenu-icons/
+       TinaDefault.svg. Only 3.82:1 against white, so it is used for glyphs
+       on white, never as a field behind body text. */
+    --brand-tina-orange: #ec4815;
+    /* The orange darkened until white body text clears WCAG AA: measured
+       5.49:1 against #ffffff (4.5:1 required). #ec4815 itself measures
+       3.82:1 and fails, which is why the field is not the raw brand orange. */
+    --brand-tina-field: #c2360d;
+    /* Hover state for that field — brightened back toward the real brand
+       orange, but only as far as contrast allows: 4.92:1 against white. Going
+       the whole way to #ec4815 would drop white body text to 3.82:1 and fail,
+       so this stops short deliberately. */
+    --brand-tina-field-hover: #cf3a0e;
+
+    /* No YakShaver colour tokens: that card's surface is deliberately the same
+       --card / --card-hover the other product cards use, achieved by scoping the
+       card itself as `dark` (see yakShaverProductCard.tsx). Their gradient comes
+       from their official artwork as an image, not from CSS colours. */
     --spacing-xs: 8px;
     --spacing-sm: 12px;
     --spacing-md: 16px;
