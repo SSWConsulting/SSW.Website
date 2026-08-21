@@ -1,5 +1,4 @@
 import { HomeThemeShell } from "@/components/layout/homeTheme";
-import { MoreProductsPanel } from "@/components/products/moreProductsPanel";
 import { ProductCard } from "@/components/products/productCard";
 import { TinaProductCard } from "@/components/products/tinaProductCard";
 import { YakShaverProductCard } from "@/components/products/yakShaverProductCard";
@@ -20,8 +19,7 @@ type BrandCardProps = {
 
 // The two products whose owners' media kits require their own card surface,
 // keyed by lowercase name so the treatment follows the product if an editor
-// reorders the CMS list. cellCount and the render below both read from this
-// one map, so it cannot drift the way two separately-maintained lists could.
+// reorders the CMS list.
 const BRAND_CARD_COMPONENTS: Record<string, FC<BrandCardProps>> = {
   tinacms: TinaProductCard,
   yakshaver: YakShaverProductCard,
@@ -37,24 +35,9 @@ export default function ProductsIndexContent({ props }) {
   // where the CMS list actually puts them. `.sort` is stable, so this only
   // reorders brand cards ahead of standard ones and otherwise preserves the
   // CMS order on both sides of that split.
-  //
-  // This is load-bearing for cellCount below, not cosmetic: CSS Grid's default
-  // sparse auto-placement bumps a col-span-2 card that doesn't fit the
-  // remaining columns of its row to a fresh row, leaving the skipped cells
-  // empty rather than backfilling them from later cards. cellCount has no way
-  // to see that empty cell, so if a brand card ever landed mid-row the panel
-  // would compute a span that doesn't fit the real remaining slots and wrap to
-  // a row of its own - the exact ragged edge the panel exists to prevent.
-  // Pinning brand cards first guarantees they always open a row at a multiple
-  // of their own span (2), so this can't happen.
   const products = [...(node?.productsList ?? [])].sort(
     (a, b) => Number(!!brandCardFor(b?.name)) - Number(!!brandCardFor(a?.name))
   );
-
-  // Each brand card occupies two grid cells at the tiers where it spans, so the
-  // trailing gap the panel fills is measured in cells, not products.
-  const cellCount =
-    products.length + products.filter((p) => brandCardFor(p?.name)).length;
 
   return (
     // min-h-screen, not min-h-full: PageLayout's <main> carries an
@@ -141,11 +124,6 @@ export default function ProductsIndexContent({ props }) {
               <ProductCard key={key} product={product} tinaNode={product} />
             );
           })}
-
-          <MoreProductsPanel
-            cellsAtMidTier={cellCount}
-            cellsAtWidestTier={cellCount}
-          />
         </div>
       </Container>
     </HomeThemeShell>
