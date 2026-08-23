@@ -1,69 +1,21 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect } from "react";
 
 const chatBaseBotId = process.env.NEXT_PUBLIC_CHATBASE_BOT_ID;
 
-const GREETING_BUBBLE_ID = "chatbase-message-bubbles";
-const GREETING_BUBBLE_LIFETIME_MS = 10_000;
+// Chatbase reveals its greeting bubble 3s after the embed loads and offers no way
+// to dismiss it, so we hide it ourselves after 10s on screen.
+const DISMISS_GREETING_AFTER_LOAD_MS = 13_000;
 
-// Chatbase only lets us configure how long before the greeting bubble appears, never
-// when it leaves. It renders the bubble up front with an inline `display: none` and
-// flips that to show it, so we watch the style attribute rather than the node itself.
-const useAutoDismissGreetingBubble = () => {
-  useEffect(() => {
-    if (!chatBaseBotId) return;
-
-    let hideTimeout: ReturnType<typeof setTimeout> | undefined;
-    const observers: MutationObserver[] = [];
-
-    const scheduleHide = (bubble: HTMLElement) => {
-      if (hideTimeout !== undefined || bubble.style.display === "none") return;
-
-      hideTimeout = setTimeout(() => {
-        bubble.style.display = "none";
-        hideTimeout = undefined;
-      }, GREETING_BUBBLE_LIFETIME_MS);
-    };
-
-    const watchBubble = (bubble: HTMLElement) => {
-      const styleObserver = new MutationObserver(() => scheduleHide(bubble));
-      styleObserver.observe(bubble, { attributeFilter: ["style"] });
-      observers.push(styleObserver);
-      scheduleHide(bubble);
-    };
-
-    const bubble = document.getElementById(GREETING_BUBBLE_ID);
-
-    if (bubble) {
-      watchBubble(bubble);
-    } else {
-      const injectionObserver = new MutationObserver(() => {
-        const injected = document.getElementById(GREETING_BUBBLE_ID);
-        if (!injected) return;
-
-        injectionObserver.disconnect();
-        watchBubble(injected);
-      });
-
-      injectionObserver.observe(document.body, {
-        childList: true,
-        subtree: true,
-      });
-      observers.push(injectionObserver);
-    }
-
-    return () => {
-      observers.forEach((observer) => observer.disconnect());
-      clearTimeout(hideTimeout);
-    };
-  }, []);
+const dismissGreetingBubble = () => {
+  setTimeout(() => {
+    const bubble = document.getElementById("chatbase-message-bubbles");
+    if (bubble) bubble.style.display = "none";
+  }, DISMISS_GREETING_AFTER_LOAD_MS);
 };
 
 const ChatBaseBot = () => {
-  useAutoDismissGreetingBubble();
-
   return (
     chatBaseBotId && (
       <Script
@@ -72,6 +24,7 @@ const ChatBaseBot = () => {
         async
         defer
         strategy="lazyOnload"
+        onLoad={dismissGreetingBubble}
       />
     )
   );
