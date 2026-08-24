@@ -3,5 +3,5 @@ OpenPGP: https://www.ssw.com.au/.well-known/public_key.asc
 Key-Server: hkps://keys.openpgp.org
 Preferred-Languages: en, fr, zh
 Canonical: https://www.ssw.com.au/.well-known/security.txt
-Expires: 2026-08-05T00:00:00.000Z
-Encryption: openpgp4fpr:7939270B62F3FF0C08F35A76B67CB6AD2A3F20C3
+Expires: 2027-07-01T00:00:00.000Z
+Encryption: openpgp4fpr:3AD6724A39934B7580E72FD40A55A791AC0138C2
