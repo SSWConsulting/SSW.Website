@@ -6,7 +6,7 @@ const chatBaseBotId = process.env.NEXT_PUBLIC_CHATBASE_BOT_ID;
 
 // Chatbase reveals its greeting bubble 3s after the embed loads and offers no way
 // to dismiss it, so we hide it ourselves after 10s on screen.
-const DISMISS_GREETING_AFTER_LOAD_MS = 13_000;
+const DISMISS_GREETING_AFTER_LOAD_MS = 8_000;
 
 const dismissGreetingBubble = () => {
   setTimeout(() => {
