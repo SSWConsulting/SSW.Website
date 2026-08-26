@@ -127,4 +127,20 @@ describe("ProductCard tags", () => {
     expect(screen.queryByText("Three")).toBeNull();
     expect(screen.queryByText("Four")).toBeNull();
   });
+
+  test("drops duplicate tags an editor left behind", () => {
+    render(
+      <ProductCard
+        product={{
+          ...withUrl,
+          tags: ["Onboarding", "Onboarding", "Induction"],
+        }}
+      />
+    );
+
+    expect(tagNames(screen.getByRole("list"))).toEqual([
+      "Onboarding",
+      "Induction",
+    ]);
+  });
 });
