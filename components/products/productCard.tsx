@@ -1,5 +1,6 @@
 import { BluredBase64Image } from "@/helpers/images";
 import { cn } from "@/lib/utils";
+import type { ProductsIndexProductsList } from "@/tina/types";
 import Image from "next/image";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
@@ -13,19 +14,12 @@ import {
 import { ProductCardShell } from "./productCardShell";
 
 export type ProductCardProps = {
-  product: {
-    name?: string;
-    url?: string;
-    description?: string;
-    logo?: string;
-    tags?: string[];
-  };
-  tinaNode?: Record<string, unknown>;
+  product: ProductsIndexProductsList;
 };
 
 // The standard card — nine of the eleven products. TinaCMS and YakShaver get
 // their own components for their media-kit surfaces.
-export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
+export const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const domain = destinationLabel(product.url);
   const tags = visibleTags(product.tags);
 
@@ -58,7 +52,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
       <div className="flex min-w-0 flex-col gap-1">
         <h3
           className="m-0 p-0 text-lg font-semibold leading-tight text-foreground"
-          data-tina-field={tinaNode ? tinaField(tinaNode, "name") : undefined}
+          data-tina-field={tinaField(product, "name")}
         >
           {product.name}
         </h3>
@@ -66,9 +60,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
           <p
             className="m-0 line-clamp-3 p-0 text-sm font-light leading-snug text-muted-foreground"
             title={product.description}
-            data-tina-field={
-              tinaNode ? tinaField(tinaNode, "description") : undefined
-            }
+            data-tina-field={tinaField(product, "description")}
           >
             {product.description}
           </p>
@@ -78,7 +70,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product, tinaNode }) => {
       {tags.length > 0 && (
         <ul
           className="m-0 flex list-none flex-wrap gap-1.5 p-0"
-          data-tina-field={tinaNode ? tinaField(tinaNode, "tags") : undefined}
+          data-tina-field={tinaField(product, "tags")}
         >
           {tags.map((tag) => (
             <li key={tag} className={productTagChip}>

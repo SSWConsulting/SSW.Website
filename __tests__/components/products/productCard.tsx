@@ -5,9 +5,8 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 // tinacms/dist/react is published as ESM and Jest does not transform
-// node_modules, so importing it here fails to parse. These tests pass no
-// tinaNode, which means tinaField is never actually called - the mock exists
-// only to keep the module graph resolvable.
+// node_modules, so importing it here fails to parse - mock it to keep the
+// module graph resolvable.
 jest.mock("tinacms/dist/react", () => ({
   tinaField: () => undefined,
 }));

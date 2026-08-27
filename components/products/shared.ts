@@ -12,6 +12,11 @@ export const cardShell = [
   "focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-brand",
 ].join(" ");
 
+// Bundled as one token, not two reorderable classes: twMerge only lets a
+// later p-* override an earlier one for the side it overlaps, so pr-10 has
+// to stay after p-6 or the extra right padding silently disappears.
+export const brandCardPadding = "p-6 pr-10";
+
 export const learnMoreChip = [
   "inline-flex items-center justify-center rounded-control px-4 py-2",
   "text-sm font-medium transition-all duration-300 motion-reduce:transition-none",
