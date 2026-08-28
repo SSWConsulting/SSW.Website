@@ -103,7 +103,8 @@ export const SocialIcons = ({
   return (
     <div
       className={classNames(
-        "flex flex-grow flex-wrap gap-2 sm:flex-grow-0",
+        "flex flex-grow flex-wrap sm:flex-grow-0",
+        variant === "plain" ? "gap-0" : "gap-2",
         className
       )}
     >
@@ -154,11 +155,11 @@ export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
     return (
       <CustomLink
         href={url}
-        className="unstyled flex size-9 min-h-9 min-w-9 cursor-pointer items-center justify-center text-xl text-white transition-colors hover:text-sswRed"
+        className="unstyled flex size-11 min-h-9 min-w-9 cursor-pointer items-center justify-center text-xl text-white transition-colors hover:text-sswRed"
         title={label}
         aria-label={"Link to " + label}
       >
-        <Icon className="text-lg" />
+        <Icon className="text-xl" />
       </CustomLink>
     );
   }
