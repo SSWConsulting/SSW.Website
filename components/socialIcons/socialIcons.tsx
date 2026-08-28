@@ -104,7 +104,7 @@ export const SocialIcons = ({
     <div
       className={classNames(
         "flex flex-grow flex-wrap sm:flex-grow-0",
-        variant === "plain" ? "gap-0" : "gap-2",
+        variant === "plain" ? "gap-px" : "gap-2",
         className
       )}
     >
