@@ -155,7 +155,7 @@ export const SocialIcon = ({ social, variant = "chip" }: SocialIconProps) => {
     return (
       <CustomLink
         href={url}
-        className="unstyled flex size-11 min-h-11 min-w-11 cursor-pointer items-center justify-center text-3xl text-white transition-colors hover:text-sswRed"
+        className="unstyled flex size-11 min-h-11 min-w-11 cursor-pointer items-center justify-center text-2xl text-white transition-colors hover:text-sswRed"
         title={label}
         aria-label={"Link to " + label}
       >
