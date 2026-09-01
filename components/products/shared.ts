@@ -1,3 +1,5 @@
+import { PROD_BASE_URL } from "@/components/util/constants";
+
 // Shared chrome for the three kinds of card on /products (standard, TinaCMS,
 // YakShaver).
 
@@ -47,7 +49,7 @@ export const visibleTags = (tags?: string[]): string[] =>
 export const destinationLabel = (url?: string): string => {
   if (!url) return "";
   try {
-    const { hostname, pathname } = new URL(url, "https://www.ssw.com.au");
+    const { hostname, pathname } = new URL(url, PROD_BASE_URL);
     const host = hostname.replace(/^www\./, "");
     return pathname === "/" ? host : `${host}${pathname}`;
   } catch {

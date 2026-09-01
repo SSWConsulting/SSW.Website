@@ -17,8 +17,15 @@ const BRAND_CARD_CONFIGS = {
   yakshaver: YAKSHAVER_CARD_CONFIG,
 } satisfies Record<string, BrandCardConfig>;
 
-const brandConfigFor = (name?: string) =>
-  BRAND_CARD_CONFIGS[(name ?? "").trim().toLowerCase()];
+// hasOwn, not a bare lookup: the map is an object literal, so a product named
+// e.g. "constructor" would otherwise resolve to a truthy prototype member and
+// then throw on config.lockup.src.
+const brandConfigFor = (name?: string): BrandCardConfig | undefined => {
+  const key = (name ?? "").trim().toLowerCase();
+  return Object.hasOwn(BRAND_CARD_CONFIGS, key)
+    ? BRAND_CARD_CONFIGS[key as keyof typeof BRAND_CARD_CONFIGS]
+    : undefined;
+};
 
 export default function ProductsIndexContent({
   data,
