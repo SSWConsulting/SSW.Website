@@ -60,6 +60,7 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
         aria-hidden
         width={config.lockup.width}
         height={config.lockup.height}
+        priority
         className={config.lockup.className}
       />
       {/* The lockup is an image, so this carries the name for a11y/SEO.
@@ -103,13 +104,16 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
         brandCardPadding
       )}
     >
+      {/* priority, not the next/image default of lazy: the sort pins both
+          brand cards to the first row, so this artwork is above the fold and
+          the YakShaver watermark is the page's LCP candidate. */}
       <Image
         src={config.watermark.src}
         alt=""
         aria-hidden
         width={config.watermark.width}
         height={config.watermark.height}
-        loading="lazy"
+        priority
         className={config.watermark.className}
       />
 
@@ -156,7 +160,7 @@ export const TINA_CARD_CONFIG: BrandCardConfig = {
 export const YAKSHAVER_CARD_CONFIG: BrandCardConfig = {
   surfaceClassName: "bg-card hover:bg-card-hover",
   watermark: {
-    src: "/images/YakShaver-Gradient-BG.png",
+    src: "/images/YakShaver-Gradient-BG.webp",
     width: 500,
     height: 320,
     className:
