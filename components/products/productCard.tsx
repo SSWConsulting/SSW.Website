@@ -50,12 +50,14 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
       </div>
 
       <div className="flex min-w-0 flex-col gap-1">
-        <h3
+        {/* h2, not h3: unlike /consulting the grid has no category headings
+            above it, so the cards sit directly under the page h1. */}
+        <h2
           className="m-0 p-0 text-lg font-semibold leading-tight text-foreground"
           data-tina-field={tinaField(product, "name")}
         >
           {product.name}
-        </h3>
+        </h2>
         {product.description && (
           <p
             className="m-0 line-clamp-3 p-0 text-sm font-light leading-snug text-muted-foreground"

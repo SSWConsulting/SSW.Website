@@ -27,7 +27,7 @@ export type BrandCardConfig = {
   // Rendered first and absolutely positioned by its own className, so it
   // sits behind the lockup without taking part in the flex layout.
   watermark: BrandImage;
-  // Stands in for the card title — see the sr-only h3 below.
+  // Stands in for the card title — see the sr-only h2 below.
   lockup: BrandImage;
   // Wraps the lockup/name/description/tags as one flex-gap group, separate
   // from the learn-more row below. Omit to lay them out flat instead — the
@@ -62,10 +62,11 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
         height={config.lockup.height}
         className={config.lockup.className}
       />
-      {/* The lockup is an image, so this carries the name for a11y/SEO. */}
-      <h3 className="sr-only" data-tina-field={tinaField(product, "name")}>
+      {/* The lockup is an image, so this carries the name for a11y/SEO.
+          h2 to match ProductCard — the cards sit directly under the page h1. */}
+      <h2 className="sr-only" data-tina-field={tinaField(product, "name")}>
         {product.name}
-      </h3>
+      </h2>
       {product.description && (
         <p
           className={config.descriptionClassName}
