@@ -1,0 +1,25 @@
+{
+  "title": "Queensland Power BI and Fabric User Group - Storage Wars: Choosing the right House for your data",
+  "slug": "queensland-power-bi-storage-wars",
+  "url": "https://www.meetup.com/queensland-power-bi-user-group/events/316293601/",
+  "ctaLabel": "Join the Meetup group",
+  "thumbnail": "/images/consulting/open-graph/power-bi.jpg",
+  "thumbnailDescription": "Power BI",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/vlad-kireyev.mdx"
+    }
+  ],
+  "startDateTime": "2026-09-03T08:00:00.000Z",
+  "endDateTime": "2026-09-03T09:30:00.000Z",
+  "calendarType": "User Groups",
+  "venue": "Online via Microsoft Teams",
+  "city": "Brisbane",
+  "category": "Data and LINQ",
+  "abstract": "This presentation explores one of the most common decisions in Microsoft Fabric: where to store your data. It cuts through the confusion between Lakehouses and Warehouses, two storage options that look similar on the surface but serve very different purposes, and explains how Medallion Architecture (Bronze, Silver, Gold) brings them together into a coherent data strategy. By the end, you'll understand when to reach for a Lakehouse, when a Warehouse is the right call, and why the answer for most real-world Fabric projects is usually both.",
+  "lead": "Join Vlad Kireyev from SSW for a practical guide to choosing between Lakehouses and Warehouses in Microsoft Fabric.",
+  "description": "### Storage Wars: Choosing the right House for your data\n\nThis presentation explores one of the most common decisions in Microsoft Fabric: where to store your data.\n\nIt cuts through the confusion between Lakehouses and Warehouses, two storage options that look similar on the surface but serve very different purposes, and explains how Medallion Architecture (Bronze, Silver, Gold) brings them together into a coherent data strategy.\n\nBy the end, you'll understand when to reach for a Lakehouse, when a Warehouse is the right call, and why the answer for most real-world Fabric projects is usually both.\n\n### How to join\n\nThis is an online event hosted by the Queensland Power BI and Fabric User Group. Join the Meetup group and RSVP to the event to access the organizer's Microsoft Teams call.",
+  "hostedAtSsw": false,
+  "enabled": true,
+  "internalNote": "The user confirmed Vlad Kireyev is the SSW speaker. The organizer's Meetup page currently does not name the speaker."
+}
