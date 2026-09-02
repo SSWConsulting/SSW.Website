@@ -83,31 +83,36 @@ export const EventsSidebar = ({
   <div className="grid grid-cols-sidebar items-start gap-8 max-xl:grid-cols-sidebar-narrow max-md:grid-cols-1 max-md:gap-4">
     {/* A plain div, not <aside>: the <nav>s below are already their own
         landmarks, and wrapping only files the <h1> under "complementary". */}
-    <div
-      className={cn(
-        "sticky top-headerOffset self-start",
-        // top-0 on mobile: the scrim and backdrop-blur are there for cards to
-        // slide underneath. Any offset leaves a gap that cards scroll through
-        // in full view, above the bar rather than behind it.
-        "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
-      )}
-    >
-      <h1
+    <div>
+      {/* Only the heading and nav are sticky. sidebarBody below is a tall
+          promo block (~800px); inside the sticky element it made the column
+          taller than the viewport, which strands its own bottom off-screen. */}
+      <div
         className={cn(
-          headingClass,
-          "m-0 whitespace-nowrap p-0 text-foreground max-md:mb-2"
+          "sticky top-headerOffset",
+          // top-0 on mobile: the scrim and backdrop-blur are there for cards to
+          // slide underneath. Any offset leaves a gap that cards scroll through
+          // in full view, above the bar rather than behind it.
+          "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
         )}
       >
-        {title}
-      </h1>
+        <h1
+          className={cn(
+            headingClass,
+            "m-0 whitespace-nowrap p-0 text-foreground max-md:mb-2"
+          )}
+        >
+          {title}
+        </h1>
 
-      {groups?.length > 0 ? (
-        groups.map((group, index) => (
-          <FilterNav key={index} label={group.allText} {...group} />
-        ))
-      ) : (
-        <p className="mt-5 text-muted-foreground">Loading...</p>
-      )}
+        {groups?.length > 0 ? (
+          groups.map((group, index) => (
+            <FilterNav key={index} label={group.allText} {...group} />
+          ))
+        ) : (
+          <p className="mt-5 text-muted-foreground">Loading...</p>
+        )}
+      </div>
 
       {sidebarChildren && (
         <div className="mt-8 text-muted-foreground max-md:hidden">

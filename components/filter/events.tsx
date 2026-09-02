@@ -311,7 +311,7 @@ const EventMetaItem = ({
 };
 
 const EventMetaGrid = ({ children }: { children: React.ReactNode }) => (
-  <div className="mt-4 grid grid-cols-1 gap-x-6 gap-y-2 text-sm font-light text-muted-foreground sm:grid-cols-2">
+  <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm font-light text-muted-foreground">
     {children}
   </div>
 );
@@ -370,7 +370,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <div className="group relative flex overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:bg-gray-50 motion-reduce:transition-none dark:bg-card dark:hover:bg-card-hover">
+        <div className="group relative flex gap-5 overflow-hidden rounded-card border-0.75 border-hairline bg-white p-5 transition-colors duration-300 hover:bg-gray-50 motion-reduce:transition-none dark:bg-card dark:hover:bg-card-hover">
           {/* The whole card is the link. Everything else stays below it, so
               nested interactive elements can't end up inside an <a>. */}
           <CustomLink
@@ -379,24 +379,28 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             className="unstyled absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-brand"
           />
 
-          <div className="relative hidden w-1/3 max-w-xs shrink-0 sm:block">
-            {thumbnail && (
+          {/* Square plate with object-contain, not a full-height cover crop:
+              29 of the 40 event thumbnails are 1:1, and the rest run from 1.07
+              to 3.69, so a fixed ratio is the only way to show every one whole.
+              White backs the transparent logos among them. */}
+          {thumbnail && (
+            <div className="hidden size-24 flex-none items-center justify-center overflow-hidden rounded-utility bg-white sm:flex">
               <Image
                 src={thumbnail}
                 alt={`${event.thumbnailDescription || event.title} logo`}
-                fill
-                sizes="(min-width: 640px) 320px, 0px"
+                width={96}
+                height={96}
                 placeholder="blur"
                 blurDataURL={BluredBase64Image}
                 loading="lazy"
                 onError={handleImageError}
-                className="object-cover"
+                className="size-full object-contain"
               />
-            )}
-          </div>
+            </div>
+          )}
 
-          <div className="flex min-w-0 flex-1 flex-col px-5 py-6 sm:px-6 lg:px-8">
-            <h2 className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground">
+          <div className="flex min-w-0 flex-1 flex-col">
+            <h2 className="m-0 p-0 text-xl font-semibold leading-tight text-foreground">
               {event.title}
             </h2>
 
@@ -431,17 +435,11 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                   ))}
               </EventMetaItem>
             </EventMetaGrid>
-
-            {event.description && (
-              <div className="prose prose-sm mt-4 line-clamp-3 max-w-full text-muted-foreground prose-img:mx-1 prose-img:my-0 prose-img:inline">
-                <TinaMarkdown content={event.description} />
-              </div>
-            )}
           </div>
 
           {/* pointer-events-none so the card-wide link keeps the click. */}
-          <div className="pointer-events-none relative z-20 hidden items-end px-5 py-6 sm:flex sm:px-6">
-            <ArrowCircle className="size-12" />
+          <div className="pointer-events-none relative z-20 hidden items-center sm:flex">
+            <ArrowCircle className="size-10" />
           </div>
         </div>
       </Transition>
