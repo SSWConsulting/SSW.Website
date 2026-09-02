@@ -108,11 +108,6 @@ export const EventsFilter = ({
   return (
     <EventsSidebar
       title="SSW Events"
-      sidebarChildren={
-        <div className="descendant-img:py-3">
-          <TinaMarkdown content={sidebarBody} components={componentRenderer} />
-        </div>
-      }
       groups={!pastSelected ? futureFilters : pastFilters}
     >
       <TabGroup
@@ -152,6 +147,12 @@ export const EventsFilter = ({
           </TabPanel>
         </TabPanels>
       </TabGroup>
+
+      {sidebarBody && (
+        <div className="mt-12 border-t-0.75 border-hairline pt-8 descendant-img:py-3">
+          <TinaMarkdown content={sidebarBody} components={componentRenderer} />
+        </div>
+      )}
     </EventsSidebar>
   );
 };
