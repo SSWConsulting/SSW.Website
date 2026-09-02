@@ -7,9 +7,13 @@ import {
   TabPanels,
   Transition,
 } from "@headlessui/react";
+import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
+import { EventsSidebar } from "@/components/events/eventsSidebar";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React, { Fragment, useEffect, useMemo, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
+import { FiCalendar, FiMapPin, FiTag, FiUser } from "react-icons/fi";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { BluredBase64Image } from "../../helpers/images";
@@ -22,11 +26,10 @@ import { useFormatDates } from "../../hooks/useFormatDates";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { UtilityButton } from "../button/utilityButton";
 import { CustomLink } from "../customLink";
-import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { Presenter, PresenterList } from "../presenters/presenterList";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
-import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
+import { EventFilterAllCategories } from "./FilterBlock";
 import { FilterGroupProps } from "./FilterGroup";
 
 const EVENTS_JSON_LD_LIMIT = 5;
@@ -103,7 +106,8 @@ export const EventsFilter = ({
   }, []);
 
   return (
-    <FilterBlock
+    <EventsSidebar
+      title="SSW Events"
       sidebarChildren={
         <div className="descendant-img:py-3">
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
@@ -115,7 +119,7 @@ export const EventsFilter = ({
         onChange={(index) => setPastSelected(index === 1)}
         selectedIndex={pastSelected ? 1 : 0}
       >
-        <TabList className="mb-8 flex flex-row">
+        <TabList className="mb-8 flex flex-row" aria-label="Event timeframe">
           <EventTab>Upcoming Events</EventTab>
           <EventTab>Past Events</EventTab>
         </TabList>
@@ -148,14 +152,22 @@ export const EventsFilter = ({
           </TabPanel>
         </TabPanels>
       </TabGroup>
-    </FilterBlock>
+    </EventsSidebar>
   );
 };
 
 const EventTab = ({ children }: { children: React.ReactNode }) => {
   return (
     <Tab as={Fragment}>
-      <button className="grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-50 ui-selected:bg-gray-100">
+      <button
+        className={cn(
+          "unstyled grow border-b-0.75 border-hairline px-4 py-2.5 text-sm font-medium uppercase tracking-widest",
+          "transition-colors duration-150 motion-reduce:transition-none",
+          "focus-visible:ring-2 focus-visible:ring-brand",
+          "text-gray-600 hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground",
+          "ui-selected:border-b-2 ui-selected:border-b-brand ui-selected:text-foreground"
+        )}
+      >
         {children}
       </button>
     </Tab>
@@ -279,6 +291,34 @@ const LoadedEvents: React.FC<AllEventsProps> = ({
   );
 };
 
+const EventMetaItem = ({
+  icon: Icon,
+  children,
+}: {
+  icon: React.ElementType;
+  children: React.ReactNode;
+}) => {
+  if (!children) return null;
+
+  return (
+    <span className="flex min-w-0 items-center gap-2">
+      <Icon className="size-4 shrink-0" />
+      <span className="flex min-w-0 flex-wrap items-center gap-x-2">
+        {children}
+      </span>
+    </span>
+  );
+};
+
+const EventMetaGrid = ({ children }: { children: React.ReactNode }) => (
+  <div className="mt-4 grid grid-cols-1 gap-x-6 gap-y-2 text-sm font-light text-muted-foreground sm:grid-cols-2">
+    {children}
+  </div>
+);
+
+const eventTagChip =
+  "flex-none rounded border-0.75 border-brand bg-brand-subtle px-2 py-1 text-xs font-medium leading-none text-foreground";
+
 interface EventProps {
   visible?: boolean;
   event: EventTrimmed;
@@ -321,7 +361,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
     <>
       <Transition
         as="div"
-        className="mb-15 border-b-1 bg-white pb-8"
+        className="mb-6"
         show={visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -330,84 +370,79 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <div className="mb-8 block md:flex md:flex-row">
-          <div className="float-left mb-3 mr-3 shrink-0 pr-2 md:float-none md:pr-0">
-            <Image
-              className={"rounded-md"}
-              height={100}
-              width={100}
-              placeholder="blur"
-              alt={`${event.thumbnailDescription || event.title} logo`}
-              src={thumbnail}
-              loading="lazy"
-              blurDataURL={BluredBase64Image}
-              onError={handleImageError}
-            />
-          </div>
-          <div>
-            <h2 className="my-0 font-semibold">
-              <CustomLink className="!no-underline" href={event.url}>
-                {event.title}
-              </CustomLink>
-            </h2>
-
-            <EventsRelativeBox
-              relativeDate={relativeDate}
-              formattedDate={formattedDate}
-              dateFontSize="text-s"
-            />
-
-            <div>
-              {(event.presenterName || event.presenterList?.length > 0) && (
-                <EventDescItem
-                  label={
-                    event?.presenterName || event?.presenterList?.length === 1
-                      ? "Presenter"
-                      : "Presenters"
-                  }
-                >
-                  {event.presenterName ? (
-                    <EventDescLink
-                      value={event.presenterName}
-                      linkValue={event.presenterProfileUrl}
-                    />
-                  ) : (
-                    <PresenterList presenters={event.presenterList} />
-                  )}
-                </EventDescItem>
-              )}
-              {city && (
-                <EventDescItem label="Location">
-                  <EventDescLink
-                    value={eventSite.name}
-                    linkValue={eventSite.url}
-                  />
-                </EventDescItem>
-              )}
-              {event.calendarType && (
-                <EventDescItem label="Type">
-                  <EventDescLink value={event.calendarType} />
-                </EventDescItem>
-              )}
-              {event.category && (
-                <EventDescItem label="Category">
-                  <EventDescLink value={event.category} />
-                </EventDescItem>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
-          <TinaMarkdown content={event?.description} />
-        </div>
-        <div className="mb-1 mt-6 p-0 text-end">
+        <div className="group relative flex overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:bg-gray-50 motion-reduce:transition-none dark:bg-card dark:hover:bg-card-hover">
+          {/* The whole card is the link. Everything else stays below it, so
+              nested interactive elements can't end up inside an <a>. */}
           <CustomLink
             href={event.url}
-            className="unstyled rounded bg-ssw-gray-dark px-3 py-2 text-sm font-normal text-white hover:bg-sswBlack"
-          >
-            Find out more
-            <span className="sr-only"> about {event.title}</span>
-          </CustomLink>
+            aria-label={`Find out more about ${event.title}`}
+            className="unstyled absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-brand"
+          />
+
+          <div className="relative hidden w-1/3 max-w-xs shrink-0 sm:block">
+            {thumbnail && (
+              <Image
+                src={thumbnail}
+                alt={`${event.thumbnailDescription || event.title} logo`}
+                fill
+                sizes="(min-width: 640px) 320px, 0px"
+                placeholder="blur"
+                blurDataURL={BluredBase64Image}
+                loading="lazy"
+                onError={handleImageError}
+                className="object-cover"
+              />
+            )}
+          </div>
+
+          <div className="flex min-w-0 flex-1 flex-col px-5 py-6 sm:px-6 lg:px-8">
+            <h2 className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground">
+              {event.title}
+            </h2>
+
+            <EventMetaGrid>
+              <EventMetaItem icon={FiCalendar}>
+                {formattedDate ? (
+                  <>
+                    <span className="min-w-0">{formattedDate}</span>
+                    {relativeDate && (
+                      <span className="inline-flex shrink-0 items-center rounded-sm bg-sswRed px-1.5 pb-px pt-0.5 text-xs font-semibold uppercase leading-none text-white">
+                        {relativeDate}
+                      </span>
+                    )}
+                  </>
+                ) : null}
+              </EventMetaItem>
+              <EventMetaItem icon={FiMapPin}>{eventSite.name}</EventMetaItem>
+              <EventMetaItem icon={FiUser}>
+                {event.presenterName ? (
+                  event.presenterName
+                ) : event.presenterList?.length > 0 ? (
+                  <PresenterList presenters={event.presenterList} />
+                ) : null}
+              </EventMetaItem>
+              <EventMetaItem icon={FiTag}>
+                {[event.calendarType, event.category]
+                  .filter(Boolean)
+                  .map((tag) => (
+                    <span key={tag} className={eventTagChip}>
+                      {tag}
+                    </span>
+                  ))}
+              </EventMetaItem>
+            </EventMetaGrid>
+
+            {event.description && (
+              <div className="prose prose-sm mt-4 line-clamp-3 max-w-full text-muted-foreground prose-img:mx-1 prose-img:my-0 prose-img:inline">
+                <TinaMarkdown content={event.description} />
+              </div>
+            )}
+          </div>
+
+          {/* pointer-events-none so the card-wide link keeps the click. */}
+          <div className="pointer-events-none relative z-20 hidden items-end px-5 py-6 sm:flex sm:px-6">
+            <ArrowCircle className="size-12" />
+          </div>
         </div>
       </Transition>
       {jsonLd && (
@@ -417,33 +452,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         />
       )}
     </>
-  );
-};
-
-type EventDescItemProps = {
-  label: string;
-  children: React.ReactNode;
-};
-
-const EventDescItem = ({ label, children }: EventDescItemProps) => {
-  return (
-    <span className="mr-2 inline-block whitespace-nowrap">
-      <strong>{label}: </strong>
-      {children}
-    </span>
-  );
-};
-
-type EventDescLinkProps = { value: string; linkValue?: string };
-
-const EventDescLink: React.FC<EventDescLinkProps> = ({
-  value,
-  linkValue,
-}: EventDescLinkProps) => {
-  return linkValue ? (
-    <CustomLink href={linkValue}>{value}</CustomLink>
-  ) : (
-    <>{value}</>
   );
 };
 
