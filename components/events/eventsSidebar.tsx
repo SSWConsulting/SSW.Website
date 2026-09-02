@@ -14,7 +14,7 @@ const headingClass =
 // bare `.text-brand` on specificity.
 const navItem = (isActive: boolean) =>
   cn(
-    "unstyled block w-full min-h-11 rounded-lg px-2.5 py-2 text-left text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
+    "unstyled block w-full min-h-9 rounded-lg px-2.5 py-1.5 text-left text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
     // A ring, not `outline`: tailwind-merge drops the bare `outline` class,
     // leaving outline-style: none.
     "focus-visible:ring-2 focus-visible:ring-brand",
@@ -34,7 +34,7 @@ const FilterNav = ({
   setSelected,
 }: FilterNavProps) => (
   <nav aria-label={label} className="not-first:mt-5 max-md:not-first:mt-2">
-    <ul className="m-0 flex list-none flex-col gap-1.5 p-0 max-md:flex-row max-md:gap-2 max-md:overflow-x-auto max-md:whitespace-nowrap max-md:pb-0.5">
+    <ul className="m-0 flex list-none flex-col gap-0.5 p-0 max-md:flex-row max-md:gap-2 max-md:overflow-x-auto max-md:whitespace-nowrap max-md:pb-0.5">
       <li>
         <button
           type="button"

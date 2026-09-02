@@ -189,7 +189,7 @@ export default function ConsultingIndex({ tinaProps }) {
               SSW Services
             </h1>
             <nav aria-label="Consulting categories">
-              <ul className="m-0 mt-5 flex list-none flex-col gap-1.5 p-0 max-md:mt-0 max-md:flex-row max-md:gap-2 max-md:overflow-x-auto max-md:whitespace-nowrap max-md:pb-0.5">
+              <ul className="m-0 mt-5 flex list-none flex-col gap-0.5 p-0 max-md:mt-0 max-md:flex-row max-md:gap-2 max-md:overflow-x-auto max-md:whitespace-nowrap max-md:pb-0.5">
                 {sections.map((section) => {
                   const isActive = section.name === selectedTag;
 
@@ -212,7 +212,7 @@ export default function ConsultingIndex({ tinaProps }) {
                         // within a flow, which is what this expresses.
                         aria-current={isActive ? "location" : undefined}
                         className={cn(
-                          "unstyled block min-h-11 rounded-lg px-2.5 py-2 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
+                          "unstyled block min-h-9 rounded-lg px-2.5 py-1.5 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
                           // A ring, not `outline`: tailwind-merge drops the
                           // bare `outline` class, leaving outline-style: none.
                           "focus-visible:ring-2 focus-visible:ring-brand",
