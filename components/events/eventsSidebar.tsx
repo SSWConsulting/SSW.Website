@@ -86,13 +86,10 @@ export const EventsSidebar = ({
     <div
       className={cn(
         "sticky top-headerOffset self-start",
-        // The filter lists can outrun the viewport, so let the sticky column
-        // scroll rather than clipping the last category off the bottom.
-        "max-h-[calc(100vh-var(--events-sidebar-gutter))] overflow-y-auto [--events-sidebar-gutter:8rem]",
         // top-0 on mobile: the scrim and backdrop-blur are there for cards to
         // slide underneath. Any offset leaves a gap that cards scroll through
         // in full view, above the bar rather than behind it.
-        "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:max-h-none max-md:overflow-visible max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
+        "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
       )}
     >
       <h1
