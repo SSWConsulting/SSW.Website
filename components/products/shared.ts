@@ -1,16 +1,13 @@
 import { PROD_BASE_URL } from "@/components/util/constants";
 
-// Shared chrome for the three kinds of card on /products (standard, TinaCMS,
-// YakShaver).
-
 export const cardShell = [
   // border-0.75, not `border`: borderWidth.DEFAULT is 3px in this repo, too
   // heavy for a card hairline.
   "unstyled group relative flex h-full flex-col overflow-hidden rounded-card border-0.75",
   "text-inherit no-underline transition-colors duration-300 motion-reduce:transition-none",
-  // outline, not ring: a Tailwind ring is a box-shadow that didn't paint here.
-  // Omit outline-2 too: twMerge folds a bare `outline` into the width group
-  // and drops it, leaving outline-style: none (verified with twMerge directly).
+  // outline, not ring (a ring is a box-shadow, which didn't paint here), and
+  // no outline-2: twMerge folds a bare `outline` into the width group and
+  // drops it, leaving outline-style: none.
   "focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-brand",
 ].join(" ");
 
@@ -38,8 +35,6 @@ export const tinaTagChip = `${tagChipBase} border-white/40 text-white`;
 
 export const MAX_VISIBLE_TAGS = 2;
 
-// Tags come from a Tina `list: true` string field: trim, drop blanks, dedupe,
-// then cap.
 export const visibleTags = (tags?: string[]): string[] =>
   Array.from(
     new Set((tags ?? []).map((tag) => tag?.trim()).filter(Boolean))

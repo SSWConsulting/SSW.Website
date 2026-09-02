@@ -11,15 +11,13 @@ import type { ProductsIndexQueryQuery } from "@/tina/types";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { tinaField } from "tinacms/dist/react";
 
-// Keyed by lowercase name so the treatment follows the product on reorder.
 const BRAND_CARD_CONFIGS = {
   tinacms: TINA_CARD_CONFIG,
   yakshaver: YAKSHAVER_CARD_CONFIG,
 } satisfies Record<string, BrandCardConfig>;
 
-// hasOwn, not a bare lookup: the map is an object literal, so a product named
-// e.g. "constructor" would otherwise resolve to a truthy prototype member and
-// then throw on config.lockup.src.
+// hasOwn, not a bare lookup: on an object literal a product named
+// "constructor" resolves to a truthy prototype member, then throws below.
 const brandConfigFor = (name?: string): BrandCardConfig | undefined => {
   const key = (name ?? "").trim().toLowerCase();
   return Object.hasOwn(BRAND_CARD_CONFIGS, key)

@@ -17,8 +17,6 @@ export type ProductCardProps = {
   product: ProductsIndexProductsList;
 };
 
-// The standard card — nine of the eleven products. TinaCMS and YakShaver get
-// their own components for their media-kit surfaces.
 export const ProductCard: FC<ProductCardProps> = ({ product }) => {
   const domain = destinationLabel(product.url);
   const tags = visibleTags(product.tags);
@@ -50,8 +48,6 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
       </div>
 
       <div className="flex min-w-0 flex-col gap-1">
-        {/* h2, not h3: unlike /consulting the grid has no category headings
-            above it, so the cards sit directly under the page h1. */}
         <h2
           className="m-0 p-0 text-lg font-semibold leading-tight text-foreground"
           data-tina-field={tinaField(product, "name")}
@@ -88,8 +84,6 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
             {domain}
           </span>
         )}
-        {/* Fill overridden here rather than in ArrowCircle (used at full
-            strength elsewhere) — keep its group-hover scale/rotate as-is. */}
         <ArrowCircle
           className="size-9 flex-none bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
           iconClassName="size-3.5"

@@ -21,17 +21,10 @@ type BrandImage = {
 };
 
 export type BrandCardConfig = {
-  // Classes layered on top of the shared shell/surface below — each brand's
-  // field colour plus its hover/focus states.
   surfaceClassName: string;
-  // Rendered first and absolutely positioned by its own className, so it
-  // sits behind the lockup without taking part in the flex layout.
   watermark: BrandImage;
-  // Stands in for the card title — see the sr-only h2 below.
   lockup: BrandImage;
-  // Wraps the lockup/name/description/tags as one flex-gap group, separate
-  // from the learn-more row below. Omit to lay them out flat instead — the
-  // two cards don't group this content the same way.
+  // Omit to lay the content out flat — the two cards don't group it the same.
   contentWrapperClassName?: string;
   descriptionClassName: string;
   tagsListClassName: string;
@@ -43,9 +36,6 @@ type BrandProductCardProps = {
   config: BrandCardConfig;
 };
 
-// The two products whose media kits require their own card surface (TinaCMS,
-// YakShaver) share this shell; only the artwork and brand classes differ,
-// captured in each one's BrandCardConfig.
 export const BrandProductCard: FC<BrandProductCardProps> = ({
   product,
   config,
@@ -63,8 +53,7 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
         priority
         className={config.lockup.className}
       />
-      {/* The lockup is an image, so this carries the name for a11y/SEO.
-          h2 to match ProductCard — the cards sit directly under the page h1. */}
+      {/* The lockup is an image, so this carries the name for a11y/SEO. */}
       <h2 className="sr-only" data-tina-field={tinaField(product, "name")}>
         {product.name}
       </h2>
@@ -104,9 +93,8 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
         brandCardPadding
       )}
     >
-      {/* priority, not the next/image default of lazy: the sort pins both
-          brand cards to the first row, so this artwork is above the fold and
-          the YakShaver watermark is the page's LCP candidate. */}
+      {/* priority, not next/image's lazy default: the brand-first sort puts
+          these above the fold, making them the LCP candidates. */}
       <Image
         src={config.watermark.src}
         alt=""
