@@ -8,6 +8,7 @@ import {
   Transition,
 } from "@headlessui/react";
 import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
+import { cardShell, productTagChip } from "@/components/products/shared";
 import { EventsSidebar } from "@/components/events/eventsSidebar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -317,9 +318,6 @@ const EventMetaGrid = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const eventTagChip =
-  "flex-none rounded border-0.75 border-brand bg-brand-subtle px-2 py-1 text-xs font-medium leading-none text-foreground";
-
 interface EventProps {
   visible?: boolean;
   event: EventTrimmed;
@@ -371,7 +369,15 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <div className="group relative flex gap-5 overflow-hidden rounded-card border-0.75 border-hairline bg-white p-5 transition-colors duration-300 hover:bg-gray-50 motion-reduce:transition-none dark:bg-card dark:hover:bg-card-hover">
+        <div
+          className={cn(
+            cardShell,
+            "flex-row gap-5 p-5",
+            "border-stroke-weak bg-gray-50 hover:border-brand hover:bg-white",
+            "dark:border-hairline dark:bg-card dark:hover:border-brand dark:hover:bg-card-hover",
+            "active:bg-gray-100 dark:active:bg-card"
+          )}
+        >
           {/* The whole card is the link. Everything else stays below it, so
               nested interactive elements can't end up inside an <a>. */}
           <CustomLink
@@ -385,7 +391,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               to 3.69, so a fixed ratio is the only way to show every one whole.
               White backs the transparent logos among them. */}
           {thumbnail && (
-            <div className="hidden size-24 flex-none items-center justify-center overflow-hidden rounded-utility bg-white sm:flex">
+            <div className="hidden size-24 flex-none items-center justify-center rounded-card bg-white sm:flex">
               <Image
                 src={thumbnail}
                 alt={`${event.thumbnailDescription || event.title} logo`}
@@ -395,7 +401,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                 blurDataURL={BluredBase64Image}
                 loading="lazy"
                 onError={handleImageError}
-                className="size-full object-contain"
+                className="size-20 object-contain"
               />
             </div>
           )}
@@ -430,7 +436,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                 {[event.calendarType, event.category]
                   .filter(Boolean)
                   .map((tag) => (
-                    <span key={tag} className={eventTagChip}>
+                    <span key={tag} className={productTagChip}>
                       {tag}
                     </span>
                   ))}
@@ -439,8 +445,11 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
           </div>
 
           {/* pointer-events-none so the card-wide link keeps the click. */}
-          <div className="pointer-events-none relative z-20 hidden items-center sm:flex">
-            <ArrowCircle className="size-10" />
+          <div className="pointer-events-none relative z-20 hidden items-end sm:flex">
+            <ArrowCircle
+              className="size-9 flex-none bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
+              iconClassName="size-3.5"
+            />
           </div>
         </div>
       </Transition>
