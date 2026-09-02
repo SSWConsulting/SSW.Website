@@ -22,7 +22,7 @@ const DEFAULT_THEME: HomeThemeMode = "dark";
 // Single source of truth for which routes opt into home theming — read by
 // isThemedRoute below, baked into PRE_PAINT_SCRIPT, and re-exported for
 // MegaMenuWrapper, so the list only needs updating in one place.
-export const THEMED_ROUTES = ["/", "/consulting"];
+export const THEMED_ROUTES = ["/", "/consulting", "/products"];
 
 export const isThemedRoute = (pathname: string) =>
   THEMED_ROUTES.includes(pathname);

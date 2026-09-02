@@ -1,5 +1,6 @@
 import bundleAnalyser from "@next/bundle-analyzer";
 import { execSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 
 // CI passes the footer's deployment info in as Docker build args. Locally
 // there are none, so read them off the checkout instead of hardcoding a
@@ -109,6 +110,10 @@ const config = {
   },
   serverExternalPackages: ["applicationinsights"],
   turbopack: {
+    // A stray lockfile in a parent directory (e.g. ~/package-lock.json) makes
+    // Turbopack infer the workspace root above this project, breaking
+    // resolution of root-level files like instrumentation.ts. Pin it explicitly.
+    root: fileURLToPath(new URL(".", import.meta.url)),
     resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
     // `tinacms/dist/rich-text` imports `sanitizeUrl` from `@tinacms/mdx`, whose
     // single entry point bundles the entire markdown parser (~1.97 MB) to supply
