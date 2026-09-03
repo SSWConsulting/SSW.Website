@@ -1,19 +1,13 @@
 "use client";
-import {
-  Tab,
-  TabGroup,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Transition,
-} from "@headlessui/react";
+import { Transition } from "@headlessui/react";
 import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import { cardShell, productTagChip } from "@/components/products/shared";
 import { EventsSidebar } from "@/components/events/eventsSidebar";
+import { SswTvCard } from "@/components/events/sswTvCard";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { Fragment, useEffect, useMemo, useState } from "react";
-import { FaSpinner } from "react-icons/fa";
+import React, { useEffect, useMemo, useState } from "react";
+import { FaHistory, FaSpinner } from "react-icons/fa";
 import { FiCalendar, FiMapPin, FiTag, FiUser } from "react-icons/fi";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -106,73 +100,127 @@ export const EventsFilter = ({
     }
   }, []);
 
+  // Keeps the ?past=1 deep link the effect above reads in step with the
+  // toggle. replaceState, not pushState: the switch is a filter, and stacking
+  // history entries would make Back walk through every flip.
+  const selectPast = (past: boolean) => {
+    setPastSelected(past);
+
+    const params = new URLSearchParams(window.location.search);
+    if (past) {
+      params.set("past", "1");
+    } else {
+      params.delete("past");
+    }
+    const query = params.toString();
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`
+    );
+  };
+
   return (
     <EventsSidebar
       title="SSW Events"
       groups={!pastSelected ? futureFilters : pastFilters}
+      promo={<SswTvCard />}
     >
-      <TabGroup
-        onChange={(index) => setPastSelected(index === 1)}
-        selectedIndex={pastSelected ? 1 : 0}
-      >
-        <TabList className="mb-8 flex flex-row" aria-label="Event timeframe">
-          <EventTab>Upcoming Events</EventTab>
-          <EventTab>Past Events</EventTab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <EventsList
-              events={futureEvents}
-              isUpcoming
-              isLoading={isLoadingFuturePages}
-            />
-            {hasMoreFuturePages && (
-              <LoadMore
-                load={() => {
-                  fetchFutureNextPage();
-                }}
-                isLoading={isFetchingFuturePages}
-              />
-            )}
-          </TabPanel>
-          <TabPanel>
-            <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
-            {hasMorePastPages && (
-              <LoadMore
-                load={() => {
-                  fetchNextPastPage();
-                }}
-                isLoading={isFetchingPastPages}
-              />
-            )}
-          </TabPanel>
-        </TabPanels>
-      </TabGroup>
+      <div className="mb-8 flex items-center justify-between gap-4 border-b-0.75 border-hairline pb-3">
+        {/* Matches /products' index heading, down to the breakpoints. m-0 p-0,
+            not mb-0: styles.css gives every h2 mt-10 mb-2.5. */}
+        <h2 className="m-0 p-0 text-xl font-semibold text-foreground max-md:text-lg xl:text-2xl">
+          {pastSelected ? "Past Events" : "Upcoming Events"}
+        </h2>
+        <TimeframeToggle
+          pastSelected={pastSelected}
+          onToggle={() => selectPast(!pastSelected)}
+        />
+      </div>
 
-      {sidebarBody && (
+      {pastSelected ? (
+        <>
+          <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
+          {hasMorePastPages && (
+            <LoadMore
+              load={() => {
+                fetchNextPastPage();
+              }}
+              isLoading={isFetchingPastPages}
+            />
+          )}
+        </>
+      ) : (
+        <>
+          <EventsList
+            events={futureEvents}
+            isUpcoming
+            isLoading={isLoadingFuturePages}
+          />
+          {hasMoreFuturePages && (
+            <LoadMore
+              load={() => {
+                fetchFutureNextPage();
+              }}
+              isLoading={isFetchingFuturePages}
+            />
+          )}
+        </>
+      )}
+
+      {/* An emptied rich-text still arrives as { type: "root", children: [] },
+          which is truthy — so test the children, or the block renders as a
+          bare hairline with nothing under it. */}
+      {sidebarBody?.children?.length > 0 && (
         <div className="mt-12 border-t-0.75 border-hairline pt-8 descendant-img:py-3">
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
         </div>
       )}
+
+      {/* The sidebar's copy is desktop-only — see EventsSidebar's promo. */}
+      <div className="mt-12 max-w-sidebar-card md:hidden">
+        <SswTvCard />
+      </div>
     </EventsSidebar>
   );
 };
 
-const EventTab = ({ children }: { children: React.ReactNode }) => {
+// One button rather than two peer tabs: upcoming events are what the page is
+// for, and the archive is a detour off it. The label says what the click does,
+// which is also the state it is leaving — the heading beside it names the
+// state you are in.
+const TimeframeToggle = ({
+  pastSelected,
+  onToggle,
+}: {
+  pastSelected: boolean;
+  onToggle: () => void;
+}) => {
+  const label = pastSelected ? "View Upcoming Events" : "View Past Events";
+  const Icon = pastSelected ? FiCalendar : FaHistory;
+
   return (
-    <Tab as={Fragment}>
-      <button
-        className={cn(
-          "unstyled grow border-b-0.75 border-hairline px-4 py-2.5 text-sm font-medium uppercase tracking-widest",
-          "transition-colors duration-150 motion-reduce:transition-none",
-          "focus-visible:ring-2 focus-visible:ring-brand",
-          "text-gray-600 hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground",
-          "ui-selected:border-b-2 ui-selected:border-b-brand ui-selected:text-foreground"
-        )}
-      >
-        {children}
-      </button>
-    </Tab>
+    <button
+      type="button"
+      onClick={onToggle}
+      // title as well as the visible label: it survives the max-sm truncation
+      // below, where only the icon is left.
+      title={label}
+      className={cn(
+        "unstyled flex min-h-9 flex-none items-center gap-2 rounded-full border-0.75 px-3.5 text-sm font-medium",
+        "transition-colors duration-150 motion-reduce:transition-none",
+        "focus-visible:ring-2 focus-visible:ring-brand",
+        "max-sm:aspect-square max-sm:justify-center max-sm:px-0",
+        pastSelected
+          ? "border-brand bg-brand-subtle text-brand"
+          : "border-hairline text-gray-600 hover:border-brand hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
+      )}
+    >
+      <Icon aria-hidden className="size-4 flex-none" />
+      {/* sr-only rather than hidden on the narrowest tier: the icon alone has
+          to keep an accessible name. */}
+      <span className="max-sm:sr-only">{label}</span>
+    </button>
   );
 };
 
@@ -312,8 +360,17 @@ const EventMetaItem = ({
   );
 };
 
+// A column, not a wrapping row: each fact gets its own line, so the card
+// reads the same whether a title runs to one line or three.
 const EventMetaGrid = ({ children }: { children: React.ReactNode }) => (
-  <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-1.5 text-sm font-light text-muted-foreground">
+  <div className="mt-3 flex flex-col gap-1.5 text-sm font-light text-muted-foreground">
+    {children}
+  </div>
+);
+
+// The one line that pairs up: presenter first, then where it is on.
+const EventMetaRow = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
     {children}
   </div>
 );
@@ -356,6 +413,15 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   }
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
+
+  const presenter = event.presenterName ? (
+    event.presenterName
+  ) : event.presenterList?.length > 0 ? (
+    <PresenterList presenters={event.presenterList} />
+  ) : null;
+
+  const tags = [event.calendarType, event.category].filter(Boolean);
+
   return (
     <>
       <Transition
@@ -389,9 +455,11 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
           {/* Square plate with object-contain, not a full-height cover crop:
               29 of the 40 event thumbnails are 1:1, and the rest run from 1.07
               to 3.69, so a fixed ratio is the only way to show every one whole.
-              White backs the transparent logos among them. */}
+              White backs the transparent logos among them. The image fills the
+              plate edge to edge — an inset would ring every square logo in
+              white. */}
           {thumbnail && (
-            <div className="hidden size-24 flex-none items-center justify-center rounded-card bg-white sm:flex">
+            <div className="hidden size-24 flex-none items-center justify-center overflow-hidden rounded-card bg-white sm:flex">
               <Image
                 src={thumbnail}
                 alt={`${event.thumbnailDescription || event.title} logo`}
@@ -401,15 +469,15 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                 blurDataURL={BluredBase64Image}
                 loading="lazy"
                 onError={handleImageError}
-                className="size-20 object-contain"
+                className="size-full object-contain"
               />
             </div>
           )}
 
           <div className="flex min-w-0 flex-1 flex-col">
-            <h2 className="m-0 p-0 text-xl font-semibold leading-tight text-foreground">
+            <h3 className="m-0 p-0 text-xl font-semibold leading-tight text-foreground">
               {event.title}
-            </h2>
+            </h3>
 
             <EventMetaGrid>
               <EventMetaItem icon={FiCalendar}>
@@ -424,23 +492,29 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                   </>
                 ) : null}
               </EventMetaItem>
-              <EventMetaItem icon={FiMapPin}>{eventSite.name}</EventMetaItem>
-              <EventMetaItem icon={FiUser}>
-                {event.presenterName ? (
-                  event.presenterName
-                ) : event.presenterList?.length > 0 ? (
-                  <PresenterList presenters={event.presenterList} />
-                ) : null}
-              </EventMetaItem>
-              <EventMetaItem icon={FiTag}>
-                {[event.calendarType, event.category]
-                  .filter(Boolean)
-                  .map((tag) => (
+
+              {/* Skipped entirely when both are missing: an empty row would
+                  still take a gap out of the column above. */}
+              {(presenter || eventSite.name) && (
+                <EventMetaRow>
+                  <EventMetaItem icon={FiUser}>{presenter}</EventMetaItem>
+                  <EventMetaItem icon={FiMapPin}>
+                    {eventSite.name}
+                  </EventMetaItem>
+                </EventMetaRow>
+              )}
+
+              {/* Tested here, not inside EventMetaItem: an empty map returns
+                  [], which is truthy, so the icon would show up alone. */}
+              {tags.length > 0 && (
+                <EventMetaItem icon={FiTag}>
+                  {tags.map((tag) => (
                     <span key={tag} className={productTagChip}>
                       {tag}
                     </span>
                   ))}
-              </EventMetaItem>
+                </EventMetaItem>
+              )}
             </EventMetaGrid>
           </div>
 

@@ -67,6 +67,10 @@ const FilterNav = ({
 type EventsSidebarProps = {
   title: string;
   groups: FilterGroupProps[];
+  // Sits under the nav on desktop only. On mobile the column collapses into a
+  // pinned filter bar, which has to stay bar-height, so the page mounts its
+  // own copy at the foot of the content instead.
+  promo?: React.ReactNode;
   children: React.ReactNode;
 };
 
@@ -76,6 +80,7 @@ type EventsSidebarProps = {
 export const EventsSidebar = ({
   title,
   groups,
+  promo,
   children,
 }: EventsSidebarProps) => (
   <div className="grid grid-cols-sidebar items-start gap-8 max-xl:grid-cols-sidebar-narrow max-md:grid-cols-1 max-md:gap-4">
@@ -105,6 +110,12 @@ export const EventsSidebar = ({
         ))
       ) : (
         <p className="mt-5 text-muted-foreground">Loading...</p>
+      )}
+
+      {/* Capped, not column-width: it keeps the old sidebar tiles'
+          proportions instead of stretching to a 400px-wide slab. */}
+      {promo && (
+        <div className="mt-8 max-w-sidebar-card max-md:hidden">{promo}</div>
       )}
     </div>
 

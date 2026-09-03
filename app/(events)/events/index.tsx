@@ -28,7 +28,11 @@ export default function EventsIndexPage({ props, tinaProps }) {
             />
           </div>
 
-          {data.eventsIndex.preface && (
+          {/* An emptied rich-text still arrives as { type: "root",
+              children: [] }, which is truthy — testing it directly leaves an
+              empty div whose mb-8 pushes the whole layout down, breaking
+              alignment with /consulting and /products. */}
+          {data.eventsIndex.preface?.children?.length > 0 && (
             <div className="mb-8 max-w-3xl text-muted-foreground">
               <TinaMarkdown
                 content={data.eventsIndex.preface}

@@ -76,9 +76,9 @@ export default {
         12: "repeat(12, minmax(min-content, 0fr))",
       },
       gridTemplateColumns: {
-        // Sticky-sidebar + fluid-content layout (used by /consulting).
-        sidebar: "minmax(280px, 30%) minmax(0, 1fr)",
-        "sidebar-narrow": "minmax(240px, 30%) minmax(0, 1fr)",
+        // Sticky-sidebar + fluid-content layout (/consulting and /events).
+        sidebar: "minmax(300px, 26%) minmax(0, 1fr)",
+        "sidebar-narrow": "minmax(260px, 30%) minmax(0, 1fr)",
       },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
@@ -160,6 +160,9 @@ export default {
       },
       maxWidth: {
         media: "420px",
+        // The /events sidebar promo. Capped rather than column-width, so it
+        // reads as a tile like the Vimeo thumbnails it replaced.
+        "sidebar-card": "300px",
         "8xl": "83rem",
         "9xl": "86rem",
         "1/2": "50%",
