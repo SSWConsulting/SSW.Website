@@ -50,7 +50,11 @@ const SlideSpeakers = ({ slide, className = "" }) => {
             alt={speaker.altText ?? speaker.name ?? "Speaker"}
             width={260}
             height={260}
-            className="size-14 rounded-full bg-sswRed object-cover object-top sm:size-36 lg:size-44"
+            className={cn(
+              // Radial red sweep behind the cut-out, sampled from the design.
+              "bg-[radial-gradient(circle,#e45655_0%,#6e2a29_100%)]",
+              "size-14 rounded-full object-cover object-top sm:size-36 lg:size-44"
+            )}
           />
           {speaker.name && (
             <figcaption
