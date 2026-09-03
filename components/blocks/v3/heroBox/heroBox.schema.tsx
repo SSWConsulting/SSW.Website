@@ -23,13 +23,13 @@ const headshotGuideField: TinaField = {
     component: () => (
       <TinaInfo>
         💡 The photo is cropped to a circle, so use a square, shoulders-up
-        headshot with the face in the top half and a plain dark or transparent
-        background. Presenter profile photos already follow this, e.g.
+        headshot with the face in the top half. A cut-out on a transparent
+        background sits on the SSW red circle, like this:
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/images/people/Adam-Cogan.jpg"
+          src="/images/thumbs/tina/hero-speaker-headshot-example.png"
           alt="Example headshot"
-          className="mt-2 size-20 rounded-full object-cover object-top"
+          className="my-3 block size-20 rounded-full object-cover object-top"
         />
       </TinaInfo>
     ),
@@ -51,7 +51,7 @@ const backgroundGuideField: TinaField = {
         <img
           src="/images/background/polygonBackground.png"
           alt="Example background"
-          className="mt-2 max-h-40 w-full rounded object-cover"
+          className="my-3 block max-h-40 w-full rounded object-cover"
         />
       </TinaInfo>
     ),

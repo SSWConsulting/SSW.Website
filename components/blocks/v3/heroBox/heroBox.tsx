@@ -221,6 +221,14 @@ export const V3HeroBox = ({ data, priority = false }) => {
                         <AlternatingText text={slide.heading} />
                       </Heading>
                     )}
+                    {slide?.eventDate && (
+                      <p
+                        data-tina-field={tinaField(slide, "eventDate")}
+                        className="mt-4 text-base text-white/90"
+                      >
+                        {slide.eventDate}
+                      </p>
+                    )}
                     {slide?.description && (
                       <div
                         data-tina-field={tinaField(slide, "description")}
@@ -238,14 +246,6 @@ export const V3HeroBox = ({ data, priority = false }) => {
                           }}
                         />
                       </div>
-                    )}
-                    {slide?.eventDate && (
-                      <p
-                        data-tina-field={tinaField(slide, "eventDate")}
-                        className="mt-4 text-base text-white/90"
-                      >
-                        {slide.eventDate}
-                      </p>
                     )}
                   </div>
                   <SlideSpeakers
