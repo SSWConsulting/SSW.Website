@@ -45,19 +45,21 @@ const SlideSpeakers = ({ slide, className = "" }) => {
             alt={speaker.altText ?? speaker.name ?? "Speaker"}
             width={260}
             height={260}
-            className="size-14 rounded-full bg-sswRed object-cover object-top sm:size-24 lg:size-32"
+            className="size-14 rounded-full bg-sswRed object-cover object-top sm:size-32 lg:size-44"
           />
           {speaker.name && (
             <figcaption
               className={cn(
-                "mt-2 max-w-28 text-white sm:max-w-40",
+                "mt-2 max-w-28 text-white sm:max-w-48",
                 // With two speakers there is no room for captions on mobile.
                 speakers.length > 1 && "hidden sm:block"
               )}
             >
-              <span className="block text-sm font-bold">{speaker.name}</span>
+              <span className="block text-sm font-bold sm:text-base">
+                {speaker.name}
+              </span>
               {speaker.position && (
-                <span className="block text-sm text-white/80">
+                <span className="block text-sm text-white/80 sm:text-base">
                   {speaker.position}
                 </span>
               )}
