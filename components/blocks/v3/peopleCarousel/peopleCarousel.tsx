@@ -41,7 +41,10 @@ function ProfileLink({ person, className, children }) {
       rel="noopener noreferrer"
       aria-label={`View ${person?.name ?? "this person"}'s SSW People profile`}
       className={cn(
-        "!no-underline after:absolute after:inset-0 after:content-['']",
+        // group/profile scopes the name's red hover to this link: the pointer
+        // is over the link whenever it is over the stretched ::after overlay,
+        // but not when it is over a social icon sitting above that overlay.
+        "group/profile !no-underline after:absolute after:inset-0 after:content-['']",
         className
       )}
     >
@@ -52,7 +55,7 @@ function ProfileLink({ person, className, children }) {
 
 function PersonCard({ person, index, scope }) {
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:border-sswRed dark:border-sswBorder dark:bg-sswCard">
+    <div className="relative flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:border-sswRed dark:border-sswBorder dark:bg-sswCard">
       <ProfileLink person={person} className="block">
         {/* Red panel frames the photo with padding on the sides and top while the
             photo stays flush to the bottom, so the person reads as standing in it. */}
@@ -71,7 +74,7 @@ function PersonCard({ person, index, scope }) {
 
         <div className="px-4 pt-4 text-center xl:px-6 xl:pt-6">
           {person?.name && (
-            <h3 className="text-xl font-semibold text-foreground transition-colors group-hover:text-sswRed">
+            <h3 className="text-xl font-semibold text-foreground transition-colors group-hover/profile:text-sswRed">
               {person.name}
             </h3>
           )}
