@@ -8,7 +8,16 @@ import React, { useCallback, useRef, useState } from "react";
 import { useResizeObserver } from "usehooks-ts";
 import { Button } from "../button/templateButton";
 
+// Outer guard: bail out before any hooks when there's nothing to render, so the
+// 13-of-14 button rows on a page that carry no buttons don't create a
+// ResizeObserver or read layout. All layout-measuring hooks live in the inner
+// component, which only mounts when buttons exist.
 const ButtonRow = ({ className, data }) => {
+  if (!(data.buttons?.length > 0)) return null;
+  return <ButtonRowInner className={className} data={data} />;
+};
+
+const ButtonRowInner = ({ className, data }) => {
   const buttonContainer = useRef<HTMLDivElement>(null);
   const buttonRefs = useRef<HTMLButtonElement[]>([]);
   const [buttonIsFullWidth, setButtonIsFullWidth] = useState(false);
@@ -51,72 +60,68 @@ const ButtonRow = ({ className, data }) => {
 
   useResizeObserver({ ref: buttonContainer, onResize: measure });
   return (
-    <>
-      {data.buttons?.length > 0 && (
-        <div
-          ref={buttonContainer}
-          className={classNames("mt-5 flex flex-wrap gap-3", className)}
-        >
-          {data.buttons?.map((button, index) => {
-            const buttonElement = (
-              <Button
-                ref={(node) => {
-                  buttonRefs.current[index] = node;
-                  return () => {
-                    if (fullWidthButtonIndex.current === index) {
-                      fullWidthButtonIndex.current = null;
-                    }
-                    delete buttonRefs.current[index];
-                  };
-                }}
-                className={cn(
-                  "text-base font-semibold",
-                  index !== fullWidthButtonIndex.current &&
-                    buttonIsFullWidth &&
-                    "w-full sm:w-auto"
-                )}
-                key={`image-text-button-${index}`}
-                data={button}
-              />
-            );
+    <div
+      ref={buttonContainer}
+      className={classNames("mt-5 flex flex-wrap gap-3", className)}
+    >
+      {data.buttons?.map((button, index) => {
+        const buttonElement = (
+          <Button
+            ref={(node) => {
+              buttonRefs.current[index] = node;
+              return () => {
+                if (fullWidthButtonIndex.current === index) {
+                  fullWidthButtonIndex.current = null;
+                }
+                delete buttonRefs.current[index];
+              };
+            }}
+            className={cn(
+              "text-base font-semibold",
+              index !== fullWidthButtonIndex.current &&
+                buttonIsFullWidth &&
+                "w-full sm:w-auto"
+            )}
+            key={`image-text-button-${index}`}
+            data={button}
+          />
+        );
 
-            const isInPageAnchor = button.buttonLink?.startsWith("#");
+        const isInPageAnchor = button.buttonLink?.startsWith("#");
 
-            return button.buttonLink && !button.leadCaptureFormOption ? (
-              isInPageAnchor ? (
-                <a
-                  className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
-                  href={button.buttonLink}
-                  key={`link-wrapper-${index}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const target = document.getElementById(
-                      button.buttonLink.slice(1)
-                    );
-                    target?.scrollIntoView({ behavior: "smooth" });
-                    history.replaceState(null, "", button.buttonLink);
-                  }}
-                >
-                  {buttonElement}
-                </a>
-              ) : (
-                <Link
-                  className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
-                  href={button.buttonLink}
-                  key={`link-wrapper-${index}`}
-                >
-                  {buttonElement}
-                </Link>
-              )
-            ) : (
-              <React.Fragment key={`button-fragment-${index}`}>
-                {buttonElement}
-              </React.Fragment>
-            );
-          })}
-        </div>
-      )}
-    </>
+        return button.buttonLink && !button.leadCaptureFormOption ? (
+          isInPageAnchor ? (
+            <a
+              className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
+              href={button.buttonLink}
+              key={`link-wrapper-${index}`}
+              onClick={(e) => {
+                e.preventDefault();
+                const target = document.getElementById(
+                  button.buttonLink.slice(1)
+                );
+                target?.scrollIntoView({ behavior: "smooth" });
+                history.replaceState(null, "", button.buttonLink);
+              }}
+            >
+              {buttonElement}
+            </a>
+          ) : (
+            <Link
+              className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
+              href={button.buttonLink}
+              key={`link-wrapper-${index}`}
+            >
+              {buttonElement}
+            </Link>
+          )
+        ) : (
+          <React.Fragment key={`button-fragment-${index}`}>
+            {buttonElement}
+          </React.Fragment>
+        );
+      })}
+    </div>
   );
 };
 
