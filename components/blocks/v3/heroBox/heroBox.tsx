@@ -15,6 +15,60 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 // (e.g. an unset/legacy value) — SSW dark gray, the default section background.
 const DEFAULT_SCOOP_COLOR = "#090909";
 
+// Speaker headshots shown on the right of the banner. The photo comes from the
+// referenced presenter unless the slide overrides it with its own image.
+const SlideSpeakers = ({ slide, className = "" }) => {
+  const speakers = (slide?.speakers ?? [])
+    .filter(Boolean)
+    .map((speaker) => ({
+      image: speaker?.image?.imageSource || speaker?.presenter?.profileImg,
+      altText: speaker?.image?.altText,
+      name: speaker?.presenter?.presenter?.name,
+      position: speaker?.role || speaker?.presenter?.position,
+    }))
+    .filter((speaker) => speaker.image);
+
+  if (speakers.length === 0) return null;
+
+  return (
+    <div
+      className={cn("flex shrink-0 items-start gap-3 sm:gap-6", className)}
+      data-tina-field={tinaField(slide, "speakers")}
+    >
+      {speakers.map((speaker, index) => (
+        <figure
+          key={`hero-slide-speaker-${index}`}
+          className="m-0 flex flex-col items-center text-center"
+        >
+          <Image
+            src={speaker.image}
+            alt={speaker.altText ?? speaker.name ?? "Speaker"}
+            width={260}
+            height={260}
+            className="size-14 rounded-full bg-sswRed object-cover object-top sm:size-24 lg:size-32"
+          />
+          {speaker.name && (
+            <figcaption
+              className={cn(
+                "mt-2 max-w-28 text-white sm:max-w-40",
+                // With two speakers there is no room for captions on mobile.
+                speakers.length > 1 && "hidden sm:block"
+              )}
+            >
+              <span className="block text-sm font-bold">{speaker.name}</span>
+              {speaker.position && (
+                <span className="block text-sm text-white/80">
+                  {speaker.position}
+                </span>
+              )}
+            </figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+  );
+};
+
 export const V3HeroBox = ({ data, priority = false }) => {
   // The block's own fields form the first slide; `slides` adds more of the same shape.
   const slides = [data, ...(data?.slides ?? []).filter(Boolean)];
@@ -152,38 +206,55 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 <div
                   key={`hero-slide-content-${index}`}
                   className={cn(
-                    "col-start-1 row-start-1 flex w-full max-w-2xl flex-col p-8 transition-[opacity,visibility] duration-500 sm:p-12 lg:p-16",
+                    "col-start-1 row-start-1 grid w-full grid-cols-1 items-start gap-4 p-8 transition-[opacity,visibility] duration-500 sm:grid-cols-[1fr_auto] sm:gap-8 sm:p-12 lg:p-16",
                     index === current
                       ? "visible opacity-100"
                       : "invisible opacity-0"
                   )}
                 >
-                  {slide?.heading && (
-                    <Heading
-                      data-tina-field={tinaField(slide, "heading")}
-                      className="m-0 p-0 text-3xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
-                    >
-                      <AlternatingText text={slide.heading} />
-                    </Heading>
-                  )}
-                  {slide?.description && (
-                    <div
-                      data-tina-field={tinaField(slide, "description")}
-                      className="mt-4 max-w-md"
-                    >
-                      <TinaMarkdown
-                        content={slide.description}
-                        components={{
-                          p: (props) => (
-                            <p {...props} className="text-base text-white/90" />
-                          ),
-                        }}
-                      />
-                    </div>
-                  )}
+                  <div className="flex w-full max-w-2xl flex-col">
+                    {slide?.heading && (
+                      <Heading
+                        data-tina-field={tinaField(slide, "heading")}
+                        className="m-0 p-0 text-3xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+                      >
+                        <AlternatingText text={slide.heading} />
+                      </Heading>
+                    )}
+                    {slide?.description && (
+                      <div
+                        data-tina-field={tinaField(slide, "description")}
+                        className="mt-4 max-w-md"
+                      >
+                        <TinaMarkdown
+                          content={slide.description}
+                          components={{
+                            p: (props) => (
+                              <p
+                                {...props}
+                                className="text-base text-white/90"
+                              />
+                            ),
+                          }}
+                        />
+                      </div>
+                    )}
+                    {slide?.eventDate && (
+                      <p
+                        data-tina-field={tinaField(slide, "eventDate")}
+                        className="mt-4 text-base text-white/90"
+                      >
+                        {slide.eventDate}
+                      </p>
+                    )}
+                  </div>
+                  <SlideSpeakers
+                    slide={slide}
+                    className="sm:row-span-2 sm:self-center"
+                  />
                   <ButtonRow
                     data={slide}
-                    className="mb-16 mt-8 flex-wrap justify-start sm:mb-0"
+                    className="mb-16 flex-wrap justify-start sm:mb-0"
                   />
                 </div>
               );
