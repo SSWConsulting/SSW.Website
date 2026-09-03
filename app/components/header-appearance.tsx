@@ -30,9 +30,13 @@ export function HeaderAppearanceProvider({
 
 export const useHeaderAppearance = () => useContext(HeaderAppearanceContext);
 
-// ponytail: client context → SSR shows full header for one frame before hiding flag/
-// contact. Upgrade path if the flash matters: set `x-pathname` in proxy.ts and
-// resolve appearance server-side in app/layout.tsx so the header renders correctly at SSR.
+// Neither flag reaches the rendered header today. MegaMenuWrapper passes
+// `isFlagVisible={false}` and always supplies `rightSideActionsOverride`, and every
+// `hidePhone` branch inside ssw.megamenu sits behind that override — so setting
+// either value changes nothing on screen. Anyone reconnecting them must render the
+// hidden state inside the override's own markup, and resolve the page's appearance
+// server-side (`x-pathname` from proxy.ts, read in app/layout.tsx) rather than through
+// this context, which only ever arrives after hydration.
 export function useMobileHeaderAppearance(
   value: MobileHeaderAppearance | null
 ) {
