@@ -32,7 +32,12 @@ const SlideSpeakers = ({ slide, className = "" }) => {
 
   return (
     <div
-      className={cn("flex shrink-0 items-start gap-3 sm:gap-6", className)}
+      className={cn(
+        "flex shrink-0 items-start gap-3 sm:gap-6",
+        // Two speakers stack vertically on tablet, as in the design.
+        speakers.length > 1 && "sm:flex-col lg:flex-row",
+        className
+      )}
       data-tina-field={tinaField(slide, "speakers")}
     >
       {speakers.map((speaker, index) => (
@@ -45,14 +50,14 @@ const SlideSpeakers = ({ slide, className = "" }) => {
             alt={speaker.altText ?? speaker.name ?? "Speaker"}
             width={260}
             height={260}
-            className="size-14 rounded-full bg-sswRed object-cover object-top sm:size-32 lg:size-44"
+            className="size-14 rounded-full bg-sswRed object-cover object-top sm:size-36 lg:size-44"
           />
           {speaker.name && (
             <figcaption
               className={cn(
                 "mt-2 max-w-28 text-white sm:max-w-48",
-                // With two speakers there is no room for captions on mobile.
-                speakers.length > 1 && "hidden sm:block"
+                // With two speakers there is no room for captions until desktop.
+                speakers.length > 1 && "hidden lg:block"
               )}
             >
               <span className="block text-sm font-bold sm:text-base">
