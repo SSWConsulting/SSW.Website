@@ -1,0 +1,24 @@
+{
+  "title": "NDC Oslo 2026 - From Copilot to the Garden of Eden",
+  "slug": "ndc-oslo-2026-adam-cogan",
+  "url": "https://ndcoslo.com/tickets",
+  "ctaLabel": "Get tickets",
+  "thumbnail": "/images/events/NDC%20Conferences.png",
+  "thumbnailDescription": "NDC Oslo 2026",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "startDateTime": "2026-09-16T11:40:00.000Z",
+  "endDateTime": "2026-09-16T12:40:00.000Z",
+  "calendarType": "Conferences",
+  "venue": "Room 6, Oslo Spektrum",
+  "city": "Other",
+  "cityOther": "Oslo",
+  "category": "Artificial Intelligence",
+  "abstract": "Move beyond the underwhelming 2023 \"Copilot hype\" to the tools actually delivering value for developers. Adam Cogan cuts through the noise, exploring how AI is fundamentally reshaping the enterprise stack, from Copilot and Cowork to agentic workflows and CLI-based coding.\n\nAgents such as OpenClaw, and Hermes are changing the way developers automate their day-to-day work.\n\nLearn how roles are shifting, which AI assistants are winning, and what an AI-integrated \"Garden of Eden\" looks like. Leave with a practical roadmap to build, analyze, and automate with confidence.",
+  "description": "Adam Cogan is speaking at NDC Oslo 2026.\n\n**From Copilot to the Garden of Eden**\n\nMove beyond the underwhelming 2023 \"Copilot hype\" to the tools actually delivering value for developers. Adam Cogan cuts through the noise, exploring how AI is fundamentally reshaping the enterprise stack, from Copilot and Cowork to agentic workflows and CLI-based coding.\n\nAgents such as OpenClaw, and Hermes are changing the way developers automate their day-to-day work.\n\nLearn how roles are shifting, which AI assistants are winning, and what an AI-integrated \"Garden of Eden\" looks like. Leave with a practical roadmap to build, analyze, and automate with confidence.\n\n**When:** Wednesday 16 September 2026, 13:40 - 14:40 (UTC+02)\n\n**Where:** Room 6, Oslo Spektrum, Sonja Henies plass 2, 0185 Oslo\n\n[View Adam's session](https://ndcoslo.com/agenda/tba-adam-cogan)\n",
+  "liveStreamDelayMinutes": 30,
+  "enabled": true
+}
