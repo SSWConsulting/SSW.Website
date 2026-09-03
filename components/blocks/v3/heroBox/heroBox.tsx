@@ -261,7 +261,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                   />
                   <ButtonRow
                     data={slide}
-                    className="mb-16 flex-wrap justify-start sm:mb-0"
+                    className="mb-16 flex-wrap justify-start sm:col-start-1 sm:mb-0"
                   />
                 </div>
               );
