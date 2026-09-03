@@ -86,6 +86,10 @@ export const V3HeroBox = ({ data, priority = false }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const current = Math.min(activeSlide, slides.length - 1);
   const hasImage = slides[current]?.backgroundMedia?.imageSource;
+  // The red wash exists to keep white text legible over a photo. Event banner
+  // slides sit on dark artwork already, so it just tints them.
+  const hasSpeakers =
+    (slides[current]?.speakers ?? []).filter(Boolean).length > 0;
 
   function slideLeft() {
     setActiveSlide((current - 1 + slides.length) % slides.length);
@@ -200,7 +204,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
               />
             ) : null
           )}
-          {hasImage && (
+          {hasImage && !hasSpeakers && (
             <div
               aria-hidden="true"
               className={cn(
