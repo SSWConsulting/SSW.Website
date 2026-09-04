@@ -30,7 +30,7 @@
         "redGlow": true
       },
       "brow": "AI-POWERED SECURITY",
-      "heading": "Attackers have AI. **Do you?**",
+      "heading": "Beat the hackers **at their own game**",
       "description": "Breaking into a company used to take skill, time and money. Now anyone can point an AI agent at your code or your network and let it hunt. SSW uses the same AI to find the holes first, verify what's exploitable and fix it before someone else gets there.\n",
       "buttons": [
         {
@@ -128,7 +128,7 @@
       "background": {
         "backgroundColour": 8
       },
-      "brow": "SERVICE 01 – APPLICATION CODE",
+      "brow": "APPLICATION CODE",
       "heading": "AI-powered **code security review**",
       "description": "A white-box review of your entire codebase, not a sample. Our AI fans out across every attack surface in parallel, traces each suspicious path from request to effect, and hands our senior engineers a shortlist of what's actually exploitable. You get verified findings with an exploit and a fix, not a wall of false positives.\n",
       "steps": [
@@ -154,7 +154,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "SERVICE 02 – NETWORK & INFRASTRUCTURE",
+      "brow": "NETWORK & INFRASTRUCTURE",
       "heading": "AI-powered **network vulnerability assessment**",
       "description": "An on-site assessment that thinks like an attacker. Our AI maps every device on your network, cross-references them against known vulnerabilities and works out how an intruder would chain them together to reach what matters. It runs on hardware we bring, with local models, so nothing about your network ever leaves your building.\n",
       "steps": [
@@ -198,10 +198,6 @@
           "desc2": "We use AI every day to build and ship production software, so we know exactly how far it can be pushed. That's why we know how attackers are using it, too.\n",
           "link": "https://www.ssw.com.au/rules/rules-to-better-ai/",
           "linkText": "Rules to Better AI"
-        },
-        {
-          "title": "Results over rhetoric",
-          "desc2": "Mainstream tech, real ROI, and clear action items. Every finding is measured by one question: could someone actually use this against you?\n"
         }
       ],
       "_template": "v3VideoHighlights"
@@ -289,62 +285,6 @@
         }
       ],
       "_template": "v3Statistics"
-    },
-    {
-      "background": {
-        "backgroundColour": 7
-      },
-      "brow": "",
-      "heading": "What the AI hunts for",
-      "subtitle": "Across your code and your network, the same weaknesses attackers look for first.",
-      "pills": [
-        {
-          "label": "OWASP Top 10"
-        },
-        {
-          "label": "SQL & command injection"
-        },
-        {
-          "label": "Broken authentication"
-        },
-        {
-          "label": "Authorization & tenancy bypass"
-        },
-        {
-          "label": "Secrets in code & git history"
-        },
-        {
-          "label": "SSRF & open redirects"
-        },
-        {
-          "label": "Cross-site scripting"
-        },
-        {
-          "label": "Prompt injection"
-        },
-        {
-          "label": "CI/CD & supply chain"
-        },
-        {
-          "label": "Insecure cloud defaults"
-        },
-        {
-          "label": "Unpatched CVEs"
-        },
-        {
-          "label": "Exposed ports & services"
-        },
-        {
-          "label": "Privilege escalation"
-        },
-        {
-          "label": "Lateral movement"
-        },
-        {
-          "label": "Weak Wi-Fi security"
-        }
-      ],
-      "_template": "v3Pills"
     },
     {
       "background": {
