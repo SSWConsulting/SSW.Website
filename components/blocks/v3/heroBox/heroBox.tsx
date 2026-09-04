@@ -15,6 +15,10 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 // (e.g. an unset/legacy value) — SSW dark gray, the default section background.
 const DEFAULT_SCOOP_COLOR = "#090909";
 
+// Falls back to the polygon artwork whenever a slide has no background image,
+// including when an editor clears one.
+const DEFAULT_BACKGROUND_IMAGE = "/images/background/polygonBackground.png";
+
 // Speaker headshots shown on the right of the banner. The photo comes from the
 // referenced presenter unless the slide overrides it with its own image.
 const SlideSpeakers = ({ slide, className = "" }) => {
@@ -85,7 +89,6 @@ export const V3HeroBox = ({ data, priority = false }) => {
   const slides = [data, ...(data?.slides ?? []).filter(Boolean)];
   const [activeSlide, setActiveSlide] = useState(0);
   const current = Math.min(activeSlide, slides.length - 1);
-  const hasImage = slides[current]?.backgroundMedia?.imageSource;
   // The red wash exists to keep white text legible over a photo. Event banner
   // slides sit on dark artwork already, so it just tints them.
   const hasSpeakers =
@@ -185,26 +188,26 @@ export const V3HeroBox = ({ data, priority = false }) => {
           )}
         >
           {/* Background images, anchored to the right of the box, cross-fading between slides */}
-          {slides.map((slide, index) =>
-            slide?.backgroundMedia?.imageSource ? (
-              <Image
-                key={`hero-slide-image-${index}`}
-                fill
-                priority={priority && index === 0}
-                fetchPriority={priority && index === 0 ? "high" : undefined}
-                quality={75}
-                sizes="(min-width: 1440px) 1312px, 100vw"
-                src={slide.backgroundMedia.imageSource}
-                alt={slide.backgroundMedia.altText ?? "Hero background"}
-                className={cn(
-                  "object-cover object-right transition-opacity duration-500",
-                  index === current ? "opacity-60 lg:opacity-100" : "opacity-0"
-                )}
-                data-tina-field={tinaField(slide, "backgroundMedia")}
-              />
-            ) : null
-          )}
-          {hasImage && !hasSpeakers && (
+          {slides.map((slide, index) => (
+            <Image
+              key={`hero-slide-image-${index}`}
+              fill
+              priority={priority && index === 0}
+              fetchPriority={priority && index === 0 ? "high" : undefined}
+              quality={75}
+              sizes="(min-width: 1440px) 1312px, 100vw"
+              src={
+                slide?.backgroundMedia?.imageSource ?? DEFAULT_BACKGROUND_IMAGE
+              }
+              alt={slide?.backgroundMedia?.altText ?? "Hero background"}
+              className={cn(
+                "object-cover object-right transition-opacity duration-500",
+                index === current ? "opacity-60 lg:opacity-100" : "opacity-0"
+              )}
+              data-tina-field={tinaField(slide, "backgroundMedia")}
+            />
+          ))}
+          {!hasSpeakers && (
             <div
               aria-hidden="true"
               className={cn(

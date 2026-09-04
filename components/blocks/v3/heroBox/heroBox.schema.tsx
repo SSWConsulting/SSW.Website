@@ -22,9 +22,10 @@ const headshotGuideField: TinaField = {
   ui: {
     component: () => (
       <TinaInfo>
-        💡 The photo is cropped to a circle, so use a square, shoulders-up
-        headshot with the face in the top half. A cut-out on a transparent
-        background sits on the SSW red circle, like this:
+        💡 The banner draws a red circle behind each speaker, so upload a
+        transparent PNG cut-out — squarish, shoulders-up, with the face in the
+        top half. An opaque photo (like a presenter&apos;s default profile
+        picture) covers the circle instead of sitting on it. Aim for this:
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/thumbs/tina/hero-speaker-headshot-example.png"
@@ -45,8 +46,8 @@ const backgroundGuideField: TinaField = {
     component: () => (
       <TinaInfo>
         💡 Use a wide, dark, low-contrast landscape image — the heading, date
-        and buttons sit over the left half in white. The polygon artwork below
-        is the default and works with any event.
+        and buttons sit over the left half in white. Clear this field to go back
+        to the polygon artwork below, which works with any event.
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/background/polygonBackground.png"
