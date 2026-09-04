@@ -102,7 +102,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
   }
 
   const prevAndNextSlideButtons = slides.length > 1 && (
-    <div className="absolute bottom-3 left-1/2 flex w-full -translate-x-1/2 items-center justify-center gap-2">
+    <div className="absolute bottom-1 left-1/2 flex w-full -translate-x-1/2 items-center justify-center gap-2 sm:bottom-3">
       <button
         type="button"
         aria-label="Previous slide"
@@ -125,7 +125,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
   // With a single slide there are no prev/next controls, so fill the scoop with
   // a scroll-down affordance instead of leaving the notch empty.
   const scrollDownButton = slides.length <= 1 && (
-    <div className="absolute bottom-3 left-1/2 flex w-full -translate-x-1/2 items-center justify-center">
+    <div className="absolute bottom-1 left-1/2 flex w-full -translate-x-1/2 items-center justify-center sm:bottom-3">
       <button
         type="button"
         aria-label="Scroll to content"
