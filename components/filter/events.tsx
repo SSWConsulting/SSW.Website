@@ -338,16 +338,23 @@ const LoadedEvents: React.FC<AllEventsProps> = ({
 
 const EventMetaItem = ({
   icon: Icon,
+  label,
   children,
 }: {
   icon: React.ElementType;
+  // What the icon stands for. The row replaced the old inline "Presenter:" /
+  // "Location:" text, and react-icons emits a bare <svg> with no accessible
+  // name, so without this a screen reader reads the value with no clue what it
+  // describes.
+  label: string;
   children: React.ReactNode;
 }) => {
   if (!children) return null;
 
   return (
     <span className="flex min-w-0 items-center gap-2">
-      <Icon className="size-4 shrink-0" />
+      <Icon aria-hidden className="size-4 shrink-0" />
+      <span className="sr-only">{label}: </span>
       <span className="flex min-w-0 flex-wrap items-center gap-x-2">
         {children}
       </span>
@@ -398,21 +405,20 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   };
 
   const city = event.city === "Other" ? event.cityOther : event.city;
-  let eventSite = { name: city, url: event.url };
-
-  if (event.hostedAtSsw) {
-    eventSite = {
-      name: CITY_MAP[city]?.name,
-      url: CITY_MAP[city]?.url,
-    };
-  }
+  // Name only: the card is a single link to the event, so the office page is
+  // not linked from here.
+  const eventSiteName = event.hostedAtSsw ? CITY_MAP[city]?.name : city;
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
 
+  // linkless: the whole card is one overlay anchor, so a profile link here
+  // would be unreachable by mouse yet still focusable, sending pointer and
+  // keyboard users to different destinations. The profile links stay on the
+  // event page itself.
   const presenter = event.presenterName ? (
     event.presenterName
   ) : event.presenterList?.length > 0 ? (
-    <PresenterList presenters={event.presenterList} />
+    <PresenterList linkless presenters={event.presenterList} />
   ) : null;
 
   const tags = [event.calendarType, event.category].filter(Boolean);
@@ -434,8 +440,10 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
           className={cn(
             cardShell,
             "flex-row gap-5 p-5",
-            "border-stroke-weak bg-gray-50 hover:border-brand hover:bg-white",
-            "dark:border-hairline dark:bg-card dark:hover:border-brand dark:hover:bg-card-hover",
+            // bg-card / bg-card-hover are theme-aware, so one pair covers both
+            // modes; only the border colour still differs.
+            "border-stroke-weak bg-card hover:border-brand hover:bg-card-hover",
+            "dark:border-hairline dark:hover:border-brand",
             "active:bg-gray-100 dark:active:bg-card"
           )}
         >
@@ -475,7 +483,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             </h3>
 
             <EventMetaGrid>
-              <EventMetaItem icon={FiCalendar}>
+              <EventMetaItem icon={FiCalendar} label="Date">
                 {formattedDate ? (
                   <>
                     <span className="min-w-0">{formattedDate}</span>
@@ -490,11 +498,13 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
 
               {/* Skipped entirely when both are missing: an empty row would
                   still take a gap out of the column above. */}
-              {(presenter || eventSite.name) && (
+              {(presenter || eventSiteName) && (
                 <EventMetaRow>
-                  <EventMetaItem icon={FiUser}>{presenter}</EventMetaItem>
-                  <EventMetaItem icon={FiMapPin}>
-                    {eventSite.name}
+                  <EventMetaItem icon={FiUser} label="Presenter">
+                    {presenter}
+                  </EventMetaItem>
+                  <EventMetaItem icon={FiMapPin} label="Location">
+                    {eventSiteName}
                   </EventMetaItem>
                 </EventMetaRow>
               )}
@@ -502,7 +512,7 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
               {/* Tested here, not inside EventMetaItem: an empty map returns
                   [], which is truthy, so the icon would show up alone. */}
               {tags.length > 0 && (
-                <EventMetaItem icon={FiTag}>
+                <EventMetaItem icon={FiTag} label="Tags">
                   {tags.map((tag) => (
                     <span key={tag} className={productTagChip}>
                       {tag}

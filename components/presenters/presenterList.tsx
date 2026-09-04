@@ -7,9 +7,17 @@ export type Presenter = {
 
 type PresenterListProps = {
   presenters: { presenter?: Presenter }[];
+  // Renders names as plain text instead of profile links. For callers that sit
+  // inside a larger click target: a nested anchor under an overlay link is
+  // unreachable by mouse but still focusable, so the two inputs would navigate
+  // to different places.
+  linkless?: boolean;
 };
 
-export const PresenterList: React.FC<PresenterListProps> = ({ presenters }) => {
+export const PresenterList: React.FC<PresenterListProps> = ({
+  presenters,
+  linkless,
+}) => {
   const unwrappedPresenters = presenters
     .map((p) => p.presenter?.presenter)
     .filter((p) => p.name);
@@ -22,7 +30,7 @@ export const PresenterList: React.FC<PresenterListProps> = ({ presenters }) => {
     <>
       {unwrappedPresenters.map((presenter, index) => (
         <React.Fragment key={`${presenter.name}-${index}`}>
-          <Presenter {...presenter} />
+          <Presenter {...presenter} linkless={linkless} />
           {index < unwrappedPresenters.length - 1 && (
             <span className="min-w-1.5">, </span>
           )}
@@ -35,14 +43,19 @@ export const PresenterList: React.FC<PresenterListProps> = ({ presenters }) => {
 type PresenterProps = {
   name?: string;
   peopleProfileURL?: string;
+  linkless?: boolean;
 };
-const Presenter: React.FC<PresenterProps> = ({ name, peopleProfileURL }) => {
+const Presenter: React.FC<PresenterProps> = ({
+  name,
+  peopleProfileURL,
+  linkless,
+}) => {
   if (!name) {
     throw PresenterNameUndefinedException;
   }
   return (
     <>
-      {peopleProfileURL ? (
+      {peopleProfileURL && !linkless ? (
         <CustomLink href={peopleProfileURL}>{name}</CustomLink>
       ) : (
         name
