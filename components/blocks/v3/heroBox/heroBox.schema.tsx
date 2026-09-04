@@ -57,15 +57,8 @@ const backgroundGuideField: TinaField = {
 };
 
 // Shared by the primary slide (the block's own fields) and each extra slide.
-const slideFields: TinaField[] = [
-  alternatingHeadingSchema,
-  {
-    type: "rich-text",
-    label: "Description",
-    name: "description",
-    description: "Supporting text shown beneath the heading.",
-    toolbarOverride: ["bold", "italic", "link"],
-  },
+// Only on event slides: the date and the speakers shown to the right.
+const eventFields: TinaField[] = [
   {
     type: "string",
     label: "Event Date",
@@ -119,6 +112,17 @@ const slideFields: TinaField[] = [
       },
     ],
   },
+];
+
+const commonSlideFields: TinaField[] = [
+  alternatingHeadingSchema,
+  {
+    type: "rich-text",
+    label: "Description",
+    name: "description",
+    description: "Supporting text shown beneath the heading.",
+    toolbarOverride: ["bold", "italic", "link"],
+  },
   {
     type: "object",
     label: "Buttons",
@@ -153,6 +157,13 @@ const slideFields: TinaField[] = [
   },
 ];
 
+// The event fields sit between the description and the buttons.
+const slideFields = (event: boolean): TinaField[] => [
+  ...commonSlideFields.slice(0, 2),
+  ...(event ? eventFields : []),
+  ...commonSlideFields.slice(2),
+];
+
 export const V3HeroBoxSchema: Template = {
   name: "v3HeroBox",
   label: "<V3> Hero Box",
@@ -172,22 +183,40 @@ export const V3HeroBoxSchema: Template = {
   fields: [
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
-    ...slideFields,
+    ...slideFields(true),
     {
       type: "object",
       label: "Extra Slides",
       name: "slides",
       list: true,
       description:
-        "Optional extra slides for the hero carousel. The fields above form the first slide; navigation arrows appear once a slide is added here.",
-      ui: {
-        itemProps: (item) => ({ label: item?.heading ?? "Slide" }),
-        defaultItem: {
-          heading: "New slide",
-          backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
+        "Optional extra slides for the hero carousel. The fields above form the first slide; navigation arrows appear once a slide is added here. Pick Event Slide for a date and speakers.",
+      templates: [
+        {
+          name: "standardSlide",
+          label: "Standard Slide",
+          ui: {
+            itemProps: (item) => ({ label: item?.heading ?? "Standard Slide" }),
+            defaultItem: {
+              heading: "New slide",
+              backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
+            },
+          },
+          fields: slideFields(false),
         },
-      },
-      fields: slideFields,
+        {
+          name: "eventSlide",
+          label: "Event Slide",
+          ui: {
+            itemProps: (item) => ({ label: item?.heading ?? "Event Slide" }),
+            defaultItem: {
+              heading: "Join us at ...",
+              backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
+            },
+          },
+          fields: slideFields(true),
+        },
+      ],
     },
   ],
 };
