@@ -79,6 +79,8 @@ export default {
         // Sticky-sidebar + fluid-content layout (/consulting and /events).
         sidebar: "minmax(300px, 26%) minmax(0, 1fr)",
         "sidebar-narrow": "minmax(260px, 30%) minmax(0, 1fr)",
+        // Hero banner: fluid text column beside a speaker column that hugs.
+        "hero-speakers": "1fr auto",
       },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
@@ -489,6 +491,8 @@ export default {
         "sunken-scrim":
           "linear-gradient(180deg, color-mix(in srgb, var(--background-sunken) 90%, transparent), color-mix(in srgb, var(--background-sunken) 98%, transparent))",
         "red-radial": "radial-gradient(circle, #cc4141, transparent 70%)",
+        // Sits behind the hero banner's speaker cut-outs, sampled from the design.
+        "speaker-radial": "radial-gradient(circle, #e45655 0%, #6e2a29 100%)",
         done: "url('/images/icons/done.png')",
         "arrow-right": "url('/images/icons/arrow-right.png')",
         "live-banner-wait":
