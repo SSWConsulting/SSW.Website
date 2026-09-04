@@ -115,6 +115,9 @@ export default {
         104: "26rem",
       },
       minHeight: {
+        // Keeps the /events sidebar promo the height of the Vimeo tiles it
+        // replaced, without an arbitrary value (tailwindcss/no-arbitrary-value).
+        "sidebar-card": "200px",
         4: "1rem",
         8: "2rem",
         12: "3rem",

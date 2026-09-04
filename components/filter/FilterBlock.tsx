@@ -7,14 +7,9 @@ export const NO_SELECTION = -1;
 interface FilterBlockProps {
   groups: FilterGroupProps[];
   children: React.ReactNode;
-  sidebarChildren?: React.ReactNode;
 }
 
-export const FilterBlock = ({
-  groups,
-  children,
-  sidebarChildren,
-}: FilterBlockProps) => {
+export const FilterBlock = ({ groups, children }: FilterBlockProps) => {
   return (
     <div className="mb-10 md:flex md:flex-row">
       <div className="md:mr-12 md:shrink-0 md:basis-64">
@@ -31,8 +26,6 @@ export const FilterBlock = ({
         ) : (
           <p>Loading...</p>
         )}
-
-        {sidebarChildren && <div className="mt-8">{sidebarChildren}</div>}
       </div>
       <div className="min-w-0 max-w-full shrink grow">{children}</div>
     </div>

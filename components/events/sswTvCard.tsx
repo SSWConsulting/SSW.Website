@@ -18,7 +18,7 @@ export const SswTvCard = ({ className }: { className?: string }) => (
       // `dark` pins every token below to its dark value: this is a media
       // surface rather than a page surface, and it is also the only variant
       // the SSW TV lockup ships in — the light one is a separate PNG.
-      "dark min-h-[200px] justify-between gap-3 p-5",
+      "dark min-h-sidebar-card justify-between gap-3 p-5",
       "border-hairline bg-card hover:border-brand hover:bg-card-hover",
       className
     )}
