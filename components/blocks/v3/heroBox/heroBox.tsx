@@ -15,13 +15,10 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 // (e.g. an unset/legacy value) — SSW dark gray, the default section background.
 const DEFAULT_SCOOP_COLOR = "#090909";
 
-// Falls back to the polygon artwork whenever a slide has no background image,
-// including when an editor clears one.
 const DEFAULT_BACKGROUND_IMAGE = "/images/background/polygonBackground.png";
 
-// The photo comes from the referenced presenter unless the slide overrides it
-// with its own image. A speaker with no resolvable photo is dropped, so this is
-// the single source of truth for "does this slide show speakers".
+// Speakers with no resolvable photo are dropped, so this also answers
+// "does this slide show speakers".
 const getSpeakers = (slide) =>
   (slide?.speakers ?? [])
     .filter(Boolean)
@@ -33,7 +30,6 @@ const getSpeakers = (slide) =>
     }))
     .filter((speaker) => speaker.image);
 
-// Speaker headshots shown on the right of the banner.
 const SlideSpeakers = ({ slide, className = "" }) => {
   const speakers = getSpeakers(slide);
 
@@ -43,7 +39,6 @@ const SlideSpeakers = ({ slide, className = "" }) => {
     <div
       className={cn(
         "flex shrink-0 items-start gap-3 sm:gap-6",
-        // Two speakers stack vertically on tablet, as in the design.
         speakers.length > 1 && "sm:flex-col lg:flex-row",
         className
       )}
@@ -65,7 +60,6 @@ const SlideSpeakers = ({ slide, className = "" }) => {
             <figcaption
               className={cn(
                 "mt-2 max-w-28 text-white sm:max-w-48",
-                // With two speakers there is no room for captions until desktop.
                 speakers.length > 1 && "hidden lg:block"
               )}
             >
@@ -89,8 +83,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
   const slides = (data?.slides ?? []).filter(Boolean);
   const [activeSlide, setActiveSlide] = useState(0);
   const current = Math.min(activeSlide, Math.max(slides.length - 1, 0));
-  // The red wash keeps white text legible over a photo. The polygon fallback is
-  // already dark, so washing it just tints the banner red.
+  // The wash keeps white text legible over a photo; the polygon default is already dark.
   const hasCustomBackground = !!slides[current]?.backgroundMedia?.imageSource;
 
   function slideLeft() {

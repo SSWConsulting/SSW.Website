@@ -6,7 +6,6 @@ import { buttonSchema } from "../../../button/templateButton.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { optimizedImageSchema } from "../../../../tina/collections/shared-fields";
 
-// Dark low-poly artwork used as the default banner backdrop.
 const DEFAULT_BACKGROUND_MEDIA = {
   altText: "Polygon background",
   imageSource: "/images/background/polygonBackground.png",
@@ -14,7 +13,6 @@ const DEFAULT_BACKGROUND_MEDIA = {
   imageHeight: 724,
 };
 
-// Display-only guidance shown above the speaker photo override.
 const headshotGuideField: TinaField = {
   type: "string",
   name: "headshotGuide",
@@ -35,7 +33,6 @@ const headshotGuideField: TinaField = {
   },
 };
 
-// Display-only guidance shown above the background image picker.
 const backgroundGuideField: TinaField = {
   type: "string",
   name: "backgroundGuide",
@@ -159,7 +156,6 @@ const tailSlideFields: TinaField[] = [
   },
 ];
 
-// The event fields sit between the description and the buttons.
 const slideFields = (event: boolean): TinaField[] => [
   ...headingFields,
   ...(event ? eventFields : []),
