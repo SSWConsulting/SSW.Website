@@ -1,0 +1,501 @@
+{
+  "seo": {
+    "title": "AI-Powered Security Consulting | SSW",
+    "description": "Attackers now use AI to find and exploit vulnerabilities in minutes. SSW's AI-powered code security reviews and network vulnerability assessments find and fix the holes before they do. Sydney, Melbourne, Brisbane & Newcastle.",
+    "canonical": "https://www.ssw.com.au/consulting/security",
+    "images": [
+      {
+        "url": "/images/consulting/open-graph/security.jpg",
+        "width": 1200,
+        "height": 629,
+        "alt": "SSW Security Consulting - AI-Powered Vulnerability Scanning"
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": false
+      },
+      "finalBreadcrumb": "AI-Powered Security",
+      "_template": "breadcrumbs"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "bleed": true,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "brow": "AI-POWERED SECURITY",
+      "heading": "Attackers have AI. **Do you?**",
+      "description": "Breaking into a company used to take skill, time and money. Now anyone can point an AI agent at your code or your network and let it hunt. SSW uses the same AI to find the holes first, verify what's exploitable and fix it before someone else gets there.\n",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "leadCaptureFormOption": "",
+          "buttonLink": "#lead-capture-heading",
+          "iconFirst": false,
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        }
+      ],
+      "mediaType": "image",
+      "image": {
+        "altText": "SSW security engineers reviewing code together",
+        "imageSource": "/images/ssw-web/hero/dev-presenting-2.png",
+        "imageHeight": 481,
+        "imageWidth": 642
+      },
+      "_template": "v3Hero"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Trusted in Sydney, Melbourne, Brisbane and Newcastle by",
+      "logos": [
+        {
+          "logo": "/images/ssw-web/logos/toll_logo.png",
+          "altText": "Toll"
+        },
+        {
+          "logo": "/images/ssw-web/logos/symantec_logo.png",
+          "altText": "Symantec"
+        },
+        {
+          "logo": "/images/ssw-web/logos/microsoft_logo.png",
+          "altText": "Microsoft"
+        },
+        {
+          "logo": "/images/ssw-web/logos/event_cinemas_logo.png",
+          "altText": "Event Cinemas"
+        },
+        {
+          "logo": "/images/ssw-web/logos/domain_logo.png",
+          "altText": "Domain"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cisco_logo.png",
+          "altText": "Cisco"
+        },
+        {
+          "logo": "/images/ssw-web/logos/cba_logo.png",
+          "altText": "Commonwealth Bank"
+        },
+        {
+          "logo": "/images/ssw-web/logos/allianz_logo.png",
+          "altText": "Allianz"
+        }
+      ],
+      "_template": "v3LogoCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "THE NEW THREAT LANDSCAPE",
+      "heading": "The cost of hacking you just dropped to zero",
+      "description": "For decades, security worked on a simple economic truth: finding a vulnerability took a skilled person a lot of time, so attackers only bothered with targets worth the effort. AI has broken that equation. The same tools that help our developers ship faster let an attacker read your code, map your network and write a working exploit in an afternoon.\n",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "Attackers don't need to be experts",
+          "description": "AI agents read source code, cross-reference CVEs and chain exploits together with no human expertise required. A beginner with a laptop now has the reach of a seasoned red team.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Every company is now a target",
+          "description": "When probing a system costs nothing, attackers stop choosing targets and simply scan everything. \"We're too small to be worth hacking\" is no longer a defence.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "An annual pentest can't keep up",
+          "description": "A yearly penetration test is a snapshot. Your code ships every sprint and your network changes every week, while attackers scan around the clock. Your defence has to move at the same speed.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "brow": "SERVICE 01 – APPLICATION CODE",
+      "heading": "AI-powered **code security review**",
+      "description": "A white-box review of your entire codebase, not a sample. Our AI fans out across every attack surface in parallel, traces each suspicious path from request to effect, and hands our senior engineers a shortlist of what's actually exploitable. You get verified findings with an exploit and a fix, not a wall of false positives.\n",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "Every attack surface, at once",
+          "description": "Authentication and token handling, authorization and tenancy, API inputs to sinks, secrets and third-party integrations, the frontend, infrastructure-as-code and your CI/CD pipeline. Each is reviewed in depth, in parallel.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Verified, not guessed",
+          "description": "Every Critical and High finding is re-read from source by a senior SSW engineer and confirmed end to end before it goes in the report. Anything that can't be proven is rated honestly, with exactly what to check.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "A report your team can act on",
+          "description": "Findings ranked by real blast radius for your system, each with evidence, a concrete exploit and the fix. Every issue is traced to the commit and author that introduced it, alongside a clear record of what you're already doing right.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "SERVICE 02 – NETWORK & INFRASTRUCTURE",
+      "heading": "AI-powered **network vulnerability assessment**",
+      "description": "An on-site assessment that thinks like an attacker. Our AI maps every device on your network, cross-references them against known vulnerabilities and works out how an intruder would chain them together to reach what matters. It runs on hardware we bring, with local models, so nothing about your network ever leaves your building.\n",
+      "steps": [
+        {
+          "brow": "01",
+          "heading": "See what's really on your network",
+          "description": "Automated reconnaissance discovers and classifies every host, service and open port, including the forgotten printer, the unpatched server and the Wi-Fi network with a guessable key. Each is scored against the latest CVE data.\n"
+        },
+        {
+          "brow": "02",
+          "heading": "Prove the path, safely",
+          "description": "Knowing a vulnerability exists isn't the same as knowing it matters. We show the real route from an exposed service to privilege escalation and lateral movement, using an engagement profile you choose, from silent reconnaissance to a full assessment.\n"
+        },
+        {
+          "brow": "03",
+          "heading": "Report, fix, retest",
+          "description": "A technical report for your engineers, an executive briefing for your board and a compliance checklist for your auditors. Once the fixes are in, we run again to confirm the holes are closed.\n"
+        }
+      ],
+      "_template": "v3FeatureSteps"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true
+      },
+      "videoUrl": "https://www.youtube.com/watch?v=uk_YFezVAuw",
+      "greyscaleThumbnail": false,
+      "figure": "Video: Rules to Better Security with Adam Cogan - The 10 tips CEOs must know (6 mins)",
+      "heading": "Why choose SSW?",
+      "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years. We've been writing enterprise software, and defending it, since before most attackers were born.\n",
+      "highlights": [
+        {
+          "title": "Developers first",
+          "desc2": "We don't just hand you a PDF of findings. Because we build software for a living, we can fix what we find in your codebase and harden your infrastructure ourselves.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-security/",
+          "linkText": "Rules to Better Security"
+        },
+        {
+          "title": "AI in the trenches",
+          "desc2": "We use AI every day to build and ship production software, so we know exactly how far it can be pushed. That's why we know how attackers are using it, too.\n",
+          "link": "https://www.ssw.com.au/rules/rules-to-better-ai/",
+          "linkText": "Rules to Better AI"
+        },
+        {
+          "title": "Results over rhetoric",
+          "desc2": "Mainstream tech, real ROI, and clear action items. Every finding is measured by one question: could someone actually use this against you?\n"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "bleed": true,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "testimonials": [
+        {
+          "quote": "Uly, your team is such a bunch of angels! **Could not be happier that we chose to go with you.** The whole crew have been so nice and so wonderful to us – they all deserve big props.",
+          "authorName": "Niru Verma",
+          "authorTitle": "Mercury Information Security Services",
+          "authorImage": "/images/testimonialAvatars/niru-verma.jpeg",
+          "authorImageAlt": "Niru Verma"
+        }
+      ],
+      "_template": "v3Testimonials"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "OUR PROCESS",
+      "heading": "What to expect working with SSW",
+      "description": "",
+      "steps": [
+        {
+          "heading": "Initial Call",
+          "description": "A short call with a senior engineer to understand your systems, your exposure and what keeps you up at night.\n",
+          "link": "https://www.ssw.com.au/rules/prepare-for-initial-meetings"
+        },
+        {
+          "heading": "Scope & Authorise",
+          "description": "We agree on the repositories, network ranges and engagement profile, put written authorisation in place and set a schedule that won't disrupt your business.\n",
+          "link": "https://www.ssw.com.au/rules/penetration-testing"
+        },
+        {
+          "heading": "Scan & Verify",
+          "description": "The AI does the sweep across every attack surface. Our senior engineers verify every Critical and High by hand before it reaches your report.\n",
+          "link": "https://www.ssw.com.au/rules/safe-against-the-owasp-top-10"
+        },
+        {
+          "heading": "Fix & Retest",
+          "description": "We walk your team through the findings, help fix them in the code or on the network, then run again to prove the holes are closed. Many clients keep us on to repeat this every sprint.\n",
+          "link": "https://www.ssw.com.au/consulting/support-plans"
+        }
+      ],
+      "_template": "v3Process"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Tell us about **your** systems",
+      "description": "Answer a few quick questions. We'll set up an initial meeting and show you where we'd start looking\n",
+      "_template": "v3LeadCapture"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "heading": "Why teams trust SSW with their security",
+      "statistics": [
+        {
+          "figure": 7000,
+          "figureSuffix": "+",
+          "heading": "Solutions delivered",
+          "description": "Enterprise-grade software"
+        },
+        {
+          "figure": 1800,
+          "figureSuffix": "+",
+          "heading": "Happy clients",
+          "description": "Across all industries"
+        },
+        {
+          "figure": 30,
+          "figureSuffix": "+",
+          "heading": "Years experience",
+          "description": "Trusted since 1999"
+        }
+      ],
+      "_template": "v3Statistics"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "",
+      "heading": "What the AI hunts for",
+      "subtitle": "Across your code and your network, the same weaknesses attackers look for first.",
+      "pills": [
+        {
+          "label": "OWASP Top 10"
+        },
+        {
+          "label": "SQL & command injection"
+        },
+        {
+          "label": "Broken authentication"
+        },
+        {
+          "label": "Authorization & tenancy bypass"
+        },
+        {
+          "label": "Secrets in code & git history"
+        },
+        {
+          "label": "SSRF & open redirects"
+        },
+        {
+          "label": "Cross-site scripting"
+        },
+        {
+          "label": "Prompt injection"
+        },
+        {
+          "label": "CI/CD & supply chain"
+        },
+        {
+          "label": "Insecure cloud defaults"
+        },
+        {
+          "label": "Unpatched CVEs"
+        },
+        {
+          "label": "Exposed ports & services"
+        },
+        {
+          "label": "Privilege escalation"
+        },
+        {
+          "label": "Lateral movement"
+        },
+        {
+          "label": "Weak Wi-Fi security"
+        }
+      ],
+      "_template": "v3Pills"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Defence in depth",
+      "heading": "Security is a team sport",
+      "subtitle": "Finding the holes is step one. We can also help you build the walls.",
+      "cards": [
+        {
+          "title": "Microsoft Entra ID",
+          "description": "Identity done right: Conditional Access, MFA, Passkeys and risk policies.",
+          "link": "/consulting/entra-id-assessment"
+        },
+        {
+          "title": "Azure",
+          "description": "Cloud architecture hardened with private networking and least privilege.",
+          "link": "/consulting/azure"
+        },
+        {
+          "title": "DevOps",
+          "description": "Pipelines that scan every build so vulnerabilities never reach production.",
+          "link": "/consulting/devops"
+        },
+        {
+          "title": "Network Architecture",
+          "description": "Segmented, monitored networks designed to contain an intruder, not host one.",
+          "link": "/consulting/network-architecture"
+        }
+      ],
+      "_template": "v3StackCards"
+    },
+    {
+      "isStacked": false,
+      "brow": "learn more on SSWTV",
+      "heading": "Security wisdom from the trenches",
+      "isH1": false,
+      "body": "At SSW, we've been building and defending enterprise software for thirty years. We document everything we learn for free on SSW Rules and SSW TV.",
+      "tabletTextAlignment": "Left",
+      "cards": [
+        {
+          "guid": "sec1a",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=6F6LY7x8gg8",
+          "altText": "Why You've Already Been Hacked | Troy Hunt | SSW User Group",
+          "category": "Threat Landscape",
+          "heading": "Why You've Already Been Hacked | Troy Hunt"
+        },
+        {
+          "guid": "sec2b",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=lbLoSTfWPbA",
+          "altText": "AI Security Fundamentals | Ulysses Maclaren & Sarah Young",
+          "category": "AI Security",
+          "heading": "AI Security Fundamentals | Ulysses Maclaren & Sarah Young"
+        },
+        {
+          "guid": "sec3c",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=uk_YFezVAuw",
+          "altText": "Rules to Better Security with Adam Cogan - The 10 tips CEOs must know",
+          "category": "For CEOs",
+          "heading": "Rules to Better Security - The 10 tips CEOs must know"
+        },
+        {
+          "guid": "sec4d",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=K1t73xArqs0",
+          "altText": "Beyond Passwords: The Future (and Present) of Authentication",
+          "category": "Identity",
+          "heading": "Beyond Passwords: The Future (and Present) of Authentication"
+        },
+        {
+          "guid": "sec5e",
+          "mediaType": "youtube",
+          "youtubeUrl": "https://www.youtube.com/watch?v=JnjVvS2Lw7M",
+          "altText": "Do you know how to choose an Enterprise Password Manager? | Warwick Leahy | SSW Rules",
+          "category": "SSW Rules",
+          "heading": "Do you know how to choose an Enterprise Password Manager?"
+        }
+      ],
+      "background": {
+        "backgroundColour": 7
+      },
+      "_template": "v3CardCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Frequently asked questions",
+      "faqs": [
+        {
+          "question": "How much does it cost?",
+          "answer": "Every engagement is scoped to your systems, so there's no single price. The initial call is always 100% **free**. From there we agree a fixed scope, whether that's a single codebase, a network segment or your whole estate, and give you a clear estimate before anything starts.\n",
+          "link": "https://www.ssw.com.au/rules/what-is-a-spec-review"
+        },
+        {
+          "question": "Is this a penetration test?",
+          "answer": "The network assessment goes further than a scanner: it covers reconnaissance, vulnerability analysis and controlled exploitation to prove which findings matter, then a retest once you've fixed them. The code review is different again. It's a white-box review of your actual source, so it finds the flaws an outside-in test can only guess at. Both run under written authorisation and an agreed scope.\n",
+          "link": "https://www.ssw.com.au/rules/penetration-testing"
+        },
+        {
+          "question": "Does our code or network data get sent to a public AI?",
+          "answer": "The network assessment runs entirely on-site on hardware we bring, using local AI models, so nothing about your network leaves your building. For code reviews we work under enterprise agreements where your source is never used for training, and where your requirements are stricter we can run the review on local models too.\n",
+          "link": "https://www.ssw.com.au/consulting/local-llm-deployment"
+        },
+        {
+          "question": "How is this different from the scanner we already run?",
+          "answer": "Scanners produce lists. They flag every library version and every open port, and your team spends weeks working out which ones actually matter. Our AI traces each finding through your real system to see whether it's reachable and exploitable, then a senior engineer confirms every Critical and High by hand. You get a short list of real risks, ranked by impact, instead of a long list of maybes.\n"
+        },
+        {
+          "question": "Will the assessment disrupt our business?",
+          "answer": "No. You choose the engagement profile, from silent reconnaissance that leaves no trace, through to a full assessment with active exploitation, and we schedule active phases around your operations. Nothing is exploited without your explicit authorisation.\n"
+        },
+        {
+          "question": "Do you fix what you find?",
+          "answer": "Yes! We're developers and infrastructure engineers first. We can fix the findings in your codebase, harden your network and pipelines, and then retest to prove the holes are closed. We can also work alongside your existing team and upskill them along the way.\n",
+          "link": "https://www.ssw.com.au/consulting/mentoring"
+        },
+        {
+          "question": "How often should we do this?",
+          "answer": "As often as your systems change. Attackers scan continuously, so a once-a-year review leaves you exposed for the other eleven months. Many clients run the code review every sprint or on every release, and repeat the network assessment whenever infrastructure changes or at least quarterly.\n",
+          "link": "https://www.ssw.com.au/consulting/support-plans"
+        }
+      ],
+      "_template": "v3Faq"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "heading": "Find the holes before someone else does",
+      "description": "Get in touch and we'll set up an initial meeting to show you where we'd start looking\n",
+      "buttons": [
+        {
+          "buttonText": "Book a Free Initial Meeting",
+          "buttonLink": "#lead-capture-heading",
+          "colour": 0
+        },
+        {
+          "buttonText": "+61 2 9953 3000",
+          "buttonLink": "tel:+61299533000",
+          "icon": "BiPhone",
+          "iconFirst": true,
+          "colour": 1
+        }
+      ],
+      "_template": "v3Cta"
+    }
+  ]
+}
