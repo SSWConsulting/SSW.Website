@@ -1,0 +1,25 @@
+{
+  "title": "Adelaide .NET User Group - From Copilot to the Garden of Eden, with Adam Cogan",
+  "slug": "adelaide-dotnet-from-copilot-to-the-garden-of-eden",
+  "url": "https://www.meetup.com/adelaide-dotnet/events/316396519/",
+  "ctaLabel": "Register on Meetup",
+  "thumbnail": "/images/events/adelaide-dotnet-from-copilot-to-the-garden-of-eden.jpeg",
+  "thumbnailDescription": "From Copilot to the Garden of Eden with Adam Cogan",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx"
+    }
+  ],
+  "startDateTime": "2026-10-14T07:00:00.000Z",
+  "endDateTime": "2026-10-14T09:00:00.000Z",
+  "calendarType": "User Groups",
+  "venue": "JS1 - 13, Jeffrey Smart Building, 217/243 Hindley St",
+  "city": "Adelaide",
+  "category": "Artificial Intelligence",
+  "abstract": "Move beyond the underwhelming 2023 \"Copilot hype\" to the 2026 tools that deliver value for developers. Adam Cogan explores how AI is reshaping the enterprise stack, from Copilot and Cowork to agentic workflows and CLI-based coding. Learn how roles are shifting, which AI assistants are winning, and what an AI-integrated \"Garden of Eden\" looks like. Leave with a practical roadmap to build, analyze, and automate with confidence.",
+  "lead": "Join SSW Chief Architect Adam Cogan at the Adelaide .NET User Group for a practical look at the AI tools changing how developers work.",
+  "description": "Adam Cogan is speaking at the Adelaide .NET User Group.\n\n### From Copilot to the Garden of Eden\n\nMove beyond the underwhelming 2023 \"Copilot hype\" to the 2026 tools that deliver value for developers. Adam cuts through the noise and explores how AI is reshaping the enterprise stack, from Copilot and Cowork to agentic workflows and CLI-based coding.\n\nAgents such as OpenClaw and Hermes are changing how developers automate their day-to-day work. Learn how roles are shifting, which AI assistants are winning, and what an AI-integrated \"Garden of Eden\" looks like. Leave with a practical roadmap to build, analyze, and automate with confidence.\n\n### Agenda (ACDT)\n\n- 5:30 pm - Arrival, networking, and food\n- 5:55 pm - Introductions and news\n- 6:00 pm - From Copilot to the Garden of Eden with Adam Cogan\n- 7:30 pm - Post-event catch-up at the West Oak Hotel across the road\n\nThis is an in-person-only event with strictly limited seating. The organizer recommends Wilson City West Car Park, a two-minute walk from the venue.",
+  "hostedAtSsw": false,
+  "enabled": true,
+  "internalNote": "External event hosted by the Adelaide .NET User Group. The organizer Meetup page confirms Adam Cogan as the speaker and is the source for the schedule, venue, registration link, and event image."
+}
