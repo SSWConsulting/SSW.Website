@@ -176,11 +176,6 @@ export const EventsFilter = ({
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
         </div>
       )}
-
-      {/* The sidebar's copy is desktop-only — see EventsSidebar's promo. */}
-      <div className="mt-12 max-w-sidebar-card md:hidden">
-        <SswTvCard />
-      </div>
     </EventsSidebar>
   );
 };

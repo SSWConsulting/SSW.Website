@@ -2,26 +2,17 @@
 
 import { NO_SELECTION } from "@/components/filter/FilterBlock";
 import type { FilterGroupProps } from "@/components/filter/FilterGroup";
-import { cn } from "@/lib/utils";
+import {
+  StickySidebarLayout,
+  sidebarNavItem,
+} from "@/components/layout/stickySidebar";
 
-// Matches /consulting's sidebar heading so the two pages stay in lockstep.
-const headingClass =
-  "text-xl font-semibold leading-tight max-md:text-lg xl:text-2xl";
-
-// Active and inactive colours are mutually exclusive, never layered: adding
-// `text-brand` on top of `dark:text-muted-foreground` loses in dark mode, since
-// tailwind-merge keeps both and `.dark .dark:text-muted-foreground` outranks a
-// bare `.text-brand` on specificity.
+// <button>s, not the <a>s /consulting uses: these filter in place rather than
+// navigating, so they need the width and alignment an anchor gets by default.
 const navItem = (isActive: boolean) =>
-  cn(
-    "unstyled block w-full min-h-9 rounded-lg px-2.5 py-1.5 text-left text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
-    // A ring, not `outline`: tailwind-merge drops the bare `outline` class,
-    // leaving outline-style: none.
-    "focus-visible:ring-2 focus-visible:ring-brand",
-    "max-md:min-h-0 max-md:w-auto max-md:shrink-0 max-md:rounded-full max-md:border-0.75 max-md:border-hairline max-md:bg-gray-100 max-md:px-3 max-md:py-2.5 dark:max-md:bg-card",
-    isActive
-      ? "text-brand dark:text-brand"
-      : "text-gray-600 hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
+  sidebarNavItem(
+    isActive,
+    "w-full text-left max-md:min-h-0 max-md:w-auto max-md:shrink-0"
   );
 
 type FilterNavProps = FilterGroupProps & { label: string };
@@ -67,9 +58,8 @@ const FilterNav = ({
 type EventsSidebarProps = {
   title: string;
   groups: FilterGroupProps[];
-  // Sits under the nav on desktop only. On mobile the column collapses into a
-  // pinned filter bar, which has to stay bar-height, so the page mounts its
-  // own copy at the foot of the content instead.
+  // Mounted in the sidebar on desktop and at the foot of the content column on
+  // mobile, both by StickySidebarLayout.
   promo?: React.ReactNode;
   children: React.ReactNode;
 };
@@ -83,42 +73,13 @@ export const EventsSidebar = ({
   promo,
   children,
 }: EventsSidebarProps) => (
-  <div className="grid grid-cols-sidebar items-start gap-8 max-xl:grid-cols-sidebar-narrow max-md:grid-cols-1 max-md:gap-4">
-    {/* A plain div, not <aside>: the <nav>s below are already their own
-        landmarks, and wrapping only files the <h1> under "complementary". */}
-    <div
-      className={cn(
-        "sticky top-headerOffset self-start",
-        // top-0 on mobile: the scrim and backdrop-blur are there for cards to
-        // slide underneath. Any offset leaves a gap that cards scroll through
-        // in full view, above the bar rather than behind it.
-        "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
-      )}
-    >
-      <h1
-        className={cn(
-          headingClass,
-          "m-0 whitespace-nowrap p-0 text-foreground max-md:mb-2"
-        )}
-      >
-        {title}
-      </h1>
-
-      {groups?.length > 0 ? (
-        groups.map((group, index) => (
-          <FilterNav key={index} label={group.allText} {...group} />
-        ))
-      ) : (
-        <p className="mt-5 text-muted-foreground">Loading...</p>
-      )}
-
-      {/* Capped, not column-width: it keeps the old sidebar tiles'
-          proportions instead of stretching to a 400px-wide slab. */}
-      {promo && (
-        <div className="mt-8 max-w-sidebar-card max-md:hidden">{promo}</div>
-      )}
-    </div>
-
-    <div className="min-w-0">{children}</div>
-  </div>
+  <StickySidebarLayout
+    title={title}
+    promo={promo}
+    sidebar={groups?.map((group, index) => (
+      <FilterNav key={index} label={group.allText} {...group} />
+    ))}
+  >
+    {children}
+  </StickySidebarLayout>
 );
