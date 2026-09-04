@@ -56,7 +56,6 @@ const backgroundGuideField: TinaField = {
   },
 };
 
-// Shared by the primary slide (the block's own fields) and each extra slide.
 // Only on event slides: the date and the speakers shown to the right.
 const eventFields: TinaField[] = [
   {
@@ -114,7 +113,7 @@ const eventFields: TinaField[] = [
   },
 ];
 
-const commonSlideFields: TinaField[] = [
+const headingFields: TinaField[] = [
   alternatingHeadingSchema,
   {
     type: "rich-text",
@@ -123,6 +122,9 @@ const commonSlideFields: TinaField[] = [
     description: "Supporting text shown beneath the heading.",
     toolbarOverride: ["bold", "italic", "link"],
   },
+];
+
+const tailSlideFields: TinaField[] = [
   {
     type: "object",
     label: "Buttons",
@@ -159,9 +161,9 @@ const commonSlideFields: TinaField[] = [
 
 // The event fields sit between the description and the buttons.
 const slideFields = (event: boolean): TinaField[] => [
-  ...commonSlideFields.slice(0, 2),
+  ...headingFields,
   ...(event ? eventFields : []),
-  ...commonSlideFields.slice(2),
+  ...tailSlideFields,
 ];
 
 export const V3HeroBoxSchema: Template = {
@@ -173,24 +175,30 @@ export const V3HeroBoxSchema: Template = {
         backgroundColour: 8,
         bleed: false,
       },
-      heading: "Three decades of enterprise solutions",
-      description:
-        "We find the best way to build software and make that knowledge available to everyone.",
-      buttons: [{ buttonText: "Schedule a Free Discovery Call", colour: 0 }],
-      backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
+      slides: [
+        {
+          _template: "standardSlide",
+          heading: "Three decades of enterprise solutions",
+          description:
+            "We find the best way to build software and make that knowledge available to everyone.",
+          buttons: [
+            { buttonText: "Schedule a Free Discovery Call", colour: 0 },
+          ],
+          backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
+        },
+      ],
     },
   },
   fields: [
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
-    ...slideFields(true),
     {
       type: "object",
-      label: "Extra Slides",
+      label: "Slides",
       name: "slides",
       list: true,
       description:
-        "Optional extra slides for the hero carousel. The fields above form the first slide; navigation arrows appear once a slide is added here. Pick Event Slide for a date and speakers.",
+        "The banner content. The first slide is the one visitors land on; add more to turn it into a carousel. Pick Event Slide for a date and speakers.",
       templates: [
         {
           name: "standardSlide",
@@ -198,7 +206,10 @@ export const V3HeroBoxSchema: Template = {
           ui: {
             itemProps: (item) => ({ label: item?.heading ?? "Standard Slide" }),
             defaultItem: {
-              heading: "New slide",
+              heading: "Three decades of enterprise solutions",
+              buttons: [
+                { buttonText: "Schedule a Free Discovery Call", colour: 0 },
+              ],
               backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
             },
           },
@@ -211,6 +222,14 @@ export const V3HeroBoxSchema: Template = {
             itemProps: (item) => ({ label: item?.heading ?? "Event Slide" }),
             defaultItem: {
               heading: "Join us at ...",
+              eventDate: "1 - 2 Jan 2027",
+              speakers: [
+                {
+                  presenter: "content/presenters/adam-cogan.mdx",
+                  role: "SSW Chief Architect",
+                },
+              ],
+              buttons: [{ buttonText: "Learn more", colour: 0 }],
               backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
             },
           },

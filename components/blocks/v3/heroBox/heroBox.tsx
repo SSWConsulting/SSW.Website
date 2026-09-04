@@ -19,10 +19,11 @@ const DEFAULT_SCOOP_COLOR = "#090909";
 // including when an editor clears one.
 const DEFAULT_BACKGROUND_IMAGE = "/images/background/polygonBackground.png";
 
-// Speaker headshots shown on the right of the banner. The photo comes from the
-// referenced presenter unless the slide overrides it with its own image.
-const SlideSpeakers = ({ slide, className = "" }) => {
-  const speakers = (slide?.speakers ?? [])
+// The photo comes from the referenced presenter unless the slide overrides it
+// with its own image. A speaker with no resolvable photo is dropped, so this is
+// the single source of truth for "does this slide show speakers".
+const getSpeakers = (slide) =>
+  (slide?.speakers ?? [])
     .filter(Boolean)
     .map((speaker) => ({
       image: speaker?.image?.imageSource || speaker?.presenter?.profileImg,
@@ -31,6 +32,10 @@ const SlideSpeakers = ({ slide, className = "" }) => {
       position: speaker?.role || speaker?.presenter?.position,
     }))
     .filter((speaker) => speaker.image);
+
+// Speaker headshots shown on the right of the banner.
+const SlideSpeakers = ({ slide, className = "" }) => {
+  const speakers = getSpeakers(slide);
 
   if (speakers.length === 0) return null;
 
@@ -54,11 +59,7 @@ const SlideSpeakers = ({ slide, className = "" }) => {
             alt={speaker.altText ?? speaker.name ?? "Speaker"}
             width={260}
             height={260}
-            className={cn(
-              // Radial red sweep behind the cut-out, sampled from the design.
-              "bg-[radial-gradient(circle,#e45655_0%,#6e2a29_100%)]",
-              "size-14 rounded-full object-cover object-top sm:size-36 lg:size-44"
-            )}
+            className="size-14 rounded-full bg-speaker-radial object-cover object-top sm:size-36 lg:size-44"
           />
           {speaker.name && (
             <figcaption
@@ -85,14 +86,12 @@ const SlideSpeakers = ({ slide, className = "" }) => {
 };
 
 export const V3HeroBox = ({ data, priority = false }) => {
-  // The block's own fields form the first slide; `slides` adds more of the same shape.
-  const slides = [data, ...(data?.slides ?? []).filter(Boolean)];
+  const slides = (data?.slides ?? []).filter(Boolean);
   const [activeSlide, setActiveSlide] = useState(0);
-  const current = Math.min(activeSlide, slides.length - 1);
-  // The red wash exists to keep white text legible over a photo. Event banner
-  // slides sit on dark artwork already, so it just tints them.
-  const hasSpeakers =
-    (slides[current]?.speakers ?? []).filter(Boolean).length > 0;
+  const current = Math.min(activeSlide, Math.max(slides.length - 1, 0));
+  // The red wash keeps white text legible over a photo. The polygon fallback is
+  // already dark, so washing it just tints the banner red.
+  const hasCustomBackground = !!slides[current]?.backgroundMedia?.imageSource;
 
   function slideLeft() {
     setActiveSlide((current - 1 + slides.length) % slides.length);
@@ -197,9 +196,10 @@ export const V3HeroBox = ({ data, priority = false }) => {
               quality={75}
               sizes="(min-width: 1440px) 1312px, 100vw"
               src={
-                slide?.backgroundMedia?.imageSource ?? DEFAULT_BACKGROUND_IMAGE
+                slide?.backgroundMedia?.imageSource || DEFAULT_BACKGROUND_IMAGE
               }
-              alt={slide?.backgroundMedia?.altText ?? "Hero background"}
+              // The polygon fallback is decorative, so it carries no alt text.
+              alt={slide?.backgroundMedia?.altText || ""}
               className={cn(
                 "object-cover object-right transition-opacity duration-500",
                 index === current ? "opacity-60 lg:opacity-100" : "opacity-0"
@@ -207,7 +207,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
               data-tina-field={tinaField(slide, "backgroundMedia")}
             />
           ))}
-          {!hasSpeakers && (
+          {hasCustomBackground && (
             <div
               aria-hidden="true"
               className={cn(
@@ -224,7 +224,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 <div
                   key={`hero-slide-content-${index}`}
                   className={cn(
-                    "col-start-1 row-start-1 grid w-full grid-cols-1 items-start gap-4 p-8 transition-[opacity,visibility] duration-500 sm:grid-cols-[1fr_auto] sm:gap-8 sm:p-12 lg:p-16",
+                    "col-start-1 row-start-1 grid w-full grid-cols-1 items-start gap-4 p-8 transition-[opacity,visibility] duration-500 sm:grid-cols-hero-speakers sm:gap-8 sm:p-12 lg:p-16",
                     index === current
                       ? "visible opacity-100"
                       : "invisible opacity-0"
@@ -272,7 +272,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                   />
                   <ButtonRow
                     data={slide}
-                    className="mb-16 flex-wrap justify-start sm:col-start-1 sm:mb-0"
+                    className="mb-16 mt-8 flex-wrap justify-start sm:col-start-1 sm:mb-0"
                   />
                 </div>
               );

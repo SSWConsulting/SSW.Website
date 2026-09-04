@@ -18,22 +18,27 @@
         "backgroundColour": 7,
         "bleed": false
       },
-      "heading": "Three decades of enterprise solutions",
-      "description": "We find the best way to build software and make that knowledge available to everyone.\n",
-      "buttons": [
+      "slides": [
         {
-          "buttonText": "Book a Free Initial Call",
-          "leadCaptureFormOption": "projectFormModal",
-          "iconFirst": false,
-          "colour": 0
+          "_template": "standardSlide",
+          "heading": "Three decades of enterprise solutions",
+          "description": "We find the best way to build software and make that knowledge available to everyone.\n",
+          "buttons": [
+            {
+              "buttonText": "Book a Free Initial Call",
+              "leadCaptureFormOption": "projectFormModal",
+              "iconFirst": false,
+              "colour": 0
+            }
+          ],
+          "backgroundMedia": {
+            "altText": "SSW team members collaborating",
+            "imageSource": "/images/carousel/Why-you-should-choose-SSW-OG-2600.jpg",
+            "imageHeight": 1150,
+            "imageWidth": 2600
+          }
         }
       ],
-      "backgroundMedia": {
-        "altText": "SSW team members collaborating",
-        "imageSource": "/images/carousel/Why-you-should-choose-SSW-OG-2600.jpg",
-        "imageHeight": 1150,
-        "imageWidth": 2600
-      },
       "_template": "v3HeroBox"
     },
     {
@@ -375,7 +380,7 @@
       "recognitionHeading": "Trusted & Recognized",
       "recognitionBadges": [
         {
-          "label": "We ♥ Microsoft - Solutions Partner",
+          "label": "We \u2665 Microsoft - Solutions Partner",
           "customImage": {
             "imageSource": "/images/logos/msoft-4-squares.png",
             "imageHeight": 960,
@@ -494,7 +499,7 @@
           "name": "Strasbourg, France",
           "email": "info@ssw.com.au",
           "phone": "+33 3 67 39 05 39",
-          "address": "Level 4–19 Rue du Fossé des Treize, Strasbourg 67000 \nFrance",
+          "address": "Level 4\u201319 Rue du Foss\u00e9 des Treize, Strasbourg 67000 \nFrance",
           "siteLinkText": "SSW Europe Office",
           "siteLinkUrl": "https://ssw.fr",
           "lat": 48.57,
