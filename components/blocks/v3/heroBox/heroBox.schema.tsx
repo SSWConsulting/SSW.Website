@@ -22,15 +22,13 @@ const headshotGuideField: TinaField = {
   ui: {
     component: () => (
       <TinaInfo>
-        💡 The banner draws a red circle behind each speaker, so upload a
-        transparent PNG cut-out — squarish, shoulders-up, with the face in the
-        top half. An opaque photo (like a presenter&apos;s default profile
-        picture) covers the circle instead of sitting on it. Aim for this:
+        💡 Transparent PNG cut-out, shoulders-up — an opaque photo hides the red
+        circle behind it.
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/thumbs/tina/hero-speaker-headshot-example.png"
           alt="Example headshot"
-          className="my-3 block size-20 rounded-full object-cover object-top"
+          className="my-3 block size-24 object-contain"
         />
       </TinaInfo>
     ),
@@ -45,9 +43,8 @@ const backgroundGuideField: TinaField = {
   ui: {
     component: () => (
       <TinaInfo>
-        💡 Use a wide, dark, low-contrast landscape image — the heading, date
-        and buttons sit over the left half in white. Clear this field to go back
-        to the polygon artwork below, which works with any event.
+        💡 Wide, dark landscape image — text sits over the left half. Clear it
+        to go back to the polygons.
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/background/polygonBackground.png"
