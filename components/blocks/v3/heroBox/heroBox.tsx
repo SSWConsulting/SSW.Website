@@ -147,7 +147,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
   );
 
   const slidePagination = slides.length > 1 && (
-    <div className="absolute bottom-6 left-8 z-20 flex items-center gap-4 sm:left-12 lg:left-16">
+    <div className="absolute bottom-6 left-8 z-20 hidden items-center gap-4 sm:left-12 sm:flex lg:left-16">
       <div className="flex items-center gap-2">
         {slides.map((_, index) => (
           <button
