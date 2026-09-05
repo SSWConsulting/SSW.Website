@@ -3,8 +3,7 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { EventsFilter } from "@/components/filter/events";
-import { Container } from "@/components/util/container";
-import { Section } from "@/components/util/section";
+import { HomeThemeShell } from "@/components/layout/homeTheme";
 import { removeExtension } from "@/services/client/utils.service";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { Breadcrumbs } from "app/components/breadcrumb";
@@ -13,34 +12,47 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 export default function EventsIndexPage({ props, tinaProps }) {
   const { filterCategories } = props;
   const { data } = tinaProps;
+
   return (
     <HydrationBoundary state={props.dehydratedState}>
-      <Section className="mx-auto min-h-24 w-full max-w-9xl px-4 py-5 sm:px-8 md:min-h-16">
-        <Breadcrumbs
-          path={removeExtension(props.variables.relativePath)}
-          title={data.eventsIndex.seo?.title}
-          seoSchema={data.eventsIndex.seo}
-        />
-      </Section>
-      <Container size="small" className="!pb-8 !pt-0">
-        <div className="md:flex md:flex-row">
-          <h1 className="pt-0 md:mr-12 md:shrink-0 md:basis-64">SSW Events</h1>
-          <div className="mt-5 min-w-0 max-w-full shrink grow overflow-auto whitespace-normal break-all pb-1 pt-5 md:mr-12 md:shrink-0 md:basis-64">
-            <TinaMarkdown
-              content={data.eventsIndex.preface}
-              components={componentRenderer}
+      {/* min-h-screen, not min-h-full: PageLayout's <main> has an unconditional
+          bg-white, so any shortfall shows as a white band under the themed
+          content. */}
+      <HomeThemeShell className="min-h-screen bg-sunken-glow">
+        <div className="mx-auto max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
+          <div className="min-h-12">
+            <Breadcrumbs
+              path={removeExtension(props.variables.relativePath)}
+              title={data.eventsIndex.seo?.title}
+              seoSchema={data.eventsIndex.seo}
             />
           </div>
+
+          {/* An emptied rich-text still arrives as { type: "root",
+              children: [] }, which is truthy — testing it directly leaves an
+              empty div whose mb-8 pushes the whole layout down, breaking
+              alignment with /consulting and /products. */}
+          {data.eventsIndex.preface?.children?.length > 0 && (
+            <div className="mb-8 max-w-3xl text-muted-foreground">
+              <TinaMarkdown
+                content={data.eventsIndex.preface}
+                components={componentRenderer}
+              />
+            </div>
+          )}
+
+          {/* The page h1 lives in the sidebar, mirroring /consulting. */}
+          <EventsFilter
+            filterCategories={filterCategories}
+            sidebarBody={data.eventsIndex.sidebarBody}
+          />
         </div>
-        <EventsFilter
-          filterCategories={filterCategories}
-          sidebarBody={data.eventsIndex.sidebarBody}
+
+        <Blocks
+          prefix="EventsIndexAfterEvents"
+          blocks={data.eventsIndex.afterEvents}
         />
-      </Container>
-      <Blocks
-        prefix="EventsIndexAfterEvents"
-        blocks={data.eventsIndex.afterEvents}
-      />
+      </HomeThemeShell>
     </HydrationBoundary>
   );
 }

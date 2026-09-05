@@ -1,15 +1,14 @@
 "use client";
-import {
-  Tab,
-  TabGroup,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Transition,
-} from "@headlessui/react";
+import { Transition } from "@headlessui/react";
+import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
+import { cardShell, productTagChip } from "@/components/products/shared";
+import { EventsSidebar } from "@/components/events/eventsSidebar";
+import { SswTvCard } from "@/components/events/sswTvCard";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { Fragment, useEffect, useMemo, useState } from "react";
-import { FaSpinner } from "react-icons/fa";
+import React, { useEffect, useMemo, useState } from "react";
+import { FaHistory, FaSpinner } from "react-icons/fa";
+import { FiCalendar, FiMapPin, FiTag, FiUser } from "react-icons/fi";
 import type { Event, WithContext } from "schema-dts";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { BluredBase64Image } from "../../helpers/images";
@@ -22,11 +21,10 @@ import { useFormatDates } from "../../hooks/useFormatDates";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { UtilityButton } from "../button/utilityButton";
 import { CustomLink } from "../customLink";
-import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { Presenter, PresenterList } from "../presenters/presenterList";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
-import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
+import { EventFilterAllCategories } from "./FilterBlock";
 import { FilterGroupProps } from "./FilterGroup";
 
 const EVENTS_JSON_LD_LIMIT = 5;
@@ -102,63 +100,122 @@ export const EventsFilter = ({
     }
   }, []);
 
+  // Keeps the ?past=1 deep link the effect above reads in step with the
+  // toggle. replaceState, not pushState: the switch is a filter, and stacking
+  // history entries would make Back walk through every flip.
+  const selectPast = (past: boolean) => {
+    setPastSelected(past);
+
+    const params = new URLSearchParams(window.location.search);
+    if (past) {
+      params.set("past", "1");
+    } else {
+      params.delete("past");
+    }
+    const query = params.toString();
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`
+    );
+  };
+
   return (
-    <FilterBlock
-      sidebarChildren={
-        <div className="descendant-img:py-3">
+    <EventsSidebar
+      title="SSW Events"
+      groups={!pastSelected ? futureFilters : pastFilters}
+      promo={<SswTvCard />}
+    >
+      <div className="mb-8 flex items-center justify-between gap-4 border-b-0.75 border-hairline pb-3">
+        {/* Matches /products' index heading, down to the breakpoints. m-0 p-0,
+            not mb-0: styles.css gives every h2 mt-10 mb-2.5. */}
+        <h2 className="m-0 p-0 text-xl font-semibold text-foreground max-md:text-lg xl:text-2xl">
+          {pastSelected ? "Past Events" : "Upcoming Events"}
+        </h2>
+        <TimeframeToggle
+          pastSelected={pastSelected}
+          onToggle={() => selectPast(!pastSelected)}
+        />
+      </div>
+
+      {pastSelected ? (
+        <>
+          <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
+          {hasMorePastPages && (
+            <LoadMore
+              load={() => {
+                fetchNextPastPage();
+              }}
+              isLoading={isFetchingPastPages}
+            />
+          )}
+        </>
+      ) : (
+        <>
+          <EventsList
+            events={futureEvents}
+            isUpcoming
+            isLoading={isLoadingFuturePages}
+          />
+          {hasMoreFuturePages && (
+            <LoadMore
+              load={() => {
+                fetchFutureNextPage();
+              }}
+              isLoading={isFetchingFuturePages}
+            />
+          )}
+        </>
+      )}
+
+      {/* An emptied rich-text still arrives as { type: "root", children: [] },
+          which is truthy — so test the children, or the block renders as a
+          bare hairline with nothing under it. */}
+      {sidebarBody?.children?.length > 0 && (
+        <div className="mt-12 border-t-0.75 border-hairline pt-8 descendant-img:py-3">
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
         </div>
-      }
-      groups={!pastSelected ? futureFilters : pastFilters}
-    >
-      <TabGroup
-        onChange={(index) => setPastSelected(index === 1)}
-        selectedIndex={pastSelected ? 1 : 0}
-      >
-        <TabList className="mb-8 flex flex-row">
-          <EventTab>Upcoming Events</EventTab>
-          <EventTab>Past Events</EventTab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <EventsList
-              events={futureEvents}
-              isUpcoming
-              isLoading={isLoadingFuturePages}
-            />
-            {hasMoreFuturePages && (
-              <LoadMore
-                load={() => {
-                  fetchFutureNextPage();
-                }}
-                isLoading={isFetchingFuturePages}
-              />
-            )}
-          </TabPanel>
-          <TabPanel>
-            <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
-            {hasMorePastPages && (
-              <LoadMore
-                load={() => {
-                  fetchNextPastPage();
-                }}
-                isLoading={isFetchingPastPages}
-              />
-            )}
-          </TabPanel>
-        </TabPanels>
-      </TabGroup>
-    </FilterBlock>
+      )}
+    </EventsSidebar>
   );
 };
 
-const EventTab = ({ children }: { children: React.ReactNode }) => {
+// One button rather than two peer tabs: upcoming events are what the page is
+// for, and the archive is a detour off it. The label says what the click does,
+// which is also the state it is leaving — the heading beside it names the
+// state you are in.
+const TimeframeToggle = ({
+  pastSelected,
+  onToggle,
+}: {
+  pastSelected: boolean;
+  onToggle: () => void;
+}) => {
+  const label = pastSelected ? "View Upcoming Events" : "View Past Events";
+  const Icon = pastSelected ? FiCalendar : FaHistory;
+
   return (
-    <Tab as={Fragment}>
-      <button className="grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-50 ui-selected:bg-gray-100">
-        {children}
-      </button>
-    </Tab>
+    <button
+      type="button"
+      onClick={onToggle}
+      // title as well as the visible label: it survives the max-sm truncation
+      // below, where only the icon is left.
+      title={label}
+      className={cn(
+        "unstyled flex min-h-9 flex-none items-center gap-2 rounded-full border-0.75 px-3.5 text-sm font-medium",
+        "transition-colors duration-150 motion-reduce:transition-none",
+        "focus-visible:ring-2 focus-visible:ring-brand",
+        "max-sm:aspect-square max-sm:justify-center max-sm:px-0",
+        pastSelected
+          ? "border-brand bg-brand-subtle text-brand"
+          : "border-hairline text-gray-600 hover:border-brand hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
+      )}
+    >
+      <Icon aria-hidden className="size-4 flex-none" />
+      {/* sr-only rather than hidden on the narrowest tier: the icon alone has
+          to keep an accessible name. */}
+      <span className="max-sm:sr-only">{label}</span>
+    </button>
   );
 };
 
@@ -279,6 +336,47 @@ const LoadedEvents: React.FC<AllEventsProps> = ({
   );
 };
 
+const EventMetaItem = ({
+  icon: Icon,
+  label,
+  children,
+}: {
+  icon: React.ElementType;
+  // What the icon stands for. The row replaced the old inline "Presenter:" /
+  // "Location:" text, and react-icons emits a bare <svg> with no accessible
+  // name, so without this a screen reader reads the value with no clue what it
+  // describes.
+  label: string;
+  children: React.ReactNode;
+}) => {
+  if (!children) return null;
+
+  return (
+    <span className="flex min-w-0 items-center gap-2">
+      <Icon aria-hidden className="size-4 shrink-0" />
+      <span className="sr-only">{label}: </span>
+      <span className="flex min-w-0 flex-wrap items-center gap-x-2">
+        {children}
+      </span>
+    </span>
+  );
+};
+
+// A column, not a wrapping row: each fact gets its own line, so the card
+// reads the same whether a title runs to one line or three.
+const EventMetaGrid = ({ children }: { children: React.ReactNode }) => (
+  <div className="mt-3 flex flex-col gap-1.5 text-sm font-light text-muted-foreground">
+    {children}
+  </div>
+);
+
+// The one line that pairs up: presenter first, then where it is on.
+const EventMetaRow = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
+    {children}
+  </div>
+);
+
 interface EventProps {
   visible?: boolean;
   event: EventTrimmed;
@@ -307,21 +405,29 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   };
 
   const city = event.city === "Other" ? event.cityOther : event.city;
-  let eventSite = { name: city, url: event.url };
-
-  if (event.hostedAtSsw) {
-    eventSite = {
-      name: CITY_MAP[city]?.name,
-      url: CITY_MAP[city]?.url,
-    };
-  }
+  // Name only: the card is a single link to the event, so the office page is
+  // not linked from here.
+  const eventSiteName = event.hostedAtSsw ? CITY_MAP[city]?.name : city;
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
+
+  // linkless: the whole card is one overlay anchor, so a profile link here
+  // would be unreachable by mouse yet still focusable, sending pointer and
+  // keyboard users to different destinations. The profile links stay on the
+  // event page itself.
+  const presenter = event.presenterName ? (
+    event.presenterName
+  ) : event.presenterList?.length > 0 ? (
+    <PresenterList linkless presenters={event.presenterList} />
+  ) : null;
+
+  const tags = [event.calendarType, event.category].filter(Boolean);
+
   return (
     <>
       <Transition
         as="div"
-        className="mb-15 border-b-1 bg-white pb-8"
+        className="mb-6"
         show={visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -330,84 +436,100 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <div className="mb-8 block md:flex md:flex-row">
-          <div className="float-left mb-3 mr-3 shrink-0 pr-2 md:float-none md:pr-0">
-            <Image
-              className={"rounded-md"}
-              height={100}
-              width={100}
-              placeholder="blur"
-              alt={`${event.thumbnailDescription || event.title} logo`}
-              src={thumbnail}
-              loading="lazy"
-              blurDataURL={BluredBase64Image}
-              onError={handleImageError}
-            />
-          </div>
-          <div>
-            <h2 className="my-0 font-semibold">
-              <CustomLink className="!no-underline" href={event.url}>
-                {event.title}
-              </CustomLink>
-            </h2>
-
-            <EventsRelativeBox
-              relativeDate={relativeDate}
-              formattedDate={formattedDate}
-              dateFontSize="text-s"
-            />
-
-            <div>
-              {(event.presenterName || event.presenterList?.length > 0) && (
-                <EventDescItem
-                  label={
-                    event?.presenterName || event?.presenterList?.length === 1
-                      ? "Presenter"
-                      : "Presenters"
-                  }
-                >
-                  {event.presenterName ? (
-                    <EventDescLink
-                      value={event.presenterName}
-                      linkValue={event.presenterProfileUrl}
-                    />
-                  ) : (
-                    <PresenterList presenters={event.presenterList} />
-                  )}
-                </EventDescItem>
-              )}
-              {city && (
-                <EventDescItem label="Location">
-                  <EventDescLink
-                    value={eventSite.name}
-                    linkValue={eventSite.url}
-                  />
-                </EventDescItem>
-              )}
-              {event.calendarType && (
-                <EventDescItem label="Type">
-                  <EventDescLink value={event.calendarType} />
-                </EventDescItem>
-              )}
-              {event.category && (
-                <EventDescItem label="Category">
-                  <EventDescLink value={event.category} />
-                </EventDescItem>
-              )}
-            </div>
-          </div>
-        </div>
-        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
-          <TinaMarkdown content={event?.description} />
-        </div>
-        <div className="mb-1 mt-6 p-0 text-end">
+        <div
+          className={cn(
+            cardShell,
+            "flex-row gap-5 p-5",
+            // bg-card / bg-card-hover are theme-aware, so one pair covers both
+            // modes; only the border colour still differs.
+            "border-stroke-weak bg-card hover:border-brand hover:bg-card-hover",
+            "dark:border-hairline dark:hover:border-brand",
+            "active:bg-gray-100 dark:active:bg-card"
+          )}
+        >
+          {/* The whole card is the link. Everything else stays below it, so
+              nested interactive elements can't end up inside an <a>. */}
           <CustomLink
             href={event.url}
-            className="unstyled rounded bg-ssw-gray-dark px-3 py-2 text-sm font-normal text-white hover:bg-sswBlack"
-          >
-            Find out more
-            <span className="sr-only"> about {event.title}</span>
-          </CustomLink>
+            aria-label={`Find out more about ${event.title}`}
+            className="unstyled absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-brand"
+          />
+
+          {/* Square plate with object-contain, not a full-height cover crop:
+              29 of the 40 event thumbnails are 1:1, and the rest run from 1.07
+              to 3.69, so a fixed ratio is the only way to show every one whole.
+              White backs the transparent logos among them. The image fills the
+              plate edge to edge — an inset would ring every square logo in
+              white. */}
+          {thumbnail && (
+            <div className="hidden size-24 flex-none items-center justify-center overflow-hidden rounded-card bg-white sm:flex">
+              <Image
+                src={thumbnail}
+                alt={`${event.thumbnailDescription || event.title} logo`}
+                width={96}
+                height={96}
+                placeholder="blur"
+                blurDataURL={BluredBase64Image}
+                loading="lazy"
+                onError={handleImageError}
+                className="size-full object-contain"
+              />
+            </div>
+          )}
+
+          <div className="flex min-w-0 flex-1 flex-col">
+            <h3 className="m-0 p-0 text-xl font-semibold leading-tight text-foreground">
+              {event.title}
+            </h3>
+
+            <EventMetaGrid>
+              <EventMetaItem icon={FiCalendar} label="Date">
+                {formattedDate ? (
+                  <>
+                    <span className="min-w-0">{formattedDate}</span>
+                    {relativeDate && (
+                      <span className="inline-flex shrink-0 items-center rounded-sm bg-sswRed px-1.5 pb-px pt-0.5 text-xs font-semibold uppercase leading-none text-white">
+                        {relativeDate}
+                      </span>
+                    )}
+                  </>
+                ) : null}
+              </EventMetaItem>
+
+              {/* Skipped entirely when both are missing: an empty row would
+                  still take a gap out of the column above. */}
+              {(presenter || eventSiteName) && (
+                <EventMetaRow>
+                  <EventMetaItem icon={FiUser} label="Presenter">
+                    {presenter}
+                  </EventMetaItem>
+                  <EventMetaItem icon={FiMapPin} label="Location">
+                    {eventSiteName}
+                  </EventMetaItem>
+                </EventMetaRow>
+              )}
+
+              {/* Tested here, not inside EventMetaItem: an empty map returns
+                  [], which is truthy, so the icon would show up alone. */}
+              {tags.length > 0 && (
+                <EventMetaItem icon={FiTag} label="Tags">
+                  {tags.map((tag) => (
+                    <span key={tag} className={productTagChip}>
+                      {tag}
+                    </span>
+                  ))}
+                </EventMetaItem>
+              )}
+            </EventMetaGrid>
+          </div>
+
+          {/* pointer-events-none so the card-wide link keeps the click. */}
+          <div className="pointer-events-none relative z-20 hidden items-end sm:flex">
+            <ArrowCircle
+              className="size-9 flex-none bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
+              iconClassName="size-3.5"
+            />
+          </div>
         </div>
       </Transition>
       {jsonLd && (
@@ -417,33 +539,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         />
       )}
     </>
-  );
-};
-
-type EventDescItemProps = {
-  label: string;
-  children: React.ReactNode;
-};
-
-const EventDescItem = ({ label, children }: EventDescItemProps) => {
-  return (
-    <span className="mr-2 inline-block whitespace-nowrap">
-      <strong>{label}: </strong>
-      {children}
-    </span>
-  );
-};
-
-type EventDescLinkProps = { value: string; linkValue?: string };
-
-const EventDescLink: React.FC<EventDescLinkProps> = ({
-  value,
-  linkValue,
-}: EventDescLinkProps) => {
-  return linkValue ? (
-    <CustomLink href={linkValue}>{value}</CustomLink>
-  ) : (
-    <>{value}</>
   );
 };
 

@@ -122,7 +122,12 @@ export const eventsIndexSchema: Collection = {
     {
       type: "rich-text",
       name: "sidebarBody",
-      label: "Sidebar Body",
+      // Renders at the foot of the content column, below the events list, not
+      // in the sidebar. The field name is kept for the generated query and the
+      // existing content; only the editor-facing label describes the position.
+      label: "Body (below the events list)",
+      description:
+        "Appears under the events list, at the end of the page content.",
       templates: [...Schemas.pageBlocks],
     },
     {
