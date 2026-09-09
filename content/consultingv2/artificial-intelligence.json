@@ -30,8 +30,8 @@
         "redGlow": true
       },
       "brow": "AI CONSULTING",
-      "heading": " Custom AI solutions, expertly implemented",
-      "description": "Our solutions go beyond basic automation to create real business value, turning AI into a genuine intellectual partner for your specific business challenges.\n",
+      "heading": "Cut manual work and build smarter software with AI.",
+      "description": "SSW helps you identify where AI will deliver value, then builds secure solutions that work with your existing systems. Automate repetitive tasks, make company knowledge searchable, or add AI features to your products.\n",
       "buttons": [
         {
           "buttonText": "Book a Free Initial Meeting",
@@ -100,6 +100,37 @@
       "background": {
         "backgroundColour": 7
       },
+      "brow": "AI IN YOUR BUSINESS",
+      "heading": "What could AI do for your business?",
+      "subtitle": "Start with a task that takes too much time or a product feature your customers need.",
+      "cards": [
+        {
+          "title": "Document processing",
+          "description": "Extract information from invoices, forms and reports to reduce manual data entry and speed up reviews.",
+          "link": "#lead-capture-heading"
+        },
+        {
+          "title": "Internal knowledge search",
+          "description": "Help staff find answers across company documents and systems, with links back to the source material.",
+          "link": "#lead-capture-heading"
+        },
+        {
+          "title": "Customer enquiry triage",
+          "description": "Sort incoming enquiries, draft responses and route complex questions to the right person.",
+          "link": "#lead-capture-heading"
+        },
+        {
+          "title": "AI features for existing software",
+          "description": "Add search, recommendations or an AI assistant to your product to help customers get more done.",
+          "link": "#lead-capture-heading"
+        }
+      ],
+      "_template": "v3StackCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
       "brow": "BASED ON OUR EXPERIENCE",
       "heading": "Why teams trust us to get AI right",
       "description": "AI can be overwhelming, but we make it simple. Our consultants analyze your systems and recommend practical AI solutions to improve efficiency, automate tasks, and extract insights from data.\n\nGet expert guidance to integrate AI where it matters most.\n",
@@ -143,6 +174,57 @@
         }
       ],
       "_template": "v3Testimonials"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "videoUrl": "https://youtu.be/CBes1SEvV54",
+      "greyscaleThumbnail": false,
+      "figure": "Video: YakShaver - AI to make the perfect PBI in 30 seconds",
+      "brow": "BUILT BY SSW",
+      "heading": "See an AI solution we built and use ourselves.",
+      "description": "YakShaver watches a screen recording, works out what needs doing, and writes the work item before you've finished talking. No forms, no triage, no Monday morning spent tidying the backlog. It's a great example of the sort of intelligence and automation we can bring to your company\n",
+      "highlights": [
+        {
+          "title": "Real work, not a chatbot",
+          "desc2": "YakShaver replaced a task every developer does several times a day, which is where AI returns the most.\n",
+          "link": "https://www.ssw.com.au/articles/yakshaver-article",
+          "linkText": "Read the story"
+        },
+        {
+          "title": "Try it yourself",
+          "desc2": "Put YakShaver to the test with your own screen recording. It's free to try at yakshaver.ai\n",
+          "link": "https://www.yakshaver.ai",
+          "linkText": "Try it now"
+        }
+      ],
+      "_template": "v3VideoHighlights"
+    },
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true
+      },
+      "videoUrl": "https://youtu.be/JM7bfGesWlQ",
+      "greyscaleThumbnail": false,
+      "figure": "Video: From Payroll Complexity to AI Confidence | Tracy Angwin",
+      "brow": "CLIENT CASE STUDY",
+      "heading": "Australian Payroll Association: faster answers with expert oversight",
+      "description": "Australian Payroll Association (APA) needed an AI agent to answer complex payroll questions without guessing when the stakes were high. Generic AI could misinterpret employment types and award rules, putting the quality of its answers at risk.\n",
+      "highlights": [
+        {
+          "title": "What SSW built",
+          "desc2": "SSW grounded the agent in APA's vetted documents and government sources, added checks to clarify questions, and routed high-stakes or out-of-scope queries to payroll specialists. Daily source updates and weekly checks with APA experts help keep answers current.\n"
+        },
+        {
+          "title": "The results",
+          "desc2": "Routine questions are answered in seconds, while specialists focus on complex cases. The published case study reports that clarifying questions before answering cut error rates in half.\n",
+          "link": "/company/clients/australian-payroll-association",
+          "linkText": "Read the APA case study"
+        }
+      ],
+      "_template": "v3VideoHighlights"
     },
     {
       "background": {
@@ -233,32 +315,6 @@
         }
       ],
       "_template": "v3Statistics"
-    },
-    {
-      "background": {
-        "backgroundColour": 7
-      },
-      "videoUrl": "https://youtu.be/CBes1SEvV54",
-      "greyscaleThumbnail": false,
-      "figure": "Video: YakShaver - AI to make the perfect PBI in 30 seconds",
-      "brow": "BUILT BY SSW",
-      "heading": "We don't just talk about AI. We ship it.",
-      "description": "YakShaver watches a screen recording, works out what needs doing, and writes the work item before you've finished talking. No forms, no triage, no Monday morning spent tidying the backlog. It's a great example of the sort of intelligence and automation we can bring to your company\n",
-      "highlights": [
-        {
-          "title": "Real work, not a chatbot",
-          "desc2": "YakShaver replaced a task every developer does several times a day, which is where AI returns the most.\n",
-          "link": "https://www.ssw.com.au/articles/yakshaver-article",
-          "linkText": "Read the story"
-        },
-        {
-          "title": "Try it yourself",
-          "desc2": "Put YakShaver to the test with your own screen recording. It's free to try at yakshaver.ai\n",
-          "link": "https://www.yakshaver.ai",
-          "linkText": "Try it now"
-        }
-      ],
-      "_template": "v3VideoHighlights"
     },
     {
       "background": {
@@ -425,7 +481,7 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "heading": "Let's build AI you can put in front of customers",
+      "heading": "Let's find where AI can deliver value for your business.",
       "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
       "buttons": [
         {
