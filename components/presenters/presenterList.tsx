@@ -7,10 +7,6 @@ export type Presenter = {
 
 type PresenterListProps = {
   presenters: { presenter?: Presenter }[];
-  // Renders names as plain text instead of profile links. For callers that sit
-  // inside a larger click target: a nested anchor under an overlay link is
-  // unreachable by mouse but still focusable, so the two inputs would navigate
-  // to different places.
   linkless?: boolean;
 };
 

@@ -100,9 +100,6 @@ export const EventsFilter = ({
     }
   }, []);
 
-  // Keeps the ?past=1 deep link the effect above reads in step with the
-  // toggle. replaceState, not pushState: the switch is a filter, and stacking
-  // history entries would make Back walk through every flip.
   const selectPast = (past: boolean) => {
     setPastSelected(past);
 
@@ -127,8 +124,6 @@ export const EventsFilter = ({
       promo={<SswTvCard />}
     >
       <div className="mb-8 flex items-center justify-between gap-4 border-b-0.75 border-hairline pb-3">
-        {/* Matches /products' index heading, down to the breakpoints. m-0 p-0,
-            not mb-0: styles.css gives every h2 mt-10 mb-2.5. */}
         <h2 className="m-0 p-0 text-xl font-semibold text-foreground max-md:text-lg xl:text-2xl">
           {pastSelected ? "Past Events" : "Upcoming Events"}
         </h2>
@@ -168,9 +163,6 @@ export const EventsFilter = ({
         </>
       )}
 
-      {/* An emptied rich-text still arrives as { type: "root", children: [] },
-          which is truthy — so test the children, or the block renders as a
-          bare hairline with nothing under it. */}
       {sidebarBody?.children?.length > 0 && (
         <div className="mt-12 border-t-0.75 border-hairline pt-8 descendant-img:py-3">
           <TinaMarkdown content={sidebarBody} components={componentRenderer} />
@@ -180,10 +172,6 @@ export const EventsFilter = ({
   );
 };
 
-// One button rather than two peer tabs: upcoming events are what the page is
-// for, and the archive is a detour off it. The label says what the click does,
-// which is also the state it is leaving — the heading beside it names the
-// state you are in.
 const TimeframeToggle = ({
   pastSelected,
   onToggle,
@@ -198,8 +186,6 @@ const TimeframeToggle = ({
     <button
       type="button"
       onClick={onToggle}
-      // title as well as the visible label: it survives the max-sm truncation
-      // below, where only the icon is left.
       title={label}
       className={cn(
         "unstyled flex min-h-9 flex-none items-center gap-2 rounded-full border-0.75 px-3.5 text-sm font-medium",
@@ -212,8 +198,6 @@ const TimeframeToggle = ({
       )}
     >
       <Icon aria-hidden className="size-4 flex-none" />
-      {/* sr-only rather than hidden on the narrowest tier: the icon alone has
-          to keep an accessible name. */}
       <span className="max-sm:sr-only">{label}</span>
     </button>
   );
@@ -342,10 +326,6 @@ const EventMetaItem = ({
   children,
 }: {
   icon: React.ElementType;
-  // What the icon stands for. The row replaced the old inline "Presenter:" /
-  // "Location:" text, and react-icons emits a bare <svg> with no accessible
-  // name, so without this a screen reader reads the value with no clue what it
-  // describes.
   label: string;
   children: React.ReactNode;
 }) => {
@@ -362,15 +342,12 @@ const EventMetaItem = ({
   );
 };
 
-// A column, not a wrapping row: each fact gets its own line, so the card
-// reads the same whether a title runs to one line or three.
 const EventMetaGrid = ({ children }: { children: React.ReactNode }) => (
   <div className="mt-3 flex flex-col gap-1.5 text-sm font-light text-muted-foreground">
     {children}
   </div>
 );
 
-// The one line that pairs up: presenter first, then where it is on.
 const EventMetaRow = ({ children }: { children: React.ReactNode }) => (
   <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
     {children}
@@ -405,16 +382,10 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   };
 
   const city = event.city === "Other" ? event.cityOther : event.city;
-  // Name only: the card is a single link to the event, so the office page is
-  // not linked from here.
   const eventSiteName = event.hostedAtSsw ? CITY_MAP[city]?.name : city;
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
 
-  // linkless: the whole card is one overlay anchor, so a profile link here
-  // would be unreachable by mouse yet still focusable, sending pointer and
-  // keyboard users to different destinations. The profile links stay on the
-  // event page itself.
   const presenter = event.presenterName ? (
     event.presenterName
   ) : event.presenterList?.length > 0 ? (
@@ -440,27 +411,17 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
           className={cn(
             cardShell,
             "flex-row gap-5 p-5",
-            // bg-card / bg-card-hover are theme-aware, so one pair covers both
-            // modes; only the border colour still differs.
             "border-stroke-weak bg-card hover:border-brand hover:bg-card-hover",
             "dark:border-hairline dark:hover:border-brand",
             "active:bg-gray-100 dark:active:bg-card"
           )}
         >
-          {/* The whole card is the link. Everything else stays below it, so
-              nested interactive elements can't end up inside an <a>. */}
           <CustomLink
             href={event.url}
             aria-label={`Find out more about ${event.title}`}
             className="unstyled absolute inset-0 z-10 rounded-card !no-underline focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-brand"
           />
 
-          {/* Square plate with object-contain, not a full-height cover crop:
-              29 of the 40 event thumbnails are 1:1, and the rest run from 1.07
-              to 3.69, so a fixed ratio is the only way to show every one whole.
-              White backs the transparent logos among them. The image fills the
-              plate edge to edge — an inset would ring every square logo in
-              white. */}
           {thumbnail && (
             <div className="hidden size-24 flex-none items-center justify-center overflow-hidden rounded-card bg-white sm:flex">
               <Image
@@ -496,8 +457,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                 ) : null}
               </EventMetaItem>
 
-              {/* Skipped entirely when both are missing: an empty row would
-                  still take a gap out of the column above. */}
               {(presenter || eventSiteName) && (
                 <EventMetaRow>
                   <EventMetaItem icon={FiUser} label="Presenter">
@@ -509,8 +468,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
                 </EventMetaRow>
               )}
 
-              {/* Tested here, not inside EventMetaItem: an empty map returns
-                  [], which is truthy, so the icon would show up alone. */}
               {tags.length > 0 && (
                 <EventMetaItem icon={FiTag} label="Tags">
                   {tags.map((tag) => (
@@ -523,7 +480,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
             </EventMetaGrid>
           </div>
 
-          {/* pointer-events-none so the card-wide link keeps the click. */}
           <div className="pointer-events-none relative z-20 hidden items-end sm:flex">
             <ArrowCircle
               className="size-9 flex-none bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"

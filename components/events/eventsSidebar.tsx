@@ -7,8 +7,6 @@ import {
   sidebarNavItem,
 } from "@/components/layout/stickySidebar";
 
-// <button>s, not the <a>s /consulting uses: these filter in place rather than
-// navigating, so they need the width and alignment an anchor gets by default.
 const navItem = (isActive: boolean) =>
   sidebarNavItem(
     isActive,
@@ -30,8 +28,6 @@ const FilterNav = ({
         <button
           type="button"
           onClick={() => setSelected(NO_SELECTION)}
-          // "location" is the ARIA value for current position within a flow,
-          // which is what a selected filter expresses.
           aria-current={selected === NO_SELECTION ? "location" : undefined}
           className={navItem(selected === NO_SELECTION)}
         >
@@ -58,15 +54,10 @@ const FilterNav = ({
 type EventsSidebarProps = {
   title: string;
   groups: FilterGroupProps[];
-  // Mounted in the sidebar on desktop and at the foot of the content column on
-  // mobile, both by StickySidebarLayout.
   promo?: React.ReactNode;
   children: React.ReactNode;
 };
 
-// The /events counterpart to /consulting's sticky category index. It is not
-// FilterBlock: that one is shared with /clients and /opportunities, which are
-// unthemed and lay the sidebar out as a plain flex column.
 export const EventsSidebar = ({
   title,
   groups,

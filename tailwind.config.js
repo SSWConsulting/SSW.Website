@@ -117,8 +117,6 @@ export default {
         104: "26rem",
       },
       minHeight: {
-        // Keeps the /events sidebar promo the height of the Vimeo tiles it
-        // replaced, without an arbitrary value (tailwindcss/no-arbitrary-value).
         "sidebar-card": "200px",
         4: "1rem",
         8: "2rem",
@@ -165,8 +163,6 @@ export default {
       },
       maxWidth: {
         media: "420px",
-        // The /events sidebar promo. Capped rather than column-width, so it
-        // reads as a tile like the Vimeo thumbnails it replaced.
         "sidebar-card": "300px",
         "8xl": "83rem",
         "9xl": "86rem",

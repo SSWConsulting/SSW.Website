@@ -15,9 +15,6 @@ export default function EventsIndexPage({ props, tinaProps }) {
 
   return (
     <HydrationBoundary state={props.dehydratedState}>
-      {/* min-h-screen, not min-h-full: PageLayout's <main> has an unconditional
-          bg-white, so any shortfall shows as a white band under the themed
-          content. */}
       <HomeThemeShell className="min-h-screen bg-sunken-glow">
         <div className="mx-auto max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
           <div className="min-h-12">
@@ -28,10 +25,6 @@ export default function EventsIndexPage({ props, tinaProps }) {
             />
           </div>
 
-          {/* An emptied rich-text still arrives as { type: "root",
-              children: [] }, which is truthy — testing it directly leaves an
-              empty div whose mb-8 pushes the whole layout down, breaking
-              alignment with /consulting and /products. */}
           {data.eventsIndex.preface?.children?.length > 0 && (
             <div className="mb-8 max-w-3xl text-muted-foreground">
               <TinaMarkdown
@@ -41,7 +34,6 @@ export default function EventsIndexPage({ props, tinaProps }) {
             </div>
           )}
 
-          {/* The page h1 lives in the sidebar, mirroring /consulting. */}
           <EventsFilter
             filterCategories={filterCategories}
             sidebarBody={data.eventsIndex.sidebarBody}
