@@ -17,6 +17,7 @@ import layoutData, {
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
 import { VideoEmbed } from "../blocks/videoEmbed";
 import { CustomLink } from "../customLink";
+import AosLoader from "../util/aosLoader";
 import { InlineJotForm } from "../inlineJotForm/inlineJotForm";
 import { SocialIcons } from "../socialIcons/socialIcons";
 
@@ -147,6 +148,7 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
             data-aos-anchor="#thumbnailAnchor"
             data-aos-anchor-placement="bottom-top"
           >
+            <AosLoader />
             <VideoEmbed
               data={{
                 url: youtubeUrls.videoUrl,

@@ -2,7 +2,6 @@
 import AlternatingText from "@/components/alternating-text";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import { cn } from "@/lib/utils";
-import "aos/dist/aos.css";
 import classNames from "classnames";
 import React from "react";
 import { tinaField } from "tinacms/dist/react";
