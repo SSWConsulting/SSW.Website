@@ -1,5 +1,10 @@
 import { cn } from "@/lib/utils";
 
+// The padded, centred container both /consulting and /events wrap this layout
+// (and their breadcrumbs) in. Shared so a padding tweak lands on both.
+export const sidebarPageContainer =
+  "mx-auto max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3";
+
 export const sidebarHeadingClass =
   "text-xl font-semibold leading-tight max-md:text-lg xl:text-2xl";
 
@@ -7,8 +12,9 @@ export const sidebarNavItem = (isActive: boolean, extra?: string) =>
   cn(
     "unstyled block min-h-9 rounded-lg px-2.5 py-1.5 text-base leading-tight no-underline transition-colors duration-150 motion-reduce:transition-none",
     // A ring, not `outline`: tailwind-merge drops the bare `outline` class,
-    // leaving outline-style: none.
-    "focus-visible:ring-2 focus-visible:ring-brand",
+    // leaving outline-style: none. outline-none suppresses the UA ring so it
+    // cannot paint over ours.
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand",
     "max-md:rounded-full max-md:border-0.75 max-md:border-hairline max-md:bg-gray-100 max-md:px-3 max-md:py-2.5 dark:max-md:bg-card",
     // Active and inactive colours are mutually exclusive, never layered:
     // adding `text-brand` on top of `dark:text-muted-foreground` loses in dark

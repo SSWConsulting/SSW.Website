@@ -120,14 +120,6 @@ export const eventsIndexSchema: Collection = {
       isBody: true,
     },
     {
-      type: "rich-text",
-      name: "sidebarBody",
-      label: "Body (below the events list)",
-      description:
-        "Appears under the events list, at the end of the page content.",
-      templates: [...Schemas.pageBlocks],
-    },
-    {
       type: "object",
       list: true,
       name: "afterEvents",

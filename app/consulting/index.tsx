@@ -6,6 +6,7 @@ import {
   StickySidebarLayout,
   sidebarHeadingClass,
   sidebarNavItem,
+  sidebarPageContainer,
 } from "@/components/layout/stickySidebar";
 import {
   ALL_SERVICES,
@@ -163,7 +164,7 @@ export default function ConsultingIndex({ tinaProps }) {
     // bg-white, so any shortfall shows as a white band under the themed
     // content. 100vh needs no cooperation from the ancestor's height.
     <HomeThemeShell className="min-h-screen bg-sunken-glow">
-      <div className="mx-auto max-w-8xl px-6 pb-16 pt-4 max-md:px-3 max-md:pb-12 max-md:pt-3">
+      <div className={sidebarPageContainer}>
         <div className="min-h-12">
           <Breadcrumbs path={"/consulting"} title={"Services"} />
         </div>
