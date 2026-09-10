@@ -1,0 +1,22 @@
+{
+  "title": "Newcastle Coders November: AI: It's a Skill Issue",
+  "slug": "newcastle-ai-its-a-skill-issue",
+  "url": "https://www.meetup.com/newcastle-coders-group/events/316437944/",
+  "thumbnail": "/images/events/newcastle-coders-group.png",
+  "thumbnailDescription": "Newcastle Coders Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    }
+  ],
+  "startDateTime": "2026-11-04T07:00:00.000Z",
+  "endDateTime": "2026-11-04T09:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "category": "Artificial Intelligence",
+  "abstract": "Join SSW's VP of AI, Calum Simpson, for a talk about the current state of AI-assisted development and what you really need to know about to get the most out of the tools.\n\nCalum will explain what AI Skills are and how to use them, share some practical examples with you, and leave you with thoughts on the Human Skills required to succeed in the world of AI.",
+  "description": "Newcastle Coders Group welcomes Calum Simpson for **AI: It's a Skill Issue** at SSW Newcastle, 432 Hunter Street.\n\nJoin SSW's VP of AI, Calum Simpson, for a talk about the current state of AI-assisted development and what you really need to know about to get the most out of the tools.\n\nCalum will explain what AI Skills are and how to use them, share some practical examples with you, and leave you with thoughts on the Human Skills required to succeed in the world of AI.\n",
+  "hostedAtSsw": true,
+  "enabled": true,
+  "venue": "SSW Newcastle, 432 Hunter Street"
+}
