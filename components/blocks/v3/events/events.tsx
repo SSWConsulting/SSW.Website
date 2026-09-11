@@ -1,6 +1,7 @@
 "use client";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
+import { DaysToGoBadge, EventMetaItem } from "@/components/events/eventMeta";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
 import { buildEventUrl } from "@/helpers/getTrimmedEvents";
@@ -38,7 +39,7 @@ const getDaysToGo = (date?: string): number | null => {
   return days >= 0 ? days : null;
 };
 
-function DaysToGoBadge({ date }: { date?: string }) {
+function DaysToGo({ date }: { date?: string }) {
   const [daysToGo, setDaysToGo] = useState<number | null>(null);
 
   useEffect(() => {
@@ -48,9 +49,9 @@ function DaysToGoBadge({ date }: { date?: string }) {
   if (daysToGo === null) return null;
 
   return (
-    <span className="inline-flex shrink-0 items-center rounded-sm bg-sswRed px-1.5 pb-px pt-0.5 text-xs font-semibold uppercase leading-none text-white">
+    <DaysToGoBadge>
       {daysToGo} {daysToGo === 1 ? "day" : "days"} to go
-    </span>
+    </DaysToGoBadge>
   );
 }
 
@@ -75,29 +76,6 @@ function PresenterList({ presenters, className = "" }) {
         })}
       </div>
     </div>
-  );
-}
-
-function EventMetaItem({
-  icon: Icon,
-  children,
-  tinaData = null,
-  tinaFieldName = "",
-}) {
-  if (!children) return null;
-
-  return (
-    <span
-      data-tina-field={
-        tinaData && tinaFieldName
-          ? tinaField(tinaData, tinaFieldName)
-          : undefined
-      }
-      className="flex min-w-0 items-center gap-2"
-    >
-      <Icon className="size-4 shrink-0" />
-      <span className="flex min-w-0 items-center gap-2">{children}</span>
-    </span>
   );
 }
 
@@ -285,15 +263,13 @@ function FeaturedEvent({ event }) {
             <EventMetaGrid className="mt-4 text-white">
               <EventMetaItem
                 icon={FiMapPin}
-                tinaData={event}
-                tinaFieldName="location"
+                tinaFieldValue={tinaField(event, "location")}
               >
                 {event?.location}
               </EventMetaItem>
               <EventMetaItem
                 icon={FiCalendar}
-                tinaData={event}
-                tinaFieldName="eventDate"
+                tinaFieldValue={tinaField(event, "eventDate")}
               >
                 {event?.eventDate ? (
                   <span className="min-w-0 truncate">
@@ -303,8 +279,7 @@ function FeaturedEvent({ event }) {
               </EventMetaItem>
               <EventMetaItem
                 icon={FiClock}
-                tinaData={event}
-                tinaFieldName="time"
+                tinaFieldValue={tinaField(event, "time")}
               >
                 {event?.time}
               </EventMetaItem>
@@ -392,7 +367,7 @@ function EventListItem({ event }) {
                   <span className="min-w-0 truncate">
                     {dayjs(event.date).format("ddd D MMM")}
                   </span>
-                  <DaysToGoBadge date={event.date} />
+                  <DaysToGo date={event.date} />
                 </>
               ) : null}
             </EventMetaItem>
