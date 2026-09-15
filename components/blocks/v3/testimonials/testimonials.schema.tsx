@@ -52,7 +52,15 @@ export const V3TestimonialsSchema: Template = {
           label: "Case Study Link Text",
           name: "caseStudyLabel",
           description:
-            "Text for the case study link (always shown in uppercase). Defaults to 'See Case Study'.",
+            "Sentence shown above the case study button, e.g. 'Discover how an AI-powered chatbot transformed their customer service'.",
+          ui: { component: "textarea" },
+        },
+        {
+          type: "string",
+          label: "Case Study Button Text",
+          name: "caseStudyButtonText",
+          description:
+            "Text on the red button (always shown in uppercase). Defaults to 'Explore the case study'.",
         },
         {
           type: "string",
