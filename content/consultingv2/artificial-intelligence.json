@@ -162,15 +162,25 @@
       },
       "testimonials": [
         {
-          "quote": "You've got soccer players and then you have the professional soccer players. **They are the professional soccer players.**",
+          "quote": "\"You've got soccer players and then you have the professional soccer players. **They (SSW) are the professional soccer players.**\"",
           "caseStudyUrl": "/company/clients/fpe",
-          "caseStudyLabel": "See case study video",
+          "caseStudyLabel": "Discover how an AI-powered chatbot has revolutionized their customer service",
           "authorName": "Thomas Bidou",
           "authorTitle": "French Payroll Expert",
           "authorImage": "/images/testimonialAvatars/thomas-bideau.png",
           "authorImageAlt": "Thomas Bidou",
           "companyLogo": "/images/clientLogos/FPE.png",
           "companyLogoAlt": "French Payroll Expert"
+        },
+        {
+          "quote": "“Beryl **represents what the future of payroll looks like**. It’s not about replacing payroll professionals, it’s about giving them a specialist AI colleague.”",
+          "caseStudyUrl": "https://www.ssw.com.au/company/clients/australian-payroll-association",
+          "caseStudyLabel": "See How We Turned a Chatbot into a Trustworthy Payroll Agent",
+          "authorName": "Tracy Angwin",
+          "authorTitle": "Director,  Australian Payroll Association",
+          "authorImage": "/images/tracy-angwin.jpeg",
+          "authorImageAlt": "Tracy Angwin",
+          "companyLogo": ""
         }
       ],
       "_template": "v3Testimonials"
