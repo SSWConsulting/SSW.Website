@@ -12,6 +12,18 @@ import { tinaField } from "tinacms/dist/react";
 // How long each testimonial stays on screen before the carousel advances.
 const AUTOPLAY_MS = 8000;
 
+// The quotation marks belong to the design, not to the copy, so editors type
+// the quote plain. Any double quotes an editor wraps around it anyway (or that
+// came from older content) are stripped first, so they never double up. The
+// marks land outside the **red** markers, which keeps them in the body colour.
+function withQuoteMarks(text: string) {
+  const trimmed = text
+    .trim()
+    .replace(/^["“”]+\s*/, "")
+    .replace(/\s*["“”]+$/, "");
+  return trimmed ? `“${trimmed}”` : "";
+}
+
 type RevealToken =
   | { space: true; word?: undefined; red?: undefined }
   | { space?: false; word: string; red: boolean };
@@ -234,9 +246,14 @@ export function V3Testimonials({ data }) {
                   )}
                 >
                   {i === active ? (
-                    <ClipTextReveal key={active} text={t?.quote ?? ""} />
+                    <ClipTextReveal
+                      key={active}
+                      text={withQuoteMarks(t?.quote ?? "")}
+                    />
                   ) : (
-                    <span>{(t?.quote ?? "").replace(/\*\*/g, "")}</span>
+                    <span>
+                      {withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}
+                    </span>
                   )}
                 </blockquote>
               ))}

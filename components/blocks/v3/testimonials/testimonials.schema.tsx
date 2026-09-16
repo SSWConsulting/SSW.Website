@@ -38,7 +38,8 @@ export const V3TestimonialsSchema: Template = {
           type: "string",
           label: "Quote",
           name: "quote",
-          description: "Use **double asterisks** to highlight text in red.",
+          description:
+            "Use **double asterisks** to highlight text in red. Leave the quotation marks out — the design adds them.",
           ui: { component: "textarea" },
         },
         {
