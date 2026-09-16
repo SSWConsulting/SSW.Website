@@ -197,8 +197,11 @@ export function V3Testimonials({ data }) {
 
   if (testimonials.length === 0) return null;
 
-  // Guard against the active index pointing past a shortened list while editing.
-  const current = testimonials[Math.min(active, testimonials.length - 1)];
+  // Guard against the stored index pointing past a shortened list while editing:
+  // everything below reads `activeIndex`, never `active`, so removing the
+  // selected slide falls back to the last one instead of hiding every quote.
+  const activeIndex = Math.min(active, testimonials.length - 1);
+  const current = testimonials[activeIndex];
 
   return (
     <V2ComponentWrapper data={data}>
@@ -213,13 +216,13 @@ export function V3Testimonials({ data }) {
             // Desktop: quote on the left, case study CTA on the right. The
             // right column is capped so a long sentence wraps to two lines
             // (as designed) instead of stretching across the section.
-            "xl:grid xl:max-w-6xl xl:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] xl:items-start xl:gap-x-16"
+            "xl:grid xl:max-w-6xl xl:grid-cols-testimonial xl:items-start xl:gap-x-16"
           )}
         >
           {/* Author + quote — left column */}
           <div className="flex flex-col xl:col-start-1">
             <motion.div
-              key={`author-${active}`}
+              key={`author-${activeIndex}`}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -234,20 +237,20 @@ export function V3Testimonials({ data }) {
               {testimonials.map((t, i) => (
                 <blockquote
                   key={`v3-testimonial-quote-${i}`}
-                  aria-hidden={i !== active}
+                  aria-hidden={i !== activeIndex}
                   data-tina-field={
-                    i === active ? tinaField(t, "quote") : undefined
+                    i === activeIndex ? tinaField(t, "quote") : undefined
                   }
                   className={cn(
                     "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 md:text-4xl",
-                    i === active
+                    i === activeIndex
                       ? "opacity-100"
                       : "pointer-events-none opacity-0"
                   )}
                 >
-                  {i === active ? (
+                  {i === activeIndex ? (
                     <ClipTextReveal
-                      key={active}
+                      key={activeIndex}
                       text={withQuoteMarks(t?.quote ?? "")}
                     />
                   ) : (
@@ -263,7 +266,7 @@ export function V3Testimonials({ data }) {
           {/* Case study CTA — right column on desktop, below the quote on mobile */}
           {current?.caseStudyUrl && (
             <motion.div
-              key={`case-study-${active}`}
+              key={`case-study-${activeIndex}`}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
@@ -307,10 +310,10 @@ export function V3Testimonials({ data }) {
                   aria-label={`Show testimonial ${i + 1}${
                     t?.authorName ? `: ${t.authorName}` : ""
                   }`}
-                  aria-current={i === active}
+                  aria-current={i === activeIndex}
                   className={cn(
                     "h-1.5 rounded-full bg-foreground transition-all duration-300",
-                    i === active ? "w-6" : "w-3 opacity-30"
+                    i === activeIndex ? "w-6" : "w-3 opacity-30"
                   )}
                 />
               ))}

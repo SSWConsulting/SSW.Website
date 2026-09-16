@@ -50,7 +50,7 @@ export const V3TestimonialsSchema: Template = {
         },
         {
           type: "string",
-          label: "Case Study Link Text",
+          label: "Case Study Sentence",
           name: "caseStudyLabel",
           description:
             "Sentence shown above the case study button, e.g. 'Discover how an AI-powered chatbot transformed their customer service'.",

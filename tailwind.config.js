@@ -81,6 +81,8 @@ export default {
         "sidebar-narrow": "minmax(240px, 30%) minmax(0, 1fr)",
         // Hero banner: fluid text column beside a speaker column that hugs.
         "hero-speakers": "1fr auto",
+        // Testimonial: quote column beside a capped case-study CTA column.
+        testimonial: "minmax(0, 1fr) minmax(0, 24rem)",
       },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
