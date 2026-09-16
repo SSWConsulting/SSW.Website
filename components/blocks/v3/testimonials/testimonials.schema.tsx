@@ -38,7 +38,8 @@ export const V3TestimonialsSchema: Template = {
           type: "string",
           label: "Quote",
           name: "quote",
-          description: "Use **double asterisks** to highlight text in red.",
+          description:
+            "Use **double asterisks** to highlight text in red. Leave the quotation marks out — the design adds them.",
           ui: { component: "textarea" },
         },
         {
@@ -49,10 +50,18 @@ export const V3TestimonialsSchema: Template = {
         },
         {
           type: "string",
-          label: "Case Study Link Text",
+          label: "Case Study Sentence",
           name: "caseStudyLabel",
           description:
-            "Text for the case study link (always shown in uppercase). Defaults to 'See Case Study'.",
+            "Sentence shown above the case study button, e.g. 'Discover how an AI-powered chatbot transformed their customer service'.",
+          ui: { component: "textarea" },
+        },
+        {
+          type: "string",
+          label: "Case Study Button Text",
+          name: "caseStudyButtonText",
+          description:
+            "Text on the red button (always shown in uppercase). Defaults to 'Explore the case study'.",
         },
         {
           type: "string",
