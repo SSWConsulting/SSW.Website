@@ -5,10 +5,13 @@ export const cardShell = [
   // heavy for a card hairline.
   "unstyled group relative flex h-full flex-col overflow-hidden rounded-card border-0.75",
   "text-inherit no-underline transition-colors duration-300 motion-reduce:transition-none",
-  // outline, not ring (a ring is a box-shadow, which didn't paint here), and
-  // no outline-2: twMerge folds a bare `outline` into the width group and
-  // drops it, leaving outline-style: none.
-  "focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-brand",
+  // A ring, not an outline, matching sidebarNavItem: tailwind-merge treats a
+  // bare `outline` and `outline-2` as one group and keeps only the last, so the
+  // pair can never give both a solid style and a 2px width. A ring is a
+  // box-shadow, and an element's own overflow-hidden does not clip it.
+  // outline-none suppresses the UA :focus-visible ring, which would otherwise
+  // paint its own blue outline on top of ours.
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand",
 ].join(" ");
 
 // Bundled as one token, not two reorderable classes: twMerge only lets a
