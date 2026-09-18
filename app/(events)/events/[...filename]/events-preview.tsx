@@ -17,6 +17,7 @@ import {
   CalendarPlus,
   Check,
   Clock,
+  Globe,
   MapPin,
   Share2,
   User,
@@ -180,6 +181,12 @@ function EventSidebar({
       : null;
   const venueName = event.venue || chapel?.name;
   const cityStateLine = [city, state].filter(Boolean).join(", ");
+  const websiteName =
+    {
+      "https://aihackday.com/": "AI Hack Day",
+      "https://mauihackday.com/": "MAUI Hack Day",
+      "https://angularhackday.com/": "Angular Hack Day",
+    }[event.websiteUrl] || "event";
 
   const handleAddToCalendar = () => {
     if (!event.startDateTime || !event.endDateTime) return;
@@ -328,6 +335,25 @@ function EventSidebar({
             </div>
           )}
 
+          {event.websiteUrl && (
+            <div className="flex items-start gap-3">
+              <Globe
+                size={18}
+                className="mt-0.5 shrink-0 text-sswRed"
+                aria-hidden
+              />
+              <a
+                data-tina-field={tinaField(event, "websiteUrl")}
+                href={event.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-sswBlack underline underline-offset-2 hover:text-sswRed"
+              >
+                Visit the {websiteName} website
+              </a>
+            </div>
+          )}
+
           {ctaHref && (
             <RippleButton
               href={ctaHref}
@@ -443,7 +469,8 @@ export default function EventsPreview({ tinaProps }: EventsPreviewProps) {
   const recordingUrl = event.youTubeId
     ? `https://www.youtube.com/watch?v=${event.youTubeId}`
     : event.trailerUrl;
-  const showRecordingCta = isPast && !!recordingUrl;
+  const showRecordingCta =
+    isPast && event.calendarType !== "Hack Days" && !!recordingUrl;
 
   // Only state a cost when one is set — a blank price hides it, as the Tina
   // field description promises. Never assume an unpriced event is free.
