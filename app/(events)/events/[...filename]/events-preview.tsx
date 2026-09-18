@@ -183,6 +183,8 @@ function EventSidebar({
   const cityStateLine = [city, state].filter(Boolean).join(", ");
   const websiteName =
     {
+      "https://www.ssw.com.au/netug": "SSW User Group",
+      "https://www.ssw.com.au/netug/": "SSW User Group",
       "https://aihackday.com/": "AI Hack Day",
       "https://mauihackday.com/": "MAUI Hack Day",
       "https://angularhackday.com/": "Angular Hack Day",

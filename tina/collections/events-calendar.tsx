@@ -99,12 +99,16 @@ export const eventsCalendarSchema: Collection = {
       label: "Event website",
       name: "websiteUrl",
       description:
-        "The event or series website, separate from registration. This text link stays visible after the event. Required for Hack Days: use https://aihackday.com/, https://mauihackday.com/ (also for Xamarin), or https://angularhackday.com/.",
+        "The event or series website, separate from registration. This text link stays visible after the event. Required for Hack Days, User Groups, and Conferences. SSW-run User Groups: https://www.ssw.com.au/netug. External events: use the external event or organiser website, not the SSW User Group page. Hack Days: use https://aihackday.com/, https://mauihackday.com/ (also for Xamarin), or https://angularhackday.com/.",
       ui: {
         validate: (value, values) => {
           if (!value?.trim()) {
-            if (values.calendarType === "Hack Days") {
-              return "Add the event website so visitors can find it after the Hack Day.";
+            if (
+              ["Hack Days", "User Groups", "Conferences"].includes(
+                values.calendarType
+              )
+            ) {
+              return "Add the event website so visitors can find it after the event.";
             }
             return;
           }
