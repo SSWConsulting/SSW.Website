@@ -319,7 +319,11 @@ const componentMap = {
   V3CardCarousel,
 };
 
-export const Blocks = ({ prefix, blocks }) => {
+export const Blocks = ({
+  prefix,
+  blocks,
+  testimonialLayout = "case-study",
+}) => {
   return (
     <div>
       {blocks ? (
@@ -329,6 +333,7 @@ export const Blocks = ({ prefix, blocks }) => {
             blockData={block}
             prefix={prefix}
             i={i}
+            testimonialLayout={testimonialLayout}
           />
         ))
       ) : (
@@ -338,7 +343,7 @@ export const Blocks = ({ prefix, blocks }) => {
   );
 };
 
-const Block = ({ prefix, blockData, i }) => {
+const Block = ({ prefix, blockData, i, testimonialLayout }) => {
   const Component = componentMap[blockData.__typename?.replace(prefix, "")];
 
   if (!Component) {
@@ -353,6 +358,9 @@ const Block = ({ prefix, blockData, i }) => {
     data: blockData,
     parentField: field,
     priority: i === 0,
+    ...(blockData.__typename?.endsWith("V3Testimonials")
+      ? { layout: testimonialLayout }
+      : {}),
   };
 
   return (
