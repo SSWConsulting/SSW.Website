@@ -1,0 +1,25 @@
+{
+  "title": "November User Group - You don't need React: Build lean with HTMX and Web Components",
+  "slug": "you-dont-need-react-htmx-web-components",
+  "url": "https://www.meetup.com/brisbane-full-stack-user-group/",
+  "websiteUrl": "https://www.ssw.com.au/netug",
+  "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/brook-jeynes.mdx"
+    }
+  ],
+  "startDateTime": "2026-11-18T07:00:00.000Z",
+  "endDateTime": "2026-11-18T09:30:00.000Z",
+  "startShowBannerDateTime": "2026-11-17T14:00:00.000Z",
+  "endShowBannerDateTime": "2026-11-18T12:30:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "category": "Web Design",
+  "abstract": "Most websites are static pages, forms, and the occasional data table. So why do we build websites like we need to harness the power of the sun (and the user's entire CPU)? What if we just... didn't?\n\nIn this talk, Brook will build a dynamic application live. No virtual DOM, client-side router, or build step, just letting HTML, JS, and your server do their thing.\n\nBy the end, you'll have new guidelines for when to use a framework like React, and maybe a better understanding of how little you needed all along.",
+  "description": "Most websites are static pages, forms, and the occasional data table. So why do we build websites like we need to harness the power of the sun (and the user's entire CPU)? What if we just... didn't?\n\nIn this talk, Brook will build a dynamic application live. No virtual DOM, client-side router, or build step, just letting HTML, JS, and your server do their thing.\n\nBy the end, you'll have new guidelines for when to use a framework like React, and maybe a better understanding of how little you needed all along.\n\n**About Brook:**\n\nBrook Jeynes is a Software Engineer and Consultant at SSW in Brisbane. He specialises in backend development for TinaCloud, working primarily with Golang and Node.js on AWS. He values simplicity, readability and accessible solutions.\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
