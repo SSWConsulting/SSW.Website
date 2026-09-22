@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../../customLink";
+import AosLoader from "../aosLoader";
 
 const Image = dynamic(() => import("next/image"));
 
@@ -68,6 +69,7 @@ export const Benefits = ({ data }) => {
 
   return (
     <article>
+      <AosLoader />
       <section className="grid sm:grid-cols-1 md:grid-cols-2">
         {benefitList?.map((benefit, index) => {
           return (
