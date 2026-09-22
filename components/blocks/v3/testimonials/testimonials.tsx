@@ -380,7 +380,7 @@ function HomepageTestimonials({ data }) {
                     i === activeIndex ? tinaField(t, "quote") : undefined
                   }
                   className={cn(
-                    "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 md:text-4xl",
+                    "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 motion-reduce:transition-none md:text-4xl",
                     i === activeIndex
                       ? "opacity-100"
                       : "pointer-events-none opacity-0"
