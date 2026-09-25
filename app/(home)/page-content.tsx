@@ -32,7 +32,11 @@ export default function PageContent({ props }) {
 
   return (
     <HomeThemeShell>
-      <Blocks prefix="Pagesv2Blocks" blocks={data.pagesv2.blocks} />
+      <Blocks
+        prefix="Pagesv2Blocks"
+        blocks={data.pagesv2.blocks}
+        testimonialLayout="quote"
+      />
     </HomeThemeShell>
   );
 }

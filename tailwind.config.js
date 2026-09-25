@@ -73,6 +73,7 @@ export default {
         "-1.5": "-1.5px",
       },
       gridTemplateRows: {
+        "testimonial-quote": "1fr auto",
         12: "repeat(12, minmax(min-content, 0fr))",
       },
       gridTemplateColumns: {
@@ -83,6 +84,7 @@ export default {
         "hero-speakers": "1fr auto",
         // Testimonial: quote column beside a capped case-study CTA column.
         testimonial: "minmax(0, 1fr) minmax(0, 24rem)",
+        "testimonial-quote": "minmax(0, 1fr) auto",
       },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",

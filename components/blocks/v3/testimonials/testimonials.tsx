@@ -3,9 +3,11 @@ import RippleButton from "@/components/button/rippleButtonV2";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import { TiArrowRight } from "react-icons/ti";
 import { BsArrowRight } from "react-icons/bs";
 import { tinaField } from "tinacms/dist/react";
 
@@ -175,7 +177,17 @@ function AuthorRow({ testimonial }) {
   );
 }
 
-export function V3Testimonials({ data }) {
+export function V3Testimonials({ data, layout = "case-study" }) {
+  return layout === "quote" ? (
+    <MotionConfig reducedMotion="user">
+      <HomepageTestimonials data={data} />
+    </MotionConfig>
+  ) : (
+    <CaseStudyTestimonials data={data} />
+  );
+}
+
+function CaseStudyTestimonials({ data }) {
   const testimonials = data?.testimonials ?? [];
   const [active, setActive] = useState(0);
   // Autoplay holds while a reader is hovering or tabbing through the block.
@@ -317,6 +329,185 @@ export function V3Testimonials({ data }) {
                   )}
                 />
               ))}
+            </div>
+          )}
+        </div>
+      </Container>
+    </V2ComponentWrapper>
+  );
+}
+
+function HomepageTestimonials({ data }) {
+  const testimonials = data?.testimonials ?? [];
+  const [active, setActive] = useState(0);
+
+  if (testimonials.length === 0) return null;
+
+  // Guard against the active index pointing past a shortened list while editing.
+  const activeIndex = Math.min(active, testimonials.length - 1);
+  const current = testimonials[activeIndex];
+
+  const goPrev = () =>
+    setActive((activeIndex - 1 + testimonials.length) % testimonials.length);
+  const goNext = () => setActive((activeIndex + 1) % testimonials.length);
+
+  return (
+    <V2ComponentWrapper data={data}>
+      <Container size="custom" className="py-16 sm:px-8 md:py-32">
+        <div
+          className={cn(
+            "mx-auto flex max-w-xl flex-col gap-10",
+            // Desktop: 2×2 grid — quote/image on top, author/buttons pinned to
+            // the bottom row. The top row is `1fr` so it absorbs the slack,
+            // keeping the author (bottom-left) and controls (bottom-right) on
+            // the same baseline regardless of quote length. Cap the width
+            // (centred via mx-auto) so the image sits beside the quote instead
+            // of being flung to the far edge of a full-width section.
+            "xl:grid xl:max-w-5xl xl:grid-cols-testimonial-quote xl:grid-rows-testimonial-quote xl:items-start xl:gap-x-12 xl:gap-y-4"
+          )}
+        >
+          {/* Quote (+ optional case study) — top-left */}
+          <div className="flex max-w-3xl flex-col xl:col-start-1 xl:row-start-1">
+            {/* All quotes share one grid cell so the cell always sizes to the
+                tallest quote — switching slides never changes the block height
+                (only the active quote is visible; the rest fade to opacity-0). */}
+            <div className="grid">
+              {testimonials.map((t, i) => (
+                <blockquote
+                  key={`v3-testimonial-quote-${i}`}
+                  aria-hidden={i !== activeIndex}
+                  data-tina-field={
+                    i === activeIndex ? tinaField(t, "quote") : undefined
+                  }
+                  className={cn(
+                    "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 motion-reduce:transition-none md:text-4xl",
+                    i === activeIndex
+                      ? "opacity-100"
+                      : "pointer-events-none opacity-0"
+                  )}
+                >
+                  {i === activeIndex ? (
+                    <ClipTextReveal
+                      key={activeIndex}
+                      text={withQuoteMarks(t?.quote ?? "")}
+                    />
+                  ) : (
+                    <span>
+                      {withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}
+                    </span>
+                  )}
+                </blockquote>
+              ))}
+            </div>
+
+            {current?.caseStudyUrl && (
+              <motion.a
+                key={`case-study-${activeIndex}`}
+                href={current.caseStudyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-tina-field={tinaField(current, "caseStudyUrl")}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.2,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                className="group mt-6 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
+              >
+                <span data-tina-field={tinaField(current, "caseStudyLabel")}>
+                  {current.caseStudyLabel || "See Case Study"}
+                </span>
+                <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
+              </motion.a>
+            )}
+          </div>
+
+          {/* Author image — top-right */}
+          {current?.authorImage && (
+            <motion.div
+              key={`author-image-${activeIndex}`}
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="relative order-first size-48 shrink-0 overflow-hidden rounded-card xl:order-none xl:col-start-2 xl:row-start-1 xl:self-start"
+            >
+              <Image
+                src={current.authorImage}
+                alt={
+                  current?.authorImageAlt ??
+                  current?.authorName ??
+                  "Testimonial author"
+                }
+                fill
+                className="object-cover"
+                data-tina-field={tinaField(current, "authorImage")}
+              />
+            </motion.div>
+          )}
+
+          {/* Author name / role / logo — bottom-left */}
+          <motion.div
+            key={`author-${activeIndex}`}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center gap-4 xl:col-start-1 xl:row-start-2 xl:self-end"
+          >
+            <div className="flex flex-col">
+              {current?.authorName && (
+                <span
+                  data-tina-field={tinaField(current, "authorName")}
+                  className="font-semibold text-foreground"
+                >
+                  {current.authorName}
+                </span>
+              )}
+              {current?.authorTitle && (
+                <span
+                  data-tina-field={tinaField(current, "authorTitle")}
+                  className="text-sm text-muted-foreground"
+                >
+                  {current.authorTitle}
+                </span>
+              )}
+            </div>
+
+            {current?.companyLogo && (
+              <>
+                <span className="h-10 w-px bg-hairline" />
+                <Image
+                  src={current.companyLogo}
+                  alt={current?.companyLogoAlt ?? "Company logo"}
+                  width={160}
+                  height={160}
+                  className="h-12 w-auto object-contain brightness-0 dark:invert"
+                  data-tina-field={tinaField(current, "companyLogo")}
+                />
+              </>
+            )}
+          </motion.div>
+
+          {/* Carousel controls — bottom-right, under the image */}
+          {testimonials.length > 1 && (
+            <div className="mt-6 flex justify-end gap-3 xl:col-start-2 xl:row-start-2 xl:mt-0 xl:place-self-end">
+              <button
+                type="button"
+                aria-label="Previous testimonial"
+                onClick={goPrev}
+                className="flex size-12 items-center justify-center rounded-full bg-foreground text-background transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground motion-reduce:transition-none"
+              >
+                <BiLeftArrowAlt className="size-6" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next testimonial"
+                onClick={goNext}
+                className="flex size-12 items-center justify-center rounded-full bg-foreground text-background transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground motion-reduce:transition-none"
+              >
+                <BiRightArrowAlt className="size-6" />
+              </button>
             </div>
           )}
         </div>
