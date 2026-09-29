@@ -121,8 +121,13 @@ function PersonCard({
   );
 }
 
+const arrowButton =
+  "flex size-12 items-center justify-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground hover:text-background disabled:pointer-events-none disabled:opacity-30 dark:border-white/40";
+
+// A finite carousel disables the arrow it can't go any further with
 function CarouselControls({ count }: { count: number }) {
-  const { scrollPrev, scrollNext } = useCarousel();
+  const { scrollPrev, scrollNext, canScrollPrev, canScrollNext } =
+    useCarousel();
 
   return (
     <div className="mt-10 flex items-center justify-between px-8 lg:px-0">
@@ -133,7 +138,8 @@ function CarouselControls({ count }: { count: number }) {
           type="button"
           aria-label="Previous"
           onClick={scrollPrev}
-          className="flex size-12 items-center justify-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground hover:text-background dark:border-white/40"
+          disabled={!canScrollPrev}
+          className={arrowButton}
         >
           <ArrowLeft className="size-5" />
         </button>
@@ -141,7 +147,8 @@ function CarouselControls({ count }: { count: number }) {
           type="button"
           aria-label="Next"
           onClick={scrollNext}
-          className="flex size-12 items-center justify-center rounded-full border border-hairline text-foreground transition-colors hover:bg-foreground hover:text-background dark:border-white/40"
+          disabled={!canScrollNext}
+          className={arrowButton}
         >
           <ArrowRight className="size-5" />
         </button>

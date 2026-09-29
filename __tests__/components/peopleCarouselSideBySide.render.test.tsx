@@ -28,9 +28,12 @@ jest.mock("@/components/ui/carousel", () => ({
     </div>
   ),
   CarouselPickItem: ({ index }) => <button data-dot={index} />,
+  // As on the first page of a finite carousel
   useCarousel: () => ({
     scrollPrev: () => {},
     scrollNext: () => {},
+    canScrollPrev: false,
+    canScrollNext: true,
     selectedIndex: 0,
   }),
 }));
@@ -80,6 +83,14 @@ describe("V3PeopleCarousel side by side", () => {
     });
     expect(d.querySelectorAll("[data-slide]")).toHaveLength(5);
     expect(d.querySelectorAll("[data-dot]")).toHaveLength(3);
+  });
+
+  it("disables the arrow the carousel can't scroll towards", () => {
+    const d = desktop(renderBlock(5, "sideBySide"));
+    const button = (label: string) =>
+      d.querySelector<HTMLButtonElement>(`button[aria-label="${label}"]`);
+    expect(button("Previous").disabled).toBe(true);
+    expect(button("Next").disabled).toBe(false);
   });
 
   it("uses the stacked layout's small-screen carousel below lg", () => {
