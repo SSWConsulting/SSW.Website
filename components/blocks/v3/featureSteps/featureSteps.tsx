@@ -67,12 +67,11 @@ export function V3FeatureSteps({ data }) {
                 key={`v3-step-${index}`}
                 className={cn(
                   "flex flex-col border-t-0.75 border-sswBorder px-2 py-6 lg:px-4",
-                  isFourSteps
-                    ? [
-                        index % 2 !== 0 && "md:border-l-0.75 md:pl-8",
-                        index === 2 && "lg:border-l-0.75 lg:pl-8",
-                      ]
-                    : index % 2 !== 0 && "md:pl-8 lg:border-x-0.75"
+                  index % 2 !== 0 &&
+                    (isFourSteps
+                      ? "md:border-l-0.75 md:pl-8"
+                      : "md:pl-8 lg:border-x-0.75"),
+                  isFourSteps && index === 2 && "lg:border-l-0.75 lg:pl-8"
                 )}
               >
                 {step?.brow && (

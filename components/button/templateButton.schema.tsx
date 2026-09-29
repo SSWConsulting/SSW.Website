@@ -45,7 +45,8 @@ export const buttonSchema = [
     type: "boolean",
     label: "Open in New Tab",
     name: "newTab",
-    description: "Open the button link in a new browser tab.",
+    description:
+      "Use for external links, like registration forms. Leave off for pages on this site.",
   },
   {
     type: "string",

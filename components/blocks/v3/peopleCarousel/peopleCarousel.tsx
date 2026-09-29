@@ -234,9 +234,8 @@ export function V3PeopleCarousel({ data }) {
     </>
   );
 
-  // 4 or fewer: swipe through them on smaller views and only settle into a
-  // static grid once there's room (lg+), like the image-cards block. Carousel
-  // when there's more than fits to scroll.
+  // 4 or fewer swipe on smaller views and settle into a static grid at lg+,
+  // like the image-cards block. More than 4 use a full carousel.
   const fitsGrid = people.length > 0 && people.length <= 4;
 
   // Below lg: horizontal finite carousel with a "+ more" end cap
@@ -343,13 +342,14 @@ export function V3PeopleCarousel({ data }) {
         ) : (
           <>
             {intro}
-            {fitsGrid && (
+            {fitsGrid ? (
               <>
                 {swipeCarousel}
                 {staticGrid}
               </>
+            ) : (
+              fullCarousel
             )}
-            {fullCarousel}
             {seeMore}
           </>
         )}
