@@ -73,8 +73,9 @@ describe("V3VerticalList", () => {
   });
 
   it("does not number the items — it isn't a sequence", () => {
-    const { container } = render(<V3VerticalList data={data} />);
-    expect(container.textContent).not.toMatch(/\b0?[1-3]\b/);
+    render(<V3VerticalList data={data} />);
+    const items = within(screen.getByRole("list")).getAllByRole("listitem");
+    items.forEach((li) => expect(li.textContent).not.toMatch(/^\s*\d/));
   });
 
   it("renders no list when there are no items", () => {

@@ -4,7 +4,7 @@ import { Container } from "@/components/util/container";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
-const bodyText = {
+const markdownComponents = {
   p: (props) => (
     <p
       {...props}
@@ -47,7 +47,7 @@ export function V3VerticalList({ data }) {
                 <div data-tina-field={tinaField(data, "description")}>
                   <TinaMarkdown
                     content={data.description}
-                    components={bodyText}
+                    components={markdownComponents}
                   />
                 </div>
               )}
@@ -74,7 +74,7 @@ export function V3VerticalList({ data }) {
                     >
                       <TinaMarkdown
                         content={item.description}
-                        components={bodyText}
+                        components={markdownComponents}
                       />
                     </div>
                   )}
