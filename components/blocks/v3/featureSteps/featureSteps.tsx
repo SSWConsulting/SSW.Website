@@ -4,6 +4,7 @@ import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { spacedParagraphs } from "../shared/spacedParagraphs";
 
 export function V3FeatureSteps({ data }) {
   // Four steps sit in a 2x2 / 1x4 grid; anything else keeps the 3-column layout
@@ -41,14 +42,9 @@ export function V3FeatureSteps({ data }) {
             >
               <TinaMarkdown
                 content={data.description}
-                components={{
-                  p: (props) => (
-                    <p
-                      {...props}
-                      className="mb-4 text-base font-light text-gray-300 last:mb-0"
-                    />
-                  ),
-                }}
+                components={spacedParagraphs(
+                  "text-base font-light text-gray-300"
+                )}
               />
             </div>
           )}

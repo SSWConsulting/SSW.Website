@@ -44,8 +44,10 @@ export function V3StackCards({ data }) {
         {cards.length > 0 && (
           <div
             className={cn(
-              "mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2",
-              cards.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"
+              "mt-12 grid grid-cols-1 gap-5",
+              cards.length === 3
+                ? "lg:grid-cols-3"
+                : "sm:grid-cols-2 lg:grid-cols-4"
             )}
           >
             {cards.map((card, index) => {
