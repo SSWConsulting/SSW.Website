@@ -15,15 +15,15 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "brow": "Free live webinar for Australian C-suite leaders",
-      "heading": "The projects you shelved are **now affordable**",
-      "description": "One Australian fintech cut its per-transaction cost from $120 to $5. In 60 minutes, Ulysses shows which parked projects you can now afford to build, and what they cost.\n\n**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom**  \n50-minute session + 10-minute live Q\\&A\n",
+      "brow": "Free Live Webinar for Australian C-Suite Executives",
+      "heading": "Solving Enterprise Challenges with AI",
+      "description": "In 60 minutes, you'll see the four business problems AI has just made cheap enough to solve, with the case studies and the dollar figures behind them.\n\nJoin us for a 50-minute session + 10-minute live Q\\&A.\\\n\\\n**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom**\n",
       "buttons": [
         {
           "buttonText": "Register on Zoom",
           "buttonLink": "https://zoom.us/webinar/register/TBC",
-          "colour": 0,
-          "newTab": true
+          "newTab": true,
+          "colour": 0
         }
       ],
       "mediaType": "image",
@@ -39,9 +39,9 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "In 60 minutes, you'll learn",
-      "heading": "What your parked projects **cost to build today**",
-      "description": "For years you priced the upgrade, the custom build and the legacy replacement, then parked them because the quotes were too high.\n\nSomeone pitches you on AI most weeks. In this session Ulysses shows what an AI build costs, and what it returns, in a business like yours.\n",
+      "brow": "",
+      "heading": "What your parked projects cost to build today",
+      "description": "For years the upgrade was too expensive. So were the custom build, the data project and the legacy replacement.\n\nIf you sit in the C-suite at an Australian business, someone pitches you on AI most weeks. Few of those pitches show what an AI build costs and returns in a company like yours.\n",
       "steps": [
         {
           "brow": "01",
@@ -56,12 +56,12 @@
         {
           "brow": "03",
           "heading": "The cost of adding AI to software you already own",
-          "description": "You'll get customisation costs from SSW's Dynamics 365, Salesforce and SAP engagements, including the fintech that cut its per-transaction cost from $120 to $5.\n"
+          "description": "You'll see real numbers from SSW's Dynamics 365, Salesforce and SAP engagements, including the Australian fintech that cut its per-transaction cost from $120 to $5.\n"
         },
         {
           "brow": "04",
-          "heading": "Replace the legacy system or keep patching it",
-          "description": "Your legacy system breaks on Monday mornings. You'll learn to run the numbers on replacing it at today's prices.\n"
+          "heading": "Replace the legacy system rather than patching it",
+          "description": "Your legacy system breaks every Monday morning. You'll learn to run the numbers on replacing it at today's prices.\n"
         }
       ],
       "_template": "v3FeatureSteps"
@@ -70,29 +70,34 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "Built for",
-      "heading": "The people who **sign off the budget**",
+      "brow": "Who this is for",
+      "heading": "The people who sign off the budget",
       "cards": [
         {
           "title": "CEOs & Managing Directors",
-          "description": "You want to know where your business could save money with AI, and how much."
+          "description": "Who want to know where their business could save money with AI, and how much."
         },
         {
           "title": "CTOs, CIOs & Heads of Technology",
-          "description": "You want to see AI that an Australian engineering team has shipped to production, and what it means for your systems."
+          "description": "Who want to see AI that an Australian engineering team has shipped to production, and what it means for their systems."
         },
         {
           "title": "CFOs & Heads of Strategy",
-          "description": "You're building the investment case and need figures from Australian engagements."
+          "description": "Who are building the investment case and need to understand the real costs from Australian engagements."
         }
       ],
       "_template": "v3StackCards"
     },
     {
       "background": {
-        "backgroundColour": 7
+        "backgroundColour": 6,
+        "bleed": false,
+        "gridOverlay": false,
+        "redGlow": false
       },
       "heading": "Organisations we've built software for",
+      "isWhiteImages": false,
+      "showBorders": true,
       "logos": [
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
@@ -131,18 +136,19 @@
     },
     {
       "background": {
-        "backgroundColour": 7,
+        "backgroundColour": 6,
+        "bleed": false,
         "gridOverlay": true,
         "redGlow": true
       },
       "heading": "See what an AI build costs **and what it returns**",
-      "description": "The session is free. Ulysses brings case studies and costs, with no sales deck. You'll leave knowing which problems you can afford to solve and the expected cost of each.\n",
+      "description": "Ulysses brings case studies and costs, with no sales deck. You'll leave knowing which problems you can afford to solve and the expected cost of each.\n",
       "buttons": [
         {
           "buttonText": "Register on Zoom",
           "buttonLink": "https://zoom.us/webinar/register/TBC",
-          "colour": 0,
-          "newTab": true
+          "newTab": true,
+          "colour": 0
         }
       ],
       "_template": "v3Cta"
@@ -152,9 +158,9 @@
         "backgroundColour": 7
       },
       "layout": "sideBySide",
-      "brow": "Your host",
-      "heading": "Hosted by **Ulysses Maclaren**",
-      "subtitle": "Ulysses has been SSW's COO since 2006. He leads the AI work inside SSW and manages our largest client accounts. On the day he'll take you through the case studies and answer your questions live.",
+      "brow": "SSW · Chief Operating Officer · Sydney",
+      "heading": "Hosted by Ulysses Maclaren",
+      "subtitle": "Ulysses has run the operational side of SSW since 2006, as COO and 2IC to Chief Architect Adam Cogan. He leads the AI work inside SSW's own business: workflow automation, process re-engineering, data-driven decision-making and customer engagement. As Principal Account Manager he also handles the relationships behind SSW's largest client accounts.\n\nOn the day he'll take you through the case studies and answer your questions live.",
       "people": [
         {
           "name": "Ulysses Maclaren",
@@ -177,8 +183,8 @@
         "backgroundColour": 7
       },
       "brow": "Agenda",
-      "heading": "Seven topics in **60 minutes**",
-      "_template": "v3VerticalList",
+      "heading": "Seven topics we'll cover in this session",
+      "description": "",
       "items": [
         {
           "heading": "The four expensive problems",
@@ -208,7 +214,8 @@
           "heading": "Live Q&A: bring your own problem",
           "description": "Ask Ulysses about a problem in your business.\n"
         }
-      ]
+      ],
+      "_template": "v3VerticalList"
     },
     {
       "background": {
@@ -225,10 +232,6 @@
           "answer": "No. Ulysses talks cost, time and return for business leaders. You won't see any code.\n"
         },
         {
-          "question": "Is this a pitch in disguise?",
-          "answer": "No. Ulysses spends the session on case studies and costs. At the end he offers a free 1:1 consultation to anyone who wants to talk through their own business.\n"
-        },
-        {
           "question": "What size business is this for?",
           "answer": "Mid-to-large Australian enterprises. Come if you have a say in the budget and your business runs custom software, a CRM or ERP, or a legacy system that blocks new features.\n"
         },
@@ -238,7 +241,7 @@
         },
         {
           "question": "Do I need my camera on?",
-          "answer": "No. It's a Zoom webinar, so attendees aren't on camera. You can ask questions in the Q\\&A.\n"
+          "answer": "No. Attendees aren't required to be on camera. You can ask questions in the Q\\&A.\n"
         },
         {
           "question": "Why is it free?",
@@ -253,14 +256,14 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "heading": "Save your **seat**",
-      "description": "Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom. We'll send you the Zoom link and the replay.\n",
+      "heading": "Register to save your seat",
+      "description": "**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom.**\n\nWe'll send you the Zoom link and the replay.\n",
       "buttons": [
         {
           "buttonText": "Register on Zoom",
           "buttonLink": "https://zoom.us/webinar/register/TBC",
-          "colour": 0,
-          "newTab": true
+          "newTab": true,
+          "colour": 0
         }
       ],
       "_template": "v3Cta"
