@@ -1,17 +1,18 @@
 "use client";
-import {
-  Tab,
-  TabGroup,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Transition,
-} from "@headlessui/react";
+import { Transition } from "@headlessui/react";
+import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
+import { DaysToGoBadge, EventMetaItem } from "@/components/events/eventMeta";
+import { SswTvCard } from "@/components/events/sswTvCard";
+import { FilterNav } from "@/components/filter/FilterNav";
+import { StickySidebarLayout } from "@/components/layout/stickySidebar";
+import { cardShell, productTagChip } from "@/components/products/shared";
+import { ProductCardShell } from "@/components/products/productCardShell";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
-import React, { Fragment, useEffect, useMemo, useState } from "react";
-import { FaSpinner } from "react-icons/fa";
+import React, { useEffect, useMemo, useState } from "react";
+import { FaHistory, FaSpinner } from "react-icons/fa";
+import { FiCalendar, FiMapPin, FiTag, FiUser } from "react-icons/fi";
 import type { Event, WithContext } from "schema-dts";
-import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { BluredBase64Image } from "../../helpers/images";
 import { useEvents } from "../../hooks/useEvents";
 import {
@@ -19,20 +20,16 @@ import {
   useFetchPastEvents,
 } from "../../hooks/useFetchEvents";
 import { useFormatDates } from "../../hooks/useFormatDates";
-import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { UtilityButton } from "../button/utilityButton";
-import { CustomLink } from "../customLink";
-import { EventsRelativeBox } from "../events/eventsRelativeBox";
 import { Presenter, PresenterList } from "../presenters/presenterList";
 import { CITY_MAP } from "../util/constants/country";
 import { sswOrganisation } from "../util/constants/json-ld";
-import { EventFilterAllCategories, FilterBlock } from "./FilterBlock";
+import { EventFilterAllCategories } from "./FilterBlock";
 import { FilterGroupProps } from "./FilterGroup";
 
 const EVENTS_JSON_LD_LIMIT = 5;
 
 interface EventsFilterProps {
-  sidebarBody: TinaMarkdownContent;
   filterCategories: EventFilterAllCategories;
 }
 
@@ -51,16 +48,11 @@ export type EventTrimmed = {
     presenter?: Presenter;
   }[];
   presenterName?: string;
-  presenterProfileUrl?: string;
   calendarType?: string;
   category?: string;
-  description?: TinaMarkdownContent;
 };
 
-export const EventsFilter = ({
-  filterCategories,
-  sidebarBody,
-}: EventsFilterProps) => {
+export const EventsFilter = ({ filterCategories }: EventsFilterProps) => {
   const [pastSelected, setPastSelected] = useState<boolean>(false);
   const { past, upcoming } = filterCategories;
   const { filters: futureFilters } = useEvents(upcoming);
@@ -102,63 +94,98 @@ export const EventsFilter = ({
     }
   }, []);
 
+  const selectPast = (past: boolean) => {
+    setPastSelected(past);
+
+    const params = new URLSearchParams(window.location.search);
+    if (past) {
+      params.set("past", "1");
+    } else {
+      params.delete("past");
+    }
+    const query = params.toString();
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`
+    );
+  };
+
+  // The two timeframes differ only in which set of five values they read, so
+  // pick them here rather than duplicating the markup per branch.
+  const groups = pastSelected ? pastFilters : futureFilters;
+  const events = pastSelected ? pastEvents : futureEvents;
+  const isLoading = pastSelected ? isLoadingPastPages : isLoadingFuturePages;
+  const hasMore = pastSelected ? hasMorePastPages : hasMoreFuturePages;
+  const isFetching = pastSelected ? isFetchingPastPages : isFetchingFuturePages;
+  const fetchNext = pastSelected ? fetchNextPastPage : fetchFutureNextPage;
+
   return (
-    <FilterBlock
-      sidebarChildren={
-        <div className="descendant-img:py-3">
-          <TinaMarkdown content={sidebarBody} components={componentRenderer} />
-        </div>
-      }
-      groups={!pastSelected ? futureFilters : pastFilters}
+    <StickySidebarLayout
+      title="SSW Events"
+      promo={<SswTvCard />}
+      sidebar={groups?.map((group) => (
+        <FilterNav key={group.label} {...group} />
+      ))}
     >
-      <TabGroup
-        onChange={(index) => setPastSelected(index === 1)}
-        selectedIndex={pastSelected ? 1 : 0}
-      >
-        <TabList className="mb-8 flex flex-row">
-          <EventTab>Upcoming Events</EventTab>
-          <EventTab>Past Events</EventTab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <EventsList
-              events={futureEvents}
-              isUpcoming
-              isLoading={isLoadingFuturePages}
-            />
-            {hasMoreFuturePages && (
-              <LoadMore
-                load={() => {
-                  fetchFutureNextPage();
-                }}
-                isLoading={isFetchingFuturePages}
-              />
-            )}
-          </TabPanel>
-          <TabPanel>
-            <EventsList events={pastEvents} isLoading={isLoadingPastPages} />
-            {hasMorePastPages && (
-              <LoadMore
-                load={() => {
-                  fetchNextPastPage();
-                }}
-                isLoading={isFetchingPastPages}
-              />
-            )}
-          </TabPanel>
-        </TabPanels>
-      </TabGroup>
-    </FilterBlock>
+      <div className="mb-8 flex items-center justify-between gap-4 border-b-0.75 border-hairline pb-3">
+        <h2 className="m-0 p-0 text-xl font-semibold text-foreground max-md:text-lg xl:text-2xl">
+          {pastSelected ? "Past Events" : "Upcoming Events"}
+        </h2>
+        <TimeframeToggle
+          pastSelected={pastSelected}
+          onToggle={() => selectPast(!pastSelected)}
+        />
+      </div>
+
+      {/* key remounts the list when the timeframe changes, which is what the
+          two separate TabPanels used to give for free. */}
+      <EventsList
+        key={pastSelected ? "past" : "upcoming"}
+        events={events}
+        isUpcoming={!pastSelected}
+        isLoading={isLoading}
+      />
+      {hasMore && (
+        <LoadMore
+          load={() => {
+            fetchNext();
+          }}
+          isLoading={isFetching}
+        />
+      )}
+    </StickySidebarLayout>
   );
 };
 
-const EventTab = ({ children }: { children: React.ReactNode }) => {
+const TimeframeToggle = ({
+  pastSelected,
+  onToggle,
+}: {
+  pastSelected: boolean;
+  onToggle: () => void;
+}) => {
+  const label = pastSelected ? "View Upcoming Events" : "View Past Events";
+  const Icon = pastSelected ? FiCalendar : FaHistory;
+
   return (
-    <Tab as={Fragment}>
-      <button className="grow border-b-2 border-b-sswRed py-2 uppercase tracking-widest hover:bg-gray-50 ui-selected:bg-gray-100">
-        {children}
-      </button>
-    </Tab>
+    <button
+      type="button"
+      onClick={onToggle}
+      title={label}
+      className={cn(
+        "unstyled flex min-h-9 flex-none items-center gap-2 rounded-full border-0.75 px-3.5 text-sm font-medium",
+        "transition-colors duration-150 motion-reduce:transition-none",
+        "focus-visible:ring-2 focus-visible:ring-brand",
+        "max-sm:aspect-square max-sm:justify-center max-sm:px-0",
+        pastSelected
+          ? "border-brand bg-brand-subtle text-brand"
+          : "border-hairline text-gray-600 hover:border-brand hover:text-foreground dark:text-muted-foreground dark:hover:text-foreground"
+      )}
+    >
+      <Icon aria-hidden className="size-4 flex-none" />
+      <span className="max-sm:sr-only">{label}</span>
+    </button>
   );
 };
 
@@ -307,21 +334,24 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
   };
 
   const city = event.city === "Other" ? event.cityOther : event.city;
-  let eventSite = { name: city, url: event.url };
-
-  if (event.hostedAtSsw) {
-    eventSite = {
-      name: CITY_MAP[city]?.name,
-      url: CITY_MAP[city]?.url,
-    };
-  }
+  const eventSiteName = event.hostedAtSsw ? CITY_MAP[city]?.name : city;
 
   const { formattedDate, relativeDate } = useFormatDates(event, true);
+
+  const presenter = event.presenterName ? (
+    event.presenterName
+  ) : event.presenterList?.length > 0 ? (
+    <PresenterList linkless presenters={event.presenterList} />
+  ) : null;
+
+  const tags = [event.calendarType, event.category].filter(Boolean);
+  const isLink = Boolean(event.url);
+
   return (
     <>
       <Transition
         as="div"
-        className="mb-15 border-b-1 bg-white pb-8"
+        className="mb-6"
         show={visible}
         enter="transition duration-100 ease-out"
         enterFrom="transform scale-95 opacity-0"
@@ -330,85 +360,81 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         leaveFrom="transform scale-100 opacity-100"
         leaveTo="transform scale-95 opacity-0"
       >
-        <div className="mb-8 block md:flex md:flex-row">
-          <div className="float-left mb-3 mr-3 shrink-0 pr-2 md:float-none md:pr-0">
-            <Image
-              className={"rounded-md"}
-              height={100}
-              width={100}
-              placeholder="blur"
-              alt={`${event.thumbnailDescription || event.title} logo`}
-              src={thumbnail}
-              loading="lazy"
-              blurDataURL={BluredBase64Image}
-              onError={handleImageError}
-            />
-          </div>
-          <div>
-            <h2 className="my-0 font-semibold">
-              <CustomLink className="!no-underline" href={event.url}>
-                {event.title}
-              </CustomLink>
-            </h2>
+        <ProductCardShell
+          href={event.url}
+          className={cn(
+            cardShell,
+            "flex-row gap-5 p-5",
+            "border-stroke-weak bg-card dark:border-hairline",
+            // An event saved without a url renders a plain div, which must not
+            // advertise itself as clickable.
+            isLink &&
+              "hover:border-brand hover:bg-card-hover active:bg-gray-100 dark:hover:border-brand dark:active:bg-card"
+          )}
+        >
+          {thumbnail && (
+            <div className="hidden size-24 flex-none items-center justify-center overflow-hidden rounded-card bg-white sm:flex">
+              <Image
+                src={thumbnail}
+                alt={`${event.thumbnailDescription || event.title} logo`}
+                width={96}
+                height={96}
+                placeholder="blur"
+                blurDataURL={BluredBase64Image}
+                loading="lazy"
+                onError={handleImageError}
+                className="size-full object-contain"
+              />
+            </div>
+          )}
 
-            <EventsRelativeBox
-              relativeDate={relativeDate}
-              formattedDate={formattedDate}
-              dateFontSize="text-s"
-            />
+          <div className="flex min-w-0 flex-1 flex-col">
+            <h3 className="m-0 p-0 text-xl font-semibold leading-tight text-foreground">
+              {event.title}
+            </h3>
 
-            <div>
-              {(event.presenterName || event.presenterList?.length > 0) && (
-                <EventDescItem
-                  label={
-                    event?.presenterName || event?.presenterList?.length === 1
-                      ? "Presenter"
-                      : "Presenters"
-                  }
-                >
-                  {event.presenterName ? (
-                    <EventDescLink
-                      value={event.presenterName}
-                      linkValue={event.presenterProfileUrl}
-                    />
-                  ) : (
-                    <PresenterList presenters={event.presenterList} />
-                  )}
-                </EventDescItem>
+            <div className="mt-3 flex flex-col gap-1.5 text-sm font-light text-muted-foreground">
+              <EventMetaItem icon={FiCalendar} label="Date">
+                {formattedDate ? (
+                  <>
+                    <span className="min-w-0">{formattedDate}</span>
+                    <DaysToGoBadge>{relativeDate}</DaysToGoBadge>
+                  </>
+                ) : null}
+              </EventMetaItem>
+
+              {(presenter || eventSiteName) && (
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
+                  <EventMetaItem icon={FiUser} label="Presenter">
+                    {presenter}
+                  </EventMetaItem>
+                  <EventMetaItem icon={FiMapPin} label="Location">
+                    {eventSiteName}
+                  </EventMetaItem>
+                </div>
               )}
-              {city && (
-                <EventDescItem label="Location">
-                  <EventDescLink
-                    value={eventSite.name}
-                    linkValue={eventSite.url}
-                  />
-                </EventDescItem>
-              )}
-              {event.calendarType && (
-                <EventDescItem label="Type">
-                  <EventDescLink value={event.calendarType} />
-                </EventDescItem>
-              )}
-              {event.category && (
-                <EventDescItem label="Category">
-                  <EventDescLink value={event.category} />
-                </EventDescItem>
+
+              {tags.length > 0 && (
+                <EventMetaItem icon={FiTag} label="Tags">
+                  {tags.map((tag) => (
+                    <span key={tag} className={productTagChip}>
+                      {tag}
+                    </span>
+                  ))}
+                </EventMetaItem>
               )}
             </div>
           </div>
-        </div>
-        <div className="prose max-w-full prose-img:mx-1 prose-img:my-0 prose-img:inline">
-          <TinaMarkdown content={event?.description} />
-        </div>
-        <div className="mb-1 mt-6 p-0 text-end">
-          <CustomLink
-            href={event.url}
-            className="unstyled rounded bg-ssw-gray-dark px-3 py-2 text-sm font-normal text-white hover:bg-sswBlack"
-          >
-            Find out more
-            <span className="sr-only"> about {event.title}</span>
-          </CustomLink>
-        </div>
+
+          {isLink && (
+            <div className="hidden items-end sm:flex">
+              <ArrowCircle
+                className="size-9 flex-none bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
+                iconClassName="size-3.5"
+              />
+            </div>
+          )}
+        </ProductCardShell>
       </Transition>
       {jsonLd && (
         <script
@@ -417,33 +443,6 @@ const Event = ({ visible, event, jsonLd }: EventProps) => {
         />
       )}
     </>
-  );
-};
-
-type EventDescItemProps = {
-  label: string;
-  children: React.ReactNode;
-};
-
-const EventDescItem = ({ label, children }: EventDescItemProps) => {
-  return (
-    <span className="mr-2 inline-block whitespace-nowrap">
-      <strong>{label}: </strong>
-      {children}
-    </span>
-  );
-};
-
-type EventDescLinkProps = { value: string; linkValue?: string };
-
-const EventDescLink: React.FC<EventDescLinkProps> = ({
-  value,
-  linkValue,
-}: EventDescLinkProps) => {
-  return linkValue ? (
-    <CustomLink href={linkValue}>{value}</CustomLink>
-  ) : (
-    <>{value}</>
   );
 };
 

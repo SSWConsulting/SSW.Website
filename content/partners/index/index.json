@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "SSW Partners",
-    "description": "SSW partners with industry leaders like Microsoft, Octopus Deploy, and Zendesk to drive innovation and deliver cutting-edge software solutions."
+    "description": "SSW partners with industry leaders like Microsoft, OpenAI, Octopus Deploy, and Zendesk to drive innovation and deliver cutting-edge software solutions."
   },
   "title": "SSW Partners",
   "subTitle": "At SSW, we have several strategic partnerships that allow us to access knowledge, innovation and expertise around the globe.  ",
@@ -11,6 +11,12 @@
       "url": "https://www.microsoft.com/",
       "description": "In 1999, SSW was recognized as a Microsoft Cloud Partner, an elite Microsoft Business Partner reserved for companies with the highest customer endorsement.   SSW has a Microsoft Regional Director, 5 MVPs and is the home of some of Australia’s leading Microsoft cloud developers and consultants. ",
       "logo": "/images/partners/logo-microsoft.jpg"
+    },
+    {
+      "name": "OpenAI",
+      "url": "https://openai.com/",
+      "description": "OpenAI builds the frontier AI models behind ChatGPT and the OpenAI API. SSW became an OpenAI Select Partner in 2026, giving our consultants direct access to OpenAI's platform and expertise so we can help clients design, build and ship AI solutions on it.",
+      "logo": "/images/partners/logo-openai.jpg"
     },
     {
       "name": "Identity Server (Duende Software)",

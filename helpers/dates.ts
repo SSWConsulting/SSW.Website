@@ -25,6 +25,79 @@ export const formatEventDate = (start: Date, end: Date) => {
   return isOneDayEvent ? startDate : `${startDate} - ${endDate}`;
 };
 
+export type EventSchedule = {
+  isMultiDay: boolean;
+  /** One chip for a single-day event, two (start and end) for a multi-day one. */
+  chips: { month: string; day: string }[];
+  /**
+   * Weekday only — the chips already carry the month and day, so repeating
+   * them would say the same thing twice. "Wednesday" for a single-day event,
+   * "Mon - Tue" across several.
+   */
+  weekdayLine: string;
+  /** Full date for the page header, e.g. "Wed 16 Sep 2026". */
+  dateLong: string;
+  /**
+   * "5:30 PM - 7:30 PM". Multi-day events append " daily": only the overall
+   * start and end are stored, so this assumes each day keeps the first day's
+   * hours — it can't know a day that starts or finishes at a different time.
+   */
+  timeLine: string;
+};
+
+// Event date/time broken into the pieces the event page renders: calendar
+// chips, a date line and a time line. Multi-day events get a chip per end.
+export const formatEventSchedule = (start: Date, end: Date): EventSchedule => {
+  const empty = {
+    isMultiDay: false,
+    chips: [],
+    weekdayLine: "",
+    dateLong: "",
+    timeLine: "",
+  };
+  if (!start || !end) return empty;
+
+  const s = dayjs(start);
+  const e = dayjs(end);
+  const chip = (d: dayjs.Dayjs) => ({
+    month: d.format("MMM").toUpperCase(),
+    day: d.format("D"),
+  });
+  const times = `${s.format("h:mm A")} - ${e.format("h:mm A")}`;
+
+  if (s.startOf("day").isSame(e.startOf("day"))) {
+    return {
+      isMultiDay: false,
+      chips: [chip(s)],
+      weekdayLine: s.format("dddd"),
+      dateLong: s.format("ddd D MMM YYYY"),
+      timeLine: times,
+    };
+  }
+
+  // Same month: name it once at the end ("Mon 20 - Tue 21 Jul"). Across a year
+  // boundary both halves need their own year, or the start reads as the wrong one.
+  const sameYear = s.isSame(e, "year");
+  const dateShort = !sameYear
+    ? `${s.format("ddd D MMM YYYY")} - ${e.format("ddd D MMM YYYY")}`
+    : s.isSame(e, "month")
+      ? `${s.format("ddd D")} - ${e.format("ddd D MMM")}`
+      : `${s.format("ddd D MMM")} - ${e.format("ddd D MMM")}`;
+
+  // "daily" only when the hours actually repeat each day. An event that simply
+  // runs past midnight ends earlier in the day than it starts, and isn't daily.
+  const repeatsDaily = e.format("HH:mm") > s.format("HH:mm");
+
+  return {
+    isMultiDay: true,
+    chips: [chip(s), chip(e)],
+    weekdayLine: `${s.format("ddd")} - ${e.format("ddd")}`,
+    // dateShort already carries both years when they differ.
+    dateLong: sameYear ? `${dateShort} ${e.format("YYYY")}` : dateShort,
+    timeLine: repeatsDaily ? `${times} daily` : times,
+  };
+};
+
 // Splits the long event date into a date line and a time line so callers can
 // render them on separate lines.
 export const formatEventLongDateParts = (start: Date, end: Date) => {

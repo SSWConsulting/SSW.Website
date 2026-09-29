@@ -125,6 +125,10 @@
     --card-hover: #ffffff;
     --shadow-raised: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
     --shadow-overlay: 0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
+
+    /* TinaCMS brand colours, not part of the SSW palette and not overridden in .dark. */
+    --brand-tina-field: #c2360d; /* darkened for 5.49:1 white-text contrast */
+    --brand-tina-field-hover: #cf3a0e; /* brightened as far as 4.5:1 allows */
     --spacing-xs: 8px;
     --spacing-sm: 12px;
     --spacing-md: 16px;

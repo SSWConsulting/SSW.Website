@@ -252,6 +252,20 @@
           ]
         },
         {
+          "title": "Go (Golang)",
+          "description": "Build fast, reliable backends and microservices with Go. Our experienced Golang consultants build for scale from day one.",
+          "logo": "/images/thumbs/consulting/new/golang.svg",
+          "page": "content/consultingv2/golang.json",
+          "tags": [
+            {
+              "tag": "content/consulting/tag/web-development.json"
+            },
+            {
+              "tag": "content/consulting/tag/platform-development.json"
+            }
+          ]
+        },
+        {
           "title": "Next.js",
           "description": "Next.js allows you to rapidly build full-stack React applications with server-side rendering and API routes. It's fast, scalable, and SEO-friendly.",
           "logo": "/images/thumbs/consulting/new/next-js.svg",

@@ -38,7 +38,8 @@ export const backgroundSchema = {
       type: "boolean",
       label: "Bleed",
       name: "bleed",
-      description: "If true, the background will bleed into lower blocks.",
+      description:
+        "If true, the background image and red glow extend past this block into the ones above and below.",
     },
     {
       type: "boolean",

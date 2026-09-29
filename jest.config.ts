@@ -42,6 +42,8 @@ const config: Config = {
     // Handle module aliases
     "^@/components/(.*)$": "<rootDir>/components/$1",
     "^@/helpers/(.*)$": "<rootDir>/helpers/$1",
+    // tsconfig maps a catch-all "@/*"; mirror the part component tests need so
+    // anything importing cn() from @/lib/utils resolves under Jest too.
     "^@/lib/(.*)$": "<rootDir>/lib/$1",
 
     // Handle @next/font

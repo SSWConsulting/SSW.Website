@@ -2,6 +2,7 @@
   "title": "July User Group - Storage Wars: Choosing the right House for your data",
   "slug": "storage-wars",
   "url": "https://www.meetup.com/brisbane-full-stack-user-group/events/315364332",
+  "websiteUrl": "https://www.ssw.com.au/netug",
   "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
   "thumbnailDescription": "Brisbane Full Stack User Group",
   "presenterList": [
@@ -9,7 +10,6 @@
       "presenter": "content/presenters/vlad-kireyev.mdx"
     }
   ],
-  "headerLayout": "avatars",
   "startDateTime": "2026-07-15T08:00:28.796Z",
   "endDateTime": "2026-07-15T10:00:41.492Z",
   "startShowBannerDateTime": "2026-07-14T14:00:50.272Z",

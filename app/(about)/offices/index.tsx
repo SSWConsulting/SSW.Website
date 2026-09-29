@@ -20,7 +20,7 @@ export default function OfficesPage({ tinaProps }) {
             <Breadcrumbs path={"/offices"} title={"Offices"} />
 
             <div className="md:flex">
-              <div className="grow">
+              <div className="grow md:min-w-0">
                 <h1 className="pt-0">Our Offices</h1>
                 {offices.map((office) => (
                   <div key={office.addressLocality} className="mb-10 block">
@@ -87,7 +87,7 @@ export default function OfficesPage({ tinaProps }) {
                   </CustomLink>
                 </p>
               </div>
-              <div className="md:max-w-sm md:pl-6">
+              <div className="md:w-96 md:shrink-0 md:pl-6">
                 <div className="prose max-w-full">
                   <h3>SSW Offices</h3>
                   <ul>
