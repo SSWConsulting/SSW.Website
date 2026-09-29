@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "You're Registered | AI for Business Leaders Webinar | SSW",
+    "title": "You Are Registered | AI for Business Leaders Webinar | SSW",
     "description": "You're registered for the AI for Business Leaders webinar. Check your inbox for the Zoom link and calendar invite.",
     "showBreadcrumb": false
   },
@@ -27,7 +27,7 @@
       ],
       "mediaType": "image",
       "image": {
-        "altText": "AI for Business Leaders webinar",
+        "altText": "Presenter at an SSW TV lectern pointing to an AI Workflows slide, in front of a business audience",
         "imageSource": "/images/eventsv2/ai-for-business-leaders-hero.webp",
         "imageHeight": 968,
         "imageWidth": 1625
