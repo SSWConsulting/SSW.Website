@@ -1,0 +1,25 @@
+{
+  "title": ".NET User Group December",
+  "slug": "net-user-group-december-2026-sydney",
+  "url": "https://www.meetup.com/sydney-net-user-group/",
+  "websiteUrl": "https://www.ssw.com.au/netug",
+  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
+  "thumbnailDescription": "Sydney .NET User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/matt-wicks.mdx"
+    }
+  ],
+  "startDateTime": "2026-12-16T07:00:00.000Z",
+  "endDateTime": "2026-12-16T10:00:00.000Z",
+  "startShowBannerDateTime": "2026-12-15T13:00:00.000Z",
+  "endShowBannerDateTime": "2026-12-16T12:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Sydney",
+  "category": "Other",
+  "abstract": ".NET User Group December with Matt Wicks. Topic TBA.\n\nAgenda (Sydney time)\n\n6 pm – Pizza and networking at SSW Sydney! 🍕\n6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n6:45 pm – Topic TBA with Matt Wicks\n\nCan't make it? Watch the live stream: https://www.ssw.com.au/live",
+  "description": "**.NET User Group December with Matt Wicks**\n\nTopic TBA.\n\n**Agenda (Sydney time)**\n\n- 6 pm – Pizza and networking at SSW Sydney! 🍕\n- 6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n- 6:45 pm – Topic TBA with Matt Wicks\n\nCan't make it? Watch the live stream: [ssw.com.au/live](https://www.ssw.com.au/live)\n\n**About Matt**\n\nMatt Wicks is a Solution Architect at SSW who runs the Newcastle office. He is a certified Scrum Master, Octopus Insider, and GitHub accredited.",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
