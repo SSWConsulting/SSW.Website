@@ -1,0 +1,25 @@
+{
+  "title": ".NET User Group January",
+  "slug": "net-user-group-january-2027-brisbane",
+  "url": "https://www.meetup.com/brisbane-full-stack-user-group/",
+  "websiteUrl": "https://www.ssw.com.au/netug",
+  "thumbnail": "/images/events/brisbane-ug-thumb.jpg",
+  "thumbnailDescription": "Brisbane Full Stack User Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/gordon-beeming.mdx"
+    }
+  ],
+  "startDateTime": "2027-01-20T08:00:00.000Z",
+  "endDateTime": "2027-01-20T10:00:00.000Z",
+  "startShowBannerDateTime": "2027-01-19T14:00:00.000Z",
+  "endShowBannerDateTime": "2027-01-20T12:30:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Brisbane",
+  "category": "Other",
+  "abstract": ".NET User Group January with Gordon Beeming. Topic TBA.\n\nAgenda (Brisbane time)\n\n6 pm – Pizza and networking at SSW Brisbane! 🍕\n6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n6:45 pm – Topic TBA with Gordon Beeming\n\nCan't make it? Watch the live stream: https://www.ssw.com.au/live",
+  "description": "**.NET User Group January with Gordon Beeming**\n\nTopic TBA.\n\n**Agenda (Brisbane time)**\n\n- 6 pm – Pizza and networking at SSW Brisbane! 🍕\n- 6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n- 6:45 pm – Topic TBA with Gordon Beeming\n\nCan't make it? Watch the live stream: [ssw.com.au/live](https://www.ssw.com.au/live)\n\n**About Gordon**\n\nGordon Beeming is a Solution Architect at SSW and a Microsoft MVP in Developer Technologies. He specialises in DevOps and Azure DevOps.",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
