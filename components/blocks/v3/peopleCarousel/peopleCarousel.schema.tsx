@@ -37,6 +37,17 @@ export const V3PeopleCarouselSchema: Template = {
     backgroundSchema,
     {
       type: "string",
+      label: "Layout",
+      name: "layout",
+      description:
+        "Side by side puts the intro on the left and the people on the right on desktop. It stacks on smaller screens.",
+      options: [
+        { value: "stacked", label: "Stacked (default)" },
+        { value: "sideBySide", label: "Side by side" },
+      ],
+    },
+    {
+      type: "string",
       label: "Brow",
       name: "brow",
       description: "Small eyebrow text above the title.",
@@ -46,7 +57,8 @@ export const V3PeopleCarouselSchema: Template = {
       type: "string",
       label: "Subtitle",
       name: "subtitle",
-      description: "Short subtitle shown beneath the title.",
+      description:
+        "Short subtitle shown beneath the title. A blank line starts a new paragraph.",
       ui: { component: "textarea" },
     },
     {

@@ -6,6 +6,9 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export function V3FeatureSteps({ data }) {
+  // Four steps sit in a 2x2 / 1x4 grid; anything else keeps the 3-column layout
+  const isFourSteps = data?.steps?.length === 4;
+
   return (
     <V2ComponentWrapper data={data}>
       <Container
@@ -42,7 +45,7 @@ export function V3FeatureSteps({ data }) {
                   p: (props) => (
                     <p
                       {...props}
-                      className="text-base font-light text-gray-300"
+                      className="mb-4 text-base font-light text-gray-300 last:mb-0"
                     />
                   ),
                 }}
@@ -53,13 +56,23 @@ export function V3FeatureSteps({ data }) {
 
         {/* Numbered steps: 01 / 02 / 03 */}
         {data?.steps?.length > 0 && (
-          <div className={"mt-10 grid grid-cols-1 md:grid-cols-3"}>
+          <div
+            className={cn(
+              "mt-10 grid grid-cols-1",
+              isFourSteps ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3"
+            )}
+          >
             {data.steps.map((step, index) => (
               <div
                 key={`v3-step-${index}`}
                 className={cn(
                   "flex flex-col border-t-0.75 border-sswBorder px-2 py-6 lg:px-4",
-                  index % 2 !== 0 && "md:pl-8 lg:border-x-0.75"
+                  isFourSteps
+                    ? [
+                        index % 2 !== 0 && "md:border-l-0.75 md:pl-8",
+                        index === 2 && "lg:border-l-0.75 lg:pl-8",
+                      ]
+                    : index % 2 !== 0 && "md:pl-8 lg:border-x-0.75"
                 )}
               >
                 {step?.brow && (

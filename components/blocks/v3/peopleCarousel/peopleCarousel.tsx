@@ -19,6 +19,7 @@ import { tinaField } from "tinacms/dist/react";
 import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { PersonCardTexture } from "./personCardTexture";
+import { getSideBySideLayout, PEOPLE_PER_PAGE } from "./sideBySideLayout";
 
 // The SSW mark is a 2×2 grid of squares. Rendered in currentColor so it inherits
 // the white→sswRed hover from its link, like the react-icons beside it.
@@ -144,10 +145,187 @@ function CarouselControls({ count }: { count: number }) {
   );
 }
 
+// Desktop half of the "Side by side" layout: people two to a page. A lone
+// person is centred at the width of a paired card (middle 2 of 4 columns).
+function SideBySidePeople({ people }) {
+  const layout = getSideBySideLayout(people.length);
+
+  if (layout.mode === "none") return null;
+
+  if (layout.mode !== "paged") {
+    return (
+      <div className="grid grid-cols-4 gap-8">
+        {people.map((person, index) => (
+          <div
+            key={`v3-person-${index}`}
+            data-tina-field={tinaField(person, "name")}
+            className={cn(
+              "col-span-2",
+              layout.mode === "single" && "col-start-2"
+            )}
+          >
+            <PersonCard person={person} index={index} scope="side" />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    // containScroll off so an odd last page shows its lone card, rather than
+    // shifting back to repeat the previous person
+    <Carousel
+      opts={{
+        align: "start",
+        loop: false,
+        slidesToScroll: PEOPLE_PER_PAGE,
+        containScroll: false,
+      }}
+      autoplay={false}
+    >
+      <CarouselContent className="-ml-8">
+        {people.map((person, index) => (
+          <CarouselItem
+            key={`v3-person-${index}`}
+            className="basis-1/2 pl-8"
+            data-tina-field={tinaField(person, "name")}
+          >
+            <PersonCard person={person} index={index} scope="side" />
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselControls count={layout.pages} />
+    </Carousel>
+  );
+}
+
 export function V3PeopleCarousel({ data }) {
   const people = (data?.people ?? []).filter(Boolean);
   const moreLink = data?.mobilePlusMore;
   const seeMoreButtons = data?.seeMoreButton ?? [];
+  const isSideBySide = data?.layout === "sideBySide";
+
+  const intro = (
+    <>
+      {data?.brow && (
+        <span
+          data-tina-field={tinaField(data, "brow")}
+          className="flex items-center gap-2 px-8 font-mono text-xs uppercase tracking-wider text-sswRed lg:px-0"
+        >
+          {data.brow}
+        </span>
+      )}
+      {data?.heading && (
+        <h2
+          data-tina-field={tinaField(data, "heading")}
+          className={cn(
+            "my-4 max-w-2xl px-8 text-4xl leading-tight text-foreground lg:px-0",
+            !isSideBySide && "lg:text-5xl"
+          )}
+        >
+          <AlternatingText text={data.heading} />
+        </h2>
+      )}
+      {data?.subtitle && (
+        <p
+          data-tina-field={tinaField(data, "subtitle")}
+          className="max-w-2xl whitespace-pre-line px-8 text-base font-light text-muted-foreground lg:px-0"
+        >
+          {data.subtitle}
+        </p>
+      )}
+
+      <ButtonRow
+        data={data}
+        className="mt-6 hidden flex-wrap px-8 lg:block lg:px-0"
+      />
+    </>
+  );
+
+  const stackedPeople = (
+    <>
+      {/* 4 or fewer: swipe through them on smaller views and only settle
+          into a static grid once there's room (lg+), like the image-cards
+          block. Carousel when there's more than fits to scroll. */}
+      {people.length > 0 && people.length <= 4 && (
+        <>
+          {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
+          <Carousel
+            opts={{
+              align: "start",
+              loop: false,
+              dragFree: true,
+              containScroll: "keepSnaps",
+            }}
+            autoplay={false}
+            className="mt-12 lg:hidden"
+          >
+            <CarouselContent className="ml-0">
+              {people.map((person, index) => (
+                <CarouselItem
+                  key={`v3-person-${index}`}
+                  className={cn(
+                    "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+                  )}
+                  data-tina-field={tinaField(person, "name")}
+                >
+                  <PersonCard person={person} index={index} scope="sm" />
+                </CarouselItem>
+              ))}
+              {moreLink && (
+                <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
+                  <CarouselMoreCard href={moreLink} />
+                </CarouselItem>
+              )}
+            </CarouselContent>
+            <CarouselDots count={people.length} />
+          </Carousel>
+
+          {/* lg+ : static grid */}
+          <div className="mt-12 hidden gap-8 lg:grid lg:grid-cols-4">
+            {people.map((person, index) => (
+              <div
+                key={`v3-person-${index}`}
+                data-tina-field={tinaField(person, "name")}
+                className="h-full"
+              >
+                <PersonCard person={person} index={index} scope="lg" />
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {people.length > 4 && (
+        <Carousel
+          opts={{ align: "start", containScroll: "keepSnaps" }}
+          className="mt-12"
+        >
+          <CarouselContent className="ml-0">
+            {people.map((person, index) => (
+              <CarouselItem
+                key={`v3-person-${index}`}
+                className="basis-4/5 pl-8 sm:basis-1/2 lg:basis-1/4"
+                data-tina-field={tinaField(person, "name")}
+              >
+                <PersonCard person={person} index={index} scope="carousel" />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselControls count={people.length} />
+        </Carousel>
+      )}
+    </>
+  );
+
+  const seeMore = seeMoreButtons.length > 0 && (
+    <div className="mt-8 flex justify-end px-8 lg:px-0">
+      <ButtonRow
+        className="mt-0 hidden justify-end lg:block"
+        data={{ buttons: seeMoreButtons }}
+      />
+    </div>
+  );
 
   return (
     <V2ComponentWrapper data={data}>
@@ -157,115 +335,25 @@ export function V3PeopleCarousel({ data }) {
         padding="px-0 lg:px-8"
         className="max-w-screen-xl py-24"
       >
-        {data?.brow && (
-          <span
-            data-tina-field={tinaField(data, "brow")}
-            className="flex items-center gap-2 px-8 font-mono text-xs uppercase tracking-wider text-sswRed lg:px-0"
-          >
-            {data.brow}
-          </span>
-        )}
-        {data?.heading && (
-          <h2
-            data-tina-field={tinaField(data, "heading")}
-            className="my-4 max-w-2xl px-8 text-4xl leading-tight text-foreground lg:px-0 lg:text-5xl"
-          >
-            <AlternatingText text={data.heading} />
-          </h2>
-        )}
-        {data?.subtitle && (
-          <p
-            data-tina-field={tinaField(data, "subtitle")}
-            className="max-w-2xl px-8 text-base font-light text-muted-foreground lg:px-0"
-          >
-            {data.subtitle}
-          </p>
-        )}
-
-        <ButtonRow
-          data={data}
-          className="mt-6 hidden flex-wrap px-8 lg:block lg:px-0"
-        />
-
-        {/* 4 or fewer: swipe through them on smaller views and only settle
-            into a static grid once there's room (lg+), like the image-cards
-            block. Carousel when there's more than fits to scroll. */}
-        {people.length > 0 && people.length <= 4 && (
-          <>
-            {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
-            <Carousel
-              opts={{
-                align: "start",
-                loop: false,
-                dragFree: true,
-                containScroll: "keepSnaps",
-              }}
-              autoplay={false}
-              className="mt-12 lg:hidden"
-            >
-              <CarouselContent className="ml-0">
-                {people.map((person, index) => (
-                  <CarouselItem
-                    key={`v3-person-${index}`}
-                    className={cn(
-                      "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
-                    )}
-                    data-tina-field={tinaField(person, "name")}
-                  >
-                    <PersonCard person={person} index={index} scope="sm" />
-                  </CarouselItem>
-                ))}
-                {moreLink && (
-                  <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
-                    <CarouselMoreCard href={moreLink} />
-                  </CarouselItem>
-                )}
-              </CarouselContent>
-              <CarouselDots count={people.length} />
-            </Carousel>
-
-            {/* lg+ : static grid */}
-            <div className="mt-12 hidden gap-8 lg:grid lg:grid-cols-4">
-              {people.map((person, index) => (
-                <div
-                  key={`v3-person-${index}`}
-                  data-tina-field={tinaField(person, "name")}
-                  className="h-full"
-                >
-                  <PersonCard person={person} index={index} scope="lg" />
-                </div>
-              ))}
+        {isSideBySide ? (
+          // Intro left, people right (lg+), tops aligned. Below lg it stacks
+          // exactly like the stacked layout.
+          <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
+            <div>{intro}</div>
+            <div>
+              <div className="lg:hidden">{stackedPeople}</div>
+              <div className="hidden lg:block">
+                <SideBySidePeople people={people} />
+              </div>
+              {seeMore}
             </div>
-          </>
-        )}
-
-        {people.length > 4 && (
-          <Carousel
-            opts={{ align: "start", containScroll: "keepSnaps" }}
-            className="mt-12"
-          >
-            <CarouselContent className="ml-0">
-              {people.map((person, index) => (
-                <CarouselItem
-                  key={`v3-person-${index}`}
-                  className="basis-4/5 pl-8 sm:basis-1/2 lg:basis-1/4"
-                  data-tina-field={tinaField(person, "name")}
-                >
-                  <PersonCard person={person} index={index} scope="carousel" />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselControls count={people.length} />
-          </Carousel>
-        )}
-
-        {seeMoreButtons.length > 0 && (
-          <div className="mt-8 flex justify-end px-8 lg:px-0">
-            <ButtonRow
-              className="mt-0 hidden justify-end lg:block"
-              data={{ buttons: seeMoreButtons }}
-            />
           </div>
+        ) : (
+          <>
+            {intro}
+            {stackedPeople}
+            {seeMore}
+          </>
         )}
       </Container>
     </V2ComponentWrapper>

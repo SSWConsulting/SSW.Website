@@ -23,7 +23,7 @@ export const Section = ({
     <section
       id={id}
       className={classNames(
-        "body-font relative flex flex-1 overflow-hidden transition duration-150 ease-out",
+        "body-font relative flex flex-1 overflow-clip transition duration-150 ease-out",
         sectionColorCss,
         className
       )}

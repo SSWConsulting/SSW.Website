@@ -212,6 +212,12 @@ const V3Process = dynamic(() =>
   import("./blocks/v3/process/process").then((mod) => mod.V3Process)
 );
 
+const V3VerticalList = dynamic(() =>
+  import("./blocks/v3/verticalList/verticalList").then(
+    (mod) => mod.V3VerticalList
+  )
+);
+
 const V3Statistics = dynamic(() => import("./blocks/v3/statistics/statistics"));
 
 const V3Cta = dynamic(() =>
@@ -303,6 +309,7 @@ const componentMap = {
   V3LogoCarousel,
   V3FeatureSteps,
   V3Process,
+  V3VerticalList,
   V3Statistics,
   V3Cta,
   V3Testimonials,
