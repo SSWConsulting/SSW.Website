@@ -15,12 +15,12 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "brow": "Free live webinar for Australian C-Suite executives",
-      "heading": "Solving the **Hardest Enterprise Problems** with AI",
-      "description": "Most AI advice aimed at executives is theory, AI 101, or a vendor selling a platform. In 60 minutes you'll see the four business problems AI has just made cheap enough to solve, with the case studies and the dollar figures behind them.\n\n**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom**  \n50 minutes live + 10 min Q\\&A\n",
+      "brow": "Free live webinar for Australian C-suite leaders",
+      "heading": "The projects you shelved are **now affordable**",
+      "description": "One Australian fintech cut its per-transaction cost from $120 to $5. In 60 minutes, see which of your parked projects AI has made cheap enough to build, and what they cost.\n\n**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom**  \n50-minute session + 10-minute live Q\\&A\n",
       "buttons": [
         {
-          "buttonText": "Register for the webinar",
+          "buttonText": "Register on Zoom",
           "buttonLink": "https://zoom.us/webinar/register/TBC",
           "colour": 0,
           "newTab": true
@@ -41,7 +41,7 @@
       },
       "brow": "In 60 minutes, you'll learn",
       "heading": "Your business problems didn't change. **The cost of solving them did.**",
-      "description": "For years the upgrade was too expensive. So was the custom build, the data project, the legacy replacement. You parked them.\n\nAI has rewritten the maths on all four. The roadmap you shelved three years ago is realistic now. The system your executive team keeps asking for can be built in weeks instead of quarters. The legacy platform that breaks every Monday morning can finally be replaced.\n\nIf you sit in the C-Suite at an Australian business, someone pitches you on AI most weeks. Almost none of it shows you what an AI build actually costs and returns in a company like yours. This session does.\n",
+      "description": "For years the upgrade was too expensive. So was the custom build, the data project, the legacy replacement. You parked them.\n\nIf you sit in the C-suite at an Australian business, someone pitches you on AI most weeks. This session shows what an AI build actually costs and returns in a company like yours.\n",
       "steps": [
         {
           "brow": "01",
@@ -50,7 +50,7 @@
         },
         {
           "brow": "02",
-          "heading": "How to get decision-grade data out of the systems you already run",
+          "heading": "How to get data you can act on out of the systems you already run",
           "description": "Dashboards your executives can act on, built in days rather than months. What that took at three Australian enterprises.\n"
         },
         {
@@ -61,7 +61,7 @@
         {
           "brow": "04",
           "heading": "When replacing the legacy system finally beats patching it",
-          "description": "The system that breaks every Monday morning. How to run the numbers on replacement now that the maths has moved.\n"
+          "description": "The system that breaks every Monday morning. How to run the numbers on replacement now that the costs have changed.\n"
         }
       ],
       "_template": "v3FeatureSteps"
@@ -71,7 +71,7 @@
         "backgroundColour": 7
       },
       "brow": "Who this is for",
-      "heading": "Built for **decision-makers**",
+      "heading": "For the people who **sign off the budget**",
       "cards": [
         {
           "title": "CEOs & Managing Directors",
@@ -92,7 +92,7 @@
       "background": {
         "backgroundColour": 7
       },
-      "heading": "The Australian businesses we've engineered for",
+      "heading": "Organisations we've built software for",
       "logos": [
         {
           "logo": "/images/ssw-web/logos/cba_logo.png",
@@ -136,10 +136,10 @@
         "redGlow": true
       },
       "heading": "What an AI build really costs, and **what it gives back**",
-      "description": "This is a free, no-pitch session. You'll leave knowing which of your problems AI has made affordable, and roughly what solving them costs.\n",
+      "description": "It's free, and there's no sales deck, just the numbers. You'll leave knowing which of your problems AI has made affordable, and roughly what solving them costs.\n",
       "buttons": [
         {
-          "buttonText": "Register for the webinar",
+          "buttonText": "Register on Zoom",
           "buttonLink": "https://zoom.us/webinar/register/TBC",
           "colour": 0,
           "newTab": true
@@ -154,7 +154,7 @@
       "layout": "sideBySide",
       "brow": "Your host",
       "heading": "Hosted by **Ulysses Maclaren**",
-      "subtitle": "SSW's COO since 2006. He leads the AI work inside SSW's own business and manages our largest client accounts, so he knows both sides of the table. On the day he'll walk through the case studies, give you the numbers, and answer your questions live.",
+      "subtitle": "SSW's COO since 2006. He leads the AI work inside SSW's own business and manages our largest client accounts. On the day he'll walk through the case studies, give you the numbers, and answer your questions live.",
       "people": [
         {
           "name": "Ulysses Maclaren",
@@ -177,7 +177,7 @@
         "backgroundColour": 7
       },
       "brow": "Agenda",
-      "heading": "Here's exactly what we'll cover",
+      "heading": "What we'll cover",
       "_template": "v3VerticalList",
       "items": [
         {
@@ -205,8 +205,8 @@
           "description": "Three questions to ask about your own business this week.\n"
         },
         {
-          "heading": "Live Q&A and the consultation offer",
-          "description": "Bring your actual problem. Free 1:1 AI consultation for attendees who want one.\n"
+          "heading": "Live Q&A: bring your actual problem",
+          "description": "Ask Ulysses about the problem your business is facing right now.\n"
         }
       ]
     },
@@ -226,11 +226,23 @@
         },
         {
           "question": "Is this a pitch in disguise?",
-          "answer": "No. The 60 minutes are teaching. At the end Ulysses offers a free 1:1 consultation to anyone who wants to talk through their own business, and that's the extent of it.\n"
+          "answer": "No. The session is teaching. At the end Ulysses offers a free 1:1 consultation to anyone who wants to talk through their own business, and that's the extent of it.\n"
         },
         {
           "question": "What size business is this for?",
           "answer": "Mid-to-large Australian enterprises. If you run custom software, a CRM or ERP, or a legacy system blocking new features, and you have a say over the budget, you're the right person in the room.\n"
+        },
+        {
+          "question": "How do I join?",
+          "answer": "Register on Zoom and you'll get an email with your join link and a calendar invite.\n"
+        },
+        {
+          "question": "Do I need my camera on?",
+          "answer": "No. It's a Zoom webinar, so attendees aren't on camera. You can ask questions in the Q\\&A.\n"
+        },
+        {
+          "question": "Why is it free?",
+          "answer": "It's how business leaders get to know SSW. If you'd like help afterwards, you can book a free 1:1 consultation. There's no obligation.\n"
         }
       ],
       "_template": "v3Faq"
