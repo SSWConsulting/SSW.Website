@@ -31,7 +31,7 @@ export const V3VerticalListSchema: Template = {
       label: "Description",
       name: "description",
       description:
-        "Optional intro text shown beneath the title. The intro stays on screen while the list scrolls (desktop).",
+        "Optional intro text shown beneath the title. On desktop, the intro stays pinned while the list scrolls.",
       toolbarOverride: ["bold", "italic", "link"],
     },
     {
