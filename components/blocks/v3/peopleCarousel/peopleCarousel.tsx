@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import type { ElementType } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { tinaField } from "tinacms/dist/react";
@@ -51,7 +52,19 @@ function ProfileLink({ person, className, children }) {
   );
 }
 
-function PersonCard({ person, index, scope }) {
+// Namespaces each card's texture ids, since one person can render in several
+// layouts on the page at once (only one is visible per breakpoint).
+type CardScope = "sm" | "lg" | "carousel" | "side";
+
+function PersonCard({
+  person,
+  index,
+  scope,
+}: {
+  person;
+  index: number;
+  scope: CardScope;
+}) {
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:border-sswRed dark:border-sswBorder dark:bg-sswCard">
       <ProfileLink person={person} className="block">
@@ -137,6 +150,29 @@ function CarouselControls({ count }: { count: number }) {
   );
 }
 
+// One card per person, each in the given wrapper (grid cell or carousel slide)
+function PersonSlots({
+  people,
+  scope,
+  as: Slot,
+  className,
+}: {
+  people;
+  scope: CardScope;
+  as: ElementType;
+  className?: string;
+}) {
+  return people.map((person, index) => (
+    <Slot
+      key={`v3-person-${index}`}
+      className={className}
+      data-tina-field={tinaField(person, "name")}
+    >
+      <PersonCard person={person} index={index} scope={scope} />
+    </Slot>
+  ));
+}
+
 // Desktop half of the "Side by side" layout: people two to a page. A lone
 // person is centred at the width of a paired card (middle 2 of 4 columns).
 function SideBySidePeople({ people }) {
@@ -147,18 +183,15 @@ function SideBySidePeople({ people }) {
   if (layout.mode !== "paged") {
     return (
       <div className="grid grid-cols-4 gap-8">
-        {people.map((person, index) => (
-          <div
-            key={`v3-person-${index}`}
-            data-tina-field={tinaField(person, "name")}
-            className={cn(
-              "col-span-2",
-              layout.mode === "single" && "col-start-2"
-            )}
-          >
-            <PersonCard person={person} index={index} scope="side" />
-          </div>
-        ))}
+        <PersonSlots
+          people={people}
+          scope="side"
+          as="div"
+          className={cn(
+            "col-span-2",
+            layout.mode === "single" && "col-start-2"
+          )}
+        />
       </div>
     );
   }
@@ -176,20 +209,20 @@ function SideBySidePeople({ people }) {
       autoplay={false}
     >
       <CarouselContent className="-ml-8">
-        {people.map((person, index) => (
-          <CarouselItem
-            key={`v3-person-${index}`}
-            className="basis-1/2 pl-8"
-            data-tina-field={tinaField(person, "name")}
-          >
-            <PersonCard person={person} index={index} scope="side" />
-          </CarouselItem>
-        ))}
+        <PersonSlots
+          people={people}
+          scope="side"
+          as={CarouselItem}
+          className="basis-1/2 pl-8"
+        />
       </CarouselContent>
       <CarouselControls count={layout.pages} />
     </Carousel>
   );
 }
+
+// The stacked layout's static grid holds up to this many; more use a carousel
+const GRID_MAX_PEOPLE = 4;
 
 export function V3PeopleCarousel({ data }) {
   const people = (data?.people ?? []).filter(Boolean);
@@ -234,9 +267,9 @@ export function V3PeopleCarousel({ data }) {
     </>
   );
 
-  // 4 or fewer swipe on smaller views and settle into a static grid at lg+,
-  // like the image-cards block. More than 4 use a full carousel.
-  const fitsGrid = people.length > 0 && people.length <= 4;
+  // Up to GRID_MAX_PEOPLE swipe on smaller views and settle into a static grid
+  // at lg+, like the image-cards block. More use a full carousel.
+  const fitsGrid = people.length > 0 && people.length <= GRID_MAX_PEOPLE;
 
   // Below lg: horizontal finite carousel with a "+ more" end cap
   const swipeCarousel = (
@@ -251,17 +284,14 @@ export function V3PeopleCarousel({ data }) {
       className="mt-12 lg:hidden"
     >
       <CarouselContent className="ml-0">
-        {people.map((person, index) => (
-          <CarouselItem
-            key={`v3-person-${index}`}
-            className={cn(
-              "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
-            )}
-            data-tina-field={tinaField(person, "name")}
-          >
-            <PersonCard person={person} index={index} scope="sm" />
-          </CarouselItem>
-        ))}
+        <PersonSlots
+          people={people}
+          scope="sm"
+          as={CarouselItem}
+          className={cn(
+            "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+          )}
+        />
         {moreLink && (
           <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
             <CarouselMoreCard href={moreLink} />
@@ -275,37 +305,29 @@ export function V3PeopleCarousel({ data }) {
   // lg+ : static grid
   const staticGrid = (
     <div className="mt-12 hidden gap-8 lg:grid lg:grid-cols-4">
-      {people.map((person, index) => (
-        <div
-          key={`v3-person-${index}`}
-          data-tina-field={tinaField(person, "name")}
-          className="h-full"
-        >
-          <PersonCard person={person} index={index} scope="lg" />
-        </div>
-      ))}
+      <PersonSlots people={people} scope="lg" as="div" className="h-full" />
     </div>
   );
 
-  const fullCarousel = people.length > 4 && (
+  const fullCarousel = people.length > GRID_MAX_PEOPLE && (
     <Carousel
       opts={{ align: "start", containScroll: "keepSnaps" }}
       className="mt-12"
     >
       <CarouselContent className="ml-0">
-        {people.map((person, index) => (
-          <CarouselItem
-            key={`v3-person-${index}`}
-            className="basis-4/5 pl-8 sm:basis-1/2 lg:basis-1/4"
-            data-tina-field={tinaField(person, "name")}
-          >
-            <PersonCard person={person} index={index} scope="carousel" />
-          </CarouselItem>
-        ))}
+        <PersonSlots
+          people={people}
+          scope="carousel"
+          as={CarouselItem}
+          className="basis-4/5 pl-8 sm:basis-1/2 lg:basis-1/4"
+        />
       </CarouselContent>
       <CarouselControls count={people.length} />
     </Carousel>
   );
+
+  // What shows below lg in both layouts (the full carousel shows at every size)
+  const carousel = fitsGrid ? swipeCarousel : fullCarousel;
 
   const seeMore = seeMoreButtons.length > 0 && (
     <div className="mt-8 flex justify-end px-8 lg:px-0">
@@ -330,9 +352,7 @@ export function V3PeopleCarousel({ data }) {
           <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-12">
             <div>{intro}</div>
             <div>
-              <div className="lg:hidden">
-                {fitsGrid ? swipeCarousel : fullCarousel}
-              </div>
+              <div className="lg:hidden">{carousel}</div>
               <div className="hidden lg:block">
                 <SideBySidePeople people={people} />
               </div>
@@ -342,14 +362,8 @@ export function V3PeopleCarousel({ data }) {
         ) : (
           <>
             {intro}
-            {fitsGrid ? (
-              <>
-                {swipeCarousel}
-                {staticGrid}
-              </>
-            ) : (
-              fullCarousel
-            )}
+            {carousel}
+            {fitsGrid && staticGrid}
             {seeMore}
           </>
         )}

@@ -3,15 +3,11 @@ import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { spacedParagraphs } from "../shared/spacedParagraphs";
 
-const markdownComponents = {
-  p: (props) => (
-    <p
-      {...props}
-      className="mb-4 text-base font-light text-gray-300 last:mb-0"
-    />
-  ),
-};
+const bodyText = spacedParagraphs(
+  "text-base font-light text-gray-600 dark:text-gray-300"
+);
 
 export function V3VerticalList({ data }) {
   const items = (data?.items ?? []).filter(Boolean);
@@ -38,7 +34,7 @@ export function V3VerticalList({ data }) {
               {data?.heading && (
                 <h2
                   data-tina-field={tinaField(data, "heading")}
-                  className="my-4 text-3xl text-white lg:text-4xl"
+                  className="my-4 text-3xl text-foreground lg:text-4xl"
                 >
                   <AlternatingText text={data.heading} />
                 </h2>
@@ -47,7 +43,7 @@ export function V3VerticalList({ data }) {
                 <div data-tina-field={tinaField(data, "description")}>
                   <TinaMarkdown
                     content={data.description}
-                    components={markdownComponents}
+                    components={bodyText}
                   />
                 </div>
               )}
@@ -56,13 +52,13 @@ export function V3VerticalList({ data }) {
 
           {/* Unnumbered rows: the order isn't a sequence */}
           {items.length > 0 && (
-            <ul className="divide-y-0.75 divide-sswBorder border-y-0.75 border-sswBorder lg:col-span-7">
+            <ul className="divide-y-0.75 divide-hairline border-y-0.75 border-hairline lg:col-span-7 dark:divide-sswBorder dark:border-sswBorder">
               {items.map((item, index) => (
                 <li key={`v3-vertical-list-${index}`} className="py-6">
                   {item?.heading && (
                     <h3
                       data-tina-field={tinaField(item, "heading")}
-                      className="text-xl text-white"
+                      className="text-xl text-foreground"
                     >
                       {item.heading}
                     </h3>
@@ -74,7 +70,7 @@ export function V3VerticalList({ data }) {
                     >
                       <TinaMarkdown
                         content={item.description}
-                        components={markdownComponents}
+                        components={bodyText}
                       />
                     </div>
                   )}

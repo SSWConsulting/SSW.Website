@@ -58,7 +58,7 @@ export const V3PeopleCarouselSchema: Template = {
       label: "Subtitle",
       name: "subtitle",
       description:
-        "Short subtitle shown beneath the title. A blank line starts a new paragraph.",
+        "Short subtitle shown beneath the title. Line breaks are kept.",
       ui: { component: "textarea" },
     },
     {

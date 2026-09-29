@@ -46,7 +46,7 @@ export const buttonSchema = [
     label: "Open in New Tab",
     name: "newTab",
     description:
-      "Use for external links, like registration forms. Leave off for pages on this site.",
+      "Use for external links, like registration forms. Leave off for pages on this site. Has no effect on in-page (#) links.",
   },
   {
     type: "string",
