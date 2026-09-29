@@ -28,12 +28,6 @@ export const productsIndexSchema: Collection = {
       required: true,
     },
     {
-      type: "string",
-      label: "Subtitle",
-      name: "subTitle",
-      required: true,
-    },
-    {
       type: "object",
       label: "Products List",
       name: "productsList",
@@ -60,6 +54,14 @@ export const productsIndexSchema: Collection = {
           type: "string",
           label: "Description",
           name: "description",
+        },
+        {
+          type: "string",
+          label: "Tags",
+          name: "tags",
+          list: true,
+          description:
+            "Short capability labels shown as chips on the product card, so the grid can be skimmed without reading every description. Keep them to one or two words. Only the first two are rendered — extras are kept but not shown.",
         },
         {
           type: "image",

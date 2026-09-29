@@ -76,9 +76,13 @@ export default {
         12: "repeat(12, minmax(min-content, 0fr))",
       },
       gridTemplateColumns: {
-        // Sticky-sidebar + fluid-content layout (used by /consulting).
-        sidebar: "minmax(280px, 30%) minmax(0, 1fr)",
-        "sidebar-narrow": "minmax(240px, 30%) minmax(0, 1fr)",
+        // Sticky-sidebar + fluid-content layout (/consulting and /events).
+        sidebar: "minmax(300px, 26%) minmax(0, 1fr)",
+        "sidebar-narrow": "minmax(260px, 30%) minmax(0, 1fr)",
+        // Hero banner: fluid text column beside a speaker column that hugs.
+        "hero-speakers": "1fr auto",
+        // Testimonial: quote column beside a capped case-study CTA column.
+        testimonial: "minmax(0, 1fr) minmax(0, 24rem)",
       },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
@@ -115,6 +119,7 @@ export default {
         104: "26rem",
       },
       minHeight: {
+        "sidebar-card": "200px",
         4: "1rem",
         8: "2rem",
         12: "3rem",
@@ -160,6 +165,7 @@ export default {
       },
       maxWidth: {
         media: "420px",
+        "sidebar-card": "300px",
         "8xl": "83rem",
         "9xl": "86rem",
         "1/2": "50%",
@@ -358,6 +364,10 @@ export default {
         brand: "var(--text-brand)",
         "brand-subtle":
           "color-mix(in srgb, var(--text-brand) 16%, transparent)",
+        // TinaCMS brand colours, namespaced to stay separate from the SSW
+        // palette above. Contrast measurements are in styles.css.
+        "brand-tina-field": "var(--brand-tina-field)",
+        "brand-tina-field-hover": "var(--brand-tina-field-hover)",
         azure: "#007fff",
         ssw: {
           red: {
@@ -462,6 +472,13 @@ export default {
           "radial-gradient(circle at top left, rgba(204,65,65,0.15), transparent 35%)",
         "red-glow-r":
           "radial-gradient(circle at 78% 50%, rgba(204,65,65,0.15), transparent 25%)",
+        // Bleed variants: the layer is grown 10rem past the block top and bottom,
+        // so the top-left glow is anchored 10rem down to keep its centre on the
+        // block's corner, and both stops shrink to offset the taller gradient box.
+        "red-glow-tl-bleed":
+          "radial-gradient(circle at left 10rem, rgba(204,65,65,0.15), transparent 30%)",
+        "red-glow-r-bleed":
+          "radial-gradient(circle at 78% 50%, rgba(204,65,65,0.15), transparent 23%)",
         // Sunken page background with a red glow bleeding in from the top-right.
         // The flat colour is baked in as a second layer (rather than pairing this
         // with a `bg-*` colour utility) so `cn()`/tailwind-merge can't treat the
@@ -472,6 +489,8 @@ export default {
         "sunken-scrim":
           "linear-gradient(180deg, color-mix(in srgb, var(--background-sunken) 90%, transparent), color-mix(in srgb, var(--background-sunken) 98%, transparent))",
         "red-radial": "radial-gradient(circle, #cc4141, transparent 70%)",
+        // Sits behind the hero banner's speaker cut-outs, sampled from the design.
+        "speaker-radial": "radial-gradient(circle, #e45655 0%, #6e2a29 100%)",
         done: "url('/images/icons/done.png')",
         "arrow-right": "url('/images/icons/arrow-right.png')",
         "live-banner-wait":

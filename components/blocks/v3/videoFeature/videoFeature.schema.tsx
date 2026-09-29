@@ -49,7 +49,7 @@ export const V3VideoFeatureSchema: Template = {
             "Mainstream tech, real ROI, and clear action items. Every decision is measured by one question: does it actually work?",
         },
       ],
-      recognitionHeading: "Trusted & Recognised",
+      recognitionHeading: "Trusted & Recognized",
       recognitionBadges: [
         { label: "We love Microsoft - Cloud Partner", icon: "SiMicrosoft" },
         { label: "MAPA Learning Excellence", icon: "BiAward" },

@@ -327,10 +327,6 @@
               "name": "Hack Days",
               "menuItems": [
                 {
-                  "name": "Angular Hack Day",
-                  "url": "https://angularhackday.com/"
-                },
-                {
                   "name": "MAUI Hack Day",
                   "url": "https://mauihackday.com/"
                 },
@@ -360,10 +356,6 @@
                   "url": "/events/ai-workshop-essentials"
                 },
                 {
-                  "name": "Angular Superpowers Tour",
-                  "url": "/events/angular-superpowers-tour"
-                },
-                {
                   "name": "Azure Superpowers Tour",
                   "url": "/events/azure-superpowers-tour"
                 },
@@ -383,10 +375,6 @@
                 {
                   "name": "AI Workshop",
                   "url": "https://www.ssw.com.au/events/ai-workshop"
-                },
-                {
-                  "name": "Angular Workshop",
-                  "url": "/events/angular-workshop"
                 },
                 {
                   "name": "Clean Architecture Workshop",

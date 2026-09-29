@@ -260,6 +260,10 @@ const V3CardCarousel = dynamic(() =>
   )
 );
 
+const V3Pills = dynamic(() =>
+  import("./blocks/v3/pills/pills").then((mod) => mod.V3Pills)
+);
+
 const componentMap = {
   AboutUs,
   Carousel,
@@ -314,6 +318,7 @@ const componentMap = {
   V3Cta,
   V3Testimonials,
   V3StackCards,
+  V3Pills,
   V3Faq,
   V3LeadCapture,
   V3VideoHighlights,
