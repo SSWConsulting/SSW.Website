@@ -42,6 +42,12 @@ export const buttonSchema = [
     name: "buttonLink",
   },
   {
+    type: "boolean",
+    label: "Open in New Tab",
+    name: "newTab",
+    description: "Open the button link in a new browser tab.",
+  },
+  {
     type: "string",
     label: "Icon",
     name: "icon",

@@ -19,6 +19,9 @@ import { tinaField } from "tinacms/dist/react";
 import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
 import { PersonCardTexture } from "./personCardTexture";
+// PROTOTYPE — remove with the side-by-side prototype
+import { Suspense } from "react";
+import { SideBySidePrototypeGate } from "./prototype/sideBySidePrototype";
 
 // The SSW mark is a 2×2 grid of squares. Rendered in currentColor so it inherits
 // the white→sswRed hover from its link, like the react-icons beside it.
@@ -59,7 +62,7 @@ function ProfileLink({ person, className, children }) {
   );
 }
 
-function PersonCard({ person, index, scope }) {
+export function PersonCard({ person, index, scope }) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white transition-colors duration-300 hover:border-sswRed dark:border-sswBorder dark:bg-sswCard">
       <ProfileLink person={person} className="block">
@@ -115,7 +118,7 @@ function PersonCard({ person, index, scope }) {
   );
 }
 
-function CarouselControls({ count }: { count: number }) {
+export function CarouselControls({ count }: { count: number }) {
   const { scrollPrev, scrollNext } = useCarousel();
 
   return (
@@ -151,123 +154,136 @@ export function V3PeopleCarousel({ data }) {
 
   return (
     <V2ComponentWrapper data={data}>
-      <Container
-        size="custom"
-        width="custom"
-        padding="px-0 lg:px-8"
-        className="max-w-screen-xl py-24"
-      >
-        {data?.brow && (
-          <span
-            data-tina-field={tinaField(data, "brow")}
-            className="flex items-center gap-2 px-8 font-mono text-xs uppercase tracking-wider text-sswRed lg:px-0"
-          >
-            {data.brow}
-          </span>
-        )}
-        {data?.heading && (
-          <h2
-            data-tina-field={tinaField(data, "heading")}
-            className="my-4 max-w-2xl px-8 text-4xl leading-tight text-foreground lg:px-0 lg:text-5xl"
-          >
-            <AlternatingText text={data.heading} />
-          </h2>
-        )}
-        {data?.subtitle && (
-          <p
-            data-tina-field={tinaField(data, "subtitle")}
-            className="max-w-2xl px-8 text-base font-light text-muted-foreground lg:px-0"
-          >
-            {data.subtitle}
-          </p>
-        )}
+      <PrototypeGate data={data}>
+        <Container
+          size="custom"
+          width="custom"
+          padding="px-0 lg:px-8"
+          className="max-w-screen-xl py-24"
+        >
+          {data?.brow && (
+            <span
+              data-tina-field={tinaField(data, "brow")}
+              className="flex items-center gap-2 px-8 font-mono text-xs uppercase tracking-wider text-sswRed lg:px-0"
+            >
+              {data.brow}
+            </span>
+          )}
+          {data?.heading && (
+            <h2
+              data-tina-field={tinaField(data, "heading")}
+              className="my-4 max-w-2xl px-8 text-4xl leading-tight text-foreground lg:px-0 lg:text-5xl"
+            >
+              <AlternatingText text={data.heading} />
+            </h2>
+          )}
+          {data?.subtitle && (
+            <p
+              data-tina-field={tinaField(data, "subtitle")}
+              className="max-w-2xl px-8 text-base font-light text-muted-foreground lg:px-0"
+            >
+              {data.subtitle}
+            </p>
+          )}
 
-        <ButtonRow
-          data={data}
-          className="mt-6 hidden flex-wrap px-8 lg:block lg:px-0"
-        />
+          <ButtonRow
+            data={data}
+            className="mt-6 hidden flex-wrap px-8 lg:block lg:px-0"
+          />
 
-        {/* 4 or fewer: swipe through them on smaller views and only settle
+          {/* 4 or fewer: swipe through them on smaller views and only settle
             into a static grid once there's room (lg+), like the image-cards
             block. Carousel when there's more than fits to scroll. */}
-        {people.length > 0 && people.length <= 4 && (
-          <>
-            {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
+          {people.length > 0 && people.length <= 4 && (
+            <>
+              {/* Below lg: horizontal finite carousel with a "+ more" end cap */}
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: false,
+                  dragFree: true,
+                  containScroll: "keepSnaps",
+                }}
+                autoplay={false}
+                className="mt-12 lg:hidden"
+              >
+                <CarouselContent className="ml-0">
+                  {people.map((person, index) => (
+                    <CarouselItem
+                      key={`v3-person-${index}`}
+                      className={cn(
+                        "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
+                      )}
+                      data-tina-field={tinaField(person, "name")}
+                    >
+                      <PersonCard person={person} index={index} scope="sm" />
+                    </CarouselItem>
+                  ))}
+                  {moreLink && (
+                    <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
+                      <CarouselMoreCard href={moreLink} />
+                    </CarouselItem>
+                  )}
+                </CarouselContent>
+                <CarouselDots count={people.length} />
+              </Carousel>
+
+              {/* lg+ : static grid */}
+              <div className="mt-12 hidden gap-8 lg:grid lg:grid-cols-4">
+                {people.map((person, index) => (
+                  <div
+                    key={`v3-person-${index}`}
+                    data-tina-field={tinaField(person, "name")}
+                    className="h-full"
+                  >
+                    <PersonCard person={person} index={index} scope="lg" />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+
+          {people.length > 4 && (
             <Carousel
-              opts={{
-                align: "start",
-                loop: false,
-                dragFree: true,
-                containScroll: "keepSnaps",
-              }}
-              autoplay={false}
-              className="mt-12 lg:hidden"
+              opts={{ align: "start", containScroll: "keepSnaps" }}
+              className="mt-12"
             >
               <CarouselContent className="ml-0">
                 {people.map((person, index) => (
                   <CarouselItem
                     key={`v3-person-${index}`}
-                    className={cn(
-                      "basis-4/5 pl-6 sm:basis-1/2 md:min-w-[380px] md:basis-1/3"
-                    )}
+                    className="basis-4/5 pl-8 sm:basis-1/2 lg:basis-1/4"
                     data-tina-field={tinaField(person, "name")}
                   >
-                    <PersonCard person={person} index={index} scope="sm" />
+                    <PersonCard
+                      person={person}
+                      index={index}
+                      scope="carousel"
+                    />
                   </CarouselItem>
                 ))}
-                {moreLink && (
-                  <CarouselItem className="basis-2/3 pl-6 sm:basis-1/3 md:basis-1/4">
-                    <CarouselMoreCard href={moreLink} />
-                  </CarouselItem>
-                )}
               </CarouselContent>
-              <CarouselDots count={people.length} />
+              <CarouselControls count={people.length} />
             </Carousel>
+          )}
 
-            {/* lg+ : static grid */}
-            <div className="mt-12 hidden gap-8 lg:grid lg:grid-cols-4">
-              {people.map((person, index) => (
-                <div
-                  key={`v3-person-${index}`}
-                  data-tina-field={tinaField(person, "name")}
-                  className="h-full"
-                >
-                  <PersonCard person={person} index={index} scope="lg" />
-                </div>
-              ))}
+          {seeMoreButtons.length > 0 && (
+            <div className="mt-8 flex justify-end px-8 lg:px-0">
+              <ButtonRow
+                className="mt-0 hidden justify-end lg:block"
+                data={{ buttons: seeMoreButtons }}
+              />
             </div>
-          </>
-        )}
-
-        {people.length > 4 && (
-          <Carousel
-            opts={{ align: "start", containScroll: "keepSnaps" }}
-            className="mt-12"
-          >
-            <CarouselContent className="ml-0">
-              {people.map((person, index) => (
-                <CarouselItem
-                  key={`v3-person-${index}`}
-                  className="basis-4/5 pl-8 sm:basis-1/2 lg:basis-1/4"
-                  data-tina-field={tinaField(person, "name")}
-                >
-                  <PersonCard person={person} index={index} scope="carousel" />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselControls count={people.length} />
-          </Carousel>
-        )}
-
-        {seeMoreButtons.length > 0 && (
-          <div className="mt-8 flex justify-end px-8 lg:px-0">
-            <ButtonRow
-              className="mt-0 hidden justify-end lg:block"
-              data={{ buttons: seeMoreButtons }}
-            />
-          </div>
-        )}
-      </Container>
+          )}
+        </Container>
+      </PrototypeGate>
     </V2ComponentWrapper>
   );
 }
+
+// PROTOTYPE — ?variant=1|2|4 swaps in the side-by-side layout
+const PrototypeGate = ({ data, children }) => (
+  <Suspense fallback={children}>
+    <SideBySidePrototypeGate data={data}>{children}</SideBySidePrototypeGate>
+  </Suspense>
+);
