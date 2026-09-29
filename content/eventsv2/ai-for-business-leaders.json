@@ -16,8 +16,8 @@
         "redGlow": true
       },
       "brow": "Free Live Webinar for Australian C-Suite Executives",
-      "heading": "Solving Enterprise Challenges with AI",
-      "description": "In 60 minutes, you'll see the four business problems AI has just made cheap enough to solve, with the case studies and the dollar figures behind them.\n\nJoin us for a 50-minute session + 10-minute live Q\\&A.\\\n\\\n**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom**\n",
+      "heading": "Solving Enterprise Challenges **with AI**",
+      "description": "You'll see the four business problems AI has just made cheap enough to solve, with the case studies and the dollar figures behind them.\n\nJoin us for a 50-minute session + 10-minute live Q\\&A.\n\n**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom**\n",
       "buttons": [
         {
           "buttonText": "Register on Zoom",
@@ -28,7 +28,7 @@
       ],
       "mediaType": "image",
       "image": {
-        "altText": "AI for Business Leaders webinar",
+        "altText": "Presenter at an SSW TV lectern pointing to an AI Workflows slide, in front of a business audience",
         "imageSource": "/images/eventsv2/ai-for-business-leaders-hero.webp",
         "imageHeight": 968,
         "imageWidth": 1625
@@ -142,7 +142,7 @@
         "redGlow": true
       },
       "heading": "See what an AI build costs **and what it returns**",
-      "description": "Ulysses brings case studies and costs, with no sales deck. You'll leave knowing which problems you can afford to solve and the expected cost of each.\n",
+      "description": "We bring case studies and costs, with no sales deck. You'll leave knowing which problems you can afford to solve and the expected cost of each.\n",
       "buttons": [
         {
           "buttonText": "Register on Zoom",
@@ -160,7 +160,7 @@
       "layout": "sideBySide",
       "brow": "SSW · Chief Operating Officer · Sydney",
       "heading": "Hosted by Ulysses Maclaren",
-      "subtitle": "Ulysses has run the operational side of SSW since 2006, as COO and 2IC to Chief Architect Adam Cogan. He leads the AI work inside SSW's own business: workflow automation, process re-engineering, data-driven decision-making and customer engagement. As Principal Account Manager he also handles the relationships behind SSW's largest client accounts.\n\nOn the day he'll take you through the case studies and answer your questions live.",
+      "subtitle": "Ulysses has run the operational side of SSW since 2006, as 2IC to Chief Architect Adam Cogan. He leads the AI work inside SSW's own business: workflow automation, process re-engineering, data-driven decision-making and customer engagement. As Principal Account Manager he also handles the relationships behind SSW's largest client accounts.\n\nOn the day he'll take you through the case studies and answer your questions live.",
       "people": [
         {
           "name": "Ulysses Maclaren",
@@ -173,7 +173,7 @@
           },
           "linkedin": "https://www.linkedin.com/in/ulyssesmaclaren/",
           "twitter": "https://x.com/ulyssesmac",
-          "sswPeople": "https://www.ssw.com.au/people/ulysses-maclaren/"
+          "sswPeople": "/people/ulysses-maclaren/"
         }
       ],
       "_template": "v3PeopleCarousel"
@@ -183,7 +183,7 @@
         "backgroundColour": 7
       },
       "brow": "Agenda",
-      "heading": "Seven topics we'll cover in this session",
+      "heading": "Topics we'll cover in this session",
       "description": "",
       "items": [
         {
@@ -196,11 +196,11 @@
         },
         {
           "heading": "The data your executives can't see",
-          "description": "Dashboards SSW built in days for three Australian enterprises.\n"
+          "description": "Dashboards in days instead of months.\n"
         },
         {
           "heading": "AI inside the software you own",
-          "description": "The $120 to $5 per-transaction case study, plus Dynamics 365, Salesforce and SAP numbers.\n"
+          "description": "The $120 to $5 fintech case study in detail.\n"
         },
         {
           "heading": "Replacing the legacy system",
@@ -245,7 +245,7 @@
         },
         {
           "question": "Why is it free?",
-          "answer": "We run it to meet business leaders. If you'd like help afterwards, you can book a free 1:1 consultation, with no obligation.\n"
+          "answer": "We run it to meet business leaders. There's no obligation.\n"
         }
       ],
       "_template": "v3Faq"
@@ -257,7 +257,7 @@
         "redGlow": true
       },
       "heading": "Register to save your seat",
-      "description": "**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom.**\n\nWe'll send you the Zoom link and the replay.\n",
+      "description": "**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom**\n\nWe'll send you the Zoom link and the replay.\n",
       "buttons": [
         {
           "buttonText": "Register on Zoom",
