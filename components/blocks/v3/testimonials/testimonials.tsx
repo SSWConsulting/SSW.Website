@@ -298,7 +298,7 @@ export function V3Testimonials({ data }) {
                   className="group mt-6 inline-flex items-center gap-1 self-start text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
                 >
                   See Case Study
-                  <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
+                  <TiArrowRight className="size-5 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
                 </motion.a>
               )}
             </div>
@@ -340,7 +340,7 @@ export function V3Testimonials({ data }) {
                   >
                     {current.caseStudyButtonText || "Explore the case study"}
                   </span>
-                  <BsArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  <BsArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
                 </RippleButton>
               </motion.div>
             ) : (
