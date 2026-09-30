@@ -24,7 +24,7 @@ export const V3TestimonialsSchema: Template = {
       label: "Layout",
       name: "layout",
       description:
-        "Quote & portrait shows the author's photo beside the quote. Quote & case study swaps the photo for the case study sentence and button, on slides that have a Case Study URL.",
+        "Quote & portrait shows the author's photo beside the quote. Quote & case study shows a case study card beside the quote instead (the author's photo, the case study sentence and a button), on slides that have a Case Study URL.",
       options: [
         { value: "quote", label: "Quote & portrait (default)" },
         { value: "caseStudy", label: "Quote & case study" },
@@ -58,14 +58,14 @@ export const V3TestimonialsSchema: Template = {
           label: "Case Study URL",
           name: "caseStudyUrl",
           description:
-            "If set, a 'See case study' link is shown below the quote. In the Quote & case study layout it becomes the button beside the quote instead.",
+            "If set, a 'See case study' link is shown below the quote. In the Quote & case study layout it becomes the button on the case study card instead.",
         },
         {
           type: "string",
           label: "Case Study Sentence",
           name: "caseStudyLabel",
           description:
-            "Quote & case study layout only. Sentence shown above the case study button, e.g. 'Discover how an AI-powered chatbot transformed their customer service'.",
+            "Quote & case study layout only. Sentence shown on the case study card, above the button, e.g. 'Discover how an AI-powered chatbot transformed their customer service'.",
           ui: { component: "textarea" },
         },
         {
@@ -73,7 +73,7 @@ export const V3TestimonialsSchema: Template = {
           label: "Case Study Button Text",
           name: "caseStudyButtonText",
           description:
-            "Quote & case study layout only. Text on the red button (always shown in uppercase). Defaults to 'Explore the case study'.",
+            "Quote & case study layout only. Text on the case study card's button. Defaults to 'Read the case study'.",
         },
         {
           type: "string",

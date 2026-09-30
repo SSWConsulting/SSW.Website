@@ -53,6 +53,9 @@ const slides = [
 const activeQuote = () =>
   document.querySelector("blockquote:not([aria-hidden='true'])")?.textContent;
 
+const dotFor = (name: string) =>
+  screen.getByRole("button", { name: new RegExp(`: ${name}$`) });
+
 describe("V3Testimonials", () => {
   it("defaults to the portrait layout with a case study text link", () => {
     render(<V3Testimonials data={{ testimonials: slides }} />);
@@ -63,18 +66,29 @@ describe("V3Testimonials", () => {
     expect(screen.queryByText("Read how Ada did it.")).toBeNull();
   });
 
-  it("swaps the portrait for the case study CTA in the case study layout", () => {
+  it("shows a case study card in the case study layout", () => {
     render(
       <V3Testimonials data={{ layout: "caseStudy", testimonials: slides }} />
     );
 
     expect(screen.getByText("Read how Ada did it.")).toBeTruthy();
-    expect(document.querySelector("[data-cta]")?.getAttribute("href")).toBe(
-      "/clients/ada"
-    );
+    const cta = document.querySelector("[data-cta]");
+    expect(cta?.getAttribute("href")).toBe("/clients/ada");
+    expect(cta?.textContent).toContain("Read the case study");
     expect(screen.queryByText("See Case Study")).toBeNull();
-    // The headshot moves into the attribution row, so it is shown only once.
+    // The photo moves into the card, so it's shown once, not as a portrait too.
     expect(screen.getAllByAltText("Ada")).toHaveLength(1);
+  });
+
+  it("shows a plain card when the author has no headshot", () => {
+    const noPhoto = slides.map((t) => ({ ...t, authorImage: undefined }));
+    render(
+      <V3Testimonials data={{ layout: "caseStudy", testimonials: noPhoto }} />
+    );
+
+    expect(screen.queryByAltText("Ada")).toBeNull();
+    expect(screen.getByText("Read how Ada did it.")).toBeTruthy();
+    expect(document.querySelector("[data-cta]")).toBeTruthy();
   });
 
   it("keeps the portrait on case study layout slides without a case study", () => {
@@ -88,7 +102,7 @@ describe("V3Testimonials", () => {
     expect(document.querySelector("[data-cta]")).toBeNull();
   });
 
-  it("uses the same arrows in both layouts, wrapping around", () => {
+  it("uses the same arrows and dots in both layouts", () => {
     for (const layout of [undefined, "caseStudy"]) {
       const { unmount } = render(
         <V3Testimonials data={{ layout, testimonials: slides }} />
@@ -97,15 +111,44 @@ describe("V3Testimonials", () => {
       expect(activeQuote()).toContain("Second quote");
       fireEvent.click(screen.getByLabelText("Next testimonial"));
       expect(activeQuote()).toContain("First quote");
+
+      fireEvent.click(dotFor("Grace"));
+      expect(activeQuote()).toContain("Second quote");
+      expect(dotFor("Grace").getAttribute("aria-current")).toBe("true");
+      expect(dotFor("Ada").getAttribute("aria-current")).toBe("false");
       unmount();
     }
   });
 
-  it("hides the arrows for a single testimonial and renders nothing when empty", () => {
+  it("changes slide on a sideways swipe, not a vertical scroll", () => {
+    render(<V3Testimonials data={{ testimonials: slides }} />);
+    // Touch events bubble up to the block, so the quote is a fine target.
+    const block = document.querySelector("blockquote")!;
+    const swipe = (dx: number, dy: number) => {
+      fireEvent.touchStart(block, {
+        touches: [{ clientX: 200, clientY: 200 }],
+      });
+      fireEvent.touchEnd(block, {
+        changedTouches: [{ clientX: 200 + dx, clientY: 200 + dy }],
+      });
+    };
+
+    swipe(-80, 10);
+    expect(activeQuote()).toContain("Second quote");
+    swipe(10, -200);
+    expect(activeQuote()).toContain("Second quote");
+    swipe(80, 0);
+    expect(activeQuote()).toContain("First quote");
+  });
+
+  it("hides the controls for a single testimonial and renders nothing when empty", () => {
     const { container, rerender } = render(
       <V3Testimonials data={{ testimonials: [slides[0]] }} />
     );
     expect(screen.queryByLabelText("Next testimonial")).toBeNull();
+    expect(
+      screen.queryByRole("button", { name: /Show testimonial/ })
+    ).toBeNull();
 
     rerender(<V3Testimonials data={{ testimonials: [] }} />);
     expect(container.innerHTML).toBe("");

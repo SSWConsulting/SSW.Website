@@ -6,8 +6,11 @@ import { cn } from "@/lib/utils";
 import { MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
-import { BsArrowRight } from "react-icons/bs";
+import {
+  BiChevronRight,
+  BiLeftArrowAlt,
+  BiRightArrowAlt,
+} from "react-icons/bi";
 import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 
@@ -122,8 +125,14 @@ function ClipTextReveal({ text }: { text: string }) {
 }
 
 // The author's headshot, filling whichever frame holds it: the large portrait
-// beside the quote, or the small one in the attribution row.
-function AuthorPhoto({ testimonial }) {
+// beside the quote, or the top of the case study card.
+function AuthorPhoto({
+  testimonial,
+  className = "",
+}: {
+  testimonial;
+  className?: string;
+}) {
   return (
     <Image
       src={testimonial.authorImage}
@@ -133,38 +142,34 @@ function AuthorPhoto({ testimonial }) {
         "Testimonial author"
       }
       fill
-      className="object-cover"
+      className={cn("object-cover", className)}
       data-tina-field={tinaField(testimonial, "authorImage")}
     />
   );
 }
 
-// Name + role + client logo, under the quote. The headshot joins the row only
-// when the case study CTA has taken the portrait's place beside the quote.
-function Attribution({ testimonial, showAvatar }) {
-  const hasAvatar = showAvatar && Boolean(testimonial?.authorImage);
-
+// The large portrait, top-right on desktop and above the quote on phones.
+function Portrait({ testimonial, activeIndex, className = "" }) {
+  if (!testimonial?.authorImage) return null;
   return (
-    <div
+    <motion.div
+      key={`author-image-${activeIndex}`}
+      {...fadeUp}
       className={cn(
-        "flex items-center gap-4",
-        // A headshot, name and logo don't fit one line on a phone, so the
-        // logo drops to its own line beneath them.
-        hasAvatar && "max-md:flex-wrap"
+        "relative order-first size-48 shrink-0 overflow-hidden rounded-card xl:order-none",
+        className
       )}
     >
-      {hasAvatar && (
-        <div className="relative size-14 shrink-0 overflow-hidden rounded-utility">
-          <AuthorPhoto testimonial={testimonial} />
-        </div>
-      )}
+      <AuthorPhoto testimonial={testimonial} />
+    </motion.div>
+  );
+}
 
-      <div
-        className={cn(
-          "flex min-w-0 flex-col break-words",
-          hasAvatar && "max-md:flex-1"
-        )}
-      >
+// Name + role, then the client logo behind a hairline divider.
+function Attribution({ testimonial }) {
+  return (
+    <div className="flex items-center gap-4">
+      <div className="flex min-w-0 flex-col break-words">
         {testimonial?.authorName && (
           <span
             data-tina-field={tinaField(testimonial, "authorName")}
@@ -185,23 +190,16 @@ function Attribution({ testimonial, showAvatar }) {
 
       {testimonial?.companyLogo && (
         <>
-          <span
-            className={cn(
-              "h-10 w-px shrink-0 bg-hairline",
-              hasAvatar && "max-md:hidden"
-            )}
+          <span className="h-10 w-px shrink-0 bg-hairline" />
+          {/* Wide wordmarks are capped on phones so they can't crowd the name. */}
+          <Image
+            src={testimonial.companyLogo}
+            alt={testimonial?.companyLogoAlt ?? "Company logo"}
+            width={160}
+            height={160}
+            className="h-12 w-auto shrink-0 object-contain object-left brightness-0 max-md:max-w-28 dark:invert"
+            data-tina-field={tinaField(testimonial, "companyLogo")}
           />
-          <div className={cn("shrink-0", hasAvatar && "max-md:basis-full")}>
-            {/* Wide wordmarks are capped on phones so they can't crowd the name. */}
-            <Image
-              src={testimonial.companyLogo}
-              alt={testimonial?.companyLogoAlt ?? "Company logo"}
-              width={160}
-              height={160}
-              className="h-12 w-auto object-contain object-left brightness-0 max-md:max-w-28 dark:invert"
-              data-tina-field={tinaField(testimonial, "companyLogo")}
-            />
-          </div>
         </>
       )}
     </div>
@@ -214,182 +212,286 @@ function ArrowButton({ label, onClick, children }) {
       type="button"
       aria-label={label}
       onClick={onClick}
-      className="flex size-12 items-center justify-center rounded-full bg-foreground text-background transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground motion-reduce:transition-none"
+      className="flex size-10 items-center justify-center rounded-full bg-foreground text-background transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground motion-reduce:transition-none xl:size-12"
     >
       {children}
     </button>
   );
 }
 
-// Two layouts share one frame so they read as the same component: quote
-// top-left, attribution bottom-left, arrows bottom-right. Only the top-right
-// cell changes — the author's portrait by default, or the case study CTA when
-// the block's layout is "caseStudy" (slides without a case study keep the
-// portrait, so the cell is never left empty).
+// Pagination dots beside the prev/next arrows. The dots show where you are
+// and jump to a slide; the arrows stay, so the dots are never the only way
+// to move. Hidden when there's a single testimonial.
+function CarouselControls({ testimonials, activeIndex, onPick, step }) {
+  if (testimonials.length <= 1) return null;
+  return (
+    <div className="flex items-center justify-between gap-4 xl:justify-end">
+      <div className="flex items-center">
+        {testimonials.map((t, i) => (
+          <button
+            key={`v3-testimonial-dot-${i}`}
+            type="button"
+            onClick={() => onPick(i)}
+            aria-label={`Show testimonial ${i + 1}${
+              t?.authorName ? `: ${t.authorName}` : ""
+            }`}
+            aria-current={i === activeIndex}
+            // The visible dot is small; the button around it is the tap area.
+            className="flex h-10 items-center px-1"
+          >
+            <span
+              className={cn(
+                "h-1.5 rounded-full bg-foreground transition-all duration-300 motion-reduce:transition-none",
+                i === activeIndex ? "w-6" : "w-3 opacity-30"
+              )}
+            />
+          </button>
+        ))}
+      </div>
+      <div className="flex gap-3">
+        <ArrowButton label="Previous testimonial" onClick={() => step(-1)}>
+          <BiLeftArrowAlt className="size-5 xl:size-6" />
+        </ArrowButton>
+        <ArrowButton label="Next testimonial" onClick={() => step(1)}>
+          <BiRightArrowAlt className="size-5 xl:size-6" />
+        </ArrowButton>
+      </div>
+    </div>
+  );
+}
+
+// All quotes share one grid cell so the cell always sizes to the tallest
+// quote — switching slides never changes the block height (only the active
+// quote is visible; the rest fade to opacity-0).
+function QuoteStack({ testimonials, activeIndex }) {
+  return (
+    <div className="grid">
+      {testimonials.map((t, i) => (
+        <blockquote
+          key={`v3-testimonial-quote-${i}`}
+          aria-hidden={i !== activeIndex}
+          data-tina-field={
+            i === activeIndex ? tinaField(t, "quote") : undefined
+          }
+          className={cn(
+            "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 motion-reduce:transition-none md:text-4xl",
+            i === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"
+          )}
+        >
+          {i === activeIndex ? (
+            <ClipTextReveal
+              key={activeIndex}
+              text={withQuoteMarks(t?.quote ?? "")}
+            />
+          ) : (
+            <span>{withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}</span>
+          )}
+        </blockquote>
+      ))}
+    </div>
+  );
+}
+
+// Case study card: the author's photo on top (when there is one), then the
+// sentence and the site's standard button. Padding matches the homepage
+// Image Cards.
+function CaseStudyCard({ testimonial, activeIndex }) {
+  return (
+    <motion.div
+      key={`case-study-${activeIndex}`}
+      {...fadeUp}
+      className="overflow-hidden rounded-card border border-hairline bg-card"
+    >
+      {testimonial?.authorImage && (
+        <div className="relative aspect-4/3 w-full">
+          <AuthorPhoto testimonial={testimonial} className="object-top" />
+        </div>
+      )}
+      <div className="flex flex-col items-start gap-6 p-6">
+        {/* The sentence and button label break long unbroken strings (a
+            pasted URL) so they wrap inside the card instead of overflowing. */}
+        {testimonial?.caseStudyLabel && (
+          <p
+            data-tina-field={tinaField(testimonial, "caseStudyLabel")}
+            className="w-full break-words text-lg font-medium text-foreground"
+          >
+            {testimonial.caseStudyLabel}
+          </p>
+        )}
+        {/* The site's primary action button, as on the homepage ("View All
+            Services"): the template button's size and weight, chevron after
+            the label. */}
+        <RippleButton
+          variant="primary"
+          href={testimonial.caseStudyUrl}
+          target="_blank"
+          data-tina-field={tinaField(testimonial, "caseStudyUrl")}
+          className="max-w-full text-base font-semibold"
+          fontClassName="min-w-0 gap-2"
+        >
+          <span
+            data-tina-field={tinaField(testimonial, "caseStudyButtonText")}
+            className="min-w-0 break-words"
+          >
+            {testimonial.caseStudyButtonText || "Read the case study"}
+          </span>
+          <BiChevronRight className="size-6 shrink-0" />
+        </RippleButton>
+      </div>
+    </motion.div>
+  );
+}
+
+// Horizontal swipe on touch screens steps the carousel. Vertical scrolling is
+// left alone: only a mostly-sideways drag of 50px or more counts.
+function useSwipe(step: (by: number) => void) {
+  const start = useRef<{ x: number; y: number } | null>(null);
+  return {
+    onTouchStart: (e: React.TouchEvent) => {
+      const t = e.touches[0];
+      start.current = { x: t.clientX, y: t.clientY };
+    },
+    onTouchEnd: (e: React.TouchEvent) => {
+      if (!start.current) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - start.current.x;
+      const dy = t.clientY - start.current.y;
+      start.current = null;
+      if (Math.abs(dx) >= 50 && Math.abs(dx) > Math.abs(dy)) {
+        step(dx < 0 ? 1 : -1);
+      }
+    },
+  };
+}
+
+// Default layout: quote top-left, attribution bottom-left, portrait top-right,
+// dots + arrows bottom-right. On phones the portrait sits above the quote.
+function QuoteLayout({ testimonials, activeIndex, current, controls, swipe }) {
+  return (
+    <div
+      {...swipe}
+      className={cn(
+        "mx-auto flex max-w-xl flex-col gap-10",
+        // Desktop: 2×2 grid. The top row is `1fr` so it absorbs the slack,
+        // keeping the attribution (bottom-left) and controls (bottom-right)
+        // on the same baseline whatever the quote length.
+        "xl:grid xl:max-w-5xl xl:grid-cols-testimonial xl:grid-rows-testimonial xl:items-start xl:gap-x-12 xl:gap-y-4"
+      )}
+    >
+      <div className="flex max-w-3xl flex-col xl:col-start-1 xl:row-start-1">
+        <QuoteStack testimonials={testimonials} activeIndex={activeIndex} />
+
+        {current?.caseStudyUrl && (
+          <motion.a
+            key={`case-study-link-${activeIndex}`}
+            {...fadeUp}
+            href={current.caseStudyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-tina-field={tinaField(current, "caseStudyUrl")}
+            className="group mt-6 inline-flex items-center gap-1 self-start text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
+          >
+            See Case Study
+            <TiArrowRight className="size-5 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
+          </motion.a>
+        )}
+      </div>
+
+      <motion.div
+        key={`author-${activeIndex}`}
+        {...fadeUp}
+        className="xl:col-start-1 xl:row-start-2 xl:self-end"
+      >
+        <Attribution testimonial={current} />
+      </motion.div>
+
+      {/* Right-aligned so its edge lines up with the arrows below, even when
+          the dots make the controls a little wider than the portrait. */}
+      <Portrait
+        testimonial={current}
+        activeIndex={activeIndex}
+        className="xl:col-start-2 xl:row-start-1 xl:justify-self-end"
+      />
+
+      <div className="xl:col-start-2 xl:row-start-2 xl:self-end">
+        {controls}
+      </div>
+    </div>
+  );
+}
+
+// Case study layout: the same quote and attribution, with the dots + arrows
+// beside the attribution, and the case study card on the right. The two
+// columns are centred on each other, and the attribution follows the quote at
+// a fixed gap, so a tall card never opens a hole under the quote. On phones:
+// quote, attribution, controls, then the card. A slide without a case study
+// shows the portrait instead of a card.
+function CaseStudyLayout({
+  testimonials,
+  activeIndex,
+  current,
+  controls,
+  swipe,
+}) {
+  return (
+    <div
+      {...swipe}
+      className="mx-auto flex max-w-xl flex-col gap-10 xl:grid xl:max-w-6xl xl:grid-cols-testimonial-case-study xl:items-center xl:gap-x-12"
+    >
+      <div className="flex flex-col gap-10">
+        <QuoteStack testimonials={testimonials} activeIndex={activeIndex} />
+        <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
+          <motion.div key={`author-${activeIndex}`} {...fadeUp}>
+            <Attribution testimonial={current} />
+          </motion.div>
+          {controls}
+        </div>
+      </div>
+
+      {current?.caseStudyUrl ? (
+        <CaseStudyCard testimonial={current} activeIndex={activeIndex} />
+      ) : (
+        <Portrait testimonial={current} activeIndex={activeIndex} />
+      )}
+    </div>
+  );
+}
+
 export function V3Testimonials({ data }) {
   const testimonials = data?.testimonials ?? [];
   const [active, setActive] = useState(0);
 
-  if (testimonials.length === 0) return null;
-
   // Guard against the stored index pointing past a shortened list while editing:
   // everything below reads `activeIndex`, never `active`, so removing the
   // selected slide falls back to the last one instead of hiding every quote.
-  const activeIndex = Math.min(active, testimonials.length - 1);
-  const current = testimonials[activeIndex];
-
-  const isCaseStudyLayout = data?.layout === "caseStudy";
-  // The case study layout puts the CTA where the portrait would go, but only on
-  // slides that have a case study; the rest keep the portrait.
-  const ctaInPortraitSlot = isCaseStudyLayout && Boolean(current?.caseStudyUrl);
-
+  const activeIndex = Math.min(active, Math.max(testimonials.length - 1, 0));
   const step = (by: number) =>
     setActive((activeIndex + by + testimonials.length) % testimonials.length);
+  const swipe = useSwipe(step);
+
+  if (testimonials.length === 0) return null;
+
+  const current = testimonials[activeIndex];
+  const Layout = data?.layout === "caseStudy" ? CaseStudyLayout : QuoteLayout;
 
   return (
     <MotionConfig reducedMotion="user">
       <V2ComponentWrapper data={data}>
         <Container size="custom" className="py-16 sm:px-8 md:py-32">
-          <div
-            className={cn(
-              "mx-auto flex max-w-xl flex-col gap-10",
-              // Desktop: 2×2 grid. The top row is `1fr` so it absorbs the
-              // slack, keeping the attribution (bottom-left) and arrows
-              // (bottom-right) on the same baseline whatever the quote length.
-              // The case study layout is wider by exactly its wider right
-              // column, so the quote keeps the same measure in both layouts.
-              // The portrait holds the top row open under a short quote; the
-              // CTA is shorter, so a larger row gap keeps the attribution clear.
-              "xl:grid xl:grid-rows-testimonial xl:items-start xl:gap-x-12",
-              isCaseStudyLayout
-                ? "xl:max-w-6xl xl:grid-cols-testimonial-case-study xl:gap-y-10"
-                : "xl:max-w-5xl xl:grid-cols-testimonial xl:gap-y-4"
-            )}
-          >
-            {/* Quote (+ case study link when there's no CTA column) — top-left */}
-            <div className="flex max-w-3xl flex-col xl:col-start-1 xl:row-start-1">
-              {/* All quotes share one grid cell so the cell always sizes to the
-                  tallest quote — switching slides never changes the block height
-                  (only the active quote is visible; the rest fade to opacity-0). */}
-              <div className="grid">
-                {testimonials.map((t, i) => (
-                  <blockquote
-                    key={`v3-testimonial-quote-${i}`}
-                    aria-hidden={i !== activeIndex}
-                    data-tina-field={
-                      i === activeIndex ? tinaField(t, "quote") : undefined
-                    }
-                    className={cn(
-                      "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 motion-reduce:transition-none md:text-4xl",
-                      i === activeIndex
-                        ? "opacity-100"
-                        : "pointer-events-none opacity-0"
-                    )}
-                  >
-                    {i === activeIndex ? (
-                      <ClipTextReveal
-                        key={activeIndex}
-                        text={withQuoteMarks(t?.quote ?? "")}
-                      />
-                    ) : (
-                      <span>
-                        {withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}
-                      </span>
-                    )}
-                  </blockquote>
-                ))}
-              </div>
-
-              {current?.caseStudyUrl && !ctaInPortraitSlot && (
-                <motion.a
-                  key={`case-study-link-${activeIndex}`}
-                  {...fadeUp}
-                  href={current.caseStudyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-tina-field={tinaField(current, "caseStudyUrl")}
-                  className="group mt-6 inline-flex items-center gap-1 self-start text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
-                >
-                  See Case Study
-                  <TiArrowRight className="size-5 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
-                </motion.a>
-              )}
-            </div>
-
-            {/* Attribution — bottom-left */}
-            <motion.div
-              key={`author-${activeIndex}`}
-              {...fadeUp}
-              className="xl:col-start-1 xl:row-start-2 xl:self-end"
-            >
-              <Attribution
-                testimonial={current}
-                showAvatar={ctaInPortraitSlot}
+          <Layout
+            testimonials={testimonials}
+            activeIndex={activeIndex}
+            current={current}
+            swipe={testimonials.length > 1 ? swipe : undefined}
+            controls={
+              <CarouselControls
+                testimonials={testimonials}
+                activeIndex={activeIndex}
+                onPick={setActive}
+                step={step}
               />
-            </motion.div>
-
-            {/* Top-right: case study CTA, or the author's portrait */}
-            {ctaInPortraitSlot ? (
-              <motion.div
-                key={`case-study-${activeIndex}`}
-                {...fadeUp}
-                className="flex flex-col items-start gap-6 xl:col-start-2 xl:row-start-1"
-              >
-                {/* The sentence and button label break long unbroken strings
-                    (a pasted URL) so they wrap inside the column instead of
-                    running off the page. */}
-                {current?.caseStudyLabel && (
-                  <p
-                    data-tina-field={tinaField(current, "caseStudyLabel")}
-                    className="w-full break-words text-lg font-medium text-foreground"
-                  >
-                    {current.caseStudyLabel}
-                  </p>
-                )}
-                <RippleButton
-                  variant="primary"
-                  href={current.caseStudyUrl}
-                  target="_blank"
-                  data-tina-field={tinaField(current, "caseStudyUrl")}
-                  className="group inline-flex w-full max-w-full rounded-full px-8 py-4 sm:w-auto"
-                  fontClassName="min-w-0 gap-3 text-sm font-semibold uppercase tracking-wider"
-                >
-                  <span
-                    data-tina-field={tinaField(current, "caseStudyButtonText")}
-                    className="min-w-0 break-words"
-                  >
-                    {current.caseStudyButtonText || "Explore the case study"}
-                  </span>
-                  <BsArrowRight className="size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
-                </RippleButton>
-              </motion.div>
-            ) : (
-              current?.authorImage && (
-                <motion.div
-                  key={`author-image-${activeIndex}`}
-                  {...fadeUp}
-                  className="relative order-first size-48 shrink-0 overflow-hidden rounded-card xl:order-none xl:col-start-2 xl:row-start-1"
-                >
-                  <AuthorPhoto testimonial={current} />
-                </motion.div>
-              )
-            )}
-
-            {/* Arrows — bottom-right */}
-            {testimonials.length > 1 && (
-              <div className="flex justify-end gap-3 xl:col-start-2 xl:row-start-2 xl:place-self-end">
-                <ArrowButton
-                  label="Previous testimonial"
-                  onClick={() => step(-1)}
-                >
-                  <BiLeftArrowAlt className="size-6" />
-                </ArrowButton>
-                <ArrowButton label="Next testimonial" onClick={() => step(1)}>
-                  <BiRightArrowAlt className="size-6" />
-                </ArrowButton>
-              </div>
-            )}
-          </div>
+            }
+          />
         </Container>
       </V2ComponentWrapper>
     </MotionConfig>
