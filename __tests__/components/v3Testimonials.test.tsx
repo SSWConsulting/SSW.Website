@@ -54,15 +54,13 @@ const activeQuote = () =>
   document.querySelector("blockquote:not([aria-hidden='true'])")?.textContent;
 
 describe("V3Testimonials", () => {
-  it("defaults to the portrait layout with the same case study CTA", () => {
+  it("defaults to the portrait layout with a case study text link", () => {
     render(<V3Testimonials data={{ testimonials: slides }} />);
 
     expect(screen.getByAltText("Ada")).toBeTruthy();
-    expect(screen.getByText("Read how Ada did it.")).toBeTruthy();
-    expect(document.querySelectorAll("[data-cta]")).toHaveLength(1);
-    expect(document.querySelector("[data-cta]")?.getAttribute("href")).toBe(
-      "/clients/ada"
-    );
+    expect(screen.getByText("See Case Study")).toBeTruthy();
+    expect(document.querySelector("[data-cta]")).toBeNull();
+    expect(screen.queryByText("Read how Ada did it.")).toBeNull();
   });
 
   it("swaps the portrait for the case study CTA in the case study layout", () => {
@@ -74,7 +72,7 @@ describe("V3Testimonials", () => {
     expect(document.querySelector("[data-cta]")?.getAttribute("href")).toBe(
       "/clients/ada"
     );
-    expect(document.querySelectorAll("[data-cta]")).toHaveLength(1);
+    expect(screen.queryByText("See Case Study")).toBeNull();
     // The headshot moves into the attribution row, so it is shown only once.
     expect(screen.getAllByAltText("Ada")).toHaveLength(1);
   });
