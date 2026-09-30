@@ -64,6 +64,7 @@ import { V3PeopleCarouselSchema } from "./v3/peopleCarousel/peopleCarousel.schem
 import { V3EventsSchema } from "./v3/events/events.schema";
 import { V3GlobeSchema } from "./v3/globe/globe.schema";
 import { V3ProcessSchema } from "./v3/process/process.schema";
+import { V3VerticalListSchema } from "./v3/verticalList/verticalList.schema";
 import { V3StatisticsTemplate } from "./v3/statistics/statistics.schema";
 import { V3CtaSchema } from "./v3/cta/cta.schema";
 import { V3LogoCarouselSchema } from "./v3/logoCarousel/logoCarousel.schema";
@@ -92,6 +93,7 @@ export const pageBlocks: Template[] = [
   V3LogoCarouselSchema,
   V3FeatureStepsSchema,
   V3ProcessSchema,
+  V3VerticalListSchema,
   V3StatisticsTemplate,
   V3CtaSchema,
   V3TestimonialsSchema,
