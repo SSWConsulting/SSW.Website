@@ -83,9 +83,9 @@ export default {
         "sidebar-narrow": "minmax(260px, 30%) minmax(0, 1fr)",
         // Hero banner: fluid text column beside a speaker column that hugs.
         "hero-speakers": "1fr auto",
-        // Testimonial: quote column beside the author's portrait, or beside a
-        // capped case-study CTA column.
+        // Testimonial: quote column beside the author's portrait.
         testimonial: "minmax(0, 1fr) auto",
+        // Testimonial, case study layout: quote beside a capped CTA column.
         "testimonial-case-study": "minmax(0, 1fr) minmax(0, 20rem)",
       },
       backgroundPosition: {

@@ -121,6 +121,24 @@ function ClipTextReveal({ text }: { text: string }) {
   );
 }
 
+// The author's headshot, filling whichever frame holds it: the large portrait
+// beside the quote, or the small one in the attribution row.
+function AuthorPhoto({ testimonial }) {
+  return (
+    <Image
+      src={testimonial.authorImage}
+      alt={
+        testimonial?.authorImageAlt ??
+        testimonial?.authorName ??
+        "Testimonial author"
+      }
+      fill
+      className="object-cover"
+      data-tina-field={tinaField(testimonial, "authorImage")}
+    />
+  );
+}
+
 // Name + role + client logo, under the quote. The headshot joins the row only
 // when the case study CTA has taken the portrait's place beside the quote.
 function Attribution({ testimonial, showAvatar }) {
@@ -137,17 +155,7 @@ function Attribution({ testimonial, showAvatar }) {
     >
       {hasAvatar && (
         <div className="relative size-14 shrink-0 overflow-hidden rounded-utility">
-          <Image
-            src={testimonial.authorImage}
-            alt={
-              testimonial?.authorImageAlt ??
-              testimonial?.authorName ??
-              "Testimonial author"
-            }
-            fill
-            className="object-cover"
-            data-tina-field={tinaField(testimonial, "authorImage")}
-          />
+          <AuthorPhoto testimonial={testimonial} />
         </div>
       )}
 
@@ -231,7 +239,9 @@ export function V3Testimonials({ data }) {
   const current = testimonials[activeIndex];
 
   const isCaseStudyLayout = data?.layout === "caseStudy";
-  const showCta = isCaseStudyLayout && Boolean(current?.caseStudyUrl);
+  // The case study layout puts the CTA where the portrait would go, but only on
+  // slides that have a case study; the rest keep the portrait.
+  const ctaInPortraitSlot = isCaseStudyLayout && Boolean(current?.caseStudyUrl);
 
   const step = (by: number) =>
     setActive((activeIndex + by + testimonials.length) % testimonials.length);
@@ -290,7 +300,7 @@ export function V3Testimonials({ data }) {
                 ))}
               </div>
 
-              {current?.caseStudyUrl && !showCta && (
+              {current?.caseStudyUrl && !ctaInPortraitSlot && (
                 <motion.a
                   key={`case-study-link-${activeIndex}`}
                   {...fadeUp}
@@ -312,19 +322,22 @@ export function V3Testimonials({ data }) {
               {...fadeUp}
               className="xl:col-start-1 xl:row-start-2 xl:self-end"
             >
-              <Attribution testimonial={current} showAvatar={showCta} />
+              <Attribution
+                testimonial={current}
+                showAvatar={ctaInPortraitSlot}
+              />
             </motion.div>
 
             {/* Top-right: case study CTA, or the author's portrait */}
-            {showCta ? (
+            {ctaInPortraitSlot ? (
               <motion.div
                 key={`case-study-${activeIndex}`}
                 {...fadeUp}
                 className="flex flex-col items-start gap-6 xl:col-start-2 xl:row-start-1"
               >
-                {/* The sentence, button label and attribution all break long
-                    unbroken strings (a pasted URL) so they wrap inside their
-                    column instead of running off the page. */}
+                {/* The sentence and button label break long unbroken strings
+                    (a pasted URL) so they wrap inside the column instead of
+                    running off the page. */}
                 {current?.caseStudyLabel && (
                   <p
                     data-tina-field={tinaField(current, "caseStudyLabel")}
@@ -357,17 +370,7 @@ export function V3Testimonials({ data }) {
                   {...fadeUp}
                   className="relative order-first size-48 shrink-0 overflow-hidden rounded-card xl:order-none xl:col-start-2 xl:row-start-1"
                 >
-                  <Image
-                    src={current.authorImage}
-                    alt={
-                      current?.authorImageAlt ??
-                      current?.authorName ??
-                      "Testimonial author"
-                    }
-                    fill
-                    className="object-cover"
-                    data-tina-field={tinaField(current, "authorImage")}
-                  />
+                  <AuthorPhoto testimonial={current} />
                 </motion.div>
               )
             )}
