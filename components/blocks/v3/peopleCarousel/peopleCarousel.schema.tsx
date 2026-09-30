@@ -9,6 +9,7 @@ export const V3PeopleCarouselSchema: Template = {
   label: "<V3> People Carousel",
   ui: {
     defaultItem: {
+      layout: "stacked",
       heading: "We work together to form an amazing collective brain",
       subtitle: "We're enthusiastic and have a 'Make it happen' culture.",
       seeMoreButton: [{ buttonText: "Meet the Team", buttonLink: "/people" }],

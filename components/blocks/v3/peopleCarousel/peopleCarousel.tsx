@@ -10,6 +10,7 @@ import {
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
+import type { PageBeforeBodyV3PeopleCarouselPeople } from "@/tina/types";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -56,12 +57,15 @@ function ProfileLink({ person, className, children }) {
 // layouts on the page at once (only one is visible per breakpoint).
 type CardScope = "sm" | "lg" | "carousel" | "side";
 
+// Tina generates this shape once per collection; any one of them fits
+type Person = Omit<PageBeforeBodyV3PeopleCarouselPeople, "__typename">;
+
 function PersonCard({
   person,
   index,
   scope,
 }: {
-  person;
+  person: Person;
   index: number;
   scope: CardScope;
 }) {
@@ -164,7 +168,7 @@ function PersonSlots({
   as: Slot,
   className,
 }: {
-  people;
+  people: Person[];
   scope: CardScope;
   as: ElementType;
   className?: string;
