@@ -8,7 +8,6 @@ import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
-import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 
 // Each slide's author, portrait and CTA fade up together when the slide changes.
@@ -200,6 +199,45 @@ function Attribution({ testimonial, showAvatar }) {
   );
 }
 
+// Case study sentence + red button. Both layouts use it; only its position
+// changes (under the quote by default, beside it in the case study layout).
+function CaseStudyCta({ testimonial, className }) {
+  return (
+    <motion.div
+      {...fadeUp}
+      className={cn("flex flex-col items-start gap-6", className)}
+    >
+      {/* The sentence, button label and attribution all break long unbroken
+          strings (a pasted URL) so they wrap inside their column instead of
+          running off the page. */}
+      {testimonial?.caseStudyLabel && (
+        <p
+          data-tina-field={tinaField(testimonial, "caseStudyLabel")}
+          className="w-full break-words text-lg font-medium text-foreground"
+        >
+          {testimonial.caseStudyLabel}
+        </p>
+      )}
+      <RippleButton
+        variant="primary"
+        href={testimonial.caseStudyUrl}
+        target="_blank"
+        data-tina-field={tinaField(testimonial, "caseStudyUrl")}
+        className="group inline-flex w-full max-w-full rounded-full px-8 py-4 sm:w-auto"
+        fontClassName="min-w-0 gap-3 text-sm font-semibold uppercase tracking-wider"
+      >
+        <span
+          data-tina-field={tinaField(testimonial, "caseStudyButtonText")}
+          className="min-w-0 break-words"
+        >
+          {testimonial.caseStudyButtonText || "Explore the case study"}
+        </span>
+        <BsArrowRight className="size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
+      </RippleButton>
+    </motion.div>
+  );
+}
+
 function ArrowButton({ label, onClick, children }) {
   return (
     <button
@@ -214,10 +252,10 @@ function ArrowButton({ label, onClick, children }) {
 }
 
 // Two layouts share one frame so they read as the same component: quote
-// top-left, attribution bottom-left, arrows bottom-right. Only the top-right
-// cell changes — the author's portrait by default, or the case study CTA when
-// the block's layout is "caseStudy" (slides without a case study keep the
-// portrait, so the cell is never left empty).
+// top-left, attribution bottom-left, arrows bottom-right. By default the
+// author's portrait sits top-right and the case study CTA goes under the
+// quote. The "caseStudy" layout moves the CTA into the portrait's place
+// (slides without a case study keep the portrait, so the cell is never empty).
 export function V3Testimonials({ data }) {
   const testimonials = data?.testimonials ?? [];
   const [active, setActive] = useState(0);
@@ -256,7 +294,7 @@ export function V3Testimonials({ data }) {
                 : "xl:max-w-5xl xl:grid-cols-testimonial xl:gap-y-4"
             )}
           >
-            {/* Quote (+ case study link when there's no CTA column) — top-left */}
+            {/* Quote (+ case study CTA when there's no CTA column) — top-left */}
             <div className="flex max-w-3xl flex-col xl:col-start-1 xl:row-start-1">
               {/* All quotes share one grid cell so the cell always sizes to the
                   tallest quote — switching slides never changes the block height
@@ -291,18 +329,13 @@ export function V3Testimonials({ data }) {
               </div>
 
               {current?.caseStudyUrl && !showCta && (
-                <motion.a
-                  key={`case-study-link-${activeIndex}`}
-                  {...fadeUp}
-                  href={current.caseStudyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-tina-field={tinaField(current, "caseStudyUrl")}
-                  className="group mt-6 inline-flex items-center gap-1 self-start text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
-                >
-                  See Case Study
-                  <TiArrowRight className="size-5 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
-                </motion.a>
+                // Bottom margin evens out the gap to the attribution when no
+                // portrait holds the row open (the row gap alone is tighter).
+                <CaseStudyCta
+                  key={`case-study-${activeIndex}`}
+                  testimonial={current}
+                  className="mt-8 xl:mb-4"
+                />
               )}
             </div>
 
@@ -317,39 +350,11 @@ export function V3Testimonials({ data }) {
 
             {/* Top-right: case study CTA, or the author's portrait */}
             {showCta ? (
-              <motion.div
+              <CaseStudyCta
                 key={`case-study-${activeIndex}`}
-                {...fadeUp}
-                className="flex flex-col items-start gap-6 xl:col-start-2 xl:row-start-1"
-              >
-                {/* The sentence, button label and attribution all break long
-                    unbroken strings (a pasted URL) so they wrap inside their
-                    column instead of running off the page. */}
-                {current?.caseStudyLabel && (
-                  <p
-                    data-tina-field={tinaField(current, "caseStudyLabel")}
-                    className="w-full break-words text-lg font-medium text-foreground"
-                  >
-                    {current.caseStudyLabel}
-                  </p>
-                )}
-                <RippleButton
-                  variant="primary"
-                  href={current.caseStudyUrl}
-                  target="_blank"
-                  data-tina-field={tinaField(current, "caseStudyUrl")}
-                  className="group inline-flex w-full max-w-full rounded-full px-8 py-4 sm:w-auto"
-                  fontClassName="min-w-0 gap-3 text-sm font-semibold uppercase tracking-wider"
-                >
-                  <span
-                    data-tina-field={tinaField(current, "caseStudyButtonText")}
-                    className="min-w-0 break-words"
-                  >
-                    {current.caseStudyButtonText || "Explore the case study"}
-                  </span>
-                  <BsArrowRight className="size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
-                </RippleButton>
-              </motion.div>
+                testimonial={current}
+                className="xl:col-start-2 xl:row-start-1"
+              />
             ) : (
               current?.authorImage && (
                 <motion.div
