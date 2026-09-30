@@ -3,14 +3,20 @@ import RippleButton from "@/components/button/rippleButtonV2";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { BsArrowRight } from "react-icons/bs";
+import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 
-// How long each testimonial stays on screen before the carousel advances.
-const AUTOPLAY_MS = 8000;
+// Each slide's author, portrait and CTA fade up together when the slide changes.
+const fadeUp = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] },
+} as const;
 
 // The quotation marks belong to the design, not to the copy, so editors type
 // the quote plain. Any double quotes an editor wraps around it anyway (or that
@@ -115,13 +121,22 @@ function ClipTextReveal({ text }: { text: string }) {
   );
 }
 
-// Author headshot + name + role + client logo. Sits above the quote (mobile and
-// desktop alike), so the reader knows who is speaking before they read it.
-function AuthorRow({ testimonial }) {
+// Name + role + client logo, under the quote. The headshot joins the row only
+// when the case study CTA has taken the portrait's place beside the quote.
+function Attribution({ testimonial, showAvatar }) {
+  const hasAvatar = showAvatar && Boolean(testimonial?.authorImage);
+
   return (
-    <div className="flex items-center gap-4">
-      {testimonial?.authorImage && (
-        <div className="relative size-14 shrink-0 overflow-hidden rounded-utility md:size-16">
+    <div
+      className={cn(
+        "flex items-center gap-4",
+        // A headshot, name and logo don't fit one line on a phone, so the
+        // logo drops to its own line beneath them.
+        hasAvatar && "max-md:flex-wrap"
+      )}
+    >
+      {hasAvatar && (
+        <div className="relative size-14 shrink-0 overflow-hidden rounded-utility">
           <Image
             src={testimonial.authorImage}
             alt={
@@ -136,11 +151,13 @@ function AuthorRow({ testimonial }) {
         </div>
       )}
 
-      <div className="flex min-w-0 flex-col">
+      <div
+        className={cn("flex min-w-0 flex-col", hasAvatar && "max-md:flex-1")}
+      >
         {testimonial?.authorName && (
           <span
             data-tina-field={tinaField(testimonial, "authorName")}
-            className="text-lg font-semibold text-foreground"
+            className="font-semibold text-foreground"
           >
             {testimonial.authorName}
           </span>
@@ -157,43 +174,50 @@ function AuthorRow({ testimonial }) {
 
       {testimonial?.companyLogo && (
         <>
-          {/* Pushed to the row's far end on mobile, where the design keeps the
-              logo against the right edge; on wider screens it tucks in beside
-              the name behind a hairline divider. */}
-          <span className="ml-auto h-10 w-px bg-hairline max-md:hidden md:ml-2" />
-          <Image
-            src={testimonial.companyLogo}
-            alt={testimonial?.companyLogoAlt ?? "Company logo"}
-            width={160}
-            height={160}
-            className="h-12 w-auto shrink-0 object-contain brightness-0 max-md:ml-auto dark:invert"
-            data-tina-field={tinaField(testimonial, "companyLogo")}
+          <span
+            className={cn(
+              "h-10 w-px shrink-0 bg-hairline",
+              hasAvatar && "max-md:hidden"
+            )}
           />
+          <div className={cn("shrink-0", hasAvatar && "max-md:basis-full")}>
+            {/* Wide wordmarks are capped on phones so they can't crowd the name. */}
+            <Image
+              src={testimonial.companyLogo}
+              alt={testimonial?.companyLogoAlt ?? "Company logo"}
+              width={160}
+              height={160}
+              className="h-12 w-auto object-contain object-left brightness-0 max-md:max-w-28 dark:invert"
+              data-tina-field={tinaField(testimonial, "companyLogo")}
+            />
+          </div>
         </>
       )}
     </div>
   );
 }
 
+function ArrowButton({ label, onClick, children }) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+      className="flex size-12 items-center justify-center rounded-full bg-foreground text-background transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground motion-reduce:transition-none"
+    >
+      {children}
+    </button>
+  );
+}
+
+// Two layouts share one frame so they read as the same component: quote
+// top-left, attribution bottom-left, arrows bottom-right. Only the top-right
+// cell changes — the author's portrait by default, or the case study CTA when
+// the block's layout is "caseStudy" (slides without a case study keep the
+// portrait, so the cell is never left empty).
 export function V3Testimonials({ data }) {
   const testimonials = data?.testimonials ?? [];
   const [active, setActive] = useState(0);
-  // Autoplay holds while a reader is hovering or tabbing through the block.
-  const [paused, setPaused] = useState(false);
-
-  // Advance on a timer, so the second testimonial is seen without any controls
-  // being touched. `active` is a dependency so picking a dot restarts the clock
-  // instead of cutting the newly chosen quote short.
-  useEffect(() => {
-    if (testimonials.length <= 1 || paused) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const timer = setTimeout(
-      () => setActive((i) => (i + 1) % testimonials.length),
-      AUTOPLAY_MS
-    );
-    return () => clearTimeout(timer);
-  }, [active, paused, testimonials.length]);
 
   if (testimonials.length === 0) return null;
 
@@ -203,124 +227,161 @@ export function V3Testimonials({ data }) {
   const activeIndex = Math.min(active, testimonials.length - 1);
   const current = testimonials[activeIndex];
 
+  const isCaseStudyLayout = data?.layout === "caseStudy";
+  const showCta = isCaseStudyLayout && Boolean(current?.caseStudyUrl);
+
+  const step = (by: number) =>
+    setActive((activeIndex + by + testimonials.length) % testimonials.length);
+
   return (
-    <V2ComponentWrapper data={data}>
-      <Container size="custom" className="py-16 sm:px-8 md:py-32">
-        <div
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocusCapture={() => setPaused(true)}
-          onBlurCapture={() => setPaused(false)}
-          className={cn(
-            "mx-auto flex max-w-xl flex-col gap-8",
-            // Desktop: quote on the left, case study CTA on the right. The
-            // right column is capped so a long sentence wraps to two lines
-            // (as designed) instead of stretching across the section.
-            "xl:grid xl:max-w-6xl xl:grid-cols-testimonial xl:items-start xl:gap-x-16"
-          )}
-        >
-          {/* Author + quote — left column */}
-          <div className="flex flex-col xl:col-start-1">
+    <MotionConfig reducedMotion="user">
+      <V2ComponentWrapper data={data}>
+        <Container size="custom" className="py-16 sm:px-8 md:py-32">
+          <div
+            className={cn(
+              "mx-auto flex max-w-xl flex-col gap-10",
+              // Desktop: 2×2 grid. The top row is `1fr` so it absorbs the
+              // slack, keeping the attribution (bottom-left) and arrows
+              // (bottom-right) on the same baseline whatever the quote length.
+              // The case study layout is wider by exactly its wider right
+              // column, so the quote keeps the same measure in both layouts.
+              // The portrait holds the top row open under a short quote; the
+              // CTA is shorter, so a larger row gap keeps the attribution clear.
+              "xl:grid xl:grid-rows-testimonial xl:items-start xl:gap-x-12",
+              isCaseStudyLayout
+                ? "xl:max-w-6xl xl:grid-cols-testimonial-case-study xl:gap-y-10"
+                : "xl:max-w-5xl xl:grid-cols-testimonial xl:gap-y-4"
+            )}
+          >
+            {/* Quote (+ case study link when there's no CTA column) — top-left */}
+            <div className="flex max-w-3xl flex-col xl:col-start-1 xl:row-start-1">
+              {/* All quotes share one grid cell so the cell always sizes to the
+                  tallest quote — switching slides never changes the block height
+                  (only the active quote is visible; the rest fade to opacity-0). */}
+              <div className="grid">
+                {testimonials.map((t, i) => (
+                  <blockquote
+                    key={`v3-testimonial-quote-${i}`}
+                    aria-hidden={i !== activeIndex}
+                    data-tina-field={
+                      i === activeIndex ? tinaField(t, "quote") : undefined
+                    }
+                    className={cn(
+                      "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 motion-reduce:transition-none md:text-4xl",
+                      i === activeIndex
+                        ? "opacity-100"
+                        : "pointer-events-none opacity-0"
+                    )}
+                  >
+                    {i === activeIndex ? (
+                      <ClipTextReveal
+                        key={activeIndex}
+                        text={withQuoteMarks(t?.quote ?? "")}
+                      />
+                    ) : (
+                      <span>
+                        {withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}
+                      </span>
+                    )}
+                  </blockquote>
+                ))}
+              </div>
+
+              {current?.caseStudyUrl && !showCta && (
+                <motion.a
+                  key={`case-study-link-${activeIndex}`}
+                  {...fadeUp}
+                  href={current.caseStudyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-tina-field={tinaField(current, "caseStudyUrl")}
+                  className="group mt-6 inline-flex items-center gap-1 self-start text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
+                >
+                  See Case Study
+                  <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
+                </motion.a>
+              )}
+            </div>
+
+            {/* Attribution — bottom-left */}
             <motion.div
               key={`author-${activeIndex}`}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              {...fadeUp}
+              className="xl:col-start-1 xl:row-start-2 xl:self-end"
             >
-              <AuthorRow testimonial={current} />
+              <Attribution testimonial={current} showAvatar={showCta} />
             </motion.div>
 
-            {/* All quotes share one grid cell so the cell always sizes to the
-                tallest quote — switching slides never changes the block height
-                (only the active quote is visible; the rest fade to opacity-0). */}
-            <div className="mt-8 grid">
-              {testimonials.map((t, i) => (
-                <blockquote
-                  key={`v3-testimonial-quote-${i}`}
-                  aria-hidden={i !== activeIndex}
-                  data-tina-field={
-                    i === activeIndex ? tinaField(t, "quote") : undefined
-                  }
-                  className={cn(
-                    "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 md:text-4xl",
-                    i === activeIndex
-                      ? "opacity-100"
-                      : "pointer-events-none opacity-0"
-                  )}
-                >
-                  {i === activeIndex ? (
-                    <ClipTextReveal
-                      key={activeIndex}
-                      text={withQuoteMarks(t?.quote ?? "")}
-                    />
-                  ) : (
-                    <span>
-                      {withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}
-                    </span>
-                  )}
-                </blockquote>
-              ))}
-            </div>
-          </div>
-
-          {/* Case study CTA — right column on desktop, below the quote on mobile */}
-          {current?.caseStudyUrl && (
-            <motion.div
-              key={`case-study-${activeIndex}`}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col items-start gap-6 xl:col-start-2 xl:row-start-1"
-            >
-              {current?.caseStudyLabel && (
-                <p
-                  data-tina-field={tinaField(current, "caseStudyLabel")}
-                  className="text-lg font-medium text-foreground"
-                >
-                  {current.caseStudyLabel}
-                </p>
-              )}
-              <RippleButton
-                variant="primary"
-                href={current.caseStudyUrl}
-                target="_blank"
-                data-tina-field={tinaField(current, "caseStudyUrl")}
-                className="group inline-flex w-full rounded-full px-8 py-4 sm:w-auto"
-                fontClassName="gap-3 text-sm font-semibold uppercase tracking-wider"
+            {/* Top-right: case study CTA, or the author's portrait */}
+            {showCta ? (
+              <motion.div
+                key={`case-study-${activeIndex}`}
+                {...fadeUp}
+                className="flex flex-col items-start gap-6 xl:col-start-2 xl:row-start-1"
               >
-                <span
-                  data-tina-field={tinaField(current, "caseStudyButtonText")}
+                {current?.caseStudyLabel && (
+                  <p
+                    data-tina-field={tinaField(current, "caseStudyLabel")}
+                    className="text-lg font-medium text-foreground"
+                  >
+                    {current.caseStudyLabel}
+                  </p>
+                )}
+                <RippleButton
+                  variant="primary"
+                  href={current.caseStudyUrl}
+                  target="_blank"
+                  data-tina-field={tinaField(current, "caseStudyUrl")}
+                  className="group inline-flex w-full rounded-full px-8 py-4 sm:w-auto"
+                  fontClassName="gap-3 text-sm font-semibold uppercase tracking-wider"
                 >
-                  {current.caseStudyButtonText || "Explore the case study"}
-                </span>
-                <BsArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </RippleButton>
-            </motion.div>
-          )}
+                  <span
+                    data-tina-field={tinaField(current, "caseStudyButtonText")}
+                  >
+                    {current.caseStudyButtonText || "Explore the case study"}
+                  </span>
+                  <BsArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </RippleButton>
+              </motion.div>
+            ) : (
+              current?.authorImage && (
+                <motion.div
+                  key={`author-image-${activeIndex}`}
+                  {...fadeUp}
+                  className="relative order-first size-48 shrink-0 overflow-hidden rounded-card xl:order-none xl:col-start-2 xl:row-start-1"
+                >
+                  <Image
+                    src={current.authorImage}
+                    alt={
+                      current?.authorImageAlt ??
+                      current?.authorName ??
+                      "Testimonial author"
+                    }
+                    fill
+                    className="object-cover"
+                    data-tina-field={tinaField(current, "authorImage")}
+                  />
+                </motion.div>
+              )
+            )}
 
-          {/* Slide picker — under the quote on desktop, last on mobile so the
-              CTA still follows the quote it belongs to. */}
-          {testimonials.length > 1 && (
-            <div className="flex items-center gap-2 xl:col-start-1 xl:row-start-2 xl:mt-8">
-              {testimonials.map((t, i) => (
-                <button
-                  key={`v3-testimonial-dot-${i}`}
-                  type="button"
-                  onClick={() => setActive(i)}
-                  aria-label={`Show testimonial ${i + 1}${
-                    t?.authorName ? `: ${t.authorName}` : ""
-                  }`}
-                  aria-current={i === activeIndex}
-                  className={cn(
-                    "h-1.5 rounded-full bg-foreground transition-all duration-300",
-                    i === activeIndex ? "w-6" : "w-3 opacity-30"
-                  )}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </Container>
-    </V2ComponentWrapper>
+            {/* Arrows — bottom-right */}
+            {testimonials.length > 1 && (
+              <div className="flex justify-end gap-3 xl:col-start-2 xl:row-start-2 xl:place-self-end">
+                <ArrowButton
+                  label="Previous testimonial"
+                  onClick={() => step(-1)}
+                >
+                  <BiLeftArrowAlt className="size-6" />
+                </ArrowButton>
+                <ArrowButton label="Next testimonial" onClick={() => step(1)}>
+                  <BiRightArrowAlt className="size-6" />
+                </ArrowButton>
+              </div>
+            )}
+          </div>
+        </Container>
+      </V2ComponentWrapper>
+    </MotionConfig>
   );
 }

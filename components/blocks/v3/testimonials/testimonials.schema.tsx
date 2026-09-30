@@ -20,6 +20,17 @@ export const V3TestimonialsSchema: Template = {
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
     {
+      type: "string",
+      label: "Layout",
+      name: "layout",
+      description:
+        "Quote & portrait shows the author's photo beside the quote. Quote & case study swaps the photo for the case study sentence and button, on slides that have a Case Study URL.",
+      options: [
+        { value: "quote", label: "Quote & portrait (default)" },
+        { value: "caseStudy", label: "Quote & case study" },
+      ],
+    },
+    {
       type: "object",
       label: "Testimonials",
       name: "testimonials",
@@ -46,14 +57,15 @@ export const V3TestimonialsSchema: Template = {
           type: "string",
           label: "Case Study URL",
           name: "caseStudyUrl",
-          description: "If set, a link is shown below the quote.",
+          description:
+            "If set, a 'See case study' link is shown below the quote. In the Quote & case study layout it becomes the button beside the quote instead.",
         },
         {
           type: "string",
           label: "Case Study Sentence",
           name: "caseStudyLabel",
           description:
-            "Sentence shown above the case study button, e.g. 'Discover how an AI-powered chatbot transformed their customer service'.",
+            "Quote & case study layout only. Sentence shown above the case study button, e.g. 'Discover how an AI-powered chatbot transformed their customer service'.",
           ui: { component: "textarea" },
         },
         {
@@ -61,7 +73,7 @@ export const V3TestimonialsSchema: Template = {
           label: "Case Study Button Text",
           name: "caseStudyButtonText",
           description:
-            "Text on the red button (always shown in uppercase). Defaults to 'Explore the case study'.",
+            "Quote & case study layout only. Text on the red button (always shown in uppercase). Defaults to 'Explore the case study'.",
         },
         {
           type: "string",
