@@ -152,7 +152,10 @@ function Attribution({ testimonial, showAvatar }) {
       )}
 
       <div
-        className={cn("flex min-w-0 flex-col", hasAvatar && "max-md:flex-1")}
+        className={cn(
+          "flex min-w-0 flex-col break-words",
+          hasAvatar && "max-md:flex-1"
+        )}
       >
         {testimonial?.authorName && (
           <span
@@ -319,10 +322,13 @@ export function V3Testimonials({ data }) {
                 {...fadeUp}
                 className="flex flex-col items-start gap-6 xl:col-start-2 xl:row-start-1"
               >
+                {/* The sentence, button label and attribution all break long
+                    unbroken strings (a pasted URL) so they wrap inside their
+                    column instead of running off the page. */}
                 {current?.caseStudyLabel && (
                   <p
                     data-tina-field={tinaField(current, "caseStudyLabel")}
-                    className="text-lg font-medium text-foreground"
+                    className="w-full break-words text-lg font-medium text-foreground"
                   >
                     {current.caseStudyLabel}
                   </p>
@@ -332,15 +338,16 @@ export function V3Testimonials({ data }) {
                   href={current.caseStudyUrl}
                   target="_blank"
                   data-tina-field={tinaField(current, "caseStudyUrl")}
-                  className="group inline-flex w-full rounded-full px-8 py-4 sm:w-auto"
-                  fontClassName="gap-3 text-sm font-semibold uppercase tracking-wider"
+                  className="group inline-flex w-full max-w-full rounded-full px-8 py-4 sm:w-auto"
+                  fontClassName="min-w-0 gap-3 text-sm font-semibold uppercase tracking-wider"
                 >
                   <span
                     data-tina-field={tinaField(current, "caseStudyButtonText")}
+                    className="min-w-0 break-words"
                   >
                     {current.caseStudyButtonText || "Explore the case study"}
                   </span>
-                  <BsArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
+                  <BsArrowRight className="size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
                 </RippleButton>
               </motion.div>
             ) : (
