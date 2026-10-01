@@ -92,13 +92,52 @@ function HighlightCard({ project }) {
   );
 }
 
-function ProjectCard({ project }) {
+// PROTOTYPE: exported so the testimonials prototype can reuse the homepage
+// card. `imageFirst` puts the photo on top, like the homepage service cards
+// and the consulting page video cards; the homepage keeps it at the bottom.
+// `className` lets a page restyle the card surface.
+export function ProjectCard({
+  project,
+  imageFirst = false,
+  className = "",
+  // PROTOTYPE: optional client logo, white, bottom-left of the photo.
+  logo = null as { src: string; alt: string } | null,
+}) {
+  const image = project?.image?.imageSource && (
+    <div className="relative aspect-video w-full shrink-0">
+      <Image
+        src={project.image.imageSource}
+        alt={project.image.altText ?? project?.title ?? ""}
+        fill
+        sizes="(min-width: 768px) 33vw, 100vw"
+        className="object-cover"
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-black/20" />
+      {logo && (
+        <>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent to-60%"
+          />
+          <Image
+            src={logo.src}
+            alt={logo.alt}
+            width={160}
+            height={160}
+            className="absolute bottom-4 left-4 h-8 w-auto max-w-40 object-contain object-left brightness-0 invert lg:bottom-6 lg:left-8"
+          />
+        </>
+      )}
+    </div>
+  );
   const inner = (
     <div
       className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white dark:bg-sswBorder"
+        "group flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white dark:bg-sswBorder",
+        className
       )}
     >
+      {imageFirst && image}
       <div className="flex flex-1 flex-col gap-8 p-4 lg:p-8">
         <div className="flex flex-col gap-4">
           <h4
@@ -116,18 +155,7 @@ function ProjectCard({ project }) {
         </div>
         <ArrowCircle className="mt-auto size-10 self-end" />
       </div>
-      {project?.image?.imageSource && (
-        <div className="relative aspect-video w-full">
-          <Image
-            src={project.image.imageSource}
-            alt={project.image.altText ?? project?.title ?? ""}
-            fill
-            sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-cover"
-          />
-          <div aria-hidden="true" className="absolute inset-0 bg-black/20" />
-        </div>
-      )}
+      {!imageFirst && image}
     </div>
   );
 

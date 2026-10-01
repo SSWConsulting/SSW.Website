@@ -13,6 +13,8 @@ import {
 } from "react-icons/bi";
 import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
+// PROTOTYPE hook-in: remove with the testimonials.prototype-*.tsx files
+import { CaseStudyPrototype } from "./testimonials.prototype-results-story";
 
 // Each slide's author, portrait and CTA fade up together when the slide changes.
 const fadeUp = {
@@ -522,15 +524,20 @@ export function V3Testimonials({ data }) {
     <MotionConfig reducedMotion="user">
       <V2ComponentWrapper data={data}>
         <Container size="custom" className="py-16 sm:px-8 md:py-32">
-          <Layout
-            testimonials={testimonials}
-            activeIndex={activeIndex}
-            current={current}
-            swipe={testimonials.length > 1 ? swipe : undefined}
-            controls={
-              <CarouselControls count={testimonials.length} step={step} />
-            }
-          />
+          {/* PROTOTYPE: Option C (default) or A (?variant=a) replaces the case study layout. */}
+          {data?.layout === "caseStudy" ? (
+            <CaseStudyPrototype testimonials={testimonials} />
+          ) : (
+            <Layout
+              testimonials={testimonials}
+              activeIndex={activeIndex}
+              current={current}
+              swipe={testimonials.length > 1 ? swipe : undefined}
+              controls={
+                <CarouselControls count={testimonials.length} step={step} />
+              }
+            />
+          )}
         </Container>
       </V2ComponentWrapper>
     </MotionConfig>
