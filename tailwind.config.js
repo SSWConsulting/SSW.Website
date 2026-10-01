@@ -85,6 +85,9 @@ export default {
         "hero-speakers": "1fr auto",
         // Testimonial: quote column beside the author's portrait.
         testimonial: "minmax(0, 1fr) auto",
+        // Testimonial, case study layout: the homepage case study card's
+        // width beside the headline and quote.
+        "testimonial-case-study": "22rem minmax(0, 1fr)",
       },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",

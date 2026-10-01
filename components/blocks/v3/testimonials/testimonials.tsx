@@ -1,4 +1,5 @@
 "use client";
+import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
@@ -8,9 +9,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
+import { ProjectCard } from "../shared/projectCard";
 
-// Each slide's content (author, portrait, case study link) fades up when the
-// slide changes.
+// Each slide's content (author, portrait, case study) fades up when the slide
+// changes.
 const fadeUp = {
   initial: { opacity: 0, y: 12 },
   animate: { opacity: 1, y: 0 },
@@ -381,6 +383,211 @@ function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
   );
 }
 
+// The homepage Case Studies card, with the photo on top, the client logo on
+// the photo, and the AI page's own card surface in dark mode (near-black with
+// a fine edge). The whole card links to the case study. No photo, no logo:
+// the logo lives on the photo.
+function CaseStudyCard({ testimonial: t }) {
+  return (
+    <ProjectCard
+      imageFirst
+      className="dark:border-sswBorder dark:bg-sswCard"
+      logo={
+        t?.companyLogo
+          ? { src: t.companyLogo, alt: t?.companyLogoAlt ?? "Company logo" }
+          : null
+      }
+      project={{
+        title: t?.caseStudyTitle || t?.companyLogoAlt,
+        description: t?.caseStudyLabel,
+        image: t?.caseStudyImage
+          ? {
+              imageSource: t.caseStudyImage,
+              altText: t?.caseStudyImageAlt ?? "",
+            }
+          : null,
+        link: t.caseStudyUrl,
+        newTab: true,
+      }}
+      fields={{
+        link: tinaField(t, "caseStudyUrl"),
+        title: tinaField(t, "caseStudyTitle"),
+        description: tinaField(t, "caseStudyLabel"),
+        image: tinaField(t, "caseStudyImage"),
+        logo: tinaField(t, "companyLogo"),
+      }}
+    />
+  );
+}
+
+// Desktop: the story column (and the controls under it) sits right of the
+// card, behind a hairline. Without a case study there's no card, so it spans
+// the full width.
+const storyColumn = (t) =>
+  t?.caseStudyUrl
+    ? "xl:col-start-2 xl:ml-12 xl:border-l-0.75 xl:border-hairline xl:pl-12"
+    : "xl:col-span-2 xl:col-start-1";
+
+// The headline, then the quote on the section background, marked by the SSW
+// red bar, with its author underneath.
+function CaseStudyStory({
+  testimonial: t,
+  isActive,
+  activeIndex,
+  hasControls,
+}) {
+  return (
+    <div
+      className={cn(
+        "col-start-1 row-start-1 flex min-w-0 flex-col gap-8 xl:justify-between",
+        storyColumn(t)
+      )}
+    >
+      {t?.caseStudyHeadline && (
+        <SlideFade isActive={isActive} activeIndex={activeIndex}>
+          <h2
+            data-tina-field={tinaField(t, "caseStudyHeadline")}
+            className="m-0 text-3xl text-foreground lg:text-4xl"
+          >
+            {t.caseStudyHeadline}
+          </h2>
+        </SlideFade>
+      )}
+      <SlideFade isActive={isActive} activeIndex={activeIndex}>
+        <figure className="m-0 flex flex-col gap-6 border-l-2 border-sswRed pl-6">
+          <blockquote
+            data-tina-field={tinaField(t, "quote")}
+            className="m-0 max-w-3xl break-words text-xl leading-snug text-foreground xl:text-2xl xl:leading-snug"
+          >
+            <AlternatingText text={withQuoteMarks(t?.quote ?? "")} />
+          </blockquote>
+          <figcaption className="flex items-center gap-3">
+            {t?.authorImage && (
+              <Image
+                src={t.authorImage}
+                alt=""
+                width={40}
+                height={40}
+                data-tina-field={tinaField(t, "authorImage")}
+                className="size-10 shrink-0 rounded-full object-cover object-top"
+              />
+            )}
+            <div className="flex min-w-0 flex-col break-words">
+              {t?.authorName && (
+                <span
+                  data-tina-field={tinaField(t, "authorName")}
+                  className="font-semibold text-foreground"
+                >
+                  {t.authorName}
+                </span>
+              )}
+              {t?.authorTitle && (
+                <span
+                  data-tina-field={tinaField(t, "authorTitle")}
+                  className="text-sm text-muted-foreground"
+                >
+                  {t.authorTitle}
+                </span>
+              )}
+            </div>
+          </figcaption>
+        </figure>
+      </SlideFade>
+      {/* Desktop: stands in for the controls row, which sits just below this
+          column, so the spare height is shared equally between the headline,
+          the quote and the controls. */}
+      {hasControls && <div aria-hidden="true" className="hidden xl:block" />}
+    </div>
+  );
+}
+
+// Case study layout. Desktop: the case study card on the left; on the right,
+// behind a hairline, the headline, the quote and its author, then the dots
+// and arrows. The headline lines up with the card's top and the controls with
+// its bottom. Phones: headline, quote, controls, then the card.
+//
+// Every slide is a subgrid laid over the same cells, so the rows size to the
+// tallest slide: changing slide never changes the block height or moves the
+// controls. Only the active slide is visible; the rest fade to opacity-0 and
+// are `inert`. The controls are shared, outside the slides.
+function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
+  const hasControls = testimonials.length > 1;
+  const current = testimonials[activeIndex];
+  return (
+    <div
+      {...swipe}
+      className="mx-auto grid max-w-xl grid-cols-1 gap-8 xl:max-w-6xl xl:grid-cols-testimonial-case-study xl:grid-rows-testimonial xl:gap-0"
+    >
+      {testimonials.map((t, i) => {
+        const isActive = i === activeIndex;
+        return (
+          <div
+            key={`v3-case-study-slide-${i}`}
+            aria-hidden={!isActive}
+            inert={!isActive}
+            className={cn(
+              // Each span comes before its start: a span resets the start in
+              // CSS, and cn() drops a start that comes before a span.
+              hasControls ? "row-span-3" : "row-span-2",
+              "col-start-1 row-start-1 grid grid-cols-subgrid grid-rows-subgrid transition-opacity duration-300 motion-reduce:transition-none xl:col-span-2 xl:col-start-1 xl:row-span-2 xl:row-start-1",
+              isActive ? "opacity-100" : "pointer-events-none opacity-0"
+            )}
+          >
+            <CaseStudyStory
+              testimonial={t}
+              isActive={isActive}
+              activeIndex={activeIndex}
+              hasControls={hasControls}
+            />
+            {t?.caseStudyUrl && (
+              <SlideFade
+                isActive={isActive}
+                activeIndex={activeIndex}
+                className={cn(
+                  "col-start-1 xl:row-span-2 xl:row-start-1",
+                  hasControls ? "row-start-3" : "row-start-2"
+                )}
+              >
+                <CaseStudyCard testimonial={t} />
+              </SlideFade>
+            )}
+          </div>
+        );
+      })}
+
+      {hasControls && (
+        // After the slides, so it paints above them and takes the clicks.
+        <div
+          className={cn(
+            "col-start-1 row-start-2 flex items-center justify-between gap-6",
+            storyColumn(current)
+          )}
+        >
+          {/* The shared CarouselDots pills, as buttons. */}
+          <div className="flex items-center gap-2">
+            {testimonials.map((t, i) => (
+              <button
+                key={`v3-case-study-dot-${i}`}
+                type="button"
+                onClick={() => goTo(i)}
+                aria-label={`Show case study ${i + 1}${
+                  t?.companyLogoAlt ? `: ${t.companyLogoAlt}` : ""
+                }`}
+                aria-current={i === activeIndex}
+                className={cn(
+                  "h-1.5 rounded-full bg-foreground transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground motion-reduce:transition-none",
+                  i === activeIndex ? "w-6" : "w-3 opacity-30"
+                )}
+              />
+            ))}
+          </div>
+          <Arrows noun="case study" step={step} />
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function V3Testimonials({ data }) {
   const testimonials = data?.testimonials ?? [];
   const [active, setActive] = useState(0);
@@ -395,14 +602,17 @@ export function V3Testimonials({ data }) {
 
   if (testimonials.length === 0) return null;
 
+  const Layout = data?.layout === "caseStudy" ? CaseStudyLayout : QuoteLayout;
+
   return (
     <MotionConfig reducedMotion="user">
       <V2ComponentWrapper data={data}>
         <Container size="custom" className="py-16 sm:px-8 md:py-32">
-          <QuoteLayout
+          <Layout
             testimonials={testimonials}
             activeIndex={activeIndex}
             step={step}
+            goTo={setActive}
             swipe={testimonials.length > 1 ? swipe : undefined}
           />
         </Container>

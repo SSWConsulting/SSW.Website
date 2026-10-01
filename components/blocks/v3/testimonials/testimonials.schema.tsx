@@ -24,8 +24,11 @@ export const V3TestimonialsSchema: Template = {
       label: "Layout",
       name: "layout",
       description:
-        "Quote & portrait shows the author's photo beside the quote.",
-      options: [{ value: "quote", label: "Quote & portrait (default)" }],
+        "Quote & portrait shows the author's photo beside the quote. Quote & case study shows each slide as a case study: a headline, the quote and its author, and a case study card (photo, title and sentence) on slides that have a Case Study URL.",
+      options: [
+        { value: "quote", label: "Quote & portrait (default)" },
+        { value: "caseStudy", label: "Quote & case study" },
+      ],
     },
     {
       type: "object",
@@ -54,22 +57,44 @@ export const V3TestimonialsSchema: Template = {
           type: "string",
           label: "Case Study URL",
           name: "caseStudyUrl",
-          description: "If set, a link is shown below the quote.",
+          description:
+            "Quote & portrait: shows a 'See Case Study' link below the quote. Quote & case study: shows the case study card, which links here.",
+        },
+        {
+          type: "string",
+          label: "Case Study Headline",
+          name: "caseStudyHeadline",
+          description:
+            "Quote & case study layout only. Headline above the quote, e.g. 'An AI chatbot that answers payroll questions around the clock'.",
+        },
+        {
+          type: "string",
+          label: "Case Study Card Title",
+          name: "caseStudyTitle",
+          description:
+            "Quote & case study layout only. Title on the case study card. Defaults to the Company Logo Alt Text.",
         },
         {
           type: "string",
           label: "Case Study Sentence",
           name: "caseStudyLabel",
           description:
-            "Sentence shown above the case study button, e.g. 'Discover how an AI-powered chatbot transformed their customer service'.",
+            "Quote & case study layout only. Short description on the case study card, under its title, e.g. 'Discover how an AI-powered chatbot transformed their customer service.'",
           ui: { component: "textarea" },
         },
         {
-          type: "string",
-          label: "Case Study Button Text",
-          name: "caseStudyButtonText",
+          type: "image",
+          label: "Case Study Card Photo",
+          name: "caseStudyImage",
           description:
-            "Text on the red button (always shown in uppercase). Defaults to 'Explore the case study'.",
+            "Quote & case study layout only. Photo at the top of the case study card, with the company logo over it. Without a photo, the card shows no image or logo.",
+        },
+        {
+          type: "string",
+          label: "Case Study Card Photo Alt Text",
+          name: "caseStudyImageAlt",
+          description:
+            "Quote & case study layout only. Leave empty if the photo is decorative.",
         },
         {
           type: "string",
@@ -92,16 +117,22 @@ export const V3TestimonialsSchema: Template = {
           type: "string",
           label: "Author Image Alt Text",
           name: "authorImageAlt",
+          description:
+            "Quote & portrait layout only. The case study layout shows the headshot beside the author's name, so it needs none.",
         },
         {
           type: "image",
           label: "Company Logo",
           name: "companyLogo",
+          description:
+            "Quote & portrait: shown beside the author. Quote & case study: shown in white on the case study card's photo.",
         },
         {
           type: "string",
           label: "Company Logo Alt Text",
           name: "companyLogoAlt",
+          description:
+            "The company's name. Quote & case study: also the card title when Case Study Card Title is empty, and the label of the slide's dot.",
         },
       ],
     },
