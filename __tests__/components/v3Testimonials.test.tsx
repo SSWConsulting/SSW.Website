@@ -51,7 +51,8 @@ const slides = [
 ];
 
 const activeQuote = () =>
-  document.querySelector("blockquote:not([aria-hidden='true'])")?.textContent;
+  // The visible slide is the one not hidden from assistive tech.
+  document.querySelector("[aria-hidden='false'] > blockquote")?.textContent;
 
 const dotFor = (name: string) =>
   screen.getByRole("button", { name: new RegExp(`: ${name}$`) });
@@ -64,6 +65,16 @@ describe("V3Testimonials", () => {
     expect(screen.getByText("See Case Study")).toBeTruthy();
     expect(document.querySelector("[data-cta]")).toBeNull();
     expect(screen.queryByText("Read how Ada did it.")).toBeNull();
+  });
+
+  it("keeps hidden slides' links out of the tab order", () => {
+    render(<V3Testimonials data={{ testimonials: slides }} />);
+    const link = () => screen.getByText("See Case Study").closest("a")!;
+    expect(link().closest("[inert]")).toBeNull();
+
+    // Ada's slide (the one with the link) is now hidden.
+    fireEvent.click(screen.getByLabelText("Next testimonial"));
+    expect(link().closest("[inert]")).not.toBeNull();
   });
 
   it("shows a case study card in the case study layout", () => {

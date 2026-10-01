@@ -260,35 +260,69 @@ function CarouselControls({ testimonials, activeIndex, onPick, step }) {
   );
 }
 
-// All quotes share one grid cell so the cell always sizes to the tallest
-// quote — switching slides never changes the block height (only the active
-// quote is visible; the rest fade to opacity-0).
-function QuoteStack({ testimonials, activeIndex }) {
+// All slides share one grid cell, so the cell always sizes to the tallest
+// slide: switching slides never changes the block height, and the controls
+// below never jump. Only the active slide is visible; the rest fade to
+// opacity-0 and are `inert`, so their links can't be tabbed to. `below`
+// renders under each slide's own quote, so whatever it holds (the author, the
+// case study link) sits right under that quote, and the spare height of a
+// short slide gathers at the bottom of the cell instead of above the author.
+function QuoteStack({
+  testimonials,
+  activeIndex,
+  below,
+}: {
+  testimonials;
+  activeIndex: number;
+  below?: (testimonial, isActive: boolean) => React.ReactNode;
+}) {
   return (
     <div className="grid">
-      {testimonials.map((t, i) => (
-        <blockquote
-          key={`v3-testimonial-quote-${i}`}
-          aria-hidden={i !== activeIndex}
-          data-tina-field={
-            i === activeIndex ? tinaField(t, "quote") : undefined
-          }
-          className={cn(
-            "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 motion-reduce:transition-none md:text-4xl",
-            i === activeIndex ? "opacity-100" : "pointer-events-none opacity-0"
-          )}
-        >
-          {i === activeIndex ? (
-            <ClipTextReveal
-              key={activeIndex}
-              text={withQuoteMarks(t?.quote ?? "")}
-            />
-          ) : (
-            <span>{withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}</span>
-          )}
-        </blockquote>
-      ))}
+      {testimonials.map((t, i) => {
+        const isActive = i === activeIndex;
+        return (
+          <div
+            key={`v3-testimonial-slide-${i}`}
+            aria-hidden={!isActive}
+            inert={!isActive}
+            className={cn(
+              "col-start-1 row-start-1 flex flex-col transition-opacity duration-300 motion-reduce:transition-none",
+              isActive ? "opacity-100" : "pointer-events-none opacity-0"
+            )}
+          >
+            <blockquote
+              data-tina-field={isActive ? tinaField(t, "quote") : undefined}
+              className="text-2xl text-foreground md:text-4xl"
+            >
+              {isActive ? (
+                <ClipTextReveal
+                  key={activeIndex}
+                  text={withQuoteMarks(t?.quote ?? "")}
+                />
+              ) : (
+                <span>
+                  {withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}
+                </span>
+              )}
+            </blockquote>
+            {below?.(t, isActive)}
+          </div>
+        );
+      })}
     </div>
+  );
+}
+
+// Fades a slide's content up when that slide becomes active. Inactive slides
+// render the same content without the animation, so the stack still sizes to
+// them.
+function SlideFade({ isActive, activeIndex, className = "", children }) {
+  return isActive ? (
+    <motion.div key={activeIndex} {...fadeUp} className={className}>
+      {children}
+    </motion.div>
+  ) : (
+    <div className={className}>{children}</div>
   );
 }
 
@@ -365,7 +399,8 @@ function useSwipe(step: (by: number) => void) {
 }
 
 // Default layout: quote top-left, attribution bottom-left, portrait top-right,
-// dots + arrows bottom-right. On phones the portrait sits above the quote.
+// dots + arrows bottom-right. On phones the portrait sits above the quote and
+// the attribution follows its quote, with the controls last.
 function QuoteLayout({ testimonials, activeIndex, current, controls, swipe }) {
   return (
     <div
@@ -378,29 +413,48 @@ function QuoteLayout({ testimonials, activeIndex, current, controls, swipe }) {
         "xl:grid xl:max-w-5xl xl:grid-cols-testimonial xl:grid-rows-testimonial xl:items-start xl:gap-x-12 xl:gap-y-4"
       )}
     >
-      <div className="flex max-w-3xl flex-col xl:col-start-1 xl:row-start-1">
-        <QuoteStack testimonials={testimonials} activeIndex={activeIndex} />
-
-        {current?.caseStudyUrl && (
-          <motion.a
-            key={`case-study-link-${activeIndex}`}
-            {...fadeUp}
-            href={current.caseStudyUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-tina-field={tinaField(current, "caseStudyUrl")}
-            className="group mt-6 inline-flex items-center gap-1 self-start text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
-          >
-            See Case Study
-            <TiArrowRight className="size-5 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
-          </motion.a>
-        )}
+      <div className="max-w-3xl xl:col-start-1 xl:row-start-1">
+        <QuoteStack
+          testimonials={testimonials}
+          activeIndex={activeIndex}
+          below={(t, isActive) => (
+            <>
+              {t?.caseStudyUrl && (
+                <SlideFade
+                  isActive={isActive}
+                  activeIndex={activeIndex}
+                  className="mt-6"
+                >
+                  <a
+                    href={t.caseStudyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-tina-field={tinaField(t, "caseStudyUrl")}
+                    className="group inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
+                  >
+                    See Case Study
+                    <TiArrowRight className="size-5 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
+                  </a>
+                </SlideFade>
+              )}
+              {/* Phones: the author follows its own quote. */}
+              <SlideFade
+                isActive={isActive}
+                activeIndex={activeIndex}
+                className="mt-10 xl:hidden"
+              >
+                <Attribution testimonial={t} />
+              </SlideFade>
+            </>
+          )}
+        />
       </div>
 
+      {/* Desktop: the author pins to the bottom row, level with the controls. */}
       <motion.div
         key={`author-${activeIndex}`}
         {...fadeUp}
-        className="xl:col-start-1 xl:row-start-2 xl:self-end"
+        className="hidden xl:col-start-1 xl:row-start-2 xl:block xl:self-end"
       >
         <Attribution testimonial={current} />
       </motion.div>
@@ -439,9 +493,27 @@ function CaseStudyLayout({
       className="mx-auto flex max-w-xl flex-col gap-10 xl:grid xl:max-w-6xl xl:grid-cols-testimonial-case-study xl:items-center xl:gap-x-12"
     >
       <div className="flex flex-col gap-10">
-        <QuoteStack testimonials={testimonials} activeIndex={activeIndex} />
-        <div className="flex flex-col gap-6 xl:flex-row xl:items-center xl:justify-between">
-          <motion.div key={`author-${activeIndex}`} {...fadeUp}>
+        <QuoteStack
+          testimonials={testimonials}
+          activeIndex={activeIndex}
+          below={(t, isActive) => (
+            // Phones: the author follows its own quote.
+            <SlideFade
+              isActive={isActive}
+              activeIndex={activeIndex}
+              className="mt-10 xl:hidden"
+            >
+              <Attribution testimonial={t} />
+            </SlideFade>
+          )}
+        />
+        <div className="xl:flex xl:items-center xl:justify-between xl:gap-6">
+          {/* Desktop: the author shares a row with the controls. */}
+          <motion.div
+            key={`author-${activeIndex}`}
+            {...fadeUp}
+            className="hidden xl:block"
+          >
             <Attribution testimonial={current} />
           </motion.div>
           {controls}
