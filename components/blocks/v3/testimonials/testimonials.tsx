@@ -1,16 +1,21 @@
 "use client";
-import RippleButton from "@/components/button/rippleButtonV2";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { BsArrowRight } from "react-icons/bs";
+import { BiRightArrowAlt } from "react-icons/bi";
+import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 
-// How long each testimonial stays on screen before the carousel advances.
-const AUTOPLAY_MS = 8000;
+// Each slide's content (author, portrait, case study link) fades up when the
+// slide changes.
+const fadeUp = {
+  initial: { opacity: 0, y: 12 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] },
+} as const;
 
 // The quotation marks belong to the design, not to the copy, so editors type
 // the quote plain. Any double quotes an editor wraps around it anyway (or that
@@ -115,32 +120,42 @@ function ClipTextReveal({ text }: { text: string }) {
   );
 }
 
-// Author headshot + name + role + client logo. Sits above the quote (mobile and
-// desktop alike), so the reader knows who is speaking before they read it.
-function AuthorRow({ testimonial }) {
+// The large portrait, top-right on desktop and above the quote on phones.
+function Portrait({ testimonial, activeIndex, className = "" }) {
+  if (!testimonial?.authorImage) return null;
+  return (
+    <motion.div
+      key={`author-image-${activeIndex}`}
+      {...fadeUp}
+      className={cn(
+        "relative order-first size-48 shrink-0 overflow-hidden rounded-card xl:order-none",
+        className
+      )}
+    >
+      <Image
+        src={testimonial.authorImage}
+        alt={
+          testimonial?.authorImageAlt ??
+          testimonial?.authorName ??
+          "Testimonial author"
+        }
+        fill
+        className="object-cover"
+        data-tina-field={tinaField(testimonial, "authorImage")}
+      />
+    </motion.div>
+  );
+}
+
+// Name + role, then the client logo behind a hairline divider.
+function Attribution({ testimonial }) {
   return (
     <div className="flex items-center gap-4">
-      {testimonial?.authorImage && (
-        <div className="relative size-14 shrink-0 overflow-hidden rounded-utility md:size-16">
-          <Image
-            src={testimonial.authorImage}
-            alt={
-              testimonial?.authorImageAlt ??
-              testimonial?.authorName ??
-              "Testimonial author"
-            }
-            fill
-            className="object-cover"
-            data-tina-field={tinaField(testimonial, "authorImage")}
-          />
-        </div>
-      )}
-
-      <div className="flex min-w-0 flex-col">
+      <div className="flex min-w-0 flex-col break-words">
         {testimonial?.authorName && (
           <span
             data-tina-field={tinaField(testimonial, "authorName")}
-            className="text-lg font-semibold text-foreground"
+            className="font-semibold text-foreground"
           >
             {testimonial.authorName}
           </span>
@@ -157,16 +172,14 @@ function AuthorRow({ testimonial }) {
 
       {testimonial?.companyLogo && (
         <>
-          {/* Pushed to the row's far end on mobile, where the design keeps the
-              logo against the right edge; on wider screens it tucks in beside
-              the name behind a hairline divider. */}
-          <span className="ml-auto h-10 w-px bg-hairline max-md:hidden md:ml-2" />
+          <span className="h-10 w-px shrink-0 bg-hairline" />
+          {/* Wide wordmarks are capped on phones so they can't crowd the name. */}
           <Image
             src={testimonial.companyLogo}
             alt={testimonial?.companyLogoAlt ?? "Company logo"}
             width={160}
             height={160}
-            className="h-12 w-auto shrink-0 object-contain brightness-0 max-md:ml-auto dark:invert"
+            className="h-12 w-auto shrink-0 object-contain object-left brightness-0 max-md:max-w-28 dark:invert"
             data-tina-field={tinaField(testimonial, "companyLogo")}
           />
         </>
@@ -175,152 +188,225 @@ function AuthorRow({ testimonial }) {
   );
 }
 
+// One arrow icon, mirrored for "previous": the icon set's left and right
+// arrows differ in length.
+function ArrowButton({ label, onClick, flip = false }) {
+  return (
+    <button
+      type="button"
+      aria-label={label}
+      onClick={onClick}
+      className="flex size-10 items-center justify-center rounded-full bg-foreground text-background transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foreground motion-reduce:transition-none xl:size-12"
+    >
+      <BiRightArrowAlt
+        className={cn("size-5 xl:size-6", flip && "-scale-x-100")}
+      />
+    </button>
+  );
+}
+
+function Arrows({ noun, step, className = "" }) {
+  return (
+    <div className={cn("flex gap-3", className)}>
+      <ArrowButton label={`Previous ${noun}`} onClick={() => step(-1)} flip />
+      <ArrowButton label={`Next ${noun}`} onClick={() => step(1)} />
+    </div>
+  );
+}
+
+// All slides share one grid cell, so the cell always sizes to the tallest
+// slide: switching slides never changes the block height, and the controls
+// below never jump. Only the active slide is visible; the rest fade to
+// opacity-0 and are `inert`, so their links can't be tabbed to. `below`
+// renders under each slide's own quote, so whatever it holds (the author, the
+// case study link) sits right under that quote, and the spare height of a
+// short slide gathers at the bottom of the cell instead of above the author.
+function QuoteStack({
+  testimonials,
+  activeIndex,
+  below,
+}: {
+  testimonials;
+  activeIndex: number;
+  below?: (testimonial, isActive: boolean) => React.ReactNode;
+}) {
+  return (
+    <div className="grid">
+      {testimonials.map((t, i) => {
+        const isActive = i === activeIndex;
+        return (
+          <div
+            key={`v3-testimonial-slide-${i}`}
+            aria-hidden={!isActive}
+            inert={!isActive}
+            className={cn(
+              "col-start-1 row-start-1 flex flex-col transition-opacity duration-300 motion-reduce:transition-none",
+              isActive ? "opacity-100" : "pointer-events-none opacity-0"
+            )}
+          >
+            <blockquote
+              data-tina-field={isActive ? tinaField(t, "quote") : undefined}
+              className="text-2xl text-foreground md:text-4xl"
+            >
+              {isActive ? (
+                <ClipTextReveal
+                  key={activeIndex}
+                  text={withQuoteMarks(t?.quote ?? "")}
+                />
+              ) : (
+                <span>
+                  {withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}
+                </span>
+              )}
+            </blockquote>
+            {below?.(t, isActive)}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// Fades a slide's content up when that slide becomes active. Inactive slides
+// render the same content without the animation, so the stack still sizes to
+// them.
+function SlideFade({ isActive, activeIndex, className = "", children }) {
+  return isActive ? (
+    <motion.div key={activeIndex} {...fadeUp} className={className}>
+      {children}
+    </motion.div>
+  ) : (
+    <div className={className}>{children}</div>
+  );
+}
+
+// Horizontal swipe on touch screens steps the carousel. Vertical scrolling is
+// left alone: only a mostly-sideways drag of 50px or more counts.
+function useSwipe(step: (by: number) => void) {
+  const start = useRef<{ x: number; y: number } | null>(null);
+  return {
+    onTouchStart: (e: React.TouchEvent) => {
+      const t = e.touches[0];
+      start.current = { x: t.clientX, y: t.clientY };
+    },
+    onTouchEnd: (e: React.TouchEvent) => {
+      if (!start.current) return;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - start.current.x;
+      const dy = t.clientY - start.current.y;
+      start.current = null;
+      if (Math.abs(dx) >= 50 && Math.abs(dx) > Math.abs(dy)) {
+        step(dx < 0 ? 1 : -1);
+      }
+    },
+  };
+}
+
+// Default layout: quote top-left, attribution bottom-left, portrait top-right,
+// arrows bottom-right. On phones the portrait sits above the quote and
+// the attribution follows its quote, with the controls last.
+function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
+  const current = testimonials[activeIndex];
+  return (
+    <div
+      {...swipe}
+      className={cn(
+        "mx-auto flex max-w-xl flex-col gap-10",
+        // Desktop: 2×2 grid. The top row is `1fr` so it absorbs the slack,
+        // keeping the attribution (bottom-left) and controls (bottom-right)
+        // on the same baseline whatever the quote length.
+        "xl:grid xl:max-w-5xl xl:grid-cols-testimonial xl:grid-rows-testimonial xl:items-start xl:gap-x-12 xl:gap-y-4"
+      )}
+    >
+      <div className="max-w-3xl xl:col-start-1 xl:row-start-1">
+        <QuoteStack
+          testimonials={testimonials}
+          activeIndex={activeIndex}
+          below={(t, isActive) => (
+            <>
+              {t?.caseStudyUrl && (
+                <SlideFade
+                  isActive={isActive}
+                  activeIndex={activeIndex}
+                  className="mt-6"
+                >
+                  <a
+                    href={t.caseStudyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-tina-field={tinaField(t, "caseStudyUrl")}
+                    className="group inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
+                  >
+                    See Case Study
+                    <TiArrowRight className="size-5 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
+                  </a>
+                </SlideFade>
+              )}
+              {/* Phones: the author follows its own quote. */}
+              <SlideFade
+                isActive={isActive}
+                activeIndex={activeIndex}
+                className="mt-10 xl:hidden"
+              >
+                <Attribution testimonial={t} />
+              </SlideFade>
+            </>
+          )}
+        />
+      </div>
+
+      {/* Desktop: the author pins to the bottom row, level with the controls. */}
+      <motion.div
+        key={`author-${activeIndex}`}
+        {...fadeUp}
+        className="hidden xl:col-start-1 xl:row-start-2 xl:block xl:self-end"
+      >
+        <Attribution testimonial={current} />
+      </motion.div>
+
+      <Portrait
+        testimonial={current}
+        activeIndex={activeIndex}
+        className="xl:col-start-2 xl:row-start-1"
+      />
+
+      {testimonials.length > 1 && (
+        <Arrows
+          noun="testimonial"
+          step={step}
+          className="justify-end xl:col-start-2 xl:row-start-2 xl:self-end"
+        />
+      )}
+    </div>
+  );
+}
+
 export function V3Testimonials({ data }) {
   const testimonials = data?.testimonials ?? [];
   const [active, setActive] = useState(0);
-  // Autoplay holds while a reader is hovering or tabbing through the block.
-  const [paused, setPaused] = useState(false);
-
-  // Advance on a timer, so the second testimonial is seen without any controls
-  // being touched. `active` is a dependency so picking a dot restarts the clock
-  // instead of cutting the newly chosen quote short.
-  useEffect(() => {
-    if (testimonials.length <= 1 || paused) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const timer = setTimeout(
-      () => setActive((i) => (i + 1) % testimonials.length),
-      AUTOPLAY_MS
-    );
-    return () => clearTimeout(timer);
-  }, [active, paused, testimonials.length]);
-
-  if (testimonials.length === 0) return null;
 
   // Guard against the stored index pointing past a shortened list while editing:
   // everything below reads `activeIndex`, never `active`, so removing the
   // selected slide falls back to the last one instead of hiding every quote.
-  const activeIndex = Math.min(active, testimonials.length - 1);
-  const current = testimonials[activeIndex];
+  const activeIndex = Math.min(active, Math.max(testimonials.length - 1, 0));
+  const step = (by: number) =>
+    setActive((activeIndex + by + testimonials.length) % testimonials.length);
+  const swipe = useSwipe(step);
+
+  if (testimonials.length === 0) return null;
 
   return (
-    <V2ComponentWrapper data={data}>
-      <Container size="custom" className="py-16 sm:px-8 md:py-32">
-        <div
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-          onFocusCapture={() => setPaused(true)}
-          onBlurCapture={() => setPaused(false)}
-          className={cn(
-            "mx-auto flex max-w-xl flex-col gap-8",
-            // Desktop: quote on the left, case study CTA on the right. The
-            // right column is capped so a long sentence wraps to two lines
-            // (as designed) instead of stretching across the section.
-            "xl:grid xl:max-w-6xl xl:grid-cols-testimonial xl:items-start xl:gap-x-16"
-          )}
-        >
-          {/* Author + quote — left column */}
-          <div className="flex flex-col xl:col-start-1">
-            <motion.div
-              key={`author-${activeIndex}`}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <AuthorRow testimonial={current} />
-            </motion.div>
-
-            {/* All quotes share one grid cell so the cell always sizes to the
-                tallest quote — switching slides never changes the block height
-                (only the active quote is visible; the rest fade to opacity-0). */}
-            <div className="mt-8 grid">
-              {testimonials.map((t, i) => (
-                <blockquote
-                  key={`v3-testimonial-quote-${i}`}
-                  aria-hidden={i !== activeIndex}
-                  data-tina-field={
-                    i === activeIndex ? tinaField(t, "quote") : undefined
-                  }
-                  className={cn(
-                    "col-start-1 row-start-1 text-2xl text-foreground transition-opacity duration-300 md:text-4xl",
-                    i === activeIndex
-                      ? "opacity-100"
-                      : "pointer-events-none opacity-0"
-                  )}
-                >
-                  {i === activeIndex ? (
-                    <ClipTextReveal
-                      key={activeIndex}
-                      text={withQuoteMarks(t?.quote ?? "")}
-                    />
-                  ) : (
-                    <span>
-                      {withQuoteMarks(t?.quote ?? "").replace(/\*\*/g, "")}
-                    </span>
-                  )}
-                </blockquote>
-              ))}
-            </div>
-          </div>
-
-          {/* Case study CTA — right column on desktop, below the quote on mobile */}
-          {current?.caseStudyUrl && (
-            <motion.div
-              key={`case-study-${activeIndex}`}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col items-start gap-6 xl:col-start-2 xl:row-start-1"
-            >
-              {current?.caseStudyLabel && (
-                <p
-                  data-tina-field={tinaField(current, "caseStudyLabel")}
-                  className="text-lg font-medium text-foreground"
-                >
-                  {current.caseStudyLabel}
-                </p>
-              )}
-              <RippleButton
-                variant="primary"
-                href={current.caseStudyUrl}
-                target="_blank"
-                data-tina-field={tinaField(current, "caseStudyUrl")}
-                className="group inline-flex w-full rounded-full px-8 py-4 sm:w-auto"
-                fontClassName="gap-3 text-sm font-semibold uppercase tracking-wider"
-              >
-                <span
-                  data-tina-field={tinaField(current, "caseStudyButtonText")}
-                >
-                  {current.caseStudyButtonText || "Explore the case study"}
-                </span>
-                <BsArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </RippleButton>
-            </motion.div>
-          )}
-
-          {/* Slide picker — under the quote on desktop, last on mobile so the
-              CTA still follows the quote it belongs to. */}
-          {testimonials.length > 1 && (
-            <div className="flex items-center gap-2 xl:col-start-1 xl:row-start-2 xl:mt-8">
-              {testimonials.map((t, i) => (
-                <button
-                  key={`v3-testimonial-dot-${i}`}
-                  type="button"
-                  onClick={() => setActive(i)}
-                  aria-label={`Show testimonial ${i + 1}${
-                    t?.authorName ? `: ${t.authorName}` : ""
-                  }`}
-                  aria-current={i === activeIndex}
-                  className={cn(
-                    "h-1.5 rounded-full bg-foreground transition-all duration-300",
-                    i === activeIndex ? "w-6" : "w-3 opacity-30"
-                  )}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      </Container>
-    </V2ComponentWrapper>
+    <MotionConfig reducedMotion="user">
+      <V2ComponentWrapper data={data}>
+        <Container size="custom" className="py-16 sm:px-8 md:py-32">
+          <QuoteLayout
+            testimonials={testimonials}
+            activeIndex={activeIndex}
+            step={step}
+            swipe={testimonials.length > 1 ? swipe : undefined}
+          />
+        </Container>
+      </V2ComponentWrapper>
+    </MotionConfig>
   );
 }

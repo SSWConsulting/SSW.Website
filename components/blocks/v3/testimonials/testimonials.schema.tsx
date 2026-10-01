@@ -20,6 +20,14 @@ export const V3TestimonialsSchema: Template = {
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
     {
+      type: "string",
+      label: "Layout",
+      name: "layout",
+      description:
+        "Quote & portrait shows the author's photo beside the quote.",
+      options: [{ value: "quote", label: "Quote & portrait (default)" }],
+    },
+    {
       type: "object",
       label: "Testimonials",
       name: "testimonials",
