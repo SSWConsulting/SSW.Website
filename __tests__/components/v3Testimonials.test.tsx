@@ -54,9 +54,6 @@ const activeQuote = () =>
   // The visible slide is the one not hidden from assistive tech.
   document.querySelector("[aria-hidden='false'] > blockquote")?.textContent;
 
-const dotFor = (name: string) =>
-  screen.getByRole("button", { name: new RegExp(`: ${name}$`) });
-
 describe("V3Testimonials", () => {
   it("defaults to the portrait layout with a case study text link", () => {
     render(<V3Testimonials data={{ testimonials: slides }} />);
@@ -113,7 +110,7 @@ describe("V3Testimonials", () => {
     expect(document.querySelector("[data-cta]")).toBeNull();
   });
 
-  it("uses the same arrows and dots in both layouts", () => {
+  it("uses the same arrows in both layouts, wrapping around", () => {
     for (const layout of [undefined, "caseStudy"]) {
       const { unmount } = render(
         <V3Testimonials data={{ layout, testimonials: slides }} />
@@ -122,11 +119,6 @@ describe("V3Testimonials", () => {
       expect(activeQuote()).toContain("Second quote");
       fireEvent.click(screen.getByLabelText("Next testimonial"));
       expect(activeQuote()).toContain("First quote");
-
-      fireEvent.click(dotFor("Grace"));
-      expect(activeQuote()).toContain("Second quote");
-      expect(dotFor("Grace").getAttribute("aria-current")).toBe("true");
-      expect(dotFor("Ada").getAttribute("aria-current")).toBe("false");
       unmount();
     }
   });
@@ -152,14 +144,11 @@ describe("V3Testimonials", () => {
     expect(activeQuote()).toContain("First quote");
   });
 
-  it("hides the controls for a single testimonial and renders nothing when empty", () => {
+  it("hides the arrows for a single testimonial and renders nothing when empty", () => {
     const { container, rerender } = render(
       <V3Testimonials data={{ testimonials: [slides[0]] }} />
     );
     expect(screen.queryByLabelText("Next testimonial")).toBeNull();
-    expect(
-      screen.queryByRole("button", { name: /Show testimonial/ })
-    ).toBeNull();
 
     rerender(<V3Testimonials data={{ testimonials: [] }} />);
     expect(container.innerHTML).toBe("");

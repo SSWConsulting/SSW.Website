@@ -219,43 +219,17 @@ function ArrowButton({ label, onClick, children }) {
   );
 }
 
-// Pagination dots beside the prev/next arrows. The dots show where you are
-// and jump to a slide; the arrows stay, so the dots are never the only way
-// to move. Hidden when there's a single testimonial.
-function CarouselControls({ testimonials, activeIndex, onPick, step }) {
-  if (testimonials.length <= 1) return null;
+// Prev/next arrows, right-aligned. Hidden when there's a single testimonial.
+function CarouselControls({ count, step }) {
+  if (count <= 1) return null;
   return (
-    <div className="flex items-center justify-between gap-4 xl:justify-end">
-      <div className="flex items-center">
-        {testimonials.map((t, i) => (
-          <button
-            key={`v3-testimonial-dot-${i}`}
-            type="button"
-            onClick={() => onPick(i)}
-            aria-label={`Show testimonial ${i + 1}${
-              t?.authorName ? `: ${t.authorName}` : ""
-            }`}
-            aria-current={i === activeIndex}
-            // The visible dot is small; the button around it is the tap area.
-            className="flex h-10 items-center px-1"
-          >
-            <span
-              className={cn(
-                "h-1.5 rounded-full bg-foreground transition-all duration-300 motion-reduce:transition-none",
-                i === activeIndex ? "w-6" : "w-3 opacity-30"
-              )}
-            />
-          </button>
-        ))}
-      </div>
-      <div className="flex gap-3">
-        <ArrowButton label="Previous testimonial" onClick={() => step(-1)}>
-          <BiLeftArrowAlt className="size-5 xl:size-6" />
-        </ArrowButton>
-        <ArrowButton label="Next testimonial" onClick={() => step(1)}>
-          <BiRightArrowAlt className="size-5 xl:size-6" />
-        </ArrowButton>
-      </div>
+    <div className="flex justify-end gap-3">
+      <ArrowButton label="Previous testimonial" onClick={() => step(-1)}>
+        <BiLeftArrowAlt className="size-5 xl:size-6" />
+      </ArrowButton>
+      <ArrowButton label="Next testimonial" onClick={() => step(1)}>
+        <BiRightArrowAlt className="size-5 xl:size-6" />
+      </ArrowButton>
     </div>
   );
 }
@@ -399,7 +373,7 @@ function useSwipe(step: (by: number) => void) {
 }
 
 // Default layout: quote top-left, attribution bottom-left, portrait top-right,
-// dots + arrows bottom-right. On phones the portrait sits above the quote and
+// arrows bottom-right. On phones the portrait sits above the quote and
 // the attribution follows its quote, with the controls last.
 function QuoteLayout({ testimonials, activeIndex, current, controls, swipe }) {
   return (
@@ -459,12 +433,10 @@ function QuoteLayout({ testimonials, activeIndex, current, controls, swipe }) {
         <Attribution testimonial={current} />
       </motion.div>
 
-      {/* Right-aligned so its edge lines up with the arrows below, even when
-          the dots make the controls a little wider than the portrait. */}
       <Portrait
         testimonial={current}
         activeIndex={activeIndex}
-        className="xl:col-start-2 xl:row-start-1 xl:justify-self-end"
+        className="xl:col-start-2 xl:row-start-1"
       />
 
       <div className="xl:col-start-2 xl:row-start-2 xl:self-end">
@@ -474,11 +446,11 @@ function QuoteLayout({ testimonials, activeIndex, current, controls, swipe }) {
   );
 }
 
-// Case study layout: the same quote and attribution, with the dots + arrows
-// beside the attribution, and the case study card on the right. The two
+// Case study layout: the same quote and attribution, with the arrows beside
+// the attribution, and the case study card on the right. The two
 // columns are centred on each other, and the attribution follows the quote at
 // a fixed gap, so a tall card never opens a hole under the quote. On phones:
-// quote, attribution, controls, then the card. A slide without a case study
+// quote, attribution, arrows, then the card. A slide without a case study
 // shows the portrait instead of a card.
 function CaseStudyLayout({
   testimonials,
@@ -556,12 +528,7 @@ export function V3Testimonials({ data }) {
             current={current}
             swipe={testimonials.length > 1 ? swipe : undefined}
             controls={
-              <CarouselControls
-                testimonials={testimonials}
-                activeIndex={activeIndex}
-                onPick={setActive}
-                step={step}
-              />
+              <CarouselControls count={testimonials.length} step={step} />
             }
           />
         </Container>
