@@ -94,9 +94,10 @@ export function ProjectCard({
         <div className="flex flex-col gap-4">
           <Title
             data-tina-field={tinaFields.title}
-            className={cn(
-              "text-[22px] font-medium leading-snug tracking-tight text-foreground"
-            )}
+            // A plain string, not cn(): tailwind-merge reads the custom
+            // `text-card-title` size as a colour and would drop it. `m-0`
+            // because the site's global heading styles give an h3 margins.
+            className="m-0 text-card-title font-medium leading-snug tracking-tight text-foreground"
           >
             {project?.title}
           </Title>

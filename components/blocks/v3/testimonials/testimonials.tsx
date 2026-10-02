@@ -396,7 +396,11 @@ function CaseStudyCard({ testimonial: t }) {
       }}
       tinaFields={{
         link: tinaField(t, "caseStudyUrl"),
-        title: tinaField(t, "caseStudyTitle"),
+        // The field the shown title comes from.
+        title: tinaField(
+          t,
+          titledByCompany ? "companyLogoAlt" : "caseStudyTitle"
+        ),
         description: tinaField(t, "caseStudyLabel"),
         image: tinaField(t, "caseStudyImage"),
         logo: tinaField(t, "companyLogo"),
@@ -405,12 +409,12 @@ function CaseStudyCard({ testimonial: t }) {
   );
 }
 
-// Desktop: the story column (and the controls under it) sits right of the
-// card, behind a hairline. Without a case study there's no card, so it spans
-// the full width.
-const storyColumn = (t) =>
-  t?.caseStudyUrl
-    ? "xl:col-start-2 xl:ml-12 xl:border-l-0.75 xl:border-hairline xl:pl-12"
+// Desktop: the story (and the controls under it) sits right of the card, past
+// the hairline, or spans the full width when there's no card. The transparent
+// border matches the hairline's width, so text lines up with or without it.
+const storyColumn = (besideCard: boolean) =>
+  besideCard
+    ? "xl:col-start-2 xl:ml-12 xl:border-l-0.75 xl:border-transparent xl:pl-12"
     : "xl:col-span-2 xl:col-start-1";
 
 // The headline, then the quote on the section background, marked by the SSW
@@ -424,7 +428,7 @@ function CaseStudyStory({ testimonial: t, isActive, hasControls }) {
         // card's bottom. Without, the quote follows the headline and any
         // spare height gathers below it.
         hasControls && "xl:justify-between",
-        storyColumn(t)
+        storyColumn(Boolean(t?.caseStudyUrl))
       )}
     >
       {t?.caseStudyHeadline && (
@@ -440,7 +444,7 @@ function CaseStudyStory({ testimonial: t, isActive, hasControls }) {
       <SlideFade isActive={isActive}>
         <figure className="m-0 flex flex-col gap-6 border-l-2 border-sswRed pl-6">
           <blockquote
-            data-tina-field={tinaField(t, "quote")}
+            data-tina-field={isActive ? tinaField(t, "quote") : undefined}
             className="m-0 max-w-3xl break-words text-xl leading-snug text-foreground xl:text-2xl xl:leading-snug"
           >
             <AlternatingText text={withQuoteMarks(t?.quote ?? "")} />
@@ -478,7 +482,9 @@ function CaseStudyStory({ testimonial: t, isActive, hasControls }) {
 // controls. The controls are shared, outside the slides.
 function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
   const hasControls = testimonials.length > 1;
-  const current = testimonials[activeIndex];
+  // The controls sit by the whole block, not the active slide, so a slide
+  // without a case study doesn't move them.
+  const anyCard = testimonials.some((t) => t?.caseStudyUrl);
   return (
     <div
       {...swipe}
@@ -505,6 +511,15 @@ function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
               hasControls={hasControls}
             />
             {t?.caseStudyUrl && (
+              // Desktop: the hairline between the card and the story, beside
+              // the controls too. It belongs to the slide, so it fades with
+              // its card.
+              <div
+                aria-hidden="true"
+                className="hidden xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:ml-12 xl:block xl:border-l-0.75 xl:border-hairline"
+              />
+            )}
+            {t?.caseStudyUrl && (
               <SlideFade
                 isActive={isActive}
                 className={cn(
@@ -524,7 +539,7 @@ function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
         <div
           className={cn(
             "col-start-1 row-start-2 flex items-center justify-between gap-6",
-            storyColumn(current)
+            storyColumn(anyCard)
           )}
         >
           {/* The shared CarouselDots pills, as buttons. */}

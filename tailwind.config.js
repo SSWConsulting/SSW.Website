@@ -232,6 +232,8 @@ export default {
       },
       fontSize: {
         xxs: ["0.65rem", { lineHeight: "1rem" }],
+        // Case study card titles (V3 Featured Products, case study testimonials).
+        "card-title": "22px",
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",

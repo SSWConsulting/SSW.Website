@@ -19,7 +19,11 @@ jest.mock("framer-motion", () => {
   };
 });
 // tinacms ships ESM, which this jest setup doesn't transform.
-jest.mock("tinacms/dist/react", () => ({ tinaField: () => undefined }));
+// tinaField returns the field name, so tests can see which field each part
+// of the block points the visual editor at.
+jest.mock("tinacms/dist/react", () => ({
+  tinaField: (_obj, field) => field,
+}));
 jest.mock(
   "@/components/layout/v2ComponentWrapper",
   () =>
@@ -185,6 +189,24 @@ describe("V3Testimonials case study layout", () => {
     expect(within(link).queryByAltText("French Payroll Expert")).toBeNull();
   });
 
+  it("points the card title at the field its text comes from", () => {
+    renderCaseStudies([{ ...caseStudies[0], caseStudyTitle: undefined }]);
+
+    expect(
+      within(cardLink()!)
+        .getByRole("heading", { level: 3 })
+        .getAttribute("data-tina-field")
+    ).toBe("companyLogoAlt");
+  });
+
+  it("only links the visible slide's quote to the visual editor", () => {
+    renderCaseStudies();
+
+    expect(
+      document.querySelectorAll("blockquote[data-tina-field]")
+    ).toHaveLength(1);
+  });
+
   it("puts the card title one level under the headline", () => {
     renderCaseStudies();
 
@@ -207,6 +229,22 @@ describe("V3Testimonials case study layout", () => {
 
     expect(headline()).toBe("A chatbot that answers payroll questions");
     expect(cardLink()).toBeNull();
+  });
+
+  it("keeps the controls in place when only some slides have a case study", () => {
+    renderCaseStudies([
+      caseStudies[0],
+      { ...caseStudies[1], caseStudyUrl: undefined },
+    ]);
+    // The dots and arrows share one row: the arrows' parent's parent.
+    const controls = () =>
+      screen.getByLabelText("Next case study").parentElement!.parentElement!
+        .className;
+    const withCard = controls();
+
+    fireEvent.click(screen.getByLabelText("Next case study"));
+    expect(cardLink()).toBeNull();
+    expect(controls()).toBe(withCard);
   });
 
   it("wraps the arrows around in both directions", () => {
