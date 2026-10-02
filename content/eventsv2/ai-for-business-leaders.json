@@ -171,7 +171,9 @@
             "imageHeight": 470,
             "imageWidth": 472
           },
-          "sswPeople": "/people/michael-smedley/"
+          "sswPeople": "https://www.ssw.com.au/people/michael-smedley/",
+          "linkedin": "https://www.linkedin.com/in/michaelsmedley/",
+          "github": "https://github.com/miichaelsmedley"
         }
       ],
       "_template": "v3PeopleCarousel"
