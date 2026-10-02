@@ -419,7 +419,11 @@ function CaseStudyStory({
   return (
     <div
       className={cn(
-        "col-start-1 row-start-1 flex min-w-0 flex-col gap-8 xl:justify-between",
+        "col-start-1 row-start-1 flex min-w-0 flex-col gap-8",
+        // With controls, the rows spread to line the controls up with the
+        // card's bottom. Without, the quote follows the headline and any
+        // spare height gathers below it.
+        hasControls && "xl:justify-between",
         storyColumn(t)
       )}
     >
