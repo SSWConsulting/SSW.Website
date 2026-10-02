@@ -73,6 +73,8 @@ export default {
         "-1.5": "-1.5px",
       },
       gridTemplateRows: {
+        // Testimonial: the top row absorbs the slack; the arrows sit below.
+        testimonial: "1fr auto",
         12: "repeat(12, minmax(min-content, 0fr))",
       },
       gridTemplateColumns: {
@@ -81,8 +83,11 @@ export default {
         "sidebar-narrow": "minmax(260px, 30%) minmax(0, 1fr)",
         // Hero banner: fluid text column beside a speaker column that hugs.
         "hero-speakers": "1fr auto",
-        // Testimonial: quote column beside a capped case-study CTA column.
-        testimonial: "minmax(0, 1fr) minmax(0, 24rem)",
+        // Testimonial: quote column beside the author's portrait.
+        testimonial: "minmax(0, 1fr) auto",
+        // Testimonial, case study layout: the homepage case study card's
+        // width beside the headline and quote.
+        "testimonial-case-study": "22rem minmax(0, 1fr)",
       },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
@@ -227,6 +232,8 @@ export default {
       },
       fontSize: {
         xxs: ["0.65rem", { lineHeight: "1rem" }],
+        // Case study card titles (V3 Featured Products, case study testimonials).
+        "card-title": "22px",
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",

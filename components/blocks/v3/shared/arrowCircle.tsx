@@ -12,7 +12,7 @@ type ArrowCircleProps = {
 // sites that sit on always-dark media can override with `bg-white text-black`.
 // Size, padding, alignment and even the hover scale are set per call site via
 // `className` (tailwind-merge lets those override the defaults below);
-// `iconClassName` sizes the arrow.
+// `iconClassName` sizes the arrow. Under reduced motion it stays still.
 export function ArrowCircle({
   className,
   iconClassName = "size-1/3",
@@ -20,7 +20,7 @@ export function ArrowCircle({
   return (
     <span
       className={cn(
-        "flex shrink-0 scale-100 items-center justify-center rounded-full bg-foreground text-background transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125",
+        "flex shrink-0 scale-100 items-center justify-center rounded-full bg-foreground text-background transition-all duration-300 ease-in-out group-hover:rotate-45 group-hover:scale-125 motion-reduce:transition-none motion-reduce:group-hover:rotate-0 motion-reduce:group-hover:scale-100",
         className
       )}
     >
