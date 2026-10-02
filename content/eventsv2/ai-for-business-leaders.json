@@ -158,22 +158,20 @@
         "backgroundColour": 7
       },
       "layout": "sideBySide",
-      "brow": "SSW · Chief Operating Officer · Sydney",
-      "heading": "Hosted by Ulysses Maclaren",
-      "subtitle": "Ulysses has run the operational side of SSW since 2006, as 2IC to Chief Architect Adam Cogan. He leads the AI work inside SSW's own business: workflow automation, process re-engineering, data-driven decision-making and customer engagement. As Principal Account Manager he also handles the relationships behind SSW's largest client accounts.\n\nOn the day he'll take you through the case studies and answer your questions live.",
+      "brow": "SSW · AI Engagement Lead · Melbourne",
+      "heading": "Hosted by Michael Smedley",
+      "subtitle": "Mike leads AI engagement at SSW. He works with Australian banks, accountancies, insurers and government departments to design and build the AI systems they run in production today, including the work that took one client's per-transaction cost from $120 to $5.\n\nOn the day he'll take you through the case studies and answer your questions live.",
       "people": [
         {
-          "name": "Ulysses Maclaren",
-          "role": "COO",
+          "name": "Michael Smedley",
+          "role": "AI Engagement Lead",
           "image": {
-            "altText": "Ulysses Maclaren",
-            "imageSource": "/images/people-carousel/uly-nobg.png",
-            "imageHeight": 534,
-            "imageWidth": 533
+            "altText": "Michael Smedley",
+            "imageSource": "/images/people-carousel/mike-nobg.png",
+            "imageHeight": 470,
+            "imageWidth": 472
           },
-          "linkedin": "https://www.linkedin.com/in/ulyssesmaclaren/",
-          "twitter": "https://x.com/ulyssesmac",
-          "sswPeople": "/people/ulysses-maclaren/"
+          "sswPeople": "/people/michael-smedley/"
         }
       ],
       "_template": "v3PeopleCarousel"
@@ -212,7 +210,7 @@
         },
         {
           "heading": "Live Q&A: bring your own problem",
-          "description": "Ask Ulysses about a problem in your business.\n"
+          "description": "Ask Mike about a problem in your business.\n"
         }
       ],
       "_template": "v3VerticalList"
@@ -229,7 +227,7 @@
         },
         {
           "question": "Is this technical?",
-          "answer": "No. Ulysses talks cost, time and return for business leaders. You won't see any code.\n"
+          "answer": "No. Mike talks cost, time and return for business leaders. You won't see any code.\n"
         },
         {
           "question": "What size business is this for?",
