@@ -69,6 +69,16 @@ describe("V3Testimonials", () => {
     expect(screen.queryByText("Read how Ada did it.")).toBeNull();
   });
 
+  it("describes the portrait with the author's name when its alt text is blank", () => {
+    render(
+      <V3Testimonials
+        data={{ testimonials: [{ ...slides[0], authorImageAlt: "" }] }}
+      />
+    );
+
+    expect(screen.getByAltText("Ada")).toBeTruthy();
+  });
+
   it("hides the other slides from assistive tech and the tab order", () => {
     render(<V3Testimonials data={{ testimonials: slides }} />);
     const hidden = screen.getByText("“Second quote”");

@@ -137,8 +137,8 @@ function Portrait({ testimonial, activeIndex, className = "" }) {
       <Image
         src={testimonial.authorImage}
         alt={
-          testimonial?.authorImageAlt ??
-          testimonial?.authorName ??
+          testimonial?.authorImageAlt ||
+          testimonial?.authorName ||
           "Testimonial author"
         }
         fill

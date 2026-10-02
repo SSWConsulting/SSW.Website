@@ -56,7 +56,7 @@ export const V3TestimonialsSchema: Template = {
       label: "Layout",
       name: "layout",
       description:
-        "Quote & portrait shows the author's photo beside the quote, with no case study. Quote & case study shows each slide as a case study: a headline, the quote and its author, and a case study card (photo, title and sentence) on slides that have a Case Study URL. The case study fields only appear in this layout.",
+        "Quote & portrait: the quote with the author's photo. Quote & case study: a headline and the quote beside a case study card. The case study fields only show when Quote & case study is picked.",
       options: [
         { value: LAYOUT.quote, label: "Quote & portrait (default)" },
         { value: LAYOUT.caseStudy, label: "Quote & case study" },
@@ -67,7 +67,8 @@ export const V3TestimonialsSchema: Template = {
       label: "Testimonials",
       name: "testimonials",
       list: true,
-      description: "Each item is a slide in the testimonial carousel.",
+      description:
+        "Each testimonial is one slide. With two or more, visitors can move between them.",
       ui: {
         itemProps: (item) => ({ label: item?.authorName ?? "Testimonial" }),
         defaultItem: {
@@ -82,7 +83,7 @@ export const V3TestimonialsSchema: Template = {
           label: "Quote",
           name: "quote",
           description:
-            "Use **double asterisks** to highlight text in red. Leave the quotation marks out — the design adds them.",
+            "Wrap words in **double asterisks** to show them in red. Don't type quotation marks; the design adds them.",
           ui: { component: "textarea" },
         },
         {
@@ -90,7 +91,7 @@ export const V3TestimonialsSchema: Template = {
           label: "Case Study URL",
           name: "caseStudyUrl",
           description:
-            "Shows the case study card, which links here. Without it, the slide has no card.",
+            "Where the case study card links to; it opens in a new tab. Use a relative path (e.g. /company/clients/fpe) or a full URL. Leave blank for no card.",
           ui: caseStudyText,
         },
         {
@@ -98,23 +99,22 @@ export const V3TestimonialsSchema: Template = {
           label: "Case Study Headline",
           name: "caseStudyHeadline",
           description:
-            "Headline above the quote, e.g. 'An AI chatbot that answers payroll questions around the clock'.",
+            "Shown above the quote. Say what SSW delivered, e.g. 'An AI chatbot that answers payroll questions around the clock'.",
           ui: caseStudyText,
         },
         {
           type: "string",
           label: "Case Study Card Title",
           name: "caseStudyTitle",
-          description:
-            "Title on the case study card. Defaults to the Company Logo Alt Text.",
+          description: "Optional. Leave blank to use the Company Name.",
           ui: caseStudyText,
         },
         {
           type: "string",
-          label: "Case Study Sentence",
+          label: "Case Study Card Description",
           name: "caseStudyLabel",
           description:
-            "Short description on the case study card, under its title, e.g. 'Discover how an AI-powered chatbot transformed their customer service.'",
+            "One sentence under the card title, e.g. 'Discover how an AI-powered chatbot transformed their customer service.'",
           ui: caseStudyOnly(TextareaFieldPlugin),
         },
         {
@@ -122,14 +122,15 @@ export const V3TestimonialsSchema: Template = {
           label: "Case Study Card Photo",
           name: "caseStudyImage",
           description:
-            "Photo at the top of the case study card, with the company logo over it. Without a photo, the card shows no image or logo.",
+            "Optional. Shown at the top of the card, with the company logo over it. Leave blank for a card with no photo or logo.",
           ui: caseStudyOnly(ImageFieldPlugin),
         },
         {
           type: "string",
           label: "Case Study Card Photo Alt Text",
           name: "caseStudyImageAlt",
-          description: "Leave empty if the photo is decorative.",
+          description:
+            "Describe the photo for screen readers. Leave blank if it's decorative.",
           ui: caseStudyText,
         },
         {
@@ -141,34 +142,35 @@ export const V3TestimonialsSchema: Template = {
           type: "string",
           label: "Author Title",
           name: "authorTitle",
-          description: "e.g. CTO, GovTech Agency",
+          description: "Role and company, e.g. CTO, GovTech Agency",
         },
         {
           type: "image",
           label: "Author Image",
           name: "authorImage",
-          description: "Headshot of the author.",
+          description:
+            "Optional. The author's headshot; square photos work best.",
         },
         {
           type: "string",
           label: "Author Image Alt Text",
           name: "authorImageAlt",
           description:
-            "Quote & portrait layout only. The case study layout shows the headshot beside the author's name, so it needs none.",
+            "Quote & portrait only. Describe the headshot for screen readers. Leave blank to use the author's name.",
         },
         {
           type: "image",
           label: "Company Logo",
           name: "companyLogo",
           description:
-            "Quote & portrait: shown beside the author. Quote & case study: shown in white on the case study card's photo.",
+            "Quote & portrait: shown beside the author's name. Quote & case study: shown in white on the card photo.",
         },
         {
           type: "string",
-          label: "Company Logo Alt Text",
+          label: "Company Name",
           name: "companyLogoAlt",
           description:
-            "The company's name. Quote & case study: also the card title when Case Study Card Title is empty, and the label of the slide's dot.",
+            "Read out by screen readers for the logo. Quote & case study also uses it as the card title when that's blank, and to label the slide's dot.",
         },
       ],
     },
