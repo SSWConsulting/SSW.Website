@@ -1,0 +1,38 @@
+{
+  "seo": {
+    "title": "You Are Registered | AI for Business Leaders Webinar | SSW",
+    "description": "You're registered for the AI for Business Leaders webinar. Check your inbox for the Zoom link and calendar invite.",
+    "showBreadcrumb": false
+  },
+  "appearance": {
+    "hideFlag": true,
+    "hideContactButton": true
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "brow": "AI for Business Leaders",
+      "heading": "You are **registered** for the webinar",
+      "description": "Check your inbox for the Zoom link and calendar invite. Not there in 5 minutes? Check your spam folder.\n\n**Thursday 3 September 2026 · 11:00 AM AEST · Live on Zoom**\n\nCan't make it live? We'll send you the replay.\n",
+      "buttons": [
+        {
+          "buttonText": "Back to the webinar details",
+          "buttonLink": "/events/ai-for-business-leaders",
+          "colour": 1
+        }
+      ],
+      "mediaType": "image",
+      "image": {
+        "altText": "Presenter at an SSW TV lectern pointing to an AI Workflows slide, in front of a business audience",
+        "imageSource": "/images/eventsv2/ai-for-business-leaders-hero.webp",
+        "imageHeight": 968,
+        "imageWidth": 1625
+      },
+      "_template": "v3Hero"
+    }
+  ]
+}

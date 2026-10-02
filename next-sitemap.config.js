@@ -8,6 +8,8 @@ module.exports = {
   priority: 0.7,
   sitemapSize: 5000,
   generateRobotsTxt: true,
+  // Post-registration thank-you page: not a search landing page
+  exclude: ["/events/ai-for-business-leaders-registered"],
   output: "standalone",
   additionalPaths: async () => {
     const otherURLs = [
@@ -91,6 +93,7 @@ module.exports = {
           "/ssw/CodeAuditor",
           "/ssw/Version.aspx",
           "/ssw/LinkAuditor",
+          "/events/ai-for-business-leaders-registered",
         ],
       },
     ],
