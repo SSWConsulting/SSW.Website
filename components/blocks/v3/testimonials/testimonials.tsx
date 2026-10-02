@@ -148,28 +148,35 @@ function Portrait({ testimonial, activeIndex, className = "" }) {
   );
 }
 
+// The author's name and role, stacked.
+function AuthorName({ testimonial }) {
+  return (
+    <div className="flex min-w-0 flex-col break-words">
+      {testimonial?.authorName && (
+        <span
+          data-tina-field={tinaField(testimonial, "authorName")}
+          className="font-semibold text-foreground"
+        >
+          {testimonial.authorName}
+        </span>
+      )}
+      {testimonial?.authorTitle && (
+        <span
+          data-tina-field={tinaField(testimonial, "authorTitle")}
+          className="text-sm text-muted-foreground"
+        >
+          {testimonial.authorTitle}
+        </span>
+      )}
+    </div>
+  );
+}
+
 // Name + role, then the client logo behind a hairline divider.
 function Attribution({ testimonial }) {
   return (
     <div className="flex items-center gap-4">
-      <div className="flex min-w-0 flex-col break-words">
-        {testimonial?.authorName && (
-          <span
-            data-tina-field={tinaField(testimonial, "authorName")}
-            className="font-semibold text-foreground"
-          >
-            {testimonial.authorName}
-          </span>
-        )}
-        {testimonial?.authorTitle && (
-          <span
-            data-tina-field={tinaField(testimonial, "authorTitle")}
-            className="text-sm text-muted-foreground"
-          >
-            {testimonial.authorTitle}
-          </span>
-        )}
-      </div>
+      <AuthorName testimonial={testimonial} />
 
       {testimonial?.companyLogo && (
         <>
@@ -215,22 +222,26 @@ function Arrows({ noun, step, className = "" }) {
   );
 }
 
+// Only the active slide is visible; the rest fade to opacity-0 and are
+// `inert` and aria-hidden, so their links can't be tabbed to or read out.
+// `className` places the slide; it goes first so its span-before-start
+// order survives cn().
+const slideProps = (isActive: boolean, className: string) => ({
+  "aria-hidden": !isActive,
+  inert: !isActive,
+  className: cn(
+    className,
+    "transition-opacity duration-300 motion-reduce:transition-none",
+    isActive ? "opacity-100" : "pointer-events-none opacity-0"
+  ),
+});
+
 // All slides share one grid cell, so the cell always sizes to the tallest
 // slide: switching slides never changes the block height, and the controls
-// below never jump. Only the active slide is visible; the rest fade to
-// opacity-0 and are `inert`, so their links can't be tabbed to. `below`
-// renders under each slide's own quote, so whatever it holds (the author on
-// phones) sits right under that quote, and the spare height of a short slide
-// gathers at the bottom of the cell instead of above the author.
-function QuoteStack({
-  testimonials,
-  activeIndex,
-  below,
-}: {
-  testimonials;
-  activeIndex: number;
-  below?: (testimonial, isActive: boolean) => React.ReactNode;
-}) {
+// below never jump. On phones each slide's author sits right under its own
+// quote, so the spare height of a short slide gathers at the bottom of the
+// cell instead of above the author.
+function QuoteStack({ testimonials, activeIndex }) {
   return (
     <div className="grid">
       {testimonials.map((t, i) => {
@@ -238,12 +249,7 @@ function QuoteStack({
         return (
           <div
             key={`v3-testimonial-slide-${i}`}
-            aria-hidden={!isActive}
-            inert={!isActive}
-            className={cn(
-              "col-start-1 row-start-1 flex flex-col transition-opacity duration-300 motion-reduce:transition-none",
-              isActive ? "opacity-100" : "pointer-events-none opacity-0"
-            )}
+            {...slideProps(isActive, "col-start-1 row-start-1 flex flex-col")}
           >
             <blockquote
               data-tina-field={isActive ? tinaField(t, "quote") : undefined}
@@ -260,7 +266,10 @@ function QuoteStack({
                 </span>
               )}
             </blockquote>
-            {below?.(t, isActive)}
+            {/* Phones: the author follows its own quote. */}
+            <SlideFade isActive={isActive} className="mt-10 xl:hidden">
+              <Attribution testimonial={t} />
+            </SlideFade>
           </div>
         );
       })}
@@ -268,12 +277,12 @@ function QuoteStack({
   );
 }
 
-// Fades a slide's content up when that slide becomes active. Inactive slides
-// render the same content without the animation, so the stack still sizes to
-// them.
-function SlideFade({ isActive, activeIndex, className = "", children }) {
+// Fades a slide's content up when that slide becomes active (the switch from
+// div to motion.div remounts it, so the fade replays). Inactive slides render
+// the same content without the animation, so the stack still sizes to them.
+function SlideFade({ isActive, className = "", children }) {
   return isActive ? (
-    <motion.div key={activeIndex} {...fadeUp} className={className}>
+    <motion.div {...fadeUp} className={className}>
       {children}
     </motion.div>
   ) : (
@@ -305,8 +314,9 @@ function useSwipe(step: (by: number) => void) {
 
 // Default layout: quote top-left, attribution bottom-left, portrait top-right,
 // arrows bottom-right. No case study: those belong to the case study layout,
-// so a saved Case Study URL is ignored here. On phones the portrait sits above the quote and
-// the attribution follows its quote, with the controls last.
+// so a saved Case Study URL is ignored here. On phones the portrait sits
+// above the quote and the attribution follows its quote, with the controls
+// last.
 function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
   const current = testimonials[activeIndex];
   return (
@@ -321,20 +331,7 @@ function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
       )}
     >
       <div className="max-w-3xl xl:col-start-1 xl:row-start-1">
-        <QuoteStack
-          testimonials={testimonials}
-          activeIndex={activeIndex}
-          below={(t, isActive) => (
-            // Phones: the author follows its own quote.
-            <SlideFade
-              isActive={isActive}
-              activeIndex={activeIndex}
-              className="mt-10 xl:hidden"
-            >
-              <Attribution testimonial={t} />
-            </SlideFade>
-          )}
-        />
+        <QuoteStack testimonials={testimonials} activeIndex={activeIndex} />
       </div>
 
       {/* Desktop: the author pins to the bottom row, level with the controls. */}
@@ -386,7 +383,7 @@ function CaseStudyCard({ testimonial: t }) {
               altText: t?.caseStudyImageAlt ?? "",
             }
           : null,
-        link: t.caseStudyUrl,
+        link: t?.caseStudyUrl,
         newTab: true,
       }}
       fields={{
@@ -410,12 +407,7 @@ const storyColumn = (t) =>
 
 // The headline, then the quote on the section background, marked by the SSW
 // red bar, with its author underneath.
-function CaseStudyStory({
-  testimonial: t,
-  isActive,
-  activeIndex,
-  hasControls,
-}) {
+function CaseStudyStory({ testimonial: t, isActive, hasControls }) {
   return (
     <div
       className={cn(
@@ -428,7 +420,7 @@ function CaseStudyStory({
       )}
     >
       {t?.caseStudyHeadline && (
-        <SlideFade isActive={isActive} activeIndex={activeIndex}>
+        <SlideFade isActive={isActive}>
           <h2
             data-tina-field={tinaField(t, "caseStudyHeadline")}
             className="m-0 text-3xl text-foreground lg:text-4xl"
@@ -437,7 +429,7 @@ function CaseStudyStory({
           </h2>
         </SlideFade>
       )}
-      <SlideFade isActive={isActive} activeIndex={activeIndex}>
+      <SlideFade isActive={isActive}>
         <figure className="m-0 flex flex-col gap-6 border-l-2 border-sswRed pl-6">
           <blockquote
             data-tina-field={tinaField(t, "quote")}
@@ -456,24 +448,7 @@ function CaseStudyStory({
                 className="size-10 shrink-0 rounded-full object-cover object-top"
               />
             )}
-            <div className="flex min-w-0 flex-col break-words">
-              {t?.authorName && (
-                <span
-                  data-tina-field={tinaField(t, "authorName")}
-                  className="font-semibold text-foreground"
-                >
-                  {t.authorName}
-                </span>
-              )}
-              {t?.authorTitle && (
-                <span
-                  data-tina-field={tinaField(t, "authorTitle")}
-                  className="text-sm text-muted-foreground"
-                >
-                  {t.authorTitle}
-                </span>
-              )}
-            </div>
+            <AuthorName testimonial={t} />
           </figcaption>
         </figure>
       </SlideFade>
@@ -492,8 +467,7 @@ function CaseStudyStory({
 //
 // Every slide is a subgrid laid over the same cells, so the rows size to the
 // tallest slide: changing slide never changes the block height or moves the
-// controls. Only the active slide is visible; the rest fade to opacity-0 and
-// are `inert`. The controls are shared, outside the slides.
+// controls. The controls are shared, outside the slides.
 function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
   const hasControls = testimonials.length > 1;
   const current = testimonials[activeIndex];
@@ -507,26 +481,24 @@ function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
         return (
           <div
             key={`v3-case-study-slide-${i}`}
-            aria-hidden={!isActive}
-            inert={!isActive}
-            className={cn(
-              // Each span comes before its start: a span resets the start in
-              // CSS, and cn() drops a start that comes before a span.
-              hasControls ? "row-span-3" : "row-span-2",
-              "col-start-1 row-start-1 grid grid-cols-subgrid grid-rows-subgrid transition-opacity duration-300 motion-reduce:transition-none xl:col-span-2 xl:col-start-1 xl:row-span-2 xl:row-start-1",
-              isActive ? "opacity-100" : "pointer-events-none opacity-0"
+            {...slideProps(
+              isActive,
+              cn(
+                // Each span comes before its start: a span resets the start
+                // in CSS, and cn() drops a start that comes before a span.
+                hasControls ? "row-span-3" : "row-span-2",
+                "col-start-1 row-start-1 grid grid-cols-subgrid grid-rows-subgrid xl:col-span-2 xl:col-start-1 xl:row-span-2 xl:row-start-1"
+              )
             )}
           >
             <CaseStudyStory
               testimonial={t}
               isActive={isActive}
-              activeIndex={activeIndex}
               hasControls={hasControls}
             />
             {t?.caseStudyUrl && (
               <SlideFade
                 isActive={isActive}
-                activeIndex={activeIndex}
                 className={cn(
                   "col-start-1 xl:row-span-2 xl:row-start-1",
                   hasControls ? "row-start-3" : "row-start-2"

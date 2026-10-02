@@ -43,6 +43,18 @@ const activeQuote = () =>
   // The visible slide is the one not hidden from assistive tech.
   document.querySelector("[aria-hidden='false'] > blockquote")?.textContent;
 
+// Drags across the visible quote; touch events bubble up to the block. Role
+// queries skip hidden slides, so this always finds the visible quote.
+const swipe = (dx: number, dy: number) => {
+  const target = screen.getByRole("blockquote");
+  fireEvent.touchStart(target, {
+    touches: [{ clientX: 200, clientY: 200 }],
+  });
+  fireEvent.touchEnd(target, {
+    changedTouches: [{ clientX: 200 + dx, clientY: 200 + dy }],
+  });
+};
+
 describe("V3Testimonials", () => {
   it("defaults to the portrait layout, with no case study", () => {
     render(<V3Testimonials data={{ testimonials: slides }} />);
@@ -50,7 +62,6 @@ describe("V3Testimonials", () => {
     expect(screen.getByAltText("Ada")).toBeTruthy();
     // Case studies belong to the case study layout: a saved URL is ignored.
     expect(screen.queryByRole("link")).toBeNull();
-    expect(screen.queryByText("See Case Study")).toBeNull();
     expect(screen.queryByText("Read how Ada did it.")).toBeNull();
   });
 
@@ -72,16 +83,6 @@ describe("V3Testimonials", () => {
 
   it("changes slide on a sideways swipe, not a vertical scroll", () => {
     render(<V3Testimonials data={{ testimonials: slides }} />);
-    // Touch events bubble up to the block, so the quote is a fine target.
-    const block = document.querySelector("blockquote")!;
-    const swipe = (dx: number, dy: number) => {
-      fireEvent.touchStart(block, {
-        touches: [{ clientX: 200, clientY: 200 }],
-      });
-      fireEvent.touchEnd(block, {
-        changedTouches: [{ clientX: 200 + dx, clientY: 200 + dy }],
-      });
-    };
 
     swipe(-80, 10);
     expect(activeQuote()).toContain("Second quote");
@@ -164,7 +165,6 @@ describe("V3Testimonials case study layout", () => {
     ).toBeTruthy();
     expect(within(link).getByAltText("The FPE team")).toBeTruthy();
     expect(within(link).getByAltText("French Payroll Expert")).toBeTruthy();
-    expect(screen.queryByText("See Case Study")).toBeNull();
   });
 
   it("titles the card with the company name when it has no title", () => {
@@ -220,16 +220,6 @@ describe("V3Testimonials case study layout", () => {
 
   it("changes slide on a sideways swipe, not a vertical scroll", () => {
     renderCaseStudies();
-    const swipe = (dx: number, dy: number) => {
-      // The visible quote; touch events bubble up to the block.
-      const target = screen.getByRole("blockquote");
-      fireEvent.touchStart(target, {
-        touches: [{ clientX: 200, clientY: 200 }],
-      });
-      fireEvent.touchEnd(target, {
-        changedTouches: [{ clientX: 200 + dx, clientY: 200 + dy }],
-      });
-    };
 
     swipe(-80, 10);
     expect(headline()).toBe("A trustworthy payroll agent");

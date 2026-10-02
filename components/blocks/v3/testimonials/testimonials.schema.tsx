@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import type { Template } from "tinacms";
 import {
   ImageFieldPlugin,
   TextareaFieldPlugin,
   TextFieldPlugin,
+  type Template,
 } from "tinacms";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { blockLayout } from "./testimonialsLayout";

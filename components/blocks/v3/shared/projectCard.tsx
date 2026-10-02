@@ -29,11 +29,11 @@ type ProjectCardFields = {
   logo?: string;
 };
 
-// The homepage Case Studies card (V3 Featured Products). Other blocks reuse it (the case study
-// testimonials): `imageFirst` puts the photo on top, `className` restyles the
-// card surface, `logo` lays a client logo in white over the photo's
-// bottom-left, and `fields` points each part at the reusing block's own Tina
-// fields. The defaults render the homepage card.
+// The homepage Case Studies card (V3 Featured Products). Other blocks reuse
+// it (the case study testimonials): `imageFirst` puts the photo on top,
+// `className` restyles the card surface, `logo` lays a client logo in white
+// over the photo's bottom-left, and `fields` points each part at the reusing
+// block's own Tina fields. The defaults render the homepage card.
 export function ProjectCard({
   project,
   imageFirst = false,
