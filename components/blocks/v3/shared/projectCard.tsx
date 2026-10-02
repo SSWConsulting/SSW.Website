@@ -21,7 +21,7 @@ export const MaybeLink = ({ link, newTab, field, children }) =>
     </div>
   );
 
-type ProjectCardFields = {
+type ProjectCardTinaFields = {
   link?: string;
   title?: string;
   description?: string;
@@ -32,24 +32,27 @@ type ProjectCardFields = {
 // The homepage Case Studies card (V3 Featured Products). Other blocks reuse
 // it (the case study testimonials): `imageFirst` puts the photo on top,
 // `className` restyles the card surface, `logo` lays a client logo in white
-// over the photo's bottom-left, and `fields` points each part at the reusing
+// over the photo's bottom-left, `titleAs` sets the title's heading level for
+// the page it sits in, and `tinaFields` points each part at the reusing
 // block's own Tina fields. The defaults render the homepage card.
 export function ProjectCard({
   project,
   imageFirst = false,
   className = "",
   logo = null,
-  fields = {},
+  titleAs: Title = "h4",
+  tinaFields = {},
 }: {
   project;
   imageFirst?: boolean;
   className?: string;
   logo?: { src: string; alt: string } | null;
-  fields?: ProjectCardFields;
+  titleAs?: "h3" | "h4";
+  tinaFields?: ProjectCardTinaFields;
 }) {
   const image = project?.image?.imageSource && (
     <div
-      data-tina-field={fields.image}
+      data-tina-field={tinaFields.image}
       className="relative aspect-video w-full"
     >
       <Image
@@ -72,7 +75,7 @@ export function ProjectCard({
             alt={logo.alt}
             width={160}
             height={160}
-            data-tina-field={fields.logo}
+            data-tina-field={tinaFields.logo}
             className="absolute bottom-4 left-4 h-8 w-auto max-w-40 object-contain object-left brightness-0 invert lg:bottom-6 lg:left-8"
           />
         </>
@@ -89,17 +92,17 @@ export function ProjectCard({
       {imageFirst && image}
       <div className="flex flex-1 flex-col gap-8 p-4 lg:p-8">
         <div className="flex flex-col gap-4">
-          <h4
-            data-tina-field={fields.title}
+          <Title
+            data-tina-field={tinaFields.title}
             className={cn(
               "text-[22px] font-medium leading-snug tracking-tight text-foreground"
             )}
           >
             {project?.title}
-          </h4>
+          </Title>
           {project?.description && (
             <p
-              data-tina-field={fields.description}
+              data-tina-field={tinaFields.description}
               className="text-base font-light text-muted-foreground"
             >
               {project.description}
@@ -116,7 +119,7 @@ export function ProjectCard({
     <MaybeLink
       link={project?.link}
       newTab={project?.newTab}
-      field={fields.link ?? tinaField(project, "title")}
+      field={tinaFields.link ?? tinaField(project, "title")}
     >
       {inner}
     </MaybeLink>

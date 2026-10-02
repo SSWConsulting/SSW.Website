@@ -176,6 +176,23 @@ describe("V3Testimonials case study layout", () => {
     ).toBeTruthy();
   });
 
+  it("names the company once when the title falls back to it", () => {
+    renderCaseStudies([{ ...caseStudies[0], caseStudyTitle: undefined }]);
+    const link = cardLink()!;
+
+    expect(within(link).getByText("French Payroll Expert")).toBeTruthy();
+    // The logo on the photo is decorative here, so it isn't read out again.
+    expect(within(link).queryByAltText("French Payroll Expert")).toBeNull();
+  });
+
+  it("puts the card title one level under the headline", () => {
+    renderCaseStudies();
+
+    expect(
+      within(cardLink()!).getByRole("heading", { level: 3 }).textContent
+    ).toBe("AI navigation for FPE");
+  });
+
   it("shows a card without an image or logo when there's no photo", () => {
     renderCaseStudies();
     fireEvent.click(screen.getByLabelText("Next case study"));

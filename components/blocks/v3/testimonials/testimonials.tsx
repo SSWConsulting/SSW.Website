@@ -9,6 +9,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { tinaField } from "tinacms/dist/react";
 import { ProjectCard } from "../shared/projectCard";
+import { LAYOUT } from "./testimonialsLayout";
 
 // Each slide's content (author, portrait, case study) fades up when the slide
 // changes.
@@ -365,13 +366,20 @@ function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
 // a fine edge). The whole card links to the case study. No photo, no logo:
 // the logo lives on the photo.
 function CaseStudyCard({ testimonial: t }) {
+  // Without its own title the card is titled with the company name, so the
+  // logo turns decorative rather than read the name out twice.
+  const titledByCompany = !t?.caseStudyTitle;
   return (
     <ProjectCard
       imageFirst
+      titleAs="h3"
       className="dark:border-sswBorder dark:bg-sswCard"
       logo={
         t?.companyLogo
-          ? { src: t.companyLogo, alt: t?.companyLogoAlt ?? "Company logo" }
+          ? {
+              src: t.companyLogo,
+              alt: titledByCompany ? "" : (t?.companyLogoAlt ?? "Company logo"),
+            }
           : null
       }
       project={{
@@ -386,7 +394,7 @@ function CaseStudyCard({ testimonial: t }) {
         link: t?.caseStudyUrl,
         newTab: true,
       }}
-      fields={{
+      tinaFields={{
         link: tinaField(t, "caseStudyUrl"),
         title: tinaField(t, "caseStudyTitle"),
         description: tinaField(t, "caseStudyLabel"),
@@ -558,7 +566,8 @@ export function V3Testimonials({ data }) {
 
   if (testimonials.length === 0) return null;
 
-  const Layout = data?.layout === "caseStudy" ? CaseStudyLayout : QuoteLayout;
+  const Layout =
+    data?.layout === LAYOUT.caseStudy ? CaseStudyLayout : QuoteLayout;
 
   return (
     <MotionConfig reducedMotion="user">

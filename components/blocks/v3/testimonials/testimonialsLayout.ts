@@ -1,9 +1,13 @@
+// The block's layouts, as stored in the Layout field.
+export const LAYOUT = { quote: "quote", caseStudy: "caseStudy" } as const;
+
 // The layout of the testimonials block a Tina field belongs to, read from the
-// form values by the field's path, e.g. "blocks.3.testimonials.0.caseStudyUrl"
-// reads `blocks.3.layout`. Unset or unreadable means the default layout.
+// form values by the field's path: "blocks.3.testimonials.0.caseStudyUrl"
+// drops its last three parts (list, slide, field) to read `blocks.3.layout`.
+// Unset or unreadable means the default layout.
 export function blockLayout(fieldName: string | undefined, values): string {
-  const [blockPath, rest] = fieldName?.split(".testimonials.") ?? [];
-  if (!blockPath || rest === undefined) return "quote";
-  const block = blockPath.split(".").reduce((obj, key) => obj?.[key], values);
-  return block?.layout || "quote";
+  const path = fieldName?.split(".") ?? [];
+  if (path.length < 4) return LAYOUT.quote;
+  const block = path.slice(0, -3).reduce((obj, key) => obj?.[key], values);
+  return block?.layout || LAYOUT.quote;
 }

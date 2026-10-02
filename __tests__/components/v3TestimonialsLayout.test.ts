@@ -15,6 +15,13 @@ describe("blockLayout", () => {
     );
   });
 
+  it("doesn't depend on the name of the list", () => {
+    const listed = { blocks: [{ layout: "caseStudy", slides: [{}] }] };
+    expect(blockLayout("blocks.0.slides.0.caseStudyUrl", listed)).toBe(
+      "caseStudy"
+    );
+  });
+
   it("falls back to the default layout when none is set", () => {
     expect(
       blockLayout("blocks.0.testimonials.0.caseStudyUrl", {

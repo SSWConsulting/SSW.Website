@@ -43,7 +43,8 @@ describe("V3FeaturedProducts case study cards", () => {
 
     expect(card.getAttribute("href")).toBe("/company/clients/fpe");
     expect(card.getAttribute("target")).toBeNull();
-    const title = within(card).getByText("AI Powered Navigation");
+    const title = within(card).getByRole("heading", { level: 4 });
+    expect(title.textContent).toBe("AI Powered Navigation");
     expect(
       within(card).getByText("A chatbot for payroll questions.")
     ).toBeTruthy();

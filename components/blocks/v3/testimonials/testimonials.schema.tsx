@@ -6,13 +6,15 @@ import {
   type Template,
 } from "tinacms";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
-import { blockLayout } from "./testimonialsLayout";
+import { blockLayout, LAYOUT } from "./testimonialsLayout";
 
 // Shows Tina's own field only while the block uses the Quote & case study
 // layout, so a case study can't be added to a Quote & portrait block. It
 // follows the Layout field live, so switching layouts shows or hides it.
-const caseStudyOnly = (plugin) =>
-  function CaseStudyField(props) {
+// Keeps the plugin's `parse`, so a cleared field still saves as "".
+const caseStudyOnly = (plugin) => ({
+  parse: plugin.parse,
+  component: function CaseStudyField(props) {
     const { form, field } = props;
     const [layout, setLayout] = useState(() =>
       blockLayout(field?.name, form.getState().values)
@@ -25,10 +27,11 @@ const caseStudyOnly = (plugin) =>
         ),
       [form, field?.name]
     );
-    return layout === "caseStudy" ? <plugin.Component {...props} /> : null;
-  };
+    return layout === LAYOUT.caseStudy ? <plugin.Component {...props} /> : null;
+  },
+});
 
-const caseStudyText = { component: caseStudyOnly(TextFieldPlugin) };
+const caseStudyText = caseStudyOnly(TextFieldPlugin);
 
 export const V3TestimonialsSchema: Template = {
   name: "v3Testimonials",
@@ -55,8 +58,8 @@ export const V3TestimonialsSchema: Template = {
       description:
         "Quote & portrait shows the author's photo beside the quote, with no case study. Quote & case study shows each slide as a case study: a headline, the quote and its author, and a case study card (photo, title and sentence) on slides that have a Case Study URL. The case study fields only appear in this layout.",
       options: [
-        { value: "quote", label: "Quote & portrait (default)" },
-        { value: "caseStudy", label: "Quote & case study" },
+        { value: LAYOUT.quote, label: "Quote & portrait (default)" },
+        { value: LAYOUT.caseStudy, label: "Quote & case study" },
       ],
     },
     {
@@ -112,7 +115,7 @@ export const V3TestimonialsSchema: Template = {
           name: "caseStudyLabel",
           description:
             "Short description on the case study card, under its title, e.g. 'Discover how an AI-powered chatbot transformed their customer service.'",
-          ui: { component: caseStudyOnly(TextareaFieldPlugin) },
+          ui: caseStudyOnly(TextareaFieldPlugin),
         },
         {
           type: "image",
@@ -120,7 +123,7 @@ export const V3TestimonialsSchema: Template = {
           name: "caseStudyImage",
           description:
             "Photo at the top of the case study card, with the company logo over it. Without a photo, the card shows no image or logo.",
-          ui: { component: caseStudyOnly(ImageFieldPlugin) },
+          ui: caseStudyOnly(ImageFieldPlugin),
         },
         {
           type: "string",
