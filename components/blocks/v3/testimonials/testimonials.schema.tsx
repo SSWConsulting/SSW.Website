@@ -1,5 +1,34 @@
+import React, { useEffect, useState } from "react";
 import type { Template } from "tinacms";
+import {
+  ImageFieldPlugin,
+  TextareaFieldPlugin,
+  TextFieldPlugin,
+} from "tinacms";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
+import { blockLayout } from "./testimonialsLayout";
+
+// Shows Tina's own field only while the block uses the Quote & case study
+// layout, so a case study can't be added to a Quote & portrait block. It
+// follows the Layout field live, so switching layouts shows or hides it.
+const caseStudyOnly = (plugin) =>
+  function CaseStudyField(props) {
+    const { form, field } = props;
+    const [layout, setLayout] = useState(() =>
+      blockLayout(field?.name, form.getState().values)
+    );
+    useEffect(
+      () =>
+        form.subscribe(
+          ({ values }) => setLayout(blockLayout(field?.name, values)),
+          { values: true }
+        ),
+      [form, field?.name]
+    );
+    return layout === "caseStudy" ? <plugin.Component {...props} /> : null;
+  };
+
+const caseStudyText = { component: caseStudyOnly(TextFieldPlugin) };
 
 export const V3TestimonialsSchema: Template = {
   name: "v3Testimonials",
@@ -24,7 +53,7 @@ export const V3TestimonialsSchema: Template = {
       label: "Layout",
       name: "layout",
       description:
-        "Quote & portrait shows the author's photo beside the quote. Quote & case study shows each slide as a case study: a headline, the quote and its author, and a case study card (photo, title and sentence) on slides that have a Case Study URL.",
+        "Quote & portrait shows the author's photo beside the quote, with no case study. Quote & case study shows each slide as a case study: a headline, the quote and its author, and a case study card (photo, title and sentence) on slides that have a Case Study URL. The case study fields only appear in this layout.",
       options: [
         { value: "quote", label: "Quote & portrait (default)" },
         { value: "caseStudy", label: "Quote & case study" },
@@ -58,43 +87,47 @@ export const V3TestimonialsSchema: Template = {
           label: "Case Study URL",
           name: "caseStudyUrl",
           description:
-            "Quote & portrait: shows a 'See Case Study' link below the quote. Quote & case study: shows the case study card, which links here.",
+            "Shows the case study card, which links here. Without it, the slide has no card.",
+          ui: caseStudyText,
         },
         {
           type: "string",
           label: "Case Study Headline",
           name: "caseStudyHeadline",
           description:
-            "Quote & case study layout only. Headline above the quote, e.g. 'An AI chatbot that answers payroll questions around the clock'.",
+            "Headline above the quote, e.g. 'An AI chatbot that answers payroll questions around the clock'.",
+          ui: caseStudyText,
         },
         {
           type: "string",
           label: "Case Study Card Title",
           name: "caseStudyTitle",
           description:
-            "Quote & case study layout only. Title on the case study card. Defaults to the Company Logo Alt Text.",
+            "Title on the case study card. Defaults to the Company Logo Alt Text.",
+          ui: caseStudyText,
         },
         {
           type: "string",
           label: "Case Study Sentence",
           name: "caseStudyLabel",
           description:
-            "Quote & case study layout only. Short description on the case study card, under its title, e.g. 'Discover how an AI-powered chatbot transformed their customer service.'",
-          ui: { component: "textarea" },
+            "Short description on the case study card, under its title, e.g. 'Discover how an AI-powered chatbot transformed their customer service.'",
+          ui: { component: caseStudyOnly(TextareaFieldPlugin) },
         },
         {
           type: "image",
           label: "Case Study Card Photo",
           name: "caseStudyImage",
           description:
-            "Quote & case study layout only. Photo at the top of the case study card, with the company logo over it. Without a photo, the card shows no image or logo.",
+            "Photo at the top of the case study card, with the company logo over it. Without a photo, the card shows no image or logo.",
+          ui: { component: caseStudyOnly(ImageFieldPlugin) },
         },
         {
           type: "string",
           label: "Case Study Card Photo Alt Text",
           name: "caseStudyImageAlt",
-          description:
-            "Quote & case study layout only. Leave empty if the photo is decorative.",
+          description: "Leave empty if the photo is decorative.",
+          ui: caseStudyText,
         },
         {
           type: "string",

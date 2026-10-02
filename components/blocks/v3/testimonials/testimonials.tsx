@@ -7,7 +7,6 @@ import { MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { ProjectCard } from "../shared/projectCard";
 
@@ -220,9 +219,9 @@ function Arrows({ noun, step, className = "" }) {
 // slide: switching slides never changes the block height, and the controls
 // below never jump. Only the active slide is visible; the rest fade to
 // opacity-0 and are `inert`, so their links can't be tabbed to. `below`
-// renders under each slide's own quote, so whatever it holds (the author, the
-// case study link) sits right under that quote, and the spare height of a
-// short slide gathers at the bottom of the cell instead of above the author.
+// renders under each slide's own quote, so whatever it holds (the author on
+// phones) sits right under that quote, and the spare height of a short slide
+// gathers at the bottom of the cell instead of above the author.
 function QuoteStack({
   testimonials,
   activeIndex,
@@ -305,7 +304,8 @@ function useSwipe(step: (by: number) => void) {
 }
 
 // Default layout: quote top-left, attribution bottom-left, portrait top-right,
-// arrows bottom-right. On phones the portrait sits above the quote and
+// arrows bottom-right. No case study: those belong to the case study layout,
+// so a saved Case Study URL is ignored here. On phones the portrait sits above the quote and
 // the attribution follows its quote, with the controls last.
 function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
   const current = testimonials[activeIndex];
@@ -325,34 +325,14 @@ function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
           testimonials={testimonials}
           activeIndex={activeIndex}
           below={(t, isActive) => (
-            <>
-              {t?.caseStudyUrl && (
-                <SlideFade
-                  isActive={isActive}
-                  activeIndex={activeIndex}
-                  className="mt-6"
-                >
-                  <a
-                    href={t.caseStudyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-tina-field={tinaField(t, "caseStudyUrl")}
-                    className="group inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-foreground transition hover:text-sswRed"
-                  >
-                    See Case Study
-                    <TiArrowRight className="size-5 transition group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0" />
-                  </a>
-                </SlideFade>
-              )}
-              {/* Phones: the author follows its own quote. */}
-              <SlideFade
-                isActive={isActive}
-                activeIndex={activeIndex}
-                className="mt-10 xl:hidden"
-              >
-                <Attribution testimonial={t} />
-              </SlideFade>
-            </>
+            // Phones: the author follows its own quote.
+            <SlideFade
+              isActive={isActive}
+              activeIndex={activeIndex}
+              className="mt-10 xl:hidden"
+            >
+              <Attribution testimonial={t} />
+            </SlideFade>
           )}
         />
       </div>

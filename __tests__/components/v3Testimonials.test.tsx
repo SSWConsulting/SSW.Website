@@ -44,22 +44,22 @@ const activeQuote = () =>
   document.querySelector("[aria-hidden='false'] > blockquote")?.textContent;
 
 describe("V3Testimonials", () => {
-  it("defaults to the portrait layout with a case study text link", () => {
+  it("defaults to the portrait layout, with no case study", () => {
     render(<V3Testimonials data={{ testimonials: slides }} />);
 
     expect(screen.getByAltText("Ada")).toBeTruthy();
-    expect(screen.getByText("See Case Study")).toBeTruthy();
+    // Case studies belong to the case study layout: a saved URL is ignored.
+    expect(screen.queryByRole("link")).toBeNull();
+    expect(screen.queryByText("See Case Study")).toBeNull();
     expect(screen.queryByText("Read how Ada did it.")).toBeNull();
   });
 
-  it("keeps hidden slides' links out of the tab order", () => {
+  it("hides the other slides from assistive tech and the tab order", () => {
     render(<V3Testimonials data={{ testimonials: slides }} />);
-    const link = () => screen.getByText("See Case Study").closest("a")!;
-    expect(link().closest("[inert]")).toBeNull();
+    const hidden = screen.getByText("“Second quote”");
 
-    // Ada's slide (the one with the link) is now hidden.
-    fireEvent.click(screen.getByLabelText("Next testimonial"));
-    expect(link().closest("[inert]")).not.toBeNull();
+    expect(hidden.closest("[aria-hidden='true']")).not.toBeNull();
+    expect(hidden.closest("[inert]")).not.toBeNull();
   });
 
   it("wraps the arrows around in both directions", () => {
