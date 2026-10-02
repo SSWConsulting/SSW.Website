@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FC } from "react";
 import Button from "../button/rippleButton";
 import { VideoModal } from "../videoModal";
+import AosLoader from "./aosLoader";
 import { Container } from "./container";
 import { Section } from "./section";
 
@@ -110,6 +111,7 @@ const VideoCards = ({
               window.open(channelLink || defaultChannelLink, "_blank")
             }
           >
+            <AosLoader />
             <span className="px-7">Watch More Videos</span>
           </Button>
         </div>
