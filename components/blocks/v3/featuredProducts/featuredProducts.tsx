@@ -5,32 +5,16 @@ import {
 } from "@/components/ui/carousel";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
+import { OptionalLink } from "@/components/optionalLink";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { ArrowCircle } from "../shared/arrowCircle";
 import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
+import { ProjectCard } from "../shared/projectCard";
 import { SectionHeader } from "../shared/sectionHeader";
-
-const MaybeLink = ({ link, newTab, field, children }) =>
-  link ? (
-    <Link
-      href={link}
-      target={newTab ? "_blank" : undefined}
-      rel={newTab ? "noopener noreferrer" : undefined}
-      data-tina-field={field}
-      className="h-full !no-underline"
-    >
-      {children}
-    </Link>
-  ) : (
-    <div data-tina-field={field} className="h-full">
-      {children}
-    </div>
-  );
 
 function HighlightCard({ project }) {
   const inner = (
@@ -82,63 +66,13 @@ function HighlightCard({ project }) {
   );
 
   return (
-    <MaybeLink
+    <OptionalLink
       link={project?.link}
       newTab={project?.newTab}
       field={tinaField(project, "title")}
     >
       {inner}
-    </MaybeLink>
-  );
-}
-
-function ProjectCard({ project }) {
-  const inner = (
-    <div
-      className={cn(
-        "group flex h-full flex-col overflow-hidden rounded-card border-0.75 border-hairline bg-white dark:bg-sswBorder"
-      )}
-    >
-      <div className="flex flex-1 flex-col gap-8 p-4 lg:p-8">
-        <div className="flex flex-col gap-4">
-          <h4
-            className={cn(
-              "text-[22px] font-medium leading-snug tracking-tight text-foreground"
-            )}
-          >
-            {project?.title}
-          </h4>
-          {project?.description && (
-            <p className="text-base font-light text-muted-foreground">
-              {project.description}
-            </p>
-          )}
-        </div>
-        <ArrowCircle className="mt-auto size-10 self-end" />
-      </div>
-      {project?.image?.imageSource && (
-        <div className="relative aspect-video w-full">
-          <Image
-            src={project.image.imageSource}
-            alt={project.image.altText ?? project?.title ?? ""}
-            fill
-            sizes="(min-width: 768px) 33vw, 100vw"
-            className="object-cover"
-          />
-          <div aria-hidden="true" className="absolute inset-0 bg-black/20" />
-        </div>
-      )}
-    </div>
-  );
-
-  return (
-    <MaybeLink
-      link={project?.link}
-      newTab={project?.newTab}
-      field={tinaField(project, "title")}
-    >
-      {inner}
-    </MaybeLink>
+    </OptionalLink>
   );
 }
 

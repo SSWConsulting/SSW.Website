@@ -205,14 +205,20 @@
         "gridOverlay": true,
         "redGlow": true
       },
+      "layout": "caseStudy",
       "testimonials": [
         {
           "quote": "I thoroughly enjoyed working with **SSW** on developing and launching our new website. What truly set them apart was not just their **evident expertise** but also their **unwavering commitment to going the extra mile.**",
           "caseStudyUrl": "/company/clients/hearing-australia",
+          "caseStudyHeadline": "A new website that makes hearing care easier to find and book",
+          "caseStudyTitle": "Rebuilding the Hearing Australia Website",
+          "caseStudyLabel": "See how we streamlined bookings and helped Australians find their nearest hearing centre.",
+          "caseStudyImage": "/images/case-studies/hearing-australia-after.png",
           "authorName": "Kiriana Meha-Bettison",
           "authorTitle": "IT Project Manager, Hearing Australia",
           "authorImage": "",
-          "companyLogo": "/images/logos/hearing-australia.png"
+          "companyLogo": "/images/logos/hearing-australia.png",
+          "companyLogoAlt": "Hearing Australia"
         }
       ],
       "_template": "v3Testimonials"
