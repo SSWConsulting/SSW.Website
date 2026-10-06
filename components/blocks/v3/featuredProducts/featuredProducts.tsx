@@ -5,6 +5,7 @@ import {
 } from "@/components/ui/carousel";
 import ButtonRow from "@/components/blocksSubtemplates/buttonRow";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
+import { OptionalLink } from "@/components/optionalLink";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -12,7 +13,7 @@ import { tinaField } from "tinacms/dist/react";
 import { ArrowCircle } from "../shared/arrowCircle";
 import { CarouselDots } from "../shared/carouselDots";
 import { CarouselMoreCard } from "../shared/carouselMoreCard";
-import { MaybeLink, ProjectCard } from "../shared/projectCard";
+import { ProjectCard } from "../shared/projectCard";
 import { SectionHeader } from "../shared/sectionHeader";
 
 function HighlightCard({ project }) {
@@ -65,13 +66,13 @@ function HighlightCard({ project }) {
   );
 
   return (
-    <MaybeLink
+    <OptionalLink
       link={project?.link}
       newTab={project?.newTab}
       field={tinaField(project, "title")}
     >
       {inner}
-    </MaybeLink>
+    </OptionalLink>
   );
 }
 

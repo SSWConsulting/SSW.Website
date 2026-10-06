@@ -8,20 +8,40 @@ import {
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { blockLayout, LAYOUT } from "./testimonialsLayout";
 
+// What the wrapper reads from the props Tina passes a field component. Tina
+// passes its form at runtime, but its schema types leave it out, so `form`
+// is optional here.
+type CaseStudyFieldProps = {
+  field: { name: string };
+  form?: {
+    getState: () => { values: object };
+    subscribe: (
+      listener: (state: { values: object }) => void,
+      subscription: { values: true }
+    ) => () => void;
+  };
+};
+
+// The parts of a Tina field plugin (text, textarea, image) the wrapper uses.
+type TinaFieldPlugin = {
+  Component: React.ElementType;
+  parse?: (value: string) => string;
+};
+
 // Shows Tina's own field only while the block uses the Quote & case study
 // layout, so a case study can't be added to a Quote & portrait block. It
 // follows the Layout field live, so switching layouts shows or hides it.
 // Keeps the plugin's `parse`, so a cleared field still saves as "".
-const caseStudyOnly = (plugin) => ({
+const caseStudyOnly = (plugin: TinaFieldPlugin) => ({
   parse: plugin.parse,
-  component: function CaseStudyField(props) {
+  component: function CaseStudyField(props: CaseStudyFieldProps) {
     const { form, field } = props;
     const [layout, setLayout] = useState(() =>
-      blockLayout(field?.name, form.getState().values)
+      blockLayout(field?.name, form?.getState().values ?? {})
     );
     useEffect(
       () =>
-        form.subscribe(
+        form?.subscribe(
           ({ values }) => setLayout(blockLayout(field?.name, values)),
           { values: true }
         ),

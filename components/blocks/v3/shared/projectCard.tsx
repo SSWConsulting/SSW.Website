@@ -1,25 +1,18 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
+import { OptionalLink } from "@/components/optionalLink";
 import { ArrowCircle } from "./arrowCircle";
 
-export const MaybeLink = ({ link, newTab, field, children }) =>
-  link ? (
-    <Link
-      href={link}
-      target={newTab ? "_blank" : undefined}
-      rel={newTab ? "noopener noreferrer" : undefined}
-      data-tina-field={field}
-      className="h-full !no-underline"
-    >
-      {children}
-    </Link>
-  ) : (
-    <div data-tina-field={field} className="h-full">
-      {children}
-    </div>
-  );
+// The card's content. The homepage passes its Tina product objects, which
+// carry extra fields the card ignores.
+type Project = {
+  title?: string | null;
+  description?: string | null;
+  image?: { imageSource?: string | null; altText?: string | null } | null;
+  link?: string | null;
+  newTab?: boolean | null;
+};
 
 type ProjectCardTinaFields = {
   link?: string;
@@ -43,7 +36,7 @@ export function ProjectCard({
   titleAs: Title = "h4",
   tinaFields = {},
 }: {
-  project;
+  project: Project;
   imageFirst?: boolean;
   className?: string;
   logo?: { src: string; alt: string } | null;
@@ -117,12 +110,12 @@ export function ProjectCard({
   );
 
   return (
-    <MaybeLink
+    <OptionalLink
       link={project?.link}
       newTab={project?.newTab}
       field={tinaFields.link ?? tinaField(project, "title")}
     >
       {inner}
-    </MaybeLink>
+    </OptionalLink>
   );
 }

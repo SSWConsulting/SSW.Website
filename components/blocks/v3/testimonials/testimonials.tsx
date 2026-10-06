@@ -3,13 +3,20 @@ import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
+import type { Consultingv2BlocksV3Testimonials } from "@/tina/types";
+import { clsx } from "clsx";
 import { MotionConfig, motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { type ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { tinaField } from "tinacms/dist/react";
 import { ProjectCard } from "../shared/projectCard";
 import { LAYOUT } from "./testimonialsLayout";
+
+// The block's Tina data. Every collection that uses the block generates the
+// same shape, so the consulting pages' type stands in for all of them.
+type TestimonialsData = Consultingv2BlocksV3Testimonials;
+type Testimonial = NonNullable<TestimonialsData["testimonials"]>[number];
 
 // Each slide's content (author, portrait, case study) fades up when the slide
 // changes.
@@ -123,7 +130,15 @@ function ClipTextReveal({ text }: { text: string }) {
 }
 
 // The large portrait, top-right on desktop and above the quote on phones.
-function Portrait({ testimonial, activeIndex, className = "" }) {
+function Portrait({
+  testimonial,
+  activeIndex,
+  className = "",
+}: {
+  testimonial: Testimonial;
+  activeIndex: number;
+  className?: string;
+}) {
   if (!testimonial?.authorImage) return null;
   return (
     <motion.div
@@ -150,7 +165,7 @@ function Portrait({ testimonial, activeIndex, className = "" }) {
 }
 
 // The author's name and role, stacked.
-function AuthorName({ testimonial }) {
+function AuthorName({ testimonial }: { testimonial: Testimonial }) {
   return (
     <div className="flex min-w-0 flex-col break-words">
       {testimonial?.authorName && (
@@ -174,7 +189,7 @@ function AuthorName({ testimonial }) {
 }
 
 // Name + role, then the client logo behind a hairline divider.
-function Attribution({ testimonial }) {
+function Attribution({ testimonial }: { testimonial: Testimonial }) {
   return (
     <div className="flex items-center gap-4">
       <AuthorName testimonial={testimonial} />
@@ -199,7 +214,15 @@ function Attribution({ testimonial }) {
 
 // One arrow icon, mirrored for "previous": the icon set's left and right
 // arrows differ in length.
-function ArrowButton({ label, onClick, flip = false }) {
+function ArrowButton({
+  label,
+  onClick,
+  flip = false,
+}: {
+  label: string;
+  onClick: () => void;
+  flip?: boolean;
+}) {
   return (
     <button
       type="button"
@@ -214,7 +237,15 @@ function ArrowButton({ label, onClick, flip = false }) {
   );
 }
 
-function Arrows({ noun, step, className = "" }) {
+function Arrows({
+  noun,
+  step,
+  className = "",
+}: {
+  noun: string;
+  step: (by: number) => void;
+  className?: string;
+}) {
   return (
     <div className={cn("flex gap-3", className)}>
       <ArrowButton label={`Previous ${noun}`} onClick={() => step(-1)} flip />
@@ -225,12 +256,12 @@ function Arrows({ noun, step, className = "" }) {
 
 // Only the active slide is visible; the rest fade to opacity-0 and are
 // `inert` and aria-hidden, so their links can't be tabbed to or read out.
-// `className` places the slide; it goes first so its span-before-start
-// order survives cn().
+// clsx, not cn(): nothing here overrides anything, and tailwind-merge would
+// drop a grid start that comes before a span.
 const slideProps = (isActive: boolean, className: string) => ({
   "aria-hidden": !isActive,
   inert: !isActive,
-  className: cn(
+  className: clsx(
     className,
     "transition-opacity duration-300 motion-reduce:transition-none",
     isActive ? "opacity-100" : "pointer-events-none opacity-0"
@@ -242,7 +273,13 @@ const slideProps = (isActive: boolean, className: string) => ({
 // below never jump. On phones each slide's author sits right under its own
 // quote, so the spare height of a short slide gathers at the bottom of the
 // cell instead of above the author.
-function QuoteStack({ testimonials, activeIndex }) {
+function QuoteStack({
+  testimonials,
+  activeIndex,
+}: {
+  testimonials: Testimonial[];
+  activeIndex: number;
+}) {
   return (
     <div className="grid">
       {testimonials.map((t, i) => {
@@ -281,7 +318,15 @@ function QuoteStack({ testimonials, activeIndex }) {
 // Fades a slide's content up when that slide becomes active (the switch from
 // div to motion.div remounts it, so the fade replays). Inactive slides render
 // the same content without the animation, so the stack still sizes to them.
-function SlideFade({ isActive, className = "", children }) {
+function SlideFade({
+  isActive,
+  className = "",
+  children,
+}: {
+  isActive: boolean;
+  className?: string;
+  children: ReactNode;
+}) {
   return isActive ? (
     <motion.div {...fadeUp} className={className}>
       {children}
@@ -313,12 +358,21 @@ function useSwipe(step: (by: number) => void) {
   };
 }
 
+// What V3Testimonials hands whichever layout it renders.
+type LayoutProps = {
+  testimonials: Testimonial[];
+  activeIndex: number;
+  step: (by: number) => void;
+  goTo: (index: number) => void;
+  swipe?: ReturnType<typeof useSwipe>;
+};
+
 // Default layout: quote top-left, attribution bottom-left, portrait top-right,
 // arrows bottom-right. No case study: those belong to the case study layout,
 // so a saved Case Study URL is ignored here. On phones the portrait sits
 // above the quote and the attribution follows its quote, with the controls
 // last.
-function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
+function QuoteLayout({ testimonials, activeIndex, step, swipe }: LayoutProps) {
   const current = testimonials[activeIndex];
   return (
     <div
@@ -365,7 +419,7 @@ function QuoteLayout({ testimonials, activeIndex, step, swipe }) {
 // the photo, and the AI page's own card surface in dark mode (near-black with
 // a fine edge). The whole card links to the case study. No photo, no logo:
 // the logo lives on the photo.
-function CaseStudyCard({ testimonial: t }) {
+function CaseStudyCard({ testimonial: t }: { testimonial: Testimonial }) {
   // Without its own title the card is titled with the company name, so the
   // logo turns decorative rather than read the name out twice.
   const titledByCompany = !t?.caseStudyTitle;
@@ -419,7 +473,15 @@ const storyColumn = (besideCard: boolean) =>
 
 // The headline, then the quote on the section background, marked by the SSW
 // red bar, with its author underneath.
-function CaseStudyStory({ testimonial: t, isActive, hasControls }) {
+function CaseStudyStory({
+  testimonial: t,
+  isActive,
+  hasControls,
+}: {
+  testimonial: Testimonial;
+  isActive: boolean;
+  hasControls: boolean;
+}) {
   return (
     <div
       className={cn(
@@ -480,7 +542,13 @@ function CaseStudyStory({ testimonial: t, isActive, hasControls }) {
 // Every slide is a subgrid laid over the same cells, so the rows size to the
 // tallest slide: changing slide never changes the block height or moves the
 // controls. The controls are shared, outside the slides.
-function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
+function CaseStudyLayout({
+  testimonials,
+  activeIndex,
+  step,
+  goTo,
+  swipe,
+}: LayoutProps) {
   const hasControls = testimonials.length > 1;
   // The controls sit by the whole block, not the active slide, so a slide
   // without a case study doesn't move them.
@@ -497,9 +565,7 @@ function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
             key={`v3-case-study-slide-${i}`}
             {...slideProps(
               isActive,
-              cn(
-                // Each span comes before its start: a span resets the start
-                // in CSS, and cn() drops a start that comes before a span.
+              clsx(
                 hasControls ? "row-span-3" : "row-span-2",
                 "col-start-1 row-start-1 grid grid-cols-subgrid grid-rows-subgrid xl:col-span-2 xl:col-start-1 xl:row-span-2 xl:row-start-1"
               )
@@ -567,7 +633,7 @@ function CaseStudyLayout({ testimonials, activeIndex, step, goTo, swipe }) {
   );
 }
 
-export function V3Testimonials({ data }) {
+export function V3Testimonials({ data }: { data: TestimonialsData }) {
   const testimonials = data?.testimonials ?? [];
   const [active, setActive] = useState(0);
 
