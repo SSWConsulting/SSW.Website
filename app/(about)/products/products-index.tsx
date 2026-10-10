@@ -11,6 +11,8 @@ import type { ProductsIndexQueryQuery } from "@/tina/types";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { tinaField } from "tinacms/dist/react";
 
+const CONSULTING = "consulting";
+
 const BRAND_CARD_CONFIGS = {
   tinacms: TINA_CARD_CONFIG,
   yakshaver: YAKSHAVER_CARD_CONFIG,
@@ -33,9 +35,19 @@ export default function ProductsIndexContent({
   const productsIndex = data.productsIndex;
 
   // Stable sort: pins brand cards first, otherwise preserves CMS order.
-  const products = [...(productsIndex?.productsList ?? [])].sort(
+  const allProducts = [...(productsIndex?.productsList ?? [])].sort(
     (a, b) =>
       Number(!!brandConfigFor(b?.name)) - Number(!!brandConfigFor(a?.name))
+  );
+
+  // Two sections, so readers can tell what they can buy off the shelf from
+  // what SSW builds and customises for them. Anything without a category
+  // counts as a product, which is what a new CMS entry defaults to.
+  const products = allProducts.filter(
+    (product) => product?.category !== CONSULTING
+  );
+  const consulting = allProducts.filter(
+    (product) => product?.category === CONSULTING
   );
 
   return (
@@ -62,25 +74,64 @@ export default function ProductsIndexContent({
             {productsIndex.title}
           </h1>
         )}
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4">
-          {products.map((product, index) => {
-            const key = `${product?.name ?? "product"}-${index}`;
-            const brandConfig = brandConfigFor(product?.name);
-
-            // col-span-2 only from md up: at the base 1-column tier it would
-            // add an implicit second column and cause horizontal scroll.
-            if (brandConfig) {
-              return (
-                <div key={key} className="md:col-span-2">
-                  <BrandProductCard product={product} config={brandConfig} />
-                </div>
-              );
-            }
-
-            return <ProductCard key={key} product={product} />;
-          })}
-        </div>
+        <ProductSection products={products} />
+        {consulting.length > 0 && (
+          <ProductSection
+            heading="Consulting offerings"
+            description="Built and customised by SSW for your business."
+            products={consulting}
+          />
+        )}
       </Container>
     </HomeThemeShell>
+  );
+}
+
+// One grid of cards, optionally under a heading. The products section runs
+// without one, since the page title already names it.
+function ProductSection({
+  heading,
+  description,
+  products,
+}: {
+  heading?: string;
+  description?: string;
+  products: ProductsIndexQueryQuery["productsIndex"]["productsList"];
+}) {
+  if (!products?.length) return null;
+
+  return (
+    <section className="mt-8">
+      {heading && (
+        <h2 className="m-0 p-0 text-lg font-semibold text-foreground xl:text-xl">
+          {heading}
+        </h2>
+      )}
+      {description && (
+        <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+      )}
+      <div
+        className={`grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 ${
+          heading ? "mt-4" : ""
+        }`}
+      >
+        {products.map((product, index) => {
+          const key = `${product?.name ?? "product"}-${index}`;
+          const brandConfig = brandConfigFor(product?.name);
+
+          // col-span-2 only from md up: at the base 1-column tier it would
+          // add an implicit second column and cause horizontal scroll.
+          if (brandConfig) {
+            return (
+              <div key={key} className="md:col-span-2">
+                <BrandProductCard product={product} config={brandConfig} />
+              </div>
+            );
+          }
+
+          return <ProductCard key={key} product={product} />;
+        })}
+      </div>
+    </section>
   );
 }
