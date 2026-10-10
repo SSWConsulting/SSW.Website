@@ -130,6 +130,7 @@ jobs:
           build-args: |
             NODE_VERSION=${{ steps.node-version.outputs.version }}
             NODE_OPTIONS=--max_old_space_size=8192
+            TINA_SKIP_CLOUD_CHECKS=${{ !inputs.push }}
             NEXT_PUBLIC_GOOGLE_GTM_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
             NEXT_PUBLIC_GITHUB_RUN_DATE=${{ steps.date.outputs.date }}
             NEXT_PUBLIC_GITHUB_RUN_ID=${{ github.run_id }}

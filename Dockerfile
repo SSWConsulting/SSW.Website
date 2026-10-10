@@ -50,6 +50,7 @@ ARG NEXT_PUBLIC_TINA_CLIENT_ID
 ENV NEXT_PUBLIC_TINA_CLIENT_ID=$NEXT_PUBLIC_TINA_CLIENT_ID
 ARG NEXT_PUBLIC_TINA_BRANCH
 ENV NEXT_PUBLIC_TINA_BRANCH=$NEXT_PUBLIC_TINA_BRANCH
+ARG TINA_SKIP_CLOUD_CHECKS=false
 ARG KEY_VAULT
 ENV KEY_VAULT=$KEY_VAULT
 ARG NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING
@@ -73,9 +74,11 @@ RUN --mount=type=secret,id=TINA_TOKEN \
   export TINA_TOKEN="$(cat /run/secrets/TINA_TOKEN)" && \
   export TINA_SEARCH_TOKEN="$(cat /run/secrets/TINA_SEARCH_TOKEN)" && \
   export YOUTUBE_PRIVATE_KEY="$(cat /run/secrets/YOUTUBE_PRIVATE_KEY)" && \
-  if [ -f yarn.lock ]; then yarn run build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run build; \
+  build_script=build && \
+  if [ "$TINA_SKIP_CLOUD_CHECKS" = "true" ]; then build_script=build:ci; fi && \
+  if [ -f yarn.lock ]; then yarn run "$build_script"; \
+  elif [ -f package-lock.json ]; then npm run "$build_script"; \
+  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run "$build_script"; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
