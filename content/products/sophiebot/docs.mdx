@@ -12,7 +12,7 @@ seo:
 
 When you connect your device to SSW WIFI (or any Wi-Fi managed by a Unifi controller), make sure the private address is disabled.
 
-If the private address is enabled, the controller assigns and records a different MAC address each time the device connects. That causes a mismatch in SophieBot's database between the employee's registered device and presence detection.
+If the private address is enabled, the controller records the randomized MAC address instead of the device's registered hardware address. That causes a mismatch in SophieBot's database between the employee's registered device and presence detection.
 
 <CustomImage src="/images/products/sophiebot/private-address-disabled.png" altText="iPhone Wi-Fi settings with the Private Address toggle switched off" height={1280} width={719} caption="Figure: Disable Private Address" />
 
