@@ -84,7 +84,9 @@ export const productsSchema: Collection = {
   ui: {
     ...kebabCaseFilename,
     router: ({ document }) => {
-      return `/products/${document._sys.filename}`;
+      // Breadcrumbs, not filename, so a nested page (content/products/
+      // sophiebot/try.mdx) routes to /products/sophiebot/try.
+      return `/products/${document._sys.breadcrumbs.join("/")}`;
     },
   },
   fields: [
