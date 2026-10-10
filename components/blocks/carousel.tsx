@@ -93,7 +93,7 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
     >
       <Image
         src={imgSrc ?? ""}
-        alt={label}
+        alt={showCaptions ? "" : label}
         height={388}
         width={1080}
         sizes="(max-width: 640px) 50vw, 100vw"
