@@ -107,7 +107,7 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
           showCaptions
             ? // `!static` drops the library's absolute offsets (left: 50%,
               // bottom: 40px) that would otherwise shift the caption off-screen.
-              "legend !static !m-0 !w-full !translate-x-0 !rounded-none !bg-transparent !p-2 !text-sm !font-bold !text-current !opacity-100"
+              "legend !static !m-0 !w-full !translate-x-0 !rounded-none !bg-transparent !px-2 !pb-14 !pt-2 !text-sm !font-bold !text-current !opacity-100"
             : "legend sr-only"
         }
       >
