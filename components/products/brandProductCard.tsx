@@ -3,10 +3,12 @@ import type { ProductsIndexProductsList } from "@/tina/types";
 import Image from "next/image";
 import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
+import { ArrowCircle } from "../blocks/v3/shared/arrowCircle";
 import {
   brandCardPadding,
+  cardFooter,
   cardShell,
-  learnMoreChip,
+  destinationLabel,
   productTagChip,
   tinaTagChip,
   visibleTags,
@@ -29,6 +31,10 @@ export type BrandCardConfig = {
   descriptionClassName: string;
   tagsListClassName: string;
   tagChipClassName: string;
+  // The footer sits on the brand surface, not the page background, so its
+  // divider and destination text are coloured per card.
+  footerClassName: string;
+  footerLabelClassName: string;
 };
 
 type BrandProductCardProps = {
@@ -41,6 +47,7 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
   config,
 }) => {
   const tags = visibleTags(product.tags);
+  const domain = destinationLabel(product.url);
 
   const content = (
     <>
@@ -111,10 +118,25 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
         content
       )}
 
-      <div className="relative flex items-center pt-3">
-        {/* Span, not a button or nested link: the card itself is already the
-            link, and both are invalid nested inside an <a>. */}
-        <span className={learnMoreChip}>Learn More</span>
+      {/* Same footer as the standard product cards - destination on the left,
+          arrow on the right - so every card on the page closes the same way. */}
+      <div className={cn(cardFooter, "relative", config.footerClassName)}>
+        {domain && (
+          <span
+            className={cn(
+              "min-w-0 truncate text-sm",
+              config.footerLabelClassName
+            )}
+          >
+            {domain}
+          </span>
+        )}
+        <ArrowCircle
+          // A white circle, not the page-themed one: these surfaces are always
+          // dark, so the light-mode treatment would vanish into them.
+          className="size-9 flex-none bg-white p-2 text-gray-900"
+          iconClassName="size-3.5"
+        />
       </div>
     </ProductCardShell>
   );
@@ -143,6 +165,8 @@ export const TINA_CARD_CONFIG: BrandCardConfig = {
     "m-0 max-w-2xl p-0 text-sm font-light leading-snug text-white",
   tagsListClassName: "m-0 flex list-none flex-wrap gap-1.5 p-0",
   tagChipClassName: tinaTagChip,
+  footerClassName: "border-white/30",
+  footerLabelClassName: "text-white/80",
 };
 
 export const YAKSHAVER_CARD_CONFIG: BrandCardConfig = {
@@ -164,4 +188,6 @@ export const YAKSHAVER_CARD_CONFIG: BrandCardConfig = {
     "relative m-0 p-0 text-sm font-light leading-snug text-muted-foreground",
   tagsListClassName: "relative m-0 flex list-none flex-wrap gap-1.5 p-0",
   tagChipClassName: productTagChip,
+  footerClassName: "border-hairline",
+  footerLabelClassName: "text-muted-foreground",
 };

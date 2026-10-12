@@ -27,6 +27,13 @@ export const learnMoreChip = [
   "self-start",
 ].join(" ");
 
+// The row that closes every product card: destination on the left, arrow on
+// the right. Colour comes from the call site, since brand cards sit on their
+// own surface rather than the page background.
+export const cardFooter = [
+  "mt-auto flex items-center justify-between gap-3 border-t-0.75 pt-3",
+].join(" ");
+
 const tagChipBase = [
   "flex-none rounded border-0.75 px-2 py-1",
   "text-xs font-medium leading-none",
