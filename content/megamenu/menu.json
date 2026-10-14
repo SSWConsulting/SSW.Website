@@ -176,7 +176,7 @@
                 },
                 {
                   "name": "SophieHub",
-                  "url": "https://sswsophie.com",
+                  "url": "/products/sophiehub",
                   "description": "A Smart Environment System which shows user specific information based on the user",
                   "iconImg": "/images/megamenu-icons/SophieHub.svg",
                   "iconImgDarkMode": "/images/megamenu-icons/SophieHub-darkmode.svg"
