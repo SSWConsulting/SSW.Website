@@ -3,6 +3,7 @@ import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
+import AosLoader from "../util/aosLoader";
 import { TechnologyCardProps } from "./technologyCardTypes";
 
 const Image = dynamic(() => import("next/image"));
@@ -14,6 +15,7 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
       className="mx-3.5 mb-15 mt-5 flex h-full flex-col border-b-2 border-solid border-sswRed bg-gray-75 px-8 py-11"
       data-aos="flip-left"
     >
+      <AosLoader />
       {thumbnail ? (
         <figure
           className="relative h-24 px-8"

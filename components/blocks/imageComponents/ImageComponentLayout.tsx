@@ -1,7 +1,6 @@
 "use client";
 import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
-import "aos/dist/aos.css";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { tinaField } from "tinacms/dist/react";
