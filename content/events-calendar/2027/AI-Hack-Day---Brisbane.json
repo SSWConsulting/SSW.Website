@@ -1,0 +1,25 @@
+{
+  "title": "AI Hack Day - Brisbane",
+  "slug": "ai-hack-day-brisbane",
+  "url": "https://www.eventbrite.com.au/e/ai-hack-day-brisbane-tickets-2001444609705",
+  "websiteUrl": "https://aihackday.com/",
+  "thumbnail": "/images/events/AIHackDaySSWEvents.jpg",
+  "thumbnailDescription": "AI Hack Day",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/adam-cogan.mdx",
+      "role": "Event organizer"
+    }
+  ],
+  "startDateTime": "2027-08-13T23:00:00.000Z",
+  "endDateTime": "2027-08-14T05:00:00.000Z",
+  "calendarType": "Hack Days",
+  "city": "Brisbane",
+  "venue": "SSW Brisbane",
+  "category": "Artificial Intelligence",
+  "abstract": "AI Hack Days are community-run events for developers or people who want to learn AI for free.",
+  "description": "AI Hack Days are community-run events for developers or people who want to learn AI for free.\n\nThere will be something for everyone. Experienced AI developers can share ideas with other experienced developers. If you are a beginner, there is plenty to learn on the day.\n\nBring a laptop to join the hack. If you want to build something yourself, you will need some of the Microsoft AI and/or Machine Learning (ML) tools already set up and installed. Some learning before the day can help if you have never tried AI or ML, but all experience levels are welcome.\n\n### Location\n\nLevel 1, 471 Adelaide Street, Brisbane City QLD 4000\n",
+  "liveStreamDelayMinutes": 30,
+  "hostedAtSsw": true,
+  "enabled": true
+}
