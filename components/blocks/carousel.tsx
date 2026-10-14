@@ -62,6 +62,7 @@ export const Carousel = ({ data }) => {
                 imgSrc={item.imgSrc}
                 label={item.label}
                 index={index}
+                showCaptions={data.showCaptions}
                 carouselSchema={item.carouselSchema}
               />
             ))}
@@ -75,11 +76,13 @@ type CarouselItemImageProps = {
   imgSrc: string;
   label: string;
   index: number;
+  /** Renders the label as a visible caption instead of screen-reader-only text. */
+  showCaptions?: boolean;
   carouselSchema: Record<string, unknown>;
 };
 
 const CarouselItemImage = (props: CarouselItemImageProps) => {
-  const { imgSrc, label, index, carouselSchema } = props;
+  const { imgSrc, label, index, showCaptions, carouselSchema } = props;
 
   return (
     <div
@@ -90,14 +93,26 @@ const CarouselItemImage = (props: CarouselItemImageProps) => {
     >
       <Image
         src={imgSrc ?? ""}
-        alt={label}
+        alt={showCaptions ? "" : label}
         height={388}
         width={1080}
         sizes="(max-width: 640px) 50vw, 100vw"
         priority={index === 0}
       />
-      {/* `legend` required so that the carousel works properly */}
-      <p className="legend sr-only">{label}</p>
+      {/* `legend` required so that the carousel works properly. Labels read as
+          alt text on most carousels, so they stay screen-reader-only unless a
+          call site opts in to showing them as captions. */}
+      <p
+        className={
+          showCaptions
+            ? // `!static` drops the library's absolute offsets (left: 50%,
+              // bottom: 40px) that would otherwise shift the caption off-screen.
+              "legend !static !m-0 !w-full !translate-x-0 !rounded-none !bg-transparent !px-2 !pb-14 !pt-2 !text-sm !font-bold !text-current !opacity-100"
+            : "legend sr-only"
+        }
+      >
+        {label}
+      </p>
     </div>
   );
 };
