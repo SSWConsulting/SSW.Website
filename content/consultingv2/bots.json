@@ -244,8 +244,8 @@
       },
       "buttons": [
         {
-          "buttonText": "See SSW Sophie AI",
-          "buttonLink": "https://sswsophie.com/",
+          "buttonText": "See SSW SophieBot",
+          "buttonLink": "/products/sophiebot",
           "colour": 0
         }
       ],
