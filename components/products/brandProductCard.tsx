@@ -40,11 +40,14 @@ export type BrandCardConfig = {
 type BrandProductCardProps = {
   product: ProductsIndexProductsList;
   config: BrandCardConfig;
+  /** Drops to h3 when the card sits under a section heading. */
+  headingLevel?: "h2" | "h3";
 };
 
 export const BrandProductCard: FC<BrandProductCardProps> = ({
   product,
   config,
+  headingLevel: Heading = "h2",
 }) => {
   const tags = visibleTags(product.tags);
   const domain = destinationLabel(product.url);
@@ -61,9 +64,9 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
         className={config.lockup.className}
       />
       {/* The lockup is an image, so this carries the name for a11y/SEO. */}
-      <h2 className="sr-only" data-tina-field={tinaField(product, "name")}>
+      <Heading className="sr-only" data-tina-field={tinaField(product, "name")}>
         {product.name}
-      </h2>
+      </Heading>
       {product.description && (
         <p
           className={config.descriptionClassName}

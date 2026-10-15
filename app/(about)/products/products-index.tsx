@@ -100,6 +100,10 @@ function ProductSection({
 }) {
   if (!products?.length) return null;
 
+  // Cards sit a level below the section heading, so the outline stays
+  // readable: h1 page title > h2 section > h3 card.
+  const cardHeading = heading ? "h3" : "h2";
+
   return (
     <section className="mt-8">
       {heading && (
@@ -124,12 +128,22 @@ function ProductSection({
           if (brandConfig) {
             return (
               <div key={key} className="md:col-span-2">
-                <BrandProductCard product={product} config={brandConfig} />
+                <BrandProductCard
+                  product={product}
+                  config={brandConfig}
+                  headingLevel={cardHeading}
+                />
               </div>
             );
           }
 
-          return <ProductCard key={key} product={product} />;
+          return (
+            <ProductCard
+              key={key}
+              product={product}
+              headingLevel={cardHeading}
+            />
+          );
         })}
       </div>
     </section>
