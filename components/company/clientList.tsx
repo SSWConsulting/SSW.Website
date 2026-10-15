@@ -18,10 +18,27 @@ export type ClientDisplay = {
   logoUrl?: string;
   content: TinaMarkdownContent;
   caseStudyUrl?: string;
+  // The story card's editorial copy and media. All optional: a client
+  // without them falls back to its name, an excerpt of its content and its
+  // logo.
+  headline?: string;
+  summary?: string;
+  service?: string;
+  image?: string;
+  featured?: boolean;
   categories: {
     category: Category;
   }[];
 };
+
+// The kinds of work a client story can be filtered by on /company/clients.
+export const CLIENT_SERVICES = [
+  "AI development",
+  "Business applications",
+  "Cloud & DevOps",
+  "Mobile development",
+  "Web development",
+];
 
 type ClientListProps = {
   data: {
@@ -122,6 +139,40 @@ export const clientListSchema: Template = {
           type: "string",
           name: "caseStudyUrl",
           label: "Case study URL",
+        },
+        {
+          type: "boolean",
+          name: "featured",
+          label: "Featured",
+          description: "Featured stories are listed first.",
+        },
+        {
+          type: "string",
+          name: "headline",
+          label: "Story headline",
+          description:
+            "The card's headline, e.g. 'Making hearing care easier to access.' Falls back to the client name.",
+        },
+        {
+          type: "string",
+          name: "summary",
+          label: "Story summary",
+          description:
+            "One or two sentences for the card. Falls back to the start of the content.",
+          ui: { component: "textarea" },
+        },
+        {
+          type: "string",
+          name: "service",
+          label: "Service",
+          options: CLIENT_SERVICES,
+        },
+        {
+          type: "image",
+          name: "image",
+          label: "Story image",
+          description:
+            "A landscape photo or screenshot for the card. Falls back to the logo.",
         },
         {
           type: "object",
