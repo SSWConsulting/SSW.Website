@@ -123,7 +123,14 @@ export const BrandProductCard: FC<BrandProductCardProps> = ({
 
       {/* Same footer as the standard product cards - destination on the left,
           arrow on the right - so every card on the page closes the same way. */}
-      <div className={cn(cardFooter, "relative", config.footerClassName)}>
+      <div
+        className={cn(
+          cardFooter,
+          "relative",
+          config.footerClassName,
+          !domain && "justify-end"
+        )}
+      >
         {domain && (
           <span
             className={cn(

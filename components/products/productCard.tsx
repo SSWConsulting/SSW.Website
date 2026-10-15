@@ -84,7 +84,9 @@ export const ProductCard: FC<ProductCardProps> = ({
         </ul>
       )}
 
-      <div className={cn(cardFooter, "border-hairline")}>
+      <div
+        className={cn(cardFooter, "border-hairline", !domain && "justify-end")}
+      >
         {domain && (
           <span className="min-w-0 truncate text-sm text-muted-foreground">
             {domain}
