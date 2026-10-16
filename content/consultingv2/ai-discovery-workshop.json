@@ -100,20 +100,20 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "A **Collaborative Discovery Process** That Works",
+      "heading": "Start with your business, not the technology",
       "isH1": false,
       "description": "",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Why Businesses Struggle with AI",
-            "description": "Every business leader knows AI is transformative, but we often hear: \"We don't know where to start”, “We lack internal expertise”, “We're worried about wasting money”, “We need a strategy, not just tools”.",
+            "heading": "Find the problems worth solving",
+            "description": "Your team knows where work gets held up: repetitive administration, information that is hard to find, slow approvals and manual reporting. We work with the people closest to these tasks to understand the problems, their impact and what a useful improvement would look like.",
             "icon": "BiCloudLightning"
           },
           {
-            "heading": "Improving your Workflows",
-            "description": "We don't just talk theory; we embed ourselves in your business… a hands-on process led by senior AI consultants and developers.",
+            "heading": "Choose the simplest effective solution",
+            "description": "The right answer may be a process change, better use of software you already own, automation or AI. We assess the options against business value, delivery effort, security and ongoing cost before recommending what to pursue.",
             "icon": "BiBulb"
           }
         ]
@@ -129,25 +129,25 @@
         "labelText": "Process",
         "icon": "BiDirections"
       },
-      "heading": "What to Expect in **3 Days**",
+      "heading": "How the **three-day workshop** works",
       "isH1": false,
       "description": "",
       "featureColumns": {
         "twoColumns": false,
         "features": [
           {
-            "heading": "Day 1 - Explore & Ideate",
-            "description": "In-depth interviews with stakeholders; understand pain points and your environment.",
+            "heading": "Day 1: Understand the business",
+            "description": "Meet the people closest to the work, review representative tasks and documents, and identify bottlenecks. Understand your existing systems, data, licences and current AI usage.",
             "icon": "BiBookOpen"
           },
           {
-            "heading": "Day 2 - Analysis & Feasibility",
-            "description": "Map pain points to AI solutions: assess data readiness, integration complexity and feasibility.",
+            "heading": "Day 2: Assess the opportunities",
+            "description": "Evaluate where process improvements, existing software, automation or AI could help. Assess indicative benefits, effort, data readiness, security and licensing requirements. Shortlist suitable pilot opportunities.",
             "icon": "BiMapPin"
           },
           {
-            "heading": "Day 3 - Roadmap & Next Steps",
-            "description": "Prioritize initiatives, build implementation roadmap and timeline, present recommendations to align team.",
+            "heading": "Day 3: Prioritise and agree next steps",
+            "description": "Present a prioritised roadmap, recommended pilots and practical adoption priorities. Discuss proposed owners, success measures and next steps with your decision-makers.",
             "icon": "BiBulb"
           }
         ]
@@ -161,35 +161,35 @@
       "isStacked": true,
       "heading": "What You’ll Walk Away With",
       "isH1": false,
-      "body": "By the end, you'll have a prioritized list of AI projects, and a step-by-step plan to implement them.",
+      "body": "You’ll receive a practical assessment and prioritised plan to help you decide what to pursue, what to defer and what needs further investigation. Your proposal defines the business areas covered and the depth of each deliverable.\n\nDiscovery provides the assessment and plan. Pilot delivery, implementation and ongoing support are scoped separately unless explicitly included in your proposal.",
       "cardStyle": 0,
       "cards": [
         {
           "guid": "4qkep6",
-          "altText": "Easy Wins",
+          "altText": "Current-state assessment",
           "icon": "info",
-          "heading": "1️⃣ Easy Wins",
-          "description": "We'll map out the low effort, high impact integrations for routine tasks. Expect immediate results where we see the opportunities.",
+          "heading": "Current-state assessment",
+          "description": "A summary of how work runs across the agreed business areas, including the main bottlenecks, existing capabilities and constraints. We consider people, processes, systems and data together.",
           "embeddedButton": {
             "buttonText": ""
           }
         },
         {
           "guid": "4ob77n",
-          "altText": "Medium Projects",
+          "altText": "Opportunity register",
           "icon": "info",
-          "heading": "2️⃣ Medium Projects",
-          "description": "Projects that require some integration or light development work, typically connect AI into your existing systems, automate multi-step workflows, or enhance internal tools. Expect meaningful efficiency gains and measurable ROI within weeks.",
+          "heading": "Opportunity register",
+          "description": "A structured list of improvement opportunities with indicative benefits, effort, dependencies and assumptions. We distinguish time released for other work from actual cost reductions and identify where estimates need further validation.",
           "embeddedButton": {
             "buttonText": ""
           }
         },
         {
           "guid": "tydp",
-          "altText": "Transformational Ideas",
+          "altText": "Roadmap and pilot recommendations",
           "icon": "info",
-          "heading": "3️⃣ Transformational Ideas",
-          "description": "High-impact initiatives that reshape how your business operates. These are end-to-end AI solutions, new product capabilities, or major process redesigns that unlock entirely new value. These projects require deeper data work and engineering, but deliver genuine competitive advantage.",
+          "heading": "Roadmap and pilot recommendations",
+          "description": "Recommended priorities covering quick wins, medium-term initiatives and longer-term improvements. For shortlisted pilots, we outline the intended users, proposed owner, scope, dependencies and measures of success.",
           "embeddedButton": {
             "buttonText": ""
           }
