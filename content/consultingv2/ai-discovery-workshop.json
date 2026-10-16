@@ -250,24 +250,32 @@
       "body": "",
       "accordionItems": [
         {
-          "label": "Is this an AI training workshop or a consulting engagement?",
-          "content": "This is a strategic consulting engagement, not a training course. Instead of teaching generic AI tools, we work with your team to map your processes, identify specific AI opportunities, and design a practical implementation roadmap tailored to your business.\n"
+          "label": "Is this a consulting engagement or an AI training workshop?",
+          "content": "This is a consulting engagement focused on your business processes, opportunities and priorities. We assess where improvements could deliver value and recommend practical next steps. We may identify training needs or illustrate an opportunity with an example, but a full training programme is separately scoped.\n"
         },
         {
-          "label": "Who should attend the 3-day workshop?",
-          "content": "We recommend a mix of business and technical stakeholders, for example:\n\n* An executive sponsor (e.g. CEO, COO, CTO)\n* Key business process owners (Operations, Sales, HR, Finance, etc.)\n* Someone who understands your current systems and data (IT/architect)\n* Individuals experiencing day-to-day pains with cumbersome processes\n\nIdeally 4–8 people who can commit for most of the 3 days.\n"
+          "label": "Who should take part?",
+          "content": "We recommend a business sponsor, representatives who understand the selected workflows, and your IT team or provider. Include people who use AI regularly and people who have not yet found it useful. We agree the participants and time required before the engagement.\n"
         },
         {
-          "label": "Do we need any AI knowledge or preparation beforehand?",
-          "content": "No AI expertise is required. You bring knowledge of your business, processes, and pain points – we bring the AI experience. Before the workshop we’ll share a short checklist (key systems, current pain points, any existing AI tools), but there’s no heavy pre-work.\n"
+          "label": "What preparation is needed?",
+          "content": "You do not need prior AI expertise. We will ask for an overview of your priorities, systems and licences, along with representative documents and any relevant usage information. We agree how information will be shared and which stakeholders need to attend.\n"
         },
         {
-          "label": "What do we actually get at the end of the 3 days?",
-          "content": "You’ll walk away with a concrete AI strategy pack, typically including:\n\n* A prioritized list of AI use cases for your business\n* Quick-win recommendations using out-of-the-box tools\n* High-level designs for any proposed custom solutions\n* A phased implementation roadmap with effort/complexity indicators\n* Clear next steps and options for implementation\n"
+          "label": "What will we receive?",
+          "content": "Your proposal defines the deliverables and their depth. These typically include a current-state assessment, an opportunity register, a prioritised roadmap, pilot recommendations and adoption priorities. We present the findings to your stakeholders so you can decide what to do next.\n"
         },
         {
-          "label": "What happens after the workshop? Do we have to use SSW for implementation?",
-          "content": "You have complete flexibility. You can:\n\n* Execute the roadmap with your internal team\n* Engage SSW to help design and build the AI solutions\n* Use a hybrid approach, where we tackle the complex pieces and your team handles simpler items\n* The deliverables are yours to use however you choose, with no lock-in\n"
+          "label": "What happens after discovery?",
+          "content": "You decide which recommendations to pursue and who will deliver them. SSW can separately scope pilot delivery, implementation, training or ongoing support. There is no obligation to engage SSW for the next phase.\n"
+        },
+        {
+          "label": "Can we use our existing software and licences?",
+          "content": "We assess existing capabilities first. For recommended pilots, we check the relevant licensing assumptions and identify any additional usage charges, infrastructure or support costs. Owning an AI or automation product does not necessarily cover every proposed use.\n"
+        },
+        {
+          "label": "How do you address security and reliability?",
+          "content": "We work with your IT team or provider to assess relevant data access, permissions and security requirements. Pilot recommendations identify what the solution may do, where human approval is required and how its outputs should be evaluated. A detailed security audit is separately scoped where needed.\n"
         }
       ],
       "isMultipleOpen": true,
