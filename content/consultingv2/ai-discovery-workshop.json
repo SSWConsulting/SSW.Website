@@ -317,7 +317,7 @@
       "isStacked": true,
       "heading": "Built on Real-World AI Delivery",
       "isH1": false,
-      "body": "SSW isn’t guessing. We’ve been building and fixing AI systems for years, across industries, tech stacks, and use cases. This workshop distills the lessons that save teams time, money, and frustration.",
+      "body": "Our discovery work connects business priorities with the practical requirements of delivery. We assess the data, integrations, access controls, operating costs and adoption needs that will influence whether a recommendation succeeds in everyday use.",
       "buttons": [
         {
           "buttonText": "Rules to Better AI Development",
@@ -327,50 +327,6 @@
       ],
       "cardStyle": 1,
       "cards": [
-        {
-          "guid": "uh77mq",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
-          "altText": "DevTools",
-          "chips": [
-            {
-              "chipText": "DevTools",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "18 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "",
-          "description": "SSW’s Gert Marx joins Chris Simon at NDC Melbourne to break down the latest on Contextive, the open-source tool helping devs write code that better aligns with business needs.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "itqfs7",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
-          "altText": "Insights",
-          "chips": [
-            {
-              "chipText": "Insights",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "11 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "",
-          "description": "At NDC, Ulysses Maclaren talks with Richard Campbell about AI’s growing energy demands, Microsoft’s nuclear plans, and the massive infrastructure shifts behind our data-hungry future.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
         {
           "guid": "2eb7hu",
           "mediaType": "youtube",
@@ -403,15 +359,15 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Equip your team with essential **AI skills**",
+      "heading": "Find the right next step for your business",
       "isH1": false,
-      "description": "",
+      "description": "Tell us where work gets held up and what you want to improve. We’ll help define the right discovery scope.\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Book Now",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
