@@ -385,6 +385,31 @@
         "bleed": false
       },
       "_template": "spacer"
+    },
+    {
+      "topLabel": {
+        "labelText": "People and adoption"
+      },
+      "heading": "Help your people put the improvements to work",
+      "isH1": false,
+      "description": "Useful technology needs people who know when and how to use it. We assess adoption needs alongside the technical opportunities and recommend learning based on the real tasks your team performs.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Develop internal AI champions",
+            "description": "Where appropriate, we recommend a small group of internal AI champions: trusted staff who understand the work and can help colleagues use approved tools effectively. The plan identifies their responsibilities, the time and manager support they need, and when to involve IT or specialist developers."
+          },
+          {
+            "heading": "Measure progress and support adoption",
+            "description": "We recommend how to measure progress through usage, work quality and business outcomes. The workshop identifies adoption priorities; training delivery and ongoing coaching are scoped separately."
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 4
+      },
+      "_template": "imageTextBlock"
     }
   ]
 }
