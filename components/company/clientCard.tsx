@@ -71,7 +71,7 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
   const actionClassName = cn(
     "unstyled mt-auto flex items-center justify-between gap-4 pt-6 text-left text-sm font-semibold text-foreground no-underline",
     // Stretched over the card; Tailwind's `after:` sets an empty content.
-    "after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-brand"
+    "after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-brand"
   );
   const actionLabel = (
     <>
