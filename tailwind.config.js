@@ -168,6 +168,13 @@ export default {
         "screen-4/6": "66.666667vh",
         "screen-5/6": "83.333333vh",
       },
+      maxHeight: {
+        // A sticky sidebar list that outgrows the viewport scrolls within
+        // what's left under the header (/company/clients' 20+ industries).
+        "sidebar-scroll": "calc(100vh - 13rem)",
+        // A dialog whose content scrolls inside it rather than the page.
+        dialog: "85vh",
+      },
       maxWidth: {
         media: "420px",
         "sidebar-card": "300px",

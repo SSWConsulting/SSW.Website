@@ -3,6 +3,7 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/components/blocks/techUpgrade";
+import { ClientsIndex } from "@/components/company/clientsIndex";
 import HistoryTimeline from "@/components/company/historyTimeline";
 import { RDPanel } from "@/components/company/rdPanel";
 import TestimonialPanel from "@/components/offices/testimonialPanel";
@@ -17,6 +18,19 @@ export default function CompanyPage({ tinaProps, props }) {
   const { data } = tinaProps;
 
   const { historyCardProps } = props;
+
+  const clientList = data.company._body?.find((block) =>
+    block?.__typename?.endsWith("ClientList")
+  );
+  if (clientList) {
+    return (
+      <ClientsIndex
+        company={data.company}
+        clientList={clientList}
+        relativePath={props.variables.relativePath}
+      />
+    );
+  }
 
   return (
     <>
