@@ -208,28 +208,28 @@
       },
       "heading": "At a Glance",
       "isH1": false,
-      "description": "A 3-day, on-site workshop to get to understand your businesses workflows, and identify where AI can drive value.\n",
+      "description": "A three-day, on-site discovery workshop focused on agreed business priorities. We assess where process improvements, automation and AI could deliver value, then recommend practical next steps.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
             "heading": "$12,000 + GST",
-            "description": "Includes two Senior AI Consultants on-site for three full days.",
+            "description": "Includes two senior consultants on-site for three full days. We agree the focus areas, required preparation and deliverables with you before the workshop.",
             "icon": "BiMoneyWithdraw"
           },
           {
-            "heading": "Deep Business Understanding",
-            "description": "We interview stakeholders, map processes, and analyse pain points across your teams.",
+            "heading": "Grounded in your business",
+            "description": "We examine real workflows with the people doing the work, using representative tasks and documents to identify useful improvements.",
             "icon": "BiSolidContact"
           },
           {
-            "heading": "Prioritized AI Roadmap",
-            "description": "A clear set of recommended initiatives ranked by value, feasibility, and ROI.",
+            "heading": "Clear priorities and next steps",
+            "description": "Recommendations ranked by expected value, effort, risk and readiness, with assumptions and dependencies made clear.",
             "icon": "BiSolidWrench"
           },
           {
-            "heading": "Tailored to Your Stack",
-            "description": "We identify solutions that fit your environment: Microsoft, AWS, OpenAI, Gemini, and more.",
+            "heading": "Make more of your existing investment",
+            "description": "We assess the software, licences and infrastructure you already have and identify where additional tools or expenditure may be needed.",
             "icon": "BiSolidCustomize"
           }
         ]
