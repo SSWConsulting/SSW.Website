@@ -47,7 +47,7 @@ export const ClientStoryDialog = ({
       onClose={onClose}
       // A click on the backdrop lands on the <dialog> itself.
       onClick={(event) => event.target === ref.current && onClose()}
-      className="m-auto max-h-dialog w-full max-w-3xl overflow-y-auto rounded-card border-0.75 border-hairline bg-background p-0 text-foreground backdrop:bg-black/60 backdrop:backdrop-blur-sm max-sm:mx-4"
+      className="m-auto max-h-dialog w-modal max-w-3xl overflow-y-auto rounded-card border-0.75 border-hairline bg-background p-0 text-foreground backdrop:bg-black/60 backdrop:backdrop-blur-sm"
     >
       {client && (
         <div className="relative p-6 md:p-8">
