@@ -194,12 +194,22 @@ export async function generateMetadata(
 
   if (calendarEvent) {
     const event = calendarEvent.props.data.eventsCalendar;
-    // Calendar events carry no seo block, so build the canonical here the way
-    // the branch above does - without one, Google picks its own.
+    // Calendar events carry no seo block, so build the canonical here -
+    // without one, Google picks its own.
+    //
+    // An event resolves from either its filename or its custom slug, so the
+    // requested path is not necessarily the preferred one. Build from the
+    // same segment generateStaticParams pre-renders, so both aliases name a
+    // single canonical URL instead of each claiming itself.
+    const year = event._sys?.breadcrumbs?.at(-2);
+    const segment = (event.slug || event._sys?.filename)?.toLowerCase();
+    const preferredPath =
+      year && segment ? `${year}/${segment}` : slug.join("/");
+
     return getSEOProps({
       title: event.title,
       description: event.abstract ?? undefined,
-      canonical: `${PROD_BASE_URL}/events/${slug.join("/")}`,
+      canonical: `${PROD_BASE_URL}/events/${preferredPath}`,
     });
   }
 
