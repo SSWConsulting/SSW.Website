@@ -2,6 +2,7 @@ import { TinaClient } from "@/app/tina-client";
 import ClientFallbackWithOption from "@/components/client-fallback-with-option";
 import { getVideoCardProps } from "@/helpers/events";
 import { getTestimonialsByCategories } from "@/helpers/getTestimonials";
+import { PROD_BASE_URL } from "@/components/util/constants";
 import { getSEOProps } from "@/lib/seo";
 import { EVENTS_MAX_SIZE_OVERRIDE } from "@/services/server/getEvents";
 import { fetchTinaData, FileType } from "@/services/tina/fetchTinaData";
@@ -193,10 +194,13 @@ export async function generateMetadata(
 
   if (calendarEvent) {
     const event = calendarEvent.props.data.eventsCalendar;
-    return {
+    // Calendar events carry no seo block, so build the canonical here the way
+    // the branch above does - without one, Google picks its own.
+    return getSEOProps({
       title: event.title,
       description: event.abstract ?? undefined,
-    };
+      canonical: `${PROD_BASE_URL}/events/${slug.join("/")}`,
+    });
   }
 
   return {};
