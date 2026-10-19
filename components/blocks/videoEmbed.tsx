@@ -39,7 +39,7 @@ export const VideoEmbed = ({ data }: VideoEmbedProps) => {
       {data.caption && (
         <figcaption
           className={classNames(
-            "mt-2 font-bold text-sswBlack",
+            "mt-2 font-bold text-inherit",
             !data.uncentre && "text-center"
           )}
         >
