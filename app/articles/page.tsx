@@ -1,3 +1,4 @@
+import { PROD_BASE_URL } from "@/components/util/constants";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import { dehydrate, DehydratedState, QueryClient } from "@tanstack/react-query";
@@ -14,7 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
     date: new Date().toISOString(),
   });
 
-  return getSEOProps(data.data.articlesIndex.seo);
+  // The index has no seo block in content, so getSEOProps would fall back to
+  // the site defaults and emit no canonical for this URL.
+  const seo = data.data.articlesIndex.seo;
+
+  return getSEOProps({
+    ...seo,
+    canonical: seo?.canonical || `${PROD_BASE_URL}/articles`,
+  });
 }
 
 async function getDehydratedClient(): Promise<DehydratedState> {
