@@ -106,6 +106,11 @@ const config = {
         destination: "https://yakshaver.ai",
         permanent: true,
       },
+      {
+        source: "/smashingbarrier",
+        destination: "/products/smashingbarrier",
+        permanent: true,
+      },
     ];
   },
   serverExternalPackages: ["applicationinsights"],
