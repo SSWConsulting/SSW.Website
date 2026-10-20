@@ -2,13 +2,13 @@
 
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { productTagChip } from "@/components/products/shared";
+import { clientIndustries } from "@/helpers/clients";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Suspense, useEffect, useRef } from "react";
 import { FiX } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import { clientIndustries } from "./clientCard";
 import type { ClientDisplay } from "./clientList";
 
 // Rich text on the themed pages. The typography plugin's DEFAULT hard-codes

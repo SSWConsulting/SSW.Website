@@ -143,8 +143,9 @@ export const clientListSchema: Template = {
         {
           type: "boolean",
           name: "featured",
-          label: "Featured",
-          description: "Featured stories are listed first.",
+          label: "Pin to top",
+          description:
+            "Pinned stories are listed first in the story grid. The story in the page's hero is chosen separately.",
         },
         {
           type: "string",

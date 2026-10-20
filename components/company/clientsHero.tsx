@@ -11,10 +11,12 @@ import { TinaMarkdown, type TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 export const CLIENT_STORIES_ID = "client-stories";
 
-// The story the hero spotlights. Its proof point comes from FPE's case study
-// (content/company/case-study/fpe.mdx): a chatbot "available at all times"
-// that answers "in any language".
-const FEATURED = {
+// The story the hero spotlights, set here rather than in Tina: its two-line
+// headline and proof point are written for this layout. (A client's "Pin to
+// top" field only orders the story grid.) The proof point comes from FPE's
+// case study (content/company/case-study/fpe.mdx): a chatbot "available at all
+// times" that answers "in any language".
+const HERO_STORY = {
   client: "French Payroll Expert",
   image: "/images/new-homepage-background-assets/fpe.png",
   headline: ["From an inbox of questions.", "To answers around the clock."],
@@ -101,12 +103,12 @@ export const ClientsHero = ({ company }: ClientsHeroProps) => (
 // proof point in a strip beneath.
 const FeaturedStory = () => (
   <CustomLink
-    href={FEATURED.link}
+    href={HERO_STORY.link}
     className="unstyled group block overflow-hidden rounded-card border-0.75 border-stroke-weak bg-card no-underline transition-colors duration-300 hover:border-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand motion-reduce:transition-none lg:col-span-5 dark:border-hairline dark:hover:border-brand"
   >
     <span className="relative block">
       <Image
-        src={FEATURED.image}
+        src={HERO_STORY.image}
         alt=""
         width={2555}
         height={1432}
@@ -120,27 +122,27 @@ const FeaturedStory = () => (
       />
       <span className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6 lg:p-8">
         <span className="text-xs font-semibold uppercase tracking-widest text-white/70">
-          Featured story / {FEATURED.client}
+          Featured story / {HERO_STORY.client}
         </span>
         <span className="text-2xl font-semibold leading-tight tracking-tight text-white lg:text-3xl">
-          {FEATURED.headline.map((line) => (
+          {HERO_STORY.headline.map((line) => (
             <span key={line} className="block">
               {line}
             </span>
           ))}
         </span>
         <span className="inline-flex items-center gap-2 text-sm font-semibold text-white">
-          Discover the {FEATURED.client} story
+          Discover the {HERO_STORY.client} story
           <FiArrowUpRight aria-hidden className="size-4" />
         </span>
       </span>
     </span>
     <span className="flex items-center gap-5 px-6 py-5 lg:px-8">
       <span className="text-4xl font-semibold leading-none tracking-tight text-foreground">
-        {FEATURED.stat}
+        {HERO_STORY.stat}
       </span>
       <span className="flex-1 text-sm leading-snug text-muted-foreground">
-        {FEATURED.statLabel.map((line) => (
+        {HERO_STORY.statLabel.map((line) => (
           <span key={line} className="block">
             {line}
           </span>

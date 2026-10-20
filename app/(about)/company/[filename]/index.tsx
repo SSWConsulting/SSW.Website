@@ -14,14 +14,21 @@ import classNames from "classnames";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+const CLIENTS_PAGE = "clients.mdx";
+
 export default function CompanyPage({ tinaProps, props }) {
   const { data } = tinaProps;
 
   const { historyCardProps } = props;
 
-  const clientList = data.company._body?.find((block) =>
-    block?.__typename?.endsWith("ClientList")
-  );
+  // /company/clients is the themed story index (it's in THEMED_ROUTES), built
+  // around its Client List block. Every other company page keeps the classic
+  // layout, even if an editor adds a Client List to it.
+  const clientList =
+    props.variables.relativePath === CLIENTS_PAGE &&
+    data.company._body?.find((block) =>
+      block?.__typename?.endsWith("ClientList")
+    );
   if (clientList) {
     return (
       <ClientsIndex

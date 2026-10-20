@@ -3,53 +3,19 @@
 import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
 import { cardShell } from "@/components/products/shared";
-import { getYouTubeId } from "@/helpers/embeds";
+import {
+  clientIndustries,
+  findVideo,
+  storyText,
+  type StoryVideo,
+} from "@/helpers/clients";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
-import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 import type { ClientDisplay } from "./clientList";
-
-// The story's plain text, for searching and for the card summary of a client
-// with no summary of its own. Embedded components (videos, buttons) carry no
-// text nodes, so they drop out.
-const plainText = (node: unknown): string => {
-  if (!node || typeof node !== "object") return "";
-  const { text, children } = node as { text?: string; children?: unknown[] };
-  if (typeof text === "string") return text;
-  return (children ?? []).map(plainText).join(" ");
-};
-
-export const storyText = (content: TinaMarkdownContent) =>
-  plainText(content).replace(/\s+/g, " ").trim();
-
-export const clientIndustries = (client: ClientDisplay) =>
-  client.categories?.map((c) => c?.category?.name).filter(Boolean) ?? [];
-
-type StoryVideo = { id: string; caption?: string; duration?: string };
-
-// The first YouTube <VideoEmbed> in the story, if any.
-const findVideo = (node: unknown): StoryVideo | null => {
-  if (!node || typeof node !== "object") return null;
-  const { name, props, children } = node as {
-    name?: string;
-    props?: { url?: string; caption?: string; duration?: string };
-    children?: unknown[];
-  };
-  // A playlist URL matches the pattern too, but has no single video to play.
-  const id = name === "VideoEmbed" ? getYouTubeId(props?.url) : null;
-  if (id) {
-    return { id, caption: props?.caption, duration: props?.duration };
-  }
-  for (const child of children ?? []) {
-    const video = findVideo(child);
-    if (video) return video;
-  }
-  return null;
-};
 
 type ClientCardProps = {
   client: ClientDisplay;

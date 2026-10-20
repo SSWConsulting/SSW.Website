@@ -2,7 +2,13 @@
 
 import { useMemo, useState } from "react";
 import { FiArrowUpRight, FiSearch } from "react-icons/fi";
-import { ClientCard, clientIndustries, storyText } from "../company/clientCard";
+import {
+  clientIndustries,
+  clientSearchText,
+  matchesClientFilters,
+  orderClients,
+} from "@/helpers/clients";
+import { ClientCard } from "../company/clientCard";
 import { CLIENT_SERVICES, type ClientDisplay } from "../company/clientList";
 import { ClientStoryDialog } from "../company/clientStoryDialog";
 import { CustomLink } from "../customLink";
@@ -18,9 +24,6 @@ type ClientsFilterProps = {
 
 const ALL_SERVICES = "all";
 
-const inCategory = (client: ClientDisplay, category: string) =>
-  clientIndustries(client).includes(category);
-
 const controlClassName =
   "h-11 rounded-control border-0.75 border-stroke-weak bg-card text-sm text-foreground transition-colors focus-visible:border-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand dark:border-hairline";
 
@@ -30,12 +33,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
   const [service, setService] = useState(ALL_SERVICES);
   const [openClient, setOpenClient] = useState<ClientDisplay | null>(null);
 
-  // Featured stories first; otherwise the order editors set in Tina.
-  const ordered = useMemo(
-    () =>
-      [...clients].sort((a, b) => Number(!!b.featured) - Number(!!a.featured)),
-    [clients]
-  );
+  const ordered = useMemo(() => orderClients(clients), [clients]);
 
   // Only the services some client actually has, in the schema's order.
   const services = useMemo(
@@ -44,33 +42,18 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
   );
 
   const searchText = useMemo(
-    () =>
-      new Map(
-        clients.map((client) => [
-          client,
-          [
-            client.name,
-            client.headline,
-            client.summary,
-            client.service,
-            ...clientIndustries(client),
-            storyText(client.content),
-          ]
-            .join(" ")
-            .toLowerCase(),
-        ])
-      ),
+    () => new Map(clients.map((client) => [client, clientSearchText(client)])),
     [clients]
   );
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return ordered.filter(
-      (client) =>
-        (selected === NO_SELECTION ||
-          inCategory(client, categories[selected])) &&
-        (service === ALL_SERVICES || client.service === service) &&
-        (!q || searchText.get(client)?.includes(q))
+    const filters = {
+      industry: selected === NO_SELECTION ? undefined : categories[selected],
+      service: service === ALL_SERVICES ? undefined : service,
+      query,
+    };
+    return ordered.filter((client) =>
+      matchesClientFilters(client, searchText.get(client) ?? "", filters)
     );
   }, [ordered, selected, categories, service, query, searchText]);
 
@@ -79,7 +62,9 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     setSelected,
     options: categories.map((category) => ({
       label: category,
-      count: clients.filter((client) => inCategory(client, category)).length,
+      count: clients.filter((client) =>
+        clientIndustries(client).includes(category)
+      ).length,
     })),
     allText: "All industries",
   };
