@@ -6,6 +6,7 @@ import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { ArrowCircle } from "../blocks/v3/shared/arrowCircle";
 import {
+  cardFooter,
   cardShell,
   destinationLabel,
   productTagChip,
@@ -78,7 +79,7 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </ul>
       )}
 
-      <div className="mt-auto flex items-center justify-between gap-3 border-t-0.75 border-hairline pt-3">
+      <div className={cn(cardFooter, "border-hairline")}>
         {domain && (
           <span className="min-w-0 truncate text-sm text-muted-foreground">
             {domain}
