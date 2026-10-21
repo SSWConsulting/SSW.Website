@@ -12,17 +12,13 @@ import type { ClientDisplay } from "./clientList";
 import { ClientsClosing } from "./clientsClosing";
 import { CLIENT_STORIES_ID, ClientsHero } from "./clientsHero";
 
-// The homepage's client logo carousel, reused as is: same block, same logos.
+// Reuses the homepage's logo carousel block.
 const homeLogoCarousel = homePage.blocks.find(
   (block) => block._template === "v3LogoCarousel"
 );
 
-// The themed /company/clients page, in the style of /events and /consulting.
-// Rendered by the generic company page whenever its body holds a Client List
-// block; every other company page keeps the classic layout.
 export const ClientsIndex = ({ company, clientList, relativePath }) => {
   const clients: ClientDisplay[] = clientList?.clients ?? [];
-  // Industries with no clients yet would only be empty filters.
   const categories: string[] = (clientList?.categories ?? [])
     .map((c) => c?.category?.name)
     .filter((name) =>
@@ -32,8 +28,7 @@ export const ClientsIndex = ({ company, clientList, relativePath }) => {
     );
 
   return (
-    // min-h-screen: PageLayout's <main> is always bg-white, so any shortfall
-    // would show as a white band under the themed content.
+    // min-h-screen: PageLayout's <main> is bg-white and would show below.
     <HomeThemeShell className="min-h-screen bg-sunken-glow">
       <div className={sidebarPageContainer}>
         <div className="min-h-12">
@@ -59,19 +54,7 @@ export const ClientsIndex = ({ company, clientList, relativePath }) => {
           className="mt-16 scroll-mt-28 md:mt-20"
           data-tina-field={tinaField(clientList)}
         >
-          <p className="m-0 text-xs font-semibold uppercase tracking-widest text-brand">
-            Explore our work
-          </p>
-          <h2 className="m-0 mt-4 p-0 text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl">
-            Good software. Real-world impact.
-          </h2>
-          <p className="m-0 mt-3 text-muted-foreground">
-            Find inspiration in the challenges we&rsquo;ve solved together.
-          </p>
-
-          <div className="mt-10">
-            <ClientsFilter clients={clients} categories={categories} />
-          </div>
+          <ClientsFilter clients={clients} categories={categories} />
         </section>
 
         {company.showTechUpgradeBlock && (

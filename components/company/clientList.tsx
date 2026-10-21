@@ -18,9 +18,6 @@ export type ClientDisplay = {
   logoUrl?: string;
   content: TinaMarkdownContent;
   caseStudyUrl?: string;
-  // The story card's editorial copy and media. All optional: a client
-  // without them falls back to its name, an excerpt of its content and its
-  // logo.
   headline?: string;
   summary?: string;
   service?: string;
@@ -31,7 +28,6 @@ export type ClientDisplay = {
   }[];
 };
 
-// The kinds of work a client story can be filtered by on /company/clients.
 export const CLIENT_SERVICES = [
   "AI development",
   "Business applications",

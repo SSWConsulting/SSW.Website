@@ -1,7 +1,6 @@
 import RippleButton from "@/components/button/rippleButtonV2";
 import { FiArrowUpRight } from "react-icons/fi";
 
-// The call to action that closes /company/clients.
 export const ClientsClosing = () => (
   <section className="flex items-center justify-between gap-8 rounded-card border-0.75 border-stroke-weak bg-card p-8 max-md:flex-col max-md:items-start md:p-12 dark:border-hairline">
     <div>

@@ -21,9 +21,7 @@ export default function CompanyPage({ tinaProps, props }) {
 
   const { historyCardProps } = props;
 
-  // /company/clients is the themed story index (it's in THEMED_ROUTES), built
-  // around its Client List block. Every other company page keeps the classic
-  // layout, even if an editor adds a Client List to it.
+  // Only /company/clients is themed (see THEMED_ROUTES).
   const clientList =
     props.variables.relativePath === CLIENTS_PAGE &&
     data.company._body?.find((block) =>

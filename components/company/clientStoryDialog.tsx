@@ -11,19 +11,14 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { ClientDisplay } from "./clientList";
 
-// Rich text on the themed pages. The typography plugin's DEFAULT hard-codes
-// sswBlack body text and sswRed h2s, so `dark:prose-invert` alone can't reach
-// them: each element is pointed at a theme token instead.
+// The typography plugin hard-codes sswBlack text and sswRed h2s, which
+// `dark:prose-invert` can't override, so each element gets a theme token.
 const themedProse = [
   "prose max-w-none font-light text-muted-foreground prose-img:my-0",
   "prose-p:text-muted-foreground prose-li:text-muted-foreground",
   "prose-headings:text-foreground prose-strong:text-foreground prose-a:text-brand",
 ].join(" ");
 
-// The full story of a client with no case study page, opened from its card.
-// A native <dialog>: showModal() traps focus, closes on Escape and returns
-// focus to the card, and since it stays inside the themed shell in the DOM it
-// takes the page's light/dark theme with it.
 export const ClientStoryDialog = ({
   client,
   onClose,
@@ -89,10 +84,8 @@ export const ClientStoryDialog = ({
             data-tina-field={tinaField(client, "content")}
             className={cn(themedProse, "mt-5")}
           >
-            {/* The story's embeds are lazy components. Without a boundary of
-                its own, the first open suspends an ancestor boundary, which
-                swaps the page for its fallback and throws the reader back to
-                the top. */}
+            {/* The embeds are lazy: without this boundary the first open
+                suspends the page and scrolls the reader back to the top. */}
             <Suspense fallback={null}>
               <TinaMarkdown
                 content={client.content}

@@ -29,7 +29,6 @@ export const sidebarNavItem = (isActive: boolean, extra?: string) =>
 
 type StickySidebarLayoutProps = {
   title: string;
-  // h2/h3 when the page puts its own headings above the layout.
   titleAs?: "h1" | "h2" | "h3";
   titleClassName?: string;
   sidebar: React.ReactNode;

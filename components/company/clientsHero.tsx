@@ -11,11 +11,8 @@ import { TinaMarkdown, type TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 export const CLIENT_STORIES_ID = "client-stories";
 
-// The story the hero spotlights, set here rather than in Tina: its two-line
-// headline and proof point are written for this layout. (A client's "Pin to
-// top" field only orders the story grid.) The proof point comes from FPE's
-// case study (content/company/case-study/fpe.mdx): a chatbot "available at all
-// times" that answers "in any language".
+// Set in code, not Tina: the copy is written for this layout. The stat comes
+// from content/company/case-study/fpe.mdx.
 const HERO_STORY = {
   client: "French Payroll Expert",
   image: "/images/new-homepage-background-assets/fpe.png",
@@ -28,7 +25,7 @@ const HERO_STORY = {
 const eyebrow =
   "m-0 text-xs font-semibold uppercase tracking-widest text-brand";
 
-// The title's **marked** part goes on its own line, in SSW red.
+// The title's **marked** part goes on its own line, in red.
 const HeroTitle = ({ text }: { text?: string | null }) => {
   const [lead, accent] = (text ?? "").split(/\*\*(.*?)\*\*/);
   return (
@@ -99,14 +96,12 @@ export const ClientsHero = ({ company }: ClientsHeroProps) => (
   </>
 );
 
-// The spotlight card: a photo with the story's headline over it, and its
-// proof point in a strip beneath.
 const FeaturedStory = () => (
   <CustomLink
     href={HERO_STORY.link}
     className="unstyled group block overflow-hidden rounded-card border-0.75 border-stroke-weak bg-card no-underline transition-colors duration-300 hover:border-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand motion-reduce:transition-none lg:col-span-5 dark:border-hairline dark:hover:border-brand"
   >
-    <span className="relative block">
+    <span className="relative block overflow-hidden">
       <Image
         src={HERO_STORY.image}
         alt=""

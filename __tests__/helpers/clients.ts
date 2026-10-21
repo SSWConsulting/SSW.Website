@@ -1,14 +1,14 @@
+import { describe, expect, it } from "@jest/globals";
 import type { ClientDisplay } from "@/components/company/clientList";
 import {
   clientIndustries,
-  clientSearchText,
   findVideo,
+  logoBox,
   matchesClientFilters,
   orderClients,
   storyText,
 } from "@/helpers/clients";
 
-// A Tina rich-text tree in the shape the CMS stores a client's story.
 const story = (...children: unknown[]) =>
   ({ type: "root", children }) as unknown as ClientDisplay["content"];
 const p = (...text: string[]) => ({
@@ -132,17 +132,14 @@ describe("orderClients", () => {
 
 describe("matchesClientFilters", () => {
   const medibank = client("Medibank", {
-    headline: "Helping development teams deliver sooner.",
     service: "Cloud & DevOps",
     categories: industries("Health", "Insurance"),
-    content: story(p("Automating a release process.")),
   });
-  const matches = (filters: Parameters<typeof matchesClientFilters>[2]) =>
-    matchesClientFilters(medibank, clientSearchText(medibank), filters);
+  const matches = (filters: Parameters<typeof matchesClientFilters>[1]) =>
+    matchesClientFilters(medibank, filters);
 
   it("matches everything when no filter is set", () => {
     expect(matches({})).toBe(true);
-    expect(matches({ query: "   " })).toBe(true);
   });
 
   it("filters by industry", () => {
@@ -155,29 +152,34 @@ describe("matchesClientFilters", () => {
     expect(matches({ service: "Web development" })).toBe(false);
   });
 
-  it("searches the name, headline, service, industries and story, ignoring case", () => {
-    expect(matches({ query: "medibank" })).toBe(true);
-    expect(matches({ query: "DELIVER SOONER" })).toBe(true);
-    expect(matches({ query: "devops" })).toBe(true);
-    expect(matches({ query: "insurance" })).toBe(true);
-    expect(matches({ query: " release process " })).toBe(true);
-    expect(matches({ query: "payroll" })).toBe(false);
+  it("requires every active filter to match", () => {
+    expect(matches({ industry: "Health", service: "Cloud & DevOps" })).toBe(
+      true
+    );
+    expect(matches({ industry: "Health", service: "Web development" })).toBe(
+      false
+    );
+  });
+});
+
+describe("logoBox", () => {
+  const area = (ratio: number) => {
+    const { width, height } = logoBox(ratio);
+    return parseFloat(width) * parseFloat(height);
+  };
+
+  it("gives wide and square logos the same visual area", () => {
+    expect(area(1)).toBeCloseTo(area(3), 5);
+    expect(area(0.8)).toBeCloseTo(area(1), 5);
   });
 
-  it("requires every active filter to match", () => {
-    expect(
-      matches({
-        industry: "Health",
-        service: "Cloud & DevOps",
-        query: "release",
-      })
-    ).toBe(true);
-    expect(
-      matches({
-        industry: "Health",
-        service: "Web development",
-        query: "release",
-      })
-    ).toBe(false);
+  it("caps very wide and very tall logos", () => {
+    expect(parseFloat(logoBox(20).width)).toBeCloseTo(55, 5);
+    expect(parseFloat(logoBox(0.2).height)).toBeCloseTo(45, 5);
+  });
+
+  it("falls back to a 2:1 box before the image's ratio is known", () => {
+    expect(logoBox(undefined)).toEqual(logoBox(2));
+    expect(logoBox(NaN)).toEqual(logoBox(2));
   });
 });

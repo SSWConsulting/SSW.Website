@@ -1,10 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { FiArrowUpRight, FiSearch } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import {
   clientIndustries,
-  clientSearchText,
   matchesClientFilters,
   orderClients,
 } from "@/helpers/clients";
@@ -29,20 +28,13 @@ const controlClassName =
 
 export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
   const [selected, setSelected] = useState(NO_SELECTION);
-  const [query, setQuery] = useState("");
   const [service, setService] = useState(ALL_SERVICES);
   const [openClient, setOpenClient] = useState<ClientDisplay | null>(null);
 
   const ordered = useMemo(() => orderClients(clients), [clients]);
 
-  // Only the services some client actually has, in the schema's order.
   const services = useMemo(
     () => CLIENT_SERVICES.filter((s) => clients.some((c) => c.service === s)),
-    [clients]
-  );
-
-  const searchText = useMemo(
-    () => new Map(clients.map((client) => [client, clientSearchText(client)])),
     [clients]
   );
 
@@ -50,12 +42,9 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     const filters = {
       industry: selected === NO_SELECTION ? undefined : categories[selected],
       service: service === ALL_SERVICES ? undefined : service,
-      query,
     };
-    return ordered.filter((client) =>
-      matchesClientFilters(client, searchText.get(client) ?? "", filters)
-    );
-  }, [ordered, selected, categories, service, query, searchText]);
+    return ordered.filter((client) => matchesClientFilters(client, filters));
+  }, [ordered, selected, categories, service]);
 
   const group: FilterGroupProps = {
     selected,
@@ -69,23 +58,20 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
     allText: "All industries",
   };
 
-  const isFiltered =
-    selected !== NO_SELECTION || service !== ALL_SERVICES || !!query.trim();
+  const isFiltered = selected !== NO_SELECTION || service !== ALL_SERVICES;
   const reset = () => {
     setSelected(NO_SELECTION);
     setService(ALL_SERVICES);
-    setQuery("");
   };
 
   return (
     <>
       <StickySidebarLayout
         title="Browse by industry"
-        titleAs="h3"
+        titleAs="h2"
         titleClassName="text-sm font-semibold max-md:text-sm xl:text-sm"
         sidebar={
-          // 20+ industries outgrow the viewport, so the sticky list scrolls
-          // on its own on desktop (mobile is a horizontal chip row).
+          // 20+ industries outgrow the viewport, so the list scrolls itself.
           <div className="md:-mx-1 md:mt-4 md:max-h-sidebar-scroll md:overflow-y-auto md:px-1">
             <FilterNav label="Client industries" {...group} />
           </div>
@@ -105,30 +91,31 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
           </div>
         }
       >
-        <div className="flex gap-3 max-sm:flex-col">
-          <label className="relative min-w-0 flex-1">
-            <span className="sr-only">Search client stories</span>
-            <FiSearch
-              aria-hidden
-              className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground"
-            />
-            <input
-              type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search clients, industries or challenges"
-              className={`${controlClassName} w-full pl-11 pr-4 placeholder:text-muted-foreground`}
-            />
-          </label>
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+            <p className="m-0" aria-live="polite">
+              {filtered.length} {filtered.length === 1 ? "story" : "stories"}
+              {selected !== NO_SELECTION && ` in ${categories[selected]}`}
+            </p>
+            {isFiltered && (
+              <button
+                type="button"
+                onClick={reset}
+                className="unstyled font-semibold text-foreground underline underline-offset-4 hover:text-brand"
+              >
+                Clear filters
+              </button>
+            )}
+          </div>
           {services.length > 0 && (
             <label className="flex-none">
               <span className="sr-only">Filter by service</span>
               <select
                 value={service}
                 onChange={(event) => setService(event.target.value)}
-                className={`${controlClassName} w-full px-4 sm:w-52`}
+                className={`${controlClassName} w-52 px-4`}
               >
-                <option value={ALL_SERVICES}>All services</option>
+                <option value={ALL_SERVICES}>All SSW Services</option>
                 {services.map((option) => (
                   <option key={option} value={option}>
                     {option}
@@ -136,22 +123,6 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
                 ))}
               </select>
             </label>
-          )}
-        </div>
-
-        <div className="mb-6 mt-4 flex items-center gap-4 text-sm text-muted-foreground">
-          <p className="m-0" aria-live="polite">
-            {filtered.length} {filtered.length === 1 ? "story" : "stories"}
-            {selected !== NO_SELECTION && ` in ${categories[selected]}`}
-          </p>
-          {isFiltered && (
-            <button
-              type="button"
-              onClick={reset}
-              className="unstyled font-semibold text-foreground underline underline-offset-4 hover:text-brand"
-            >
-              Clear filters
-            </button>
           )}
         </div>
 

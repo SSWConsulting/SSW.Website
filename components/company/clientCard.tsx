@@ -6,6 +6,7 @@ import { cardShell } from "@/components/products/shared";
 import {
   clientIndustries,
   findVideo,
+  logoBox,
   storyText,
   type StoryVideo,
 } from "@/helpers/clients";
@@ -19,15 +20,9 @@ import type { ClientDisplay } from "./clientList";
 
 type ClientCardProps = {
   client: ClientDisplay;
-  // Clients without a case study open their story in a dialog instead.
   onOpen: () => void;
 };
 
-// A client story: the image (or the logo filling the panel) above the
-// industry and service, the client, the headline, a summary and "Explore the
-// story". "Explore the story" is stretched over the whole card, so a click
-// anywhere opens the case study (or the story dialog). A story with a video
-// plays it in the picture instead, above that stretched link.
 export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
   const industries = clientIndustries(client);
   const meta = [industries.join(", "), client.service].filter(Boolean);
@@ -36,7 +31,7 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
 
   const actionClassName = cn(
     "unstyled mt-auto flex items-center justify-between gap-4 pt-6 text-left text-sm font-semibold text-foreground no-underline",
-    // Stretched over the card; Tailwind's `after:` sets an empty content.
+    // Stretched over the card, so the whole card is clickable.
     "after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-brand"
   );
   const actionLabel = (
@@ -73,16 +68,11 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
           />
         ) : (
           client.logo && (
-            // The logo fills the panel, on white in both themes: most client
-            // logos are JPGs on white.
+            // White in both themes: most client logos are JPGs on white.
             <span className="absolute inset-0 bg-white">
-              <Image
+              <CardLogo
                 src={client.logo}
-                alt=""
-                fill
-                sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 100vw"
-                data-tina-field={tinaField(client, "logo")}
-                className="object-contain p-6 transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none sm:p-8"
+                tinaFieldName={tinaField(client, "logo")}
               />
             </span>
           )
@@ -146,9 +136,43 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
   );
 };
 
-// The story's video, as a poster with an unmistakable "Watch video" control
-// that plays it in place. It sits above the card's stretched link (z-10), so
-// clicking the picture plays the video rather than opening the story.
+// Hidden until loaded: its size depends on the image's aspect ratio.
+const CardLogo = ({
+  src,
+  tinaFieldName,
+}: {
+  src: string;
+  tinaFieldName: string;
+}) => {
+  const [ratio, setRatio] = useState<number>();
+  const box = logoBox(ratio);
+
+  return (
+    <span
+      className={cn(
+        "absolute inset-0 m-auto transition-opacity duration-300",
+        !ratio && "opacity-0"
+      )}
+      style={box}
+    >
+      <Image
+        src={src}
+        alt=""
+        fill
+        sizes="(min-width: 1280px) 17vw, (min-width: 768px) 25vw, 55vw"
+        data-tina-field={tinaFieldName}
+        onLoad={(event) =>
+          setRatio(
+            event.currentTarget.naturalWidth / event.currentTarget.naturalHeight
+          )
+        }
+        className="object-contain transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+      />
+    </span>
+  );
+};
+
+// z-10 lifts it above the card's stretched link, so a click plays the video.
 const CardVideo = ({
   video,
   poster,
