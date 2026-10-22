@@ -160,11 +160,15 @@
         "gridOverlay": true,
         "redGlow": true
       },
+      "layout": "caseStudy",
       "testimonials": [
         {
           "quote": "SSW's added value is their professionalism. There’s not much else to say - compared to others, it's on a **whole different level**. They are pros.",
           "caseStudyUrl": "/company/clients/fpe",
+          "caseStudyHeadline": "An AI chatbot that answers French payroll questions around the clock",
+          "caseStudyTitle": "AI Powered Navigation for French Payroll Expert",
           "caseStudyLabel": "Discover how an AI-powered chatbot transformed their customer service.",
+          "caseStudyImage": "/images/new-homepage-background-assets/fpe.png",
           "authorName": "Thomas Bidou",
           "authorTitle": "French Payroll Expert",
           "authorImage": "/images/testimonialAvatars/thomas-bideau.png",
@@ -175,7 +179,10 @@
         {
           "quote": "Beryl **represents what the future of payroll looks like**. It’s not about replacing payroll professionals, it’s about giving them a specialist AI colleague.",
           "caseStudyUrl": "https://www.ssw.com.au/company/clients/australian-payroll-association",
+          "caseStudyHeadline": "Turning an off-the-shelf chatbot into a trustworthy payroll agent",
+          "caseStudyTitle": "How APA Built a Compliant AI Payroll Agent",
           "caseStudyLabel": "See how we turned a chatbot into a trustworthy payroll agent.",
+          "caseStudyImage": "/images/case-studies/apa-beryl.webp",
           "authorName": "Tracy Angwin",
           "authorTitle": "Director, Australian Payroll Association",
           "authorImage": "/images/tracy-angwin.jpeg",

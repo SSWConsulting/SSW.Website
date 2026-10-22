@@ -12,6 +12,12 @@ export default function ProductsContent({ props }) {
         <Breadcrumbs
           path={removeExtension(variables.relativePath)}
           title={data.products?.seo?.title}
+          // Nested pages (e.g. /products/sophiebot/try) would otherwise show
+          // the raw folder slug as a crumb.
+          additionalReplacements={[
+            { from: "sophiebot", to: "SophieBot" },
+            { from: "sophiehub", to: "SophieHub" },
+          ]}
         />
       </Section>
       <Container

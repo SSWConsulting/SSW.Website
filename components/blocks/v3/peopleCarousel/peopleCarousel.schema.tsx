@@ -9,6 +9,7 @@ export const V3PeopleCarouselSchema: Template = {
   label: "<V3> People Carousel",
   ui: {
     defaultItem: {
+      layout: "stacked",
       heading: "We work together to form an amazing collective brain",
       subtitle: "We're enthusiastic and have a 'Make it happen' culture.",
       seeMoreButton: [{ buttonText: "Meet the Team", buttonLink: "/people" }],
@@ -37,6 +38,17 @@ export const V3PeopleCarouselSchema: Template = {
     backgroundSchema,
     {
       type: "string",
+      label: "Layout",
+      name: "layout",
+      description:
+        "Side by side puts the intro on the left and the people on the right on desktop. It stacks on smaller screens.",
+      options: [
+        { value: "stacked", label: "Stacked (default)" },
+        { value: "sideBySide", label: "Side by side" },
+      ],
+    },
+    {
+      type: "string",
       label: "Brow",
       name: "brow",
       description: "Small eyebrow text above the title.",
@@ -46,7 +58,8 @@ export const V3PeopleCarouselSchema: Template = {
       type: "string",
       label: "Subtitle",
       name: "subtitle",
-      description: "Short subtitle shown beneath the title.",
+      description:
+        "Short subtitle shown beneath the title. Line breaks are kept.",
       ui: { component: "textarea" },
     },
     {

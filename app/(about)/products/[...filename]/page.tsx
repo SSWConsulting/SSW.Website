@@ -23,8 +23,11 @@ export async function generateStaticParams() {
     );
   }
 
-  const pages = PageListData.data.productsConnection.edges.map((page) => ({
-    filename: page.node._sys.filename,
+  // Catch-all route: a page nested in a folder (e.g. content/products/
+  // sophiebot/try.mdx) becomes the segments ["sophiebot", "try"], so it serves
+  // at /products/sophiebot/try. Top-level pages stay a single segment.
+  const pages = allPagesListData.data.productsConnection.edges.map((page) => ({
+    filename: page.node._sys.breadcrumbs,
   }));
 
   return pages;
@@ -43,7 +46,7 @@ const getData = async (filename: string) => {
 };
 
 type GenerateMetaDataProps = {
-  params: Promise<{ filename: string }>;
+  params: Promise<{ filename: string[] }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
@@ -51,31 +54,32 @@ export async function generateMetadata(
   props: GenerateMetaDataProps
 ): Promise<Metadata> {
   const params = await props.params;
-  const tinaProps = await getData(params.filename);
+  const slug = params.filename.join("/");
+  const tinaProps = await getData(slug);
   if (!tinaProps) {
     return {};
   }
 
   const seo = tinaProps.data.products.seo;
   if (seo && !seo.canonical) {
-    seo.canonical = `${tinaProps.data.global.header.url}products/${params.filename}`;
+    seo.canonical = `${tinaProps.data.global.header.url}products/${slug}`;
   }
 
   return getSEOProps(seo);
 }
 
 export default async function Products(prop: {
-  params: Promise<{ filename: string }>;
+  params: Promise<{ filename: string[] }>;
 }) {
   const params = await prop.params;
-  const { filename } = params;
+  const slug = params.filename.join("/");
 
-  const tinaProps = await getData(filename);
+  const tinaProps = await getData(slug);
   if (!tinaProps) {
     return (
       <ClientFallback
         queryName="productContentQuery"
-        variables={{ relativePath: `${filename}.mdx` }}
+        variables={{ relativePath: `${slug}.mdx` }}
         Component={ProductsPreview}
       />
     );
