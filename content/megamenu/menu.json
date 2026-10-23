@@ -169,14 +169,14 @@
                 },
                 {
                   "name": "SophieBot",
-                  "url": "https://sswsophie.com/sophiebot",
+                  "url": "/products/sophiebot",
                   "description": "AI-driven solution that delivers a competitive edge through its ability to find data",
                   "iconImg": "/images/megamenu-icons/SophieBot.svg",
                   "iconImgDarkMode": "/images/megamenu-icons/SophieBot-darkmode.svg"
                 },
                 {
                   "name": "SophieHub",
-                  "url": "https://sswsophie.com",
+                  "url": "/products/sophiehub",
                   "description": "A Smart Environment System which shows user specific information based on the user",
                   "iconImg": "/images/megamenu-icons/SophieHub.svg",
                   "iconImgDarkMode": "/images/megamenu-icons/SophieHub-darkmode.svg"
@@ -327,10 +327,6 @@
               "name": "Hack Days",
               "menuItems": [
                 {
-                  "name": "Angular Hack Day",
-                  "url": "https://angularhackday.com/"
-                },
-                {
                   "name": "MAUI Hack Day",
                   "url": "https://mauihackday.com/"
                 },
@@ -352,12 +348,12 @@
               "name": "1-Day Training",
               "menuItems": [
                 {
-                  "name": "AI Essentials Workshop",
-                  "url": "/events/ai-workshop-essentials"
+                  "name": "Claude Training Workshop ",
+                  "url": "https://www.ssw.com.au/consulting/claude-training"
                 },
                 {
-                  "name": "Angular Superpowers Tour",
-                  "url": "/events/angular-superpowers-tour"
+                  "name": "AI Essentials Workshop",
+                  "url": "/events/ai-workshop-essentials"
                 },
                 {
                   "name": "Azure Superpowers Tour",
@@ -370,10 +366,6 @@
                 {
                   "name": ".NET Superpowers Tour",
                   "url": "/events/net-superpowers-tour"
-                },
-                {
-                  "name": "Azure Super Skills",
-                  "url": "/events/azure-superskills"
                 }
               ]
             },
@@ -383,10 +375,6 @@
                 {
                   "name": "AI Workshop",
                   "url": "https://www.ssw.com.au/events/ai-workshop"
-                },
-                {
-                  "name": "Angular Workshop",
-                  "url": "/events/angular-workshop"
                 },
                 {
                   "name": "Clean Architecture Workshop",

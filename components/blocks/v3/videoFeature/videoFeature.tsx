@@ -174,7 +174,7 @@ export function V3VideoFeature({ data }) {
               {data?.recognitionHeading && (
                 <span
                   data-tina-field={tinaField(data, "recognitionHeading")}
-                  className="font-mono text-xs uppercase tracking-widest text-muted-foreground"
+                  className="font-mono text-xs uppercase tracking-wider text-muted-foreground"
                 >
                   {data.recognitionHeading}
                 </span>

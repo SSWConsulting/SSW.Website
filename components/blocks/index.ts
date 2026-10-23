@@ -64,11 +64,13 @@ import { V3PeopleCarouselSchema } from "./v3/peopleCarousel/peopleCarousel.schem
 import { V3EventsSchema } from "./v3/events/events.schema";
 import { V3GlobeSchema } from "./v3/globe/globe.schema";
 import { V3ProcessSchema } from "./v3/process/process.schema";
+import { V3VerticalListSchema } from "./v3/verticalList/verticalList.schema";
 import { V3StatisticsTemplate } from "./v3/statistics/statistics.schema";
 import { V3CtaSchema } from "./v3/cta/cta.schema";
 import { V3LogoCarouselSchema } from "./v3/logoCarousel/logoCarousel.schema";
 import { V3TestimonialsSchema } from "./v3/testimonials/testimonials.schema";
 import { V3StackCardsSchema } from "./v3/stackCards/stackCards.schema";
+import { V3PillsSchema } from "./v3/pills/pills.schema";
 import { V3FaqSchema } from "./v3/faq/faq.schema";
 import { V3LeadCaptureSchema } from "./v3/leadCapture/leadCapture.template";
 import { V3VideoHighlightsSchema } from "./v3/videoHighlights/videoHighlights.schema";
@@ -91,10 +93,12 @@ export const pageBlocks: Template[] = [
   V3LogoCarouselSchema,
   V3FeatureStepsSchema,
   V3ProcessSchema,
+  V3VerticalListSchema,
   V3StatisticsTemplate,
   V3CtaSchema,
   V3TestimonialsSchema,
   V3StackCardsSchema,
+  V3PillsSchema,
   V3FaqSchema,
   V3LeadCaptureSchema,
   V3VideoHighlightsSchema,

@@ -20,7 +20,7 @@ function OfficeAccordionItem({ office, isOpen, onToggle }) {
   return (
     <div
       className={cn(
-        "relative border-b border-hairline bg-gray-100 dark:border-white/10 dark:bg-sswBorder",
+        "relative border-b border-hairline bg-gray-100 transition-colors hover:bg-gray-200 dark:border-white/10 dark:bg-sswBorder dark:hover:bg-sswBlack",
         isOpen && "bg-gray-200 dark:bg-sswBlack"
       )}
     >

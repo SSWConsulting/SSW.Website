@@ -39,6 +39,10 @@ export type AddContactToNewslettersData = {
 };
 
 export interface EventInfo extends EventTrimmed {
+  // Moved off EventTrimmed: the /events index cards render neither, but the
+  // live-stream banner and the netug/live pages both do.
+  description?: TinaMarkdownContent;
+  presenterProfileUrl?: string;
   youTubeId?: string;
   abstract?: string;
   delayedLiveStreamStart?: boolean;

@@ -96,11 +96,21 @@ const V2ComponentWrapper = ({
         <>
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-10 bg-red-glow-tl"
+            className={classNames(
+              "pointer-events-none absolute inset-x-0 z-10",
+              data.background?.bleed
+                ? "-inset-y-40 bg-red-glow-tl-bleed"
+                : "inset-y-0 bg-red-glow-tl"
+            )}
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 z-10 bg-red-glow-r"
+            className={classNames(
+              "pointer-events-none absolute inset-x-0 z-10",
+              data.background?.bleed
+                ? "-inset-y-40 bg-red-glow-r-bleed"
+                : "inset-y-0 bg-red-glow-r"
+            )}
           />
         </>
       )}

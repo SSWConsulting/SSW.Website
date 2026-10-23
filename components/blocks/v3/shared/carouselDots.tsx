@@ -3,11 +3,12 @@
 import { CarouselPickItem, useCarousel } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
-// Clickable pill indicators for the v3 carousels — one dot per card. `count` is
-// the number of content cards (do NOT include any "+ more" end-cap tile).
-// Renders nothing when there's a single card. Must live inside a <Carousel>,
-// and the carousel needs `containScroll: "keepSnaps"` so every card keeps its
-// own scroll snap and the active dot tracks correctly.
+// Clickable pill indicators for the v3 carousels — one dot per scroll snap.
+// Usually that's one per card: pass the number of content cards (do NOT include
+// any "+ more" end-cap tile) and use `containScroll: "keepSnaps"` so every card
+// keeps its own snap. A paged carousel (`slidesToScroll` > 1) has one snap per
+// page instead, so pass the page count. Renders nothing for a single snap.
+// Must live inside a <Carousel>.
 export function CarouselDots({
   count,
   className,

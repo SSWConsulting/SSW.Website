@@ -1,4 +1,20 @@
 import bundleAnalyser from "@next/bundle-analyzer";
+import { execSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
+
+// CI passes the footer's deployment info in as Docker build args. Locally
+// there are none, so read them off the checkout instead of hardcoding a
+// placeholder in .env that silently goes stale. Returns undefined when git
+// isn't available (e.g. the Docker build context has no .git).
+const fromGit = (command) => {
+  try {
+    return execSync(command, { stdio: ["ignore", "pipe", "ignore"] })
+      .toString()
+      .trim();
+  } catch {
+    return undefined;
+  }
+};
 
 // Turbopack resolves resolveAlias values against the project root and prepends
 // "./" to whatever it is given, so this has to stay a project-relative path — an
@@ -94,6 +110,10 @@ const config = {
   },
   serverExternalPackages: ["applicationinsights"],
   turbopack: {
+    // A stray lockfile in a parent directory (e.g. ~/package-lock.json) makes
+    // Turbopack infer the workspace root above this project, breaking
+    // resolution of root-level files like instrumentation.ts. Pin it explicitly.
+    root: fileURLToPath(new URL(".", import.meta.url)),
     resolveExtensions: [".mdx", ".tsx", ".ts", ".jsx", ".js", ".mjs", ".json"],
     // `tinacms/dist/rich-text` imports `sanitizeUrl` from `@tinacms/mdx`, whose
     // single entry point bundles the entire markdown parser (~1.97 MB) to supply
@@ -112,6 +132,15 @@ const config = {
     staticGenerationMinPagesPerWorker: 30,
   },
   expireTime: 3600, // to set the cache-control header - https://nextjs.org/docs/app/api-reference/config/next-config-js/expireTime
+  env: {
+    NEXT_PUBLIC_GITHUB_RUN_DATE:
+      process.env.NEXT_PUBLIC_GITHUB_RUN_DATE ||
+      fromGit("git log -1 --format=%cI"),
+    NEXT_PUBLIC_GITHUB_SHA:
+      process.env.NEXT_PUBLIC_GITHUB_SHA || fromGit("git rev-parse HEAD"),
+    NEXT_PUBLIC_GITHUB_REPOSITORY:
+      process.env.NEXT_PUBLIC_GITHUB_REPOSITORY || "SSWConsulting/SSW.Website",
+  },
 };
 
 const withBundleAnalyzer = bundleAnalyser({

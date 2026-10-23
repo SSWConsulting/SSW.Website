@@ -1,6 +1,7 @@
 {
   "title": "TinaCon - Herding the Future!",
   "url": "https://tina.io/conference",
+  "websiteUrl": "https://tina.io/conference",
   "thumbnail": "/images/events/1x1-Socials-promo%20(10).jpg",
   "thumbnailDescription": "TinaCon",
   "presenterList": [
@@ -23,7 +24,6 @@
       "presenter": "content/presenters/adam-cogan.mdx"
     }
   ],
-  "headerLayout": "avatars",
   "startDateTime": "2025-04-30T22:00:00.000Z",
   "endDateTime": "2025-05-02T09:00:00.000Z",
   "calendarType": "Conferences",

@@ -212,6 +212,12 @@ const V3Process = dynamic(() =>
   import("./blocks/v3/process/process").then((mod) => mod.V3Process)
 );
 
+const V3VerticalList = dynamic(() =>
+  import("./blocks/v3/verticalList/verticalList").then(
+    (mod) => mod.V3VerticalList
+  )
+);
+
 const V3Statistics = dynamic(() => import("./blocks/v3/statistics/statistics"));
 
 const V3Cta = dynamic(() =>
@@ -252,6 +258,10 @@ const V3CardCarousel = dynamic(() =>
   import("./blocks/v3/cardCarousel/cardCarousel").then(
     (mod) => mod.V3CardCarousel
   )
+);
+
+const V3Pills = dynamic(() =>
+  import("./blocks/v3/pills/pills").then((mod) => mod.V3Pills)
 );
 
 const componentMap = {
@@ -303,10 +313,12 @@ const componentMap = {
   V3LogoCarousel,
   V3FeatureSteps,
   V3Process,
+  V3VerticalList,
   V3Statistics,
   V3Cta,
   V3Testimonials,
   V3StackCards,
+  V3Pills,
   V3Faq,
   V3LeadCapture,
   V3VideoHighlights,

@@ -120,12 +120,6 @@ export const eventsIndexSchema: Collection = {
       isBody: true,
     },
     {
-      type: "rich-text",
-      name: "sidebarBody",
-      label: "Sidebar Body",
-      templates: [...Schemas.pageBlocks],
-    },
-    {
       type: "object",
       list: true,
       name: "afterEvents",

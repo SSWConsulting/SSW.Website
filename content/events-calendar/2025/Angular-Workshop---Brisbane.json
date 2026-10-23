@@ -20,5 +20,5 @@
   "description": "​In this workshop, we will build a CRM application with Angular using components, services, dependency injection, forms, Angular modules, and lazy loaded routes. We will then cover unit tests and using the redux pattern with the ngrx library. By the end of this workshop, you will have built a working Angular application you can extend into an enterprise application. You will also walk away with the source code and the course material. So, join us to learn to build great enterprise applications with Angular.\n\n**What’s included in this workshop?**\n\n* 2 days of tuition with an experienced Angular developer.\n* Full course material\n* Full source code for the three apps you will build for later reference and to be used as best practice ​​\n",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
-  "enabled": true
+  "enabled": false
 }

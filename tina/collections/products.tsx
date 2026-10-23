@@ -28,12 +28,6 @@ export const productsIndexSchema: Collection = {
       required: true,
     },
     {
-      type: "string",
-      label: "Subtitle",
-      name: "subTitle",
-      required: true,
-    },
-    {
       type: "object",
       label: "Products List",
       name: "productsList",
@@ -62,6 +56,14 @@ export const productsIndexSchema: Collection = {
           name: "description",
         },
         {
+          type: "string",
+          label: "Tags",
+          name: "tags",
+          list: true,
+          description:
+            "Short capability labels shown as chips on the product card, so the grid can be skimmed without reading every description. Keep them to one or two words. Only the first two are rendered — extras are kept but not shown.",
+        },
+        {
           type: "image",
           label: "Logo",
           name: "logo",
@@ -82,7 +84,9 @@ export const productsSchema: Collection = {
   ui: {
     ...kebabCaseFilename,
     router: ({ document }) => {
-      return `/products/${document._sys.filename}`;
+      // Breadcrumbs, not filename, so a nested page (content/products/
+      // sophiebot/try.mdx) routes to /products/sophiebot/try.
+      return `/products/${document._sys.breadcrumbs.join("/")}`;
     },
   },
   fields: [

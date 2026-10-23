@@ -87,5 +87,12 @@ export const carouselBlockSchema: Template = {
       label: "Show on mobile devices",
       name: "showOnMobileDevices",
     },
+    {
+      type: "boolean",
+      label: "Show captions",
+      name: "showCaptions",
+      description:
+        "Shows each item's Label under its image. Leave off when the labels read as alt text rather than captions.",
+    },
   ],
 };

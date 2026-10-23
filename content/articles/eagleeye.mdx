@@ -1,0 +1,73 @@
+---
+seo:
+  title: 'What is EagleEye and Why Does it Matter? '
+  description: 'Discover EagleEye by SSW: AI email classification deployed securely in your own Azure environment. Full visibility, total data control, zero vendor access.'
+bannerImg: '/images/articles/ChatGPT-Image-Aug-13,-2026,-10_23_57-AM.png'
+title: 'What is EagleEye and Why Does it Matter? '
+subTitle: |
+  EagleEye is an enterprise communication analytics platform created by SSW. It reads and classifies email against AI-guided tags your organisation sets up itself, things like "As per our conversation," and surfaces what matters. It works across every mailbox in the Azure Entra group you choose to scan, so any part of the business can put it to use.
+
+  Giving an application permission to read company email is a serious security decision, and it shaped EagleEye's architecture from the start. Rather than running as a conventional SaaS product hosted by SSW, EagleEye is deployed into each organisations’ Azure instance. SSW has no access to the running system, its logs, or its data. That trade-off is deliberate, and it answers every security team's biggest concern... "Who can see our email data?" - With EagleEye, only the customer
+
+  ## EagleEye Is Deployed as a Solution Template
+
+  A managed application implies the vendor installs software into a customer's Azure environment and manages it on the customer's behalf. That never matched how EagleEye worked - SSW never has and never will have operational access to customer deployments. The solution template model reflects the real arrangement instead: SSW provides the software, the customer deploys it, and the customer owns everything that gets created.
+
+  A conventional SaaS architecture would have been simpler for SSW to run, but it would have required customers to grant an SSW-owned application permission to read company mail, a much harder approval for many security teams. It would also have meant storing customer information on SSW-controlled infrastructure, which EagleEye was designed to avoid.
+
+  ## What Gets Deployed into the Customer's Azure Subscription?
+
+  When a customer deploys EagleEye, roughly 15 Azure services are created inside a Resource Group in their own Azure account. During setup, the customer chooses:
+
+  * The Azure subscription
+  * The deployment region
+  * The staff group EagleEye should scan
+  * The database size
+  * An optional custom portal URL
+
+  The deployment creates the core parts of the system: a database, Key Vault, 3 App Registrations, an AI service, logging infrastructure, the email scanner, and the EagleEye web portal. Once deployment finishes, those resources belong to the customer. They can inspect, resize, or delete them, and SSW retains no administrative access. One extra step falls to the customer: selecting and enabling the AI model. EagleEye creates the AI service, but the customer chooses which model it runs, giving them direct control over both the architecture and the associated costs.
+
+  ## Every Customer Gets an Isolated Deployment
+
+  EagleEye is single-tenant by design. Each customer has their own database, AI service, application registrations, logs, and portal, with no shared EagleEye backend between customers.
+
+  The only shared component is software distribution. During installation or an update, the customer's environment downloads EagleEye software from SSW's Azure Registry, and that download carries no customer data. While EagleEye runs, its telemetry and diagnostic logs stay inside the customer's Azure account; without sending any telemetry back to SSW.
+
+  Azure Marketplace does apply its own tracking so Microsoft can attribute Azure consumption to the product. Per the implementation review, that information goes to Microsoft and contains no EagleEye customer data.
+
+  ## What Happens to the Contents of an Email?
+
+  For each mailbox in the customer's selected Entra group, EagleEye reads the sender, recipients, subject, date, and message body text.
+
+  The body is processed by AI but never written to the customer’s EagleEye's database. The email body is loaded into memory, sent to the customer's AI service for analysis, and then discarded; EagleEye’s database stores only the resulting metadata (subject, people involved, date, and the labels the AI produces). Before processing, EagleEye strips quoted replies from earlier in a thread so the AI focuses on the new message rather than re-analysing the whole conversation each time. Depending on the configured rules, a single message may be sent to the AI more than once, for different classification tasks.
+
+  ## What the Customer Controls
+
+  Because the deployment sits in the customer's Azure environment, normal Azure controls stay with them. Passwords and secrets live in Key Vault inside their account. Data is encrypted in transit and at rest using Azure's standard platform capabilities. Authentication belongs to the customer's organisation, and administrators can inspect or revoke EagleEye's permissions themselves. They also choose which group of employees EagleEye scans and can add or remove users from that scope at will.
+
+  ## Why Not Host EagleEye as SaaS?
+
+  A conventional SaaS deployment would make several things easier operationally. SSW could monitor production systems, inspect telemetry, push updates immediately, and manage one central platform. But the security model would change substantially: customers would need to grant an SSW-owned application access to company mail, SSW would become responsible for storing customer information, and customers would depend more heavily on SSW's audit trail, hosting choices, and deletion processes.
+
+  With the current model, the customer can revoke the application's permissions or remove the deployment from their own Azure account without asking SSW to do it for them. That control comes with extra responsibility: the customer runs the Azure infrastructure, pays the resource costs, needs an administrator with enough Azure knowledge to complete the deployment, and decides when upgrades happen.
+
+  For a product that needs access to sensitive company communications, SSW chose customer control over vendor convenience.
+
+  That's the trade EagleEye offers, in the end: the visibility of an AI-powered classification tool, running on infrastructure you already own and control. You get the tagging and the insight into your organisation's email.
+author: content/presenters/hark-singh.mdx
+publishedDate: 2026-08-16T05:54:05.949Z
+sidebarPanel:
+  title: 2-Day Pre-Migration Assessment Engagement
+  description: 'Get a solid foundation for your .NET 8 migration project, ensuring you are well-prepared to tackle the migration with confidence.'
+  showSidebarPanel: true
+  actionUrl: /
+  actionText: Learn more
+callToAction:
+  title: Talk to us about your project
+  subTitle: Connect with our Account Managers to discuss how we can help.
+  showCallToAction: true
+  buttonText: Book a Free Initial Meeting
+  animated: true
+  buttonSubtitle: or call +61 2 9953 3000
+---
+
