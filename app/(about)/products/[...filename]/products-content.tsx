@@ -17,6 +17,8 @@ export default function ProductsContent({ props }) {
           additionalReplacements={[
             { from: "sophiebot", to: "SophieBot" },
             { from: "sophiehub", to: "SophieHub" },
+            { from: "smashingbarrier", to: "SmashingBarrier" },
+            { from: "user-guide", to: "User Guide" },
           ]}
         />
       </Section>
