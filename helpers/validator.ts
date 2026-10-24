@@ -1,12 +1,11 @@
 import xss, { type IFilterXSSOptions } from "xss";
 
+// Found at https://emailregex.com/
+/* eslint-disable */
+const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export const isEmail = (email: string): boolean => {
-  // Found at https://emailregex.com/
-  /* eslint-disable */
-  const regex =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   /* eslint-enable */
-  return regex.test(email);
+  return EMAIL_REGEX.test(email);
 };
 
 export const spanWhitelist = {
