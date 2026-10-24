@@ -29,6 +29,8 @@ export const sidebarNavItem = (isActive: boolean, extra?: string) =>
 
 type StickySidebarLayoutProps = {
   title: string;
+  titleAs?: "h1" | "h2" | "h3";
+  titleClassName?: string;
   sidebar: React.ReactNode;
   promo?: React.ReactNode;
   contentRef?: React.Ref<HTMLDivElement>;
@@ -38,6 +40,8 @@ type StickySidebarLayoutProps = {
 
 export const StickySidebarLayout = ({
   title,
+  titleAs: Title = "h1",
+  titleClassName,
   sidebar,
   promo,
   contentRef,
@@ -51,14 +55,15 @@ export const StickySidebarLayout = ({
         "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
       )}
     >
-      <h1
+      <Title
         className={cn(
           sidebarHeadingClass,
-          "m-0 whitespace-nowrap p-0 text-foreground max-md:mb-2"
+          "m-0 whitespace-nowrap p-0 text-foreground max-md:mb-2",
+          titleClassName
         )}
       >
         {title}
-      </h1>
+      </Title>
 
       {sidebar}
 

@@ -22,6 +22,8 @@ RUN --mount=type=cache,target=/root/.local/share/pnpm/store \
 FROM base AS builder
 WORKDIR /website
 
+ARG SKIP_TINA_CLOUD_CHECKS=false
+
 COPY --from=deps /website/node_modules ./node_modules
 COPY . .
 
@@ -73,9 +75,10 @@ RUN --mount=type=secret,id=TINA_TOKEN \
   export TINA_TOKEN="$(cat /run/secrets/TINA_TOKEN)" && \
   export TINA_SEARCH_TOKEN="$(cat /run/secrets/TINA_SEARCH_TOKEN)" && \
   export YOUTUBE_PRIVATE_KEY="$(cat /run/secrets/YOUTUBE_PRIVATE_KEY)" && \
-  if [ -f yarn.lock ]; then yarn run build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run build; \
+  BUILD_SCRIPT=build && if [ "$SKIP_TINA_CLOUD_CHECKS" = "true" ]; then BUILD_SCRIPT=build:ci; fi && \
+  if [ -f yarn.lock ]; then yarn run "$BUILD_SCRIPT"; \
+  elif [ -f package-lock.json ]; then npm run "$BUILD_SCRIPT"; \
+  elif [ -f pnpm-lock.yaml ]; then npm i -g corepack@latest && corepack enable pnpm && pnpm run "$BUILD_SCRIPT"; \
   else echo "Lockfile not found." && exit 1; \
   fi
 

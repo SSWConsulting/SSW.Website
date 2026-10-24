@@ -168,6 +168,11 @@ export default {
         "screen-4/6": "66.666667vh",
         "screen-5/6": "83.333333vh",
       },
+      maxHeight: {
+        // The space under the header, for a sticky list that scrolls itself.
+        "sidebar-scroll": "calc(100vh - 13rem)",
+        dialog: "85vh",
+      },
       maxWidth: {
         media: "420px",
         "sidebar-card": "300px",
