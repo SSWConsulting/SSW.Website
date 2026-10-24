@@ -18,7 +18,7 @@ const RawImage = ({ data }) => {
 
 export const VerticalImageLayout = ({ data }) => {
   return (
-    <div className="md:grid md:grid-cols-12 md:gap-x-6">
+    <div className="mx-auto max-w-4xl md:grid md:grid-cols-12 md:items-center md:gap-x-6">
       <div className="col-span-5">
         {data.imageLink ? (
           <CustomLink href={data.imageLink}>
