@@ -51,11 +51,16 @@ export const visibleTags = (tags?: string[]): string[] =>
   ).slice(0, MAX_VISIBLE_TAGS);
 
 // `url` can be relative (SSW Rewards' own /products/rewards), hence the base.
+// A page on this site gets no label: "ssw.com.au/products/rewards" tells the
+// reader nothing they can't see from the card, and the arrow already says the
+// card is a link. Only an off-site destination is worth naming.
 export const destinationLabel = (url?: string): string => {
   if (!url) return "";
   try {
     const { hostname, pathname } = new URL(url, PROD_BASE_URL);
     const host = hostname.replace(/^www\./, "");
+    const ownHost = new URL(PROD_BASE_URL).hostname.replace(/^www\./, "");
+    if (host === ownHost) return "";
     return pathname === "/" ? host : `${host}${pathname}`;
   } catch {
     return "";

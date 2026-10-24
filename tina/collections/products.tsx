@@ -36,6 +36,7 @@ export const productsIndexSchema: Collection = {
         itemProps: (item) => {
           return { label: item?.name };
         },
+        defaultItem: { category: "product" },
       },
       fields: [
         {
@@ -44,6 +45,17 @@ export const productsIndexSchema: Collection = {
           name: "name",
           isTitle: true,
           required: true,
+        },
+        {
+          type: "string",
+          label: "Category",
+          name: "category",
+          description:
+            "Which section of the Products page this appears in. Leave as Product unless SSW builds and customises it per client.",
+          options: [
+            { value: "product", label: "Product" },
+            { value: "consulting", label: "Consulting offering" },
+          ],
         },
         {
           type: "string",
