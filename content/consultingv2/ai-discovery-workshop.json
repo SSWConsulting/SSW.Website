@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "AI Discovery Workshop | SSW",
-    "description": "3-day AI Discovery Workshop in Sydney, Brisbane, Melbourne & Newcastle. Identify custom AI opportunities for your business. Discover bespoke solutions tailored to you. Book now.",
+    "description": "Three-day AI Discovery Workshop with two senior consultants. Assess workflows, prioritise AI and automation opportunities, and plan practical next steps.",
     "canonical": "https://www.ssw.com.au/consulting/ai-discovery-workshop",
     "images": [
       {
@@ -15,11 +15,11 @@
   "blocks": [
     {
       "topLabel": {
-        "labelText": "On-Site 3-Day AI Discovery Workshop"
+        "labelText": "AI Discovery Workshop"
       },
-      "heading": "Uncover AI Opportunities in a **3-day Workshop**",
+      "heading": "Build a practical AI improvement roadmap in **three days**",
       "isH1": true,
-      "description": "In this intensive engagement, our AI strategists work with your team to identify where AI can drive real value... In just three days, you'll go from wondering about AI to having a clear, actionable implementation roadmap.\n",
+      "description": "Find where your teams can reduce administration, access information faster and improve everyday work. SSW works with your business and technology teams to assess the opportunities and develop a prioritised roadmap, with practical recommendations for your people, processes, systems and data.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -100,20 +100,20 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "A **Collaborative Discovery Process** That Works",
+      "heading": "Start with your business, not the technology",
       "isH1": false,
       "description": "",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
-            "heading": "Why Businesses Struggle with AI",
-            "description": "Every business leader knows AI is transformative, but we often hear: \"We don't know where to start”, “We lack internal expertise”, “We're worried about wasting money”, “We need a strategy, not just tools”.",
+            "heading": "Find the problems worth solving",
+            "description": "Your team knows where work gets held up: repetitive administration, information that is hard to find, slow approvals and manual reporting. We work with the people closest to these tasks to understand the problems, their impact and what a useful improvement would look like.",
             "icon": "BiCloudLightning"
           },
           {
-            "heading": "Improving your Workflows",
-            "description": "We don't just talk theory; we embed ourselves in your business… a hands-on process led by senior AI consultants and developers.",
+            "heading": "Choose the simplest effective solution",
+            "description": "The right answer may be a process change, better use of software you already own, automation or AI. We assess the options against business value, delivery effort, security and ongoing cost before recommending what to pursue.",
             "icon": "BiBulb"
           }
         ]
@@ -129,25 +129,25 @@
         "labelText": "Process",
         "icon": "BiDirections"
       },
-      "heading": "What to Expect in **3 Days**",
+      "heading": "How the **three-day workshop** works",
       "isH1": false,
       "description": "",
       "featureColumns": {
         "twoColumns": false,
         "features": [
           {
-            "heading": "Day 1 - Explore & Ideate",
-            "description": "In-depth interviews with stakeholders; understand pain points and your environment.",
+            "heading": "Day 1: Understand the business",
+            "description": "Meet the people closest to the work, review representative tasks and documents, and identify bottlenecks. Understand your existing systems, data, licences and current AI usage.",
             "icon": "BiBookOpen"
           },
           {
-            "heading": "Day 2 - Analysis & Feasibility",
-            "description": "Map pain points to AI solutions: assess data readiness, integration complexity and feasibility.",
+            "heading": "Day 2: Assess the opportunities",
+            "description": "Evaluate where process improvements, existing software, automation or AI could help. Assess indicative benefits, effort, data readiness, security and licensing requirements. Shortlist suitable pilot opportunities.",
             "icon": "BiMapPin"
           },
           {
-            "heading": "Day 3 - Roadmap & Next Steps",
-            "description": "Prioritize initiatives, build implementation roadmap and timeline, present recommendations to align team.",
+            "heading": "Day 3: Prioritise and agree next steps",
+            "description": "Present a prioritised roadmap, recommended pilots and practical adoption priorities. Discuss proposed owners, success measures and next steps with your decision-makers.",
             "icon": "BiBulb"
           }
         ]
@@ -161,35 +161,35 @@
       "isStacked": true,
       "heading": "What You’ll Walk Away With",
       "isH1": false,
-      "body": "By the end, you'll have a prioritized list of AI projects, and a step-by-step plan to implement them.",
+      "body": "You’ll receive a practical assessment and prioritised plan to help you decide what to pursue, what to defer and what needs further investigation. Your proposal defines the business areas covered and the depth of each deliverable.\n\nDiscovery provides the assessment and plan. Pilot delivery, implementation and ongoing support are scoped separately unless explicitly included in your proposal.",
       "cardStyle": 0,
       "cards": [
         {
           "guid": "4qkep6",
-          "altText": "Easy Wins",
+          "altText": "Current-state assessment",
           "icon": "info",
-          "heading": "1️⃣ Easy Wins",
-          "description": "We'll map out the low effort, high impact integrations for routine tasks. Expect immediate results where we see the opportunities.",
+          "heading": "Current-state assessment",
+          "description": "A summary of how work runs across the agreed business areas, including the main bottlenecks, existing capabilities and constraints. We consider people, processes, systems and data together.",
           "embeddedButton": {
             "buttonText": ""
           }
         },
         {
           "guid": "4ob77n",
-          "altText": "Medium Projects",
+          "altText": "Opportunity register",
           "icon": "info",
-          "heading": "2️⃣ Medium Projects",
-          "description": "Projects that require some integration or light development work, typically connect AI into your existing systems, automate multi-step workflows, or enhance internal tools. Expect meaningful efficiency gains and measurable ROI within weeks.",
+          "heading": "Opportunity register",
+          "description": "A structured list of improvement opportunities with indicative benefits, effort, dependencies and assumptions. We distinguish time released for other work from actual cost reductions and identify where estimates need further validation.",
           "embeddedButton": {
             "buttonText": ""
           }
         },
         {
           "guid": "tydp",
-          "altText": "Transformational Ideas",
+          "altText": "Roadmap and pilot recommendations",
           "icon": "info",
-          "heading": "3️⃣ Transformational Ideas",
-          "description": "High-impact initiatives that reshape how your business operates. These are end-to-end AI solutions, new product capabilities, or major process redesigns that unlock entirely new value. These projects require deeper data work and engineering, but deliver genuine competitive advantage.",
+          "heading": "Roadmap and pilot recommendations",
+          "description": "Recommended priorities covering quick wins, medium-term initiatives and longer-term improvements. For shortlisted pilots, we outline the intended users, proposed owner, scope, dependencies and measures of success.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -204,32 +204,57 @@
     },
     {
       "topLabel": {
+        "labelText": "People and adoption"
+      },
+      "heading": "Help your people put the improvements to work",
+      "isH1": false,
+      "description": "Useful technology needs people who know when and how to use it. We assess adoption needs alongside the technical opportunities and recommend learning based on the real tasks your team performs.\n",
+      "featureColumns": {
+        "twoColumns": true,
+        "features": [
+          {
+            "heading": "Develop internal AI champions",
+            "description": "Where appropriate, we recommend a small group of internal AI champions: trusted staff who understand the work and can help colleagues use approved tools effectively. The plan identifies their responsibilities, the time and manager support they need, and when to involve IT or specialist developers."
+          },
+          {
+            "heading": "Measure progress and support adoption",
+            "description": "We recommend how to measure progress through usage, work quality and business outcomes. The workshop identifies adoption priorities; training delivery and ongoing coaching are scoped separately."
+          }
+        ]
+      },
+      "background": {
+        "backgroundColour": 4
+      },
+      "_template": "imageTextBlock"
+    },
+    {
+      "topLabel": {
         "labelText": ""
       },
       "heading": "At a Glance",
       "isH1": false,
-      "description": "A 3-day, on-site workshop to get to understand your businesses workflows, and identify where AI can drive value.",
+      "description": "A three-day, on-site discovery workshop focused on agreed business priorities. We assess where process improvements, automation and AI could deliver value, then recommend practical next steps.\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
           {
             "heading": "$12,000 + GST",
-            "description": "Includes two Senior AI Consultants on-site for three full days.",
+            "description": "Includes two senior consultants on-site for three full days. We agree the focus areas, required preparation and deliverables with you before the workshop.",
             "icon": "BiMoneyWithdraw"
           },
           {
-            "heading": "Deep Business Understanding",
-            "description": "We interview stakeholders, map processes, and analyse pain points across your teams.",
+            "heading": "Grounded in your business",
+            "description": "We examine real workflows with the people doing the work, using representative tasks and documents to identify useful improvements.",
             "icon": "BiSolidContact"
           },
           {
-            "heading": "Prioritized AI Roadmap",
-            "description": "A clear set of recommended initiatives ranked by value, feasibility, and ROI.",
+            "heading": "Clear priorities and next steps",
+            "description": "Recommendations ranked by expected value, effort, risk and readiness, with assumptions and dependencies made clear.",
             "icon": "BiSolidWrench"
           },
           {
-            "heading": "Tailored to Your Stack",
-            "description": "We identify solutions that fit your environment: Microsoft, AWS, OpenAI, Gemini, and more.",
+            "heading": "Make more of your existing investment",
+            "description": "We assess the software, licences and infrastructure you already have and identify where additional tools or expenditure may be needed.",
             "icon": "BiSolidCustomize"
           }
         ]
@@ -250,24 +275,32 @@
       "body": "",
       "accordionItems": [
         {
-          "label": "Is this an AI training workshop or a consulting engagement?",
-          "content": "This is a strategic consulting engagement, not a training course. Instead of teaching generic AI tools, we work with your team to map your processes, identify specific AI opportunities, and design a practical implementation roadmap tailored to your business.\n"
+          "label": "Is this a consulting engagement or an AI training workshop?",
+          "content": "This is a consulting engagement focused on your business processes, opportunities and priorities. We assess where improvements could deliver value and recommend practical next steps. We may identify training needs or illustrate an opportunity with an example, but a full training programme is separately scoped.\n"
         },
         {
-          "label": "Who should attend the 3-day workshop?",
-          "content": "We recommend a mix of business and technical stakeholders, for example:\n\n* An executive sponsor (e.g. CEO, COO, CTO)\n* Key business process owners (Operations, Sales, HR, Finance, etc.)\n* Someone who understands your current systems and data (IT/architect)\n* Individuals experiencing day-to-day pains with cumbersome processes\n\nIdeally 4–8 people who can commit for most of the 3 days.\n"
+          "label": "Who should take part?",
+          "content": "We recommend a business sponsor, representatives who understand the selected workflows, and your IT team or provider. Include people who use AI regularly and people who have not yet found it useful. We agree the participants and time required before the engagement.\n"
         },
         {
-          "label": "Do we need any AI knowledge or preparation beforehand?",
-          "content": "No AI expertise is required. You bring knowledge of your business, processes, and pain points – we bring the AI experience. Before the workshop we’ll share a short checklist (key systems, current pain points, any existing AI tools), but there’s no heavy pre-work.\n"
+          "label": "What preparation is needed?",
+          "content": "You do not need prior AI expertise. We will ask for an overview of your priorities, systems and licences, along with representative documents and any relevant usage information. We agree how information will be shared and which stakeholders need to attend.\n"
         },
         {
-          "label": "What do we actually get at the end of the 3 days?",
-          "content": "You’ll walk away with a concrete AI strategy pack, typically including:\n\n* A prioritized list of AI use cases for your business\n* Quick-win recommendations using out-of-the-box tools\n* High-level designs for any proposed custom solutions\n* A phased implementation roadmap with effort/complexity indicators\n* Clear next steps and options for implementation\n"
+          "label": "What will we receive?",
+          "content": "Your proposal defines the deliverables and their depth. These typically include a current-state assessment, an opportunity register, a prioritised roadmap, pilot recommendations and adoption priorities. We present the findings to your stakeholders so you can decide what to do next.\n"
         },
         {
-          "label": "What happens after the workshop? Do we have to use SSW for implementation?",
-          "content": "You have complete flexibility. You can:\n\n* Execute the roadmap with your internal team\n* Engage SSW to help design and build the AI solutions\n* Use a hybrid approach, where we tackle the complex pieces and your team handles simpler items\n* The deliverables are yours to use however you choose, with no lock-in\n"
+          "label": "What happens after discovery?",
+          "content": "You decide which recommendations to pursue and who will deliver them. SSW can separately scope pilot delivery, implementation, training or ongoing support. There is no obligation to engage SSW for the next phase.\n"
+        },
+        {
+          "label": "Can we use our existing software and licences?",
+          "content": "We assess existing capabilities first. For recommended pilots, we check the relevant licensing assumptions and identify any additional usage charges, infrastructure or support costs. Owning an AI or automation product does not necessarily cover every proposed use.\n"
+        },
+        {
+          "label": "How do you address security and reliability?",
+          "content": "We work with your IT team or provider to assess relevant data access, permissions and security requirements. Pilot recommendations identify what the solution may do, where human approval is required and how its outputs should be evaluated. A detailed security audit is separately scoped where needed.\n"
         }
       ],
       "isMultipleOpen": true,
@@ -309,7 +342,7 @@
       "isStacked": true,
       "heading": "Built on Real-World AI Delivery",
       "isH1": false,
-      "body": "SSW isn’t guessing. We’ve been building and fixing AI systems for years, across industries, tech stacks, and use cases. This workshop distills the lessons that save teams time, money, and frustration.",
+      "body": "Our discovery work connects business priorities with the practical requirements of delivery. We assess the data, integrations, access controls, operating costs and adoption needs that will influence whether a recommendation succeeds in everyday use.",
       "buttons": [
         {
           "buttonText": "Rules to Better AI Development",
@@ -319,50 +352,6 @@
       ],
       "cardStyle": 1,
       "cards": [
-        {
-          "guid": "uh77mq",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=Rd8cBi8Fv-4",
-          "altText": "DevTools",
-          "chips": [
-            {
-              "chipText": "DevTools",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "18 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "",
-          "description": "SSW’s Gert Marx joins Chris Simon at NDC Melbourne to break down the latest on Contextive, the open-source tool helping devs write code that better aligns with business needs.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
-        {
-          "guid": "itqfs7",
-          "mediaType": "youtube",
-          "youtubeUrl": "https://www.youtube.com/watch?v=BQtWkD7ek5E",
-          "altText": "Insights",
-          "chips": [
-            {
-              "chipText": "Insights",
-              "chipType": "filledChip"
-            },
-            {
-              "chipText": "11 min",
-              "chipType": "clearChip"
-            }
-          ],
-          "icon": "info",
-          "heading": "",
-          "description": "At NDC, Ulysses Maclaren talks with Richard Campbell about AI’s growing energy demands, Microsoft’s nuclear plans, and the massive infrastructure shifts behind our data-hungry future.",
-          "embeddedButton": {
-            "buttonText": ""
-          }
-        },
         {
           "guid": "2eb7hu",
           "mediaType": "youtube",
@@ -395,15 +384,15 @@
       "topLabel": {
         "labelText": ""
       },
-      "heading": "Equip your team with essential **AI skills**",
+      "heading": "Find the right next step for your business",
       "isH1": false,
-      "description": "",
+      "description": "Tell us where work gets held up and what you want to improve. We’ll help define the right discovery scope.\n",
       "featureColumns": {
         "twoColumns": true
       },
       "buttons": [
         {
-          "buttonText": "Book Now",
+          "buttonText": "Book a Free Initial Meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
