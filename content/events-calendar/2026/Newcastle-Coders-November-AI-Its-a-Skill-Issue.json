@@ -1,6 +1,6 @@
 {
-  "title": "Newcastle Coders November: AI: It's a Skill Issue",
-  "slug": "newcastle-ai-its-a-skill-issue",
+  "title": "Golden Ticket Tour of the AI Software Factory",
+  "slug": "newcastle-golden-ticket-tour-of-the-ai-software-factory",
   "url": "https://www.meetup.com/newcastle-coders-group/events/316437944/",
   "websiteUrl": "https://www.meetup.com/newcastle-coders-group/",
   "thumbnail": "/images/events/newcastle-coders-group.png",
@@ -15,8 +15,9 @@
   "calendarType": "User Groups",
   "city": "Newcastle",
   "category": "Artificial Intelligence",
-  "abstract": "Join SSW's VP of AI, Calum Simpson, for a talk about the current state of AI-assisted development and what you really need to know about to get the most out of the tools.\n\nCalum will explain what AI Skills are and how to use them, share some practical examples with you, and leave you with thoughts on the Human Skills required to succeed in the world of AI.",
-  "description": "Newcastle Coders Group welcomes Calum Simpson for **AI: It's a Skill Issue** at SSW Newcastle, 432 Hunter Street.\n\nJoin SSW's VP of AI, Calum Simpson, for a talk about the current state of AI-assisted development and what you really need to know about to get the most out of the tools.\n\nCalum will explain what AI Skills are and how to use them, share some practical examples with you, and leave you with thoughts on the Human Skills required to succeed in the world of AI.\n",
+  "abstract": "What happens when you stop asking AI to write code and start asking it to deliver software?\n\nJoin Calum Simpson, SSW’s VP of AI, for a golden-ticket tour of the AI software factory. Through real experiments, surprising successes and instructive failures, discover what agents can do, where they go off-script, and why the machinery behind the magic still matters.\n\nSee how people and agents turn ideas into working enterprise solutions, and leave with practical ways to move beyond the chat window.",
+  "lead": "Behind the scenes of a new way to build software",
+  "description": "What happens when you stop asking AI to write code and start asking it to deliver software?\n\nJoin Calum Simpson, SSW’s VP of AI, for a golden-ticket tour of the AI software factory. Through real experiments, surprising successes and instructive failures, discover what agents can do, where they go off-script, and why the machinery behind the magic still matters.\n\nSee how people and agents turn ideas into working enterprise solutions, and leave with practical ways to move beyond the chat window.",
   "hostedAtSsw": true,
   "enabled": true,
   "venue": "SSW Newcastle, 432 Hunter Street"
