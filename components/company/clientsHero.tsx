@@ -11,8 +11,7 @@ import { TinaMarkdown, type TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 export const CLIENT_STORIES_ID = "client-stories";
 
-// Set in code, not Tina: the copy is written for this layout. The outcome is
-// from content/company/case-study/fpe.mdx.
+// Outcome copy is based on content/company/case-study/fpe.mdx.
 const HERO_STORY = {
   client: "French Payroll Expert",
   image: "/images/new-homepage-background-assets/fpe.png",
@@ -25,13 +24,18 @@ const HERO_STORY = {
 const eyebrow =
   "m-0 text-xs font-semibold uppercase tracking-widest text-brand";
 
-// The title's **marked** part goes on its own line, in red.
 const HeroTitle = ({ text }: { text?: string | null }) => {
-  const [lead, accent] = (text ?? "").split(/\*\*(.*?)\*\*/);
   return (
     <>
-      {lead?.trim()}
-      {accent && <span className="block text-brand">{accent}</span>}
+      {(text ?? "").split(/\*\*(.*?)\*\*/).map((part, index) =>
+        index % 2 ? (
+          <span key={index} className="block text-brand">
+            {part}
+          </span>
+        ) : (
+          part
+        )
+      )}
     </>
   );
 };

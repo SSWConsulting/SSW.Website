@@ -1,8 +1,7 @@
-import type { ClientDisplay } from "@/components/company/clientList";
+import type { ClientDisplay } from "@/helpers/clientTypes";
 import { getYouTubeId } from "@/helpers/embeds";
 import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 
-// Embedded components (videos, buttons) have no text nodes, so they drop out.
 const plainText = (node: unknown): string => {
   if (!node || typeof node !== "object") return "";
   const { text, children } = node as { text?: string; children?: unknown[] };
@@ -45,7 +44,6 @@ export const orderClients = (clients: ClientDisplay[]) =>
   [...clients].sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
 
 export type ClientFilters = {
-  // Unset means "all".
   industry?: string;
   service?: string;
 };

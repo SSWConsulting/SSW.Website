@@ -169,11 +169,9 @@ export default {
         "screen-5/6": "83.333333vh",
       },
       maxHeight: {
-        // The space under the header, for a sticky list that scrolls itself.
         dialog: "85vh",
       },
       minWidth: {
-        // A Radix dropdown as wide as the button that opens it.
         "dropdown-trigger": "var(--radix-dropdown-menu-trigger-width)",
       },
       maxWidth: {

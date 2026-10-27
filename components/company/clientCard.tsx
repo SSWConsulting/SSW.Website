@@ -20,7 +20,7 @@ import { useState } from "react";
 import { FaPlay } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
 import { CustomLink } from "../customLink";
-import type { ClientDisplay } from "./clientList";
+import type { ClientDisplay } from "@/helpers/clientTypes";
 
 type ClientCardProps = {
   client: ClientDisplay;
@@ -34,10 +34,8 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
 
   const actionClassName = cn(
     "unstyled text-left text-sm font-semibold text-foreground no-underline",
-    // The same hairline-topped row that closes a product card.
     cardFooter,
     "border-hairline",
-    // Stretched over the card, so the whole card is clickable.
     "after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-brand"
   );
   const actionLabel = (
@@ -127,7 +125,6 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
           </p>
         )}
 
-        {/* mt-auto pins the row to the bottom; pt-6 keeps it off the text. */}
         <div className="mt-auto flex flex-col pt-6">
           {client.caseStudyUrl ? (
             <CustomLink href={client.caseStudyUrl} className={actionClassName}>

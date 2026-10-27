@@ -16,7 +16,7 @@ import {
   orderClients,
 } from "@/helpers/clients";
 import { ClientCard } from "../company/clientCard";
-import { CLIENT_SERVICES, type ClientDisplay } from "../company/clientList";
+import { CLIENT_SERVICES, type ClientDisplay } from "@/helpers/clientTypes";
 import { ClientStoryDialog } from "../company/clientStoryDialog";
 import { useHomeTheme } from "../layout/homeTheme";
 import { StickySidebarLayout } from "../layout/stickySidebar";
@@ -156,8 +156,7 @@ const ServiceMenu = ({
   value: string;
   onChange: (service: string) => void;
 }) => {
-  // The menu renders in a portal, outside the themed shell, so it takes the
-  // theme class itself.
+  // The portalled menu needs its own theme class outside the themed shell.
   const { isDark } = useHomeTheme();
   const label = value === ALL_SERVICES ? ALL_SERVICES_LABEL : value;
 

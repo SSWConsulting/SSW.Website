@@ -7,12 +7,8 @@ const HEADER_OFFSET = 104;
 const BOTTOM_GAP = 24;
 const DESKTOP_QUERY = "(min-width: 768px)";
 
-// A sidebar taller than the viewport cannot stick at the top: its bottom would
-// stay out of reach. So its sticky `top` follows the scroll instead, clamped
-// between the header and the point where its bottom meets the viewport's.
-// Scrolling down, it moves with the page until its last item is in view, then
-// sticks; scrolling up, it moves back until its first item is in view. A
-// sidebar that fits keeps the plain top-headerOffset from its class.
+// Tall sidebars follow scrolling until either edge reaches the viewport,
+// keeping every item reachable. Short sidebars retain the header offset.
 export const StickySidebarPanel = ({
   className,
   children,

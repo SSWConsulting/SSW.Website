@@ -1,5 +1,5 @@
 import { describe, expect, it } from "@jest/globals";
-import type { ClientDisplay } from "@/components/company/clientList";
+import type { ClientDisplay } from "@/helpers/clientTypes";
 import {
   clientIndustries,
   clientTags,

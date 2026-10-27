@@ -9,7 +9,7 @@ import { Suspense, useEffect, useRef } from "react";
 import { FiX } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
-import type { ClientDisplay } from "./clientList";
+import type { ClientDisplay } from "@/helpers/clientTypes";
 
 // The typography plugin hard-codes sswBlack text and sswRed h2s, which
 // `dark:prose-invert` can't override, so each element gets a theme token.
@@ -68,7 +68,10 @@ export const ClientStoryDialog = ({
           )}
           <h2
             id="client-story-title"
-            data-tina-field={tinaField(client, "name")}
+            data-tina-field={tinaField(
+              client,
+              client.headline ? "headline" : "name"
+            )}
             className="m-0 mt-5 p-0 text-2xl font-semibold leading-tight tracking-tight text-foreground"
           >
             {client.headline || client.name}

@@ -8,11 +8,10 @@ import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { tinaField } from "tinacms/dist/react";
 import homePage from "../../content/pagesv2/home.json";
-import type { ClientDisplay } from "./clientList";
+import type { ClientDisplay } from "@/helpers/clientTypes";
 import { ClientsClosing } from "./clientsClosing";
 import { CLIENT_STORIES_ID, ClientsHero } from "./clientsHero";
 
-// Reuses the homepage's logo carousel block.
 const homeLogoCarousel = homePage.blocks.find(
   (block) => block._template === "v3LogoCarousel"
 );
@@ -53,8 +52,6 @@ export const ClientsIndex = ({ company, clientList, relativePath }) => {
 
         {homeLogoCarousel && (
           <div className="mt-20">
-            {/* The closing card sits close beneath, so drop the carousel's
-                bottom padding. */}
             <V3LogoCarousel data={homeLogoCarousel} className="sm:pb-0" />
           </div>
         )}
