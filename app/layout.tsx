@@ -95,7 +95,7 @@ const MegaMenu = ({
 }) => {
   const hasLiveStreamWindow = Boolean(
     liveStreamData?.startShowBannerDateTime &&
-    liveStreamData?.endShowBannerDateTime
+      liveStreamData?.endShowBannerDateTime
   );
 
   return (
