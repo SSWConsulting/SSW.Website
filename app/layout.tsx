@@ -93,9 +93,14 @@ const MegaMenu = ({
   liveStreamData: EventInfoStatic;
   menuData: MegaMenuProps;
 }) => {
+  const hasLiveStreamWindow = Boolean(
+    liveStreamData?.startShowBannerDateTime &&
+    liveStreamData?.endShowBannerDateTime
+  );
+
   return (
     <>
-      {liveStreamData ? (
+      {hasLiveStreamWindow ? (
         <LiveStream event={liveStreamData}>
           <MegaMenuWrapper menu={menuData.data.megamenu.menuGroups} />
         </LiveStream>
