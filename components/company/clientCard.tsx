@@ -2,9 +2,13 @@
 
 import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import { YouTubeEmbed } from "@/components/embeds/youtubeEmbed";
-import { cardShell } from "@/components/products/shared";
 import {
-  clientIndustries,
+  cardFooter,
+  cardShell,
+  productTagChip,
+} from "@/components/products/shared";
+import {
+  clientTags,
   findVideo,
   logoBox,
   storyText,
@@ -24,13 +28,15 @@ type ClientCardProps = {
 };
 
 export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
-  const industries = clientIndustries(client);
-  const meta = [industries.join(", "), client.service].filter(Boolean);
+  const tags = clientTags(client);
   const summary = client.summary || storyText(client.content);
   const video = findVideo(client.content);
 
   const actionClassName = cn(
-    "unstyled mt-auto flex items-center justify-between gap-4 pt-6 text-left text-sm font-semibold text-foreground no-underline",
+    "unstyled text-left text-sm font-semibold text-foreground no-underline",
+    // The same hairline-topped row that closes a product card.
+    cardFooter,
+    "border-hairline",
     // Stretched over the card, so the whole card is clickable.
     "after:absolute after:inset-0 after:rounded-card focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-brand"
   );
@@ -80,10 +86,14 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
       </div>
 
       <div className="flex flex-1 flex-col p-5 lg:p-6">
-        {meta.length > 0 && (
-          <p className="m-0 text-xs text-muted-foreground">
-            {meta.join(" / ")}
-          </p>
+        {tags.length > 0 && (
+          <ul className="m-0 flex list-none flex-wrap gap-1.5 p-0">
+            {tags.map((tag) => (
+              <li key={tag} className={productTagChip}>
+                {tag}
+              </li>
+            ))}
+          </ul>
         )}
         {client.headline && (
           <p
@@ -117,20 +127,23 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
           </p>
         )}
 
-        {client.caseStudyUrl ? (
-          <CustomLink href={client.caseStudyUrl} className={actionClassName}>
-            {actionLabel}
-          </CustomLink>
-        ) : (
-          <button
-            type="button"
-            onClick={onOpen}
-            aria-haspopup="dialog"
-            className={actionClassName}
-          >
-            {actionLabel}
-          </button>
-        )}
+        {/* mt-auto pins the row to the bottom; pt-6 keeps it off the text. */}
+        <div className="mt-auto flex flex-col pt-6">
+          {client.caseStudyUrl ? (
+            <CustomLink href={client.caseStudyUrl} className={actionClassName}>
+              {actionLabel}
+            </CustomLink>
+          ) : (
+            <button
+              type="button"
+              onClick={onOpen}
+              aria-haspopup="dialog"
+              className={actionClassName}
+            >
+              {actionLabel}
+            </button>
+          )}
+        </div>
       </div>
     </article>
   );

@@ -5,21 +5,21 @@ import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
 import Image from "next/image";
-import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
+import { FiArrowDown, FiArrowUpRight, FiStar } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, type TinaMarkdownContent } from "tinacms/dist/rich-text";
 
 export const CLIENT_STORIES_ID = "client-stories";
 
-// Set in code, not Tina: the copy is written for this layout. The stat comes
+// Set in code, not Tina: the copy is written for this layout. The outcome is
 // from content/company/case-study/fpe.mdx.
 const HERO_STORY = {
   client: "French Payroll Expert",
   image: "/images/new-homepage-background-assets/fpe.png",
   headline: ["From an inbox of questions.", "To answers around the clock."],
   link: "/company/clients/fpe",
-  stat: "24/7",
-  statLabel: ["answers on French payroll law,", "in any language"],
+  outcome:
+    "FPE's clients can now ask about French payroll law at any time, in any language, with answers drawn from official legislation.",
 };
 
 const eyebrow =
@@ -113,11 +113,15 @@ const FeaturedStory = () => (
       />
       <span
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-transparent"
       />
+      <span className="absolute left-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-sswRed px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-white shadow-lg lg:left-8 lg:top-8">
+        <FiStar aria-hidden className="size-3.5 fill-current" />
+        Featured story
+      </span>
       <span className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6 lg:p-8">
-        <span className="text-xs font-semibold uppercase tracking-widest text-white/70">
-          Featured story / {HERO_STORY.client}
+        <span className="text-base font-semibold text-sswRed">
+          {HERO_STORY.client}
         </span>
         <span className="text-2xl font-semibold leading-tight tracking-tight text-white lg:text-3xl">
           {HERO_STORY.headline.map((line) => (
@@ -126,22 +130,11 @@ const FeaturedStory = () => (
             </span>
           ))}
         </span>
-        <span className="inline-flex items-center gap-2 text-sm font-semibold text-white">
-          Discover the {HERO_STORY.client} story
-          <FiArrowUpRight aria-hidden className="size-4" />
-        </span>
       </span>
     </span>
     <span className="flex items-center gap-5 px-6 py-5 lg:px-8">
-      <span className="text-4xl font-semibold leading-none tracking-tight text-foreground">
-        {HERO_STORY.stat}
-      </span>
-      <span className="flex-1 text-sm leading-snug text-muted-foreground">
-        {HERO_STORY.statLabel.map((line) => (
-          <span key={line} className="block">
-            {line}
-          </span>
-        ))}
+      <span className="flex-1 text-sm leading-relaxed text-muted-foreground">
+        {HERO_STORY.outcome}
       </span>
       <ArrowCircle
         className="size-11 flex-none border-0.75 border-hairline bg-transparent text-foreground"

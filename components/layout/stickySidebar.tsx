@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { StickySidebarPanel } from "./stickySidebarPanel";
 
 // The padded, centred container both /consulting and /events wrap this layout
 // (and their breadcrumbs) in. Shared so a padding tweak lands on both.
@@ -49,7 +50,7 @@ export const StickySidebarLayout = ({
   children,
 }: StickySidebarLayoutProps) => (
   <div className="grid grid-cols-sidebar items-start gap-8 max-xl:grid-cols-sidebar-narrow max-md:grid-cols-1 max-md:gap-4">
-    <div
+    <StickySidebarPanel
       className={cn(
         "sticky top-headerOffset self-start",
         "max-md:top-0 max-md:z-15 max-md:-mx-3 max-md:border-b-0.75 max-md:border-hairline max-md:bg-sunken-scrim max-md:px-3 max-md:pb-2.5 max-md:pt-2 max-md:backdrop-blur"
@@ -70,7 +71,7 @@ export const StickySidebarLayout = ({
       {promo && (
         <div className="mt-8 max-w-sidebar-card max-md:hidden">{promo}</div>
       )}
-    </div>
+    </StickySidebarPanel>
 
     <div ref={contentRef} className={cn("min-w-0", contentClassName)}>
       {children}

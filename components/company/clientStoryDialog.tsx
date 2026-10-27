@@ -2,7 +2,7 @@
 
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { productTagChip } from "@/components/products/shared";
-import { clientIndustries } from "@/helpers/clients";
+import { clientTags } from "@/helpers/clients";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { Suspense, useEffect, useRef } from "react";
@@ -73,13 +73,13 @@ export const ClientStoryDialog = ({
           >
             {client.headline || client.name}
           </h2>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {clientIndustries(client).map((industry) => (
-              <span key={industry} className={productTagChip}>
-                {industry}
-              </span>
+          <ul className="m-0 mt-3 flex list-none flex-wrap gap-1.5 p-0">
+            {clientTags(client).map((tag) => (
+              <li key={tag} className={productTagChip}>
+                {tag}
+              </li>
             ))}
-          </div>
+          </ul>
           <div
             data-tina-field={tinaField(client, "content")}
             className={cn(themedProse, "mt-5")}

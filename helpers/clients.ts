@@ -16,6 +16,9 @@ export const storyText = (content: TinaMarkdownContent) =>
 export const clientIndustries = (client: ClientDisplay) =>
   client.categories?.map((c) => c?.category?.name).filter(Boolean) ?? [];
 
+export const clientTags = (client: ClientDisplay) =>
+  [...new Set([...clientIndustries(client), client.service])].filter(Boolean);
+
 export type StoryVideo = { id: string; caption?: string; duration?: string };
 
 export const findVideo = (node: unknown): StoryVideo | null => {

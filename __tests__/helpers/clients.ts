@@ -2,6 +2,7 @@ import { describe, expect, it } from "@jest/globals";
 import type { ClientDisplay } from "@/components/company/clientList";
 import {
   clientIndustries,
+  clientTags,
   findVideo,
   logoBox,
   matchesClientFilters,
@@ -70,6 +71,24 @@ describe("clientIndustries", () => {
     expect(clientIndustries(client("A", { categories: undefined }))).toEqual(
       []
     );
+  });
+});
+
+describe("clientTags", () => {
+  it("lists the industries, then the service, without duplicates", () => {
+    const tags = clientTags(
+      client("A", {
+        service: "Web development",
+        categories: industries("Health", "Health", "Education"),
+      })
+    );
+    expect(tags).toEqual(["Health", "Education", "Web development"]);
+  });
+
+  it("skips a missing service", () => {
+    expect(
+      clientTags(client("A", { categories: industries("Mining") }))
+    ).toEqual(["Mining"]);
   });
 });
 

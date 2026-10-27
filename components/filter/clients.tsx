@@ -1,7 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 import {
   clientIndustries,
   matchesClientFilters,
@@ -10,7 +18,7 @@ import {
 import { ClientCard } from "../company/clientCard";
 import { CLIENT_SERVICES, type ClientDisplay } from "../company/clientList";
 import { ClientStoryDialog } from "../company/clientStoryDialog";
-import { CustomLink } from "../customLink";
+import { useHomeTheme } from "../layout/homeTheme";
 import { StickySidebarLayout } from "../layout/stickySidebar";
 import { NO_SELECTION } from "./FilterBlock";
 import { type FilterGroupProps } from "./FilterGroup";
@@ -71,23 +79,8 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
         titleAs="h2"
         titleClassName="text-sm font-semibold max-md:text-sm xl:text-sm"
         sidebar={
-          // 20+ industries outgrow the viewport, so the list scrolls itself.
-          <div className="md:-mx-1 md:mt-4 md:max-h-sidebar-scroll md:overflow-y-auto md:px-1">
+          <div className="md:mt-4">
             <FilterNav label="Client industries" {...group} />
-          </div>
-        }
-        promo={
-          <div className="border-t-0.75 border-hairline pt-6 text-sm">
-            <p className="m-0 text-muted-foreground">
-              Have a similar challenge?
-            </p>
-            <CustomLink
-              href="/company/contact-us"
-              className="unstyled mt-1 inline-flex items-center gap-1.5 font-semibold text-foreground no-underline hover:text-brand"
-            >
-              Let&rsquo;s work on it
-              <FiArrowUpRight aria-hidden className="size-4" />
-            </CustomLink>
           </div>
         }
       >
@@ -108,21 +101,11 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
             )}
           </div>
           {services.length > 0 && (
-            <label className="flex-none">
-              <span className="sr-only">Filter by service</span>
-              <select
-                value={service}
-                onChange={(event) => setService(event.target.value)}
-                className={`${controlClassName} w-52 px-4`}
-              >
-                <option value={ALL_SERVICES}>All SSW Services</option>
-                {services.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </label>
+            <ServiceMenu
+              services={services}
+              value={service}
+              onChange={setService}
+            />
           )}
         </div>
 
@@ -156,5 +139,68 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
         onClose={() => setOpenClient(null)}
       />
     </>
+  );
+};
+
+const ALL_SERVICES_LABEL = "All SSW Services";
+
+const serviceItem =
+  "cursor-pointer py-2 text-foreground focus:bg-card-hover focus:text-foreground data-[state=checked]:font-semibold";
+
+const ServiceMenu = ({
+  services,
+  value,
+  onChange,
+}: {
+  services: string[];
+  value: string;
+  onChange: (service: string) => void;
+}) => {
+  // The menu renders in a portal, outside the themed shell, so it takes the
+  // theme class itself.
+  const { isDark } = useHomeTheme();
+  const label = value === ALL_SERVICES ? ALL_SERVICES_LABEL : value;
+
+  return (
+    <DropdownMenu modal={false}>
+      <DropdownMenuTrigger asChild>
+        <button
+          type="button"
+          aria-label={`Filter by service: ${label}`}
+          className={cn(
+            controlClassName,
+            "unstyled flex w-52 flex-none items-center justify-between gap-2 px-4 text-left data-[state=open]:border-brand"
+          )}
+        >
+          <span className="truncate">{label}</span>
+          <FiChevronDown
+            aria-hidden
+            className="size-4 flex-none text-muted-foreground"
+          />
+        </button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        align="end"
+        className={cn(
+          isDark && "dark",
+          "min-w-dropdown-trigger rounded-control border-0.75 border-hairline bg-card p-1 text-foreground shadow-lg"
+        )}
+      >
+        <DropdownMenuRadioGroup value={value} onValueChange={onChange}>
+          <DropdownMenuRadioItem value={ALL_SERVICES} className={serviceItem}>
+            {ALL_SERVICES_LABEL}
+          </DropdownMenuRadioItem>
+          {services.map((service) => (
+            <DropdownMenuRadioItem
+              key={service}
+              value={service}
+              className={serviceItem}
+            >
+              {service}
+            </DropdownMenuRadioItem>
+          ))}
+        </DropdownMenuRadioGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

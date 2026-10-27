@@ -43,12 +43,6 @@ export const ClientsIndex = ({ company, clientList, relativePath }) => {
           <ClientsHero company={company} />
         </div>
 
-        {homeLogoCarousel && (
-          <div className="mt-16">
-            <V3LogoCarousel data={homeLogoCarousel} />
-          </div>
-        )}
-
         <section
           id={CLIENT_STORIES_ID}
           className="mt-16 scroll-mt-28 md:mt-20"
@@ -57,8 +51,16 @@ export const ClientsIndex = ({ company, clientList, relativePath }) => {
           <ClientsFilter clients={clients} categories={categories} />
         </section>
 
-        {company.showTechUpgradeBlock && (
+        {homeLogoCarousel && (
           <div className="mt-20">
+            {/* The closing card sits close beneath, so drop the carousel's
+                bottom padding. */}
+            <V3LogoCarousel data={homeLogoCarousel} className="sm:pb-0" />
+          </div>
+        )}
+
+        {company.showTechUpgradeBlock && (
+          <div className={homeLogoCarousel ? "mt-6" : "mt-20"}>
             <ClientsClosing />
           </div>
         )}
