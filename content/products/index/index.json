@@ -8,6 +8,7 @@
   "productsList": [
     {
       "name": "TinaCMS",
+      "category": "product",
       "url": "https://tina.io",
       "description": "Build stunning websites with TinaCMS visual editor, or create beautiful documentation with TinaDocs. Both powered by Git and built for developers who love great UX.",
       "tags": [
@@ -18,6 +19,7 @@
     },
     {
       "name": "YakShaver",
+      "category": "product",
       "url": "https://yakshaver.ai/",
       "description": "Save hours writing PBIs and bug reports. YakShaver AI automatically turns your meetings into actionable backlog items.",
       "tags": [
@@ -28,6 +30,7 @@
     },
     {
       "name": "SugarLearning",
+      "category": "product",
       "url": "https://sugarlearning.com/",
       "description": "The next generation on-boarding & induction tool for smart companies.",
       "tags": [
@@ -38,6 +41,7 @@
     },
     {
       "name": "EagleEye",
+      "category": "product",
       "url": "https://www.ssweagleeye.com/",
       "description": "AI-driven solution that provides insights and patterns, boosts productivity & data-driven decisions.",
       "tags": [
@@ -48,6 +52,7 @@
     },
     {
       "name": "TimePro",
+      "category": "product",
       "url": "https://sswtimepro.com/",
       "description": "TimePro offers everything an enterprise needs, such as invoicing, receipting, and time sheeting.",
       "tags": [
@@ -58,6 +63,7 @@
     },
     {
       "name": "SophieBot",
+      "category": "consulting",
       "url": "/products/sophiebot",
       "description": "AI-driven solution that delivers a competitive edge by finding data with advanced, business-grade AI.",
       "tags": [
@@ -68,6 +74,7 @@
     },
     {
       "name": "SophieHub",
+      "category": "consulting",
       "url": "/products/sophiehub",
       "description": "A Smart Environment System that detects who's present and shows tailored information to help clients and employees.",
       "tags": [
@@ -78,6 +85,7 @@
     },
     {
       "name": "SSW Dory",
+      "category": "consulting",
       "url": "https://www.sswdory.com/",
       "description": "Identify checked-out SharePoint pages or stale GitHub pull requests.",
       "tags": [
@@ -88,6 +96,7 @@
     },
     {
       "name": "CodeAuditor",
+      "category": "product",
       "url": "https://codeauditor.com/",
       "description": "Scan any website for broken links and HTML Issues.",
       "tags": [
@@ -98,6 +107,7 @@
     },
     {
       "name": "SSW Rewards",
+      "category": "consulting",
       "url": "/products/rewards",
       "description": "Scan SSW QR codes, earn SSW Points, claim rewards, and win prizes!",
       "tags": [

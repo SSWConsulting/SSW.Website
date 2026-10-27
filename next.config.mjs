@@ -82,6 +82,12 @@ const config = {
   async redirects() {
     return [
       {
+        source: "/events/2026/newcastle-ai-its-a-skill-issue",
+        destination:
+          "/events/2026/newcastle-golden-ticket-tour-of-the-ai-software-factory",
+        permanent: true,
+      },
+      {
         source: "/admin",
         destination: "/admin/index.html",
         permanent: true,
