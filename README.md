@@ -27,13 +27,14 @@ This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCM
 
 ## Requirements
 
-- Git, and the Node.js version pinned in [`.nvmrc`](.nvmrc) (currently v24.13.1). `nvm use` picks it up automatically.
-- pnpm `corepack enable pnpm`
+- Git
+- [nvm](https://github.com/nvm-sh/nvm) - `nvm use` selects the Node version pinned in [`.nvmrc`](.nvmrc)
+- pnpm - enable once with `corepack enable pnpm` (the version comes from `packageManager` in `package.json`)
 - A [TinaCMS](https://app.tina.io) account for live editing.
 
 ## Get Started
 
-Select the pinned Node version and enable pnpm. Both are one-off, and Corepack ships with Node:
+Enable pnpm once per machine, and select the pinned Node version in each new terminal (Corepack ships with Node):
 
 ```bash
 nvm use
