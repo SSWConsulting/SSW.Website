@@ -82,7 +82,16 @@ const resolveTheme = (): HomeThemeMode => {
 // kept in lockstep with resolveTheme() above, and its route test mirrors
 // isThemedRoute (exact THEMED_ROUTES, or under a THEMED_ROUTE_PREFIXES entry) —
 // if the two disagree a themed page flashes the wrong theme before hydration.
-const PRE_PAINT_SCRIPT = `(function(){try{var p=location.pathname;var E=${JSON.stringify(THEMED_ROUTES)},P=${JSON.stringify(THEMED_ROUTE_PREFIXES)};var m=E.indexOf(p)!==-1;for(var i=0;!m&&i<P.length;i++){m=p.indexOf(P[i]+"/")===0}if(!m)return;var t;try{t=localStorage.getItem('${STORAGE_KEY}')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=document.currentScript&&document.currentScript.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()`;
+//
+// The script is a static literal and reads its route lists off its own
+// `data-` attributes, rather than having them interpolated into the source.
+// JSON.stringify escapes for JSON, not for HTML: it leaves `<`, `>` and the
+// U+2028/U+2029 line separators alone, so a route containing `</script>` would
+// close the tag early and the rest would parse as markup (CodeQL
+// js/bad-code-sanitization). React escapes attribute values, so the same data
+// travels safely and the lists still come from the constants above.
+const PRE_PAINT_SCRIPT =
+  "(function(){try{var s=document.currentScript;if(!s)return;var p=location.pathname;var E=JSON.parse(s.getAttribute('data-exact')||'[]'),P=JSON.parse(s.getAttribute('data-prefixes')||'[]');var m=E.indexOf(p)!==-1;for(var i=0;!m&&i<P.length;i++){m=p.indexOf(P[i]+'/')===0}if(!m)return;var t;try{t=localStorage.getItem(s.getAttribute('data-key'))}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=s.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()";
 
 export const HomeThemePrePaint = () => (
   // suppressHydrationWarning: the script has already run (and mutated the DOM)
@@ -90,6 +99,9 @@ export const HomeThemePrePaint = () => (
   // otherwise it flags a mismatch (#418) and regenerates the subtree.
   <script
     suppressHydrationWarning
+    data-exact={JSON.stringify(THEMED_ROUTES)}
+    data-prefixes={JSON.stringify(THEMED_ROUTE_PREFIXES)}
+    data-key={STORAGE_KEY}
     dangerouslySetInnerHTML={{ __html: PRE_PAINT_SCRIPT }}
   />
 );
