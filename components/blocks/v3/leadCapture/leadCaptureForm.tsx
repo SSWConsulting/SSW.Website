@@ -128,9 +128,9 @@ export function LeadCaptureForm({
       company: company.trim(),
       phone: phone.trim(),
       location: locationValue,
+      hearAboutUs: hearAboutValue,
       message: message.trim(),
     };
-    lead.hearAboutUs = hearAboutValue;
     if (typeof window !== "undefined") {
       lead.landingPageUrl = window.location.href;
     }
@@ -318,6 +318,7 @@ export function LeadCaptureForm({
                       type="radio"
                       name="lc-hear"
                       value={opt}
+                      required
                       checked={hearAboutUs === opt}
                       onChange={() => setHearAboutUs(opt)}
                       className="size-4 accent-sswRed"
@@ -329,8 +330,13 @@ export function LeadCaptureForm({
               {isHearOther && (
                 <SSWAdaptiveField
                   className="mt-4"
-                  inputClassName="border-[0.5px] border-white/15 focus:border-sswRed"
-                  label="Please type another option here"
+                  inputClassName="border-0.5 border-white/15 focus:border-sswRed"
+                  label={
+                    <>
+                      Please type another option here{" "}
+                      <span className="text-sswRed">*</span>
+                    </>
+                  }
                   type="text"
                   required
                   value={hearAboutOther}
