@@ -15,6 +15,19 @@ export const storyText = (content: TinaMarkdownContent) =>
 export const clientIndustries = (client: ClientDisplay) =>
   client.categories?.map((c) => c?.category?.name).filter(Boolean) ?? [];
 
+export const clientIndustryOptions = (
+  clients: ClientDisplay[],
+  categories: string[]
+) =>
+  categories
+    .map((label) => ({
+      label,
+      count: clients.filter((client) =>
+        clientIndustries(client).includes(label)
+      ).length,
+    }))
+    .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, "en"));
+
 export const clientTags = (client: ClientDisplay) =>
   [...new Set([...clientIndustries(client), client.service])].filter(Boolean);
 

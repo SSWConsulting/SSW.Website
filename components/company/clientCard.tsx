@@ -41,7 +41,8 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
   const actionLabel = (
     <>
       <span>
-        Explore the <span className="sr-only">{client.name} </span>story
+        {client.caseStudyUrl ? "Explore the case study" : "Read more"}
+        <span className="sr-only"> about {client.name}</span>
       </span>
       <ArrowCircle
         className="size-9 flex-none bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
@@ -84,35 +85,20 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
       </div>
 
       <div className="flex flex-1 flex-col p-5 lg:p-6">
-        {tags.length > 0 && (
-          <ul className="m-0 flex list-none flex-wrap gap-1.5 p-0">
-            {tags.map((tag) => (
-              <li key={tag} className={productTagChip}>
-                {tag}
-              </li>
-            ))}
-          </ul>
-        )}
-        {client.headline && (
-          <p
-            data-tina-field={tinaField(client, "name")}
-            className="m-0 mt-3 text-sm font-semibold text-brand"
-          >
-            {client.name}
-          </p>
-        )}
-        <h3
-          data-tina-field={tinaField(
-            client,
-            client.headline ? "headline" : "name"
-          )}
-          className={cn(
-            "m-0 p-0 text-xl font-semibold leading-snug tracking-tight text-foreground",
-            client.headline ? "mt-1" : "mt-3"
-          )}
+        <p
+          data-tina-field={tinaField(client, "name")}
+          className="m-0 text-sm font-semibold text-brand"
         >
-          {client.headline || client.name}
-        </h3>
+          {client.name}
+        </p>
+        {client.headline && (
+          <h3
+            data-tina-field={tinaField(client, "headline")}
+            className="m-0 mt-2 p-0 text-xl font-semibold leading-snug tracking-tight text-foreground"
+          >
+            {client.headline}
+          </h3>
+        )}
         {summary && (
           <p
             data-tina-field={tinaField(
@@ -123,6 +109,15 @@ export const ClientCard = ({ client, onOpen }: ClientCardProps) => {
           >
             {summary}
           </p>
+        )}
+        {tags.length > 0 && (
+          <ul className="m-0 mt-4 flex list-none flex-wrap gap-1.5 p-0">
+            {tags.map((tag) => (
+              <li key={tag} className={productTagChip}>
+                {tag}
+              </li>
+            ))}
+          </ul>
         )}
 
         <div className="mt-auto flex flex-col pt-6">

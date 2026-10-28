@@ -15,7 +15,7 @@ export const CLIENT_STORIES_ID = "client-stories";
 const HERO_STORY = {
   client: "French Payroll Expert",
   image: "/images/new-homepage-background-assets/fpe.png",
-  headline: ["From an inbox of questions.", "To answers around the clock."],
+  headline: "From an inbox of questions to answers around the clock.",
   link: "/company/clients/fpe",
   outcome:
     "FPE's clients can now ask about French payroll law at any time, in any language, with answers drawn from official legislation.",
@@ -81,17 +81,19 @@ export const ClientsHero = ({ company }: ClientsHeroProps) => (
             <span>Explore client stories</span>
             <FiArrowDown aria-hidden className="size-4" />
           </RippleButton>
-          <CustomLink
+          <RippleButton
+            variant="secondary"
             href="/company/contact-us"
-            className="unstyled inline-flex items-center gap-2 text-base font-semibold text-foreground no-underline hover:text-brand"
+            className="inline-flex border-stroke-weak text-base font-semibold text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground dark:border-hairline dark:hover:border-brand"
+            fontClassName="gap-3"
           >
-            Talk to our team
+            <span>Talk to our team</span>
             <FiArrowUpRight aria-hidden className="size-4" />
-          </CustomLink>
+          </RippleButton>
         </div>
 
         <p className="m-0 mt-10 max-w-xs border-l-2 border-sswRed pl-4 text-sm leading-relaxed text-muted-foreground">
-          Three decades of building software that makes a difference.
+          30+ years of building software that makes a difference.
         </p>
       </div>
 
@@ -128,11 +130,7 @@ const FeaturedStory = () => (
           {HERO_STORY.client}
         </span>
         <span className="text-2xl font-semibold leading-tight tracking-tight text-white lg:text-3xl">
-          {HERO_STORY.headline.map((line) => (
-            <span key={line} className="block">
-              {line}
-            </span>
-          ))}
+          {HERO_STORY.headline}
         </span>
       </span>
     </span>

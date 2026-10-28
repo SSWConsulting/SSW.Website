@@ -1,15 +1,28 @@
 "use client";
 
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
+import type { ContentCardProps } from "@/components/blocks/contentCard";
 import { productTagChip } from "@/components/products/shared";
 import { clientTags } from "@/helpers/clients";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Suspense, useEffect, useRef } from "react";
 import { FiX } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { ClientDisplay } from "@/helpers/clientTypes";
+
+const ContentCard = dynamic<ContentCardProps>(() =>
+  import("@/components/blocks/contentCard").then((mod) => mod.ContentCard)
+);
+
+const dialogComponents = {
+  ...componentRenderer,
+  ContentCard: (props) => (
+    <ContentCard data={props} className="bg-card text-foreground" />
+  ),
+};
 
 // The typography plugin hard-codes sswBlack text and sswRed h2s, which
 // `dark:prose-invert` can't override, so each element gets a theme token.
@@ -92,7 +105,7 @@ export const ClientStoryDialog = ({
             <Suspense fallback={null}>
               <TinaMarkdown
                 content={client.content}
-                components={componentRenderer}
+                components={dialogComponents}
               />
             </Suspense>
           </div>

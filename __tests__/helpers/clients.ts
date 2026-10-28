@@ -2,6 +2,7 @@ import { describe, expect, it } from "@jest/globals";
 import type { ClientDisplay } from "@/helpers/clientTypes";
 import {
   clientIndustries,
+  clientIndustryOptions,
   clientTags,
   findVideo,
   logoBox,
@@ -71,6 +72,32 @@ describe("clientIndustries", () => {
     expect(clientIndustries(client("A", { categories: undefined }))).toEqual(
       []
     );
+  });
+});
+
+describe("clientIndustryOptions", () => {
+  it("sorts by descending count, then alphabetically, without reordering categories", () => {
+    const categories = ["Mining", "Technology", "Health", "Education"];
+    const clients = [
+      client("A", { categories: industries("Technology", "Health") }),
+      client("B", { categories: industries("Technology", "Education") }),
+      client("C", { categories: industries("Health") }),
+    ];
+
+    const options = clientIndustryOptions(clients, categories);
+
+    expect(options).toEqual([
+      { label: "Health", count: 2 },
+      { label: "Technology", count: 2 },
+      { label: "Education", count: 1 },
+      { label: "Mining", count: 0 },
+    ]);
+    expect(categories).toEqual(["Mining", "Technology", "Health", "Education"]);
+    expect(
+      clients
+        .filter((c) => matchesClientFilters(c, { industry: options[0].label }))
+        .map((c) => c.name)
+    ).toEqual(["A", "C"]);
   });
 });
 

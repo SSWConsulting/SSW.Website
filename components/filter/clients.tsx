@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { FiChevronDown } from "react-icons/fi";
+import { FiCheck, FiChevronDown } from "react-icons/fi";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
 import {
-  clientIndustries,
+  clientIndustryOptions,
   matchesClientFilters,
   orderClients,
 } from "@/helpers/clients";
@@ -40,29 +40,47 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
   const [openClient, setOpenClient] = useState<ClientDisplay | null>(null);
 
   const ordered = useMemo(() => orderClients(clients), [clients]);
+  const industryOptions = useMemo(
+    () => clientIndustryOptions(clients, categories),
+    [clients, categories]
+  );
+  const industry =
+    selected === NO_SELECTION ? undefined : industryOptions[selected]?.label;
+  const industryClients = useMemo(
+    () =>
+      ordered.filter((client) =>
+        matchesClientFilters(client, {
+          industry,
+        })
+      ),
+    [ordered, industry]
+  );
 
   const services = useMemo(
-    () => CLIENT_SERVICES.filter((s) => clients.some((c) => c.service === s)),
-    [clients]
+    () =>
+      CLIENT_SERVICES.filter((s) => clients.some((c) => c.service === s)).map(
+        (name) => ({
+          name,
+          count: industryClients.filter((client) => client.service === name)
+            .length,
+        })
+      ),
+    [clients, industryClients]
   );
 
   const filtered = useMemo(() => {
     const filters = {
-      industry: selected === NO_SELECTION ? undefined : categories[selected],
       service: service === ALL_SERVICES ? undefined : service,
     };
-    return ordered.filter((client) => matchesClientFilters(client, filters));
-  }, [ordered, selected, categories, service]);
+    return industryClients.filter((client) =>
+      matchesClientFilters(client, filters)
+    );
+  }, [industryClients, service]);
 
   const group: FilterGroupProps = {
     selected,
     setSelected,
-    options: categories.map((category) => ({
-      label: category,
-      count: clients.filter((client) =>
-        clientIndustries(client).includes(category)
-      ).length,
-    })),
+    options: industryOptions,
     allText: "All industries",
   };
 
@@ -88,7 +106,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
           <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
             <p className="m-0" aria-live="polite">
               {filtered.length} {filtered.length === 1 ? "story" : "stories"}
-              {selected !== NO_SELECTION && ` in ${categories[selected]}`}
+              {industry && ` in ${industry}`}
             </p>
             {isFiltered && (
               <button
@@ -103,6 +121,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
           {services.length > 0 && (
             <ServiceMenu
               services={services}
+              total={industryClients.length}
               value={service}
               onChange={setService}
             />
@@ -145,36 +164,45 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
 const ALL_SERVICES_LABEL = "All SSW Services";
 
 const serviceItem =
-  "cursor-pointer py-2 text-foreground focus:bg-card-hover focus:text-foreground data-[state=checked]:font-semibold";
+  "cursor-pointer py-2 text-foreground hover:bg-sswRed/10 hover:text-brand focus:bg-sswRed/10 focus:text-brand data-[highlighted]:bg-sswRed/10 data-[highlighted]:text-brand data-[state=checked]:font-semibold data-[state=checked]:text-brand";
 
 const ServiceMenu = ({
   services,
+  total,
   value,
   onChange,
 }: {
-  services: string[];
+  services: { name: string; count: number }[];
+  total: number;
   value: string;
   onChange: (service: string) => void;
 }) => {
   // The portalled menu needs its own theme class outside the themed shell.
   const { isDark } = useHomeTheme();
   const label = value === ALL_SERVICES ? ALL_SERVICES_LABEL : value;
+  const count =
+    value === ALL_SERVICES
+      ? total
+      : (services.find((service) => service.name === value)?.count ?? 0);
 
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <button
           type="button"
-          aria-label={`Filter by service: ${label}`}
+          aria-label={`Filter by service: ${label} (${count})`}
           className={cn(
             controlClassName,
-            "unstyled flex w-52 flex-none items-center justify-between gap-2 px-4 text-left data-[state=open]:border-brand"
+            "unstyled group flex w-52 flex-none items-center justify-between gap-2 px-4 text-left hover:border-brand hover:bg-card-hover data-[state=open]:border-brand dark:hover:border-brand"
           )}
         >
-          <span className="truncate">{label}</span>
+          <span className="flex min-w-0 items-center gap-1">
+            <span className="truncate">{label}</span>
+            <span className="flex-none">({count})</span>
+          </span>
           <FiChevronDown
             aria-hidden
-            className="size-4 flex-none text-muted-foreground"
+            className="size-4 flex-none text-muted-foreground transition-colors group-hover:text-brand"
           />
         </button>
       </DropdownMenuTrigger>
@@ -186,16 +214,21 @@ const ServiceMenu = ({
         )}
       >
         <DropdownMenuRadioGroup value={value} onValueChange={onChange}>
-          <DropdownMenuRadioItem value={ALL_SERVICES} className={serviceItem}>
-            {ALL_SERVICES_LABEL}
+          <DropdownMenuRadioItem
+            value={ALL_SERVICES}
+            className={serviceItem}
+            indicator={<FiCheck aria-hidden className="size-4 text-brand" />}
+          >
+            {ALL_SERVICES_LABEL} ({total})
           </DropdownMenuRadioItem>
           {services.map((service) => (
             <DropdownMenuRadioItem
-              key={service}
-              value={service}
+              key={service.name}
+              value={service.name}
               className={serviceItem}
+              indicator={<FiCheck aria-hidden className="size-4 text-brand" />}
             >
-              {service}
+              {service.name} ({service.count})
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>
