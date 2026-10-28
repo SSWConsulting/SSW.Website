@@ -147,6 +147,17 @@ const sectionFields: TinaField[] = [
     ],
   },
   {
+    type: "string",
+    label: "Image Fit",
+    name: "imageFit",
+    description:
+      "Natural lets the image set its own height - right for screenshots and photos. Uniform gives every section the same fixed frame and scales the image to fit inside it, so a set of logos at different aspect ratios still lines up. Defaults to natural.",
+    options: [
+      { value: "natural", label: "Natural height" },
+      { value: "uniform", label: "Uniform frame (logos)" },
+    ],
+  },
+  {
     type: "object",
     label: "Video",
     name: "video",

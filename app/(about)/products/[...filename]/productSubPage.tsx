@@ -12,7 +12,6 @@ import { Breadcrumbs } from "app/components/breadcrumb";
 const NO_REPLACEMENTS: { from: string; to: string }[] = [];
 
 export const ProductSubPage = ({ page, parent, parentSlug, slug }) => {
-  const parentHref = `/products/${parentSlug}`;
   const productName = parent?.title ?? page?.title;
 
   return (
@@ -48,11 +47,7 @@ export const ProductSubPage = ({ page, parent, parentSlug, slug }) => {
           sidebar={
             // Sub-pages inherit the product's sidebar, so the nav can show
             // which page is active without duplicating the CTAs per page.
-            <ProductSidebar
-              productName={productName}
-              productHref={parentHref}
-              data={parent?.sidebar}
-            />
+            <ProductSidebar productName={productName} data={parent?.sidebar} />
           }
         >
           <ProductSections sections={page?.sections} divided />

@@ -13,8 +13,6 @@ import { ProductVideo } from "@/components/products/template/productVideo";
 import { Breadcrumbs } from "app/components/breadcrumb";
 
 export const ProductPage = ({ product, slug }) => {
-  const productHref = `/products/${slug}`;
-
   return (
     // min-h-screen, not min-h-full: PageLayout's <main> has an unconditional
     // bg-white, so any shortfall shows as a white band in dark mode.
@@ -35,7 +33,6 @@ export const ProductPage = ({ product, slug }) => {
           sidebar={
             <ProductSidebar
               productName={product?.title}
-              productHref={productHref}
               data={product?.sidebar}
             />
           }

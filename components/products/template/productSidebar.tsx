@@ -28,7 +28,6 @@ export type ProductSidebarData = {
 
 type ProductSidebarProps = {
   productName: string;
-  productHref: string;
   data?: ProductSidebarData | null;
 };
 
@@ -67,11 +66,7 @@ const StoreBadge = ({
   </a>
 );
 
-export const ProductSidebar = ({
-  productName,
-  productHref,
-  data,
-}: ProductSidebarProps) => {
+export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
   const pathname = usePathname();
   const subPages = (data?.subPages ?? []).filter((page): page is Link =>
     Boolean(page?.label && page?.href)
@@ -80,7 +75,7 @@ export const ProductSidebar = ({
   const embedUrl = data?.embed?.url;
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-3 rounded-card border-0.75 border-hairline bg-white p-6 shadow-md dark:bg-sswCard">
         <h2 className="m-0 p-0 text-xl font-semibold leading-tight text-foreground">
           {productName}
@@ -142,38 +137,38 @@ export const ProductSidebar = ({
         )}
       </div>
 
-      <nav aria-label={`${productName} pages`} className="flex flex-col gap-1">
-        <span className="px-2.5 font-mono text-xs uppercase tracking-wider text-muted-foreground">
-          Pages
-        </span>
-        <a
-          href={productHref}
-          aria-current={pathname === productHref ? "page" : undefined}
-          className={navItem(pathname === productHref)}
+      {/* Sub-pages and outbound links only - the product page itself is the
+          hero above, so a self-referencing "Overview" entry earned nothing. */}
+      {subPages.length > 0 && (
+        <nav
+          aria-label={`Explore ${productName}`}
+          className="flex flex-col gap-1"
         >
-          Overview
-        </a>
-        {subPages.map((page, index) => {
-          const isActive = pathname === page.href;
-          return (
-            <a
-              key={`product-sub-page-${index}`}
-              href={page.href ?? undefined}
-              data-tina-field={tinaField(page, "label")}
-              aria-current={isActive ? "page" : undefined}
-              className={navItem(isActive)}
-            >
-              {page.label}
-              <BiRightArrowAlt className="size-5 shrink-0 opacity-70" />
-            </a>
-          );
-        })}
-      </nav>
+          <span className="px-2.5 font-mono text-xs uppercase tracking-wider text-muted-foreground">
+            Explore
+          </span>
+          {subPages.map((page, index) => {
+            const isActive = pathname === page.href;
+            return (
+              <a
+                key={`product-sub-page-${index}`}
+                href={page.href ?? undefined}
+                data-tina-field={tinaField(page, "label")}
+                aria-current={isActive ? "page" : undefined}
+                className={navItem(isActive)}
+              >
+                {page.label}
+                <BiRightArrowAlt className="size-5 shrink-0 opacity-70" />
+              </a>
+            );
+          })}
+        </nav>
+      )}
 
       {embedUrl && (
         <div className="flex flex-col gap-3">
           <span className="px-2.5 font-mono text-xs uppercase tracking-wider text-muted-foreground">
-            {data?.embed?.type === "short" ? "Short" : "On X"}
+            Social Media
           </span>
           {data?.embed?.type === "short" ? (
             <iframe

@@ -11,6 +11,7 @@ export type ProductSection = {
   list?: (string | null)[] | null;
   image?: string | null;
   imagePosition?: string | null;
+  imageFit?: string | null;
   video?: ProductVideoData | null;
   button?: { label?: string | null; href?: string | null } | null;
 };
@@ -73,17 +74,26 @@ const SectionText = ({ section }: { section: ProductSection }) => {
   );
 };
 
-const SectionImage = ({ section }: { section: ProductSection }) =>
-  section.image ? (
-    // The frame hugs the image rather than holding the design's fixed 4/3 box.
-    // Real section images run from a 0.56 phone screenshot to a 3.28 vendor
-    // logo, so a fixed ratio would either crop them to a band or leave wide
-    // letterbox bars. bg-white in both themes follows productCard: several of
-    // these are third-party logos drawn in dark ink on transparency, which all
-    // but vanish on a dark page.
+const SectionImage = ({ section }: { section: ProductSection }) => {
+  if (!section.image) return null;
+
+  // Natural is the default: the frame hugs the image. Real section images run
+  // from a 0.56 phone screenshot to a 3.28 vendor logo, so forcing one ratio on
+  // all of them would either crop a screenshot to a band or letterbox a logo.
+  // Uniform is the opt-in for a set that has to line up - the platform logos
+  // below "Built on proven platforms" are 1.01, 1.10, 2.77 and 3.28, so left to
+  // their own heights they look ragged. bg-white in both themes follows
+  // productCard: these are third-party logos in dark ink on transparency, which
+  // all but vanish on a dark page.
+  const isUniform = section.imageFit === "uniform";
+
+  return (
     <div
       data-tina-field={tinaField(section, "image")}
-      className="overflow-hidden rounded-card border-0.75 border-hairline bg-white"
+      className={cn(
+        "overflow-hidden rounded-card border-0.75 border-hairline bg-white",
+        isUniform && "flex aspect-video items-center justify-center p-8"
+      )}
     >
       <Image
         src={section.image}
@@ -91,10 +101,18 @@ const SectionImage = ({ section }: { section: ProductSection }) =>
         width={0}
         height={0}
         sizes="(min-width: 1024px) 33vw, 100vw"
-        className="!my-0 h-auto w-full"
+        className={cn(
+          // w-full in both cases: `width={0}` means the intrinsic width is 0,
+          // so `w-auto` would collapse the image - and with it the flex plate.
+          // The uniform plate takes its size from aspect-video instead, and
+          // object-contain scales the logo to fit without cropping it.
+          "!my-0 w-full",
+          isUniform ? "h-full object-contain" : "h-auto"
+        )}
       />
     </div>
-  ) : null;
+  );
+};
 
 const Section = ({
   section,
