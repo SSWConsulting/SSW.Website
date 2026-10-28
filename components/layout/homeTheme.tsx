@@ -24,8 +24,15 @@ const DEFAULT_THEME: HomeThemeMode = "dark";
 // MegaMenuWrapper, so the list only needs updating in one place.
 export const THEMED_ROUTES = ["/", "/consulting", "/products", "/events"];
 
+// Routes whose descendants are themed too. Every /products/<slug> page and its
+// sub-pages use the product template, which is built for both themes, so the
+// section opts in wholesale. The other entries stay exact matches, leaving
+// /consulting/<page> and /events/<page> untouched.
+export const THEMED_ROUTE_PREFIXES = ["/products"];
+
 export const isThemedRoute = (pathname: string) =>
-  THEMED_ROUTES.includes(pathname);
+  THEMED_ROUTES.includes(pathname) ||
+  THEMED_ROUTE_PREFIXES.some((prefix) => pathname.startsWith(`${prefix}/`));
 
 // The global mega menu reads the theme on every route, including ones with no
 // HomeThemeProvider ancestor (error pages, etc.), so fall back to defaults there
@@ -72,8 +79,10 @@ const resolveTheme = (): HomeThemeMode => {
 // the browser paints the nav/hero — and sets `.dark` on its own parent wrapper.
 // That makes a themed route's first paint already match the resolved theme, so
 // there's no dark→light flash. Rendered inside each themed wrapper; the logic is
-// kept in lockstep with resolveTheme() above. Gated to THEMED_ROUTES.
-const PRE_PAINT_SCRIPT = `(function(){try{var p=location.pathname;if(${JSON.stringify(THEMED_ROUTES)}.indexOf(p)===-1)return;var t;try{t=localStorage.getItem('${STORAGE_KEY}')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=document.currentScript&&document.currentScript.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()`;
+// kept in lockstep with resolveTheme() above, and its route test mirrors
+// isThemedRoute (exact THEMED_ROUTES, or under a THEMED_ROUTE_PREFIXES entry) —
+// if the two disagree a themed page flashes the wrong theme before hydration.
+const PRE_PAINT_SCRIPT = `(function(){try{var p=location.pathname;var E=${JSON.stringify(THEMED_ROUTES)},P=${JSON.stringify(THEMED_ROUTE_PREFIXES)};var m=E.indexOf(p)!==-1;for(var i=0;!m&&i<P.length;i++){m=p.indexOf(P[i]+"/")===0}if(!m)return;var t;try{t=localStorage.getItem('${STORAGE_KEY}')}catch(e){}if(t!=='light'&&t!=='dark'){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}var el=document.currentScript&&document.currentScript.parentElement;if(el){el.classList.toggle('dark',t==='dark')}}catch(e){}})()`;
 
 export const HomeThemePrePaint = () => (
   // suppressHydrationWarning: the script has already run (and mutated the DOM)
@@ -152,7 +161,7 @@ export const HomeThemeBoundary = ({
 };
 
 // Applies the theme class to a route-scoped wrapper (NOT <html>) so theming
-// stays contained to THEMED_ROUTES and cannot affect other routes. Tailwind's
+// stays contained to the themed routes and cannot affect others. Tailwind's
 // `dark:` variants and the design-token CSS variables both resolve from this
 // ancestor, so descendant blocks pick up the active theme automatically.
 export const HomeThemeShell = ({
