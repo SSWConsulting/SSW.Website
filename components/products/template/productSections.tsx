@@ -75,20 +75,23 @@ const SectionText = ({ section }: { section: ProductSection }) => {
 
 const SectionImage = ({ section }: { section: ProductSection }) =>
   section.image ? (
+    // The frame hugs the image rather than holding the design's fixed 4/3 box.
+    // Real section images run from a 0.56 phone screenshot to a 3.28 vendor
+    // logo, so a fixed ratio would either crop them to a band or leave wide
+    // letterbox bars. bg-white in both themes follows productCard: several of
+    // these are third-party logos drawn in dark ink on transparency, which all
+    // but vanish on a dark page.
     <div
       data-tina-field={tinaField(section, "image")}
-      className="relative aspect-4/3 overflow-hidden rounded-card border-0.75 border-hairline"
+      className="overflow-hidden rounded-card border-0.75 border-hairline bg-white"
     >
       <Image
         src={section.image}
         alt={section.heading ?? ""}
-        fill
+        width={0}
+        height={0}
         sizes="(min-width: 1024px) 33vw, 100vw"
-        // object-contain, not the design's cover: real section images run from
-        // a 0.56 phone screenshot to a 3.28 vendor logo, and cover would crop
-        // every one of them to a band. The frame keeps its 4/3 footprint so
-        // the two-column layout stays steady whatever the image.
-        className="!my-0 object-contain"
+        className="!my-0 h-auto w-full"
       />
     </div>
   ) : null;
