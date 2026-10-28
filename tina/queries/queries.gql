@@ -328,6 +328,19 @@ query productContentQuery($relativePath: String!) {
   ...LayoutQueryFragment
   products(relativePath: $relativePath) {
     ...ProductsParts
+    # ProductsParts expands the service reference into the referenced page's
+    # own fields and selects no identifier, so the CTA has nothing to build a
+    # link from. GraphQL merges these into that selection.
+    serviceCta {
+      service {
+        ... on Document {
+          id
+          _sys {
+            filename
+          }
+        }
+      }
+    }
   }
 }
 
