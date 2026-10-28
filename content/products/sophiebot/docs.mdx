@@ -4,18 +4,13 @@ seo:
   description: >-
     Documentation for SSW SophieBot, including how to keep presence detection
     working by disabling the private Wi-Fi address on your device.
+title: SSW SophieBot docs
+sections:
+  - heading: Make sure the private address is disabled
+    image: /images/products/sophiebot/private-address-disabled.png
+    imagePosition: right
+    body: |-
+      When you connect your device to SSW WIFI (or any Wi-Fi managed by a UniFi controller), make sure the private address is disabled.
+
+      If the private address is enabled, the controller records the randomized MAC address instead of the device's registered hardware address. That causes a mismatch in SophieBot's database between the employee's registered device and presence detection.
 ---
-
-# SSW SophieBot docs
-
-## Make sure the private address is disabled
-
-When you connect your device to SSW WIFI (or any Wi-Fi managed by a UniFi controller), make sure the private address is disabled.
-
-If the private address is enabled, the controller records the randomized MAC address instead of the device's registered hardware address. That causes a mismatch in SophieBot's database between the employee's registered device and presence detection.
-
-<CustomImage src="/images/products/sophiebot/private-address-disabled.png" altText="iPhone Wi-Fi settings with the Private Address toggle switched off" height={1280} width={719} caption="Figure: Disable Private Address" />
-
-***
-
-[Back to SophieBot](/products/sophiebot) | [Try SophieBot](/products/sophiebot/try)
