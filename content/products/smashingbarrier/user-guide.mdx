@@ -4,130 +4,139 @@ seo:
   description: >-
     Archived setup and usage guide for the retired SSW SmashingBarrier widget.
     SmashingBarrier has been retired or incorporated into SSW YakShaver.
+title: SSW SmashingBarrier User Guide
+blurb: >-
+  In order to use SSW SmashingBarrier control in your web application, you need
+  to add the references and the UserControl to your project and add the
+  configuration settings into the web.config, then putting/dragging onto the
+  page (usually the footer of the master page). Then you will be able to create
+  new Work items (and see existing ones) from the right way around ie. the
+  current page you are on. Add the control into your site.master to use it on
+  all of your pages and begin using it to smash the barriers between your
+  customers and developers.
+sections:
+  - heading: 🗃️ This product has been retired
+    imagePosition: none
+    body: >-
+      **This product has been retired or incorporated into [SSW
+      YakShaver](https://yakshaver.ai).** This guide is kept for reference. See
+      the [SmashingBarrier product page](/products/smashingbarrier).
+  - heading: Setting it up
+    imagePosition: none
+    body: |-
+      **1.** Create a new web project with Framework 3.5.
+
+      **2.** Unzip the project package.
+
+      **3.** Copy "References" and "_CONTROLTEMPLATES" folders into the project root folder and include them into the new project. Click "Show All Files" button in Solution Explorer, then right click on the selected two new folders and click "Include In Project".
+
+      **4.** Add references to the listed assemblies:
+    list:
+      - Microsoft.TeamFoundation.Client.dll
+      - Microsoft.TeamFoundation.WorkItemTracking.Client.dll
+      - Microsoft.TeamFoundation.Common.dll
+  - heading: Add the widget to your pages
+    imagePosition: none
+    body: |-
+      **5.** Add the reference to the TFSQuery.ascx to the pages that you want to host this widget. Tip: Most developers choose to put in the footer of the master page.
+
+      **a)** Register the widget at the top of the page (under the `<%@ Page……` line).
+
+      ```aspnet
+      <%@ Register Namespace="SSW.TFSSmashingBarrier.UserControls" Assembly="SSW.TFSSmashingBarrier.UserControls.TFSQuery" TagPrefix="ssw" %>
+      <%@ Register src="/_controltemplates/SSWUserControls/TFSSB/TfsQuery.ascx" tagname="TfsQuery" tagprefix="ssw" %>
+      ```
+
+      **b)** Add the widget to the location you want to show it (referable inside `<div>`). Note: you need to include the Script Manager if you don't already have one on that page.
+
+      ```aspnet
+      <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+      <ssw:TfsQuery ID="TfsQuery1" runat="server" />
+      ```
+
+      **c)** Add the CSS file reference into the page. Note: if you are using a Master Page, it's recommended to include this into your Master Page.
+
+      ```html
+      <link rel="Stylesheet" href="UserControls/style/TFSQuery.css" />
+      ```
+
+      Add the following keys to your web.config. Note: You are expected to change the configurations to fit to your environment later.
+
+      ```xml
+      <appSettings>
+          <add key="TFSServer" value="[TFS URL]"/>
+          <add key="TeamProjectName" value="[Team Project Name]"/>
+          <add key="TFSWebAccess" value="[TFS Web Access URL]"/>
+          <add key="TFSUserName" value="[Username]"/>
+          <add key="TFSPassword" value="[Password]"/>
+          <add key="TFSDomain" value="[Domain]"/>
+      </appSettings>
+      ```
+  - heading: Configure the settings step by step
+    imagePosition: none
+    body: |-
+      **a)** Replace the highlighted part to set the correct settings for your TFS.
+
+      ```xml
+      <appSettings>
+          <add key="TFSServer" value="http://sampledomain.com:8080/tfs" />
+          <add key="TeamProjectName" value="Sample.SampleProject"/>
+          <add key="TFSWebAccess" value="http://sampledomain.com/tfs/web/ "/>
+      </appSettings>
+      ```
+
+      **b)** Provide the credentials for your TFS. Note: this account must have [Project Contributor] permission on the Team Project.
+
+      ```xml
+      <appSettings>
+          <add key="TFSUserName" value="username"/>
+          <add key="TFSPassword" value="password"/>
+          <add key="TFSDomain" value="sampledomain"/>
+      </appSettings>
+      ```
+
+      Now, you are ready to add the URL field into your TFS template.
+  - heading: How to add "SSW.Agile.URL" field for TFS 2013 project?
+    imagePosition: none
+    body: |-
+      In order to use SSW TFS Smashing Barrier you need to add a custom field to the Task work item type in TFS process template, so that we can store the unique identifier of the form or webpage URL and look it up later.
+  - heading: Install TFS 2013 Power Tools
+    imagePosition: none
+    body: |-
+      Before adding the new "SSW.Agile.URL" field, you need to make sure you have TFS power tools for Visual Studio 2012 installed.
+
+      Note: You have to use VS 2012 (not VS2008) with TFS Power Tools to finish the following steps, otherwise you will see an error message when importing the changes to TFS.
+  - heading: Add URL field into a TFS process template
+    imagePosition: none
+    body: |-
+      **a)** Open Visual Studio 2012 and select "Tools | Process Editor | Work Item Types | Open WIT from Server".
+
+      **b)** Select the team project you want to add the field to, and then select Work Item Type "Task" and click "OK".
+
+      **c)** Visual Studio will open the "Task.wit".
+
+      **d)** Click "New" to add a new field "SSW.Agile.URL", then click "OK". Make sure you set "RefName" to "SSW.Agile.URL".
+
+      **e)** Switch to the "Layout" tab, add a new control under Layout | Group | Column | Group – Classification | Column.
+
+      **f)** Use the "SSW.Agile.URL" field in the new control, choose "FieldName" and input a "Label" value.
+
+      **g)** After completing the modification, click "Save" to update it to TFS.
+
+      **h)** Refresh team explorer to get the latest WIT types for the projects.
+
+      **i)** Open a work item type from the project to check the new "URL" field is there.
+
+      Done. We now have a custom field in our Task work item type that can be used to track web pages or forms.
+  - heading: How to use SSW TFS Smashing Barrier
+    imagePosition: none
+    body: |-
+      Now you should be able to run the page successfully. Try to click "Add …" to add a new task in TFS related to your current page.
+
+      Update the necessary fields and save it in the new opened window.
+
+      Refresh the web page, you will be able to see the task in the "Active Tasks" area.
+
+      Find the task in Visual Studio and close it, go back and refresh the web page again, you will see the "Closed" task in the "Completed Tasks" area.
 ---
-
-# User Guide
-
-### 🗃️ This product has been retired
-
-> **This product has been retired or incorporated into [SSW YakShaver](https://yakshaver.ai).** This guide is kept for reference. See the [SmashingBarrier product page](/products/smashingbarrier).
-
-## SSW Smashing Barrier User Guide
-
-In order to use SSW SmashingBarrier control in your web application, you need to add the references and the UserControl to your project and add the configuration settings into the web.config, then putting/dragging onto the page (usually the footer of the master page). Then you will be able to create new Work items (and see existing ones) from the right way around ie. the current page you are on. Add the control into your site.master to use it on all of your pages and begin using it to smash the barriers between your customers and developers.
-
-## Setting it up
-
-1. Create a new web project with Framework 3.5.
-2. Unzip the project package.
-3. Copy "References" and "_CONTROLTEMPLATES" folders into the project root folder and include them into the new project.
-   * Click "Show All Files" button in Solution Explorer.
-   * Right click on the selected two new folders and click "Include In Project".
-4. Add references to the listed assemblies:
-   * Microsoft.TeamFoundation.Client.dll
-   * Microsoft.TeamFoundation.WorkItemTracking.Client.dll
-   * Microsoft.TeamFoundation.Common.dll
-5. Add the reference to the TFSQuery.ascx to the pages that you want to host this widget. Tip: Most developers choose to put in the footer of the master page.
-
-a) Register the widget at the top of the page (under the `<%@ Page……` line).
-
-```aspnet
-<%@ Register Namespace="SSW.TFSSmashingBarrier.UserControls" Assembly="SSW.TFSSmashingBarrier.UserControls.TFSQuery" TagPrefix="ssw" %>
-<%@ Register src="/_controltemplates/SSWUserControls/TFSSB/TfsQuery.ascx" tagname="TfsQuery" tagprefix="ssw" %>
-```
-
-b) Add the widget to the location you want to show it (referable inside `<div>`).
-Note: you need to include the Script Manager if you don't already have one on that page.
-
-```aspnet
-<asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-
-<ssw:TfsQuery ID="TfsQuery1" runat="server" />
-```
-
-c) Add the CSS file reference into the page. Note: if you are using a Master Page, it's recommended to include this into your Master Page.
-
-```html
-<link rel="Stylesheet" href="UserControls/style/TFSQuery.css" />
-```
-
-Add the following keys to your web.config.
-Note: You are expected to change the configurations to fit to your environment later.
-
-```xml
-<appSettings>
-    <add key="TFSServer" value="[TFS URL]"/>
-    <add key="TeamProjectName" value="[Team Project Name]"/>
-    <add key="TFSWebAccess" value="[TFS Web Access URL]"/>
-    <add key="TFSUserName" value="[Username]"/>
-    <add key="TFSPassword" value="[Password]"/>
-    <add key="TFSDomain" value="[Domain]"/>
-</appSettings>
-```
-
-## Configure the settings step by step
-
-a) Replace the highlighted part to set the correct settings for your TFS.
-
-```xml
-<appSettings>
-    <add key="TFSServer" value="http://sampledomain.com:8080/tfs" />
-    <add key="TeamProjectName" value="Sample.SampleProject"/>
-    <add key="TFSWebAccess" value="http://sampledomain.com/tfs/web/ "/>
-</appSettings>
-```
-
-b) Provide the credentials for your TFS.
-Note: this account must have [Project Contributor] permission on the Team Project.
-
-```xml
-<appSettings>
-    <add key="TFSUserName" value="username"/>
-    <add key="TFSPassword" value="password"/>
-    <add key="TFSDomain" value="sampledomain"/>
-</appSettings>
-```
-
-Now, you are ready to add the URL field into your TFS template.
-
-## How to add "SSW.Agile.URL" field for TFS 2013 project?
-
-In order to use SSW TFS Smashing Barrier you need to add a custom field to the Task work item type in TFS process template, so that we can store the unique identifier of the form or webpage URL and look it up later.
-
-### Install TFS 2013 Power Tools
-
-Before adding the new "SSW.Agile.URL" field, you need to make sure you have TFS power tools for Visual Studio 2012 installed.
-
-Note: You have to use VS 2012 (not VS2008) with TFS Power Tools to finish the following steps, otherwise you will see an error message when importing the changes to TFS.
-
-### Add URL field into a TFS process template
-
-a) Open Visual Studio 2012 and select "Tools | Process Editor | Work Item Types | Open WIT from Server".
-
-b) Select the team project you want to add the field to, and then select Work Item Type "Task" and click "OK".
-
-c) Visual Studio will open the "Task.wit".
-
-d) Click "New" to add a new field "SSW.Agile.URL", then click "OK". Make sure you set "RefName" to "SSW.Agile.URL".
-
-e) Switch to the "Layout" tab, add a new control under Layout | Group | Column | Group – Classification | Column.
-
-f) Use the "SSW.Agile.URL" field in the new control, choose "FieldName" and input a "Label" value.
-
-g) After completing the modification, click "Save" to update it to TFS.
-
-h) Refresh team explorer to get the latest WIT types for the projects.
-
-i) Open a work item type from the project to check the new "URL" field is there.
-
-Done. We now have a custom field in our Task work item type that can be used to track web pages or forms.
-
-## How to use SSW TFS Smashing Barrier
-
-Now you should be able to run the page successfully. Try to click "Add …" to add a new task in TFS related to your current page.
-
-Update the necessary fields and save it in the new opened window.
-
-Refresh the web page, you will be able to see the task in the "Active Tasks" area.
-
-Find the task in Visual Studio and close it, go back and refresh the web page again, you will see the "Closed" task in the "Completed Tasks" area.

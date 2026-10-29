@@ -26,6 +26,13 @@ const bodyComponents = {
       className="m-0 text-base font-light leading-relaxed text-muted-foreground not-first:mt-4"
     />
   ),
+  // Setup guides (e.g. /products/smashingbarrier/user-guide) carry config
+  // snippets; Tina's default is an unstyled <pre> that overflows the column.
+  code_block: ({ value }) => (
+    <pre className="m-0 overflow-x-auto rounded-card border-0.75 border-hairline bg-white p-4 text-sm leading-relaxed text-foreground not-first:mt-4 dark:bg-sswCard">
+      <code>{value}</code>
+    </pre>
+  ),
 };
 
 const sectionBullets = (section: ProductSection) =>
