@@ -31,6 +31,15 @@ type ProductSidebarProps = {
   data?: ProductSidebarData | null;
 };
 
+// Nothing in the sidebar should point at the page it is being rendered on:
+// a red CTA that reloads the current page looks broken, and a nav entry that
+// links to itself is a dead end. Trailing slashes are normalised because the
+// hrefs come from content and `usePathname` never has one.
+const trimSlash = (value: string) => value.replace(/\/+$/, "") || "/";
+
+const isCurrentPage = (href: string | null | undefined, pathname: string) =>
+  Boolean(href) && trimSlash(href as string) === trimSlash(pathname);
+
 const navItem = (isActive: boolean) =>
   cn(
     "unstyled flex min-h-9 items-center justify-between gap-2 rounded-utility px-2.5 py-2",
@@ -73,6 +82,12 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
   );
   const hasStores = Boolean(data?.appStore || data?.googlePlay);
   const embedUrl = data?.embed?.url;
+  const showPrimary =
+    Boolean(data?.primaryCta?.href) &&
+    !isCurrentPage(data?.primaryCta?.href, pathname);
+  const showSecondary =
+    Boolean(data?.secondaryCta?.href) &&
+    !isCurrentPage(data?.secondaryCta?.href, pathname);
 
   return (
     <div className="flex flex-col gap-10">
@@ -81,7 +96,7 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
           {productName}
         </h2>
 
-        {data?.primaryCta?.href && data?.primaryCta?.label && (
+        {data?.primaryCta?.label && showPrimary && (
           <RippleButton
             variant="primary"
             href={data.primaryCta.href}
@@ -92,7 +107,7 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
           </RippleButton>
         )}
 
-        {data?.secondaryCta?.href && data?.secondaryCta?.label && (
+        {data?.secondaryCta?.label && showSecondary && (
           <RippleButton
             variant="secondary"
             href={data.secondaryCta.href}
@@ -148,14 +163,27 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
             Explore
           </span>
           {subPages.map((page, index) => {
-            const isActive = pathname === page.href;
-            return (
+            const isActive = isCurrentPage(page.href, pathname);
+            const key = `product-sub-page-${index}`;
+
+            // The entry stays, and keeps its red "you are here" colour, but a
+            // span rather than an anchor - and without the arrow, which
+            // promises to take you somewhere.
+            return isActive ? (
+              <span
+                key={key}
+                data-tina-field={tinaField(page, "label")}
+                aria-current="page"
+                className={navItem(true)}
+              >
+                {page.label}
+              </span>
+            ) : (
               <a
-                key={`product-sub-page-${index}`}
+                key={key}
                 href={page.href ?? undefined}
                 data-tina-field={tinaField(page, "label")}
-                aria-current={isActive ? "page" : undefined}
-                className={navItem(isActive)}
+                className={navItem(false)}
               >
                 {page.label}
                 <BiRightArrowAlt className="size-5 shrink-0 opacity-70" />
