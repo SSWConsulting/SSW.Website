@@ -1,27 +1,20 @@
 "use client";
 
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
-import type { ContentCardProps } from "@/components/blocks/contentCard";
 import { productTagChip } from "@/components/products/shared";
 import { clientTags } from "@/helpers/clients";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { Suspense, useEffect, useRef } from "react";
 import { FiX } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import type { ClientDisplay } from "@/helpers/clientTypes";
-
-const ContentCard = dynamic<ContentCardProps>(() =>
-  import("@/components/blocks/contentCard").then((mod) => mod.ContentCard)
-);
+import { ClientQuote } from "./clientQuote";
 
 const dialogComponents = {
   ...componentRenderer,
-  ContentCard: (props) => (
-    <ContentCard data={props} className="bg-card text-foreground" />
-  ),
+  ContentCard: (props) => <ClientQuote data={props} />,
 };
 
 // The typography plugin hard-codes sswBlack text and sswRed h2s, which
