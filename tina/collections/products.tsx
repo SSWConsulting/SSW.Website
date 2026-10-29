@@ -136,14 +136,29 @@ const sectionFields: TinaField[] = [
   },
   {
     type: "string",
+    label: "Image Alt Text",
+    name: "imageAlt",
+    description:
+      "What the image shows, for screen readers and for when it fails to load. Describe the picture rather than repeating the heading, which is only the fallback.",
+  },
+  {
+    type: "string",
+    label: "Image Caption",
+    name: "imageCaption",
+    description:
+      "Shown under the image. Start it with Figure: followed by a space, the way captions read everywhere else on the site.",
+  },
+  {
+    type: "string",
     label: "Image Position",
     name: "imagePosition",
     description:
-      "Where the image sits relative to the text. Ignored when no image is set.",
+      "Where the image sits beside or under the text. Leave it on Hide to keep a section text-only while holding on to its image.",
     options: [
-      { value: "none", label: "Full width (no image)" },
+      { value: "none", label: "Hide the image" },
       { value: "left", label: "Image left, text right" },
       { value: "right", label: "Text left, image right" },
+      { value: "full", label: "Image under the text, full width" },
     ],
   },
   {
@@ -283,7 +298,7 @@ export const productsSchema: Collection = {
           name: "subPages",
           list: true,
           description:
-            "Links listed under Overview in the sidebar nav. Sub-pages, in-page anchors and external links all work.",
+            "Links listed under Explore in the sidebar nav. Sub-pages, in-page anchors and external links all work. The product page itself is the hero above, so it needs no entry here.",
           ui: {
             itemProps: (item) => ({ label: item?.label }),
           },
@@ -434,6 +449,27 @@ export const productsSchema: Collection = {
                 "Shown under the frame, and used as the image's alt text.",
             },
           ],
+        },
+      ],
+    },
+    {
+      type: "object",
+      label: "Quote",
+      name: "quote",
+      description:
+        "Optional pull quote from a customer, shown after the carousel. Product pages only.",
+      fields: [
+        {
+          type: "string",
+          label: "Quote",
+          name: "text",
+          ui: { component: "textarea" },
+        },
+        {
+          type: "string",
+          label: "Author",
+          name: "author",
+          description: "Who said it, for example Adam Stephensen.",
         },
       ],
     },

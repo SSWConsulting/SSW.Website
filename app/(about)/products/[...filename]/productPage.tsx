@@ -2,6 +2,7 @@ import { HomeThemeShell } from "@/components/layout/homeTheme";
 import { ProductCarousel } from "@/components/products/template/productCarousel";
 import { ProductFeatures } from "@/components/products/template/productFeatures";
 import { ProductHero } from "@/components/products/template/productHero";
+import { ProductQuote } from "@/components/products/template/productQuote";
 import { ProductSections } from "@/components/products/template/productSections";
 import { ProductServiceCta } from "@/components/products/template/productServiceCta";
 import {
@@ -41,6 +42,7 @@ export const ProductPage = ({ product, slug }) => {
           <ProductFeatures data={product?.features} />
           <ProductSections sections={product?.sections} />
           <ProductCarousel data={product?.carousel} />
+          <ProductQuote data={product?.quote} />
           <ProductServiceCta data={product?.serviceCta} />
         </ProductShell>
       </div>

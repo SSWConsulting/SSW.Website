@@ -10,6 +10,8 @@ export type ProductSection = {
   body?: TinaMarkdownContent | TinaMarkdownContent[] | null;
   list?: (string | null)[] | null;
   image?: string | null;
+  imageAlt?: string | null;
+  imageCaption?: string | null;
   imagePosition?: string | null;
   imageFit?: string | null;
   video?: ProductVideoData | null;
@@ -25,8 +27,25 @@ const bodyComponents = {
   ),
 };
 
+const sectionBullets = (section: ProductSection) =>
+  (section.list ?? []).filter(Boolean);
+
+// A section can carry nothing but an image - a photo that belongs under the
+// section before it, say - and the full-width layout needs to know, so it can
+// drop the gap above the image rather than leave an empty text block's worth
+// of space.
+const hasText = (section: ProductSection) =>
+  Boolean(
+    section.heading ||
+      section.body ||
+      sectionBullets(section).length ||
+      (section.button?.href && section.button?.label)
+  );
+
 const SectionText = ({ section }: { section: ProductSection }) => {
-  const bullets = (section.list ?? []).filter(Boolean);
+  const bullets = sectionBullets(section);
+
+  if (!hasText(section)) return null;
 
   return (
     <div className="min-w-0">
@@ -74,7 +93,13 @@ const SectionText = ({ section }: { section: ProductSection }) => {
   );
 };
 
-const SectionImage = ({ section }: { section: ProductSection }) => {
+const SectionImage = ({
+  section,
+  full,
+}: {
+  section: ProductSection;
+  full?: boolean;
+}) => {
   if (!section.image) return null;
 
   // Natural is the default: the frame hugs the image. Real section images run
@@ -88,29 +113,51 @@ const SectionImage = ({ section }: { section: ProductSection }) => {
   const isUniform = section.imageFit === "uniform";
 
   return (
-    <div
-      data-tina-field={tinaField(section, "image")}
-      className={cn(
-        "overflow-hidden rounded-card border-0.75 border-hairline bg-white",
-        isUniform && "flex aspect-video items-center justify-center p-8"
-      )}
-    >
-      <Image
-        src={section.image}
-        alt={section.heading ?? ""}
-        width={0}
-        height={0}
-        sizes="(min-width: 1024px) 33vw, 100vw"
+    <figure className="m-0" data-tina-field={tinaField(section, "image")}>
+      <div
         className={cn(
-          // w-full in both cases: `width={0}` means the intrinsic width is 0,
-          // so `w-auto` would collapse the image - and with it the flex plate.
-          // The uniform plate takes its size from aspect-video instead, and
-          // object-contain scales the logo to fit without cropping it.
-          "!my-0 w-full",
-          isUniform ? "h-full object-contain" : "h-auto"
+          "overflow-hidden rounded-card border-0.75 border-hairline bg-white",
+          isUniform && "flex aspect-video items-center justify-center p-8"
         )}
-      />
-    </div>
+      >
+        <Image
+          src={section.image}
+          // The heading is the fallback, not the intent: it names the section,
+          // while alt text has to describe the picture. Every image the site
+          // renders through CustomImage has required alt text, so a section
+          // image gets its own field rather than inheriting a title.
+          alt={section.imageAlt ?? section.heading ?? ""}
+          width={0}
+          height={0}
+          sizes={
+            full
+              ? "(min-width: 1024px) 66vw, 100vw"
+              : "(min-width: 1024px) 33vw, 100vw"
+          }
+          className={cn(
+            // w-full in both cases: `width={0}` means the intrinsic width is 0,
+            // so `w-auto` would collapse the image - and with it the flex plate.
+            // The uniform plate takes its size from aspect-video instead, and
+            // object-contain scales the logo to fit without cropping it.
+            "!my-0 w-full",
+            isUniform ? "h-full object-contain" : "h-auto"
+          )}
+        />
+      </div>
+
+      {/* Authors write the "Figure:" prefix themselves, as they do everywhere
+          else on the site. The styling follows ProductVideo and
+          ProductCarousel, so the three kinds of caption on a product page
+          read alike. */}
+      {section.imageCaption && (
+        <figcaption
+          data-tina-field={tinaField(section, "imageCaption")}
+          className="mt-4 text-sm text-muted-foreground"
+        >
+          {section.imageCaption}
+        </figcaption>
+      )}
+    </figure>
   );
 };
 
@@ -123,6 +170,7 @@ const Section = ({
 }) => {
   const position = section.image ? (section.imagePosition ?? "none") : "none";
   const isSplit = position === "left" || position === "right";
+  const isFull = position === "full";
 
   return (
     <section
@@ -148,6 +196,15 @@ const Section = ({
             <SectionImage section={section} />
           </div>
         </div>
+      ) : isFull ? (
+        // The image runs the width of the main column, under the text. A
+        // landscape photo is unreadable at the 5/12 the split layout gives it,
+        // and gap rather than a margin so an image-only section has no
+        // phantom space above it.
+        <div className="flex flex-col gap-8">
+          <SectionText section={section} />
+          <SectionImage section={section} full />
+        </div>
       ) : (
         <SectionText section={section} />
       )}
@@ -166,7 +223,7 @@ export const ProductSections = ({
   divided?: boolean;
 }) => {
   const items = (sections ?? []).filter((section): section is ProductSection =>
-    Boolean(section?.heading || section?.body)
+    Boolean(section?.heading || section?.body || section?.image)
   );
 
   if (!items.length) return null;
