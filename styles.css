@@ -285,6 +285,13 @@
     @apply decoration-sswRed;
   }
 
+  /* Links in red prose headings keep the heading's red and darken on hover,
+     instead of turning black like body links */
+  .prose h2 a:not(.unstyled) {
+    color: inherit;
+    @apply hover:text-sswDarkRed;
+  }
+
   .m-icon {
     @apply mr-1;
   }
