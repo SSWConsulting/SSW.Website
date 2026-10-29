@@ -22,10 +22,15 @@ jest.mock("@/components/embeds/tweetEmbed", () => ({
 }));
 
 // An anchor, so a CTA that is rendered can be found by role the same way a
-// nav entry is.
+// nav entry is. target and rel are forwarded because the real button passes
+// them through to the element it renders, and that is what these tests check.
 jest.mock("@/components/button/rippleButtonV2", () => ({
   __esModule: true,
-  default: ({ href, children }) => <a href={href}>{children}</a>,
+  default: ({ href, children, target, rel }) => (
+    <a href={href} target={target} rel={rel}>
+      {children}
+    </a>
+  ),
 }));
 
 // Nothing in the sidebar may point at the page it is rendered on. The primary
@@ -98,5 +103,49 @@ describe("ProductSidebar self-links", () => {
     expect(
       screen.getByRole("link", { name: /SophieBot docs/ })
     ).toHaveAttribute("href", "/products/sophiebot/docs");
+  });
+});
+
+// The blocks this template replaced opened the YouTube and Teams links in a
+// new tab (`openInNewTab={true}` on UtilityButton) and the in-site ones in the
+// same tab. Keying off the href restores that, and the sidebar's outbound nav
+// entries - Adam's blog post on Rewards - get the same treatment.
+
+describe("ProductSidebar external links", () => {
+  test("opens an off-site CTA in a new tab, with rel set", () => {
+    mockPathname.mockReturnValue("/products/rewards");
+    render(
+      <ProductSidebar
+        productName="SSW Rewards"
+        data={{
+          secondaryCta: {
+            label: "Videos",
+            href: "https://www.youtube.com/@sswrewards/videos",
+          },
+        }}
+      />
+    );
+
+    const videos = screen.getByRole("link", { name: "Videos" });
+    expect(videos).toHaveAttribute("target", "_blank");
+    expect(videos).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  test("leaves an in-site CTA in the same tab", () => {
+    renderAt("/products/sophiebot");
+
+    const tryIt = screen.getByRole("link", { name: "Try SophieBot" });
+    expect(tryIt).not.toHaveAttribute("target");
+  });
+
+  test("opens an outbound Explore entry in a new tab", () => {
+    renderAt("/products/sophiebot");
+
+    expect(
+      screen.getByRole("link", { name: /Adam's Blog Post/ })
+    ).toHaveAttribute("target", "_blank");
+    expect(
+      screen.getByRole("link", { name: /SophieBot docs/ })
+    ).not.toHaveAttribute("target");
   });
 });

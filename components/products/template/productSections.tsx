@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, type TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { newTabProps } from "./externalLink";
 import { ProductVideo, type ProductVideoData } from "./productVideo";
 
 export type ProductSection = {
@@ -83,6 +84,7 @@ const SectionText = ({ section }: { section: ProductSection }) => {
         <RippleButton
           variant="primary"
           href={section.button.href}
+          {...newTabProps(section.button.href)}
           textTinaField={tinaField(section.button, "label")}
           className="mt-6 inline-flex min-h-12 px-5 py-3.5 text-base font-semibold"
         >

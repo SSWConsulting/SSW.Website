@@ -21,9 +21,18 @@ jest.mock("@/components/products/template/productVideo", () => ({
   ProductVideo: () => null,
 }));
 
+// Mirrors the real button: an anchor when it has an href, a button otherwise,
+// forwarding the target and rel these tests assert on.
 jest.mock("@/components/button/rippleButtonV2", () => ({
   __esModule: true,
-  default: ({ children }) => <button>{children}</button>,
+  default: ({ href, children, target, rel }) =>
+    href ? (
+      <a href={href} target={target} rel={rel}>
+        {children}
+      </a>
+    ) : (
+      <button>{children}</button>
+    ),
 }));
 
 // The migration to this template dropped the "Figure:" captions and the alt
@@ -121,5 +130,52 @@ describe("ProductSections image", () => {
     expect(container.querySelector("figcaption")).toHaveTextContent(
       "Figure: Sophie greets visitors by name"
     );
+  });
+});
+
+// `/products/sophiebot/try` launches a Teams deep link, which opened in a new
+// tab before the migration.
+
+describe("ProductSections button", () => {
+  test("opens an off-site button in a new tab, with rel set", () => {
+    render(
+      <ProductSections
+        sections={[
+          {
+            heading: "Launch SophieBot on Microsoft Teams",
+            button: {
+              label: "Launch SophieBot on Teams",
+              href: "https://teams.microsoft.com/dl/launcher/launcher.html",
+            },
+          },
+        ]}
+      />
+    );
+
+    const launch = screen.getByRole("link", {
+      name: "Launch SophieBot on Teams",
+    });
+    expect(launch).toHaveAttribute("target", "_blank");
+    expect(launch).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  test("leaves an in-site button in the same tab", () => {
+    render(
+      <ProductSections
+        sections={[
+          {
+            heading: "Read the docs",
+            button: {
+              label: "SophieBot docs",
+              href: "/products/sophiebot/docs",
+            },
+          },
+        ]}
+      />
+    );
+
+    expect(
+      screen.getByRole("link", { name: "SophieBot docs" })
+    ).not.toHaveAttribute("target");
   });
 });

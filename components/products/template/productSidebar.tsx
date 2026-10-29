@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FaPlay } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
+import { newTabProps } from "./externalLink";
 
 // Official badge artwork is pinned here rather than being a CMS field, so an
 // author can't substitute a non-compliant badge. The aspect ratios differ
@@ -100,6 +101,7 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
           <RippleButton
             variant="primary"
             href={data.primaryCta.href}
+            {...newTabProps(data.primaryCta.href)}
             textTinaField={tinaField(data.primaryCta, "label")}
             className="flex min-h-12 w-full px-5 py-3.5 text-base font-semibold"
           >
@@ -111,6 +113,7 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
           <RippleButton
             variant="secondary"
             href={data.secondaryCta.href}
+            {...newTabProps(data.secondaryCta.href)}
             textTinaField={tinaField(data.secondaryCta, "label")}
             // The shared secondary variant is tuned for dark backgrounds
             // (gray-300 on transparent), which disappears on the light card.
@@ -182,6 +185,7 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
               <a
                 key={key}
                 href={page.href ?? undefined}
+                {...newTabProps(page.href)}
                 data-tina-field={tinaField(page, "label")}
                 className={navItem(false)}
               >
