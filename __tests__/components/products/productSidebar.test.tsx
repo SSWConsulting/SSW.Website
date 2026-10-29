@@ -83,16 +83,29 @@ describe("ProductSidebar self-links", () => {
     ).not.toBeInTheDocument();
   });
 
-  test("marks the current Explore entry without linking to it", () => {
+  test("leaves the current page out of the Explore list", () => {
     renderAt("/products/sophiebot/docs");
 
-    expect(
-      screen.queryByRole("link", { name: /SophieBot docs/ })
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText("SophieBot docs")).not.toBeInTheDocument();
+  });
 
-    const current = screen.getByText("SophieBot docs");
-    expect(current.tagName).toBe("SPAN");
-    expect(current).toHaveAttribute("aria-current", "page");
+  test("hides Explore when the current page is its only entry", () => {
+    mockPathname.mockReturnValue("/products/smashingbarrier/user-guide");
+    render(
+      <ProductSidebar
+        productName="SSW SmashingBarrier"
+        data={{
+          subPages: [
+            {
+              label: "User Guide",
+              href: "/products/smashingbarrier/user-guide",
+            },
+          ],
+        }}
+      />
+    );
+
+    expect(screen.queryByText("Explore")).not.toBeInTheDocument();
   });
 
   test("leaves the other Explore entries as links", () => {

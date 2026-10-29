@@ -25,13 +25,11 @@ sections:
       **3.** Copy "References" and "_CONTROLTEMPLATES" folders into the project root folder and include them into the new project. Click "Show All Files" button in Solution Explorer, then right click on the selected two new folders and click "Include In Project".
 
       **4.** Add references to the listed assemblies:
-    list:
-      - Microsoft.TeamFoundation.Client.dll
-      - Microsoft.TeamFoundation.WorkItemTracking.Client.dll
-      - Microsoft.TeamFoundation.Common.dll
-  - heading: Add the widget to your pages
-    imagePosition: none
-    body: |-
+
+      * Microsoft.TeamFoundation.Client.dll
+      * Microsoft.TeamFoundation.WorkItemTracking.Client.dll
+      * Microsoft.TeamFoundation.Common.dll
+
       **5.** Add the reference to the TFSQuery.ascx to the pages that you want to host this widget. Tip: Most developers choose to put in the footer of the master page.
 
       **a)** Register the widget at the top of the page (under the `<%@ Page……` line).
