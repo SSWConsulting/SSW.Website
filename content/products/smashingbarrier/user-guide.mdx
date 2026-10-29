@@ -93,15 +93,15 @@ sections:
     imagePosition: none
     body: |-
       In order to use SSW TFS Smashing Barrier you need to add a custom field to the Task work item type in TFS process template, so that we can store the unique identifier of the form or webpage URL and look it up later.
-  - heading: Install TFS 2013 Power Tools
-    imagePosition: none
-    body: |-
+
+      **Install TFS 2013 Power Tools**
+
       Before adding the new "SSW.Agile.URL" field, you need to make sure you have TFS power tools for Visual Studio 2012 installed.
 
       Note: You have to use VS 2012 (not VS2008) with TFS Power Tools to finish the following steps, otherwise you will see an error message when importing the changes to TFS.
-  - heading: Add URL field into a TFS process template
-    imagePosition: none
-    body: |-
+
+      **Add URL field into a TFS process template**
+
       **a)** Open Visual Studio 2012 and select "Tools | Process Editor | Work Item Types | Open WIT from Server".
 
       **b)** Select the team project you want to add the field to, and then select Work Item Type "Task" and click "OK".
