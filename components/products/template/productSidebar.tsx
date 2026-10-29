@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FaPlay } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown, type TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { newTabProps } from "./externalLink";
 
 // Official badge artwork is pinned here rather than being a CMS field, so an
@@ -18,7 +19,15 @@ const GOOGLE_PLAY_BADGE = "/images/products/play-store-banner.png";
 
 type Link = { label?: string | null; href?: string | null };
 
+const noticeComponents = {
+  p: (props) => <p {...props} className="m-0 mt-1 text-muted-foreground" />,
+};
+
 export type ProductSidebarData = {
+  notice?: {
+    heading?: string | null;
+    text?: TinaMarkdownContent | TinaMarkdownContent[] | null;
+  } | null;
   primaryCta?: Link | null;
   secondaryCta?: Link | null;
   appStore?: string | null;
@@ -96,6 +105,23 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
         <h2 className="m-0 p-0 text-xl font-semibold leading-tight text-foreground">
           {productName}
         </h2>
+
+        {(data?.notice?.heading || data?.notice?.text) && (
+          <div
+            data-tina-field={tinaField(data.notice)}
+            className="rounded-xl bg-brand-subtle p-4 text-sm leading-relaxed text-foreground"
+          >
+            {data.notice.heading && (
+              <p className="m-0 font-semibold">{data.notice.heading}</p>
+            )}
+            {data.notice.text && (
+              <TinaMarkdown
+                content={data.notice.text}
+                components={noticeComponents}
+              />
+            )}
+          </div>
+        )}
 
         {data?.primaryCta?.label && showPrimary && (
           <RippleButton

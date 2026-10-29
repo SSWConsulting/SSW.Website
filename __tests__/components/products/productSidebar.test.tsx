@@ -17,6 +17,12 @@ jest.mock("tinacms/dist/react", () => ({
   tinaField: () => undefined,
 }));
 
+// Same ESM problem. The notice text is rich text; rendering its raw string is
+// enough to assert where it lands.
+jest.mock("tinacms/dist/rich-text", () => ({
+  TinaMarkdown: ({ content }) => <p>{content}</p>,
+}));
+
 jest.mock("@/components/embeds/tweetEmbed", () => ({
   TweetEmbed: () => null,
 }));
@@ -147,5 +153,41 @@ describe("ProductSidebar external links", () => {
     expect(
       screen.getByRole("link", { name: /SophieBot docs/ })
     ).not.toHaveAttribute("target");
+  });
+});
+
+// A retired product (SmashingBarrier) says so before its CTAs point readers at
+// the replacement, so the notice must sit above the buttons, not after them.
+describe("ProductSidebar notice", () => {
+  test("shows the notice above the primary CTA", () => {
+    mockPathname.mockReturnValue("/products/smashingbarrier");
+    render(
+      <ProductSidebar
+        productName="SSW SmashingBarrier"
+        data={{
+          notice: {
+            heading: "This product has been retired",
+            text: "Incorporated into SSW YakShaver.",
+          },
+          primaryCta: { label: "Explore YakShaver", href: "/yakshaver" },
+        }}
+      />
+    );
+
+    const heading = screen.getByText("This product has been retired");
+    const cta = screen.getByRole("link", { name: "Explore YakShaver" });
+    expect(screen.getByText("Incorporated into SSW YakShaver.")).toBeVisible();
+    expect(
+      heading.compareDocumentPosition(cta) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  test("renders nothing for an empty notice", () => {
+    mockPathname.mockReturnValue("/products/smashingbarrier");
+    const { container } = render(
+      <ProductSidebar productName="SSW SmashingBarrier" data={{ notice: {} }} />
+    );
+
+    expect(container.querySelector(".bg-brand-subtle")).toBeNull();
   });
 });
