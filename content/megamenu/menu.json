@@ -322,39 +322,27 @@
                   "url": "https://ssw.fr/events"
                 }
               ]
-            },
-            {
-              "name": "Hack Days",
-              "menuItems": [
-                {
-                  "name": "MAUI Hack Day",
-                  "url": "https://mauihackday.com/"
-                },
-                {
-                  "name": "AI Hack Day",
-                  "url": "https://aihackday.com/"
-                },
-                {
-                  "name": "View All Hack Days",
-                  "url": "/hackday"
-                }
-              ]
             }
           ]
         },
         {
           "menuColumnGroups": [
             {
-              "name": "1-Day Training",
+              "name": "On-site Essentials Training",
               "menuItems": [
                 {
-                  "name": "Claude Training Workshop ",
+                  "name": "Claude Essentials",
                   "url": "https://www.ssw.com.au/consulting/claude-training"
                 },
                 {
-                  "name": "AI Essentials Workshop",
+                  "name": "AI Essentials",
                   "url": "/events/ai-workshop-essentials"
-                },
+                }
+              ]
+            },
+            {
+              "name": "Superpowers Tour (1 day)",
+              "menuItems": [
                 {
                   "name": "Azure Superpowers Tour",
                   "url": "/events/azure-superpowers-tour"
@@ -370,7 +358,7 @@
               ]
             },
             {
-              "name": "2-Day Training",
+              "name": "Workshops (2 days)",
               "menuItems": [
                 {
                   "name": "AI Workshop",
@@ -387,6 +375,19 @@
         {
           "menuColumnGroups": [
             {
+              "name": "Hack Days",
+              "menuItems": [
+                {
+                  "name": "MAUI Hack Day",
+                  "url": "https://mauihackday.com/"
+                },
+                {
+                  "name": "AI Hack Day",
+                  "url": "https://aihackday.com/"
+                }
+              ]
+            },
+            {
               "name": "12-Week Programs",
               "menuItems": [
                 {
@@ -396,19 +397,6 @@
                 {
                   "name": "Full Stack Developer Internship",
                   "url": "/training/internship-fullstack"
-                }
-              ]
-            },
-            {
-              "name": "Related Services",
-              "menuItems": [
-                {
-                  "name": "Video Production & Live Streaming",
-                  "url": "/consulting/video-production"
-                },
-                {
-                  "name": "Conference Room for Hire",
-                  "url": "https://sswchapel.com.au/"
                 }
               ]
             }
@@ -437,6 +425,21 @@
             {
               "name": "Northwind365",
               "url": "https://northwind365.com",
+              "widgetType": "standardLink"
+            }
+          ]
+        },
+        {
+          "name": "Related Services",
+          "items": [
+            {
+              "name": "Video Production & Live Streaming",
+              "url": "/consulting/video-production",
+              "widgetType": "standardLink"
+            },
+            {
+              "name": "Conference Room for Hire",
+              "url": "https://sswchapel.com.au/",
               "widgetType": "standardLink"
             }
           ]
