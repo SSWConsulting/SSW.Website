@@ -17,6 +17,12 @@ jest.mock("tinacms/dist/react", () => ({
   tinaField: () => undefined,
 }));
 
+// Same ESM problem. The notice text is rich text; rendering its raw string is
+// enough to assert where it lands.
+jest.mock("tinacms/dist/rich-text", () => ({
+  TinaMarkdown: ({ content }) => <p>{content}</p>,
+}));
+
 jest.mock("@/components/embeds/tweetEmbed", () => ({
   TweetEmbed: () => null,
 }));
@@ -77,16 +83,29 @@ describe("ProductSidebar self-links", () => {
     ).not.toBeInTheDocument();
   });
 
-  test("marks the current Explore entry without linking to it", () => {
+  test("leaves the current page out of the Explore list", () => {
     renderAt("/products/sophiebot/docs");
 
-    expect(
-      screen.queryByRole("link", { name: /SophieBot docs/ })
-    ).not.toBeInTheDocument();
+    expect(screen.queryByText("SophieBot docs")).not.toBeInTheDocument();
+  });
 
-    const current = screen.getByText("SophieBot docs");
-    expect(current.tagName).toBe("SPAN");
-    expect(current).toHaveAttribute("aria-current", "page");
+  test("hides Explore when the current page is its only entry", () => {
+    mockPathname.mockReturnValue("/products/smashingbarrier/user-guide");
+    render(
+      <ProductSidebar
+        productName="SSW SmashingBarrier"
+        data={{
+          subPages: [
+            {
+              label: "User Guide",
+              href: "/products/smashingbarrier/user-guide",
+            },
+          ],
+        }}
+      />
+    );
+
+    expect(screen.queryByText("Explore")).not.toBeInTheDocument();
   });
 
   test("leaves the other Explore entries as links", () => {
@@ -147,5 +166,41 @@ describe("ProductSidebar external links", () => {
     expect(
       screen.getByRole("link", { name: /SophieBot docs/ })
     ).not.toHaveAttribute("target");
+  });
+});
+
+// A retired product (SmashingBarrier) says so before its CTAs point readers at
+// the replacement, so the notice must sit above the buttons, not after them.
+describe("ProductSidebar notice", () => {
+  test("shows the notice above the primary CTA", () => {
+    mockPathname.mockReturnValue("/products/smashingbarrier");
+    render(
+      <ProductSidebar
+        productName="SSW SmashingBarrier"
+        data={{
+          notice: {
+            heading: "This product has been retired",
+            text: "Incorporated into SSW YakShaver.",
+          },
+          primaryCta: { label: "Explore YakShaver", href: "/yakshaver" },
+        }}
+      />
+    );
+
+    const heading = screen.getByText("This product has been retired");
+    const cta = screen.getByRole("link", { name: "Explore YakShaver" });
+    expect(screen.getByText("Incorporated into SSW YakShaver.")).toBeVisible();
+    expect(
+      heading.compareDocumentPosition(cta) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy();
+  });
+
+  test("renders nothing for an empty notice", () => {
+    mockPathname.mockReturnValue("/products/smashingbarrier");
+    const { container } = render(
+      <ProductSidebar productName="SSW SmashingBarrier" data={{ notice: {} }} />
+    );
+
+    expect(container.querySelector(".bg-brand-subtle")).toBeNull();
   });
 });
