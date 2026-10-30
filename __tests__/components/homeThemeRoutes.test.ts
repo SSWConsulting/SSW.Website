@@ -14,6 +14,11 @@ describe("isThemedRoute", () => {
     expect(isThemedRoute("/products/sophiebot/docs")).toBe(true);
   });
 
+  it("themes the clients index and each client story", () => {
+    expect(isThemedRoute("/company/clients")).toBe(true);
+    expect(isThemedRoute("/company/clients/fpe")).toBe(true);
+  });
+
   it("leaves the other sections' detail pages unthemed", () => {
     expect(isThemedRoute("/consulting/bots")).toBe(false);
     expect(isThemedRoute("/events/user-group")).toBe(false);
