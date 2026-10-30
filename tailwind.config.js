@@ -255,8 +255,14 @@ export default {
         marquee: "marquee 20s linear infinite",
         "marquee-vertical": "marquee-vertical 20s linear infinite",
         "slight-pulse": "slight-pulse 2s ease-in-out infinite",
+        // Plays from first paint, so server-rendered heroes need no JS to show.
+        "rise-in": "rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
       keyframes: {
+        "rise-in": {
+          from: { opacity: "0", transform: "translateY(24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
         "slight-pulse": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.85" },

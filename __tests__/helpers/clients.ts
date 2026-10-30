@@ -4,10 +4,14 @@ import {
   clientIndustries,
   clientIndustryOptions,
   clientTags,
+  findClientStory,
   findVideo,
+  headingId,
   logoBox,
   matchesClientFilters,
   orderClients,
+  relatedClientStories,
+  storyHeadings,
   storyText,
 } from "@/helpers/clients";
 
@@ -227,5 +231,83 @@ describe("logoBox", () => {
   it("falls back to a 2:1 box before the image's ratio is known", () => {
     expect(logoBox(undefined)).toEqual(logoBox(2));
     expect(logoBox(NaN)).toEqual(logoBox(2));
+  });
+});
+
+describe("findClientStory", () => {
+  const clients = [
+    client("FPE", {
+      caseStudyUrl: "https://www.ssw.com.au/company/clients/fpe",
+    }),
+    client("Toll", { caseStudyUrl: "/company/clients/toll/" }),
+    client("Logo only"),
+  ];
+
+  it("matches absolute URLs and site paths by path", () => {
+    expect(findClientStory(clients, "fpe")?.name).toBe("FPE");
+    expect(findClientStory(clients, "toll")?.name).toBe("Toll");
+  });
+
+  it("returns null when no client links to the page", () => {
+    expect(findClientStory(clients, "missing")).toBeNull();
+  });
+});
+
+describe("relatedClientStories", () => {
+  const url = (slug: string) => `/company/clients/${slug}`;
+  const clients = [
+    client("Current", {
+      caseStudyUrl: url("current"),
+      service: "AI development",
+      categories: industries("Finance"),
+    }),
+    client("No case study", { service: "AI development" }),
+    client("Other", { caseStudyUrl: url("other") }),
+    client("Same industry", {
+      caseStudyUrl: url("same-industry"),
+      categories: industries("Finance"),
+    }),
+    client("Same service", {
+      caseStudyUrl: url("same-service"),
+      service: "AI development",
+    }),
+    client("Pinned", { caseStudyUrl: url("pinned"), featured: true }),
+  ];
+
+  it("ranks other case studies by service, then industry, then pin", () => {
+    expect(relatedClientStories(clients, "current").map((c) => c.name)).toEqual(
+      ["Same service", "Same industry", "Pinned"]
+    );
+  });
+
+  it("falls back to Tina order when the page has no client entry", () => {
+    expect(
+      relatedClientStories(clients, "unlisted", 2).map((c) => c.name)
+    ).toEqual(["Pinned", "Current"]);
+  });
+});
+
+describe("storyHeadings", () => {
+  it("lists the top-level h2s with ids taken from their text", () => {
+    const content = story(
+      { type: "h2", children: [{ type: "text", text: "The Challenge " }] },
+      p("Body"),
+      { type: "h3", children: [{ type: "text", text: "Skipped" }] },
+      {
+        type: "h2",
+        children: [{ type: "text", text: "We make complicated things simple" }],
+      }
+    );
+    expect(storyHeadings(content)).toEqual([
+      { id: "the-challenge", text: "The Challenge" },
+      {
+        id: "we-make-complicated-things-simple",
+        text: "We make complicated things simple",
+      },
+    ]);
+  });
+
+  it("strips accents and punctuation from ids", () => {
+    expect(headingId("Résultats & “Next” steps!")).toBe("resultats-next-steps");
   });
 });

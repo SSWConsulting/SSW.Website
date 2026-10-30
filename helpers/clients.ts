@@ -85,3 +85,68 @@ export const logoBox = (ratio?: number) => {
   const height = (width * PANEL_RATIO) / r;
   return { width: `${width * 100}%`, height: `${height * 100}%` };
 };
+
+// Editors enter case study links both as absolute ssw.com.au URLs and as
+// site paths, so links are compared by path alone.
+const casePath = (url?: string) =>
+  (url ?? "")
+    .replace(/^https?:\/\/[^/]+/, "")
+    .replace(/[?#].*$/, "")
+    .replace(/\/+$/, "")
+    .toLowerCase();
+
+export const findClientStory = (clients: ClientDisplay[], filename: string) =>
+  clients.find(
+    (client) =>
+      casePath(client.caseStudyUrl) ===
+      `/company/clients/${filename}`.toLowerCase()
+  ) ?? null;
+
+// Other case studies, closest first: a shared service outweighs a shared
+// industry, and pinned stories break ties. The sort is stable, so equal
+// scores keep their Tina order.
+export const relatedClientStories = (
+  clients: ClientDisplay[],
+  filename: string,
+  count = 3
+) => {
+  const current = findClientStory(clients, filename);
+  const industries = current ? clientIndustries(current) : [];
+  const score = (client: ClientDisplay) =>
+    (current?.service && client.service === current.service ? 4 : 0) +
+    clientIndustries(client).filter((name) => industries.includes(name))
+      .length *
+      2 +
+    Number(!!client.featured);
+
+  return clients
+    .filter((client) => client.caseStudyUrl && client !== current)
+    .map((client) => ({ client, score: score(client) }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, count)
+    .map(({ client }) => client);
+};
+
+export const headingId = (text: string) =>
+  text
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+export type StoryHeading = { id: string; text: string };
+
+// The story's h2s, for its table of contents. Ids match the ones the article
+// gives its headings, since both come from the heading text.
+export const storyHeadings = (content: TinaMarkdownContent): StoryHeading[] => {
+  const children =
+    (content as { children?: { type?: string }[] } | null)?.children ?? [];
+  return children
+    .filter((node) => node?.type === "h2")
+    .map((node) => {
+      const text = storyText(node as TinaMarkdownContent);
+      return { id: headingId(text), text };
+    })
+    .filter((heading) => heading.id);
+};
