@@ -322,6 +322,19 @@
                   "url": "https://ssw.fr/events"
                 }
               ]
+            },
+            {
+              "name": "Hack Days",
+              "menuItems": [
+                {
+                  "name": "MAUI Hack Day",
+                  "url": "https://mauihackday.com/"
+                },
+                {
+                  "name": "AI Hack Day",
+                  "url": "https://aihackday.com/"
+                }
+              ]
             }
           ]
         },
@@ -336,7 +349,7 @@
                 },
                 {
                   "name": "AI Essentials",
-                  "url": "/events/ai-workshop-essentials"
+                  "url": "/events/ai-essentials"
                 }
               ]
             },
@@ -356,7 +369,11 @@
                   "url": "/events/net-superpowers-tour"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "menuColumnGroups": [
             {
               "name": "Workshops (2 days)",
               "menuItems": [
@@ -369,26 +386,9 @@
                   "url": "/events/clean-architecture-workshop"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "menuColumnGroups": [
-            {
-              "name": "Hack Days",
-              "menuItems": [
-                {
-                  "name": "MAUI Hack Day",
-                  "url": "https://mauihackday.com/"
-                },
-                {
-                  "name": "AI Hack Day",
-                  "url": "https://aihackday.com/"
-                }
-              ]
             },
             {
-              "name": "12-Week Programs",
+              "name": "Academy Programs (12 weeks)",
               "menuItems": [
                 {
                   "name": "FireBootCamp",
@@ -425,6 +425,11 @@
             {
               "name": "Northwind365",
               "url": "https://northwind365.com",
+              "widgetType": "standardLink"
+            },
+            {
+              "name": "Rules to Better Events",
+              "url": "https://www.ssw.com.au/rules/rules-to-better-events",
               "widgetType": "standardLink"
             }
           ]
