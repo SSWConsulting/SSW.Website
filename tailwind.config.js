@@ -168,6 +168,12 @@ export default {
         "screen-4/6": "66.666667vh",
         "screen-5/6": "83.333333vh",
       },
+      maxHeight: {
+        dialog: "85vh",
+      },
+      minWidth: {
+        "dropdown-trigger": "var(--radix-dropdown-menu-trigger-width)",
+      },
       maxWidth: {
         media: "420px",
         "sidebar-card": "300px",

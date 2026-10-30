@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 192.14 49.249998"
+   version="1.1"
+   sodipodi:docname="tafe-nsw-logo-white.svg"
+   width="192.14"
+   height="49.25"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview79"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="4"
+     inkscape:cx="127.375"
+     inkscape:cy="23.875"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_1" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1,.cls-3{fill:#fff;}.cls-2{fill:#d7153a;}.cls-3{fill-rule:evenodd;}</style>
+  </defs>
+  <title
+     id="title6">TAFE-NSW-RED-WARATAH-REV-KEYLINE-RGB</title>
+  <polygon
+     class="cls-1"
+     points="135.36,72.82 122.55,72.82 122.55,34.65 107.86,34.65 107.86,23.62 150.04,23.62 150.04,34.65 135.36,34.65 "
+     id="polygon62"
+     transform="translate(-107.86,-23.62)"
+     style="fill:#000000" />
+  <polygon
+     class="cls-1"
+     points="235.85,33.88 212.43,33.88 212.43,43.94 232.68,43.94 232.68,53.87 212.43,53.87 212.43,72.82 199.61,72.82 199.61,23.62 235.85,23.62 "
+     id="polygon64"
+     transform="translate(-107.86,-23.62)"
+     style="fill:#000000" />
+  <polygon
+     class="cls-1"
+     points="279.78,33.88 253.38,33.88 253.38,42.5 277.51,42.5 277.51,52.42 253.38,52.42 253.38,61.8 280.47,61.8 280.47,72.82 240.57,72.82 240.57,23.62 279.78,23.62 "
+     id="polygon66"
+     transform="translate(-107.86,-23.62)"
+     style="fill:#000000" />
+  <polygon
+     class="cls-3"
+     points="195.88,72.82 167.49,23.64 139.09,72.82 153.82,72.82 167.49,49.13 181.16,72.82 "
+     id="polygon68"
+     transform="translate(-107.86,-23.62)"
+     style="fill:#000000" />
+  <polygon
+     class="cls-1"
+     points="293.84,63.51 293.84,63.48 284.47,63.48 284.47,59.75 299.68,59.75 299.68,63.82 290.2,69.11 290.2,69.14 299.68,69.14 299.68,72.87 284.47,72.87 284.47,68.8 "
+     id="polygon70"
+     transform="translate(-107.86,-23.62)"
+     style="fill:#000000" />
+  <path
+     class="cls-1"
+     d="m 186.71,30.33 c 1.78,-0.08 2.36,-1.18 2.36,-2.87 0,-1.19 -0.42,-2.43 -1.55,-2.43 -1.35,0 -1.6,2.18 -2.22,4.36 -0.62,2.18 -1.61,4.47 -4.39,4.47 -3.32,0 -4.62,-3.35 -4.62,-6.21 0,-3 1.47,-6.07 4.9,-6.09 v 4 c -1.39,-0.06 -1.84,1.24 -1.84,2.45 0,0.85 0.31,1.91 1.31,1.91 1.17,0 1.39,-2.19 2,-4.4 0.61,-2.21 1.64,-4.41 4.39,-4.41 3.86,0 5.09,3.28 5.09,6.62 0,3.5 -1.54,6.58 -5.43,6.61 z"
+     id="path72"
+     style="fill:#000000" />
+  <polygon
+     class="cls-1"
+     points="289.2,33.93 289.2,33.97 299.68,36.06 299.68,40.09 284.47,44.2 284.47,40.24 295.6,38.09 295.6,38.04 284.47,35.8 284.47,32.08 295.6,29.84 295.6,29.8 284.47,27.64 284.47,23.68 299.68,27.87 299.68,31.84 "
+     id="polygon74"
+     transform="translate(-107.86,-23.62)"
+     style="fill:#000000" />
+  <metadata
+     id="metadata896">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>TAFE-NSW-RED-WARATAH-REV-KEYLINE-RGB</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

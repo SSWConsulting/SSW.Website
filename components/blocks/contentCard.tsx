@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { cn } from "@/lib/utils";
 import type { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomImage, CustomImageProps } from "./customImage";
@@ -6,6 +6,7 @@ import { VerticalListItem } from "./verticalListItem";
 import { VideoEmbed } from "./videoEmbed";
 
 export type ContentCardProps = {
+  className?: string;
   data: {
     content: TinaMarkdownContent;
     prose?: boolean;
@@ -28,9 +29,14 @@ const contentCardComponentRenderer: Components<{
   VideoEmbed: (props) => <VideoEmbed data={props} />,
 };
 
-export const ContentCard = ({ data }: ContentCardProps) => {
+export const ContentCard = ({ data, className }: ContentCardProps) => {
   const component = (
-    <article className="relative mx-auto my-5 size-full border-b-2 border-solid border-sswRed bg-gray-75 p-10">
+    <article
+      className={cn(
+        "relative mx-auto my-5 size-full border-b-2 border-solid border-sswRed bg-gray-75 p-10",
+        className
+      )}
+    >
       <TinaMarkdown
         content={data.content}
         components={contentCardComponentRenderer}
@@ -45,7 +51,7 @@ export const ContentCard = ({ data }: ContentCardProps) => {
   return (
     <>
       <div
-        className={classNames(
+        className={cn(
           "prose max-w-full grow",
           data.centerAlignedText
             ? "prose-p:text-center"

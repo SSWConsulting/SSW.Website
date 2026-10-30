@@ -6,12 +6,24 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 
-export function V3LogoCarousel({ data }) {
+// className lands on the inner column, so a page can trim its built-in padding.
+export function V3LogoCarousel({
+  data,
+  className,
+}: {
+  data;
+  className?: string;
+}) {
   return (
     <V2ComponentWrapper data={data}>
       <hr className="m-0 w-full border-0 border-b-0.5 border-hairline" />
       <Container size="custom" padding="px-4 pt-6 sm:px-8">
-        <div className="flex w-full flex-col items-center pb-4 text-center sm:pb-14">
+        <div
+          className={cn(
+            "flex w-full flex-col items-center pb-4 text-center sm:pb-14",
+            className
+          )}
+        >
           {data?.heading && (
             <h2
               className="!mt-4 p-2 text-xl text-foreground md:text-3xl"
