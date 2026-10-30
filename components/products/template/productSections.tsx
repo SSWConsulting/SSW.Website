@@ -26,6 +26,24 @@ const bodyComponents = {
       className="m-0 text-base font-light leading-relaxed text-muted-foreground not-first:mt-4"
     />
   ),
+  // Setup guides (e.g. /products/smashingbarrier/user-guide) carry config
+  // snippets; Tina's default is an unstyled <pre> that overflows the column.
+  code_block: ({ value }) => (
+    <pre className="m-0 overflow-x-auto rounded-card border-0.75 border-hairline bg-white p-4 text-sm leading-relaxed text-foreground not-first:mt-4 dark:bg-sswCard">
+      <code>{value}</code>
+    </pre>
+  ),
+  // A list inside the body stays in the reading order of the text around it,
+  // one column, with the same square markers as the List field's grid.
+  ul: ({ children }) => (
+    <ul className="m-0 mt-4 flex list-none flex-col gap-2.5 p-0">{children}</ul>
+  ),
+  li: ({ children }) => (
+    <li className="m-0 flex gap-3 p-0 text-base font-light text-muted-foreground">
+      <span aria-hidden className="mt-2 size-2 shrink-0 bg-sswRed" />
+      <div>{children}</div>
+    </li>
+  ),
 };
 
 const sectionBullets = (section: ProductSection) =>
