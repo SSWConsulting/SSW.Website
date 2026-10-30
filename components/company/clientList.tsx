@@ -1,27 +1,15 @@
 import type { Template } from "tinacms";
-import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
+import {
+  CLIENT_SERVICES,
+  type Category,
+  type ClientDisplay,
+} from "@/helpers/clientTypes";
 import { contentCardBlockSchema } from "../../components/blocks/contentCard.schema";
 import { customImageBlockSchema } from "../../components/blocks/customImage";
 import { videoEmbedBlockSchema } from "../../components/blocks/videoEmbed.schema";
 import { utilityButtonSchema } from "../../components/button/utilityButton";
 import { ClientsFilter } from "../filter/clients";
 import { Container } from "../util/container";
-
-export type Category = {
-  id: string;
-  name: string;
-};
-
-export type ClientDisplay = {
-  name: string;
-  logo?: string;
-  logoUrl?: string;
-  content: TinaMarkdownContent;
-  caseStudyUrl?: string;
-  categories: {
-    category: Category;
-  }[];
-};
 
 type ClientListProps = {
   data: {
@@ -122,6 +110,41 @@ export const clientListSchema: Template = {
           type: "string",
           name: "caseStudyUrl",
           label: "Case study URL",
+        },
+        {
+          type: "boolean",
+          name: "featured",
+          label: "Pin to top",
+          description:
+            "Pinned stories are listed first in the story grid. The story in the page's hero is chosen separately.",
+        },
+        {
+          type: "string",
+          name: "headline",
+          label: "Story headline",
+          description:
+            "The card's headline, e.g. 'Making hearing care easier to access.' Falls back to the client name.",
+        },
+        {
+          type: "string",
+          name: "summary",
+          label: "Story summary",
+          description:
+            "One or two sentences for the card. Falls back to the start of the content.",
+          ui: { component: "textarea" },
+        },
+        {
+          type: "string",
+          name: "service",
+          label: "Service",
+          options: CLIENT_SERVICES,
+        },
+        {
+          type: "image",
+          name: "image",
+          label: "Story image",
+          description:
+            "A landscape photo or screenshot for the card. Falls back to the logo.",
         },
         {
           type: "object",

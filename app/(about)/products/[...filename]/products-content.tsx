@@ -1,35 +1,25 @@
-import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
-import { Container } from "@/components/util/container";
-import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
-import { Breadcrumbs } from "app/components/breadcrumb";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { ProductPage } from "./productPage";
+import { ProductSubPage } from "./productSubPage";
+
 export default function ProductsContent({ props }) {
-  const { data, variables } = props;
-  return (
-    <>
-      <Section className="mx-auto w-full max-w-9xl px-4 pt-5 sm:px-8">
-        <Breadcrumbs
-          path={removeExtension(variables.relativePath)}
-          title={data.products?.seo?.title}
-          // Nested pages (e.g. /products/sophiebot/try) would otherwise show
-          // the raw folder slug as a crumb.
-          additionalReplacements={[
-            { from: "sophiebot", to: "SophieBot" },
-            { from: "sophiehub", to: "SophieHub" },
-          ]}
-        />
-      </Section>
-      <Container
-        className={
-          "prose flex-1 pt-4 prose-h1:!my-0 prose-h1:!pt-4 prose-h3:!mt-0 prose-img:!my-0"
-        }
-      >
-        <TinaMarkdown
-          content={data.products?._body}
-          components={componentRenderer}
-        />
-      </Container>
-    </>
-  );
+  const { data, variables, parent } = props;
+
+  // Page type comes from the file's depth rather than a field:
+  // content/products/<slug>.mdx is a product page, and anything nested under
+  // it (content/products/<slug>/<page>.mdx) is a content sub-page.
+  const segments = removeExtension(variables.relativePath).split("/");
+
+  if (segments.length > 1) {
+    return (
+      <ProductSubPage
+        page={data?.products}
+        parent={parent}
+        parentSlug={segments[0]}
+        slug={segments[segments.length - 1]}
+      />
+    );
+  }
+
+  return <ProductPage product={data?.products} slug={segments[0]} />;
 }
