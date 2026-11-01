@@ -265,6 +265,22 @@ export const productsSchema: Collection = {
       fields: [
         {
           type: "object",
+          label: "Notice",
+          name: "notice",
+          description:
+            "Optional callout above the buttons, e.g. a retired-product notice. Sub-pages show it too.",
+          fields: [
+            { type: "string", label: "Heading", name: "heading" },
+            {
+              type: "rich-text",
+              label: "Text",
+              name: "text",
+              toolbarOverride: ["bold", "italic", "link"],
+            },
+          ],
+        },
+        {
+          type: "object",
           label: "Primary Button",
           name: "primaryCta",
           description:

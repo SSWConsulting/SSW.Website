@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { FaPlay } from "react-icons/fa";
 import { tinaField } from "tinacms/dist/react";
+import { TinaMarkdown, type TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { newTabProps } from "./externalLink";
 
 // Official badge artwork is pinned here rather than being a CMS field, so an
@@ -18,7 +19,15 @@ const GOOGLE_PLAY_BADGE = "/images/products/play-store-banner.png";
 
 type Link = { label?: string | null; href?: string | null };
 
+const noticeComponents = {
+  p: (props) => <p {...props} className="m-0 mt-1 text-muted-foreground" />,
+};
+
 export type ProductSidebarData = {
+  notice?: {
+    heading?: string | null;
+    text?: TinaMarkdownContent | TinaMarkdownContent[] | null;
+  } | null;
   primaryCta?: Link | null;
   secondaryCta?: Link | null;
   appStore?: string | null;
@@ -41,15 +50,11 @@ const trimSlash = (value: string) => value.replace(/\/+$/, "") || "/";
 const isCurrentPage = (href: string | null | undefined, pathname: string) =>
   Boolean(href) && trimSlash(href as string) === trimSlash(pathname);
 
-const navItem = (isActive: boolean) =>
-  cn(
-    "unstyled flex min-h-9 items-center justify-between gap-2 rounded-utility px-2.5 py-2",
-    "text-base no-underline transition-colors duration-300 motion-reduce:transition-none",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand",
-    isActive
-      ? "text-brand dark:text-brand"
-      : "text-foreground hover:bg-gray-100 dark:hover:bg-card"
-  );
+const navItem = cn(
+  "unstyled flex min-h-9 items-center justify-between gap-2 rounded-utility px-2.5 py-2",
+  "text-base text-foreground no-underline transition-colors duration-300 hover:bg-gray-100 motion-reduce:transition-none dark:hover:bg-card",
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+);
 
 const StoreBadge = ({
   href,
@@ -78,8 +83,11 @@ const StoreBadge = ({
 
 export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
   const pathname = usePathname();
-  const subPages = (data?.subPages ?? []).filter((page): page is Link =>
-    Boolean(page?.label && page?.href)
+  // The page you are on is left out entirely, so a sub-page whose only entry is
+  // itself shows no Explore list at all.
+  const subPages = (data?.subPages ?? []).filter(
+    (page): page is Link =>
+      Boolean(page?.label && page?.href) && !isCurrentPage(page?.href, pathname)
   );
   const hasStores = Boolean(data?.appStore || data?.googlePlay);
   const embedUrl = data?.embed?.url;
@@ -96,6 +104,23 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
         <h2 className="m-0 p-0 text-xl font-semibold leading-tight text-foreground">
           {productName}
         </h2>
+
+        {(data?.notice?.heading || data?.notice?.text) && (
+          <div
+            data-tina-field={tinaField(data.notice)}
+            className="rounded-xl bg-brand-subtle p-4 text-sm leading-relaxed text-foreground"
+          >
+            {data.notice.heading && (
+              <p className="m-0 font-semibold">{data.notice.heading}</p>
+            )}
+            {data.notice.text && (
+              <TinaMarkdown
+                content={data.notice.text}
+                components={noticeComponents}
+              />
+            )}
+          </div>
+        )}
 
         {data?.primaryCta?.label && showPrimary && (
           <RippleButton
@@ -165,35 +190,18 @@ export const ProductSidebar = ({ productName, data }: ProductSidebarProps) => {
           <span className="px-2.5 font-mono text-xs uppercase tracking-wider text-muted-foreground">
             Explore
           </span>
-          {subPages.map((page, index) => {
-            const isActive = isCurrentPage(page.href, pathname);
-            const key = `product-sub-page-${index}`;
-
-            // The entry stays, and keeps its red "you are here" colour, but a
-            // span rather than an anchor - and without the arrow, which
-            // promises to take you somewhere.
-            return isActive ? (
-              <span
-                key={key}
-                data-tina-field={tinaField(page, "label")}
-                aria-current="page"
-                className={navItem(true)}
-              >
-                {page.label}
-              </span>
-            ) : (
-              <a
-                key={key}
-                href={page.href ?? undefined}
-                {...newTabProps(page.href)}
-                data-tina-field={tinaField(page, "label")}
-                className={navItem(false)}
-              >
-                {page.label}
-                <BiRightArrowAlt className="size-5 shrink-0 opacity-70" />
-              </a>
-            );
-          })}
+          {subPages.map((page, index) => (
+            <a
+              key={`product-sub-page-${index}`}
+              href={page.href ?? undefined}
+              {...newTabProps(page.href)}
+              data-tina-field={tinaField(page, "label")}
+              className={navItem}
+            >
+              {page.label}
+              <BiRightArrowAlt className="size-5 shrink-0 opacity-70" />
+            </a>
+          ))}
         </nav>
       )}
 

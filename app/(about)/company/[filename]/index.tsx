@@ -3,6 +3,7 @@
 import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/components/blocks/techUpgrade";
+import { ClientsIndex } from "@/components/company/clientsIndex";
 import HistoryTimeline from "@/components/company/historyTimeline";
 import { RDPanel } from "@/components/company/rdPanel";
 import TestimonialPanel from "@/components/offices/testimonialPanel";
@@ -13,10 +14,28 @@ import classNames from "classnames";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
+const CLIENTS_PAGE = "clients.mdx";
+
 export default function CompanyPage({ tinaProps, props }) {
   const { data } = tinaProps;
 
   const { historyCardProps } = props;
+
+  // Only /company/clients is themed (see THEMED_ROUTES).
+  const clientList =
+    props.variables.relativePath === CLIENTS_PAGE &&
+    data.company._body?.find((block) =>
+      block?.__typename?.endsWith("ClientList")
+    );
+  if (clientList) {
+    return (
+      <ClientsIndex
+        company={data.company}
+        clientList={clientList}
+        relativePath={props.variables.relativePath}
+      />
+    );
+  }
 
   return (
     <>

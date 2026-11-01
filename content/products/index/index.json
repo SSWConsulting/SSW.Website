@@ -116,17 +116,6 @@
         "Treasure Hunt"
       ],
       "logo": "/images/products/ssw-rewards.jpeg"
-    },
-    {
-      "name": "SmashingBarrier",
-      "category": "product",
-      "url": "https://smashingbarrier.com/",
-      "description": "A widget that integrates with your web app, letting users send feature requests or bug reports straight to your team's project.",
-      "tags": [
-        "Feedback Widget",
-        "Bug Reports"
-      ],
-      "logo": "/images/products/thumb-SmashingBarrier.jpg"
     }
   ]
 }
