@@ -1,16 +1,16 @@
 {
   "seo": {
-    "title": "1-Day Hands-On AI Training Workshop for Business | SSW",
-    "description": "Equip your team with essential AI skills in our hands-on, 1-day on-site workshop. Master the AI skills that deliver real productivity, not just hype."
+    "title": "1-Day Hands-On AI Essentials Training for Business | SSW",
+    "description": "Equip your team with essential AI skills in our hands-on, 1-day on-site training. Master the AI skills that deliver real productivity, not just hype."
   },
   "blocks": [
     {
       "topLabel": {
-        "labelText": "On-Site 1-Day AI Workshop"
+        "labelText": "On-Site 1-Day AI Essentials Training"
       },
       "heading": "Equip your team with **essential AI skills**",
       "isH1": true,
-      "description": "Everyone’s testing prompts. Few are getting real gains.\\\nThis hands-on workshop gives your team the skills and systems to turn AI into actual productivity, not just hallway hype.\n",
+      "description": "Everyone’s testing prompts. Few are getting real gains.\\\nThis hands-on training gives your team the skills and systems to turn AI into actual productivity, not just hallway hype.\n",
       "tabletTextAlignment": "Left",
       "featureColumns": {
         "twoColumns": true
@@ -150,7 +150,7 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "A Workshop Built for **Real AI Adoption**",
+      "heading": "Training Built for **Real AI Adoption**",
       "body": "This isn’t theory. It’s hands-on. We train your team to actually use AI in daily work, and build systems that stick. One intense day; five tightly scoped modules.",
       "accordionItems": [
         {
@@ -174,8 +174,8 @@
           "content": "Interact naturally with AI using your voice, images, and video, then customize it to remember your preferences and perform specialized tasks. Get practical tips for choosing the right AI tools, optimizing your usage, and staying ahead in the rapidly evolving AI landscape\n"
         },
         {
-          "label": "✨ Post-Wokshop Support",
-          "content": "Post-workshop check-ins and template library to help your team turn experiments into roll-outs\n"
+          "label": "✨ Post-Training Support",
+          "content": "Post-training check-ins and template library to help your team turn experiments into roll-outs\n"
         }
       ],
       "isMultipleOpen": true,
@@ -204,7 +204,7 @@
       },
       "heading": "At a Glance",
       "isH1": false,
-      "description": "A one-day, on-site workshop to get your team up to speed with practical, business-ready AI skills\n",
+      "description": "A one-day, on-site training session to get your team up to speed with practical, business-ready AI skills\n",
       "featureColumns": {
         "twoColumns": true,
         "features": [
@@ -219,7 +219,7 @@
             "icon": "BiSolidContact"
           },
           {
-            "heading": "Post-Workshop Toolkit",
+            "heading": "Post-Training Toolkit",
             "description": "Includes slides, cheat sheets, and workflows",
             "icon": "BiSolidWrench"
           },
@@ -253,7 +253,7 @@
           "altText": "Lorem Ipsum",
           "icon": "info",
           "heading": "1️⃣ Quick call to map goals",
-          "description": "We map your team’s goals, use cases, and current AI maturity. Everything we need to tailor the workshop.",
+          "description": "We map your team’s goals, use cases, and current AI maturity. Everything we need to tailor the training.",
           "embeddedButton": {
             "buttonText": ""
           }
@@ -262,7 +262,7 @@
           "guid": "4ob77n",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "2️⃣ On-Site Workshop Day",
+          "heading": "2️⃣ On-Site Training Day",
           "description": "One focused day at your office. Live demos, hands-on labs, real workflows. Your team leaves ready to apply what they learned.",
           "embeddedButton": {
             "buttonText": ""
@@ -272,7 +272,7 @@
           "guid": "tydp",
           "altText": "Lorem Ipsum",
           "icon": "info",
-          "heading": "3️⃣ Post-Workshop Support",
+          "heading": "3️⃣ Post-Training Support",
           "description": "Follow-up meetings and templates to keep momentum, answer questions, and turn experiments into production.",
           "embeddedButton": {
             "buttonText": ""
@@ -287,24 +287,24 @@
       "_template": "cardCarousel"
     },
     {
-      "heading": "Workshop FAQ",
+      "heading": "Training FAQ",
       "body": "",
       "accordionItems": [
         {
           "label": "How much does it cost?",
-          "content": "The full-day, on-site workshop is priced at $5,200 + GST. This covers up to 20 participants and includes all materials, hands-on labs, and post-workshop resources.\n"
+          "content": "The full-day, on-site training is priced at $5,200 + GST. This covers up to 20 participants and includes all materials, hands-on labs, and post-training resources.\n"
         },
         {
           "label": "Do I need to know how to code?",
           "content": "Absolutely not, we focus on practical workflows that anyone from marketing to ops can use. If you write emails, crunch numbers, or manage projects, you’ll walk out with new AI superpowers.\n"
         },
         {
-          "label": "How long is the workshop?",
+          "label": "How long is the training?",
           "content": "One intense day; four tightly scoped modules. Energy drinks optional but recommended.\n"
         },
         {
           "label": "How many seats are available?",
-          "content": "We cap each workshop at \\~10 people. That’s the sweet spot where everyone gets hands-on time with the instructor, and no one’s stuck waiting to try the demos.\n"
+          "content": "We cap each session at 20 people. That’s the sweet spot where everyone gets hands-on time with the instructor, and no one’s stuck waiting to try the demos.\n"
         },
         {
           "label": "What will my team take away?",
@@ -350,7 +350,7 @@
       "isStacked": true,
       "heading": "Built on Real-World AI Delivery",
       "isH1": false,
-      "body": "SSW isn’t guessing. We’ve been building and fixing AI systems for years, across industries, tech stacks, and use cases. This workshop distills the lessons that save teams time, money, and frustration.",
+      "body": "SSW isn’t guessing. We’ve been building and fixing AI systems for years, across industries, tech stacks, and use cases. This training distills the lessons that save teams time, money, and frustration.",
       "buttons": [
         {
           "buttonText": "Rules to Better AI Development",
