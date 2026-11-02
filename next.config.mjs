@@ -88,6 +88,11 @@ const config = {
         permanent: true,
       },
       {
+        source: "/events/ai-workshop-essentials",
+        destination: "/events/ai-essentials",
+        permanent: true,
+      },
+      {
         source: "/admin",
         destination: "/admin/index.html",
         permanent: true,
