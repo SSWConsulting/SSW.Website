@@ -45,6 +45,22 @@ const getData = async (filename: string) => {
   return { ...tinaProps };
 };
 
+// A sub-page renders its parent product's sidebar, so the parent document is
+// fetched alongside it. The parent is the first path segment - a top-level
+// product page has none.
+const getParentProduct = async (segments: string[]) => {
+  if (segments.length < 2) {
+    return null;
+  }
+
+  const parent = await fetchTinaData(
+    client.queries.productContentQuery,
+    segments[0]
+  );
+
+  return parent?.data?.products ?? null;
+};
+
 type GenerateMetaDataProps = {
   params: Promise<{ filename: string[] }>;
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
@@ -85,5 +101,7 @@ export default async function Products(prop: {
     );
   }
 
-  return <ProductsPreview props={{ ...tinaProps }} />;
+  const parent = await getParentProduct(params.filename);
+
+  return <ProductsPreview props={{ ...tinaProps, parent }} />;
 }

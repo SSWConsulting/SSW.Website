@@ -102,6 +102,7 @@
       "links": [
         { "label": "SSW TV", "url": "https://tv.ssw.com" },
         { "label": "SSW Rules", "url": "https://www.ssw.com.au/rules" },
+        { "label": "SSW Design System", "url": "https://design.ssw.com.au/" },
         { "label": "Adam's Blog", "url": "https://adamcogan.com" },
         { "label": "Partners", "url": "/company/partners" }
       ]

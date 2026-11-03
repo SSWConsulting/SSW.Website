@@ -77,6 +77,28 @@ describe("ProductCard shell", () => {
     render(<ProductCard product={withoutUrl} />);
     expect(screen.queryByText("sugarlearning.com")).toBeNull();
   });
+
+  // A page on this site is named by the card itself, so repeating
+  // "ssw.com.au/products/rewards" underneath adds nothing.
+  test("shows no destination for a page on this site", () => {
+    const relative = {
+      name: "SSW Rewards",
+      url: "/products/rewards",
+      description: "Scan QR codes, earn points.",
+    };
+    const { unmount } = render(<ProductCard product={relative} />);
+    expect(screen.queryByText(/ssw\.com\.au/)).toBeNull();
+    expect(screen.queryByText(/products\/rewards/)).toBeNull();
+    unmount();
+
+    const absolute = {
+      name: "SSW Rewards",
+      url: "https://www.ssw.com.au/products/rewards",
+      description: "Scan QR codes, earn points.",
+    };
+    render(<ProductCard product={absolute} />);
+    expect(screen.queryByText(/ssw\.com\.au/)).toBeNull();
+  });
 });
 
 // Tags come from a Tina `list: true` string field, so the component has to cope

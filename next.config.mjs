@@ -82,6 +82,17 @@ const config = {
   async redirects() {
     return [
       {
+        source: "/events/2026/newcastle-ai-its-a-skill-issue",
+        destination:
+          "/events/2026/newcastle-golden-ticket-tour-of-the-ai-software-factory",
+        permanent: true,
+      },
+      {
+        source: "/events/ai-workshop-essentials",
+        destination: "/events/ai-essentials",
+        permanent: true,
+      },
+      {
         source: "/admin",
         destination: "/admin/index.html",
         permanent: true,
@@ -104,6 +115,11 @@ const config = {
       {
         source: "/yakshaver",
         destination: "https://yakshaver.ai",
+        permanent: true,
+      },
+      {
+        source: "/smashingbarrier",
+        destination: "/products/smashingbarrier",
         permanent: true,
       },
     ];
