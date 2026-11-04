@@ -1,9 +1,8 @@
 "use client";
 
 import RippleButton from "@/components/button/rippleButtonV2";
-import { productTagChip } from "@/components/products/shared";
 import type { ClientDisplay } from "@/helpers/clientTypes";
-import { clientIndustries, type StoryVideo } from "@/helpers/clients";
+import type { StoryVideo } from "@/helpers/clients";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
@@ -34,8 +33,6 @@ export const ClientStoryHero = ({
   story,
   video,
 }: ClientStoryHeroProps) => {
-  const industries = story ? clientIndustries(story) : [];
-
   return (
     <section className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
       <div className="min-w-0 lg:col-span-6 xl:col-span-7">
@@ -66,20 +63,7 @@ export const ClientStoryHero = ({
           </p>
         )}
 
-        {industries.length > 0 && (
-          <ul
-            {...rise(3, "m-0 mt-6 flex list-none flex-wrap gap-1.5 p-0")}
-            aria-label="Industries"
-          >
-            {industries.map((name) => (
-              <li key={name} className={productTagChip}>
-                {name}
-              </li>
-            ))}
-          </ul>
-        )}
-
-        <div {...rise(4, "mt-8 flex flex-wrap items-center gap-x-6 gap-y-3")}>
+        <div {...rise(3, "mt-8 flex flex-wrap items-center gap-x-6 gap-y-3")}>
           <RippleButton
             variant="primary"
             href={`#${CLIENT_STORY_ID}`}
@@ -107,18 +91,6 @@ export const ClientStoryHero = ({
           className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-red-radial opacity-25 blur-3xl motion-safe:animate-slight-pulse"
         />
         <HeroMedia story={story} video={video} name={caseStudy.heading} />
-        {story?.logo && (video || story.image) && (
-          <span className="absolute -bottom-6 right-6 flex h-16 w-36 items-center justify-center rounded-xl border-0.75 border-stroke-weak bg-white p-3 shadow-xl motion-safe:animate-badge-bounce-up dark:border-hairline">
-            <Image
-              src={story.logo}
-              alt={`${story.name} logo`}
-              width={144}
-              height={64}
-              data-tina-field={tinaField(story, "logo")}
-              className="size-full object-contain"
-            />
-          </span>
-        )}
       </div>
     </section>
   );

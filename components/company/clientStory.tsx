@@ -150,8 +150,10 @@ export const ClientStory = ({
 
   return (
     <MotionConfig reducedMotion="user">
-      {/* min-h-screen: PageLayout's <main> is bg-white and would show below. */}
-      <HomeThemeShell className="min-h-screen bg-sunken-glow">
+      {/* min-h-screen: PageLayout's <main> is bg-white and would show below.
+          overflow-x-clip: the hero glow spills past the window edge, and clip
+          (unlike hidden) keeps the sticky contents working. */}
+      <HomeThemeShell className="min-h-screen overflow-x-clip bg-sunken-glow">
         <ReadingProgress />
         <div className={sidebarPageContainer}>
           <div className="min-h-12">
@@ -265,7 +267,7 @@ const StoryFacts = ({
   const industries = story ? clientIndustries(story) : [];
 
   const facts = [
-    { label: "Client", value: story?.name || caseStudy.heading },
+    { label: "Client", value: story?.name },
     { label: "Industry", value: industries.join(", ") },
     { label: "Service", value: story?.service },
     { label: "Read time", value: `${minutes} min read` },
@@ -274,7 +276,10 @@ const StoryFacts = ({
 
   return (
     // gap-px over a hairline-coloured list draws the dividers, which stay
-    // right however the facts wrap.
+    // right however the facts wrap. Below xl the client's name has a row of
+    // its own, and from lg the other facts fit theirs on one line each. From
+    // xl every fact shares one row, and the name gets twice the share each
+    // other fact gets.
     <dl className="m-0 flex flex-wrap gap-px overflow-hidden rounded-card border-0.75 border-stroke-weak bg-stroke-weak dark:border-hairline dark:bg-hairline">
       {facts.map(({ label, value }, index) => (
         <motion.div
@@ -283,7 +288,12 @@ const StoryFacts = ({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.08 * index }}
-          className="min-w-40 flex-1 bg-card p-5 md:p-6"
+          className={cn(
+            "bg-card p-5 md:p-6",
+            label === "Client"
+              ? "grow-2 basis-full md:whitespace-nowrap xl:basis-0"
+              : "min-w-36 flex-1 lg:min-w-fit lg:flex-auto lg:whitespace-nowrap xl:flex-1"
+          )}
         >
           <dt className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
             {label}
