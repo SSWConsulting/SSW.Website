@@ -280,6 +280,28 @@ describe("relatedClientStories", () => {
     );
   });
 
+  it("keeps a shared service ahead of any number of shared industries", () => {
+    const stories = [
+      client("Current", {
+        caseStudyUrl: url("current"),
+        service: "AI development",
+        categories: industries("Finance", "Legal"),
+      }),
+      client("Pinned two industries", {
+        caseStudyUrl: url("pinned-two-industries"),
+        featured: true,
+        categories: industries("Finance", "Legal"),
+      }),
+      client("Same service", {
+        caseStudyUrl: url("same-service"),
+        service: "AI development",
+      }),
+    ];
+    expect(relatedClientStories(stories, "current").map((c) => c.name)).toEqual(
+      ["Same service", "Pinned two industries"]
+    );
+  });
+
   it("falls back to Tina order when the page has no client entry", () => {
     expect(
       relatedClientStories(clients, "unlisted", 2).map((c) => c.name)

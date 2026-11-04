@@ -102,9 +102,9 @@ export const findClientStory = (clients: ClientDisplay[], filename: string) =>
       `/company/clients/${filename}`.toLowerCase()
   ) ?? null;
 
-// Other case studies, closest first: a shared service outweighs a shared
-// industry, and pinned stories break ties. The sort is stable, so equal
-// scores keep their Tina order.
+// Other case studies, closest first: a shared service comes first, then the
+// number of shared industries, and pinned stories break ties. The sort is
+// stable, so equal scores keep their Tina order.
 export const relatedClientStories = (
   clients: ClientDisplay[],
   filename: string,
