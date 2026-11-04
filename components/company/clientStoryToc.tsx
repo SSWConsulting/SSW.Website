@@ -24,12 +24,22 @@ const useActiveHeading = (headings: StoryHeading[]) => {
       );
       setActive((passed[passed.length - 1] ?? elements[0]).id);
     };
-    const observer = new IntersectionObserver(update, {
-      rootMargin: "0px 0px -66% 0px",
-    });
-    elements.forEach((element) => observer.observe(element));
-    update();
-    return () => observer.disconnect();
+    let observer: IntersectionObserver | undefined;
+    const observeHeadings = () => {
+      observer?.disconnect();
+      const nextObserver = new IntersectionObserver(update, {
+        rootMargin: `0px 0px -${(window.innerHeight * 2) / 3}px 0px`,
+      });
+      observer = nextObserver;
+      elements.forEach((element) => nextObserver.observe(element));
+      update();
+    };
+    observeHeadings();
+    window.addEventListener("resize", observeHeadings);
+    return () => {
+      window.removeEventListener("resize", observeHeadings);
+      observer?.disconnect();
+    };
   }, [headings]);
 
   return active;
