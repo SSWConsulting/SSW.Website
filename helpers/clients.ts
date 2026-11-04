@@ -112,17 +112,23 @@ export const relatedClientStories = (
 ) => {
   const current = findClientStory(clients, filename);
   const industries = current ? clientIndustries(current) : [];
-  const score = (client: ClientDisplay) =>
-    (current?.service && client.service === current.service ? 4 : 0) +
-    clientIndustries(client).filter((name) => industries.includes(name))
-      .length *
-      2 +
-    Number(!!client.featured);
+  const score = (client: ClientDisplay) => ({
+    service: Number(!!current?.service && client.service === current.service),
+    industries: clientIndustries(client).filter((name) =>
+      industries.includes(name)
+    ).length,
+    featured: Number(!!client.featured),
+  });
 
   return clients
     .filter((client) => client.caseStudyUrl && client !== current)
     .map((client) => ({ client, score: score(client) }))
-    .sort((a, b) => b.score - a.score)
+    .sort(
+      (a, b) =>
+        b.score.service - a.score.service ||
+        b.score.industries - a.score.industries ||
+        b.score.featured - a.score.featured
+    )
     .slice(0, count)
     .map(({ client }) => client);
 };
