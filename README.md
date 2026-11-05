@@ -27,11 +27,19 @@ This repository is a v3 of the SSW.Website. This website uses NextJS with TinaCM
 
 ## Requirements
 
-- Git, [Node.js Active LTS](https://nodejs.org/en/about/releases/)
-- pnpm `corepack enable pnpm`
+- Git
+- [nvm](https://github.com/nvm-sh/nvm) - `nvm use` selects the Node version pinned in [`.nvmrc`](.nvmrc)
+- pnpm - enable once with `corepack enable pnpm` (the version comes from `packageManager` in `package.json`)
 - A [TinaCMS](https://app.tina.io) account for live editing.
 
 ## Get Started
+
+Enable pnpm once per machine, and select the pinned Node version in each new terminal (Corepack ships with Node):
+
+```bash
+nvm use
+corepack enable pnpm
+```
 
 Install the project's dependencies:
 
@@ -39,7 +47,7 @@ Install the project's dependencies:
 pnpm install
 ```
 
-Run the project locally:
+Run the project locally. This starts Next.js and the local TinaCMS server together, which is why there are two ports below:
 
 ```bash
 pnpm dev
@@ -51,7 +59,9 @@ Build the project:
 pnpm build
 ```
 
-## Build the Docker image locally:
+## Build the Docker image locally (optional)
+
+Docker is not required for day-to-day development. `pnpm dev` above is usually the quicker path, and is easier to debug. Build the image when you need to reproduce the deployed container, for example to chase a build or runtime problem that only shows up there.
 
 To build the Docker image, execute the following command to extract the necessary Docker build command:
 
