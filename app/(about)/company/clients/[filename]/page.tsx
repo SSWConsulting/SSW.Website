@@ -1,5 +1,7 @@
 import { TinaClient } from "@/app/tina-client";
 import ClientFallback from "@/components/client-fallback";
+import type { ClientDisplay } from "@/helpers/clientTypes";
+import { findClientStory, relatedClientStories } from "@/helpers/clients";
 import { getSEOProps } from "@/lib/seo";
 import { fetchTinaData } from "@/services/tina/fetchTinaData";
 import client from "@/tina/client";
@@ -30,6 +32,19 @@ export async function generateStaticParams() {
   return pages;
 }
 
+// The story's card metadata (logo, industries, service) and its neighbours
+// live on the clients index page, in its Client List block.
+const getClientList = async (): Promise<ClientDisplay[]> => {
+  const index = await fetchTinaData(
+    client.queries.companyContentQuery,
+    "clients"
+  );
+  const clientList = index?.data.company._body?.find((block) =>
+    block?.__typename?.endsWith("ClientList")
+  ) as { clients?: ClientDisplay[] } | undefined;
+  return clientList?.clients ?? [];
+};
+
 const getData = async (filename: string) => {
   const tinaProps = await fetchTinaData(
     client.queries.caseStudyContentQuery,
@@ -40,6 +55,7 @@ const getData = async (filename: string) => {
   }
 
   const seo = tinaProps.data.caseStudy.seo;
+  const clients = await getClientList();
 
   return {
     props: {
@@ -50,6 +66,8 @@ const getData = async (filename: string) => {
         url: tinaProps.data.global.header.url,
       },
       seo,
+      story: findClientStory(clients, filename),
+      relatedStories: relatedClientStories(clients, filename),
       ...tinaProps,
     },
   };
