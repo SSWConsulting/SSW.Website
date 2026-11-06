@@ -42,7 +42,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                 variant={open ? "secondary" : "white"}
               >
                 {InputIcon && (
-                  <InputIcon className="mr-1 h-auto w-7 fill-current text-blue-500" />
+                  <InputIcon className="mr-1 h-auto w-7 fill-current text-sswRed" />
                 )}
                 {inputLabel}
                 {!InputIcon && (
@@ -93,7 +93,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                       {filteredBlocks.length > 0 && (
                         <div className="grid w-full auto-rows-auto grid-cols-6 overflow-y-auto p-2">
                           <button
-                            className="relative flex-1 rounded-lg px-3 py-2 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-blue-500 focus:bg-gray-50 focus:text-blue-500"
+                            className="relative flex-1 rounded-lg px-3 py-2 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-sswRed focus:bg-gray-50 focus:text-sswRed"
                             key={"clear-input"}
                             onClick={() => {
                               input.onChange("");
@@ -106,7 +106,7 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                           {filteredBlocks.map((name) => {
                             return (
                               <button
-                                className="relative flex flex-1 items-center justify-center rounded-lg px-3 py-2 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-blue-500 focus:bg-gray-50 focus:text-blue-500"
+                                className="relative flex flex-1 items-center justify-center rounded-lg px-3 py-2 text-center text-xs outline-none transition-all duration-150 ease-out hover:bg-gray-50 hover:text-sswRed focus:bg-gray-50 focus:text-sswRed"
                                 key={name}
                                 onClick={() => {
                                   input.onChange(name);
@@ -118,7 +118,6 @@ export const IconPickerInput = wrapFieldsWithMeta(({ input }) => {
                                   data={{
                                     name: name,
                                     size: "custom",
-                                    color: "blue",
                                   }}
                                   className="h-auto w-7"
                                 />

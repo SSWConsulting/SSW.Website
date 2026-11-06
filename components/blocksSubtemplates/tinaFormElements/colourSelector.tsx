@@ -58,7 +58,7 @@ export const ColorPickerInput = (colours: ColorPickerOptions[]) => {
                   hasSplitPreview
                     ? ""
                     : `h-9 ${colour.editorClasses ?? colour.classes}`
-                } ${isSelected ? "ring ring-blue-400 ring-offset-2" : ""}`}
+                } ${isSelected ? "ring ring-sswRed ring-offset-2" : ""}`}
                 onClick={() => {
                   input.onChange(colour.reference);
                 }}
