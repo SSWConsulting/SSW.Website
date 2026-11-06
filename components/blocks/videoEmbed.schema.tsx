@@ -62,7 +62,7 @@ export const videoEmbedBlockSchema: Template = {
       label: "Caption",
       name: "caption",
       description:
-        "Shows up under the video as 'Video: {{ YOUR_INPUT }} ({{ YOUR_DURATION }})'. No full stop at the end. See https://ssw.com.au/rules/add-useful-and-concise-figure-captions/",
+        "Shows up under the video as 'Video: {{ YOUR_INPUT }} ({{ YOUR_DURATION }})'. No full stop at the end. See https://ssw.com.au/rules/add-useful-and-concise-figure-captions",
       required: false,
     },
     {
