@@ -69,7 +69,7 @@ export const BreadcrumbSchema: Template = {
             <TinaInfo>
               💡 Customize how sections appear in your navigation breadcrumbs in{" "}
               <Link
-                className="text-blue-600 hover:underline"
+                className="text-sswRed hover:underline"
                 href="/admin/index.html#/collections/edit/global/index"
               >
                 global settings
