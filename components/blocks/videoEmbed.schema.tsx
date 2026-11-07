@@ -62,14 +62,15 @@ export const videoEmbedBlockSchema: Template = {
       label: "Caption",
       name: "caption",
       description:
-        "Shows up under the video as 'Video: {{ YOUR_INPUT }} ( {{ YOUR_DURATION }} )'. This adheres to https://www.ssw.com.au/rules/add-useful-and-concise-figure-captions/",
+        "Shows up under the video as 'Video: {{ YOUR_INPUT }} ({{ YOUR_DURATION }})'. No full stop at the end. See https://ssw.com.au/rules/add-useful-and-concise-figure-captions",
       required: false,
     },
     {
       type: "string",
       label: "Duration",
       name: "duration",
-      description: "See caption description",
+      description:
+        "For example 30 sec, 4 min, 1 hr or 1 hr 26 min. See https://ssw.com.au/rules/right-format-to-write-videos-time-length",
     },
   ],
 };
