@@ -6,7 +6,6 @@ import { HomeThemeShell } from "@/components/layout/homeTheme";
 import { sidebarPageContainer } from "@/components/layout/stickySidebar";
 import type { ClientDisplay } from "@/helpers/clientTypes";
 import {
-  clientIndustries,
   findVideo,
   headingId,
   storyHeadings,
@@ -147,6 +146,8 @@ export const ClientStory = ({
   );
 
   const showBreadcrumb = caseStudy.seo?.showBreadcrumb !== false;
+  const words = storyText(caseStudy.content).split(" ").length;
+  const readMinutes = Math.max(1, Math.round(words / WORDS_PER_MINUTE));
 
   return (
     <MotionConfig reducedMotion="user">
@@ -171,16 +172,13 @@ export const ClientStory = ({
               caseStudy={caseStudy}
               story={story}
               video={video}
+              readMinutes={readMinutes}
             />
           </div>
 
-          <motion.div {...reveal()} className="mt-16 md:mt-20">
-            <StoryFacts caseStudy={caseStudy} story={story} video={video} />
-          </motion.div>
-
           <div
             id={CLIENT_STORY_ID}
-            className="mt-12 grid scroll-mt-28 gap-10 md:mt-16 lg:grid-cols-12 lg:gap-12"
+            className="mt-16 grid scroll-mt-28 gap-10 md:mt-16 lg:grid-cols-12 lg:gap-12"
           >
             <aside className="max-lg:hidden lg:col-span-3">
               <div className="sticky top-28 flex flex-col gap-10">
@@ -253,78 +251,18 @@ const BackToStories = () => (
   </CustomLink>
 );
 
-const StoryFacts = ({
-  caseStudy,
-  story,
-  video,
-}: {
-  caseStudy: ClientStoryProps["caseStudy"];
-  story: ClientDisplay | null;
-  video: StoryVideo | null;
-}) => {
-  const words = storyText(caseStudy.content).split(" ").length;
-  const minutes = Math.max(1, Math.round(words / WORDS_PER_MINUTE));
-  const industries = story ? clientIndustries(story) : [];
-
-  const facts = [
-    { label: "Client", value: story?.name },
-    { label: "Industry", value: industries.join(", ") },
-    { label: "Service", value: story?.service },
-    { label: "Read time", value: `${minutes} min read` },
-    video?.duration && { label: "Video", value: video.duration },
-  ].filter((fact): fact is { label: string; value: string } => !!fact?.value);
-
-  return (
-    // gap-px over a hairline-coloured list draws the dividers, which stay
-    // right however the facts wrap. Below xl the client's name has a row of
-    // its own, and from lg the other facts fit theirs on one line each. From
-    // xl every fact shares one row, and the name gets twice the share each
-    // other fact gets.
-    <dl className="m-0 flex flex-wrap gap-px overflow-hidden rounded-card border-0.75 border-stroke-weak bg-stroke-weak dark:border-hairline dark:bg-hairline">
-      {facts.map(({ label, value }, index) => (
-        <motion.div
-          key={label}
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.08 * index }}
-          className={cn(
-            "bg-card p-5 md:p-6",
-            label === "Client"
-              ? "grow-2 basis-full md:whitespace-nowrap xl:basis-0"
-              : "min-w-36 flex-1 lg:min-w-fit lg:flex-auto lg:whitespace-nowrap xl:flex-1"
-          )}
-        >
-          <dt className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-            {label}
-          </dt>
-          <dd className="m-0 mt-2 text-base font-semibold text-foreground">
-            {value}
-          </dd>
-        </motion.div>
-      ))}
-    </dl>
-  );
-};
-
 const RelatedStories = ({ stories }: { stories: ClientDisplay[] }) => (
   <section aria-labelledby="related-stories" className="mt-24">
-    <motion.div
-      {...reveal()}
-      className="flex flex-wrap items-end justify-between gap-4"
-    >
-      <div>
-        <p className="m-0 text-xs font-semibold uppercase tracking-widest text-brand">
-          Keep reading
-        </p>
-        <h2
-          id="related-stories"
-          className="m-0 mt-4 p-0 text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl"
-        >
-          More client stories
-        </h2>
-      </div>
-      <BackToStories />
+    <motion.div {...reveal()}>
+      <p className="m-0 text-xs font-semibold uppercase tracking-widest text-brand">
+        Keep reading
+      </p>
+      <h2
+        id="related-stories"
+        className="m-0 mt-4 p-0 text-3xl font-semibold leading-tight tracking-tight text-foreground md:text-4xl"
+      >
+        More from our clients
+      </h2>
     </motion.div>
     <ul className="m-0 mt-8 grid list-none gap-6 p-0 md:grid-cols-2 xl:grid-cols-3">
       {stories.map((client, index) => (

@@ -2,7 +2,7 @@
 
 import RippleButton from "@/components/button/rippleButtonV2";
 import type { ClientDisplay } from "@/helpers/clientTypes";
-import type { StoryVideo } from "@/helpers/clients";
+import { clientIndustries, type StoryVideo } from "@/helpers/clients";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
@@ -26,20 +26,31 @@ type ClientStoryHeroProps = {
   caseStudy: { heading?: string | null; subHeading?: string | null };
   story: ClientDisplay | null;
   video: StoryVideo | null;
+  readMinutes: number;
 };
 
 export const ClientStoryHero = ({
   caseStudy,
   story,
   video,
+  readMinutes,
 }: ClientStoryHeroProps) => {
+  // The eyebrow carries what the page doesn't say elsewhere: the service,
+  // then the client's industries.
+  const eyebrowDetail = [
+    story?.service,
+    story ? clientIndustries(story).join(", ") : "",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+
   return (
     <section className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
       <div className="min-w-0 lg:col-span-6 xl:col-span-7">
         <p {...rise(0, eyebrow)}>
           Client story
-          {story?.service && (
-            <span className="text-muted-foreground"> · {story.service}</span>
+          {eyebrowDetail && (
+            <span className="text-muted-foreground"> · {eyebrowDetail}</span>
           )}
         </p>
         <h1
@@ -66,21 +77,27 @@ export const ClientStoryHero = ({
         <div {...rise(3, "mt-8 flex flex-wrap items-center gap-x-6 gap-y-3")}>
           <RippleButton
             variant="primary"
-            href={`#${CLIENT_STORY_ID}`}
-            className="inline-flex text-base font-semibold"
-            fontClassName="gap-3"
-          >
-            <span>Read the story</span>
-            <FiArrowDown aria-hidden className="size-4" />
-          </RippleButton>
-          <RippleButton
-            variant="secondary"
             href="/company/contact-us"
-            className="inline-flex border-stroke-weak text-base font-semibold text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground dark:border-hairline dark:hover:border-brand"
+            className="inline-flex text-base font-semibold"
             fontClassName="gap-3"
           >
             <span>Talk to our team</span>
             <FiArrowUpRight aria-hidden className="size-4" />
+          </RippleButton>
+          <RippleButton
+            variant="secondary"
+            href={`#${CLIENT_STORY_ID}`}
+            className="inline-flex border-stroke-weak text-base font-semibold text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground dark:border-hairline dark:hover:border-brand"
+            fontClassName="gap-3"
+          >
+            <span>
+              Read the story
+              <span className="font-normal text-muted-foreground">
+                {" "}
+                · {readMinutes} min
+              </span>
+            </span>
+            <FiArrowDown aria-hidden className="size-4" />
           </RippleButton>
         </div>
       </div>

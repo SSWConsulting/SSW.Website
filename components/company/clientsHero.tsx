@@ -74,21 +74,21 @@ export const ClientsHero = ({ company }: ClientsHeroProps) => (
         <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
           <RippleButton
             variant="primary"
-            href={`#${CLIENT_STORIES_ID}`}
-            className="inline-flex text-base font-semibold"
-            fontClassName="gap-3"
-          >
-            <span>Explore client stories</span>
-            <FiArrowDown aria-hidden className="size-4" />
-          </RippleButton>
-          <RippleButton
-            variant="secondary"
             href="/company/contact-us"
-            className="inline-flex border-stroke-weak text-base font-semibold text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground dark:border-hairline dark:hover:border-brand"
+            className="inline-flex text-base font-semibold"
             fontClassName="gap-3"
           >
             <span>Talk to our team</span>
             <FiArrowUpRight aria-hidden className="size-4" />
+          </RippleButton>
+          <RippleButton
+            variant="secondary"
+            href={`#${CLIENT_STORIES_ID}`}
+            className="inline-flex border-stroke-weak text-base font-semibold text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground dark:border-hairline dark:hover:border-brand"
+            fontClassName="gap-3"
+          >
+            <span>Explore client stories</span>
+            <FiArrowDown aria-hidden className="size-4" />
           </RippleButton>
         </div>
 

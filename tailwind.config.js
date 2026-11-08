@@ -213,11 +213,6 @@ export default {
       padding: {
         "9/16": "56.25%",
       },
-      // The client story facts strip gives the client's name twice the spare
-      // room of the other facts.
-      flexGrow: {
-        2: "2",
-      },
       zIndexStack: [
         "base",
         "bgVideo",

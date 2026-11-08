@@ -22,7 +22,9 @@ const dialogComponents = {
 export const themedProse = [
   "prose max-w-none font-light text-muted-foreground prose-img:my-0",
   "prose-p:text-muted-foreground prose-li:text-muted-foreground",
-  "prose-headings:text-foreground prose-strong:text-foreground prose-a:text-brand",
+  "prose-headings:text-foreground prose-strong:text-foreground",
+  // Links follow the site style: body colour with a grey underline, red on hover.
+  "prose-a:text-foreground prose-a:transition-colors hover:prose-a:text-brand",
 ].join(" ");
 
 export const ClientStoryDialog = ({
