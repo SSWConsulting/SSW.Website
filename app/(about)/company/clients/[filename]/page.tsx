@@ -45,17 +45,18 @@ const getClientList = async (): Promise<ClientDisplay[]> => {
   return clientList?.clients ?? [];
 };
 
-const getData = async (filename: string) => {
-  const tinaProps = await fetchTinaData(
-    client.queries.caseStudyContentQuery,
-    filename
-  );
+// Metadata only needs the case study; the page also needs the client list,
+// which is fetched alongside it rather than after it.
+const getData = async (filename: string, withClients = true) => {
+  const [tinaProps, clients] = await Promise.all([
+    fetchTinaData(client.queries.caseStudyContentQuery, filename),
+    withClients ? getClientList() : Promise.resolve([]),
+  ]);
   if (!tinaProps) {
     return null;
   }
 
   const seo = tinaProps.data.caseStudy.seo;
-  const clients = await getClientList();
 
   return {
     props: {
@@ -82,7 +83,7 @@ export async function generateMetadata(
   props: GenerateMetaDataProps
 ): Promise<Metadata> {
   const params = await props.params;
-  const tinaProps = await getData(params.filename);
+  const tinaProps = await getData(params.filename, false);
   if (!tinaProps) {
     return {};
   }

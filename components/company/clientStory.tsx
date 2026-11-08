@@ -7,7 +7,6 @@ import { sidebarPageContainer } from "@/components/layout/stickySidebar";
 import type { ClientDisplay } from "@/helpers/clientTypes";
 import {
   findVideo,
-  headingId,
   storyHeadings,
   storyText,
   type StoryVideo,
@@ -57,16 +56,12 @@ const articleProse = cn(
   "prose-figcaption:text-muted-foreground"
 );
 
-// TinaMarkdown hands a heading its text as a nested <TinaMarkdown content>,
-// so the id comes from the same nodes storyHeadings reads.
-const headingText = (children: ReactNode) =>
-  isValidElement<{ content?: unknown[] }>(children) &&
-  Array.isArray(children.props.content)
-    ? storyText({
-        type: "root",
-        children: children.props.content,
-      } as TinaMarkdownContent)
-    : "";
+// TinaMarkdown renders a heading's text as a nested <TinaMarkdown content>,
+// passing the heading node's own children array, which storyHeadings keeps.
+const headingContent = (children: ReactNode) =>
+  isValidElement<{ content?: unknown[] }>(children)
+    ? children.props.content
+    : undefined;
 
 type Block = {
   __typename?: string;
@@ -119,6 +114,13 @@ export const ClientStory = ({
     () => storyHeadings(caseStudy.content),
     [caseStudy.content]
   );
+  const headingIds = useMemo(
+    () => new Map(headings.map(({ content, id }) => [content, id])),
+    [headings]
+  );
+  // Keyed by id, not the video object, which is rebuilt every render: a new
+  // h2 renderer would remount every heading the contents list is watching.
+  const videoId = video?.id;
 
   const components = useMemo(
     () => ({
@@ -126,12 +128,12 @@ export const ClientStory = ({
       ContentCard: (props) => <ClientQuote data={props} />,
       // The hero already plays this video.
       VideoEmbed: (props) =>
-        video && getYouTubeId(props.url) === video.id
+        videoId && getYouTubeId(props.url) === videoId
           ? null
           : componentRenderer.VideoEmbed(props),
       h2: ({ children }: { children?: ReactNode }) => (
         <motion.h2
-          id={headingId(headingText(children)) || undefined}
+          id={headingIds.get(headingContent(children))}
           initial={{ opacity: 0, x: -16 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -142,7 +144,7 @@ export const ClientStory = ({
         </motion.h2>
       ),
     }),
-    [video]
+    [videoId, headingIds]
   );
 
   const showBreadcrumb = caseStudy.seo?.showBreadcrumb !== false;

@@ -141,18 +141,30 @@ export const headingId = (text: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-export type StoryHeading = { id: string; text: string };
+// `content` is the heading node's own children array. TinaMarkdown hands that
+// same array to the h2 renderer, so the article can look its id up by it.
+export type StoryHeading = { id: string; text: string; content: unknown[] };
 
-// The story's h2s, for its table of contents. Ids match the ones the article
-// gives its headings, since both come from the heading text.
+// The story's h2s, for its table of contents. Ids come from the heading text,
+// numbered when a heading repeats, and fall back to the heading's position
+// when its text has no letters or digits to use.
 export const storyHeadings = (content: TinaMarkdownContent): StoryHeading[] => {
   const children =
-    (content as { children?: { type?: string }[] } | null)?.children ?? [];
+    (content as { children?: { type?: string; children?: unknown[] }[] } | null)
+      ?.children ?? [];
+  const seen = new Map<string, number>();
   return children
     .filter((node) => node?.type === "h2")
-    .map((node) => {
+    .map((node, index) => {
       const text = storyText(node as TinaMarkdownContent);
-      return { id: headingId(text), text };
+      const base = headingId(text) || `section-${index + 1}`;
+      const count = (seen.get(base) ?? 0) + 1;
+      seen.set(base, count);
+      return {
+        id: count > 1 ? `${base}-${count}` : base,
+        text,
+        content: node.children ?? [],
+      };
     })
-    .filter((heading) => heading.id);
+    .filter((heading) => heading.text);
 };

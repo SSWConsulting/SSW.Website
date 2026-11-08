@@ -108,6 +108,11 @@ export const ClientStoryHero = ({
           className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-red-radial opacity-25 blur-3xl motion-safe:animate-slight-pulse"
         />
         <HeroMedia story={story} video={video} name={caseStudy.heading} />
+        {video?.caption && (
+          <p className="m-0 mt-4 text-sm leading-relaxed text-muted-foreground">
+            {video.caption}
+          </p>
+        )}
       </div>
     </section>
   );

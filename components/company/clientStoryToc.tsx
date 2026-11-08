@@ -36,9 +36,14 @@ const useActiveHeading = (headings: StoryHeading[]) => {
     };
     observeHeadings();
     window.addEventListener("resize", observeHeadings);
+    // Images and embeds loading above the reading line move headings across
+    // it without a crossing the observer reports, so recheck on reflow too.
+    const reflow = new ResizeObserver(update);
+    reflow.observe(document.body);
     return () => {
       window.removeEventListener("resize", observeHeadings);
       observer?.disconnect();
+      reflow.disconnect();
     };
   }, [headings]);
 

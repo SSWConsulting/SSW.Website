@@ -320,13 +320,46 @@ describe("storyHeadings", () => {
         children: [{ type: "text", text: "We make complicated things simple" }],
       }
     );
-    expect(storyHeadings(content)).toEqual([
+    expect(
+      storyHeadings(content).map(({ id, text }) => ({ id, text }))
+    ).toEqual([
       { id: "the-challenge", text: "The Challenge" },
       {
         id: "we-make-complicated-things-simple",
         text: "We make complicated things simple",
       },
     ]);
+  });
+
+  it("numbers repeated headings so every id is unique", () => {
+    const h2 = (text: string) => ({
+      type: "h2",
+      children: [{ type: "text", text }],
+    });
+    const content = story(h2("Results"), p("Body"), h2("Results"));
+    expect(storyHeadings(content).map((h) => h.id)).toEqual([
+      "results",
+      "results-2",
+    ]);
+  });
+
+  it("falls back to the heading's position when its text gives no id", () => {
+    const content = story(
+      { type: "h2", children: [{ type: "text", text: "Challenge" }] },
+      { type: "h2", children: [{ type: "text", text: "成果" }] }
+    );
+    expect(storyHeadings(content).map((h) => h.id)).toEqual([
+      "challenge",
+      "section-2",
+    ]);
+  });
+
+  it("keeps each heading's own children, for the article to match", () => {
+    const heading = {
+      type: "h2",
+      children: [{ type: "text", text: "Challenge" }],
+    };
+    expect(storyHeadings(story(heading))[0].content).toBe(heading.children);
   });
 
   it("strips accents and punctuation from ids", () => {
