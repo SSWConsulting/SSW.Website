@@ -2,7 +2,7 @@ name: PR - Lint PR
 
 on:
   pull_request:
-    types: [opened, edited, synchronize, reopened]
+    types: [opened, synchronize, reopened]
 
 concurrency:
   group: ci-${{ github.event.number }}
