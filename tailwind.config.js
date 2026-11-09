@@ -65,9 +65,9 @@ export default {
       },
       // Tailwind's default ring is blue-500. A ring with no colour of its own
       // falls back to the Design System's --ring (brand red) instead.
-      ringColor: {
-        DEFAULT: "#cc4141",
-      },
+      ringColor: ({ theme }) => ({
+        DEFAULT: theme("colors.sswRed"),
+      }),
       textUnderlineOffset: {
         3: "3px",
       },

@@ -105,7 +105,7 @@
     --text-information: hsla(262, 74%, 38%, 1);
     --stroke-strong: rgba(0, 0, 0, 0.45);
     --stroke-weak: rgba(0, 0, 0, 0.1);
-    --hairline: #e5e7eb;
+    --hairline: rgba(0, 0, 0, 0.1);
     --dot-color: rgba(0, 0, 0, 0.12);
     --home-nav-bg: #ffffff;
     --home-nav-border: #f2f2f2;
