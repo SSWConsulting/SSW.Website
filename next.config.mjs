@@ -122,6 +122,11 @@ const config = {
         destination: "/products/smashingbarrier",
         permanent: true,
       },
+      {
+        source: "/products/sophiebot/docs",
+        destination: "/rules/how-to-find-your-mac-address",
+        permanent: true,
+      },
     ];
   },
   serverExternalPackages: ["applicationinsights"],
