@@ -285,11 +285,18 @@
     @apply decoration-sswRed;
   }
 
-  /* Links in red prose headings keep the heading's red and darken on hover,
-     instead of turning black like body links */
-  .prose h2 a:not(.unstyled) {
+  /* Links in red prose headings (h2, and h1 > strong) keep the heading's red
+     and darken on hover - text and underline - instead of turning black like
+     body links. Containers that recolour those headings keep the standard
+     link style: base pages (prose-h2:text-black) and the client story
+     dialog (prose-headings/prose-strong:text-foreground). Add any new
+     heading colour override to these :not() lists. */
+  .prose:not(.prose-h2\:text-black, .prose-headings\:text-foreground)
+    h2
+    a:not(.unstyled),
+  .prose:not(.prose-strong\:text-foreground) h1 > strong a:not(.unstyled) {
     color: inherit;
-    @apply hover:text-sswDarkRed;
+    @apply hover:text-sswDarkRed hover:decoration-sswDarkRed;
   }
 
   .m-icon {
