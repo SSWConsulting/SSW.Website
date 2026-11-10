@@ -26,6 +26,18 @@ const bodyComponents = {
       className="m-0 text-base font-light leading-relaxed text-muted-foreground not-first:mt-4"
     />
   ),
+  // A sub-heading inside a section, one step below the section's h2.
+  // m-0 p-0: styles.css gives every h3 its own margins and colour.
+  h3: ({ children }) => (
+    <h3 className="m-0 p-0 text-lg leading-tight text-foreground not-first:mt-6 lg:text-xl">
+      {children}
+    </h3>
+  ),
+  // Body text is font-light, so the browser's `bolder` only lifts a <strong>
+  // to 400 - next to 300 it barely reads as bold. Set the weight outright.
+  bold: ({ children }) => (
+    <strong className="font-semibold text-foreground">{children}</strong>
+  ),
   // Setup guides (e.g. /products/smashingbarrier/user-guide) carry config
   // snippets; Tina's default is an unstyled <pre> that overflows the column.
   code_block: ({ value }) => (
