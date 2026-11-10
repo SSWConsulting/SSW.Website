@@ -49,7 +49,8 @@ const reveal = (delay = 0): MotionProps => ({
 const articleProse = cn(
   themedProse,
   "md:prose-lg",
-  "prose-h2:mb-4 prose-h2:mt-16 prose-h2:scroll-mt-28 prose-h2:text-2xl prose-h2:font-semibold prose-h2:tracking-tight md:prose-h2:text-3xl",
+  // The first heading starts level with the contents list beside it.
+  "prose-h2:mb-4 prose-h2:mt-16 prose-h2:first:mt-0 prose-h2:scroll-mt-28 prose-h2:text-2xl prose-h2:font-semibold prose-h2:tracking-tight md:prose-h2:text-3xl",
   "prose-h3:text-foreground prose-a:underline-offset-4 prose-li:marker:text-brand",
   "prose-blockquote:rounded-r-card prose-blockquote:border-l-2 prose-blockquote:border-sswRed prose-blockquote:bg-card prose-blockquote:px-6 prose-blockquote:py-5 prose-blockquote:font-light prose-blockquote:not-italic prose-blockquote:leading-relaxed prose-blockquote:text-foreground md:prose-blockquote:px-8 md:prose-blockquote:py-7",
   "prose-hr:border-stroke-weak dark:prose-hr:border-hairline",
@@ -134,8 +135,10 @@ export const ClientStory = ({
       h2: ({ children }: { children?: ReactNode }) => (
         <motion.h2
           id={headingIds.get(headingContent(children))}
-          initial={{ opacity: 0, x: -16 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          // Slides only: a heading that started transparent would leave a blank
+          // gap whenever the reveal fired late.
+          initial={{ x: -16 }}
+          whileInView={{ x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="flex items-center gap-3 before:block before:h-0.5 before:w-6 before:flex-none before:bg-sswRed"
