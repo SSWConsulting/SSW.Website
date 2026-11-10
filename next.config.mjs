@@ -124,7 +124,8 @@ const config = {
       },
       {
         source: "/products/sophiebot/docs",
-        destination: "/rules/how-to-find-your-mac-address",
+        destination:
+          "https://www.ssw.com.au/rules/how-to-find-your-mac-address",
         permanent: true,
       },
     ];
