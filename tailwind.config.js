@@ -63,6 +63,11 @@ export default {
       ringWidth: {
         3: "3px",
       },
+      // Tailwind's default ring is blue-500. A ring with no colour of its own
+      // falls back to the Design System's --ring (brand red) instead.
+      ringColor: ({ theme }) => ({
+        DEFAULT: theme("colors.sswRed"),
+      }),
       textUnderlineOffset: {
         3: "3px",
       },
@@ -332,14 +337,12 @@ export default {
           400: "#a6a6a6",
           450: "#9e9e9e",
           500: "#808080",
-          550: "#6C757D",
           600: "#737373",
           650: "#666666",
           700: "#606060",
           800: "#414141",
           900: "#333333",
           950: "#222222",
-          1000: "#1c1b2e",
         },
         platform: platform.reduce(
           (acc, c) => ({ ...acc, [c.name]: c.color }),
@@ -432,11 +435,47 @@ export default {
             ul: {
               listStyleType: "square",
             },
-            pre: {
-              color: theme("colors.gray.700"),
-              backgroundColor: theme("colors.gray.100"),
-            },
+            // The plugin ships its own cool, blue-tinted greys (links, bold and
+            // h1/h3/h4 were #111827). Map every prose colour to Design System
+            // tokens: text to Secondary, quieter text to muted-foreground, rules
+            // and borders to border/input.
+            "--tw-prose-body": theme("colors.sswBlack"),
+            "--tw-prose-headings": theme("colors.sswBlack"),
+            "--tw-prose-lead": "rgba(0, 0, 0, 0.6)",
+            "--tw-prose-links": theme("colors.sswBlack"),
+            "--tw-prose-bold": theme("colors.sswBlack"),
+            "--tw-prose-counters": "rgba(0, 0, 0, 0.6)",
             "--tw-prose-bullets": "var(--tw-prose-body)",
+            "--tw-prose-hr": "rgba(0, 0, 0, 0.1)",
+            "--tw-prose-quotes": theme("colors.sswBlack"),
+            "--tw-prose-quote-borders": "rgba(0, 0, 0, 0.1)",
+            "--tw-prose-captions": "rgba(0, 0, 0, 0.6)",
+            "--tw-prose-kbd": theme("colors.sswBlack"),
+            "--tw-prose-kbd-shadows": "0 0 0",
+            "--tw-prose-code": theme("colors.sswBlack"),
+            "--tw-prose-pre-code": theme("colors.gray.700"),
+            "--tw-prose-pre-bg": theme("colors.gray.100"),
+            "--tw-prose-th-borders": "rgba(0, 0, 0, 0.2)",
+            "--tw-prose-td-borders": "rgba(0, 0, 0, 0.1)",
+            // prose-invert, with the Design System's dark tokens
+            "--tw-prose-invert-body": "#ffffff",
+            "--tw-prose-invert-headings": "#ffffff",
+            "--tw-prose-invert-lead": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-links": "#ffffff",
+            "--tw-prose-invert-bold": "#ffffff",
+            "--tw-prose-invert-counters": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-bullets": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-hr": "rgba(255, 255, 255, 0.12)",
+            "--tw-prose-invert-quotes": "#ffffff",
+            "--tw-prose-invert-quote-borders": "rgba(255, 255, 255, 0.12)",
+            "--tw-prose-invert-captions": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-kbd": "#ffffff",
+            "--tw-prose-invert-kbd-shadows": "255 255 255",
+            "--tw-prose-invert-code": "#ffffff",
+            "--tw-prose-invert-pre-code": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-pre-bg": "rgba(0, 0, 0, 0.5)",
+            "--tw-prose-invert-th-borders": "rgba(255, 255, 255, 0.2)",
+            "--tw-prose-invert-td-borders": "rgba(255, 255, 255, 0.12)",
           },
         },
         dark: {
