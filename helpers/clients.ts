@@ -85,3 +85,86 @@ export const logoBox = (ratio?: number) => {
   const height = (width * PANEL_RATIO) / r;
   return { width: `${width * 100}%`, height: `${height * 100}%` };
 };
+
+// Editors enter case study links both as absolute ssw.com.au URLs and as
+// site paths, so links are compared by path alone.
+const casePath = (url?: string) =>
+  (url ?? "")
+    .replace(/^https?:\/\/[^/]+/, "")
+    .replace(/[?#].*$/, "")
+    .replace(/\/+$/, "")
+    .toLowerCase();
+
+export const findClientStory = (clients: ClientDisplay[], filename: string) =>
+  clients.find(
+    (client) =>
+      casePath(client.caseStudyUrl) ===
+      `/company/clients/${filename}`.toLowerCase()
+  ) ?? null;
+
+// Other case studies, closest first: a shared service comes first, then the
+// number of shared industries, and pinned stories break ties. The sort is
+// stable, so equal scores keep their Tina order.
+export const relatedClientStories = (
+  clients: ClientDisplay[],
+  filename: string,
+  count = 3
+) => {
+  const current = findClientStory(clients, filename);
+  const industries = current ? clientIndustries(current) : [];
+  const score = (client: ClientDisplay) => ({
+    service: Number(!!current?.service && client.service === current.service),
+    industries: clientIndustries(client).filter((name) =>
+      industries.includes(name)
+    ).length,
+    featured: Number(!!client.featured),
+  });
+
+  return clients
+    .filter((client) => client.caseStudyUrl && client !== current)
+    .map((client) => ({ client, score: score(client) }))
+    .sort(
+      (a, b) =>
+        b.score.service - a.score.service ||
+        b.score.industries - a.score.industries ||
+        b.score.featured - a.score.featured
+    )
+    .slice(0, count)
+    .map(({ client }) => client);
+};
+
+export const headingId = (text: string) =>
+  text
+    .normalize("NFKD")
+    .replace(/[̀-ͯ]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+// `content` is the heading node's own children array. TinaMarkdown hands that
+// same array to the h2 renderer, so the article can look its id up by it.
+export type StoryHeading = { id: string; text: string; content: unknown[] };
+
+// The story's h2s, for its table of contents. Ids come from the heading text,
+// numbered when a heading repeats, and fall back to the heading's position
+// when its text has no letters or digits to use.
+export const storyHeadings = (content: TinaMarkdownContent): StoryHeading[] => {
+  const children =
+    (content as { children?: { type?: string; children?: unknown[] }[] } | null)
+      ?.children ?? [];
+  const seen = new Map<string, number>();
+  return children
+    .filter((node) => node?.type === "h2")
+    .map((node, index) => {
+      const text = storyText(node as TinaMarkdownContent);
+      const base = headingId(text) || `section-${index + 1}`;
+      const count = (seen.get(base) ?? 0) + 1;
+      seen.set(base, count);
+      return {
+        id: count > 1 ? `${base}-${count}` : base,
+        text,
+        content: node.children ?? [],
+      };
+    })
+    .filter((heading) => heading.text);
+};

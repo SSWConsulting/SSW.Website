@@ -178,7 +178,7 @@ const CardLogo = ({
 };
 
 // z-10 lifts it above the card's stretched link, so a click plays the video.
-const CardVideo = ({
+export const CardVideo = ({
   video,
   poster,
   name,
