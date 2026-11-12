@@ -60,7 +60,7 @@ export const DeploymentBanner = ({ poweredBy }: DeploymentBannerProps) => {
           This website is under{" "}
           <CustomLink
             href={DEPLOYMENT_RULE_URL}
-            className="unstyled font-medium text-gray-100 underline underline-offset-2 transition-colors hover:text-white"
+            className="unstyled underline underline-offset-2 transition-colors hover:text-white"
           >
             continuous deployment
           </CustomLink>
@@ -70,10 +70,7 @@ export const DeploymentBanner = ({ poweredBy }: DeploymentBannerProps) => {
               <time
                 dateTime={iso}
                 title={`Last updated ${exact}`}
-                className={cn(
-                  "font-medium text-gray-100",
-                  relative && "cursor-help"
-                )}
+                className={cn(relative && "cursor-help")}
               >
                 {relative ?? exact}
               </time>
@@ -84,7 +81,7 @@ export const DeploymentBanner = ({ poweredBy }: DeploymentBannerProps) => {
               {". Last commit "}
               <CustomLink
                 href={`https://github.com/${repo}/commit/${commitHash}`}
-                className="unstyled font-medium text-gray-100 transition-colors hover:text-white"
+                className="unstyled underline underline-offset-2 transition-colors hover:text-white"
               >
                 {commitHash.slice(0, 7)}
               </CustomLink>

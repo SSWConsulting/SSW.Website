@@ -2,6 +2,7 @@
   "title": "October User Group - Becoming an Agentic Scrum Master",
   "slug": "becoming-an-agentic-scrum-master",
   "url": "https://www.meetup.com/melbourne-net-user-group/events/315677548",
+  "websiteUrl": "https://www.ssw.com.au/netug",
   "thumbnail": "/images/events/melbourne-ug-thumb.jpg",
   "thumbnailDescription": "Melbourne .NET User Group",
   "presenterList": [
@@ -18,6 +19,7 @@
   "category": "Artificial Intelligence",
   "abstract": "Scrum Masters lose hours each week to the same glue-work: Sprint prep, PBI chasing, Retros, and community triage. This session shows how one Scrum Master handed that off to AI agents, using Claude Code with custom skills, self-running routines, and MCP tool integrations into GitHub, PostHog, and more.\n\nExpect a candid look at where agents save real time, where a human still leads, and what it takes to actually go \"agentic\".\n",
   "description": "Scrum Masters lose hours each week to the same glue-work: Sprint prep, PBI chasing, Retros, and community triage. This session shows how one Scrum Master handed that off to AI agents, using Claude Code with custom skills, self-running routines, and MCP tool integrations into GitHub, PostHog, and more.\n\nExpect a candid look at where agents save real time, where a human still leads, and what it takes to actually go \"agentic\".\n\n**About Eli:**\n\nEli is a Melbourne-based Software Engineer at SSW, originally from Invercargill, New Zealand. He specialises in building scalable, maintainable software using modern Microsoft and JavaScript technologies, working with clients across industries to deliver clean, cloud-first solutions.\n",
+  "youTubeId": "XnPsfUm0gIM",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true

@@ -42,10 +42,10 @@ export default function OfficePage({ props, tinaProps }) {
           />
         )}
         <div className="mt-8 md:flex">
-          <div className="grow">
+          <div className="grow md:min-w-0">
             <OfficeLayout office={data.offices} />
           </div>
-          <div className="md:max-w-sm md:pl-6">
+          <div className="md:w-96 md:shrink-0 md:pl-6">
             <SidePanel office={data.offices} />
           </div>
         </div>

@@ -63,6 +63,11 @@ export default {
       ringWidth: {
         3: "3px",
       },
+      // Tailwind's default ring is blue-500. A ring with no colour of its own
+      // falls back to the Design System's --ring (brand red) instead.
+      ringColor: ({ theme }) => ({
+        DEFAULT: theme("colors.sswRed"),
+      }),
       textUnderlineOffset: {
         3: "3px",
       },
@@ -73,12 +78,21 @@ export default {
         "-1.5": "-1.5px",
       },
       gridTemplateRows: {
+        // Testimonial: the top row absorbs the slack; the arrows sit below.
+        testimonial: "1fr auto",
         12: "repeat(12, minmax(min-content, 0fr))",
       },
       gridTemplateColumns: {
-        // Sticky-sidebar + fluid-content layout (used by /consulting).
-        sidebar: "minmax(280px, 30%) minmax(0, 1fr)",
-        "sidebar-narrow": "minmax(240px, 30%) minmax(0, 1fr)",
+        // Sticky-sidebar + fluid-content layout (/consulting and /events).
+        sidebar: "minmax(300px, 26%) minmax(0, 1fr)",
+        "sidebar-narrow": "minmax(260px, 30%) minmax(0, 1fr)",
+        // Hero banner: fluid text column beside a speaker column that hugs.
+        "hero-speakers": "1fr auto",
+        // Testimonial: quote column beside the author's portrait.
+        testimonial: "minmax(0, 1fr) auto",
+        // Testimonial, case study layout: the homepage case study card's
+        // width beside the headline and quote.
+        "testimonial-case-study": "22rem minmax(0, 1fr)",
       },
       backgroundPosition: {
         "right-bottom-4": "right 1rem bottom 1rem",
@@ -115,6 +129,7 @@ export default {
         104: "26rem",
       },
       minHeight: {
+        "sidebar-card": "200px",
         4: "1rem",
         8: "2rem",
         12: "3rem",
@@ -158,8 +173,15 @@ export default {
         "screen-4/6": "66.666667vh",
         "screen-5/6": "83.333333vh",
       },
+      maxHeight: {
+        dialog: "85vh",
+      },
+      minWidth: {
+        "dropdown-trigger": "var(--radix-dropdown-menu-trigger-width)",
+      },
       maxWidth: {
         media: "420px",
+        "sidebar-card": "300px",
         "8xl": "83rem",
         "9xl": "86rem",
         "1/2": "50%",
@@ -221,6 +243,8 @@ export default {
       },
       fontSize: {
         xxs: ["0.65rem", { lineHeight: "1rem" }],
+        // Case study card titles (V3 Featured Products, case study testimonials).
+        "card-title": "22px",
       },
       animation: {
         "more-bounce": "more-bounce 2s infinite",
@@ -236,8 +260,14 @@ export default {
         marquee: "marquee 20s linear infinite",
         "marquee-vertical": "marquee-vertical 20s linear infinite",
         "slight-pulse": "slight-pulse 2s ease-in-out infinite",
+        // Plays from first paint, so server-rendered heroes need no JS to show.
+        "rise-in": "rise-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
       keyframes: {
+        "rise-in": {
+          from: { opacity: "0", transform: "translateY(24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
         "slight-pulse": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.85" },
@@ -307,14 +337,12 @@ export default {
           400: "#a6a6a6",
           450: "#9e9e9e",
           500: "#808080",
-          550: "#6C757D",
           600: "#737373",
           650: "#666666",
           700: "#606060",
           800: "#414141",
           900: "#333333",
           950: "#222222",
-          1000: "#1c1b2e",
         },
         platform: platform.reduce(
           (acc, c) => ({ ...acc, [c.name]: c.color }),
@@ -407,11 +435,47 @@ export default {
             ul: {
               listStyleType: "square",
             },
-            pre: {
-              color: theme("colors.gray.700"),
-              backgroundColor: theme("colors.gray.100"),
-            },
+            // The plugin ships its own cool, blue-tinted greys (links, bold and
+            // h1/h3/h4 were #111827). Map every prose colour to Design System
+            // tokens: text to Secondary, quieter text to muted-foreground, rules
+            // and borders to border/input.
+            "--tw-prose-body": theme("colors.sswBlack"),
+            "--tw-prose-headings": theme("colors.sswBlack"),
+            "--tw-prose-lead": "rgba(0, 0, 0, 0.6)",
+            "--tw-prose-links": theme("colors.sswBlack"),
+            "--tw-prose-bold": theme("colors.sswBlack"),
+            "--tw-prose-counters": "rgba(0, 0, 0, 0.6)",
             "--tw-prose-bullets": "var(--tw-prose-body)",
+            "--tw-prose-hr": "rgba(0, 0, 0, 0.1)",
+            "--tw-prose-quotes": theme("colors.sswBlack"),
+            "--tw-prose-quote-borders": "rgba(0, 0, 0, 0.1)",
+            "--tw-prose-captions": "rgba(0, 0, 0, 0.6)",
+            "--tw-prose-kbd": theme("colors.sswBlack"),
+            "--tw-prose-kbd-shadows": "0 0 0",
+            "--tw-prose-code": theme("colors.sswBlack"),
+            "--tw-prose-pre-code": theme("colors.gray.700"),
+            "--tw-prose-pre-bg": theme("colors.gray.100"),
+            "--tw-prose-th-borders": "rgba(0, 0, 0, 0.2)",
+            "--tw-prose-td-borders": "rgba(0, 0, 0, 0.1)",
+            // prose-invert, with the Design System's dark tokens
+            "--tw-prose-invert-body": "#ffffff",
+            "--tw-prose-invert-headings": "#ffffff",
+            "--tw-prose-invert-lead": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-links": "#ffffff",
+            "--tw-prose-invert-bold": "#ffffff",
+            "--tw-prose-invert-counters": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-bullets": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-hr": "rgba(255, 255, 255, 0.12)",
+            "--tw-prose-invert-quotes": "#ffffff",
+            "--tw-prose-invert-quote-borders": "rgba(255, 255, 255, 0.12)",
+            "--tw-prose-invert-captions": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-kbd": "#ffffff",
+            "--tw-prose-invert-kbd-shadows": "255 255 255",
+            "--tw-prose-invert-code": "#ffffff",
+            "--tw-prose-invert-pre-code": "rgba(255, 255, 255, 0.78)",
+            "--tw-prose-invert-pre-bg": "rgba(0, 0, 0, 0.5)",
+            "--tw-prose-invert-th-borders": "rgba(255, 255, 255, 0.2)",
+            "--tw-prose-invert-td-borders": "rgba(255, 255, 255, 0.12)",
           },
         },
         dark: {
@@ -483,6 +547,8 @@ export default {
         "sunken-scrim":
           "linear-gradient(180deg, color-mix(in srgb, var(--background-sunken) 90%, transparent), color-mix(in srgb, var(--background-sunken) 98%, transparent))",
         "red-radial": "radial-gradient(circle, #cc4141, transparent 70%)",
+        // Sits behind the hero banner's speaker cut-outs, sampled from the design.
+        "speaker-radial": "radial-gradient(circle, #e45655 0%, #6e2a29 100%)",
         done: "url('/images/icons/done.png')",
         "arrow-right": "url('/images/icons/arrow-right.png')",
         "live-banner-wait":

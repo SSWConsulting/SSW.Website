@@ -116,7 +116,7 @@
       "videoUrl": "https://www.youtube.com/watch?v=3K4Gb54BFMo",
       "thumbnail": "/images/consulting/thumbnail.png",
       "greyscaleThumbnail": true,
-      "figure": "Video: React vs. Angular: Let the experts argue! (28 mins)",
+      "figure": "Video: React vs. Angular: Let the experts argue! (28 min)",
       "heading": "Why choose SSW?",
       "description": "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries for more than 30 years.\n",
       "highlights": [
@@ -205,14 +205,20 @@
         "gridOverlay": true,
         "redGlow": true
       },
+      "layout": "caseStudy",
       "testimonials": [
         {
           "quote": "I thoroughly enjoyed working with **SSW** on developing and launching our new website. What truly set them apart was not just their **evident expertise** but also their **unwavering commitment to going the extra mile.**",
           "caseStudyUrl": "/company/clients/hearing-australia",
+          "caseStudyHeadline": "A new website that makes hearing care easier to find and book",
+          "caseStudyTitle": "Rebuilding the Hearing Australia Website",
+          "caseStudyLabel": "See how we streamlined bookings and helped Australians find their nearest hearing centre.",
+          "caseStudyImage": "/images/case-studies/hearing-australia-after.png",
           "authorName": "Kiriana Meha-Bettison",
           "authorTitle": "IT Project Manager, Hearing Australia",
           "authorImage": "",
-          "companyLogo": "/images/logos/hearing-australia.png"
+          "companyLogo": "/images/logos/hearing-australia.png",
+          "companyLogoAlt": "Hearing Australia"
         }
       ],
       "_template": "v3Testimonials"

@@ -1,6 +1,7 @@
 import AlternatingText from "@/components/alternating-text";
 import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { ArrowCircle } from "../shared/arrowCircle";
@@ -41,7 +42,14 @@ export function V3StackCards({ data }) {
         )}
 
         {cards.length > 0 && (
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            className={cn(
+              "mt-12 grid grid-cols-1 gap-5",
+              cards.length === 3
+                ? "lg:grid-cols-3"
+                : "sm:grid-cols-2 lg:grid-cols-4"
+            )}
+          >
             {cards.map((card, index) => {
               const inner = (
                 <div className="group flex h-full flex-col rounded-2xl border-0.75 border-sswBorder bg-sswCard p-6 transition">
@@ -49,7 +57,9 @@ export function V3StackCards({ data }) {
                     <h3 className="text-2xl font-semibold text-white">
                       {card?.title}
                     </h3>
-                    <ArrowCircle className="p-2" iconClassName="size-4" />
+                    {card?.link && (
+                      <ArrowCircle className="p-2" iconClassName="size-4" />
+                    )}
                   </div>
                   {card?.description && (
                     <p className="mt-10 text-base font-light text-gray-400">

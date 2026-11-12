@@ -1,12 +1,12 @@
 "use client";
 
 import { SSWAdaptiveField } from "@/components/ssw/field";
-import { Field, FieldLabel } from "@/components/ui/field";
 import { cn } from "@/lib/utils";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { useRef, useState } from "react";
 import { TiArrowLeft } from "react-icons/ti";
 
+const HEAR_ABOUT_OTHER = "Other";
 const HEAR_ABOUT_OPTIONS = [
   "Conference",
   "Google",
@@ -16,7 +16,7 @@ const HEAR_ABOUT_OPTIONS = [
   "Referral",
   "Signage",
   "SSW TV",
-  "Other",
+  HEAR_ABOUT_OTHER,
 ];
 
 // Location: countries, with Australia revealing state sub-options.
@@ -73,6 +73,7 @@ export function LeadCaptureForm({
   const [country, setCountry] = useState("");
   const [region, setRegion] = useState("");
   const [hearAboutUs, setHearAboutUs] = useState("");
+  const [hearAboutOther, setHearAboutOther] = useState("");
   // Screen 3 — how can we help
   const [message, setMessage] = useState("");
   const [captchaToken, setCaptchaToken] = useState("");
@@ -105,7 +106,14 @@ export function LeadCaptureForm({
     company.trim().length > 0 &&
     phone.trim().length > 0;
 
-  const screen2Valid = Boolean(country) && (!needsRegion || Boolean(region));
+  const isHearOther = hearAboutUs === HEAR_ABOUT_OTHER;
+  // Submitted value: the typed text when "Other" is chosen, else the option.
+  const hearAboutValue = isHearOther ? hearAboutOther.trim() : hearAboutUs;
+
+  const screen2Valid =
+    Boolean(country) &&
+    (!needsRegion || Boolean(region)) &&
+    Boolean(hearAboutValue);
 
   const screen3Valid = message.trim().length > 0;
 
@@ -120,9 +128,9 @@ export function LeadCaptureForm({
       company: company.trim(),
       phone: phone.trim(),
       location: locationValue,
+      hearAboutUs: hearAboutValue,
       message: message.trim(),
     };
-    if (hearAboutUs) lead.hearAboutUs = hearAboutUs;
     if (typeof window !== "undefined") {
       lead.landingPageUrl = window.location.href;
     }
@@ -295,34 +303,47 @@ export function LeadCaptureForm({
               </div>
             )}
 
-            <Field className="mt-2">
-              <FieldLabel htmlFor="lc-hear">
+            <fieldset className="mt-2">
+              <legend className="mb-3 text-sm text-white">
                 How did you hear about us?{" "}
-                <span className="text-gray-500">(optional)</span>
-              </FieldLabel>
-              <select
-                id="lc-hear"
-                value={hearAboutUs}
-                onChange={(e) => setHearAboutUs(e.target.value)}
-                className={cn(
-                  "w-full rounded-lg border-0.5 border-white/15 bg-transparent px-4 py-3 text-sm focus:border-sswRed focus:outline-none",
-                  hearAboutUs ? "text-white" : "text-gray-500"
-                )}
-              >
-                <option value="" className="bg-sswCard text-gray-300">
-                  Please select
-                </option>
+                <span className="text-sswRed">*</span>
+              </legend>
+              <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
                 {HEAR_ABOUT_OPTIONS.map((opt) => (
-                  <option
+                  <label
                     key={opt}
-                    value={opt}
-                    className="bg-sswCard text-white"
+                    className="flex cursor-pointer items-center gap-3 text-sm text-gray-200"
                   >
+                    <input
+                      type="radio"
+                      name="lc-hear"
+                      value={opt}
+                      required
+                      checked={hearAboutUs === opt}
+                      onChange={() => setHearAboutUs(opt)}
+                      className="size-4 accent-sswRed"
+                    />
                     {opt}
-                  </option>
+                  </label>
                 ))}
-              </select>
-            </Field>
+              </div>
+              {isHearOther && (
+                <SSWAdaptiveField
+                  className="mt-4"
+                  inputClassName="border-0.5 border-white/15 focus:border-sswRed"
+                  label={
+                    <>
+                      Please type another option here{" "}
+                      <span className="text-sswRed">*</span>
+                    </>
+                  }
+                  type="text"
+                  required
+                  value={hearAboutOther}
+                  onChange={(e) => setHearAboutOther(e.target.value)}
+                />
+              )}
+            </fieldset>
           </div>
 
           <div className="mt-8 flex items-center justify-between">

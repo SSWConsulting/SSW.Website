@@ -16,18 +16,20 @@ type VideoEmbedProps = {
 
 export const VideoEmbed = ({ data }: VideoEmbedProps) => {
   const width = data.videoWidth || "w-3/4";
-  const margin = data.removeMargin ? "" : "m-8";
-  const uncentre = data.uncentre ? "" : "mx-auto";
+  const margin = data.removeMargin ? "m-0" : "m-8";
+  const centreBlock = data.uncentre ? "" : "mx-auto";
 
   return (
-    <div
+    <figure
       className={classNames(
-        "relative aspect-video max-md:w-full",
+        "relative max-md:w-full",
         width,
         margin,
-        uncentre
+        centreBlock
       )}
     >
+      {/* The aspect ratio lives on the player (VideoModal) so the caption below
+          does not stretch the ratio box. */}
       <VideoModal
         url={data.url}
         overflow={data.overflow}
@@ -35,10 +37,15 @@ export const VideoEmbed = ({ data }: VideoEmbedProps) => {
         className="cursor-pointer"
       />
       {data.caption && (
-        <p className={classNames("font-bold", !uncentre && "text-centre")}>
+        <figcaption
+          className={classNames(
+            "mt-2 font-bold text-inherit",
+            !data.uncentre && "text-center"
+          )}
+        >
           Video: {data.caption} {data.duration && <>({data.duration})</>}
-        </p>
+        </figcaption>
       )}
-    </div>
+    </figure>
   );
 };

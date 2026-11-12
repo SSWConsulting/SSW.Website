@@ -15,12 +15,76 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 // (e.g. an unset/legacy value) — SSW dark gray, the default section background.
 const DEFAULT_SCOOP_COLOR = "#090909";
 
+const DEFAULT_BACKGROUND_IMAGE = "/images/background/polygonBackground.png";
+
+// Speakers with no resolvable photo are dropped, so this also answers
+// "does this slide show speakers".
+const getSpeakers = (slide) =>
+  (slide?.speakers ?? [])
+    .filter(Boolean)
+    .map((speaker) => ({
+      image: speaker?.image?.imageSource || speaker?.presenter?.profileImg,
+      altText: speaker?.image?.altText,
+      name: speaker?.presenter?.presenter?.name,
+      position: speaker?.role || speaker?.presenter?.position,
+    }))
+    .filter((speaker) => speaker.image);
+
+const SlideSpeakers = ({ slide, className = "" }) => {
+  const speakers = getSpeakers(slide);
+
+  if (speakers.length === 0) return null;
+
+  return (
+    <div
+      className={cn(
+        "flex shrink-0 items-start gap-3 sm:gap-6",
+        speakers.length > 1 && "sm:flex-col lg:flex-row",
+        className
+      )}
+      data-tina-field={tinaField(slide, "speakers")}
+    >
+      {speakers.map((speaker, index) => (
+        <figure
+          key={`hero-slide-speaker-${index}`}
+          className="m-0 flex flex-col items-center text-center"
+        >
+          <Image
+            src={speaker.image}
+            alt={speaker.altText ?? speaker.name ?? "Speaker"}
+            width={260}
+            height={260}
+            className="size-14 rounded-full bg-speaker-radial object-cover object-top sm:size-36 lg:size-44"
+          />
+          {speaker.name && (
+            <figcaption
+              className={cn(
+                "mt-2 max-w-28 text-white sm:max-w-48",
+                speakers.length > 1 && "hidden lg:block"
+              )}
+            >
+              <span className="block text-sm font-bold sm:text-base">
+                {speaker.name}
+              </span>
+              {speaker.position && (
+                <span className="block text-sm text-white/80 sm:text-base">
+                  {speaker.position}
+                </span>
+              )}
+            </figcaption>
+          )}
+        </figure>
+      ))}
+    </div>
+  );
+};
+
 export const V3HeroBox = ({ data, priority = false }) => {
-  // The block's own fields form the first slide; `slides` adds more of the same shape.
-  const slides = [data, ...(data?.slides ?? []).filter(Boolean)];
+  const slides = (data?.slides ?? []).filter(Boolean);
   const [activeSlide, setActiveSlide] = useState(0);
-  const current = Math.min(activeSlide, slides.length - 1);
-  const hasImage = slides[current]?.backgroundMedia?.imageSource;
+  const current = Math.min(activeSlide, Math.max(slides.length - 1, 0));
+  // The wash keeps white text legible over a photo; the polygon default is already dark.
+  const hasCustomBackground = !!slides[current]?.backgroundMedia?.imageSource;
 
   function slideLeft() {
     setActiveSlide((current - 1 + slides.length) % slides.length);
@@ -31,7 +95,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
   }
 
   const prevAndNextSlideButtons = slides.length > 1 && (
-    <div className="absolute bottom-3 left-1/2 flex w-full -translate-x-1/2 items-center justify-center gap-2">
+    <div className="absolute bottom-1 left-1/2 flex w-full -translate-x-1/2 items-center justify-center gap-2 sm:bottom-3">
       <button
         type="button"
         aria-label="Previous slide"
@@ -54,7 +118,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
   // With a single slide there are no prev/next controls, so fill the scoop with
   // a scroll-down affordance instead of leaving the notch empty.
   const scrollDownButton = slides.length <= 1 && (
-    <div className="absolute bottom-3 left-1/2 flex w-full -translate-x-1/2 items-center justify-center">
+    <div className="absolute bottom-1 left-1/2 flex w-full -translate-x-1/2 items-center justify-center sm:bottom-3">
       <button
         type="button"
         aria-label="Scroll to content"
@@ -75,7 +139,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
   );
 
   const slidePagination = slides.length > 1 && (
-    <div className="absolute bottom-6 left-8 z-20 flex items-center gap-4 sm:left-12 lg:left-16">
+    <div className="absolute bottom-6 left-8 z-20 hidden items-center gap-4 sm:left-12 sm:flex lg:left-16">
       <div className="flex items-center gap-2">
         {slides.map((_, index) => (
           <button
@@ -116,26 +180,27 @@ export const V3HeroBox = ({ data, priority = false }) => {
           )}
         >
           {/* Background images, anchored to the right of the box, cross-fading between slides */}
-          {slides.map((slide, index) =>
-            slide?.backgroundMedia?.imageSource ? (
-              <Image
-                key={`hero-slide-image-${index}`}
-                fill
-                priority={priority && index === 0}
-                fetchPriority={priority && index === 0 ? "high" : undefined}
-                quality={75}
-                sizes="(min-width: 1440px) 1312px, 100vw"
-                src={slide.backgroundMedia.imageSource}
-                alt={slide.backgroundMedia.altText ?? "Hero background"}
-                className={cn(
-                  "object-cover object-right transition-opacity duration-500",
-                  index === current ? "opacity-60 lg:opacity-100" : "opacity-0"
-                )}
-                data-tina-field={tinaField(slide, "backgroundMedia")}
-              />
-            ) : null
-          )}
-          {hasImage && (
+          {slides.map((slide, index) => (
+            <Image
+              key={`hero-slide-image-${index}`}
+              fill
+              priority={priority && index === 0}
+              fetchPriority={priority && index === 0 ? "high" : undefined}
+              quality={75}
+              sizes="(min-width: 1440px) 1312px, 100vw"
+              src={
+                slide?.backgroundMedia?.imageSource || DEFAULT_BACKGROUND_IMAGE
+              }
+              // The polygon fallback is decorative, so it carries no alt text.
+              alt={slide?.backgroundMedia?.altText || ""}
+              className={cn(
+                "object-cover object-right transition-opacity duration-500",
+                index === current ? "opacity-60 lg:opacity-100" : "opacity-0"
+              )}
+              data-tina-field={tinaField(slide, "backgroundMedia")}
+            />
+          ))}
+          {hasCustomBackground && (
             <div
               aria-hidden="true"
               className={cn(
@@ -152,38 +217,55 @@ export const V3HeroBox = ({ data, priority = false }) => {
                 <div
                   key={`hero-slide-content-${index}`}
                   className={cn(
-                    "col-start-1 row-start-1 flex w-full max-w-2xl flex-col p-8 transition-[opacity,visibility] duration-500 sm:p-12 lg:p-16",
+                    "col-start-1 row-start-1 grid w-full grid-cols-1 items-start gap-4 p-8 transition-[opacity,visibility] duration-500 sm:grid-cols-hero-speakers sm:gap-8 sm:p-12 lg:p-16",
                     index === current
                       ? "visible opacity-100"
                       : "invisible opacity-0"
                   )}
                 >
-                  {slide?.heading && (
-                    <Heading
-                      data-tina-field={tinaField(slide, "heading")}
-                      className="m-0 p-0 text-3xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
-                    >
-                      <AlternatingText text={slide.heading} />
-                    </Heading>
-                  )}
-                  {slide?.description && (
-                    <div
-                      data-tina-field={tinaField(slide, "description")}
-                      className="mt-4 max-w-md"
-                    >
-                      <TinaMarkdown
-                        content={slide.description}
-                        components={{
-                          p: (props) => (
-                            <p {...props} className="text-base text-white/90" />
-                          ),
-                        }}
-                      />
-                    </div>
-                  )}
+                  <div className="flex w-full max-w-2xl flex-col">
+                    {slide?.heading && (
+                      <Heading
+                        data-tina-field={tinaField(slide, "heading")}
+                        className="m-0 p-0 text-3xl leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+                      >
+                        <AlternatingText text={slide.heading} />
+                      </Heading>
+                    )}
+                    {slide?.eventDate && (
+                      <p
+                        data-tina-field={tinaField(slide, "eventDate")}
+                        className="mt-4 text-base text-white/90"
+                      >
+                        {slide.eventDate}
+                      </p>
+                    )}
+                    {slide?.description && (
+                      <div
+                        data-tina-field={tinaField(slide, "description")}
+                        className="mt-4 max-w-md"
+                      >
+                        <TinaMarkdown
+                          content={slide.description}
+                          components={{
+                            p: (props) => (
+                              <p
+                                {...props}
+                                className="text-base text-white/90"
+                              />
+                            ),
+                          }}
+                        />
+                      </div>
+                    )}
+                  </div>
+                  <SlideSpeakers
+                    slide={slide}
+                    className="sm:row-span-2 sm:self-center"
+                  />
                   <ButtonRow
                     data={slide}
-                    className="mb-16 mt-8 flex-wrap justify-start sm:mb-0"
+                    className="mb-16 mt-8 flex-wrap justify-start sm:col-start-1 sm:mb-0"
                   />
                 </div>
               );

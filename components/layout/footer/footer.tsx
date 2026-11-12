@@ -98,7 +98,9 @@ export const Footer = () => {
               <CustomLink
                 key={(link.url ?? "") + index}
                 href={link.url}
-                className="transition-colors hover:text-white"
+                // unstyled: opt out of the global a:not(.unstyled) rule, which
+                // would otherwise set its own underline and red hover.
+                className="unstyled underline underline-offset-2 transition-colors hover:text-white"
               >
                 {link.label}
               </CustomLink>

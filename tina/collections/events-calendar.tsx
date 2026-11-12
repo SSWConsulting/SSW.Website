@@ -50,6 +50,9 @@ export const eventsCalendarSchema: Collection = {
       if (typeof cleaned.slug === "string" && cleaned.slug.length > 0) {
         cleaned.slug = normalizeSlug(cleaned.slug);
       }
+      if (typeof cleaned.websiteUrl === "string") {
+        cleaned.websiteUrl = cleaned.websiteUrl.trim();
+      }
       return cleaned;
     },
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -90,6 +93,30 @@ export const eventsCalendarSchema: Collection = {
       required: true,
       description:
         "Where people go to actually sign up. Usually an Eventbrite, Humanitix, or Meetup URL.",
+    },
+    {
+      type: "string",
+      label: "Event website",
+      name: "websiteUrl",
+      description:
+        "The event or series website, separate from registration. This text link stays visible after the event. Required for enabled events. SSW courses, workshops, tours, webinars and other SSW events: use the specific event or series website (a surviving archived event page is also suitable). SSW-run User Groups: https://www.ssw.com.au/netug. External events: use the external event or organiser website, not the SSW User Group page. Hack Days: use https://aihackday.com/, https://mauihackday.com/ (also for Xamarin), or https://angularhackday.com/.",
+      ui: {
+        validate: (value, values) => {
+          if (!value?.trim()) {
+            if (values.enabled !== false) {
+              return "Add the event website so visitors can find it after the event.";
+            }
+            return;
+          }
+          try {
+            const url = new URL(value.trim());
+            if (url.protocol === "https:" || url.protocol === "http:") return;
+          } catch {
+            // Show the same guidance for missing schemes and malformed URLs.
+          }
+          return "Enter a full website URL starting with https:// or http://.";
+        },
+      },
     },
     {
       type: "string",

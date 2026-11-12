@@ -103,6 +103,10 @@ const ButtonRow = ({ className, data }) => {
                 <Link
                   className={cn(buttonIsFullWidth && "w-full sm:w-auto")}
                   href={button.buttonLink}
+                  {...(button.newTab && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
                   key={`link-wrapper-${index}`}
                 >
                   {buttonElement}

@@ -1,11 +1,116 @@
+import React from "react";
 import type { Template, TinaField } from "tinacms";
+import { TinaInfo } from "../../../tina/tina-info";
 import alternatingHeadingSchema from "../../../blocksSubtemplates/alternatingHeading.schema";
 import { buttonSchema } from "../../../button/templateButton.schema";
 import { backgroundSchema } from "../../../layout/v2ComponentWrapper.schema";
 import { optimizedImageSchema } from "../../../../tina/collections/shared-fields";
 
-// Shared by the primary slide (the block's own fields) and each extra slide.
-const slideFields: TinaField[] = [
+const DEFAULT_BACKGROUND_MEDIA = {
+  altText: "Polygon background",
+  imageSource: "/images/background/polygonBackground.png",
+  imageWidth: 1728,
+  imageHeight: 724,
+};
+
+const headshotGuideField: TinaField = {
+  type: "string",
+  name: "headshotGuide",
+  label: "Headshot Guide",
+  ui: {
+    component: () => (
+      <TinaInfo>
+        💡 Transparent PNG cut-out, shoulders-up — an opaque photo hides the red
+        circle behind it.
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/thumbs/tina/hero-speaker-headshot-example.png"
+          alt="Example headshot"
+          className="my-3 block size-24 object-contain"
+        />
+      </TinaInfo>
+    ),
+  },
+};
+
+const backgroundGuideField: TinaField = {
+  type: "string",
+  name: "backgroundGuide",
+  label: "Background Guide",
+  ui: {
+    component: () => (
+      <TinaInfo>
+        💡 Wide, dark landscape image — text sits over the left half. Clear it
+        to go back to the polygons.
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/background/polygonBackground.png"
+          alt="Example background"
+          className="my-3 block max-h-40 w-full rounded object-cover"
+        />
+      </TinaInfo>
+    ),
+  },
+};
+
+// Only on event slides: the date and the speakers shown to the right.
+const eventFields: TinaField[] = [
+  {
+    type: "string",
+    label: "Event Date",
+    name: "eventDate",
+    description: "Optional. Shown under the heading, e.g. 31 Aug - 1 Sep 2026.",
+  },
+  {
+    type: "object",
+    label: "Speakers",
+    name: "speakers",
+    list: true,
+    description:
+      "Optional. Speakers shown on the right of the banner. Max 2. Name and role come from the presenter.",
+    ui: {
+      max: 2,
+      itemProps: (item) => ({
+        label:
+          item?.presenter
+            ?.split("/")
+            .pop()
+            ?.replace(".mdx", "")
+            .replace(/-/g, " ") ?? "Speaker",
+      }),
+    },
+    fields: [
+      {
+        type: "reference",
+        label: "Presenter",
+        name: "presenter",
+        collections: ["presenter"],
+      },
+      headshotGuideField,
+      {
+        type: "string",
+        label: "Role Override",
+        name: "role",
+        description:
+          "Optional. Leave blank to use the presenter's position, e.g. SSW Chief Architect.",
+      },
+      {
+        type: "object",
+        label: "Image Override",
+        name: "image",
+        description:
+          "Optional. Leave blank to use the presenter's profile photo.",
+        fields: [
+          { type: "string", label: "Alt Text", name: "altText" },
+          // @ts-expect-error – optimizedImageSchema's field types aren't recognised
+          ...optimizedImageSchema("Override photo for this speaker."),
+        ],
+      },
+    ],
+  },
+];
+
+const headingFields: TinaField[] = [
   alternatingHeadingSchema,
   {
     type: "rich-text",
@@ -14,6 +119,9 @@ const slideFields: TinaField[] = [
     description: "Supporting text shown beneath the heading.",
     toolbarOverride: ["bold", "italic", "link"],
   },
+];
+
+const tailSlideFields: TinaField[] = [
   {
     type: "object",
     label: "Buttons",
@@ -35,6 +143,7 @@ const slideFields: TinaField[] = [
     description:
       "The full-bleed image that fills the rounded hero box. A landscape image works best.",
     fields: [
+      backgroundGuideField,
       {
         type: "string",
         label: "Alt Text",
@@ -47,6 +156,12 @@ const slideFields: TinaField[] = [
   },
 ];
 
+const slideFields = (event: boolean): TinaField[] => [
+  ...headingFields,
+  ...(event ? eventFields : []),
+  ...tailSlideFields,
+];
+
 export const V3HeroBoxSchema: Template = {
   name: "v3HeroBox",
   label: "<V3> Hero Box",
@@ -56,30 +171,67 @@ export const V3HeroBoxSchema: Template = {
         backgroundColour: 8,
         bleed: false,
       },
-      heading: "Three decades of enterprise solutions",
-      description:
-        "We find the best way to build software and make that knowledge available to everyone.",
-      buttons: [{ buttonText: "Schedule a Free Discovery Call", colour: 0 }],
+      slides: [
+        {
+          _template: "standardSlide",
+          heading: "Three decades of enterprise solutions",
+          description:
+            "We find the best way to build software and make that knowledge available to everyone.",
+          buttons: [
+            { buttonText: "Schedule a Free Discovery Call", colour: 0 },
+          ],
+          backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
+        },
+      ],
     },
   },
   fields: [
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
-    ...slideFields,
     {
       type: "object",
-      label: "Extra Slides",
+      label: "Slides",
       name: "slides",
       list: true,
       description:
-        "Optional extra slides for the hero carousel. The fields above form the first slide; navigation arrows appear once a slide is added here.",
-      ui: {
-        itemProps: (item) => ({ label: item?.heading ?? "Slide" }),
-        defaultItem: {
-          heading: "New slide",
+        "The banner content. The first slide is the one visitors land on; add more to turn it into a carousel. Pick Event Slide for a date and speakers.",
+      templates: [
+        {
+          name: "standardSlide",
+          label: "Standard Slide",
+          ui: {
+            itemProps: (item) => ({ label: item?.heading ?? "Standard Slide" }),
+            defaultItem: {
+              heading: "Three decades of enterprise solutions",
+              buttons: [
+                { buttonText: "Schedule a Free Discovery Call", colour: 0 },
+              ],
+              backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
+            },
+          },
+          fields: slideFields(false),
         },
-      },
-      fields: slideFields,
+        {
+          name: "eventSlide",
+          label: "Event Slide",
+          ui: {
+            itemProps: (item) => ({ label: item?.heading ?? "Event Slide" }),
+            defaultItem: {
+              heading: "Join us at ...",
+              eventDate: "1 - 2 Jan 2027",
+              speakers: [
+                {
+                  presenter: "content/presenters/adam-cogan.mdx",
+                  role: "SSW Chief Architect",
+                },
+              ],
+              buttons: [{ buttonText: "Learn more", colour: 0 }],
+              backgroundMedia: DEFAULT_BACKGROUND_MEDIA,
+            },
+          },
+          fields: slideFields(true),
+        },
+      ],
     },
   ],
 };

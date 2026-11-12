@@ -1,0 +1,24 @@
+{
+  "title": "Golden Ticket Tour of the AI Software Factory",
+  "slug": "newcastle-golden-ticket-tour-of-the-ai-software-factory",
+  "url": "https://www.meetup.com/newcastle-coders-group/events/316437944/",
+  "websiteUrl": "https://www.meetup.com/newcastle-coders-group/",
+  "thumbnail": "/images/events/newcastle-coders-group.png",
+  "thumbnailDescription": "Newcastle Coders Group",
+  "presenterList": [
+    {
+      "presenter": "content/presenters/calum-simpson.mdx"
+    }
+  ],
+  "startDateTime": "2026-11-04T07:00:00.000Z",
+  "endDateTime": "2026-11-04T09:00:00.000Z",
+  "calendarType": "User Groups",
+  "city": "Newcastle",
+  "category": "Artificial Intelligence",
+  "abstract": "What happens when you stop asking AI to write code and start asking it to deliver software?\n\nJoin Calum Simpson, SSW’s VP of AI, for a golden-ticket tour of the AI software factory. Through real experiments, surprising successes and instructive failures, discover what agents can do, where they go off-script, and why the machinery behind the magic still matters.\n\nSee how people and agents turn ideas into working enterprise solutions, and leave with practical ways to move beyond the chat window.",
+  "lead": "Behind the scenes of a new way to build software",
+  "description": "What happens when you stop asking AI to write code and start asking it to deliver software?\n\nJoin Calum Simpson, SSW’s VP of AI, for a golden-ticket tour of the AI software factory. Through real experiments, surprising successes and instructive failures, discover what agents can do, where they go off-script, and why the machinery behind the magic still matters.\n\nSee how people and agents turn ideas into working enterprise solutions, and leave with practical ways to move beyond the chat window.",
+  "hostedAtSsw": true,
+  "enabled": true,
+  "venue": "SSW Newcastle, 432 Hunter Street"
+}

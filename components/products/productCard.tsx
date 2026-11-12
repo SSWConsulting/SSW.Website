@@ -6,6 +6,7 @@ import { FC } from "react";
 import { tinaField } from "tinacms/dist/react";
 import { ArrowCircle } from "../blocks/v3/shared/arrowCircle";
 import {
+  cardFooter,
   cardShell,
   destinationLabel,
   productTagChip,
@@ -15,9 +16,14 @@ import { ProductCardShell } from "./productCardShell";
 
 export type ProductCardProps = {
   product: ProductsIndexProductsList;
+  /** Drops to h3 when the card sits under a section heading. */
+  headingLevel?: "h2" | "h3";
 };
 
-export const ProductCard: FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: FC<ProductCardProps> = ({
+  product,
+  headingLevel: Heading = "h2",
+}) => {
   const domain = destinationLabel(product.url);
   const tags = visibleTags(product.tags);
 
@@ -48,12 +54,12 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
       </div>
 
       <div className="flex min-w-0 flex-col gap-1">
-        <h2
+        <Heading
           className="m-0 p-0 text-lg font-semibold leading-tight text-foreground"
           data-tina-field={tinaField(product, "name")}
         >
           {product.name}
-        </h2>
+        </Heading>
         {product.description && (
           <p
             className="m-0 line-clamp-3 p-0 text-sm font-light leading-snug text-muted-foreground"
@@ -78,7 +84,9 @@ export const ProductCard: FC<ProductCardProps> = ({ product }) => {
         </ul>
       )}
 
-      <div className="mt-auto flex items-center justify-between gap-3 border-t-0.75 border-hairline pt-3">
+      <div
+        className={cn(cardFooter, "border-hairline", !domain && "justify-end")}
+      >
         {domain && (
           <span className="min-w-0 truncate text-sm text-muted-foreground">
             {domain}
