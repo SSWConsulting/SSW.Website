@@ -1,31 +1,64 @@
 import { describe, expect, it } from "@jest/globals";
 import { render, screen } from "@testing-library/react";
 import React from "react";
-import { getTikTokVideoId, TikTokEmbed } from "@/components/embeds/tiktokEmbed";
+import {
+  getTikTokVideoId,
+  TikTokEmbed,
+  tikTokEmbedSchema,
+  validateTikTokVideoUrl,
+} from "@/components/embeds/tiktokEmbed";
 
 const videoUrl = "https://www.tiktok.com/@microburbs/video/7700040809642511637";
+const shortUrl = "https://vt.tiktok.com/ZSprXmVPK/";
 
 describe("getTikTokVideoId", () => {
-  it("reads the id from a full video URL", () => {
-    expect(getTikTokVideoId(videoUrl)).toBe("7700040809642511637");
+  it.each([
+    [videoUrl, "7700040809642511637"],
+    ["https://tiktok.com/@ssw.tv/video/123?_r=1&_t=ZS-9BCJkYdTyio", "123"],
+    ["https://www.tiktok.com/@a/video/123/", "123"],
+    ["https://www.tiktok.com/@a/video/123#top", "123"],
+    ["HTTPS://WWW.TikTok.com/@a/video/123", "123"],
+    [`  ${videoUrl}  `, "7700040809642511637"],
+  ])("reads the id from %s", (url, id) => {
+    expect(getTikTokVideoId(url)).toBe(id);
   });
 
-  it("ignores the query string and the missing www", () => {
-    expect(
-      getTikTokVideoId(
-        "https://tiktok.com/@ssw.tv/video/123?_r=1&_t=ZS-9BCJkYdTyio"
-      )
-    ).toBe("123");
+  it.each([
+    shortUrl,
+    "http://www.tiktok.com/@a/video/123",
+    "https://www.tiktok.com/@a/video/123abc",
+    "https://www.tiktok.com/@a/video/",
+    "https://www.tiktok.com/@a/photo/123",
+    "https://www.tiktok.com.evil.example/@a/video/123",
+    "https://evil.example/www.tiktok.com/@a/video/123",
+    "",
+    undefined,
+  ])("returns undefined for %s", (url) => {
+    expect(getTikTokVideoId(url)).toBeUndefined();
+  });
+});
+
+describe("validateTikTokVideoUrl", () => {
+  it("accepts an empty value and a full video URL", () => {
+    expect(validateTikTokVideoUrl("")).toBeUndefined();
+    expect(validateTikTokVideoUrl(undefined)).toBeUndefined();
+    expect(validateTikTokVideoUrl(videoUrl)).toBeUndefined();
   });
 
-  it("returns undefined for a short share link and other sites", () => {
-    expect(
-      getTikTokVideoId("https://vt.tiktok.com/ZSprXmVPK/")
-    ).toBeUndefined();
-    expect(
-      getTikTokVideoId("https://evil.example/www.tiktok.com/@a/video/1")
-    ).toBeUndefined();
-    expect(getTikTokVideoId(undefined)).toBeUndefined();
+  it("rejects a short link with a message that shows the full URL form", () => {
+    expect(validateTikTokVideoUrl(shortUrl)).toMatch(
+      /^Use the full TikTok video URL, like https:\/\/www\.tiktok\.com\/@/
+    );
+  });
+
+  it("is the validator of the schema's URL field", () => {
+    const urlField = tikTokEmbedSchema.fields[0] as {
+      name: string;
+      ui: { validate: unknown };
+    };
+
+    expect(urlField.name).toBe("url");
+    expect(urlField.ui.validate).toBe(validateTikTokVideoUrl);
   });
 });
 
@@ -48,6 +81,12 @@ describe("TikTokEmbed", () => {
     ).toBeTruthy();
   });
 
+  it("renders the caption without a duration", () => {
+    render(<TikTokEmbed url={videoUrl} caption="Moving to Newcastle" />);
+
+    expect(screen.getByText("Video: Moving to Newcastle")).toBeTruthy();
+  });
+
   it("renders no caption when none is set", () => {
     const { container } = render(<TikTokEmbed url={videoUrl} />);
 
@@ -55,12 +94,27 @@ describe("TikTokEmbed", () => {
     expect(container.querySelector("figcaption")).toBeNull();
   });
 
-  it("links to the video when the URL has no video id", () => {
-    render(<TikTokEmbed url="https://vt.tiktok.com/ZSprXmVPK/" />);
+  it("links to the video and keeps the caption when the URL has no video id", () => {
+    render(<TikTokEmbed url={` ${shortUrl} `} caption="Moving to Newcastle" />);
 
-    expect(screen.queryByTitle("TikTok video")).toBeNull();
-    expect(
-      screen.getByRole("link", { name: "Watch the video on TikTok" })
-    ).toHaveProperty("href", "https://vt.tiktok.com/ZSprXmVPK/");
+    expect(screen.queryByTitle(/TikTok video/)).toBeNull();
+    const link = screen.getByRole("link", {
+      name: "Watch the video on TikTok",
+    });
+    expect(link.getAttribute("href")).toBe(shortUrl);
+    expect(link.getAttribute("target")).toBe("_blank");
+    expect(link.getAttribute("rel")).toBe("noopener noreferrer");
+    expect(screen.getByText("Video: Moving to Newcastle")).toBeTruthy();
   });
+
+  it.each(["", "   ", "www.tiktok.com/@a/video/1", "javascript:alert(1)"])(
+    "renders nothing for the URL %j",
+    (url) => {
+      const { container } = render(
+        <TikTokEmbed url={url} caption="Moving to Newcastle" />
+      );
+
+      expect(container.innerHTML).toBe("");
+    }
+  );
 });

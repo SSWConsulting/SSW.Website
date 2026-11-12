@@ -10,36 +10,58 @@ export type TikTokEmbedProps = {
 // https://www.tiktok.com/@microburbs/video/7700040809642511637.
 // Short share links (vt.tiktok.com/...) hide the id behind a redirect.
 const TIKTOK_VIDEO_URL =
-  /^https:\/\/(?:www\.)?tiktok\.com\/@[\w.-]+\/video\/(\d+)/;
+  /^https:\/\/(?:www\.)?tiktok\.com\/@[\w.-]+\/video\/(\d+)(?:[/?#]|$)/i;
+
+const EXAMPLE_URL = "https://www.tiktok.com/@ssw_tv/video/1234567890";
 
 export const getTikTokVideoId = (url?: string): string | undefined =>
   url?.trim().match(TIKTOK_VIDEO_URL)?.[1];
 
+export const validateTikTokVideoUrl = (value?: string): string | undefined =>
+  !value || getTikTokVideoId(value)
+    ? undefined
+    : `Use the full TikTok video URL, like ${EXAMPLE_URL}`;
+
+const isHttpsUrl = (url: string) => {
+  try {
+    return new URL(url).protocol === "https:";
+  } catch {
+    return false;
+  }
+};
+
 export const TikTokEmbed = ({ url, caption, duration }: TikTokEmbedProps) => {
   const videoId = getTikTokVideoId(url);
+  const href = url?.trim();
 
-  // Keep the video reachable if the URL is one the player cannot take.
-  if (!videoId) {
-    return url ? (
-      <p>
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          Watch the video on TikTok
-        </a>
-      </p>
-    ) : null;
+  // Content edited outside TinaCMS can hold a URL the player cannot take,
+  // such as a short link. Keep the video reachable with a plain link then.
+  if (!videoId && !(href && isHttpsUrl(href))) {
+    return null;
   }
 
   return (
     <figure className="mx-auto my-8 w-full max-w-tiktok">
-      {/* TikTok's embed player, the iframe its oEmbed API returns. It needs
-          no third-party script, unlike the blockquote embed. */}
-      <iframe
-        className="aspect-9/16 w-full rounded-md"
-        src={`https://www.tiktok.com/player/v1/${videoId}?description=1&music_info=1&rel=0`}
-        title={caption ? `TikTok video: ${caption}` : "TikTok video"}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
-        loading="lazy"
-      />
+      {videoId ? (
+        // TikTok's embed player, the iframe its oEmbed API returns. It needs
+        // no third-party script, unlike the blockquote embed.
+        <iframe
+          className="aspect-9/16 w-full rounded-md"
+          src={`https://www.tiktok.com/player/v1/${videoId}?description=1&music_info=1&rel=0`}
+          title={caption ? `TikTok video: ${caption}` : "TikTok video"}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+          loading="lazy"
+        />
+      ) : (
+        <a
+          className="block text-center"
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Watch the video on TikTok
+        </a>
+      )}
       {caption && (
         <figcaption className="mt-2 text-center font-bold text-inherit">
           Video: {caption} {duration && <>({duration})</>}
@@ -60,14 +82,10 @@ export const tikTokEmbedSchema: Template = {
       type: "string",
       label: "TikTok video URL",
       name: "url",
-      description:
-        "The full video URL, for example https://www.tiktok.com/@sswtv/video/1234567890. Open a short vt.tiktok.com link in a browser to get it",
+      description: `The full video URL, for example ${EXAMPLE_URL}. Open a short vt.tiktok.com link in a browser to get it`,
       required: true,
       ui: {
-        validate: (value: string) =>
-          !value || getTikTokVideoId(value)
-            ? undefined
-            : "Use the full TikTok video URL, like https://www.tiktok.com/@sswtv/video/1234567890",
+        validate: validateTikTokVideoUrl,
       },
     },
     {
@@ -82,7 +100,7 @@ export const tikTokEmbedSchema: Template = {
       label: "Duration",
       name: "duration",
       description:
-        "For example 30 sec, 4 min, 1 hr or 1 hr 26 min. See https://ssw.com.au/rules/right-format-to-write-videos-time-length",
+        "Shows only with a caption. For example 30 sec, 4 min, 1 hr or 1 hr 26 min. See https://ssw.com.au/rules/right-format-to-write-videos-time-length",
     },
   ],
 };
