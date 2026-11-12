@@ -79,6 +79,10 @@ const VideoEmbed = dynamic(() =>
   import("./blocks/videoEmbed").then((mod) => mod.VideoEmbed)
 );
 
+const TikTokEmbed = dynamic(() =>
+  import("./embeds/tiktokEmbed").then((mod) => mod.TikTokEmbed)
+);
+
 const ClientList = dynamic(() =>
   import("./company/clientList").then((mod) => mod.ClientList)
 );
@@ -289,6 +293,7 @@ const componentMap = {
   InterestForm,
   LatestTech,
   VideoEmbed,
+  TikTokEmbed,
   JotFormEmbed,
   ColorBlock,
   DownloadBlock,
