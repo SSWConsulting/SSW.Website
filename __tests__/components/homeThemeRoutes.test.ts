@@ -19,6 +19,10 @@ describe("isThemedRoute", () => {
     expect(isThemedRoute("/company/clients/fpe")).toBe(true);
   });
 
+  it("themes the testimonials page", () => {
+    expect(isThemedRoute("/company/testimonials")).toBe(true);
+  });
+
   it("leaves the other sections' detail pages unthemed", () => {
     expect(isThemedRoute("/consulting/bots")).toBe(false);
     expect(isThemedRoute("/events/user-group")).toBe(false);
