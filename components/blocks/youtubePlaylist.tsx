@@ -6,6 +6,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import { tinaField } from "tinacms/dist/react";
 import { VideoLink } from "../../services/server/youtube";
 import { CustomLink } from "../customLink";
+import AosLoader from "../util/aosLoader";
 import { VideoCard } from "../util/videoCards";
 
 export type YoutubePlaylistProps = {
@@ -71,6 +72,7 @@ export const YoutubePlaylistBlock: React.FC<YoutubePlaylistProps> = (props) => {
             data-aos={playlistButton.animated ? "fade-up" : undefined}
             data-tina-field={tinaField(props.playlistButton, "text")}
           >
+            {playlistButton.animated && <AosLoader />}
             {playlistButton.text}
             <BsArrowRightCircle className="ml-1 inline" />
           </CustomLink>
