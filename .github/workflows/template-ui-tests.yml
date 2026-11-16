@@ -23,7 +23,6 @@ on:
 jobs:
   test:
     name: Run Playwright tests
-    # Playwright doesn't support ubuntu-26.04 (what ubuntu-latest now resolves to), so pin the last supported image.
     runs-on: ubuntu-24.04
     continue-on-error: ${{ inputs.continue-on-failure || false }}
     outputs:
