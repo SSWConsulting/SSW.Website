@@ -3,6 +3,9 @@ description: >
   Deletes untagged manifests that no tagged image references. Untagged children of a
   tagged OCI index (the amd64 image and its provenance attestation) are kept, because
   deleting them breaks pulls of the tag. Requires an Azure CLI login.
+  The age check does not protect an index that just lost its tag, so nothing may
+  deploy or roll back by digest (image@sha256:...); deploy by tag only.
+  Run from one place (the weekly job) so parallel runs don't race on the same deletes.
 
 inputs:
   acr_name:
@@ -36,7 +39,10 @@ runs:
           -not $_.tags -and -not $protected.ContainsKey($_.digest) -and ([datetime]$_.lastUpdateTime).ToUniversalTime() -lt $cutoff
         }
 
+        $failed = 0
         foreach ($o in $orphans) {
           az acr repository delete -n $env:ACR_NAME -t "$($env:IMAGE_NAME)@$($o.digest)" --yes
+          if ($LASTEXITCODE -ne 0) { $failed++ }
         }
-        Write-Host "✅ Deleted $(@($orphans).Count) orphaned manifests, kept $($protected.Count) index children"
+        Write-Host "✅ Deleted $(@($orphans).Count - $failed) orphaned manifests, kept $($protected.Count) index children"
+        if ($failed -gt 0) { throw "$failed orphaned manifest deletes failed" }
