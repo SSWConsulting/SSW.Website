@@ -1,7 +1,7 @@
 import { getLinkKind, safeHref } from "@/helpers/links";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { FiExternalLink } from "react-icons/fi";
+import { FiExternalLink, FiMapPin, FiYoutube } from "react-icons/fi";
 
 type ContentLinkProps = {
   url: string;
@@ -9,11 +9,15 @@ type ContentLinkProps = {
   children?: ReactNode;
 };
 
+const ICON_CLASS = "content-link-icon inline size-3.5 align-baseline";
+
 /**
  * A link written in rich-text content. Links to other sites open in a new tab
- * and get an external-link icon, as per
- * https://www.ssw.com.au/rules/indicate-external-links. Menus and buttons
- * don't render through rich text, so they are unaffected.
+ * and get an icon, as per https://www.ssw.com.au/rules/indicate-external-links
+ * and https://www.ssw.com.au/rules/use-icons-to-not-surprise-users: YouTube
+ * and Google Maps get their own icon before the text, any other site gets an
+ * external-link icon after it. Menus and buttons don't render through rich
+ * text, so they are unaffected.
  */
 export const ContentLink = ({ url, title, children }: ContentLinkProps) => {
   const href = safeHref(url);
@@ -37,20 +41,22 @@ export const ContentLink = ({ url, title, children }: ContentLinkProps) => {
     );
   }
 
-  const isExternal = kind === "external";
   return (
     <a
       href={href}
       title={title}
       target="_blank"
-      rel={isExternal ? "noopener noreferrer nofollow" : "noopener"}
+      rel={kind === "branded" ? "noopener" : "noopener noreferrer nofollow"}
     >
+      {kind === "youtube" && (
+        <FiYoutube aria-hidden="true" className={`${ICON_CLASS} mr-1`} />
+      )}
+      {kind === "maps" && (
+        <FiMapPin aria-hidden="true" className={`${ICON_CLASS} mr-1`} />
+      )}
       {children}
-      {isExternal && (
-        <FiExternalLink
-          aria-hidden="true"
-          className="content-link-icon ml-1 inline size-3.5 align-baseline"
-        />
+      {kind === "external" && (
+        <FiExternalLink aria-hidden="true" className={`${ICON_CLASS} ml-1`} />
       )}
       <span className="sr-only"> (opens in a new tab)</span>
     </a>

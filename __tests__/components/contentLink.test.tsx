@@ -6,6 +6,11 @@ import { ContentLink } from "@/components/contentLink";
 const link = () => screen.getByRole("link");
 const icon = (container: HTMLElement) =>
   container.querySelector(".content-link-icon");
+// firstChild, not firstElementChild: the link text is a text node.
+const iconIsFirst = () =>
+  (link().firstChild as Element | null)?.classList?.contains(
+    "content-link-icon"
+  ) ?? false;
 
 describe("ContentLink", () => {
   it("gives an external link an icon and opens it in a new tab", () => {
@@ -18,7 +23,27 @@ describe("ContentLink", () => {
     expect(link().getAttribute("target")).toBe("_blank");
     expect(link().getAttribute("rel")).toBe("noopener noreferrer nofollow");
     expect(icon(container)).not.toBeNull();
+    expect(iconIsFirst()).toBe(false);
     expect(link().textContent).toContain("(opens in a new tab)");
+  });
+
+  it("gives tina.io the external-link icon", () => {
+    const { container } = render(
+      <ContentLink url="https://tina.io/docs">TinaCMS docs</ContentLink>
+    );
+
+    expect(icon(container)).not.toBeNull();
+  });
+
+  it.each([
+    ["YouTube", "https://www.youtube.com/watch?v=pnPKusNJwE4"],
+    ["Google Maps", "https://www.google.com/maps/place/SSW"],
+  ])("puts the %s icon before the text, in a new tab", (_, url) => {
+    const { container } = render(<ContentLink url={url}>Watch</ContentLink>);
+
+    expect(link().getAttribute("target")).toBe("_blank");
+    expect(container.querySelectorAll(".content-link-icon")).toHaveLength(1);
+    expect(iconIsFirst()).toBe(true);
   });
 
   it("keeps an internal link in the same tab with no icon", () => {
