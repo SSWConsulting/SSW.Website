@@ -10,6 +10,7 @@ import { useState, type CSSProperties } from "react";
 import { FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 // Fallback scoop fill when the section's background colour has no matching hex
 // (e.g. an unset/legacy value) — SSW dark gray, the default section background.
@@ -248,6 +249,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
                         <TinaMarkdown
                           content={slide.description}
                           components={{
+                            ...contentLinkComponents,
                             p: (props) => (
                               <p
                                 {...props}

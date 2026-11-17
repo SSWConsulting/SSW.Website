@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../../customLink";
+import { contentLinkComponents } from "@/components/contentLink";
 
 const Image = dynamic(() => import("next/image"));
 
@@ -43,7 +44,10 @@ const BenefitCard = (props) => {
           data-tina-field={tinaField(props.data, "description")}
           className="mx-auto w-full max-w-full p-0 text-center text-sm font-light leading-normal prose-p:m-0 prose-p:first-of-type:pt-0 prose-strong:font-bold prose-ul:list-disc prose-li:m-0 prose-li:list-item prose-li:font-normal md:text-left md:text-base"
         >
-          <TinaMarkdown content={description} />
+          <TinaMarkdown
+            content={description}
+            components={contentLinkComponents}
+          />
         </section>
         {linkURL && (
           <p className="pt-4 text-center md:text-left">

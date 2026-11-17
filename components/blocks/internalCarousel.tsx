@@ -11,6 +11,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BsArrowRightCircle, BsYoutube } from "react-icons/bs";
 import { Carousel as CarouselImplementation } from "react-responsive-carousel";
 import { UtilityButton } from "../button/utilityButton";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export type InternalCarouselProps = {
   items: {
@@ -113,7 +114,7 @@ const CarouselBody = ({
         </span>
       </div>
       <div className="text-left prose-p:py-2">
-        <TinaMarkdown content={paragraph} />
+        <TinaMarkdown content={paragraph} components={contentLinkComponents} />
       </div>
       <div className="flex flex-wrap">
         {technologies?.map((tech, index) => (

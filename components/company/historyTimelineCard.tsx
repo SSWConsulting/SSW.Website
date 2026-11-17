@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FC } from "react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Countries, sswCountries } from "../util/constants/country";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export type HistoryTimelineCardProps = {
   year: number;
@@ -39,7 +40,10 @@ const HistoryTimelineCard: FC<HistoryTimelineCardProps> = ({
             </span>
           )}
         </h5>
-        <TinaMarkdown content={description} />
+        <TinaMarkdown
+          content={description}
+          components={contentLinkComponents}
+        />
       </div>
     </div>
   );

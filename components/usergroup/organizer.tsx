@@ -7,6 +7,7 @@ import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 import { ReadMore } from "./readMore";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export type OrganizerType = {
   name: string;
@@ -61,7 +62,12 @@ export const Organizer = ({
         </div>
       </div>
       <div data-tina-field={tinaField(data, "content")} className="text-left">
-        {data?.content && <TinaMarkdown content={data?.content} />}
+        {data?.content && (
+          <TinaMarkdown
+            content={data?.content}
+            components={contentLinkComponents}
+          />
+        )}
         {/* Here for the case where the content comes from SharePoint */}
         {stringContent && (
           <ReadMore text={stringContent} length={200} className="text-lg" />

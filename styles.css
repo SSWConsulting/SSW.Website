@@ -285,6 +285,12 @@
     @apply decoration-sswRed;
   }
 
+  /* A rich-text link that only wraps an image doesn't need the external-link
+     icon from ContentLink. */
+  a:has(img) > .content-link-icon {
+    @apply hidden;
+  }
+
   /* Links in red prose headings (h2, and h1 > strong) keep the heading's red
      and darken on hover - text and underline - instead of turning black like
      body links. Containers that recolour those headings keep the standard

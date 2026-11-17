@@ -20,6 +20,7 @@ import classNames from "classnames";
 import ReactDomServer from "react-dom/server";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 const PREVIEW_SENTENCE_COUNT = 4; // Max number of sentences to be previewed
 
@@ -47,7 +48,10 @@ export default function NETUGPage({ props, tinaProps }) {
 
   // Converting element to string to render in presenter block
   const aboutDescription = ReactDomServer.renderToString(
-    <TinaMarkdown content={speaker?.presenter?.about} />
+    <TinaMarkdown
+      content={speaker?.presenter?.about}
+      components={contentLinkComponents}
+    />
   );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
@@ -125,6 +129,7 @@ export default function NETUGPage({ props, tinaProps }) {
               >
                 <TinaMarkdown
                   content={data.userGroupPage.whenAndWhere?.content}
+                  components={contentLinkComponents}
                 />
               </div>
               {data.userGroupPage.whenAndWhere?.googleMapsEmbedUrl && (
@@ -232,7 +237,10 @@ export default function NETUGPage({ props, tinaProps }) {
                 className="text-white child-p:text-lg"
                 data-tina-field={tinaField(data.userGroupPage, "aboutContent")}
               >
-                <TinaMarkdown content={data.userGroupPage.aboutContent} />
+                <TinaMarkdown
+                  content={data.userGroupPage.aboutContent}
+                  components={contentLinkComponents}
+                />
               </div>
             </div>
             <div className="col-span-1 pl-0 pt-4 md:pl-8 md:pt-0">
