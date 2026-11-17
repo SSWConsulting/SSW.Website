@@ -50,8 +50,14 @@ export const getLinkKind = (href?: string | null): LinkKind => {
   const value = href?.trim() ?? "";
   if (!value || value === "about:blank") return "other";
   if (!ABSOLUTE_WEB_URL.test(value)) {
-    // Relative paths, #anchors and ?queries stay on this site.
-    return ANY_SCHEME.test(value) ? "other" : "internal";
+    if (ANY_SCHEME.test(value)) return "other";
+    // Relative paths, #anchors and ?queries stay on this site - except
+    // root-relative links to the SSW subsites (/rules, /people), which are
+    // separate apps.
+    const { pathname } = new URL(value, "https://www.ssw.com.au");
+    return value.startsWith("/") && SSW_SUBSITE_PATH.test(pathname)
+      ? "branded"
+      : "internal";
   }
 
   let url: URL;

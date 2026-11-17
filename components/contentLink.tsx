@@ -1,5 +1,4 @@
 import { getLinkKind, safeHref } from "@/helpers/links";
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { FiExternalLink, FiMapPin, FiYoutube } from "react-icons/fi";
 
@@ -23,17 +22,10 @@ export const ContentLink = ({ url, title, children }: ContentLinkProps) => {
   const href = safeHref(url);
   const kind = getLinkKind(href);
 
-  if (kind === "internal") {
-    // prefetch={false} keeps today's behaviour: content links were plain
-    // anchors, so they never prefetched.
-    return (
-      <Link href={href} title={title} prefetch={false}>
-        {children}
-      </Link>
-    );
-  }
-
-  if (kind === "other") {
+  // A plain anchor, as before: content can link to paths this Next.js app
+  // doesn't serve (files, other SSW apps), which client-side routing can't
+  // handle.
+  if (kind === "internal" || kind === "other") {
     return (
       <a href={href} title={title}>
         {children}

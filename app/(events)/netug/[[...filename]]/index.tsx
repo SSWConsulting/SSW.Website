@@ -46,12 +46,11 @@ export default function NETUGPage({ props, tinaProps }) {
           : speaker?.presenter?.profileImg,
       };
 
-  // Converting element to string to render in presenter block
+  // Converting element to string to render in presenter block. Default link
+  // rendering on purpose: ReadMore sanitises and truncates this HTML, which
+  // would strip ContentLink's icon and screen-reader text.
   const aboutDescription = ReactDomServer.renderToString(
-    <TinaMarkdown
-      content={speaker?.presenter?.about}
-      components={contentLinkComponents}
-    />
+    <TinaMarkdown content={speaker?.presenter?.about} />
   );
 
   if (data?.userGroupPage?.__typename === "UserGroupPageLocationPage") {
