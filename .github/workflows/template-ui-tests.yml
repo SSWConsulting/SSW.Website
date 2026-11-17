@@ -23,7 +23,7 @@ on:
 jobs:
   test:
     name: Run Playwright tests
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-24.04 # TODO: Unpin when Playwright supports ubuntu-26.04.
     continue-on-error: ${{ inputs.continue-on-failure || false }}
     outputs:
       testPassed: ${{ steps.onFailure.outputs.testPassed || 'true' }}
