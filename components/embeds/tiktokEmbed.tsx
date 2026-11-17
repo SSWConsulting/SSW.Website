@@ -41,17 +41,25 @@ export const TikTokEmbed = ({ url, caption, duration }: TikTokEmbedProps) => {
   }
 
   return (
-    <figure className="mx-auto my-8 w-full max-w-tiktok">
+    // md:w-3/4 matches the default width of the YouTube VideoEmbed, so the 2
+    // video types line up when a page stacks them.
+    <figure className="mx-auto my-8 w-full md:w-3/4">
       {videoId ? (
-        // TikTok's embed player, the iframe its oEmbed API returns. It needs
-        // no third-party script, unlike the blockquote embed.
-        <iframe
-          className="aspect-9/16 w-full rounded-md"
-          src={`https://www.tiktok.com/player/v1/${videoId}?description=1&music_info=1&rel=0`}
-          title={caption ? `TikTok video: ${caption}` : "TikTok video"}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
-          loading="lazy"
-        />
+        // From md up, a dark band fills the figure behind the portrait
+        // player, so the player does not sit alone as a tall, narrow strip.
+        // The player keeps its own width: a 16:9 band would shrink it below
+        // 200px in a mid-width column.
+        <div className="flex justify-center rounded-md md:bg-black">
+          {/* TikTok's embed player, the iframe its oEmbed API returns. It
+              needs no third-party script, unlike the blockquote embed. */}
+          <iframe
+            className="aspect-9/16 w-full max-w-tiktok rounded-md md:rounded-none"
+            src={`https://www.tiktok.com/player/v1/${videoId}?description=1&music_info=1&rel=0`}
+            title={caption ? `TikTok video: ${caption}` : "TikTok video"}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
+            loading="lazy"
+          />
+        </div>
       ) : (
         <a
           className="block text-center"
