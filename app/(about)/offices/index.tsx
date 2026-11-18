@@ -31,6 +31,7 @@ function OfficeCard({
 }) {
   const { addressLocality: city, addressCountry: country } = office;
   const officePath = `/offices/${city.toLowerCase()}`;
+  const inlineLocality = office.streetAddress?.trimEnd().endsWith(",");
 
   const countryTag = (
     <span
@@ -98,12 +99,13 @@ function OfficeCard({
             />
             <p className="m-0 p-0">
               <span
-                className="block"
+                className={inlineLocality ? undefined : "block"}
                 data-tina-field={tinaField(office, "streetAddress")}
               >
                 {office.streetAddress}
               </span>
-              <span className="block">
+              <span className={inlineLocality ? undefined : "block"}>
+                {inlineLocality && "\u00a0"}
                 {office.suburb}, {office.addressRegion} {office.postalCode}
               </span>
             </p>
