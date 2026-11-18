@@ -68,14 +68,25 @@ function OfficeCard({ office }: { office: Office }) {
       )}
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="mb-5">
+        <div className="mb-3">
           {!office.thumbnail && countryTag}
-          <h2
-            className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground"
-            data-tina-field={tinaField(office, "addressLocality")}
-          >
-            {city}
-          </h2>
+          <div className="flex items-center justify-between gap-3">
+            <h2
+              className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground"
+              data-tina-field={tinaField(office, "addressLocality")}
+            >
+              {city}
+            </h2>
+            <CustomLink
+              className="unstyled inline-flex min-h-10 min-w-10 shrink-0 items-center justify-center gap-1.5 rounded-full border-0.75 border-hairline text-xs font-medium text-muted-foreground no-underline hover:border-brand hover:text-brand focus-visible:outline-brand xl:px-3"
+              href={`${officePath}#Directions`}
+              aria-label={`Directions to SSW ${city}`}
+              title="Directions"
+            >
+              <Navigation aria-hidden="true" className="size-4" />
+              <span className="hidden xl:inline">Directions</span>
+            </CustomLink>
+          </div>
         </div>
 
         <address className="flex flex-1 flex-col gap-3 text-sm not-italic leading-relaxed text-muted-foreground">
@@ -84,27 +95,17 @@ function OfficeCard({ office }: { office: Office }) {
               aria-hidden="true"
               className="mt-0.5 size-4 shrink-0 text-brand"
             />
-            <div className="min-w-0 flex-1">
-              <CustomLink
-                className="unstyled float-right ml-3 inline-flex min-h-10 items-center gap-1.5 whitespace-nowrap rounded-lg border-0.75 border-hairline px-2.5 text-xs font-medium text-foreground no-underline hover:border-brand hover:text-brand focus-visible:outline-brand"
-                href={`${officePath}#Directions`}
-                aria-label={`Directions to SSW ${city}`}
+            <p className="m-0 p-0">
+              <span
+                className="block"
+                data-tina-field={tinaField(office, "streetAddress")}
               >
-                <Navigation aria-hidden="true" className="size-3.5" />
-                Directions
-              </CustomLink>
-              <p className="m-0 p-0">
-                <span
-                  className="block"
-                  data-tina-field={tinaField(office, "streetAddress")}
-                >
-                  {office.streetAddress}
-                </span>
-                <span className="block">
-                  {office.suburb}, {office.addressRegion} {office.postalCode}
-                </span>
-              </p>
-            </div>
+                {office.streetAddress}
+              </span>
+              <span className="block">
+                {office.suburb}, {office.addressRegion} {office.postalCode}
+              </span>
+            </p>
           </div>
           <div className="mt-auto flex items-center gap-3">
             <Phone aria-hidden="true" className="size-4 shrink-0 text-brand" />
