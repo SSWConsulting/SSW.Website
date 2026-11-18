@@ -26,44 +26,43 @@ function OfficeCard({ office }: { office: Office }) {
 
   return (
     <article className="flex h-full flex-col rounded-card border-0.75 border-hairline bg-card">
+      {office.thumbnail && (
+        <div
+          className="relative aspect-video overflow-hidden rounded-t-card"
+          data-tina-field={tinaField(office, "thumbnail")}
+        >
+          <Image
+            className="object-cover"
+            src={office.thumbnail}
+            alt=""
+            fill
+            sizes="(min-width: 1536px) 480px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+          />
+        </div>
+      )}
+
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <div className="mb-5 flex items-center justify-between gap-3">
-          <div>
-            <p
-              className="m-0 mb-1.5 flex items-center gap-2 p-0 text-sm font-medium text-muted-foreground"
-              data-tina-field={tinaField(office, "addressCountry")}
-            >
-              <span aria-hidden="true">
-                <Flag
-                  country={country as Countries}
-                  width={20}
-                  height={20}
-                  className="h-auto"
-                />
-              </span>
-              {country}
-            </p>
-            <h2
-              className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground"
-              data-tina-field={tinaField(office, "addressLocality")}
-            >
-              {city}
-            </h2>
-          </div>
-          {office.thumbnail && (
-            <div
-              className="shrink-0"
-              data-tina-field={tinaField(office, "thumbnail")}
-            >
-              <Image
-                className="m-0 size-16 rounded-lg object-cover sm:size-20"
-                src={office.thumbnail}
-                width={80}
-                height={80}
-                alt=""
+        <div className="mb-5">
+          <p
+            className="m-0 mb-1.5 flex items-center gap-2 p-0 text-sm font-medium text-muted-foreground"
+            data-tina-field={tinaField(office, "addressCountry")}
+          >
+            <span aria-hidden="true">
+              <Flag
+                country={country as Countries}
+                width={20}
+                height={20}
+                className="h-auto"
               />
-            </div>
-          )}
+            </span>
+            {country}
+          </p>
+          <h2
+            className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground"
+            data-tina-field={tinaField(office, "addressLocality")}
+          >
+            {city}
+          </h2>
         </div>
 
         <address className="flex flex-1 flex-col gap-3 text-sm not-italic leading-relaxed text-muted-foreground">
