@@ -4,7 +4,12 @@ import { Breadcrumbs } from "@/app/components/breadcrumb";
 import { Flag } from "@/components/blocks/flag";
 import { CustomLink } from "@/components/customLink";
 import { HomeThemeShell } from "@/components/layout/homeTheme";
+import {
+  sidebarHeadingClass,
+  sidebarPageContainer,
+} from "@/components/layout/stickySidebar";
 import type { Countries } from "@/components/util/constants/country";
+import { cn } from "@/lib/utils";
 import type { OfficeIndexQueryQuery } from "@/tina/types";
 import { ArrowRight, Globe2, MapPin, Navigation, Phone } from "lucide-react";
 import Image from "next/image";
@@ -126,23 +131,22 @@ export default function OfficesPage({
 
   return (
     <HomeThemeShell className="min-h-screen bg-sunken-glow">
-      <div className="section mx-auto max-w-8xl px-4 pb-12 pt-3 md:px-6 md:pb-20 md:pt-4">
-        <Breadcrumbs path="/offices" title="Offices" />
+      <div className={cn("section", sidebarPageContainer)}>
+        <div className="min-h-12">
+          <Breadcrumbs path="/offices" title="Offices" />
+        </div>
 
-        <header className="my-8 grid gap-4 border-b-0.75 border-hairline pb-8 md:mb-10 md:mt-14 md:grid-cols-2 md:items-end md:gap-8 md:pb-10">
-          <div>
-            <span
-              aria-hidden="true"
-              className="mb-4 block h-1 w-12 rounded-full bg-sswRed"
-            />
-            <h1
-              id="offices-title"
-              className="m-0 p-0 text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl"
-            >
-              Our Offices
-            </h1>
-          </div>
-          <p className="m-0 max-w-md p-0 text-base leading-relaxed text-muted-foreground md:text-lg">
+        <header className="mb-8">
+          <h1
+            id="offices-title"
+            className={cn(
+              sidebarHeadingClass,
+              "m-0 p-0 text-foreground max-md:mt-2"
+            )}
+          >
+            Our Offices
+          </h1>
+          <p className="m-0 mt-1 p-0 text-sm text-muted-foreground">
             Find the address, phone number and directions for your nearest SSW
             office.
           </p>
