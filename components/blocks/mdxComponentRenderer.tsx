@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { Components, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import type { TikTokEmbedProps } from "../embeds/tiktokEmbed";
 import type { TweetEmbedProps } from "../embeds/tweetEmbed";
 import type { Countries } from "../util/constants/country";
 import type { ColorBlockProps } from "./colorBlock";
@@ -13,6 +14,7 @@ import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
 import { UtilityButton } from "../button/utilityButton";
+import { TikTokEmbed } from "../embeds/tiktokEmbed";
 import { TweetEmbed } from "../embeds/tweetEmbed";
 import { InlineJotFormProps } from "../inlineJotForm/inlineJotForm";
 import { Content, ContentType } from "./content";
@@ -156,6 +158,7 @@ export const componentRenderer: Components<{
       title: string;
     }[];
   };
+  TikTokEmbed: TikTokEmbedProps;
   TweetEmbed: TweetEmbedProps;
   DynamicColumns: {
     colBody: TinaMarkdownContent;
@@ -268,6 +271,7 @@ export const componentRenderer: Components<{
   VerticalListItem: (props) => <VerticalListItem data={props} />,
   TrainingInformation: (props) => <TrainingInformation data={props} />,
   TrainingLearningOutcome: (props) => <TrainingLearningOutcome data={props} />,
+  TikTokEmbed: (props) => <TikTokEmbed {...props} />,
   TweetEmbed: (props) => <TweetEmbed {...props} />,
   RecurringEvent: (props) => <RecurringEvent data={props} />,
   FixedTabsLayout: (props) => <FixedTabsLayout data={props} />,

@@ -46,6 +46,8 @@ export default {
       },
       aspectRatio: {
         "4/3": "4 / 3",
+        // Portrait video, such as the TikTok embed player.
+        "9/16": "9 / 16",
       },
       scale: {
         165: "1.65",
@@ -182,6 +184,8 @@ export default {
       maxWidth: {
         media: "420px",
         "sidebar-card": "300px",
+        // Width of the TikTok embed player, as its oEmbed API returns it.
+        tiktok: "325px",
         "8xl": "83rem",
         "9xl": "86rem",
         "1/2": "50%",
