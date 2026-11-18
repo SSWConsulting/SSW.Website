@@ -16,7 +16,7 @@ import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 
 const hangzhouLandmarkPhoto =
-  "/images/offices/hangzhou/hangzhou-qianjiang-new-city.webp";
+  "/images/offices/hangzhou/hangzhou-qianjiang-towers.webp";
 
 type OfficeIndex = OfficeIndexQueryQuery["officeIndex"];
 type Office = NonNullable<
@@ -180,8 +180,8 @@ export default function OfficesPage({
         ) && (
           <p className="m-0 mt-3 p-0 text-xs text-muted-foreground">
             Hangzhou photo by{" "}
-            <CustomLink href="https://commons.wikimedia.org/wiki/File:Hangzhou_International_Conference_Center_18.jpg">
-              钉钉
+            <CustomLink href="https://commons.wikimedia.org/wiki/File:Qianjiang_New_City_20230729.jpg">
+              Nat4Eben
             </CustomLink>
             {", cropped and resized, "}
             <CustomLink href="https://creativecommons.org/licenses/by-sa/4.0/">
