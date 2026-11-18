@@ -24,6 +24,28 @@ function OfficeCard({ office }: { office: Office }) {
   const { addressLocality: city, addressCountry: country } = office;
   const officePath = `/offices/${city.toLowerCase()}`;
 
+  const countryTag = (
+    <span
+      className={cn(
+        "inline-flex w-fit items-center gap-1.5 text-xs font-semibold",
+        office.thumbnail
+          ? "absolute left-3 top-3 rounded-full bg-black/80 px-2.5 py-1 text-white"
+          : "mb-2 text-muted-foreground"
+      )}
+      data-tina-field={tinaField(office, "addressCountry")}
+    >
+      <span aria-hidden="true">
+        <Flag
+          country={country as Countries}
+          width={16}
+          height={16}
+          className="h-auto"
+        />
+      </span>
+      {country}
+    </span>
+  );
+
   return (
     <article className="flex h-full flex-col rounded-card border-0.75 border-hairline bg-card">
       {office.thumbnail && (
@@ -38,25 +60,13 @@ function OfficeCard({ office }: { office: Office }) {
             fill
             sizes="(min-width: 1536px) 480px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           />
+          {countryTag}
         </div>
       )}
 
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-5">
-          <p
-            className="m-0 mb-1.5 flex items-center gap-2 p-0 text-sm font-medium text-muted-foreground"
-            data-tina-field={tinaField(office, "addressCountry")}
-          >
-            <span aria-hidden="true">
-              <Flag
-                country={country as Countries}
-                width={20}
-                height={20}
-                className="h-auto"
-              />
-            </span>
-            {country}
-          </p>
+          {!office.thumbnail && countryTag}
           <h2
             className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground"
             data-tina-field={tinaField(office, "addressLocality")}
