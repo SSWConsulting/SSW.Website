@@ -2,28 +2,36 @@
 
 import { Breadcrumbs } from "@/app/components/breadcrumb";
 import { Flag } from "@/components/blocks/flag";
+import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import { CustomLink } from "@/components/customLink";
 import { HomeThemeShell } from "@/components/layout/homeTheme";
 import {
   sidebarHeadingClass,
   sidebarPageContainer,
 } from "@/components/layout/stickySidebar";
+import { cardFooter, cardShell } from "@/components/products/shared";
 import type { Countries } from "@/components/util/constants/country";
 import { cn } from "@/lib/utils";
 import type { OfficeIndexQueryQuery } from "@/tina/types";
-import { ArrowRight, Globe2, MapPin, Navigation, Phone } from "lucide-react";
+import { ArrowRight, Globe2, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
-import { tinaField } from "tinacms/dist/react";
+import { tinaField, useEditState } from "tinacms/dist/react";
 
-const hangzhouRiverfrontPhoto =
-  "/images/offices/hangzhou/hangzhou-qianjiang-riverfront.webp";
+const hangzhouSkylinePhoto =
+  "/images/offices/hangzhou/hangzhou-qianjiang-skyline.webp";
 
 type OfficeIndex = OfficeIndexQueryQuery["officeIndex"];
 type Office = NonNullable<
   NonNullable<OfficeIndex["officesIndex"]>[number]
 >["office"];
 
-function OfficeCard({ office }: { office: Office }) {
+function OfficeCard({
+  office,
+  isEditing,
+}: {
+  office: Office;
+  isEditing: boolean;
+}) {
   const { addressLocality: city, addressCountry: country } = office;
   const officePath = `/offices/${city.toLowerCase()}`;
 
@@ -50,7 +58,14 @@ function OfficeCard({ office }: { office: Office }) {
   );
 
   return (
-    <article className="flex h-full flex-col rounded-card border-0.75 border-hairline bg-card">
+    <article
+      className={cn(
+        cardShell,
+        "border-stroke-weak bg-gray-50 hover:border-brand hover:bg-white",
+        "dark:border-hairline dark:bg-card dark:hover:border-brand dark:hover:bg-card-hover",
+        "active:bg-gray-100 dark:active:bg-card"
+      )}
+    >
       {office.thumbnail && (
         <div
           className="relative aspect-office-banner overflow-hidden rounded-t-card"
@@ -70,23 +85,12 @@ function OfficeCard({ office }: { office: Office }) {
       <div className="flex flex-1 flex-col p-5 sm:p-6">
         <div className="mb-3">
           {!office.thumbnail && countryTag}
-          <div className="flex items-center justify-between gap-3">
-            <h2
-              className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground"
-              data-tina-field={tinaField(office, "addressLocality")}
-            >
-              {city}
-            </h2>
-            <CustomLink
-              className="unstyled inline-flex min-h-10 min-w-10 shrink-0 items-center justify-center gap-1.5 rounded-full border-0.75 border-hairline text-xs font-medium text-muted-foreground no-underline hover:border-brand hover:text-brand focus-visible:outline-brand xl:px-3"
-              href={`${officePath}#Directions`}
-              aria-label={`Directions to SSW ${city}`}
-              title="Directions"
-            >
-              <Navigation aria-hidden="true" className="size-4" />
-              <span className="hidden xl:inline">Directions</span>
-            </CustomLink>
-          </div>
+          <h2
+            className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground"
+            data-tina-field={tinaField(office, "addressLocality")}
+          >
+            {city}
+          </h2>
         </div>
 
         <address className="flex flex-1 flex-col gap-3 text-sm not-italic leading-relaxed text-muted-foreground">
@@ -110,7 +114,8 @@ function OfficeCard({ office }: { office: Office }) {
           <div className="mt-auto flex items-center gap-3">
             <Phone aria-hidden="true" className="size-4 shrink-0 text-brand" />
             <a
-              className="unstyled rounded-sm text-foreground no-underline hover:text-brand hover:underline focus-visible:outline-brand"
+              // Keep the phone link above the stretched office details link.
+              className="unstyled relative z-20 rounded-sm text-foreground no-underline hover:text-brand hover:underline focus-visible:outline-brand"
               data-tina-field={tinaField(office, "phone")}
               href={`tel:${office.phone.replace(/[^\d+]/g, "")}`}
             >
@@ -120,15 +125,25 @@ function OfficeCard({ office }: { office: Office }) {
         </address>
       </div>
 
-      <div className="flex items-center border-t-0.75 border-hairline px-5 py-2 sm:px-6">
+      <div className={cn(cardFooter, "mx-5 border-hairline pb-4 sm:mx-6")}>
         <CustomLink
-          className="unstyled inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-semibold text-brand no-underline hover:underline focus-visible:outline-brand"
+          className={cn(
+            "unstyled text-sm font-medium text-muted-foreground no-underline",
+            "after:absolute after:inset-0 after:z-10 focus-visible:outline-none focus-visible:after:rounded-card focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-brand",
+            // Tina quick edit needs clicks to reach the actual fields.
+            isEditing && "after:pointer-events-none"
+          )}
           href={office.localWebsiteLink?.url || officePath}
           aria-label={`Office details for ${city}`}
         >
           Office details
-          <ArrowRight aria-hidden="true" className="size-4" />
         </CustomLink>
+        <span aria-hidden="true">
+          <ArrowCircle
+            className="size-9 bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
+            iconClassName="size-3.5"
+          />
+        </span>
       </div>
     </article>
   );
@@ -139,6 +154,7 @@ export default function OfficesPage({
 }: {
   tinaProps: { data: object };
 }) {
+  const { edit } = useEditState();
   const { officeIndex } = tinaProps.data as OfficeIndexQueryQuery;
   const offices = (officeIndex.officesIndex ?? [])
     .map((entry) => entry?.office)
@@ -173,26 +189,10 @@ export default function OfficesPage({
         >
           {offices.map((office) => (
             <li key={office.addressLocality}>
-              <OfficeCard office={office} />
+              <OfficeCard office={office} isEditing={edit} />
             </li>
           ))}
         </ul>
-
-        {offices.some(
-          (office) => office.thumbnail === hangzhouRiverfrontPhoto
-        ) && (
-          <p className="m-0 mt-3 p-0 text-xs text-muted-foreground">
-            Hangzhou photo by{" "}
-            <CustomLink href="https://commons.wikimedia.org/wiki/File:20201012%E4%BB%8E%E9%92%B1%E5%A1%98%E6%B1%9F%E6%B1%9F%E9%9D%A2%E4%B8%8A%E7%A9%BA%E8%A7%82%E7%9C%8B%E9%92%B1%E6%B1%9F%E6%96%B0%E5%9F%8E.jpg">
-              MasaneMiyaPA
-            </CustomLink>
-            {", cropped and retouched, "}
-            <CustomLink href="https://creativecommons.org/licenses/by-sa/4.0/">
-              CC BY-SA 4.0
-            </CustomLink>
-            .
-          </p>
-        )}
 
         <div className="mt-8 grid gap-4 lg:mt-10 lg:grid-cols-3 lg:gap-6">
           <section className="rounded-card border-0.75 border-hairline bg-card p-5 sm:p-6 lg:col-span-2">
@@ -231,6 +231,24 @@ export default function OfficesPage({
             </div>
           </section>
         </div>
+        {offices.some(
+          (office) => office.thumbnail === hangzhouSkylinePhoto
+        ) && (
+          <details className="mt-4 text-xs text-muted-foreground">
+            <summary className="w-fit cursor-pointer">Photo credits</summary>
+            <p className="m-0 mt-2 p-0">
+              Hangzhou photo by{" "}
+              <CustomLink href="https://commons.wikimedia.org/wiki/File:20201012%E4%BB%8E%E9%92%B1%E5%A1%98%E6%B1%9F%E6%B1%9F%E9%9D%A2%E4%B8%8A%E7%A9%BA%E8%A7%82%E7%9C%8B%E9%92%B1%E6%B1%9F%E6%96%B0%E5%9F%8E.jpg">
+                MasaneMiyaPA
+              </CustomLink>
+              {", cropped and retouched, "}
+              <CustomLink href="https://creativecommons.org/licenses/by-sa/4.0/">
+                CC BY-SA 4.0
+              </CustomLink>
+              .
+            </p>
+          </details>
+        )}
       </div>
     </HomeThemeShell>
   );
