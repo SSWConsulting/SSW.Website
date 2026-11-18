@@ -88,14 +88,20 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: keyVault - Secrets
-        uses: theotow/keyvault-secret-azure@v1
         id: KeyVaultSecrets
-        with:
-          key-vault-name: ${{ env.KEY_VAULT }}
-          config: |
-            {
-              "YOUTUBE_PRIVATE_KEY": "YOUTUBE-PRIVATE-KEY"
-            }
+        run: |
+          # Calls az directly so the real Key Vault error appears in the log.
+          $value = $null
+          foreach ($attempt in 1..3) {
+            $value = az keyvault secret show --vault-name ${{ env.KEY_VAULT }} --name YOUTUBE-PRIVATE-KEY --query value -o tsv
+            if ($LASTEXITCODE -eq 0 -and $value) { break }
+            Write-Host "⚠️ Attempt $attempt to read YOUTUBE-PRIVATE-KEY failed"
+            $value = $null
+            if ($attempt -lt 3) { Start-Sleep -Seconds (10 * $attempt) }
+          }
+          if (-not $value) { throw "Could not read YOUTUBE-PRIVATE-KEY from ${{ env.KEY_VAULT }}" }
+          Write-Host "::add-mask::$value"
+          "YOUTUBE_PRIVATE_KEY=$value" >> $env:GITHUB_ENV
 
       - name: AppInsight - Connection Strings
         shell: pwsh
