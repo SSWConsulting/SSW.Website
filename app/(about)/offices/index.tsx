@@ -218,20 +218,21 @@ export default function OfficesPage({
               <ArrowRight aria-hidden="true" className="size-4" />
             </a>
           </section>
-          <section className="rounded-card border-0.75 border-hairline bg-card p-5 sm:p-6">
+          <section className="flex flex-col rounded-card border-0.75 border-hairline bg-card p-5 sm:p-6">
             <h2 className="m-0 p-0 text-xl font-semibold text-foreground">
               Microsoft Cloud Partner
             </h2>
             <p className="m-0 mt-2 p-0 text-sm leading-relaxed text-muted-foreground">
               SSW builds and deploys solutions using Microsoft technologies.
             </p>
-            <div className="mt-4 w-fit rounded-lg bg-white p-2">
+            <div className="mt-4 flex flex-1 items-center rounded-lg bg-white">
               <Image
-                className="m-0 h-auto"
+                className="m-0 h-auto w-full"
                 src="/images/logos/Microsoft-Solutions-Partner.png"
                 alt="Microsoft Solutions Partner"
-                width={177}
-                height={50}
+                width={925}
+                height={420}
+                sizes="(min-width: 1536px) 408px, (min-width: 1024px) 33vw, 100vw"
               />
             </div>
           </section>
