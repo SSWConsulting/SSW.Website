@@ -1,0 +1,48 @@
+name: ACR - Delete orphaned manifests
+description: >
+  Deletes untagged manifests that no tagged image references. Untagged children of a
+  tagged OCI index (the amd64 image and its provenance attestation) are kept, because
+  deleting them breaks pulls of the tag. Requires an Azure CLI login.
+  The age check does not protect an index that just lost its tag, so nothing may
+  deploy or roll back by digest (image@sha256:...); deploy by tag only.
+  Run from one place (the weekly job) so parallel runs don't race on the same deletes.
+
+inputs:
+  acr_name:
+    required: true
+  image_name:
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Delete orphaned manifests
+      shell: pwsh
+      env:
+        ACR_NAME: ${{ inputs.acr_name }}
+        IMAGE_NAME: ${{ inputs.image_name }}
+      run: |
+        $all = az acr manifest list-metadata -r $env:ACR_NAME -n $env:IMAGE_NAME -o json | ConvertFrom-Json
+        if ($LASTEXITCODE -ne 0) { throw "Could not list manifests" }
+
+        # Every digest a tagged manifest points at. Single manifests have no children.
+        $protected = @{}
+        foreach ($m in $all | Where-Object { $_.tags }) {
+          $manifest = az acr manifest show -r $env:ACR_NAME -n "$($env:IMAGE_NAME)@$($m.digest)" -o json | ConvertFrom-Json
+          if ($LASTEXITCODE -ne 0) { throw "Could not read $($m.digest), refusing to delete" }
+          foreach ($child in $manifest.manifests) { $protected[$child.digest] = $true }
+        }
+
+        # Skip anything under a day old: a build pushes its children before it tags the index.
+        $cutoff = (Get-Date).ToUniversalTime().AddDays(-1)
+        $orphans = $all | Where-Object {
+          -not $_.tags -and -not $protected.ContainsKey($_.digest) -and ([datetime]$_.lastUpdateTime).ToUniversalTime() -lt $cutoff
+        }
+
+        $failed = 0
+        foreach ($o in $orphans) {
+          az acr repository delete -n $env:ACR_NAME -t "$($env:IMAGE_NAME)@$($o.digest)" --yes
+          if ($LASTEXITCODE -ne 0) { $failed++ }
+        }
+        Write-Host "✅ Deleted $(@($orphans).Count - $failed) orphaned manifests, kept $($protected.Count) index children"
+        if ($failed -gt 0) { throw "$failed orphaned manifest deletes failed" }

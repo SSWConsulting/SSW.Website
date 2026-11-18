@@ -38,12 +38,11 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Delete all untagged images
-        run: |
-          $untaggedDigests = az acr manifest list-metadata -r  ${{ env.ACR_NAME }} -n `
-          ${{ env.IMAGE_NAME }} --query "[?tags==null].digest" -o tsv | `
-          %{ az acr repository delete -n ${{ env.ACR_NAME }} -t ${{ env.IMAGE_NAME }}@$_ --yes}
-          Write-Host "✅ All untagged images have been deleted"
+      - name: Delete orphaned manifests
+        uses: ./.github/actions/acr-delete-orphaned-manifests
+        with:
+          acr_name: ${{ env.ACR_NAME }}
+          image_name: ${{ env.IMAGE_NAME }}
 
       - name: Get list of active PRs
         id: prList
