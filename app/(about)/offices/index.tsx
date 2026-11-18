@@ -17,9 +17,6 @@ import { ArrowRight, Globe2, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import { tinaField, useEditState } from "tinacms/dist/react";
 
-const hangzhouSkylinePhoto =
-  "/images/offices/hangzhou/hangzhou-qianjiang-panorama.webp";
-
 type OfficeIndex = OfficeIndexQueryQuery["officeIndex"];
 type Office = NonNullable<
   NonNullable<OfficeIndex["officesIndex"]>[number]
@@ -231,24 +228,6 @@ export default function OfficesPage({
             </div>
           </section>
         </div>
-        {offices.some(
-          (office) => office.thumbnail === hangzhouSkylinePhoto
-        ) && (
-          <details className="mt-4 text-xs text-muted-foreground">
-            <summary className="w-fit cursor-pointer">Photo credits</summary>
-            <p className="m-0 mt-2 p-0">
-              Hangzhou photo by{" "}
-              <CustomLink href="https://commons.wikimedia.org/wiki/File:20201012%E4%BB%8E%E9%92%B1%E5%A1%98%E6%B1%9F%E6%B1%9F%E9%9D%A2%E4%B8%8A%E7%A9%BA%E8%A7%82%E7%9C%8B%E9%92%B1%E6%B1%9F%E6%96%B0%E5%9F%8E.jpg">
-                MasaneMiyaPA
-              </CustomLink>
-              {", cropped and retouched, "}
-              <CustomLink href="https://creativecommons.org/licenses/by-sa/4.0/">
-                CC BY-SA 4.0
-              </CustomLink>
-              .
-            </p>
-          </details>
-        )}
       </div>
     </HomeThemeShell>
   );
