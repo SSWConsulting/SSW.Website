@@ -180,38 +180,36 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
 
               {/* Columns rather than a grid, so short and long quotes pack
                   together without leaving gaps under the short ones. */}
-              <ul className="m-0 mt-8 list-none gap-6 p-0 md:columns-2 xl:columns-3">
-                {wall.map((testimonial, index) => (
-                  <motion.li
-                    key={`${testimonial.name}-${index}`}
-                    {...reveal(0.06 * (index % 3))}
-                    className="mb-6 break-inside-avoid"
-                  >
-                    <TestimonialCard testimonial={testimonial} />
-                  </motion.li>
-                ))}
-              </ul>
+              <MotionConfig reducedMotion="never">
+                <ul className="m-0 mt-8 list-none gap-6 p-0 md:columns-2 xl:columns-3">
+                  {wall.map((testimonial, index) => (
+                    <motion.li
+                      key={`${testimonial.name}-${index}`}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, margin: "0px 0px -96px 0px" }}
+                      className="mb-6 inline-block w-full break-inside-avoid align-top"
+                    >
+                      <motion.div
+                        variants={{
+                          hidden: { opacity: 0, y: 52 },
+                          visible: { opacity: 1, y: 0 },
+                        }}
+                        transition={{
+                          y: {
+                            duration: 0.78,
+                            ease: [0.32, 0.05, 0.18, 1],
+                          },
+                          opacity: { duration: 0.78, ease: "linear" },
+                        }}
+                      >
+                        <TestimonialCard testimonial={testimonial} />
+                      </motion.div>
+                    </motion.li>
+                  ))}
+                </ul>
+              </MotionConfig>
             </section>
-          )}
-
-          {page.about.children?.length > 0 && (
-            <motion.section
-              {...reveal()}
-              className="mt-20 rounded-card border-0.75 border-stroke-weak bg-card p-8 md:p-12 dark:border-hairline"
-            >
-              <div
-                data-tina-field={tinaField(company, "subTitle")}
-                className={cn(
-                  themedProse,
-                  "max-w-3xl prose-h2:mb-6 prose-h2:mt-0 prose-h2:text-3xl prose-h2:font-semibold prose-h2:tracking-tight prose-a:underline-offset-4 md:prose-h2:text-4xl"
-                )}
-              >
-                <TinaMarkdown
-                  content={page.about}
-                  components={componentRenderer}
-                />
-              </div>
-            </motion.section>
           )}
 
           <motion.div {...reveal()} className="mt-6">
