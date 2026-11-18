@@ -180,7 +180,7 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
 
               {/* Columns rather than a grid, so short and long quotes pack
                   together without leaving gaps under the short ones. */}
-              <MotionConfig reducedMotion="never">
+              <MotionConfig reducedMotion="user">
                 <ul className="m-0 mt-8 list-none gap-6 p-0 md:columns-2 xl:columns-3">
                   {wall.map((testimonial, index) => (
                     <motion.li
