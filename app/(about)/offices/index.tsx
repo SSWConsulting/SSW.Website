@@ -18,7 +18,7 @@ import Image from "next/image";
 import { tinaField, useEditState } from "tinacms/dist/react";
 
 const hangzhouSkylinePhoto =
-  "/images/offices/hangzhou/hangzhou-qianjiang-skyline.webp";
+  "/images/offices/hangzhou/hangzhou-qianjiang-panorama.webp";
 
 type OfficeIndex = OfficeIndexQueryQuery["officeIndex"];
 type Office = NonNullable<
