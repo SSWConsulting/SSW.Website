@@ -1,4 +1,4 @@
-import { getLinkKind, safeHref } from "@/helpers/links";
+import { getLinkKind, getLinkRel, safeHref } from "@/helpers/links";
 import type { ReactNode } from "react";
 import { FiExternalLink, FiMapPin, FiYoutube } from "react-icons/fi";
 
@@ -34,12 +34,7 @@ export const ContentLink = ({ url, title, children }: ContentLinkProps) => {
   }
 
   return (
-    <a
-      href={href}
-      title={title}
-      target="_blank"
-      rel={kind === "branded" ? "noopener" : "noopener noreferrer nofollow"}
-    >
+    <a href={href} title={title} target="_blank" rel={getLinkRel(href)}>
       {kind === "youtube" && (
         <FiYoutube aria-hidden="true" className={`${ICON_CLASS} mr-1`} />
       )}

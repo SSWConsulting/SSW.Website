@@ -9,7 +9,8 @@
 //             it's still "us".
 // - youtube:  a YouTube video or channel. New tab, YouTube icon.
 // - maps:     a Google Maps link. New tab, map pin icon.
-// - external: any other site. New tab, external-link icon.
+// - external: any other site. New tab, external-link icon. SSW-owned sites on
+//             other domains (tina.io) are external too, but see getLinkRel.
 // - other:    mailto:, tel: and other non-web links. Left as they are.
 export type LinkKind =
   | "internal"
@@ -28,6 +29,8 @@ const YOUTUBE_HOST = /(^|\.)(youtube\.com|youtube-nocookie\.com|youtu\.be)$/i;
 // google.com, google.com.au, etc.
 const GOOGLE_HOST = /(^|\.)google\.[a-z]{2,3}(\.[a-z]{2})?$/i;
 const GOOGLE_MAPS_HOST = /^maps\.(google\.[a-z.]+|app\.goo\.gl)$/i;
+// SSW-owned sites on other domains. Same as CustomLink's isTinaSite.
+const SSW_OWNED_HOST = /(^|\.)tina\.io$/i;
 const ABSOLUTE_WEB_URL = /^(https?:)?\/\//i;
 const ALLOWED_SCHEME = /^(https?|mailto|tel):/i;
 const ANY_SCHEME = /^[a-z][a-z\d+.-]*:/i;
@@ -79,4 +82,23 @@ export const getLinkKind = (href?: string | null): LinkKind => {
   if (YOUTUBE_HOST.test(url.hostname)) return "youtube";
   if (isGoogleMaps(url)) return "maps";
   return "external";
+};
+
+/**
+ * The `rel` for a link that opens in a new tab. SSW's own sites only need
+ * `noopener`; other sites also get `noreferrer nofollow`, as in CustomLink.
+ */
+export const getLinkRel = (href?: string | null): string => {
+  const kind = getLinkKind(href);
+  if (kind === "branded") return "noopener";
+  try {
+    const value = href?.trim() ?? "";
+    const { hostname } = new URL(
+      value.startsWith("//") ? `https:${value}` : value
+    );
+    if (SSW_OWNED_HOST.test(hostname)) return "noopener";
+  } catch {
+    // Not an absolute URL.
+  }
+  return "noopener noreferrer nofollow";
 };

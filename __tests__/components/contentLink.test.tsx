@@ -27,12 +27,13 @@ describe("ContentLink", () => {
     expect(link().textContent).toContain("(opens in a new tab)");
   });
 
-  it("gives tina.io the external-link icon", () => {
+  it("gives tina.io the external-link icon without nofollow", () => {
     const { container } = render(
       <ContentLink url="https://tina.io/docs">TinaCMS docs</ContentLink>
     );
 
     expect(icon(container)).not.toBeNull();
+    expect(link().getAttribute("rel")).toBe("noopener");
   });
 
   it.each([
