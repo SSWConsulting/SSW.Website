@@ -7,6 +7,7 @@ describe("isThemedRoute", () => {
     expect(isThemedRoute("/products")).toBe(true);
     expect(isThemedRoute("/consulting")).toBe(true);
     expect(isThemedRoute("/events")).toBe(true);
+    expect(isThemedRoute("/offices")).toBe(true);
   });
 
   it("themes pages under /products, including sub-pages", () => {
@@ -22,6 +23,7 @@ describe("isThemedRoute", () => {
   it("leaves the other sections' detail pages unthemed", () => {
     expect(isThemedRoute("/consulting/bots")).toBe(false);
     expect(isThemedRoute("/events/user-group")).toBe(false);
+    expect(isThemedRoute("/offices/sydney")).toBe(false);
   });
 
   it("does not match a route that merely starts with the same text", () => {

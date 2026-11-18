@@ -1,116 +1,202 @@
 "use client";
+
+import { Breadcrumbs } from "@/app/components/breadcrumb";
 import { Flag } from "@/components/blocks/flag";
 import { CustomLink } from "@/components/customLink";
-import MicrosoftPanel from "@/components/offices/microsoftPanel";
-import TestimonialPanel from "@/components/offices/testimonialPanel";
-import { Countries } from "@/components/util/constants/country";
-import { Container } from "@/components/util/container";
+import { HomeThemeShell } from "@/components/layout/homeTheme";
+import type { Countries } from "@/components/util/constants/country";
+import type { OfficeIndexQueryQuery } from "@/tina/types";
+import { ArrowRight, Globe2, MapPin, Navigation, Phone } from "lucide-react";
 import Image from "next/image";
-import { Breadcrumbs } from "../../components/breadcrumb";
+import { tinaField } from "tinacms/dist/react";
 
-export default function OfficesPage({ tinaProps }) {
-  const { data } = tinaProps;
-  const offices = data.officeIndex.officesIndex?.map((office) => office.office);
+type OfficeIndex = OfficeIndexQueryQuery["officeIndex"];
+type Office = NonNullable<
+  NonNullable<OfficeIndex["officesIndex"]>[number]
+>["office"];
+
+function OfficeCard({ office }: { office: Office }) {
+  const { addressLocality: city, addressCountry: country } = office;
+  const officePath = `/offices/${city.toLowerCase()}`;
 
   return (
-    <>
-      {offices && (
-        <>
-          <Container className="flex-1 pt-2">
-            <Breadcrumbs path={"/offices"} title={"Offices"} />
-
-            <div className="md:flex">
-              <div className="grow md:min-w-0">
-                <h1 className="pt-0">Our Offices</h1>
-                {offices.map((office) => (
-                  <div key={office.addressLocality} className="mb-10 block">
-                    <span>
-                      <h2 className="mt-0 text-sswRed">
-                        {`${office.addressLocality} | ${office.addressCountry}`}{" "}
-                        <Flag country={office.addressCountry as Countries} />
-                      </h2>
-                    </span>
-                    {office.thumbnail ? (
-                      <Image
-                        className="float-left mr-4 pb-3"
-                        src={office.thumbnail}
-                        width={115}
-                        height={115}
-                        alt="Office Thumbnail"
-                      />
-                    ) : (
-                      <></>
-                    )}
-                    <p className="block max-sm:clear-left">
-                      {office.streetAddress}
-                      <br />
-                      {office.suburb}, {office.addressRegion}{" "}
-                      {office.postalCode}
-                    </p>
-                    <p className="block max-sm:clear-left">
-                      <strong>Phone: {office.phone}</strong>
-                    </p>
-                    <p className="block max-sm:clear-left">
-                      <CustomLink
-                        href={
-                          office.localWebsiteLink?.url ||
-                          `/offices/${office.addressLocality.toLowerCase()}`
-                        }
-                      >
-                        Learn more about our {office.addressLocality} office
-                      </CustomLink>
-                    </p>
-                    <p className="block max-sm:clear-left">
-                      <CustomLink
-                        href={`${`/offices/${office.addressLocality.toLowerCase()}`}#Directions`}
-                      >
-                        Directions to SSW {office.addressLocality}
-                      </CustomLink>
-                    </p>
-                  </div>
-                ))}
-                <hr className="my-3" />
-                <div className="border-2 bg-gray-100 px-4 py-2">
-                  <p>
-                    Our staff are ready to work remotely for any country
-                    globally. We have worked for clients from the
-                    <strong> USA, Canada, the UK</strong>, New Zealand, and even
-                    European countries, such as <strong>France, Germany</strong>
-                    , and as far north as <strong>Sweden</strong>.
-                  </p>
-                </div>
-                <br />
-                <p>
-                  {"If you require any further information, don't hesitate to "}
-                  <CustomLink href="mailto:info@ssw.com.au">
-                    contact us.
-                  </CustomLink>
-                </p>
-              </div>
-              <div className="md:w-96 md:shrink-0 md:pl-6">
-                <div className="prose max-w-full">
-                  <h3>SSW Offices</h3>
-                  <ul>
-                    {offices.map((office) => (
-                      <li key={office.addressLocality}>
-                        <CustomLink
-                          href={`${`/offices/${office.addressLocality.toLowerCase()}`}#Directions`}
-                        >
-                          {office.addressLocality}
-                        </CustomLink>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="hidden sm:block">
-                    <MicrosoftPanel />
-                    <TestimonialPanel />
-                  </div>
-                </div>
-              </div>
+    <article className="flex h-full flex-col rounded-card border-0.75 border-hairline bg-card">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <div className="mb-5 flex items-center justify-between gap-3">
+          <div>
+            <p
+              className="m-0 mb-1.5 flex items-center gap-2 p-0 text-sm font-medium text-muted-foreground"
+              data-tina-field={tinaField(office, "addressCountry")}
+            >
+              <span aria-hidden="true">
+                <Flag
+                  country={country as Countries}
+                  width={20}
+                  height={20}
+                  className="h-auto"
+                />
+              </span>
+              {country}
+            </p>
+            <h2
+              className="m-0 p-0 text-2xl font-semibold leading-tight text-foreground"
+              data-tina-field={tinaField(office, "addressLocality")}
+            >
+              {city}
+            </h2>
+          </div>
+          {office.thumbnail && (
+            <div
+              className="shrink-0"
+              data-tina-field={tinaField(office, "thumbnail")}
+            >
+              <Image
+                className="m-0 size-16 rounded-lg object-cover sm:size-20"
+                src={office.thumbnail}
+                width={80}
+                height={80}
+                alt=""
+              />
             </div>
-          </Container>
-        </>
-      )}
-    </>
+          )}
+        </div>
+
+        <address className="flex flex-1 flex-col gap-3 text-sm not-italic leading-relaxed text-muted-foreground">
+          <div className="flex items-start gap-3">
+            <MapPin
+              aria-hidden="true"
+              className="mt-0.5 size-4 shrink-0 text-brand"
+            />
+            <p className="m-0 p-0">
+              <span
+                className="block"
+                data-tina-field={tinaField(office, "streetAddress")}
+              >
+                {office.streetAddress}
+              </span>
+              <span>
+                {office.suburb}, {office.addressRegion} {office.postalCode}
+              </span>
+            </p>
+          </div>
+          <div className="mt-auto flex items-center gap-3">
+            <Phone aria-hidden="true" className="size-4 shrink-0 text-brand" />
+            <a
+              className="unstyled rounded-sm text-foreground no-underline hover:text-brand hover:underline focus-visible:outline-brand"
+              data-tina-field={tinaField(office, "phone")}
+              href={`tel:${office.phone.replace(/[^\d+]/g, "")}`}
+            >
+              {office.phone}
+            </a>
+          </div>
+        </address>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-x-4 border-t-0.75 border-hairline px-5 py-2 sm:px-6">
+        <CustomLink
+          className="unstyled inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-semibold text-brand no-underline hover:underline focus-visible:outline-brand"
+          href={office.localWebsiteLink?.url || officePath}
+          aria-label={`Office details for ${city}`}
+        >
+          Office details
+          <ArrowRight aria-hidden="true" className="size-4" />
+        </CustomLink>
+        <CustomLink
+          className="unstyled inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-medium text-muted-foreground no-underline hover:text-foreground hover:underline focus-visible:outline-brand"
+          href={`${officePath}#Directions`}
+          aria-label={`Directions to SSW ${city}`}
+        >
+          <Navigation aria-hidden="true" className="size-4" />
+          Directions
+        </CustomLink>
+      </div>
+    </article>
+  );
+}
+
+export default function OfficesPage({
+  tinaProps,
+}: {
+  tinaProps: { data: object };
+}) {
+  const { officeIndex } = tinaProps.data as OfficeIndexQueryQuery;
+  const offices = (officeIndex.officesIndex ?? [])
+    .map((entry) => entry?.office)
+    .filter((office): office is Office => Boolean(office?.addressLocality));
+
+  return (
+    <HomeThemeShell className="min-h-screen bg-sunken-glow">
+      <div className="section mx-auto max-w-8xl px-4 pb-12 pt-3 md:px-6 md:pb-20 md:pt-4">
+        <Breadcrumbs path="/offices" title="Offices" />
+
+        <header className="my-8 grid gap-4 border-b-0.75 border-hairline pb-8 md:mb-10 md:mt-14 md:grid-cols-2 md:items-end md:gap-8 md:pb-10">
+          <div>
+            <span
+              aria-hidden="true"
+              className="mb-4 block h-1 w-12 rounded-full bg-sswRed"
+            />
+            <h1
+              id="offices-title"
+              className="m-0 p-0 text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl"
+            >
+              Our Offices
+            </h1>
+          </div>
+          <p className="m-0 max-w-md p-0 text-base leading-relaxed text-muted-foreground md:text-lg">
+            Find the address, phone number and directions for your nearest SSW
+            office.
+          </p>
+        </header>
+
+        <ul
+          aria-labelledby="offices-title"
+          className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6"
+        >
+          {offices.map((office) => (
+            <li key={office.addressLocality}>
+              <OfficeCard office={office} />
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-8 grid gap-4 lg:mt-10 lg:grid-cols-3 lg:gap-6">
+          <section className="rounded-card border-0.75 border-hairline bg-card p-5 sm:p-6 lg:col-span-2">
+            <Globe2 aria-hidden="true" className="mb-3 size-6 text-brand" />
+            <h2 className="m-0 p-0 text-xl font-semibold text-foreground">
+              Work with us from anywhere
+            </h2>
+            <p className="m-0 mt-2 max-w-2xl p-0 text-sm leading-relaxed text-muted-foreground">
+              Our teams work remotely with clients around the world, including
+              in the USA, Canada, the UK, New Zealand, France, Germany and
+              Sweden.
+            </p>
+            <a
+              href="mailto:info@ssw.com.au"
+              className="unstyled mt-4 inline-flex min-h-11 items-center gap-2 rounded-lg bg-sswRed px-4 py-2 text-sm font-semibold text-white no-underline hover:bg-sswDarkRed focus-visible:outline-brand"
+            >
+              Contact us
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </a>
+          </section>
+          <section className="rounded-card border-0.75 border-hairline bg-card p-5 sm:p-6">
+            <h2 className="m-0 p-0 text-xl font-semibold text-foreground">
+              Microsoft Cloud Partner
+            </h2>
+            <p className="m-0 mt-2 p-0 text-sm leading-relaxed text-muted-foreground">
+              SSW builds and deploys solutions using Microsoft technologies.
+            </p>
+            <div className="mt-4 w-fit rounded-lg bg-white p-2">
+              <Image
+                className="m-0 h-auto"
+                src="/images/logos/Microsoft-Solutions-Partner.png"
+                alt="Microsoft Solutions Partner"
+                width={177}
+                height={50}
+              />
+            </div>
+          </section>
+        </div>
+      </div>
+    </HomeThemeShell>
   );
 }
