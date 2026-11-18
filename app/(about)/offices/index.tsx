@@ -15,8 +15,8 @@ import { ArrowRight, Globe2, MapPin, Navigation, Phone } from "lucide-react";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 
-const hangzhouLandmarkPhoto =
-  "/images/offices/hangzhou/hangzhou-qianjiang-towers.webp";
+const hangzhouRiverfrontPhoto =
+  "/images/offices/hangzhou/hangzhou-qianjiang-riverfront.webp";
 
 type OfficeIndex = OfficeIndexQueryQuery["officeIndex"];
 type Office = NonNullable<
@@ -176,14 +176,14 @@ export default function OfficesPage({
         </ul>
 
         {offices.some(
-          (office) => office.thumbnail === hangzhouLandmarkPhoto
+          (office) => office.thumbnail === hangzhouRiverfrontPhoto
         ) && (
           <p className="m-0 mt-3 p-0 text-xs text-muted-foreground">
             Hangzhou photo by{" "}
-            <CustomLink href="https://commons.wikimedia.org/wiki/File:Qianjiang_New_City_20230729.jpg">
-              Nat4Eben
+            <CustomLink href="https://commons.wikimedia.org/wiki/File:20201012%E4%BB%8E%E9%92%B1%E5%A1%98%E6%B1%9F%E6%B1%9F%E9%9D%A2%E4%B8%8A%E7%A9%BA%E8%A7%82%E7%9C%8B%E9%92%B1%E6%B1%9F%E6%96%B0%E5%9F%8E.jpg">
+              MasaneMiyaPA
             </CustomLink>
-            {", cropped and resized, "}
+            {", cropped and retouched, "}
             <CustomLink href="https://creativecommons.org/licenses/by-sa/4.0/">
               CC BY-SA 4.0
             </CustomLink>
