@@ -68,9 +68,9 @@ const sectionBullets = (section: ProductSection) =>
 const hasText = (section: ProductSection) =>
   Boolean(
     section.heading ||
-      section.body ||
-      sectionBullets(section).length ||
-      (section.button?.href && section.button?.label)
+    section.body ||
+    sectionBullets(section).length ||
+    (section.button?.href && section.button?.label)
   );
 
 const SectionText = ({ section }: { section: ProductSection }) => {

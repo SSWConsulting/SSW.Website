@@ -23,9 +23,8 @@ export async function loadAppInsights({
     process.env.NEXT_PUBLIC_APP_INSIGHT_CONNECTION_STRING;
   if (!connectionString) return null;
 
-  const { ApplicationInsights } = await import(
-    "@microsoft/applicationinsights-web"
-  );
+  const { ApplicationInsights } =
+    await import("@microsoft/applicationinsights-web");
 
   const appInsights = new ApplicationInsights({
     config: {
