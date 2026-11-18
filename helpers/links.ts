@@ -4,8 +4,9 @@
 // https://www.ssw.com.au/rules/use-icons-to-not-surprise-users:
 //
 // - internal: a page on this site. Same tab, no icon.
-// - branded:  another SSW app on ssw.com.au (People, Rules, the old /ssw
-//             site). New tab, no icon - it's still "us".
+// - branded:  another SSW app (People, Rules, the old /ssw site, or an SSW
+//             subdomain such as rules. or blog.ssw.com.au). New tab, no icon -
+//             it's still "us".
 // - youtube:  a YouTube video or channel. New tab, YouTube icon.
 // - maps:     a Google Maps link. New tab, map pin icon.
 // - external: any other site. New tab, external-link icon.
@@ -19,6 +20,8 @@ export type LinkKind =
   | "other";
 
 const SSW_HOST = /(^|\.)ssw\.com\.au$/i;
+// This site. Any other SSW subdomain (rules., blog., design.) is another app.
+const SSW_WEBSITE_HOST = /^(www\.)?ssw\.com\.au$/i;
 // Same paths CustomLink treats as separate SSW sites.
 const SSW_SUBSITE_PATH = /^\/(people|rules|ssw)(\/|$)/i;
 const YOUTUBE_HOST = /(^|\.)(youtube\.com|youtube-nocookie\.com|youtu\.be)$/i;
@@ -68,7 +71,10 @@ export const getLinkKind = (href?: string | null): LinkKind => {
   }
 
   if (SSW_HOST.test(url.hostname)) {
-    return SSW_SUBSITE_PATH.test(url.pathname) ? "branded" : "internal";
+    return SSW_WEBSITE_HOST.test(url.hostname) &&
+      !SSW_SUBSITE_PATH.test(url.pathname)
+      ? "internal"
+      : "branded";
   }
   if (YOUTUBE_HOST.test(url.hostname)) return "youtube";
   if (isGoogleMaps(url)) return "maps";
