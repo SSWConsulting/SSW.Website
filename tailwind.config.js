@@ -46,6 +46,7 @@ export default {
       },
       aspectRatio: {
         "4/3": "4 / 3",
+        "office-banner": "2280 / 820",
       },
       scale: {
         165: "1.65",

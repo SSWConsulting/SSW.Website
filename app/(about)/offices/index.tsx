@@ -28,7 +28,7 @@ function OfficeCard({ office }: { office: Office }) {
     <article className="flex h-full flex-col rounded-card border-0.75 border-hairline bg-card">
       {office.thumbnail && (
         <div
-          className="relative aspect-video overflow-hidden rounded-t-card"
+          className="relative aspect-office-banner overflow-hidden rounded-t-card"
           data-tina-field={tinaField(office, "thumbnail")}
         >
           <Image
