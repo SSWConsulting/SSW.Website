@@ -212,6 +212,16 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
             </section>
           )}
 
+          <section
+            className={cn(
+              themedProse,
+              "mt-12 rounded-card border-0.75 border-stroke-weak bg-card p-8 md:p-10 dark:border-hairline"
+            )}
+            data-tina-field={tinaField(company, "subTitle")}
+          >
+            <TinaMarkdown content={page.about} components={componentRenderer} />
+          </section>
+
           <motion.div {...reveal()} className="mt-6">
             <ClientsClosing />
           </motion.div>
