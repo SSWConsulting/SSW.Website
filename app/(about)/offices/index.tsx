@@ -84,17 +84,27 @@ function OfficeCard({ office }: { office: Office }) {
               aria-hidden="true"
               className="mt-0.5 size-4 shrink-0 text-brand"
             />
-            <p className="m-0 p-0">
-              <span
-                className="block"
-                data-tina-field={tinaField(office, "streetAddress")}
+            <div className="min-w-0 flex-1">
+              <CustomLink
+                className="unstyled float-right ml-3 inline-flex min-h-10 items-center gap-1.5 whitespace-nowrap rounded-lg border-0.75 border-hairline px-2.5 text-xs font-medium text-foreground no-underline hover:border-brand hover:text-brand focus-visible:outline-brand"
+                href={`${officePath}#Directions`}
+                aria-label={`Directions to SSW ${city}`}
               >
-                {office.streetAddress}
-              </span>
-              <span>
-                {office.suburb}, {office.addressRegion} {office.postalCode}
-              </span>
-            </p>
+                <Navigation aria-hidden="true" className="size-3.5" />
+                Directions
+              </CustomLink>
+              <p className="m-0 p-0">
+                <span
+                  className="block"
+                  data-tina-field={tinaField(office, "streetAddress")}
+                >
+                  {office.streetAddress}
+                </span>
+                <span className="block">
+                  {office.suburb}, {office.addressRegion} {office.postalCode}
+                </span>
+              </p>
+            </div>
           </div>
           <div className="mt-auto flex items-center gap-3">
             <Phone aria-hidden="true" className="size-4 shrink-0 text-brand" />
@@ -109,7 +119,7 @@ function OfficeCard({ office }: { office: Office }) {
         </address>
       </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-x-4 border-t-0.75 border-hairline px-5 py-2 sm:px-6">
+      <div className="flex items-center border-t-0.75 border-hairline px-5 py-2 sm:px-6">
         <CustomLink
           className="unstyled inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-semibold text-brand no-underline hover:underline focus-visible:outline-brand"
           href={office.localWebsiteLink?.url || officePath}
@@ -117,14 +127,6 @@ function OfficeCard({ office }: { office: Office }) {
         >
           Office details
           <ArrowRight aria-hidden="true" className="size-4" />
-        </CustomLink>
-        <CustomLink
-          className="unstyled inline-flex min-h-11 items-center gap-2 rounded-sm text-sm font-medium text-muted-foreground no-underline hover:text-foreground hover:underline focus-visible:outline-brand"
-          href={`${officePath}#Directions`}
-          aria-label={`Directions to SSW ${city}`}
-        >
-          <Navigation aria-hidden="true" className="size-4" />
-          Directions
         </CustomLink>
       </div>
     </article>
