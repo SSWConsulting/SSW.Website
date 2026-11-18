@@ -194,20 +194,3 @@ jobs:
           } else {
             Write-Host "ℹ️ ACR image ${{ env.IMAGE_NAME }}:$tag not found"
           }
-
-      - name: ACR - Delete untagged manifests
-        continue-on-error: true
-        run: |
-          # NOTE: best-effort. Repo-wide (not PR-scoped), and `az acr manifest list-metadata`
-          # currently does not return untagged manifests (Azure/azure-cli#29994), so this is
-          # largely a no-op today. Tracked as a follow-up in the linked issue.
-          az acr manifest list-metadata `
-            -r ${{ env.ACR_NAME }} `
-            -n ${{ env.IMAGE_NAME }} `
-            --query "[?tags==null].digest" `
-            -o tsv | ForEach-Object {
-              if ($_) {
-                az acr repository delete -n ${{ env.ACR_NAME }} -t "${{ env.IMAGE_NAME }}@$_" --yes
-              }
-            }
-          Write-Host "✅ Untagged manifests cleaned up"
