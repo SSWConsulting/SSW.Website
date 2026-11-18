@@ -9,7 +9,11 @@ import {
   sidebarHeadingClass,
   sidebarPageContainer,
 } from "@/components/layout/stickySidebar";
-import { cardFooter, cardShell } from "@/components/products/shared";
+import {
+  cardFooter,
+  cardShell,
+  destinationLabel,
+} from "@/components/products/shared";
 import type { Countries } from "@/components/util/constants/country";
 import { cn } from "@/lib/utils";
 import type { OfficeIndexQueryQuery } from "@/tina/types";
@@ -31,6 +35,8 @@ function OfficeCard({
 }) {
   const { addressLocality: city, addressCountry: country } = office;
   const officePath = `/offices/${city.toLowerCase()}`;
+  const href = office.localWebsiteLink?.url || officePath;
+  const domain = destinationLabel(href).split("/")[0];
   const inlineLocality = office.streetAddress?.trimEnd().endsWith(",");
 
   const countryTag = (
@@ -127,22 +133,22 @@ function OfficeCard({
       <div className={cn(cardFooter, "mx-5 border-hairline pb-4 sm:mx-6")}>
         <CustomLink
           className={cn(
-            "unstyled text-sm font-medium text-muted-foreground no-underline",
+            "unstyled flex w-full items-center justify-end gap-3 text-sm font-medium text-muted-foreground no-underline",
             "after:absolute after:inset-0 after:z-10 focus-visible:outline-none focus-visible:after:rounded-card focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-brand",
             // Tina quick edit needs clicks to reach the actual fields.
             isEditing && "after:pointer-events-none"
           )}
-          href={office.localWebsiteLink?.url || officePath}
+          href={href}
           aria-label={`Office details for ${city}`}
         >
-          Office details
+          {domain === "ssw.fr" && <span className="mr-auto">{domain}</span>}
+          <span aria-hidden="true">
+            <ArrowCircle
+              className="size-9 bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
+              iconClassName="size-3.5"
+            />
+          </span>
         </CustomLink>
-        <span aria-hidden="true">
-          <ArrowCircle
-            className="size-9 bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
-            iconClassName="size-3.5"
-          />
-        </span>
       </div>
     </article>
   );
