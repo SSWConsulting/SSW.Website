@@ -3,6 +3,7 @@ import { clientLogosBlockSchema } from "../../components/blocks/clientLogos";
 import { bookingButtonSchema } from "../bookingButton/bookingButton";
 import { utilityButtonSchema } from "../button/utilityButton";
 import { clientListSchema } from "../company/clientList";
+import { tikTokEmbedSchema } from "../embeds/tiktokEmbed";
 import { tweetEmbedSchema } from "../embeds/tweetEmbed";
 import { interestFormSchema } from "../events/interestForm";
 import { inlineJotFormSchema } from "../inlineJotForm/inlineJotForm";
@@ -153,6 +154,7 @@ export const pageBlocks: Template[] = [
   serviceCardsBlockSchema,
   tableBlockSchema,
   testimonialsListSchema,
+  tikTokEmbedSchema,
   trainingInformationSchema,
   trainingLearningOutcomeSchema,
   tweetEmbedSchema,
