@@ -13,8 +13,8 @@ import { cn } from "@/lib/utils";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
 import { MotionConfig, motion, type MotionProps } from "framer-motion";
-import { useMemo } from "react";
-import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
+import { useEffect, useMemo, useRef } from "react";
+import { FiArrowDown, FiArrowRight } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { themedProse } from "./clientStoryDialog";
@@ -46,7 +46,42 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
   );
   const featured = featuredTestimonial(testimonials);
   // The hero already quotes the featured one in full.
-  const wall = testimonials.filter((t) => t !== featured);
+  const wall = useMemo(
+    () => testimonials.filter((testimonial) => testimonial !== featured),
+    [testimonials, featured]
+  );
+  const wallRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    const list = wallRef.current;
+    if (!list || !("IntersectionObserver" in window)) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const observer = new IntersectionObserver((entries) => {
+      for (const { isIntersecting, target } of entries) {
+        if (!isIntersecting) continue;
+
+        observer.unobserve(target);
+        if (!reducedMotion.matches) {
+          target.firstElementChild?.animate?.(
+            [
+              { opacity: 0.3, transform: "translateY(52px)" },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            { duration: 780, easing: "cubic-bezier(0.32, 0.05, 0.18, 1)" }
+          );
+        }
+      }
+    });
+
+    // Cards already visible when hydration finishes should stay fully visible.
+    for (const card of list.children) {
+      const { top, bottom } = card.getBoundingClientRect();
+      if (top >= window.innerHeight || bottom <= 0) observer.observe(card);
+    }
+    return () => observer.disconnect();
+  }, [wall]);
+
   const showBreadcrumb = company.seo?.showBreadcrumb !== false;
 
   return (
@@ -108,7 +143,7 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
                   fontClassName="gap-3"
                 >
                   <span>Talk to our team</span>
-                  <FiArrowUpRight aria-hidden className="size-4" />
+                  <FiArrowRight aria-hidden className="size-4" />
                 </RippleButton>
                 {wall.length > 0 && (
                   <RippleButton
@@ -180,35 +215,21 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
 
               {/* Columns rather than a grid, so short and long quotes pack
                   together without leaving gaps under the short ones. */}
-              <MotionConfig reducedMotion="user">
-                <ul className="m-0 mt-8 list-none gap-6 p-0 md:columns-2 xl:columns-3">
-                  {wall.map((testimonial, index) => (
-                    <motion.li
-                      key={`${testimonial.name}-${index}`}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true, margin: "0px 0px -96px 0px" }}
-                      className="mb-6 inline-block w-full break-inside-avoid align-top"
-                    >
-                      <motion.div
-                        variants={{
-                          hidden: { opacity: 0, y: 52 },
-                          visible: { opacity: 1, y: 0 },
-                        }}
-                        transition={{
-                          y: {
-                            duration: 0.78,
-                            ease: [0.32, 0.05, 0.18, 1],
-                          },
-                          opacity: { duration: 0.78, ease: "linear" },
-                        }}
-                      >
-                        <TestimonialCard testimonial={testimonial} />
-                      </motion.div>
-                    </motion.li>
-                  ))}
-                </ul>
-              </MotionConfig>
+              <ul
+                ref={wallRef}
+                className="m-0 mt-8 list-none gap-6 p-0 md:columns-2 xl:columns-3"
+              >
+                {wall.map((testimonial, index) => (
+                  <li
+                    key={`${testimonial.name}-${index}`}
+                    className="mb-6 inline-block w-full break-inside-avoid align-top"
+                  >
+                    <div>
+                      <TestimonialCard testimonial={testimonial} />
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 
