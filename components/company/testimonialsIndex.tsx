@@ -165,7 +165,7 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
                   aria-hidden="true"
                   className="pointer-events-none absolute -inset-10 -z-10 rounded-full bg-red-radial opacity-25 blur-3xl motion-safe:animate-slight-pulse"
                 />
-                <figure className="m-0 rounded-card border-0.75 border-stroke-weak bg-card p-8 shadow-2xl md:p-10 dark:border-hairline">
+                <figure className="m-0 rounded-card border-0.75 border-stroke-weak bg-card p-8 md:p-10 dark:border-hairline dark:shadow-2xl">
                   <span
                     aria-hidden="true"
                     className="block h-9 font-serif text-7xl leading-none text-brand"
