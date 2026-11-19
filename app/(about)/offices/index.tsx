@@ -3,6 +3,7 @@
 import { Breadcrumbs } from "@/app/components/breadcrumb";
 import { Flag } from "@/components/blocks/flag";
 import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
+import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
 import { HomeThemeShell } from "@/components/layout/homeTheme";
 import {
@@ -35,9 +36,9 @@ function OfficeCard({
 }) {
   const { addressLocality: city, addressCountry: country } = office;
   const officePath = `/offices/${city.toLowerCase()}`;
-  const href = office.localWebsiteLink?.url || officePath;
-  const domain = destinationLabel(href).split("/")[0];
-  const inlineLocality = office.streetAddress?.trimEnd().endsWith(",");
+  const regionalUrl = office.localWebsiteLink?.url;
+  const domain = destinationLabel(regionalUrl).split("/")[0];
+  const inlineLocality = city === "Hangzhou";
 
   const countryTag = (
     <span
@@ -111,7 +112,7 @@ function OfficeCard({
                 {office.streetAddress}
               </span>
               <span className={inlineLocality ? undefined : "block"}>
-                {inlineLocality && "\u00a0"}
+                {inlineLocality && ",\u00a0"}
                 {office.suburb}, {office.addressRegion} {office.postalCode}
               </span>
             </p>
@@ -138,10 +139,15 @@ function OfficeCard({
             // Tina quick edit needs clicks to reach the actual fields.
             isEditing && "after:pointer-events-none"
           )}
-          href={href}
-          aria-label={`Office details for ${city}`}
+          href={regionalUrl || officePath}
+          target={domain ? "_blank" : undefined}
+          aria-label={
+            domain
+              ? `Visit ${domain} for the ${city} office (opens in a new tab)`
+              : `Office details for ${city}`
+          }
         >
-          {domain === "ssw.fr" && <span className="mr-auto">{domain}</span>}
+          {domain && <span className="mr-auto">{domain}</span>}
           <span aria-hidden="true">
             <ArrowCircle
               className="size-9 bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
@@ -210,17 +216,18 @@ export default function OfficesPage({
               in the USA, Canada, the UK, New Zealand, France, Germany and
               Sweden.
             </p>
-            <a
+            <RippleButton
+              variant="primary"
               href="mailto:info@ssw.com.au"
-              className="unstyled mt-4 inline-flex min-h-11 items-center gap-2 rounded-lg bg-sswRed px-4 py-2 text-sm font-semibold text-white no-underline hover:bg-sswDarkRed focus-visible:outline-brand"
+              className="mt-4 inline-flex min-h-11 px-4 py-2 text-sm font-semibold focus-visible:outline-brand"
             >
               Contact us
               <ArrowRight aria-hidden="true" className="size-4" />
-            </a>
+            </RippleButton>
           </section>
           <section className="rounded-card border-0.75 border-hairline bg-card p-5 sm:p-6">
             <h2 className="m-0 p-0 text-xl font-semibold text-foreground">
-              Microsoft Cloud Partner
+              Microsoft Solutions Partner
             </h2>
             <p className="m-0 mt-2 p-0 text-sm leading-relaxed text-muted-foreground">
               SSW builds and deploys solutions using Microsoft technologies.

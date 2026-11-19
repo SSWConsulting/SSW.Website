@@ -101,7 +101,7 @@ const OfficeLayout = ({ office }) => {
             width={16}
             className="my-0 mr-1.5 inline-block"
           />
-          {`${office.streetAddress?.replace(/,\s*$/, "")}, ${office.suburb}, ${office.addressRegion} ${office.postalCode}, ${office.addressCountry}`}
+          {`${office.streetAddress}, ${office.suburb}, ${office.addressRegion} ${office.postalCode}, ${office.addressCountry}`}
         </CustomLink>
       </h4>
       <div data-tina-field={tinaField(office, "directions")}>
