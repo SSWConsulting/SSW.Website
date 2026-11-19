@@ -41,7 +41,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           className={className}
           href={href}
           target={target || "_blank"}
-          rel={isAnSSWBrandedSite ? "" : "noopener"}
+          rel="noopener"
           title={title}
           style={style}
           {...props}

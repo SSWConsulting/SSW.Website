@@ -13,13 +13,13 @@ describe("CustomLink", () => {
     expect(link().getAttribute("rel")).toBe("noopener");
   });
 
-  it("treats a tina.io link as SSW-branded, with no nofollow", () => {
+  it("gives a tina.io link noopener only", () => {
     render(<CustomLink href="https://tina.io/docs">TinaCMS docs</CustomLink>);
 
-    expect(link().getAttribute("rel")).toBe("");
+    expect(link().getAttribute("rel")).toBe("noopener");
   });
 
-  it("leaves rel empty for an SSW-branded site", () => {
+  it("gives an SSW-branded site noopener only", () => {
     render(
       <CustomLink href="https://www.ssw.com.au/rules/indicate-external-links">
         the rule
@@ -27,7 +27,7 @@ describe("CustomLink", () => {
     );
 
     expect(link().getAttribute("target")).toBe("_blank");
-    expect(link().getAttribute("rel")).toBe("");
+    expect(link().getAttribute("rel")).toBe("noopener");
   });
 
   it("renders a relative path as a same-tab link with no rel", () => {
