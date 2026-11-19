@@ -152,13 +152,7 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
                     className="inline-flex border-stroke-weak text-base font-semibold text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground dark:border-hairline dark:hover:border-brand"
                     fontClassName="gap-3"
                   >
-                    <span>
-                      Read the testimonials
-                      <span className="font-normal text-muted-foreground">
-                        {" "}
-                        · {testimonials.length}
-                      </span>
-                    </span>
+                    <span>See all testimonials</span>
                     <FiArrowDown aria-hidden className="size-4" />
                   </RippleButton>
                 )}
@@ -178,7 +172,7 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
                   >
                     &ldquo;
                   </span>
-                  <blockquote className="m-0 mt-2 whitespace-pre-line border-0 p-0 text-xl font-light leading-snug text-foreground md:text-2xl md:leading-snug">
+                  <blockquote className="m-0 mt-2 whitespace-pre-line border-0 p-0 text-lg font-light leading-relaxed text-foreground md:text-xl md:leading-relaxed">
                     {featured.body?.trim()}
                   </blockquote>
                   <div className="mt-8">
@@ -240,7 +234,25 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
             )}
             data-tina-field={tinaField(company, "subTitle")}
           >
-            <TinaMarkdown content={page.about} components={componentRenderer} />
+            <TinaMarkdown
+              content={page.about}
+              components={{
+                ...componentRenderer,
+                a: ({ url, children }) =>
+                  url === "/company/about-us" ||
+                  url === "https://www.ssw.com.au/company/about-us" ? (
+                    <a
+                      href={url}
+                      className="not-prose unstyled inline-flex items-center gap-3 rounded-control border border-ssw-red bg-ssw-red px-6 py-3 text-base font-semibold text-white no-underline hover:bg-sswDarkRed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                    >
+                      {children}
+                      <FiArrowRight aria-hidden className="size-4" />
+                    </a>
+                  ) : (
+                    <a href={url}>{children}</a>
+                  ),
+              }}
+            />
           </section>
 
           <motion.div {...reveal()} className="mt-6">
