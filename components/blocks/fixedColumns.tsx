@@ -4,6 +4,7 @@ import { contentCardBlockSchema } from "./contentCard.schema";
 import { customImageBlockSchema } from "./customImage";
 import { eventLinkSchema } from "./eventLink";
 import { componentRenderer } from "./mdxComponentRenderer";
+import { contentLinkComponents } from "@/components/contentLink";
 
 interface FixedColumnsProps {
   data: {
@@ -18,7 +19,10 @@ export const FixedColumns = ({ data }: FixedColumnsProps) => {
     <>
       {data.headerSection && (
         <h3 className="py-4">
-          <TinaMarkdown content={data.headerSection} />
+          <TinaMarkdown
+            content={data.headerSection}
+            components={contentLinkComponents}
+          />
         </h3>
       )}
       <div className="grid md:grid-cols-2 md:gap-6">

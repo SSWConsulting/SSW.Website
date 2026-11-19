@@ -6,6 +6,7 @@ import { CustomLink } from "../customLink";
 import { YouTubeEmbed } from "../embeds/youtubeEmbed";
 import { componentRenderer } from "./mdxComponentRenderer";
 import { SolutionsRow } from "./solutionsRow";
+import { ContentLink } from "@/components/contentLink";
 
 export const DownloadWhitepaperLink = ({ whitepaperFile, children }) => (
   <CustomLink target={"_blank"} href={whitepaperFile}>
@@ -80,6 +81,7 @@ export const industryRenderer: Components<{
     body3: string;
   };
 }> = {
+  a: (props) => <ContentLink {...props} />,
   ...componentRenderer,
   VideoEmbed: (props) => <VideoEmbed {...props} />,
   Whitepaper: (props) => <Whitepaper {...props} />,

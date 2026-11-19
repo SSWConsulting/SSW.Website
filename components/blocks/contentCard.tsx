@@ -4,6 +4,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomImage, CustomImageProps } from "./customImage";
 import { VerticalListItem } from "./verticalListItem";
 import { VideoEmbed } from "./videoEmbed";
+import { ContentLink } from "@/components/contentLink";
 
 export type ContentCardProps = {
   className?: string;
@@ -24,6 +25,7 @@ const contentCardComponentRenderer: Components<{
     url: string;
   };
 }> = {
+  a: (props) => <ContentLink {...props} />,
   CustomImage: (props) => <CustomImage data={props} />,
   VerticalListItem: (props) => <VerticalListItem data={props} />,
   VideoEmbed: (props) => <VideoEmbed data={props} />,
