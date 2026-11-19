@@ -380,7 +380,7 @@
       "recognitionHeading": "Trusted & Recognized",
       "recognitionBadges": [
         {
-          "label": "We ♥ Microsoft - Solutions Partner",
+          "label": "We ♥ Microsoft",
           "customImage": {
             "imageSource": "/images/logos/msoft-4-squares.png",
             "imageHeight": 960,
@@ -396,6 +396,15 @@
           }
         }
       ],
+      "recognitionFeature": {
+        "image": {
+          "altText": "Microsoft Solutions Partner - Cloud & AI Platforms",
+          "imageSource": "/images/logos/microsoft-solutions-partner-cloud-ai-platforms.png",
+          "imageHeight": 685,
+          "imageWidth": 1043
+        },
+        "link": "/consulting/artificial-intelligence"
+      },
       "_template": "v3VideoFeature"
     },
     {

@@ -170,5 +170,25 @@ export const V3VideoFeatureSchema: Template = {
         ),
       ],
     },
+    {
+      type: "object",
+      label: "Featured Badge",
+      name: "recognitionFeature",
+      description:
+        "Optional larger badge (e.g. a partner accreditation) shown beneath the badges.",
+      fields: [
+        imageObject(
+          "image",
+          "Image",
+          "Badge artwork. Use the official file unaltered."
+        ),
+        {
+          type: "string",
+          label: "Link",
+          name: "link",
+          description: "Optional. Page the badge links to.",
+        },
+      ],
+    },
   ],
 };
