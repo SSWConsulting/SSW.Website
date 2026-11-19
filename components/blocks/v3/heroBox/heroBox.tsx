@@ -162,20 +162,6 @@ export const V3HeroBox = ({ data, priority = false }) => {
       >
         <FiArrowLeft className="size-5" />
       </button>
-      {canAutoplay && !prefersReducedMotion && (
-        <button
-          type="button"
-          aria-label={isPaused ? "Play slides" : "Pause slides"}
-          onClick={() => setIsPaused(!isPaused)}
-          className="pointer-events-auto flex size-11 items-center justify-center rounded-full border border-black/70 text-black transition-colors hover:bg-black hover:text-white dark:border-white/80 dark:text-white dark:hover:bg-white dark:hover:text-black"
-        >
-          {isPaused ? (
-            <FiPlay className="size-5" />
-          ) : (
-            <FiPause className="size-5" />
-          )}
-        </button>
-      )}
       <button
         type="button"
         aria-label="Next slide"
@@ -208,6 +194,23 @@ export const V3HeroBox = ({ data, priority = false }) => {
         <FiArrowDown className="size-5" />
       </button>
     </div>
+  );
+
+  // Kept small and quiet, but always available: autoplay needs a way to stop
+  // it (WCAG 2.2.2), and hover/focus pausing doesn't cover touch users.
+  const pauseButton = canAutoplay && !prefersReducedMotion && (
+    <button
+      type="button"
+      aria-label={isPaused ? "Play slides" : "Pause slides"}
+      onClick={() => setIsPaused(!isPaused)}
+      className="absolute right-3 top-3 z-20 flex size-8 items-center justify-center rounded-full text-white/50 transition-colors hover:bg-white/10 hover:text-white sm:right-4 sm:top-4"
+    >
+      {isPaused ? (
+        <FiPlay className="size-4" />
+      ) : (
+        <FiPause className="size-4" />
+      )}
+    </button>
   );
 
   const slidePagination = slides.length > 1 && (
@@ -361,6 +364,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
           </div>
 
           {slidePagination}
+          {pauseButton}
 
           {/* Scroll-down indicator nested in a concave scoop */}
 
