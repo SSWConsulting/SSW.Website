@@ -28,6 +28,7 @@ export const THEMED_ROUTES = [
   "/products",
   "/events",
   "/company/clients",
+  "/company/testimonials",
 ];
 
 // Routes whose descendants are themed too. Every /products/<slug> page and its

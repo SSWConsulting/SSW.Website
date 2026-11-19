@@ -59,7 +59,15 @@ export const getTestimonialsExcludingCategories = async (
   categoryRoutePaths: {
     categoryName: string;
   }[]
-): Promise<TestimonialType[]> => {
+): Promise<TestimonialType[]> =>
+  testimonialsExcludingCategories(categoryRoutePaths);
+
+// The same list, read synchronously: the data is a bundled JSON file.
+export const testimonialsExcludingCategories = (
+  categoryRoutePaths: {
+    categoryName: string;
+  }[]
+): TestimonialType[] => {
   const categoryListToExclude = categoryRoutePaths?.map((category) =>
     extractFileName(category?.categoryName)?.toLowerCase()
   );
