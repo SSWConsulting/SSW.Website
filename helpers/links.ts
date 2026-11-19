@@ -65,17 +65,6 @@ const parseAbsolute = (value: string): URL | null => {
 };
 
 /**
- * An absolute link to an SSW-owned site (any SSW domain or subdomain),
- * including the separate apps on www.ssw.com.au such as /rules.
- */
-export const isSswOwnedUrl = (href?: string | null): boolean => {
-  const value = href?.trim() ?? "";
-  if (!ABSOLUTE_WEB_URL.test(value)) return false;
-  const url = parseAbsolute(value);
-  return !!url && isSswOwnedHost(url.hostname);
-};
-
-/**
  * An absolute link to one of the separate SSW apps on www.ssw.com.au
  * (/people, /rules, /ssw).
  */
