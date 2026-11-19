@@ -108,7 +108,7 @@ export const ClientStoryDialog = ({
             <a
               href={client.logoUrl}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               className="mt-6 inline-block text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
             >
               Visit {client.name} ↗

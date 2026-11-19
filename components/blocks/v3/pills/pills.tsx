@@ -68,7 +68,7 @@ export function V3Pills({ data }) {
                   key={`v3-pill-${index}`}
                   href={pill.link}
                   target={pill?.newTab ? "_blank" : undefined}
-                  rel={pill?.newTab ? "noopener noreferrer" : undefined}
+                  rel={pill?.newTab ? "noopener" : undefined}
                   data-tina-field={tinaField(pill, "label")}
                   className={`${className} !no-underline transition hover:border-sswRed`}
                 >

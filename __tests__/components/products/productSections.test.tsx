@@ -156,7 +156,7 @@ describe("ProductSections button", () => {
       name: "Launch SophieBot on Teams",
     });
     expect(launch).toHaveAttribute("target", "_blank");
-    expect(launch).toHaveAttribute("rel", "noopener noreferrer");
+    expect(launch).toHaveAttribute("rel", "noopener");
   });
 
   test("leaves an in-site button in the same tab", () => {

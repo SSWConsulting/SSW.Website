@@ -70,7 +70,7 @@ const StoreBadge = ({
   <a
     href={href}
     target="_blank"
-    rel="noopener noreferrer"
+    rel="noopener"
     className="unstyled relative h-11 no-underline"
   >
     <Image

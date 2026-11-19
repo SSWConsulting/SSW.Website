@@ -113,7 +113,7 @@ const RippleButton = React.forwardRef<
     // Default rel on new-tab links (tabnabbing); an explicit rel in props wins.
     const newTabRel =
       href && (props as { target?: string }).target === "_blank"
-        ? { rel: "noopener noreferrer" }
+        ? { rel: "noopener" }
         : {};
     return (
       <Comp
