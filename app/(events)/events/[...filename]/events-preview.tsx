@@ -320,7 +320,7 @@ function EventSidebar({
                     <a
                       href={venueUrl}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener"
                       className="font-medium text-sswBlack underline underline-offset-2 hover:text-sswRed"
                     >
                       {venueName}
@@ -348,7 +348,7 @@ function EventSidebar({
                 data-tina-field={tinaField(event, "websiteUrl")}
                 href={event.websiteUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="font-medium text-sswBlack underline underline-offset-2 hover:text-sswRed"
               >
                 Visit the {websiteName} website

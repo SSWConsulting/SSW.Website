@@ -15,6 +15,4 @@ export const isExternalHref = (href?: string | null) =>
  * new tab can reach back through `window.opener`.
  */
 export const newTabProps = (href?: string | null) =>
-  isExternalHref(href)
-    ? ({ target: "_blank", rel: "noopener noreferrer" } as const)
-    : {};
+  isExternalHref(href) ? ({ target: "_blank", rel: "noopener" } as const) : {};

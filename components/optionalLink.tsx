@@ -22,7 +22,7 @@ export const OptionalLink = ({
     <Link
       href={link}
       target={newTab ? "_blank" : undefined}
-      rel={newTab ? "noopener noreferrer" : undefined}
+      rel={newTab ? "noopener" : undefined}
       data-tina-field={field}
       className="h-full !no-underline"
     >

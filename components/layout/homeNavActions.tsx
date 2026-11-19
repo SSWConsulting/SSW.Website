@@ -67,7 +67,7 @@ function SearchButton({ isDark }: { isDark: boolean }) {
           term
         )}`,
         "_blank",
-        "noopener,noreferrer"
+        "noopener"
       );
     }
     setOpen(false);

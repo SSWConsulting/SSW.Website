@@ -41,7 +41,7 @@ function ProfileLink({ person, className, children }) {
     <Link
       href={person.sswPeople}
       target="_blank"
-      rel="noopener noreferrer"
+      rel="noopener"
       aria-label={`View ${person?.name ?? "this person"}'s SSW People profile`}
       className={cn(
         // group/profile scopes the name's red hover to this link: the pointer
@@ -112,7 +112,7 @@ function PersonCard({
               key={key}
               href={person[key]}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
               aria-label={`${person?.name ?? ""} on ${label}`}
               // Keep the icon at 16px but give the link a ≥36×36px hit area
               // so it meets the minimum accessible touch-target size.

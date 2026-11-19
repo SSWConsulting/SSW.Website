@@ -50,7 +50,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           className={className}
           href={href}
           target={target || "_blank"}
-          rel={isAnSSWBrandedSite ? "" : "noopener noreferrer nofollow"}
+          rel={isAnSSWBrandedSite ? "" : "noopener"}
           title={title}
           style={style}
           {...props}
