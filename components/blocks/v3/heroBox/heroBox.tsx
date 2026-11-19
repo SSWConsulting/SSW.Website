@@ -6,8 +6,14 @@ import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useState, type CSSProperties } from "react";
-import { FiArrowDown, FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { useEffect, useState, type CSSProperties } from "react";
+import {
+  FiArrowDown,
+  FiArrowLeft,
+  FiArrowRight,
+  FiPause,
+  FiPlay,
+} from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
@@ -79,10 +85,62 @@ const SlideSpeakers = ({ slide, className = "" }) => {
   );
 };
 
+const SlideBadge = ({ slide, className = "" }) => {
+  const badge = slide?.badge;
+
+  if (!badge?.imageSource) return null;
+
+  return (
+    <div className={cn("shrink-0", className)}>
+      <Image
+        src={badge.imageSource}
+        alt={badge.altText ?? ""}
+        width={badge.imageWidth || 1043}
+        height={badge.imageHeight || 685}
+        sizes="(min-width: 1024px) 288px, (min-width: 640px) 224px, 160px"
+        className="h-auto w-40 sm:w-56 lg:w-72"
+        data-tina-field={tinaField(slide, "badge")}
+      />
+    </div>
+  );
+};
+
+// Anything shorter doesn't leave time to read a slide.
+const MIN_AUTOPLAY_SECONDS = 3;
+
 export const V3HeroBox = ({ data, priority = false }) => {
   const slides = (data?.slides ?? []).filter(Boolean);
   const [activeSlide, setActiveSlide] = useState(0);
   const current = Math.min(activeSlide, Math.max(slides.length - 1, 0));
+
+  const autoplaySeconds = Number(data?.autoplaySeconds) || 0;
+  const canAutoplay = autoplaySeconds > 0 && slides.length > 1;
+  // Paused by the pause button, or while the visitor hovers or focuses the hero.
+  const [isPaused, setIsPaused] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(query.matches);
+    const onChange = (e: MediaQueryListEvent) =>
+      setPrefersReducedMotion(e.matches);
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
+  const isAutoplaying =
+    canAutoplay && !isPaused && !isInteracting && !prefersReducedMotion;
+
+  // Restarts on every slide change, so a manual move gets a full interval too.
+  useEffect(() => {
+    if (!isAutoplaying) return;
+    const timer = window.setTimeout(
+      () => setActiveSlide((current + 1) % slides.length),
+      Math.max(autoplaySeconds, MIN_AUTOPLAY_SECONDS) * 1000
+    );
+    return () => window.clearTimeout(timer);
+  }, [isAutoplaying, current, slides.length, autoplaySeconds]);
   // The wash keeps white text legible over a photo; the polygon default is already dark.
   const hasCustomBackground = !!slides[current]?.backgroundMedia?.imageSource;
 
@@ -138,6 +196,23 @@ export const V3HeroBox = ({ data, priority = false }) => {
     </div>
   );
 
+  // Kept small and quiet, but always available: autoplay needs a way to stop
+  // it (WCAG 2.2.2), and hover/focus pausing doesn't cover touch users.
+  const pauseButton = canAutoplay && !prefersReducedMotion && (
+    <button
+      type="button"
+      aria-label={isPaused ? "Play slides" : "Pause slides"}
+      onClick={() => setIsPaused(!isPaused)}
+      className="absolute right-3 top-3 z-20 flex size-8 items-center justify-center rounded-full text-white/50 transition-colors hover:bg-white/10 hover:text-white sm:right-4 sm:top-4"
+    >
+      {isPaused ? (
+        <FiPlay className="size-4" />
+      ) : (
+        <FiPause className="size-4" />
+      )}
+    </button>
+  );
+
   const slidePagination = slides.length > 1 && (
     <div className="absolute bottom-6 left-8 z-20 hidden items-center gap-4 sm:left-12 sm:flex lg:left-16">
       <div className="flex items-center gap-2">
@@ -178,6 +253,14 @@ export const V3HeroBox = ({ data, priority = false }) => {
           className={cn(
             "relative flex min-h-[28rem] w-full items-center overflow-hidden rounded-feature bg-black sm:min-h-[34rem] lg:min-h-128"
           )}
+          onMouseEnter={() => setIsInteracting(true)}
+          onMouseLeave={() => setIsInteracting(false)}
+          onFocus={() => setIsInteracting(true)}
+          onBlur={(e) => {
+            if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+              setIsInteracting(false);
+            }
+          }}
         >
           {/* Background images, anchored to the right of the box, cross-fading between slides */}
           {slides.map((slide, index) => (
@@ -210,7 +293,11 @@ export const V3HeroBox = ({ data, priority = false }) => {
           )}
 
           {/* Content*/}
-          <div className="relative z-10 grid w-full">
+          <div
+            className="relative z-10 grid w-full"
+            // Announce slide changes the visitor makes, not the automatic ones.
+            aria-live={isAutoplaying ? "off" : "polite"}
+          >
             {slides.map((slide, index) => {
               const Heading = index === 0 ? "h1" : "h2";
               return (
@@ -263,6 +350,10 @@ export const V3HeroBox = ({ data, priority = false }) => {
                     slide={slide}
                     className="sm:row-span-2 sm:self-center"
                   />
+                  <SlideBadge
+                    slide={slide}
+                    className="sm:row-span-2 sm:self-center"
+                  />
                   <ButtonRow
                     data={slide}
                     className="mb-16 mt-8 flex-wrap justify-start sm:col-start-1 sm:mb-0"
@@ -273,6 +364,7 @@ export const V3HeroBox = ({ data, priority = false }) => {
           </div>
 
           {slidePagination}
+          {pauseButton}
 
           {/* Scroll-down indicator nested in a concave scoop */}
 
