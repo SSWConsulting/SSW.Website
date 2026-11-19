@@ -11,7 +11,6 @@ import { Container } from "@/components/util/container";
 import { VideoModal } from "@/components/videoModal";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 
 function Highlight({ item }) {
@@ -32,37 +31,6 @@ function Highlight({ item }) {
         >
           {item.highlightBody}
         </p>
-      )}
-    </div>
-  );
-}
-
-function FeaturedBadge({ feature }) {
-  const image = feature?.image;
-  if (!image?.imageSource) return null;
-
-  const badgeImage = (
-    <Image
-      src={image.imageSource}
-      alt={image.altText ?? ""}
-      width={image.imageWidth || 1043}
-      height={image.imageHeight || 685}
-      sizes="192px"
-      className="h-auto w-48"
-    />
-  );
-
-  return (
-    <div data-tina-field={tinaField(feature, "image")}>
-      {feature.link ? (
-        <Link
-          href={feature.link}
-          className="block transition-opacity hover:opacity-80"
-        >
-          {badgeImage}
-        </Link>
-      ) : (
-        badgeImage
       )}
     </div>
   );
@@ -103,11 +71,7 @@ export function V3VideoFeature({ data }) {
   const badges = (data?.badges ?? data?.recognitionBadges ?? []).filter(
     Boolean
   );
-  const showRecognition = Boolean(
-    data?.recognitionHeading ||
-      badges.length ||
-      data?.recognitionFeature?.image?.imageSource
-  );
+  const showRecognition = Boolean(data?.recognitionHeading || badges.length);
 
   return (
     <V2ComponentWrapper data={data}>
@@ -225,7 +189,6 @@ export function V3VideoFeature({ data }) {
                   ))}
                 </div>
               )}
-              <FeaturedBadge feature={data?.recognitionFeature} />
             </div>
           )}
         </div>
