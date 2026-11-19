@@ -149,7 +149,7 @@ export const EventbriteModalButton = ({
               <a
                 href={`${EVENTBRITE_DOMAIN}/e/${eventId}`}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener"
                 className="font-semibold text-sswRed underline"
               >
                 Register on the Eventbrite event page instead

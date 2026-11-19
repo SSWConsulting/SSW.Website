@@ -1,7 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 import {
   getLinkKind,
-  getLinkRel,
   isSswOwnedUrl,
   isSswSubsiteUrl,
   safeHref,
@@ -78,24 +77,6 @@ describe("safeHref", () => {
     [undefined, ""],
   ])("%s becomes %s", (href, expected) => {
     expect(safeHref(href)).toBe(expected);
-  });
-});
-
-describe("getLinkRel", () => {
-  it.each([
-    ["https://www.ssw.com.au/rules/indicate-external-links", "noopener"],
-    ["https://rules.ssw.com.au", "noopener"],
-    ["https://tina.io/docs", "noopener"],
-    ["https://www.tina.io", "noopener"],
-    ["https://yakshaver.ai", "noopener"],
-    ["https://example.com", "noopener noreferrer nofollow"],
-    ["https://tina.io.example.com", "noopener noreferrer nofollow"],
-    [
-      "https://www.youtube.com/watch?v=pnPKusNJwE4",
-      "noopener noreferrer nofollow",
-    ],
-  ])("%s gets %s", (href, rel) => {
-    expect(getLinkRel(href)).toBe(rel);
   });
 });
 

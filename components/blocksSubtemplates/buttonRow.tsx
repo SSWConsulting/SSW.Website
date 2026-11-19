@@ -105,7 +105,7 @@ const ButtonRow = ({ className, data }) => {
                   href={button.buttonLink}
                   {...(button.newTab && {
                     target: "_blank",
-                    rel: "noopener noreferrer",
+                    rel: "noopener",
                   })}
                   key={`link-wrapper-${index}`}
                 >

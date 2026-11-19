@@ -68,7 +68,7 @@ export const TikTokEmbed = ({ url, caption, duration }: TikTokEmbedProps) => {
           className="block text-center"
           href={href}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
           Watch the video on TikTok
         </a>

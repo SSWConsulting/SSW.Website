@@ -144,11 +144,3 @@ export const getLinkKind = (href?: string | null): LinkKind => {
  */
 export const opensInNewTab = (kind: LinkKind): boolean =>
   kind === "external" || kind === "youtube" || kind === "maps";
-
-/**
- * The `rel` for a link that opens in a new tab: outside sites get
- * `noopener noreferrer nofollow`, as in CustomLink. SSW's own sites only need
- * `noopener`.
- */
-export const getLinkRel = (href?: string | null): string =>
-  getLinkKind(href) === "branded" ? "noopener" : "noopener noreferrer nofollow";

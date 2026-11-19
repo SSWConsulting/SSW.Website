@@ -1,9 +1,4 @@
-import {
-  getLinkKind,
-  getLinkRel,
-  opensInNewTab,
-  safeHref,
-} from "@/helpers/links";
+import { getLinkKind, opensInNewTab, safeHref } from "@/helpers/links";
 import type { ReactNode } from "react";
 import { FiExternalLink, FiMail, FiMapPin, FiYoutube } from "react-icons/fi";
 
@@ -74,7 +69,7 @@ export const ContentLink = ({ url, title, children }: ContentLinkProps) => {
   }
 
   return (
-    <a href={href} title={title} target="_blank" rel={getLinkRel(href)}>
+    <a href={href} title={title} target="_blank" rel="noopener">
       {content}
       <span className="sr-only"> (opens in a new tab)</span>
     </a>

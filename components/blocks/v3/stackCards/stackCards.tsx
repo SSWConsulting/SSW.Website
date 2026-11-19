@@ -74,7 +74,7 @@ export function V3StackCards({ data }) {
                   key={`v3-stack-card-${index}`}
                   href={card.link}
                   target={card?.newTab ? "_blank" : undefined}
-                  rel={card?.newTab ? "noopener noreferrer" : undefined}
+                  rel={card?.newTab ? "noopener" : undefined}
                   data-tina-field={tinaField(card, "title")}
                   className="h-full !no-underline"
                 >

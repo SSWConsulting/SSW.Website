@@ -102,7 +102,7 @@ export function V3Process({ data }) {
                   key={`v3-process-step-${index}`}
                   href={step.link}
                   target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  rel={isExternal ? "noopener" : undefined}
                   className="group flex flex-col !no-underline transition-transform duration-200 hover:-translate-y-1"
                 >
                   {inner}

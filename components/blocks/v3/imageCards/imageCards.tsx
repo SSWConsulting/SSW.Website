@@ -75,7 +75,7 @@ function ImageCard({ card, cardBackgroundClass, showBorder }) {
     <Link
       href={card.link}
       target={card?.newTab ? "_blank" : undefined}
-      rel={card?.newTab ? "noopener noreferrer" : undefined}
+      rel={card?.newTab ? "noopener" : undefined}
       data-tina-field={tinaField(card, "title")}
       className="h-full !no-underline"
     >
