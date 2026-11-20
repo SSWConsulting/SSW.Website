@@ -6,10 +6,7 @@ import { ArrowCircle } from "@/components/blocks/v3/shared/arrowCircle";
 import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
 import { HomeThemeShell } from "@/components/layout/homeTheme";
-import {
-  sidebarHeadingClass,
-  sidebarPageContainer,
-} from "@/components/layout/stickySidebar";
+import { sidebarPageContainer } from "@/components/layout/stickySidebar";
 import {
   cardFooter,
   cardShell,
@@ -77,7 +74,7 @@ function OfficeCard({
           data-tina-field={tinaField(office, "thumbnail")}
         >
           <Image
-            className="object-cover"
+            className="object-cover motion-safe:transition-transform motion-safe:duration-500 motion-safe:group-hover:scale-105"
             src={office.thumbnail}
             alt=""
             fill
@@ -181,10 +178,7 @@ export default function OfficesPage({
         <header className="mb-8">
           <h1
             id="offices-title"
-            className={cn(
-              sidebarHeadingClass,
-              "m-0 p-0 text-foreground max-md:mt-2"
-            )}
+            className="m-0 p-0 font-semibold text-foreground max-md:mt-2"
           >
             Our Offices
           </h1>
