@@ -16,7 +16,7 @@
       "description": "Move beyond one-off prompts. SSW’s hands-on group Claude training helps your people use Chat, Cowork and Code safely, apply them to real work, and turn valuable processes into repeatable skills, automations and working prototypes. The outcome is one shared way of working with AI across your organisation, not 100 different ones.\n",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "",
           "buttonLink": "#lead-capture-heading",
           "iconFirst": false,
@@ -314,7 +314,7 @@
       "description": "",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "buttonLink": "#lead-capture-heading",
           "colour": 0
         },
