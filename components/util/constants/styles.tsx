@@ -8,9 +8,4 @@ export const sectionColors = {
 };
 
 export type SectionColor =
-  | "default"
-  | "lightgray"
-  | "darkgray"
-  | "red"
-  | "black"
-  | "toggleLightMode";
+  "default" | "lightgray" | "darkgray" | "red" | "black" | "toggleLightMode";

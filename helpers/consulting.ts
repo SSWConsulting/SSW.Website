@@ -41,12 +41,10 @@ const getConsultingPageMetadata = async ({
       ?.map((category) => category.testimonialCategory.name) ?? [];
 
   const mediaCardProps =
-    data.consulting?.medias?.mediaCards?.map(
-      (m): MediaCardProps => ({
-        type: m.type as MediaCardProps["type"],
-        content: m.content,
-      })
-    ) || [];
+    data.consulting?.medias?.mediaCards?.map((m): MediaCardProps => ({
+      type: m.type as MediaCardProps["type"],
+      content: m.content,
+    })) || [];
   const marketingSection = await client.queries.marketing({
     relativePath: "/why-choose-ssw.mdx",
   });

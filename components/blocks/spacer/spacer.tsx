@@ -12,8 +12,8 @@ export function Spacer({ data }: { data: Consultingv2BlocksSpacer }) {
   // component when one of them is actually configured.
   const isDecorated = Boolean(
     data?.background?.backgroundImage ||
-      data?.background?.redGlow ||
-      data?.background?.gridOverlay
+    data?.background?.redGlow ||
+    data?.background?.gridOverlay
   );
 
   const spacer = isDecorated ? (
