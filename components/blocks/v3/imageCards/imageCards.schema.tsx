@@ -15,7 +15,7 @@ export const V3ImageCardsSchema: Template = {
       subtitle: "Tell us about your platform. We'll show you what's possible.",
       showBorder: true,
       seeMoreButton: [
-        { buttonText: "View All Services", buttonLink: "/services" },
+        { buttonText: "View all services", buttonLink: "/services" },
       ],
       cards: [
         {
@@ -147,7 +147,7 @@ export const V3ImageCardsSchema: Template = {
         max: 1,
         itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
         defaultItem: {
-          buttonText: "View All Services",
+          buttonText: "View all services",
           buttonLink: "/services",
         },
       },

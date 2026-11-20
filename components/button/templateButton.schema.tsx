@@ -27,6 +27,8 @@ export const buttonSchema = [
     type: "string",
     label: "Button Text",
     name: "buttonText",
+    description:
+      "Use Sentence case: capitalise only the first word and names, e.g. Book a free initial meeting. See https://design.ssw.com.au/?path=/docs/foundations-writing--docs",
   },
   {
     type: "string",

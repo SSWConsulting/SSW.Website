@@ -165,7 +165,7 @@ const TimeframeToggle = ({
   pastSelected: boolean;
   onToggle: () => void;
 }) => {
-  const label = pastSelected ? "View Upcoming Events" : "View Past Events";
+  const label = pastSelected ? "View upcoming events" : "View past events";
   const Icon = pastSelected ? FiCalendar : FaHistory;
 
   return (
@@ -456,7 +456,7 @@ export const LoadMore = ({ load, isLoading }: LoadMoreProps) => {
     <div className="flex flex-col items-center">
       <UtilityButton
         onClick={() => !isLoading && load()}
-        buttonText="Load More"
+        buttonText="Load more"
         size="small"
         className="!mt-0"
       />
