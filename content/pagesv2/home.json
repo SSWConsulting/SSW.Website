@@ -51,7 +51,7 @@
           },
           "buttons": [
             {
-              "buttonText": "Explore AI Consulting",
+              "buttonText": "Explore AI consulting",
               "buttonLink": "/consulting/artificial-intelligence",
               "iconFirst": false,
               "colour": 0
@@ -106,7 +106,7 @@
       ],
       "seeMoreButton": [
         {
-          "buttonText": "View All Services",
+          "buttonText": "View all services",
           "buttonLink": "/consulting",
           "icon": "BiChevronRight"
         }
@@ -210,7 +210,7 @@
       ],
       "seeMoreButton": [
         {
-          "buttonText": "More Client Stories",
+          "buttonText": "More client stories",
           "buttonLink": "/company/clients",
           "icon": "BiChevronRight"
         }
@@ -363,7 +363,7 @@
       ],
       "seeMoreButton": [
         {
-          "buttonText": "See All SSW People",
+          "buttonText": "See all SSW People",
           "buttonLink": "/people",
           "icon": "BiChevronRight"
         }
@@ -432,17 +432,17 @@
           "imageHeight": 876,
           "imageWidth": 3684
         },
-        "registerText": "Register Now",
+        "registerText": "Register now",
         "buttons": [
           {
-            "buttonText": "Register Now",
+            "buttonText": "Register now",
             "colour": 0
           }
         ]
       },
       "seeMoreButton": [
         {
-          "buttonText": "See More Events",
+          "buttonText": "See more events",
           "buttonLink": "/events",
           "icon": "BiChevronRight"
         }

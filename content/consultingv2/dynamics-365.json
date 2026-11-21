@@ -266,7 +266,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Read the full Article here",
+          "buttonText": "Read the full article here",
           "buttonLink": "/articles/legacy-migration-to-dynamics"
         }
       ],
@@ -297,7 +297,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Read the full Case Study here",
+          "buttonText": "Read the full case study here",
           "buttonLink": "https://www.ssw.com.au/company/clients/shepherd-centre"
         }
       ],
