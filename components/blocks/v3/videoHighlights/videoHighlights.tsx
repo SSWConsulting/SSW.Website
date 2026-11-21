@@ -133,7 +133,7 @@ export function V3VideoHighlights({ data }) {
                       <Link
                         href={item.link}
                         data-tina-field={tinaField(item, "link")}
-                        className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-white transition hover:text-sswRed"
+                        className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold text-white transition hover:text-sswRed"
                       >
                         {item.linkText || "Read more"}
                         <TiArrowRight className="size-5 transition group-hover:translate-x-1" />

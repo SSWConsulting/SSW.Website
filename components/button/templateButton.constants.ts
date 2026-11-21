@@ -6,6 +6,7 @@
 // field-editor UI (ColorPickerInput/IconPickerInput) and, through it, the
 // ~1.5 MB tinacms editor barrel. See SSW.Website perf work on the events pages.
 export const PROJECT_FORM_MODAL = "projectFormModal";
-// data-cta value on every button that opens the booking form. Google Tag Manager
+export const BOOKING_JOTFORM = "bookingJotFormId";
+// data-cta value on every button that opens a booking form (multi-step or Jotform). Google Tag Manager
 // triggers should match this instead of the button text, which editors change.
 export const BOOKING_CTA = "book-initial-meeting";

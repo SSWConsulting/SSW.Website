@@ -1,7 +1,10 @@
 import { buttonOptions } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import { ColorPickerInput } from "../blocksSubtemplates/tinaFormElements/colourSelector";
 import { IconPickerInput } from "../blocksSubtemplates/tinaFormElements/iconSelector";
-import { PROJECT_FORM_MODAL } from "./templateButton.constants";
+import {
+  BOOKING_JOTFORM,
+  PROJECT_FORM_MODAL,
+} from "./templateButton.constants";
 
 export const bookingForms = [
   {
@@ -10,7 +13,7 @@ export const bookingForms = [
   },
   {
     label: "Booking Form",
-    value: "bookingJotFormId",
+    value: BOOKING_JOTFORM,
   },
   {
     label: "Registration of Interest Form",

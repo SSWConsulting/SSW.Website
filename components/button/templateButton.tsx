@@ -10,7 +10,11 @@ import Popup from "../popup/popup";
 import { SESSION_STORAGE_KEYS } from "../util/constants";
 import { buttonColorVariants } from "../blocksSubtemplates/tinaFormElements/colourOptions/buttonOptions";
 import RippleButton, { ButtonTinaFields } from "./rippleButtonV2";
-import { BOOKING_CTA, PROJECT_FORM_MODAL } from "./templateButton.constants";
+import {
+  BOOKING_CTA,
+  BOOKING_JOTFORM,
+  PROJECT_FORM_MODAL,
+} from "./templateButton.constants";
 
 type TemplateButtonOptions = {
   buttonText?: string;
@@ -56,7 +60,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           variant={buttonColorVariants[colour]}
           // A stable hook for Google Tag Manager, so tracking doesn't depend on the label text.
           data-cta={
-            leadCaptureFormOption === PROJECT_FORM_MODAL
+            leadCaptureFormOption === PROJECT_FORM_MODAL ||
+            leadCaptureFormOption === BOOKING_JOTFORM
               ? BOOKING_CTA
               : undefined
           }
