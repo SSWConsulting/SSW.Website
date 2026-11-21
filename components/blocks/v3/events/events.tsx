@@ -146,7 +146,7 @@ function getEventTime(event) {
 
 function getFeaturedButton(eventUrl: string, featuredEventDisplay) {
   const button = featuredEventDisplay?.buttons?.filter(Boolean)?.[0];
-  const fallbackText = featuredEventDisplay?.registerText ?? "Register Now";
+  const fallbackText = featuredEventDisplay?.registerText ?? "Register now";
 
   if (!button) {
     return [{ buttonText: fallbackText, buttonLink: eventUrl, colour: 0 }];
@@ -408,7 +408,7 @@ export function V3Events({ data }) {
       : data?.seeMoreLink
         ? [
             {
-              buttonText: data.seeMoreText ?? "See More Events",
+              buttonText: data.seeMoreText ?? "See more events",
               buttonLink: data.seeMoreLink,
               colour: 0,
             },

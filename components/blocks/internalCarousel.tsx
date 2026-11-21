@@ -130,7 +130,7 @@ const CarouselBody = ({
               link={caseStudyUrl}
               buttonText={
                 <>
-                  See Case Study
+                  See case study
                   <BsArrowRightCircle className="ml-1 inline" />
                 </>
               }

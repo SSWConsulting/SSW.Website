@@ -161,7 +161,7 @@ export const ClientsFilter = ({ clients, categories }: ClientsFilterProps) => {
   );
 };
 
-const ALL_SERVICES_LABEL = "All SSW Services";
+const ALL_SERVICES_LABEL = "All SSW services";
 
 const serviceItem =
   "cursor-pointer py-2 text-foreground hover:bg-sswRed/10 hover:text-brand focus:bg-sswRed/10 focus:text-brand data-[highlighted]:bg-sswRed/10 data-[highlighted]:text-brand data-[state=checked]:font-semibold data-[state=checked]:text-brand";
