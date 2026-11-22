@@ -633,7 +633,7 @@
             {
               "name": "The Ruleferret",
               "url": "https://www.ssw.com.au/rules/",
-              "description": "Ask our AI chat questions about SSW Rules",
+              "description": "Our AI chat, now built into SSW Rules",
               "widgetType": "featured",
               "icon": "fingerPrint"
             }
