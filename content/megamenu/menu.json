@@ -631,9 +631,9 @@
           "name": "Featured",
           "items": [
             {
-              "name": "RulesGPT",
-              "url": "https://rulesgpt.ssw.com.au/",
-              "description": "Try out our custom GPT used to write our Rules",
+              "name": "The Ruleferret",
+              "url": "https://www.ssw.com.au/rules/",
+              "description": "Ask our AI chat questions about SSW Rules",
               "widgetType": "featured",
               "icon": "fingerPrint"
             }
