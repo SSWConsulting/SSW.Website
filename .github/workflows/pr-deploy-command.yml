@@ -65,6 +65,19 @@ jobs:
           "head_repository=$($pr.head.repo.full_name)" >> $env:GITHUB_OUTPUT
           Write-Host "✅ Deploying PR #$prNumber ($($pr.head.ref) @ $($pr.head.sha))"
 
+      # A fork's code would build and deploy with our Azure login and GitHub App key.
+      # A deleted fork has no head repo, so it is refused too.
+      - name: Refuse fork PRs
+        env:
+          HEAD_REPOSITORY: ${{ steps.pr.outputs.head_repository }}
+        run: |
+          if ($env:HEAD_REPOSITORY -ne '${{ github.repository }}') {
+            gh api "repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" `
+              -f body="🛑 Staging slots aren't available for forked PRs - a fork's code would build with our Azure login. Push the branch to this repo instead." --silent
+            Write-Host "::error::PR head is '$($env:HEAD_REPOSITORY)', not ${{ github.repository }} - fork PRs are not deployed."
+            exit 1
+          }
+
       - name: React to comment
         run: |
           gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" `
