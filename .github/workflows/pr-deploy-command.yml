@@ -27,60 +27,22 @@ jobs:
       issues: write
       pull-requests: write
     outputs:
-      pr_number: ${{ steps.pr.outputs.pr_number }}
-      head_ref: ${{ steps.pr.outputs.head_ref }}
-      head_sha: ${{ steps.pr.outputs.head_sha }}
-      head_repository: ${{ steps.pr.outputs.head_repository }}
-    env:
-      GH_TOKEN: ${{ github.token }}
+      pr_number: ${{ github.event.issue.number }}
+      head_ref: ${{ steps.gate.outputs.head_ref }}
+      head_sha: ${{ steps.gate.outputs.head_sha }}
+      head_repository: ${{ steps.gate.outputs.head_repository }}
     steps:
-      # The local refuse-fork-pr action needs the repo checked out
-      - uses: actions/checkout@v7
-
-      - name: Check commenter has write access
-        run: |
-          $login = '${{ github.event.comment.user.login }}'
-          $permission = gh api "repos/${{ github.repository }}/collaborators/$login/permission" --jq '.permission'
-
-          if ($permission -notin @('admin', 'maintain', 'write')) {
-            gh api "repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" `
-              -f body="🛑 Sorry @$login - write access to this repo is required to deploy a staging slot." --silent
-            Write-Host "::error::$login has '$permission' permission - write access is required to deploy."
-            exit 1
-          }
-
-          Write-Host "✅ $login has '$permission' permission - proceeding."
-
-      - name: Get PR details
-        id: pr
-        run: |
-          $prNumber = '${{ github.event.issue.number }}'
-          $pr = gh api "repos/${{ github.repository }}/pulls/$prNumber" | ConvertFrom-Json
-
-          if ($pr.state -ne 'open') {
-            Write-Host "::error::PR #$prNumber is not open (state: $($pr.state)) - nothing to deploy."
-            exit 1
-          }
-
-          "pr_number=$prNumber" >> $env:GITHUB_OUTPUT
-          "head_ref=$($pr.head.ref)" >> $env:GITHUB_OUTPUT
-          "head_sha=$($pr.head.sha)" >> $env:GITHUB_OUTPUT
-          "head_repository=$($pr.head.repo.full_name)" >> $env:GITHUB_OUTPUT
-          Write-Host "Found PR #$prNumber ($($pr.head.ref) @ $($pr.head.sha))"
-
-      - name: Refuse fork PRs
-        uses: ./.github/actions/refuse-fork-pr
+      # Write access, open PR, and no forks. Pinned to a release, not main.
+      - name: Gate /deploy
+        id: gate
+        uses: SSWConsulting/pr-deploy-gate@v1.0.0
         with:
+          token: ${{ github.token }}
           repository: ${{ github.repository }}
           pr_number: ${{ github.event.issue.number }}
-          head_repository: ${{ steps.pr.outputs.head_repository }}
           commenter: ${{ github.event.comment.user.login }}
-          token: ${{ github.token }}
-
-      - name: React to comment
-        run: |
-          gh api "repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions" `
-            -f content=rocket --silent
+          comment_id: ${{ github.event.comment.id }}
+          refuse_message: "🛑 Sorry @{commenter} - this PR can't get a staging slot because {reason}. A fork's code would build with our Azure login. Push the branch to this repo and open a new PR from it."
 
   check-slot-capacity:
     name: Check staging slot capacity
