@@ -34,13 +34,17 @@ jobs:
     steps:
       - name: Gate /deploy
         id: gate
-        uses: SSWConsulting/pr-deploy-gate@v1.0.0
+        uses: SSWConsulting/comment-command-gate@v2.0.0
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
-          pr_number: ${{ github.event.issue.number }}
-          commenter: ${{ github.event.comment.user.login }}
+          issue_number: ${{ github.event.issue.number }}
           comment_id: ${{ github.event.comment.id }}
+          comment_body: ${{ github.event.comment.body }}
+          commenter: ${{ github.event.comment.user.login }}
+          command: /deploy
+          min_role: write
+          require_same_repo_branch: "true"
           refuse_message: "🛑 Sorry @{commenter} - this PR can't get a staging slot because {reason}. A fork's code would build with our Azure login. Push the branch to this repo and open a new PR from it."
 
   check-slot-capacity:
