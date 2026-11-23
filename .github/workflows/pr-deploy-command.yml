@@ -32,7 +32,6 @@ jobs:
       head_sha: ${{ steps.gate.outputs.head_sha }}
       head_repository: ${{ steps.gate.outputs.head_repository }}
     steps:
-      # Write access, open PR, and no forks. Pinned to a release, not main.
       - name: Gate /deploy
         id: gate
         uses: SSWConsulting/pr-deploy-gate@v1.0.0
