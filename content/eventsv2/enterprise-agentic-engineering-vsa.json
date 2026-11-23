@@ -5,13 +5,14 @@
   },
   "blocks": [
     {
-      "topLabel": {
-        "labelText": "Hands-on developer training"
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
       },
+      "brow": "Hands-on developer training",
       "heading": "Enterprise Agentic Engineering **with VSA**",
-      "isH1": true,
-      "description": "Start with a slice. Build an agent you can trust. Daniel Mackay and Gordon Beeming kick off with Vertical Slice Architecture, then guide developers through the engineering decisions that make agentic features easier to build, test and operate.",
-      "tabletTextAlignment": "Left",
+      "description": "Start with a slice. Build an agent you can trust. Daniel Mackay and Gordon Beeming kick off with Vertical Slice Architecture, then guide developers through the engineering decisions that make agentic features easier to build, test and operate.\n",
       "buttons": [
         {
           "buttonText": "Talk to SSW",
@@ -19,248 +20,195 @@
           "colour": 0
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "mediaConfiguration": {
-        "placement": "Left",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "imageSource": "/images/ssw-web/hero/enterprise-agentic-engineering-dan-gordon.png",
-        "imageWidth": 1672,
-        "imageHeight": 941,
+      "mediaType": "image",
+      "image": {
         "altText": "Illustration of Daniel Mackay and Gordon Beeming discussing software architecture at a desk",
-        "loadWithPriority": true
+        "imageSource": "/images/ssw-web/hero/enterprise-agentic-engineering-dan-gordon.webp",
+        "imageHeight": 941,
+        "imageWidth": 1672
       },
-      "_template": "imageTextBlock"
+      "_template": "v3Hero"
     },
     {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "",
       "heading": "Agent demos are easy. Reliable features take engineering.",
-      "isH1": false,
-      "body": "Agentic systems cross model calls, tools, data and user workflows. A clear feature boundary makes change easier to reason about and results easier to check.",
-      "isStacked": true,
-      "cardStyle": 0,
+      "subtitle": "Agentic systems cross model calls, tools, data and user workflows. A clear feature boundary makes change easier to reason about and results easier to check.",
       "cards": [
         {
-          "guid": "agent-change",
-          "icon": "info",
-          "heading": "Make change easier to reason about",
+          "title": "Make change easier to reason about",
           "description": "Keep the request, orchestration, dependencies and tests close to the feature they serve."
         },
         {
-          "guid": "agent-behaviour",
-          "icon": "info",
-          "heading": "Design for uncertain behaviour",
+          "title": "Design for uncertain behaviour",
           "description": "Define what the agent may do, when a human needs to step in, and how to check the result."
         },
         {
-          "guid": "agent-release",
-          "icon": "info",
-          "heading": "Prepare for real use",
+          "title": "Prepare for real use",
           "description": "Work through permissions, traceability, failure handling and release decisions."
         }
       ],
-      "background": {
-        "backgroundColour": 5
-      },
-      "_template": "cardCarousel"
+      "_template": "v3StackCards"
     },
     {
-      "topLabel": {
-        "labelText": "The opening move"
+      "background": {
+        "backgroundColour": 7
       },
+      "brow": "The opening move",
       "heading": "Begin with **Vertical Slice Architecture**",
-      "isH1": false,
-      "description": "Dan and Gordon start with one user action and trace it through a self-contained feature slice. This gives the rest of the course a shared structure for building agentic behaviour. Each slice keeps its request, handler, local dependencies and tests together.",
-      "tabletTextAlignment": "Left",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "One capability",
-            "description": "Organise code around a business action."
-          },
-          {
-            "heading": "One clear path",
-            "description": "Follow the request through to the result."
-          },
-          {
-            "heading": "Local dependencies",
-            "description": "Keep tool and data access close to the slice."
-          },
-          {
-            "heading": "Focused tests",
-            "description": "Check behaviour alongside the code that delivers it."
-          }
-        ]
-      },
-      "buttons": [
+      "subtitle": "Dan and Gordon start with one user action and trace it through a self-contained feature slice. This gives the rest of the course a shared structure for building agentic behaviour. Each slice keeps its request, handler, local dependencies and tests together.",
+      "cards": [
         {
-          "buttonText": "Read the SSW VSA rule",
-          "buttonLink": "/rules/vertical-slice-architecture",
-          "colour": 1
+          "title": "One capability",
+          "description": "Organise code around a business action."
+        },
+        {
+          "title": "One clear path",
+          "description": "Follow the request through to the result."
+        },
+        {
+          "title": "Local dependencies",
+          "description": "Keep tool and data access close to the slice."
+        },
+        {
+          "title": "Focused tests",
+          "description": "Check behaviour alongside the code that delivers it."
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "imageTextBlock"
+      "_template": "v3StackCards"
     },
     {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Course modules",
       "heading": "From first slice to **production thinking**",
-      "body": "Follow one feature from its first architecture decision through agentic behaviour, evaluation and release.",
-      "isMultipleOpen": true,
-      "accordionItems": [
+      "description": "Follow one feature from its first architecture decision through agentic behaviour, evaluation and release.\n",
+      "items": [
         {
-          "label": "Kick off with VSA",
-          "content": "Turn a business action into a self-contained feature. Identify its request, handler, local dependencies and tests. Use the slice to make ownership and change impact visible."
+          "heading": "01 · Kick off with VSA",
+          "description": "Turn a business action into a self-contained feature. Identify its request, handler, local dependencies and tests. Use the slice to make ownership and change impact visible.\n"
         },
         {
-          "label": "Add agentic behaviour",
-          "content": "Define the agent’s goal, allowed tools, inputs and output contract. Decide what remains deterministic and what can be delegated to a model."
+          "heading": "02 · Add agentic behaviour",
+          "description": "Define the agent’s goal, allowed tools, inputs and output contract. Decide what remains deterministic and what can be delegated to a model.\n"
         },
         {
-          "label": "Build reliable tool use",
-          "content": "Connect the agent to a narrow capability. Cover permissions, validation, idempotency and useful failure paths before adding more tools."
+          "heading": "03 · Build reliable tool use",
+          "description": "Connect the agent to a narrow capability. Cover permissions, validation, idempotency and useful failure paths before adding more tools.\n"
         },
         {
-          "label": "Evaluate and observe",
-          "content": "Create representative scenarios, inspect traces and test outcomes. Review cost, latency and quality together."
+          "heading": "04 · Evaluate and observe",
+          "description": "Create representative scenarios, inspect traces and test outcomes. Review cost, latency and quality together.\n"
         },
         {
-          "label": "Ship an enterprise slice",
-          "content": "Walk through release, monitoring, human review and rollback choices. Leave with a repeatable checklist for the next agentic feature."
+          "heading": "05 · Ship an enterprise slice",
+          "description": "Walk through release, monitoring, human review and rollback choices. Leave with a repeatable checklist for the next agentic feature.\n"
         }
       ],
-      "background": {
-        "backgroundColour": 3
-      },
-      "_template": "accordionBlock"
+      "_template": "v3VerticalList"
     },
     {
-      "topLabel": {
-        "labelText": "At a glance"
+      "background": {
+        "backgroundColour": 7
       },
+      "brow": "At a glance",
       "heading": "Designed for teams **building real software**",
-      "isH1": false,
-      "description": "Practical architecture and implementation decisions, taught through one evolving feature.",
-      "tabletTextAlignment": "Left",
-      "featureColumns": {
-        "twoColumns": true,
-        "features": [
-          {
-            "heading": "Audience",
-            "description": "Experienced developers, architects and technical leads"
-          },
-          {
-            "heading": "Learning style",
-            "description": "Mentor-led discussion, code exercises and review"
-          },
-          {
-            "heading": "Starting point",
-            "description": "SSW’s Vertical Slice Architecture rule"
-          },
-          {
-            "heading": "Takeaway",
-            "description": "A repeatable approach to building and reviewing agentic features"
-          }
-        ]
-      },
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "imageTextBlock"
-    },
-    {
-      "topLabel": {
-        "labelText": "Meet your mentors"
-      },
-      "heading": "Daniel Mackay",
-      "isH1": false,
-      "subheading": "Solution Architect",
-      "description": "Dan brings more than 20 years of software experience and deep .NET expertise. He helps teams turn architecture principles into maintainable code and starts this course with a practical VSA exercise.",
-      "tabletTextAlignment": "Left",
-      "buttons": [
+      "subtitle": "Practical architecture and implementation decisions, taught through one evolving feature.",
+      "cards": [
         {
-          "buttonText": "Meet Dan",
-          "buttonLink": "/people/daniel-mackay",
-          "colour": 1
+          "title": "Audience",
+          "description": "Experienced developers, architects and technical leads"
+        },
+        {
+          "title": "Learning style",
+          "description": "Mentor-led discussion, code exercises and review"
+        },
+        {
+          "title": "Starting point",
+          "description": "SSW’s Vertical Slice Architecture rule",
+          "link": "/rules/vertical-slice-architecture"
+        },
+        {
+          "title": "Takeaway",
+          "description": "A repeatable approach to building and reviewing agentic features"
         }
       ],
-      "background": {
-        "backgroundColour": 3
-      },
-      "mediaConfiguration": {
-        "placement": "Left",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "imageSource": "/images/people/Daniel-Mackay.jpg",
-        "imageWidth": 172,
-        "imageHeight": 242,
-        "squareImage": true,
-        "altText": "Daniel Mackay, SSW Solution Architect"
-      },
-      "_template": "imageTextBlock"
+      "_template": "v3StackCards"
     },
     {
-      "heading": "Gordon Beeming",
-      "isH1": false,
-      "subheading": "Solution Architect + Microsoft MVP",
-      "description": "Gordon helps teams adopt DevOps practices and improve the way they build and release software. He joins Dan to turn the initial slice into an agentic feature and examine how the design holds up in an enterprise setting.",
-      "tabletTextAlignment": "Left",
-      "buttons": [
+      "background": {
+        "backgroundColour": 7
+      },
+      "layout": "sideBySide",
+      "brow": "Meet your mentors",
+      "heading": "Dan & Gordon",
+      "subtitle": "Dan brings more than 20 years of software experience and deep .NET expertise. He helps teams turn architecture principles into maintainable code and starts this course with a practical VSA exercise.\n\nGordon helps teams adopt DevOps practices and improve the way they build and release software. He joins Dan to turn the initial slice into an agentic feature and examine how the design holds up in an enterprise setting.",
+      "people": [
         {
-          "buttonText": "Meet Gordon",
-          "buttonLink": "/people/gordon-beeming",
-          "colour": 1
+          "name": "Daniel Mackay",
+          "role": "Solution Architect",
+          "image": {
+            "altText": "Daniel Mackay",
+            "imageSource": "/images/people-carousel/dan-mackay-nobg.png",
+            "imageWidth": 1040,
+            "imageHeight": 1080
+          },
+          "sswPeople": "https://www.ssw.com.au/people/daniel-mackay/",
+          "linkedin": "https://www.linkedin.com/in/danieljamesmackay/",
+          "github": "https://github.com/danielmackay"
+        },
+        {
+          "name": "Gordon Beeming",
+          "role": "Solution Architect + Microsoft MVP",
+          "image": {
+            "altText": "Gordon Beeming",
+            "imageSource": "/images/people-carousel/gordon-beeming-nobg.png",
+            "imageWidth": 1040,
+            "imageHeight": 1080
+          },
+          "sswPeople": "https://www.ssw.com.au/people/gordon-beeming/",
+          "github": "https://github.com/gordonbeeming"
         }
       ],
-      "background": {
-        "backgroundColour": 3
-      },
-      "mediaConfiguration": {
-        "placement": "Right",
-        "verticalPlacement": "Centered",
-        "mobilePlacement": "Above",
-        "imageSource": "/images/people/Gordon-Beeming.jpg",
-        "imageWidth": 172,
-        "imageHeight": 242,
-        "squareImage": true,
-        "altText": "Gordon Beeming, SSW Solution Architect and Microsoft MVP"
-      },
-      "_template": "imageTextBlock"
+      "_template": "v3PeopleCarousel"
     },
     {
+      "background": {
+        "backgroundColour": 8
+      },
       "heading": "Course FAQ",
-      "isMultipleOpen": true,
-      "accordionItems": [
+      "faqs": [
         {
-          "label": "Who is this for?",
-          "content": "Developers, software architects and technical leads who already build production applications and want a practical approach to agentic features."
+          "question": "Who is this for?",
+          "answer": "Developers, software architects and technical leads who already build production applications and want a practical approach to agentic features.\n"
         },
         {
-          "label": "Do participants need VSA experience?",
-          "content": "No prior VSA experience is needed. Dan and Gordon start with the core principles and a worked feature slice."
+          "question": "Do participants need VSA experience?",
+          "answer": "No prior VSA experience is needed. Dan and Gordon start with the core principles and a worked feature slice.\n"
         },
         {
-          "label": "Which agent framework will be used?",
-          "content": "The exercises focus on architecture and engineering decisions that apply across agent frameworks."
+          "question": "Which agent framework will be used?",
+          "answer": "The exercises focus on architecture and engineering decisions that apply across agent frameworks.\n"
         },
         {
-          "label": "What will I take away?",
-          "content": "A worked feature slice and a practical checklist for designing, evaluating and operating agentic features."
+          "question": "What will I take away?",
+          "answer": "A worked feature slice and a practical checklist for designing, evaluating and operating agentic features.\n"
         }
       ],
-      "background": {
-        "backgroundColour": 6
-      },
-      "_template": "accordionBlock"
+      "_template": "v3Faq"
     },
     {
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false,
+        "gridOverlay": true,
+        "redGlow": true
+      },
       "heading": "Build agentic features **with confidence**",
-      "isH1": false,
-      "description": "Talk with SSW about agentic engineering training for your team.",
-      "tabletTextAlignment": "Left",
+      "description": "Talk with SSW about agentic engineering training for your team.\n",
       "buttons": [
         {
           "buttonText": "Talk to SSW",
@@ -268,10 +216,7 @@
           "colour": 0
         }
       ],
-      "background": {
-        "backgroundColour": 5
-      },
-      "_template": "imageTextBlock"
+      "_template": "v3Cta"
     }
   ]
 }
