@@ -14,10 +14,11 @@ const sizes = {
 
 // Secondary is an outlined button for light backgrounds, for a link that sits
 // beside or below the main content rather than a call to action.
+// `!border-solid` beats the ripple's `border-none`, which would hide the outline.
 const variants = {
   primary: "bg-sswRed text-white rounded",
   secondary:
-    "rounded border-1.5 border-stroke-strong bg-transparent text-foreground hover:border-brand hover:text-brand",
+    "rounded !border-solid border-1.5 border-stroke-strong bg-transparent text-foreground hover:border-brand hover:text-brand",
 } as const;
 
 type UtilityButtonProps = {
