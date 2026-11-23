@@ -153,8 +153,8 @@
           "image": {
             "altText": "Daniel Mackay",
             "imageSource": "/images/people-carousel/dan-mackay-nobg.png",
-            "imageWidth": 520,
-            "imageHeight": 540
+            "imageWidth": 1040,
+            "imageHeight": 1080
           },
           "sswPeople": "https://www.ssw.com.au/people/daniel-mackay/",
           "linkedin": "https://www.linkedin.com/in/danieljamesmackay/",
@@ -166,8 +166,8 @@
           "image": {
             "altText": "Gordon Beeming",
             "imageSource": "/images/people-carousel/gordon-beeming-nobg.png",
-            "imageWidth": 520,
-            "imageHeight": 540
+            "imageWidth": 1040,
+            "imageHeight": 1080
           },
           "sswPeople": "https://www.ssw.com.au/people/gordon-beeming/",
           "github": "https://github.com/gordonbeeming"
