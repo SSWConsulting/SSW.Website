@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "Enterprise Agentic Engineering with VSA | SSW Training",
+    "title": "Enterprise Agentic Engineering | SSW Training",
     "description": "Build reliable agentic features with Vertical Slice Architecture. A hands-on SSW course mentored by Daniel Mackay and Gordon Beeming."
   },
   "blocks": [
@@ -11,7 +11,7 @@
         "redGlow": true
       },
       "brow": "Hands-on developer training",
-      "heading": "Enterprise Agentic Engineering **with VSA**",
+      "heading": "Enterprise Agentic Engineering",
       "description": "Start with a slice. Build an agent you can trust. Daniel Mackay and Gordon Beeming kick off with Vertical Slice Architecture, then guide developers through the engineering decisions that make agentic features easier to build, test and operate.\n",
       "buttons": [
         {
