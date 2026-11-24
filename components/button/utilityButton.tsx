@@ -34,6 +34,8 @@ type UtilityButtonProps = {
   openInNewTab?: boolean;
   disabled?: boolean;
   variant?: keyof typeof variants;
+  /** Stable data-cta hook for analytics, e.g. BOOKING_CTA. */
+  dataCta?: string;
 };
 
 const utilIcons = {
@@ -61,6 +63,7 @@ export const UtilityButton = ({
   openInNewTab,
   disabled,
   variant,
+  dataCta,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
@@ -75,6 +78,7 @@ export const UtilityButton = ({
       )}
       onClick={() => !disabled && onClick?.()}
       data-aos={animated ? "fade-up" : undefined}
+      data-cta={dataCta}
     >
       {buttonText}
       {btnIcon && iconMapper(btnIcon)}

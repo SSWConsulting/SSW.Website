@@ -15,6 +15,7 @@ export interface JotFormEmbedProps extends PropsWithChildren {
   buttonClass?: string;
   buttonText: string;
   animated?: boolean;
+  dataCta?: string;
 }
 
 export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
@@ -23,6 +24,7 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
   buttonClass,
   buttonText,
   animated,
+  dataCta,
   children,
 }) => {
   const [open, setOpen] = useState(false);
@@ -44,6 +46,7 @@ export const JotFormEmbed: React.FC<JotFormEmbedProps> = ({
           buttonText={buttonText}
           animated={animated}
           onClick={() => setOpen(true)}
+          dataCta={dataCta}
         />
         {children}
       </div>

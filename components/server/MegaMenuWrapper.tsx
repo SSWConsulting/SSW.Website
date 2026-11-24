@@ -18,7 +18,7 @@ export function MegaMenuWrapper(props) {
   const { mobile } = useHeaderAppearance();
 
   // Every route gets the same v3 menu — including the HomeNavActions cluster
-  // (search / region globe / Let's Talk). Only THEMED_ROUTES additionally opt
+  // (search / region globe / Let's talk). Only THEMED_ROUTES additionally opt
   // into theming: the dark toggle and the `.dark` scope below, whose token
   // utilities (bg-background/text-foreground/border-hairline) flip via the CSS
   // variables under the `dark` class on this element.
@@ -31,7 +31,7 @@ export function MegaMenuWrapper(props) {
         isThemed &&
           "ssw-home-nav relative isolate text-foreground before:absolute before:inset-y-0 before:left-1/2 before:-z-10 before:w-screen before:-translate-x-1/2 before:border-b-1 before:border-[var(--home-nav-border)] before:bg-[var(--home-nav-bg)] before:content-['']",
         // Between xl (1280) and 1360 the desktop nav's designed gutters leave the
-        // "Let's Talk" pill ~40px too wide; reclaim the side padding in just that
+        // "Let's talk" pill ~40px too wide; reclaim the side padding in just that
         // band so the ≥1360 (incl. the 1440 Figma) spacing stays untouched.
         isThemed && "xl:-mx-6 min-[1360px]:mx-0",
         // `.dark` is applied by React (seeded) and, before hydration, by the
