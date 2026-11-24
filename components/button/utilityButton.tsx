@@ -12,6 +12,15 @@ const sizes = {
   medium: "px-10 py-3",
 } as const;
 
+// Secondary is an outlined button for light backgrounds, for a link that sits
+// beside or below the main content rather than a call to action.
+// `!border-solid` beats the ripple's `border-none`, which would hide the outline.
+const variants = {
+  primary: "bg-sswRed text-white rounded",
+  secondary:
+    "rounded !border-solid border-1.5 border-stroke-strong bg-transparent text-foreground hover:border-brand hover:text-brand",
+} as const;
+
 type UtilityButtonProps = {
   buttonText?: string | JSX.Element;
   onClick?: () => void;
@@ -24,6 +33,7 @@ type UtilityButtonProps = {
   removeTopMargin?: boolean;
   openInNewTab?: boolean;
   disabled?: boolean;
+  variant?: keyof typeof variants;
   /** Stable data-cta hook for analytics, e.g. BOOKING_CTA. */
   dataCta?: string;
 };
@@ -52,11 +62,13 @@ export const UtilityButton = ({
   removeTopMargin,
   openInNewTab,
   disabled,
+  variant,
   dataCta,
 }: UtilityButtonProps) => {
   const baseComponent = (
     <Button
       ripple
+      defaultClass={variants[variant ?? "primary"]}
       className={classNames(
         "h-auto",
         sizes[size ?? "medium"],
@@ -64,7 +76,7 @@ export const UtilityButton = ({
         removeTopMargin ? "" : "mt-8",
         className
       )}
-      onClick={() => !disabled && onClick()}
+      onClick={() => !disabled && onClick?.()}
       data-aos={animated ? "fade-up" : undefined}
       data-cta={dataCta}
     >
@@ -115,6 +127,18 @@ export const utilityButtonSchema: Template = {
       name: "size",
       required: false,
       options: Object.keys(sizes),
+    },
+    {
+      type: "string",
+      label: "Style",
+      name: "variant",
+      required: false,
+      description:
+        "Primary is the red call-to-action button (default). Secondary is an outlined button for links like a photo album.",
+      options: [
+        { label: "Primary", value: "primary" },
+        { label: "Secondary", value: "secondary" },
+      ],
     },
     {
       type: "string",
