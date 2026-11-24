@@ -17,7 +17,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book Now",
+          "buttonText": "Book now",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -181,7 +181,7 @@
       "isMultipleOpen": true,
       "buttons": [
         {
-          "buttonText": "Get the full Agenda",
+          "buttonText": "Get the full agenda",
           "leadCaptureFormOption": "aiWorkshopJotFormId",
           "buttonLink": "",
           "colour": 1
@@ -444,7 +444,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book Now",
+          "buttonText": "Book now",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

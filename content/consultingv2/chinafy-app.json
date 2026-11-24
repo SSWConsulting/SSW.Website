@@ -241,7 +241,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Contact Us",
+          "buttonText": "Contact us",
           "leadCaptureFormOption": "registrationOfInterestJotFormId",
           "colour": 0
         }

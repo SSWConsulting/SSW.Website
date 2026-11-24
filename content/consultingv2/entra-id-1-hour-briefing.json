@@ -41,7 +41,7 @@
       ],
       "buttons": [
         {
-          "buttonText": "Book a Free 1 Hour Briefing",
+          "buttonText": "Book a free 1-hour briefing",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         },
@@ -204,7 +204,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book your Free Initial Meeting",
+          "buttonText": "Book your free initial meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "iconFirst": false
         }

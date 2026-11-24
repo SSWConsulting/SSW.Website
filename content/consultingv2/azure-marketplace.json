@@ -137,7 +137,7 @@
           "colour": 0
         },
         {
-          "buttonText": "Create an Azure Marketplace Offer",
+          "buttonText": "Create an Azure Marketplace offer",
           "buttonLink": "https://www.ssw.com.au/rules/create-azure-marketplace-offer",
           "icon": "BiStore",
           "iconFirst": true,
