@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { TestimonialType } from "../../helpers/getTestimonials";
 import { CustomLink } from "../customLink";
+import AosLoader from "../util/aosLoader";
 
 const Image = dynamic(() => import("next/image"));
 
@@ -23,6 +24,7 @@ export const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
       data-aos="flip-right"
       key={testimonial?.name}
     >
+      <AosLoader />
       <div className="flex flex-col items-center">
         <Image
           alt={`Avatar of ${testimonial?.name}`}
