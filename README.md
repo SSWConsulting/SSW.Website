@@ -132,7 +132,7 @@ It generates report and saves into `.lighthouseci` folder. You can also change t
 
 ## Pull Requests
 
-Staging deployments are opt-in - comment `/deploy` on a Pull Request to build it and deploy it to its own staging environment (requires write access). The URL to the environment is posted in the PR thread. New commits are not deployed automatically - comment `/deploy` again to update the slot.
+Staging deployments are opt-in - comment `/deploy` on a Pull Request to build it and deploy it to its own staging environment (requires write access, and the PR branch must be in this repo - PRs from forks are not deployed). The URL to the environment is posted in the PR thread. New commits are not deployed automatically - comment `/deploy` again to update the slot.
 
 Slots are a shared, limited resource (see [#4767](https://github.com/SSWConsulting/SSW.Website/issues/4767)) - they are capped at 5 concurrent PR slots and cleaned up when a PR closes or goes inactive for 7 days.
 
