@@ -18,6 +18,7 @@
         "backgroundColour": 7,
         "bleed": false
       },
+      "autoplaySeconds": 8,
       "slides": [
         {
           "_template": "standardSlide",
@@ -37,6 +38,25 @@
             "imageHeight": 1150,
             "imageWidth": 2600
           }
+        },
+        {
+          "_template": "standardSlide",
+          "heading": "Microsoft Solutions Partner for **Cloud & AI Platforms**",
+          "description": "Microsoft has recognised our expertise in building cloud and AI solutions on Azure. See how we can help you ship AI that works.\n",
+          "badge": {
+            "altText": "Microsoft Solutions Partner - Cloud & AI Platforms",
+            "imageSource": "/images/logos/ms-solutions-partner-cloud-ai.png",
+            "imageHeight": 685,
+            "imageWidth": 1043
+          },
+          "buttons": [
+            {
+              "buttonText": "Explore AI Consulting",
+              "buttonLink": "/consulting/artificial-intelligence",
+              "iconFirst": false,
+              "colour": 0
+            }
+          ]
         }
       ],
       "_template": "v3HeroBox"

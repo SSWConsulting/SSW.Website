@@ -60,9 +60,13 @@ jobs:
           $slots = @($slotNames -split "`n" | Where-Object { $_ -ne '' } | ForEach-Object { $_ -replace '^pr-', '' })
 
           # Open PRs mapped to their last-updated timestamp
-          $openPrs = gh pr list --state open --json number,updatedAt | ConvertFrom-Json
+          $openPrs = gh pr list --state open --json number,updatedAt,isCrossRepository | ConvertFrom-Json
           $openMap = @{}
-          foreach ($pr in $openPrs) { $openMap["$($pr.number)"] = $pr.updatedAt }
+          $forkPrs = @{}
+          foreach ($pr in $openPrs) {
+            $openMap["$($pr.number)"] = $pr.updatedAt
+            if ($pr.isCrossRepository) { $forkPrs["$($pr.number)"] = $true }
+          }
 
           $toDelete = @()
           foreach ($slot in $slots) {
@@ -75,7 +79,9 @@ jobs:
             $updated = ([datetime]$openMap[$slot]).ToUniversalTime()
             if ($updated -lt $cutoff) {
               Write-Host "🧹 pr-$slot - PR #$slot inactive since $updated -> delete + comment"
-              gh pr comment $slot --body "🧹 Your **staging deployment was removed** during weekly cleanup because this PR has been inactive for over $staleDays days. Comment ``/deploy`` on this PR to spin up a fresh staging environment."
+              # Fork PRs can't be deployed with /deploy any more, so don't suggest it to them.
+              $next = if ($forkPrs.ContainsKey($slot)) { "Fork PRs can't get a new staging slot - push the branch to this repo and open a new PR to deploy it." } else { "Comment ``/deploy`` on this PR to spin up a fresh staging environment." }
+              gh pr comment $slot --body "🧹 Your **staging deployment was removed** during weekly cleanup because this PR has been inactive for over $staleDays days. $next"
               $toDelete += $slot
             }
             else {
