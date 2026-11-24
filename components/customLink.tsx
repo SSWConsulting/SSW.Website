@@ -1,5 +1,6 @@
 "use client";
 
+import { isSswOwnedUrl, isSswSubsiteUrl } from "@/helpers/links";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 
@@ -14,20 +15,9 @@ interface CustomLinkProps extends PropsWithChildren {
 const isExternalLink = (href: string): boolean => {
   // i.e. href = https://anydomain.com.au => true | href = https://www.ssw.com.au/rule/* => true for SSW External Site | href = /company => false for relative path
   return (
-    isExternalSSWSite(href) ||
+    isSswSubsiteUrl(href) ||
     (href?.startsWith("https://") && !href.includes("ssw.com.au")) // checking relative path and external domains i.e. /company
   );
-};
-
-const isExternalSSWSite = (href: string): boolean => {
-  const externalSSWSitePatterns =
-    /^(https:\/\/(?:www\.)?ssw\.com\.au\/(?:people|rules|ssw)(?:\/|$))/i;
-  return externalSSWSitePatterns.test(href);
-};
-
-const isTinaSite = (href: string): boolean => {
-  const tinaSitePatterns = /^(https:\/\/(?:www\.)?tina\.io(?:\/|$))/i;
-  return tinaSitePatterns.test(href);
 };
 
 export const CustomLink: React.FC<CustomLinkProps> = ({
@@ -40,7 +30,8 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   ...props
 }) => {
   const isExternal = isExternalLink(href);
-  const isAnSSWBrandedSite = isExternalSSWSite(href) || isTinaSite(href);
+  // The same list of SSW-owned domains that content links use.
+  const isAnSSWBrandedSite = isSswOwnedUrl(href);
 
   if (!href) return <>{children}</>;
   return (

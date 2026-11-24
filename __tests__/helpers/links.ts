@@ -1,5 +1,11 @@
 import { describe, expect, it } from "@jest/globals";
-import { getLinkKind, getLinkRel, safeHref } from "../../helpers/links";
+import {
+  getLinkKind,
+  getLinkRel,
+  isSswOwnedUrl,
+  isSswSubsiteUrl,
+  safeHref,
+} from "../../helpers/links";
 
 describe("getLinkKind", () => {
   it.each([
@@ -18,7 +24,16 @@ describe("getLinkKind", () => {
     ["/rules?q=links#top", "branded"],
     ["/rules-of-thumb", "internal"],
     ["rules", "internal"],
-    ["https://tina.io/docs", "external"],
+    ["https://tina.io/docs", "branded"],
+    ["https://www.ssw.fr", "branded"],
+    ["https://www.ssw.com.cn/", "branded"],
+    ["https://tv.ssw.com/", "branded"],
+    ["https://www.sswchapel.com.au", "branded"],
+    ["https://sswdigital.com.au/", "branded"],
+    ["https://yakshaver.ai", "branded"],
+    ["https://www.sugarlearning.com/", "branded"],
+    ["https://firebootcamp.com", "branded"],
+    ["https://codeauditor.com/", "branded"],
     ["https://www.firstparking.com.au/locations/11-argyle-st/", "external"],
     ["http://example.com", "external"],
     ["//example.com/page", "external"],
@@ -35,7 +50,10 @@ describe("getLinkKind", () => {
     // Hosts that only look like SSW's are still external.
     ["https://ssw.com.au.example.com", "external"],
     ["https://notssw.com.au", "external"],
-    ["mailto:info@example.com", "other"],
+    ["https://tina.io.example.com", "external"],
+    ["https://notyakshaver.ai", "external"],
+    ["mailto:info@example.com", "email"],
+    ["MAILTO:info@example.com", "email"],
     ["tel:+61299533000", "other"],
     ["", "other"],
     [undefined, "other"],
@@ -49,9 +67,13 @@ describe("safeHref", () => {
   it.each([
     ["javascript:alert(1)", "about:blank"],
     [" JavaScript:alert(1)", "about:blank"],
+    ["java\tscript:alert(1)", "about:blank"],
+    ["java\nscript:alert(1)", "about:blank"],
     ["data:text/html,hi", "about:blank"],
     ["https://example.com", "https://example.com"],
     ["mailto:info@example.com", "mailto:info@example.com"],
+    ["tel:+61299533000", "tel:+61299533000"],
+    ["#directions", "#directions"],
     ["/consulting", "/consulting"],
     [undefined, ""],
   ])("%s becomes %s", (href, expected) => {
@@ -65,6 +87,7 @@ describe("getLinkRel", () => {
     ["https://rules.ssw.com.au", "noopener"],
     ["https://tina.io/docs", "noopener"],
     ["https://www.tina.io", "noopener"],
+    ["https://yakshaver.ai", "noopener"],
     ["https://example.com", "noopener noreferrer nofollow"],
     ["https://tina.io.example.com", "noopener noreferrer nofollow"],
     [
@@ -73,5 +96,33 @@ describe("getLinkRel", () => {
     ],
   ])("%s gets %s", (href, rel) => {
     expect(getLinkRel(href)).toBe(rel);
+  });
+});
+
+describe("isSswOwnedUrl", () => {
+  it.each([
+    ["https://www.ssw.com.au/rules", true],
+    ["https://rules.ssw.com.au", true],
+    ["https://tina.io", true],
+    ["https://www.codeauditor.com/", true],
+    ["//www.ssw.fr", true],
+    ["/rules", false],
+    ["https://example.com", false],
+    ["https://ssw.com.au.example.com", false],
+  ])("%s is %s", (href, expected) => {
+    expect(isSswOwnedUrl(href)).toBe(expected);
+  });
+});
+
+describe("isSswSubsiteUrl", () => {
+  it.each([
+    ["https://www.ssw.com.au/rules/indicate-external-links", true],
+    ["https://ssw.com.au/people", true],
+    ["https://www.ssw.com.au/company", false],
+    ["https://www.ssw.com.au/rules-of-thumb", false],
+    ["https://rules.ssw.com.au", false],
+    ["/rules", false],
+  ])("%s is %s", (href, expected) => {
+    expect(isSswSubsiteUrl(href)).toBe(expected);
   });
 });
