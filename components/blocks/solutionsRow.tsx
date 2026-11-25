@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export const SolutionsRow = (props) => {
   const RawImage = ({ img, altText }) => (
@@ -10,7 +11,7 @@ export const SolutionsRow = (props) => {
     <div className="relative col-span-4">
       <RawImage img={imgSrc} altText={header} />
       <h4 className="mb-2 mt-5 text-sm font-bold">{header}</h4>
-      <TinaMarkdown content={body} />
+      <TinaMarkdown content={body} components={contentLinkComponents} />
     </div>
   );
 

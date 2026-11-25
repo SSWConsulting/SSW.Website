@@ -18,6 +18,7 @@
         "backgroundColour": 7,
         "bleed": false
       },
+      "autoplaySeconds": 8,
       "slides": [
         {
           "_template": "standardSlide",
@@ -25,7 +26,7 @@
           "description": "We find the best way to build software and make that knowledge available to everyone.\n",
           "buttons": [
             {
-              "buttonText": "Book a Free Initial Call",
+              "buttonText": "Book a free initial meeting",
               "leadCaptureFormOption": "projectFormModal",
               "iconFirst": false,
               "colour": 0
@@ -37,6 +38,25 @@
             "imageHeight": 1150,
             "imageWidth": 2600
           }
+        },
+        {
+          "_template": "standardSlide",
+          "heading": "Microsoft Solutions Partner for **Cloud & AI Platforms**",
+          "description": "Microsoft has recognised our expertise in building cloud and AI solutions on Azure. See how we can help you ship AI that works.\n",
+          "badge": {
+            "altText": "Microsoft Solutions Partner - Cloud & AI Platforms",
+            "imageSource": "/images/logos/ms-solutions-partner-cloud-ai.png",
+            "imageHeight": 685,
+            "imageWidth": 1043
+          },
+          "buttons": [
+            {
+              "buttonText": "Explore AI consulting",
+              "buttonLink": "/consulting/artificial-intelligence",
+              "iconFirst": false,
+              "colour": 0
+            }
+          ]
         }
       ],
       "_template": "v3HeroBox"
@@ -86,7 +106,7 @@
       ],
       "seeMoreButton": [
         {
-          "buttonText": "View All Services",
+          "buttonText": "View all services",
           "buttonLink": "/consulting",
           "icon": "BiChevronRight"
         }
@@ -125,7 +145,7 @@
       "heading": "AI solutions that deliver, the first time.",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Call",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "projectFormModal",
           "colour": 0
         }
@@ -190,7 +210,7 @@
       ],
       "seeMoreButton": [
         {
-          "buttonText": "More Client Stories",
+          "buttonText": "More client stories",
           "buttonLink": "/company/clients",
           "icon": "BiChevronRight"
         }
@@ -343,7 +363,7 @@
       ],
       "seeMoreButton": [
         {
-          "buttonText": "See All SSW People",
+          "buttonText": "See all SSW People",
           "buttonLink": "/people",
           "icon": "BiChevronRight"
         }
@@ -362,7 +382,7 @@
       "introText": "SSW's consulting services have delivered best-in-class solutions for thousands of clients in 15 countries over more than 30 years.",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Call",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "projectFormModal",
           "colour": 0
         }
@@ -412,17 +432,17 @@
           "imageHeight": 876,
           "imageWidth": 3684
         },
-        "registerText": "Register Now",
+        "registerText": "Register now",
         "buttons": [
           {
-            "buttonText": "Register Now",
+            "buttonText": "Register now",
             "colour": 0
           }
         ]
       },
       "seeMoreButton": [
         {
-          "buttonText": "See More Events",
+          "buttonText": "See more events",
           "buttonLink": "/events",
           "icon": "BiChevronRight"
         }
@@ -439,7 +459,7 @@
       "subtitle": "Work with us, any time and any place.",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Call",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "projectFormModal",
           "colour": 0
         }

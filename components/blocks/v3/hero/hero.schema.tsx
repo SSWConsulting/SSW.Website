@@ -17,7 +17,7 @@ export const V3HeroSchema: Template = {
       brow: "Lorem Ipsum",
       heading: "This is a **bold** headline",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      buttons: [{ buttonText: "Get Started", colour: 0 }],
+      buttons: [{ buttonText: "Get started", colour: 0 }],
     },
   },
   fields: [

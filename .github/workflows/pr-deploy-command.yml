@@ -63,7 +63,23 @@ jobs:
           "head_ref=$($pr.head.ref)" >> $env:GITHUB_OUTPUT
           "head_sha=$($pr.head.sha)" >> $env:GITHUB_OUTPUT
           "head_repository=$($pr.head.repo.full_name)" >> $env:GITHUB_OUTPUT
-          Write-Host "✅ Deploying PR #$prNumber ($($pr.head.ref) @ $($pr.head.sha))"
+          Write-Host "Found PR #$prNumber ($($pr.head.ref) @ $($pr.head.sha))"
+
+      # A fork's code would build and deploy with our Azure login and GitHub App key.
+      # A deleted fork has no head repo, so it is refused too.
+      - name: Refuse fork PRs
+        env:
+          HEAD_REPOSITORY: ${{ steps.pr.outputs.head_repository }}
+          COMMENTER: ${{ github.event.comment.user.login }}
+        run: |
+          if ($env:HEAD_REPOSITORY -ne '${{ github.repository }}') {
+            if ([string]::IsNullOrEmpty($env:HEAD_REPOSITORY)) { $why = "its fork was deleted" } else { $why = "it comes from the fork $env:HEAD_REPOSITORY" }
+            gh api "repos/${{ github.repository }}/issues/${{ github.event.issue.number }}/comments" `
+              -f body="🛑 Sorry @$env:COMMENTER - this PR can't get a staging slot because $why. A fork's code would build with our Azure login. Push the branch to this repo and open a new PR from it." --silent
+            Write-Host "::error::Not deployed: $why. Only PRs from branches in ${{ github.repository }} are deployed."
+            exit 1
+          }
+          Write-Host "✅ Deploying PR #${{ github.event.issue.number }}"
 
       - name: React to comment
         run: |

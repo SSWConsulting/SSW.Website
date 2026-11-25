@@ -8,6 +8,7 @@ import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { heroMediaRegistry } from "./media/registry";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export const V3Hero = ({ data, priority = false }) => {
   const image = data?.image;
@@ -53,6 +54,7 @@ export const V3Hero = ({ data, priority = false }) => {
               <TinaMarkdown
                 content={data.description}
                 components={{
+                  ...contentLinkComponents,
                   p: (props) => (
                     <p
                       {...props}

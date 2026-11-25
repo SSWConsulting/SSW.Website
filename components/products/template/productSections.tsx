@@ -1,5 +1,6 @@
 import RippleButton from "@/components/button/rippleButtonV2";
 import { cn } from "@/lib/utils";
+import { contentLinkComponents } from "@/components/contentLink";
 import Image from "next/image";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, type TinaMarkdownContent } from "tinacms/dist/rich-text";
@@ -20,6 +21,7 @@ export type ProductSection = {
 };
 
 const bodyComponents = {
+  ...contentLinkComponents,
   p: (props) => (
     <p
       {...props}

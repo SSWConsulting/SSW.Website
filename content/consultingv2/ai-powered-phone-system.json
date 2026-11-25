@@ -32,7 +32,7 @@
           "colour": 1
         },
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -206,7 +206,7 @@
           "heading": "Power Platform",
           "description": "Build apps, automate workflows, and analyse data, all without heavy coding.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/power-platform"
           }
         },
@@ -217,7 +217,7 @@
           "heading": "Zendesk",
           "description": "Streamline support by centralising all communication channels into one hub.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/zendesk"
           }
         },
@@ -228,7 +228,7 @@
           "heading": "Intune",
           "description": "A cloud-based unified management solution for mobile devices and operating systems. ",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/intune"
           }
         },
@@ -239,7 +239,7 @@
           "heading": "Azure Entra ID",
           "description": "Secure identity and access management that keeps your people and apps connected.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/rules/managing-microsoft-entra-id/"
           }
         },
@@ -250,7 +250,7 @@
           "heading": "Service Desk",
           "description": "Centralised support that resolves issues fast and keeps your operations running smoothly.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/service-desk"
           }
         }
@@ -282,7 +282,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

@@ -80,6 +80,7 @@ export const industryRenderer: Components<{
     body3: string;
   };
 }> = {
+  // componentRenderer already renders links through ContentLink.
   ...componentRenderer,
   VideoEmbed: (props) => <VideoEmbed {...props} />,
   Whitepaper: (props) => <Whitepaper {...props} />,

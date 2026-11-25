@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { FC } from "react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export type MediaCardProps = {
   type: "video" | "blog";
@@ -22,7 +23,7 @@ const MediaCard: FC<MediaCardProps> = ({ type, content }) => {
         bgImagesClasses[type]
       )}
     >
-      <TinaMarkdown content={content} />
+      <TinaMarkdown content={content} components={contentLinkComponents} />
     </div>
   );
 };
