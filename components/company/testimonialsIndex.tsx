@@ -28,6 +28,9 @@ import {
 
 const TESTIMONIALS_ID = "testimonials";
 
+const secondaryCtaClassName =
+  "inline-block border-stroke-weak text-base font-semibold text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand dark:border-hairline dark:hover:border-brand";
+
 const eyebrow =
   "m-0 text-xs font-semibold uppercase tracking-widest text-brand";
 
@@ -137,14 +140,11 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
                 />
               </div>
 
-              <div
-                {...rise(3, "mt-8 flex flex-wrap items-center gap-x-6 gap-y-3")}
-              >
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <RippleButton
                   variant="primary"
                   href="/company/contact-us"
-                  className="inline-flex text-base font-semibold"
-                  fontClassName="gap-3"
+                  className="inline-block text-base font-semibold"
                 >
                   <span>Talk to our team</span>
                   <FiArrowRight aria-hidden className="size-4" />
@@ -153,8 +153,7 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
                   <RippleButton
                     variant="secondary"
                     href={`#${TESTIMONIALS_ID}`}
-                    className="inline-flex border-stroke-weak text-base font-semibold text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground dark:border-hairline dark:hover:border-brand"
-                    fontClassName="gap-3"
+                    className={secondaryCtaClassName}
                   >
                     <span>See all testimonials</span>
                     <FiArrowDown aria-hidden className="size-4" />
@@ -232,37 +231,38 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
             </section>
           )}
 
-          <section
-            className={cn(
-              themedProse,
-              "mt-12 rounded-card border-0.75 border-stroke-weak bg-card p-8 md:p-10 dark:border-hairline"
-            )}
-            data-tina-field={tinaField(company, "subTitle")}
-          >
-            <TinaMarkdown
-              content={page.about}
-              components={{
-                ...componentRenderer,
-                a: ({ url, children }) =>
-                  url === "/company/about-us" ||
-                  url === "https://www.ssw.com.au/company/about-us" ? (
-                    <a
-                      href={url}
-                      className="not-prose unstyled inline-flex items-center gap-3 rounded-control border-1 border-stroke-weak bg-transparent px-6 py-3 text-base font-semibold text-foreground no-underline hover:border-brand hover:bg-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand dark:border-hairline dark:hover:border-brand"
-                    >
-                      {children}
-                      <FiArrowRight aria-hidden className="size-4" />
-                    </a>
-                  ) : (
-                    <a href={url}>{children}</a>
-                  ),
-              }}
-            />
-          </section>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <section
+              className={cn(
+                themedProse,
+                "rounded-card border-0.75 border-stroke-weak bg-card p-8 md:p-10 dark:border-hairline"
+              )}
+              data-tina-field={tinaField(company, "subTitle")}
+            >
+              <TinaMarkdown
+                content={page.about}
+                components={{
+                  ...componentRenderer,
+                  a: ({ url, children }) =>
+                    url === "/company/about-us" ||
+                    url === "https://www.ssw.com.au/company/about-us" ? (
+                      <RippleButton
+                        href={url}
+                        variant="secondary"
+                        className={cn("not-prose", secondaryCtaClassName)}
+                      >
+                        {children}
+                        <FiArrowRight aria-hidden className="size-4" />
+                      </RippleButton>
+                    ) : (
+                      <a href={url}>{children}</a>
+                    ),
+                }}
+              />
+            </section>
 
-          <motion.div {...reveal()} className="mt-6">
-            <ClientsClosing />
-          </motion.div>
+            <ClientsClosing stacked />
+          </div>
         </div>
       </HomeThemeShell>
     </MotionConfig>

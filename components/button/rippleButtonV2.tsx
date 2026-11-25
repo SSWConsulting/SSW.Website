@@ -78,9 +78,10 @@ const RippleButton = React.forwardRef<
       className
     );
 
+    const Content = href ? "span" : "div";
     const inner = (
       <>
-        <div
+        <Content
           data-tina-field={textTinaField}
           className={cn(
             "relative z-10 flex items-center justify-center gap-2",
@@ -88,7 +89,7 @@ const RippleButton = React.forwardRef<
           )}
         >
           {children}
-        </div>
+        </Content>
         <span className="pointer-events-none absolute inset-0">
           {buttonRipples.map((ripple) => (
             <span
