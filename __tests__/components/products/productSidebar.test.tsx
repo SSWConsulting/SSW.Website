@@ -1,5 +1,6 @@
 import { ProductSidebar } from "@/components/products/template/productSidebar";
 import { render, screen } from "@testing-library/react";
+import type { TinaMarkdownContent } from "tinacms/dist/rich-text";
 // This repo leaves setupFilesAfterEnv commented out in jest.config.ts, so the
 // jest-dom matchers are not registered globally. Import them here.
 import "@testing-library/jest-dom";
@@ -180,7 +181,8 @@ describe("ProductSidebar notice", () => {
         data={{
           notice: {
             heading: "This product has been retired",
-            text: "Incorporated into SSW YakShaver.",
+            // The mock above renders this as a plain string, so cast it for the rich-text type.
+            text: "Incorporated into SSW YakShaver." as unknown as TinaMarkdownContent,
           },
           primaryCta: { label: "Explore YakShaver", href: "/yakshaver" },
         }}
