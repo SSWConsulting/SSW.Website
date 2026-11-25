@@ -20,7 +20,7 @@ export const EventModel = {
   HOSTED_BY: "Hosted by",
   CURRENCY: "$",
   TIMINGS: "9AM - 5PM",
-  BOOKING_BTN_TEXT: "Book Now",
+  BOOKING_BTN_TEXT: "Book now",
   PRICE: "Price",
   DISCOUNT_PRICE: "Discount Price",
   DURATION: "Duration",

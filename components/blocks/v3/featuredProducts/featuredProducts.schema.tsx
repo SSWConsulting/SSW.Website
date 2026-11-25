@@ -59,7 +59,7 @@ export const V3FeaturedProductsSchema: Template = {
         "SSW's Consulting Services have delivered best-in-class Microsoft solutions for thousands of clients in 15 countries over more than 30 years.",
       buttons: [{ buttonText: "Our Client Stories", colour: 0 }],
       seeMoreButton: [
-        { buttonText: "More Client Stories", buttonLink: "/company/clients" },
+        { buttonText: "More client stories", buttonLink: "/company/clients" },
       ],
       highlighted: {
         title: "AI Powered Navigation for French Payroll Expert",
@@ -161,7 +161,7 @@ export const V3FeaturedProductsSchema: Template = {
         max: 1,
         itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
         defaultItem: {
-          buttonText: "More Client Stories",
+          buttonText: "More client stories",
           buttonLink: "/company/clients",
         },
       },

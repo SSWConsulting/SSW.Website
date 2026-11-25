@@ -1,5 +1,6 @@
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 // As per https://tailwindcss.com/docs/columns
 const largest_col = 12;
@@ -23,7 +24,7 @@ const classNames = {
 export const DynamicColumns = ({ data }) => {
   return (
     <div className={classNames[data.colCount] || ""}>
-      <TinaMarkdown content={data.colBody} />
+      <TinaMarkdown content={data.colBody} components={contentLinkComponents} />
     </div>
   );
 };

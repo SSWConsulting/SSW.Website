@@ -154,7 +154,7 @@
               "menuItems": [
                 {
                   "name": "YakShaver",
-                  "url": "https://www.sswyakshaver.com",
+                  "url": "https://yakshaver.ai",
                   "description": "An AI tool that records your screen and voice, then assigns tasks to the appropriate people based on the content",
                   "iconImg": "/images/megamenu-icons/YakShaver-v3.svg",
                   "documentationLink": "https://yakshaver.ai/docs",
@@ -345,7 +345,7 @@
               "menuItems": [
                 {
                   "name": "Claude Essentials",
-                  "url": "https://www.ssw.com.au/consulting/claude-training"
+                  "url": "/consulting/claude-training"
                 },
                 {
                   "name": "AI Essentials",
@@ -379,7 +379,7 @@
               "menuItems": [
                 {
                   "name": "AI Workshop",
-                  "url": "https://www.ssw.com.au/events/ai-workshop"
+                  "url": "/events/ai-workshop"
                 },
                 {
                   "name": "Clean Architecture Workshop",
@@ -473,7 +473,7 @@
                 },
                 {
                   "name": "Awards",
-                  "url": "https://www.ssw.com.au/company/awards"
+                  "url": "/company/awards"
                 }
               ]
             },
@@ -503,7 +503,7 @@
                 },
                 {
                   "name": "Testimonials",
-                  "url": "https://www.ssw.com.au/company/testimonials"
+                  "url": "/company/testimonials"
                 },
                 {
                   "name": "Partners",
@@ -536,7 +536,7 @@
                 },
                 {
                   "name": "News & Press",
-                  "url": "/company/news/"
+                  "url": "/company/news"
                 },
                 {
                   "name": "SSW Blog",

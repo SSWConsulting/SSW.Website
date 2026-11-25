@@ -2,6 +2,7 @@
 
 import RippleButton from "@/components/button/rippleButtonV2";
 import { TweetEmbed } from "@/components/embeds/tweetEmbed";
+import { contentLinkComponents } from "@/components/contentLink";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -20,6 +21,7 @@ const GOOGLE_PLAY_BADGE = "/images/products/play-store-banner.png";
 type Link = { label?: string | null; href?: string | null };
 
 const noticeComponents = {
+  ...contentLinkComponents,
   p: (props) => <p {...props} className="m-0 mt-1 text-muted-foreground" />,
 };
 

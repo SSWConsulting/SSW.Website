@@ -4,6 +4,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 import { TechnologyCardProps } from "./technologyCardTypes";
+import { contentLinkComponents } from "@/components/contentLink";
 
 const Image = dynamic(() => import("next/image"));
 
@@ -34,7 +35,7 @@ const TechnologyCard: FC<TechnologyCardProps> = (props) => {
         data-tina-field={tinaField(props, "body")}
         className="prose max-w-full grow prose-strong:text-sswRed prose-ul:grid prose-ul:grid-flow-col prose-ul:grid-rows-12 prose-ul:text-left descendant-div:!m-0 md:prose-p:text-justify"
       >
-        <TinaMarkdown content={body} />
+        <TinaMarkdown content={body} components={contentLinkComponents} />
       </div>
       {readMoreSlug && (
         <CustomLink

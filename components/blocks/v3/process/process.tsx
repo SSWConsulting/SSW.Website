@@ -4,6 +4,7 @@ import { Container } from "@/components/util/container";
 import Link from "next/link";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export function V3Process({ data }) {
   return (
@@ -39,6 +40,7 @@ export function V3Process({ data }) {
               <TinaMarkdown
                 content={data.description}
                 components={{
+                  ...contentLinkComponents,
                   p: (props) => (
                     <p
                       {...props}
@@ -81,6 +83,7 @@ export function V3Process({ data }) {
                       <TinaMarkdown
                         content={step.description}
                         components={{
+                          ...contentLinkComponents,
                           p: (props) => (
                             <p
                               {...props}
