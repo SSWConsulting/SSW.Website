@@ -51,10 +51,10 @@ export const V3EventsSchema: Template = {
       buttons: [{ buttonText: "Explore Events & Training", colour: 0 }],
       numberOfEvents: 3,
       featuredEvent: {
-        registerText: "Register Now",
-        buttons: [{ buttonText: "Register Now", colour: 0 }],
+        registerText: "Register now",
+        buttons: [{ buttonText: "Register now", colour: 0 }],
       },
-      seeMoreButton: [{ buttonText: "See More Events", buttonLink: "/events" }],
+      seeMoreButton: [{ buttonText: "See more events", buttonLink: "/events" }],
     },
   },
   fields: [
@@ -139,7 +139,7 @@ export const V3EventsSchema: Template = {
           ui: {
             max: 1,
             itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
-            defaultItem: { buttonText: "Register Now", colour: 0 },
+            defaultItem: { buttonText: "Register now", colour: 0 },
           },
           //@ts-expect-error – fields are not being recognized
           fields: buttonSchema,
@@ -183,7 +183,7 @@ export const V3EventsSchema: Template = {
       ui: {
         max: 1,
         itemProps: (item) => ({ label: item?.buttonText ?? "Button" }),
-        defaultItem: { buttonText: "See More Events", buttonLink: "/events" },
+        defaultItem: { buttonText: "See more events", buttonLink: "/events" },
       },
       //@ts-expect-error – fields are not being recognized
       fields: buttonSchema,

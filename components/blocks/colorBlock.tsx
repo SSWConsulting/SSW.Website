@@ -5,6 +5,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { sswColors } from "../util/constants";
 import { Container } from "../util/container";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export type ColorBlockProps = {
   title?: string;
@@ -35,7 +36,10 @@ export const ColorBlock = (data: ColorBlockProps) => {
               <React.Fragment key={index}>
                 <ColorRow {...row} />
                 <div className="col-span-2">
-                  <TinaMarkdown content={row.caption} />
+                  <TinaMarkdown
+                    content={row.caption}
+                    components={contentLinkComponents}
+                  />
                 </div>
               </React.Fragment>
             ))}

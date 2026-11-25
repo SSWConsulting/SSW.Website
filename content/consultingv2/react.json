@@ -24,7 +24,7 @@
       "description": "Most React apps work in the demo. We build the ones that survive real users, real data and years of change. Fast and built to last, with Australia's most-certified React consultants.\n",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "",
           "buttonLink": "#lead-capture-heading",
           "iconFirst": false,
@@ -346,7 +346,7 @@
       "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "buttonLink": "#lead-capture-heading",
           "colour": 0
         },

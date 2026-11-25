@@ -156,9 +156,24 @@ const tailSlideFields: TinaField[] = [
   },
 ];
 
+// Only on standard slides: a badge (e.g. a partner accreditation) shown on the
+// right, where event slides show speakers.
+const badgeField: TinaField = {
+  type: "object",
+  label: "Badge",
+  name: "badge",
+  description:
+    "Optional. A badge or accreditation logo shown on the right of the banner. Use the official file unaltered.",
+  fields: [
+    { type: "string", label: "Alt Text", name: "altText" },
+    // @ts-expect-error – optimizedImageSchema's field types aren't recognised
+    ...optimizedImageSchema("Upload the badge image."),
+  ],
+};
+
 const slideFields = (event: boolean): TinaField[] => [
   ...headingFields,
-  ...(event ? eventFields : []),
+  ...(event ? eventFields : [badgeField]),
   ...tailSlideFields,
 ];
 
@@ -188,6 +203,13 @@ export const V3HeroBoxSchema: Template = {
   fields: [
     //@ts-expect-error – custom component typing won't be pinned down
     backgroundSchema,
+    {
+      type: "number",
+      label: "Autoplay (seconds)",
+      name: "autoplaySeconds",
+      description:
+        "Optional. Move to the next slide every this many seconds. Leave blank to turn autoplay off. Pauses on hover and has a pause button.",
+    },
     {
       type: "object",
       label: "Slides",

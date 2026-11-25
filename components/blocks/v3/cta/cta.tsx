@@ -4,6 +4,7 @@ import V2ComponentWrapper from "@/components/layout/v2ComponentWrapper";
 import { Container } from "@/components/util/container";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export function V3Cta({ data }) {
   return (
@@ -29,6 +30,7 @@ export function V3Cta({ data }) {
             <TinaMarkdown
               content={data.description}
               components={{
+                ...contentLinkComponents,
                 p: (props) => (
                   <p
                     {...props}

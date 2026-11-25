@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { Container } from "../util/container";
+import { contentLinkComponents } from "@/components/contentLink";
 
 type LiveHeaderprops = {
   title: string;
@@ -35,7 +36,12 @@ export const LiveHeader = (props: LiveHeaderprops) => {
             }}
           ></h1>
           <div className="mb-2 pb-1 pt-3 child-h1:text-5xl child-h1:font-semibold child-p:text-xl">
-            {<TinaMarkdown content={subtitle} />}
+            {
+              <TinaMarkdown
+                content={subtitle}
+                components={contentLinkComponents}
+              />
+            }
           </div>
           <div
             className={classNames(

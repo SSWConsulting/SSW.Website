@@ -15,7 +15,7 @@
       "description": "Most Odoo implementations work in the demo. We build the ones that survive real operations, real data and years of growth, backed by 30+ years of enterprise software delivery in Australia.\n",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "",
           "buttonLink": "#lead-capture-heading",
           "iconFirst": false,
@@ -342,7 +342,7 @@
       "description": "Get in touch and we'll set up an initial meeting to show you where we'd start\n",
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "buttonLink": "#lead-capture-heading",
           "colour": 0
         },

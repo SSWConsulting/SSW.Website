@@ -24,7 +24,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -287,7 +287,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

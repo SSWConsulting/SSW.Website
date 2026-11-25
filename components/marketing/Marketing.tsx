@@ -5,6 +5,7 @@ import { sanitiseXSS, spanWhitelist } from "../../helpers/validator";
 import { componentRenderer } from "../blocks/mdxComponentRenderer";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export const sides = ["left", "right"];
 
@@ -53,7 +54,7 @@ export const Marketing = (props) => {
 const TextCol = ({ body }) => {
   return (
     <div className="mt-16 w-full pb-0 text-left font-sans text-base text-white md:ml-10 md:mt-0 md:w-1/3">
-      <TinaMarkdown content={body} />
+      <TinaMarkdown content={body} components={contentLinkComponents} />
     </div>
   );
 };

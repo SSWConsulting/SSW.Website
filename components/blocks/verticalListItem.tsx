@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export const VerticalListItem = ({ data }) => {
   const iconScale = data?.iconScale || 1;
@@ -34,11 +35,17 @@ export const VerticalListItem = ({ data }) => {
           </div>
         ) : null}
         <div className="text-left font-helvetica font-bold">
-          <TinaMarkdown content={data.content} />
+          <TinaMarkdown
+            content={data.content}
+            components={contentLinkComponents}
+          />
         </div>
       </div>
       <div className="pl-20 text-left marker:text-sswRed child-ul:!ml-0 descendant-ul:ml-6 descendant-ul:!list-square">
-        <TinaMarkdown content={data.afterBody} />
+        <TinaMarkdown
+          content={data.afterBody}
+          components={contentLinkComponents}
+        />
       </div>
     </div>
   );
