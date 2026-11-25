@@ -94,9 +94,9 @@
     --billable: #01b8aa;
     --destructive: hsla(0, 72%, 51%, 1);
     --destructive-foreground: hsla(0, 0%, 100%, 1);
-    --ring: hsla(0, 58%, 53%, 0.2);
+    --ring: #cc4141;
     --text-strong: rgba(0, 0, 0, 0.9);
-    --text-weak: rgba(0, 0, 0, 0.72);
+    --text-weak: rgba(0, 0, 0, 0.6);
     --text-brand: oklch(57.5% 0.176 24.5);
     --text-disabled: rgba(0, 0, 0, 0.1);
     --text-error: oklch(57.7% 0.215 27.3);
@@ -174,7 +174,7 @@
     --destructive: hsla(0, 72%, 51%, 1);
     --destructive-foreground: hsla(0, 0%, 100%, 1);
     --input: hsla(0, 0%, 100%, 0.2);
-    --ring: hsla(0, 58%, 53%, 0.2);
+    --ring: #cc4141;
     --text-strong: white;
     --text-weak: rgba(255, 255, 255, 0.78);
     --text-brand: oklch(57.5% 0.176 24.5);
