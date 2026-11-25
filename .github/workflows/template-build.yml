@@ -28,13 +28,19 @@ on:
         required: false
         default: true
         description: "Push the image to ACR. Set false to validate the build only - the BuildKit cache is still exported either way."
+      azure:
+        type: boolean
+        required: false
+        default: true
+        description: "Sign in to Azure for the YouTube key, App Insights connection string and ACR BuildKit cache. Set false for validation builds that must not hold Azure credentials - they use the GitHub Actions cache instead and build without those two values."
     secrets:
+      # Only needed when `azure` is true (the default).
       AZURE_CLIENT_ID:
-        required: true
+        required: false
       AZURE_TENANT_ID:
-        required: true
+        required: false
       AZURE_SUBSCRIPTION_ID:
-        required: true
+        required: false
       NEXT_PUBLIC_TINA_CLIENT_ID:
         required: true
       TINA_TOKEN:
@@ -58,9 +64,10 @@ defaults:
   run:
     shell: pwsh
 
-permissions:
-  id-token: write
-  contents: read
+# No permissions block: the job inherits the caller's. A called workflow can't
+# ask for more than its caller grants, so declaring `id-token: write` here would
+# fail callers that build without Azure. Callers with `azure: true` must grant
+# `id-token: write` and `contents: read`.
 
 jobs:
   build-site:
@@ -81,6 +88,7 @@ jobs:
           echo "date=$(Get-Date -Format yyyy-MM-ddTHH:mm:ssZ -AsUtc)" >> $env:GITHUB_OUTPUT
 
       - name: Azure CLI - Login
+        if: inputs.azure
         uses: azure/login@v3
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -88,6 +96,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: keyVault - Secrets
+        if: inputs.azure
         uses: theotow/keyvault-secret-azure@v1
         id: KeyVaultSecrets
         with:
@@ -98,6 +107,7 @@ jobs:
             }
 
       - name: AppInsight - Connection Strings
+        if: inputs.azure
         shell: pwsh
         id: AppInsight
         run: |
@@ -110,6 +120,7 @@ jobs:
           Write-Host '✅ AppInsight - Connection String retrieved'
 
       - name: ACR - Login
+        if: inputs.azure
         run: |
           az acr login --name ${{ env.ACR_LOGIN_SERVER }}
 
@@ -150,6 +161,8 @@ jobs:
 
           # Mounted as secrets (not build-args) so they are not baked into the
           # exported BuildKit cache (cache-to mode=max).
+          # YOUTUBE_PRIVATE_KEY is empty when `azure` is false: build-push-action
+          # skips an empty secret with a warning and the build runs without it.
           secrets: |
             TINA_TOKEN=${{ secrets.TINA_TOKEN }}
             TINA_SEARCH_TOKEN=${{ secrets.TINA_SEARCH_TOKEN }}
@@ -157,5 +170,6 @@ jobs:
 
           tags: |
             ${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ inputs.tag }}
-          cache-from: type=registry,ref=${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:buildcache
-          cache-to: type=registry,ref=${{ env.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
+          # Without Azure there is no ACR login, so use the GitHub Actions cache.
+          cache-from: ${{ inputs.azure && format('type=registry,ref={0}/{1}:buildcache', env.ACR_LOGIN_SERVER, env.IMAGE_NAME) || 'type=gha,scope=pr-build' }}
+          cache-to: ${{ inputs.azure && format('type=registry,ref={0}/{1}:buildcache,mode=max', env.ACR_LOGIN_SERVER, env.IMAGE_NAME) || 'type=gha,scope=pr-build,mode=max' }}
