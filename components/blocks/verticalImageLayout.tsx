@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Template } from "tinacms";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
+import { contentLinkComponents } from "@/components/contentLink";
 
 const RawImage = ({ data }) => {
   return (
@@ -29,7 +30,10 @@ export const VerticalImageLayout = ({ data }) => {
         )}
       </div>
       <div className="col-span-7">
-        <TinaMarkdown content={data.message} />
+        <TinaMarkdown
+          content={data.message}
+          components={contentLinkComponents}
+        />
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import { Section } from "@/components/util/section";
 import { removeExtension } from "@/services/client/utils.service";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export default function LogoPage({ props, tinaProps }) {
   const { data } = tinaProps;
@@ -29,7 +30,10 @@ export default function LogoPage({ props, tinaProps }) {
         </h1>
         {data.logos?.subHeader && (
           <span data-tina-field={tinaField(data?.logos, "subHeader")}>
-            <TinaMarkdown content={data.logos?.subHeader} />
+            <TinaMarkdown
+              content={data.logos?.subHeader}
+              components={contentLinkComponents}
+            />
           </span>
         )}
         <Blocks prefix="Logos_body" blocks={data.logos?._body} />

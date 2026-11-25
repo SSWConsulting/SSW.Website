@@ -3,6 +3,7 @@ import type { Template } from "tinacms";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { paymentDetailsBlockConstant } from "../../tina/collections/payment-details.constant";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export type PaymentBlockProps = {
   bankName: string;
@@ -124,7 +125,10 @@ export const PaymentBlock = ({ data }) => {
         className="mx-auto max-w-4xl"
         data-tina-field={tinaField(data, paymentBlockConstants.footer)}
       >
-        <TinaMarkdown content={data.footer} />
+        <TinaMarkdown
+          content={data.footer}
+          components={contentLinkComponents}
+        />
       </div>
       {creditImgSrc && (
         <span

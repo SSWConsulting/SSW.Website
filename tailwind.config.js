@@ -105,6 +105,11 @@ export default {
       textDecoration: ["active"],
       opacity: {
         7: ".075",
+        // ssw.megamenu's Design System ghost-button hover (8%) and pressed (12%)
+        // tints. The menu's classes are compiled by this config, so the steps
+        // have to exist here too.
+        8: ".08",
+        12: ".12",
         15: ".15",
       },
       zIndex: {

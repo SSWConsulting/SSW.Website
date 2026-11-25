@@ -10,6 +10,7 @@ import { FiChevronDown } from "react-icons/fi";
 import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export function V3Faq({ data }) {
   const faqs = data?.faqs ?? [];
@@ -90,6 +91,7 @@ export function V3Faq({ data }) {
                         <TinaMarkdown
                           content={faq.answer}
                           components={{
+                            ...contentLinkComponents,
                             p: (props) => (
                               <p
                                 {...props}

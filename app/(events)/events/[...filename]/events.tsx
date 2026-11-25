@@ -10,6 +10,7 @@ import { Breadcrumbs } from "app/components/breadcrumb";
 import dynamic from "next/dynamic";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 const ClientLogos = dynamic(() =>
   import("@/components/blocks/clientLogos").then((mod) => mod.ClientLogos)
 );
@@ -60,7 +61,10 @@ export default function EventsPage({ props, tinaProps }) {
               data-tina-field={tinaField(data.events, "subTitle")}
               className="mx-6 py-0 text-center md:mx-0 md:text-left"
             >
-              <TinaMarkdown content={data.events?.subTitle} />
+              <TinaMarkdown
+                content={data.events?.subTitle}
+                components={contentLinkComponents}
+              />
             </div>
           </Container>
         )}

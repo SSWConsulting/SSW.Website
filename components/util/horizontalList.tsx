@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export type HorizontalListItemProps = {
   icon: string;
@@ -20,7 +21,7 @@ const HorizontalListItem: FC<HorizontalListItemProps> = ({
       )}
       <div className="mt-3 flex flex-col justify-start text-center text-gray-500">
         <span className="text-xl font-semibold text-black">{title}</span>
-        <TinaMarkdown content={content} />
+        <TinaMarkdown content={content} components={contentLinkComponents} />
       </div>
     </div>
   );

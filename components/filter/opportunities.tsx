@@ -228,7 +228,7 @@ const OpportunityDropdown = ({
               {!opportunity.hideApply && (
                 <UtilityButton
                   className="mx-auto my-10 flex items-center"
-                  buttonText="Apply Now"
+                  buttonText="Apply now"
                   link={`mailto:lukecook@ssw.com.au?subject=SSW Employment Application for ${sanitiseMailto(
                     opportunity.title
                   )}`}

@@ -6,6 +6,7 @@ import { Container } from "@/components/util/container";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { LeadCaptureForm } from "./leadCaptureForm";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export function V3LeadCapture({ data }) {
   return (
@@ -43,6 +44,7 @@ export function V3LeadCapture({ data }) {
                 <TinaMarkdown
                   content={data.description}
                   components={{
+                    ...contentLinkComponents,
                     p: (props) => (
                       <p
                         {...props}

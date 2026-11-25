@@ -9,6 +9,7 @@ import Link from "next/link";
 import { TiArrowRight } from "react-icons/ti";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export function V3VideoHighlights({ data }) {
   return (
@@ -73,6 +74,7 @@ export function V3VideoHighlights({ data }) {
                 <TinaMarkdown
                   content={data.description}
                   components={{
+                    ...contentLinkComponents,
                     p: (props) => (
                       <p
                         {...props}
@@ -119,6 +121,7 @@ export function V3VideoHighlights({ data }) {
                         <TinaMarkdown
                           content={item.desc2}
                           components={{
+                            ...contentLinkComponents,
                             p: (props) => (
                               <p
                                 {...props}
@@ -133,9 +136,9 @@ export function V3VideoHighlights({ data }) {
                       <Link
                         href={item.link}
                         data-tina-field={tinaField(item, "link")}
-                        className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold uppercase tracking-wide text-white transition hover:text-sswRed"
+                        className="group mt-4 inline-flex items-center gap-1 text-sm font-semibold text-white transition hover:text-sswRed"
                       >
-                        {item.linkText || "Read More"}
+                        {item.linkText || "Read more"}
                         <TiArrowRight className="size-5 transition group-hover:translate-x-1" />
                       </Link>
                     )}
