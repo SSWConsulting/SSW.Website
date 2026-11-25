@@ -1,7 +1,9 @@
 name: PR - Delete Environment when PR is closed
 
 on:
-  pull_request:
+  # pull_request_target runs this file from the base branch, so a PR can't
+  # change what runs with the Azure identity. Nothing here checks out PR code.
+  pull_request_target:
     types: [closed]
   workflow_dispatch:
     inputs:
@@ -49,6 +51,10 @@ jobs:
   delete-slot-and-acr-cleanup:
     runs-on: ubuntu-latest
     needs: setting-up-slot-ids
+    # PR-close runs sign in to Azure through this environment's OIDC subject
+    # (restrict it to the main branch) instead of trusting `pull_request`.
+    # Weekly and manual runs keep their existing subject.
+    environment: ${{ github.event_name == 'pull_request_target' && 'pr-cleanup' || '' }}
     # Serialize deletes of the SAME slot across triggers (PR-close vs weekly sweep vs dispatch)
     # so they can't race; different slots still run in parallel.
     concurrency:
