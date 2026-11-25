@@ -13,6 +13,7 @@ import type { TableLayoutProps } from "./tableLayout";
 import type { YoutubePlaylistProps } from "./youtubePlaylist";
 
 import { BookingButton } from "../bookingButton/bookingButton";
+import { ContentLink } from "../contentLink";
 import { UtilityButton } from "../button/utilityButton";
 import { TikTokEmbed } from "../embeds/tiktokEmbed";
 import { TweetEmbed } from "../embeds/tweetEmbed";
@@ -296,4 +297,5 @@ export const componentRenderer: Components<{
   Content: (props) => <Content data={props} />,
   DomainFromQuery: (props) => <DomainFromQuery {...props} />,
   InlineJotForm: (props) => <InlineJotForm {...props} />,
+  a: (props) => <ContentLink {...props} />,
 };

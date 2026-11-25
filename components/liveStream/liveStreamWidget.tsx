@@ -19,6 +19,7 @@ import { VideoEmbed } from "../blocks/videoEmbed";
 import { CustomLink } from "../customLink";
 import { InlineJotForm } from "../inlineJotForm/inlineJotForm";
 import { SocialIcons } from "../socialIcons/socialIcons";
+import { contentLinkComponents } from "@/components/contentLink";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
@@ -266,7 +267,10 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                     }
                   )}
                 >
-                  <TinaMarkdown content={event.description} />
+                  <TinaMarkdown
+                    content={event.description}
+                    components={contentLinkComponents}
+                  />
                 </div>
                 {eventDescriptionCollapsable && (
                   <div
@@ -319,7 +323,10 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                       <p className="mb-3 font-bold">
                         {presenterDetails.presenter.name}
                       </p>
-                      <TinaMarkdown content={presenterDetails.about} />
+                      <TinaMarkdown
+                        content={presenterDetails.about}
+                        components={contentLinkComponents}
+                      />
                       {!!presenterDetails.presenter.peopleProfileURL && (
                         <CustomLink
                           className="float-right border-b-1 border-dotted border-gray-450 !no-underline"

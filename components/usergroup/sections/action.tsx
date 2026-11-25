@@ -10,6 +10,7 @@ import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { Container } from "../../util/container";
 import { MeetupForm } from "../meetupForm";
 import { SponsorCard } from "../sponsorCard";
+import { contentLinkComponents } from "@/components/contentLink";
 
 type ActionSectionProps = {
   heading?: string;
@@ -59,7 +60,10 @@ export const ActionSection = (props: ActionSectionProps) => {
                 className="child-p:text-base child-p:font-normal child-p:text-gray-50"
                 data-tina-field={tinaField(props, "content")}
               >
-                <TinaMarkdown content={props.content} />
+                <TinaMarkdown
+                  content={props.content}
+                  components={contentLinkComponents}
+                />
               </div>
             </div>
             <ul>

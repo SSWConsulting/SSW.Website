@@ -13,6 +13,7 @@ import classNames from "classnames";
 import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { ImageComponentLayout } from "../ImageComponentLayout";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export const AccordionBlock = ({ data, priority = false }) => {
   const headingClasses = "my-0 py-2 dark:text-gray-200";
@@ -96,6 +97,7 @@ export const AccordionBlock = ({ data, priority = false }) => {
                   <TinaMarkdown
                     content={item.content}
                     components={{
+                      ...contentLinkComponents,
                       p: (props) => (
                         <p
                           {...props}

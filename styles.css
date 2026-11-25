@@ -123,8 +123,10 @@
        nothing in light mode. */
     --card: #f9f9f9;
     --card-hover: #ffffff;
-    --shadow-raised: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
-    --shadow-overlay: 0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
+    --shadow-raised:
+      0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
+    --shadow-overlay:
+      0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
 
     /* TinaCMS brand colours, not part of the SSW palette and not overridden in .dark. */
     --brand-tina-field: #c2360d; /* darkened for 5.49:1 white-text contrast */
@@ -134,9 +136,9 @@
     --spacing-md: 16px;
     --radius-sm: 4px;
     --radius-lg: 8px;
-    --font-family-body: 'Inter', sans-serif;
-    --font-family-heading: 'Inter', sans-serif;
-    --font-family-mono: 'IBM Plex Mono', monospace;
+    --font-family-body: "Inter", sans-serif;
+    --font-family-heading: "Inter", sans-serif;
+    --font-family-mono: "IBM Plex Mono", monospace;
     --font-size-h1: 40px;
     --font-size-h2: 32px;
     --font-size-h3: 24px;
@@ -158,8 +160,8 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
     --success: hsla(162, 90%, 25%, 1);
     --success-foreground: hsla(0, 0%, 100%, 1);
     --warning: hsla(42, 70%, 33%, 1);
@@ -198,16 +200,18 @@
     --background-overlay: #44403c;
     --card: #101010;
     --card-hover: #151515;
-    --shadow-raised: 0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
-    --shadow-overlay: 0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
+    --shadow-raised:
+      0px 2px 4px 0px rgba(0, 0, 0, 0.08), 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
+    --shadow-overlay:
+      0px 8px 8px 0px rgba(0, 0, 0, 0.04), 0px 20px 24px 0px rgba(0, 0, 0, 0.08);
     --spacing-xs: 8px;
     --spacing-sm: 12px;
     --spacing-md: 16px;
     --radius-sm: 4px;
     --radius-lg: 8px;
-    --font-family-body: 'Inter', sans-serif;
-    --font-family-heading: 'Inter', sans-serif;
-    --font-family-mono: 'IBM Plex Mono', monospace;
+    --font-family-body: "Inter", sans-serif;
+    --font-family-heading: "Inter", sans-serif;
+    --font-family-mono: "IBM Plex Mono", monospace;
     --font-size-h1: 40px;
     --font-size-h2: 32px;
     --font-size-h3: 24px;
@@ -229,8 +233,8 @@
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
     --success: hsla(162, 41%, 62%, 1);
     --success-foreground: hsla(0, 0%, 9%, 1);
     --warning: hsla(42, 65%, 66%, 1);
@@ -283,6 +287,21 @@
 
   a:hover:not(.unstyled) {
     @apply decoration-sswRed;
+  }
+
+  /* ContentLink's icons are sized in em so they scale with the text, from
+     body copy up to large headings, and sit on the text's baseline. */
+  .content-link-icon {
+    display: inline;
+    width: 0.875em;
+    height: 0.875em;
+    vertical-align: -0.125em;
+  }
+
+  /* A rich-text link that only wraps an image doesn't need ContentLink's
+     icons. */
+  a:has(img) .content-link-icon {
+    @apply hidden;
   }
 
   /* Links in red prose headings (h2, and h1 > strong) keep the heading's red
