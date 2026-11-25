@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Enterprise Agentic Engineering | SSW Training",
-    "description": "Build reliable agentic features with Vertical Slice Architecture. A hands-on SSW course mentored by Daniel Mackay and Gordon Beeming."
+    "description": "Use AI coding agents to plan, build, test and review a feature in this hands-on, one-day SSW workshop."
   },
   "blocks": [
     {
@@ -10,9 +10,9 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "brow": "Hands-on developer training",
+      "brow": "One-day developer workshop",
       "heading": "Enterprise Agentic Engineering",
-      "description": "Start with a slice. Build an agent you can trust. Daniel Mackay and Gordon Beeming kick off with Vertical Slice Architecture, then guide developers through the engineering decisions that make agentic features easier to build, test and operate.\n",
+      "description": "Take a work item from a rough brief to a reviewed pull request with AI. In this hands-on workshop, you’ll use a coding agent to plan, build, test and review a feature, then turn the steps you repeat into reusable skills for your team.\n",
       "buttons": [
         {
           "buttonText": "Talk to SSW",
@@ -34,20 +34,20 @@
         "backgroundColour": 7
       },
       "brow": "",
-      "heading": "Agent demos are easy. Reliable features take engineering.",
-      "subtitle": "Agentic systems cross model calls, tools, data and user workflows. A clear feature boundary makes change easier to reason about and results easier to check.",
+      "heading": "Give your coding agent a workflow your team can review",
+      "subtitle": "Use the same plan to guide the build, verify the result and review the code.",
       "cards": [
         {
-          "title": "Make change easier to reason about",
-          "description": "Keep the request, orchestration, dependencies and tests close to the feature they serve."
+          "title": "Define what done looks like",
+          "description": "Turn a vague request into numbered, testable use cases."
         },
         {
-          "title": "Design for uncertain behaviour",
-          "description": "Define what the agent may do, when a human needs to step in, and how to check the result."
+          "title": "Show what you tested",
+          "description": "Run automated tests, explore the running app and bring the evidence into your pull request."
         },
         {
-          "title": "Prepare for real use",
-          "description": "Work through permissions, traceability, failure handling and release decisions."
+          "title": "Capture what works",
+          "description": "Turn recurring corrections into repository guidance and reusable skills. Review proposed improvements with your team."
         }
       ],
       "_template": "v3StackCards"
@@ -56,25 +56,25 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "The opening move",
-      "heading": "Begin with **Vertical Slice Architecture**",
-      "subtitle": "Dan and Gordon start with one user action and trace it through a self-contained feature slice. This gives the rest of the course a shared structure for building agentic behaviour. Each slice keeps its request, handler, local dependencies and tests together.",
+      "brow": "Workshop exercise",
+      "heading": "One work item, from first prompt to peer review",
+      "subtitle": "Imagine your work item says, “Add a search box to the products page.” What should users see when no products match? You’ll build a first pass, then use questions like this to write a plan you can build from and test.",
       "cards": [
         {
-          "title": "One capability",
-          "description": "Organise code around a business action."
+          "title": "Build a first pass",
+          "description": "Use a coding agent and note where you have to repeat instructions or correct its work."
         },
         {
-          "title": "One clear path",
-          "description": "Follow the request through to the result."
+          "title": "Plan and rebuild",
+          "description": "Agree on the expected behaviour, then compare the first implementation with the planned build."
         },
         {
-          "title": "Local dependencies",
-          "description": "Keep tool and data access close to the slice."
+          "title": "Test the result",
+          "description": "Check each use case and explore the running app for behaviour the plan missed."
         },
         {
-          "title": "Focused tests",
-          "description": "Check behaviour alongside the code that delivers it."
+          "title": "Review the PR",
+          "description": "Include test evidence and screenshots, then review a partner’s changes against their plan."
         }
       ],
       "_template": "v3StackCards"
@@ -83,29 +83,17 @@
       "background": {
         "backgroundColour": 7
       },
-      "brow": "Course modules",
-      "heading": "From first slice to **production thinking**",
-      "description": "Follow one feature from its first architecture decision through agentic behaviour, evaluation and release.\n",
+      "brow": "Workshop agenda",
+      "heading": "Build the workflow, then make it your own",
+      "description": "Write your own skills in the morning, then compare and adapt them in the afternoon.\n",
       "items": [
         {
-          "heading": "01 · Kick off with VSA",
-          "description": "Turn a business action into a self-contained feature. Identify its request, handler, local dependencies and tests. Use the slice to make ownership and change impact visible.\n"
+          "heading": "Morning · Build your own workflow",
+          "description": "Take a work item through planning, implementation, testing and peer review. Capture the repeatable steps as skills, and open a pull request with a clear summary, test evidence and before-and-after screenshots.\n"
         },
         {
-          "heading": "02 · Add agentic behaviour",
-          "description": "Define the agent’s goal, allowed tools, inputs and output contract. Decide what remains deterministic and what can be delegated to a model.\n"
-        },
-        {
-          "heading": "03 · Build reliable tool use",
-          "description": "Connect the agent to a narrow capability. Cover permissions, validation, idempotency and useful failure paths before adding more tools.\n"
-        },
-        {
-          "heading": "04 · Evaluate and observe",
-          "description": "Create representative scenarios, inspect traces and test outcomes. Review cost, latency and quality together.\n"
-        },
-        {
-          "heading": "05 · Ship an enterprise slice",
-          "description": "Walk through release, monitoring, human review and rollback choices. Leave with a repeatable checklist for the next agentic feature.\n"
+          "heading": "Afternoon · Adapt and improve the workflow",
+          "description": "Explore how coding agents use instructions, then compare your skills with an established toolkit. Practise adding repository rules, team workflows and personal preferences. Use evidence from tests, reviews and coding sessions to propose an improvement for human review.\n"
         }
       ],
       "_template": "v3VerticalList"
@@ -115,25 +103,24 @@
         "backgroundColour": 7
       },
       "brow": "At a glance",
-      "heading": "Designed for teams **building real software**",
-      "subtitle": "Practical architecture and implementation decisions, taught through one evolving feature.",
+      "heading": "Who it’s for and what to expect",
+      "subtitle": "Bring your experience working in a codebase and practise using an AI coding agent on a complete development task.",
       "cards": [
         {
           "title": "Audience",
-          "description": "Experienced developers, architects and technical leads"
+          "description": "Software developers, including junior developers working in an existing codebase"
         },
         {
-          "title": "Learning style",
-          "description": "Mentor-led discussion, code exercises and review"
+          "title": "Format",
+          "description": "One day of live demos, paired coding exercises and peer review"
         },
         {
-          "title": "Starting point",
-          "description": "SSW’s Vertical Slice Architecture rule",
-          "link": "/rules/vertical-slice-architecture"
+          "title": "Tools",
+          "description": "Claude Code for demos, with reusable practices you can adapt to other coding agents"
         },
         {
           "title": "Takeaway",
-          "description": "A repeatable approach to building and reviewing agentic features"
+          "description": "A worked example and starter skills for building, testing, opening PRs and reviewing changes"
         }
       ],
       "_template": "v3StackCards"
@@ -145,7 +132,7 @@
       "layout": "sideBySide",
       "brow": "Meet your mentors",
       "heading": "Dan & Gordon",
-      "subtitle": "Dan brings more than 20 years of software experience and deep .NET expertise. He helps teams turn architecture principles into maintainable code and starts this course with a practical VSA exercise.\n\nGordon helps teams adopt DevOps practices and improve the way they build and release software. He joins Dan to turn the initial slice into an agentic feature and examine how the design holds up in an enterprise setting.",
+      "subtitle": "Dan brings more than 20 years of software experience and deep .NET expertise, helping teams turn requirements into maintainable code.\n\nGordon helps teams adopt DevOps practices and improve how they build, test and review software.",
       "people": [
         {
           "name": "Daniel Mackay",
@@ -183,19 +170,19 @@
       "faqs": [
         {
           "question": "Who is this for?",
-          "answer": "Developers, software architects and technical leads who already build production applications and want a practical approach to agentic features.\n"
+          "answer": "Software developers who can work in an existing codebase and want a repeatable way to use coding agents in their day-to-day work.\n"
         },
         {
-          "question": "Do participants need VSA experience?",
-          "answer": "No prior VSA experience is needed. Dan and Gordon start with the core principles and a worked feature slice.\n"
+          "question": "What will I build?",
+          "answer": "You’ll work through one feature in a sample application, from a first implementation to a planned, tested change that a peer can review.\n"
         },
         {
-          "question": "Which agent framework will be used?",
-          "answer": "The exercises focus on architecture and engineering decisions that apply across agent frameworks.\n"
+          "question": "Which coding tools will we use?",
+          "answer": "The workshop demos use Claude Code. You can adapt the planning, testing and review practices to other coding agents.\n"
         },
         {
           "question": "What will I take away?",
-          "answer": "A worked feature slice and a practical checklist for designing, evaluating and operating agentic features.\n"
+          "answer": "A worked example with a plan, tests and a reviewed pull request, plus starter skills for building, testing, opening PRs and reviewing changes.\n"
         }
       ],
       "_template": "v3Faq"
@@ -207,8 +194,8 @@
         "gridOverlay": true,
         "redGlow": true
       },
-      "heading": "Build agentic features **with confidence**",
-      "description": "Talk with SSW about agentic engineering training for your team.\n",
+      "heading": "Bring agentic engineering to your team",
+      "description": "Talk with SSW about running this hands-on workshop for your developers.\n",
       "buttons": [
         {
           "buttonText": "Talk to SSW",
