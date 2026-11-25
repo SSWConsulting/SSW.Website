@@ -65,6 +65,31 @@ export const TestimonialAttribution = ({
   </figcaption>
 );
 
+export const TestimonialQuote = ({
+  body,
+  className,
+}: {
+  body?: string;
+  className?: string;
+}) => (
+  <blockquote
+    className={cn(
+      "m-0 space-y-4 border-0 p-0 font-light leading-relaxed text-foreground",
+      className
+    )}
+  >
+    {body
+      ?.split(/\r?\n/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+      .map((paragraph, index) => (
+        <p key={index} className="m-0">
+          {paragraph}
+        </p>
+      ))}
+  </blockquote>
+);
+
 export const TestimonialCard = ({
   testimonial,
 }: {
@@ -77,9 +102,7 @@ export const TestimonialCard = ({
     >
       &ldquo;
     </span>
-    <blockquote className="m-0 mt-3 grow whitespace-pre-line border-0 p-0 text-base font-light leading-relaxed text-foreground">
-      {testimonial.body?.trim()}
-    </blockquote>
+    <TestimonialQuote body={testimonial.body} className="mt-2 grow text-base" />
     {testimonial.link?.url && testimonial.link.title && (
       <CustomLink
         href={testimonial.link.url}
@@ -88,7 +111,7 @@ export const TestimonialCard = ({
         {testimonial.link.title}
       </CustomLink>
     )}
-    <div className="mt-6 border-t-0.75 border-stroke-weak pt-5 dark:border-hairline">
+    <div className="mt-4 border-t-0.75 border-stroke-weak pt-4 dark:border-hairline">
       <TestimonialAttribution testimonial={testimonial} />
     </div>
   </figure>

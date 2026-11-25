@@ -20,7 +20,11 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { themedProse } from "./clientStoryDialog";
 import { ClientsClosing } from "./clientsClosing";
 import { rise } from "./rise";
-import { TestimonialAttribution, TestimonialCard } from "./testimonialCard";
+import {
+  TestimonialAttribution,
+  TestimonialCard,
+  TestimonialQuote,
+} from "./testimonialCard";
 
 const TESTIMONIALS_ID = "testimonials";
 
@@ -172,10 +176,11 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
                   >
                     &ldquo;
                   </span>
-                  <blockquote className="m-0 mt-2 whitespace-pre-line border-0 p-0 text-lg font-light leading-relaxed text-foreground md:text-xl md:leading-relaxed">
-                    {featured.body?.trim()}
-                  </blockquote>
-                  <div className="mt-8">
+                  <TestimonialQuote
+                    body={featured.body}
+                    className="mt-1 text-lg md:text-xl"
+                  />
+                  <div className="mt-6">
                     <TestimonialAttribution testimonial={featured} size={56} />
                   </div>
                 </figure>
@@ -243,7 +248,7 @@ export const TestimonialsIndex = ({ company, relativePath }) => {
                   url === "https://www.ssw.com.au/company/about-us" ? (
                     <a
                       href={url}
-                      className="not-prose unstyled inline-flex items-center gap-3 rounded-control border border-ssw-red bg-ssw-red px-6 py-3 text-base font-semibold text-white no-underline hover:bg-sswDarkRed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                      className="not-prose unstyled inline-flex items-center gap-3 rounded-control border-1 border-stroke-weak bg-transparent px-6 py-3 text-base font-semibold text-foreground no-underline hover:border-brand hover:bg-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand dark:border-hairline dark:hover:border-brand"
                     >
                       {children}
                       <FiArrowRight aria-hidden className="size-4" />
