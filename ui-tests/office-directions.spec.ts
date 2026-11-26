@@ -15,6 +15,13 @@ async function officeHeader(page: Page, slug: string) {
           p.textContent.startsWith("Opening hours:")
         )?.textContent,
         link: directions?.textContent,
+        phone: header?.querySelector("a[href^='tel:']")?.textContent,
+        localLinks: Array.from(doc.querySelectorAll("a")).map((a) =>
+          a.textContent.trim()
+        ),
+        headings: Array.from(doc.querySelectorAll("h2")).map(
+          (h) => h.textContent
+        ),
         target: doc.getElementById("Directions")?.textContent,
         mapLinks: Array.from(doc.querySelectorAll("a"))
           .filter((link) => link.href.includes("google.com/maps"))
@@ -30,7 +37,14 @@ test("Newcastle publishes opening hours and a link to its directions section", a
 }) => {
   const office = await officeHeader(page, "newcastle");
   expect(office.link).toContain("Get directions");
-  expect(office.target).toContain("Newcastle");
+  expect(office.target).toBe("Getting here");
+  expect(office.phone).toContain("+61 2 9953 3000");
+  expect(office.localLinks).toEqual(
+    expect.arrayContaining(["SSW Chapel", "CivicHub.com.au"])
+  );
+  expect(office.headings.indexOf("About the Newcastle office")).toBeGreaterThan(
+    office.headings.indexOf("Getting here")
+  );
   expect(office.mapLinks).toEqual(["Open in Google Maps"]);
   expect(office.hours).toBe("Opening hours: Monday - Friday, 9am - 6pm AEDT");
 });
