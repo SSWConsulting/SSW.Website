@@ -1,9 +1,11 @@
 "use client";
 
+import { TestimonialCard } from "@/components/company/testimonialCard";
 import { useEffect, useState } from "react";
 import {
   getRandomClientTestimonial,
   getTestimonialByName,
+  type TestimonialType,
 } from "../../helpers/getTestimonials";
 
 type TestimonialPanelProps = {
@@ -11,37 +13,37 @@ type TestimonialPanelProps = {
   themed?: boolean;
 };
 
-type Testimonial = {
-  body?: string;
-  name?: string;
-  company?: string;
-};
-
 const TestimonialPanel = ({
   testimonialName,
   themed = false,
 }: TestimonialPanelProps) => {
-  const [testimonial, setTestimonial] = useState<Testimonial | null>(null);
+  const [testimonial, setTestimonial] = useState<TestimonialType | null>(null);
 
   useEffect(() => {
     setTestimonial(
       testimonialName
         ? getTestimonialByName(testimonialName)
-        : getRandomClientTestimonial()
+        : getRandomClientTestimonial({ preferAvatar: themed })
     );
-  }, [testimonialName]);
+  }, [testimonialName, themed]);
 
-  if (themed && !testimonial) return null;
+  if (themed) {
+    if (!testimonial) return null;
+    return (
+      <section>
+        <h3 className="mb-4 mt-0 text-xl font-semibold text-foreground">
+          Testimonials
+        </h3>
+        <TestimonialCard key={testimonial.name} testimonial={testimonial} />
+      </section>
+    );
+  }
 
   return (
     <>
       <h3>Testimonials</h3>
       {testimonial ? (
-        <div
-          className={
-            themed ? "text-muted-foreground" : "border-2 bg-gray-100 px-4 py-3"
-          }
-        >
+        <div className="border-2 bg-gray-100 px-4 py-3">
           {testimonial?.body}
           <p>
             <strong>{testimonial?.name}</strong> - {testimonial?.company}

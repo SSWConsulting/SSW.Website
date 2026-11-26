@@ -232,9 +232,7 @@ const SidePanel = ({ office }) => {
       <div className="prose max-w-none rounded-card border-0.75 border-stroke-weak bg-card p-6 dark:prose-invert prose-headings:text-foreground prose-h3:first:mt-0 prose-p:text-muted-foreground prose-strong:text-foreground">
         <MicrosoftPanel themed />
       </div>
-      <div className="prose max-w-none rounded-card border-0.75 border-stroke-weak bg-card p-6 dark:prose-invert empty:hidden prose-headings:text-foreground prose-h3:first:mt-0 prose-p:text-muted-foreground prose-strong:text-foreground">
-        <TestimonialPanel themed />
-      </div>
+      <TestimonialPanel themed />
     </div>
   );
 };
