@@ -4,6 +4,7 @@ import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import RippleButton from "@/components/button/rippleButtonV2";
 import { HomeThemeShell } from "@/components/layout/homeTheme";
 import { CustomLink } from "@/components/customLink";
+import ContactPanel from "@/components/offices/contactPanel";
 import MicrosoftPanel from "@/components/offices/microsoftPanel";
 import TestimonialPanel from "@/components/offices/testimonialPanel";
 import {
@@ -73,9 +74,7 @@ export default function OfficePage({ props, tinaProps }) {
                   className="inline-flex border-stroke-weak text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground"
                 >
                   <FiPhone aria-hidden className="size-4" />
-                  <span data-tina-field={tinaField(office, "phone")}>
-                    Call {office.phone}
-                  </span>
+                  Call our office
                 </RippleButton>
               )}
             </div>
@@ -95,13 +94,14 @@ export default function OfficePage({ props, tinaProps }) {
             </div>
           )}
         </header>
-        <OfficeLayout office={office} />
-        <aside className="mt-12 grid items-start gap-6 md:grid-cols-2">
-          <TestimonialPanel themed />
-          <div className="prose max-w-none rounded-card border-0.75 border-stroke-weak bg-card p-6 dark:prose-invert prose-headings:text-foreground prose-h3:first:mt-0 prose-p:text-muted-foreground prose-strong:text-foreground">
-            <MicrosoftPanel themed />
+        <div className="mt-10 grid gap-10 lg:grid-cols-12">
+          <div className="min-w-0 lg:col-span-8">
+            <OfficeLayout office={office} />
           </div>
-        </aside>
+          <aside className="min-w-0 lg:col-span-4">
+            <SidePanel office={office} />
+          </aside>
+        </div>
       </Container>
     </HomeThemeShell>
   );
@@ -113,8 +113,34 @@ const OfficeLayout = ({ office }) => {
     { field: "publicTransport", label: "Public transport" },
   ].filter(({ field }) => office[field]?.children?.length);
   return (
-    <div className="prose mt-12 max-w-none dark:prose-invert prose-headings:text-foreground prose-h2:mt-12 prose-h2:scroll-mt-28 prose-h2:first:mt-0 prose-p:text-muted-foreground prose-a:text-foreground prose-strong:text-foreground prose-li:text-muted-foreground prose-img:rounded-control">
-      <h2 id="Directions">Getting here</h2>
+    <div className="prose max-w-none dark:prose-invert prose-headings:text-foreground prose-h2:mt-12 prose-h2:scroll-mt-28 prose-h2:first:mt-0 prose-p:text-muted-foreground prose-a:text-foreground prose-strong:text-foreground prose-li:text-muted-foreground prose-img:rounded-control">
+      <h2>About Us</h2>
+      <div data-tina-field={tinaField(office, "aboutUs")}>
+        <TinaMarkdown components={componentRenderer} content={office.aboutUs} />
+      </div>
+      {office.localWebsiteLink?.title && (
+        <CustomLink
+          href={office.localWebsiteLink.url ?? ""}
+          data-tina-field={tinaField(office, "localWebsiteLink")}
+        >
+          {office.localWebsiteLink.title}
+        </CustomLink>
+      )}
+      {office.map ? (
+        <>
+          <h2>SSW {office.addressLocality} Map</h2>
+          <Image
+            data-tina-field={tinaField(office, "map")}
+            src={office.map}
+            width={1920}
+            height={1080}
+            alt={`SSW ${office.addressLocality} Map`}
+          />
+        </>
+      ) : (
+        <></>
+      )}
+      <h2 id="Directions">SSW {office.addressLocality} Directions</h2>
       <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <strong>
           {`${office.streetAddress}, ${office.suburb}, ${office.addressRegion} ${office.postalCode}, ${office.addressCountry}`}
@@ -128,138 +154,85 @@ const OfficeLayout = ({ office }) => {
           </CustomLink>
         )}
       </p>
-      <div className="grid items-start gap-6 lg:grid-cols-12 lg:gap-10">
-        <div className="min-w-0 lg:col-span-8 lg:only:col-span-12">
-          {office.map && (
-            <Image
-              data-tina-field={tinaField(office, "map")}
-              src={office.map}
-              width={1920}
-              height={1080}
-              alt={`Map of the SSW ${office.addressLocality} office`}
-              className="mt-0 h-auto w-full"
-            />
-          )}
-          <div data-tina-field={tinaField(office, "directions")}>
+      <div data-tina-field={tinaField(office, "directions")}>
+        <TinaMarkdown
+          components={componentRenderer}
+          content={office.directions}
+        />
+      </div>
+      {arrivalSections.length > 0 && (
+        <Accordion type="multiple" className="my-6 border-b border-stroke-weak">
+          {arrivalSections.map(({ field, label }) => (
+            <AccordionItem
+              key={field}
+              value={field}
+              className="border-t border-stroke-weak"
+            >
+              <AccordionTrigger
+                indicator="chevron"
+                className="text-foreground hover:text-foreground data-[state=open]:text-foreground"
+              >
+                {label}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                <div data-tina-field={tinaField(office, field)}>
+                  <TinaMarkdown
+                    components={componentRenderer}
+                    content={office[field]}
+                  />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      )}
+      {office.team?.children?.length > 0 ? (
+        <>
+          <h2>The SSW {office.addressLocality} Team</h2>
+          <div data-tina-field={tinaField(office, "team")}>
             <TinaMarkdown
               components={componentRenderer}
-              content={office.directions}
+              content={office.team}
             />
           </div>
-          {arrivalSections.length > 0 && (
-            <Accordion
-              type="multiple"
-              className="my-6 border-b border-stroke-weak"
-            >
-              {arrivalSections.map(({ field, label }) => (
-                <AccordionItem
-                  key={field}
-                  value={field}
-                  className="border-t border-stroke-weak"
-                >
-                  <AccordionTrigger
-                    indicator="chevron"
-                    className="text-foreground hover:text-foreground data-[state=open]:text-foreground"
-                  >
-                    {label}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    <div data-tina-field={tinaField(office, field)}>
-                      <TinaMarkdown
-                        components={componentRenderer}
-                        content={office[field]}
-                      />
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          )}
-        </div>
-        {office.sideImg && (
-          <Image
-            data-tina-field={tinaField(office, "sideImg")}
-            src={office.sideImg}
-            width={285}
-            height={160}
-            alt={`Exterior of the SSW ${office.addressLocality} office`}
-            className="my-0 h-auto w-full lg:col-span-4"
+        </>
+      ) : (
+        <></>
+      )}
+      {office.photos?.children?.length > 0 && (
+        <>
+          <h2>SSW {office.addressLocality} Photos</h2>
+          <TinaMarkdown
+            components={componentRenderer}
+            content={office.photos}
           />
-        )}
-      </div>
-      <div className="mx-auto mt-12 max-w-5xl border-t border-stroke-weak pt-8">
-        {office.aboutUs?.children?.length > 0 && (
-          <>
-            <h2>About the {office.addressLocality} office</h2>
-            <div data-tina-field={tinaField(office, "aboutUs")}>
-              <TinaMarkdown
-                components={componentRenderer}
-                content={office.aboutUs}
-              />
-            </div>
-          </>
-        )}
-        <div className="flex flex-wrap gap-x-6 gap-y-2 empty:hidden">
-          {office.localWebsiteLink?.url && office.localWebsiteLink.title && (
-            <CustomLink
-              href={office.localWebsiteLink.url}
-              data-tina-field={tinaField(office, "localWebsiteLink")}
-            >
-              {office.localWebsiteLink.title}
-            </CustomLink>
-          )}
-          {office.chapelLink && (
-            <CustomLink
-              href={office.chapelLink}
-              data-tina-field={tinaField(office, "chapelLink")}
-            >
-              SSW Chapel
-            </CustomLink>
-          )}
-          {office.sidebarSecondaryPlace?.url &&
-            office.sidebarSecondaryPlace.name && (
-              <CustomLink
-                href={office.sidebarSecondaryPlace.url}
-                data-tina-field={tinaField(office, "sidebarSecondaryPlace")}
-              >
-                {office.sidebarSecondaryPlace.name}
-              </CustomLink>
-            )}
-        </div>
-        {office.team?.children?.length > 0 ? (
-          <>
-            <h2>The SSW {office.addressLocality} Team</h2>
-            <div data-tina-field={tinaField(office, "team")}>
-              <TinaMarkdown
-                components={componentRenderer}
-                content={office.team}
-              />
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
-        {office.photos?.children?.length > 0 && (
-          <>
-            <h2>SSW {office.addressLocality} Photos</h2>
+        </>
+      )}
+      {office._body?.children?.length > 0 && (
+        <>
+          <hr />
+          <div data-tina-field={tinaField(office, "_body")}>
             <TinaMarkdown
               components={componentRenderer}
-              content={office.photos}
+              content={office._body}
             />
-          </>
-        )}
-        {office._body?.children?.length > 0 && (
-          <>
-            <hr />
-            <div data-tina-field={tinaField(office, "_body")}>
-              <TinaMarkdown
-                components={componentRenderer}
-                content={office._body}
-              />
-            </div>
-          </>
-        )}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+const SidePanel = ({ office }) => {
+  return (
+    <div className="space-y-6">
+      <div className="prose max-w-none rounded-card border-0.75 border-stroke-weak bg-card p-6 dark:prose-invert prose-headings:text-foreground prose-h3:first:mt-0 prose-p:text-muted-foreground prose-a:text-foreground prose-strong:text-foreground prose-img:rounded-control">
+        <ContactPanel office={office} />
       </div>
+      <div className="prose max-w-none rounded-card border-0.75 border-stroke-weak bg-card p-6 dark:prose-invert prose-headings:text-foreground prose-h3:first:mt-0 prose-p:text-muted-foreground prose-strong:text-foreground">
+        <MicrosoftPanel themed />
+      </div>
+      <TestimonialPanel themed />
     </div>
   );
 };
