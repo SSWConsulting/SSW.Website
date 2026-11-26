@@ -8,19 +8,12 @@ import Image from "next/image";
 import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
 import { tinaField } from "tinacms/dist/react";
 import { CardVideo } from "./clientCard";
+import { rise } from "./rise";
 
 export const CLIENT_STORY_ID = "story";
 
 const eyebrow =
   "m-0 text-xs font-semibold uppercase tracking-widest text-brand";
-
-// Each hero line rises in after the one before it. A CSS animation rather
-// than framer-motion, so the server-rendered headline shows (and counts for
-// LCP) before the page hydrates.
-const rise = (step: number, className: string) => ({
-  className: cn(className, "motion-safe:animate-rise-in"),
-  style: { animationDelay: `${80 * step}ms` },
-});
 
 type ClientStoryHeroProps = {
   caseStudy: { heading?: string | null; subHeading?: string | null };
