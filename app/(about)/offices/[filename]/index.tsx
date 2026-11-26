@@ -29,62 +29,65 @@ export default function OfficePage({ props, tinaProps }) {
             title={office.seo.title}
           />
         )}
-        <header className="py-8 sm:py-12">
-          <p className="m-0 text-xs font-semibold uppercase tracking-widest text-brand dark:text-muted-foreground">
-            Our offices · {office.addressCountry}
-          </p>
-          <h1
-            className="m-0 mt-3 p-0 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl"
-            data-tina-field={tinaField(office, "name")}
-          >
-            {office.name}
-          </h1>
-          {office.streetAddress && (
-            <p className="mb-0 mt-3 text-muted-foreground">
-              {[office.streetAddress, office.suburb, office.addressRegion]
-                .filter(Boolean)
-                .join(", ")}
+        <header className="grid items-center gap-6 pt-8 sm:pt-12 lg:grid-cols-12 lg:gap-10">
+          <div className="min-w-0 lg:col-span-5 lg:only:col-span-12">
+            <p className="m-0 text-xs font-semibold uppercase tracking-widest text-brand dark:text-muted-foreground">
+              Our offices · {office.addressCountry}
             </p>
-          )}
-          {openingHours && (
-            <p className="mb-0 mt-1 text-muted-foreground">
-              Opening hours: {openingHours}
-            </p>
-          )}
-          <div className="mt-5 flex flex-wrap gap-3">
-            <RippleButton
-              variant="primary"
-              href="#Directions"
-              className="inline-flex"
+            <h1
+              className="m-0 mt-3 p-0 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl"
+              data-tina-field={tinaField(office, "name")}
             >
-              <FiMapPin aria-hidden className="size-4" />
-              Get directions
-            </RippleButton>
-            {office.phone && (
-              <RippleButton
-                variant="secondary"
-                href={`tel:${office.phone.replace(/[^+\d]/g, "")}`}
-                className="inline-flex border-stroke-weak text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground"
-              >
-                <FiPhone aria-hidden className="size-4" />
-                Call our office
-              </RippleButton>
+              {office.name}
+            </h1>
+            {office.streetAddress && (
+              <p className="mb-0 mt-3 text-muted-foreground">
+                {[office.streetAddress, office.suburb, office.addressRegion]
+                  .filter(Boolean)
+                  .join(", ")}
+              </p>
             )}
+            {openingHours && (
+              <p className="mb-0 mt-1 text-muted-foreground">
+                Opening hours: {openingHours}
+              </p>
+            )}
+            <div className="mt-5 flex flex-wrap gap-3">
+              <RippleButton
+                variant="primary"
+                href="#Directions"
+                className="inline-flex"
+              >
+                <FiMapPin aria-hidden className="size-4" />
+                Get directions
+              </RippleButton>
+              {office.phone && (
+                <RippleButton
+                  variant="secondary"
+                  href={`tel:${office.phone.replace(/[^+\d]/g, "")}`}
+                  className="inline-flex border-stroke-weak text-foreground hover:border-brand hover:bg-card-hover hover:text-foreground"
+                >
+                  <FiPhone aria-hidden className="size-4" />
+                  Call our office
+                </RippleButton>
+              )}
+            </div>
           </div>
+          {office.coverImg && (
+            <div className="overflow-hidden rounded-card border-0.75 border-stroke-weak lg:col-span-7">
+              <Image
+                data-tina-field={tinaField(office, "coverImg")}
+                width={1476}
+                height={542}
+                src={office.coverImg}
+                alt={`View of ${office.addressLocality}`}
+                sizes="(min-width: 1024px) 58vw, 100vw"
+                priority
+                className="h-auto w-full"
+              />
+            </div>
+          )}
         </header>
-        {office.coverImg && (
-          <div className="overflow-hidden rounded-card border-0.75 border-stroke-weak">
-            <Image
-              data-tina-field={tinaField(office, "coverImg")}
-              width={1476}
-              height={542}
-              src={office.coverImg}
-              alt={`View of ${office.addressLocality}`}
-              priority
-              className="h-auto w-full"
-            />
-          </div>
-        )}
         <div className="mt-10 grid gap-10 lg:grid-cols-12">
           <div className="min-w-0 lg:col-span-8">
             <OfficeLayout office={office} />
