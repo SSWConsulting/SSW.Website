@@ -128,21 +128,19 @@ const OfficeLayout = ({ office }) => {
         <></>
       )}
       <h2 id="Directions">SSW {office.addressLocality} Directions</h2>
-      <h4>
-        <CustomLink
-          data-tina-field={tinaField(office, "directionsUrl")}
-          href={office.directionsUrl ?? ""}
-        >
-          <Image
-            src="/images/icons/map-pin.svg"
-            alt="Map pin icon"
-            height={16}
-            width={16}
-            className="my-0 mr-1.5 inline-block"
-          />
+      <p className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+        <strong>
           {`${office.streetAddress}, ${office.suburb}, ${office.addressRegion} ${office.postalCode}, ${office.addressCountry}`}
-        </CustomLink>
-      </h4>
+        </strong>
+        {office.directionsUrl && (
+          <CustomLink
+            href={office.directionsUrl}
+            data-tina-field={tinaField(office, "directionsUrl")}
+          >
+            Open in Google Maps
+          </CustomLink>
+        )}
+      </p>
       <div data-tina-field={tinaField(office, "directions")}>
         <TinaMarkdown
           components={componentRenderer}
@@ -217,7 +215,7 @@ const SidePanel = ({ office }) => {
       <div className="prose max-w-none rounded-card border-0.75 border-stroke-weak bg-card p-6 dark:prose-invert prose-headings:text-foreground prose-h3:first:mt-0 prose-p:text-muted-foreground prose-strong:text-foreground">
         <MicrosoftPanel themed />
       </div>
-      <div className="prose max-w-none rounded-card border-0.75 border-stroke-weak bg-card p-6 dark:prose-invert prose-headings:text-foreground prose-h3:first:mt-0 prose-p:text-muted-foreground prose-strong:text-foreground">
+      <div className="prose max-w-none rounded-card border-0.75 border-stroke-weak bg-card p-6 dark:prose-invert empty:hidden prose-headings:text-foreground prose-h3:first:mt-0 prose-p:text-muted-foreground prose-strong:text-foreground">
         <TestimonialPanel themed />
       </div>
     </div>

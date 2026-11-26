@@ -16,6 +16,9 @@ async function officeHeader(page: Page, slug: string) {
         )?.textContent,
         link: directions?.textContent,
         target: doc.getElementById("Directions")?.textContent,
+        mapLinks: Array.from(doc.querySelectorAll("a"))
+          .filter((link) => link.href.includes("google.com/maps"))
+          .map((link) => link.textContent),
       };
     },
     await response.text()
@@ -28,6 +31,7 @@ test("Newcastle publishes opening hours and a link to its directions section", a
   const office = await officeHeader(page, "newcastle");
   expect(office.link).toContain("Get directions");
   expect(office.target).toContain("Newcastle");
+  expect(office.mapLinks).toEqual(["Open in Google Maps"]);
   expect(office.hours).toBe("Opening hours: Monday - Friday, 9am - 6pm AEDT");
 });
 

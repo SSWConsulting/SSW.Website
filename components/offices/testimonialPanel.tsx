@@ -31,6 +31,8 @@ const TestimonialPanel = ({
     );
   }, [testimonialName]);
 
+  if (themed && !testimonial) return null;
+
   return (
     <>
       <h3>Testimonials</h3>
