@@ -19,6 +19,7 @@ export default function OfficePage({ props, tinaProps }) {
   const { data } = tinaProps;
 
   const office = data.offices;
+  const openingHours = [office.days, office.hours].filter(Boolean).join(", ");
   return (
     <HomeThemeShell className="min-h-screen">
       <Container size="custom" className="pb-16 pt-4">
@@ -29,7 +30,7 @@ export default function OfficePage({ props, tinaProps }) {
           />
         )}
         <header className="py-8 sm:py-12">
-          <p className="m-0 text-xs font-semibold uppercase tracking-widest text-brand">
+          <p className="m-0 text-xs font-semibold uppercase tracking-widest text-brand dark:text-muted-foreground">
             Our offices · {office.addressCountry}
           </p>
           <h1
@@ -45,17 +46,20 @@ export default function OfficePage({ props, tinaProps }) {
                 .join(", ")}
             </p>
           )}
+          {openingHours && (
+            <p className="mb-0 mt-1 text-muted-foreground">
+              Opening hours: {openingHours}
+            </p>
+          )}
           <div className="mt-5 flex flex-wrap gap-3">
-            {office.directionsUrl && (
-              <RippleButton
-                variant="primary"
-                href="#Directions"
-                className="inline-flex"
-              >
-                <FiMapPin aria-hidden className="size-4" />
-                Get directions
-              </RippleButton>
-            )}
+            <RippleButton
+              variant="primary"
+              href="#Directions"
+              className="inline-flex"
+            >
+              <FiMapPin aria-hidden className="size-4" />
+              Get directions
+            </RippleButton>
             {office.phone && (
               <RippleButton
                 variant="secondary"
