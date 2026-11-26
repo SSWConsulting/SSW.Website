@@ -34,9 +34,14 @@ export const THEMED_ROUTES = [
 // Routes whose descendants are themed too. Every /products/<slug> page and its
 // sub-pages use the product template, and every /company/clients/<slug> page
 // uses the client story template; both are built for both themes, so those
-// sections opt in wholesale. The other entries stay exact matches, leaving
+// sections opt in wholesale. Office detail pages opt in too, but the office
+// directory stays unthemed until its own redesign is ready. Other entries stay exact matches, leaving
 // /consulting/<page> and /events/<page> untouched.
-export const THEMED_ROUTE_PREFIXES = ["/products", "/company/clients"];
+export const THEMED_ROUTE_PREFIXES = [
+  "/products",
+  "/company/clients",
+  "/offices",
+];
 
 export const isThemedRoute = (pathname: string) =>
   THEMED_ROUTES.includes(pathname) ||

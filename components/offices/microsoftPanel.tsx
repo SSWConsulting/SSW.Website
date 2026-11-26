@@ -1,16 +1,20 @@
 import Image from "next/image";
 import type { Template } from "tinacms";
 
-const MicrosoftPanel = () => {
+const MicrosoftPanel = ({ themed = false }: { themed?: boolean }) => {
   return (
     <>
       <h3>We ❤️ Microsoft</h3>
-      <div className="border-2 bg-gray-100 px-4 py-2">
+      <div
+        className={
+          themed ? "text-muted-foreground" : "border-2 bg-gray-100 px-4 py-2"
+        }
+      >
         <p>
           <strong>SSW is a Microsoft Cloud Partner!</strong>
         </p>
         <Image
-          className="m-0"
+          className={themed ? "m-0 rounded-control bg-white p-2" : "m-0"}
           src="/images/logos/Microsoft-Solutions-Partner.png"
           width={177}
           height={50}
