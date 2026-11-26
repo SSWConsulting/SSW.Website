@@ -7,15 +7,11 @@ import RippleButton from "@/components/button/rippleButtonV2";
 import { CustomLink } from "@/components/customLink";
 import { HomeThemeShell } from "@/components/layout/homeTheme";
 import { sidebarPageContainer } from "@/components/layout/stickySidebar";
-import {
-  cardFooter,
-  cardShell,
-  destinationLabel,
-} from "@/components/products/shared";
+import { cardShell, destinationLabel } from "@/components/products/shared";
 import type { Countries } from "@/components/util/constants/country";
 import { cn } from "@/lib/utils";
 import type { OfficeIndexQueryQuery } from "@/tina/types";
-import { ArrowRight, Globe2, MapPin, Phone } from "lucide-react";
+import { ArrowRight, ExternalLink, Globe2, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import { tinaField, useEditState } from "tinacms/dist/react";
 
@@ -35,7 +31,6 @@ function OfficeCard({
   const officePath = `/offices/${city.toLowerCase()}`;
   const regionalUrl = office.localWebsiteLink?.url;
   const domain = destinationLabel(regionalUrl).split("/")[0];
-  const inlineLocality = city === "Hangzhou";
 
   const countryTag = (
     <span
@@ -95,63 +90,79 @@ function OfficeCard({
           </h2>
         </div>
 
-        <address className="flex flex-1 flex-col gap-3 text-sm not-italic leading-relaxed text-muted-foreground">
-          <div className="flex items-start gap-3">
-            <MapPin
-              aria-hidden="true"
-              className="mt-0.5 size-4 shrink-0 text-brand"
-            />
-            <p className="m-0 p-0">
-              <span
-                className={inlineLocality ? undefined : "block"}
-                data-tina-field={tinaField(office, "streetAddress")}
+        <div className="flex flex-1 items-start gap-3">
+          <address className="flex min-w-0 flex-1 flex-col gap-3 text-sm not-italic leading-relaxed text-muted-foreground">
+            <div className="flex items-start gap-3">
+              <MapPin
+                aria-hidden="true"
+                className="mt-0.5 size-4 shrink-0 text-brand"
+              />
+              <p className="m-0 p-0">
+                <span
+                  className="block"
+                  data-tina-field={tinaField(office, "streetAddress")}
+                >
+                  {office.streetAddress}
+                </span>
+                <span className="block">
+                  {office.suburb}, {office.addressRegion} {office.postalCode}
+                </span>
+              </p>
+            </div>
+            <div className="flex items-center gap-3">
+              <Phone
+                aria-hidden="true"
+                className="size-4 shrink-0 text-brand"
+              />
+              <a
+                // Keep the phone link above the stretched office details link.
+                className="unstyled relative z-20 rounded-sm text-foreground no-underline hover:text-brand hover:underline focus-visible:outline-brand"
+                data-tina-field={tinaField(office, "phone")}
+                href={`tel:${office.phone.replace(/[^\d+]/g, "")}`}
               >
-                {office.streetAddress}
-              </span>
-              <span className={inlineLocality ? undefined : "block"}>
-                {inlineLocality && ",\u00a0"}
-                {office.suburb}, {office.addressRegion} {office.postalCode}
-              </span>
-            </p>
-          </div>
-          <div className="mt-auto flex items-center gap-3">
-            <Phone aria-hidden="true" className="size-4 shrink-0 text-brand" />
-            <a
-              // Keep the phone link above the stretched office details link.
-              className="unstyled relative z-20 rounded-sm text-foreground no-underline hover:text-brand hover:underline focus-visible:outline-brand"
-              data-tina-field={tinaField(office, "phone")}
-              href={`tel:${office.phone.replace(/[^\d+]/g, "")}`}
-            >
-              {office.phone}
-            </a>
-          </div>
-        </address>
-      </div>
+                {office.phone}
+              </a>
+            </div>
+            {regionalUrl && domain && (
+              <CustomLink
+                className="unstyled relative z-20 inline-flex w-fit items-center gap-3 rounded-sm text-foreground no-underline hover:text-brand hover:underline focus-visible:outline-brand"
+                href={regionalUrl}
+                target="_blank"
+                aria-label={`Visit ${domain} for the ${city} office (opens in a new tab)`}
+              >
+                <Globe2
+                  aria-hidden="true"
+                  className="size-4 shrink-0 text-brand"
+                />
+                <span className="inline-flex items-center gap-1.5">
+                  {domain}
+                  <ExternalLink
+                    aria-hidden="true"
+                    className="size-3.5 shrink-0"
+                  />
+                </span>
+              </CustomLink>
+            )}
+          </address>
 
-      <div className={cn(cardFooter, "mx-5 border-hairline pb-4 sm:mx-6")}>
-        <CustomLink
-          className={cn(
-            "unstyled flex w-full items-center justify-end gap-3 text-sm font-medium text-muted-foreground no-underline",
-            "after:absolute after:inset-0 after:z-10 focus-visible:outline-none focus-visible:after:rounded-card focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-brand",
-            // Tina quick edit needs clicks to reach the actual fields.
-            isEditing && "after:pointer-events-none"
-          )}
-          href={regionalUrl || officePath}
-          target={domain ? "_blank" : undefined}
-          aria-label={
-            domain
-              ? `Visit ${domain} for the ${city} office (opens in a new tab)`
-              : `Office details for ${city}`
-          }
-        >
-          {domain && <span className="mr-auto">{domain}</span>}
-          <span aria-hidden="true">
-            <ArrowCircle
-              className="size-9 bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
-              iconClassName="size-3.5"
-            />
-          </span>
-        </CustomLink>
+          <CustomLink
+            className={cn(
+              "unstyled flex shrink-0 self-end no-underline",
+              "after:absolute after:inset-0 after:z-10 focus-visible:outline-none focus-visible:after:rounded-card focus-visible:after:ring-2 focus-visible:after:ring-inset focus-visible:after:ring-brand",
+              // Tina quick edit needs clicks to reach the actual fields.
+              isEditing && "after:pointer-events-none"
+            )}
+            href={officePath}
+            aria-label={`Office details for ${city}`}
+          >
+            <span aria-hidden="true">
+              <ArrowCircle
+                className="size-9 bg-gray-200 p-2 text-gray-900 dark:bg-gray-950 dark:text-white"
+                iconClassName="size-3.5"
+              />
+            </span>
+          </CustomLink>
+        </div>
       </div>
     </article>
   );
