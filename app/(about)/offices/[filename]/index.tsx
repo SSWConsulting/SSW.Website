@@ -7,6 +7,12 @@ import { CustomLink } from "@/components/customLink";
 import ContactPanel from "@/components/offices/contactPanel";
 import MicrosoftPanel from "@/components/offices/microsoftPanel";
 import TestimonialPanel from "@/components/offices/testimonialPanel";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Container } from "@/components/util/container";
 import { removeExtension } from "@/services/client/utils.service";
 import { Breadcrumbs } from "app/components/breadcrumb";
@@ -102,6 +108,10 @@ export default function OfficePage({ props, tinaProps }) {
 }
 
 const OfficeLayout = ({ office }) => {
+  const arrivalSections = [
+    { field: "parking", label: "Parking" },
+    { field: "publicTransport", label: "Public transport" },
+  ].filter(({ field }) => office[field]?.children?.length);
   return (
     <div className="prose max-w-none dark:prose-invert prose-headings:text-foreground prose-h2:mt-12 prose-h2:scroll-mt-28 prose-h2:first:mt-0 prose-p:text-muted-foreground prose-a:text-foreground prose-strong:text-foreground prose-li:text-muted-foreground prose-img:rounded-control">
       <h2>About Us</h2>
@@ -150,27 +160,31 @@ const OfficeLayout = ({ office }) => {
           content={office.directions}
         />
       </div>
-      {office.parking?.children?.length > 0 && (
-        <>
-          <h2>Parking</h2>
-          <div data-tina-field={tinaField(office, "parking")}>
-            <TinaMarkdown
-              components={componentRenderer}
-              content={office.parking}
-            />
-          </div>
-        </>
-      )}
-      {office.publicTransport?.children?.length > 0 && (
-        <>
-          <h2>Public Transport</h2>
-          <div data-tina-field={tinaField(office, "publicTransport")}>
-            <TinaMarkdown
-              components={componentRenderer}
-              content={office.publicTransport}
-            />
-          </div>
-        </>
+      {arrivalSections.length > 0 && (
+        <Accordion type="multiple" className="my-6 border-b border-stroke-weak">
+          {arrivalSections.map(({ field, label }) => (
+            <AccordionItem
+              key={field}
+              value={field}
+              className="border-t border-stroke-weak"
+            >
+              <AccordionTrigger
+                indicator="chevron"
+                className="text-foreground hover:text-foreground data-[state=open]:text-foreground"
+              >
+                {label}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground">
+                <div data-tina-field={tinaField(office, field)}>
+                  <TinaMarkdown
+                    components={componentRenderer}
+                    content={office[field]}
+                  />
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
       )}
       {office.team?.children?.length > 0 ? (
         <>
