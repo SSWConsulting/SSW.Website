@@ -1,0 +1,209 @@
+{
+  "seo": {
+    "title": "Enterprise Agentic Engineering | SSW Training",
+    "description": "Use AI coding agents to plan, build, test and review a feature in this hands-on, one-day SSW workshop."
+  },
+  "blocks": [
+    {
+      "background": {
+        "backgroundColour": 7,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "brow": "One-day developer workshop",
+      "heading": "Enterprise Agentic Engineering",
+      "description": "Take a work item from a rough brief to a reviewed pull request with AI. In this hands-on workshop, you’ll use a coding agent to plan, build, test and review a feature, then turn the steps you repeat into reusable skills for your team.\n",
+      "buttons": [
+        {
+          "buttonText": "Talk to SSW",
+          "buttonLink": "/company/contact-us",
+          "colour": 0
+        }
+      ],
+      "mediaType": "image",
+      "image": {
+        "altText": "Illustration of Daniel Mackay and Gordon Beeming discussing software architecture at a desk",
+        "imageSource": "/images/ssw-web/hero/enterprise-agentic-engineering-dan-gordon.webp",
+        "imageHeight": 941,
+        "imageWidth": 1672
+      },
+      "_template": "v3Hero"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "",
+      "heading": "Give your coding agent a workflow your team can review",
+      "subtitle": "Use the same plan to guide the build, verify the result and review the code.",
+      "cards": [
+        {
+          "title": "Define what done looks like",
+          "description": "Turn a vague request into numbered, testable use cases."
+        },
+        {
+          "title": "Show what you tested",
+          "description": "Run automated tests, explore the running app and bring the evidence into your pull request."
+        },
+        {
+          "title": "Capture what works",
+          "description": "Turn recurring corrections into repository guidance and reusable skills. Review proposed improvements with your team."
+        }
+      ],
+      "_template": "v3StackCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Workshop exercise",
+      "heading": "One work item, from first prompt to peer review",
+      "subtitle": "Imagine your work item says, “Add a search box to the products page.” What should users see when no products match? You’ll build a first pass, then use questions like this to write a plan you can build from and test.",
+      "cards": [
+        {
+          "title": "Build a first pass",
+          "description": "Use a coding agent and note where you have to repeat instructions or correct its work."
+        },
+        {
+          "title": "Plan and rebuild",
+          "description": "Agree on the expected behaviour, then compare the first implementation with the planned build."
+        },
+        {
+          "title": "Test the result",
+          "description": "Check each use case and explore the running app for behaviour the plan missed."
+        },
+        {
+          "title": "Review the PR",
+          "description": "Include test evidence and screenshots, then review a partner’s changes against their plan."
+        }
+      ],
+      "_template": "v3StackCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "Workshop agenda",
+      "heading": "Build the workflow, then make it your own",
+      "description": "Write your own skills in the morning, then compare and adapt them in the afternoon.\n",
+      "items": [
+        {
+          "heading": "Morning · Build your own workflow",
+          "description": "Take a work item through planning, implementation, testing and peer review. Capture the repeatable steps as skills, and open a pull request with a clear summary, test evidence and before-and-after screenshots.\n"
+        },
+        {
+          "heading": "Afternoon · Adapt and improve the workflow",
+          "description": "Explore how coding agents use instructions, then compare your skills with an established toolkit. Practise adding repository rules, team workflows and personal preferences. Use evidence from tests, reviews and coding sessions to propose an improvement for human review.\n"
+        }
+      ],
+      "_template": "v3VerticalList"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "brow": "At a glance",
+      "heading": "Who it’s for and what to expect",
+      "subtitle": "Bring your experience working in a codebase and practise using an AI coding agent on a complete development task.",
+      "cards": [
+        {
+          "title": "Audience",
+          "description": "Software developers, including junior developers working in an existing codebase"
+        },
+        {
+          "title": "Format",
+          "description": "One day of live demos, paired coding exercises and peer review"
+        },
+        {
+          "title": "Tools",
+          "description": "Claude Code for demos, with reusable practices you can adapt to other coding agents"
+        },
+        {
+          "title": "Takeaway",
+          "description": "A worked example and starter skills for building, testing, opening PRs and reviewing changes"
+        }
+      ],
+      "_template": "v3StackCards"
+    },
+    {
+      "background": {
+        "backgroundColour": 7
+      },
+      "layout": "sideBySide",
+      "brow": "Meet your mentors",
+      "heading": "Dan & Gordon",
+      "subtitle": "Dan brings more than 20 years of software experience and deep .NET expertise, helping teams turn requirements into maintainable code.\n\nGordon helps teams adopt DevOps practices and improve how they build, test and review software.",
+      "people": [
+        {
+          "name": "Daniel Mackay",
+          "role": "Solution Architect",
+          "image": {
+            "altText": "Daniel Mackay",
+            "imageSource": "/images/people-carousel/dan-mackay-nobg.png",
+            "imageWidth": 1040,
+            "imageHeight": 1080
+          },
+          "sswPeople": "https://www.ssw.com.au/people/daniel-mackay/",
+          "linkedin": "https://www.linkedin.com/in/danieljamesmackay/",
+          "github": "https://github.com/danielmackay"
+        },
+        {
+          "name": "Gordon Beeming",
+          "role": "Solution Architect + Microsoft MVP",
+          "image": {
+            "altText": "Gordon Beeming",
+            "imageSource": "/images/people-carousel/gordon-beeming-nobg.png",
+            "imageWidth": 1040,
+            "imageHeight": 1080
+          },
+          "sswPeople": "https://www.ssw.com.au/people/gordon-beeming/",
+          "github": "https://github.com/gordonbeeming"
+        }
+      ],
+      "_template": "v3PeopleCarousel"
+    },
+    {
+      "background": {
+        "backgroundColour": 8
+      },
+      "heading": "Course FAQ",
+      "faqs": [
+        {
+          "question": "Who is this for?",
+          "answer": "Software developers who can work in an existing codebase and want a repeatable way to use coding agents in their day-to-day work.\n"
+        },
+        {
+          "question": "What will I build?",
+          "answer": "You’ll work through one feature in a sample application, from a first implementation to a planned, tested change that a peer can review.\n"
+        },
+        {
+          "question": "Which coding tools will we use?",
+          "answer": "The workshop demos use Claude Code. You can adapt the planning, testing and review practices to other coding agents.\n"
+        },
+        {
+          "question": "What will I take away?",
+          "answer": "A worked example with a plan, tests and a reviewed pull request, plus starter skills for building, testing, opening PRs and reviewing changes.\n"
+        }
+      ],
+      "_template": "v3Faq"
+    },
+    {
+      "background": {
+        "backgroundColour": 6,
+        "bleed": false,
+        "gridOverlay": true,
+        "redGlow": true
+      },
+      "heading": "Bring agentic engineering to your team",
+      "description": "Talk with SSW about running this hands-on workshop for your developers.\n",
+      "buttons": [
+        {
+          "buttonText": "Talk to SSW",
+          "buttonLink": "/company/contact-us",
+          "colour": 0
+        }
+      ],
+      "_template": "v3Cta"
+    }
+  ]
+}

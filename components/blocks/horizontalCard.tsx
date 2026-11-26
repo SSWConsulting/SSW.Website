@@ -4,6 +4,7 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown, TinaMarkdownContent } from "tinacms/dist/rich-text";
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
+import { contentLinkComponents } from "@/components/contentLink";
 
 type CardType = {
   title: string;
@@ -75,7 +76,10 @@ const Card = (card: CardType) => {
             </h3>
           </span>
           <span data-tina-field={tinaField(card, "content")}>
-            <TinaMarkdown content={card?.content} />
+            <TinaMarkdown
+              content={card?.content}
+              components={contentLinkComponents}
+            />
           </span>
         </div>
       </article>

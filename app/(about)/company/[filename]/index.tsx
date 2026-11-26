@@ -4,6 +4,7 @@ import { Blocks } from "@/components/blocks-renderer";
 import { componentRenderer } from "@/components/blocks/mdxComponentRenderer";
 import { TechUpgrade } from "@/components/blocks/techUpgrade";
 import { ClientsIndex } from "@/components/company/clientsIndex";
+import { TestimonialsIndex } from "@/components/company/testimonialsIndex";
 import HistoryTimeline from "@/components/company/historyTimeline";
 import { RDPanel } from "@/components/company/rdPanel";
 import TestimonialPanel from "@/components/offices/testimonialPanel";
@@ -15,13 +16,15 @@ import { tinaField } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 const CLIENTS_PAGE = "clients.mdx";
+const TESTIMONIALS_PAGE = "testimonials.mdx";
 
 export default function CompanyPage({ tinaProps, props }) {
   const { data } = tinaProps;
 
   const { historyCardProps } = props;
 
-  // Only /company/clients is themed (see THEMED_ROUTES).
+  // Only /company/clients and /company/testimonials are themed (see
+  // THEMED_ROUTES).
   const clientList =
     props.variables.relativePath === CLIENTS_PAGE &&
     data.company._body?.find((block) =>
@@ -32,6 +35,15 @@ export default function CompanyPage({ tinaProps, props }) {
       <ClientsIndex
         company={data.company}
         clientList={clientList}
+        relativePath={props.variables.relativePath}
+      />
+    );
+  }
+
+  if (props.variables.relativePath === TESTIMONIALS_PAGE) {
+    return (
+      <TestimonialsIndex
+        company={data.company}
         relativePath={props.variables.relativePath}
       />
     );

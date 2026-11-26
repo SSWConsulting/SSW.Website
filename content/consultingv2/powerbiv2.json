@@ -25,7 +25,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }
@@ -199,7 +199,7 @@
           "heading": "Power Platform",
           "description": "Build apps, automate workflows, and analyze data, all without heavy coding.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/power-platform"
           }
         },
@@ -210,7 +210,7 @@
           "heading": "Azure Synapse",
           "description": "Accelerate time-to-insight by bridging the gap between big data stores and enterprise-grade data warehousing.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/azure-synapse"
           }
         },
@@ -221,7 +221,7 @@
           "heading": "Microsoft Fabric",
           "description": "A unified, AI-powered analytics platform that connects your entire data estate in a single, governed environment.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/fabric"
           }
         },
@@ -232,7 +232,7 @@
           "heading": "Azure Machine Learning",
           "description": "Move from hindsight to foresight by integrating predictive models and advanced AI directly into your reporting.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/consulting/azure"
           }
         },
@@ -243,7 +243,7 @@
           "heading": "Microsoft Copilot",
           "description": "Empower your workforce with generative AI that automates complex analysis and delivers instant, natural-language insights from your enterprise data.",
           "embeddedButton": {
-            "buttonText": "Read More",
+            "buttonText": "Read more",
             "buttonLink": "https://www.ssw.com.au/rules/rules-to-better-ai-development"
           }
         }
@@ -275,7 +275,7 @@
       },
       "buttons": [
         {
-          "buttonText": "Book a Free Initial Meeting",
+          "buttonText": "Book a free initial meeting",
           "leadCaptureFormOption": "bookingJotFormId",
           "colour": 0
         }

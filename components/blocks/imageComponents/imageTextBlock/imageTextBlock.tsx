@@ -12,6 +12,7 @@ import { ListItem } from "../../../blocksSubtemplates/listItem";
 import { PillGroup } from "../../../blocksSubtemplates/pillGroup";
 
 import { ImageComponentLayout } from "../ImageComponentLayout";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export const ImageTextBlock = ({ data, priority = false }) => {
   const hasMedia =
@@ -47,6 +48,7 @@ export const ImageTextBlock = ({ data, priority = false }) => {
           <TinaMarkdown
             content={data.description}
             components={{
+              ...contentLinkComponents,
               p: (props) => (
                 <p
                   {...props}

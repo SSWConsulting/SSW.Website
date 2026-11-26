@@ -1,6 +1,7 @@
 import type { Template } from "tinacms";
 import globals from "../../content/global/index.json";
 import { JotFormEmbed, JotFormEmbedProps } from "../blocks/jotFormEmbed";
+import { BOOKING_CTA } from "../button/templateButton.constants";
 const DEFAULT_SUBTITLE = `or call ${globals.bookingPhone}`;
 export interface BookingButtonProps {
   data?: {
@@ -28,6 +29,7 @@ export const BookingButton: React.FC<BookingButtonProps | undefined> = ({
     buttonClass: data?.buttonClass || "",
     buttonText: buttonText,
     animated: animated,
+    dataCta: BOOKING_CTA,
   };
   //Create lead - JotForm Doc - https://sswcom.sharepoint.com/sites/SSWDevelopers/_layouts/15/doc.aspx?sourcedoc={45a11067-ef82-4dce-9b43-20812631a184}&action=edit
   return (
@@ -63,6 +65,8 @@ export const bookingButtonSchema: Template = {
       type: "string",
       label: "Button Text",
       name: "buttonText",
+      description:
+        "Use Sentence case: capitalise only the first word and names, e.g. Book a free initial meeting.",
       required: false,
     },
     {

@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { TfiAngleDown } from "react-icons/tfi";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { LiveStreamProps } from "../../hooks/useLiveStreamProps";
+import { contentLinkComponents } from "@/components/contentLink";
 
 type LiveStreamWidgetProps = {
   isLive?: boolean;
@@ -201,7 +202,10 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                             }
                           )}
                         >
-                          <TinaMarkdown content={event.description} />
+                          <TinaMarkdown
+                            content={event.description}
+                            components={contentLinkComponents}
+                          />
                         </div>
                         {eventDescriptionCollapsable && (
                           <div
@@ -263,7 +267,10 @@ export const LiveStreamWidget = ({ isLive, event }: LiveStreamWidgetProps) => {
                               <p className="mb-3 font-bold">
                                 {presenterDetails.presenter.name}
                               </p>
-                              <TinaMarkdown content={presenterDetails.about} />
+                              <TinaMarkdown
+                                content={presenterDetails.about}
+                                components={contentLinkComponents}
+                              />
                               {!!presenterDetails.presenter
                                 .peopleProfileURL && (
                                 <CustomLink

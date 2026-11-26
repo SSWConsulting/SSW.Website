@@ -187,7 +187,7 @@ function RegionGlobe({ isDark }: { isDark: boolean }) {
   );
 }
 
-// The v3 menu actions: search, region globe, then the "Let's Talk" pill. These
+// The v3 menu actions: search, region globe, then the "Let's talk" pill. These
 // render on EVERY route (injected via the mega menu's `rightSideActionsOverride`).
 // The sun/moon theme toggle is the one homepage-only extra — it's the only piece
 // gated behind `isThemed`, and elsewhere the cluster is always light (even if the OS
@@ -221,7 +221,7 @@ export function HomeNavActions({ isThemed = false }: { isThemed?: boolean }) {
         href={CONTACT_URL}
         className="unstyled group flex h-12 shrink-0 items-center gap-2 rounded-full bg-sswRed py-1 pl-4 pr-1 font-medium text-white"
       >
-        Let&apos;s Talk
+        Let&apos;s talk
         <ArrowCircle
           className="size-10 bg-white text-sswRed group-hover:scale-110"
           iconClassName="size-5"

@@ -5,6 +5,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { presenterSchemaConstants } from "../../tina/collections/presenter"; // TODO: Use alias - https://github.com/tinacms/tinacms/issues/4488
 import { CustomLink } from "../customLink";
 import { Container } from "../util/container";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export const PresenterBlock = ({ data }) => {
   return (
@@ -91,7 +92,10 @@ const PresenterCard = ({ presenter, schema, index }) => {
           presenterSchemaConstants.about
         )}
       >
-        <TinaMarkdown content={presenter?.about} />
+        <TinaMarkdown
+          content={presenter?.about}
+          components={contentLinkComponents}
+        />
       </div>
     </div>
   );

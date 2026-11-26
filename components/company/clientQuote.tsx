@@ -1,6 +1,7 @@
 import type { ContentCardProps } from "@/components/blocks/contentCard";
 import { storyText } from "@/helpers/clients";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { contentLinkComponents } from "@/components/contentLink";
 
 // Client testimonials store the attribution in their final paragraph.
 export const ClientQuote = ({ data }: ContentCardProps) => {
@@ -24,6 +25,7 @@ export const ClientQuote = ({ data }: ContentCardProps) => {
             key={index}
             content={[paragraph]}
             components={{
+              ...contentLinkComponents,
               p: ({ children }) => (
                 <p className="mb-4 last:mb-0">
                   {index === 0 && "“"}

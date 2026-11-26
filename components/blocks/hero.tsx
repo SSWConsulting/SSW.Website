@@ -5,6 +5,7 @@ import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Actions } from "../util/actions";
 import { Container } from "../util/container";
 import { Section } from "../util/section";
+import { contentLinkComponents } from "@/components/contentLink";
 
 export const Hero = ({ data, parentField }) => {
   return (
@@ -46,7 +47,10 @@ export const Hero = ({ data, parentField }) => {
               data-tinafield={`${parentField}.text`}
               className="prose prose-lg mx-auto mb-10 lg:mx-0"
             >
-              <TinaMarkdown content={data.text} />
+              <TinaMarkdown
+                content={data.text}
+                components={contentLinkComponents}
+              />
             </div>
           )}
           {data.actions && (
