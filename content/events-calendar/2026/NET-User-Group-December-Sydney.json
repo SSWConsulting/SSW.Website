@@ -1,10 +1,11 @@
 {
-  "title": ".NET User Group December",
+  "title": "December User Group - Writing code got easier. Shipping it feels harder.",
   "slug": "net-user-group-december-2026-sydney",
   "url": "https://www.meetup.com/sydney-net-user-group/events/316761758/",
   "websiteUrl": "https://www.ssw.com.au/netug",
-  "thumbnail": "/images/events/sydney-ug-thumb.jpg",
-  "thumbnailDescription": "Sydney .NET User Group",
+  "thumbnail": "/images/events/matt-wicks-writing-code-shipping-dec-2026.png",
+  "thumbnailDescription": "Writing code got easier. Shipping it feels harder. With Matt Wicks at Sydney .NET User Group on 16 December",
+  "bannerImage": "/images/events/matt-wicks-writing-code-shipping-dec-2026.png",
   "presenterList": [
     {
       "presenter": "content/presenters/matt-wicks.mdx"
@@ -17,8 +18,8 @@
   "calendarType": "User Groups",
   "city": "Sydney",
   "category": "Other",
-  "abstract": ".NET User Group December with Matt Wicks. Topic TBA.\n\nAgenda (Sydney time)\n\n6 pm – Pizza and networking at SSW Sydney! 🍕\n6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n6:45 pm – Topic TBA with Matt Wicks\n\nCan't make it? Watch the live stream: https://www.ssw.com.au/live",
-  "description": "**.NET User Group December with Matt Wicks**\n\nTopic TBA.\n\n**Agenda (Sydney time)**\n\n- 6 pm – Pizza and networking at SSW Sydney! 🍕\n- 6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n- 6:45 pm – Topic TBA with Matt Wicks\n\nCan't make it? Watch the live stream: [ssw.com.au/live](https://www.ssw.com.au/live)\n\n**About Matt**\n\nMatt Wicks is a Solution Architect at SSW who runs the Newcastle office. He is a certified Scrum Master, Octopus Insider, and GitHub accredited.",
+  "abstract": "Writing code got easier. Shipping it feels harder. Matt Wicks explores why AI can speed up development while leaving teams with bigger changes, review queues, and harder rollbacks. You'll leave knowing whether your team is shipping faster or just breaking things faster, and what to change when you get back to work.",
+  "description": "**Writing code got easier. Shipping it feels harder.**\n\nAI made me faster. It's made most teams faster. The research says it's also made them less stable: bigger changes, smaller teams, and review queues that can't keep up.\n\nBy day I build enterprise apps for large clients. On the side I experiment, because the tools seem to change every couple of days. My latest experiment was an online store for my wife, in a stack I'd never touched, with AI writing most of it. Getting it working was the easy part. Keeping it safe to change is where it got hard, and teams shipping mostly AI-written code are hitting the same wall. When code is cheap, review, rollback and knowing how the system works become the real work.\n\nYou'll leave knowing whether your team is shipping faster or just breaking things faster, and what to change when you get back to work.\n\n**Agenda (Sydney time)**\n\n- 6 pm – Pizza and networking at SSW Sydney! 🍕\n- 6:30 pm – Welcome & News with Eve & Adam Cogan - this will be live-streamed around the world\n- 6:45 pm – Matt Wicks: Writing code got easier. Shipping it feels harder.\n\nCan't make it? Watch the live stream: [ssw.com.au/live](https://www.ssw.com.au/live)\n\n**About Matt**\n\nMatt Wicks is a Solution Architect at SSW who runs the Newcastle office. He is a certified Scrum Master, Octopus Insider, and GitHub accredited.",
   "liveStreamDelayMinutes": 30,
   "hostedAtSsw": true,
   "enabled": true
