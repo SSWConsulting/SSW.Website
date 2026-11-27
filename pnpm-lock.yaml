@@ -171,8 +171,8 @@ importers:
         specifier: ^0.34.3
         version: 0.34.3
       ssw.megamenu:
-        specifier: 4.15.0
-        version: 4.15.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: 4.15.2
+        version: 4.15.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       stale-while-revalidate-cache:
         specifier: ^3.4.0
         version: 3.4.0
@@ -8261,8 +8261,8 @@ packages:
   sqlite-level@2.1.1:
     resolution: {integrity: sha512-hhRnO7R4fym5PjWiRkKyMju1Ok6B3MfK3wWyyoeAaGd9OZPrTqGbjEbghHLh7uco4r3syZrbk3/9IQTWCv3/sw==}
 
-  ssw.megamenu@4.15.0:
-    resolution: {integrity: sha512-6ACOkEEoAfZRT7RzqU2FZ/cYhmhlUrPK9brpoeQvULNTZbpG98Fmql9lDyNZbyaO9vMhUJS8kpE3rsed+bwW8Q==}
+  ssw.megamenu@4.15.2:
+    resolution: {integrity: sha512-tZutaPByCmGIaKJhfWKbfFtf8qRG3BUxPP4oJwOs9F7ubYFT3wxEhtUS9QmKdRHyMeGEGmSh4BI909yFlpzZ1g==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -18518,7 +18518,7 @@ snapshots:
       better-sqlite3: 12.10.0
       module-error: 1.0.2
 
-  ssw.megamenu@4.15.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+  ssw.megamenu@4.15.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
     dependencies:
       '@headlessui/react': 2.2.4(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@heroicons/react': 2.2.0(react@19.2.8)

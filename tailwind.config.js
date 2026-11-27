@@ -408,6 +408,10 @@ export default {
           darkRed: "#8e2c2c",
           black: "#333333",
           gray: { DEFAULT: "#797979", dark: "#666666", light: "#AAAAAA" },
+          // ssw.megamenu names this same red `ssw-light-red` (its search button
+          // and dark-mode link hovers). The menu's classes are compiled by this
+          // config, so the name has to exist here too.
+          light: { red: "#d26e6e" },
         },
         aspect: {
           carousel: "1080/388",
