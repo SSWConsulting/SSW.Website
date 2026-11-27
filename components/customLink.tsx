@@ -1,6 +1,6 @@
 "use client";
 
-import { isSswOwnedUrl, isSswSubsiteUrl } from "@/helpers/links";
+import { isSswSubsiteUrl } from "@/helpers/links";
 import Link from "next/link";
 import React, { PropsWithChildren } from "react";
 
@@ -30,8 +30,6 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
   ...props
 }) => {
   const isExternal = isExternalLink(href);
-  // The same list of SSW-owned domains that content links use.
-  const isAnSSWBrandedSite = isSswOwnedUrl(href);
 
   if (!href) return <>{children}</>;
   return (
@@ -41,7 +39,7 @@ export const CustomLink: React.FC<CustomLinkProps> = ({
           className={className}
           href={href}
           target={target || "_blank"}
-          rel={isAnSSWBrandedSite ? "" : "noopener noreferrer nofollow"}
+          rel="noopener"
           title={title}
           style={style}
           {...props}

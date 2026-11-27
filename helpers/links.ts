@@ -65,17 +65,6 @@ const parseAbsolute = (value: string): URL | null => {
 };
 
 /**
- * An absolute link to an SSW-owned site (any SSW domain or subdomain),
- * including the separate apps on www.ssw.com.au such as /rules.
- */
-export const isSswOwnedUrl = (href?: string | null): boolean => {
-  const value = href?.trim() ?? "";
-  if (!ABSOLUTE_WEB_URL.test(value)) return false;
-  const url = parseAbsolute(value);
-  return !!url && isSswOwnedHost(url.hostname);
-};
-
-/**
  * An absolute link to one of the separate SSW apps on www.ssw.com.au
  * (/people, /rules, /ssw).
  */
@@ -144,11 +133,3 @@ export const getLinkKind = (href?: string | null): LinkKind => {
  */
 export const opensInNewTab = (kind: LinkKind): boolean =>
   kind === "external" || kind === "youtube" || kind === "maps";
-
-/**
- * The `rel` for a link that opens in a new tab: outside sites get
- * `noopener noreferrer nofollow`, as in CustomLink. SSW's own sites only need
- * `noopener`.
- */
-export const getLinkRel = (href?: string | null): string =>
-  getLinkKind(href) === "branded" ? "noopener" : "noopener noreferrer nofollow";

@@ -22,7 +22,7 @@ describe("ContentLink", () => {
     );
 
     expect(link().getAttribute("target")).toBe("_blank");
-    expect(link().getAttribute("rel")).toBe("noopener noreferrer nofollow");
+    expect(link().getAttribute("rel")).toBe("noopener");
     expect(icon(container)).not.toBeNull();
     expect(iconIsFirst()).toBe(false);
     expect(link().textContent).toContain("(opens in a new tab)");
@@ -60,6 +60,7 @@ describe("ContentLink", () => {
     const { container } = render(<ContentLink url={url}>Watch</ContentLink>);
 
     expect(link().getAttribute("target")).toBe("_blank");
+    expect(link().getAttribute("rel")).toBe("noopener");
     expect(container.querySelectorAll(".content-link-icon")).toHaveLength(1);
     expect(iconIsFirst()).toBe(true);
   });

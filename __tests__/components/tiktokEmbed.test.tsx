@@ -103,7 +103,7 @@ describe("TikTokEmbed", () => {
     });
     expect(link.getAttribute("href")).toBe(shortUrl);
     expect(link.getAttribute("target")).toBe("_blank");
-    expect(link.getAttribute("rel")).toBe("noopener noreferrer");
+    expect(link.getAttribute("rel")).toBe("noopener");
     expect(screen.getByText("Video: Moving to Newcastle")).toBeTruthy();
   });
 

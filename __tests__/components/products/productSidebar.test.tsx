@@ -147,7 +147,7 @@ describe("ProductSidebar external links", () => {
 
     const videos = screen.getByRole("link", { name: "Videos" });
     expect(videos).toHaveAttribute("target", "_blank");
-    expect(videos).toHaveAttribute("rel", "noopener noreferrer");
+    expect(videos).toHaveAttribute("rel", "noopener");
   });
 
   test("leaves an in-site CTA in the same tab", () => {
