@@ -50,12 +50,12 @@ const config = {
       },
       {
         protocol: "https",
-        hostname: "**ssw.com.au",
+        hostname: "ssw.com.au",
         port: "",
       },
       {
-        protocol: "http",
-        hostname: "**ssw.com.au",
+        protocol: "https",
+        hostname: "**.ssw.com.au",
         port: "",
       },
       {
