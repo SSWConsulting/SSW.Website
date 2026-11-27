@@ -46,6 +46,7 @@ export default {
       },
       aspectRatio: {
         "4/3": "4 / 3",
+        "office-banner": "2280 / 820",
         // Portrait video, such as the TikTok embed player.
         "9/16": "9 / 16",
       },

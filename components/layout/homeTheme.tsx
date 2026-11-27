@@ -27,6 +27,7 @@ export const THEMED_ROUTES = [
   "/consulting",
   "/products",
   "/events",
+  "/offices",
   "/company/clients",
   "/company/testimonials",
 ];
