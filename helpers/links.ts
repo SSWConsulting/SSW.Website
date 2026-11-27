@@ -13,13 +13,7 @@
 // - email:    a mailto: link. Same tab, email icon.
 // - other:    tel: and other non-web links. Left as they are.
 export type LinkKind =
-  | "internal"
-  | "branded"
-  | "youtube"
-  | "maps"
-  | "external"
-  | "email"
-  | "other";
+  "internal" | "branded" | "youtube" | "maps" | "external" | "email" | "other";
 
 // This site. Any other SSW subdomain (rules., blog., design.) is another app.
 const SSW_WEBSITE_HOST = /^(www\.)?ssw\.com\.au$/i;

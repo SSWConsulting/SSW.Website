@@ -9,8 +9,7 @@ export type ButtonTinaFields = {
 };
 
 interface RippleButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ButtonTinaFields {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonTinaFields {
   children: React.ReactNode;
   rippleColor?: string;
   fontClassName?: string;

@@ -14,7 +14,6 @@ export function blockLayout(
   const block = path
     .slice(0, -3)
     .reduce<unknown>((obj, key) => obj?.[key as keyof typeof obj], values) as
-    | { layout?: string }
-    | undefined;
+    { layout?: string } | undefined;
   return block?.layout || LAYOUT.quote;
 }
