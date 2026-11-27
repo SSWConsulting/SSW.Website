@@ -17,7 +17,19 @@ jobs:
       tag: pr-${{ github.event.number }}
       # Validate the build only - `/deploy` is what pushes a pr-<n> image to ACR.
       push: false
+      # PR code runs here, so it gets no Azure identity. Without Azure the build
+      # skips the YouTube key and App Insights lookups and caches to GitHub
+      # Actions instead of ACR.
+      azure: false
     permissions:
-      id-token: write
       contents: read
-    secrets: inherit
+    # Only what the build needs - no Azure secrets.
+    secrets:
+      NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.NEXT_PUBLIC_TINA_CLIENT_ID }}
+      TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+      TINA_SEARCH_TOKEN: ${{ secrets.TINA_SEARCH_TOKEN }}
+      NEXT_PUBLIC_GOOGLE_GTM_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_GTM_ID }}
+      JOTFORM_API_KEY: ${{ secrets.JOTFORM_API_KEY }}
+      POWER_AUTOMATE_LEAD_WEBHOOK_URL: ${{ secrets.POWER_AUTOMATE_LEAD_WEBHOOK_URL }}
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
+      TURNSTILE_SECRET_KEY: ${{ secrets.TURNSTILE_SECRET_KEY }}

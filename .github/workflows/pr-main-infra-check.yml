@@ -24,6 +24,9 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # The Azure login federates on this environment's subject, not on
+    # `pull_request`, so PR code can only reach Azure once a reviewer approves.
+    environment: infra-preview
     env:
       BICEP_PATH: ./infra/main.bicep
     steps:
@@ -45,13 +48,9 @@ jobs:
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-      - name: Deploy
+      - name: What-if
         run: |
           $timestamp = (Get-Date -Format yyyy-MM-ddTHH-mm)
-
-          az group create `
-            --location ${{ env.AZURE_RESOURCE_GROUP_LOCATION }} `
-            --name ${{ env.AZURE_RESOURCE_GROUP }}
 
           az deployment group create `
             --what-if `
