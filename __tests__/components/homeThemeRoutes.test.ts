@@ -23,6 +23,12 @@ describe("isThemedRoute", () => {
     expect(isThemedRoute("/company/testimonials")).toBe(true);
   });
 
+  it("themes office details without changing the office directory", () => {
+    expect(isThemedRoute("/offices/sydney")).toBe(true);
+    expect(isThemedRoute("/offices/hangzhou")).toBe(true);
+    expect(isThemedRoute("/offices")).toBe(false);
+  });
+
   it("leaves the other sections' detail pages unthemed", () => {
     expect(isThemedRoute("/consulting/bots")).toBe(false);
     expect(isThemedRoute("/events/user-group")).toBe(false);

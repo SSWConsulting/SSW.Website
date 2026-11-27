@@ -1,7 +1,7 @@
 "use client";
 
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Plus } from "lucide-react";
+import { ChevronDown, Plus } from "lucide-react";
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
@@ -18,19 +18,28 @@ AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {
+    indicator?: "plus" | "chevron";
+  }
+>(({ className, children, indicator = "plus", ...props }, ref) => (
   <AccordionPrimitive.Header className="my-0 flex">
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between gap-4 rounded-sm py-5 text-left text-lg font-semibold transition-colors hover:text-sswRed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sswRed focus-visible:ring-offset-2 focus-visible:ring-offset-transparent data-[state=open]:text-sswRed motion-reduce:transition-none [&[data-state=open]>svg]:rotate-45",
+        "flex flex-1 items-center justify-between gap-4 rounded-sm py-5 text-left text-lg font-semibold transition-colors hover:text-sswRed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sswRed focus-visible:ring-offset-2 focus-visible:ring-offset-transparent data-[state=open]:text-sswRed motion-reduce:transition-none",
+        indicator === "chevron"
+          ? "[&[data-state=open]>svg]:rotate-180"
+          : "[&[data-state=open]>svg]:rotate-45",
         className
       )}
       {...props}
     >
       {children}
-      <Plus className="size-6 shrink-0 transition-transform duration-200 motion-reduce:transition-none" />
+      {React.createElement(indicator === "chevron" ? ChevronDown : Plus, {
+        "aria-hidden": true,
+        className:
+          "size-6 shrink-0 transition-transform duration-200 motion-reduce:transition-none",
+      })}
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
